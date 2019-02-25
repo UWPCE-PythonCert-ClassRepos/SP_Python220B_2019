@@ -1,13 +1,16 @@
 """Test File for testing inventory management files"""
+import sys
+sys.path.append('/Users/njschafi/desktop/python220/SP_Python220B_2019/'
+                'students/njschafi/lesson01/inventory_management')
+
 from unittest import TestCase
 from mock import patch
-
-from inventory_management.inventory_class import Inventory
-from inventory_management.electric_appliances_class import ElectricAppliances
-from inventory_management.furniture_class import Furniture
-from inventory_management.market_prices import get_latest_price
-from inventory_management.main import add_new_item, return_inventory, item_info
-from inventory_management.main import main_menu, get_price, exit_program
+from inventory_class import Inventory
+from electric_appliances_class import ElectricAppliances
+from furniture_class import Furniture
+from market_prices import get_latest_price
+from main import add_new_item, return_inventory, item_info
+from main import main_menu, get_price, exit_program
 
 
 class InventoryTest(TestCase):
@@ -94,17 +97,21 @@ class MainTest(TestCase):
             add_new_item()
         self.assertEqual(test_inventory, return_inventory())
 
-        def test_exit_program(self):
-            """Tests if program exits properly"""
+    def test_no_item_info(self):
+        """Tests if item_info gets returned"""
+        input4 = [22]
+        with patch('builtins.input', side_effect=input4):
+            item = item_info()
+        self.assertEqual(item, None)
 
-        def test_return_inventory(self):
-            """Test if inventory gets returned"""
-            test_inventory = {}
-            self.assertEqual(test_inventory, return_inventory())
+    def test_item_info(self):
+        """Tests if item_info gets returned"""
+        input4 = [1]
+        with patch('builtins.input', side_effect=input4):
+            item = item_info()
+        self.assertEqual(item, None)
 
-        def test_item_info(self):
-            """Tests if item_info gets returned"""
-            input4 = [1, 2]
-            with patch('builtins.input', side_effect=input4):
-                item = item_info()
-            self.assertEqual(item, "Item not found in inventory")
+    def test_exit_program(self):
+        """Tests if program exits properly"""
+        with self.assertRaises(SystemExit):
+            exit_program()

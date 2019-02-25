@@ -86,6 +86,5 @@ def exit_program():
 
 if __name__ == '__main__':
     while True:
-        #print(FULL_INVENTORY)
         main_menu()()
         input("Press Enter to continue...........")
