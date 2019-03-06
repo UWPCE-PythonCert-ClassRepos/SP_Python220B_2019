@@ -11,6 +11,7 @@ from unittest.mock import MagicMock
 from furniture import Furniture
 from inventory import Inventory
 from electricappliances import ElectricAppliances
+from main import main_menu, get_price, add_new_item, item_info, exit_program
 
 
 class FurnitureTests(TestCase):
@@ -45,3 +46,6 @@ class ElectricApplicancesTests(TestCase):
         self.assertEqual('r_price', new_item.rental_price)
         self.assertEqual('brand', new_item.brand)
         self.assertEqual('voltage', new_item.voltage)
+
+
+
