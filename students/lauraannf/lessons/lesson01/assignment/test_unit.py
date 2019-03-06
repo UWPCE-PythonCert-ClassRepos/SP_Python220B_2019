@@ -6,12 +6,15 @@ Created on Tue Mar  5 14:52:01 2019
 """
 
 from unittest import TestCase
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
-from furniture import Furniture
-from inventory import Inventory
-from electricappliances import ElectricAppliances
-from main import main_menu, get_price, add_new_item, item_info, exit_program
+from inventory_management.furniture import Furniture
+from inventory_management.inventory import Inventory
+from inventory_management.electricappliances import ElectricAppliances
+from inventory_management.main import main_menu as main_menu
+from inventory_management.main import get_price as get_price, \
+    add_new_item as add_new_item, item_info as item_info, \
+    exit_program as exit_program
 
 
 class FurnitureTests(TestCase):
@@ -53,3 +56,13 @@ class PriceTests(TestCase):
         self.get_price = MagicMock(return_value=24)
         self.get_price(1)
         self.get_price.assert_called_with(1)
+
+
+class MainTests(TestCase):
+    def test_main_menu_add(self):
+        with patch('inventory_management.main.add_new_item') as mock_add:
+            main_menu('1')
+            mock_add.assert_called_once()
+
+    def test_get_price(self):
+        self.assertEqual(24, get_price(1))

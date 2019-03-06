@@ -1,9 +1,9 @@
 """  Launches the user interface for the inventory management system"""
 import sys
-import market_prices
-import inventory
-import furniture
-import electricappliances
+import inventory_management.market_prices as market_prices
+import inventory_management.inventory as inventory
+import inventory_management.furniture as furniture
+import inventory_management.electricappliances as electricappliances
 
 
 def main_menu(user_prompt=None):
