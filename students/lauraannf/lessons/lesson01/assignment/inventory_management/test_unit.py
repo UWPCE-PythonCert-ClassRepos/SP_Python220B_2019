@@ -48,4 +48,8 @@ class ElectricApplicancesTests(TestCase):
         self.assertEqual('voltage', new_item.voltage)
 
 
-
+class PriceTests(TestCase):
+    def test_getprice(self):
+        self.get_price = MagicMock(return_value=24)
+        self.get_price(1)
+        self.get_price.assert_called_with(1)

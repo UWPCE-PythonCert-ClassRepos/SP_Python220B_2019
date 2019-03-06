@@ -23,9 +23,10 @@ def main_menu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 
-def get_price():
+def get_price(item_code):
     """ get item price"""
-    print("Get price")
+    latest_price = market_prices.get_latest_price(item_code)
+    return latest_price
 
 
 def add_new_item():
