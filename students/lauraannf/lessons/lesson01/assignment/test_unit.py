@@ -85,3 +85,4 @@ class MainTests(TestCase):
             test_return = {'1': {'product_code': '1', 'description': '2',
                                  'market_price': 24, 'rental_price': '3',
                                  'material': 'l', 'size': 'l'}}
+            assertEqual(test_return, FULL_INVENTORY)
