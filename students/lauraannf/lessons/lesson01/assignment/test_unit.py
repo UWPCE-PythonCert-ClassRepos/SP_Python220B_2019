@@ -60,9 +60,28 @@ class PriceTests(TestCase):
 
 class MainTests(TestCase):
     def test_main_menu_add(self):
-        with patch('inventory_management.main.add_new_item') as mock_add:
-            main_menu('1')
-            mock_add.assert_called_once()
+        with patch('builtins.input', side_effect='1'):
+            self.assertEqual(main_menu(), add_new_item)
+
+    def test_main_menu_info(self):
+        with patch('builtins.input', side_effect='2'):
+            self.assertEqual(main_menu(), item_info)
+
+    def test_main_menu_quit(self):
+        with patch('builtins.input', side_effect='q'):
+            self.assertEqual(main_menu(), exit_program)
 
     def test_get_price(self):
         self.assertEqual(24, get_price(1))
+
+    def test_exit(self):
+        self.assertRaises(SystemExit)
+
+    def test_add_new_item(self):
+        with patch('builtins.input', side_effect=['100', 'description',
+                                                  'rentalprice', 'y',
+                                                  'material', 'size']):
+            add_new_item()
+            test_return = {'1': {'product_code': '1', 'description': '2',
+                                 'market_price': 24, 'rental_price': '3',
+                                 'material': 'l', 'size': 'l'}}
