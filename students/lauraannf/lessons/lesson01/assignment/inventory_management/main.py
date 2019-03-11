@@ -4,6 +4,7 @@ import inventory_management.market_prices as market_prices
 import inventory_management.inventory as inventory
 import inventory_management.furniture as furniture
 import inventory_management.electricappliances as electricappliances
+FULL_INVENTORY = {}
 
 
 def main_menu(user_prompt=None):
@@ -15,7 +16,7 @@ def main_menu(user_prompt=None):
 
     while user_prompt not in valid_prompts:
         # options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({options_str}):")
+        print("Please choose from the following options:")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
@@ -60,6 +61,7 @@ def add_new_item():
                                            item_price, item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
+    return FULL_INVENTORY
 
 
 def item_info():
