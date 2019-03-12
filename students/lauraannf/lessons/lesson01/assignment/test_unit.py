@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Mar  5 14:52:01 2019
+Created on Tue Mar 12 13:53:15 2019
 
 @author: Laura.Fiorentino
 """
 
 from unittest import TestCase
-from unittest.mock import MagicMock, patch
+from unittest.mock import Mock, MagicMock, patch
 
+from inventory_management.market_prices import get_latest_price
 from inventory_management.furniture import Furniture
 from inventory_management.inventory import Inventory
 from inventory_management.electricappliances import ElectricAppliances
@@ -15,48 +16,49 @@ from inventory_management.main import main_menu as main_menu
 from inventory_management.main import get_price as get_price, \
     add_new_item as add_new_item, item_info as item_info, \
     exit_program as exit_program
-from io import StringIO
 
 
 class FurnitureTests(TestCase):
-
     def test_furniture(self):
-        new_item = Furniture('code', 'description', 'm_price', 'r_price',
-                             'material', 'size')
-        self.assertEqual('description', new_item.description)
-        self.assertEqual('code', new_item.product_code)
-        self.assertEqual('m_price', new_item.market_price)
-        self.assertEqual('r_price', new_item.rental_price)
-        self.assertEqual('material', new_item.material)
-        self.assertEqual('size', new_item.size)
+        furniture_test = Furniture('100', 'description', 'marketprice',
+                                   'rentalprice', 'material', 'size')
+        furniture_test_2 = furniture_test.return_as_dictionary()
+        self.assertEqual(furniture_test_2, {'product_code': '100',
+                                            'description': 'description',
+                                            'market_price': 'marketprice',
+                                            'rental_price': 'rentalprice',
+                                            'material': 'material',
+                                            'size': 'size'})
+
+
+class ElectricTests(TestCase):
+    def test_electric(self):
+        electric_test = ElectricAppliances('200', 'description', 'marketprice',
+                                           'rentalprice', 'brand', 'voltage')
+        electric_test_2 = electric_test.return_as_dictionary()
+        self.assertEqual(electric_test_2, {'product_code': '200',
+                                           'description': 'description',
+                                           'market_price': 'marketprice',
+                                           'rental_price': 'rentalprice',
+                                           'brand': 'brand',
+                                           'voltage': 'voltage'})
 
 
 class InventoryTests(TestCase):
     def test_inventory(self):
-        new_item = Inventory('code', 'description', 'm_price', 'r_price')
-        self.assertEqual('description', new_item.description)
-        self.assertEqual('code', new_item.product_code)
-        self.assertEqual('m_price', new_item.market_price)
-        self.assertEqual('r_price', new_item.rental_price)
-
-
-class ElectricApplicancesTests(TestCase):
-    def test_electricappliances(self):
-        new_item = ElectricAppliances('code', 'description', 'm_price',
-                                      'r_price', 'brand', 'voltage')
-        self.assertEqual('description', new_item.description)
-        self.assertEqual('code', new_item.product_code)
-        self.assertEqual('m_price', new_item.market_price)
-        self.assertEqual('r_price', new_item.rental_price)
-        self.assertEqual('brand', new_item.brand)
-        self.assertEqual('voltage', new_item.voltage)
+        inventory_test = Inventory('300', 'description', 'marketprice',
+                                   'rentalprice')
+        inventory_test_2 = inventory_test.return_as_dictionary()
+        self.assertEqual(inventory_test_2, {'product_code': '300',
+                                            'description': 'description',
+                                            'market_price': 'marketprice',
+                                            'rental_price': 'rentalprice'})
 
 
 class PriceTests(TestCase):
     def test_getprice(self):
-        self.get_price = MagicMock(return_value=24)
-        self.get_price(1)
-        self.get_price.assert_called_with(1)
+        price = get_latest_price('1')
+        self.assertEqual(price, 24)
 
 
 class MainTests(TestCase):
@@ -72,7 +74,8 @@ class MainTests(TestCase):
         with patch('builtins.input', side_effect='q'):
             self.assertEqual(main_menu(), exit_program)
 
-    def test_get_price(self):
+    def test_getprice(self):
+        self.get_price = MagicMock(return_value=24)
         self.assertEqual(24, get_price(1))
 
     def test_add_new_item(self):
@@ -130,12 +133,12 @@ class MainTests(TestCase):
                            'material', 'size']
         with patch('builtins.input', side_effect=furniture_input):
             add_new_item()
-#        with patch('builtins.input', side_effect='100'):
-#            item_test1 = item_info()
-#        self.assertEqual(item_test1, None)
+        with patch('builtins.input', side_effect='100'):
+            item_test1 = item_info()
+        self.assertEqual(item_test1, None)
         with patch('builtins.input', side_effect='500'):
             item_test2 = item_info()
-        self.assertEqual(item_test2, None)
+            self.assertEqual(item_test2, None)
 
     def test_exit(self):
         with self.assertRaises(SystemExit):
