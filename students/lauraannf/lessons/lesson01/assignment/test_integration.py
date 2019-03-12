@@ -20,7 +20,30 @@ from inventory_management.main import get_price as get_price, \
 class ModuleTests(TestCase):
 
     def test_module(self):
-        Furniture('100', 'description', 'rentalprice', 'y', 'material', 'size')
-        ElectricAppliances('200', 'description', 'rentalprice', 'n', 'y',
-                           'brand', 'voltage')
-        Inventory('300', 'description', 'rentalprice', 'n', 'n')
+        furniture_test = Furniture('100', 'description', 'marketprice',
+                                   'rentalprice', 'material', 'size')
+        electric_test = ElectricAppliances('200', 'description', 'marketprice',
+                                           'rentalprice', 'brand', 'voltage')
+        inventory_test = Inventory('300', 'description', 'marketprice',
+                                   'rentalprice')
+        furniture_test_2 = furniture_test.return_as_dictionary()
+        electric_test_2 = electric_test.return_as_dictionary()
+        inventory_test_2 = inventory_test.return_as_dictionary()
+        self.assertEqual(furniture_test_2, {'product_code': '100',
+                                            'description': 'description',
+                                            'market_price': 'marketprice',
+                                            'rental_price': 'rentalprice',
+                                            'material': 'material',
+                                            'size': 'size'})
+        self.assertEqual(electric_test_2, {'product_code': '200',
+                                           'description': 'description',
+                                           'market_price': 'marketprice',
+                                           'rental_price': 'rentalprice',
+                                           'brand': 'brand',
+                                           'voltage': 'voltage'})
+        self.assertEqual(inventory_test_2, {'product_code': '300',
+                                            'description': 'description',
+                                            'market_price': 'marketprice',
+                                            'rental_price': 'rentalprice'})
+        main_test = main_menu('1')
+        main_test()
