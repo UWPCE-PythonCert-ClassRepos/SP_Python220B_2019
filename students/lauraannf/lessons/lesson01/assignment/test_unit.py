@@ -7,7 +7,7 @@ Created on Tue Mar 12 13:53:15 2019
 
 from unittest import TestCase
 from unittest.mock import Mock, MagicMock, patch
-
+import unittest
 from inventory_management.market_prices import get_latest_price
 from inventory_management.furniture import Furniture
 from inventory_management.inventory import Inventory
@@ -129,16 +129,14 @@ class MainTests(TestCase):
             self.assertEqual(test_return_other, test_inventory)
 
     def test_item_info(self):
-        furniture_input = ['100', 'description', 'rentalprice', 'y',
-                           'material', 'size']
-        with patch('builtins.input', side_effect=furniture_input):
-            add_new_item()
-        with patch('builtins.input', side_effect='100'):
-            item_test1 = item_info()
-        self.assertEqual(item_test1, None)
+        FULL_INVENTORY = {'100': {'product_code': '100',
+                                  'description': 'description',
+                                  'market_price': 24,
+                                  'rental_price': 'rentalprice',
+                                  'material': 'material',
+                                  'size': 'size'}}
         with patch('builtins.input', side_effect='500'):
-            item_test2 = item_info()
-            self.assertEqual(item_test2, None)
+            self.assertEqual(item_info(), None)
 
     def test_exit(self):
         with self.assertRaises(SystemExit):
