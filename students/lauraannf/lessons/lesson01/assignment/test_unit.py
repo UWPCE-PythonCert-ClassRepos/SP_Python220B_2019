@@ -11,12 +11,12 @@ from inventory_management.market_prices import get_latest_price
 from inventory_management.furniture import Furniture
 from inventory_management.inventory import Inventory
 from inventory_management.electricappliances import ElectricAppliances
-from inventory_management.main import main_menu as main_menu
-from inventory_management.main import get_price as get_price, \
-    add_new_item as add_new_item, item_info as item_info, \
-    exit_program as exit_program
-import io
-import sys
+from inventory_management.main import main_menu
+from inventory_management.main import get_price
+from inventory_management.main import add_new_item
+from inventory_management.main import item_info
+from inventory_management.main import exit_program
+
 
 class FurnitureTests(TestCase):
     def test_furniture(self):
@@ -81,7 +81,7 @@ class MainTests(TestCase):
     def test_add_new_item(self):
         furniture_input = ['100', 'description', 'rentalprice', 'y',
                            'material', 'size']
-        electronic_input = ['200', 'description', 'rentalprice', 'n', 'y',
+        electric_input = ['200', 'description', 'rentalprice', 'n', 'y',
                             'brand', 'voltage']
         other_input = ['300', 'description', 'rentalprice', 'n', 'n']
         with patch('builtins.input', side_effect=furniture_input):
@@ -93,9 +93,9 @@ class MainTests(TestCase):
                                              'material': 'material',
                                              'size': 'size'}}
             self.assertEqual(test_return_furniture, test_inventory)
-        with patch('builtins.input', side_effect=electronic_input):
+        with patch('builtins.input', side_effect=electric_input):
             test_inventory = add_new_item()
-            test_return_electronics = {'100': {'product_code': '100',
+            test_return_electrics = {'100': {'product_code': '100',
                                                'description': 'description',
                                                'market_price': 24,
                                                'rental_price': 'rentalprice',
@@ -107,7 +107,7 @@ class MainTests(TestCase):
                                                'rental_price': 'rentalprice',
                                                'brand': 'brand',
                                                'voltage': 'voltage'}}
-            self.assertEqual(test_return_electronics, test_inventory)
+            self.assertEqual(test_return_electrics, test_inventory)
         with patch('builtins.input', side_effect=other_input):
             test_inventory = add_new_item()
             test_return_other = {'100': {'product_code': '100',
