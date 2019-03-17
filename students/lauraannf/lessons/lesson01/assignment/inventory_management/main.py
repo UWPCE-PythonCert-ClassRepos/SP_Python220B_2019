@@ -64,13 +64,14 @@ def add_new_item():
     return FULL_INVENTORY
 
 
-def item_info():
+def item_info(FULL_INVENTORY):
     """ get item info"""
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
         print_dict = FULL_INVENTORY[item_code]
         for k_val, v_val in print_dict.items():
             print("{}:{}".format(k_val, v_val))
+        return print_dict
     else:
         print("Item not found in inventory")
 
