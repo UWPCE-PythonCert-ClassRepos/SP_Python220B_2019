@@ -84,4 +84,3 @@ class CalculatorTests(TestCase):
 
         self.subtracter.calc.assert_called_with(1, 2)
 
-
