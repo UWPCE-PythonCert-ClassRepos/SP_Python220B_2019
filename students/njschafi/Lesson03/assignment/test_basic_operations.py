@@ -63,7 +63,8 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(user_2['credit_limit'], query.customer_limit)
 
         # add a duplicate person
-        self.assertRaises(ValueError, add_customer(**user_2))
+        with self.assertRaises(ValueError):
+            add_customer(**user_2)
         drop_db()
 
     def test_search_customer(self):
@@ -96,13 +97,12 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(5000.00, query.customer_limit)
 
         # Test for non-existant customer
-        update_customer_credit('456879', 5000.00)
-        self.assertRaises(ValueError,
-                          update_customer_credit('456879', 5000.00))
+        with self.assertRaises(ValueError):
+            update_customer_credit('456879', 5000.00)
 
         # Test for non-float value inputted
-        self.assertRaises(TypeError,
-                          update_customer_credit(user_1['customer_id'], '$20'))
+        with self.assertRaises(TypeError):
+            update_customer_credit(user_1['customer_id'], '$20')
         drop_db()
 
     def test_list_active_customers(self):
