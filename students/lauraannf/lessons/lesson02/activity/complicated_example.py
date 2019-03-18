@@ -18,7 +18,7 @@ def one():
 
 def two():
     z = 'two'
-    long_loop()
+    long_loop() 
 
 
 def long_loop():
