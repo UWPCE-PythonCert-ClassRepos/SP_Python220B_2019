@@ -1,6 +1,6 @@
 """Furniture class"""
 
-from inventory_management.inventory_class import Inventory
+from inventory_class import Inventory
 
 class Furniture(Inventory):
     """Creates a class that handles data on furniture"""

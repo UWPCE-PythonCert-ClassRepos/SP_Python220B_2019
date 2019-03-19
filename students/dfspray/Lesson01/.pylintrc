@@ -63,6 +63,7 @@ confidence=
 disable=print-statement,
         too-few-public-methods,
         parameter-unpacking,
+        wrong-import-position,
         unpacking-in-except,
         old-raise-syntax,
         backtick,
