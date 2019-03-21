@@ -8,6 +8,7 @@ import math
 import logging
 import sys
 
+
 def init_logger(level):
 
     # Convert string to int for log level
@@ -57,6 +58,7 @@ def init_logger(level):
         logger.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
 
+
 def parse_cmd_arguments():
     '''
     Parse command line arguments
@@ -67,6 +69,7 @@ def parse_cmd_arguments():
     parser.add_argument('-d', '--debug', help='debug level', required=True)
 
     return parser.parse_args()
+
 
 def load_rentals_file(filename):
     '''
@@ -79,14 +82,18 @@ def load_rentals_file(filename):
             logging.error(ex)
     return data
 
+
 def calculate_additional_fields(data):
     '''
     Calculate additional fields based on source.json file
     '''
     for value in data.values():
         try:
-            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
-            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+            rental_start = datetime.datetime.strptime(value['rental_start'],
+                                                      '%m/%d/%y')
+            rental_end = datetime.datetime.strptime(value['rental_end'],
+                                                    '%m/%d/%y')
+            logging.debug((rental_end - rental_start).days)
             value['total_days'] = (rental_end - rental_start).days
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
@@ -99,12 +106,14 @@ def calculate_additional_fields(data):
 
     return data
 
+
 def save_to_json(filename, data):
     '''
     Save results to JSON file
     '''
     with open(filename, 'w') as file:
         json.dump(data, file)
+
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
