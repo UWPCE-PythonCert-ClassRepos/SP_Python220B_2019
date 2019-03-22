@@ -65,7 +65,8 @@ def parse_cmd_arguments():
     '''
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
-    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+    parser.add_argument('-o', '--output', help='ouput JSON file',
+                        required=True)
     parser.add_argument('-d', '--debug', help='debug level', required=True)
 
     return parser.parse_args()
@@ -93,7 +94,19 @@ def calculate_additional_fields(data):
                                                       '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'],
                                                     '%m/%d/%y')
-            value['total_days'] = (rental_end - rental_start).days
+        except NameError as name_ex:
+            if "'rental_end' is not defined" in str(name_ex):
+                logging.error('no end date')
+                continue
+            else:
+                logging.warning(name_ex)
+            if rental_end < rental_start:
+                logging.warning('end date is before start date')
+            total_days = (rental_end - rental_start).days
+            if total_days <= 0:
+                logging.error('not a valid rental length')
+                continue
+            value['total_days'] = total_days
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
@@ -101,7 +114,6 @@ def calculate_additional_fields(data):
             if "math domain error" in str(ex):
                 logging.error('total_price is negative: %s',
                               value['total_price'])
-#                              + str(value['total_price']))
             elif 'does not match format' in str(ex):
                 logging.warning(ex)
 
@@ -119,7 +131,7 @@ def save_to_json(filename, data):
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
     init_logger(ARGS.debug)
-#    logging.debug(ARGS)
+#    logging.debug(ARGS)    is this line necessary?
     DATA = load_rentals_file(ARGS.input)
     RESULT = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, RESULT)
