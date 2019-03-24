@@ -88,36 +88,35 @@ def calculate_additional_fields(data):
     '''
     Calculate additional fields based on source.json file
     '''
-    for value in data.values():
+    data_new = data.copy()
+    for key in data:
         try:
-            rental_start = datetime.datetime.strptime(value['rental_start'],
+            rental_start = datetime.datetime.strptime(data[key]['rental_start'],
                                                       '%m/%d/%y')
-            rental_end = datetime.datetime.strptime(value['rental_end'],
+            rental_end = datetime.datetime.strptime(data[key]['rental_end'],
                                                     '%m/%d/%y')
-        except NameError as name_ex:
-            if "'rental_end' is not defined" in str(name_ex):
-                logging.error('no end date')
-                continue
-            else:
-                logging.warning(name_ex)
-            if rental_end < rental_start:
-                logging.warning('end date is before start date')
             total_days = (rental_end - rental_start).days
+            data[key]['total_days'] = total_days
+            data[key]['total_price'] = data[key]['total_days'] * data[key]['price_per_day']
+            data[key]['sqrt_total_price'] = math.sqrt(data[key]['total_price'])
+            data[key]['unit_cost'] = data[key]['total_price'] / data[key]['units_rented']
             if total_days <= 0:
-                logging.error('not a valid rental length')
+                logging.error('not a valid rental length for rental %s', key)
+                del data_new[key]
                 continue
-            value['total_days'] = total_days
-            value['total_price'] = value['total_days'] * value['price_per_day']
-            value['sqrt_total_price'] = math.sqrt(value['total_price'])
-            value['unit_cost'] = value['total_price'] / value['units_rented']
         except ValueError as ex:
-            if "math domain error" in str(ex):
+            if "time data '' does not match format" in str(ex):
+                logging.error('no rental_end for rental %', key)
+                del data_new[key]
+            elif "math domain error" in str(ex):
                 logging.error('total_price is negative: %s',
-                              value['total_price'])
+                              data[key]['total_price'])
+                del data_new[key]
             elif 'does not match format' in str(ex):
                 logging.warning(ex)
+                del data_new[key]
 
-    return data
+    return data_new
 
 
 def save_to_json(filename, data):
