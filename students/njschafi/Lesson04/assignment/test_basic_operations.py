@@ -4,6 +4,7 @@ from unittest import TestCase
 from customer_model import *
 from basic_operations import add_customer, search_customer, delete_customer
 from basic_operations import update_customer_credit, list_active_customers
+from basic_operations import display_customers
 
 # create a set of customers
 user_1 = {'customer_id': '1234', 'name': 'Post', 'lastname': 'Malone',
@@ -112,4 +113,15 @@ class BasicOperationsTest(TestCase):
         add_customer(**user_2)
         add_customer(**user_3)
         self.assertEqual(2, list_active_customers())
+        drop_db()
+
+    def test_display_customers(self):
+        """Tests the display of all customers in database"""
+        create_empty_db()
+        self.assertEqual([], display_customers())
+        add_customer(**user_1)
+        add_customer(**user_2)
+        add_customer(**user_3)
+        self.assertEqual(['Post Malone', 'Howard Moon', 'Vince Noir'],
+                         display_customers())
         drop_db()
