@@ -10,13 +10,12 @@ import logging
 
 def init_logger(level):
     """sets up logger"""
-    # Convert string to int for log level
+# Convert string to int for log level
     level = int(level)
 
     # Format log
-    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s \
-                    %(message)s"
-    log_file = datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    log_file = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')+'.log'
 
     # Attach formater
     formatter = logging.Formatter(log_format)
@@ -24,12 +23,12 @@ def init_logger(level):
     # Add file handler and only log to file
     # when level is WARNING or above
     file_handler = logging.FileHandler(log_file)
-#    file_handler.setLevel(logging.WARNING)
+    file_handler.setLevel(logging.WARNING)
     file_handler.setFormatter(formatter)
 
     # Add console handler
     console_handler = logging.StreamHandler()
-#    console_handler.setLevel(logging.DEBUG)
+    console_handler.setLevel(logging.DEBUG)
     console_handler.setFormatter(formatter)
 
     # Add handles to logger
@@ -40,10 +39,10 @@ def init_logger(level):
     # Setup log level according to user selection
     # 0: No debug messages or log file.
     if level == 0:
-        logger.setLevel(logging.CRITICAL)
+        logger.disabled == True
 
     # 1: Only error messages.
-    if level == 1:
+    elif level == 1:
         logger.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
@@ -96,29 +95,25 @@ def calculate_additional_fields(data):
             rental_end = datetime.datetime.strptime(data[key]['rental_end'],
                                                     '%m/%d/%y')
             total_days = (rental_end - rental_start).days
+#            data[key]['total_days'] = total_days
+#            data[key]['total_price'] = data[key]['total_days'] * data[key]['price_per_day']
+#            data[key]['sqrt_total_price'] = math.sqrt(data[key]['total_price'])
+#            data[key]['unit_cost'] = data[key]['total_price'] / data[key]['units_rented']
             if total_days <= 0:
-                raise ValueError('End before start')
-#                logging.error('not a valid rental length for rental %s', key)
-#                del data_new[key]
-            data[key]['total_days'] = total_days
-            data[key]['total_price'] = data[key]['total_days'] * data[key]['price_per_day']
-            data[key]['sqrt_total_price'] = math.sqrt(data[key]['total_price'])
-            data[key]['unit_cost'] = data[key]['total_price'] / data[key]['units_rented']
-
+                logging.error('not a valid rental length for rental %s', key)
+                del data_new[key]
+                continue
         except ValueError as ex:
             if "time data '' does not match format" in str(ex):
                 logging.error('no rental_end for rental %s', key)
                 del data_new[key]
-            elif "math domain error" in str(ex):
-                logging.error('total_price is negative for rental %s: %s', key,
-                              data[key]['total_price'])
-                del data_new[key]
-            elif 'does not match format' in str(ex):
-                logging.warning(ex)
-                del data_new[key]
-            elif 'End before start' in str(ex):
-                logging.error('not a valid rental length for rental %s', key)
-                del data_new[key]
+#            elif "math domain error" in str(ex):
+#                logging.error('total_price is negative for rental %s: %s', key,
+#                              data[key]['total_price'])
+#                del data_new[key]
+#            elif 'does not match format' in str(ex):
+#                logging.warning(ex)
+#                del data_new[key]
 
     return data_new
 

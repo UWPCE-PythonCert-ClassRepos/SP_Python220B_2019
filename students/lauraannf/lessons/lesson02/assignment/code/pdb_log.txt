@@ -75,3 +75,5 @@ datetime.datetime(2017, 6, 12, 0, 0)
 (Pdb) value
 {'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542}
 (Pdb)
+
+
