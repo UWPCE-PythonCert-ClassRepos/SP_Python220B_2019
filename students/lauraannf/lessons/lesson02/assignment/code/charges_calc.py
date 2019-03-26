@@ -16,7 +16,7 @@ def init_logger(level):
     # Format log
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s \
                     %(message)s"
-    log_file = datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+    log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
 
     # Attach formater
     formatter = logging.Formatter(log_format)
