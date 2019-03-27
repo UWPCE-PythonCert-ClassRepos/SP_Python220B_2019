@@ -3,7 +3,10 @@ import sys
 import inventory_management.market_prices as market_prices
 import inventory_management.inventory_class as inventory_class
 import inventory_management.furniture_class as furniture_class
-import inventory_management.electric_appliances_class as electric_appliances_class
+import \
+    inventory_management.electric_appliances_class as electric_appliances_class
+
+FULL_INVENTORY = {}
 
 
 def main_menu(user_prompt=None):
@@ -28,9 +31,9 @@ def get_price():
     print("Get price")
 
 
-def add_new_item():
+def add_new_item(
+        inventory=FULL_INVENTORY):  # pylint: disable=dangerous-default-value
     """Add New Item"""
-    global FULL_INVENTORY  # pylint: disable=global-statement
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -62,15 +65,16 @@ def add_new_item():
         else:
             new_item = inventory_class.Inventory(item_code, item_description,
                                                  item_price, item_rental_price)
-    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
+    inventory[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 
-def item_info():
+def item_info(
+        inventory=FULL_INVENTORY):  # pylint: disable=dangerous-default-value
     """Item Info"""
     item_code = input("Enter item code: ")
-    if item_code in FULL_INVENTORY:
-        print_dict = FULL_INVENTORY[item_code]
+    if item_code in inventory:
+        print_dict = inventory[item_code]
         for k, v in print_dict.items():
             print("{}:{}".format(k, v))
     else:
@@ -83,7 +87,6 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
     while True:
         print(FULL_INVENTORY)
         main_menu()()
