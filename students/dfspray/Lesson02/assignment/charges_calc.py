@@ -114,7 +114,8 @@ def calculate_additional_fields(data):
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ValueError as ex:
             if "math domain error" in str(ex):
-                logging.warning('total_price is negative: %s for %s', value["total_price"], key)
+                logging.warning('''total_price is negative: %s for %s, sqrt_total_price \
+and unit_cost may be omitted''', value["total_price"], key)
                 logging.debug("Occurred in calculate_additional_fields method")
             elif 'does not match format' in str(ex):
                 logging.warning(ex)
