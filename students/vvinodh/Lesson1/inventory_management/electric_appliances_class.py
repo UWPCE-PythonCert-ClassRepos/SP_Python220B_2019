@@ -1,12 +1,11 @@
-# Electric appliances class
-"""This is a script to check for errors"""
+"""This is a class to get electrical appliance data"""
 # pylint: disable-msg=too-many-arguments
 # pylint: disable=too-few-public-methods
 
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 class ElectricAppliances(Inventory):
-    """Creates an instance with inputs"""
+    """Clas instance for electrical item"""
     def __init__(self, product_code, description, market_price, rental_price, brand, voltage):
         # Creates common instance variables from the parent class
         Inventory.__init__(self, product_code, description, market_price, rental_price)

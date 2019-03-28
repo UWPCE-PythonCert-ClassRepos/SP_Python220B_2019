@@ -1,4 +1,4 @@
-"""Inventory class with productduct details"""
+"""Inventory class"""
 # pylint: disable=too-few-public-methods
 class Inventory:
     """Inventory instance"""
@@ -9,7 +9,7 @@ class Inventory:
         self.rental_price = rental_price
 
     def return_as_dictionary(self):
-        """Gets user input about the products"""
+        """Product data"""
         output_dict = {}
         output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description

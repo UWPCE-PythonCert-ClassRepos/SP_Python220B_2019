@@ -1,4 +1,4 @@
-"""Furniture inventory details, to take user inputs"""
+"""This is a class to get furniture data"""
 #pylint: disable-msg=too-many-arguments
 #pylint: disable=too-few-public-methods
 

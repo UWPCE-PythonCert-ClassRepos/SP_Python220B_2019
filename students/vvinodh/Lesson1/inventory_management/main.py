@@ -5,7 +5,7 @@ import market_prices
 import inventory_class
 import furniture_class
 import electric_appliances_class
-
+FULL_INVENTORY = {}
 
 
 def main_menu(user_prompt=None):
@@ -27,7 +27,8 @@ def main_menu(user_prompt=None):
 def get_price(item_code):
     """Display prices"""
     print("Get price")
-    item_price = market_prices.get_latest_price(item_code)
+    price = market_prices.get_latest_price(item_code)
+    return price
 
 def add_new_item():
     """Add inventory items"""
@@ -70,6 +71,10 @@ def item_info():
             print("{}:{}".format(k, stuff))
     else:
         print("Item not found in inventory")
+
+def return_inventory():
+    """Returns dict of all inventory."""
+    return FULL_INVENTORY
 
 def exit_program():
     """Function to exit the program"""

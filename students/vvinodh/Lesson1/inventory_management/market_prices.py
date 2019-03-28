@@ -1,7 +1,7 @@
-"""Function to return the number 24"""
+"""This is a class to return the item price to the main function"""
 #pylint: disable=no-else-return
 def get_latest_price(item_code):
-    """Returns 24 or exception"""
+    """ Return item price"""
     if item_code == 1:
         return 24
     elif item_code == 2:
