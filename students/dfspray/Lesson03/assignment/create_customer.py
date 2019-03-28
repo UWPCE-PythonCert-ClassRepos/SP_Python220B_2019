@@ -1,12 +1,14 @@
-from customer_model_schema import *
+"""This program builds the Customers class in the database"""
 
 import logging
 
+from customer_model_schema import *
+
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
-logger.info('One off program to build the Customers class in the database')
+LOGGER.info('One off program to build the Customers class in the database')
 
-database.create_tables([Customers])
+DATABASE.create_tables([Customers])
 
-database.close()
+DATABASE.close()
