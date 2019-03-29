@@ -4,7 +4,11 @@
 """
 
 import logging
+import sys
+sys.path.append('C:/Users/allth/OneDrive/Desktop/Python/Python220/SP_Python220B_2019/'
+                'students/dfspray/Lesson03/assignment/src')
 
+import create_customer
 from customer_model_schema import *
 
 logging.basicConfig(level=logging.INFO)
@@ -29,9 +33,12 @@ def add_customer(id_number, first, last, address, phone, email, activity, credit
             new_customer.save()
             LOGGER.info('Successfully added new customer')
 
-    except Exception as ex:
-        LOGGER.info('Error creating %s', id_number)
-        LOGGER.info(ex)
+    except IntegrityError as ex1:
+        LOGGER.info('Error creating %s, Non-unique customer id', id_number)
+        LOGGER.info(ex1)
+
+    except Exception as ex2:
+        LOGGER.info(ex2)
 
     finally:
         LOGGER.info('Closing database')
@@ -124,6 +131,31 @@ def list_active_customers():
         return counter
 
     except Exception as ex:
+        LOGGER.info(ex)
+
+    finally:
+        LOGGER.info('Closing database')
+        DATABASE.close()
+
+def update_status(customer_id, new_status):
+    """This functions will update the status of a single customer"""
+    try:
+        DATABASE.connect()
+        DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
+
+        new_status_customer = Customers.get(Customers.customer_id == customer_id)
+
+        if new_status in ('active', 'inactive'):
+            new_status_customer.status = new_status
+            LOGGER.info('Status successfully updated')
+            new_status_customer.save()
+        else:
+            LOGGER.info('Status must be set to either "active" or "inactive"')
+            LOGGER.info('Status was not updated')
+
+    except Exception as ex:
+        LOGGER.info('Error finding %s', customer_id)
+        LOGGER.info('Status not updated')
         LOGGER.info(ex)
 
     finally:

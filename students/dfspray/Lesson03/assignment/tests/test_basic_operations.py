@@ -2,12 +2,16 @@
 
 import logging
 import unittest
+import sys
+sys.path.append('C:/Users/allth/OneDrive/Desktop/Python/Python220/SP_Python220B_2019/'
+                'students/dfspray/Lesson03/assignment/src')
 from peewee import *
-import basic_operations
-from customer_model_schema import *
+import src
+from src import basic_operations
+from src import customer_model_schema
+from src.customer_model_schema import Customers
 
-DATABASE.close()
-
+DATABASE = SqliteDatabase('customers.db')
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
@@ -167,6 +171,35 @@ class TestOperations(unittest.TestCase):
         self.assertEqual(deleted_customer, {})
         LOGGER.info('Closing database')
         DATABASE.close()
+
+    def test_update_status(self):
+        """Test that you can update a customer's status to only either active or inactive"""
+        add_test_customer()
+        LOGGER.info('Closing database')
+        DATABASE.close()
+
+        basic_operations.update_status('001', 2000)
+        updated_status_customer_fail = Customers.get(Customers.customer_id == '001')
+        actual_status_update_fail = updated_status_customer_fail.status
+        expected_status_fail = 'active'
+
+        self.assertEqual(actual_status_update_fail, expected_status_fail)
+
+        basic_operations.update_status('001', 'inactive')
+        updated_status_customer_success = Customers.get(Customers.customer_id == '001')
+        actual_status_update_success = updated_status_customer_success.status
+        expected_status_success = 'inactive'
+
+        self.assertEqual(actual_status_update_success, expected_status_success)
+
+        basic_operations.update_status('001', 'active')
+        updated_status_customer_active = Customers.get(Customers.customer_id == '001')
+        actual_status_update_active = updated_status_customer_active.status
+        expected_status_active = 'active'
+
+        self.assertEqual(actual_status_update_active, expected_status_active)
+
+        delete_test_customer()
 
 def add_test_customer():
     """This method adds a single test customer, and leaves the database open"""
