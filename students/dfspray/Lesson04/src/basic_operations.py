@@ -130,7 +130,7 @@ def list_active_customers():
         customer_list = [customer.customer_id for customer in
                          Customers.select().where(Customers.status == 'active')]
         LOGGER.debug('There are %d active customers', len(customer_list))
-        LOGGER.debug('%s', str(customer_list))
+        LOGGER.debug('The active customer ids are %s', str(customer_list))
         return len(customer_list)
 
     except Exception as ex:
