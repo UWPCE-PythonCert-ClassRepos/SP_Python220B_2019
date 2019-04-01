@@ -19,12 +19,16 @@ class TestOperations(unittest.TestCase):
     """Tests the methods of basic_operations"""
     def test_add_customer(self):
         """This method tests that 3 customers are successfully added to the database"""
+        basic_operations.add_customer(None, None, None, None, None, None, None, None)
         basic_operations.add_customer('001', 'Joey', 'Smith', '123 Jackson Street', 1234567890,
                                       'joey@gmail.com', 'active', 1000.00)
         basic_operations.add_customer('002', 'Alex', 'Peterson', '123 Jefferson Street', 2345678901,
                                       'alex@gmail.com', 'active', 1000.00)
         basic_operations.add_customer('003', 'Aaron', 'Dickson', '123 Rainier Street', 3456789012,
                                       'aaron@gmail.com', 'inactive', 1000.00)
+        basic_operations.add_customer('003', 'Aaron', 'Dickson', '123 Rainier Street', 3456789012,
+                                      'aaron@gmail.com', 'active', 1000.00)
+
 
         try:
             DATABASE.connect()
@@ -108,23 +112,35 @@ class TestOperations(unittest.TestCase):
         add_test_customer()
         LOGGER.info('Closing database')
         DATABASE.close()
-        basic_operations.update_customer_credit('001', 2000)
-        updated_credit_customer = Customers.get(Customers.customer_id == '001')
-        actual_credit_update = updated_credit_customer.credit_limit
-        expected_credit_update = 2000.00
 
-        self.assertEqual(actual_credit_update, expected_credit_update)
+        basic_operations.update_customer_credit('002', 2000)
+        updated_credit_customer1 = Customers.get(Customers.customer_id == '001')
+        actual_credit_update1 = updated_credit_customer1.credit_limit
+        expected_credit_update1 = 1000.00
+
+        self.assertEqual(actual_credit_update1, expected_credit_update1)
+
+        basic_operations.update_customer_credit('001', 2000)
+        updated_credit_customer2 = Customers.get(Customers.customer_id == '001')
+        actual_credit_update2 = updated_credit_customer2.credit_limit
+        expected_credit_update2 = 2000.00
+
+        self.assertEqual(actual_credit_update2, expected_credit_update2)
 
         delete_test_customer()
 
-    def test_list_all(self):
+    def test_list_active(self):
         """Test that you can display the correct number of active customers"""
+
+        actual_customer_count1 = basic_operations.list_active_customers()
+        self.assertEqual(actual_customer_count1, 0)
 
         add_test_customer()
         LOGGER.info('Closing database')
         DATABASE.close()
-        actual_customer_count = basic_operations.list_active_customers()
-        self.assertEqual(actual_customer_count, 1)
+
+        actual_customer_count2 = basic_operations.list_active_customers()
+        self.assertEqual(actual_customer_count2, 1)
 
         delete_test_customer()
 
@@ -140,6 +156,7 @@ class TestOperations(unittest.TestCase):
                            added_customer.status, added_customer.credit_limit)
         expected_customer = ('001', 'Joey', 'Smith', '123 Jackson Street', '1234567890',
                              'joey@gmail.com', 'active', 1000.00)
+        basic_operations.delete_customer('0001')
 
         self.assertEqual(actual_customer, expected_customer)
 
@@ -185,6 +202,14 @@ class TestOperations(unittest.TestCase):
 
         self.assertEqual(actual_status_update_fail, expected_status_fail)
 
+        basic_operations.update_status('002', 'inactive')
+        updated_status_customer_fail2 = Customers.get(Customers.customer_id == '001')
+        actual_status_update_fail2 = updated_status_customer_fail2.status
+        expected_status_fail2 = 'active'
+
+        self.assertEqual(actual_status_update_fail2, expected_status_fail2)
+
+        self.assertEqual(actual_status_update_fail, expected_status_fail)
         basic_operations.update_status('001', 'inactive')
         updated_status_customer_success = Customers.get(Customers.customer_id == '001')
         actual_status_update_success = updated_status_customer_success.status

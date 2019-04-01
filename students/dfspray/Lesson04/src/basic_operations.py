@@ -11,7 +11,7 @@ LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 LOG_FILE = 'db.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
-FILE_HANDLER.setLevel(logging.WARNING)
+FILE_HANDLER.setLevel(logging.DEBUG)
 FILE_HANDLER.setFormatter(FORMATTER)
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -127,13 +127,11 @@ def list_active_customers():
     try:
         DATABASE.connect()
         DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
-        counter = 0
-        customer_list = []
-        for customer in Customers.select().where(Customers.status == 'active'):
-            counter += 1
-            customer_list.append(customer)
-        LOGGER.debug('There are %d active customers', counter)
-        return counter
+        customer_list = [customer.customer_id for customer in
+                         Customers.select().where(Customers.status == 'active')]
+        LOGGER.debug('There are %d active customers', len(customer_list))
+        LOGGER.debug('%s', str(customer_list))
+        return len(customer_list)
 
     except Exception as ex:
         LOGGER.debug(ex)
