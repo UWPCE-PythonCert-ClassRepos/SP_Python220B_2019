@@ -106,7 +106,7 @@ def update_customer_credit(customer_id, credit_limit):
 
         new_credit_customer = Customers.get(Customers.customer_id == customer_id)
         new_credit_customer.credit_limit = credit_limit
-        LOGGER.debug('Credit limit successfully updated for %s', new_credit_customer.name,
+        LOGGER.debug('Credit limit successfully updated for %s %s', new_credit_customer.name,
                      new_credit_customer.lastname)
         new_credit_customer.save()
 
