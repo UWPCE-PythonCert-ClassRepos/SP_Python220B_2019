@@ -2,9 +2,9 @@
 
 import logging
 import unittest
-#import sys
-#sys.path.append('C:/Users/allth/OneDrive/Desktop/Python/Python220/SP_Python220B_2019/'
-                'students/dfspray/Lesson03/assignment/src')
+import sys
+sys.path.append('C:/Users/allth/OneDrive/Desktop/Python/Python220/SP_Python220B_2019/'
+                'students/dfspray/Lesson04/src')
 from peewee import *
 import src
 from src import basic_operations
