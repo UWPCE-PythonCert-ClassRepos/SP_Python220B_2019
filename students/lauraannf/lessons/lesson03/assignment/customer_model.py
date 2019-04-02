@@ -27,16 +27,23 @@ class Customer(BaseModel):
     """
         This class defines Customer, which maintains details of customers
     """
-    customer_ID = CharField(primary_key=True, max_length=30)
+    customer_ID = CharField(primary_key=True,
+                            constraints=[Check('length(customer_id)==5')])
     first_name = CharField(max_length=30)
     last_name = CharField(max_length=30)
     home_address = CharField(max_length=100)
-    phone_number = CharField(max_length=12)
+    phone_number = CharField(constraints=[Check('length(phone_number)==10')])
     email_address = CharField(max_length=30)
-    status = CharField(max_length=8)
-    credit_limit = DecimalField(decimal_places=2)
+    status = BooleanField()
+    credit_limit = IntegerField()
 
 
 class Rentals(BaseModel):
+    """ Rental Database"""
     rental_number = CharField(primary_key=True, max_length=10)
-    renter = ForeignKeyField(Customer, null = False)
+    renter = ForeignKeyField(Customer, null=False)
+
+if __name__ == '__main__':
+
+    models = [Customer, Rentals]
+    DATABASE.create_tables(models)
