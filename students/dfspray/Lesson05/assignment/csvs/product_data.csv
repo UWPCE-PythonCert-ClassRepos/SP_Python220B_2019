@@ -1,3 +1,4 @@
-prd001,"{'description': 'TV', 'product_type': 'livingroom', 'quantity_available': 3}"
-prd002,"{'description': 'Couch', 'product_type': 'livingroom', 'quantity_available': 1}"
-prd003,"{'description': 'Chair', 'product_type': 'livingroom', 'quantity_available': 0}"
+id,description,product_type,quantity_available
+prd001,TV,livingroom,3
+prd002,Couch,livingroom,1
+prd003,Chair,livingroom,0

@@ -55,74 +55,124 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
         LOGGER.debug("Importing %s", product_file)
         try:
-            with open(directory_name+'/'+product_file, 'r') as product_csv:
-                csv_reader = csv.reader(product_csv, delimiter=',', quotechar='"')
+            with open(directory_name+'/'+product_file, newline='') as products_csv:
+                product_reader = csv.DictReader(products_csv)
+                products_dict = {}
                 try:
-                    for row in csv_reader:
-                        result = product.insert_one(row)
-                except ValueError:
+                    for row in product_reader:
+                        products_dict[row['id']] = {'description': row['description'],
+                                                    'product_type': row['product_type'],
+                                                    'quantity_available': row['quantity_available']
+                                                   }
+                except Exception as ex:
                     product_error_count += 1
-                    LOGGER.warning("Invalid entry")
+                    LOGGER.warning(ex)
+                    LOGGER.warning("Something went wrong while reading product_file")
+
+            LOGGER.debug("I imported: %s", products_dict)
+            result = product.insert_one(products_dict)
             LOGGER.debug("Successfully imported %s", product_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", product_file)
             product_error_count += 1
 
         LOGGER.debug("Importing %s", customer_file)
+
         try:
-            with open(directory_name+'/'+customer_file, 'r') as customer_csv:
-                csv_reader = csv.reader(customer_csv, delimiter=',', quotechar='"')
+            with open(directory_name+'/'+customer_file, newline='') as customers_csv:
+                customer_reader = csv.DictReader(customers_csv)
+                customers_dict = {}
                 try:
-                    for row in csv_reader:
-                        result = customer.insert_one(row)
-                except ValueError:
+                    for row in customer_reader:
+                        customers_dict[row['id']] = {'name': row['name'],
+                                                     'address': row['address'],
+                                                     'phone_number': row['phone_number']} 
+                except Exception as ex:
                     customer_error_count += 1
-                    LOGGER.warning("Invalid entry")
+                    LOGGER.warning(ex)
+                    LOGGER.warning("Something went wrong while reading customer_file")
+            LOGGER.debug("I imported: %s", customers_dict)
+            result = customer.insert_one(customers_dict)
             LOGGER.debug("Successfully imported %s", customer_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", customer_file)
             customer_error_count += 1
 
         LOGGER.debug("Importing %s", rentals_file)
+
         try:
-            with open(directory_name+'/'+rentals_file, 'r') as rentals_csv:
-                csv_reader = csv.reader(rentals_csv, delimiter=',', quotechar='"')
+            with open(directory_name+'/'+rentals_file, newline='') as rentals_csv:
+                rentals_reader = csv.DictReader(rentals_csv)
+                rentals_dict = {}
                 try:
-                    for row in csv_reader:
-                        result = rentals.insert_one(row)
-                except ValueError:
+                    for row in rentals_reader:
+                        row['id']
+                        rentals_dict[row['id']] = {'name': row['name'],
+                                                   'rentals': row['rentals'].split()}
+                except Exception as ex:
                     rentals_error_count += 1
-                    LOGGER.warning("Invalid entry")
+                    LOGGER.warning(ex)
+                    LOGGER.warning("Something went wrong while reading rentals_file")
+
+            LOGGER.debug("I imported: %s", rentals_dict)
+            result = rentals.insert_one(rentals_dict)
             LOGGER.debug("Successfully imported %s", rentals_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", rentals_file)
             rentals_error_count += 1
 
-        tuple1 = (db.product.count(), db.customer.count(), db.rentals.count())
+        tuple1 = (db.product.count_documents({}), db.customer.count_documents({}), db.rentals.count_documents({}))
         tuple2 = (product_error_count, customer_error_count, rentals_error_count)
 
         return tuple1, tuple2
 
 def show_available_products():
     """Returns a Python dictionary of products listed as available"""
-    available_products = {}
-    LOGGER.debug("Finding all available products...")
-    try:
-        for product in products.find():
-            if int(product['quantity_avail']>0):
-                available_products.append(products)
-    except ValueError:
-        LOGGER.error("There is no product data here")
-    finally:
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.rental_company
+        available_products = {}
+        LOGGER.debug("Finding all available products...")
+        for entry in db.product.find():
+            LOGGER.debug('the entry in the product search is: %s', entry)
+            for key, value in entry.items():
+                if key != '_id':
+                    LOGGER.debug('The variable "value" of entry.items() is: %s', value)
+                    if value['quantity_available']!='0':
+                        available_products[key] = value
         LOGGER.debug("Search complete")
         return available_products
 
 def show_rentals(product_id):
     """Return a Python dictionary from users that have rented products matching the product_id"""
-    LOGGER.debug("Finding rental %s", product_id)
-    try:
-        return rentals.find(product_id)
-    except ValueError:
-        LOGGER.error("the product id could not be found")
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.rental_company
+        renters_dict = {}
+        LOGGER.debug("Finding rental %s", product_id)
+        for entry in db.rentals.find():
+            LOGGER.debug('the entry in the rentals search is: %s', entry)
+            for key, value in entry.items():
+                if key != '_id':
+                    LOGGER.debug('The key and value of "entry.items()" are: %s %s', key, value)
+                    if product_id in value['rentals']:
+                        LOGGER.debug('I matched something for %s!', key)
+                        for customer in db.customer.find():
+                            LOGGER.debug('I found it in the customers database!')
+                            renters_dict[key] = customer[key]
+                    else:
+                        LOGGER.debug("I didn't match anything for %s", key)
 
-#if __name__ == "__main__":
+        LOGGER.debug('The returned rentals matched are: %s', renters_dict)
+        return renters_dict
+
+
+def delete_database():
+    """This method deletes the database to reset for other tests"""
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.rental_company
+        db.product.drop()
+        db.customer.drop()
+        db.rentals.drop()
+    LOGGER.debug("Cleared database")

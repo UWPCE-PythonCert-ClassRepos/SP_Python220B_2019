@@ -1,3 +1,4 @@
-cst001,"{'name': 'Charlie', 'address': '123 Fleet Street', 'phone_number': '1231234123'}"
-cst002,"{'name': 'Andrey', 'address': '123 Jordan Street', 'phone_number': '4564564567'}"
-cst003,"{'name': 'Vijay', 'address': '123 Lake Street', 'phone_number': '7987897891'}"
+id,name,address,phone_number
+cst001,Charlie,123 Fleet Street,1231234123
+cst002,Andrey,123 Jordan Street,4564564567
+cst003,Vijay,123 Lake Street,7987897891
