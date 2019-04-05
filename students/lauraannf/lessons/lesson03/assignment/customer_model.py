@@ -38,12 +38,8 @@ class Customer(BaseModel):
     credit_limit = IntegerField()
 
 
-class Rentals(BaseModel):
-    """ Rental Database"""
-    rental_number = CharField(primary_key=True, max_length=10)
-    renter = ForeignKeyField(Customer, null=False)
-
 if __name__ == '__main__':
 
-    models = [Customer, Rentals]
-    DATABASE.create_tables(models)
+    MODELS = [Customer]
+    DATABASE.create_tables(MODELS)
+    DATABASE.close()
