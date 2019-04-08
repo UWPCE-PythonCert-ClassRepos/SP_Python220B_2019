@@ -4,7 +4,6 @@ This program will read and write data to a mongoDB database
 
 import logging
 import csv
-import pymongo
 from pymongo import MongoClient
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
@@ -18,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.setLevel(logging.DEBUG)
 
-class MongoDBConnection(object):
+class MongoDBConnection():
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
         """Initiates the connection settings"""
@@ -42,11 +41,11 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
        of any errors that occurred in products, customers, and rentals"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.rental_company
+        database = mongo.connection.rental_company
 
-        product = db["product"]
-        customer = db["customer"]
-        rentals = db["rentals"]
+        product = database["product"]
+        customer = database["customer"]
+        rentals = database["rentals"]
 
         product_error_count = 0
         customer_error_count = 0
@@ -70,7 +69,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.warning("Something went wrong while reading product_file")
 
             LOGGER.debug("I imported: %s", products_dict)
-            result = product.insert_one(products_dict)
+            product.insert_one(products_dict)
             LOGGER.debug("Successfully imported %s", product_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", product_file)
@@ -86,13 +85,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     for row in customer_reader:
                         customers_dict[row['id']] = {'name': row['name'],
                                                      'address': row['address'],
-                                                     'phone_number': row['phone_number']} 
+                                                     'phone_number': row['phone_number']}
                 except Exception as ex:
                     customer_error_count += 1
                     LOGGER.warning(ex)
                     LOGGER.warning("Something went wrong while reading customer_file")
             LOGGER.debug("I imported: %s", customers_dict)
-            result = customer.insert_one(customers_dict)
+            customer.insert_one(customers_dict)
             LOGGER.debug("Successfully imported %s", customer_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", customer_file)
@@ -106,7 +105,6 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 rentals_dict = {}
                 try:
                     for row in rentals_reader:
-                        row['id']
                         rentals_dict[row['id']] = {'name': row['name'],
                                                    'rentals': row['rentals'].split()}
                 except Exception as ex:
@@ -115,13 +113,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.warning("Something went wrong while reading rentals_file")
 
             LOGGER.debug("I imported: %s", rentals_dict)
-            result = rentals.insert_one(rentals_dict)
+            rentals.insert_one(rentals_dict)
             LOGGER.debug("Successfully imported %s", rentals_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", rentals_file)
             rentals_error_count += 1
 
-        tuple1 = (db.product.count_documents({}), db.customer.count_documents({}), db.rentals.count_documents({}))
+        tuple1 = (database.product.count_documents({}), database.customer.count_documents({}),
+                  database.rentals.count_documents({}))
         tuple2 = (product_error_count, customer_error_count, rentals_error_count)
 
         return tuple1, tuple2
@@ -130,15 +129,15 @@ def show_available_products():
     """Returns a Python dictionary of products listed as available"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.rental_company
+        database = mongo.connection.rental_company
         available_products = {}
         LOGGER.debug("Finding all available products...")
-        for entry in db.product.find():
+        for entry in database.product.find():
             LOGGER.debug('the entry in the product search is: %s', entry)
             for key, value in entry.items():
                 if key != '_id':
                     LOGGER.debug('The variable "value" of entry.items() is: %s', value)
-                    if value['quantity_available']!='0':
+                    if value['quantity_available'] != '0':
                         available_products[key] = value
         LOGGER.debug("Search complete")
         return available_products
@@ -147,17 +146,17 @@ def show_rentals(product_id):
     """Return a Python dictionary from users that have rented products matching the product_id"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.rental_company
+        database = mongo.connection.rental_company
         renters_dict = {}
         LOGGER.debug("Finding rental %s", product_id)
-        for entry in db.rentals.find():
+        for entry in database.rentals.find():
             LOGGER.debug('the entry in the rentals search is: %s', entry)
             for key, value in entry.items():
                 if key != '_id':
                     LOGGER.debug('The key and value of "entry.items()" are: %s %s', key, value)
                     if product_id in value['rentals']:
                         LOGGER.debug('I matched something for %s!', key)
-                        for customer in db.customer.find():
+                        for customer in database.customer.find():
                             LOGGER.debug('I found it in the customers database!')
                             renters_dict[key] = customer[key]
                     else:
@@ -171,8 +170,8 @@ def delete_database():
     """This method deletes the database to reset for other tests"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.rental_company
-        db.product.drop()
-        db.customer.drop()
-        db.rentals.drop()
+        database = mongo.connection.rental_company
+        database.product.drop()
+        database.customer.drop()
+        database.rentals.drop()
     LOGGER.debug("Cleared database")
