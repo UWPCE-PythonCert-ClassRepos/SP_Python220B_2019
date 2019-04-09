@@ -1,13 +1,11 @@
 """
-This is a one-off program to create the product_data, customer_data, and rentals_data csv files
-in a folder named 'csvs'. This program is otherwise useless once the data is created. I only made
-this because I couldn't find any pre-generated csv files or formats were given.
+This is a one-off program to create one million records to test the efficiency of poor_perf.py
 """
 
-import os
 import csv
 import logging
 import random
+import uuid
 from datetime import date, timedelta
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
@@ -26,25 +24,28 @@ def write_csv():
 
     LOGGER.debug("Writing to .csv files")
     with open('data/exercise.csv', 'w') as data:
-        for record in range(0,100):
+        for record in range(0, 1000000):
+            unique_id = uuid.uuid4()
             something1 = record + 1
             something2 = record + 2
             something3 = record + 3
             something4 = record + 4
-            date = random_date()
-            perf_data = [something1, something2, something3, something4, date, date, something1]
+            random_ao = random.choice(['ao', None])
+            rand_date = random_date()
+            perf_data = [unique_id, something1, something2, something3,
+                         something4, rand_date, random_ao]
             writer = csv.writer(data, lineterminator='\n')
             writer.writerow(perf_data)
     LOGGER.debug("Write successful!")
 
 def random_date():
-    min_year = 2010
-    max_year = 2018
-    years = 9
+    """This method creates a random date between 2010 and 2018"""
     start = date(2010, 1, 1)
+    years = 9
     end = timedelta(years*365)
-    return start + end * random.random()
-    
+    rand_date = start + end * random.random()
+    return rand_date.strftime("%m/%d/%Y")
+
 
 if __name__ == '__main__':
     write_csv()
