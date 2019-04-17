@@ -54,9 +54,9 @@ class BaseTestCase(TestCase):
         self.assertEqual(test_c1.email_address, 'd.zbornak@gmail.com')
         self.assertEqual(test_c1.status, True)
         self.assertEqual(test_c1.credit_limit, 1000)
-        test_c1 = add_customer(*CUSTOMERS[0])
+        add_customer(*CUSTOMERS[0])
         self.assertRaises(Exception)
-        test_c1 = add_customer(*CUSTOMERS[4])
+        add_customer(*CUSTOMERS[4])
         self.assertRaises(Exception)
 
     def test_search_customer(self):
@@ -77,7 +77,7 @@ class BaseTestCase(TestCase):
                           'Phone Number': '5551234570',
                           'Email Address': 'r.nylund@gmail.com',
                           'Status': 'Inactive', 'Credit Limit': 2000}, test_c2)
-        test_c2 = search_customer('00009')
+        search_customer('00009')
         self.assertRaises(Exception)
 
     def test_delete_customer(self):
@@ -87,7 +87,9 @@ class BaseTestCase(TestCase):
         add_customer(*CUSTOMERS[0])
         add_customer(*CUSTOMERS[1])
         delete_customer('00001')
-        test_c3 = search_customer('00001')
+        search_customer('00001')
+        self.assertRaises(Exception)
+        delete_customer('00009')
         self.assertRaises(Exception)
 
     def test_update_customer_credit(self):
@@ -98,8 +100,9 @@ class BaseTestCase(TestCase):
         update_customer_credit('00001', 5000)
         test_c4 = search_customer('00001')
         self.assertEqual(test_c4['Credit Limit'], 5000)
-        test_c4 = search_customer('00008')
+        update_customer_credit('00008', 5000)
         self.assertRaises(Exception)
+
     def test_list_active_customer(self):
         """tests counting number of active customers"""
         TEST_DB.bind(MODELS, bind_refs=False, bind_backrefs=False)
