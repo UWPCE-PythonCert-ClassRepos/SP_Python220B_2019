@@ -11,11 +11,12 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def analyze(filename):
+    """Analyzes file for certain years and letters"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         new_ones = []
-        logger.info('run time for row reader and filter for > 00/00/2012:'
+        logger.info('Run time for row reader and filter for > 00/00/2012:'
                     ' %s sec', timer(
         '''for row in reader:
             lrow = list(row)
@@ -45,8 +46,8 @@ def analyze(filename):
                 year_count["2016"] += 1
             if new[0][6:] == '2017':
                 year_count["2017"] += 1
-            if new[0][6:] == '2018': #new[0][6:] == 00/00/2012.....2012
-                year_count["2017"] += 1''', globals=locals(), number=1))
+            if new[0][6:] == '2018':
+                year_count["2018"] += 1''', globals=locals(), number=1))
 
         print(year_count)
 
@@ -54,7 +55,7 @@ def analyze(filename):
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
 
         found = [0]
-        logger.info('run time for reading and filtering for "ao": %s sec',
+        logger.info('Run time for reading and filtering for "ao": %s sec',
                     timer(
         '''for line in reader:
             lrow = list(line)
@@ -66,6 +67,7 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    """Calls and runs analye()"""
     logger.info('main() run time: %s sec', timer(
         'filename = "exercise.csv"\nanalyze(filename)', globals=globals(),
         number=1))
