@@ -4,7 +4,10 @@ This program will read and write data to a mongoDB database
 
 import logging
 import csv
+import os
+import sys
 from pymongo import MongoClient
+sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 LOG_FILE = 'db.log'
@@ -54,7 +57,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
         LOGGER.debug("Importing %s", product_file)
         try:
-            with open(directory_name+'/'+product_file, newline='') as products_csv:
+            with open(os.path.join(os.path.dirname(__file__), directory_name, product_file),
+                      newline='') as products_csv:
                 product_reader = csv.DictReader(products_csv)
                 products_dict = {}
                 try:
@@ -78,7 +82,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         LOGGER.debug("Importing %s", customer_file)
 
         try:
-            with open(directory_name+'/'+customer_file, newline='') as customers_csv:
+            with open(os.path.join(os.path.dirname(__file__), directory_name, customer_file),
+                      newline='') as customers_csv:
                 customer_reader = csv.DictReader(customers_csv)
                 customers_dict = {}
                 try:
@@ -100,7 +105,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         LOGGER.debug("Importing %s", rentals_file)
 
         try:
-            with open(directory_name+'/'+rentals_file, newline='') as rentals_csv:
+            with open(os.path.join(os.path.dirname(__file__), directory_name, rentals_file),
+                      newline='') as rentals_csv:
                 rentals_reader = csv.DictReader(rentals_csv)
                 rentals_dict = {}
                 try:
