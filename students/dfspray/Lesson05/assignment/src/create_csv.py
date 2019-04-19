@@ -7,6 +7,8 @@ this because I couldn't find any pre-generated csv files or formats were given.
 import os
 import csv
 import logging
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 LOG_FILE = 'test.log'
@@ -21,9 +23,8 @@ LOGGER.setLevel(logging.DEBUG)
 
 def write_csv():
     """This method writes the csv files to import for testing"""
-
     try:
-        os.mkdir('csvs')
+        os.mkdir(os.path.join(os.path.dirname(__file__), 'csvs'))
     except OSError:
         print("Could not create directory")
     else:
@@ -49,7 +50,8 @@ def write_csv():
                     'cst003': {'name': 'Vijay', 'rentals': ['prd001', 'prd003']}}
 
     LOGGER.debug("Writing to .csv files")
-    with open('csvs/product_data.csv', 'w') as products:
+    with open(os.path.join(os.path.dirname(__file__), 'csvs', 'product_data.csv'),
+              'w') as products:
         product_fields = ['id', 'description', 'product_type', 'quantity_available']
         product_writer = csv.DictWriter(products, delimiter=',', lineterminator='\n',
                                         fieldnames=product_fields)
@@ -59,7 +61,8 @@ def write_csv():
             product_row.update(value)
             product_writer.writerow(product_row)
 
-    with open('csvs/customer_data.csv', 'w') as customers:
+    with open(os.path.join(os.path.dirname(__file__), 'csvs', 'customer_data.csv'),
+              'w') as customers:
         customer_fields = ['id', 'name', 'address', 'phone_number']
         customer_writer = csv.DictWriter(customers, delimiter=',', lineterminator='\n',
                                          fieldnames=customer_fields)
@@ -69,7 +72,8 @@ def write_csv():
             customer_row.update(value)
             customer_writer.writerow(customer_row)
 
-    with open('csvs/rentals_data.csv', 'w') as rentals:
+    with open(os.path.join(os.path.dirname(__file__), 'csvs', 'rentals_data.csv'),
+              'w') as rentals:
         rentals_fields = ['id', 'name', 'rentals']
         rentals_writer = csv.DictWriter(rentals, delimiter=',', lineterminator='\n',
                                         fieldnames=rentals_fields)

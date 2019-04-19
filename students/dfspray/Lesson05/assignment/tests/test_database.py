@@ -4,9 +4,6 @@ This file will test the methods in database.py for reading and writing to a mong
 
 import logging
 import unittest
-import sys
-sys.path.append('C:/Users/allth/OneDrive/Desktop/Python/Python220/SP_Python220B_2019/'
-                'students/dfspray/Lesson05/src')
 from src import database
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
