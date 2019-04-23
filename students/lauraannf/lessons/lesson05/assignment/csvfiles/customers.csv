@@ -1,0 +1,6 @@
+Customer ID,First Name,Last Name,Home Address,Email Address,Phone Number,Status,Credit Limit
+c00001,Dorothy,Zbornak,"6151 Richmond Street, Miami, FL, 33133",d.zbornak@gmail.com,555-111-1111,1,1000
+c00002,Sophia ,Petrillo,"6151 Richmond Street, Miami, FL, 33133",s.petrillo@gmail.com,555-222-2222,1,1000
+c00003,Blanche,Devereaux,"6151 Richmond Street, Miami, FL, 33133",b.devereaux@gmail.com,555-333-3333,1,1000
+c00004,Rose,Nylund,"6151 Richmond Street, Miami, FL, 33133",r.nylund@gmail.com,555-444-4444,1,1000
+,,,,,,,1000
