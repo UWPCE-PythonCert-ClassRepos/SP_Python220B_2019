@@ -29,14 +29,45 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         rentals = database["rentals"]
         products = database["products"]
 
-        with open(os.path.join(directory_name, product_file)) as customer_csv:
+        with open(os.path.join(directory_name, customer_file)) as customer_csv:
             csv_reader = csv.DictReader(customer_csv)
+
+            customer_list = []
+
             for row in csv_reader:
-                customers[row['Customer ID']] = {
-                    'first_name': row['First Name'],
-                    'last_name': row['Last Name'],
-                    'home_address': row['Home Address'],
-                    'email_address': row['Email Address'],
-                    'phone_number': row['Phone Number'],
-                    'status': row['Status'],
-                    'credit_limit': row['Credit Limit']}
+                customer_list.append({'customer_id': row['Customer ID'],
+                                      'first_name': row['First Name'],
+                                      'last_name': row['Last Name'],
+                                      'home_address': row['Home Address'],
+                                      'email_address': row['Email Address'],
+                                      'phone_number': row['Phone Number'],
+                                      'status': row['Status'],
+                                      'credit_limit': row['Credit Limit']})
+
+            customers.insert_many(customer_list)
+
+        with open(os.path.join(directory_name, product_file)) as product_csv:
+            csv_reader = csv.DictReader(product_csv)
+
+            product_list = []
+
+            for row in csv_reader:
+                product_list.append({'product_id': row['Product ID'],
+                                     'description': row['Description'],
+                                     'type': row['Type'],
+                                     'total_quantity': row['Total Quantity']})
+
+            products.insert_many(product_list)
+
+        with open(os.path.join(directory_name, rental_file)) as rental_csv:
+            csv_reader = csv.DictReader(rental_csv)
+
+            rental_list = []
+
+            for row in csv_reader:
+                rental_list.append({'rental_id': row['Rental ID'],
+                                    'customer_id': row['Customer ID'],
+                                    'product_id': row['Product ID'],
+                                    'quantity': row['Quantity']})
+
+            rentals.insert_many(rental_list)
