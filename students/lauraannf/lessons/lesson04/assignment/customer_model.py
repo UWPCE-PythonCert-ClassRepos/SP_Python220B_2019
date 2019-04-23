@@ -8,7 +8,8 @@ Lesson3 Assignment
 """
 
 
-from peewee import *
+from peewee import SqliteDatabase, Model, CharField, Check
+from peewee import BooleanField, IntegerField
 
 
 DATABASE = SqliteDatabase('customers.db')
