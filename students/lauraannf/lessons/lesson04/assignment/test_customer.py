@@ -5,11 +5,11 @@ Created on Fri Apr  5 14:30:07 2019
 @author: Laura.Fiorentino
 """
 
-from unittest import TestCase, mock
-from unittest.mock import patch
-from peewee import *
+from unittest import TestCase
+from peewee import SqliteDatabase
 from customer_model import Customer
-from basic_operations import *
+from basic_operations import add_customer, search_customer, delete_customer
+from basic_operations import update_customer_credit, list_active_customers
 
 MODELS = [Customer]
 
@@ -28,6 +28,7 @@ CUSTOMERS = [
     ('00005', 'Stan', 'Zbornak', 'Hawaii', '555',
      's.zbornak@gmail.com', False, 100),
     ]
+
 
 class BaseTestCase(TestCase):
     """ test for customer database"""
