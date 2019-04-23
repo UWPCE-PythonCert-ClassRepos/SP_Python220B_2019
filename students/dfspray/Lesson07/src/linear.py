@@ -6,6 +6,7 @@ import logging
 import csv
 import os
 import sys
+import psutil
 from timeit import timeit as timer
 from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
@@ -131,3 +132,4 @@ def delete_database():
 if __name__ == '__main__':
     LOGGER.debug("Linear program time: %s seconds", timer(
                  'import_data()', globals=globals(), number=1))
+    LOGGER.debug("This program's cpu usage was: %s%%", psutil.cpu_percent())
