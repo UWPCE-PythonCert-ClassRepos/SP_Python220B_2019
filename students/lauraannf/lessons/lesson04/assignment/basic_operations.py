@@ -7,6 +7,7 @@ Created on Mon Apr  1 16:47:37 2019
 
 import logging
 from customer_model import Customer
+from peewee import IntegrityError
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
@@ -24,20 +25,20 @@ def add_customer(customer_id, first_name, last_name, home_address,
     try:
         Customer.get_by_id(customer_id)
         print('Customer ID {} is already in use'.format(customer_id))
-    except Exception:
-        try:
-            new_customer = Customer.create(customer_ID=customer_id,
-                                           first_name=first_name,
-                                           last_name=last_name,
-                                           home_address=home_address,
-                                           phone_number=phone_number,
-                                           email_address=email_address,
-                                           status=status,
-                                           credit_limit=credit_limit)
-            new_customer.save()
-            LOGGER.info('Added new customer, Customer ID %s', customer_id)
-        except Exception as ex:
-            if "CHECK constraint failed: customer" in str(ex):
+    except Exception as ex:
+        if "instance matching query does not exist" in str(ex):
+            try:
+                new_customer = Customer.create(customer_ID=customer_id,
+                                               first_name=first_name,
+                                               last_name=last_name,
+                                               home_address=home_address,
+                                               phone_number=phone_number,
+                                               email_address=email_address,
+                                               status=status,
+                                               credit_limit=credit_limit)
+                new_customer.save()
+                LOGGER.info('Added new customer, Customer ID %s', customer_id)
+            except IntegrityError:
                 print('Incorrect format, customer {} not saved'
                       .format(customer_id))
 
@@ -61,12 +62,8 @@ def search_customer(customer_id):
                          'Credit Limit': customer_search.credit_limit}
         print('Info for Customer ID {}'.format(customer_id))
         return customer_dict
-    except Exception as ex:
-        if "instance matching query does not exist" in str(ex):
-            print('No record of customer with Customer ID {}'
-                  .format(customer_id))
-        else:
-            print('unknown error')
+    except Customer.DoesNotExist:
+        print('No record of customer with Customer ID {}'.format(customer_id))
 
 
 def delete_customer(customer_id):
@@ -77,13 +74,9 @@ def delete_customer(customer_id):
         customer_delete.delete_instance()
         LOGGER.info('Customer with Customer ID %s has been deleted',
                     customer_id)
-    except Exception as ex:
-        if "instance matching query does not exist" in str(ex):
-            print('No record of customer with Customer ID {}'
-                  .format(customer_id))
-            print('No customer deleted')
-        else:
-            print('unknown error')
+    except Customer.DoesNotExist:
+        print('No record of customer with Customer ID {}'.format(customer_id))
+        print('No customer deleted')
 
 
 def update_customer_credit(customer_id, new_credit_limit):
@@ -94,13 +87,9 @@ def update_customer_credit(customer_id, new_credit_limit):
         customer_credit_update.credit_limit = new_credit_limit
         customer_credit_update.save()
         LOGGER.info('Customer with ID %s has been updated', customer_id)
-    except Exception as ex:
-        if "instance matching query does not exist" in str(ex):
-            print('No record of customer with Customer ID {}'
-                  .format(customer_id))
-            print('No customer updated')
-        else:
-            print('unknown error')
+    except Customer.DoesNotExist:
+        print('No record of customer with Customer ID {}'.format(customer_id))
+        print('No customer updated')
 
 
 def list_active_customers():
