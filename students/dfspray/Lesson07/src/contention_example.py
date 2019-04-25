@@ -63,14 +63,14 @@ def import_data(directory_name='csvs', product_file='product_data.csv',
     product_process = mp.Process(target=universal_import, args=(directory_name, product_file,
                                                                 'product_errors', count_dict))
     product_process.start()
+    product_process.join()
     customer_process = mp.Process(target=universal_import, args=(directory_name, customer_file,
                                                                  'customer_errors', count_dict))
     customer_process.start()
+    customer_process.join()
     rentals_process = mp.Process(target=universal_import, args=(directory_name, rentals_file,
                                                                 'rentals_errors', count_dict))
-    rentals_process.start()
-    product_process.join()
-    customer_process.join()
+
     rentals_process.join()
     product_tuple = (count_dict['product_count_after'] - count_dict['product_count_before'],
                      count_dict['product_count_before'], count_dict['product_count_after'],

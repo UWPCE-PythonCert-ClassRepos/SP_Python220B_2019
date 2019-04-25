@@ -26,8 +26,7 @@ class TestDatabase(unittest.TestCase):
         parallel.delete_database()
 
         #Fully successful import
-        actual_tuples1 = parallel.import_data('csvs', 'product_data.csv', 'customer_data.csv',
-                                              'rentals_data.csv')
+        actual_tuples1 = parallel.main()
         expected_tuples1 = ((1, 1, 1), (0, 0, 0))
         self.assertEqual(actual_tuples1, expected_tuples1)
         parallel.delete_database()

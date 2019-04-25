@@ -11,7 +11,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = 'test.log'
+LOG_FILE = 'create_csv.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setLevel(logging.DEBUG)
@@ -82,10 +82,11 @@ def expand_product_data():
                                'quantity_available': 1},
                     'prd003': {'description': 'Chair', 'product_type': 'livingroom',
                                'quantity_available': 0}}
-    for number in range(0, 999):
+    for number in range(4, 1000):
         key = 'prd{}'.format('0'*(3-len(str(number)))+str(number))
-        product_data.setdefault(key, {'description': 'Chair', 'product_type': 'livingroom',
-                                      'quantity_available': 0})
+        product_data.setdefault(key, {'description': "something{}".format(str(number)),
+                                      'product_type': "type{}".format(str(number)),
+                                      'quantity_available': number})
     return product_data
 
 def expand_customer_data():
@@ -97,10 +98,11 @@ def expand_customer_data():
                      'cst003': {'name': 'Vijay', 'address': '123 Lake Street',
                                 'phone_number': '7987897891'}}
 
-    for number in range(0, 999):
+    for number in range(4, 1000):
         key = 'cst{}'.format('0'*(3-len(str(number)))+str(number))
-        customer_data.setdefault(key, {'name': 'Vijay', 'address': '123 Lake Street',
-                                      'phone_number': '7987897891'})
+        customer_data.setdefault(key, {'name': "something{}".format(str(number)),
+                                       'address': "somewhere{}".format(str(number)),
+                                       'phone_number': str(number)})
     return customer_data
 
 def expand_rentals_data():
@@ -109,7 +111,7 @@ def expand_rentals_data():
                     'cst002': {'name': 'Andrey', 'rentals': ['prd002', 'prd003']},
                     'cst003': {'name': 'Vijay', 'rentals': ['prd001', 'prd003']}}
 
-    for number in range(0, 999):
+    for number in range(4, 1000):
         key = 'cst{}'.format('0'*(3-len(str(number)))+str(number))
         rentals_data.setdefault(key, {'name': 'Vijay', 'rentals': ['prd001', 'prd003']})
     return rentals_data
