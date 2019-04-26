@@ -1,8 +1,8 @@
 """
-This program imports the data in exactly the same form as database.py, but in parallel
+This program fails due to contention for locks
 """
 import logging
-import multiprocessing as mp
+import threading
 from timeit import timeit as timer
 import csv
 import os
@@ -12,7 +12,7 @@ from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = 'parallel.log'
+LOG_FILE = 'deadlock_contention_example.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setLevel(logging.DEBUG)
@@ -45,9 +45,9 @@ def import_data(directory_name='csvs', product_file='product_data.csv',
     the number of records processed (int), the record count in the database
     prior to running (int), the record count after running (int), and the
     time taken to run the module (float)."""
+    lock = threading.Lock()
 
-    manager = mp.Manager()
-    count_dict = manager.dict()
+    count_dict = {}
 
     count_dict.setdefault('product_errors', 0)
     count_dict.setdefault('customer_errors', 0)
@@ -60,18 +60,29 @@ def import_data(directory_name='csvs', product_file='product_data.csv',
     count_dict.setdefault('product_time', 0)
     count_dict.setdefault('customer_time', 0)
 
-    product_process = mp.Process(target=universal_import, args=(directory_name, product_file,
-                                                                'product_errors', count_dict))
-    product_process.start()
-    product_process.join()
-    customer_process = mp.Process(target=universal_import, args=(directory_name, customer_file,
-                                                                 'customer_errors', count_dict))
-    customer_process.start()
-    customer_process.join()
-    rentals_process = mp.Process(target=universal_import, args=(directory_name, rentals_file,
-                                                                'rentals_errors', count_dict))
+    lock.acquire()
+    product_thread = threading.Thread(target=universal_import, args=(directory_name, product_file,
+                                                                     'product_errors',
+                                                                     count_dict))
+    product_thread.start()
+    lock.acquire()
+    customer_thread = threading.Thread(target=universal_import, args=(directory_name,
+                                                                      customer_file,
+                                                                      'customer_errors',
+                                                                      count_dict))
+    customer_thread.start()
+    lock.release()
+    lock.acquire()
+    rentals_thread = threading.Thread(target=universal_import, args=(directory_name, rentals_file,
+                                                                     'rentals_errors',
+                                                                     count_dict))
+    rentals_thread.start()
+    lock.release()
 
-    rentals_process.join()
+    product_thread.join()
+    customer_thread.join()
+    rentals_thread.join()
+
     product_tuple = (count_dict['product_count_after'] - count_dict['product_count_before'],
                      count_dict['product_count_before'], count_dict['product_count_after'],
                      count_dict['product_time'])
@@ -83,32 +94,32 @@ def import_data(directory_name='csvs', product_file='product_data.csv',
 
 def universal_import(directory_name, file, error_index, count_dict):
     """This method will import any of the .csv files"""
-
     LOGGER.debug("Importing %s", file)
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.rental_company
         try:
             if file == 'product_data.csv':
-                count_dict['product_count_before'] = database.product.count_documents({})
+                for entry in database.product.find():
+                    count_dict['product_count_before'] += len(entry)
                 count_dict['product_time'] = timer('product_file_reader()',
                                                    globals=globals(), number=1)
-                count_dict['product_count_after'] = database.product.count_documents({})
+                for entry in database.product.find():
+                    count_dict['product_count_after'] += len(entry)
             elif file == 'customer_data.csv':
-                count_dict['customer_count_before'] = database.customer.count_documents({})
+                for entry in database.customer.find():
+                    count_dict['customer_count_before'] += len(entry)
                 count_dict['customer_time'] = timer('customer_file_reader()',
                                                     globals=globals(), number=1)
-                count_dict['customer_count_after'] = database.customer.count_documents({})
+                for entry in database.customer.find():
+                    count_dict['customer_count_after'] += len(entry)
             elif file == 'rentals_data.csv':
                 rentals_file_reader()
-                count_dict['rentals_count'] = database.rentals.count_documents({})
         except Exception as ex:
             count_dict[error_index] += 1
             LOGGER.warning(ex)
             LOGGER.warning("Something went wrong while reading file")
         LOGGER.debug("Successfully imported %s", file)
-
-    return
 
 def product_file_reader():
     """This method will loop through and read the product_file"""
@@ -161,7 +172,8 @@ def rentals_file_reader():
                       newline='') as csv_file:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
-                    rentals_dict[row['id']] = {'name': row['name'], 'rentals': row['rentals'].split()}
+                    rentals_dict[row['id']] = {'name': row['name'],
+                                               'rentals': row['rentals'].split()}
                 rentals.insert_one(rentals_dict)
         except FileNotFoundError:
             LOGGER.error("Could not find rentals_data.csv")
