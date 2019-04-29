@@ -24,9 +24,9 @@ class TestOperations(unittest.TestCase):
         basic_operations.update_customer_credit('010', 3000)
         basic_operations.update_status('010', 'inactive')
         expected_customer = {'customer_id': '010', 'name': 'James', 'lastname': 'Bond',
-                             'home_address': '007 Bond Street', 'phone_number': '8885671000',
+                             'home_address': '123 Turnberry Street', 'phone_number': '8885671000',
                              'email_address': 'bond@bond.com', 'status': 'inactive',
-                             'credit_limit': 3000.0}
+                             'credit_limit': 3000.00}
         actual_searched_customer = basic_operations.search_customer('010')
         self.assertEqual(actual_searched_customer, expected_customer)
         actual_customer_count = basic_operations.list_active_customers()
