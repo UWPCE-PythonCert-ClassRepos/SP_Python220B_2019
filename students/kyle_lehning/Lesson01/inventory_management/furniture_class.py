@@ -1,22 +1,25 @@
-# Furniture class
+#!/usr/bin/env python3
+"""Module containing Furniture class"""
 from inventory_class import Inventory
 
 
 class Furniture(Inventory):
-
+    """
+    A class-based system for furniture
+    """
     def __init__(self, product_code, description, market_price, rental_price, material, size):
         # Creates common instance variables from the parent class
         Inventory.__init__(self, product_code, description, market_price, rental_price)
-
         self.material = material
         self.size = size
 
     def return_as_dictionary(self):
-        output_dict = {}
-        output_dict['productCode'] = self.product_code
+        """Return a dictionary containing furniture info"""
+        output_dict = dict()
+        output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
+        output_dict['market_price'] = self.market_price
+        output_dict['rental_price'] = self.rental_price
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 
