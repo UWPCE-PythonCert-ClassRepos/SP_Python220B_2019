@@ -2,7 +2,7 @@
     This file defines the schema of the data stored
     in the database
 """
-
+# pylint: disable=W0614, W0401, C0103, R0903
 from peewee import *
 
 DATABASE = SqliteDatabase('customers.db')

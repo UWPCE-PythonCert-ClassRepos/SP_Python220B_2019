@@ -3,13 +3,13 @@
 import logging
 import unittest
 import sys
+from peewee import *
+from src import basic_operations
+from src.customer_model_schema import Customers
+
 sys.path.append(r"C:\UW-Python-Advanced\SP_Python220B_2019\students\vvinodh\Lesson3")
 
-from peewee import *
-import src
-from src import basic_operations
-from src import customer_model_schema
-from src.customer_model_schema import Customers
+
 
 DATABASE = SqliteDatabase('customers.db')
 logging.basicConfig(level=logging.INFO)
