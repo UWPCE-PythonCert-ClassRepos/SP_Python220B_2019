@@ -27,10 +27,18 @@ class MongoDBConnection():
         self.host = host
         self.port = port
         self.connection = None
+        self.product = None
+        self.customer = None
+        self.rentals = None
+        self.database = None
 
     def __enter__(self):
         """Connects to MongoDB"""
         self.connection = MongoClient(self.host, self.port)
+        self.database = self.connection.rental_company
+        self.product = self.database["product"]
+        self.customer = self.database["customer"]
+        self.rentals = self.database["rentals"]
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -44,16 +52,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
        of any errors that occurred in products, customers, and rentals"""
     mongo = MongoDBConnection()
     with mongo:
-        database = mongo.connection.rental_company
-
-        product = database["product"]
-        customer = database["customer"]
-        rentals = database["rentals"]
-
         product_error_count = 0
         customer_error_count = 0
         rentals_error_count = 0
-
 
         LOGGER.debug("Importing %s", product_file)
         try:
@@ -73,7 +74,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.warning("Something went wrong while reading product_file")
 
             LOGGER.debug("I imported: %s", products_dict)
-            product.insert_one(products_dict)
+            mongo.product.insert_one(products_dict)
             LOGGER.debug("Successfully imported %s", product_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", product_file)
@@ -96,7 +97,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.warning(ex)
                     LOGGER.warning("Something went wrong while reading customer_file")
             LOGGER.debug("I imported: %s", customers_dict)
-            customer.insert_one(customers_dict)
+            mongo.customer.insert_one(customers_dict)
             LOGGER.debug("Successfully imported %s", customer_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", customer_file)
@@ -119,14 +120,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.warning("Something went wrong while reading rentals_file")
 
             LOGGER.debug("I imported: %s", rentals_dict)
-            rentals.insert_one(rentals_dict)
+            mongo.rentals.insert_one(rentals_dict)
             LOGGER.debug("Successfully imported %s", rentals_file)
         except FileNotFoundError:
             LOGGER.error("could not find %s", rentals_file)
             rentals_error_count += 1
 
-        tuple1 = (database.product.count_documents({}), database.customer.count_documents({}),
-                  database.rentals.count_documents({}))
+        tuple1 = (mongo.product.count_documents({}),
+                  mongo.customer.count_documents({}),
+                  mongo.rentals.count_documents({}))
         tuple2 = (product_error_count, customer_error_count, rentals_error_count)
 
         return tuple1, tuple2
