@@ -1,0 +1,29 @@
+Notes:
+1. I expanded the import to 1000 rows per .csv file
+2. Running multiprocessing takes ~.85 seconds, linear.py takes ~.05 seconds, and threading takes ~.03 seconds
+    a. multiprocessing takes around .04 seconds for product files and .02 seconds for customers files
+    b. linear.py takes around .015 seconds for product files and .02 seconds for customers files
+    c. threading takes around .02 seconds for product files and .02 seconds for customers files
+3. Running multiprocessing used ~2% cpu capacity, linear.py used ~.75% cpu capacity, and threading used ~1.5% capacity
+4. While the time to actually do the individual imports is about the same for linear, mulitprocessing, and threading methods, the
+   implementation was the fastest for threading, then linear, then multiprocessing in that order.
+5. When I am using multiprocessing rather than multithreading to run this program, there will be no GIL contention for locks.
+6. Using threading for me was much faster than using multiprocessing. It seems like the import itself took almost the same time for
+   both the customers and products (~.02 seconds each), however, just replacing the .Process() with .Thread() reduced the overall
+   program time by around .05 seconds (over 50%).
+
+Contention Notes:
+1. To avoid contention, I just need to implement locking correctly for the threads sharing data. In my case, the shared data
+   doesn't need to get modified in any particular order, since the data input is independent of other processes. But if it was
+   interdependent, this would cause issues.
+2. If I only create one lock to be shared, and there are a large number of threads being used that make counter updates,
+   this may also lead to contention.
+
+Conclusion:
+-Running a threaded program has time benefits in my case. It uses very little cpu capacity in general, and runs ~50% faster than
+ a linear program. Provided that I can avoid contention in this case.
+
+-I am also running an 8 core, 16 thread AMD Ryzen 7 processor. This might have varying results on different computers, especially
+ if the data were expanded to more threads/processes. In theory, a Ryzen 7 should have a multi-core advantage over an Intel i7,
+ while the Intel i7 should have and advantage in single-core and quad-core speed (which might be more relevant for only 3 processes).
+ I don't know what the effect that would have on this test when the times are so close and often overlap.

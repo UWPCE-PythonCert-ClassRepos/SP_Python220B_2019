@@ -1,18 +1,18 @@
 """
-This program imports the data in the csv files linearly
+This program fails due to contention for locks
 """
-
 import logging
+import threading
+from timeit import timeit as timer
 import csv
 import os
 import sys
-from timeit import timeit as timer
 import psutil
 from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = 'parallel.log'
+LOG_FILE = 'deadlock_contention_example.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setLevel(logging.DEBUG)
@@ -39,22 +39,16 @@ class MongoDBConnection():
         """Disconnects from MongoDB"""
         self.connection.close()
 
-def main():
-    """This method runs a timer and cpu usage tracker for the program"""
-    time_taken = timer('import_data()', globals=globals(), number=1)
-    cpu_usage = psutil.cpu_percent()
-    LOGGER.debug("Linear program time: %s seconds", time_taken)
-    LOGGER.debug("This program's cpu usage was: %s%%", cpu_usage)
-    return time_taken, cpu_usage
-
 def import_data(directory_name='csvs', product_file='product_data.csv',
                 customer_file='customer_data.csv', rentals_file='rentals_data.csv'):
-    """This function takes a directory name and three csv files and creates/populates a new
-       MongoDB database with the data. It then returns two tuples: The first contains a record
-       count of the number of products, customers and rentals added. The second contains a count
-       of any errors that occurred in products, customers, and rentals"""
+    """This method will run the full program, and return a tuple containing
+    the number of records processed (int), the record count in the database
+    prior to running (int), the record count after running (int), and the
+    time taken to run the module (float)."""
+    lock = threading.Lock()
 
     count_dict = {}
+
     count_dict.setdefault('product_errors', 0)
     count_dict.setdefault('customer_errors', 0)
     count_dict.setdefault('rentals_errors', 0)
@@ -66,9 +60,28 @@ def import_data(directory_name='csvs', product_file='product_data.csv',
     count_dict.setdefault('product_time', 0)
     count_dict.setdefault('customer_time', 0)
 
-    count_dict = universal_import(directory_name, product_file, 'product_errors', count_dict)
-    count_dict = universal_import(directory_name, customer_file, 'customer_errors', count_dict)
-    universal_import(directory_name, rentals_file, 'rentals_errors', count_dict)
+    lock.acquire()
+    product_thread = threading.Thread(target=universal_import, args=(directory_name, product_file,
+                                                                     'product_errors',
+                                                                     count_dict))
+    product_thread.start()
+    lock.acquire()
+    customer_thread = threading.Thread(target=universal_import, args=(directory_name,
+                                                                      customer_file,
+                                                                      'customer_errors',
+                                                                      count_dict))
+    customer_thread.start()
+    lock.release()
+    lock.acquire()
+    rentals_thread = threading.Thread(target=universal_import, args=(directory_name, rentals_file,
+                                                                     'rentals_errors',
+                                                                     count_dict))
+    rentals_thread.start()
+    lock.release()
+
+    product_thread.join()
+    customer_thread.join()
+    rentals_thread.join()
 
     product_tuple = (count_dict['product_count_after'] - count_dict['product_count_before'],
                      count_dict['product_count_before'], count_dict['product_count_after'],
@@ -108,8 +121,6 @@ def universal_import(directory_name, file, error_index, count_dict):
             LOGGER.warning("Something went wrong while reading file")
         LOGGER.debug("Successfully imported %s", file)
 
-    return count_dict
-
 def product_file_reader():
     """This method will loop through and read the product_file"""
     mongo = MongoDBConnection()
@@ -128,6 +139,7 @@ def product_file_reader():
                 product.insert_one(products_dict)
         except FileNotFoundError:
             LOGGER.error("Could not find product_data.csv")
+    return products_dict
 
 def customer_file_reader():
     """This method will loop through and read the product_file"""
@@ -146,6 +158,7 @@ def customer_file_reader():
                 customer.insert_one(customer_dict)
         except FileNotFoundError:
             LOGGER.error("Could not find customer_data.csv")
+        return customer_dict
 
 def rentals_file_reader():
     """This method will loop through and read the product_file"""
@@ -164,6 +177,7 @@ def rentals_file_reader():
                 rentals.insert_one(rentals_dict)
         except FileNotFoundError:
             LOGGER.error("Could not find rentals_data.csv")
+    return rentals_dict
 
 def delete_database():
     """This method deletes the database to reset for other tests"""
@@ -176,4 +190,9 @@ def delete_database():
     LOGGER.debug("Cleared database")
 
 if __name__ == '__main__':
-    main()
+    __spec__ = "ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>)"
+
+    LOGGER.debug("Parallel program time: %s seconds", timer(
+        'import_data()', globals=globals(), number=1))
+
+    LOGGER.debug("This program's cpu usage was: %s%%", psutil.cpu_percent())

@@ -1,10 +1,13 @@
 """
-This program imports the data in exactly the same form as database.py, but in parallel
+This program imports in parallel with threading
 """
 import logging
+import threading
+from timeit import timeit as timer
 import csv
 import os
 import sys
+import psutil
 from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
@@ -36,119 +39,151 @@ class MongoDBConnection():
         """Disconnects from MongoDB"""
         self.connection.close()
 
+def main():
+    """This method runs a timer and cpu usage tracker for the program"""
+    time_taken = timer('import_data()', globals=globals(), number=1)
+    cpu_usage = psutil.cpu_percent()
+    LOGGER.debug("Parallel program time: %s seconds", time_taken)
+    LOGGER.debug("This program's cpu usage was: %s%%", cpu_usage)
+    return time_taken, cpu_usage
+
 def import_data(directory_name='csvs', product_file='product_data.csv',
                 customer_file='customer_data.csv', rentals_file='rentals_data.csv'):
-    """This function takes a directory name and three csv files and creates/populates a new
-       MongoDB database with the data. It then returns two tuples: The first contains a record
-       count of the number of products, customers and rentals added. The second contains a count
-       of any errors that occurred in products, customers, and rentals"""
+    """This method will run the full program, and return a tuple containing
+    the number of records processed (int), the record count in the database
+    prior to running (int), the record count after running (int), and the
+    time taken to run the module (float)."""
+    lock = threading.Lock()
 
+    count_dict = {}
+
+    count_dict.setdefault('product_errors', 0)
+    count_dict.setdefault('customer_errors', 0)
+    count_dict.setdefault('rentals_errors', 0)
+    count_dict.setdefault('product_count_before', 0)
+    count_dict.setdefault('customer_count_before', 0)
+    count_dict.setdefault('product_count_after', 0)
+    count_dict.setdefault('customer_count_after', 0)
+    count_dict.setdefault('product_time', 0)
+    count_dict.setdefault('product_time', 0)
+    count_dict.setdefault('customer_time', 0)
+
+    lock.acquire()
+    product_thread = threading.Thread(target=universal_import, args=(directory_name, product_file,
+                                                                     'product_errors',
+                                                                     count_dict))
+    product_thread.start()
+    lock.release()
+    lock.acquire()
+    customer_thread = threading.Thread(target=universal_import, args=(directory_name,
+                                                                      customer_file,
+                                                                      'customer_errors',
+                                                                      count_dict))
+    customer_thread.start()
+    lock.release()
+    lock.acquire()
+    rentals_thread = threading.Thread(target=universal_import, args=(directory_name, rentals_file,
+                                                                     'rentals_errors',
+                                                                     count_dict))
+    rentals_thread.start()
+    lock.release()
+
+    product_thread.join()
+    customer_thread.join()
+    rentals_thread.join()
+
+    product_tuple = (count_dict['product_count_after'] - count_dict['product_count_before'],
+                     count_dict['product_count_before'], count_dict['product_count_after'],
+                     count_dict['product_time'])
+    customer_tuple = (count_dict['customer_count_after'] - count_dict['customer_count_before'],
+                      count_dict['customer_count_before'], count_dict['customer_count_after'],
+                      count_dict['customer_time'])
+    LOGGER.debug("%s, %s", product_tuple, customer_tuple)
+    return product_tuple, customer_tuple
+
+def universal_import(directory_name, file, error_index, count_dict):
+    """This method will import any of the .csv files"""
+    LOGGER.debug("Importing %s", file)
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.rental_company
-        product_error_count = import_product_file(directory_name, product_file)
-        customer_error_count = import_customer_file(directory_name, customer_file)
-        rentals_error_count = import_rentals_file(directory_name, rentals_file)
+        try:
+            if file == 'product_data.csv':
+                for entry in database.product.find():
+                    count_dict['product_count_before'] += len(entry)
+                count_dict['product_time'] = timer('product_file_reader()',
+                                                   globals=globals(), number=1)
+                for entry in database.product.find():
+                    count_dict['product_count_after'] += len(entry)
+            elif file == 'customer_data.csv':
+                for entry in database.customer.find():
+                    count_dict['customer_count_before'] += len(entry)
+                count_dict['customer_time'] = timer('customer_file_reader()',
+                                                    globals=globals(), number=1)
+                for entry in database.customer.find():
+                    count_dict['customer_count_after'] += len(entry)
+            elif file == 'rentals_data.csv':
+                rentals_file_reader()
+        except Exception as ex:
+            count_dict[error_index] += 1
+            LOGGER.warning(ex)
+            LOGGER.warning("Something went wrong while reading file")
+        LOGGER.debug("Successfully imported %s", file)
 
-    tuple1 = (database.product.count_documents({}), database.customer.count_documents({}),
-              database.rentals.count_documents({}))
-    tuple2 = (product_error_count, customer_error_count, rentals_error_count)
-    LOGGER.debug(tuple1, tuple2)
-    return tuple1, tuple2
-        
-
-def import_product_file(directory_name, product_file):
-    """This method imports the product file"""
-    database = mongo.connection.rental_company
-    product = database["product"]
-    product_error_count = 0
-    LOGGER.debug("Importing %s", product_file)
-    try:
-        with open(os.path.join(os.path.dirname(__file__), directory_name, product_file),
-                  newline='') as products_csv:
-            product_reader = csv.DictReader(products_csv)
-            products_dict = {}
-            try:
-                for row in product_reader:
+def product_file_reader():
+    """This method will loop through and read the product_file"""
+    mongo = MongoDBConnection()
+    with mongo:
+        database = mongo.connection.rental_company
+        product = database["product"]
+        products_dict = {}
+        try:
+            with open(os.path.join(os.path.dirname(__file__), 'csvs', 'product_data.csv'),
+                      newline='') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
                     products_dict[row['id']] = {'description': row['description'],
                                                 'product_type': row['product_type'],
-                                                'quantity_available': row['quantity_available']
-                                               }
-            except Exception as ex:
-                product_error_count += 1
-                LOGGER.warning(ex)
-                LOGGER.warning("Something went wrong while reading product_file")
+                                                'quantity_available': row['quantity_available']}
+                product.insert_one(products_dict)
+        except FileNotFoundError:
+            LOGGER.error("Could not find product_data.csv")
 
-        LOGGER.debug("I imported: %s", products_dict)
-        product.insert_one(products_dict)
-        LOGGER.debug("Successfully imported %s", product_file)
+def customer_file_reader():
+    """This method will loop through and read the product_file"""
+    mongo = MongoDBConnection()
+    with mongo:
+        database = mongo.connection.rental_company
+        customer = database["customer"]
+        customer_dict = {}
+        try:
+            with open(os.path.join(os.path.dirname(__file__), 'csvs', 'customer_data.csv'),
+                      newline='') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
+                    customer_dict[row['id']] = {'name': row['name'], 'address': row['address'],
+                                                'phone_number': row['phone_number']}
+                customer.insert_one(customer_dict)
+        except FileNotFoundError:
+            LOGGER.error("Could not find customer_data.csv")
 
-    except FileNotFoundError:
-        LOGGER.error("could not find %s", product_file)
-        product_error_count += 1
-
-    return product_error_count
-
-def import_customer_file(directory_name, customer_file):
-    """This method imports the product file"""
-    database = mongo.connection.rental_company
-    customer = database["customer"]
-    LOGGER.debug("Importing %s", customer_file)
-    customer_error_count = 0
-
-    try:
-        with open(os.path.join(os.path.dirname(__file__), directory_name, customer_file),
-                  newline='') as customers_csv:
-            customer_reader = csv.DictReader(customers_csv)
-            customers_dict = {}
-            try:
-                for row in customer_reader:
-                    customers_dict[row['id']] = {'name': row['name'],
-                                                 'address': row['address'],
-                                                 'phone_number': row['phone_number']}
-            except Exception as ex:
-                customer_error_count += 1
-                LOGGER.warning(ex)
-                LOGGER.warning("Something went wrong while reading customer_file")
-        LOGGER.debug("I imported: %s", customers_dict)
-        customer.insert_one(customers_dict)
-        LOGGER.debug("Successfully imported %s", customer_file)
-
-    except FileNotFoundError:
-        LOGGER.error("could not find %s", customer_file)
-        customer_error_count += 1
-
-    return customer_error_count
-
-def import_rentals_file(directory_name, rentals_file):
-    """This method imports the product file"""
-    database = mongo.connection.rental_company
-    LOGGER.debug("Importing %s", rentals_file)
-    rentals = database["rentals"]
-    rentals_error_count = 0
-    try:
-        with open(os.path.join(os.path.dirname(__file__), directory_name, rentals_file),
-                  newline='') as rentals_csv:
-            rentals_reader = csv.DictReader(rentals_csv)
-            rentals_dict = {}
-            try:
-                for row in rentals_reader:
+def rentals_file_reader():
+    """This method will loop through and read the product_file"""
+    mongo = MongoDBConnection()
+    with mongo:
+        database = mongo.connection.rental_company
+        rentals = database["rentals"]
+        rentals_dict = {}
+        try:
+            with open(os.path.join(os.path.dirname(__file__), 'csvs', 'rentals_data.csv'),
+                      newline='') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
                     rentals_dict[row['id']] = {'name': row['name'],
                                                'rentals': row['rentals'].split()}
-            except Exception as ex:
-                rentals_error_count += 1
-                LOGGER.warning(ex)
-                LOGGER.warning("Something went wrong while reading rentals_file")
-
-        LOGGER.debug("I imported: %s", rentals_dict)
-        rentals.insert_one(rentals_dict)
-        LOGGER.debug("Successfully imported %s", rentals_file)
-
-    except FileNotFoundError:
-        LOGGER.error("could not find %s", rentals_file)
-        rentals_error_count += 1
-
-    return rentals_error_count
+                rentals.insert_one(rentals_dict)
+        except FileNotFoundError:
+            LOGGER.error("Could not find rentals_data.csv")
 
 def delete_database():
     """This method deletes the database to reset for other tests"""
@@ -159,3 +194,7 @@ def delete_database():
         database.customer.drop()
         database.rentals.drop()
     LOGGER.debug("Cleared database")
+
+if __name__ == '__main__':
+    __spec__ = "ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>)"
+    main()
