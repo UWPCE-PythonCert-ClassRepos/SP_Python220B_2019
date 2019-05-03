@@ -1,0 +1,30 @@
+Neima Schafi - Lesson07 Findings
+
+Refactored database.py twice.
+First refactor was so it ran linarly.
+Second refactor was so it ran in parallel.
+
+Each refactored code will return a list of tuples, one tuple for customer and
+one for products. Each tuple will contain 4 values:
+1. the number of records processed (int)
+2. the record count in the database prior to running (int)
+3. the record count after running (int), and the time taken to run
+the module (float).
+
+parallel.py tuples output:
+('rental', 4, 116, 120, 0.013417959213256836)
+('customers', 4, 116, 120, 0.014095783233642578)
+('products', 4, 116, 120, 0.015336990356445312)
+Run time: 0.017442941665649414
+
+linear.py tuples output:
+('product', 4, 0, 4, 0.04593491554260254),
+('customer', 4, 0, 4, 0.19017601013183594),
+('rentals', 4, 0, 4, 0.03636002540588379)
+Run time: 0.2743408679962158
+
+Conclusions:
+Based on the findings above, running the code in parallel is more
+efficient and performs faster.
+
+Run time for parallel code was 0.2569 seconds faster than in linear.
