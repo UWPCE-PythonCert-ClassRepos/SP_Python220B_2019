@@ -11,7 +11,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), 'csvs'))
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = 'create_csv.log'
+LOG_FILE = 'test.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setLevel(logging.DEBUG)
@@ -31,11 +31,23 @@ def write_csv():
         print("Successfully created the directory")
 
     LOGGER.debug("Establishing dictionaries for csv")
-    product_data = expand_product_data()
+    product_data = {'prd001': {'description': 'TV', 'product_type': 'livingroom',
+                               'quantity_available': 3},
+                    'prd002': {'description': 'Couch', 'product_type': 'livingroom',
+                               'quantity_available': 1},
+                    'prd003': {'description': 'Chair', 'product_type': 'livingroom',
+                               'quantity_available': 0}}
 
-    customer_data = expand_customer_data()
+    customer_data = {'cst001': {'name': 'Charlie', 'address': '123 Fleet Street',
+                                'phone_number': '1231234123'},
+                     'cst002': {'name': 'Andrey', 'address': '123 Jordan Street',
+                                'phone_number': '4564564567'},
+                     'cst003': {'name': 'Vijay', 'address': '123 Lake Street',
+                                'phone_number': '7987897891'}}
 
-    rentals_data = expand_rentals_data()
+    rentals_data = {'cst001': {'name': 'Charlie', 'rentals': ['prd001', 'prd002']},
+                    'cst002': {'name': 'Andrey', 'rentals': ['prd002', 'prd003']},
+                    'cst003': {'name': 'Vijay', 'rentals': ['prd001', 'prd003']}}
 
     LOGGER.debug("Writing to .csv files")
     with open(os.path.join(os.path.dirname(__file__), 'csvs', 'product_data.csv'),
@@ -73,48 +85,6 @@ def write_csv():
             rentals_writer.writerow(rentals_row)
 
     LOGGER.debug("Writing complete")
-
-def expand_product_data():
-    """This method expands the product_data to 1000 records"""
-    product_data = {'prd001': {'description': 'TV', 'product_type': 'livingroom',
-                               'quantity_available': 3},
-                    'prd002': {'description': 'Couch', 'product_type': 'livingroom',
-                               'quantity_available': 1},
-                    'prd003': {'description': 'Chair', 'product_type': 'livingroom',
-                               'quantity_available': 0}}
-    for number in range(4, 1000):
-        key = 'prd{}'.format('0'*(3-len(str(number)))+str(number))
-        product_data.setdefault(key, {'description': "something{}".format(str(number)),
-                                      'product_type': "type{}".format(str(number)),
-                                      'quantity_available': number})
-    return product_data
-
-def expand_customer_data():
-    """This method expands the customer_data to 1000 records"""
-    customer_data = {'cst001': {'name': 'Charlie', 'address': '123 Fleet Street',
-                                'phone_number': '1231234123'},
-                     'cst002': {'name': 'Andrey', 'address': '123 Jordan Street',
-                                'phone_number': '4564564567'},
-                     'cst003': {'name': 'Vijay', 'address': '123 Lake Street',
-                                'phone_number': '7987897891'}}
-
-    for number in range(4, 1000):
-        key = 'cst{}'.format('0'*(3-len(str(number)))+str(number))
-        customer_data.setdefault(key, {'name': "something{}".format(str(number)),
-                                       'address': "somewhere{}".format(str(number)),
-                                       'phone_number': str(number)})
-    return customer_data
-
-def expand_rentals_data():
-    """This method expands the rentals_data to 1000 records"""
-    rentals_data = {'cst001': {'name': 'Charlie', 'rentals': ['prd001', 'prd002']},
-                    'cst002': {'name': 'Andrey', 'rentals': ['prd002', 'prd003']},
-                    'cst003': {'name': 'Vijay', 'rentals': ['prd001', 'prd003']}}
-
-    for number in range(4, 1000):
-        key = 'cst{}'.format('0'*(3-len(str(number)))+str(number))
-        rentals_data.setdefault(key, {'name': 'Vijay', 'rentals': ['prd001', 'prd003']})
-    return rentals_data
 
 if __name__ == '__main__':
     write_csv()
