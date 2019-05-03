@@ -5,7 +5,6 @@ main, and market_prices
 """
 
 import io
-import sys
 from electric_appliances_class import *
 from furniture_class import *
 from inventory_class import *
