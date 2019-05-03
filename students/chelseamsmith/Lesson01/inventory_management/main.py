@@ -45,7 +45,7 @@ def add_new_item():
         material = input("Enter item material: ")
         size = input("Enter item size (S,M,L,XL): ")
         new_item = furniture_class.Furniture(code, description, price,
-         rental_price, material, size)
+                                             rental_price, material, size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
@@ -55,11 +55,12 @@ def add_new_item():
                                                                     rental_price, brand, voltage)
         else:
             new_item = inventory_class.Inventory(code, description, price,
-             rental_price)
+                                                 rental_price)
     FULL_INVENTORY[code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 def return_inventory():
+    """returns inventory"""
     return FULL_INVENTORY
 
 def item_info():

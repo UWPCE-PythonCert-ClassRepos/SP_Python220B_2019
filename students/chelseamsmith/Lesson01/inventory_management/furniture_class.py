@@ -7,9 +7,9 @@ class Furniture(Inventory):
     """furniture class. holds product information.
     also has method to return product info in a dictionary"""
     def __init__(self, product_code, description, market_price, rental_price,
-     material, size):
+                 material, size):
         Inventory.__init__(self, product_code, description, market_price,
-         rental_price)
+                           rental_price)
 
         self.material = material
         self.size = size
