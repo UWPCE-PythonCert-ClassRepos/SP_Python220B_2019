@@ -7,9 +7,9 @@ class ElectricAppliances(Inventory):
     """electrical appliance class. holds product information.
     also has method to return product info in a dictionary"""
     def __init__(self, product_code, description, market_price, rental_price,
-     brand, voltage):
+                 brand, voltage):
         Inventory.__init__(self, product_code, description, market_price,
-         rental_price)
+                           rental_price)
 
         self.brand = brand
         self.voltage = voltage

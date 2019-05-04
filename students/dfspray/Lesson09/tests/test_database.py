@@ -7,7 +7,7 @@ import unittest
 from src import database
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = 'test.log'
+LOG_FILE = 'test_database.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setLevel(logging.DEBUG)
