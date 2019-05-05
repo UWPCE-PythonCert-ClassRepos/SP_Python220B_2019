@@ -2,7 +2,7 @@
 contains get_latest_price module
 """
 
-
+# pylint: disable=R0903
 def get_latest_price(item_code):
     """
     :param item_code:

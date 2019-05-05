@@ -1,3 +1,4 @@
+# pylint: disable=R0903
 """ Electric appliances class"""
 from inventory_management.inventory_class import Inventory
 

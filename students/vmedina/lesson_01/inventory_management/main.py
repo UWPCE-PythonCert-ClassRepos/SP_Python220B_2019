@@ -1,4 +1,5 @@
 """ Launches the user interface for the inventory management system"""
+# pylint: disable=R0903
 import sys
 import inventory_management.market_prices as market_prices
 import inventory_management.inventory_class as inventory
