@@ -1,0 +1,47 @@
+> c:\users\lehni\documents\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 44
+Breakpoint 1 at c:\users\lehni\documents\charges_calc.py:44
+(Pdb) continue
+> c:\users\lehni\documents\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> c:\users\lehni\documents\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> c:\users\lehni\documents\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) n
+SystemExit: 0
+> c:\users\lehni\documents\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) n
+--Return--
+> c:\users\lehni\documents\charges_calc.py(46)<module>()->None
+-> data = calculate_additional_fields(data)
+(Pdb) n
+SystemExit: 0
+> <string>(1)<module>()->None
+(Pdb)
+
+-> '''
+(Pdb) b 26
+Breakpoint 1 at c:\users\lehni\documents\charges_calc.py:26
+(Pdb) continue
+> c:\users\lehni\documents\charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) b 34
+Breakpoint 2 at c:\users\lehni\documents\charges_calc.py:34
+(Pdb) continue
+> c:\users\lehni\documents\charges_calc.py(34)calculate_additional_fields()
+-> except:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'total_price': -2542,
+ 'units_rented': 8}
+(Pdb)
+
