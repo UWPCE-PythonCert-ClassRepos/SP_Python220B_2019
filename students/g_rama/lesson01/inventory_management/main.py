@@ -1,10 +1,12 @@
 """# Launches the user interface for the inventory management system"""
 import sys
-import market_prices
-import inventory_class
-import furniture_class
-import electric_appliances_class
+import market_prices # pylint: disable=import-error
+import inventory_class # pylint: disable=import-error
+import furniture_class # pylint: disable=import-error
+import electric_appliances_class # pylint: disable=import-error
 
+
+FULL_INVENTORY = {}
 
 def main_menu(user_prompt=None):
     """Main function"""
@@ -25,12 +27,12 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Function to get the price of item code"""
-    print("Get price")
+    print(f"Get price {item_code}")
 
 
 def add_new_iem():
     """Function to add the new item"""
-    global FULL_INVENTORY
+    #global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -65,8 +67,8 @@ def item_info():
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
         print_dict = FULL_INVENTORY[item_code]
-        for k, v in print_dict.items():
-            print("{}:{}".format(k, v))
+        for key, value in print_dict.items():
+            print("{}:{}".format(key, value))
     else:
         print("Item not found in inventory")
 
@@ -77,7 +79,7 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
+
     while True:
         print(FULL_INVENTORY)
         main_menu()()

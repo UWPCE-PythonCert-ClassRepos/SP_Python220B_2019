@@ -1,12 +1,13 @@
 """# Furniture class"""
-from inventory_class import Inventory
+from inventory_class import Inventory # pylint: disable=import-error
 
 
-class Furniture(Inventory):
+class Furniture(Inventory): # pylint: disable=too-few-public-methods
 
     """Furniture class to store the furniture data """
 
     def __init__(self, product_code, description, market_price, rental_price, material, size):
+        # pylint: disable=too-many-arguments
         Inventory.__init__(self, product_code, description, market_price, rental_price)
         # Creates common instance variables from the parent class
 
