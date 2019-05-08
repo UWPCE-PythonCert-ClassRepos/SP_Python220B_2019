@@ -1,0 +1,14 @@
+Notes:
+- I didn't find an existing file for database.py to analyze or add to, so I refactored my 'linear.py' method from previous lessons
+  to be conducive to metaprogramming and timing information. 'unobstructive_timing_method' is added to the ImportData class in
+  both the __name__ == '__main__' block and in the test_database.py file.
+
+- Because I just rewrote my method for importing the data, the code itself didn't create much timing variation when importing the data
+
+
+Observations:
+- The time appears to scale linearly with the number of records as expected
+
+- Product files took longer than Customer files to import just based on the size of each record
+
+- The Rentals files took the longest to import because of the '.split()' function
