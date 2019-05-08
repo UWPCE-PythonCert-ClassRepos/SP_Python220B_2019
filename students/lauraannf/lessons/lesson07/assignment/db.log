@@ -1,0 +1,22 @@
+2019-05-07 21:48:25,374 database.py:66  WARNING [Errno 2] No such file or directory: 'csvfiles/customers.csv'
+2019-05-07 21:48:25,374 database.py:66  WARNING [Errno 2] No such file or directory: 'csvfiles/customers.csv'
+2019-05-07 21:48:25,375 database.py:67  WARNING error when opening customer file
+2019-05-07 21:48:25,375 database.py:67  WARNING error when opening customer file
+2019-05-07 21:48:25,376 database.py:84  WARNING [Errno 2] No such file or directory: 'csvfiles/inventory.csv'
+2019-05-07 21:48:25,376 database.py:84  WARNING [Errno 2] No such file or directory: 'csvfiles/inventory.csv'
+2019-05-07 21:48:25,376 database.py:85  WARNING error when opening product file
+2019-05-07 21:48:25,376 database.py:85  WARNING error when opening product file
+2019-05-07 21:48:25,376 database.py:103 WARNING [Errno 2] No such file or directory: 'csvfiles/rental.csv'
+2019-05-07 21:48:25,376 database.py:103 WARNING [Errno 2] No such file or directory: 'csvfiles/rental.csv'
+2019-05-07 21:48:25,377 database.py:104 WARNING error when opening rental file
+2019-05-07 21:48:25,377 database.py:104 WARNING error when opening rental file
+2019-05-07 21:51:04,885 database.py:66  WARNING [Errno 2] No such file or directory: 'csvfiles/customers.csv'
+2019-05-07 21:51:04,886 database.py:67  WARNING error when opening customer file
+2019-05-07 21:51:04,886 database.py:84  WARNING [Errno 2] No such file or directory: 'csvfiles/inventory.csv'
+2019-05-07 21:51:04,886 database.py:85  WARNING error when opening product file
+2019-05-07 21:51:04,887 database.py:103 WARNING [Errno 2] No such file or directory: 'csvfiles/rental.csv'
+2019-05-07 21:51:04,887 database.py:104 WARNING error when opening rental file
+2019-05-07 22:41:53,650 test:72  WARNING [Errno 2] No such file or directory: 'csvfiles/products.csv'
+2019-05-07 22:41:53,654 test:73  WARNING error when opening product file
+2019-05-07 22:41:53,662 test:147 WARNING [Errno 2] No such file or directory: 'csvfiles/rentals.csv'
+2019-05-07 22:41:53,664 test:148 WARNING error when opening rental file
