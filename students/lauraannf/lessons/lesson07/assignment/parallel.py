@@ -10,6 +10,8 @@ import csv
 import os
 import logging
 import time
+from threading import Thread
+from queue import Queue
 from pymongo import MongoClient
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
@@ -35,7 +37,7 @@ class MongoDBConnection(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
-def import_products(directory_name, product_file):
+def import_products(directory_name, product_file, queue):
     """imports data from csv files and puts in database"""
     start_p = time.clock()
     mongo = MongoDBConnection()
@@ -65,10 +67,10 @@ def import_products(directory_name, product_file):
 
         product_count_new = database.products.count_documents({})
 
-        return(product_count_new - product_count_orig, product_count_orig,
-               product_count_new, time.clock() - start_p)
+        queue.put((product_count_new - product_count_orig, product_count_orig,
+               product_count_new, time.clock() - start_p))
 
-def import_customers(directory_name, customer_file):
+def import_customers(directory_name, customer_file, queue):
     """imports data from csv files and puts in database"""
     start_c = time.clock()
     mongo = MongoDBConnection()
@@ -100,10 +102,10 @@ def import_customers(directory_name, customer_file):
             LOGGER.warning('error when opening customer file')
         customer_count_new = database.customers.count_documents({})
 
-        return(customer_count_new - customer_count_orig, customer_count_orig,
-               customer_count_new, time.clock() - start_c)
+        queue.put((customer_count_new - customer_count_orig, customer_count_orig,
+               customer_count_new, time.clock() - start_c))
 
-def import_rentals(directory_name, rental_file):
+def import_rentals(directory_name, rental_file, queue):
     """imports data from csv files and puts in database"""
     start_r = time.clock()
     mongo = MongoDBConnection()
@@ -133,8 +135,9 @@ def import_rentals(directory_name, rental_file):
             LOGGER.warning('error when opening rental file')
         rental_count_new = database.rentals.count_documents({})
 
-        return(rental_count_new - rental_count_orig, rental_count_orig,
-               rental_count_new, time.clock() - start_r)
+        queue.put((rental_count_new - rental_count_orig, rental_count_orig,
+               rental_count_new, time.clock() - start_r))
+
 
 def delete_database():
     """deletes database to start fresh"""
@@ -154,22 +157,15 @@ def delete_database():
 
 
 if __name__ == "__main__":
-#    MONGO_RESTART = MongoDBConnection()
-#    with MONGO_RESTART:
-#        DATABASE_RESTART = MONGO_RESTART.connection.HPNorton
-#        delete_database()
-#    START_C = time.clock()
     start = time.clock()
-    CUSTOMER_COUNT = import_customers('csvfiles', 'customers.csv')
-#    CUSTOMER_COUNT += (time.clock() - START_C, )
-
-#    START_P = time.clock()
-    PRODUCT_COUNT = import_products('csvfiles', 'inventory.csv')
-#    PRODUCT_COUNT += (time.clock() - START_P, )
-
-#    START_R = time.clock()
-    RENTAL_COUNT = import_rentals('csvfiles', 'rental.csv')
-#    RENTAL_COUNT += (time.clock() - START_C, )
+    queue = Queue()
+    queue_results = []
+    threads = [Thread(target=import_products, args=('csvfiles','inventory.csv', queue)),
+               Thread(target=import_customers, args=('csvfiles', 'customers.csv', queue)), 
+               Thread(target=import_rentals, args=('csvfiles', 'rental.csv', queue ))]
+    for thread in threads:
+        thread.start()
+        queue_results.append(queue.get())
     end = time.clock() - start
-    print(PRODUCT_COUNT, CUSTOMER_COUNT)
     print('Total Time = {}s'.format(end))
+    print(queue_results)

@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May  9 14:19:48 2019
+
+@author: lauraannf
+"""
+import csv
+import os
+import logging
+import time
+from queue import Queue
+from threading import Thread
+
+
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+FORMATTER = logging.Formatter(LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler('db.log')
+FILE_HANDLER.setFormatter(FORMATTER)
+LOGGER = logging.getLogger()
+LOGGER.addHandler(FILE_HANDLER)
+LOGGER.setLevel(logging.DEBUG)
+
+class MongoDBConnection(object):
+    "MongoDB Connection"""
+    def __init__(self, host='127.0.0.1', port=27017):
+        """ be sure to use the ip address not name for local windows"""
+        self.host = host
+        self.port = port
+        self.connection = None
+
+    def __enter__(self):
+        self.connection = MongoClient(self.host, self.port)
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.connection.close()
