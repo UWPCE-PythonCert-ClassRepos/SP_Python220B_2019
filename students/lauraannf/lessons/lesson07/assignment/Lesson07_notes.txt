@@ -1,5 +1,8 @@
 Lesson 7
 
-linear.py :
+linear.py results:
+(96, 4, 100, 0.017842999999999165) (19, 5, 24, 0.010475000000001344)
+
+creating parallel.py:
     
     

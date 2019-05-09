@@ -6,14 +6,6 @@ Created on Tue May  7 22:41:13 2019
 @author: lauraannf
 """
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May  7 22:00:11 2019
-
-@author: lauraannf
-"""
-
 import csv
 import os
 import logging
@@ -46,11 +38,10 @@ class MongoDBConnection(object):
 def import_products(directory_name, product_file):
     """imports data from csv files and puts in database"""
     mongo = MongoDBConnection()
-    product_error = 0
-    
+
     with mongo:
         database = mongo.connection.HPNorton
-
+        product_count_orig = database.products.count_documents({})
         products = database["products"]
         product_list = []
 
@@ -67,28 +58,25 @@ def import_products(directory_name, product_file):
                     products.insert_many(product_list)
                 except Exception as ex:
                     LOGGER.warning(ex)
-                    product_error += 1
         except Exception as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening product file')
-            product_error += 1
-    
-        if product_error > 0:
-            product_count = 0
-        else:
-            product_count = len(product_list)
-        return(product_count, product_error)
+
+        product_count_new = database.products.count_documents({})
+
+        return(product_count_new - product_count_orig, product_count_orig,
+               product_count_new)
 
 def import_customers(directory_name, customer_file):
     """imports data from csv files and puts in database"""
     mongo = MongoDBConnection()
-    customer_error = 0
     with mongo:
         database = mongo.connection.HPNorton
+        customer_count_orig = database.customers.count_documents({})
 
         customers = database["customers"]
         customer_list = []
-        
+
         try:
             with open(os.path.join(directory_name, customer_file)) as customer_csv:
                 csv_reader = csv.DictReader(customer_csv)
@@ -105,29 +93,24 @@ def import_customers(directory_name, customer_file):
                     customers.insert_many(customer_list)
                 except Exception as ex:
                     LOGGER.warning(ex)
-                    customer_error += 1
         except Exception as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening customer file')
-            customer_error += 1
-        
-        if customer_error > 0:
-            customer_count = 0
-        else:
-            customer_count = len(customer_list)
+        customer_count_new = database.customers.count_documents({})
 
-        return(customer_count, customer_error)
+        return(customer_count_new - customer_count_orig, customer_count_orig,
+               customer_count_new)
 
 def import_rentals(directory_name, rental_file):
     """imports data from csv files and puts in database"""
     mongo = MongoDBConnection()
-    rental_error = 0
 
     with mongo:
         database = mongo.connection.HPNorton
+        rental_count_orig = database.rentals.count_documents({})
         rentals = database["rentals"]
         rental_list = []
-    
+
         try:
             with open(os.path.join(directory_name, rental_file)) as rental_csv:
                 csv_reader = csv.DictReader(rental_csv)
@@ -142,17 +125,13 @@ def import_rentals(directory_name, rental_file):
                     rentals.insert_many(rental_list)
                 except Exception as ex:
                     LOGGER.warning(ex)
-                    rental_error += 1
         except Exception as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening rental file')
-            rental_error += 1
+        rental_count_new = database.rentals.count_documents({})
 
-        if rental_error > 0:
-            rental_count = 0
-        else:
-            rental_count = len(rental_list)
-        return(rental_count, rental_error)
+        return(rental_count_new - rental_count_orig, rental_count_orig,
+               rental_count_new)
 
 
 def delete_database():
@@ -173,11 +152,20 @@ def delete_database():
 
 
 if __name__ == "__main__":
-    MONGO_RESTART = MongoDBConnection()
-    with MONGO_RESTART:
-        DATABASE_RESTART = MONGO_RESTART.connection.HPNorton
-        delete_database()
-    START_ALL = time.clock()
-    CUSTOMER_COUNT= import_customers('csvfiles', 'customers.csv')
-    CUSTOMER_COUNT= import_products('csvfiles', 'inventory.csv')
-    CUSTOMER_COUNT= import_rentals('csvfiles', 'rental.csv')
+#    MONGO_RESTART = MongoDBConnection()
+#    with MONGO_RESTART:
+#        DATABASE_RESTART = MONGO_RESTART.connection.HPNorton
+#        delete_database()
+    START_C = time.clock()
+    CUSTOMER_COUNT = import_customers('csvfiles', 'customers.csv')
+    CUSTOMER_COUNT += (time.clock() - START_C, )
+
+    START_P = time.clock()
+    PRODUCT_COUNT = import_products('csvfiles', 'inventory.csv')
+    PRODUCT_COUNT += (time.clock() - START_P, )
+
+    START_R = time.clock()
+    RENTAL_COUNT = import_rentals('csvfiles', 'rental.csv')
+    RENTAL_COUNT += (time.clock() - START_C, )
+
+    print(CUSTOMER_COUNT, PRODUCT_COUNT)
