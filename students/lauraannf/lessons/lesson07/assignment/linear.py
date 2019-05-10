@@ -154,22 +154,10 @@ def delete_database():
 
 
 if __name__ == "__main__":
-#    MONGO_RESTART = MongoDBConnection()
-#    with MONGO_RESTART:
-#        DATABASE_RESTART = MONGO_RESTART.connection.HPNorton
-#        delete_database()
-#    START_C = time.clock()
     start = time.clock()
     CUSTOMER_COUNT = import_customers('csvfiles', 'customers.csv')
-#    CUSTOMER_COUNT += (time.clock() - START_C, )
-
-#    START_P = time.clock()
     PRODUCT_COUNT = import_products('csvfiles', 'inventory.csv')
-#    PRODUCT_COUNT += (time.clock() - START_P, )
-
-#    START_R = time.clock()
     RENTAL_COUNT = import_rentals('csvfiles', 'rental.csv')
-#    RENTAL_COUNT += (time.clock() - START_C, )
     end = time.clock() - start
     print(PRODUCT_COUNT, CUSTOMER_COUNT)
     print('Total Time = {}s'.format(end))
