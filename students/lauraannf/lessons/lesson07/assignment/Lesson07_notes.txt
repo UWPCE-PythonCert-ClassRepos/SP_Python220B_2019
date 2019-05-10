@@ -22,3 +22,7 @@ Total Time = 0.10250300000000045s
 I don't really save much time here. Is this because they are such short times to begin 
 with or is my code inefficient?
 
+Failure from contention:
+
+One place that it could fail is when it produces the tuples, it might put whichever one takes less time first, and then I wouldn't know which was which.
+So I could add a lock so that the queue only updates in the right order. I'm not sure how to do that for the way I've written the code.
