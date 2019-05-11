@@ -51,11 +51,11 @@ def add_new_item():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = electric_appliances_class.electricAppliances(item_code, item_description,
+            new_item = electric_appliances_class.ElectricAppliances(item_code, item_description,
                                                                     item_price, item_rental_price,
                                                                     item_brand, item_voltage)
         else:
-            new_item = inventory_class.inventory(item_code, item_description,
+            new_item = inventory_class.Inventory(item_code, item_description,
                                                  item_price, item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
