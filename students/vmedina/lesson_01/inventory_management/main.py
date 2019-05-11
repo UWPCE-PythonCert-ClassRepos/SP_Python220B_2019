@@ -5,7 +5,7 @@ import inventory_management.market_prices as market_prices
 import inventory_management.inventory_class as inventory
 import inventory_management.furniture_class as furniture
 import inventory_management.electric_appliances_class as electricappliances
-
+# pylint: disable=unused-variable
 FULL_INVENTORY = {}
 
 
@@ -47,7 +47,7 @@ def add_new_item():
     :return:
     :rtype:
     """
-    global FULL_INVENTORY
+    #global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
