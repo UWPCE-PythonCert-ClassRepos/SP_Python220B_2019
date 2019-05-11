@@ -1,15 +1,21 @@
 import sys
-import unittest
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama'
                 '/lesson01/inventory_management')
 from unittest import TestCase, mock
+from unittest.mock import patch
+import unittest
 import pytest
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management.inventory_class import Inventory
+import market_prices
+import main
 
 
 class TestInventory(unittest.TestCase):
+    """
+    Testing
+    """
     def testInventory(self):
         test_inventory = Inventory(1, "dining_table_description", 400, 50)
         assert test_inventory.product_code == 1
@@ -24,6 +30,9 @@ class TestInventory(unittest.TestCase):
 
 
 class TestElectricAppliances(unittest.TestCase):
+    """
+    Testing ElectricAppliances class
+    """
     def testElectricAppliances(self):
         test_electric_app = ElectricAppliances(1, "refregirator_description", 400, 50,
                                                "samsung", "110v")
@@ -41,6 +50,9 @@ class TestElectricAppliances(unittest.TestCase):
 
 
 class TestFurniture(unittest.TestCase):
+    """
+    Testing Furniture class
+    """
     def testFurniture(self):
         test_furniture = Furniture(1, "dining_table_description", 400, 50, "glass", "L")
         assert test_furniture.product_code == 1
@@ -56,6 +68,33 @@ class TestFurniture(unittest.TestCase):
         self.assertDictEqual(test_actualoutput, test_expectedoutput)
 
 
+class TestMarketPrices(unittest.TestCase):
+    """
+    Testing market_prices class
+    """
+    def test_get_latest_price(self):
+        test_actual_item_code = market_prices.get_latest_price("item_code")
+        test_expected_item_code = 24
+        assert test_actual_item_code == test_expected_item_code
+
+
+class TestMain(unittest.TestCase):
+    """Testing of the main class"""
+
+    def test_add_new_item(self):
+        test_furniture_data = [1, 'dining_table_description', 50, 'y', 'glass', 'L']
+        # test_electric_data = [1, "refregirator_description", 400, 50,
+        #                       "samsung", "110v"]
+        # test_inventory_data = [1, "dining_table_description", 400, 50]
+        with patch('builtins.input', side_effect=test_furniture_data):
+            main.add_new_item()
+            print("ramakanth")
+            print(main.FULL_INVENTORY[test_furniture_data[0]])
+            test_furniture_data_values = main.FULL_INVENTORY[test_furniture_data[0]]
+
+        test_expected_furniture_data = {'product_code': 1, 'description': 'dining_table_description',
+                                        'market_price': 24, 'rental_price': 50, 'material': 'glass', 'size': 'L'}
+        self.assertDictEqual(test_furniture_data_values, test_expected_furniture_data)
 
 
 

@@ -10,7 +10,7 @@ FULL_INVENTORY = {}
 
 def main_menu(user_prompt=None):
     """Main function"""
-    valid_prompts = {"1": add_new_iem,
+    valid_prompts = {"1": add_new_item,
                      "2": item_info,
                      "q": exit_program}
     options = list(valid_prompts.keys())
@@ -30,7 +30,7 @@ def get_price(item_code):
     print(f"Get price {item_code}")
 
 
-def add_new_iem():
+def add_new_item():
     """Function to add the new item"""
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
@@ -43,7 +43,7 @@ def add_new_iem():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.furniture(item_code, item_description, item_price,
+        new_item = furniture_class.Furniture(item_code, item_description, item_price,
                                              item_rental_price, item_material,
                                              item_size)
     else:
@@ -57,7 +57,7 @@ def add_new_iem():
         else:
             new_item = inventory_class.inventory(item_code, item_description,
                                                  item_price, item_rental_price)
-    FULL_INVENTORY[item_code] = new_item.returnAsDictionary()
+    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 
