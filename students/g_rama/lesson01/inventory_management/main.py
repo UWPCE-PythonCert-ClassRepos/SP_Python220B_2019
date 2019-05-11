@@ -5,8 +5,8 @@ import inventory_class # pylint: disable=import-error
 import furniture_class # pylint: disable=import-error
 import electric_appliances_class # pylint: disable=import-error
 
-
 FULL_INVENTORY = {}
+
 
 def main_menu(user_prompt=None):
     """Main function"""
@@ -32,7 +32,6 @@ def get_price(item_code):
 
 def add_new_iem():
     """Function to add the new item"""
-    #global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -79,6 +78,8 @@ def exit_program():
 
 
 if __name__ == '__main__':
+
+    FULL_INVENTORY = {}
 
     while True:
         print(FULL_INVENTORY)

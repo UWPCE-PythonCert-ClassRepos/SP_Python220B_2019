@@ -1,7 +1,7 @@
 """# Inventory class"""
 
 
-class Inventory: # pylint: disable=too-few-public-methods
+class Inventory:  # pylint: disable=too-few-public-methods
 
     """Inventory class to store inventory data"""
 
