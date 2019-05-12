@@ -45,3 +45,116 @@ Breakpoint 2 at c:\users\lehni\documents\charges_calc.py:34
  'units_rented': 8}
 (Pdb)
 
+$ python -m pdb charges_calc.py -i wrong.json -o output.json -d 4
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(3)<module>()
+-> """
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(8)<module>()
+-> import logging
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(11)<module>()
+-> def init_logger(level):
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(55)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(67)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(79)<module>()
+-> def calculate_additional_fields(update_data):
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(110)<module>()
+-> def save_to_json(filename, input_data):
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(116)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(117)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(118)<module>()
+-> init_logger(args.debug)
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(119)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) s
+--Call--
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(67)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(69)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+FileNotFoundError: [Errno 2] No such file or directory: 'wrong.json'
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(69)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+--Return--
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(69)load_rentals_file()->None
+-> with open(filename) as file:
+(Pdb) n
+FileNotFoundError: [Errno 2] No such file or directory: 'wrong.json'
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(119)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+--Return--
+> c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\charge
+s_calc.py(119)<module>()->None
+-> data = load_rentals_file(args.input)
+(Pdb) n
+FileNotFoundError: [Errno 2] No such file or directory: 'wrong.json'
+> <string>(1)<module>()->None
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+(Pdb) n
+Traceback (most recent call last):
+  File "C:\Users\lehni\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1697, in main
+    pdb._runscript(mainpyfile)
+  File "C:\Users\lehni\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1566, in _runscript
+    self.run(statement)
+  File "C:\Users\lehni\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\
+charges_calc.py", line 119, in <module>
+    data = load_rentals_file(args.input)
+  File "c:\users\lehni\documents\education\uw\python220\students\kyle_lehning\lesson02\assignment\code\
+charges_calc.py", line 69, in load_rentals_file
+    with open(filename) as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'wrong.json'
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
