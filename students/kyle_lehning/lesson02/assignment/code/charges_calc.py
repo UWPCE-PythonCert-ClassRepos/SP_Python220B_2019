@@ -64,7 +64,10 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
-    """Open passed filename and use json.load to read to read_data object and return it"""
+    """
+    Open passed filename and use json.load to read to read_data object and return it
+    Critical error is logged and program exited if file not found or incorrect value
+    """
     try:
         with open(filename) as file:
             read_data = json.load(file)
@@ -83,6 +86,8 @@ def calculate_additional_fields(update_data):
     """
     Receive update_data and go through each value within update_data and update fields
     within the dictionary then return update_data with updated value fields
+    Warning is logged if date can't be used and other fields aren't calculated
+    Error is logged if total days is 0 or negative during calculation
     """
     for key, value in update_data.items():
         try:
