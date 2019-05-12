@@ -60,10 +60,10 @@ class MainTests(unittest.TestCase):
         with self.assertRaises(SystemExit):
             inventory_management.main.exit_program()
 
-    def test_add_new_item(self):
+    def test_add_new_furniture(self):
         furniture = ['780', 'table', '300', 'y', 'wood', 'L']
         with patch('builtins.input', side_effect=furniture):
-            inventory_management.main.add_new_item()
+            output = inventory_management.main.add_new_item()
         self.assertEqual(inventory_management.main.inventory_specs()['780'], {'productCode': '780',
                                                                               'description': 'table',
                                                                               'marketPrice': 24,
@@ -71,19 +71,43 @@ class MainTests(unittest.TestCase):
                                                                               'material': 'wood',
                                                                               'size': 'L'})
 
-        electric_appliance = ['800', 'computer', '500', '400', 'n', 'y', 'Dell', '50']
+    def test_add_new_electric(self):
+        electric_appliance = ['800', 'computer', '500', 'n', 'y', 'Dell', '50']
         with patch('builtins.input', side_effect=electric_appliance):
             inventory_management.main.add_new_item()
+        print('hey')
+        print(inventory_management.main.FULL_INVENTORY)
+        print('hey')
         self.assertEqual(inventory_management.main.inventory_specs()['800'], {'productCode': '800',
                                                                               'description': 'computer',
                                                                               'marketPrice': 24,
-                                                                              'rentalPrice': '500'})
+                                                                              'rentalPrice': '500',
+                                                                              'brand': 'Dell',
+                                                                              'voltage': '50'})
 
-    def test_main_menu(self):
+    def test_add_new_item(self):
+        item = ['1000', 'pencil', '500', 'n', 'n']
+        with patch('builtins.input', side_effect=item):
+            inventory_management.main.add_new_item()
+        print('hey')
+        print(inventory_management.main.FULL_INVENTORY)
+        print('hey')
+        self.assertEqual(inventory_management.main.inventory_specs()['1000'], {'productCode': '1000',
+                                                                               'description': 'pencil',
+                                                                               'marketPrice': 24,
+                                                                               'rentalPrice': '500'})
+
+    def test_main_menu_1(self):
         with patch('builtins.input', side_effect=['1']):
             output = inventory_management.main.main_menu()
 
         self.assertEqual(output.__name__, 'add_new_item')
+
+    def test_main_menu_2(self):
+        with patch('builtins.input', side_effect=['2']):
+            output = inventory_management.main.main_menu()
+
+        self.assertEqual(output.__name__, 'item_info')
 
     def test_get_price(self):
         self.assertEqual(inventory_management.main.get_price(6980), 24)
@@ -96,6 +120,17 @@ class MainTests(unittest.TestCase):
         with patch('builtins.input', side_effect=['1']):
             output = inventory_management.main.item_info()
         self.assertEqual(None, output)
+
+        furniture = ['780', 'table', '300', 'y', 'wood', 'L']
+        with patch('builtins.input', side_effect=furniture):
+            inventory_management.main.add_new_item()
+
+        with patch('builtins.input', side_effect=['780']):
+            output = inventory_management.main.item_info()
+        print('hey')
+        print(output)
+        print('hey')
+        # self.assertEqual(output,)
 
     def test_inventory_specs(self):
         furniture2 = ['999', 'table', '300', 'y', 'wood', 'L']
