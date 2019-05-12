@@ -118,9 +118,9 @@ class TestMain(unittest.TestCase):
                                        'market_price': 24, 'rental_price': 400}
         self.assertDictEqual(test_inventory_data_values, test_expected_inventory_data)
 
-    def test_item_info(self):
-        test_FULL_INVENTORY = {1, {'product_code': 1, 'description': 'refregirator_description',
-                                   'market_price': 24, 'rental_price': 400, 'brand': 'samsung', 'voltage': '110v'}}
+    # def test_item_info(self):
+    #     test_FULL_INVENTORY = {1, {'product_code': 1, 'description': 'refregirator_description',
+    #                                'market_price': 24, 'rental_price': 400, 'brand': 'samsung', 'voltage': '110v'}}
 
 
 
