@@ -3,14 +3,13 @@ import csv
 from functools import partial
 #pylint: disable=E0602, W0613, C0103
 
-def add_furniture(invoice_file='', customer_name='', item_code='',
-                  item_description='', item_monthly_price=''):
+def add_furniture(*args):
     """Adds furniture with given user inputs to invoice_file.csv"""
-
-    with open(invoice_file, "a+", newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        row = customer_name, item_code, item_description, item_monthly_price
-        csvwriter.writerow(row)
+    if args:
+        with open(args[0], "a+", newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            row = args[1], args[2], args[3], args[4]
+            csvwriter.writerow(row)
 
 def start_data():
     """Adds initial data to invoice_file.csv"""
@@ -18,6 +17,7 @@ def start_data():
     add_furniture('invoice_file.csv', 'ABSIV', 'LL999', 'Horse', 25.00)
     add_furniture('invoice_file.csv', 'Rob Crow', 'MN1234', 'Post Malone Album',
                   10.00)
+    add_furniture()
 
 def single_customer(customer_name, invoice_file):
     """Returns a new function (with a fixed customer name and destination
@@ -26,11 +26,9 @@ def single_customer(customer_name, invoice_file):
     def inner(rental_items):
         with open(rental_items) as csvfile:
             csvreader = csv.reader(csvfile)
-            add_item = partial(add_furniture, invoice_file=invoice_file,
-                               customer_name=customer_name)
+            add_item = partial(add_furniture, invoice_file, customer_name)
             for row in csvreader:
-                add_item(item_code=row[0], item_description=row[1],
-                         item_monthly_price=row[2])
+                add_item(row[0], row[1], row[2])
     return inner
 
 if __name__ == "__main__":
