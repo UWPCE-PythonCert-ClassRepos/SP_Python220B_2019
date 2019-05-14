@@ -1,0 +1,20 @@
+I.
+poor code:
+if lrow[5] > '00/00/2012':
+   new_ones.append((lrow[5], lrow[0]))
+good code:
+uses dictionary to increment the year counter.
+
+II.
+poor code:
+Opens csv two times.
+
+good code:
+Opens csv only one time.
+
+III.
+poor code:
+Uses several print statements
+
+good code:
+Instead writes to the lod, which is much faster.
