@@ -1,6 +1,8 @@
 """ Inventory class"""
-
-
+# pylint: disable=R0903
+# pylint: disable=R0801
+# pylint:disable=duplicate-code
+# pylint:disable=duplicate-code
 class Inventory:
     "Invetory class definiton"
     def __init__(self, product_code, description, market_price, rental_price):
