@@ -1,21 +1,15 @@
-""" Inventory class"""
-# pylint: disable=R0903
-# pylint: disable=R0801
-# pylint:disable=duplicate-code
-# pylint:disable=duplicate-code
+"""
+Inventory Module
+"""
+# pylint: disable=too-many-arguments,too-few-public-methods
+
+
 class Inventory:
-    "Invetory class definiton"
+    """ Inventory class """
+
     def __init__(self, product_code, description, market_price, rental_price):
         """
-
-        :param product_code:
-        :type product_code:
-        :param description:
-        :type description:
-        :param market_price:
-        :type market_price:
-        :param rental_price:
-        :type rental_price:
+        class construction
         """
         self.product_code = product_code
         self.description = description
@@ -24,11 +18,12 @@ class Inventory:
 
     def return_as_dictionary(self):
         """
-        :returns dictionary
+        function to return an inventory dictionary
         """
         output_dict = {}
         output_dict['productCode'] = self.product_code
         output_dict['description'] = self.description
         output_dict['marketPrice'] = self.market_price
         output_dict['rentalPrice'] = self.rental_price
+
         return output_dict
