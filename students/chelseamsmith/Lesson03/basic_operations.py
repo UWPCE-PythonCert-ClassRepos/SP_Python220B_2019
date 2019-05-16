@@ -4,9 +4,6 @@ from peewee import *
 from customer_model import *
 
 
-db.init('customers.db')
-db.create_tables([Customer])
-
 def add_customer(cust_id, firstname, lastname, address, phone, email, is_active, credit):
     """adds a new customer to the database"""
     new_customer = Customer.create(customer_id=cust_id,
@@ -52,3 +49,7 @@ def list_active_customers():
     """returns the number of customers whose status equals True"""
     number_active_customers = Customer.select().where(Customer.status).count()
     return number_active_customers
+
+if __name__ == "__main__":
+    DB.init('customers.db')
+    DB.create_tables([Customer])
