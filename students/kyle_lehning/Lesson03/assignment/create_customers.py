@@ -7,9 +7,9 @@ from customer_schema import *
 
 def create_tables():
     """Helper function to create tables in database"""
-    with db:
-        db.create_tables([Customer])
-    db.close()
+    with DB:
+        DB.create_tables([Customer])
+    DB.close()
 
 
 if __name__ == '__main__':

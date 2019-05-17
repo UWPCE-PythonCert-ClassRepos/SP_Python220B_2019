@@ -4,9 +4,9 @@ Schema for defining a customer for HP Norton Furniture
 """
 from peewee import *
 
-db = SqliteDatabase('customers.db')  # Set name of SqliteDatabase
-db.connect()  # Connect to the database
-db.execute_sql('PRAGMA foreign_keys = ON;')  # needed for sqlite only. See part 2 video
+DB = SqliteDatabase('customers.db')  # Set name of SqliteDatabase
+DB.connect()  # Connect to the database
+DB.execute_sql('PRAGMA foreign_keys = ON;')  # needed for sqlite only. See part 2 video
 
 
 class BaseModel(Model):
@@ -15,7 +15,7 @@ class BaseModel(Model):
     """
     class Meta:
         """Meta class provides info passed on to each implementation of BaseModel"""
-        database = db
+        database = DB
 
 
 class Customer(BaseModel):
