@@ -17,9 +17,9 @@ console_handler.setFormatter(formatter)
 logger = logging.getLogger()
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.DEBUG)
 file_handler.setLevel(logging.WARNING)
-console_handler.setLevel(logging.WARNING)
+console_handler.setLevel(logging.DEBUG)
 
 
 def add_customer(customer_id, name, lastname, home_address, phone_number,
@@ -39,8 +39,17 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
             credit_limit=credit_limit
         )
         new_customer.save()
-    except peewee.IntegrityError:
-        logger.warning("Tried to add a customer_id that already exists")
+    except peewee.IntegrityError as e:
+        if 'unique' in str(e).lower():
+            logger.warning('Tried to add a customer_id that already exists: {}'.format(customer_id))
+            raise Exception('Tried to add a customer_id that already exists: {}'.format(customer_id))
+        elif 'check' in str(e).lower():
+            logger.warning('Missing a field: {}'.format(str(e)))
+            raise Exception('Missing a field: {}'.format(str(e)))
+        logger.debug("UNHANDLED INTEGRITY")
+    except Exception as Ex:
+        logger.debug('Next exception: {}'.format(str(Ex)))
+        return Ex
 
 
 def search_customer(customer_id):

@@ -29,6 +29,5 @@ class Customer(BaseModel):
     phone_number = CharField(max_length=15)
     email_address = CharField(max_length=254)
     status = BooleanField()
-    credit_limit = DecimalField(decimal_places=2, constraints=[Check('credit_limit < 100000'),
-                                                               Check('credit_limit > 0')])
+    credit_limit = DecimalField(decimal_places=2)
 

@@ -36,6 +36,26 @@ class BasicOperationsTest(TestCase):
                      'phone_number': '5558468665', 'email_address': 'TimToolManTaylor@ToolTime.com',
                      'status': True, 'credit_limit': 10000.00}
         add_customer(**test_user)
-        # add_customer(**test_user)
+
         db_query = Customer.get_by_id('1255')
-        self.assertEqual(db_query.name, test_user['name'])
+        self.assertEqual(db_query.customer_id, test_user['customer_id'])
+        self.assertEqual(db_query.lastname, test_user['lastname'])
+        self.assertEqual(db_query.home_address, test_user['home_address'])
+        self.assertEqual(db_query.phone_number, test_user['phone_number'])
+        self.assertEqual(db_query.email_address, test_user['email_address'])
+        self.assertEqual(db_query.status, test_user['status'])
+        self.assertEqual(db_query.credit_limit, test_user['credit_limit'])
+
+        with self.assertRaises(Exception) as context:
+            add_customer(**test_user)
+        self.assertTrue('Tried to add a customer_id that already exists:'
+                        in str(context.exception))
+
+        long_number_user = {'customer_id': '1245', 'name': 'Tim', 'lastname': 'Allen',
+                            'home_address': "15402 W 8 Mile Rd, Detroit, MI 48219",
+                            'phone_number': '55584686654433443434344343434334343',
+                            'email_address': 'TimToolManTaylor@ToolTime.com',
+                            'status': True, 'credit_limit': '100'}
+        add_customer(**long_number_user)
+        test = Customer.get_by_id('1245')
+        print(test.phone_number)
