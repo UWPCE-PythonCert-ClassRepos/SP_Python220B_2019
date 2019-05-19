@@ -34,7 +34,7 @@ def delete_customer(cust_id):
         query = Customer.get(Customer.customer_id == cust_id)
         query.delete_instance()
     except DoesNotExist:
-        pass
+        raise ValueError
 
 def update_customer_credit(cust_id, new_credit_limit):
     """updates credit limit of customer"""

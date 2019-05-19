@@ -67,6 +67,11 @@ class BasicOperationsTests(TestCase):
         actual = search_customer(123)
         self.assertEqual(actual, {})
 
+    def test_delete_custome_error(self):
+        """tests delete_customer exception block"""
+        create_db()
+        self.assertRaises(ValueError, delete_customer, 123)
+
     def test_update_customer_credit(self):
         """tests update_customer_credit"""
         create_db()
@@ -75,6 +80,11 @@ class BasicOperationsTests(TestCase):
         update_customer_credit(123, 15000)
         query = Customer.get(Customer.customer_id == 123)
         self.assertEqual(query.credit_limit, 15000)
+
+    def test_update_customer_credit_error(self):
+        """tests update_customer_credit exception block"""
+        create_db()
+        self.assertRaises(ValueError, update_customer_credit, 234, 15000)
 
     def test_list_active_customers(self):
         """tests list active customers function"""
