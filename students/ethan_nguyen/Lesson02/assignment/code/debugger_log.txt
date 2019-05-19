@@ -1,0 +1,165 @@
+#The  calculate_additional_fields function calculate the total days, total price and sqrt_total_price and unit_cost for each product_code.  But the total days sometimes are negative and therefore the sqrt_total_price would cause an exception.  Moreover, the rental_start date and rental date can be null which cause a ValueError exception                                          
+                      
+$ python -m pdb debug.py -i source.json -o debug.json                                                                                                              
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(3)<module>()                     
+-> '''                                                                                                                                                             
+(Pdb) b 29                                                                                                                                                         
+Breakpoint 1 at c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py:29                 
+(Pdb) b 31                                                                                                                                                         
+Breakpoint 2 at c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py:31                 
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(4)<module>()                     
+-> import argparse                                                                                                                                                 
+(Pdb) c                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(29)calculate_additional_fields() 
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')                                                                                    
+(Pdb) rental_start                                                                                                                                                 
+*** NameError: name 'rental_start' is not defined                                                                                                                  
+(Pdb) value                                                                                                                                                        
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}                                              
+(Pdb) where                                                                                                                                                        
+  c:\users\ethan\anaconda3\lib\bdb.py(434)run()                                                                                                                    
+-> exec(cmd, globals, locals)                                                                                                                                      
+  <string>(1)<module>()                                                                                                                                            
+  c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(47)<module>()                    
+-> data = calculate_additional_fields(data)                                                                                                                        
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(29)calculate_additional_fields() 
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')                                                                                    
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(30)calculate_additional_fields() 
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')                                                                                        
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(31)calculate_additional_fields() 
+-> value['total_days'] = (rental_end - rental_start).days                                                                                                          
+(Pdb) value                                                                                                                                                        
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}                                              
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(32)calculate_additional_fields() 
+-> value['total_price'] = value['total_days'] * value['price_per_day']                                                                                             
+(Pdb) value                                                                                                                                                        
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82}                           
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(33)calculate_additional_fields() 
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])                                                                                                     
+(Pdb) n                                                                                                                                                            
+ValueError: math domain error                                                                                                                                      
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(33)calculate_additional_fields() 
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])                                                                                                     
+(Pdb) value                                                                                                                                                        
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542}     
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(35)calculate_additional_fields() 
+-> except:                                                                                                                                                         
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(36)calculate_additional_fields() 
+-> exit(0)                                                                                                                                                         
+(Pdb) n                                                                                                                                                            
+SystemExit: 0                                                                                                                                                      
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(36)calculate_additional_fields() 
+-> exit(0)                                                                                                                                                         
+(Pdb) n                                                                                                                                                            
+--Return--                                                                                                                                                         
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(36)calculate_additional_fields()-
+>None                                                                                                                                                              
+-> exit(0)                                                                                                                                                         
+(Pdb) n                                                                                                                                                            
+SystemExit: 0                                                                                                                                                      
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(47)<module>()                    
+-> data = calculate_additional_fields(data)                                                                                                                        
+(Pdb) n                                                                                                                                                            
+--Return--                                                                                                                                                         
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(47)<module>()->None              
+-> data = calculate_additional_fields(data)                                                                                                                        
+(Pdb) n                                                                                                                                                            
+SystemExit: 0                                                                                                                                                      
+> <string>(1)<module>()->None                                                                                                                                      
+(Pdb) n                                                                                                                                                            
+--Return--                                                                                                                                                         
+> <string>(1)<module>()->None                                                                                                                                      
+(Pdb) n                                                                                                                                                            
+The program exited via sys.exit(). Exit status: 0                                                                                                                  
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(3)<module>()                     
+-> '''                                                                                                                                                             
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(4)<module>()                     
+-> import argparse                                                                                                                                                 
+(Pdb) n                                                                                                                                                            
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(5)<module>()                     
+-> import json                                                                                                                                                     
+(Pdb)                                                                                                                      > c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(5)<module>()
+-> import json
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3     '''
+  4     import argparse
+  5  -> import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29 B               rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31 B               value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34
+ 35             except ValueError:
+ 36                 print("Missing rental start or end date")
+ 37                 next
+ 38
+ 39             except ZeroDivisionError:
+ 40                 print("Tried to divide by zero")
+ 41                 next
+ 42
+ 43         return data
+ 44
+ 45     def save_to_json(filename, data):
+ 46         with open(filename, 'w') as file:
+ 47             json.dump(data, file)
+ 48
+ 49     if __name__ == "__main__":
+ 50         args = parse_cmd_arguments()
+ 51         data = load_rentals_file(args.input)
+ 52         data = calculate_additional_fields(data)
+ 53         save_to_json(args.output, data)
+(Pdb) b 36
+Breakpoint 3 at c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py:36
+(Pdb) b 40
+Breakpoint 4 at c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py:40
+(Pdb) c
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(40)<module>()
+-> print("Tried to divide by zero")
+(Pdb) value
+*** NameError: name 'value' is not defined
+(Pdb) c
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(29)calculate_additional_fields() -> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) b 29
+Breakpoint 5 at c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py:29
+(Pdb) c
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(31)calculate_additional_fields() -> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) c
+> c:\users\ethan\desktop\uw-extension\python\python220\sp_python220b_2019\students\ethan_nguyen\lesson02\assignment\code\debug.py(36)calculate_additional_fields() -> print("Missing rental start or end date")
+(Pdb)                                       
