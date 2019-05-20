@@ -2,31 +2,28 @@
 """
 Tests for basic_operations
 """
-import unittest
 from unittest import TestCase
-from unittest.mock import MagicMock
-from unittest.mock import patch
-from customer_schema import Customer
 from functools import wraps
 import peewee
-import basic_operations as b_o
+from customer_schema import Customer # pylint: disable=E0401
+import basic_operations as b_o  # pylint: disable=E0401
 
 
-test_db = peewee.SqliteDatabase(':memory:')
+TEST_DB = peewee.SqliteDatabase(':memory:')
 
 
-def use_test_database(fn):
+def use_test_database(fn):  # pylint: disable=C0103
     """
     Used to create decorator that binds the given models to the db for the duration of wrapped block
     """
     @wraps(fn)
     def inner(self):
-        with test_db.bind_ctx([Customer]):
-            test_db.create_tables([Customer])
+        with TEST_DB.bind_ctx([Customer]):
+            TEST_DB.create_tables([Customer])
             try:
                 fn(self)
             finally:
-                test_db.drop_tables([Customer])
+                TEST_DB.drop_tables([Customer])
     return inner
 
 
@@ -108,8 +105,8 @@ class BasicOperationsUnitTest(TestCase):
         self.assertEqual(Customer.select().count(), 2)
         try:
             b_o.delete_customer('doesnt exist')
-        except Exception as Ex:
-            self.fail("delete_customer() raised {} unexpectedly".format(Ex))
+        except Exception as exception: # pylint: disable=W0703
+            self.fail("delete_customer() raised {} unexpectedly".format(exception))
         b_o.delete_customer('1564')
         self.assertEqual(Customer.select().count(), 1)
         with self.assertRaises(peewee.DoesNotExist):
@@ -160,6 +157,7 @@ class BasicOperationsUnitTest(TestCase):
 
 
 class BasicOperationsIntegrationTest(TestCase):
+    """Class for integration tests of basic_operations.py"""
     @use_test_database
     def test_basic_operations_integration(self):
         """
@@ -183,4 +181,3 @@ class BasicOperationsIntegrationTest(TestCase):
         b_o.delete_customer('1255')
         customer_count = b_o.list_active_customers()
         self.assertEqual(customer_count, 0)
-

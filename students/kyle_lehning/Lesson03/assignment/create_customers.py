@@ -2,14 +2,14 @@
 """
 Used to create database of customers, only needed once
 """
-from customer_schema import *
+import customer_schema
 
 
 def create_tables():
     """Helper function to create tables in database"""
-    with DB:
-        DB.create_tables([Customer])
-    DB.close()
+    with customer_schema.DB:
+        customer_schema.DB.create_tables([customer_schema.Customer])
+    customer_schema.DB.close()
 
 
 if __name__ == '__main__':
