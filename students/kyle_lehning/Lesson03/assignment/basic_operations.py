@@ -17,9 +17,9 @@ console_handler.setFormatter(formatter)
 logger = logging.getLogger()
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.WARNING)
 file_handler.setLevel(logging.WARNING)
-console_handler.setLevel(logging.DEBUG)
+console_handler.setLevel(logging.WARNING)
 
 
 def add_customer(customer_id, name, lastname, home_address, phone_number,
@@ -41,15 +41,14 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
         new_customer.save()
     except peewee.IntegrityError as e:
         if 'unique' in str(e).lower():
-            logger.warning('Tried to add a customer_id that already exists: {}'.format(customer_id))
-            raise Exception('Tried to add a customer_id that already exists: {}'.format(customer_id))
-        elif 'check' in str(e).lower():
-            logger.warning('Missing a field: {}'.format(str(e)))
-            raise Exception('Missing a field: {}'.format(str(e)))
-        logger.debug("UNHANDLED INTEGRITY")
+            logger.warning('Tried to add a customer_id that already exists: %s', customer_id)
+            raise peewee.IntegrityError('Tried to add a customer_id that already exists: {}'
+                                        .format(customer_id))
+        else:
+            logger.debug("Integrity Error in add_customer: %s", str(e))
     except Exception as Ex:
-        logger.debug('Next exception: {}'.format(str(Ex)))
-        return Ex
+        logger.debug('add_customer exception: %s', str(Ex))
+        raise Exception('add_customer raised this error: {}'.format(str(Ex)))
 
 
 def search_customer(customer_id):
@@ -57,14 +56,29 @@ def search_customer(customer_id):
     This function will return a dictionary object with name, lastname, email address
     and phone number of a customer or an empty dictionary object if no customer was found.
     """
-    pass
+    customer_dict = {}
+    try:
+        db_query = Customer.get_by_id(customer_id)
+    except peewee.DoesNotExist:
+        logger.warning("'%s' doesn't exist in database using search_customer()", customer_id)
+        return customer_dict
+        # raise peewee.DoesNotExist("{} doesn't exist in database".format(customer_id))
+    keys = ['name', 'lastname', 'email_address', 'phone_number']
+    values = [db_query.name, db_query.lastname, db_query.email_address, db_query.phone_number]
+    customer_dict = dict(zip(keys, values))
+
+    return customer_dict
 
 
 def delete_customer(customer_id):
     """
     This function will delete a customer from the sqlite3 database.
     """
-    pass
+    try:
+        db_query = Customer.get_by_id(customer_id)
+        db_query.delete_instance()
+    except peewee.DoesNotExist:
+        logger.warning("'%s' doesn't exist in database using delete_customer()", customer_id)
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -72,7 +86,13 @@ def update_customer_credit(customer_id, credit_limit):
     This function will search an existing customer by customer_id and update
     their credit limit or raise a ValueError exception if the customer does not exist.
     """
-    pass
+    try:
+        db_query = Customer.get_by_id(customer_id)
+    except peewee.DoesNotExist:
+        logger.warning("'%s' doesn't exist in database using update_customer_credit()", customer_id)
+        raise ValueError
+    db_query.credit_limit = float(credit_limit)
+    db_query.save()
 
 
 def list_active_customers():
@@ -80,4 +100,5 @@ def list_active_customers():
     This function will return an integer with the number of customers whose status is
     currently active.
     """
-    pass
+    db_query = Customer.select().where(Customer.status == True).count()
+    return db_query
