@@ -27,6 +27,7 @@ class TestInventoryManagement(TestCase):
                 'rental_price': 15.0, 'material': 'Mahogany', 'size': 'L'}
         }
 
+        # Expected output for searching inventory.
         test_string = ('product_code: 002\n'
                        'description: Microwave\n'
                        'market_price: 24\n'
@@ -34,7 +35,7 @@ class TestInventoryManagement(TestCase):
                        'brand: GE\n'
                        'voltage: 3.2\n')
 
-        # Test that a blank full inventory is printed.
+        # Test that a blank full inventory is created.
         with patch('builtins.input', side_effect=inv_details):
             main.add_new_item()
         with patch('builtins.input', side_effect=app_details):
@@ -42,7 +43,9 @@ class TestInventoryManagement(TestCase):
         with patch('builtins.input', side_effect=furn_details):
             main.add_new_item()
 
+        # Test that all items were added to the full inventory.
         self.assertEqual(main.FULL_INVENTORY, expected_dict)
 
-        with patch('builtins.input', side_effect='002'):
+        # Test that an applicance item was added to the full inventory.
+        with patch('builtins.input', side_effect=['002']):
             self.assertEqual(main.item_info(), print(test_string))
