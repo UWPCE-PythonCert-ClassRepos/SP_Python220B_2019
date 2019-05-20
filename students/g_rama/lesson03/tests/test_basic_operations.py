@@ -1,4 +1,7 @@
-from src import basic_operaions
+import sys
+sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama'
+                '/lesson03/src')
+from src.basic_operations import *
 
 
 def test_add_customer():
