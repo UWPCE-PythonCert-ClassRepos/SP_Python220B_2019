@@ -95,53 +95,55 @@ class TestMain(TestCase):
 
         expected_dict = {
         '001': {'product_code': '001', 'description': 'Painting',
-                'market_price': 24, 'rental_price': 6.0},
-        '002': {'product_code': '002', 'description': 'Microwave', 'market_price': 24,
+                'market_price': 180.0, 'rental_price': 6.0},
+        '002': {'product_code': '002', 'description': 'Microwave', 'market_price': 322.0,
                 'rental_price': 5.0, 'brand': 'GE', 'voltage': 3.2},
-        '003': {'product_code': '003', 'description': 'Desk', 'market_price': 24,
+        '003': {'product_code': '003', 'description': 'Desk', 'market_price': 1030.0,
                 'rental_price': 15.0, 'material': 'Mahogany', 'size': 'L'}
         }
 
         # Test that an inventory object is added to the full inventory.
-
-        with patch('builtins.input', side_effect=inv_obj_details):
-            main.FULL_INVENTORY = {}
-            main.add_new_item()
-            test_inv = {}
-            test_inv.setdefault('001', expected_dict.get('001'))
-            self.assertEqual(main.FULL_INVENTORY, test_inv)
+        with patch('market_prices.get_latest_price', return_value=180.0):
+            with patch('builtins.input', side_effect=inv_obj_details):
+                main.FULL_INVENTORY = {}
+                main.add_new_item()
+                test_inv = {}
+                test_inv.setdefault('001', expected_dict.get('001'))
+                self.assertEqual(main.FULL_INVENTORY, test_inv)
 
         # Test that a new electric appliance object is added to the full inventory.
-        with patch('builtins.input', side_effect=app_obj_details):
-            main.FULL_INVENTORY = {}
-            main.add_new_item()
-            test_app = {}
-            test_app.setdefault('002', expected_dict.get('002'))
-            self.assertEqual(main.FULL_INVENTORY, test_app)
+        with patch('market_prices.get_latest_price', return_value=322.0):
+            with patch('builtins.input', side_effect=app_obj_details):
+                main.FULL_INVENTORY = {}
+                main.add_new_item()
+                test_app = {}
+                test_app.setdefault('002', expected_dict.get('002'))
+                self.assertEqual(main.FULL_INVENTORY, test_app)
 
         # Test that a new furrniture object is added to the full inventory.
-        with patch('builtins.input', side_effect=furn_obj_details):
-            main.FULL_INVENTORY = {}
-            main.add_new_item()
-            test_furn = {}
-            test_furn.setdefault('003', expected_dict.get('003'))
-            self.assertEqual(main.FULL_INVENTORY, test_furn)
+        with patch('market_prices.get_latest_price', return_value=1030.0):
+            with patch('builtins.input', side_effect=furn_obj_details):
+                main.FULL_INVENTORY = {}
+                main.add_new_item()
+                test_furn = {}
+                test_furn.setdefault('003', expected_dict.get('003'))
+                self.assertEqual(main.FULL_INVENTORY, test_furn)
 
     def test_item_info(self):
         """Test that item info for an existing object in inventory is returned"""
         test_dict = {'product_code': '001', 'description': 'Painting',
                      'market_price': 180.0, 'rental_price': 6.0}
-        expected_print = ('product code: 001\n'
+        expected_print = ('product_code: 001\n'
                           'description: Painting\n'
                           'market_price: 180.0\n'
                           'rental_price: 6.0\n')
 
-        with patch('builtins.input', side_effect='001'):
+        with patch('builtins.input', side_effect=['001']):
             main.FULL_INVENTORY['001'] = test_dict
             self.assertEqual(main.item_info(), print(expected_print))
 
         # Test the case where item is not in inventory.
-        with patch('builtins.input', side_effect='002'):
+        with patch('builtins.input', side_effect=['002']):
             main.FULL_INVENTORY = {}
             expect_string = 'Item not found in inventory'
             self.assertEqual(main.item_info(), print(expect_string))
