@@ -75,30 +75,28 @@ def calculate_additional_fields(data):
     """Function to calculate the required fields"""
     for value in data.values():
         logging.debug("calculate_additional_fields function is called from main")
-        logging.debug("First value of the data {}".format(value))
+        logging.debug(f"First value of the data {value}")
         try:
-            '''Try block to catch if there are empty field for dates'''
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             logging.debug("Getting the rental start time")
-            logging.debug("Rental start period is {}".format(rental_start))
+            logging.debug(f"Rental start period is {rental_start}")
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             logging.debug("Getting the rental end time")
-            logging.debug("Rental end period is {}".format(rental_end))
+            logging.debug(f"Rental end period is {rental_end}")
         except ValueError:
             logging.debug("Incorrect rental start and end date formats")
         value['total_days'] = (rental_end - rental_start).days
         if value['total_days'] < 0:
-            logging.debug("total period of rental is  {}".format(value['total_days']))
-            logging.warning("Rental start and end periods "
-                            "are incorrect for {}".format(value["product_code"]))
+            logging.debug(f"total period of rental is  {value['total_days']}")
+            logging.warning(f"Rental start and end periods "
+                            f"are incorrect for {value['product_code']}")
         try:
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
         except ValueError:
-            logging.warning("Cannot do square root for a "
-                            "negative number{}".format(value['total_price']))
-            logging.debug("Cannot do square root for a "
-                          "negative number{}".format(value['total_price']))
+            logging.warning(f"Cannot do square root for a "
+                            f"negative number{value['total_price']}")
+            logging.debug(f"Cannot do square root for a negative number{value['total_price']}")
         try:
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ZeroDivisionError:
@@ -115,8 +113,8 @@ def save_to_json(filename, data):
 
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    log_debug(args.debug)
-    logging.debug(args)
-    new_data = calculate_additional_fields(load_rentals_file(args.input))
-    save_to_json(args.output, new_data)
+    ARGS = parse_cmd_arguments()
+    log_debug(ARGS.debug)
+    logging.debug(ARGS)
+    NEW_DATA = calculate_additional_fields(load_rentals_file(ARGS.input))
+    save_to_json(ARGS.output, NEW_DATA)
