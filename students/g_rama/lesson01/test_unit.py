@@ -89,6 +89,7 @@ class TestMain(unittest.TestCase):
         prompt_1 = "1"
         prompt_2 = "2"
         prompt_3 = "q"
+        prompt_4 = "error"
         with patch('builtins.input', side_effect=prompt_1):
             expected_option = 'add_new_item'
             actual_option = main.main_menu()
