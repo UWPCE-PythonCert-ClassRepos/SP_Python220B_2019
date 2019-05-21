@@ -1,6 +1,7 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
+# pylint: disable=line-too-long, c0301
 import argparse
 import json
 import datetime
@@ -21,18 +22,21 @@ def set_logger(level, logger):
     file_handler.setLevel(logging.WARNING)
 
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)                    
-    console_handler.setFormatter(formatter)          
+    console_handler.setLevel(logging.DEBUG)        
+    console_handler.setFormatter(formatter)
 
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-     
+
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('-i', '--input', help='input JSON file', required=True)
-    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--debug', help='logging for debug', required=True)
+    parser.add_argument('-i', '--input', help='input JSON file',
+                        required=True)
+    parser.add_argument('-o', '--output', help='ouput JSON file',
+                        required=True)
+    parser.add_argument('-d', '--debug', help='logging for debug',
+                        required=True)
 
     return parser.parse_args()
 
@@ -59,8 +63,10 @@ def calculate_additional_fields(data):
         logging.debug("Proccessing record {}".format(value))
 
         try:
-            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
-            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+            rental_start = datetime.datetime.strptime(
+                value['rental_start'], '%m/%d/%y')
+            rental_end = datetime.datetime.strptime(
+                value['rental_end'], '%m/%d/%y')
             total_day = (rental_end - rental_start).days
             if total_day < 0:
                 logging.warning("Negative total day.  Let take absolute of it")
@@ -100,7 +106,7 @@ if __name__ == "__main__":
     args = parse_cmd_arguments()
     log_lev = int(args.debug)
     logger = logging.getLogger()
-    #create a logger object
+    # create a logger object
     if log_lev > 0:
         if log_lev == 1:
             logger.setLevel(logging.ERROR)
@@ -110,7 +116,7 @@ if __name__ == "__main__":
             logger.setLevel(logging.DEBUG)
         set_logger(log_lev, logger)
     else:
-        logging.disable(logging.ERROR)  #disable all logging
+        logging.disable(logging.ERROR)  # disable all logging
 
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
