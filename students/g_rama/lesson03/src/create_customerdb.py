@@ -6,14 +6,14 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 logging.info("Creating the Customer table")
-db.create_tables([Customer])
+DB.create_tables([Customer])
 logging.info("Closing the customer database")
-db.close()
+DB.close()
 
 
 def before_request_handler():
-    db.connect()
+    DB.connect()
 
 
 def after_request_handler():
-    db.close()
+    DB.close()

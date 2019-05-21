@@ -1,28 +1,28 @@
-import sqlite3
-import logging
+"""Database schema class"""
 from peewee import *
 
-
-db = SqliteDatabase('customers.db')
+DB = SqliteDatabase('customers.db')
 #logging.info("Connecting to the customer database")
-db.execute_sql('PRAGMA foreign_keys = ON;')
-db.connect()
-#database.close()
+DB.connect()
+DB.execute_sql('PRAGMA foreign_keys = ON;')
+# db.close()
+
 
 class BaseModel(Model):
     """Base model class using peewee"""
     class Meta:
-        database = db
+        database = DB
 
 
 class Customer(BaseModel):
     """Customer class to create the customer table"""
-    customer_id = IntegerField
-    name = CharField(max_length=30)
-    last_name = CharField(max_length=30)
-    home_address = TextField
-    phone_number = TextField
-    email_address = TextField
-    status = BooleanField
-    credit_limit = IntegerField
+    customer_id = CharField
+    name = CharField
+    last_name = CharField
+    home_address = CharField
+    phone_number = CharField
+    email_address = CharField
+    status = CharField
+    credit_limit = CharField
+
 
