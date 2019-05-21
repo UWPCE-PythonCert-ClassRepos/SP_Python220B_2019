@@ -1,6 +1,9 @@
 import logging
 import sqlite3
 import peewee
+import sys
+sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson03/src")
+import create_customerdb
 from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
@@ -25,7 +28,7 @@ def add_customer(customer_id, name, lastname, home_address,
 
 def search_customer(customer_id):
     """Searching the customer"""
-    query = Customer.select().where(Customer.customer_id == customer_id )
+    query = Customer.select().where(Customer.customer_id == customer_id)
     if query:
         print(query)
 
@@ -45,6 +48,6 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_customers():
     """Display the active customers"""
     query = Customer.select().where(status=1).count()
-    query.execute
+    query.execute()
 
 

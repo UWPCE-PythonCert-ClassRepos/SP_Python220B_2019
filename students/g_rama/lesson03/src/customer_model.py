@@ -3,16 +3,16 @@ import logging
 from peewee import *
 
 
-database = SqliteDatabase('customers.db')
-logging.info("Connecting to the customer database")
-database.execute_sql('PRAGMA foreign_keys = ON;')
-database.connect()
-
+db = SqliteDatabase('customers.db')
+#logging.info("Connecting to the customer database")
+db.execute_sql('PRAGMA foreign_keys = ON;')
+db.connect()
+#database.close()
 
 class BaseModel(Model):
     """Base model class using peewee"""
     class Meta:
-        database = database
+        database = db
 
 
 class Customer(BaseModel):
