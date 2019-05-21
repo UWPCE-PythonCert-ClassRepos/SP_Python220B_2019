@@ -27,7 +27,8 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Function to get the price of item code"""
-    print(f"Get price {item_code}")
+    print(f"Get price of {item_code}")
+    return market_prices.get_latest_price(item_code)
 
 
 def add_new_item():

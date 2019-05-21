@@ -102,6 +102,12 @@ class TestMain(unittest.TestCase):
             actual_option = main.main_menu()
             self.assertEqual(actual_option.__name__, expected_option)
 
+    def test_get_price(self):
+        """Testing of get price item"""
+        expected_output = 24
+        actual_output = main.get_price(100)
+        self.assertEquals(expected_output, actual_output)
+
     def test_add_new_item(self):
         """Testing of add_new_item function"""
         test_furniture_data = [1, 'dining_table_description', 50, 'y', 'glass', 'L']
