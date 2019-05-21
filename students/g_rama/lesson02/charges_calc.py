@@ -1,11 +1,10 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 import argparse
 import json
 import datetime
 import math
-import pdb
 import logging
 
 
@@ -28,21 +27,22 @@ def log_debug(debug):
 
     debug_level = debug
     if debug_level == 0:
-        """This will disable all the logging"""
+        #This will disable all the logging
         logger.disabled = True
         file_handler.disabled = True
     elif debug_level == 1:
-        """Error messages; This prints error and above messages"""
+        #"""Error messages; This prints error and above messages"""
         logger.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
     elif debug_level == 2:
-        """WARNING messages print to console and file; Tis prints Warning and above messages"""
+        #"""WARNING messages print to console and file; Tis prints Warning and above messages"""
         logger.setLevel(logging.WARNING)
         console_handler.setLevel(logging.WARNING)
         file_handler.setLevel(logging.WARNING)
     elif debug_level == 3:
-        """DEBUG messages print to console and warning messages to file; This prints debug and above messages"""
+        #"""DEBUG messages print to console and warning messages to file;
+         #This prints debug and above messages"""
         logger.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.WARNING)
@@ -58,9 +58,6 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 
-#pdb.set_trace()
-
-
 def load_rentals_file(filename):
     """Function to load the json file"""
     with open(filename) as file:
@@ -68,8 +65,8 @@ def load_rentals_file(filename):
             logging.debug("loading the json data file")
             data = json.load(file)
             #logging.debug("complete json data {}".format(data))
-        except:
-            logging.ERROR("File not found")
+        except FileNotFoundError:
+            logging.error("File not found")
             exit(0)
     return data
 
@@ -92,13 +89,16 @@ def calculate_additional_fields(data):
         value['total_days'] = (rental_end - rental_start).days
         if value['total_days'] < 0:
             logging.debug("total period of rental is  {}".format(value['total_days']))
-            logging.warning("Rental start and end periods are incorrect for {}".format(value["product_code"]))
+            logging.warning("Rental start and end periods "
+                            "are incorrect for {}".format(value["product_code"]))
         try:
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
         except ValueError:
-            logging.warning("Cannot do square root for a negative number{}".format(value['total_price']))
-            logging.debug("Cannot do square root for a negative number{}".format(value['total_price']))
+            logging.warning("Cannot do square root for a "
+                            "negative number{}".format(value['total_price']))
+            logging.debug("Cannot do square root for a "
+                          "negative number{}".format(value['total_price']))
         try:
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ZeroDivisionError:
