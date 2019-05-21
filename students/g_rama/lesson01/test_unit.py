@@ -10,6 +10,7 @@ from inventory_management.furniture_class import Furniture
 from inventory_management.inventory_class import Inventory
 import market_prices
 import main
+from io import StringIO
 
 
 class TestInventory(unittest.TestCase):
@@ -85,7 +86,22 @@ class TestMain(unittest.TestCase):
     """Testing of the main class"""
     def test_main_menu(self):
         """Testing of menu options"""
-        
+        prompt_1 = "1"
+        prompt_2 = "2"
+        prompt_3 = "q"
+        with patch('builtins.input', side_effect=prompt_1):
+            expected_option = 'add_new_item'
+            actual_option = main.main_menu()
+            self.assertEqual(actual_option.__name__, expected_option)
+        with patch('builtins.input', side_effect=prompt_2):
+            expected_option = 'item_info'
+            actual_option = main.main_menu()
+            self.assertEqual(actual_option.__name__, expected_option)
+        with patch('builtins.input', side_effect=prompt_3):
+            expected_option = 'exit_program'
+            actual_option = main.main_menu()
+            self.assertEqual(actual_option.__name__, expected_option)
+
     def test_add_new_item(self):
         """Testing of add_new_item function"""
         test_furniture_data = [1, 'dining_table_description', 50, 'y', 'glass', 'L']
@@ -121,12 +137,24 @@ class TestMain(unittest.TestCase):
     # def test_item_info(self):
     #     test_FULL_INVENTORY = {1, {'product_code': 1, 'description': 'refregirator_description',
     #                                'market_price': 24, 'rental_price': 400, 'brand': 'samsung', 'voltage': '110v'}}
+    #     test_non_item_code = 2
+    #
+    #     with patch('builtins.input', side_effect=test_non_item_code):
+    #         captured_output = StringIO.StringIO()
+    #         sys.stdout = captured_output
+    #         main.item_info()
+    #         sys.stdout = sys.__stdout__
+
+    # @patch('sys.stdout', new_callable=StringIO)
+    # def test_item_info(self, mock_stdout):
+    #     # test_FULL_INVENTORY = {1, {'product_code': 1, 'description': 'refregirator_description',
+    #     #                            'market_price': 24, 'rental_price': 400, 'brand': 'samsung', 'voltage': '110v'}}
+    #     test_non_item_code = 2
+    #     with patch('builtins.input', side_effect=test_non_item_code):
+    #         main.item_info()
+    #         assert mock_stdout.__getattribute__() == 'Item not found in inventory\n'
 
 
-
-
-
-
-
-
+if __name__ == '__main__':
+    unittest.main()
 
