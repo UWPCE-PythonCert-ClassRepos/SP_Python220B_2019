@@ -159,6 +159,12 @@ material:glass
 size:L'''
         self.assertNotEqual(actual_output, expected_output)
 
+    def test_exit_program(self):
+        """Test function to test the system exit"""
+        with self.assertRaises(SystemExit):
+            main.exit_program()
+
+
 
     # @patch('sys.stdout', new_callable=StringIO)
     # def test_item_info(self, mock_stdout):
