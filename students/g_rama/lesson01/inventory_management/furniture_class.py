@@ -16,7 +16,7 @@ class Furniture(Inventory):  # pylint: disable=too-few-public-methods
 
     def return_as_dictionary(self):
         """Function to store furniture as a data dictionary"""
-        output_dict = Inventory.return_as_dictionary()
+        output_dict = Inventory.return_as_dictionary(self)
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 

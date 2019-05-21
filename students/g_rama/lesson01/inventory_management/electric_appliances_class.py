@@ -18,7 +18,7 @@ class ElectricAppliances(Inventory):
 
     def return_as_dictionary(self):
         """Function to return Inventory as dictionary"""
-        output_dict = Inventory.return_as_dictionary()
+        output_dict = Inventory.return_as_dictionary(self)
         output_dict['brand'] = self.brand
         output_dict['voltage'] = self.voltage
 
