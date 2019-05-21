@@ -140,16 +140,25 @@ class TestMain(unittest.TestCase):
                                        'market_price': 24, 'rental_price': 400}
         self.assertDictEqual(test_inventory_data_values, test_expected_inventory_data)
 
-    # def test_item_info(self):
-    #     test_FULL_INVENTORY = {1, {'product_code': 1, 'description': 'refregirator_description',
-    #                                'market_price': 24, 'rental_price': 400, 'brand': 'samsung', 'voltage': '110v'}}
-    #     test_non_item_code = 2
-    #
-    #     with patch('builtins.input', side_effect=test_non_item_code):
-    #         captured_output = StringIO.StringIO()
-    #         sys.stdout = captured_output
-    #         main.item_info()
-    #         sys.stdout = sys.__stdout__
+    def test_item_info(self):
+        """Test item info """
+        test_data = ['1', 'dining', '50', 'y', 'glass', 'L']
+        with patch('builtins.input', side_effect=test_data):
+            main.add_new_item()
+            print(main.FULL_INVENTORY)
+        test_item_code = 1
+        with patch('builtins.input', side_effect='2'):
+            actual_output = main.item_info()
+            print("nub")
+            print(actual_output)
+        expected_output = '''product_code:1
+description:dining
+market_price:24
+rental_price:50
+material:glass
+size:L'''
+        self.assertNotEqual(actual_output, expected_output)
+
 
     # @patch('sys.stdout', new_callable=StringIO)
     # def test_item_info(self, mock_stdout):
