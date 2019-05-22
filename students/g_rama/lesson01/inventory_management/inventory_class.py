@@ -1,7 +1,7 @@
 """# Inventory class"""
 
 
-class Inventory: # pylint: disable=too-few-public-methods
+class Inventory:  # pylint: disable=too-few-public-methods
 
     """Inventory class to store inventory data"""
 
@@ -11,7 +11,6 @@ class Inventory: # pylint: disable=too-few-public-methods
         self.market_price = market_price
         self.rental_price = rental_price
 
-    # pylint: disable=duplicate-code
     def return_as_dictionary(self):
         """Function to store inventory as a data dictionary"""
         output_dict = dict()
