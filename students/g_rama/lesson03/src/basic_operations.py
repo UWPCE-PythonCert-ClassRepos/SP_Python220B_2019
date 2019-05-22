@@ -2,10 +2,10 @@
 # pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments
 import logging
 import sys
-from customer_model import *
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
                 r"SP_Python220B_2019/students/g_rama/lesson03/src")
-
+from customer_model import *
+from create_customerdb import *
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
@@ -60,6 +60,7 @@ def list_active_customers():
     """Display the active customers"""
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
-    query = Customer.select().where(Customer.status == 1).count()
-    query.execute()
+    count = Customer.select().where(Customer.status == "1").count()
+    print(count)
+    return count
     # db.close()
