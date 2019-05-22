@@ -16,13 +16,13 @@ class BaseModel(Model):
 
 class Customer(BaseModel):
     """Customer class to create the customer table"""
-    customer_id = CharField
-    name = CharField
-    last_name = CharField
-    home_address = CharField
-    phone_number = CharField
-    email_address = CharField
-    status = CharField
-    credit_limit = CharField
+    customer_id = CharField(primary_key=True)
+    name = CharField(max_length=255)
+    last_name = CharField(max_length=255)
+    home_address = CharField(max_length=255)
+    phone_number = CharField(max_length=255)
+    email_address = CharField(max_length=255)
+    status = CharField(max_length=255)
+    credit_limit = CharField(max_length=255)
 
 

@@ -2,7 +2,7 @@
 # pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments
 import logging
 import sys
-from customer_model import Customer
+from customer_model import *
 from peewee import *
 import create_customerdb
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
@@ -34,17 +34,18 @@ def search_customer(customer_id):
     # DB.connect()
     # DB.execute_sql('PRAGMA foreign_keys = ON;')
     s_customers = (Customer.select().where(Customer.customer_id == customer_id)).execute()
-    print(s_customers)
-
-    # for cus in s_customers:
-    #     print(f"{cus.name}, {cus.last_name}")
+    #return s_customers.name
+    for cus in s_customers:
+        return cus.name
+    #return s_customers
 
 
 def delete_customer(customer_id):
     """Delete the customer"""
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
-    query = (Customer.delete().where(Customer.customer_id == customer_id)).execute()
+    query = Customer.delete().where(Customer.customer_id == customer_id)
+    query.execute()
     # db.close()
 
 
@@ -52,7 +53,8 @@ def update_customer_credit(customer_id, limit):
     """Update the customer credit limit"""
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
-    query = (Customer.update(credit_limit=limit).where(Customer.customer_id == customer_id)).execute()
+    query = Customer.update(credit_limit=limit).where(Customer.customer_id == customer_id)
+    query.execute()
     # db.close()
 
 
