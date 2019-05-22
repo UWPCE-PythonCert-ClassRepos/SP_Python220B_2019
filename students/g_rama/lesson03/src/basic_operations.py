@@ -1,5 +1,5 @@
 """basic operations class"""
-# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments
+# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments,wrong-import-position
 import logging
 import sys
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
