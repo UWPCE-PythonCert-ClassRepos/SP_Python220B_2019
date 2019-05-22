@@ -1,9 +1,7 @@
-"""# Inventory class"""
+"""Inventory class to store data about an item"""
 
-
-class Inventory:  # pylint: disable=too-few-public-methods
-
-    """Inventory class to store inventory data"""
+class Inventory:
+    """Class for an inventory object."""
 
     def __init__(self, product_code, description, market_price, rental_price):
         self.product_code = product_code
@@ -12,8 +10,8 @@ class Inventory:  # pylint: disable=too-few-public-methods
         self.rental_price = rental_price
 
     def return_as_dictionary(self):
-        """Function to store inventory as a data dictionary"""
-        output_dict = dict()
+        """Generate a dictionary containing data about the instance of inventory"""
+        output_dict = {}
         output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
         output_dict['market_price'] = self.market_price
