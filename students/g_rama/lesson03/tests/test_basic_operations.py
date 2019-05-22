@@ -1,11 +1,11 @@
 """Test case class for basic operations"""
-import sys
 import unittest
 from peewee import *  # pylint: disable=unused-wildcard-import,wildcard-import
-import basic_operations as bo
-import customer_model as cm
+import sys
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama'
                 '/lesson03/src')
+import basic_operations as bo
+import customer_model as cm
 
 
 # testdb = SqliteDatabase('test.db')

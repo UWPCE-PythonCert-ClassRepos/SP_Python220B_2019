@@ -3,13 +3,11 @@
 import logging
 import sys
 from customer_model import *
-from peewee import *
-import create_customerdb
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
                 r"SP_Python220B_2019/students/g_rama/lesson03/src")
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 
 def add_customer(customer_id, name, lastname, home_address,
