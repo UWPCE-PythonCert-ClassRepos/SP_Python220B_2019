@@ -112,8 +112,11 @@ def list_active_customers():
     This function will return an integer with the number of customers whose status is
     currently active.
     """
-    db_query = Customer.select().where(Customer.status == True).count()  # pylint: disable=C0121
-    return db_query
-
-
-def display_customers(active_only=True):
+    # db_query = Customer.select().where(Customer.status == True).count()  # pylint: disable=C0121
+    # Above line changed to below to show iteration
+    db_query = Customer.select()
+    customer_count = 0
+    for customer in db_query:
+        if customer.status is True:
+            customer_count += 1
+    return customer_count
