@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 21 20:47:09 2019
+
+@author: Laura.Fiorentino
+"""
+
 """list jpg files and their paths"""
 import os
 
@@ -5,7 +12,7 @@ import os
 def find_jpg(path):
     """search for jpg files"""
     path_list = []
-    for root, direcs, files in os.walk(path):
+    for root, dirs, files in os.walk(path):
         file_list = []
         for file in files:
             if '.png' in file:
@@ -13,8 +20,7 @@ def find_jpg(path):
         if file_list:
             path_list.append(root)
             path_list.append(file_list)
-        for direc in direcs:
-            find_jpg(direc)
+
     return path_list
 
 
