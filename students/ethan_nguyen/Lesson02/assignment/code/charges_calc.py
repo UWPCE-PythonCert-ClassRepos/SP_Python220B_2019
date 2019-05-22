@@ -9,8 +9,10 @@ import math
 import logging
 
 
-def set_logger(level, logger):
-
+def set_logger(logger):
+    """
+    function to set up logger and handler
+    """
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s \
                     %(message)s"
 
@@ -22,7 +24,7 @@ def set_logger(level, logger):
     file_handler.setLevel(logging.WARNING)
 
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)        
+    console_handler.setLevel(logging.DEBUG)
     console_handler.setFormatter(formatter)
 
     logger.addHandler(file_handler)
@@ -30,6 +32,9 @@ def set_logger(level, logger):
 
 
 def parse_cmd_arguments():
+    """
+    function to parse input and check for input requirements
+    """
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file',
                         required=True)
@@ -42,6 +47,9 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    """
+    function to check and load json file
+    """
     logging.debug("Load input json file")
     try:
         with open(filename) as file:
@@ -51,16 +59,19 @@ def load_rentals_file(filename):
                 logging.error("Decoding JSON has failed")
                 exit(0)
     except FileNotFoundError:
-        logging.error("File {} not found".format(filename))
+        logging.error(f"File {filename} not found")
         exit(0)
 
     return data
 
 
 def calculate_additional_fields(data):
+    """
+    function to loop through json data and calculate required fields
+    """
     logging.debug("Start calculating additional fields")
     for value in data.values():
-        logging.debug("Proccessing record {}".format(value))
+        logging.debug(f"Proccessing record {value}")
 
         try:
             rental_start = datetime.datetime.strptime(
@@ -72,52 +83,54 @@ def calculate_additional_fields(data):
                 logging.warning("Negative total day.  Let take absolute of it")
                 total_day = abs(total_day)
             if total_day == 0:
-                logging.warning("Rental start and end date are the same.  Let set \
-                            total rental days to 1 {}".format(value))
+                logging.warning(f"Rental start and end date are the same.  Let set \
+                            total rental days to 1 {value}")
                 total_day = 1
             value['total_days'] = total_day
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        
-        except ValueError: 
-            logging.warning("Missing rental start or end date. Value was {}. \
-                            Skipped this record gracefully.".format(value))
-            next
+        except ValueError:
+            logging.warning(f"Missing rental start or end date. Value was {value}. \
+                            Skipped this record gracefully.")
+            continue
         except ZeroDivisionError:
-            logging.warning("Tried to divide by zero. Value was {}. Recovered \
-                            gracefully.".format(value))
-            next
-
+            logging.warning(f"Tried to divide by zero. Value was {value}. Recovered \
+                            gracefully.")
+            continue
     return data
 
 
 def save_to_json(filename, data):
+    """
+    function to save json to disk
+    """
     logging.debug("Save output to json")
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
     except IOError:
-        logging.error("Problem dumping {} file".format(filename))
+        logging.error(f"Problem dumping {filename} file")
         exit(0)
 
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    log_lev = int(args.debug)
-    logger = logging.getLogger()
+
+    ARGS = parse_cmd_arguments()
+    LOGLEV = int(ARGS.debug)
+    LOGGER = logging.getLogger()
     # create a logger object
-    if log_lev > 0:
-        if log_lev == 1:
-            logger.setLevel(logging.ERROR)
-        elif log_lev == 2:
-            logger.setLevel(logging.WARNING)
+    if LOGLEV > 0:
+        if LOGLEV == 1:
+            LOGGER.setLevel(logging.ERROR)
+        elif LOGLEV == 2:
+            LOGGER.setLevel(logging.WARNING)
         else:
-            logger.setLevel(logging.DEBUG)
-        set_logger(log_lev, logger)
+            LOGGER.setLevel(logging.DEBUG)
+        set_logger(LOGGER)
     else:
         logging.disable(logging.ERROR)  # disable all logging
 
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    DATA = load_rentals_file(ARGS.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(ARGS.output, DATA)
