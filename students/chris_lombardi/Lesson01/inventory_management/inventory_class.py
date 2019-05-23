@@ -1,5 +1,7 @@
 """Inventory class to store data about an item"""
 
+# pylint: disable=too-few-public-methods
+
 class Inventory:
     """Class for an inventory object."""
 
