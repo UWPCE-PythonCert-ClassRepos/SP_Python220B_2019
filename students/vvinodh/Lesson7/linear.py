@@ -11,6 +11,7 @@ import psutil
 from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'data_files'))
 
+# pylint: disable=W0703,W0613
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 LOG_FILE = 'linear.log'
 FORMATTER = logging.Formatter(LOG_FORMAT)
