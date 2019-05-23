@@ -23,14 +23,17 @@ def add_customer(customer_id, name, lastname, home_address,
         status=status,
         credit_limit=credit_limit
     )
-    customer.save()
-    # DB.close()
+    try:
+        customer.save()
+    except IntegrityError:
+        print("Duplicate primary keys no allowed")
 
 
 def search_customer(customer_id):
     """Searching the customer"""
     # DB.connect()
     # DB.execute_sql('PRAGMA foreign_keys = ON;')
+    logging.info(f"Searching for customer {customer_id}")
     s_customers = (Customer.select().where(Customer.customer_id == customer_id)).execute()
     #return s_customers.name
     for cus in s_customers:
@@ -42,6 +45,7 @@ def delete_customer(customer_id):
     """Delete the customer"""
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
+    logging.info(f"Deleting the customer {customer_id}")
     query = Customer.delete().where(Customer.customer_id == customer_id)
     query.execute()
     # db.close()
@@ -51,6 +55,7 @@ def update_customer_credit(customer_id, limit):
     """Update the customer credit limit"""
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
+    logging.info(f"Updating the customer {customer_id} credit limt to {limit}")
     query = Customer.update(credit_limit=limit).where(Customer.customer_id == customer_id)
     query.execute()
     # db.close()
@@ -61,6 +66,7 @@ def list_active_customers():
     # db.connect()
     # db.execute_sql('PRAGMA foreign_keys = ON;')
     count = Customer.select().where(Customer.status == "1").count()
+    logging.info(f"Total number of active customers are {count}")
     print(count)
     return count
     # db.close()
