@@ -1,0 +1,34 @@
+"""Neima Schafi - Lesson 10 Assignment"""
+
+Results for 4 items:
+csv_convert, 0:00:00.000568, (0, 0, 0)
+add_data, 0:00:00.202896, (4, 0, 0)
+csv_convert, 0:00:00.000190, (4, 0, 0)
+add_data, 0:00:00.049032, (4, 4, 0)
+csv_convert, 0:00:00.000171, (4, 4, 0)
+add_data, 0:00:00.040303, (4, 4, 4)
+import_data, 0:00:00.329381, (4, 4, 4)
+show_available_products, 0:00:00.008911, (4, 4, 4)
+show_rentals, 0:00:00.002528, (4, 4, 4)
+drop_all, 0:00:00.082205, (0, 0, 0)
+
+Results for 12 items:
+csv_convert, 0:00:00.000372, (0, 0, 0)
+add_data, 0:00:00.096157, (12, 0, 0)
+csv_convert, 0:00:00.000349, (12, 0, 0)
+add_data, 0:00:00.086807, (12, 12, 0)
+csv_convert, 0:00:00.003292, (12, 12, 0)
+add_data, 0:00:00.213427, (12, 12, 12)
+import_data, 0:00:00.470147, (12, 12, 12)
+show_available_products, 0:00:00.002633, (12, 12, 12)
+show_rentals, 0:00:00.003075, (12, 12, 12)
+drop_all, 0:00:00.164658, (0, 0, 0)
+
+Conclusion:
+I tripled the amount of items for each database file (products, rentals, customers)
+but there seems to be a negligible difference in performance based on the results above.
+In some instances, the method ran faster with more items which seems counter intuitive.
+
+Based on the results above, I can conclude that using metaclasses contributes to slight
+bump in performance. However, I am not fully confident about this until I run it on a
+much larger scale (1,000+ items).
