@@ -1,9 +1,10 @@
 """Test case class for basic operations"""
+# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments,wrong-import-position
 import unittest
-from peewee import *  # pylint: disable=unused-wildcard-import,wildcard-import
 import sys
-sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama'
-                '/lesson03/src')
+sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
+                'students/g_rama/lesson03/src/')
+from peewee import *
 import basic_operations as bo
 import customer_model as cm
 
@@ -57,8 +58,29 @@ class TestBasicOperations(unittest.TestCase):
 
     def test_update_customer_credit(self):
         """Test function for update operation"""
-        pass
+        bo.add_customer("300", "TestFirst3", "TestLast3", "TestAddress3",
+                        "TestPhone3", "test3@test.com", "1", "1000")
+        bo.update_customer_credit("300", "3000")
+        updated_customer = bo.Customer.get(bo.Customer.customer_id == "300")
+        expected_credit = "3000"
+        actual_credit = updated_customer.credit_limit
+        self.assertEqual(expected_credit, actual_credit)
+        updated_customer.delete_instance()
 
     def test_list_active_customers(self):
         """Test function to list the active customers"""
-        pass
+        bo.add_customer("400", "TestFirst4", "TestLast4", "TestAddress4",
+                        "TestPhone4", "test4@test.com", "1", "1000")
+        bo.add_customer("500", "TestFirst5", "TestLast5", "TestAddress5",
+                        "TestPhone5", "test5@test.com", "1", "5000")
+        bo.add_customer("600", "TestFirst6", "TestLast6", "TestAddress6",
+                        "TestPhone6", "test6@test.com", "0", "5000")
+        actual_count = bo.list_active_customers()
+        expected_count = 2
+        self.assertEqual(actual_count, expected_count)
+        added_customer1 = bo.Customer.get(bo.Customer.customer_id == "400")
+        added_customer2 = bo.Customer.get(bo.Customer.customer_id == "500")
+        added_customer3 = bo.Customer.get(bo.Customer.customer_id == "600")
+        added_customer1.delete_instance()
+        added_customer2.delete_instance()
+        added_customer3.delete_instance()
