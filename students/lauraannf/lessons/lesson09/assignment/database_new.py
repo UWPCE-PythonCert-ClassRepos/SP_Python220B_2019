@@ -55,12 +55,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                           'phone_number': row['Phone Number'],
                                           'status': row['Status'],
                                           'credit_limit': row['Credit Limit']})
-                try:
-                    customers.insert_many(customer_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    customer_error += 1
-        except Exception as ex:
+                customers.insert_many(customer_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening customer file')
             customer_error += 1
@@ -73,12 +69,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                          'description': row['Description'],
                                          'type': row['Type'],
                                          'total_quantity': row['Total Quantity']})
-                try:
-                    products.insert_many(product_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    product_error += 1
-        except Exception as ex:
+                products.insert_many(product_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening product file')
             product_error += 1
@@ -92,12 +84,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                         'customer_id': row['Customer ID'],
                                         'product_id': row['Product ID'],
                                         'quantity': row['Quantity']})
-                try:
-                    rentals.insert_many(rental_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    rental_error += 1
-        except Exception as ex:
+                rentals.insert_many(rental_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening rental file')
             rental_error += 1
