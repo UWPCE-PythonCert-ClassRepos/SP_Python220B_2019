@@ -23,10 +23,10 @@ class CustomerDBTests(TestCase):
 
         basic_operations.delete_all_customers()
 
-        basic_operations.add_customer('Michael', 'Jordan', '3421 S Bull Street \
+        basic_operations.add_customer(1, 'Michael', 'Jordan', '3421 S Bull Street \
 North Carolina', '203-231-3223', 'goat_test@gmail.com', 'Active', 212109)
 
-        customer = basic_operations.search_customer('1')
+        customer = basic_operations.search_customer(1)
         self.assertDictEqual(gold, customer)
 
     # def test_search_customer(self):
@@ -38,20 +38,20 @@ North Carolina', '203-231-3223', 'goat_test@gmail.com', 'Active', 212109)
 
         basic_operations.delete_all_customers()
 
-        basic_operations.add_customer('Shawn', 'Kemp', '3423 Green Lake \
+        basic_operations.add_customer(2, 'Shawn', 'Kemp', '3423 Green Lake \
 Street Seattle WA', '206-240-4023', 'dunk_test@gmail.com', 'Active', 212109)
 
         count = basic_operations.list_active_customers()
         self.assertEqual(1, count)
 
     def test_update_customer_credit(self):
-        basic_operations.update_customer_credit('1', 200)
-        customer = basic_operations.search_customer('1')
+        basic_operations.update_customer_credit(2, 200)
+        customer = basic_operations.search_customer(2)
         self.assertEqual(200, customer['credit_limit'])
 
     def test_update_customer_credit_not_found(self):
         try:
-            basic_operations.update_customer_credit('10', 300)
+            basic_operations.update_customer_credit(10, 300)
         except ValueError:
             self.assertRaises(ValueError)
 
@@ -59,8 +59,8 @@ Street Seattle WA', '206-240-4023', 'dunk_test@gmail.com', 'Active', 212109)
     @pytest.mark.last
     def test_delete_customer(self):
 
-        basic_operations.delete_customer('1')
-        customer = basic_operations.search_customer('1')
+        basic_operations.delete_customer(1)
+        customer = basic_operations.search_customer(1)
         self.assertIsNone(customer)
 
 

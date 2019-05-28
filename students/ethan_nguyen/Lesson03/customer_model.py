@@ -39,12 +39,14 @@ LOGGER.info('By inheritance only we keep our model \
 
 class Customer(BaseModel):
     """
-        This class defines Customer, which store customer data from HP Norton.
+        This class defines Customer which store customer data from HP Norton.
     """
     LOGGER.info('Note how we defined the class')
 
     LOGGER.info('Specify the fields in our model, their lengths and if mandatory')
     LOGGER.info('Must be a unique identifier for each person')
+
+    id = IntegerField(primary_key=True)
     name = CharField(max_length=30)
     last_name = CharField(max_length=30)
     home_address = CharField(max_length=30)

@@ -18,7 +18,7 @@ DATABASE.create_tables([
 DATABASE.close()
 
 
-def add_customer(name, lastname, home_address, phone_number, email_address,
+def add_customer(customer_id, name, lastname, home_address, phone_number, email_address,
                  status, credit_limit):
     '''
     This function will add a new customer to the sqlite3 database.
@@ -27,7 +27,7 @@ def add_customer(name, lastname, home_address, phone_number, email_address,
         # id is automatically created and incremented by 1
         with DATABASE.transaction():
             new_customer = Customer.create(
-                name=name, last_name=lastname,
+                id=customer_id, name=name, last_name=lastname,
                 home_address=home_address, phone_number=phone_number,
                 email=email_address, status=status, credit_limit=credit_limit)
             new_customer.save()
