@@ -2,6 +2,7 @@
     Create database examle with Peewee ORM, sqlite and Python
 """
 import logging
+from peewee import OperationalError, DoesNotExist
 from customer_model import Customer, DATABASE
 # noqa # pylint: disable=unused-import,too-few-public-methods,too-many-arguments, broad-except
 
@@ -18,8 +19,8 @@ DATABASE.create_tables([
 DATABASE.close()
 
 
-def add_customer(customer_id, name, lastname, home_address, phone_number, email_address,
-                 status, credit_limit):
+def add_customer(customer_id, name, lastname, home_address, phone_number,
+                 email_address, status, credit_limit):
     '''
     This function will add a new customer to the sqlite3 database.
     '''
@@ -33,10 +34,10 @@ def add_customer(customer_id, name, lastname, home_address, phone_number, email_
             new_customer.save()
             LOGGER.info('Database add successful')
 
-    except Exception as exc:
+    except (OperationalError,
+            DoesNotExist) as exc:
         LOGGER.info(f'Error creating = {name}')
         LOGGER.info(exc)
-        LOGGER.info('See how the database protects our data')
 
 
 def return_all_customers():
@@ -99,8 +100,9 @@ def update_customer_credit(customer_id, credit_limit):
         acustomer = Customer.get(Customer.id == customer_id)
         acustomer.credit_limit = credit_limit
         acustomer.save()
-    except Exception:
+    except DoesNotExist:
         raise ValueError(f"Customer Id {customer_id} not found")
+
 
 def list_active_customers():
     '''
