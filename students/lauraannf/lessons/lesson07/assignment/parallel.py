@@ -68,7 +68,7 @@ def import_products(directory_name, product_file, queue):
         product_count_new = database.products.count_documents({})
 
         queue.put((product_count_new - product_count_orig, product_count_orig,
-               product_count_new, time.clock() - start_p))
+                   product_count_new, time.clock() - start_p))
 
 def import_customers(directory_name, customer_file, queue):
     """imports data from csv files and puts in database"""
@@ -103,7 +103,7 @@ def import_customers(directory_name, customer_file, queue):
         customer_count_new = database.customers.count_documents({})
 
         queue.put((customer_count_new - customer_count_orig, customer_count_orig,
-               customer_count_new, time.clock() - start_c))
+                   customer_count_new, time.clock() - start_c))
 
 def import_rentals(directory_name, rental_file, queue):
     """imports data from csv files and puts in database"""
@@ -136,7 +136,7 @@ def import_rentals(directory_name, rental_file, queue):
         rental_count_new = database.rentals.count_documents({})
 
         queue.put((rental_count_new - rental_count_orig, rental_count_orig,
-               rental_count_new, time.clock() - start_r))
+                   rental_count_new, time.clock() - start_r))
 
 
 def delete_database():
@@ -157,15 +157,15 @@ def delete_database():
 
 
 if __name__ == "__main__":
-    start = time.clock()
-    queue = Queue()
-    queue_results = []
-    threads = [Thread(target=import_products, args=('csvfiles','inventory.csv', queue)),
-               Thread(target=import_customers, args=('csvfiles', 'customers.csv', queue)), 
-               Thread(target=import_rentals, args=('csvfiles', 'rental.csv', queue ))]
-    for thread in threads:
+    START = time.clock()
+    QUEUE = Queue()
+    QUEUE_RESULTS = []
+    THREADS = [Thread(target=import_products, args=('csvfiles', 'inventory.csv', QUEUE)),
+               Thread(target=import_customers, args=('csvfiles', 'customers.csv', QUEUE)),
+               Thread(target=import_rentals, args=('csvfiles', 'rental.csv', QUEUE))]
+    for thread in THREADS:
         thread.start()
-        queue_results.append(queue.get())
-    end = time.clock() - start
-    print('Total Time = {}s'.format(end))
-    print(queue_results)
+        QUEUE_RESULTS.append(QUEUE.get())
+    END = time.clock() - START
+    print('Total Time = {}s'.format(END))
+    print(QUEUE_RESULTS)

@@ -14,7 +14,8 @@ LOGGER.setLevel(logging.DEBUG)
 
 class MongoDBConnection(object):
     "MongoDB Connection"""
-    def __init__(self, host='127.0.0.1', port=27017):
+#    def __init__(self, host='127.0.0.1', port=27017):
+    def __init__(self, host, port):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
@@ -29,14 +30,12 @@ class MongoDBConnection(object):
 
 def import_data(directory_name, product_file, customer_file, rental_file):
     """imports data from csv files and puts in database"""
-    mongo = MongoDBConnection()
     customer_error = 0
     product_error = 0
     rental_error = 0
 
-    with mongo:
+    with MongoDBConnection('127.0.0.1', 27017) as mongo:
         database = mongo.connection.HPNorton
-
         customers = database["customers"]
         rentals = database["rentals"]
         products = database["products"]
@@ -56,12 +55,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                           'phone_number': row['Phone Number'],
                                           'status': row['Status'],
                                           'credit_limit': row['Credit Limit']})
-                try:
-                    customers.insert_many(customer_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    customer_error += 1
-        except Exception as ex:
+                customers.insert_many(customer_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening customer file')
             customer_error += 1
@@ -74,12 +69,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                          'description': row['Description'],
                                          'type': row['Type'],
                                          'total_quantity': row['Total Quantity']})
-                try:
-                    products.insert_many(product_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    product_error += 1
-        except Exception as ex:
+                products.insert_many(product_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening product file')
             product_error += 1
@@ -93,12 +84,8 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                         'customer_id': row['Customer ID'],
                                         'product_id': row['Product ID'],
                                         'quantity': row['Quantity']})
-                try:
-                    rentals.insert_many(rental_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-                    rental_error += 1
-        except Exception as ex:
+                rentals.insert_many(rental_list)
+        except FileNotFoundError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening rental file')
             rental_error += 1
@@ -122,8 +109,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
 def show_available_products():
     """ lists all available products"""
-    mongo = MongoDBConnection()
-    with mongo:
+    with MongoDBConnection('127.0.0.1', 27017) as mongo:
         database = mongo.connection.HPNorton
         product_dict = {}
         for product in database.products.find():
@@ -137,8 +123,7 @@ def show_available_products():
 
 def show_rentals(product_id):
     """lists all rentals"""
-    mongo = MongoDBConnection()
-    with mongo:
+    with MongoDBConnection('127.0.0.1', 27017) as mongo:
         database = mongo.connection.HPNorton
         rental_dict = {}
         for rental in database.rentals.find({'product_id': product_id}):
@@ -162,9 +147,7 @@ def total_rented(product_id):
 
 def delete_database():
     """deletes database to start fresh"""
-    mongo = MongoDBConnection()
-
-    with mongo:
+    with MongoDBConnection('127.0.0.1', 27017) as mongo:
         database = mongo.connection.HPNorton
 
         customers = database["customers"]
