@@ -114,9 +114,8 @@ def list_active_customers():
     """
     # db_query = Customer.select().where(Customer.status == True).count()  # pylint: disable=C0121
     # Above line changed to below to show iteration
-    db_query = Customer.select()
     customer_count = 0
-    for customer in db_query:
+    for customer in Customer.select():
         if customer.status is True:
             customer_count += 1
     return customer_count
