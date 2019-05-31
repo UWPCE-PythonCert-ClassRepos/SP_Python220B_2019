@@ -29,6 +29,15 @@ North Carolina', '203-231-3223', 'goat_test@gmail.com', 'Active', 212109)
         customer = basic_operations.search_customer(1)
         self.assertDictEqual(gold, customer)
 
+    def test_add_bad_customer(self):
+
+        try:
+            basic_operations.add_customer(1, 'Bad', 'Customer', '3421 S Bull Street \
+North Carolina', '203-231-3223', 'goat_test@gmail.com', 'Active', '100.9')
+
+        except ValueError:
+            self.assertRaises(ValueError)
+
     # def test_search_customer(self):
 
     #     customer = basic_operations.search_customer('1')
@@ -55,6 +64,15 @@ Street Seattle WA', '206-240-4023', 'dunk_test@gmail.com', 'Active', 212109)
         except ValueError:
             self.assertRaises(ValueError)
 
+    def test_return_all_customers(self):
+
+        basic_operations.add_customer(3, 'Charle', 'Barkley', '3423 Green Lake \
+Street Seattle WA', '206-240-4023', 'chucky@gmail.com', 'Inactive', 212)
+
+        customer = basic_operations.return_all_customers()
+        customer_dict = customer.dicts()
+
+        self.assertEqual(2, len(customer_dict))
 
     @pytest.mark.last
     def test_delete_customer(self):
@@ -62,10 +80,3 @@ Street Seattle WA', '206-240-4023', 'dunk_test@gmail.com', 'Active', 212109)
         basic_operations.delete_customer(1)
         customer = basic_operations.search_customer(1)
         self.assertIsNone(customer)
-
-
-#if __name__ == '__main__':
-
-#    test = CustomerDBTests()
-
-#     test.create_database()
