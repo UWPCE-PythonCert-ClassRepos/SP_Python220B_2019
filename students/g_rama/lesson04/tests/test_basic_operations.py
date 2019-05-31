@@ -8,7 +8,6 @@ sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
 from peewee import *
 import basic_operations as bo
 import customer_model as cm
-from unittest.mock import patch
 LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
@@ -16,7 +15,6 @@ logging.basicConfig(level=logging.DEBUG)
 # testdb.connect()
 # testdb.execute_sql('PRAGMA foreign_keys = ON;')
 # bo.DB = testdb
-
 
 
 class TestBasicOperations(unittest.TestCase):
@@ -42,7 +40,7 @@ class TestBasicOperations(unittest.TestCase):
                        added_customer.email_address, added_customer.status,
                        added_customer.credit_limit)
         added_customer.delete_instance()
-        logger.info("Deleted the customer instance")
+        LOGGER.info("Deleted the customer instance")
         self.assertEqual(expected_data, actual_data)
 
     def test_delete_customer(self):
@@ -68,7 +66,8 @@ class TestBasicOperations(unittest.TestCase):
     #         added_customer1.delete_instance()
     #         added_customer2.delete_instance()
     #         added_customer3.delete_instance()
-    #         mock_print.assert_called_once_with("['TestFirst7 TestLast7', 'TestFirst8 TestLast8', 'TestFirst9 TestLast9']")
+    #         mock_print.assert_called_once_with("['TestFirst7 TestLast7',
+    #         'TestFirst8 TestLast8', 'TestFirst9 TestLast9']")
 
     def test_list_active_customers(self):
         """Test function to list the active customers"""
