@@ -1,0 +1,11 @@
+﻿product_id,description,product_type,quantiry_available
+p101,TV,Electronics,5
+p102,Lamp,Livingroom,5
+p103,Dining Table,Diningroom,5
+p104,Queen bed,bedroom,5
+p105,Kung bed,bedroom,5
+p106,Study Table,studyroom,5
+p107,Bunk Bed,kidsroom,5
+p108,Microwave,Electronics,5
+p109,Fan,livingroom,5
+p110,Heater,livingroom,5

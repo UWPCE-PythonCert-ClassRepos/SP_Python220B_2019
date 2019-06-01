@@ -154,10 +154,10 @@ def delete_database():
 
 
 if __name__ == "__main__":
-    start = time.clock()
+    START = time.clock()
     CUSTOMER_COUNT = import_customers('csvfiles', 'customers.csv')
     PRODUCT_COUNT = import_products('csvfiles', 'inventory.csv')
     RENTAL_COUNT = import_rentals('csvfiles', 'rental.csv')
-    end = time.clock() - start
+    END = time.clock() - START
     print(PRODUCT_COUNT, CUSTOMER_COUNT)
-    print('Total Time = {}s'.format(end))
+    print('Total Time = {}s'.format(END))
