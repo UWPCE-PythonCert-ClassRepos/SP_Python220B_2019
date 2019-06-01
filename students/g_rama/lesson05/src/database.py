@@ -1,6 +1,7 @@
 """Mongo DB class to import the CSV data and to display the data"""
-from pymongo import MongoClient
 import csv
+import os
+from pymongo import MongoClient
 
 
 class MongoDBConnection():
