@@ -97,8 +97,8 @@ def show_available_products():
         for p in db.products.find():
             if int(p["quantity_available"]) > 0:
                 available_products.update({p["product_id"]: {p["description"],
-                                                        p["product_type"],
-                                                        p["quantity_available"]}})
+                                                             p["product_type"],
+                                                             p["quantity_available"]}})
 
         return available_products
 
@@ -108,19 +108,18 @@ def show_rentals(product_id):
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.hpnorton
-        # print(product_id)
-        # print(type(product_id))
+        rented_user_id = []
         rentals_all = db.rentals.find({'product_id': {'$eq': product_id}})
-        # {'product_id': {'$in': [product_id]}}
-        #type(rentals)
-        #rentals = db.rentals.find()
-        #print(rentals)
-        # for rental in rentals:
-        #     print("i am in")
-        #     print(f'{rental["product_id"]} \n')
-        #
         for rental in rentals_all:
-            print(rental['user_id'])
+            rented_user_id.append(rental['user_id'])
+        print(rented_user_id)
+        rented_user_info = {}
+        for user in rented_user_id:
+            for rented_user in db.customers.find({'user_id': {'$eq': user}}):
+                rented_user_info.update({rented_user["user_id"]: {rented_user["name"],
+                                                                  rented_user["address"],
+                                                                  rented_user["email"]}})
+        return rented_user_info
 
 
 def drop_collections():
@@ -142,6 +141,6 @@ if __name__ == '__main__':
     import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
     show_available_products()
 
-    #show_rentals("p101")
+    show_rentals("p101")
     drop_collections()
 
