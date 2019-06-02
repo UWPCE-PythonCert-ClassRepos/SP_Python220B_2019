@@ -93,13 +93,14 @@ def show_available_products():
     with mongo:
         db = mongo.connection.hpnorton
         print(db.list_collection_names())
-        product_all = db.products.find()
-        print(product_all)
-        print("NAME" + "    " + "Address" + "    " + "phone_number" + "   " + "email")
+        available_products = {}
         for p in db.products.find():
-            print(f'{p["product_id"]},{p["description"]},'
-                  f'{p["product_type"]},{p["quantity_available"]}\n')
+            if int(p["quantity_available"]) > 0:
+                available_products.update({p["product_id"]: {p["description"],
+                                                        p["product_type"],
+                                                        p["quantity_available"]}})
 
+        return available_products
 
 
 def show_rentals(product_id):
@@ -142,5 +143,5 @@ if __name__ == '__main__':
     show_available_products()
 
     #show_rentals("p101")
-    #drop_collections()
+    drop_collections()
 
