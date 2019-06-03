@@ -1,8 +1,5 @@
 """
-    Simple database example with Peewee ORM, sqlite and Python
-    Here we define the schema
-    Use logging for messages so they can be turned off
-
+    Schema is defined here
 """
 import logging
 from peewee import *
