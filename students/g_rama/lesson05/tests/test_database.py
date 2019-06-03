@@ -1,26 +1,20 @@
 """Testing the database.py"""
-import logging
-import unittest
-import pytest
 import sys
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
                 'students/g_rama/lesson05/src/')
+import unittest
 import database
 
 
 class TestDatabase(unittest.TestCase):
+    """Test cases for database.py methods"""
 
-    @pytest.mark.parametrize('directory_name, product_file, customer_file, rentals_file, expected_output', [
-        ("/Users/guntur/PycharmProjects/uw/", "product_file1", "customer_file1", "rentals_file1",
-         "((0, 0, 0), (1, 1, 1))")
-    ])
     def test_import_data(self):
         """Testing of the import data"""
         directory_name = "/Users/guntur/PycharmProjects/uw/" \
                          "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
-        added, errors = database.import_data(directory_name, "products1.csv", "customers1.csv", "rentals1.csv")
-
-        #added, errors = database.import_data(directory_name, product_file, customer_file, rentals_file)
+        added, errors = database.import_data(directory_name, "products1.csv",
+                                             "customers1.csv", "rentals1.csv")
         actual_output = added, errors
         expected_output = ((0, 0, 0), (1, 1, 1))
         assert actual_output == expected_output
@@ -43,7 +37,7 @@ class TestDatabase(unittest.TestCase):
                            'p110': {'5', 'livingroom', 'Heater'}}
         actual_data = database.show_available_products()
         database.drop_collections()
-        self.assertEqual(expected_output,actual_data)
+        self.assertEqual(expected_output, actual_data)
 
     def test_show_rentals(self):
         """Function to test the return of user details for a product that is rented"""

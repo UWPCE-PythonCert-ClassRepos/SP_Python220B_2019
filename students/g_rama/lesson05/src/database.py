@@ -1,12 +1,11 @@
 """Mongo DB class to import the CSV data and to display the data"""
 import csv
 import os
-import logging
 import pymongo
 from pymongo import MongoClient
 
 
-class MongoDBConnection():
+class MongoDBConnection:
     """MongoDB Connection"""
 
     def __init__(self, host='localhost', port=27017):
@@ -29,7 +28,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     mongo = MongoDBConnection()
     with mongo:
         # mongodb database; it all starts here
-        db = mongo.connection.hpnorton
+        DB = mongo.connection.hpnorton
         products_error = 0
         customers_error = 0
         rentals_error = 0
@@ -46,14 +45,14 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         except FileNotFoundError:
             rentals_error += 1
 
-        products = db["products"]
-        customers = db["customers"]
-        rentals = db["rentals"]
+        products = DB["products"]
+        customers = DB["customers"]
+        rentals = DB["rentals"]
 
         with mongo:
-            db = mongo.connection.hpnorton
+            DB = mongo.connection.hpnorton
             print("Printing the collection of DB")
-            print(db.list_collection_names())
+            print(DB.list_collection_names())
 
         try:
             with open(product_file_csv, encoding='utf-8-sig') as product:
@@ -91,9 +90,9 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         except FileNotFoundError:
             rentals_error += 1
 
-        products_count = db.products.count_documents({})
-        customers_count = db.customers.count_documents({})
-        rentals_count = db.rentals.count_documents({})
+        products_count = DB.products.count_documents({})
+        customers_count = DB.customers.count_documents({})
+        rentals_count = DB.rentals.count_documents({})
 
         tuple1 = (products_count, customers_count, rentals_count)
         tuple2 = (products_error, customers_error, rentals_error)
@@ -104,14 +103,14 @@ def show_available_products():
     """Display the products in inventory"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.hpnorton
-        print(db.list_collection_names())
+        DB = mongo.connection.hpnorton
+        print(DB.list_collection_names())
         available_products = {}
-        for p in db.products.find():
-            if int(p["quantity_available"]) > 0:
-                available_products.update({p["product_id"]: {p["description"],
-                                                             p["product_type"],
-                                                             p["quantity_available"]}})
+        for prod in DB.products.find():
+            if int(prod["quantity_available"]) > 0:
+                available_products.update({prod["product_id"]: {prod["description"],
+                                                                prod["product_type"],
+                                                                prod["quantity_available"]}})
 
         return available_products
 
@@ -120,15 +119,15 @@ def show_rentals(product_id):
     """Display the users who rented a product"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.hpnorton
+        DB = mongo.connection.hpnorton
         rented_user_id = []
-        rentals_all = db.rentals.find({'product_id': {'$eq': product_id}})
+        rentals_all = DB.rentals.find({'product_id': {'$eq': product_id}})
         for rental in rentals_all:
             rented_user_id.append(rental['user_id'])
         print(rented_user_id)
         rented_user_info = {}
         for user in rented_user_id:
-            for rented_user in db.customers.find({'user_id': {'$eq': user}}):
+            for rented_user in DB.customers.find({'user_id': {'$eq': user}}):
                 rented_user_info.update({rented_user["user_id"]: {rented_user["name"],
                                                                   rented_user["address"],
                                                                   rented_user["email"]}})
@@ -139,26 +138,10 @@ def drop_collections():
     """Function to clean the collections created"""
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.hpnorton
-        db.products.drop()
+        DB = mongo.connection.hpnorton
+        DB.products.drop()
         print("deleted the products")
-        db.customers.drop()
+        DB.customers.drop()
         print("deleted the customers")
-        db.rentals.drop()
+        DB.rentals.drop()
         print("deleted the rentals")
-
-
-if __name__ == '__main__':
-    directory_name = "/Users/guntur/PycharmProjects/uw/" \
-               "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
-    imd1 = import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
-    show_avail = show_available_products()
-    print(show_avail)
-
-    show_rentals("p101")
-    test = show_rentals("p899")
-    print(test)
-    print(imd1)
-    drop_collections()
-
-
