@@ -3,11 +3,11 @@
 from pymongo import MongoClient
 import logging
 import datetime
+import os
 
 
 class MongoDBConnection:
     """MongoDB Connection"""
-
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
@@ -44,15 +44,6 @@ LOG_FILE = 'database' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 LOGGER = __setup_logger('database_logger', LOG_FILE, logging.DEBUG)
 
 
-def main():
-    pass
-
-
-def print_mbd_collection(collection_name):
-    for doc in collection_name.find():
-        print(doc)
-
-
 def import_data(directory_name, product_file, customer_file, rental_file):
     """
     This function takes a directory name and three csv files as input, one with product data,
@@ -61,7 +52,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     number of products, customers, and rentals added (in that order), the second with a count
     of any errors that occurred, in the same order
     """
-    db_names = __set_db_names()
+    db_names = __set_collection_names()
     with MONGO:
         # mongodb database
         db = MONGO.connection.media
@@ -72,34 +63,37 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         customer_error = 0
         rental_error = 0
         try:
-            product_list = __read_csv(product_file)
+            product_list = __read_csv(os.path.join(directory_name, product_file))
             product_dict = __make_mongo_dictionary(product_list)
             product_result = products.insert_many(product_dict)
+            product_count = len(product_result.inserted_ids)
         except FileNotFoundError:
             product_error += 1
+            product_count = 0
         try:
-            customer_list = __read_csv(customer_file)
+            customer_list = __read_csv(os.path.join(directory_name, customer_file))
             customer_dict = __make_mongo_dictionary(customer_list)
             customer_result = customers.insert_many(customer_dict)
+            customer_count = len(customer_result.inserted_ids)
         except FileNotFoundError:
             customer_error += 1
+            customer_count = 0
         try:
-            rental_list = __read_csv(rental_file)
+            rental_list = __read_csv(os.path.join(directory_name, rental_file))
             rental_dict = __make_mongo_dictionary(rental_list)
             rental_result = rentals.insert_many(rental_dict)
+            rental_count = len(rental_result.inserted_ids)
         except FileNotFoundError:
             rental_error += 1
-        product_count = len(product_result.inserted_ids)
-        customer_count = len(customer_result.inserted_ids)
-        rental_count = len(rental_result.inserted_ids)
+            rental_count = 0
         count_tuple = (product_count, customer_count, rental_count)
         error_tuple = (product_error, customer_error, rental_error)
         return_list = [count_tuple, error_tuple]
-        LOGGER.debug(return_list)
         return return_list
 
 
 def __make_mongo_dictionary(passed_list):
+    """Makes a dictionary from a list who's first item is keys"""
     keys = passed_list.pop(0)
     return_dictionary = []
     for line in passed_list:
@@ -108,6 +102,7 @@ def __make_mongo_dictionary(passed_list):
 
 
 def __read_csv(passed_file):
+    """Make a list from a csv file"""
     return_list = []
     with open(passed_file) as passed_csv:
         for line in passed_csv:
@@ -116,9 +111,10 @@ def __read_csv(passed_file):
     return return_list
 
 
-def __set_db_names():
+def __set_collection_names():
     """Set names with function so that this can be mocked for testing"""
     return ['products', 'customers', 'rentals']
+
 
 def show_available_products():
     """
@@ -128,7 +124,18 @@ def show_available_products():
     product_type
     quantity_available
     """
-    pass
+    db_names = __set_collection_names()
+    with MONGO:
+        # mongodb database
+        db = MONGO.connection.media
+        products = db[db_names[0]]
+        available_dict = {}
+        for doc in products.find({'quantity_available': {"$gt": '0'}}):
+            product = {'description': doc['description'],
+                       'product_type': doc['product_type'],
+                       'quantity_available': doc['quantity_available']}
+            available_dict[doc['product_id']] = product
+        return available_dict
 
 
 def show_rentals(product_id):
@@ -142,7 +149,3 @@ def show_rentals(product_id):
     email
     """
     pass
-
-
-if __name__ == "__main__":
-    main()
