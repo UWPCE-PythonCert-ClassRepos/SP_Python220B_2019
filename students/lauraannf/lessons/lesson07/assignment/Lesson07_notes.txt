@@ -1,0 +1,28 @@
+Lesson 7
+
+Updated the csv files to have >1000 records
+
+(Imported Records, Old Records, Total Records, time for module)
+
+linear.py results:
+((1205, 5, 1210, 0.04693600000000009) (1103, 4, 1107, 0.06535400000000013)
+Total Time = 0.11956100000000003s
+
+
+
+creating parallel.py:
+    I imported threading and queue
+    I loop through threads, where each thread is one of the three import functions
+    I added queue to capture the results from each import
+Total Time = 0.1119110000000001s
+[(1205, 7235, 8440, 0.060365), (1103, 6622, 7725, 0.04325000000000001), 
+(15, 94, 109, 0.00641399999999992)]
+    
+I don't really save much time here. Is this because they are such short times to begin 
+with or is my code inefficient?
+
+Failure from contention:
+
+One place that it could fail is when it adds to the queue, it can do so before finishing the thread
+it already started. So by adding thread.join() then queue.append, we ensure that 
+it waits for the previous thread to finish before adding to the queue
