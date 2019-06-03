@@ -4,10 +4,6 @@ import os
 import logging
 import pymongo
 from pymongo import MongoClient
-from prettytable import PrettyTable
-
-x = PrettyTable()
-x.field_names = ["name", "Address", "Phone", "Email"]
 
 
 class MongoDBConnection():
@@ -34,13 +30,21 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     with mongo:
         # mongodb database; it all starts here
         db = mongo.connection.hpnorton
-
-        product_file_csv = os.path.join(directory_name, product_file)
-        customer_file_csv = os.path.join(directory_name, customer_file)
-        rental_file_csv = os.path.join(directory_name, rental_file)
         products_error = 0
         customers_error = 0
         rentals_error = 0
+        try:
+            product_file_csv = os.path.join(directory_name, product_file)
+        except FileNotFoundError:
+            products_error += 1
+        try:
+            customer_file_csv = os.path.join(directory_name, customer_file)
+        except FileNotFoundError:
+            customers_error += 1
+        try:
+            rental_file_csv = os.path.join(directory_name, rental_file)
+        except FileNotFoundError:
+            rentals_error += 1
 
         products = db["products"]
         customers = db["customers"]
@@ -51,32 +55,41 @@ def import_data(directory_name, product_file, customer_file, rental_file):
             print("Printing the collection of DB")
             print(db.list_collection_names())
 
-        with open(product_file_csv, encoding='utf-8-sig') as product:
-            products_csv = csv.DictReader(product)
-            for row in products_csv:
-                print(row)
-                try:
-                    products.insert_one(row)
-                except pymongo.errors.DuplicateKeyError:
-                    products_error += 1
+        try:
+            with open(product_file_csv, encoding='utf-8-sig') as product:
+                products_csv = csv.DictReader(product)
+                for row in products_csv:
+                    print(row)
+                    try:
+                        products.insert_one(row)
+                    except pymongo.errors.DuplicateKeyError:
+                        products_error += 1
+        except FileNotFoundError:
+            products_error += 1
 
-        with open(customer_file_csv, encoding='utf-8-sig') as customer:
-            customers_csv = csv.DictReader(customer)
-            for row in customers_csv:
-                print(row)
-                try:
-                    customers.insert_one(row)
-                except pymongo.errors.DuplicateKeyError:
-                    customers_error += 1
+        try:
+            with open(customer_file_csv, encoding='utf-8-sig') as customer:
+                customers_csv = csv.DictReader(customer)
+                for row in customers_csv:
+                    print(row)
+                    try:
+                        customers.insert_one(row)
+                    except pymongo.errors.DuplicateKeyError:
+                        customers_error += 1
+        except FileNotFoundError:
+            customers_error += 1
 
-        with open(rental_file_csv, encoding='utf-8-sig') as rental:
-            rentals_csv = csv.DictReader(rental)
-            for row in rentals_csv:
-                print(row)
-                try:
-                    rentals.insert_one(row)
-                except Exception as ex:
-                    rentals_error += 1
+        try:
+            with open(rental_file_csv, encoding='utf-8-sig') as rental:
+                rentals_csv = csv.DictReader(rental)
+                for row in rentals_csv:
+                    print(row)
+                    try:
+                        rentals.insert_one(row)
+                    except Exception as ex:
+                        rentals_error += 1
+        except FileNotFoundError:
+            rentals_error += 1
 
         products_count = db.products.count_documents({})
         customers_count = db.customers.count_documents({})
@@ -138,9 +151,14 @@ def drop_collections():
 if __name__ == '__main__':
     directory_name = "/Users/guntur/PycharmProjects/uw/" \
                "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
-    import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
-    show_available_products()
+    imd1 = import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
+    show_avail = show_available_products()
+    print(show_avail)
 
     show_rentals("p101")
+    test = show_rentals("p899")
+    print(test)
+    print(imd1)
     drop_collections()
+
 
