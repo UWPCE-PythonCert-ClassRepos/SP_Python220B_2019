@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Migration of product data from csv into MongoDB"""
-from pymongo import MongoClient
 import logging
 import datetime
 import os
+from pymongo import MongoClient
 
 
 class MongoDBConnection:
@@ -44,7 +44,7 @@ LOG_FILE = 'database' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 LOGGER = __setup_logger('database_logger', LOG_FILE, logging.DEBUG)
 
 
-def import_data(directory_name, product_file, customer_file, rental_file):
+def import_data(directory_name, product_file, customer_file, rental_file):  # pylint: disable=R0914
     """
     This function takes a directory name and three csv files as input, one with product data,
     one with customer data, and the third one with rentals data. It creates and populates a new
@@ -55,7 +55,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     db_names = __set_collection_names()
     with MONGO:
         # mongodb database
-        db = MONGO.connection.media
+        db = MONGO.connection.media  # pylint: disable=C0103
         products = db[db_names[0]]
         customers = db[db_names[1]]
         rentals = db[db_names[2]]
@@ -127,7 +127,7 @@ def show_available_products():
     db_names = __set_collection_names()
     with MONGO:
         # mongodb database
-        db = MONGO.connection.media
+        db = MONGO.connection.media  # pylint: disable=C0103
         products = db[db_names[0]]
         available_dict = {}
         for doc in products.find({'quantity_available': {"$gt": '0'}}):
@@ -148,4 +148,19 @@ def show_rentals(product_id):
     phone_number
     email
     """
-    pass
+    db_names = __set_collection_names()
+    with MONGO:
+        db = MONGO.connection.media  # pylint: disable=C0103
+        rentals = db[db_names[2]]
+        customers = db[db_names[1]]
+        customer_dict = {}
+        for rental in rentals.find({'product_id': product_id}):
+            query = {"user_id": rental["user_id"]}
+            for customer in customers.find(query):
+                customer_info = {'name': customer['name'],
+                                 'address': customer['address'],
+                                 'phone_number': customer['phone_number'],
+                                 'email': customer['email']}
+                customer_dict[customer["user_id"]] = customer_info
+        LOGGER.debug(customer_dict)
+        return customer_dict
