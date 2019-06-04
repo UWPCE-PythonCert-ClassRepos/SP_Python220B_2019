@@ -9,7 +9,7 @@ class Furniture(Inventory):
     def __init__(self, product_code, description, market_price,
                  rental_price, material, size):
         """
-        function construction
+        furniture construction
         """
         Inventory.__init__(
             self, product_code, description, market_price, rental_price)
@@ -19,7 +19,7 @@ class Furniture(Inventory):
 
     def return_as_dictionary(self):
         """
-        function to return dictionary from super class
+        function to return a furniture dictionary from super class
         """
         furniture = Inventory.return_as_dictionary(self)
         furniture['material'] = self.material

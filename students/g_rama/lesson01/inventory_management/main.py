@@ -5,12 +5,12 @@ import inventory_class # pylint: disable=import-error
 import furniture_class # pylint: disable=import-error
 import electric_appliances_class # pylint: disable=import-error
 
-
 FULL_INVENTORY = {}
+
 
 def main_menu(user_prompt=None):
     """Main function"""
-    valid_prompts = {"1": add_new_iem,
+    valid_prompts = {"1": add_new_item,
                      "2": item_info,
                      "q": exit_program}
     options = list(valid_prompts.keys())
@@ -27,12 +27,12 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Function to get the price of item code"""
-    print(f"Get price {item_code}")
+    print(f"Get price of {item_code}")
+    return market_prices.get_latest_price(item_code)
 
 
-def add_new_iem():
+def add_new_item():
     """Function to add the new item"""
-    #global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -44,7 +44,7 @@ def add_new_iem():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.furniture(item_code, item_description, item_price,
+        new_item = furniture_class.Furniture(item_code, item_description, item_price,
                                              item_rental_price, item_material,
                                              item_size)
     else:
@@ -52,13 +52,13 @@ def add_new_iem():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = electric_appliances_class.electricAppliances(item_code, item_description,
+            new_item = electric_appliances_class.ElectricAppliances(item_code, item_description,
                                                                     item_price, item_rental_price,
                                                                     item_brand, item_voltage)
         else:
-            new_item = inventory_class.inventory(item_code, item_description,
+            new_item = inventory_class.Inventory(item_code, item_description,
                                                  item_price, item_rental_price)
-    FULL_INVENTORY[item_code] = new_item.returnAsDictionary()
+    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 
@@ -79,6 +79,8 @@ def exit_program():
 
 
 if __name__ == '__main__':
+
+    FULL_INVENTORY = {}
 
     while True:
         print(FULL_INVENTORY)
