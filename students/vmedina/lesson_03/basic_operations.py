@@ -3,7 +3,9 @@ Module that includes operations on the customers database
 """
 # pylint: disable= W0401,W1202
 import logging
+import peewee
 from HP import Customer
+
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -43,7 +45,7 @@ def add_customer(customer_id, name, last_name, home_address, phone_number, email
         new_customer.save()
         LOGGER.info('Added a new customer')
 
-    except Exception as error:
+    except peewee.IntegrityError as error:
         LOGGER.info('Customer with ID {} could not be created, check all inputs'
                     .format(customer_id))
         LOGGER.info(error)
@@ -65,9 +67,12 @@ def search_customer(customer_id):
                          'email_address': customer.email_address,
                          'phone_number': customer.phone_number}
         return customer_info
-    except Exception as error:
+    except IndexError as error:
+        LOGGER.info("Could not find customer with id {}".format(customer_id))
         LOGGER.info(error)
         return {}
+
+    return {}
 
 
 def delete_customer(customer_id):
@@ -82,9 +87,11 @@ def delete_customer(customer_id):
     customer = Customer.get(Customer.customer_id == customer_id)
     try:
         customer.delete_instance()
-    except Exception as error:
-        LOGGER.info('Customer with id {} not deleted'.format(customer_id))
-        LOGGER.info(error)
+    except IndexError as index_error:
+        LOGGER.info("Customer with id {} doesn't exist".format(customer_id))
+        LOGGER.info(index_error)
+
+
 
 
 def update_customer_credit(customer_id, credit_limit):
