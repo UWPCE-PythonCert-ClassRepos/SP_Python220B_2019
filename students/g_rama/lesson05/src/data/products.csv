@@ -1,4 +1,4 @@
-﻿product_id,description,product_type,quantiry_available
+﻿product_id,description,product_type,quantity_available
 p101,TV,Electronics,5
 p102,Lamp,Livingroom,5
 p103,Dining Table,Diningroom,5
@@ -9,3 +9,5 @@ p107,Bunk Bed,kidsroom,5
 p108,Microwave,Electronics,5
 p109,Fan,livingroom,5
 p110,Heater,livingroom,5
+p111,Speakers,Mediaroom,0
+p112,Routers,Studyroom,0
