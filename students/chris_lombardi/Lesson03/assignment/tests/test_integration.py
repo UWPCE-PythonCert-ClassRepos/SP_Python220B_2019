@@ -5,6 +5,7 @@ sys.path.append('C:\\Users\\chris\\documents\\PY220_Git\\SP_Python220B_2019\\'
 import logging
 import unittest
 import basic_operations
+import peewee
 from customer_model import *
 import create_customers
 
@@ -32,7 +33,7 @@ class Test_Basic_Operations(unittest.TestCase):
         try:
             cust_exit = Customer.get(Customer.cust_id == cust[0])
             cust_exit.delete_instance()
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             logger.info('DNE')
     logger.info('Database Clear!')
 
@@ -50,7 +51,7 @@ class Test_Basic_Operations(unittest.TestCase):
                              'email address': self.CUST_LIST[0][5], 'phone number': self.CUST_LIST[0][4]}
             self.assertEqual(test_dict, expected_dict)
             logger.info('Found Customer 001!')
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             logger.info('Customer id 001 not found in database.')
             assert False
 
@@ -61,7 +62,7 @@ class Test_Basic_Operations(unittest.TestCase):
             test_empty = basic_operations.search_customer('003')
             self.assertEqual({}, test_empty)
             logger.info('Confirmed no customer id 003 in the database...')
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             logger.info('Incorrectly found customer id 003 in the database...')
             assert False
 
@@ -69,7 +70,7 @@ class Test_Basic_Operations(unittest.TestCase):
             logger.info('Attempting to delete customer 002 from database...')
             acust = basic_operations.delete_customer('002')
             logger.info('Customer 002 succesfully deleted!')
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             logger.info('Customer 002 was not deleted from the database as requested...')
             assert False
 

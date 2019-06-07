@@ -3,10 +3,11 @@ sys.path.append('C:\\Users\\chris\\documents\\PY220_Git\\SP_Python220B_2019\\'
                 '\\students\\chris_lombardi\\Lesson03\\assignment')
 
 import unittest
+import peewee
+import logging
 import basic_operations
 import create_customers
 from customer_model import *
-import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -26,6 +27,7 @@ class test_basic_operations(unittest.TestCase):
 
     def test_add_customer(self):
 
+        self.clear_database()
         logging.info('Testing add_customer...')
         basic_operations.add_customer(*self.CUST_LIST[0])
         basic_operations.add_customer(*self.CUST_LIST[1])
@@ -40,7 +42,7 @@ class test_basic_operations(unittest.TestCase):
             self.assertEqual(test_cust_one.cust_lastname, self.CUST_LIST[0][2])
             self.assertEqual(test_cust_one.cust_address, self.CUST_LIST[0][3])
 
-        except Exception as e:
+        except peewee.IntegrityError as e:
             assert False
 
     def test_search_customer(self):
@@ -64,7 +66,7 @@ class test_basic_operations(unittest.TestCase):
             self.assertEqual(test_dict, expected_dict)
             self.assertDictEqual(test_no_entry, empty_dict)
 
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             assert False
 
     def test_delete_customer(self):
@@ -83,7 +85,7 @@ class test_basic_operations(unittest.TestCase):
             self.assertEqual(None, basic_operations.delete_customer('001'))
             # Check that the whole database was not deleted.
             self.assertEqual(self.CUST_LIST[1][1], Customer.get(Customer.cust_id =='002').cust_firstname)
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             assert False
 
     def test_update_customer_credit(self):
@@ -107,7 +109,7 @@ class test_basic_operations(unittest.TestCase):
             with self.assertRaises(ValueError):
                 basic_operations.update_customer_credit('002', new_credit)
 
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             assert False
 
     def test_list_active_customers(self):
@@ -126,7 +128,7 @@ class test_basic_operations(unittest.TestCase):
             # Confirm there are two active Customer in database.
             self.assertEqual(basic_operations.list_active_customers(), 2)
 
-        except Exception as e:
+        except peewee.DoesNotExist as e:
             assert False
 
     def clear_database(self):
@@ -136,6 +138,6 @@ class test_basic_operations(unittest.TestCase):
             try:
                 cust_exit = Customer.get(Customer.cust_id == cust[0])
                 cust_exit.delete_instance()
-            except Exception as e:
+            except peewee.DoesNotExist as e:
                 logger.info('DNE')
         logger.info('Database Clear!')

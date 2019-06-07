@@ -5,6 +5,7 @@
 #pylint: disable=too-many-arguments
 
 import logging
+import peewee
 from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
@@ -16,9 +17,6 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
     Add a new customer to the customer database using the provided params.
     """
 
-#    CUST_SCHEMA = {'cust_id': 0, 'first_name': 1, 'last_name': 2, 'address': 3,
-#                   'city': 4, 'state': 5, 'zip': 6, 'phone_number': 7, 'email': 8,
-#                   'status': 9, 'credit_limit': 10}
     try:
         with database.transaction():
             logging.info('Trying to add customer %s...', customer_id)
@@ -35,12 +33,9 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
             new_cust.save()
             LOGGER.info('Added new customer %s %s', name, lastname)
 
-    except IntegrityError as error_1:
+    except peewee.IntegrityError as error_1:
         LOGGER.info(error_1)
         LOGGER.info('Non-unique customer id: %s', customer_id)
-    except Exception as error_2:
-        LOGGER.info(error_2)
-        LOGGER.info('Error adding customer to the database.')
 
 def search_customer(customer_id):
     """
@@ -53,7 +48,7 @@ def search_customer(customer_id):
         acustomer = Customer.get(Customer.cust_id == customer_id)
         return {'name': acustomer.cust_firstname, 'lastname': acustomer.cust_lastname,
                 'email address': acustomer.cust_email, 'phone number': acustomer.cust_phone}
-    except Exception:
+    except peewee.DoesNotExist:
         LOGGER.info('Customer ID %s does not exist in database.', customer_id)
         return {}
 
@@ -65,7 +60,7 @@ def delete_customer(customer_id):
     try:
         acustomer = Customer.get(Customer.cust_id == customer_id)
         acustomer.delete_instance()
-    except Exception as error_1:
+    except peewee.DoesNotExist as error_1:
         LOGGER.info(error_1)
         LOGGER.info('%s was not in the database.', customer_id)
 
@@ -83,7 +78,7 @@ def update_customer_credit(customer_id, credit_limit):
             acust.cust_credit_limit = credit_limit
             acust.save()
             LOGGER.info('Customer credit limit updated.')
-    except Exception:
+    except peewee.DoesNotExist:
         LOGGER.info('%s is not in the database.', customer_id)
         raise ValueError
 
