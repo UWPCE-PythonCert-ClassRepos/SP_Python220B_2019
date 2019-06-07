@@ -1,4 +1,3 @@
-# Neima Schafi - Lesson09 Part 3
 """This program uses recursion in order to find jpg files within a folder."""
 import os
 import logging
