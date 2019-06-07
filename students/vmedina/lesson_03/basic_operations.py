@@ -67,7 +67,7 @@ def search_customer(customer_id):
                          'email_address': customer.email_address,
                          'phone_number': customer.phone_number}
         return customer_info
-    except IndexError as error:
+    except (Exception, IndexError) as error:
         LOGGER.info("Could not find customer with id {}".format(customer_id))
         LOGGER.info(error)
         return {}
@@ -84,13 +84,11 @@ def delete_customer(customer_id):
     :rtype:
     """
     LOGGER.info('Deleting customer with id {}'.format(customer_id))
-    customer = Customer.get(Customer.customer_id == customer_id)
     try:
+        customer = Customer.get(Customer.customer_id == customer_id)
         customer.delete_instance()
-    except IndexError as index_error:
+    except (Exception, IndexError):
         LOGGER.info("Customer with id {} doesn't exist".format(customer_id))
-        LOGGER.info(index_error)
-
 
 
 
