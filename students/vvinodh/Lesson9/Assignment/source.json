@@ -1,0 +1,6995 @@
+{
+  "VIN001": {
+    "product_code": "PRD80",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "6/12/17",
+    "rental_end": "3/22/17"
+  },
+  "VIN002": {
+    "product_code": "PRD11",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "7/20/16",
+    "rental_end": "9/30/18"
+  },
+  "VIN003": {
+    "product_code": "PRD22",
+    "units_rented": 4,
+    "price_per_day": 40,
+    "rental_start": "2/1/16",
+    "rental_end": "6/4/17"
+  },
+  "VIN004": {
+    "product_code": "PRD86",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "8/14/16",
+    "rental_end": "12/7/17"
+  },
+  "VIN005": {
+    "product_code": "PRD70",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "7/12/17",
+    "rental_end": "11/23/18"
+  },
+  "VIN006": {
+    "product_code": "PRD51",
+    "units_rented": 8,
+    "price_per_day": 20,
+    "rental_start": "8/26/18",
+    "rental_end": "7/29/18"
+  },
+  "VIN007": {
+    "product_code": "PRD42",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "7/10/17",
+    "rental_end": "5/31/17"
+  },
+  "VIN008": {
+    "product_code": "PRD32",
+    "units_rented": 3,
+    "price_per_day": 12,
+    "rental_start": "10/25/18",
+    "rental_end": "7/4/18"
+  },
+  "VIN009": {
+    "product_code": "PRD13",
+    "units_rented": 9,
+    "price_per_day": 6,
+    "rental_start": "11/3/18",
+    "rental_end": "7/28/16"
+  },
+  "VIN010": {
+    "product_code": "PRD22",
+    "units_rented": 6,
+    "price_per_day": 27,
+    "rental_start": "3/15/18",
+    "rental_end": "8/27/17"
+  },
+  "VIN011": {
+    "product_code": "PRD17",
+    "units_rented": 7,
+    "price_per_day": 26,
+    "rental_start": "9/29/17",
+    "rental_end": "4/29/16"
+  },
+  "VIN012": {
+    "product_code": "PRD55",
+    "units_rented": 4,
+    "price_per_day": 18,
+    "rental_start": "10/24/17",
+    "rental_end": "1/15/16"
+  },
+  "VIN013": {
+    "product_code": "PRD81",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "2/3/17",
+    "rental_end": "8/31/17"
+  },
+  "VIN014": {
+    "product_code": "PRD0",
+    "units_rented": 7,
+    "price_per_day": 37,
+    "rental_start": "1/30/17",
+    "rental_end": "7/30/16"
+  },
+  "VIN015": {
+    "product_code": "PRD82",
+    "units_rented": 10,
+    "price_per_day": 29,
+    "rental_start": "5/2/17",
+    "rental_end": "6/22/18"
+  },
+  "VIN016": {
+    "product_code": "PRD52",
+    "units_rented": 10,
+    "price_per_day": 11,
+    "rental_start": "6/18/18",
+    "rental_end": "2/5/16"
+  },
+  "VIN017": {
+    "product_code": "PRD5",
+    "units_rented": 10,
+    "price_per_day": 36,
+    "rental_start": "4/28/18",
+    "rental_end": "4/11/18"
+  },
+  "VIN018": {
+    "product_code": "PRD59",
+    "units_rented": 9,
+    "price_per_day": 40,
+    "rental_start": "8/16/16",
+    "rental_end": "1/13/16"
+  },
+  "VIN019": {
+    "product_code": "PRD6",
+    "units_rented": 8,
+    "price_per_day": 39,
+    "rental_start": "12/16/17",
+    "rental_end": "5/10/16"
+  },
+  "VIN020": {
+    "product_code": "PRD2",
+    "units_rented": 9,
+    "price_per_day": 33,
+    "rental_start": "6/20/18",
+    "rental_end": "1/12/16"
+  },
+  "VIN021": {
+    "product_code": "PRD97",
+    "units_rented": 3,
+    "price_per_day": 33,
+    "rental_start": "8/31/17",
+    "rental_end": "2/9/16"
+  },
+  "VIN022": {
+    "product_code": "PRD66",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "10/3/16",
+    "rental_end": "11/1/17"
+  },
+  "VIN023": {
+    "product_code": "PRD14",
+    "units_rented": 9,
+    "price_per_day": 20,
+    "rental_start": "9/13/16",
+    "rental_end": "11/16/18"
+  },
+  "VIN024": {
+    "product_code": "PRD78",
+    "units_rented": 3,
+    "price_per_day": 20,
+    "rental_start": "7/14/17",
+    "rental_end": "11/25/18"
+  },
+  "VIN025": {
+    "product_code": "PRD28",
+    "units_rented": 5,
+    "price_per_day": 26,
+    "rental_start": "3/2/18",
+    "rental_end": "5/28/16"
+  },
+  "VIN026": {
+    "product_code": "PRD40",
+    "units_rented": 6,
+    "price_per_day": 24,
+    "rental_start": "3/27/18",
+    "rental_end": "4/21/16"
+  },
+  "VIN027": {
+    "product_code": "PRD11",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "3/28/16",
+    "rental_end": "8/3/16"
+  },
+  "VIN028": {
+    "product_code": "PRD63",
+    "units_rented": 10,
+    "price_per_day": 17,
+    "rental_start": "7/6/18",
+    "rental_end": "5/6/17"
+  },
+  "VIN029": {
+    "product_code": "PRD77",
+    "units_rented": 5,
+    "price_per_day": 10,
+    "rental_start": "9/5/16",
+    "rental_end": "5/3/18"
+  },
+  "VIN030": {
+    "product_code": "PRD43",
+    "units_rented": 4,
+    "price_per_day": 31,
+    "rental_start": "7/1/17",
+    "rental_end": "4/18/17"
+  },
+  "VIN031": {
+    "product_code": "PRD51",
+    "units_rented": 10,
+    "price_per_day": 27,
+    "rental_start": "4/18/18",
+    "rental_end": "4/13/17"
+  },
+  "VIN032": {
+    "product_code": "PRD97",
+    "units_rented": 9,
+    "price_per_day": 34,
+    "rental_start": "7/2/16",
+    "rental_end": "7/18/16"
+  },
+  "VIN033": {
+    "product_code": "PRD0",
+    "units_rented": 6,
+    "price_per_day": 8,
+    "rental_start": "2/5/17",
+    "rental_end": "3/28/17"
+  },
+  "VIN034": {
+    "product_code": "PRD72",
+    "units_rented": 9,
+    "price_per_day": 36,
+    "rental_start": "10/11/17",
+    "rental_end": "4/3/16"
+  },
+  "VIN035": {
+    "product_code": "PRD19",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "9/15/16",
+    "rental_end": "11/4/17"
+  },
+  "VIN036": {
+    "product_code": "PRD94",
+    "units_rented": 2,
+    "price_per_day": 14,
+    "rental_start": "10/16/17",
+    "rental_end": "1/9/18"
+  },
+  "VIN037": {
+    "product_code": "PRD6",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "3/20/18",
+    "rental_end": "9/13/18"
+  },
+  "VIN038": {
+    "product_code": "PRD5",
+    "units_rented": 4,
+    "price_per_day": 18,
+    "rental_start": "2/16/17",
+    "rental_end": "6/24/17"
+  },
+  "VIN039": {
+    "product_code": "PRD61",
+    "units_rented": 1,
+    "price_per_day": 17,
+    "rental_start": "7/24/16",
+    "rental_end": "7/24/16"
+  },
+  "VIN040": {
+    "product_code": "PRD51",
+    "units_rented": 1,
+    "price_per_day": 23,
+    "rental_start": "12/1/17",
+    "rental_end": "12/30/16"
+  },
+  "VIN041": {
+    "product_code": "PRD59",
+    "units_rented": 4,
+    "price_per_day": 14,
+    "rental_start": "2/19/18",
+    "rental_end": "3/30/17"
+  },
+  "VIN042": {
+    "product_code": "PRD18",
+    "units_rented": 10,
+    "price_per_day": 11,
+    "rental_start": "7/27/17",
+    "rental_end": "10/19/17"
+  },
+  "VIN043": {
+    "product_code": "PRD68",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "4/9/17",
+    "rental_end": "7/5/18"
+  },
+  "VIN044": {
+    "product_code": "PRD43",
+    "units_rented": 1,
+    "price_per_day": 15,
+    "rental_start": "9/4/18",
+    "rental_end": "12/19/16"
+  },
+  "VIN045": {
+    "product_code": "PRD62",
+    "units_rented": 3,
+    "price_per_day": 33,
+    "rental_start": "12/19/18",
+    "rental_end": "11/12/18"
+  },
+  "VIN046": {
+    "product_code": "PRD46",
+    "units_rented": 5,
+    "price_per_day": 34,
+    "rental_start": "10/15/18",
+    "rental_end": "1/8/18"
+  },
+  "VIN047": {
+    "product_code": "PRD52",
+    "units_rented": 2,
+    "price_per_day": 12,
+    "rental_start": "8/3/18",
+    "rental_end": "6/24/16"
+  },
+  "VIN048": {
+    "product_code": "PRD32",
+    "units_rented": 5,
+    "price_per_day": 36,
+    "rental_start": "9/5/17",
+    "rental_end": "10/28/16"
+  },
+  "VIN049": {
+    "product_code": "PRD77",
+    "units_rented": 4,
+    "price_per_day": 14,
+    "rental_start": "1/9/18",
+    "rental_end": "3/14/18"
+  },
+  "VIN050": {
+    "product_code": "PRD6",
+    "units_rented": 8,
+    "price_per_day": 34,
+    "rental_start": "12/6/18",
+    "rental_end": "6/30/17"
+  },
+  "VIN051": {
+    "product_code": "PRD45",
+    "units_rented": 6,
+    "price_per_day": 33,
+    "rental_start": "2/18/16",
+    "rental_end": "7/19/17"
+  },
+  "VIN052": {
+    "product_code": "PRD53",
+    "units_rented": 7,
+    "price_per_day": 9,
+    "rental_start": "10/30/16",
+    "rental_end": "3/13/17"
+  },
+  "VIN053": {
+    "product_code": "PRD17",
+    "units_rented": 7,
+    "price_per_day": 10,
+    "rental_start": "12/12/16",
+    "rental_end": "9/20/17"
+  },
+  "VIN054": {
+    "product_code": "PRD62",
+    "units_rented": 1,
+    "price_per_day": 6,
+    "rental_start": "12/31/16",
+    "rental_end": "12/21/17"
+  },
+  "VIN055": {
+    "product_code": "PRD16",
+    "units_rented": 6,
+    "price_per_day": 33,
+    "rental_start": "2/4/18",
+    "rental_end": "9/14/18"
+  },
+  "VIN056": {
+    "product_code": "PRD43",
+    "units_rented": 9,
+    "price_per_day": 40,
+    "rental_start": "4/12/18",
+    "rental_end": "2/27/16"
+  },
+  "VIN057": {
+    "product_code": "PRD58",
+    "units_rented": 4,
+    "price_per_day": 23,
+    "rental_start": "9/23/17",
+    "rental_end": "9/17/18"
+  },
+  "VIN058": {
+    "product_code": "PRD35",
+    "units_rented": 8,
+    "price_per_day": 28,
+    "rental_start": "7/14/17",
+    "rental_end": "1/25/17"
+  },
+  "VIN059": {
+    "product_code": "PRD9",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "3/26/16",
+    "rental_end": "10/11/16"
+  },
+  "VIN060": {
+    "product_code": "PRD84",
+    "units_rented": 8,
+    "price_per_day": 29,
+    "rental_start": "2/15/16",
+    "rental_end": "1/18/16"
+  },
+  "VIN061": {
+    "product_code": "PRD35",
+    "units_rented": 8,
+    "price_per_day": 24,
+    "rental_start": "2/12/18",
+    "rental_end": "2/28/17"
+  },
+  "VIN062": {
+    "product_code": "PRD29",
+    "units_rented": 3,
+    "price_per_day": 12,
+    "rental_start": "8/25/18",
+    "rental_end": "6/3/18"
+  },
+  "VIN063": {
+    "product_code": "PRD47",
+    "units_rented": 4,
+    "price_per_day": 35,
+    "rental_start": "1/11/17",
+    "rental_end": "5/18/18"
+  },
+  "VIN064": {
+    "product_code": "PRD83",
+    "units_rented": 3,
+    "price_per_day": 23,
+    "rental_start": "2/24/17",
+    "rental_end": "6/28/17"
+  },
+  "VIN065": {
+    "product_code": "PRD61",
+    "units_rented": 1,
+    "price_per_day": 11,
+    "rental_start": "10/11/18",
+    "rental_end": "12/12/16"
+  },
+  "VIN066": {
+    "product_code": "PRD74",
+    "units_rented": 10,
+    "price_per_day": 39,
+    "rental_start": "2/28/16",
+    "rental_end": "11/12/17"
+  },
+  "VIN067": {
+    "product_code": "PRD29",
+    "units_rented": 5,
+    "price_per_day": 31,
+    "rental_start": "1/18/18",
+    "rental_end": "10/18/17"
+  },
+  "VIN068": {
+    "product_code": "PRD71",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "3/28/16",
+    "rental_end": "5/20/16"
+  },
+  "VIN069": {
+    "product_code": "PRD38",
+    "units_rented": 9,
+    "price_per_day": 27,
+    "rental_start": "10/21/16",
+    "rental_end": "2/17/17"
+  },
+  "VIN070": {
+    "product_code": "PRD82",
+    "units_rented": 3,
+    "price_per_day": 13,
+    "rental_start": "10/24/17",
+    "rental_end": "10/21/18"
+  },
+  "VIN071": {
+    "product_code": "PRD38",
+    "units_rented": 9,
+    "price_per_day": 6,
+    "rental_start": "10/5/16",
+    "rental_end": "5/25/16"
+  },
+  "VIN072": {
+    "product_code": "PRD53",
+    "units_rented": 8,
+    "price_per_day": 32,
+    "rental_start": "10/6/16",
+    "rental_end": "6/19/18"
+  },
+  "VIN073": {
+    "product_code": "PRD37",
+    "units_rented": 3,
+    "price_per_day": 23,
+    "rental_start": "4/3/18",
+    "rental_end": "9/8/18"
+  },
+  "VIN074": {
+    "product_code": "PRD33",
+    "units_rented": 9,
+    "price_per_day": 22,
+    "rental_start": "9/9/17",
+    "rental_end": "7/14/17"
+  },
+  "VIN075": {
+    "product_code": "PRD2",
+    "units_rented": 8,
+    "price_per_day": 25,
+    "rental_start": "4/25/16",
+    "rental_end": "11/13/18"
+  },
+  "VIN076": {
+    "product_code": "PRD64",
+    "units_rented": 4,
+    "price_per_day": 20,
+    "rental_start": "6/6/18",
+    "rental_end": "5/12/16"
+  },
+  "VIN077": {
+    "product_code": "PRD6",
+    "units_rented": 8,
+    "price_per_day": 14,
+    "rental_start": "8/15/18",
+    "rental_end": "11/19/16"
+  },
+  "VIN078": {
+    "product_code": "PRD72",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "1/6/17",
+    "rental_end": "11/1/17"
+  },
+  "VIN079": {
+    "product_code": "PRD85",
+    "units_rented": 1,
+    "price_per_day": 21,
+    "rental_start": "11/27/18",
+    "rental_end": "1/27/18"
+  },
+  "VIN080": {
+    "product_code": "PRD8",
+    "units_rented": 10,
+    "price_per_day": 21,
+    "rental_start": "6/27/17",
+    "rental_end": "4/18/18"
+  },
+  "VIN081": {
+    "product_code": "PRD52",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "2/8/18",
+    "rental_end": "12/9/18"
+  },
+  "VIN082": {
+    "product_code": "PRD2",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "10/3/16",
+    "rental_end": "11/16/17"
+  },
+  "VIN083": {
+    "product_code": "PRD70",
+    "units_rented": 1,
+    "price_per_day": 17,
+    "rental_start": "9/9/17",
+    "rental_end": "2/6/18"
+  },
+  "VIN084": {
+    "product_code": "PRD75",
+    "units_rented": 6,
+    "price_per_day": 16,
+    "rental_start": "5/13/17",
+    "rental_end": "4/29/16"
+  },
+  "VIN085": {
+    "product_code": "PRD16",
+    "units_rented": 6,
+    "price_per_day": 21,
+    "rental_start": "2/21/18",
+    "rental_end": "3/20/18"
+  },
+  "VIN086": {
+    "product_code": "PRD87",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "12/3/18",
+    "rental_end": "3/20/18"
+  },
+  "VIN087": {
+    "product_code": "PRD0",
+    "units_rented": 2,
+    "price_per_day": 37,
+    "rental_start": "8/10/16",
+    "rental_end": "6/18/16"
+  },
+  "VIN088": {
+    "product_code": "PRD84",
+    "units_rented": 9,
+    "price_per_day": 20,
+    "rental_start": "6/9/16",
+    "rental_end": "2/25/17"
+  },
+  "VIN089": {
+    "product_code": "PRD58",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "11/5/18",
+    "rental_end": "8/15/18"
+  },
+  "VIN090": {
+    "product_code": "PRD18",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "1/14/17",
+    "rental_end": "8/19/18"
+  },
+  "VIN091": {
+    "product_code": "PRD46",
+    "units_rented": 7,
+    "price_per_day": 5,
+    "rental_start": "6/27/17",
+    "rental_end": "10/25/17"
+  },
+  "VIN092": {
+    "product_code": "PRD6",
+    "units_rented": 10,
+    "price_per_day": 18,
+    "rental_start": "3/10/17",
+    "rental_end": "5/23/16"
+  },
+  "VIN093": {
+    "product_code": "PRD64",
+    "units_rented": 2,
+    "price_per_day": 33,
+    "rental_start": "4/2/16",
+    "rental_end": "11/19/18"
+  },
+  "VIN094": {
+    "product_code": "PRD28",
+    "units_rented": 3,
+    "price_per_day": 19,
+    "rental_start": "8/22/16",
+    "rental_end": "8/24/16"
+  },
+  "VIN095": {
+    "product_code": "PRD83",
+    "units_rented": 6,
+    "price_per_day": 6,
+    "rental_start": "8/5/18",
+    "rental_end": "7/23/17"
+  },
+  "VIN096": {
+    "product_code": "PRD97",
+    "units_rented": 1,
+    "price_per_day": 12,
+    "rental_start": "2/6/16",
+    "rental_end": "7/9/16"
+  },
+  "VIN097": {
+    "product_code": "PRD36",
+    "units_rented": 7,
+    "price_per_day": 29,
+    "rental_start": "1/11/17",
+    "rental_end": "8/29/16"
+  },
+  "VIN098": {
+    "product_code": "PRD5",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "1/28/17",
+    "rental_end": "2/11/18"
+  },
+  "VIN099": {
+    "product_code": "PRD42",
+    "units_rented": 1,
+    "price_per_day": 18,
+    "rental_start": "11/23/18",
+    "rental_end": "10/21/16"
+  },
+  "VIN100": {
+    "product_code": "PRD66",
+    "units_rented": 6,
+    "price_per_day": 10,
+    "rental_start": "6/16/18",
+    "rental_end": "5/21/16"
+  },
+  "VIN101": {
+    "product_code": "PRD42",
+    "units_rented": 9,
+    "price_per_day": 9,
+    "rental_start": "12/3/18",
+    "rental_end": "9/20/17"
+  },
+  "VIN102": {
+    "product_code": "PRD68",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "7/17/17",
+    "rental_end": "12/8/16"
+  },
+  "VIN103": {
+    "product_code": "PRD76",
+    "units_rented": 6,
+    "price_per_day": 20,
+    "rental_start": "1/24/17",
+    "rental_end": "2/18/16"
+  },
+  "VIN104": {
+    "product_code": "PRD98",
+    "units_rented": 1,
+    "price_per_day": 31,
+    "rental_start": "12/20/17",
+    "rental_end": "8/30/16"
+  },
+  "VIN105": {
+    "product_code": "PRD3",
+    "units_rented": 4,
+    "price_per_day": 32,
+    "rental_start": "12/29/17",
+    "rental_end": "2/20/16"
+  },
+  "VIN106": {
+    "product_code": "PRD80",
+    "units_rented": 7,
+    "price_per_day": 35,
+    "rental_start": "3/14/18",
+    "rental_end": "1/1/18"
+  },
+  "VIN107": {
+    "product_code": "PRD84",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "5/30/17",
+    "rental_end": "6/4/16"
+  },
+  "VIN108": {
+    "product_code": "PRD44",
+    "units_rented": 1,
+    "price_per_day": 26,
+    "rental_start": "6/5/16",
+    "rental_end": "3/15/17"
+  },
+  "VIN109": {
+    "product_code": "PRD88",
+    "units_rented": 2,
+    "price_per_day": 30,
+    "rental_start": "6/26/18",
+    "rental_end": "1/9/17"
+  },
+  "VIN110": {
+    "product_code": "PRD42",
+    "units_rented": 2,
+    "price_per_day": 33,
+    "rental_start": "10/25/16",
+    "rental_end": "7/14/18"
+  },
+  "VIN111": {
+    "product_code": "PRD10",
+    "units_rented": 7,
+    "price_per_day": 5,
+    "rental_start": "9/4/16",
+    "rental_end": "11/10/17"
+  },
+  "VIN112": {
+    "product_code": "PRD99",
+    "units_rented": 10,
+    "price_per_day": 20,
+    "rental_start": "7/11/16",
+    "rental_end": "9/1/16"
+  },
+  "VIN113": {
+    "product_code": "PRD65",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "10/19/18",
+    "rental_end": "11/6/18"
+  },
+  "VIN114": {
+    "product_code": "PRD89",
+    "units_rented": 10,
+    "price_per_day": 14,
+    "rental_start": "6/6/17",
+    "rental_end": "1/9/16"
+  },
+  "VIN115": {
+    "product_code": "PRD22",
+    "units_rented": 2,
+    "price_per_day": 8,
+    "rental_start": "5/11/18",
+    "rental_end": "2/3/16"
+  },
+  "VIN116": {
+    "product_code": "PRD74",
+    "units_rented": 1,
+    "price_per_day": 8,
+    "rental_start": "4/14/17",
+    "rental_end": "8/4/16"
+  },
+  "VIN117": {
+    "product_code": "PRD11",
+    "units_rented": 9,
+    "price_per_day": 29,
+    "rental_start": "6/12/18",
+    "rental_end": "12/23/18"
+  },
+  "VIN118": {
+    "product_code": "PRD11",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "7/23/18",
+    "rental_end": "6/4/17"
+  },
+  "VIN119": {
+    "product_code": "PRD58",
+    "units_rented": 10,
+    "price_per_day": 28,
+    "rental_start": "7/19/18",
+    "rental_end": "12/18/17"
+  },
+  "VIN120": {
+    "product_code": "PRD83",
+    "units_rented": 8,
+    "price_per_day": 6,
+    "rental_start": "1/3/17",
+    "rental_end": "8/1/16"
+  },
+  "VIN121": {
+    "product_code": "PRD39",
+    "units_rented": 2,
+    "price_per_day": 11,
+    "rental_start": "11/30/18",
+    "rental_end": "2/25/17"
+  },
+  "VIN122": {
+    "product_code": "PRD9",
+    "units_rented": 5,
+    "price_per_day": 16,
+    "rental_start": "12/4/18",
+    "rental_end": "4/5/17"
+  },
+  "VIN123": {
+    "product_code": "PRD83",
+    "units_rented": 7,
+    "price_per_day": 13,
+    "rental_start": "3/2/18",
+    "rental_end": "7/25/17"
+  },
+  "VIN124": {
+    "product_code": "PRD42",
+    "units_rented": 2,
+    "price_per_day": 11,
+    "rental_start": "11/3/16",
+    "rental_end": "3/10/17"
+  },
+  "VIN125": {
+    "product_code": "PRD76",
+    "units_rented": 10,
+    "price_per_day": 27,
+    "rental_start": "12/15/18",
+    "rental_end": "7/30/18"
+  },
+  "VIN126": {
+    "product_code": "PRD8",
+    "units_rented": 7,
+    "price_per_day": 10,
+    "rental_start": "1/10/16",
+    "rental_end": "7/7/17"
+  },
+  "VIN127": {
+    "product_code": "PRD95",
+    "units_rented": 10,
+    "price_per_day": 39,
+    "rental_start": "4/8/16",
+    "rental_end": "8/25/18"
+  },
+  "VIN128": {
+    "product_code": "PRD59",
+    "units_rented": 10,
+    "price_per_day": 29,
+    "rental_start": "4/8/17",
+    "rental_end": "12/7/17"
+  },
+  "VIN129": {
+    "product_code": "PRD75",
+    "units_rented": 10,
+    "price_per_day": 6,
+    "rental_start": "3/23/18",
+    "rental_end": "5/23/17"
+  },
+  "VIN130": {
+    "product_code": "PRD23",
+    "units_rented": 8,
+    "price_per_day": 5,
+    "rental_start": "12/17/18",
+    "rental_end": "6/21/17"
+  },
+  "VIN131": {
+    "product_code": "PRD74",
+    "units_rented": 3,
+    "price_per_day": 18,
+    "rental_start": "1/15/16",
+    "rental_end": "5/31/16"
+  },
+  "VIN132": {
+    "product_code": "PRD23",
+    "units_rented": 6,
+    "price_per_day": 32,
+    "rental_start": "3/17/16",
+    "rental_end": "2/20/17"
+  },
+  "VIN133": {
+    "product_code": "PRD0",
+    "units_rented": 8,
+    "price_per_day": 19,
+    "rental_start": "2/14/17",
+    "rental_end": "9/24/18"
+  },
+  "VIN134": {
+    "product_code": "PRD64",
+    "units_rented": 1,
+    "price_per_day": 37,
+    "rental_start": "1/23/18",
+    "rental_end": "9/7/18"
+  },
+  "VIN135": {
+    "product_code": "PRD79",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "10/13/16",
+    "rental_end": "8/11/16"
+  },
+  "VIN136": {
+    "product_code": "PRD79",
+    "units_rented": 1,
+    "price_per_day": 5,
+    "rental_start": "6/10/17",
+    "rental_end": "10/15/17"
+  },
+  "VIN137": {
+    "product_code": "PRD74",
+    "units_rented": 1,
+    "price_per_day": 5,
+    "rental_start": "11/6/16",
+    "rental_end": "9/11/17"
+  },
+  "VIN138": {
+    "product_code": "PRD23",
+    "units_rented": 10,
+    "price_per_day": 22,
+    "rental_start": "1/4/18",
+    "rental_end": "12/22/18"
+  },
+  "VIN139": {
+    "product_code": "PRD13",
+    "units_rented": 2,
+    "price_per_day": 23,
+    "rental_start": "9/13/17",
+    "rental_end": "5/1/17"
+  },
+  "VIN140": {
+    "product_code": "PRD70",
+    "units_rented": 7,
+    "price_per_day": 7,
+    "rental_start": "12/14/16",
+    "rental_end": "2/26/17"
+  },
+  "VIN141": {
+    "product_code": "PRD63",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "1/20/18",
+    "rental_end": "3/22/17"
+  },
+  "VIN142": {
+    "product_code": "PRD66",
+    "units_rented": 9,
+    "price_per_day": 16,
+    "rental_start": "11/15/16",
+    "rental_end": "5/2/16"
+  },
+  "VIN143": {
+    "product_code": "PRD38",
+    "units_rented": 8,
+    "price_per_day": 39,
+    "rental_start": "11/20/18",
+    "rental_end": "1/3/16"
+  },
+  "VIN144": {
+    "product_code": "PRD51",
+    "units_rented": 7,
+    "price_per_day": 35,
+    "rental_start": "5/18/16",
+    "rental_end": "5/29/18"
+  },
+  "VIN145": {
+    "product_code": "PRD31",
+    "units_rented": 7,
+    "price_per_day": 31,
+    "rental_start": "7/28/18",
+    "rental_end": "7/15/16"
+  },
+  "VIN146": {
+    "product_code": "PRD56",
+    "units_rented": 8,
+    "price_per_day": 38,
+    "rental_start": "5/8/16",
+    "rental_end": "9/17/17"
+  },
+  "VIN147": {
+    "product_code": "PRD94",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "4/8/17",
+    "rental_end": "10/10/17"
+  },
+  "VIN148": {
+    "product_code": "PRD33",
+    "units_rented": 6,
+    "price_per_day": 13,
+    "rental_start": "10/20/18",
+    "rental_end": "9/17/18"
+  },
+  "VIN149": {
+    "product_code": "PRD34",
+    "units_rented": 8,
+    "price_per_day": 20,
+    "rental_start": "9/29/18",
+    "rental_end": "11/3/16"
+  },
+  "VIN150": {
+    "product_code": "PRD88",
+    "units_rented": 6,
+    "price_per_day": 8,
+    "rental_start": "2/3/16",
+    "rental_end": "7/14/17"
+  },
+  "VIN151": {
+    "product_code": "PRD93",
+    "units_rented": 7,
+    "price_per_day": 25,
+    "rental_start": "8/11/18",
+    "rental_end": "8/16/16"
+  },
+  "VIN152": {
+    "product_code": "PRD89",
+    "units_rented": 4,
+    "price_per_day": 36,
+    "rental_start": "12/24/17",
+    "rental_end": "12/24/17"
+  },
+  "VIN153": {
+    "product_code": "PRD12",
+    "units_rented": 9,
+    "price_per_day": 15,
+    "rental_start": "3/31/16",
+    "rental_end": "8/19/16"
+  },
+  "VIN154": {
+    "product_code": "PRD35",
+    "units_rented": 3,
+    "price_per_day": 16,
+    "rental_start": "5/24/17",
+    "rental_end": "3/30/16"
+  },
+  "VIN155": {
+    "product_code": "PRD30",
+    "units_rented": 9,
+    "price_per_day": 22,
+    "rental_start": "1/7/18",
+    "rental_end": "7/19/17"
+  },
+  "VIN156": {
+    "product_code": "PRD2",
+    "units_rented": 1,
+    "price_per_day": 5,
+    "rental_start": "5/8/16",
+    "rental_end": "5/12/17"
+  },
+  "VIN157": {
+    "product_code": "PRD72",
+    "units_rented": 7,
+    "price_per_day": 32,
+    "rental_start": "12/23/18",
+    "rental_end": "5/19/17"
+  },
+  "VIN158": {
+    "product_code": "PRD3",
+    "units_rented": 4,
+    "price_per_day": 12,
+    "rental_start": "7/10/18",
+    "rental_end": "3/6/16"
+  },
+  "VIN159": {
+    "product_code": "PRD51",
+    "units_rented": 10,
+    "price_per_day": 40,
+    "rental_start": "4/14/16",
+    "rental_end": "9/14/17"
+  },
+  "VIN160": {
+    "product_code": "PRD61",
+    "units_rented": 6,
+    "price_per_day": 12,
+    "rental_start": "5/18/18",
+    "rental_end": "3/14/18"
+  },
+  "VIN161": {
+    "product_code": "PRD13",
+    "units_rented": 5,
+    "price_per_day": 9,
+    "rental_start": "2/23/16",
+    "rental_end": "3/7/17"
+  },
+  "VIN162": {
+    "product_code": "PRD52",
+    "units_rented": 9,
+    "price_per_day": 37,
+    "rental_start": "2/27/16",
+    "rental_end": "11/17/16"
+  },
+  "VIN163": {
+    "product_code": "PRD43",
+    "units_rented": 8,
+    "price_per_day": 24,
+    "rental_start": "12/16/16",
+    "rental_end": "9/10/16"
+  },
+  "VIN164": {
+    "product_code": "PRD71",
+    "units_rented": 4,
+    "price_per_day": 21,
+    "rental_start": "4/24/18",
+    "rental_end": "8/7/17"
+  },
+  "VIN165": {
+    "product_code": "PRD33",
+    "units_rented": 7,
+    "price_per_day": 12,
+    "rental_start": "5/29/16",
+    "rental_end": "9/9/17"
+  },
+  "VIN166": {
+    "product_code": "PRD60",
+    "units_rented": 3,
+    "price_per_day": 37,
+    "rental_start": "4/14/18",
+    "rental_end": "2/15/16"
+  },
+  "VIN167": {
+    "product_code": "PRD34",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "2/3/17",
+    "rental_end": "12/11/16"
+  },
+  "VIN168": {
+    "product_code": "PRD44",
+    "units_rented": 4,
+    "price_per_day": 39,
+    "rental_start": "10/15/16",
+    "rental_end": "5/25/16"
+  },
+  "VIN169": {
+    "product_code": "PRD0",
+    "units_rented": 4,
+    "price_per_day": 28,
+    "rental_start": "3/18/18",
+    "rental_end": "9/25/16"
+  },
+  "VIN170": {
+    "product_code": "PRD54",
+    "units_rented": 9,
+    "price_per_day": 15,
+    "rental_start": "9/16/18",
+    "rental_end": "1/11/17"
+  },
+  "VIN171": {
+    "product_code": "PRD89",
+    "units_rented": 3,
+    "price_per_day": 36,
+    "rental_start": "10/3/16",
+    "rental_end": "8/17/17"
+  },
+  "VIN172": {
+    "product_code": "PRD21",
+    "units_rented": 5,
+    "price_per_day": 15,
+    "rental_start": "3/29/18",
+    "rental_end": "4/24/18"
+  },
+  "VIN173": {
+    "product_code": "PRD31",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "10/12/17",
+    "rental_end": "6/8/18"
+  },
+  "VIN174": {
+    "product_code": "PRD40",
+    "units_rented": 3,
+    "price_per_day": 22,
+    "rental_start": "2/5/16",
+    "rental_end": "2/15/17"
+  },
+  "VIN175": {
+    "product_code": "PRD48",
+    "units_rented": 9,
+    "price_per_day": 39,
+    "rental_start": "5/16/18",
+    "rental_end": "3/15/18"
+  },
+  "VIN176": {
+    "product_code": "PRD10",
+    "units_rented": 10,
+    "price_per_day": 12,
+    "rental_start": "2/25/17",
+    "rental_end": "5/18/17"
+  },
+  "VIN177": {
+    "product_code": "PRD27",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "6/6/16",
+    "rental_end": "9/15/17"
+  },
+  "VIN178": {
+    "product_code": "PRD35",
+    "units_rented": 5,
+    "price_per_day": 40,
+    "rental_start": "8/1/18",
+    "rental_end": "4/7/18"
+  },
+  "VIN179": {
+    "product_code": "PRD16",
+    "units_rented": 8,
+    "price_per_day": 6,
+    "rental_start": "8/24/18",
+    "rental_end": "8/14/18"
+  },
+  "VIN180": {
+    "product_code": "PRD12",
+    "units_rented": 3,
+    "price_per_day": 27,
+    "rental_start": "12/29/18",
+    "rental_end": "9/8/16"
+  },
+  "VIN181": {
+    "product_code": "PRD90",
+    "units_rented": 10,
+    "price_per_day": 40,
+    "rental_start": "9/13/16",
+    "rental_end": "12/22/16"
+  },
+  "VIN182": {
+    "product_code": "PRD7",
+    "units_rented": 6,
+    "price_per_day": 23,
+    "rental_start": "2/8/18",
+    "rental_end": "9/21/18"
+  },
+  "VIN183": {
+    "product_code": "PRD10",
+    "units_rented": 5,
+    "price_per_day": 24,
+    "rental_start": "5/31/18",
+    "rental_end": "4/8/18"
+  },
+  "VIN184": {
+    "product_code": "PRD66",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "3/12/18",
+    "rental_end": "9/28/16"
+  },
+  "VIN185": {
+    "product_code": "PRD39",
+    "units_rented": 4,
+    "price_per_day": 35,
+    "rental_start": "12/11/16",
+    "rental_end": "1/12/18"
+  },
+  "VIN186": {
+    "product_code": "PRD48",
+    "units_rented": 9,
+    "price_per_day": 39,
+    "rental_start": "12/23/17",
+    "rental_end": "2/20/18"
+  },
+  "VIN187": {
+    "product_code": "PRD12",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "10/5/17",
+    "rental_end": "1/11/16"
+  },
+  "VIN188": {
+    "product_code": "PRD76",
+    "units_rented": 7,
+    "price_per_day": 14,
+    "rental_start": "3/20/17",
+    "rental_end": "10/1/18"
+  },
+  "VIN189": {
+    "product_code": "PRD54",
+    "units_rented": 8,
+    "price_per_day": 18,
+    "rental_start": "11/20/16",
+    "rental_end": "8/17/16"
+  },
+  "VIN190": {
+    "product_code": "PRD45",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "1/29/17",
+    "rental_end": "10/11/17"
+  },
+  "VIN191": {
+    "product_code": "PRD69",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "6/1/16",
+    "rental_end": "11/6/18"
+  },
+  "VIN192": {
+    "product_code": "PRD59",
+    "units_rented": 10,
+    "price_per_day": 31,
+    "rental_start": "5/10/17",
+    "rental_end": "4/30/17"
+  },
+  "VIN193": {
+    "product_code": "PRD50",
+    "units_rented": 6,
+    "price_per_day": 36,
+    "rental_start": "10/19/16",
+    "rental_end": "2/17/17"
+  },
+  "VIN194": {
+    "product_code": "PRD49",
+    "units_rented": 1,
+    "price_per_day": 35,
+    "rental_start": "8/14/17",
+    "rental_end": "2/22/18"
+  },
+  "VIN195": {
+    "product_code": "PRD93",
+    "units_rented": 2,
+    "price_per_day": 17,
+    "rental_start": "5/4/18",
+    "rental_end": "1/6/16"
+  },
+  "VIN196": {
+    "product_code": "PRD92",
+    "units_rented": 8,
+    "price_per_day": 19,
+    "rental_start": "10/28/18",
+    "rental_end": "5/4/16"
+  },
+  "VIN197": {
+    "product_code": "PRD69",
+    "units_rented": 4,
+    "price_per_day": 33,
+    "rental_start": "3/2/18",
+    "rental_end": "11/14/17"
+  },
+  "VIN198": {
+    "product_code": "PRD45",
+    "units_rented": 10,
+    "price_per_day": 20,
+    "rental_start": "6/1/16",
+    "rental_end": "12/6/17"
+  },
+  "VIN199": {
+    "product_code": "PRD95",
+    "units_rented": 7,
+    "price_per_day": 23,
+    "rental_start": "2/22/18",
+    "rental_end": "5/26/18"
+  },
+  "VIN200": {
+    "product_code": "PRD9",
+    "units_rented": 9,
+    "price_per_day": 39,
+    "rental_start": "8/6/18",
+    "rental_end": "8/30/18"
+  },
+  "VIN201": {
+    "product_code": "PRD14",
+    "units_rented": 1,
+    "price_per_day": 17,
+    "rental_start": "10/12/17",
+    "rental_end": "9/17/16"
+  },
+  "VIN202": {
+    "product_code": "PRD93",
+    "units_rented": 2,
+    "price_per_day": 34,
+    "rental_start": "11/4/18",
+    "rental_end": "2/7/16"
+  },
+  "VIN203": {
+    "product_code": "PRD85",
+    "units_rented": 4,
+    "price_per_day": 25,
+    "rental_start": "8/21/17",
+    "rental_end": "8/27/18"
+  },
+  "VIN204": {
+    "product_code": "PRD70",
+    "units_rented": 10,
+    "price_per_day": 26,
+    "rental_start": "4/15/17",
+    "rental_end": "4/3/18"
+  },
+  "VIN205": {
+    "product_code": "PRD46",
+    "units_rented": 1,
+    "price_per_day": 25,
+    "rental_start": "12/4/16",
+    "rental_end": "3/28/18"
+  },
+  "VIN206": {
+    "product_code": "PRD59",
+    "units_rented": 9,
+    "price_per_day": 12,
+    "rental_start": "2/16/18",
+    "rental_end": "2/19/18"
+  },
+  "VIN207": {
+    "product_code": "PRD21",
+    "units_rented": 7,
+    "price_per_day": 21,
+    "rental_start": "3/15/18",
+    "rental_end": "6/3/16"
+  },
+  "VIN208": {
+    "product_code": "PRD86",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "2/24/16",
+    "rental_end": "2/18/16"
+  },
+  "VIN209": {
+    "product_code": "PRD95",
+    "units_rented": 4,
+    "price_per_day": 14,
+    "rental_start": "9/12/16",
+    "rental_end": "12/15/17"
+  },
+  "VIN210": {
+    "product_code": "PRD2",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "7/5/17",
+    "rental_end": "1/2/17"
+  },
+  "VIN211": {
+    "product_code": "PRD89",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "6/15/18",
+    "rental_end": "7/23/18"
+  },
+  "VIN212": {
+    "product_code": "PRD16",
+    "units_rented": 3,
+    "price_per_day": 27,
+    "rental_start": "9/3/16",
+    "rental_end": "9/26/16"
+  },
+  "VIN213": {
+    "product_code": "PRD44",
+    "units_rented": 10,
+    "price_per_day": 28,
+    "rental_start": "4/9/16",
+    "rental_end": "9/4/18"
+  },
+  "VIN214": {
+    "product_code": "PRD6",
+    "units_rented": 6,
+    "price_per_day": 26,
+    "rental_start": "12/4/16",
+    "rental_end": "6/29/16"
+  },
+  "VIN215": {
+    "product_code": "PRD36",
+    "units_rented": 9,
+    "price_per_day": 19,
+    "rental_start": "4/25/16",
+    "rental_end": "8/3/17"
+  },
+  "VIN216": {
+    "product_code": "PRD6",
+    "units_rented": 2,
+    "price_per_day": 16,
+    "rental_start": "4/20/16",
+    "rental_end": "2/10/16"
+  },
+  "VIN217": {
+    "product_code": "PRD11",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "8/18/18",
+    "rental_end": "8/4/16"
+  },
+  "VIN218": {
+    "product_code": "PRD20",
+    "units_rented": 8,
+    "price_per_day": 40,
+    "rental_start": "12/11/17",
+    "rental_end": "12/23/16"
+  },
+  "VIN219": {
+    "product_code": "PRD79",
+    "units_rented": 8,
+    "price_per_day": 30,
+    "rental_start": "1/24/17",
+    "rental_end": "12/16/17"
+  },
+  "VIN220": {
+    "product_code": "PRD69",
+    "units_rented": 9,
+    "price_per_day": 11,
+    "rental_start": "1/1/16",
+    "rental_end": "2/14/17"
+  },
+  "VIN221": {
+    "product_code": "PRD12",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "10/26/18",
+    "rental_end": "7/28/16"
+  },
+  "VIN222": {
+    "product_code": "PRD97",
+    "units_rented": 1,
+    "price_per_day": 23,
+    "rental_start": "5/5/16",
+    "rental_end": "2/27/17"
+  },
+  "VIN223": {
+    "product_code": "PRD51",
+    "units_rented": 7,
+    "price_per_day": 27,
+    "rental_start": "2/3/18",
+    "rental_end": "4/28/16"
+  },
+  "VIN224": {
+    "product_code": "PRD10",
+    "units_rented": 10,
+    "price_per_day": 34,
+    "rental_start": "11/5/17",
+    "rental_end": "10/7/16"
+  },
+  "VIN225": {
+    "product_code": "PRD51",
+    "units_rented": 7,
+    "price_per_day": 25,
+    "rental_start": "5/15/17",
+    "rental_end": "12/24/16"
+  },
+  "VIN226": {
+    "product_code": "PRD90",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "10/19/17",
+    "rental_end": "12/3/17"
+  },
+  "VIN227": {
+    "product_code": "PRD32",
+    "units_rented": 9,
+    "price_per_day": 17,
+    "rental_start": "5/11/18",
+    "rental_end": "2/4/16"
+  },
+  "VIN228": {
+    "product_code": "PRD61",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "1/28/18",
+    "rental_end": "12/9/18"
+  },
+  "VIN229": {
+    "product_code": "PRD75",
+    "units_rented": 3,
+    "price_per_day": 10,
+    "rental_start": "2/23/17",
+    "rental_end": "11/3/16"
+  },
+  "VIN230": {
+    "product_code": "PRD99",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "10/27/17",
+    "rental_end": "1/4/18"
+  },
+  "VIN231": {
+    "product_code": "PRD20",
+    "units_rented": 2,
+    "price_per_day": 35,
+    "rental_start": "5/25/16",
+    "rental_end": "12/28/18"
+  },
+  "VIN232": {
+    "product_code": "PRD26",
+    "units_rented": 10,
+    "price_per_day": 26,
+    "rental_start": "9/30/16",
+    "rental_end": "10/6/17"
+  },
+  "VIN233": {
+    "product_code": "PRD35",
+    "units_rented": 7,
+    "price_per_day": 9,
+    "rental_start": "4/27/18",
+    "rental_end": "7/25/16"
+  },
+  "VIN234": {
+    "product_code": "PRD2",
+    "units_rented": 10,
+    "price_per_day": 13,
+    "rental_start": "4/25/18",
+    "rental_end": "1/20/18"
+  },
+  "VIN235": {
+    "product_code": "PRD34",
+    "units_rented": 6,
+    "price_per_day": 24,
+    "rental_start": "10/11/18",
+    "rental_end": "10/17/18"
+  },
+  "VIN236": {
+    "product_code": "PRD16",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "12/17/18",
+    "rental_end": "3/25/16"
+  },
+  "VIN237": {
+    "product_code": "PRD9",
+    "units_rented": 10,
+    "price_per_day": 12,
+    "rental_start": "3/25/16",
+    "rental_end": "12/4/17"
+  },
+  "VIN238": {
+    "product_code": "PRD43",
+    "units_rented": 7,
+    "price_per_day": 5,
+    "rental_start": "1/1/18",
+    "rental_end": "8/7/17"
+  },
+  "VIN239": {
+    "product_code": "PRD79",
+    "units_rented": 8,
+    "price_per_day": 20,
+    "rental_start": "3/26/16",
+    "rental_end": "4/23/16"
+  },
+  "VIN240": {
+    "product_code": "PRD20",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "6/17/16",
+    "rental_end": "12/5/16"
+  },
+  "VIN241": {
+    "product_code": "PRD97",
+    "units_rented": 9,
+    "price_per_day": 28,
+    "rental_start": "7/2/18",
+    "rental_end": "12/7/17"
+  },
+  "VIN242": {
+    "product_code": "PRD14",
+    "units_rented": 7,
+    "price_per_day": 9,
+    "rental_start": "1/31/17",
+    "rental_end": "2/18/16"
+  },
+  "VIN243": {
+    "product_code": "PRD0",
+    "units_rented": 4,
+    "price_per_day": 13,
+    "rental_start": "12/8/17",
+    "rental_end": "10/13/16"
+  },
+  "VIN244": {
+    "product_code": "PRD23",
+    "units_rented": 2,
+    "price_per_day": 12,
+    "rental_start": "6/25/18",
+    "rental_end": "9/16/16"
+  },
+  "VIN245": {
+    "product_code": "PRD0",
+    "units_rented": 9,
+    "price_per_day": 39,
+    "rental_start": "6/11/16",
+    "rental_end": "9/10/18"
+  },
+  "VIN246": {
+    "product_code": "PRD85",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "2/2/18",
+    "rental_end": "8/28/17"
+  },
+  "VIN247": {
+    "product_code": "PRD33",
+    "units_rented": 6,
+    "price_per_day": 9,
+    "rental_start": "7/10/17",
+    "rental_end": "6/10/17"
+  },
+  "VIN248": {
+    "product_code": "PRD79",
+    "units_rented": 9,
+    "price_per_day": 33,
+    "rental_start": "6/23/16",
+    "rental_end": "7/29/17"
+  },
+  "VIN249": {
+    "product_code": "PRD6",
+    "units_rented": 6,
+    "price_per_day": 6,
+    "rental_start": "10/28/16",
+    "rental_end": "2/16/17"
+  },
+  "VIN250": {
+    "product_code": "PRD83",
+    "units_rented": 8,
+    "price_per_day": 24,
+    "rental_start": "3/23/18",
+    "rental_end": "4/28/18"
+  },
+  "VIN251": {
+    "product_code": "PRD58",
+    "units_rented": 1,
+    "price_per_day": 27,
+    "rental_start": "1/12/18",
+    "rental_end": "10/6/18"
+  },
+  "VIN252": {
+    "product_code": "PRD5",
+    "units_rented": 5,
+    "price_per_day": 21,
+    "rental_start": "12/30/16",
+    "rental_end": "8/27/17"
+  },
+  "VIN253": {
+    "product_code": "PRD10",
+    "units_rented": 6,
+    "price_per_day": 28,
+    "rental_start": "1/11/17",
+    "rental_end": "12/17/18"
+  },
+  "VIN254": {
+    "product_code": "PRD13",
+    "units_rented": 7,
+    "price_per_day": 8,
+    "rental_start": "10/31/16",
+    "rental_end": "4/17/16"
+  },
+  "VIN255": {
+    "product_code": "PRD10",
+    "units_rented": 10,
+    "price_per_day": 17,
+    "rental_start": "4/1/17",
+    "rental_end": "9/2/18"
+  },
+  "VIN256": {
+    "product_code": "PRD60",
+    "units_rented": 6,
+    "price_per_day": 26,
+    "rental_start": "9/5/17",
+    "rental_end": "11/23/17"
+  },
+  "VIN257": {
+    "product_code": "PRD0",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "4/4/16",
+    "rental_end": "12/15/18"
+  },
+  "VIN258": {
+    "product_code": "PRD70",
+    "units_rented": 2,
+    "price_per_day": 18,
+    "rental_start": "10/21/17",
+    "rental_end": "4/10/17"
+  },
+  "VIN259": {
+    "product_code": "PRD86",
+    "units_rented": 4,
+    "price_per_day": 34,
+    "rental_start": "2/14/18",
+    "rental_end": "8/16/16"
+  },
+  "VIN260": {
+    "product_code": "PRD17",
+    "units_rented": 10,
+    "price_per_day": 16,
+    "rental_start": "1/28/18",
+    "rental_end": "1/19/17"
+  },
+  "VIN261": {
+    "product_code": "PRD82",
+    "units_rented": 4,
+    "price_per_day": 15,
+    "rental_start": "3/14/18",
+    "rental_end": "11/10/17"
+  },
+  "VIN262": {
+    "product_code": "PRD59",
+    "units_rented": 7,
+    "price_per_day": 11,
+    "rental_start": "11/24/16",
+    "rental_end": "3/13/17"
+  },
+  "VIN263": {
+    "product_code": "PRD90",
+    "units_rented": 1,
+    "price_per_day": 33,
+    "rental_start": "3/3/18",
+    "rental_end": "12/5/18"
+  },
+  "VIN264": {
+    "product_code": "PRD50",
+    "units_rented": 1,
+    "price_per_day": 15,
+    "rental_start": "9/25/18",
+    "rental_end": "9/26/16"
+  },
+  "VIN265": {
+    "product_code": "PRD15",
+    "units_rented": 5,
+    "price_per_day": 16,
+    "rental_start": "10/8/17",
+    "rental_end": "10/7/17"
+  },
+  "VIN266": {
+    "product_code": "PRD35",
+    "units_rented": 7,
+    "price_per_day": 39,
+    "rental_start": "1/7/18",
+    "rental_end": "1/20/18"
+  },
+  "VIN267": {
+    "product_code": "PRD44",
+    "units_rented": 3,
+    "price_per_day": 26,
+    "rental_start": "4/12/16",
+    "rental_end": "8/5/17"
+  },
+  "VIN268": {
+    "product_code": "PRD27",
+    "units_rented": 2,
+    "price_per_day": 15,
+    "rental_start": "6/10/16",
+    "rental_end": "7/16/16"
+  },
+  "VIN269": {
+    "product_code": "PRD5",
+    "units_rented": 6,
+    "price_per_day": 39,
+    "rental_start": "6/17/17",
+    "rental_end": "11/20/18"
+  },
+  "VIN270": {
+    "product_code": "PRD19",
+    "units_rented": 4,
+    "price_per_day": 19,
+    "rental_start": "8/30/16",
+    "rental_end": "7/24/16"
+  },
+  "VIN271": {
+    "product_code": "PRD33",
+    "units_rented": 1,
+    "price_per_day": 11,
+    "rental_start": "11/27/18",
+    "rental_end": "8/7/16"
+  },
+  "VIN272": {
+    "product_code": "PRD57",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "7/31/17",
+    "rental_end": "5/19/17"
+  },
+  "VIN273": {
+    "product_code": "PRD96",
+    "units_rented": 9,
+    "price_per_day": 12,
+    "rental_start": "10/27/17",
+    "rental_end": "6/30/18"
+  },
+  "VIN274": {
+    "product_code": "PRD3",
+    "units_rented": 2,
+    "price_per_day": 38,
+    "rental_start": "12/15/18",
+    "rental_end": "2/12/17"
+  },
+  "VIN275": {
+    "product_code": "PRD17",
+    "units_rented": 8,
+    "price_per_day": 22,
+    "rental_start": "11/14/16",
+    "rental_end": "12/30/16"
+  },
+  "VIN276": {
+    "product_code": "PRD84",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "7/2/16",
+    "rental_end": "4/2/18"
+  },
+  "VIN277": {
+    "product_code": "PRD28",
+    "units_rented": 2,
+    "price_per_day": 5,
+    "rental_start": "8/7/18",
+    "rental_end": "10/21/16"
+  },
+  "VIN278": {
+    "product_code": "PRD64",
+    "units_rented": 3,
+    "price_per_day": 36,
+    "rental_start": "7/25/16",
+    "rental_end": "12/23/18"
+  },
+  "VIN279": {
+    "product_code": "PRD14",
+    "units_rented": 8,
+    "price_per_day": 34,
+    "rental_start": "5/23/16",
+    "rental_end": "4/25/18"
+  },
+  "VIN280": {
+    "product_code": "PRD14",
+    "units_rented": 10,
+    "price_per_day": 9,
+    "rental_start": "7/25/16",
+    "rental_end": "8/1/18"
+  },
+  "VIN281": {
+    "product_code": "PRD29",
+    "units_rented": 1,
+    "price_per_day": 6,
+    "rental_start": "7/18/17",
+    "rental_end": "5/25/18"
+  },
+  "VIN282": {
+    "product_code": "PRD28",
+    "units_rented": 8,
+    "price_per_day": 20,
+    "rental_start": "2/3/18",
+    "rental_end": "9/4/17"
+  },
+  "VIN283": {
+    "product_code": "PRD85",
+    "units_rented": 7,
+    "price_per_day": 12,
+    "rental_start": "7/18/18",
+    "rental_end": "6/30/18"
+  },
+  "VIN284": {
+    "product_code": "PRD40",
+    "units_rented": 6,
+    "price_per_day": 36,
+    "rental_start": "1/17/16",
+    "rental_end": "12/19/16"
+  },
+  "VIN285": {
+    "product_code": "PRD19",
+    "units_rented": 6,
+    "price_per_day": 33,
+    "rental_start": "3/31/17",
+    "rental_end": "5/5/17"
+  },
+  "VIN286": {
+    "product_code": "PRD1",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "4/26/16",
+    "rental_end": "3/27/17"
+  },
+  "VIN287": {
+    "product_code": "PRD28",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "6/9/16",
+    "rental_end": "1/1/17"
+  },
+  "VIN288": {
+    "product_code": "PRD74",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "12/31/18",
+    "rental_end": "9/13/18"
+  },
+  "VIN289": {
+    "product_code": "PRD75",
+    "units_rented": 10,
+    "price_per_day": 27,
+    "rental_start": "6/11/18",
+    "rental_end": "7/1/18"
+  },
+  "VIN290": {
+    "product_code": "PRD90",
+    "units_rented": 2,
+    "price_per_day": 26,
+    "rental_start": "5/17/16",
+    "rental_end": "5/12/16"
+  },
+  "VIN291": {
+    "product_code": "PRD19",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "7/26/16",
+    "rental_end": "10/10/18"
+  },
+  "VIN292": {
+    "product_code": "PRD14",
+    "units_rented": 1,
+    "price_per_day": 29,
+    "rental_start": "1/13/17",
+    "rental_end": "3/31/17"
+  },
+  "VIN293": {
+    "product_code": "PRD75",
+    "units_rented": 6,
+    "price_per_day": 8,
+    "rental_start": "4/6/18",
+    "rental_end": "12/3/18"
+  },
+  "VIN294": {
+    "product_code": "PRD40",
+    "units_rented": 6,
+    "price_per_day": 16,
+    "rental_start": "1/14/16",
+    "rental_end": "11/16/18"
+  },
+  "VIN295": {
+    "product_code": "PRD71",
+    "units_rented": 3,
+    "price_per_day": 35,
+    "rental_start": "11/10/16",
+    "rental_end": "4/25/16"
+  },
+  "VIN296": {
+    "product_code": "PRD84",
+    "units_rented": 5,
+    "price_per_day": 24,
+    "rental_start": "12/8/17",
+    "rental_end": "5/13/16"
+  },
+  "VIN297": {
+    "product_code": "PRD61",
+    "units_rented": 1,
+    "price_per_day": 5,
+    "rental_start": "12/29/17",
+    "rental_end": "9/4/18"
+  },
+  "VIN298": {
+    "product_code": "PRD29",
+    "units_rented": 3,
+    "price_per_day": 20,
+    "rental_start": "12/11/18",
+    "rental_end": "7/8/18"
+  },
+  "VIN299": {
+    "product_code": "PRD69",
+    "units_rented": 6,
+    "price_per_day": 39,
+    "rental_start": "10/13/16",
+    "rental_end": "10/8/16"
+  },
+  "VIN300": {
+    "product_code": "PRD18",
+    "units_rented": 1,
+    "price_per_day": 27,
+    "rental_start": "1/27/17",
+    "rental_end": "6/30/16"
+  },
+  "VIN301": {
+    "product_code": "PRD89",
+    "units_rented": 8,
+    "price_per_day": 15,
+    "rental_start": "8/10/17",
+    "rental_end": "1/29/16"
+  },
+  "VIN302": {
+    "product_code": "PRD37",
+    "units_rented": 3,
+    "price_per_day": 6,
+    "rental_start": "12/2/16",
+    "rental_end": "2/22/16"
+  },
+  "VIN303": {
+    "product_code": "PRD13",
+    "units_rented": 8,
+    "price_per_day": 30,
+    "rental_start": "7/2/18",
+    "rental_end": "5/23/17"
+  },
+  "VIN304": {
+    "product_code": "PRD11",
+    "units_rented": 8,
+    "price_per_day": 20,
+    "rental_start": "6/29/18",
+    "rental_end": "12/31/17"
+  },
+  "VIN305": {
+    "product_code": "PRD12",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "1/10/18",
+    "rental_end": "4/20/16"
+  },
+  "VIN306": {
+    "product_code": "PRD18",
+    "units_rented": 1,
+    "price_per_day": 40,
+    "rental_start": "8/6/18",
+    "rental_end": "1/21/17"
+  },
+  "VIN307": {
+    "product_code": "PRD90",
+    "units_rented": 9,
+    "price_per_day": 10,
+    "rental_start": "11/4/17",
+    "rental_end": "6/18/18"
+  },
+  "VIN308": {
+    "product_code": "PRD23",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "7/25/16",
+    "rental_end": "4/28/16"
+  },
+  "VIN309": {
+    "product_code": "PRD14",
+    "units_rented": 5,
+    "price_per_day": 35,
+    "rental_start": "12/3/17",
+    "rental_end": "10/26/17"
+  },
+  "VIN310": {
+    "product_code": "PRD29",
+    "units_rented": 10,
+    "price_per_day": 13,
+    "rental_start": "11/28/18",
+    "rental_end": "7/5/16"
+  },
+  "VIN311": {
+    "product_code": "PRD45",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "12/24/18",
+    "rental_end": "5/19/17"
+  },
+  "VIN312": {
+    "product_code": "PRD98",
+    "units_rented": 1,
+    "price_per_day": 34,
+    "rental_start": "6/17/17",
+    "rental_end": "3/26/17"
+  },
+  "VIN313": {
+    "product_code": "PRD75",
+    "units_rented": 8,
+    "price_per_day": 13,
+    "rental_start": "1/23/18",
+    "rental_end": "2/17/17"
+  },
+  "VIN314": {
+    "product_code": "PRD71",
+    "units_rented": 8,
+    "price_per_day": 39,
+    "rental_start": "7/25/18",
+    "rental_end": "3/6/17"
+  },
+  "VIN315": {
+    "product_code": "PRD86",
+    "units_rented": 3,
+    "price_per_day": 35,
+    "rental_start": "9/19/17",
+    "rental_end": "12/21/16"
+  },
+  "VIN316": {
+    "product_code": "PRD92",
+    "units_rented": 6,
+    "price_per_day": 16,
+    "rental_start": "1/9/17",
+    "rental_end": "4/14/16"
+  },
+  "VIN317": {
+    "product_code": "PRD41",
+    "units_rented": 3,
+    "price_per_day": 14,
+    "rental_start": "9/12/16",
+    "rental_end": "9/15/18"
+  },
+  "VIN318": {
+    "product_code": "PRD95",
+    "units_rented": 3,
+    "price_per_day": 37,
+    "rental_start": "12/29/16",
+    "rental_end": "11/5/17"
+  },
+  "VIN319": {
+    "product_code": "PRD96",
+    "units_rented": 6,
+    "price_per_day": 38,
+    "rental_start": "2/7/16",
+    "rental_end": "12/24/18"
+  },
+  "VIN320": {
+    "product_code": "PRD90",
+    "units_rented": 5,
+    "price_per_day": 14,
+    "rental_start": "10/16/18",
+    "rental_end": "8/25/17"
+  },
+  "VIN321": {
+    "product_code": "PRD65",
+    "units_rented": 9,
+    "price_per_day": 17,
+    "rental_start": "4/18/18",
+    "rental_end": "6/9/17"
+  },
+  "VIN322": {
+    "product_code": "PRD29",
+    "units_rented": 4,
+    "price_per_day": 37,
+    "rental_start": "1/27/17",
+    "rental_end": "6/6/17"
+  },
+  "VIN323": {
+    "product_code": "PRD82",
+    "units_rented": 4,
+    "price_per_day": 21,
+    "rental_start": "8/15/16",
+    "rental_end": "2/2/17"
+  },
+  "VIN324": {
+    "product_code": "PRD18",
+    "units_rented": 5,
+    "price_per_day": 18,
+    "rental_start": "12/29/18",
+    "rental_end": "2/3/16"
+  },
+  "VIN325": {
+    "product_code": "PRD42",
+    "units_rented": 1,
+    "price_per_day": 34,
+    "rental_start": "5/18/18",
+    "rental_end": "6/10/16"
+  },
+  "VIN326": {
+    "product_code": "PRD28",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "1/5/16",
+    "rental_end": "7/18/17"
+  },
+  "VIN327": {
+    "product_code": "PRD10",
+    "units_rented": 7,
+    "price_per_day": 31,
+    "rental_start": "4/19/16",
+    "rental_end": "1/10/18"
+  },
+  "VIN328": {
+    "product_code": "PRD26",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "8/25/17",
+    "rental_end": "12/5/17"
+  },
+  "VIN329": {
+    "product_code": "PRD85",
+    "units_rented": 9,
+    "price_per_day": 40,
+    "rental_start": "7/16/16",
+    "rental_end": "8/6/17"
+  },
+  "VIN330": {
+    "product_code": "PRD18",
+    "units_rented": 3,
+    "price_per_day": 25,
+    "rental_start": "1/20/17",
+    "rental_end": "5/5/17"
+  },
+  "VIN331": {
+    "product_code": "PRD68",
+    "units_rented": 2,
+    "price_per_day": 38,
+    "rental_start": "7/8/17",
+    "rental_end": "7/6/17"
+  },
+  "VIN332": {
+    "product_code": "PRD30",
+    "units_rented": 5,
+    "price_per_day": 13,
+    "rental_start": "8/8/16",
+    "rental_end": "1/8/18"
+  },
+  "VIN333": {
+    "product_code": "PRD24",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "2/25/16",
+    "rental_end": "9/30/18"
+  },
+  "VIN334": {
+    "product_code": "PRD82",
+    "units_rented": 5,
+    "price_per_day": 33,
+    "rental_start": "2/21/17",
+    "rental_end": "4/27/17"
+  },
+  "VIN335": {
+    "product_code": "PRD37",
+    "units_rented": 3,
+    "price_per_day": 10,
+    "rental_start": "12/19/17",
+    "rental_end": "12/4/17"
+  },
+  "VIN336": {
+    "product_code": "PRD95",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "9/3/17",
+    "rental_end": "12/13/16"
+  },
+  "VIN337": {
+    "product_code": "PRD31",
+    "units_rented": 9,
+    "price_per_day": 25,
+    "rental_start": "12/16/17",
+    "rental_end": "3/25/17"
+  },
+  "VIN338": {
+    "product_code": "PRD29",
+    "units_rented": 3,
+    "price_per_day": 29,
+    "rental_start": "1/23/17",
+    "rental_end": "11/23/17"
+  },
+  "VIN339": {
+    "product_code": "PRD43",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "7/12/17",
+    "rental_end": "3/1/16"
+  },
+  "VIN340": {
+    "product_code": "PRD81",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "1/23/16",
+    "rental_end": "12/9/17"
+  },
+  "VIN341": {
+    "product_code": "PRD11",
+    "units_rented": 3,
+    "price_per_day": 31,
+    "rental_start": "9/23/16",
+    "rental_end": "8/30/17"
+  },
+  "VIN342": {
+    "product_code": "PRD91",
+    "units_rented": 5,
+    "price_per_day": 15,
+    "rental_start": "12/23/16",
+    "rental_end": "6/21/18"
+  },
+  "VIN343": {
+    "product_code": "PRD73",
+    "units_rented": 3,
+    "price_per_day": 32,
+    "rental_start": "2/15/17",
+    "rental_end": "1/17/17"
+  },
+  "VIN344": {
+    "product_code": "PRD61",
+    "units_rented": 1,
+    "price_per_day": 26,
+    "rental_start": "8/3/18",
+    "rental_end": "8/27/18"
+  },
+  "VIN345": {
+    "product_code": "PRD44",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "5/15/17",
+    "rental_end": "10/22/16"
+  },
+  "VIN346": {
+    "product_code": "PRD59",
+    "units_rented": 7,
+    "price_per_day": 27,
+    "rental_start": "9/17/18",
+    "rental_end": "3/21/17"
+  },
+  "VIN347": {
+    "product_code": "PRD32",
+    "units_rented": 6,
+    "price_per_day": 18,
+    "rental_start": "4/17/18",
+    "rental_end": "9/21/17"
+  },
+  "VIN348": {
+    "product_code": "PRD37",
+    "units_rented": 4,
+    "price_per_day": 34,
+    "rental_start": "2/19/16",
+    "rental_end": "5/28/16"
+  },
+  "VIN349": {
+    "product_code": "PRD0",
+    "units_rented": 6,
+    "price_per_day": 15,
+    "rental_start": "10/11/16",
+    "rental_end": "4/5/18"
+  },
+  "VIN350": {
+    "product_code": "PRD22",
+    "units_rented": 1,
+    "price_per_day": 28,
+    "rental_start": "11/12/16",
+    "rental_end": "3/14/17"
+  },
+  "VIN351": {
+    "product_code": "PRD66",
+    "units_rented": 2,
+    "price_per_day": 34,
+    "rental_start": "1/7/16",
+    "rental_end": "6/3/17"
+  },
+  "VIN352": {
+    "product_code": "PRD92",
+    "units_rented": 8,
+    "price_per_day": 33,
+    "rental_start": "7/16/18",
+    "rental_end": "1/15/17"
+  },
+  "VIN353": {
+    "product_code": "PRD38",
+    "units_rented": 4,
+    "price_per_day": 38,
+    "rental_start": "10/4/17",
+    "rental_end": "12/13/16"
+  },
+  "VIN354": {
+    "product_code": "PRD36",
+    "units_rented": 10,
+    "price_per_day": 12,
+    "rental_start": "9/17/16",
+    "rental_end": "10/17/17"
+  },
+  "VIN355": {
+    "product_code": "PRD29",
+    "units_rented": 3,
+    "price_per_day": 12,
+    "rental_start": "9/13/18",
+    "rental_end": "7/30/18"
+  },
+  "VIN356": {
+    "product_code": "PRD59",
+    "units_rented": 9,
+    "price_per_day": 7,
+    "rental_start": "1/16/18",
+    "rental_end": "8/21/17"
+  },
+  "VIN357": {
+    "product_code": "PRD28",
+    "units_rented": 10,
+    "price_per_day": 33,
+    "rental_start": "3/16/18",
+    "rental_end": "8/29/18"
+  },
+  "VIN358": {
+    "product_code": "PRD46",
+    "units_rented": 9,
+    "price_per_day": 7,
+    "rental_start": "9/15/16",
+    "rental_end": "9/19/17"
+  },
+  "VIN359": {
+    "product_code": "PRD30",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "8/20/16",
+    "rental_end": "8/13/17"
+  },
+  "VIN360": {
+    "product_code": "PRD96",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "1/29/16",
+    "rental_end": "3/3/17"
+  },
+  "VIN361": {
+    "product_code": "PRD31",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "1/29/18",
+    "rental_end": "3/5/16"
+  },
+  "VIN362": {
+    "product_code": "PRD99",
+    "units_rented": 2,
+    "price_per_day": 19,
+    "rental_start": "3/18/17",
+    "rental_end": "10/3/18"
+  },
+  "VIN363": {
+    "product_code": "PRD40",
+    "units_rented": 3,
+    "price_per_day": 19,
+    "rental_start": "6/12/18",
+    "rental_end": "5/21/18"
+  },
+  "VIN364": {
+    "product_code": "PRD51",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "6/24/18",
+    "rental_end": "5/14/18"
+  },
+  "VIN365": {
+    "product_code": "PRD76",
+    "units_rented": 2,
+    "price_per_day": 34,
+    "rental_start": "9/29/16",
+    "rental_end": "11/18/17"
+  },
+  "VIN366": {
+    "product_code": "PRD73",
+    "units_rented": 1,
+    "price_per_day": 34,
+    "rental_start": "7/24/18",
+    "rental_end": "10/8/17"
+  },
+  "VIN367": {
+    "product_code": "PRD71",
+    "units_rented": 6,
+    "price_per_day": 37,
+    "rental_start": "8/12/17",
+    "rental_end": "11/26/17"
+  },
+  "VIN368": {
+    "product_code": "PRD31",
+    "units_rented": 9,
+    "price_per_day": 27,
+    "rental_start": "3/9/17",
+    "rental_end": "6/18/17"
+  },
+  "VIN369": {
+    "product_code": "PRD2",
+    "units_rented": 2,
+    "price_per_day": 20,
+    "rental_start": "6/1/18",
+    "rental_end": "9/11/18"
+  },
+  "VIN370": {
+    "product_code": "PRD3",
+    "units_rented": 10,
+    "price_per_day": 28,
+    "rental_start": "7/23/16",
+    "rental_end": "2/23/18"
+  },
+  "VIN371": {
+    "product_code": "PRD2",
+    "units_rented": 2,
+    "price_per_day": 30,
+    "rental_start": "11/20/18",
+    "rental_end": "6/10/17"
+  },
+  "VIN372": {
+    "product_code": "PRD40",
+    "units_rented": 6,
+    "price_per_day": 26,
+    "rental_start": "9/14/17",
+    "rental_end": "9/17/16"
+  },
+  "VIN373": {
+    "product_code": "PRD30",
+    "units_rented": 2,
+    "price_per_day": 21,
+    "rental_start": "9/17/17",
+    "rental_end": "12/24/17"
+  },
+  "VIN374": {
+    "product_code": "PRD85",
+    "units_rented": 6,
+    "price_per_day": 9,
+    "rental_start": "6/28/18",
+    "rental_end": "1/15/18"
+  },
+  "VIN375": {
+    "product_code": "PRD1",
+    "units_rented": 5,
+    "price_per_day": 8,
+    "rental_start": "5/18/17",
+    "rental_end": "7/17/17"
+  },
+  "VIN376": {
+    "product_code": "PRD75",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "11/20/17",
+    "rental_end": "4/20/17"
+  },
+  "VIN377": {
+    "product_code": "PRD76",
+    "units_rented": 1,
+    "price_per_day": 21,
+    "rental_start": "4/9/16",
+    "rental_end": "3/10/18"
+  },
+  "VIN378": {
+    "product_code": "PRD68",
+    "units_rented": 5,
+    "price_per_day": 28,
+    "rental_start": "6/24/16",
+    "rental_end": "12/19/17"
+  },
+  "VIN379": {
+    "product_code": "PRD44",
+    "units_rented": 10,
+    "price_per_day": 17,
+    "rental_start": "9/11/18",
+    "rental_end": "11/21/16"
+  },
+  "VIN380": {
+    "product_code": "PRD12",
+    "units_rented": 10,
+    "price_per_day": 24,
+    "rental_start": "3/6/16",
+    "rental_end": "5/23/17"
+  },
+  "VIN381": {
+    "product_code": "PRD30",
+    "units_rented": 3,
+    "price_per_day": 19,
+    "rental_start": "5/28/18",
+    "rental_end": "12/26/16"
+  },
+  "VIN382": {
+    "product_code": "PRD95",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "5/19/17",
+    "rental_end": "12/8/18"
+  },
+  "VIN383": {
+    "product_code": "PRD58",
+    "units_rented": 9,
+    "price_per_day": 9,
+    "rental_start": "5/28/17",
+    "rental_end": "5/6/17"
+  },
+  "VIN384": {
+    "product_code": "PRD73",
+    "units_rented": 1,
+    "price_per_day": 34,
+    "rental_start": "11/28/17",
+    "rental_end": "5/29/17"
+  },
+  "VIN385": {
+    "product_code": "PRD29",
+    "units_rented": 9,
+    "price_per_day": 18,
+    "rental_start": "12/17/16",
+    "rental_end": "8/30/18"
+  },
+  "VIN386": {
+    "product_code": "PRD99",
+    "units_rented": 4,
+    "price_per_day": 38,
+    "rental_start": "1/5/17",
+    "rental_end": "6/9/16"
+  },
+  "VIN387": {
+    "product_code": "PRD38",
+    "units_rented": 3,
+    "price_per_day": 40,
+    "rental_start": "12/28/18",
+    "rental_end": "7/18/16"
+  },
+  "VIN388": {
+    "product_code": "PRD38",
+    "units_rented": 9,
+    "price_per_day": 5,
+    "rental_start": "7/21/18",
+    "rental_end": "12/11/16"
+  },
+  "VIN389": {
+    "product_code": "PRD71",
+    "units_rented": 10,
+    "price_per_day": 27,
+    "rental_start": "4/6/17",
+    "rental_end": "8/25/18"
+  },
+  "VIN390": {
+    "product_code": "PRD81",
+    "units_rented": 7,
+    "price_per_day": 5,
+    "rental_start": "12/16/16",
+    "rental_end": "10/19/17"
+  },
+  "VIN391": {
+    "product_code": "PRD2",
+    "units_rented": 1,
+    "price_per_day": 27,
+    "rental_start": "8/18/17",
+    "rental_end": "8/6/17"
+  },
+  "VIN392": {
+    "product_code": "PRD64",
+    "units_rented": 9,
+    "price_per_day": 21,
+    "rental_start": "7/17/18",
+    "rental_end": "4/4/18"
+  },
+  "VIN393": {
+    "product_code": "PRD49",
+    "units_rented": 8,
+    "price_per_day": 15,
+    "rental_start": "3/10/16",
+    "rental_end": "4/6/17"
+  },
+  "VIN394": {
+    "product_code": "PRD11",
+    "units_rented": 3,
+    "price_per_day": 27,
+    "rental_start": "2/15/18",
+    "rental_end": "1/10/17"
+  },
+  "VIN395": {
+    "product_code": "PRD22",
+    "units_rented": 5,
+    "price_per_day": 6,
+    "rental_start": "3/31/18",
+    "rental_end": "12/29/17"
+  },
+  "VIN396": {
+    "product_code": "PRD10",
+    "units_rented": 8,
+    "price_per_day": 5,
+    "rental_start": "8/9/16",
+    "rental_end": "5/16/18"
+  },
+  "VIN397": {
+    "product_code": "PRD81",
+    "units_rented": 4,
+    "price_per_day": 18,
+    "rental_start": "6/22/17",
+    "rental_end": "5/11/16"
+  },
+  "VIN398": {
+    "product_code": "PRD46",
+    "units_rented": 9,
+    "price_per_day": 16,
+    "rental_start": "5/27/18",
+    "rental_end": "6/5/18"
+  },
+  "VIN399": {
+    "product_code": "PRD10",
+    "units_rented": 5,
+    "price_per_day": 35,
+    "rental_start": "1/21/16",
+    "rental_end": "10/11/17"
+  },
+  "VIN400": {
+    "product_code": "PRD59",
+    "units_rented": 5,
+    "price_per_day": 27,
+    "rental_start": "10/12/18",
+    "rental_end": "3/6/17"
+  },
+  "VIN401": {
+    "product_code": "PRD86",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "1/1/18",
+    "rental_end": "5/10/18"
+  },
+  "VIN402": {
+    "product_code": "PRD69",
+    "units_rented": 9,
+    "price_per_day": 24,
+    "rental_start": "3/8/17",
+    "rental_end": "12/3/17"
+  },
+  "VIN403": {
+    "product_code": "PRD59",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "8/16/16",
+    "rental_end": "10/7/17"
+  },
+  "VIN404": {
+    "product_code": "PRD95",
+    "units_rented": 7,
+    "price_per_day": 40,
+    "rental_start": "9/1/16",
+    "rental_end": "11/23/17"
+  },
+  "VIN405": {
+    "product_code": "PRD48",
+    "units_rented": 3,
+    "price_per_day": 18,
+    "rental_start": "10/9/18",
+    "rental_end": "4/17/17"
+  },
+  "VIN406": {
+    "product_code": "PRD49",
+    "units_rented": 5,
+    "price_per_day": 13,
+    "rental_start": "3/2/17",
+    "rental_end": "1/5/18"
+  },
+  "VIN407": {
+    "product_code": "PRD75",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "8/7/16",
+    "rental_end": "3/18/17"
+  },
+  "VIN408": {
+    "product_code": "PRD42",
+    "units_rented": 2,
+    "price_per_day": 37,
+    "rental_start": "2/1/17",
+    "rental_end": "1/2/17"
+  },
+  "VIN409": {
+    "product_code": "PRD12",
+    "units_rented": 10,
+    "price_per_day": 24,
+    "rental_start": "8/16/17",
+    "rental_end": "11/18/16"
+  },
+  "VIN410": {
+    "product_code": "PRD56",
+    "units_rented": 10,
+    "price_per_day": 14,
+    "rental_start": "8/8/18",
+    "rental_end": "9/7/18"
+  },
+  "VIN411": {
+    "product_code": "PRD99",
+    "units_rented": 3,
+    "price_per_day": 16,
+    "rental_start": "10/7/16",
+    "rental_end": "6/2/18"
+  },
+  "VIN412": {
+    "product_code": "PRD58",
+    "units_rented": 3,
+    "price_per_day": 33,
+    "rental_start": "6/30/18",
+    "rental_end": "9/16/17"
+  },
+  "VIN413": {
+    "product_code": "PRD6",
+    "units_rented": 2,
+    "price_per_day": 5,
+    "rental_start": "9/22/18",
+    "rental_end": "10/1/17"
+  },
+  "VIN414": {
+    "product_code": "PRD65",
+    "units_rented": 8,
+    "price_per_day": 38,
+    "rental_start": "8/5/17",
+    "rental_end": "11/4/16"
+  },
+  "VIN415": {
+    "product_code": "PRD26",
+    "units_rented": 1,
+    "price_per_day": 9,
+    "rental_start": "4/12/16",
+    "rental_end": "9/13/17"
+  },
+  "VIN416": {
+    "product_code": "PRD71",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "10/26/17",
+    "rental_end": "2/18/17"
+  },
+  "VIN417": {
+    "product_code": "PRD14",
+    "units_rented": 10,
+    "price_per_day": 37,
+    "rental_start": "5/4/16",
+    "rental_end": "9/22/16"
+  },
+  "VIN418": {
+    "product_code": "PRD31",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "9/29/16",
+    "rental_end": "6/30/17"
+  },
+  "VIN419": {
+    "product_code": "PRD12",
+    "units_rented": 9,
+    "price_per_day": 10,
+    "rental_start": "2/3/16",
+    "rental_end": "9/2/18"
+  },
+  "VIN420": {
+    "product_code": "PRD49",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "8/22/16",
+    "rental_end": "11/27/18"
+  },
+  "VIN421": {
+    "product_code": "PRD92",
+    "units_rented": 9,
+    "price_per_day": 9,
+    "rental_start": "12/6/17",
+    "rental_end": "4/14/16"
+  },
+  "VIN422": {
+    "product_code": "PRD14",
+    "units_rented": 4,
+    "price_per_day": 21,
+    "rental_start": "12/24/16",
+    "rental_end": "7/18/16"
+  },
+  "VIN423": {
+    "product_code": "PRD45",
+    "units_rented": 6,
+    "price_per_day": 35,
+    "rental_start": "10/17/16",
+    "rental_end": "1/25/16"
+  },
+  "VIN424": {
+    "product_code": "PRD5",
+    "units_rented": 8,
+    "price_per_day": 22,
+    "rental_start": "9/27/18",
+    "rental_end": "4/27/16"
+  },
+  "VIN425": {
+    "product_code": "PRD26",
+    "units_rented": 5,
+    "price_per_day": 35,
+    "rental_start": "1/30/17",
+    "rental_end": "6/23/18"
+  },
+  "VIN426": {
+    "product_code": "PRD33",
+    "units_rented": 7,
+    "price_per_day": 23,
+    "rental_start": "3/6/16",
+    "rental_end": "4/26/17"
+  },
+  "VIN427": {
+    "product_code": "PRD59",
+    "units_rented": 9,
+    "price_per_day": 11,
+    "rental_start": "5/5/18",
+    "rental_end": "1/9/17"
+  },
+  "VIN428": {
+    "product_code": "PRD86",
+    "units_rented": 7,
+    "price_per_day": 15,
+    "rental_start": "11/11/16",
+    "rental_end": "6/11/16"
+  },
+  "VIN429": {
+    "product_code": "PRD9",
+    "units_rented": 10,
+    "price_per_day": 30,
+    "rental_start": "2/13/16",
+    "rental_end": "9/4/16"
+  },
+  "VIN430": {
+    "product_code": "PRD57",
+    "units_rented": 2,
+    "price_per_day": 15,
+    "rental_start": "5/3/18",
+    "rental_end": "4/11/18"
+  },
+  "VIN431": {
+    "product_code": "PRD90",
+    "units_rented": 6,
+    "price_per_day": 9,
+    "rental_start": "3/30/16",
+    "rental_end": "7/23/18"
+  },
+  "VIN432": {
+    "product_code": "PRD12",
+    "units_rented": 3,
+    "price_per_day": 19,
+    "rental_start": "12/24/17",
+    "rental_end": "12/27/18"
+  },
+  "VIN433": {
+    "product_code": "PRD31",
+    "units_rented": 8,
+    "price_per_day": 25,
+    "rental_start": "1/31/16",
+    "rental_end": "11/6/18"
+  },
+  "VIN434": {
+    "product_code": "PRD18",
+    "units_rented": 10,
+    "price_per_day": 29,
+    "rental_start": "8/18/17",
+    "rental_end": "11/3/18"
+  },
+  "VIN435": {
+    "product_code": "PRD70",
+    "units_rented": 1,
+    "price_per_day": 32,
+    "rental_start": "11/22/16",
+    "rental_end": "1/24/16"
+  },
+  "VIN436": {
+    "product_code": "PRD37",
+    "units_rented": 4,
+    "price_per_day": 10,
+    "rental_start": "4/17/18",
+    "rental_end": "5/7/17"
+  },
+  "VIN437": {
+    "product_code": "PRD39",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "8/31/16",
+    "rental_end": "9/17/17"
+  },
+  "VIN438": {
+    "product_code": "PRD10",
+    "units_rented": 10,
+    "price_per_day": 8,
+    "rental_start": "4/24/16",
+    "rental_end": "6/29/16"
+  },
+  "VIN439": {
+    "product_code": "PRD76",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "4/30/18",
+    "rental_end": "7/24/18"
+  },
+  "VIN440": {
+    "product_code": "PRD43",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "11/24/18",
+    "rental_end": "12/3/16"
+  },
+  "VIN441": {
+    "product_code": "PRD33",
+    "units_rented": 4,
+    "price_per_day": 12,
+    "rental_start": "6/1/16",
+    "rental_end": "5/1/18"
+  },
+  "VIN442": {
+    "product_code": "PRD68",
+    "units_rented": 8,
+    "price_per_day": 13,
+    "rental_start": "2/6/17",
+    "rental_end": "8/21/18"
+  },
+  "VIN443": {
+    "product_code": "PRD82",
+    "units_rented": 9,
+    "price_per_day": 27,
+    "rental_start": "8/7/18",
+    "rental_end": "2/18/16"
+  },
+  "VIN444": {
+    "product_code": "PRD0",
+    "units_rented": 1,
+    "price_per_day": 40,
+    "rental_start": "6/16/17",
+    "rental_end": "12/8/17"
+  },
+  "VIN445": {
+    "product_code": "PRD87",
+    "units_rented": 6,
+    "price_per_day": 16,
+    "rental_start": "2/22/18",
+    "rental_end": "10/24/17"
+  },
+  "VIN446": {
+    "product_code": "PRD55",
+    "units_rented": 4,
+    "price_per_day": 18,
+    "rental_start": "6/30/18",
+    "rental_end": "6/26/16"
+  },
+  "VIN447": {
+    "product_code": "PRD67",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "11/14/17",
+    "rental_end": "7/7/17"
+  },
+  "VIN448": {
+    "product_code": "PRD33",
+    "units_rented": 7,
+    "price_per_day": 29,
+    "rental_start": "6/20/17",
+    "rental_end": "12/25/17"
+  },
+  "VIN449": {
+    "product_code": "PRD89",
+    "units_rented": 6,
+    "price_per_day": 37,
+    "rental_start": "10/17/18",
+    "rental_end": "7/30/17"
+  },
+  "VIN450": {
+    "product_code": "PRD40",
+    "units_rented": 8,
+    "price_per_day": 22,
+    "rental_start": "12/31/16",
+    "rental_end": "12/25/17"
+  },
+  "VIN451": {
+    "product_code": "PRD3",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "3/23/17",
+    "rental_end": "10/16/16"
+  },
+  "VIN452": {
+    "product_code": "PRD57",
+    "units_rented": 7,
+    "price_per_day": 18,
+    "rental_start": "2/6/17",
+    "rental_end": "11/17/18"
+  },
+  "VIN453": {
+    "product_code": "PRD52",
+    "units_rented": 1,
+    "price_per_day": 34,
+    "rental_start": "10/10/18",
+    "rental_end": "7/23/16"
+  },
+  "VIN454": {
+    "product_code": "PRD46",
+    "units_rented": 2,
+    "price_per_day": 5,
+    "rental_start": "9/28/18",
+    "rental_end": "8/25/18"
+  },
+  "VIN455": {
+    "product_code": "PRD73",
+    "units_rented": 7,
+    "price_per_day": 7,
+    "rental_start": "11/16/16",
+    "rental_end": "5/3/17"
+  },
+  "VIN456": {
+    "product_code": "PRD24",
+    "units_rented": 6,
+    "price_per_day": 19,
+    "rental_start": "2/16/16",
+    "rental_end": "4/23/16"
+  },
+  "VIN457": {
+    "product_code": "PRD56",
+    "units_rented": 5,
+    "price_per_day": 31,
+    "rental_start": "8/6/18",
+    "rental_end": "11/25/16"
+  },
+  "VIN458": {
+    "product_code": "PRD70",
+    "units_rented": 3,
+    "price_per_day": 7,
+    "rental_start": "9/24/17",
+    "rental_end": "2/26/18"
+  },
+  "VIN459": {
+    "product_code": "PRD92",
+    "units_rented": 8,
+    "price_per_day": 35,
+    "rental_start": "5/23/16",
+    "rental_end": "2/25/17"
+  },
+  "VIN460": {
+    "product_code": "PRD23",
+    "units_rented": 5,
+    "price_per_day": 29,
+    "rental_start": "11/17/16",
+    "rental_end": "3/15/18"
+  },
+  "VIN461": {
+    "product_code": "PRD80",
+    "units_rented": 2,
+    "price_per_day": 11,
+    "rental_start": "7/21/18",
+    "rental_end": "6/6/16"
+  },
+  "VIN462": {
+    "product_code": "PRD82",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "6/9/18",
+    "rental_end": "5/2/18"
+  },
+  "VIN463": {
+    "product_code": "PRD6",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "11/18/18",
+    "rental_end": "3/14/18"
+  },
+  "VIN464": {
+    "product_code": "PRD80",
+    "units_rented": 2,
+    "price_per_day": 6,
+    "rental_start": "3/31/18",
+    "rental_end": "7/23/18"
+  },
+  "VIN465": {
+    "product_code": "PRD81",
+    "units_rented": 3,
+    "price_per_day": 37,
+    "rental_start": "4/28/18",
+    "rental_end": "3/7/17"
+  },
+  "VIN466": {
+    "product_code": "PRD93",
+    "units_rented": 3,
+    "price_per_day": 7,
+    "rental_start": "1/14/17",
+    "rental_end": "8/20/18"
+  },
+  "VIN467": {
+    "product_code": "PRD65",
+    "units_rented": 8,
+    "price_per_day": 28,
+    "rental_start": "5/18/18",
+    "rental_end": "5/23/16"
+  },
+  "VIN468": {
+    "product_code": "PRD90",
+    "units_rented": 5,
+    "price_per_day": 6,
+    "rental_start": "5/12/16",
+    "rental_end": "7/19/16"
+  },
+  "VIN469": {
+    "product_code": "PRD49",
+    "units_rented": 5,
+    "price_per_day": 10,
+    "rental_start": "12/27/16",
+    "rental_end": "11/21/18"
+  },
+  "VIN470": {
+    "product_code": "PRD74",
+    "units_rented": 2,
+    "price_per_day": 23,
+    "rental_start": "3/4/18",
+    "rental_end": "7/1/18"
+  },
+  "VIN471": {
+    "product_code": "PRD52",
+    "units_rented": 5,
+    "price_per_day": 7,
+    "rental_start": "11/25/16",
+    "rental_end": "11/22/18"
+  },
+  "VIN472": {
+    "product_code": "PRD44",
+    "units_rented": 9,
+    "price_per_day": 36,
+    "rental_start": "4/25/17",
+    "rental_end": "3/5/17"
+  },
+  "VIN473": {
+    "product_code": "PRD22",
+    "units_rented": 8,
+    "price_per_day": 30,
+    "rental_start": "1/25/17",
+    "rental_end": "12/3/18"
+  },
+  "VIN474": {
+    "product_code": "PRD81",
+    "units_rented": 5,
+    "price_per_day": 35,
+    "rental_start": "5/23/17",
+    "rental_end": "6/4/17"
+  },
+  "VIN475": {
+    "product_code": "PRD31",
+    "units_rented": 10,
+    "price_per_day": 6,
+    "rental_start": "8/15/17",
+    "rental_end": "7/29/18"
+  },
+  "VIN476": {
+    "product_code": "PRD40",
+    "units_rented": 4,
+    "price_per_day": 36,
+    "rental_start": "7/28/18",
+    "rental_end": "11/26/16"
+  },
+  "VIN477": {
+    "product_code": "PRD15",
+    "units_rented": 9,
+    "price_per_day": 5,
+    "rental_start": "8/24/16",
+    "rental_end": "1/23/18"
+  },
+  "VIN478": {
+    "product_code": "PRD39",
+    "units_rented": 3,
+    "price_per_day": 36,
+    "rental_start": "1/12/16",
+    "rental_end": "3/29/16"
+  },
+  "VIN479": {
+    "product_code": "PRD59",
+    "units_rented": 10,
+    "price_per_day": 22,
+    "rental_start": "9/13/16",
+    "rental_end": "9/28/16"
+  },
+  "VIN480": {
+    "product_code": "PRD42",
+    "units_rented": 3,
+    "price_per_day": 8,
+    "rental_start": "8/2/18",
+    "rental_end": "4/8/17"
+  },
+  "VIN481": {
+    "product_code": "PRD76",
+    "units_rented": 8,
+    "price_per_day": 21,
+    "rental_start": "5/16/17",
+    "rental_end": "9/4/17"
+  },
+  "VIN482": {
+    "product_code": "PRD96",
+    "units_rented": 7,
+    "price_per_day": 13,
+    "rental_start": "1/25/16",
+    "rental_end": "1/24/17"
+  },
+  "VIN483": {
+    "product_code": "PRD63",
+    "units_rented": 3,
+    "price_per_day": 23,
+    "rental_start": "1/13/17",
+    "rental_end": "3/19/18"
+  },
+  "VIN484": {
+    "product_code": "PRD40",
+    "units_rented": 6,
+    "price_per_day": 14,
+    "rental_start": "6/23/16",
+    "rental_end": "9/7/17"
+  },
+  "VIN485": {
+    "product_code": "PRD56",
+    "units_rented": 7,
+    "price_per_day": 38,
+    "rental_start": "3/26/18",
+    "rental_end": "1/29/17"
+  },
+  "VIN486": {
+    "product_code": "PRD20",
+    "units_rented": 1,
+    "price_per_day": 6,
+    "rental_start": "10/26/17",
+    "rental_end": "10/9/18"
+  },
+  "VIN487": {
+    "product_code": "PRD93",
+    "units_rented": 5,
+    "price_per_day": 36,
+    "rental_start": "3/12/17",
+    "rental_end": "4/28/16"
+  },
+  "VIN488": {
+    "product_code": "PRD66",
+    "units_rented": 3,
+    "price_per_day": 23,
+    "rental_start": "3/8/16",
+    "rental_end": "2/15/18"
+  },
+  "VIN489": {
+    "product_code": "PRD69",
+    "units_rented": 6,
+    "price_per_day": 19,
+    "rental_start": "8/21/18",
+    "rental_end": "5/9/18"
+  },
+  "VIN490": {
+    "product_code": "PRD58",
+    "units_rented": 5,
+    "price_per_day": 19,
+    "rental_start": "9/23/17",
+    "rental_end": "8/17/17"
+  },
+  "VIN491": {
+    "product_code": "PRD14",
+    "units_rented": 10,
+    "price_per_day": 15,
+    "rental_start": "6/2/18",
+    "rental_end": "2/3/17"
+  },
+  "VIN492": {
+    "product_code": "PRD26",
+    "units_rented": 6,
+    "price_per_day": 11,
+    "rental_start": "1/22/17",
+    "rental_end": "10/10/17"
+  },
+  "VIN493": {
+    "product_code": "PRD95",
+    "units_rented": 6,
+    "price_per_day": 12,
+    "rental_start": "8/23/18",
+    "rental_end": "10/10/16"
+  },
+  "VIN494": {
+    "product_code": "PRD88",
+    "units_rented": 7,
+    "price_per_day": 23,
+    "rental_start": "7/31/16",
+    "rental_end": "12/29/16"
+  },
+  "VIN495": {
+    "product_code": "PRD23",
+    "units_rented": 10,
+    "price_per_day": 7,
+    "rental_start": "6/22/17",
+    "rental_end": "7/31/16"
+  },
+  "VIN496": {
+    "product_code": "PRD8",
+    "units_rented": 7,
+    "price_per_day": 26,
+    "rental_start": "11/28/17",
+    "rental_end": "12/5/16"
+  },
+  "VIN497": {
+    "product_code": "PRD12",
+    "units_rented": 4,
+    "price_per_day": 17,
+    "rental_start": "6/17/18",
+    "rental_end": "4/20/17"
+  },
+  "VIN498": {
+    "product_code": "PRD95",
+    "units_rented": 6,
+    "price_per_day": 14,
+    "rental_start": "5/1/16",
+    "rental_end": "4/30/17"
+  },
+  "VIN499": {
+    "product_code": "PRD64",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "8/18/17",
+    "rental_end": "4/20/18"
+  },
+  "VIN500": {
+    "product_code": "PRD88",
+    "units_rented": 5,
+    "price_per_day": 27,
+    "rental_start": "3/16/16",
+    "rental_end": "6/5/16"
+  },
+  "VIN501": {
+    "product_code": "PRD51",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "10/30/16",
+    "rental_end": "7/4/16"
+  },
+  "VIN502": {
+    "product_code": "PRD97",
+    "units_rented": 9,
+    "price_per_day": 15,
+    "rental_start": "2/26/17",
+    "rental_end": "7/2/18"
+  },
+  "VIN503": {
+    "product_code": "PRD37",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "3/15/17",
+    "rental_end": "11/22/16"
+  },
+  "VIN504": {
+    "product_code": "PRD88",
+    "units_rented": 2,
+    "price_per_day": 22,
+    "rental_start": "12/22/16",
+    "rental_end": "3/7/18"
+  },
+  "VIN505": {
+    "product_code": "PRD28",
+    "units_rented": 6,
+    "price_per_day": 20,
+    "rental_start": "5/18/16",
+    "rental_end": "10/4/16"
+  },
+  "VIN506": {
+    "product_code": "PRD97",
+    "units_rented": 10,
+    "price_per_day": 36,
+    "rental_start": "1/25/18",
+    "rental_end": "11/19/18"
+  },
+  "VIN507": {
+    "product_code": "PRD1",
+    "units_rented": 4,
+    "price_per_day": 6,
+    "rental_start": "6/20/18",
+    "rental_end": "6/1/17"
+  },
+  "VIN508": {
+    "product_code": "PRD53",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "5/31/17",
+    "rental_end": "3/21/16"
+  },
+  "VIN509": {
+    "product_code": "PRD78",
+    "units_rented": 6,
+    "price_per_day": 12,
+    "rental_start": "12/18/18",
+    "rental_end": "3/17/18"
+  },
+  "VIN510": {
+    "product_code": "PRD74",
+    "units_rented": 5,
+    "price_per_day": 17,
+    "rental_start": "7/14/16",
+    "rental_end": "7/29/16"
+  },
+  "VIN511": {
+    "product_code": "PRD23",
+    "units_rented": 5,
+    "price_per_day": 23,
+    "rental_start": "3/27/18",
+    "rental_end": "12/27/18"
+  },
+  "VIN512": {
+    "product_code": "PRD29",
+    "units_rented": 4,
+    "price_per_day": 8,
+    "rental_start": "11/15/17",
+    "rental_end": "11/3/17"
+  },
+  "VIN513": {
+    "product_code": "PRD2",
+    "units_rented": 6,
+    "price_per_day": 25,
+    "rental_start": "12/22/18",
+    "rental_end": "7/6/18"
+  },
+  "VIN514": {
+    "product_code": "PRD23",
+    "units_rented": 9,
+    "price_per_day": 34,
+    "rental_start": "8/18/18",
+    "rental_end": "9/25/17"
+  },
+  "VIN515": {
+    "product_code": "PRD24",
+    "units_rented": 8,
+    "price_per_day": 18,
+    "rental_start": "4/22/18",
+    "rental_end": "9/18/17"
+  },
+  "VIN516": {
+    "product_code": "PRD91",
+    "units_rented": 3,
+    "price_per_day": 28,
+    "rental_start": "3/15/18",
+    "rental_end": "4/15/17"
+  },
+  "VIN517": {
+    "product_code": "PRD74",
+    "units_rented": 5,
+    "price_per_day": 14,
+    "rental_start": "8/17/18",
+    "rental_end": "12/20/16"
+  },
+  "VIN518": {
+    "product_code": "PRD41",
+    "units_rented": 2,
+    "price_per_day": 25,
+    "rental_start": "6/10/18",
+    "rental_end": "9/29/16"
+  },
+  "VIN519": {
+    "product_code": "PRD10",
+    "units_rented": 5,
+    "price_per_day": 7,
+    "rental_start": "8/27/17",
+    "rental_end": "8/28/17"
+  },
+  "VIN520": {
+    "product_code": "PRD96",
+    "units_rented": 6,
+    "price_per_day": 18,
+    "rental_start": "8/15/17",
+    "rental_end": "4/10/17"
+  },
+  "VIN521": {
+    "product_code": "PRD98",
+    "units_rented": 8,
+    "price_per_day": 23,
+    "rental_start": "2/5/17",
+    "rental_end": "9/27/17"
+  },
+  "VIN522": {
+    "product_code": "PRD85",
+    "units_rented": 8,
+    "price_per_day": 15,
+    "rental_start": "5/10/18",
+    "rental_end": "11/22/17"
+  },
+  "VIN523": {
+    "product_code": "PRD53",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "1/23/16",
+    "rental_end": "4/2/16"
+  },
+  "VIN524": {
+    "product_code": "PRD63",
+    "units_rented": 1,
+    "price_per_day": 37,
+    "rental_start": "7/29/18",
+    "rental_end": "3/22/18"
+  },
+  "VIN525": {
+    "product_code": "PRD86",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "2/18/18",
+    "rental_end": "10/26/17"
+  },
+  "VIN526": {
+    "product_code": "PRD2",
+    "units_rented": 3,
+    "price_per_day": 37,
+    "rental_start": "4/24/16",
+    "rental_end": "2/4/18"
+  },
+  "VIN527": {
+    "product_code": "PRD99",
+    "units_rented": 1,
+    "price_per_day": 10,
+    "rental_start": "4/28/16",
+    "rental_end": "1/12/18"
+  },
+  "VIN528": {
+    "product_code": "PRD59",
+    "units_rented": 4,
+    "price_per_day": 28,
+    "rental_start": "5/30/18",
+    "rental_end": "2/6/16"
+  },
+  "VIN529": {
+    "product_code": "PRD96",
+    "units_rented": 9,
+    "price_per_day": 40,
+    "rental_start": "9/12/16",
+    "rental_end": "12/3/16"
+  },
+  "VIN530": {
+    "product_code": "PRD10",
+    "units_rented": 6,
+    "price_per_day": 38,
+    "rental_start": "3/11/16",
+    "rental_end": "7/13/17"
+  },
+  "VIN531": {
+    "product_code": "PRD5",
+    "units_rented": 4,
+    "price_per_day": 19,
+    "rental_start": "10/5/17",
+    "rental_end": "11/26/18"
+  },
+  "VIN532": {
+    "product_code": "PRD81",
+    "units_rented": 10,
+    "price_per_day": 34,
+    "rental_start": "12/7/18",
+    "rental_end": "10/30/17"
+  },
+  "VIN533": {
+    "product_code": "PRD66",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "3/29/18",
+    "rental_end": "12/28/16"
+  },
+  "VIN534": {
+    "product_code": "PRD30",
+    "units_rented": 5,
+    "price_per_day": 11,
+    "rental_start": "6/9/16",
+    "rental_end": "6/24/17"
+  },
+  "VIN535": {
+    "product_code": "PRD79",
+    "units_rented": 7,
+    "price_per_day": 26,
+    "rental_start": "6/5/18",
+    "rental_end": "11/22/16"
+  },
+  "VIN536": {
+    "product_code": "PRD94",
+    "units_rented": 6,
+    "price_per_day": 39,
+    "rental_start": "12/29/18",
+    "rental_end": "7/3/18"
+  },
+  "VIN537": {
+    "product_code": "PRD71",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "6/30/17",
+    "rental_end": "8/29/16"
+  },
+  "VIN538": {
+    "product_code": "PRD5",
+    "units_rented": 10,
+    "price_per_day": 34,
+    "rental_start": "11/24/16",
+    "rental_end": "2/22/16"
+  },
+  "VIN539": {
+    "product_code": "PRD74",
+    "units_rented": 8,
+    "price_per_day": 23,
+    "rental_start": "7/28/17",
+    "rental_end": "7/3/16"
+  },
+  "VIN540": {
+    "product_code": "PRD84",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "11/20/17",
+    "rental_end": "1/11/18"
+  },
+  "VIN541": {
+    "product_code": "PRD54",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "8/12/18",
+    "rental_end": "5/5/16"
+  },
+  "VIN542": {
+    "product_code": "PRD44",
+    "units_rented": 7,
+    "price_per_day": 31,
+    "rental_start": "12/20/17",
+    "rental_end": "11/19/18"
+  },
+  "VIN543": {
+    "product_code": "PRD26",
+    "units_rented": 5,
+    "price_per_day": 14,
+    "rental_start": "2/27/17",
+    "rental_end": "3/4/17"
+  },
+  "VIN544": {
+    "product_code": "PRD53",
+    "units_rented": 2,
+    "price_per_day": 14,
+    "rental_start": "1/9/18",
+    "rental_end": "6/19/17"
+  },
+  "VIN545": {
+    "product_code": "PRD66",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "11/8/18",
+    "rental_end": "9/27/17"
+  },
+  "VIN546": {
+    "product_code": "PRD81",
+    "units_rented": 9,
+    "price_per_day": 37,
+    "rental_start": "11/10/16",
+    "rental_end": "6/16/16"
+  },
+  "VIN547": {
+    "product_code": "PRD28",
+    "units_rented": 3,
+    "price_per_day": 15,
+    "rental_start": "5/28/16",
+    "rental_end": "12/2/17"
+  },
+  "VIN548": {
+    "product_code": "PRD58",
+    "units_rented": 2,
+    "price_per_day": 39,
+    "rental_start": "10/27/18",
+    "rental_end": "10/20/17"
+  },
+  "VIN549": {
+    "product_code": "PRD0",
+    "units_rented": 6,
+    "price_per_day": 28,
+    "rental_start": "7/20/17",
+    "rental_end": "10/14/17"
+  },
+  "VIN550": {
+    "product_code": "PRD40",
+    "units_rented": 7,
+    "price_per_day": 39,
+    "rental_start": "9/5/17",
+    "rental_end": "5/30/16"
+  },
+  "VIN551": {
+    "product_code": "PRD34",
+    "units_rented": 9,
+    "price_per_day": 10,
+    "rental_start": "6/24/18",
+    "rental_end": "8/8/17"
+  },
+  "VIN552": {
+    "product_code": "PRD16",
+    "units_rented": 7,
+    "price_per_day": 27,
+    "rental_start": "1/11/16",
+    "rental_end": "1/6/18"
+  },
+  "VIN553": {
+    "product_code": "PRD75",
+    "units_rented": 4,
+    "price_per_day": 24,
+    "rental_start": "12/17/16",
+    "rental_end": "7/31/17"
+  },
+  "VIN554": {
+    "product_code": "PRD70",
+    "units_rented": 4,
+    "price_per_day": 6,
+    "rental_start": "5/7/16",
+    "rental_end": "3/10/18"
+  },
+  "VIN555": {
+    "product_code": "PRD42",
+    "units_rented": 10,
+    "price_per_day": 40,
+    "rental_start": "6/15/17",
+    "rental_end": "4/15/17"
+  },
+  "VIN556": {
+    "product_code": "PRD81",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "11/23/17",
+    "rental_end": "11/9/18"
+  },
+  "VIN557": {
+    "product_code": "PRD99",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "3/18/16",
+    "rental_end": "7/16/17"
+  },
+  "VIN558": {
+    "product_code": "PRD45",
+    "units_rented": 8,
+    "price_per_day": 28,
+    "rental_start": "9/24/18",
+    "rental_end": "6/10/18"
+  },
+  "VIN559": {
+    "product_code": "PRD82",
+    "units_rented": 7,
+    "price_per_day": 10,
+    "rental_start": "11/25/17",
+    "rental_end": "7/28/18"
+  },
+  "VIN560": {
+    "product_code": "PRD0",
+    "units_rented": 2,
+    "price_per_day": 15,
+    "rental_start": "6/20/16",
+    "rental_end": "1/18/17"
+  },
+  "VIN561": {
+    "product_code": "PRD35",
+    "units_rented": 1,
+    "price_per_day": 30,
+    "rental_start": "7/14/18",
+    "rental_end": "5/15/16"
+  },
+  "VIN562": {
+    "product_code": "PRD9",
+    "units_rented": 7,
+    "price_per_day": 32,
+    "rental_start": "11/18/18",
+    "rental_end": "8/14/18"
+  },
+  "VIN563": {
+    "product_code": "PRD49",
+    "units_rented": 3,
+    "price_per_day": 24,
+    "rental_start": "7/19/17",
+    "rental_end": "6/11/18"
+  },
+  "VIN564": {
+    "product_code": "PRD72",
+    "units_rented": 8,
+    "price_per_day": 17,
+    "rental_start": "7/26/17",
+    "rental_end": "4/11/18"
+  },
+  "VIN565": {
+    "product_code": "PRD37",
+    "units_rented": 6,
+    "price_per_day": 36,
+    "rental_start": "6/4/17",
+    "rental_end": "8/20/17"
+  },
+  "VIN566": {
+    "product_code": "PRD3",
+    "units_rented": 3,
+    "price_per_day": 33,
+    "rental_start": "11/25/18",
+    "rental_end": "2/27/16"
+  },
+  "VIN567": {
+    "product_code": "PRD49",
+    "units_rented": 1,
+    "price_per_day": 28,
+    "rental_start": "11/7/16",
+    "rental_end": "12/2/17"
+  },
+  "VIN568": {
+    "product_code": "PRD85",
+    "units_rented": 1,
+    "price_per_day": 26,
+    "rental_start": "4/17/17",
+    "rental_end": "9/17/18"
+  },
+  "VIN569": {
+    "product_code": "PRD43",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "10/1/18",
+    "rental_end": "5/30/18"
+  },
+  "VIN570": {
+    "product_code": "PRD7",
+    "units_rented": 4,
+    "price_per_day": 38,
+    "rental_start": "11/21/17",
+    "rental_end": "7/13/17"
+  },
+  "VIN571": {
+    "product_code": "PRD40",
+    "units_rented": 5,
+    "price_per_day": 12,
+    "rental_start": "7/3/16",
+    "rental_end": "7/10/16"
+  },
+  "VIN572": {
+    "product_code": "PRD38",
+    "units_rented": 9,
+    "price_per_day": 10,
+    "rental_start": "10/13/18",
+    "rental_end": "8/7/16"
+  },
+  "VIN573": {
+    "product_code": "PRD62",
+    "units_rented": 4,
+    "price_per_day": 23,
+    "rental_start": "2/20/18",
+    "rental_end": "3/12/18"
+  },
+  "VIN574": {
+    "product_code": "PRD13",
+    "units_rented": 2,
+    "price_per_day": 9,
+    "rental_start": "5/18/16",
+    "rental_end": "8/19/18"
+  },
+  "VIN575": {
+    "product_code": "PRD91",
+    "units_rented": 9,
+    "price_per_day": 12,
+    "rental_start": "8/1/17",
+    "rental_end": "1/22/17"
+  },
+  "VIN576": {
+    "product_code": "PRD95",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "10/7/16",
+    "rental_end": "6/9/18"
+  },
+  "VIN577": {
+    "product_code": "PRD89",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "1/6/17",
+    "rental_end": "4/23/18"
+  },
+  "VIN578": {
+    "product_code": "PRD79",
+    "units_rented": 2,
+    "price_per_day": 40,
+    "rental_start": "1/5/16",
+    "rental_end": "3/9/16"
+  },
+  "VIN579": {
+    "product_code": "PRD31",
+    "units_rented": 10,
+    "price_per_day": 26,
+    "rental_start": "7/14/17",
+    "rental_end": "9/5/17"
+  },
+  "VIN580": {
+    "product_code": "PRD81",
+    "units_rented": 9,
+    "price_per_day": 25,
+    "rental_start": "7/2/18",
+    "rental_end": "4/24/17"
+  },
+  "VIN581": {
+    "product_code": "PRD33",
+    "units_rented": 3,
+    "price_per_day": 24,
+    "rental_start": "8/3/16",
+    "rental_end": "5/9/18"
+  },
+  "VIN582": {
+    "product_code": "PRD10",
+    "units_rented": 4,
+    "price_per_day": 35,
+    "rental_start": "5/2/17",
+    "rental_end": "4/28/17"
+  },
+  "VIN583": {
+    "product_code": "PRD3",
+    "units_rented": 1,
+    "price_per_day": 39,
+    "rental_start": "6/15/17",
+    "rental_end": "5/19/18"
+  },
+  "VIN584": {
+    "product_code": "PRD37",
+    "units_rented": 10,
+    "price_per_day": 18,
+    "rental_start": "4/16/16",
+    "rental_end": "10/6/18"
+  },
+  "VIN585": {
+    "product_code": "PRD75",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "2/9/18",
+    "rental_end": "1/15/16"
+  },
+  "VIN586": {
+    "product_code": "PRD73",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "1/27/17",
+    "rental_end": "7/5/16"
+  },
+  "VIN587": {
+    "product_code": "PRD63",
+    "units_rented": 3,
+    "price_per_day": 27,
+    "rental_start": "5/1/18",
+    "rental_end": "3/20/17"
+  },
+  "VIN588": {
+    "product_code": "PRD70",
+    "units_rented": 5,
+    "price_per_day": 6,
+    "rental_start": "5/13/16",
+    "rental_end": "9/23/17"
+  },
+  "VIN589": {
+    "product_code": "PRD60",
+    "units_rented": 10,
+    "price_per_day": 16,
+    "rental_start": "4/3/16",
+    "rental_end": "6/1/16"
+  },
+  "VIN590": {
+    "product_code": "PRD67",
+    "units_rented": 7,
+    "price_per_day": 40,
+    "rental_start": "12/23/18",
+    "rental_end": "6/26/17"
+  },
+  "VIN591": {
+    "product_code": "PRD73",
+    "units_rented": 4,
+    "price_per_day": 22,
+    "rental_start": "6/2/18",
+    "rental_end": "3/21/18"
+  },
+  "VIN592": {
+    "product_code": "PRD1",
+    "units_rented": 4,
+    "price_per_day": 21,
+    "rental_start": "8/26/16",
+    "rental_end": "5/4/16"
+  },
+  "VIN593": {
+    "product_code": "PRD69",
+    "units_rented": 1,
+    "price_per_day": 37,
+    "rental_start": "11/26/16",
+    "rental_end": "9/23/16"
+  },
+  "VIN594": {
+    "product_code": "PRD51",
+    "units_rented": 7,
+    "price_per_day": 30,
+    "rental_start": "5/6/16",
+    "rental_end": "8/21/17"
+  },
+  "VIN595": {
+    "product_code": "PRD24",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "2/23/17",
+    "rental_end": "1/2/16"
+  },
+  "VIN596": {
+    "product_code": "PRD72",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "3/9/17",
+    "rental_end": "10/2/17"
+  },
+  "VIN597": {
+    "product_code": "PRD45",
+    "units_rented": 7,
+    "price_per_day": 37,
+    "rental_start": "10/29/18",
+    "rental_end": "2/21/17"
+  },
+  "VIN598": {
+    "product_code": "PRD48",
+    "units_rented": 7,
+    "price_per_day": 9,
+    "rental_start": "3/2/18",
+    "rental_end": "8/29/16"
+  },
+  "VIN599": {
+    "product_code": "PRD87",
+    "units_rented": 8,
+    "price_per_day": 21,
+    "rental_start": "6/17/18",
+    "rental_end": "2/12/16"
+  },
+  "VIN600": {
+    "product_code": "PRD99",
+    "units_rented": 10,
+    "price_per_day": 25,
+    "rental_start": "10/8/16",
+    "rental_end": "8/20/17"
+  },
+  "VIN601": {
+    "product_code": "PRD71",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "6/12/17",
+    "rental_end": "1/12/17"
+  },
+  "VIN602": {
+    "product_code": "PRD24",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "10/10/16",
+    "rental_end": "4/12/16"
+  },
+  "VIN603": {
+    "product_code": "PRD65",
+    "units_rented": 1,
+    "price_per_day": 9,
+    "rental_start": "9/17/17",
+    "rental_end": "2/7/16"
+  },
+  "VIN604": {
+    "product_code": "PRD72",
+    "units_rented": 6,
+    "price_per_day": 6,
+    "rental_start": "7/14/17",
+    "rental_end": "7/6/16"
+  },
+  "VIN605": {
+    "product_code": "PRD48",
+    "units_rented": 7,
+    "price_per_day": 33,
+    "rental_start": "11/4/17",
+    "rental_end": "9/6/16"
+  },
+  "VIN606": {
+    "product_code": "PRD61",
+    "units_rented": 10,
+    "price_per_day": 39,
+    "rental_start": "10/21/18",
+    "rental_end": "5/31/16"
+  },
+  "VIN607": {
+    "product_code": "PRD83",
+    "units_rented": 2,
+    "price_per_day": 35,
+    "rental_start": "4/12/17",
+    "rental_end": "10/16/18"
+  },
+  "VIN608": {
+    "product_code": "PRD38",
+    "units_rented": 2,
+    "price_per_day": 21,
+    "rental_start": "7/12/16",
+    "rental_end": "7/31/16"
+  },
+  "VIN609": {
+    "product_code": "PRD96",
+    "units_rented": 5,
+    "price_per_day": 18,
+    "rental_start": "1/16/16",
+    "rental_end": "7/24/18"
+  },
+  "VIN610": {
+    "product_code": "PRD94",
+    "units_rented": 9,
+    "price_per_day": 24,
+    "rental_start": "1/23/18",
+    "rental_end": "11/4/18"
+  },
+  "VIN611": {
+    "product_code": "PRD97",
+    "units_rented": 4,
+    "price_per_day": 33,
+    "rental_start": "3/5/18",
+    "rental_end": "1/30/18"
+  },
+  "VIN612": {
+    "product_code": "PRD90",
+    "units_rented": 2,
+    "price_per_day": 32,
+    "rental_start": "12/12/16",
+    "rental_end": "8/29/17"
+  },
+  "VIN613": {
+    "product_code": "PRD99",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "10/4/18",
+    "rental_end": "1/17/18"
+  },
+  "VIN614": {
+    "product_code": "PRD56",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "3/6/18",
+    "rental_end": "12/7/18"
+  },
+  "VIN615": {
+    "product_code": "PRD29",
+    "units_rented": 4,
+    "price_per_day": 40,
+    "rental_start": "9/30/17",
+    "rental_end": "6/29/17"
+  },
+  "VIN616": {
+    "product_code": "PRD99",
+    "units_rented": 2,
+    "price_per_day": 35,
+    "rental_start": "8/24/16",
+    "rental_end": "4/27/17"
+  },
+  "VIN617": {
+    "product_code": "PRD87",
+    "units_rented": 10,
+    "price_per_day": 20,
+    "rental_start": "5/28/17",
+    "rental_end": "4/15/18"
+  },
+  "VIN618": {
+    "product_code": "PRD96",
+    "units_rented": 9,
+    "price_per_day": 38,
+    "rental_start": "7/25/17",
+    "rental_end": "1/3/18"
+  },
+  "VIN619": {
+    "product_code": "PRD30",
+    "units_rented": 6,
+    "price_per_day": 13,
+    "rental_start": "7/24/17",
+    "rental_end": "8/21/17"
+  },
+  "VIN620": {
+    "product_code": "PRD81",
+    "units_rented": 2,
+    "price_per_day": 16,
+    "rental_start": "8/13/16",
+    "rental_end": "1/19/18"
+  },
+  "VIN621": {
+    "product_code": "PRD40",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "4/26/16",
+    "rental_end": "3/15/18"
+  },
+  "VIN622": {
+    "product_code": "PRD40",
+    "units_rented": 3,
+    "price_per_day": 32,
+    "rental_start": "8/22/16",
+    "rental_end": "4/18/16"
+  },
+  "VIN623": {
+    "product_code": "PRD44",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "4/18/16",
+    "rental_end": "6/30/16"
+  },
+  "VIN624": {
+    "product_code": "PRD15",
+    "units_rented": 8,
+    "price_per_day": 34,
+    "rental_start": "1/20/17",
+    "rental_end": "4/2/17"
+  },
+  "VIN625": {
+    "product_code": "PRD7",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "4/15/16",
+    "rental_end": "5/1/16"
+  },
+  "VIN626": {
+    "product_code": "PRD11",
+    "units_rented": 9,
+    "price_per_day": 32,
+    "rental_start": "7/22/18",
+    "rental_end": "8/1/17"
+  },
+  "VIN627": {
+    "product_code": "PRD91",
+    "units_rented": 6,
+    "price_per_day": 21,
+    "rental_start": "8/23/16",
+    "rental_end": "12/31/18"
+  },
+  "VIN628": {
+    "product_code": "PRD81",
+    "units_rented": 3,
+    "price_per_day": 7,
+    "rental_start": "9/1/17",
+    "rental_end": "12/7/18"
+  },
+  "VIN629": {
+    "product_code": "PRD81",
+    "units_rented": 5,
+    "price_per_day": 19,
+    "rental_start": "1/2/17",
+    "rental_end": "8/31/17"
+  },
+  "VIN630": {
+    "product_code": "PRD68",
+    "units_rented": 6,
+    "price_per_day": 37,
+    "rental_start": "11/27/16",
+    "rental_end": "9/15/16"
+  },
+  "VIN631": {
+    "product_code": "PRD68",
+    "units_rented": 8,
+    "price_per_day": 25,
+    "rental_start": "2/8/16",
+    "rental_end": "10/5/18"
+  },
+  "VIN632": {
+    "product_code": "PRD45",
+    "units_rented": 7,
+    "price_per_day": 18,
+    "rental_start": "1/13/16",
+    "rental_end": "1/7/16"
+  },
+  "VIN633": {
+    "product_code": "PRD54",
+    "units_rented": 9,
+    "price_per_day": 6,
+    "rental_start": "7/9/18",
+    "rental_end": "2/1/18"
+  },
+  "VIN634": {
+    "product_code": "PRD99",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "9/16/18",
+    "rental_end": "8/7/18"
+  },
+  "VIN635": {
+    "product_code": "PRD81",
+    "units_rented": 2,
+    "price_per_day": 11,
+    "rental_start": "3/2/16",
+    "rental_end": "1/22/17"
+  },
+  "VIN636": {
+    "product_code": "PRD81",
+    "units_rented": 7,
+    "price_per_day": 38,
+    "rental_start": "11/2/18",
+    "rental_end": "9/15/17"
+  },
+  "VIN637": {
+    "product_code": "PRD85",
+    "units_rented": 1,
+    "price_per_day": 17,
+    "rental_start": "4/24/16",
+    "rental_end": "11/28/17"
+  },
+  "VIN638": {
+    "product_code": "PRD15",
+    "units_rented": 9,
+    "price_per_day": 17,
+    "rental_start": "2/24/17",
+    "rental_end": "3/20/16"
+  },
+  "VIN639": {
+    "product_code": "PRD47",
+    "units_rented": 5,
+    "price_per_day": 23,
+    "rental_start": "12/9/18",
+    "rental_end": "9/10/17"
+  },
+  "VIN640": {
+    "product_code": "PRD35",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "9/9/17",
+    "rental_end": "4/29/16"
+  },
+  "VIN641": {
+    "product_code": "PRD94",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "8/30/16",
+    "rental_end": "5/10/18"
+  },
+  "VIN642": {
+    "product_code": "PRD14",
+    "units_rented": 8,
+    "price_per_day": 28,
+    "rental_start": "7/25/16",
+    "rental_end": "7/3/16"
+  },
+  "VIN643": {
+    "product_code": "PRD59",
+    "units_rented": 7,
+    "price_per_day": 32,
+    "rental_start": "10/20/18",
+    "rental_end": "2/13/16"
+  },
+  "VIN644": {
+    "product_code": "PRD45",
+    "units_rented": 6,
+    "price_per_day": 11,
+    "rental_start": "1/22/18",
+    "rental_end": "2/27/18"
+  },
+  "VIN645": {
+    "product_code": "PRD65",
+    "units_rented": 4,
+    "price_per_day": 29,
+    "rental_start": "12/29/16",
+    "rental_end": "4/12/17"
+  },
+  "VIN646": {
+    "product_code": "PRD8",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "4/13/16",
+    "rental_end": "9/17/18"
+  },
+  "VIN647": {
+    "product_code": "PRD8",
+    "units_rented": 2,
+    "price_per_day": 7,
+    "rental_start": "4/5/17",
+    "rental_end": "9/8/16"
+  },
+  "VIN648": {
+    "product_code": "PRD53",
+    "units_rented": 4,
+    "price_per_day": 11,
+    "rental_start": "7/19/18",
+    "rental_end": "6/26/17"
+  },
+  "VIN649": {
+    "product_code": "PRD64",
+    "units_rented": 9,
+    "price_per_day": 37,
+    "rental_start": "7/17/18",
+    "rental_end": "11/16/17"
+  },
+  "VIN650": {
+    "product_code": "PRD47",
+    "units_rented": 10,
+    "price_per_day": 11,
+    "rental_start": "1/26/16",
+    "rental_end": "6/10/17"
+  },
+  "VIN651": {
+    "product_code": "PRD94",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "9/13/18",
+    "rental_end": "1/27/16"
+  },
+  "VIN652": {
+    "product_code": "PRD46",
+    "units_rented": 3,
+    "price_per_day": 26,
+    "rental_start": "3/13/16",
+    "rental_end": "1/2/17"
+  },
+  "VIN653": {
+    "product_code": "PRD54",
+    "units_rented": 10,
+    "price_per_day": 12,
+    "rental_start": "8/22/17",
+    "rental_end": "3/25/17"
+  },
+  "VIN654": {
+    "product_code": "PRD95",
+    "units_rented": 6,
+    "price_per_day": 10,
+    "rental_start": "5/2/18",
+    "rental_end": "12/31/18"
+  },
+  "VIN655": {
+    "product_code": "PRD3",
+    "units_rented": 1,
+    "price_per_day": 32,
+    "rental_start": "10/20/18",
+    "rental_end": "11/3/18"
+  },
+  "VIN656": {
+    "product_code": "PRD34",
+    "units_rented": 7,
+    "price_per_day": 10,
+    "rental_start": "10/5/18",
+    "rental_end": "7/4/16"
+  },
+  "VIN657": {
+    "product_code": "PRD81",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "8/5/16",
+    "rental_end": "11/15/18"
+  },
+  "VIN658": {
+    "product_code": "PRD96",
+    "units_rented": 5,
+    "price_per_day": 29,
+    "rental_start": "8/9/16",
+    "rental_end": "11/27/18"
+  },
+  "VIN659": {
+    "product_code": "PRD9",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "9/14/18",
+    "rental_end": "9/6/17"
+  },
+  "VIN660": {
+    "product_code": "PRD89",
+    "units_rented": 1,
+    "price_per_day": 37,
+    "rental_start": "2/15/16",
+    "rental_end": "12/18/16"
+  },
+  "VIN661": {
+    "product_code": "PRD56",
+    "units_rented": 7,
+    "price_per_day": 37,
+    "rental_start": "2/5/18",
+    "rental_end": "7/18/18"
+  },
+  "VIN662": {
+    "product_code": "PRD12",
+    "units_rented": 5,
+    "price_per_day": 30,
+    "rental_start": "4/27/18",
+    "rental_end": "2/13/18"
+  },
+  "VIN663": {
+    "product_code": "PRD85",
+    "units_rented": 8,
+    "price_per_day": 34,
+    "rental_start": "1/3/18",
+    "rental_end": "1/20/17"
+  },
+  "VIN664": {
+    "product_code": "PRD4",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "7/2/18",
+    "rental_end": "8/20/16"
+  },
+  "VIN665": {
+    "product_code": "PRD78",
+    "units_rented": 5,
+    "price_per_day": 21,
+    "rental_start": "9/8/17",
+    "rental_end": "2/4/17"
+  },
+  "VIN666": {
+    "product_code": "PRD75",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "11/21/16",
+    "rental_end": "9/1/17"
+  },
+  "VIN667": {
+    "product_code": "PRD30",
+    "units_rented": 2,
+    "price_per_day": 25,
+    "rental_start": "1/4/18",
+    "rental_end": "3/31/16"
+  },
+  "VIN668": {
+    "product_code": "PRD85",
+    "units_rented": 6,
+    "price_per_day": 17,
+    "rental_start": "2/17/16",
+    "rental_end": "1/1/16"
+  },
+  "VIN669": {
+    "product_code": "PRD43",
+    "units_rented": 3,
+    "price_per_day": 38,
+    "rental_start": "7/28/18",
+    "rental_end": "12/16/18"
+  },
+  "VIN670": {
+    "product_code": "PRD65",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "11/27/16",
+    "rental_end": "1/30/16"
+  },
+  "VIN671": {
+    "product_code": "PRD51",
+    "units_rented": 6,
+    "price_per_day": 21,
+    "rental_start": "3/5/18",
+    "rental_end": "6/16/17"
+  },
+  "VIN672": {
+    "product_code": "PRD64",
+    "units_rented": 10,
+    "price_per_day": 14,
+    "rental_start": "6/16/16",
+    "rental_end": "4/9/18"
+  },
+  "VIN673": {
+    "product_code": "PRD88",
+    "units_rented": 3,
+    "price_per_day": 9,
+    "rental_start": "1/31/16",
+    "rental_end": "10/4/16"
+  },
+  "VIN674": {
+    "product_code": "PRD56",
+    "units_rented": 8,
+    "price_per_day": 25,
+    "rental_start": "7/24/18",
+    "rental_end": "4/24/17"
+  },
+  "VIN675": {
+    "product_code": "PRD48",
+    "units_rented": 5,
+    "price_per_day": 18,
+    "rental_start": "2/19/18",
+    "rental_end": "2/22/18"
+  },
+  "VIN676": {
+    "product_code": "PRD46",
+    "units_rented": 3,
+    "price_per_day": 20,
+    "rental_start": "10/13/17",
+    "rental_end": "11/7/18"
+  },
+  "VIN677": {
+    "product_code": "PRD69",
+    "units_rented": 10,
+    "price_per_day": 40,
+    "rental_start": "9/3/17",
+    "rental_end": "8/17/17"
+  },
+  "VIN678": {
+    "product_code": "PRD44",
+    "units_rented": 8,
+    "price_per_day": 25,
+    "rental_start": "11/27/16",
+    "rental_end": "11/13/16"
+  },
+  "VIN679": {
+    "product_code": "PRD26",
+    "units_rented": 5,
+    "price_per_day": 29,
+    "rental_start": "11/21/17",
+    "rental_end": "2/3/16"
+  },
+  "VIN680": {
+    "product_code": "PRD21",
+    "units_rented": 4,
+    "price_per_day": 33,
+    "rental_start": "12/28/16",
+    "rental_end": "12/3/18"
+  },
+  "VIN681": {
+    "product_code": "PRD70",
+    "units_rented": 1,
+    "price_per_day": 40,
+    "rental_start": "4/29/16",
+    "rental_end": "9/19/18"
+  },
+  "VIN682": {
+    "product_code": "PRD68",
+    "units_rented": 10,
+    "price_per_day": 29,
+    "rental_start": "12/31/18",
+    "rental_end": "10/19/18"
+  },
+  "VIN683": {
+    "product_code": "PRD17",
+    "units_rented": 4,
+    "price_per_day": 17,
+    "rental_start": "1/10/17",
+    "rental_end": "4/12/18"
+  },
+  "VIN684": {
+    "product_code": "PRD74",
+    "units_rented": 3,
+    "price_per_day": 25,
+    "rental_start": "6/26/17",
+    "rental_end": "4/3/16"
+  },
+  "VIN685": {
+    "product_code": "PRD17",
+    "units_rented": 6,
+    "price_per_day": 25,
+    "rental_start": "2/24/17",
+    "rental_end": "3/3/17"
+  },
+  "VIN686": {
+    "product_code": "PRD81",
+    "units_rented": 9,
+    "price_per_day": 34,
+    "rental_start": "12/21/16",
+    "rental_end": "10/28/18"
+  },
+  "VIN687": {
+    "product_code": "PRD37",
+    "units_rented": 8,
+    "price_per_day": 33,
+    "rental_start": "5/8/18",
+    "rental_end": "5/30/18"
+  },
+  "VIN688": {
+    "product_code": "PRD74",
+    "units_rented": 6,
+    "price_per_day": 7,
+    "rental_start": "7/6/18",
+    "rental_end": "6/2/18"
+  },
+  "VIN689": {
+    "product_code": "PRD1",
+    "units_rented": 4,
+    "price_per_day": 19,
+    "rental_start": "10/19/16",
+    "rental_end": "12/20/16"
+  },
+  "VIN690": {
+    "product_code": "PRD30",
+    "units_rented": 1,
+    "price_per_day": 37,
+    "rental_start": "12/20/17",
+    "rental_end": "6/15/18"
+  },
+  "VIN691": {
+    "product_code": "PRD84",
+    "units_rented": 5,
+    "price_per_day": 36,
+    "rental_start": "9/19/18",
+    "rental_end": "9/10/16"
+  },
+  "VIN692": {
+    "product_code": "PRD50",
+    "units_rented": 10,
+    "price_per_day": 18,
+    "rental_start": "8/27/17",
+    "rental_end": "7/29/17"
+  },
+  "VIN693": {
+    "product_code": "PRD80",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "5/16/16",
+    "rental_end": "4/12/18"
+  },
+  "VIN694": {
+    "product_code": "PRD12",
+    "units_rented": 9,
+    "price_per_day": 26,
+    "rental_start": "12/9/18",
+    "rental_end": "9/15/17"
+  },
+  "VIN695": {
+    "product_code": "PRD47",
+    "units_rented": 5,
+    "price_per_day": 25,
+    "rental_start": "7/14/16",
+    "rental_end": "3/5/16"
+  },
+  "VIN696": {
+    "product_code": "PRD12",
+    "units_rented": 2,
+    "price_per_day": 39,
+    "rental_start": "11/17/17",
+    "rental_end": "5/18/18"
+  },
+  "VIN697": {
+    "product_code": "PRD24",
+    "units_rented": 4,
+    "price_per_day": 32,
+    "rental_start": "11/28/17",
+    "rental_end": "8/21/18"
+  },
+  "VIN698": {
+    "product_code": "PRD69",
+    "units_rented": 1,
+    "price_per_day": 38,
+    "rental_start": "4/2/18",
+    "rental_end": "11/22/16"
+  },
+  "VIN699": {
+    "product_code": "PRD66",
+    "units_rented": 4,
+    "price_per_day": 6,
+    "rental_start": "6/7/18",
+    "rental_end": "7/24/18"
+  },
+  "VIN700": {
+    "product_code": "PRD44",
+    "units_rented": 4,
+    "price_per_day": 28,
+    "rental_start": "6/1/16",
+    "rental_end": "10/27/18"
+  },
+  "VIN701": {
+    "product_code": "PRD42",
+    "units_rented": 5,
+    "price_per_day": 22,
+    "rental_start": "10/24/17",
+    "rental_end": "10/11/18"
+  },
+  "VIN702": {
+    "product_code": "PRD88",
+    "units_rented": 6,
+    "price_per_day": 15,
+    "rental_start": "9/26/17",
+    "rental_end": "12/8/16"
+  },
+  "VIN703": {
+    "product_code": "PRD41",
+    "units_rented": 6,
+    "price_per_day": 9,
+    "rental_start": "6/15/18",
+    "rental_end": "3/1/18"
+  },
+  "VIN704": {
+    "product_code": "PRD6",
+    "units_rented": 4,
+    "price_per_day": 19,
+    "rental_start": "12/23/17",
+    "rental_end": "4/2/16"
+  },
+  "VIN705": {
+    "product_code": "PRD74",
+    "units_rented": 5,
+    "price_per_day": 12,
+    "rental_start": "2/25/17",
+    "rental_end": "6/23/17"
+  },
+  "VIN706": {
+    "product_code": "PRD59",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "9/8/17",
+    "rental_end": "5/17/17"
+  },
+  "VIN707": {
+    "product_code": "PRD13",
+    "units_rented": 9,
+    "price_per_day": 24,
+    "rental_start": "4/10/16",
+    "rental_end": "10/13/18"
+  },
+  "VIN708": {
+    "product_code": "PRD28",
+    "units_rented": 7,
+    "price_per_day": 16,
+    "rental_start": "7/29/16",
+    "rental_end": "1/15/17"
+  },
+  "VIN709": {
+    "product_code": "PRD26",
+    "units_rented": 9,
+    "price_per_day": 12,
+    "rental_start": "5/18/17",
+    "rental_end": "1/15/17"
+  },
+  "VIN710": {
+    "product_code": "PRD58",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "11/17/16",
+    "rental_end": "12/29/18"
+  },
+  "VIN711": {
+    "product_code": "PRD41",
+    "units_rented": 1,
+    "price_per_day": 9,
+    "rental_start": "4/25/18",
+    "rental_end": "4/25/17"
+  },
+  "VIN712": {
+    "product_code": "PRD74",
+    "units_rented": 3,
+    "price_per_day": 10,
+    "rental_start": "10/9/17",
+    "rental_end": "8/8/16"
+  },
+  "VIN713": {
+    "product_code": "PRD11",
+    "units_rented": 2,
+    "price_per_day": 14,
+    "rental_start": "9/3/18",
+    "rental_end": "11/27/18"
+  },
+  "VIN714": {
+    "product_code": "PRD18",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "4/9/16",
+    "rental_end": "10/18/17"
+  },
+  "VIN715": {
+    "product_code": "PRD78",
+    "units_rented": 3,
+    "price_per_day": 27,
+    "rental_start": "8/23/17",
+    "rental_end": "6/23/16"
+  },
+  "VIN716": {
+    "product_code": "PRD12",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "9/16/16",
+    "rental_end": "11/27/16"
+  },
+  "VIN717": {
+    "product_code": "PRD90",
+    "units_rented": 3,
+    "price_per_day": 31,
+    "rental_start": "9/25/18",
+    "rental_end": "1/12/16"
+  },
+  "VIN718": {
+    "product_code": "PRD87",
+    "units_rented": 5,
+    "price_per_day": 19,
+    "rental_start": "3/25/18",
+    "rental_end": "4/26/18"
+  },
+  "VIN719": {
+    "product_code": "PRD18",
+    "units_rented": 6,
+    "price_per_day": 24,
+    "rental_start": "9/22/16",
+    "rental_end": "4/5/16"
+  },
+  "VIN720": {
+    "product_code": "PRD58",
+    "units_rented": 6,
+    "price_per_day": 36,
+    "rental_start": "1/29/16",
+    "rental_end": "4/18/18"
+  },
+  "VIN721": {
+    "product_code": "PRD58",
+    "units_rented": 2,
+    "price_per_day": 28,
+    "rental_start": "9/2/18",
+    "rental_end": "2/13/18"
+  },
+  "VIN722": {
+    "product_code": "PRD24",
+    "units_rented": 8,
+    "price_per_day": 22,
+    "rental_start": "10/6/17",
+    "rental_end": "3/8/16"
+  },
+  "VIN723": {
+    "product_code": "PRD46",
+    "units_rented": 8,
+    "price_per_day": 28,
+    "rental_start": "2/13/16",
+    "rental_end": "3/8/17"
+  },
+  "VIN724": {
+    "product_code": "PRD82",
+    "units_rented": 9,
+    "price_per_day": 11,
+    "rental_start": "1/3/16",
+    "rental_end": "10/29/18"
+  },
+  "VIN725": {
+    "product_code": "PRD71",
+    "units_rented": 7,
+    "price_per_day": 32,
+    "rental_start": "2/19/17",
+    "rental_end": "11/17/16"
+  },
+  "VIN726": {
+    "product_code": "PRD22",
+    "units_rented": 2,
+    "price_per_day": 39,
+    "rental_start": "11/24/17",
+    "rental_end": "5/6/16"
+  },
+  "VIN727": {
+    "product_code": "PRD69",
+    "units_rented": 9,
+    "price_per_day": 24,
+    "rental_start": "1/18/17",
+    "rental_end": "7/15/18"
+  },
+  "VIN728": {
+    "product_code": "PRD48",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "7/27/17",
+    "rental_end": "7/23/18"
+  },
+  "VIN729": {
+    "product_code": "PRD16",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "8/18/17",
+    "rental_end": "4/23/17"
+  },
+  "VIN730": {
+    "product_code": "PRD18",
+    "units_rented": 4,
+    "price_per_day": 16,
+    "rental_start": "12/20/16",
+    "rental_end": "8/23/18"
+  },
+  "VIN731": {
+    "product_code": "PRD30",
+    "units_rented": 1,
+    "price_per_day": 10,
+    "rental_start": "11/17/17",
+    "rental_end": "9/2/17"
+  },
+  "VIN732": {
+    "product_code": "PRD96",
+    "units_rented": 5,
+    "price_per_day": 35,
+    "rental_start": "8/18/17",
+    "rental_end": "11/24/16"
+  },
+  "VIN733": {
+    "product_code": "PRD40",
+    "units_rented": 1,
+    "price_per_day": 32,
+    "rental_start": "5/26/17",
+    "rental_end": "11/5/16"
+  },
+  "VIN734": {
+    "product_code": "PRD4",
+    "units_rented": 9,
+    "price_per_day": 27,
+    "rental_start": "4/3/16",
+    "rental_end": "10/25/17"
+  },
+  "VIN735": {
+    "product_code": "PRD22",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "1/15/18",
+    "rental_end": "11/3/18"
+  },
+  "VIN736": {
+    "product_code": "PRD31",
+    "units_rented": 10,
+    "price_per_day": 37,
+    "rental_start": "4/13/16",
+    "rental_end": "6/9/17"
+  },
+  "VIN737": {
+    "product_code": "PRD92",
+    "units_rented": 1,
+    "price_per_day": 20,
+    "rental_start": "1/4/16",
+    "rental_end": "12/6/16"
+  },
+  "VIN738": {
+    "product_code": "PRD59",
+    "units_rented": 4,
+    "price_per_day": 11,
+    "rental_start": "11/3/16",
+    "rental_end": "7/1/17"
+  },
+  "VIN739": {
+    "product_code": "PRD73",
+    "units_rented": 5,
+    "price_per_day": 37,
+    "rental_start": "9/18/17",
+    "rental_end": "6/2/18"
+  },
+  "VIN740": {
+    "product_code": "PRD81",
+    "units_rented": 7,
+    "price_per_day": 32,
+    "rental_start": "2/16/18",
+    "rental_end": "10/13/17"
+  },
+  "VIN741": {
+    "product_code": "PRD1",
+    "units_rented": 3,
+    "price_per_day": 6,
+    "rental_start": "4/21/16",
+    "rental_end": "2/7/18"
+  },
+  "VIN742": {
+    "product_code": "PRD9",
+    "units_rented": 4,
+    "price_per_day": 26,
+    "rental_start": "4/24/16",
+    "rental_end": "8/21/17"
+  },
+  "VIN743": {
+    "product_code": "PRD44",
+    "units_rented": 10,
+    "price_per_day": 32,
+    "rental_start": "6/28/16",
+    "rental_end": "12/22/18"
+  },
+  "VIN744": {
+    "product_code": "PRD39",
+    "units_rented": 1,
+    "price_per_day": 15,
+    "rental_start": "4/28/16",
+    "rental_end": "8/27/17"
+  },
+  "VIN745": {
+    "product_code": "PRD36",
+    "units_rented": 6,
+    "price_per_day": 21,
+    "rental_start": "9/2/18",
+    "rental_end": "10/18/17"
+  },
+  "VIN746": {
+    "product_code": "PRD40",
+    "units_rented": 5,
+    "price_per_day": 28,
+    "rental_start": "10/16/17",
+    "rental_end": "8/8/17"
+  },
+  "VIN747": {
+    "product_code": "PRD65",
+    "units_rented": 3,
+    "price_per_day": 22,
+    "rental_start": "7/1/16",
+    "rental_end": "4/11/18"
+  },
+  "VIN748": {
+    "product_code": "PRD91",
+    "units_rented": 3,
+    "price_per_day": 7,
+    "rental_start": "9/14/17",
+    "rental_end": "3/30/17"
+  },
+  "VIN749": {
+    "product_code": "PRD70",
+    "units_rented": 4,
+    "price_per_day": 36,
+    "rental_start": "7/6/17",
+    "rental_end": "1/11/18"
+  },
+  "VIN750": {
+    "product_code": "PRD67",
+    "units_rented": 1,
+    "price_per_day": 40,
+    "rental_start": "1/6/17",
+    "rental_end": "8/22/16"
+  },
+  "VIN751": {
+    "product_code": "PRD2",
+    "units_rented": 4,
+    "price_per_day": 33,
+    "rental_start": "12/9/17",
+    "rental_end": "5/20/17"
+  },
+  "VIN752": {
+    "product_code": "PRD1",
+    "units_rented": 6,
+    "price_per_day": 34,
+    "rental_start": "5/21/17",
+    "rental_end": "10/29/18"
+  },
+  "VIN753": {
+    "product_code": "PRD81",
+    "units_rented": 10,
+    "price_per_day": 25,
+    "rental_start": "9/19/18",
+    "rental_end": "7/10/18"
+  },
+  "VIN754": {
+    "product_code": "PRD80",
+    "units_rented": 10,
+    "price_per_day": 22,
+    "rental_start": "3/28/17",
+    "rental_end": "9/18/18"
+  },
+  "VIN755": {
+    "product_code": "PRD28",
+    "units_rented": 7,
+    "price_per_day": 8,
+    "rental_start": "2/4/16",
+    "rental_end": "3/30/17"
+  },
+  "VIN756": {
+    "product_code": "PRD44",
+    "units_rented": 6,
+    "price_per_day": 14,
+    "rental_start": "12/3/17",
+    "rental_end": "7/14/17"
+  },
+  "VIN757": {
+    "product_code": "PRD52",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "12/13/18",
+    "rental_end": "7/6/18"
+  },
+  "VIN758": {
+    "product_code": "PRD34",
+    "units_rented": 1,
+    "price_per_day": 19,
+    "rental_start": "11/21/16",
+    "rental_end": "8/31/17"
+  },
+  "VIN759": {
+    "product_code": "PRD53",
+    "units_rented": 5,
+    "price_per_day": 11,
+    "rental_start": "2/10/18",
+    "rental_end": "1/5/16"
+  },
+  "VIN760": {
+    "product_code": "PRD11",
+    "units_rented": 7,
+    "price_per_day": 14,
+    "rental_start": "11/23/16",
+    "rental_end": "5/9/18"
+  },
+  "VIN761": {
+    "product_code": "PRD2",
+    "units_rented": 5,
+    "price_per_day": 40,
+    "rental_start": "3/21/16",
+    "rental_end": "11/27/17"
+  },
+  "VIN762": {
+    "product_code": "PRD78",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "8/1/16",
+    "rental_end": "3/2/17"
+  },
+  "VIN763": {
+    "product_code": "PRD43",
+    "units_rented": 7,
+    "price_per_day": 31,
+    "rental_start": "1/10/18",
+    "rental_end": "5/21/18"
+  },
+  "VIN764": {
+    "product_code": "PRD26",
+    "units_rented": 5,
+    "price_per_day": 13,
+    "rental_start": "9/13/16",
+    "rental_end": "2/2/18"
+  },
+  "VIN765": {
+    "product_code": "PRD25",
+    "units_rented": 6,
+    "price_per_day": 10,
+    "rental_start": "9/13/16",
+    "rental_end": "4/28/17"
+  },
+  "VIN766": {
+    "product_code": "PRD86",
+    "units_rented": 4,
+    "price_per_day": 25,
+    "rental_start": "3/15/18",
+    "rental_end": "7/28/17"
+  },
+  "VIN767": {
+    "product_code": "PRD29",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "9/25/16",
+    "rental_end": "3/2/18"
+  },
+  "VIN768": {
+    "product_code": "PRD68",
+    "units_rented": 1,
+    "price_per_day": 10,
+    "rental_start": "3/8/17",
+    "rental_end": "9/5/18"
+  },
+  "VIN769": {
+    "product_code": "PRD51",
+    "units_rented": 4,
+    "price_per_day": 28,
+    "rental_start": "11/12/17",
+    "rental_end": "11/18/18"
+  },
+  "VIN770": {
+    "product_code": "PRD83",
+    "units_rented": 7,
+    "price_per_day": 36,
+    "rental_start": "12/2/18",
+    "rental_end": "1/6/16"
+  },
+  "VIN771": {
+    "product_code": "PRD65",
+    "units_rented": 9,
+    "price_per_day": 17,
+    "rental_start": "5/4/16",
+    "rental_end": "6/12/16"
+  },
+  "VIN772": {
+    "product_code": "PRD71",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "6/18/18",
+    "rental_end": "2/21/18"
+  },
+  "VIN773": {
+    "product_code": "PRD14",
+    "units_rented": 4,
+    "price_per_day": 24,
+    "rental_start": "10/23/16",
+    "rental_end": "10/13/16"
+  },
+  "VIN774": {
+    "product_code": "PRD30",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "7/13/18",
+    "rental_end": "12/28/16"
+  },
+  "VIN775": {
+    "product_code": "PRD2",
+    "units_rented": 3,
+    "price_per_day": 36,
+    "rental_start": "4/20/17",
+    "rental_end": "10/10/18"
+  },
+  "VIN776": {
+    "product_code": "PRD70",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "6/19/16",
+    "rental_end": ""
+  },
+  "VIN777": {
+    "product_code": "PRD15",
+    "units_rented": 9,
+    "price_per_day": 39,
+    "rental_start": "8/11/17",
+    "rental_end": "10/7/18"
+  },
+  "VIN778": {
+    "product_code": "PRD65",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "1/13/18",
+    "rental_end": "1/3/17"
+  },
+  "VIN779": {
+    "product_code": "PRD37",
+    "units_rented": 5,
+    "price_per_day": 23,
+    "rental_start": "1/31/17",
+    "rental_end": "8/21/16"
+  },
+  "VIN780": {
+    "product_code": "PRD67",
+    "units_rented": 7,
+    "price_per_day": 21,
+    "rental_start": "8/21/18",
+    "rental_end": "10/5/18"
+  },
+  "VIN781": {
+    "product_code": "PRD61",
+    "units_rented": 9,
+    "price_per_day": 26,
+    "rental_start": "1/31/16",
+    "rental_end": "7/19/17"
+  },
+  "VIN782": {
+    "product_code": "PRD14",
+    "units_rented": 10,
+    "price_per_day": 22,
+    "rental_start": "1/25/18",
+    "rental_end": "4/16/17"
+  },
+  "VIN783": {
+    "product_code": "PRD98",
+    "units_rented": 10,
+    "price_per_day": 13,
+    "rental_start": "11/27/18",
+    "rental_end": "3/22/17"
+  },
+  "VIN784": {
+    "product_code": "PRD53",
+    "units_rented": 5,
+    "price_per_day": 31,
+    "rental_start": "12/31/17",
+    "rental_end": "7/7/18"
+  },
+  "VIN785": {
+    "product_code": "PRD15",
+    "units_rented": 5,
+    "price_per_day": 28,
+    "rental_start": "7/31/18",
+    "rental_end": "12/20/18"
+  },
+  "VIN786": {
+    "product_code": "PRD79",
+    "units_rented": 7,
+    "price_per_day": 14,
+    "rental_start": "12/1/16",
+    "rental_end": "2/25/18"
+  },
+  "VIN787": {
+    "product_code": "PRD31",
+    "units_rented": 10,
+    "price_per_day": 6,
+    "rental_start": "10/14/17",
+    "rental_end": "2/15/18"
+  },
+  "VIN788": {
+    "product_code": "PRD10",
+    "units_rented": 4,
+    "price_per_day": 27,
+    "rental_start": "2/24/16",
+    "rental_end": "7/31/16"
+  },
+  "VIN789": {
+    "product_code": "PRD7",
+    "units_rented": 7,
+    "price_per_day": 26,
+    "rental_start": "4/10/18",
+    "rental_end": "6/4/18"
+  },
+  "VIN790": {
+    "product_code": "PRD55",
+    "units_rented": 7,
+    "price_per_day": 11,
+    "rental_start": "3/30/17",
+    "rental_end": "2/24/16"
+  },
+  "VIN791": {
+    "product_code": "PRD92",
+    "units_rented": 9,
+    "price_per_day": 27,
+    "rental_start": "3/18/18",
+    "rental_end": "6/3/17"
+  },
+  "VIN792": {
+    "product_code": "PRD82",
+    "units_rented": 1,
+    "price_per_day": 13,
+    "rental_start": "12/24/17",
+    "rental_end": "12/8/18"
+  },
+  "VIN793": {
+    "product_code": "PRD55",
+    "units_rented": 1,
+    "price_per_day": 22,
+    "rental_start": "1/16/16",
+    "rental_end": "2/7/16"
+  },
+  "VIN794": {
+    "product_code": "PRD54",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "12/30/18",
+    "rental_end": "4/30/16"
+  },
+  "VIN795": {
+    "product_code": "PRD83",
+    "units_rented": 8,
+    "price_per_day": 19,
+    "rental_start": "1/25/18",
+    "rental_end": "9/15/17"
+  },
+  "VIN796": {
+    "product_code": "PRD90",
+    "units_rented": 10,
+    "price_per_day": 32,
+    "rental_start": "1/13/18",
+    "rental_end": "6/8/17"
+  },
+  "VIN797": {
+    "product_code": "PRD56",
+    "units_rented": 5,
+    "price_per_day": 13,
+    "rental_start": "2/2/16",
+    "rental_end": "2/6/17"
+  },
+  "VIN798": {
+    "product_code": "PRD58",
+    "units_rented": 7,
+    "price_per_day": 36,
+    "rental_start": "10/9/16",
+    "rental_end": "9/5/18"
+  },
+  "VIN799": {
+    "product_code": "PRD23",
+    "units_rented": 2,
+    "price_per_day": 33,
+    "rental_start": "3/12/17",
+    "rental_end": "4/22/18"
+  },
+  "VIN800": {
+    "product_code": "PRD66",
+    "units_rented": 3,
+    "price_per_day": 25,
+    "rental_start": "5/15/16",
+    "rental_end": "3/13/18"
+  },
+  "VIN801": {
+    "product_code": "PRD54",
+    "units_rented": 8,
+    "price_per_day": 34,
+    "rental_start": "6/25/17",
+    "rental_end": "5/19/18"
+  },
+  "VIN802": {
+    "product_code": "PRD37",
+    "units_rented": 10,
+    "price_per_day": 9,
+    "rental_start": "4/17/17",
+    "rental_end": "12/13/17"
+  },
+  "VIN803": {
+    "product_code": "PRD32",
+    "units_rented": 10,
+    "price_per_day": 5,
+    "rental_start": "10/17/16",
+    "rental_end": "2/10/16"
+  },
+  "VIN804": {
+    "product_code": "PRD19",
+    "units_rented": 2,
+    "price_per_day": 38,
+    "rental_start": "9/30/16",
+    "rental_end": "4/8/17"
+  },
+  "VIN805": {
+    "product_code": "PRD41",
+    "units_rented": 9,
+    "price_per_day": 8,
+    "rental_start": "3/8/18",
+    "rental_end": "4/24/18"
+  },
+  "VIN806": {
+    "product_code": "PRD9",
+    "units_rented": 3,
+    "price_per_day": 32,
+    "rental_start": "10/24/16",
+    "rental_end": "11/2/16"
+  },
+  "VIN807": {
+    "product_code": "PRD12",
+    "units_rented": 7,
+    "price_per_day": 26,
+    "rental_start": "4/3/18",
+    "rental_end": "7/19/17"
+  },
+  "VIN808": {
+    "product_code": "PRD67",
+    "units_rented": 9,
+    "price_per_day": 10,
+    "rental_start": "7/25/17",
+    "rental_end": "12/15/16"
+  },
+  "VIN809": {
+    "product_code": "PRD18",
+    "units_rented": 3,
+    "price_per_day": 17,
+    "rental_start": "12/4/17",
+    "rental_end": "4/7/17"
+  },
+  "VIN810": {
+    "product_code": "PRD47",
+    "units_rented": 7,
+    "price_per_day": 29,
+    "rental_start": "9/3/16",
+    "rental_end": "10/26/18"
+  },
+  "VIN811": {
+    "product_code": "PRD92",
+    "units_rented": 2,
+    "price_per_day": 14,
+    "rental_start": "1/23/16",
+    "rental_end": "10/25/16"
+  },
+  "VIN812": {
+    "product_code": "PRD23",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "10/25/16",
+    "rental_end": "8/18/16"
+  },
+  "VIN813": {
+    "product_code": "PRD11",
+    "units_rented": 9,
+    "price_per_day": 8,
+    "rental_start": "6/6/16",
+    "rental_end": "12/14/18"
+  },
+  "VIN814": {
+    "product_code": "PRD32",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "5/16/18",
+    "rental_end": "5/3/17"
+  },
+  "VIN815": {
+    "product_code": "PRD58",
+    "units_rented": 7,
+    "price_per_day": 39,
+    "rental_start": "11/29/17",
+    "rental_end": "3/26/17"
+  },
+  "VIN816": {
+    "product_code": "PRD72",
+    "units_rented": 8,
+    "price_per_day": 8,
+    "rental_start": "12/20/17",
+    "rental_end": "7/6/17"
+  },
+  "VIN817": {
+    "product_code": "PRD66",
+    "units_rented": 7,
+    "price_per_day": 36,
+    "rental_start": "11/27/18",
+    "rental_end": "2/11/16"
+  },
+  "VIN818": {
+    "product_code": "PRD36",
+    "units_rented": 10,
+    "price_per_day": 40,
+    "rental_start": "11/13/17",
+    "rental_end": "5/13/16"
+  },
+  "VIN819": {
+    "product_code": "PRD84",
+    "units_rented": 7,
+    "price_per_day": 20,
+    "rental_start": "12/7/17",
+    "rental_end": "9/25/17"
+  },
+  "VIN820": {
+    "product_code": "PRD97",
+    "units_rented": 2,
+    "price_per_day": 10,
+    "rental_start": "5/3/16",
+    "rental_end": "4/25/16"
+  },
+  "VIN821": {
+    "product_code": "PRD79",
+    "units_rented": 8,
+    "price_per_day": 9,
+    "rental_start": "3/29/17",
+    "rental_end": "10/12/18"
+  },
+  "VIN822": {
+    "product_code": "PRD26",
+    "units_rented": 9,
+    "price_per_day": 22,
+    "rental_start": "12/15/17",
+    "rental_end": "8/11/17"
+  },
+  "VIN823": {
+    "product_code": "PRD98",
+    "units_rented": 7,
+    "price_per_day": 5,
+    "rental_start": "1/12/17",
+    "rental_end": "9/15/17"
+  },
+  "VIN824": {
+    "product_code": "PRD86",
+    "units_rented": 6,
+    "price_per_day": 27,
+    "rental_start": "2/5/16",
+    "rental_end": "10/23/17"
+  },
+  "VIN825": {
+    "product_code": "PRD67",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "3/18/18",
+    "rental_end": "11/25/17"
+  },
+  "VIN826": {
+    "product_code": "PRD61",
+    "units_rented": 6,
+    "price_per_day": 11,
+    "rental_start": "3/6/17",
+    "rental_end": "4/2/18"
+  },
+  "VIN827": {
+    "product_code": "PRD64",
+    "units_rented": 10,
+    "price_per_day": 9,
+    "rental_start": "6/25/16",
+    "rental_end": "12/17/16"
+  },
+  "VIN828": {
+    "product_code": "PRD7",
+    "units_rented": 4,
+    "price_per_day": 30,
+    "rental_start": "7/24/16",
+    "rental_end": "6/29/18"
+  },
+  "VIN829": {
+    "product_code": "PRD3",
+    "units_rented": 3,
+    "price_per_day": 25,
+    "rental_start": "6/5/16",
+    "rental_end": "8/28/17"
+  },
+  "VIN830": {
+    "product_code": "PRD53",
+    "units_rented": 10,
+    "price_per_day": 20,
+    "rental_start": "8/18/16",
+    "rental_end": "11/8/16"
+  },
+  "VIN831": {
+    "product_code": "PRD10",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "2/28/17",
+    "rental_end": "2/25/17"
+  },
+  "VIN832": {
+    "product_code": "PRD42",
+    "units_rented": 9,
+    "price_per_day": 13,
+    "rental_start": "4/7/16",
+    "rental_end": "12/11/18"
+  },
+  "VIN833": {
+    "product_code": "PRD47",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "5/16/16",
+    "rental_end": "6/23/18"
+  },
+  "VIN834": {
+    "product_code": "PRD51",
+    "units_rented": 5,
+    "price_per_day": 39,
+    "rental_start": "10/28/16",
+    "rental_end": "10/5/18"
+  },
+  "VIN835": {
+    "product_code": "PRD2",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "8/24/17",
+    "rental_end": "1/8/16"
+  },
+  "VIN836": {
+    "product_code": "PRD32",
+    "units_rented": 4,
+    "price_per_day": 20,
+    "rental_start": "7/14/16",
+    "rental_end": "7/9/16"
+  },
+  "VIN837": {
+    "product_code": "PRD82",
+    "units_rented": 4,
+    "price_per_day": 8,
+    "rental_start": "7/28/17",
+    "rental_end": "10/28/17"
+  },
+  "VIN838": {
+    "product_code": "PRD74",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "9/18/16",
+    "rental_end": "10/12/18"
+  },
+  "VIN839": {
+    "product_code": "PRD67",
+    "units_rented": 1,
+    "price_per_day": 9,
+    "rental_start": "12/21/18",
+    "rental_end": "6/25/18"
+  },
+  "VIN840": {
+    "product_code": "PRD63",
+    "units_rented": 10,
+    "price_per_day": 19,
+    "rental_start": "11/1/18",
+    "rental_end": "2/4/17"
+  },
+  "VIN841": {
+    "product_code": "PRD33",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "5/11/16",
+    "rental_end": "7/27/17"
+  },
+  "VIN842": {
+    "product_code": "PRD91",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "10/16/17",
+    "rental_end": "4/16/16"
+  },
+  "VIN843": {
+    "product_code": "PRD79",
+    "units_rented": 0,
+    "price_per_day": 34,
+    "rental_start": "11/7/17",
+    "rental_end": "6/26/16"
+  },
+  "VIN844": {
+    "product_code": "PRD26",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "4/14/18",
+    "rental_end": "9/9/17"
+  },
+  "VIN845": {
+    "product_code": "PRD81",
+    "units_rented": 10,
+    "price_per_day": 32,
+    "rental_start": "4/6/16",
+    "rental_end": "7/15/17"
+  },
+  "VIN846": {
+    "product_code": "PRD89",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "9/8/17",
+    "rental_end": "6/29/16"
+  },
+  "VIN847": {
+    "product_code": "PRD88",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "10/19/18",
+    "rental_end": "3/7/18"
+  },
+  "VIN848": {
+    "product_code": "PRD72",
+    "units_rented": 7,
+    "price_per_day": 28,
+    "rental_start": "8/23/17",
+    "rental_end": "11/4/17"
+  },
+  "VIN849": {
+    "product_code": "PRD58",
+    "units_rented": 7,
+    "price_per_day": 6,
+    "rental_start": "7/19/18",
+    "rental_end": "8/18/16"
+  },
+  "VIN850": {
+    "product_code": "PRD95",
+    "units_rented": 8,
+    "price_per_day": 38,
+    "rental_start": "3/9/16",
+    "rental_end": "9/11/16"
+  },
+  "VIN851": {
+    "product_code": "PRD8",
+    "units_rented": 5,
+    "price_per_day": 23,
+    "rental_start": "3/18/17",
+    "rental_end": "5/7/18"
+  },
+  "VIN852": {
+    "product_code": "PRD50",
+    "units_rented": 8,
+    "price_per_day": 35,
+    "rental_start": "7/31/16",
+    "rental_end": "9/20/17"
+  },
+  "VIN853": {
+    "product_code": "PRD88",
+    "units_rented": 4,
+    "price_per_day": 15,
+    "rental_start": "5/14/18",
+    "rental_end": "2/9/16"
+  },
+  "VIN854": {
+    "product_code": "PRD84",
+    "units_rented": 8,
+    "price_per_day": 39,
+    "rental_start": "8/11/16",
+    "rental_end": "12/2/18"
+  },
+  "VIN855": {
+    "product_code": "PRD28",
+    "units_rented": 2,
+    "price_per_day": 23,
+    "rental_start": "10/6/18",
+    "rental_end": "6/16/18"
+  },
+  "VIN856": {
+    "product_code": "PRD81",
+    "units_rented": 5,
+    "price_per_day": 23,
+    "rental_start": "3/6/17",
+    "rental_end": "10/14/17"
+  },
+  "VIN857": {
+    "product_code": "PRD20",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "6/17/17",
+    "rental_end": "7/27/17"
+  },
+  "VIN858": {
+    "product_code": "PRD61",
+    "units_rented": 6,
+    "price_per_day": 25,
+    "rental_start": "8/15/18",
+    "rental_end": "6/7/18"
+  },
+  "VIN859": {
+    "product_code": "PRD48",
+    "units_rented": 1,
+    "price_per_day": 12,
+    "rental_start": "6/1/16",
+    "rental_end": "10/5/16"
+  },
+  "VIN860": {
+    "product_code": "PRD22",
+    "units_rented": 5,
+    "price_per_day": 10,
+    "rental_start": "5/5/18",
+    "rental_end": "12/16/18"
+  },
+  "VIN861": {
+    "product_code": "PRD52",
+    "units_rented": 5,
+    "price_per_day": 24,
+    "rental_start": "1/30/18",
+    "rental_end": "9/12/16"
+  },
+  "VIN862": {
+    "product_code": "PRD94",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "5/4/16",
+    "rental_end": "5/28/16"
+  },
+  "VIN863": {
+    "product_code": "PRD42",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "11/5/16",
+    "rental_end": "3/31/16"
+  },
+  "VIN864": {
+    "product_code": "PRD53",
+    "units_rented": 6,
+    "price_per_day": 12,
+    "rental_start": "1/20/18",
+    "rental_end": "1/12/18"
+  },
+  "VIN865": {
+    "product_code": "PRD84",
+    "units_rented": 3,
+    "price_per_day": 24,
+    "rental_start": "1/16/18",
+    "rental_end": "4/14/18"
+  },
+  "VIN866": {
+    "product_code": "PRD57",
+    "units_rented": 9,
+    "price_per_day": 38,
+    "rental_start": "1/1/18",
+    "rental_end": "5/7/17"
+  },
+  "VIN867": {
+    "product_code": "PRD60",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "6/14/17",
+    "rental_end": "1/19/17"
+  },
+  "VIN868": {
+    "product_code": "PRD14",
+    "units_rented": 5,
+    "price_per_day": 37,
+    "rental_start": "12/10/16",
+    "rental_end": "5/26/17"
+  },
+  "VIN869": {
+    "product_code": "PRD74",
+    "units_rented": 10,
+    "price_per_day": 26,
+    "rental_start": "9/27/17",
+    "rental_end": "12/2/16"
+  },
+  "VIN870": {
+    "product_code": "PRD9",
+    "units_rented": 7,
+    "price_per_day": 7,
+    "rental_start": "9/13/16",
+    "rental_end": "11/26/18"
+  },
+  "VIN871": {
+    "product_code": "PRD25",
+    "units_rented": 7,
+    "price_per_day": 29,
+    "rental_start": "4/30/17",
+    "rental_end": "2/20/17"
+  },
+  "VIN872": {
+    "product_code": "PRD26",
+    "units_rented": 8,
+    "price_per_day": 26,
+    "rental_start": "1/13/16",
+    "rental_end": "5/7/17"
+  },
+  "VIN873": {
+    "product_code": "PRD16",
+    "units_rented": 3,
+    "price_per_day": 5,
+    "rental_start": "2/8/18",
+    "rental_end": "11/24/17"
+  },
+  "VIN874": {
+    "product_code": "PRD83",
+    "units_rented": 9,
+    "price_per_day": 38,
+    "rental_start": "8/11/18",
+    "rental_end": "8/8/18"
+  },
+  "VIN875": {
+    "product_code": "PRD96",
+    "units_rented": 8,
+    "price_per_day": 15,
+    "rental_start": "6/4/16",
+    "rental_end": "7/24/16"
+  },
+  "VIN876": {
+    "product_code": "PRD60",
+    "units_rented": 4,
+    "price_per_day": 26,
+    "rental_start": "4/30/17",
+    "rental_end": "9/20/16"
+  },
+  "VIN877": {
+    "product_code": "PRD43",
+    "units_rented": 3,
+    "price_per_day": 14,
+    "rental_start": "12/27/16",
+    "rental_end": "8/1/18"
+  },
+  "VIN878": {
+    "product_code": "PRD72",
+    "units_rented": 3,
+    "price_per_day": 8,
+    "rental_start": "8/15/18",
+    "rental_end": "8/25/18"
+  },
+  "VIN879": {
+    "product_code": "PRD44",
+    "units_rented": 5,
+    "price_per_day": 24,
+    "rental_start": "5/5/18",
+    "rental_end": "6/11/16"
+  },
+  "VIN880": {
+    "product_code": "PRD60",
+    "units_rented": 7,
+    "price_per_day": 29,
+    "rental_start": "7/10/17",
+    "rental_end": "8/30/17"
+  },
+  "VIN881": {
+    "product_code": "PRD97",
+    "units_rented": 7,
+    "price_per_day": 8,
+    "rental_start": "3/16/17",
+    "rental_end": "3/30/18"
+  },
+  "VIN882": {
+    "product_code": "PRD3",
+    "units_rented": 6,
+    "price_per_day": 28,
+    "rental_start": "1/27/18",
+    "rental_end": "4/13/16"
+  },
+  "VIN883": {
+    "product_code": "PRD28",
+    "units_rented": 6,
+    "price_per_day": 19,
+    "rental_start": "6/14/18",
+    "rental_end": "11/20/17"
+  },
+  "VIN884": {
+    "product_code": "PRD1",
+    "units_rented": 4,
+    "price_per_day": 11,
+    "rental_start": "12/3/16",
+    "rental_end": "5/1/16"
+  },
+  "VIN885": {
+    "product_code": "PRD3",
+    "units_rented": 1,
+    "price_per_day": 15,
+    "rental_start": "1/28/17",
+    "rental_end": "2/10/18"
+  },
+  "VIN886": {
+    "product_code": "PRD33",
+    "units_rented": 2,
+    "price_per_day": 24,
+    "rental_start": "1/24/17",
+    "rental_end": "10/23/16"
+  },
+  "VIN887": {
+    "product_code": "PRD81",
+    "units_rented": 3,
+    "price_per_day": 32,
+    "rental_start": "4/14/17",
+    "rental_end": "7/4/18"
+  },
+  "VIN888": {
+    "product_code": "PRD56",
+    "units_rented": 9,
+    "price_per_day": 13,
+    "rental_start": "12/11/17",
+    "rental_end": "6/16/18"
+  },
+  "VIN889": {
+    "product_code": "PRD73",
+    "units_rented": 10,
+    "price_per_day": 21,
+    "rental_start": "2/2/18",
+    "rental_end": "11/30/18"
+  },
+  "VIN890": {
+    "product_code": "PRD91",
+    "units_rented": 6,
+    "price_per_day": 8,
+    "rental_start": "6/12/18",
+    "rental_end": "3/21/16"
+  },
+  "VIN891": {
+    "product_code": "PRD79",
+    "units_rented": 1,
+    "price_per_day": 28,
+    "rental_start": "12/10/16",
+    "rental_end": "6/24/18"
+  },
+  "VIN892": {
+    "product_code": "PRD6",
+    "units_rented": 3,
+    "price_per_day": 8,
+    "rental_start": "3/29/17",
+    "rental_end": "11/20/16"
+  },
+  "VIN893": {
+    "product_code": "PRD20",
+    "units_rented": 2,
+    "price_per_day": 26,
+    "rental_start": "8/4/17",
+    "rental_end": "10/27/16"
+  },
+  "VIN894": {
+    "product_code": "PRD29",
+    "units_rented": 5,
+    "price_per_day": 13,
+    "rental_start": "3/6/17",
+    "rental_end": "12/7/16"
+  },
+  "VIN895": {
+    "product_code": "PRD9",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "7/6/18",
+    "rental_end": "1/4/16"
+  },
+  "VIN896": {
+    "product_code": "PRD74",
+    "units_rented": 4,
+    "price_per_day": 30,
+    "rental_start": "10/9/17",
+    "rental_end": "7/7/17"
+  },
+  "VIN897": {
+    "product_code": "PRD48",
+    "units_rented": 5,
+    "price_per_day": 26,
+    "rental_start": "1/28/16",
+    "rental_end": "7/7/16"
+  },
+  "VIN898": {
+    "product_code": "PRD7",
+    "units_rented": 2,
+    "price_per_day": 31,
+    "rental_start": "8/30/17",
+    "rental_end": "11/18/16"
+  },
+  "VIN899": {
+    "product_code": "PRD67",
+    "units_rented": 9,
+    "price_per_day": 6,
+    "rental_start": "2/24/16",
+    "rental_end": "7/15/16"
+  },
+  "VIN900": {
+    "product_code": "PRD45",
+    "units_rented": 9,
+    "price_per_day": 21,
+    "rental_start": "5/10/17",
+    "rental_end": "6/28/18"
+  },
+  "VIN901": {
+    "product_code": "PRD69",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "4/8/17",
+    "rental_end": "11/19/16"
+  },
+  "VIN902": {
+    "product_code": "PRD98",
+    "units_rented": 9,
+    "price_per_day": 21,
+    "rental_start": "1/10/17",
+    "rental_end": "4/3/17"
+  },
+  "VIN903": {
+    "product_code": "PRD55",
+    "units_rented": 8,
+    "price_per_day": 14,
+    "rental_start": "4/22/18",
+    "rental_end": "12/26/17"
+  },
+  "VIN904": {
+    "product_code": "PRD67",
+    "units_rented": 8,
+    "price_per_day": 9,
+    "rental_start": "2/18/17",
+    "rental_end": "3/15/17"
+  },
+  "VIN905": {
+    "product_code": "PRD77",
+    "units_rented": 7,
+    "price_per_day": 27,
+    "rental_start": "9/6/17",
+    "rental_end": "8/21/17"
+  },
+  "VIN906": {
+    "product_code": "PRD67",
+    "units_rented": 7,
+    "price_per_day": 16,
+    "rental_start": "2/9/16",
+    "rental_end": "5/13/16"
+  },
+  "VIN907": {
+    "product_code": "PRD44",
+    "units_rented": 10,
+    "price_per_day": 5,
+    "rental_start": "3/5/17",
+    "rental_end": "9/9/17"
+  },
+  "VIN908": {
+    "product_code": "PRD55",
+    "units_rented": 2,
+    "price_per_day": 27,
+    "rental_start": "3/6/16",
+    "rental_end": "5/25/17"
+  },
+  "VIN909": {
+    "product_code": "PRD52",
+    "units_rented": 3,
+    "price_per_day": 15,
+    "rental_start": "5/23/18",
+    "rental_end": "5/17/16"
+  },
+  "VIN910": {
+    "product_code": "PRD78",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "6/7/17",
+    "rental_end": "6/23/17"
+  },
+  "VIN911": {
+    "product_code": "PRD55",
+    "units_rented": 6,
+    "price_per_day": 20,
+    "rental_start": "10/14/16",
+    "rental_end": "1/17/16"
+  },
+  "VIN912": {
+    "product_code": "PRD54",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "11/20/18",
+    "rental_end": "9/5/16"
+  },
+  "VIN913": {
+    "product_code": "PRD33",
+    "units_rented": 9,
+    "price_per_day": 7,
+    "rental_start": "1/30/16",
+    "rental_end": "5/26/17"
+  },
+  "VIN914": {
+    "product_code": "PRD56",
+    "units_rented": 3,
+    "price_per_day": 38,
+    "rental_start": "7/4/18",
+    "rental_end": "7/3/16"
+  },
+  "VIN915": {
+    "product_code": "PRD35",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "8/9/18",
+    "rental_end": "12/19/17"
+  },
+  "VIN916": {
+    "product_code": "PRD81",
+    "units_rented": 2,
+    "price_per_day": 25,
+    "rental_start": "3/6/16",
+    "rental_end": "12/8/18"
+  },
+  "VIN917": {
+    "product_code": "PRD75",
+    "units_rented": 5,
+    "price_per_day": 33,
+    "rental_start": "2/17/17",
+    "rental_end": "5/30/16"
+  },
+  "VIN918": {
+    "product_code": "PRD0",
+    "units_rented": 2,
+    "price_per_day": 39,
+    "rental_start": "8/10/18",
+    "rental_end": "7/20/18"
+  },
+  "VIN919": {
+    "product_code": "PRD2",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "4/17/18",
+    "rental_end": "2/25/17"
+  },
+  "VIN920": {
+    "product_code": "PRD9",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "2/17/16",
+    "rental_end": "12/25/18"
+  },
+  "VIN921": {
+    "product_code": "PRD81",
+    "units_rented": 4,
+    "price_per_day": 30,
+    "rental_start": "3/11/17",
+    "rental_end": "7/11/18"
+  },
+  "VIN922": {
+    "product_code": "PRD3",
+    "units_rented": 6,
+    "price_per_day": 5,
+    "rental_start": "1/20/18",
+    "rental_end": "6/13/17"
+  },
+  "VIN923": {
+    "product_code": "PRD47",
+    "units_rented": 10,
+    "price_per_day": 23,
+    "rental_start": "11/15/16",
+    "rental_end": "9/10/17"
+  },
+  "VIN924": {
+    "product_code": "PRD79",
+    "units_rented": 9,
+    "price_per_day": 31,
+    "rental_start": "5/12/18",
+    "rental_end": "4/3/16"
+  },
+  "VIN925": {
+    "product_code": "PRD72",
+    "units_rented": 10,
+    "price_per_day": 31,
+    "rental_start": "1/15/17",
+    "rental_end": "6/26/18"
+  },
+  "VIN926": {
+    "product_code": "PRD44",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "9/8/17",
+    "rental_end": "4/12/17"
+  },
+  "VIN927": {
+    "product_code": "PRD61",
+    "units_rented": 3,
+    "price_per_day": 19,
+    "rental_start": "8/17/17",
+    "rental_end": "7/18/17"
+  },
+  "VIN928": {
+    "product_code": "PRD66",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "10/10/17",
+    "rental_end": "4/1/16"
+  },
+  "VIN929": {
+    "product_code": "PRD40",
+    "units_rented": 10,
+    "price_per_day": 8,
+    "rental_start": "12/6/16",
+    "rental_end": "12/2/17"
+  },
+  "VIN930": {
+    "product_code": "PRD50",
+    "units_rented": 4,
+    "price_per_day": 32,
+    "rental_start": "1/11/17",
+    "rental_end": "8/4/16"
+  },
+  "VIN931": {
+    "product_code": "PRD94",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "3/17/18",
+    "rental_end": "11/24/16"
+  },
+  "VIN932": {
+    "product_code": "PRD63",
+    "units_rented": 3,
+    "price_per_day": 40,
+    "rental_start": "5/15/18",
+    "rental_end": "4/30/16"
+  },
+  "VIN933": {
+    "product_code": "PRD57",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "4/4/16",
+    "rental_end": "7/31/16"
+  },
+  "VIN934": {
+    "product_code": "PRD6",
+    "units_rented": 10,
+    "price_per_day": 36,
+    "rental_start": "10/21/16",
+    "rental_end": "12/15/18"
+  },
+  "VIN935": {
+    "product_code": "PRD97",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "3/2/18",
+    "rental_end": "2/21/18"
+  },
+  "VIN936": {
+    "product_code": "PRD82",
+    "units_rented": 5,
+    "price_per_day": 29,
+    "rental_start": "9/30/16",
+    "rental_end": "3/11/17"
+  },
+  "VIN937": {
+    "product_code": "PRD57",
+    "units_rented": 10,
+    "price_per_day": 19,
+    "rental_start": "3/27/17",
+    "rental_end": "3/14/17"
+  },
+  "VIN938": {
+    "product_code": "PRD6",
+    "units_rented": 5,
+    "price_per_day": 36,
+    "rental_start": "6/30/17",
+    "rental_end": "8/7/16"
+  },
+  "VIN939": {
+    "product_code": "PRD94",
+    "units_rented": 1,
+    "price_per_day": 33,
+    "rental_start": "12/10/17",
+    "rental_end": "3/23/16"
+  },
+  "VIN940": {
+    "product_code": "PRD2",
+    "units_rented": 6,
+    "price_per_day": 13,
+    "rental_start": "10/23/16",
+    "rental_end": "10/15/16"
+  },
+  "VIN941": {
+    "product_code": "PRD85",
+    "units_rented": 8,
+    "price_per_day": 40,
+    "rental_start": "8/25/16",
+    "rental_end": "3/27/17"
+  },
+  "VIN942": {
+    "product_code": "PRD29",
+    "units_rented": 3,
+    "price_per_day": 35,
+    "rental_start": "4/7/17",
+    "rental_end": "2/21/17"
+  },
+  "VIN943": {
+    "product_code": "PRD78",
+    "units_rented": 1,
+    "price_per_day": 35,
+    "rental_start": "7/19/17",
+    "rental_end": "2/10/16"
+  },
+  "VIN944": {
+    "product_code": "PRD26",
+    "units_rented": 9,
+    "price_per_day": 18,
+    "rental_start": "7/19/18",
+    "rental_end": "7/22/17"
+  },
+  "VIN945": {
+    "product_code": "PRD94",
+    "units_rented": 5,
+    "price_per_day": 28,
+    "rental_start": "9/30/16",
+    "rental_end": "11/10/16"
+  },
+  "VIN946": {
+    "product_code": "PRD81",
+    "units_rented": 4,
+    "price_per_day": 39,
+    "rental_start": "11/12/17",
+    "rental_end": "8/19/17"
+  },
+  "VIN947": {
+    "product_code": "PRD72",
+    "units_rented": 4,
+    "price_per_day": 8,
+    "rental_start": "11/26/16",
+    "rental_end": "9/11/16"
+  },
+  "VIN948": {
+    "product_code": "PRD90",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "11/30/18",
+    "rental_end": "5/9/17"
+  },
+  "VIN949": {
+    "product_code": "PRD50",
+    "units_rented": 4,
+    "price_per_day": 21,
+    "rental_start": "8/30/16",
+    "rental_end": "1/19/16"
+  },
+  "VIN950": {
+    "product_code": "PRD64",
+    "units_rented": 3,
+    "price_per_day": 11,
+    "rental_start": "7/25/17",
+    "rental_end": "10/6/18"
+  },
+  "VIN951": {
+    "product_code": "PRD99",
+    "units_rented": 2,
+    "price_per_day": 5,
+    "rental_start": "8/27/18",
+    "rental_end": "12/16/16"
+  },
+  "VIN952": {
+    "product_code": "PRD70",
+    "units_rented": 7,
+    "price_per_day": 28,
+    "rental_start": "8/21/17",
+    "rental_end": "9/21/17"
+  },
+  "VIN953": {
+    "product_code": "PRD41",
+    "units_rented": 5,
+    "price_per_day": 38,
+    "rental_start": "3/17/16",
+    "rental_end": "11/16/18"
+  },
+  "VIN954": {
+    "product_code": "PRD27",
+    "units_rented": 3,
+    "price_per_day": 21,
+    "rental_start": "4/10/16",
+    "rental_end": "10/21/16"
+  },
+  "VIN955": {
+    "product_code": "PRD74",
+    "units_rented": 7,
+    "price_per_day": 35,
+    "rental_start": "10/15/17",
+    "rental_end": "7/9/17"
+  },
+  "VIN956": {
+    "product_code": "PRD43",
+    "units_rented": 6,
+    "price_per_day": 16,
+    "rental_start": "5/17/16",
+    "rental_end": "2/29/16"
+  },
+  "VIN957": {
+    "product_code": "PRD28",
+    "units_rented": 9,
+    "price_per_day": 30,
+    "rental_start": "6/14/18",
+    "rental_end": "11/1/17"
+  },
+  "VIN958": {
+    "product_code": "PRD82",
+    "units_rented": 10,
+    "price_per_day": 24,
+    "rental_start": "6/21/17",
+    "rental_end": "11/13/16"
+  },
+  "VIN959": {
+    "product_code": "PRD92",
+    "units_rented": 1,
+    "price_per_day": 19,
+    "rental_start": "2/8/17",
+    "rental_end": "7/21/16"
+  },
+  "VIN960": {
+    "product_code": "PRD30",
+    "units_rented": 6,
+    "price_per_day": 22,
+    "rental_start": "3/1/18",
+    "rental_end": "10/22/16"
+  },
+  "VIN961": {
+    "product_code": "PRD67",
+    "units_rented": 2,
+    "price_per_day": 14,
+    "rental_start": "5/14/18",
+    "rental_end": "3/19/18"
+  },
+  "VIN962": {
+    "product_code": "PRD27",
+    "units_rented": 7,
+    "price_per_day": 19,
+    "rental_start": "8/20/17",
+    "rental_end": "6/25/17"
+  },
+  "VIN963": {
+    "product_code": "PRD20",
+    "units_rented": 7,
+    "price_per_day": 16,
+    "rental_start": "1/16/17",
+    "rental_end": "12/13/16"
+  },
+  "VIN964": {
+    "product_code": "PRD97",
+    "units_rented": 2,
+    "price_per_day": 11,
+    "rental_start": "1/25/16",
+    "rental_end": "3/26/16"
+  },
+  "VIN965": {
+    "product_code": "PRD19",
+    "units_rented": 10,
+    "price_per_day": 30,
+    "rental_start": "12/15/17",
+    "rental_end": "10/13/17"
+  },
+  "VIN966": {
+    "product_code": "PRD60",
+    "units_rented": 9,
+    "price_per_day": 22,
+    "rental_start": "5/17/17",
+    "rental_end": "6/25/18"
+  },
+  "VIN967": {
+    "product_code": "PRD14",
+    "units_rented": 5,
+    "price_per_day": 26,
+    "rental_start": "10/18/18",
+    "rental_end": "4/6/17"
+  },
+  "VIN968": {
+    "product_code": "PRD82",
+    "units_rented": 7,
+    "price_per_day": 35,
+    "rental_start": "6/11/16",
+    "rental_end": "1/17/17"
+  },
+  "VIN969": {
+    "product_code": "PRD77",
+    "units_rented": 1,
+    "price_per_day": 36,
+    "rental_start": "6/28/18",
+    "rental_end": "5/27/16"
+  },
+  "VIN970": {
+    "product_code": "PRD61",
+    "units_rented": 1,
+    "price_per_day": 22,
+    "rental_start": "2/26/18",
+    "rental_end": "4/19/16"
+  },
+  "VIN971": {
+    "product_code": "PRD78",
+    "units_rented": 5,
+    "price_per_day": 20,
+    "rental_start": "11/20/17",
+    "rental_end": "1/13/17"
+  },
+  "VIN972": {
+    "product_code": "PRD6",
+    "units_rented": 3,
+    "price_per_day": 40,
+    "rental_start": "4/2/17",
+    "rental_end": "8/24/18"
+  },
+  "VIN973": {
+    "product_code": "PRD11",
+    "units_rented": 9,
+    "price_per_day": 14,
+    "rental_start": "9/13/17",
+    "rental_end": "4/28/18"
+  },
+  "VIN974": {
+    "product_code": "PRD66",
+    "units_rented": 6,
+    "price_per_day": 30,
+    "rental_start": "10/23/18",
+    "rental_end": "2/28/18"
+  },
+  "VIN975": {
+    "product_code": "PRD77",
+    "units_rented": 7,
+    "price_per_day": 39,
+    "rental_start": "5/9/16",
+    "rental_end": "5/26/16"
+  },
+  "VIN976": {
+    "product_code": "PRD42",
+    "units_rented": 5,
+    "price_per_day": 32,
+    "rental_start": "1/27/16",
+    "rental_end": "8/5/16"
+  },
+  "VIN977": {
+    "product_code": "PRD23",
+    "units_rented": 8,
+    "price_per_day": 37,
+    "rental_start": "4/5/17",
+    "rental_end": "10/10/16"
+  },
+  "VIN978": {
+    "product_code": "PRD57",
+    "units_rented": 3,
+    "price_per_day": 39,
+    "rental_start": "1/4/16",
+    "rental_end": "11/15/16"
+  },
+  "VIN979": {
+    "product_code": "PRD48",
+    "units_rented": 4,
+    "price_per_day": 5,
+    "rental_start": "9/23/17",
+    "rental_end": "4/16/16"
+  },
+  "VIN980": {
+    "product_code": "PRD66",
+    "units_rented": 5,
+    "price_per_day": 40,
+    "rental_start": "11/16/17",
+    "rental_end": "12/7/17"
+  },
+  "VIN981": {
+    "product_code": "PRD76",
+    "units_rented": 10,
+    "price_per_day": 18,
+    "rental_start": "2/28/17",
+    "rental_end": "2/2/18"
+  },
+  "VIN982": {
+    "product_code": "PRD39",
+    "units_rented": 10,
+    "price_per_day": 7,
+    "rental_start": "11/3/16",
+    "rental_end": "3/16/16"
+  },
+  "VIN983": {
+    "product_code": "PRD46",
+    "units_rented": 2,
+    "price_per_day": 29,
+    "rental_start": "11/11/16",
+    "rental_end": "1/16/16"
+  },
+  "VIN984": {
+    "product_code": "PRD48",
+    "units_rented": 7,
+    "price_per_day": 17,
+    "rental_start": "10/8/17",
+    "rental_end": "11/26/18"
+  },
+  "VIN985": {
+    "product_code": "PRD63",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "11/8/16",
+    "rental_end": "6/30/16"
+  },
+  "VIN986": {
+    "product_code": "PRD40",
+    "units_rented": 2,
+    "price_per_day": 31,
+    "rental_start": "11/20/18",
+    "rental_end": "3/11/16"
+  },
+  "VIN987": {
+    "product_code": "PRD23",
+    "units_rented": 7,
+    "price_per_day": 34,
+    "rental_start": "9/10/17",
+    "rental_end": "2/28/16"
+  },
+  "VIN988": {
+    "product_code": "PRD66",
+    "units_rented": 10,
+    "price_per_day": 33,
+    "rental_start": "3/8/18",
+    "rental_end": "8/22/18"
+  },
+  "VIN989": {
+    "product_code": "PRD19",
+    "units_rented": 10,
+    "price_per_day": 30,
+    "rental_start": "10/25/18",
+    "rental_end": "4/7/16"
+  },
+  "VIN990": {
+    "product_code": "PRD9",
+    "units_rented": 9,
+    "price_per_day": 7,
+    "rental_start": "5/7/16",
+    "rental_end": "4/24/18"
+  },
+  "VIN991": {
+    "product_code": "PRD71",
+    "units_rented": 9,
+    "price_per_day": 38,
+    "rental_start": "6/17/16",
+    "rental_end": "11/18/16"
+  },
+  "VIN992": {
+    "product_code": "PRD68",
+    "units_rented": 5,
+    "price_per_day": 37,
+    "rental_start": "3/10/18",
+    "rental_end": "9/8/18"
+  },
+  "VIN993": {
+    "product_code": "PRD87",
+    "units_rented": 8,
+    "price_per_day": 24,
+    "rental_start": "5/26/16",
+    "rental_end": "12/10/17"
+  },
+  "VIN994": {
+    "product_code": "PRD42",
+    "units_rented": 5,
+    "price_per_day": 30,
+    "rental_start": "6/4/17",
+    "rental_end": "1/2/17"
+  },
+  "VIN995": {
+    "product_code": "PRD0",
+    "units_rented": 10,
+    "price_per_day": 10,
+    "rental_start": "9/7/16",
+    "rental_end": "1/28/18"
+  },
+  "VIN996": {
+    "product_code": "PRD4",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "7/5/16",
+    "rental_end": "1/25/18"
+  },
+  "VIN997": {
+    "product_code": "PRD30",
+    "units_rented": 1,
+    "price_per_day": 11,
+    "rental_start": "4/25/16",
+    "rental_end": "1/29/18"
+  },
+  "VIN998": {
+    "product_code": "PRD73",
+    "units_rented": 7,
+    "price_per_day": 30,
+    "rental_start": "9/2/18",
+    "rental_end": "4/14/16"
+  },
+  "VIN999": {
+    "product_code": "PRD69",
+    "units_rented": 8,
+    "price_per_day": 36,
+    "rental_start": "10/12/18",
+    "rental_end": "10/2/16"
+  }
+}
