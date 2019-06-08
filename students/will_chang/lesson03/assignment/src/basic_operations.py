@@ -27,9 +27,10 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
         new_customer.save()
         LOGGER.info(f'Successfully added new customer with id {customer_id} ' +\
                     f'to the database.')
-    except Exception:
+    except TypeError as err:
         LOGGER.info(f'Error creating = {customer_id}')
-        LOGGER.info(Exception)
+        LOGGER.info(err)
+        raise err
 
 def search_customer(customer_id):
     """
@@ -64,6 +65,7 @@ def delete_customer(customer_id):
         LOGGER.warning(f'Customer with id {customer_id} could not be found' +\
                        f'in the database. Deletion unsuccessful.')
         LOGGER.info(DoesNotExist)
+        raise ValueError
 
 def update_customer_credit(customer_id, credit_limit):
     """
