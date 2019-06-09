@@ -1,0 +1,1 @@
+This is Randi Peterson's folder for Python220 class.
