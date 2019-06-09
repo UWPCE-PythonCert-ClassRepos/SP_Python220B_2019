@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-'''
+"""
 Returns total price paid for individual rentals
-'''
+"""
 
 import logging
 import argparse
@@ -10,22 +10,20 @@ import json
 import datetime
 import math
 
-def config_log(level):
-    """Configure log file settings"""
-    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-    log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'_charges_calc.log'
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'_charges_calc.log'
 
-    formatter = logging.Formatter(log_format)
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setFormatter(formatter)
+formatter = logging.Formatter(log_format)
+file_handler = logging.FileHandler(log_file)
+file_handler.setFormatter(formatter)
 
-    console_handler = logging.StreamHandler()
+console_handler = logging.StreamHandler()
 
-    console_handler.setFormatter(formatter)
+console_handler.setFormatter(formatter)
 
-    logger = logging.getLogger()
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
 
     if level == '0':
         logger.disabled = True

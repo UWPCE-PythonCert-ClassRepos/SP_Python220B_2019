@@ -1,12 +1,12 @@
 """
-    Learning persistence with Peewee and sqlite
-    delete the database to start over
-        (but running this program does not require it)
+Creates functionality to add, search, delete, update, and list customers.
 """
 
 from personjob_modeli import *
 
 import logging
+import peewee
+from customer_model import Customer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
