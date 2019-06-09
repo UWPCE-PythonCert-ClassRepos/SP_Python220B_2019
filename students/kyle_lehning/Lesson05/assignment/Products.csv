@@ -1,0 +1,5 @@
+product_id,description,product_type,quantity_available
+prd0001,Computer keyboard,office,100
+prd0002,Deluxe office chair,office,50
+prd0003,Mr. Coffee espresso machine,kitchen,15
+prd0004,Large kitchen island,kitchen,0

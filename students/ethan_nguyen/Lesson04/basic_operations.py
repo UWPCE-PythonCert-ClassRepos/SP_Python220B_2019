@@ -1,13 +1,27 @@
 """
-    Create database examle with Peewee ORM, sqlite and Python
+    Create database example with Peewee ORM, sqlite and Python
 """
 import logging
+import datetime
 from peewee import OperationalError, DoesNotExist
 from customer_model import Customer, DATABASE
 # noqa # pylint: disable=unused-import,too-few-public-methods,too-many-arguments, broad-except
 
-logging.basicConfig(level=logging.INFO)
-LOGGER = logging.getLogger(__name__)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s \
+                %(message)s"
+
+FORMATTER = logging.Formatter(LOG_FORMAT)
+
+LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d-")+"db.log"
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
+FILE_HANDLER.setLevel(logging.INFO)
+
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
+LOGGER = logging.getLogger()
+LOGGER.addHandler(FILE_HANDLER)
 
 LOGGER.info('One off program to build the classes from the model in \
             the database')
@@ -17,6 +31,39 @@ DATABASE.create_tables([
     ])
 
 DATABASE.close()
+
+CUSTOMERS = [
+    (1, 'Allen', 'Iverson', 'Philadelphia', '555-123-4567',
+     'ai@gmail.com', True, 2000),
+    (2, 'Shaw', 'Kemp', 'Seattle', '123-512-3568',
+     'rainman@gmail.com', True, 1000),
+    (3, 'Vince', 'Carter', 'Torento', '236-123-4569',
+     'highligher@gmail.com', True, 5000),
+    (4, 'Rose', 'Derrick', 'Chicago', '854-123-4570',
+     'gDog@gmail.com', False, 2000),
+    (5, 'Steve', 'Nash', 'Phoenix', '654-568-4961',
+     'thehair@gmail.com', False, 100),
+    ]
+
+
+def add_toy_customers():
+    '''
+    This function will add make-up customers to the sqlite3 database for
+    testing.
+    '''
+    delete_all_customers()
+
+    for customer in CUSTOMERS:
+        add_customer(*customer)
+
+
+def print_customers():
+    '''
+    This function will print all customers in the sqlite3 database
+    '''
+    customers = return_all_customers()
+    for customer in customers.dicts():
+        print(customer)
 
 
 def add_customer(customer_id, name, lastname, home_address, phone_number,
@@ -32,7 +79,7 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
                 home_address=home_address, phone_number=phone_number,
                 email=email_address, status=status, credit_limit=credit_limit)
             new_customer.save()
-            LOGGER.info('Database add successful')
+            LOGGER.info(f'Database add successful for customerId {name}')
 
     except (OperationalError,
             DoesNotExist) as exc:

@@ -13,11 +13,15 @@ Street North Carolina', 'phone_number': '203-231-3223',
 
 class CustomerDBTests(TestCase):
 
-    def create_database(self):
+    def test_create_database(self):
         self.assertIsNotNone(basic_operations.DATABASE)
 
-    def create_table(self):
+    def test_create_table(self):
         self.assertIsNotNone(basic_operations.Customer)
+
+    def test_add_toy_customers(self):
+        basic_operations.add_toy_customers()
+        basic_operations.print_customers()
 
     def test_add_customer(self):
 
@@ -80,3 +84,8 @@ Street Seattle WA', '206-240-4023', 'chucky@gmail.com', 'Inactive', 212)
         basic_operations.delete_customer(1)
         customer = basic_operations.search_customer(1)
         self.assertIsNone(customer)
+
+if __name__ == "__main__":
+   
+    test = CustomerDBTests()
+    test.test_add_toy_customers()
