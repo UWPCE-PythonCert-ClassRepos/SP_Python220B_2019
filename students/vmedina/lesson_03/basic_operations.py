@@ -72,7 +72,7 @@ def search_customer(customer_id):
         LOGGER.info(error)
         return {}
 
-    return {}
+
 
 
 def delete_customer(customer_id):
