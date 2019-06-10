@@ -5,16 +5,22 @@ poorly performing, poorly written module
 
 import datetime
 import csv
+import time
+import timeit
+import cProfile
+import line_profiler
+import atexit
+profile = line_profiler.LineProfiler()
+atexit.register(profile.print_stats)
 
+
+@profile
 def analyze(filename):
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         new_ones = []
-        for row in reader:
-            lrow = list(row)
-            if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
+        [new_ones.append((list(row)[5], list(row)[0])) for row in reader if list(row)[5] > '00/00/2012']
 
         year_count = {
             "2013": 0,
@@ -28,15 +34,15 @@ def analyze(filename):
         for new in new_ones:
             if new[0][6:] == '2013':
                 year_count["2013"] += 1
-            if new[0][6:] == '2014':
+            elif new[0][6:] == '2014':
                 year_count["2014"] += 1
-            if new[0][6:] == '2015':
+            elif new[0][6:] == '2015':
                 year_count["2015"] += 1
-            if new[0][6:] == '2016':
+            elif new[0][6:] == '2016':
                 year_count["2016"] += 1
-            if new[0][6:] == '2017':
+            elif new[0][6:] == '2017':
                 year_count["2017"] += 1
-            if new[0][6:] == '2018':
+            elif new[0][6:] == '2018':
                 year_count["2017"] += 1
 
         print(year_count)
@@ -47,18 +53,23 @@ def analyze(filename):
         found = 0
 
         for line in reader:
-            lrow = list(line)
+            # lrow = list(line)
             if "ao" in line[6]:
                 found += 1
 
         print(f"'ao' was found {found} times")
         end = datetime.datetime.now()
 
-    return (start, end, year_count, found)
+    return start, end, year_count, found
 
+
+@profile
 def main():
     filename = "data/exercise.csv"
+    # t0 = time.time()
     analyze(filename)
+    # t1 = time.time()
+    # print(t1-t0)
 
 
 if __name__ == "__main__":
