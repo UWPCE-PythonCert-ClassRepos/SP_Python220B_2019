@@ -1,5 +1,8 @@
 """Furniture class to store data about item"""
 
+# pylint: disable=too-few-public-methods
+# pylint: disable=too-many-arguments
+
 from inventory_class import Inventory
 
 class Furniture(Inventory):

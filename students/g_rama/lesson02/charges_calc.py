@@ -1,6 +1,6 @@
-'''
+"""
 Returns total price paid for individual rentals
-'''
+"""
 import argparse
 import json
 import datetime
