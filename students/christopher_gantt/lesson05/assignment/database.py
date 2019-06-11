@@ -1,10 +1,7 @@
 '''
     Assignment 5, MongoDB
 
-    pylint Disable=too-many-locals, too-many-statements,
-    to do:
-        5. unit testing, 90% coverage
-        6. pylint
+    pylint Disable=too-many-locals, too-many-statements
 '''
 import csv
 import os
@@ -192,21 +189,4 @@ def drop_dbs():
         database["Customers"].drop()
         database["Products"].drop()
         database["Rentals"].drop()
-
-
-if __name__ == '__main__':
-    LOGGER.info('Importing Data')
-    DATA = import_data('csv_files', 'product_file.csv',
-                       'customer_file.csv', 'rentals_file.csv')
-    LOGGER.info(DATA)
-
-    LOGGER.info('Showing Available Products')
-    SAP = show_available_products()
-    LOGGER.info(SAP)
-
-    LOGGER.info('Showing renters for product p123')
-    SR = show_rentals('p123')
-    LOGGER.info(SR)
-
-    LOGGER.info('Dropping Databases')
-    drop_dbs()
+    return 'Databases have been dropped'
