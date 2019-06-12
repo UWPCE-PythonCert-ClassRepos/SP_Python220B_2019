@@ -9,7 +9,7 @@
 '''
 
 import logging
-from hp_norton_model import *
+from data.hp_norton_model import *
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
@@ -60,8 +60,8 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
             new_customer.save()
             LOGGER.info('%s %s added to database', customer[1], customer[2])
     except IntegrityError as exc:
+        LOGGER.error('Was not able to add customer to the database')
         LOGGER.error(exc)
-        LOGGER.info('Was not able to add customer to the database')
 
 
 def search_customer(customers_id):
@@ -90,6 +90,7 @@ def delete_customer(customers_id):
                     customer.first_name, customer.last_name)
         customer.delete_instance()
         LOGGER.info('This customer has been deleted')
+        return 'This customer has been deleted'
 
     except DoesNotExist:
         raise ValueError('Customer id is not in the database')
@@ -130,8 +131,11 @@ def display_customers():
     '''
     LOGGER.info('Displaying the names of all the customers in the database.')
     gen = ((f'{customer.first_name}'+' '+f'{customer.last_name}') for customer in Customer.select())
+    temp_list = []
     for name in gen:
+        temp_list.append(name)
         LOGGER.info(name)
+    return temp_list
 
 
 def close_database():

@@ -2,9 +2,10 @@
 import logging
 from unittest import TestCase
 from peewee import *
-from hp_norton_model import *
-from basic_operations import add_customer, search_customer, delete_customer
-from basic_operations import update_customer_credit, list_active_customers
+from data.hp_norton_model import *
+from data.basic_operations import add_customer, search_customer, delete_customer
+from data.basic_operations import update_customer_credit, list_active_customers
+from data.basic_operations import display_customers
 
 #pylint Disable=wildcard-import, unused-wildcard-import
 
@@ -104,6 +105,11 @@ class BasicOperationsTests(TestCase):
         active_count = list_active_customers()
         self.assertEqual(0, active_count)
 
+    def test_display_customers(self):
+        customers = display_customers()
+        expected = "John Coder"
+        self.assertEqual(expected, customers[0])
+ 
     def test_integration(self):
         '''testing that basic_operations functions work together'''
         database.drop_tables([Customer])
