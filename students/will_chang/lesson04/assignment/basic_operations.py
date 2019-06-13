@@ -1,3 +1,4 @@
+# pylint: disable=W0401, W0614, W1203, R0913
 """
 Create functionality to add, search, delete, update, and list customers.
 """
