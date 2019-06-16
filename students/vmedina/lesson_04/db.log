@@ -1,0 +1,50 @@
+2019-06-11 17:15:53,971 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:54,146 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:54,147 basic_operations.py:55  INFO Customer with ID 9860 could not be created, check all inputs
+2019-06-11 17:15:54,147 basic_operations.py:56  INFO UNIQUE constraint failed: customer.customer_id
+2019-06-11 17:15:54,525 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:54,713 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:54,713 basic_operations.py:91  INFO Deleting customer with id 0000
+2019-06-11 17:15:54,805 basic_operations.py:76  INFO Could not find customer with id 0000
+2019-06-11 17:15:54,806 basic_operations.py:77  INFO <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."customer_name", "t1"."customer_last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."status", "t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: [0, 1, 0]
+2019-06-11 17:15:54,807 basic_operations.py:76  INFO Could not find customer with id 0000
+2019-06-11 17:15:54,807 basic_operations.py:77  INFO <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."customer_name", "t1"."customer_last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."status", "t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: [0, 1, 0]
+2019-06-11 17:15:55,204 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:55,484 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:55,485 basic_operations.py:119 INFO Displaying all the customers: 
+2019-06-11 17:15:55,896 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:56,051 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:56,354 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:56,355 basic_operations.py:69  INFO Found customer with id 0000 
+2019-06-11 17:15:56,730 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:15:56,731 basic_operations.py:111 INFO Credit limit before the change is 800
+2019-06-11 17:15:56,813 basic_operations.py:114 INFO New credit limit is 1000
+2019-06-11 17:33:54,550 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:54,759 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:54,760 basic_operations.py:55  INFO Customer with ID 9860 could not be created, check all inputs
+2019-06-11 17:33:54,760 basic_operations.py:56  INFO UNIQUE constraint failed: customer.customer_id
+2019-06-11 17:33:55,113 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:55,292 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:55,293 basic_operations.py:91  INFO Deleting customer with id 0000
+2019-06-11 17:33:55,360 basic_operations.py:76  INFO Could not find customer with id 0000
+2019-06-11 17:33:55,360 basic_operations.py:77  INFO <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."customer_name", "t1"."customer_last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."status", "t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: [0, 1, 0]
+2019-06-11 17:33:55,363 basic_operations.py:76  INFO Could not find customer with id 0000
+2019-06-11 17:33:55,363 basic_operations.py:77  INFO <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."customer_name", "t1"."customer_last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."status", "t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: [0, 1, 0]
+2019-06-11 17:33:55,771 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:55,955 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:55,955 basic_operations.py:119 INFO Displaying all the customers: 
+2019-06-11 17:33:56,405 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:56,588 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:57,013 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:57,014 basic_operations.py:69  INFO Found customer with id 0000 
+2019-06-11 17:33:57,288 basic_operations.py:51  INFO Added a new customer
+2019-06-11 17:33:57,289 basic_operations.py:111 INFO Credit limit before the change is 800
+2019-06-11 17:33:57,380 basic_operations.py:114 INFO New credit limit is 1000
