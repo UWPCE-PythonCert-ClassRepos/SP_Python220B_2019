@@ -8,19 +8,20 @@ import logging
 import peewee
 from customer_model import *
 
-log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-formatter = logging.Formatter(log_format)
-file_handler = logging.FileHandler('db.log')
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(formatter)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+FORMATTER = logging.Formatter(LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler('db.log')
+FILE_HANDLER.setLevel(logging.INFO)
+FILE_HANDLER.setFormatter(FORMATTER)
 
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
-console_handler.setFormatter(formatter)
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 LOGGER = logging.getLogger()
-LOGGER.addHandler(file_handler)
-LOGGER.addHandler(console_handler)
+LOGGER.addHandler(FILE_HANDLER)
+LOGGER.addHandler(CONSOLE_HANDLER)
+LOGGER.setLevel(logging.INFO)
 
 def add_customer(customer_id, name, lastname, home_address, phone_number,
                  email_address, status, credit_limit):
@@ -30,7 +31,7 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
 
     try:
         with database.transaction():
-            logging.info('Trying to add customer %s...', customer_id)
+            logging.debug('Trying to add customer %s...', customer_id)
             new_cust = Customer.create(
                 cust_id=customer_id,
                 cust_firstname=name,
@@ -45,8 +46,8 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
             LOGGER.info('Added new customer %s %s', name, lastname)
 
     except peewee.IntegrityError as error_1:
-        LOGGER.info(error_1)
-        LOGGER.info('Non-unique customer id: %s', customer_id)
+        LOGGER.debug(error_1)
+        LOGGER.debug('Non-unique customer id: %s', customer_id)
 
 def search_customer(customer_id):
     """
@@ -55,12 +56,12 @@ def search_customer(customer_id):
     database. Otherwise returns an empty dictionary.
     """
     try:
-        LOGGER.info('Looking for %s', customer_id)
+        LOGGER.debug('Looking for %s', customer_id)
         acustomer = Customer.get(Customer.cust_id == customer_id)
         return {'name': acustomer.cust_firstname, 'lastname': acustomer.cust_lastname,
                 'email address': acustomer.cust_email, 'phone number': acustomer.cust_phone}
     except peewee.DoesNotExist:
-        LOGGER.info('Customer ID %s does not exist in database.', customer_id)
+        LOGGER.debug('Customer ID %s does not exist in database.', customer_id)
         return {}
 
 def delete_customer(customer_id):
@@ -73,8 +74,8 @@ def delete_customer(customer_id):
         acustomer.delete_instance()
         LOGGER.info('%s deleted from database', customer_id)
     except peewee.DoesNotExist as error_1:
-        LOGGER.info(error_1)
-        LOGGER.info('%s was not in the database.', customer_id)
+        LOGGER.debug(error_1)
+        LOGGER.debug('%s was not in the database.', customer_id)
 
 def update_customer_credit(customer_id, credit_limit):
     """
@@ -91,7 +92,7 @@ def update_customer_credit(customer_id, credit_limit):
             acust.save()
             LOGGER.info('Customer credit for %s limit updated to %s', customer_id, credit_limit)
     except peewee.DoesNotExist:
-        LOGGER.info('%s is not in the database.', customer_id)
+        LOGGER.debug('%s is not in the database.', customer_id)
         raise ValueError
 
 def list_active_customers():
@@ -100,5 +101,7 @@ def list_active_customers():
     of active.
     """
     active_custs = Customer.select().where(Customer.cust_status == 'Active').count()
-    LOGGER.info('There are %i active customers in the database.', active_custs)
-    return active_custs
+    LOGGER.debug('There are %i active customers in the database.', active_custs)
+    #return active_custs
+
+    return len([customer.cust_id for customer in Customer.select().where(Customer.cust_status == 'Active')])
