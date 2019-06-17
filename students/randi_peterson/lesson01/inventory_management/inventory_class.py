@@ -1,4 +1,5 @@
 """Inventory class"""
+
 class Inventory:
     """Class of object called Inventory"""
 
