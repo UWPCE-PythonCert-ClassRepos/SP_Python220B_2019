@@ -1,3 +1,10 @@
+Notes: 
+
+  1. The following progress shows how many times each line is being executed in a for loop. 
+  2. Based on the lineprofilers it was noted how many times each line is being executed.
+  3. From the Profilers, it was deduced to open and read the file one time would make to reduce the time spent on each loop
+  4. Each if and else statements can also be put in iterators
+
 ➜  lesson06 git:(master) ✗ python3 -m cProfile -s ncalls poor_perf.py
 {'2013': 156279, '2014': 154602, '2015': 155376, '2016': 155800, '2017': 309951, '2018': 0}
 'ao' was found 500138 times
@@ -335,3 +342,148 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     70         1   12498385.0 12498385.0    100.0      analyze(filename)
 
 ➜  lesson06 git:(master) ✗
+
+
+➜  lesson06 git:(master) ✗ python3 poor_perf.py
+{'2013': 156279, '2014': 154602, '2015': 155376, '2016': 155800, '2017': 309951, '2018': 0}
+'ao' was found 0 times
+Timer unit: 1e-06 s
+
+Total time: 5.78451 s
+File: poor_perf.py
+Function: analyze at line 19
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    19                                           @profile
+    20                                           def analyze(filename):
+    21         1         20.0     20.0      0.0      start = datetime.datetime.now()
+    22         1        110.0    110.0      0.0      with open(filename) as csvfile:
+    23         1          8.0      8.0      0.0          reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    24         1          1.0      1.0      0.0          new_ones = []
+    25         1    2121889.0 2121889.0     36.7          [new_ones.append((list(row)[5], list(row)[0])) for row in reader if list(row)[5] > '00/00/2012']
+    26
+    27                                                   year_count = {
+    28         1          1.0      1.0      0.0              "2013": 0,
+    29         1          2.0      2.0      0.0              "2014": 0,
+    30         1          1.0      1.0      0.0              "2015": 0,
+    31         1          1.0      1.0      0.0              "2016": 0,
+    32         1          1.0      1.0      0.0              "2017": 0,
+    33         1          2.0      2.0      0.0              "2018": 0
+    34                                                   }
+    35
+    36   1000001     549096.0      0.5      9.5          for new in new_ones:
+    37   1000000     691523.0      0.7     12.0              if new[0][6:] == '2013':
+    38    156279      98890.0      0.6      1.7                  year_count["2013"] += 1
+    39    843721     571768.0      0.7      9.9              elif new[0][6:] == '2014':
+    40    154602      97494.0      0.6      1.7                  year_count["2014"] += 1
+    41    689119     474281.0      0.7      8.2              elif new[0][6:] == '2015':
+    42    155376      98988.0      0.6      1.7                  year_count["2015"] += 1
+    43    533743     363920.0      0.7      6.3              elif new[0][6:] == '2016':
+    44    155800     109733.0      0.7      1.9                  year_count["2016"] += 1
+    45    377943     260074.0      0.7      4.5              elif new[0][6:] == '2017':
+    46    154932      97780.0      0.6      1.7                  year_count["2017"] += 1
+    47    223011     151252.0      0.7      2.6              elif new[0][6:] == '2018':
+    48    155019      97493.0      0.6      1.7                  year_count["2017"] += 1
+    49
+    50         1         78.0     78.0      0.0          print(year_count)
+    51
+    52         1          0.0      0.0      0.0          found = 0
+    53
+    54         1         27.0     27.0      0.0          for line in reader:
+    55                                                       # lrow = list(line)
+    56                                                       if "ao" in line[6]:
+    57                                                           found += 1
+    58
+    59         1          9.0      9.0      0.0          print(f"'ao' was found {found} times")
+    60         1         67.0     67.0      0.0          end = datetime.datetime.now()
+    61
+    62                                               # with open(filename) as csvfile:
+    63                                               #     reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    64
+    65
+    66
+    67         1          2.0      2.0      0.0      return start, end, year_count, found
+
+Total time: 9.14688 s
+File: poor_perf.py
+Function: main at line 71
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    71                                           @profile
+    72                                           def main():
+    73         1          4.0      4.0      0.0      filename = "data/exercise.csv"
+    74                                               # t0 = time.time()
+    75         1    9146879.0 9146879.0    100.0      analyze(filename)
+	
+	
+	
+'ao' was found 500138 times
+{'2013': 78182, '2014': 77487, '2015': 77431, '2016': 77897, '2017': 77815, '2018': 77412}
+Timer unit: 1e-06 s
+
+Total time: 2.8455 s
+File: poor_perf.py
+Function: analyze at line 14
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    14                                           @profile
+    15                                           def analyze(filename):
+    16         1         15.0     15.0      0.0      start = datetime.datetime.now()
+    17         1         85.0     85.0      0.0      with open(filename) as csvfile:
+    18         1         31.0     31.0      0.0          reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    19         1         14.0     14.0      0.0          new_ones = []
+    20                                                   #[new_ones.append((list(row)[5], list(row)[0])) for row in reader if list(row)[5] > '00/00/2012']
+    21                                           
+    22                                                   year_count = {
+    23         1          0.0      0.0      0.0              "2013": 0,
+    24         1          1.0      1.0      0.0              "2014": 0,
+    25         1          0.0      0.0      0.0              "2015": 0,
+    26         1          1.0      1.0      0.0              "2016": 0,
+    27         1          1.0      1.0      0.0              "2017": 0,
+    28         1          1.0      1.0      0.0              "2018": 0
+    29                                                   }
+    30                                           
+    31                                                   # for new in new_ones:
+    32                                                   #     if new[0][6:] == '2013':
+    33                                                   #         year_count["2013"] += 1
+    34                                                   #     elif new[0][6:] == '2014':
+    35                                                   #         year_count["2014"] += 1
+    36                                                   #     elif new[0][6:] == '2015':
+    37                                                   #         year_count["2015"] += 1
+    38                                                   #     elif new[0][6:] == '2016':
+    39                                                   #         year_count["2016"] += 1
+    40                                                   #     elif new[0][6:] == '2017':
+    41                                                   #         year_count["2017"] += 1
+    42                                                   #     elif new[0][6:] == '2018':
+    43                                                   #         year_count["2017"] += 1
+    44                                           
+    45         1          0.0      0.0      0.0          found = 0
+    46                                           
+    47   1000001    1568678.0      1.6     55.1          for line in reader:
+    48   1000000     461844.0      0.5     16.2              if "ao" in line[6]:
+    49    500138     223200.0      0.4      7.8                  found += 1
+    50    500138     195849.0      0.4      6.9                  try:
+    51    500138     363088.0      0.7     12.8                      year_count[line[5][6:]] += 1
+    52     33914      16884.0      0.5      0.6                  except KeyError:
+    53     33914      15671.0      0.5      0.6                      continue
+    54                                           
+    55         1         58.0     58.0      0.0          print(f"'ao' was found {found} times")
+    56         1         28.0     28.0      0.0          print(year_count)
+    57         1         53.0     53.0      0.0          end = datetime.datetime.now()
+    58                                           
+    59         1          1.0      1.0      0.0      return start, end, year_count, found
+
+Total time: 4.29843 s
+File: poor_perf.py
+Function: main at line 62
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    62                                           @profile
+    63                                           def main():
+    64         1          3.0      3.0      0.0      filename = "data/exercise.csv"
+    65         1    4298427.0 4298427.0    100.0      analyze(filename)
+
