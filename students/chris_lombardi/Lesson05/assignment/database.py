@@ -64,7 +64,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             with open(product_file_path, encoding='utf-8-sig') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    prod_add = {'product_id': row['product_id'],
+                    prod_add = {'_id': row['_id'],
                                 'description': row['description'],
                                 'product_type': row['product_type'],
                                 'quantity_available': row['quantity_available']}
@@ -84,7 +84,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             with open(customer_file_path, encoding='utf-8-sig') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    cust_add = {'user_id': row['user_id'],
+                    cust_add = {'_id': row['_id'],
                                 'name': row['name'],
                                 'address': row['address'],
                                 'phone_number': row['phone_number'],
@@ -105,7 +105,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             with open(rentals_file_path, encoding='utf-8-sig') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    rental_add = {'product_id': row['product_id'],
+                    rental_add = {'_id': row['_id'],
+                                  'product_id': row['product_id'],
                                   'user_id': row['user_id']}
                     try:
                         rentals.insert_one(rental_add)
@@ -138,7 +139,7 @@ def show_available_products():
             prod_info = {'description': prod['description'],
                          'product_type': prod['product_type'],
                          'quantity_available': prod['quantity_available']}
-            avail_prod[prod['product_id']] = prod_info
+            avail_prod[prod['_id']] = prod_info
 
     return avail_prod
 
@@ -152,12 +153,12 @@ def show_rentals(product_id):
     with mongo:
         db = mongo.connection.hp_norton
         for cust in db.rentals.find({'product_id': product_id}):
-            for person in db.customers.find({'user_id': cust['user_id']}):
+            for person in db.customers.find({'_id': cust['user_id']}):
                 entry = {'name': person['name'],
                          'address': person['address'],
                          'phone_number': person['phone_number'],
                          'email': person['email']}
-                rental_list[person['user_id']] = entry
+                rental_list[person['_id']] = entry
 
     return rental_list
 
