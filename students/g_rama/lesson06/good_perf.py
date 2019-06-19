@@ -5,19 +5,21 @@ poorly performing, poorly written module
 
 import datetime
 import csv
-import line_profiler
 import atexit
-profile = line_profiler.LineProfiler()
-atexit.register(profile.print_stats)
+import line_profiler
+PROFILE = line_profiler.LineProfiler()
+atexit.register(PROFILE.print_stats)
 
 
-@profile
+@PROFILE
 def analyze(filename):
+    """Function to analyze the file"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        #[new_ones.append((list(row)[5], list(row)[0])) for row in reader if list(row)[5] > '00/00/2012']
+        #new_ones = []
+        # [new_ones.append((list(row)[5], list(row)[0]))
+        #  for row in reader if list(row)[5] > '00/00/2012']
 
         year_count = {
             "2013": 0,
@@ -59,8 +61,9 @@ def analyze(filename):
     return start, end, year_count, found
 
 
-@profile
+@PROFILE
 def main():
+    """Main function"""
     filename = "data/exercise.csv"
     analyze(filename)
 
