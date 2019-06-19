@@ -2,7 +2,6 @@
 
 import uuid
 import random
-from memory_profiler import profile
 from datetime import date
 
 
@@ -13,7 +12,7 @@ def random_uuid():
 
 def random_gene():
     """Generate a random number"""
-    for x in range(10):
+    for i in range(10):
         return random.randint(1, 21)
 
 
@@ -25,17 +24,17 @@ def random_date():
     return random_day
 
 
-end = ["ao", ""]
+END = ["ao", ""]
 
-f = open('exercise.csv', 'w')
+FILE = open('exercise.csv', 'w')
 
-for i in range(1000000):
+for j in range(1000000):
     uid = random_uuid()
     first = random_gene()
     second = random_gene()
     third = random_gene()
     fourth = random_gene()
     ran_date = random_date()
-    end_ch = random.choice(end)
-    f.write(f'{uid},{first},{second},{third},{fourth},{ran_date},{end_ch}\n')
-f.close()
+    end_ch = random.choice(END)
+    FILE.write(f'{uid},{first},{second},{third},{fourth},{ran_date},{end_ch}\n')
+FILE.close()
