@@ -1,4 +1,4 @@
-﻿product_id,description,product_type,quantity_available
+﻿_id,description,product_type,quantity_available
 prd001,table,diningroom,2
 prd002,lamp,office,3
 prd003,desk,office,1

@@ -5,6 +5,7 @@ sys.path.append('C:\\Users\\chris\\documents\\PY220_Git\\SP_Python220B_2019\\stu
 import unittest
 import database
 import logging
+from pymongo import errors as pyerror
 
 
 logging.basicConfig(level=logging.INFO)
@@ -28,9 +29,14 @@ class test_database(unittest.TestCase):
         # Test that records are successfully added to the database with no errors.
         test_one, test_two = database.import_data(PATH, 'products.csv',
                                                   'customers.csv', 'rentals.csv')
-        database.drop_all()
         self.assertEqual(test_one, (5, 10, 10))
         self.assertEqual(test_two, (0, 0, 0))
+
+        # Test DuplicateKeyError raised when importing documents again.
+        tup1, tup2 = database.import_data(PATH, 'products.csv', 'customers.csv',
+                                          'rentals.csv')
+        self.assertEqual(tup2, (5, 10, 10))
+        database.drop_all()
 
     def test_show_available_products(self):
         """Test show_available_products function"""

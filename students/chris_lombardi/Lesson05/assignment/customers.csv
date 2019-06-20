@@ -1,4 +1,4 @@
-﻿user_id,name,address,phone_number,email
+﻿_id,name,address,phone_number,email
 cust001,John,1234 Main St,1238880098,John@aol.com
 cust002,Patrick,231 Side St,1234567890,Patrick@aol.com
 cust003,Kim,2132 Back St,3432019212,Kim@aol.com
