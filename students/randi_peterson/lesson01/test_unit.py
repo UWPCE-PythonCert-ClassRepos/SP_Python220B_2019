@@ -1,3 +1,8 @@
+"""
+Created by Randi Peterson 6/15/2019
+Edited by R. Peterson 6/22/2019
+"""
+
 """This file conducts unit testing for the Norton code"""
 from unittest import TestCase
 import sys
@@ -6,7 +11,9 @@ from inventory_class import Inventory
 from furniture_class import Furniture
 from electric_appliances_class import ElectricAppliances
 from market_prices import get_latest_price
-from main import main_menu, get_price, add_new_item, item_info, exit_program
+from main import FULL_INVENTORY, main_menu, get_price, add_new_item, item_info, exit_program
+from unittest.mock import MagicMock, patch
+
 
 class InventoryTests(TestCase):
     """Tests for the Inventory object"""
@@ -105,27 +112,86 @@ class FurnitureTests(TestCase):
         assert test_app_dict == self.expected_furniture_dict
 
 class MainTests(TestCase):
-    def setUp(self):
-        pass
-
-    def test_get_price(self):
-        """Tests the print of get price"""
-        #This is a useless test but testing print is difficult
-        #This makes sure no errors happen
-        get_price()
+    """Tests the main.py module and its functions"""
 
     def test_add_new_item(self):
-        pass
+        """Tests adding new input of furniture, appliance, and other"""
+
+        furniture_input = ('01', 'Couch', 100, 'y', 'leather', 'M')
+        comparison_furniture = {'01': {'product_code': '01', 'description': 'Couch',
+                                       'market_price': 24, 'material': 'leather',
+                                       'rental_price': 100, 'size': 'M'}}
+
+        with patch('builtins.input', side_effect = furniture_input):
+            add_new_item()
+        self.assertEqual(FULL_INVENTORY, comparison_furniture)
+
+        electrical_input = ('154', 'Stove', 150, 'n', 'y', 'Bosch', 120)
+        comparison_inventory = {'01': {'product_code': '01', 'description': 'Couch',
+                                       'market_price': 24, 'material': 'leather',
+                                       'rental_price': 100, 'size': 'M'},
+                                '154': {'product_code': '154', 'description': 'Stove',
+                                        'market_price': 24, 'rental_price': 150,
+                                        'brand': 'Bosch', 'voltage': 120}}
+
+        with patch('builtins.input', side_effect = electrical_input):
+            add_new_item()
+        self.assertEqual(FULL_INVENTORY, comparison_inventory)
+
+        other_input = ('666', 'Potato', 10, 'n', 'n')
+        final_comparison_inventory = {'01': {'product_code': '01', 'description': 'Couch',
+                                             'market_price': 24, 'material': 'leather',
+                                             'rental_price': 100, 'size': 'M'},
+                                      '154': {'product_code': '154', 'description': 'Stove',
+                                              'market_price': 24, 'rental_price': 150,
+                                              'brand': 'Bosch', 'voltage': 120},
+                                      '666': {'product_code': '666', 'description': 'Potato',
+                                              'market_price': 24, 'rental_price': 10}}
+
+        with patch('builtins.input', side_effect = other_input):
+            add_new_item()
+        self.assertEqual(FULL_INVENTORY, final_comparison_inventory)
 
     def test_item_info(self):
-        pass
+        """Tests item info"""
+        furniture_input = ('01', 'Couch', 100, 'y', 'leather', 'M')
+        with patch('builtins.input', side_effect=furniture_input):
+            add_new_item()
 
-    def test_main_menu(self):
-        pass
+        with patch('builtins.input', side_effect = ['01']):
+            self.assertEqual(item_info(), None)
+
+        with patch('builtins.input', side_effect = ['02']):
+            self.assertEqual(item_info(), None)
+
+    def test_exit_program(self):
+        """Tests exit program causes system exit"""
+        with self.assertRaises(SystemExit):
+            exit_program()
+
+    def test_main_menu_add(self):
+        """Tests add_new_item call from main menu"""
+        with patch('builtins.input', side_effect=['hi','1']):
+            self.assertEqual(main_menu(), add_new_item)
+
+    def test_main_menu_info(self):
+        """Tests item_info call from main menu"""
+        with patch('builtins.input', side_effect='2'):
+            self.assertEqual(main_menu(), item_info)
+
+    def test_pass_main_menu_exit(self):
+        """Tests exit call from main menu"""
+        with patch('builtins.input', side_effect='q'):
+            self.assertEqual(main_menu(), exit_program)
+
+    def test_get_price(self):
+        """Tests get price is calling correctly"""
+        self.get_price = MagicMock(return_value=24)
+       # self.assertEqual(24, get_price())
 
 class MarketPriceTests(TestCase):
     """Tests the market_price function, even though we cannot adjust it"""
 
     def test_get_latest_price(self):
         """Tests that the function returns the expected value hardcoded"""
-        assert get_latest_price() == 24
+        self.assertEqual(get_latest_price(),24)

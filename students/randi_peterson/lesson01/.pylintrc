@@ -142,7 +142,6 @@ disable=too-many-locals,
         comprehension-escape,
 		too-many-arguments,
 		too-few-public-methods,
-		global-statement,
 		duplicate-code
 
 # Enable the message, report, category or checker with the given id(s). You can
