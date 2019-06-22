@@ -1,0 +1,33 @@
+---Timing Notes for Lesson06---
+
+(1) Initial run of the poor performance module indicated a total time of 4.030 seconds. 
+    Using CProfile in an interpreter resulted in a time of 3.977 seconds.
+
+(2) I created a file to time groups of the code to identify which portions
+    were causing the biggest bottlenecks in the overall timing. First, using
+    timeit, showed the overall time was 3.80947 seconds.
+
+    The first group of code, which involved reading the *.csv file and appending
+    the date and uuid to a new list if the date was greater than 00/00/2012. The
+    timing for this portion was 1.809186 seconds.
+
+    The second group of code was updating the dictionary containing the count of years
+    from the list that was created. The timing for this portion was .5551445 seconds.
+
+    The third group of code was for counting the number of instances of 'ao' in the 
+    data file, which required reading through the entire *.csv file again.
+    The timing for this portion of code was 1.4855753 seconds.
+
+    I elected to start refactoring the code by only reading through the *.csv file once.
+
+(3) After refactoring the code to read through the *.csv file once, the overall time
+    was 2.450 seconds, representing a time decrease of 1.35947 seconds, which was
+    almost the amount of time for the second iteration of the csvreader.
+
+(4) During initial profiling of poor_perf.py I noticed that one of the operations that was
+    taking the longest was appending new items to a list. I decided to eliminate this step 
+    and add the count directly to the  dictionary.
+
+(5) Next I tried to eliminate the number of for loops to reduce the number of times that
+    the module was cycling through the rows in the *.csv file. After refactoring the for 
+    loops, the overall time was 1.651 seconds.python
