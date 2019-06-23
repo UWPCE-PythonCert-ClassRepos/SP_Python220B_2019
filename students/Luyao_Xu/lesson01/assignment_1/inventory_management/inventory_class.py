@@ -1,4 +1,3 @@
-
 """
 This module contains definitions of Inventory.
 """

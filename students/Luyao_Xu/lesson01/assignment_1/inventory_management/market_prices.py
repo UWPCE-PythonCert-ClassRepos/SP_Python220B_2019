@@ -1,13 +1,12 @@
-
 """
 This module contains functions to return market prices.
 """
 
 
-def get_latest_price():
+def get_latest_price(price=24):
     """
     Return latest price
     :return: latest price
     """
-    return 24
+    return price
     # Raise an exception to force the user to Mock its output

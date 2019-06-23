@@ -12,6 +12,7 @@ from .electric_appliances_class import ElectricAppliances
 
 FULL_INVENTORY = {}
 
+
 def main_menu(user_prompt=None):
     """
     Show main menu.
@@ -31,12 +32,13 @@ def main_menu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 
-def get_price():
+def get_price(price=24):
     """
     Print "Get price"
     :return:
     """
     print("Get price")
+    return get_latest_price(price)
 
 
 def add_new_item():
@@ -78,7 +80,7 @@ def add_new_item():
 def item_info():
     """
     Print item's metadata.
-    :return: None
+    :return: Dict or None
     """
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
@@ -87,6 +89,7 @@ def item_info():
             print("{}:{}".format(k, val))
     else:
         print("Item not found in inventory")
+    return FULL_INVENTORY.get(item_code)
 
 
 def exit_program():
