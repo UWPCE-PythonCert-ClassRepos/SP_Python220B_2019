@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Migration of product data from csv into MongoDB"""
+import threading
 import logging
 import datetime
 import time
@@ -42,7 +43,7 @@ def __setup_logger(name, log_file, level=logging.WARNING, stream=True):
 
 
 MONGO = MongoDBConnection()
-LOG_FILE = 'linear' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+LOG_FILE = 'parallel' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 LOGGER = __setup_logger('database_logger', LOG_FILE, logging.DEBUG)
 
 
@@ -55,60 +56,54 @@ def import_data(directory_name, product_file, customer_file, rental_file):  # py
     of any errors that occurred, in the same order
     """
     db_names = __set_collection_names()
+    customer_list = []
+    product_list = []
+    rental_list = []
     with MONGO:
         # mongodb database
         db = MONGO.connection.media  # pylint: disable=C0103
-        product_error = 0
-        customer_error = 0
-        rental_error = 0
-        product_start = time.time()
         products = db[db_names[0]]
-        product_start_count = products.count_documents({})
-        try:
-            product_list = __read_csv(os.path.join(directory_name, product_file))
-            product_dict = __make_mongo_dictionary(product_list)
-            product_result = products.insert_many(product_dict)
-            product_count = len(product_result.inserted_ids)
-        except FileNotFoundError:
-            product_error += 1
-            product_count = 0
-        product_final_count = products.count_documents({})
-        product_end = time.time()
-        product_time = product_end - product_start
-        customer_start = time.time()
         customers = db[db_names[1]]
-        customer_start_count = customers.count_documents({})
-        try:
-            customer_list = __read_csv(os.path.join(directory_name, customer_file))
-            customer_dict = __make_mongo_dictionary(customer_list)
-            customer_result = customers.insert_many(customer_dict)
-            customer_count = len(customer_result.inserted_ids)
-        except FileNotFoundError:
-            customer_error += 1
-            customer_count = 0
-        customer_final_count = customers.count_documents({})
-        customer_end = time.time()
-        customer_time = customer_end - customer_start
-        rental_start = time.time()
         rentals = db[db_names[2]]
-        rental_start_count = rentals.count_documents({})
-        try:
-            rental_list = __read_csv(os.path.join(directory_name, rental_file))
-            rental_dict = __make_mongo_dictionary(rental_list)
-            rental_result = rentals.insert_many(rental_dict)
-            rental_count = len(rental_result.inserted_ids)
-        except FileNotFoundError:
-            rental_error += 1
-            rental_count = 0
-        rental_final_count = rentals.count_documents({})
-        rental_end = time.time()
-        rental_time = rental_end - rental_start
-        customer_tuple = (customer_count, customer_start_count, customer_final_count, customer_time)
-        product_tuple = (product_count, product_start_count, product_final_count, product_time)
-        rental_tuple = (rental_count, rental_start_count, rental_final_count, rental_time)
-        return_list = [customer_tuple, product_tuple, rental_tuple]
+        product_thread = threading.Thread(target=write_to_db, args=(products, product_file,
+                                                                    directory_name, product_list)
+                                          )
+        product_thread.start()
+        customer_thread = threading.Thread(target=write_to_db, args=(customers, customer_file,
+                                                                     directory_name, customer_list)
+                                           )
+        customer_thread.start()
+        rental_thread = threading.Thread(target=write_to_db, args=(rentals, rental_file,
+                                                                   directory_name, rental_list)
+                                         )
+        rental_thread.start()
+        product_thread.join()
+        customer_thread.join()
+        rental_thread.join()
+        return_list = [tuple(customer_list), tuple(product_list), tuple(rental_list)]
         LOGGER.info("Returned: %s", return_list)
         return return_list
+
+
+def write_to_db(db, file_name, directory_name, return_list):
+    start_time = time.time()
+    total_error = 0
+    start_count = db.count_documents({})
+    try:
+        read_list = __read_csv(os.path.join(directory_name, file_name))
+        read_dict = __make_mongo_dictionary(read_list)
+        db_result = db.insert_many(read_dict)
+        insert_count = len(db_result.inserted_ids)
+    except FileNotFoundError:
+        total_error += 1
+        insert_count = 0
+    final_count = db.count_documents({})
+    end_time = time.time()
+    total_time = end_time - start_time
+    return_list.append(insert_count)
+    return_list.append(start_count)
+    return_list.append(final_count)
+    return_list.append(total_time)
 
 
 def __make_mongo_dictionary(passed_list):
