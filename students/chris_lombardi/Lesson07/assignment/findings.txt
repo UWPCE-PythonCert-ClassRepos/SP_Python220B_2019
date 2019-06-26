@@ -1,0 +1,27 @@
+Lesson07 Findings
+
+(1) I first generated 1000 random product and customer entries by appending the *.csv files and using
+    a data expander script. 
+
+(2) Next, I refactored the database.py code into linear.py to have the import of each file performed
+    under a separate module. Timing for this module to import the 1000 entries of products, 1000 entries
+    of customers, and rental file took a total of 1.0806 seconds. Importing the product data took a total of
+    0.4090 seconds and importing the customer data took a total of 0.3972 seconds.
+
+(3) Including the import of the rentals.csv file increases the total duration to 1.6056 seconds even
+    though there are just 10 entries in the rentals.csv file.
+
+(4) Next, I refactored the linear.py code to add threading so that the import customers and import products
+    modules could run on separate threads. Using multi-threading to import the data into the database, the
+    total time was reduced to 1.0342 seconds. The performance using multi-threading was only slightly more
+    improved than the linear version, however, I expect that as the number of entries grows and number of
+    documents being added to the database increases the performance using multi-threading will be a better
+    long-term solution. This was demonstrated by including the import of the rental.csv data, which resulted
+    in a total time of 1.5869 seconds which is again, another slight improvement over the linear.py file import.
+
+
+Contention Failure
+-One example of where the program could fail as a result of contention is where the thread is run without
+ the results being added to the queue within the module. The for loop controlling the threads is expecting
+ for the data to be added to the queue before exiting the loop. This will result in the loop never completing
+ and the thread loop will not close. This is demonstrated in parallel_contention.py.
