@@ -1,10 +1,12 @@
 import sys
 sys.path.append('C:\\Users\\chris\\documents\\PY220_Git\\SP_Python220B_2019\\students\\'
                 'chris_lombardi\\Lesson07\\assignment')
-
+import os
 import unittest
+import csv
 import linear
 import logging
+import sample_data_expand as expander
 from pymongo import errors as pyerror
 
 
@@ -12,8 +14,30 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 PATH = ('C:\\users\\chris\\documents\\PY220_Git\\SP_Python220B_2019\\students\\'
         'chris_lombardi\\Lesson07\\assignment\\data')
+AVAIL_PRODS = {}
 
 class test_database(unittest.TestCase):
+
+    def setup(self):
+        # Generate test products file with 10 entries.
+        print('Running setup...')
+        expander.expand_products('test_prod.csv', 10)
+
+        # Read the file into a list and get the entries that have availability.
+        file_path = os.path.join(PATH, 'test_prod.csv')
+        entries=[]
+        with open(file_path, mode='r', newline='') as file:
+            reader = csv.reader(file)
+            next(reader)
+            for row in reader:
+                entries.append(row)
+
+        for entry in entries:
+            if int(entry[3]) > 0:
+                prod_info = {'description': entry[1],
+                             'product_type': entry[2],
+                             'quantity_available': entry[3]}
+                AVAIL_PRODS[entry[0]] = prod_info
 
     def test_import_data(self):
         """Test importing data into the database"""
@@ -51,20 +75,15 @@ class test_database(unittest.TestCase):
         self.assertEqual(tup3_errors, 10)
         linear.drop_all()
 
-    #def test_show_available_products(self):
-    #    """Test show_available_products function"""
-    #    # Clear the database
-    #    linear.drop_all()
-    #    expected_data = {'prd0001': {'description': 'shovel', 'product_type': 'diningroom',
-    #                     'quantity_available': '2'}, 'prd002': {'description': 'lamp',
-    #                    'product_type': 'office', 'quantity_available': '3'},
-    #                     'prd003': {'description': 'desk', 'product_type': 'office',
-    #                     'quantity_available': '1'}, 'prd005': {'description': 'shovel',
-    #                     'product_type': 'yard', 'quantity_available': '5'}}
-    #    linear.import_data(PATH, 'products.csv', 'customers.csv', 'rentals.csv')
-    #    return_dict = linear.show_available_products()
-    #    self.assertEqual(expected_data, return_dict)
-    #    linear.drop_all()
+    def test_show_available_products(self):
+        """Test show_available_products function"""
+        # Clear the database
+        linear.drop_all()
+        self.setup()
+        linear.import_products(PATH, 'test_prod.csv')
+        return_dict = linear.show_available_products()
+        self.assertEqual(AVAIL_PRODS, return_dict)
+        linear.drop_all()
 
     def test_show_rentals(self):
         """Test show_rentals function"""
@@ -80,3 +99,6 @@ class test_database(unittest.TestCase):
         return_dict = linear.show_rentals('prd0001')
         self.assertEqual(expected_data, return_dict)
         linear.drop_all()
+
+if __name__ == '__main__':
+    test_database.setup()
