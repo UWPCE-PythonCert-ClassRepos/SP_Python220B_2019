@@ -33,6 +33,7 @@ class MongoDBConnection():
         self.connection.close()
 
 def import_products(directory_name, filename):
+    """Import product data into a MongoDB database from a *.csv file"""
     prod_start = time.time()
     error_prod = 0
     file_path = os.path.join(directory_name, filename)
@@ -56,8 +57,7 @@ def import_products(directory_name, filename):
                     try:
                         products.insert_one(prod_add)
                         #LOGGER.info('Added product to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding product to database.')
                         error_prod += 1
         except FileNotFoundError:
@@ -70,6 +70,7 @@ def import_products(directory_name, filename):
 
 
 def import_customers(directory_name, filename):
+    """Import customer data into a MongoDB database from a *.csv file"""
     cust_start = time.time()
     error_cust = 0
     file_path = os.path.join(directory_name, filename)
@@ -94,8 +95,7 @@ def import_customers(directory_name, filename):
                     try:
                         customers.insert_one(cust_add)
                         #LOGGER.info('Added customer to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding customer to database.')
                         error_cust += 1
         except FileNotFoundError:
@@ -107,6 +107,7 @@ def import_customers(directory_name, filename):
             cust_end-cust_start), error_cust
 
 def import_rentals(directory_name, filename):
+    """Import rental data into a MongoDB database from a *.csv file"""
     rent_start = time.time()
     error_rent = 0
     file_path = os.path.join(directory_name, filename)
@@ -129,8 +130,7 @@ def import_rentals(directory_name, filename):
                     try:
                         rentals.insert_one(rental_add)
                         #LOGGER.info('Added rental to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding rental to database.')
                         error_rent += 1
         except FileNotFoundError:
