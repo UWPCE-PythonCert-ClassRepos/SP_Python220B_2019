@@ -4,8 +4,7 @@ Tests for parallel.py
 """
 from unittest import TestCase
 from unittest.mock import patch
-import parallel  # pylint: disable=E0401
-
+from Assignment import parallel
 
 TEST_DB_NAMES = ['test_products', 'test_customers', 'test_rentals']
 
