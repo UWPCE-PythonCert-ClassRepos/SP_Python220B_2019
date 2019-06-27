@@ -4,8 +4,8 @@ import logging
 import datetime
 import time
 import os
-from pymongo import MongoClient
 from timeit import timeit as timer
+from pymongo import MongoClient
 
 
 class MongoDBConnection:
@@ -46,13 +46,14 @@ LOG_FILE = 'linear' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 LOGGER = __setup_logger('database_logger', LOG_FILE, logging.DEBUG)
 
 
-def import_data(directory_name, product_file, customer_file, rental_file):  # pylint: disable=R0914
+def import_data(directory_name, product_file, customer_file, rental_file):  # pylint: disable=R0914, R0915
     """
     This function takes a directory name and three csv files as input, one with product data,
     one with customer data, and the third one with rentals data. It creates and populates a new
-    MongoDB database with these data. It returns 2 tuples: the first with a record count of the
-    number of products, customers, and rentals added (in that order), the second with a count
-    of any errors that occurred, in the same order
+    MongoDB database with these data. It returns a list with 3 tuples for customers, products, and
+    rentals. Each tuple will contain 4 values: the number of records processed (int), the record
+    count in the database prior to running (int), the record count after running (int), and the time
+    taken to run the module (float)
     """
     db_names = __set_collection_names()
     with MONGO:
@@ -138,7 +139,7 @@ def __set_collection_names():
 if __name__ == '__main__':
     LOGGER.info('timeit run: %s', timer("import_data('', 'Products.csv', 'Customers.csv', "
                                         "'Rentals.csv')", globals=globals(), number=10))
-    erase_db_names = __set_collection_names()
+    erase_db_names = __set_collection_names()  # pylint: disable=C0103
     with MONGO:
         erase_db = MONGO.connection.media  # pylint: disable=C0103
         erase_db[erase_db_names[0]].drop()
