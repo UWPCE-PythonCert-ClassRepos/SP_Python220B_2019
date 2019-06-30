@@ -59,8 +59,7 @@ def import_products(directory_name, filename):
                     try:
                         products.insert_one(prod_add)
                         #LOGGER.info('Added product to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding product to database.')
                         error_prod += 1
         except FileNotFoundError:
@@ -98,8 +97,7 @@ def import_customers(directory_name, filename):
                     try:
                         customers.insert_one(cust_add)
                         #LOGGER.info('Added customer to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding customer to database.')
                         error_cust += 1
         except FileNotFoundError:
@@ -135,8 +133,7 @@ def import_rentals(directory_name, filename):
                     try:
                         rentals.insert_one(rental_add)
                         #LOGGER.info('Added rental to the database.')
-                    except pyerror.DuplicateKeyError as error:
-                        #LOGGER.info(error)
+                    except pyerror.DuplicateKeyError:
                         #LOGGER.info('Error adding rental to database.')
                         error_rent += 1
         except FileNotFoundError:
@@ -202,8 +199,10 @@ if __name__ == '__main__':
     output_queue = Queue()
     queue_storage = []
     threads = []
-    threads.append(threading.Thread(target=import_products, args=(path, 'products.csv'), daemon=True))
-    threads.append(threading.Thread(target=import_customers, args=(path, 'customers.csv'), daemon=True))
+    threads.append(threading.Thread(target=import_products,
+                                    args=(path, 'products.csv'), daemon=True))
+    threads.append(threading.Thread(target=import_customers,
+                                    args=(path, 'customers.csv'), daemon=True))
     threads.append(threading.Thread(target=import_rentals, args=(path, 'rentals.csv'), daemon=True))
     for thread in threads:
         thread.start()
