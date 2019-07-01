@@ -3,6 +3,7 @@ import csv
 import os
 import pymongo
 from pymongo import MongoClient
+import cProfile
 
 
 class MongoDBConnection:
