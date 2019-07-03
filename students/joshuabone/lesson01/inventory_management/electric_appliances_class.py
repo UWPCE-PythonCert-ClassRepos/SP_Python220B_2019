@@ -17,12 +17,7 @@ class ElectricAppliances(Inventory):  # pylint: disable=too-few-public-methods
 
     def return_as_dictionary(self):
         """Method docstring"""
-        output_dict = dict()
-        output_dict['productCode'] = self.product_code
-        output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
+        output_dict = super().return_as_dictionary()
         output_dict['brand'] = self.brand
         output_dict['voltage'] = self.voltage
-
         return output_dict
