@@ -58,6 +58,9 @@ def calculate_additional_fields(local_data):
                                                       '%m/%d/%y')
             logging.debug("Parsed rental_start: %s", rental_start)
 
+            # Some entries may be missing a 'rental_end' field. If this is the
+            # case we should skip the additional field calculations and log it
+            # as a warning.
             if not value['rental_end']:
                 logging.warning("Field rental_end missing for entry %s. "
                                 "Skipping additional calculated fields.",
@@ -72,6 +75,9 @@ def calculate_additional_fields(local_data):
             value['total_days'] = (rental_end - rental_start).days
             logging.debug("Calculated total_days: %s", value['total_days'])
 
+            # Some entries may may contain a 'rental_end' field that is older
+            # than the 'rental_start' field. If this is the case we should skip
+            # the additional field calculations and log it as a warning.
             if value['total_days'] < 0:
                 logging.warning("Total days was negative for entry %s. "
                                 "Skipping additional calculated fields.",
