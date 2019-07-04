@@ -1,6 +1,20 @@
-'''
-Returns total price paid for individual rentals
-'''
+"""
+Returns total price paid for individual rentals.
+
+Note that logging can be enabled from the command line using the --d or --debug
+argument flags with the following options:
+
+0: No debug messages or log file.
+1: Only error messages.
+2: Error messages and warnings.
+3: Error messages, warnings and debug messages.
+
+If logging is enabled, all log messages will be written to a .log file in this
+directory named according to the current date, e.g. '2019-01-01.log'.
+Additionally, both log and debug (if enabled) messages will be printed to
+console.
+"""
+
 import argparse
 import json
 import datetime
