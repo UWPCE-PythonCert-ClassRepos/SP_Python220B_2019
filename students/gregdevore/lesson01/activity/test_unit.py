@@ -97,3 +97,28 @@ class CalculatorTests(TestCase):
         self.calculator.divide()
 
         self.divider.calc.assert_called_with(1, 2)
+
+    def test_sequential_operations(self):
+        # This test ensures that two operations can be performed in sequence
+        # This requires that the first operation store its result so that the
+        # second operation can use it
+
+        # First, mock up calc methods since we aren't relying on their
+        # correctness
+        self.adder.calc = MagicMock(return_value=5)
+        self.subtracter.calc = MagicMock(return_value=4)
+
+        # Next, enter numbers and perform first operation
+        self.calculator.enter_number(2)
+        self.calculator.enter_number(3)
+        self.calculator.add()
+        # Now, the stack should contain only [5], which is the return value of
+        # our adder
+        self.assertEqual([5], self.calculator.stack)
+
+        # Next, enter single number and perform subtraction
+        self.calculator.enter_number(1)
+        self.calculator.subtract()
+        # Now, the stack should contain only [4], which is the return value of
+        # our subtracter
+        self.assertEqual([4], self.calculator.stack)
