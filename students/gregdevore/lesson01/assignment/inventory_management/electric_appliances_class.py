@@ -3,7 +3,7 @@ Module to create electric appliance object
 """
 
 # Electric appliances class
-from inventory_class import Inventory
+from .inventory_class import Inventory
 
 class ElectricAppliances(Inventory):
     """
