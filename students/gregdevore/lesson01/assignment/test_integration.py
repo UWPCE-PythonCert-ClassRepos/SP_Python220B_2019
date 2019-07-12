@@ -10,7 +10,7 @@ class ModuleTests(TestCase):
     def test_module(self):
         # Define furniture item to add
         furntiture_item = ('001', 'chair', 50, 'y', 'fabric', 'L')
-        # Dictionar representation
+        # Dictionary representation
         furniture_dict = {'product_code':'001', 'description':'chair',
                           'market_price':24, 'rental_price':50,
                           'material':'fabric', 'size':'L'}
