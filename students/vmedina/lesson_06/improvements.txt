@@ -1,0 +1,6 @@
+*Fixed year_count["2017"] += 1 listed twice to year_count["2018"] += 1
+*combined both open(filename) to one with open(filename)
+*combined for loops to one for loop
+*removed the for loop to determine if date is >2012, not needed
+*changed prints to logging.info for time savings
+*changed subsequent if's to elif's
