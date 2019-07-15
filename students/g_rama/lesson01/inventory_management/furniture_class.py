@@ -1,8 +1,8 @@
 """# Furniture class"""
-from inventory_class import Inventory # pylint: disable=import-error
+from inventory_class import Inventory  # pylint: disable=import-error
 
 
-class Furniture(Inventory): # pylint: disable=too-few-public-methods
+class Furniture(Inventory):  # pylint: disable=too-few-public-methods
 
     """Furniture class to store the furniture data """
 
@@ -16,11 +16,7 @@ class Furniture(Inventory): # pylint: disable=too-few-public-methods
 
     def return_as_dictionary(self):
         """Function to store furniture as a data dictionary"""
-        output_dict = dict()
-        output_dict['productCode'] = self.product_code
-        output_dict['description'] = self.description
-        output_dict['market_price'] = self.market_price
-        output_dict['rental_price'] = self.rental_price
+        output_dict = Inventory.return_as_dictionary(self)
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 

@@ -1,0 +1,21 @@
+2019-06-05 22:43:04,643 basic_operations.py:27  INFO                 One off program to build the classes from the model in             the database
+2019-06-05 22:43:04,877 basic_operations.py:124 INFO                 We will delete all customers...
+2019-06-05 22:43:04,895 basic_operations.py:82  INFO                 Database add successful for customerId Michael
+2019-06-05 22:43:05,044 basic_operations.py:109 INFO                 Search customer by Id: 1
+2019-06-05 22:43:05,189 basic_operations.py:124 INFO                 We will delete all customers...
+2019-06-05 22:43:05,211 basic_operations.py:82  INFO                 Database add successful for customerId Allen
+2019-06-05 22:43:05,390 basic_operations.py:82  INFO                 Database add successful for customerId Shaw
+2019-06-05 22:43:05,613 basic_operations.py:82  INFO                 Database add successful for customerId Vince
+2019-06-05 22:43:05,727 basic_operations.py:82  INFO                 Database add successful for customerId Rose
+2019-06-05 22:43:05,913 basic_operations.py:82  INFO                 Database add successful for customerId Steve
+2019-06-05 22:43:06,044 basic_operations.py:97  INFO                 REturn all customers
+2019-06-05 22:43:06,044 basic_operations.py:132 INFO                 We will delete this customer 1...
+2019-06-05 22:43:06,194 basic_operations.py:109 INFO                 Search customer by Id: 1
+2019-06-05 22:43:06,360 basic_operations.py:124 INFO                 We will delete all customers...
+2019-06-05 22:43:06,360 basic_operations.py:82  INFO                 Database add successful for customerId Shawn
+2019-06-05 22:43:06,477 basic_operations.py:162 INFO                 integer with the number of customers whose status is         currently active
+2019-06-05 22:43:06,492 basic_operations.py:82  INFO                 Database add successful for customerId Charle
+2019-06-05 22:43:06,713 basic_operations.py:97  INFO                 REturn all customers
+2019-06-05 22:43:06,727 basic_operations.py:144 INFO                 We will update this customer 2...
+2019-06-05 22:43:06,860 basic_operations.py:109 INFO                 Search customer by Id: 2
+2019-06-05 22:43:06,860 basic_operations.py:144 INFO                 We will update this customer 10...
