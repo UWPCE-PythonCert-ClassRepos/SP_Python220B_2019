@@ -221,3 +221,105 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ➜  tests git:(master) ✗
 
 
+
+
+➜  tests git:(master) ✗ python3 test_parallel.py
+deleted the products
+deleted the customers
+deleted the rentals
+900
+0
+984
+0
+(0, 900, 900)
+(0, 984, 984)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.537s
+
+OK
+Timer unit: 1e-06 s
+
+Total time: 0.005393 s
+File: test_parallel.py
+Function: test_import_data at line 18
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    18                                               @profile
+    19                                               def test_import_data(self):
+    20                                                   """Testing of the import data"""
+    21         1       5390.0   5390.0     99.9          parallel.drop_collections()
+    22         1          3.0      3.0      0.1          customer, product = parallel.import_data(directory_name, "customers.csv",
+    23                                                                                            "products.csv", "rentals.csv")
+    24                                                   actual_output = customer, product
+    25                                                   expected_output = ((0, 900, 900), (0, 984, 984))
+    26                                                   assert actual_output == expected_output
+
+Timer unit: 1e-06 s
+
+Total time: 0.530209 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/parallel.py
+Function: import_data at line 35
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    35                                           @profile
+    36                                           def import_data(directory_name, customer_file, product_file, rental_file):
+    37                                               """Import data for inventory management"""
+    38
+    39                                               #procs = []
+    40         1      19186.0  19186.0      3.6      with multiprocessing.pool.Pool() as pool:
+    41         1        138.0    138.0      0.0          cust = pool.apply_async(import_generic, (directory_name, customer_file, "customers"))
+    42         1         28.0     28.0      0.0          prod = pool.apply_async(import_generic, (directory_name, product_file, "products"))
+    43                                                   customer_prior_imported_table_count, customer_imported_table_count, customer_after_imported_table_count = \
+    44         1     456362.0 456362.0     86.1              cust.get()
+    45                                                   product_prior_imported_table_count, product_imported_table_count, product_after_imported_table_count = \
+    46         1      43564.0  43564.0      8.2              prod.get()
+    47         1          1.0      1.0      0.0          customer_tuple = (customer_prior_imported_table_count, customer_imported_table_count,
+    48         1          1.0      1.0      0.0                            customer_after_imported_table_count)
+    49         1          0.0      0.0      0.0          product_tuple = (product_prior_imported_table_count, product_imported_table_count,
+    50         1          0.0      0.0      0.0                           product_after_imported_table_count)
+    51         1         62.0     62.0      0.0          print(customer_tuple)
+    52         1          6.0      6.0      0.0          print(product_tuple)
+    53         1      10861.0  10861.0      2.0          return customer_tuple, product_tuple
+
+Total time: 0 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/parallel.py
+Function: import_generic at line 71
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    71                                           @profile
+    72                                           def import_generic(directory_name, import_file, imported_table):
+    73                                               mongo = MongoDBConnection()
+    74                                               with mongo:
+    75                                                   # mongodb database; it all starts here
+    76                                                   DB = mongo.connection.hpnorton
+    77                                                   imported_error = 0
+    78                                                   #imported_table_count = 0
+    79                                                   try:
+    80                                                       import_file_csv = os.path.join(directory_name, import_file)
+    81                                                   except FileNotFoundError:
+    82                                                       imported_error += 1
+    83                                                   imported_table = imported_table
+    84                                                   imp_table = DB[imported_table]
+    85                                                   prior_imported_table_count = DB[imported_table].count()
+    86                                                   try:
+    87                                                       with open(import_file_csv, encoding='utf-8-sig') as file_csv:
+    88                                                           imported_table_csv = csv.DictReader(file_csv)
+    89                                                           for row in imported_table_csv:
+    90                                                               try:
+    91                                                                   imp_table.insert_one(row)
+    92                                                               except pymongo.errors.DuplicateKeyError:
+    93                                                                   imported_error += 1
+    94
+    95                                                           after_imported_table_count = DB[imported_table].count()
+    96
+    97                                                   except FileNotFoundError:
+    98                                                       imported_error += 1
+    99                                                   imported_table_count = after_imported_table_count - prior_imported_table_count
+   100                                                   print(imported_table_count)
+   101                                                   print(imported_error)
+   102
+   103                                                   return prior_imported_table_count, imported_table_count, after_imported_table_count
