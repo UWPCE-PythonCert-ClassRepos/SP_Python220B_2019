@@ -23,7 +23,7 @@ class TestLinear(unittest.TestCase):
         linear.drop_collections()
         customer, product = linear.import_data(DIRECTORY_NAME, "customers.csv",
                                                "products.csv", "rentals.csv")
-        actual_output = customer, product
+        actual_output = customer[0:3], product[0:3]
         expected_output = ((0, 900, 900), (0, 984, 984))
         assert actual_output == expected_output
 
