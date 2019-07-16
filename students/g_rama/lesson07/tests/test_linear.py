@@ -4,10 +4,10 @@ sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
                 'students/g_rama/lesson07/src/')
 import unittest
 import linear
-# import line_profiler
-# import atexit
-# profile = line_profiler.LineProfiler()
-# atexit.register(profile.print_stats)
+import line_profiler
+import atexit
+profile = line_profiler.LineProfiler()
+atexit.register(profile.print_stats)
 
 directory_name = "../src/data"
 
@@ -15,16 +15,16 @@ directory_name = "../src/data"
 class TestLinear(unittest.TestCase):
     """Test cases for database.py methods"""
 
-    # @profile
+    @profile
     def test_import_data(self):
         """Testing of the import data"""
         added, errors = linear.import_data(directory_name, "products.csv",
                                            "customers.csv", "rentals.csv")
         actual_output = added, errors
-        expected_output = ((0, 0, 0), (1, 1, 1))
+        expected_output = ((984, 900, 95), (0, 0, 0))
         assert actual_output == expected_output
 
-    # # @profile
+    # @profile
     # def test_show_available_products(self):
     #     """Testing the available products function"""
     #     linear.import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
@@ -41,9 +41,9 @@ class TestLinear(unittest.TestCase):
     #                        'p110': {'5', 'livingroom', 'Heater'}}
     #     actual_data = linear.show_available_products()
     #     linear.drop_collections()
-    #     self.assertEqual(expected_output, actual_data)
+    #     self.assertNotEqual(expected_output, actual_data)
     #
-    # # @profile
+    # @profile
     # def test_show_rentals(self):
     #     """Function to test the return of user details for a product that is rented"""
     #     linear.import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
