@@ -1,25 +1,27 @@
-"""Testing the database.py"""
+"""Testing the linear.py"""
 import sys
+import unittest
+import atexit
+from line_profiler import LineProfiler
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
                 'students/g_rama/lesson07/src/')
-import unittest
+#pylint: disable=import-error
 import linear
-from line_profiler import LineProfiler
-import atexit
-profile = LineProfiler()
-atexit.register(profile.print_stats)
 
-directory_name = "../src/data"
+PROFILE = LineProfiler()
+atexit.register(PROFILE.print_stats)
+
+DIRECTORY_NAME = "../src/data"
 
 
 class TestLinear(unittest.TestCase):
     """Test cases for database.py methods"""
 
-    @profile
+    @PROFILE
     def test_import_data(self):
         """Testing of the import data"""
         linear.drop_collections()
-        customer, product = linear.import_data(directory_name, "customers.csv",
+        customer, product = linear.import_data(DIRECTORY_NAME, "customers.csv",
                                                "products.csv", "rentals.csv")
         actual_output = customer, product
         expected_output = ((0, 900, 900), (0, 984, 984))
