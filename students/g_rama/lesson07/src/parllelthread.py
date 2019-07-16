@@ -1,5 +1,6 @@
 """Mongo DB class to import the CSV data and to display the data"""
 import csv
+import time
 import os
 import pymongo
 from pymongo import MongoClient
@@ -36,12 +37,12 @@ def import_data(directory_name, customer_file, product_file, rental_file):
     pool = ThreadPool(processes=2)
     cust = pool.apply_async(import_generic, args=(directory_name, customer_file, "customers"))
     prod = pool.apply_async(import_generic, args=(directory_name, product_file, "products"))
-    cust_pri_imp_table_count, cust_imp_table_count, cust_after_imp_table_count = cust.get()
-    prod_pri_imp_table_count, prod_imp_table_count, prod_after_imp_table_count = prod.get()
+    cust_pri_imp_table_count, cust_imp_table_count, cust_after_imp_table_count, cust_time = cust.get()
+    prod_pri_imp_table_count, prod_imp_table_count, prod_after_imp_table_count, prod_time = prod.get()
     customer_tuple = (cust_pri_imp_table_count, cust_imp_table_count,
-                      cust_after_imp_table_count)
+                      cust_after_imp_table_count, cust_time)
     product_tuple = (prod_pri_imp_table_count, prod_imp_table_count,
-                     prod_after_imp_table_count)
+                     prod_after_imp_table_count, prod_time)
     print(customer_tuple)
     print(product_tuple)
     return customer_tuple, product_tuple
@@ -49,6 +50,7 @@ def import_data(directory_name, customer_file, product_file, rental_file):
 
 @profile
 def import_generic(directory_name, import_file, imported_table):
+    imp_start = time.time()
     mongo = MongoDBConnection()
     with mongo:
         # mongodb database; it all starts here
@@ -78,8 +80,9 @@ def import_generic(directory_name, import_file, imported_table):
         imported_table_count = after_imported_table_count - prior_imported_table_count
         print(imported_table_count)
         print(imported_error)
+        imp_end = time.time()
 
-        return prior_imported_table_count, imported_table_count, after_imported_table_count
+        return prior_imported_table_count, imported_table_count, after_imported_table_count, imp_end-imp_start
 
 
 def show_available_products():

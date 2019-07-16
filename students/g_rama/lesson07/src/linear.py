@@ -1,6 +1,7 @@
 """Mongo DB class to import the CSV data and to display the data"""
 import csv
 import os
+import time
 import atexit
 import pymongo
 from pymongo import MongoClient
@@ -29,17 +30,16 @@ class MongoDBConnection:
 @PROFILE
 def import_data(directory_name, customer_file, product_file, rental_file):
     """Import data for inventory management"""
-
-    prod_pri_imp_table_count, prod_imp_table_count, prod_after_imp_table_count = \
+    prod_pri_imp_table_count, prod_imp_table_count, prod_after_imp_table_count, prod_time = \
         import_generic(directory_name, product_file, "products")
-    cust_prior_imported_table_count, cust_imported_table_count, cust_after_imported_table_count = \
+    cust_prior_imported_table_count, cust_imported_table_count, cust_after_imported_table_count, cust_time = \
         import_generic(directory_name, customer_file, "customers")
     #rentals_count, rentals_error = import_generic(directory_name, rental_file, "rentals")
 
     customer_tuple = (cust_prior_imported_table_count, cust_imported_table_count,
-                      cust_after_imported_table_count)
+                      cust_after_imported_table_count, cust_time)
     product_tuple = (prod_pri_imp_table_count, prod_imp_table_count,
-                     prod_after_imp_table_count)
+                     prod_after_imp_table_count, prod_time)
     print(customer_tuple)
     print(product_tuple)
     return customer_tuple, product_tuple
@@ -49,6 +49,7 @@ def import_data(directory_name, customer_file, product_file, rental_file):
 @PROFILE
 def import_generic(directory_name, import_file, imported_table):
     """A generic function to import data to mongo DB"""
+    imp_start = time.time()
     mongo = MongoDBConnection()
     with mongo:
         # mongodb database; it all starts here
@@ -78,8 +79,9 @@ def import_generic(directory_name, import_file, imported_table):
         imported_table_count = after_imported_table_count - prior_imported_table_count
         print(imported_table_count)
         print(imported_error)
+        imp_end = time.time()
 
-        return prior_imported_table_count, imported_table_count, after_imported_table_count
+        return prior_imported_table_count, imported_table_count, after_imported_table_count, imp_end-imp_start
 
 
 def show_available_products():
