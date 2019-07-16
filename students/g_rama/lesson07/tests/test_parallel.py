@@ -19,10 +19,10 @@ class TestLinear(unittest.TestCase):
     def test_import_data(self):
         """Testing of the import data"""
         parallel.drop_collections()
-        added, errors = parallel.import_data(directory_name, "products.csv",
-                                           "customers.csv", "rentals.csv")
-        actual_output = added, errors
-        expected_output = ((984, 900, 95), (0, 0, 0))
+        customer, product = parallel.import_data(directory_name, "customers.csv",
+                                                 "products.csv", "rentals.csv")
+        actual_output = customer, product
+        expected_output = ((0, 900, 900), (0, 984, 984))
         assert actual_output == expected_output
 
     # # @profile
