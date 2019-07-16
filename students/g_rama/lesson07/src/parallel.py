@@ -5,9 +5,12 @@ import pymongo
 from pymongo import MongoClient
 from line_profiler import LineProfiler
 import atexit
+from threading import Thread
+from queue import Queue
+import time
 profile = LineProfiler()
 atexit.register(profile.print_stats)
-
+# acquire_lock = threading.Lock()
 
 class MongoDBConnection:
     """MongoDB Connection"""
@@ -30,7 +33,9 @@ class MongoDBConnection:
 def import_data(directory_name, product_file, customer_file, rental_file):
     """Import data for inventory management"""
 
+    # threads = []
     products_count, products_error = import_generic(directory_name, product_file, "products")
+    #products_count, products_error = threads.append(Thread(target  =  import_generic(directory_name, product_file, "products")))
     customers_count, customers_error = import_generic(directory_name, customer_file, "customers")
     rentals_count, rentals_error = import_generic(directory_name, rental_file, "rentals")
 
