@@ -1,0 +1,223 @@
+1. Profiling when the import is happening linearly. i.e if
+
+➜  tests git:(master) ✗ python3 test_linear.py
+deleted the products
+deleted the customers
+deleted the rentals
+984
+0
+900
+0
+95
+0
+(984, 900, 95)
+(0, 0, 0)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.848s
+
+OK
+Timer unit: 1e-06 s
+
+Total time: 0.023012 s
+File: test_linear.py
+Function: test_import_data at line 18
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    18                                               @profile
+    19                                               def test_import_data(self):
+    20                                                   """Testing of the import data"""
+    21         1      23008.0  23008.0    100.0          linear.drop_collections()
+    22         1          4.0      4.0      0.0          added, errors = linear.import_data(directory_name, "products.csv",
+    23                                                                                      "customers.csv", "rentals.csv")
+    24                                                   actual_output = added, errors
+    25                                                   expected_output = ((984, 900, 95), (0, 0, 0))
+    26                                                   assert actual_output == expected_output
+
+Timer unit: 1e-06 s
+
+Total time: 0.82484 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/linear.py
+Function: import_data at line 29
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    29                                           @profile
+    30                                           def import_data(directory_name, product_file, customer_file, rental_file):
+    31                                               """Import data for inventory management"""
+    32
+    33         1     394889.0 394889.0     47.9      products_count, products_error = import_generic(directory_name, product_file, "products")
+    34         1     352831.0 352831.0     42.8      customers_count, customers_error = import_generic(directory_name, customer_file, "customers")
+    35         1      77078.0  77078.0      9.3      rentals_count, rentals_error = import_generic(directory_name, rental_file, "rentals")
+    36
+    37         1          2.0      2.0      0.0      tuple1 = (products_count, customers_count, rentals_count)
+    38         1          1.0      1.0      0.0      tuple2 = (products_error, customers_error, rentals_error)
+    39         1         13.0     13.0      0.0      print(tuple1)
+    40         1         25.0     25.0      0.0      print(tuple2)
+    41         1          1.0      1.0      0.0      return tuple1, tuple2
+
+Total time: 0.821337 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/linear.py
+Function: import_generic at line 44
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    44                                           @profile
+    45                                           def import_generic(directory_name, import_file, imported_table):
+    46         3         13.0      4.3      0.0      mongo = MongoDBConnection()
+    47         3       2710.0    903.3      0.3      with mongo:
+    48                                                   # mongodb database; it all starts here
+    49         3         84.0     28.0      0.0          DB = mongo.connection.hpnorton
+    50         3          1.0      0.3      0.0          imported_error = 0
+    51         3          3.0      1.0      0.0          imported_table_count = 0
+    52         3          2.0      0.7      0.0          try:
+    53         3         43.0     14.3      0.0              import_file_csv = os.path.join(directory_name, import_file)
+    54                                                   except FileNotFoundError:
+    55                                                       imported_error += 1
+    56         3          1.0      0.3      0.0          imported_table = imported_table
+    57         3         90.0     30.0      0.0          imp_table = DB[imported_table]
+    58         3          1.0      0.3      0.0          try:
+    59         3       1275.0    425.0      0.2              with open(import_file_csv, encoding='utf-8-sig') as file_csv:
+    60         3         30.0     10.0      0.0                  imported_table_csv = csv.DictReader(file_csv)
+    61      1982      25589.0     12.9      3.1                  for row in imported_table_csv:
+    62      1979       1115.0      0.6      0.1                      try:
+    63      1979     788749.0    398.6     96.0                          imp_table.insert_one(row)
+    64                                                               except pymongo.errors.DuplicateKeyError:
+    65                                                                   imported_error += 1
+    66                                                           # if imported_table == 'products':
+    67                                                           #     imported_table_count = DB.products.count_documents({})
+    68                                                           # elif imported_table == 'customers':
+    69                                                           #     imported_table_count = DB.customers.count_documents({})
+    70                                                           # elif imported_table == 'rentals':
+    71                                                           #     imported_table_count = DB.rentals.count_documents({})
+    72         3          3.0      1.0      0.0                  if imported_table == 'products':
+    73         1        378.0    378.0      0.0                      imported_table_count = DB.products.count()
+    74         2          2.0      1.0      0.0                  elif imported_table == 'customers':
+    75         1        341.0    341.0      0.0                      imported_table_count = DB.customers.count()
+    76         1          1.0      1.0      0.0                  elif imported_table == 'rentals':
+    77         1        332.0    332.0      0.0                      imported_table_count = DB.rentals.count()
+    78                                                   except FileNotFoundError:
+    79                                                       imported_error += 1
+    80         3         53.0     17.7      0.0          print(imported_table_count)
+    81         3         20.0      6.7      0.0          print(imported_error)
+    82
+    83         3        501.0    167.0      0.1          return imported_table_count, imported_error
+
+
+
+
+################
+
+➜  tests git:(master) ✗ python3 test_linear.py
+deleted the products
+deleted the customers
+deleted the rentals
+984
+0
+900
+0
+95
+0
+(984, 900, 95)
+(0, 0, 0)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.874s
+
+OK
+Timer unit: 1e-06 s
+
+Total time: 0.056926 s
+File: test_linear.py
+Function: test_import_data at line 18
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    18                                               @profile
+    19                                               def test_import_data(self):
+    20                                                   """Testing of the import data"""
+    21         1      56923.0  56923.0    100.0          linear.drop_collections()
+    22         1          3.0      3.0      0.0          added, errors = linear.import_data(directory_name, "products.csv",
+    23                                                                                      "customers.csv", "rentals.csv")
+    24                                                   actual_output = added, errors
+    25                                                   expected_output = ((984, 900, 95), (0, 0, 0))
+    26                                                   assert actual_output == expected_output
+
+Timer unit: 1e-06 s
+
+Total time: 0.817215 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/linear.py
+Function: import_data at line 29
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    29                                           @profile
+    30                                           def import_data(directory_name, product_file, customer_file, rental_file):
+    31                                               """Import data for inventory management"""
+    32
+    33         1     396622.0 396622.0     48.5      products_count, products_error = import_generic(directory_name, product_file, "products")
+    34         1     349456.0 349456.0     42.8      customers_count, customers_error = import_generic(directory_name, customer_file, "customers")
+    35         1      71114.0  71114.0      8.7      rentals_count, rentals_error = import_generic(directory_name, rental_file, "rentals")
+    36
+    37         1          1.0      1.0      0.0      tuple1 = (products_count, customers_count, rentals_count)
+    38         1          0.0      0.0      0.0      tuple2 = (products_error, customers_error, rentals_error)
+    39         1         15.0     15.0      0.0      print(tuple1)
+    40         1          7.0      7.0      0.0      print(tuple2)
+    41         1          0.0      0.0      0.0      return tuple1, tuple2
+
+Total time: 0.813866 s
+File: /Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/students/g_rama/lesson07/src/linear.py
+Function: import_generic at line 44
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    44                                           @profile
+    45                                           def import_generic(directory_name, import_file, imported_table):
+    46         3         93.0     31.0      0.0      mongo = MongoDBConnection()
+    47         3      20404.0   6801.3      2.5      with mongo:
+    48                                                   # mongodb database; it all starts here
+    49         3         96.0     32.0      0.0          DB = mongo.connection.hpnorton
+    50         3          2.0      0.7      0.0          imported_error = 0
+    51         3          2.0      0.7      0.0          imported_table_count = 0
+    52         3          2.0      0.7      0.0          try:
+    53         3         66.0     22.0      0.0              import_file_csv = os.path.join(directory_name, import_file)
+    54                                                   except FileNotFoundError:
+    55                                                       imported_error += 1
+    56         3          3.0      1.0      0.0          imported_table = imported_table
+    57         3        191.0     63.7      0.0          imp_table = DB[imported_table]
+    58         3       9643.0   3214.3      1.2          prior_imported_table_count = DB[imported_table].count()
+    59         3          4.0      1.3      0.0          try:
+    60         3        945.0    315.0      0.1              with open(import_file_csv, encoding='utf-8-sig') as file_csv:
+    61         3         58.0     19.3      0.0                  imported_table_csv = csv.DictReader(file_csv)
+    62      1982      23469.0     11.8      2.9                  for row in imported_table_csv:
+    63      1979       1067.0      0.5      0.1                      try:
+    64      1979     756096.0    382.1     92.9                          imp_table.insert_one(row)
+    65                                                               except pymongo.errors.DuplicateKeyError:
+    66                                                                   imported_error += 1
+    67                                                           """ Python 3.7 supports coun_documents, python 3.7 has line_profiler compiling issues"""
+    68                                                           # if imported_table == 'products':
+    69                                                           #     imported_table_count = DB.products.count_documents({})
+    70                                                           # elif imported_table == 'customers':
+    71                                                           #     imported_table_count = DB.customers.count_documents({})
+    72                                                           # elif imported_table == 'rentals':
+    73                                                           #     imported_table_count = DB.rentals.count_documents({})
+    74         3       1085.0    361.7      0.1                  after_imported_table_count = DB[imported_table].count()
+    75                                                           #
+    76                                                           # if imported_table == 'products':
+    77                                                           #     imported_table_count = DB.products.count()
+    78                                                           # elif imported_table == 'customers':
+    79                                                           #     imported_table_count = DB.customers.count()
+    80                                                           # elif imported_table == 'rentals':
+    81                                                           #     imported_table_count = DB.rentals.count()
+    82                                                   except FileNotFoundError:
+    83                                                       imported_error += 1
+    84         3          3.0      1.0      0.0          imported_table_count = after_imported_table_count - prior_imported_table_count
+    85         3         62.0     20.7      0.0          print(imported_table_count)
+    86         3         23.0      7.7      0.0          print(imported_error)
+    87
+    88         3        552.0    184.0      0.1          return imported_table_count, imported_error
+
+➜  tests git:(master) ✗
+
+
