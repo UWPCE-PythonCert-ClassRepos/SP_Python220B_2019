@@ -3,7 +3,10 @@ import csv
 import os
 import pymongo
 from pymongo import MongoClient
-
+import line_profiler
+import atexit
+profile = line_profiler.LineProfiler()
+atexit.register(profile.print_stats)
 
 class MongoDBConnection:
     """MongoDB Connection"""
@@ -22,77 +25,9 @@ class MongoDBConnection:
         self.connection.close()
 
 
+@profile
 def import_data(directory_name, product_file, customer_file, rental_file):
     """Import data for inventory management"""
-
-    # mongo = MongoDBConnection()
-    # with mongo:
-    #     # mongodb database; it all starts here
-    #     DB = mongo.connection.hpnorton
-    #     products_error = 0
-    #     customers_error = 0
-    #     rentals_error = 0
-    #     try:
-    #         product_file_csv = os.path.join(directory_name, product_file)
-    #     except FileNotFoundError:
-    #         products_error += 1
-    #     try:
-    #         customer_file_csv = os.path.join(directory_name, customer_file)
-    #     except FileNotFoundError:
-    #         customers_error += 1
-    #     try:
-    #         rental_file_csv = os.path.join(directory_name, rental_file)
-    #     except FileNotFoundError:
-    #         rentals_error += 1
-    #
-    #     products = DB["products"]
-    #     customers = DB["customers"]
-    #     rentals = DB["rentals"]
-    #
-    #     with mongo:
-    #         DB = mongo.connection.hpnorton
-    #         print("Printing the collection of DB")
-    #         print(DB.list_collection_names())
-    #
-    #     try:
-    #         with open(product_file_csv, encoding='utf-8-sig') as product:
-    #             products_csv = csv.DictReader(product)
-    #             for row in products_csv:
-    #                 print(row)
-    #                 try:
-    #                     products.insert_one(row)
-    #                 except pymongo.errors.DuplicateKeyError:
-    #                     products_error += 1
-    #     except FileNotFoundError:
-    #         products_error += 1
-    #
-    #     try:
-    #         with open(customer_file_csv, encoding='utf-8-sig') as customer:
-    #             customers_csv = csv.DictReader(customer)
-    #             for row in customers_csv:
-    #                 print(row)
-    #                 try:
-    #                     customers.insert_one(row)
-    #                 except pymongo.errors.DuplicateKeyError:
-    #                     customers_error += 1
-    #     except FileNotFoundError:
-    #         customers_error += 1
-    #
-    #     try:
-    #         with open(rental_file_csv, encoding='utf-8-sig') as rental:
-    #             rentals_csv = csv.DictReader(rental)
-    #             for row in rentals_csv:
-    #                 print(row)
-    #                 try:
-    #                     rentals.insert_one(row)
-    #                 except Exception as ex:
-    #                     rentals_error += 1
-    #     except FileNotFoundError:
-    #         rentals_error += 1
-    #
-    #     products_count = DB.products.count_documents({})
-    #     customers_count = DB.customers.count_documents({})
-    #     rentals_count = DB.rentals.count_documents({})
 
     products_count, products_error = import_generic(directory_name, product_file, "products")
     customers_count, customers_error = import_generic(directory_name, customer_file, "customers")
@@ -100,43 +35,45 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
     tuple1 = (products_count, customers_count, rentals_count)
     tuple2 = (products_error, customers_error, rentals_error)
+    print(tuple1)
+    print(tuple2)
     return tuple1, tuple2
 
 
+@profile
 def import_generic(directory_name, import_file, imported_table):
     mongo = MongoDBConnection()
     with mongo:
         # mongodb database; it all starts here
         DB = mongo.connection.hpnorton
         imported_error = 0
+        imported_table_count = 0
         try:
             import_file_csv = os.path.join(directory_name, import_file)
-            print(import_file_csv)
         except FileNotFoundError:
             imported_error += 1
-
-        imported_table = DB[imported_table]
-        print(DB.list_collection_names())
-
-        # with mongo:
-        #     DB = mongo.connection.hpnorton
-        #     print("Printing the collection of DB")
-        #     print(DB.list_collection_names())
-
+        imported_table = imported_table
+        imp_table = DB[imported_table]
         try:
-            with open(import_file_csv, encoding='utf-8-sig'):
-                imported_table_csv = csv.DictReader(import_file_csv)
+            with open(import_file_csv, encoding='utf-8-sig') as file_csv:
+                imported_table_csv = csv.DictReader(file_csv)
                 for row in imported_table_csv:
-                    print(row)
                     try:
-                        imported_table.insert_one(row)
+                        imp_table.insert_one(row)
                     except pymongo.errors.DuplicateKeyError:
                         imported_error += 1
+                if imported_table == 'products':
+                    imported_table_count = DB.products.count_documents({})
+                elif imported_table == 'customers':
+                    imported_table_count = DB.customers.count_documents({})
+                elif imported_table == 'rentals':
+                    imported_table_count = DB.rentals.count_documents({})
         except FileNotFoundError:
             imported_error += 1
+        print(imported_table_count)
+        print(imported_error)
 
-        imported_table_count = DB.imported_table.count_documents({})
-    return imported_error, imported_table_count
+        return imported_table_count, imported_error
 
 
 def import_customers():
