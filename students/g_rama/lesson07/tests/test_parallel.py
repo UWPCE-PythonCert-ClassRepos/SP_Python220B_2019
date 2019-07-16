@@ -3,7 +3,7 @@ import sys
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
                 'students/g_rama/lesson07/src/')
 import unittest
-import linear
+import parallel
 from line_profiler import LineProfiler
 import atexit
 profile = LineProfiler()
@@ -18,8 +18,8 @@ class TestLinear(unittest.TestCase):
     @profile
     def test_import_data(self):
         """Testing of the import data"""
-        linear.drop_collections()
-        added, errors = linear.import_data(directory_name, "products.csv",
+        parallel.drop_collections()
+        added, errors = parallel.import_data(directory_name, "products.csv",
                                            "customers.csv", "rentals.csv")
         actual_output = added, errors
         expected_output = ((984, 900, 95), (0, 0, 0))
