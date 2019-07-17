@@ -1,0 +1,101 @@
+Below is a copy of my terminal debugging exercise for trying to diagnose the problem with 'recursive.py'.
+
+The flaw in the logic is that there is no base case for a number that is not a power of 2, so in this case the function will never stop calling itself. 
+
+When n is a number that is not a power of two, it keeps getting divided by 2, and gets smaller and smaller as the recursive calls continue.
+
+To fix this, a base case is required for numbers that are not a power of two.
+
+In the terminal output below, I first step through the code, and eventually set a breakpoint to observe the values of n after each recursive call. I determined that n will continue to get smaller until Python's recursion limit is reached (1000 calls).
+
+gregs-air:activity gdevore21$ python3 -m pdb recursive.py 15
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(3)<module>()
+-> """
+(Pdb) l
+  1  	"""
+  2  	recursion for debuging
+  3  ->	"""
+  4  	
+  5  	import sys
+  6  	
+  7  	
+  8  	def my_fun(n):
+  9  	    if n == 2:
+ 10  	        return True
+ 11  	    return my_fun(n / 2)
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(5)<module>()
+-> import sys
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(8)<module>()
+-> def my_fun(n):
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(14)<module>()
+-> if __name__ == '__main__':
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(15)<module>()
+-> n = int(sys.argv[1])
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(16)<module>()
+-> print(my_fun(n))
+(Pdb) ll
+  1  	"""
+  2  	recursion for debuging
+  3  	"""
+  4  	
+  5  	import sys
+  6  	
+  7  	
+  8  	def my_fun(n):
+  9  	    if n == 2:
+ 10  	        return True
+ 11  	    return my_fun(n / 2)
+ 12  	
+ 13  	
+ 14  	if __name__ == '__main__':
+ 15  	    n = int(sys.argv[1])
+ 16  ->	    print(my_fun(n))
+(Pdb) s
+--Call--
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) pp n
+15
+(Pdb) s
+--Call--
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) pp n
+7.5
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) ll
+  8  	def my_fun(n):
+  9  ->	    if n == 2:
+ 10  	        return True
+ 11  	    return my_fun(n / 2)
+(Pdb) b 9
+Breakpoint 1 at /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py:9
+(Pdb) c
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+3.75
+(Pdb) c
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+1.875
+(Pdb) c
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+0.9375
+(Pdb) exit
