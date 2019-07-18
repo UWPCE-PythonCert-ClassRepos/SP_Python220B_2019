@@ -2,6 +2,7 @@
 Module for locating all *.png files starting in a parent directory to
 the final root directory.
 """
+#pylint: disable=len-as-condition
 
 import os
 
@@ -26,6 +27,6 @@ def png_locator(path):
     return list_output
 
 if __name__ == '__main__':
-    dir_path = os.getcwd()
-    LIST_PNG_FILES = png_locator(dir_path)
+    DIRECTORY_PATH = os.getcwd()
+    LIST_PNG_FILES = png_locator(DIRECTORY_PATH)
     print(LIST_PNG_FILES)
