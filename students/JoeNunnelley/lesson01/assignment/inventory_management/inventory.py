@@ -4,8 +4,8 @@ The Inventory Module
 
 class Inventory:
     """ The Inventory Class """
-    def __init__(self, inventory={}):
-        self._inventory = inventory
+    def __init__(self, inventory=None):
+        self._inventory = inventory or {}
 
     def get_inventory(self):
         """ getter for the inventory """
@@ -14,6 +14,14 @@ class Inventory:
     def set_inventory(self, inventory):
         """ setter for the inventory """
         self._inventory = inventory
+
+    def __setitem__(self, index, value):
+        """ item setter """
+        self._inventory[index] = value
+
+    def __getitem__(self, index):
+        """ item getter """
+        return self._inventory[index]
 
 
 class InventoryItem:

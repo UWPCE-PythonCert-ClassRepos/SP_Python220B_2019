@@ -17,12 +17,4 @@ class Furniture(InventoryItem):
 
     def return_as_dictionary(self):
         """ Function to return the Furniture item as a dictionary """
-        output = {}
-        output['productCode'] = self.product_code
-        output['description'] = self.description
-        output['marketPrice'] = self.market_price
-        output['rentalPrice'] = self.rental_price
-        output['material'] = self.material
-        output['size'] = self.size
-
-        return output
+        return InventoryItem.return_as_dictionary
