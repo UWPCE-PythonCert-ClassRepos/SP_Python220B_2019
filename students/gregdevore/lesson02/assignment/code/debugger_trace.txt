@@ -1,0 +1,164 @@
+This is my first attempt at running the program. The main goal is to figure out the expected command line arguments.
+
+I'll step through the program until the portion where the command line arguments are parsed.
+
+
+gregs-air:code gdevore21$ python3 -m pdb charges_calc.py 
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(3)<module>()
+-> '''
+(Pdb) l
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8  	
+  9  	def parse_cmd_arguments():
+ 10  	    parser = argparse.ArgumentParser(description='Process some integers.')
+ 11  	    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) l
+ 38  	
+ 39  	def save_to_json(filename, data):
+ 40  	    with open(filename, 'w') as file:
+ 41  	        json.dump(data, file)
+ 42  	
+ 43  ->	if __name__ == "__main__":
+ 44  	    args = parse_cmd_arguments()
+ 45  	    data = load_rentals_file(args.input)
+ 46  	    data = calculate_additional_fields(data)
+ 47  	    save_to_json(args.output, data)
+[EOF]
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--output
+SystemExit: 2
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) exit
+
+
+From the above debugger trace, it appears that two command line arguments are required. The arguments, which are captured as args.input and args.output, specify the input and output JSON files for the program. It looks like the argparse module expects the arguments to be prefaced by -i and -o, or --input and --output.
+
+I'll run the program again, this time with the required arguments. I'll make use of breakpoints and the continue command to skip unimportant lines of code.
+
+
+gregs-air:code gdevore21$ python3 -m pdb charges_calc.py -i source.json -o out.json
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(3)<module>()
+-> '''
+(Pdb) ll
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8  	
+  9  	def parse_cmd_arguments():
+ 10  	    parser = argparse.ArgumentParser(description='Process some integers.')
+ 11  	    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12  	    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13  	
+ 14  	    return parser.parse_args()
+ 15  	
+ 16  	
+ 17  	def load_rentals_file(filename):
+ 18  	    with open(filename) as file:
+ 19  	        try:
+ 20  	            data = json.load(file)
+ 21  	        except:
+ 22  	            exit(0)
+ 23  	    return data
+ 24  	
+ 25  	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+ 31  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+ 38  	
+ 39  	def save_to_json(filename, data):
+ 40  	    with open(filename, 'w') as file:
+ 41  	        json.dump(data, file)
+ 42  	
+ 43  	if __name__ == "__main__":
+ 44  	    args = parse_cmd_arguments()
+ 45  	    data = load_rentals_file(args.input)
+ 46  	    data = calculate_additional_fields(data)
+ 47  	    save_to_json(args.output, data)
+(Pdb) b 44
+Breakpoint 1 at /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py:44
+(Pdb) c
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+--Return--
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(14)parse_cmd_arguments()->Namespace(inp...ut='out.json')
+-> return parser.parse_args()
+(Pdb) n
+> /Users/gdevore21/Documents/Certificate Programs/Python/PYTHON220/SP_Python220B_2019/students/gregdevore/lesson02/assignment/code/charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) pp args
+Namespace(input='source.json', output='out.json')
+(Pdb) pp args.input
+'source.json'
+(Pdb) pp args.output
+'out.json'
+(Pdb) exit
+
+It looks like the command line arguments were passed successfully, and were captured as args.input and args.output.
