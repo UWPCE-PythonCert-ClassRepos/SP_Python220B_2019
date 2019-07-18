@@ -17,12 +17,4 @@ class ElectricAppliances(InventoryItem):
 
     def return_as_dictionary(self):
         """ Function to return appliance as a dictionary """
-        output = {}
-        output['productCode'] = self.product_code
-        output['description'] = self.description
-        output['marketPrice'] = self.market_price
-        output['rentalPrice'] = self.rental_price
-        output['brand'] = self.brand
-        output['voltage'] = self.voltage
-
-        return output
+        return InventoryItem.return_as_dictionary
