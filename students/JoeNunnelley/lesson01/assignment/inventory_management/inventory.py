@@ -4,6 +4,20 @@ The Inventory Module
 
 class Inventory:
     """ The Inventory Class """
+    def __init__(self, inventory={}):
+        self._inventory = inventory
+
+    def get_inventory(self):
+        """ getter for the inventory """
+        return self._inventory
+
+    def set_inventory(self, inventory):
+        """ setter for the inventory """
+        self._inventory = inventory
+
+
+class InventoryItem:
+    """ The InventoryItem Class """
     def __init__(self, product_code, description, market_price, rental_price):
         self.product_code = product_code
         self.description = description
