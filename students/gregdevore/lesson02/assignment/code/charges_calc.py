@@ -1,10 +1,11 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 import argparse
 import json
 import datetime
 import math
+import logging
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
