@@ -1,11 +1,12 @@
 """
 Main Module : Launches the user interface for the inventory management system
 """
+
 import sys
 from market_prices import get_latest_price
-from inventory import Inventory
+from inventory import Inventory, InventoryItem
 from furniture import Furniture
-from electric_appliances import Electric_Appliances
+from electric_appliances import ElectricAppliances
 
 def main_menu(user_prompt=None):
     """ The main menu function """
@@ -15,21 +16,20 @@ def main_menu(user_prompt=None):
     options = list(valid_prompts.keys())
 
     while user_prompt not in valid_prompts:
-        options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({options_str}):")
+        _options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
+        print("Please choose from the following options ({_options_str}):")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
-def get_price(item_code):
+def get_price(_item_code):
     """ Get the price of an item """
-    print("Get price")
+    print("Get price for {_item_code}")
 
 def add_new_item():
     """ Add an item to the inventory """
-    global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -48,12 +48,12 @@ def add_new_item():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = Electric_Appliances(item_code, item_description,
-                                           item_price, item_rental_price,
-                                           item_brand, item_voltage)
+            new_item = ElectricAppliances(item_code, item_description,
+                                          item_price, item_rental_price,
+                                          item_brand, item_voltage)
         else:
-            new_item = Inventory(item_code, item_description, item_price,
-                                 item_rental_price)
+            new_item = InventoryItem(item_code, item_description, item_price,
+                                     item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
@@ -73,7 +73,7 @@ def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
+    FULL_INVENTORY = Inventory()
     while True:
         print(FULL_INVENTORY)
         main_menu()()
