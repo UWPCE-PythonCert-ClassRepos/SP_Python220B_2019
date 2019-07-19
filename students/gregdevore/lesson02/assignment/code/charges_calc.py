@@ -8,7 +8,9 @@ import math
 import logging
 
 def parse_cmd_arguments():
-    # Define command line argument structure for input/output JSON files
+    """
+    Define command line argument structure for input/output JSON files
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -19,16 +21,20 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 def load_rentals_file(filename):
-    # Load JSON file using python json module
+    """
+    Load JSON file using python json module
+    """
     with open(filename) as file:
         try:
             data = json.load(file)
-        except:
+        except Exception:
             exit(0)
     return data
 
 def calculate_additional_fields(data):
-    # Iterate over each value in input JSON file
+    """
+    Iterate over each value in input JSON file
+    """
     for value in data.values():
         try:
             logging.debug('---- Processing product code {}'.format(value['product_code']))
@@ -67,7 +73,9 @@ Cannot take square root. Check start and end dates.'.format(value['product_code'
     return data
 
 def save_to_json(filename, data):
-    # Write updated data to JSON file
+    """
+    Write updated data to JSON file
+    """
     with open(filename, 'w') as file:
         json.dump(data, file)
 
