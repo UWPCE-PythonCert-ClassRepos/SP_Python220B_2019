@@ -37,6 +37,7 @@ def load_rentals_file(filename):
     """
     Load JSON file using python json module
     """
+    logging.debug('Loading JSON file.')
     with open(filename) as file:
         try:
             data = json.load(file)
@@ -89,6 +90,7 @@ def save_to_json(filename, data):
     """
     Write updated data to JSON file
     """
+    logging.debug('Writing updated JSON file.')
     with open(filename, 'w') as file:
         json.dump(data, file)
 
