@@ -1,6 +1,19 @@
-'''
+"""
 Returns total price paid for individual rentals
-'''
+
+This module supports logging, which can be enabled with an optional
+input argument (-d or --debug). The supported levels are:
+0 - Do not log anything
+1 - Log errors only (to a file with today's date)
+2 - Log errors and warnings only (to a file with today's date)
+3 - Log debug messages (to the console) and errors and warnings
+    (to a file with today's date)
+
+Debug messages - Track the flow of the script
+Warning messages - Identify missing elements in source JSON data
+Error messages - Identify inconsistencies in source JSON data that can cause
+                 the script to crash
+"""
 import argparse
 import json
 import datetime
