@@ -1,20 +1,24 @@
+#! /usr/bin/env python3
 """
 Furniture Module
 """
 
-from inventory import InventoryItem
+from inventory import Inventory
 
-class Furniture(InventoryItem):
+class Furniture(Inventory):
     """ The Furniture Class """
     def __init__(self, product_code, description, market_price,
                  rental_price, material, size):
         # Creates common instance variables from the parent class
-        InventoryItem.__init__(self, product_code, description,
-                               market_price, rental_price)
+        Inventory.__init__(self, product_code, description,
+                           market_price, rental_price)
 
         self.material = material
         self.size = size
 
     def return_as_dictionary(self):
         """ Function to return the Furniture item as a dictionary """
-        return InventoryItem.return_as_dictionary
+        item = Inventory.return_as_dictionary(self)
+        item['Material'] = self.material
+        item['Size'] = self.size
+        return item
