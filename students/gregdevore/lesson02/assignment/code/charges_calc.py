@@ -41,8 +41,9 @@ def load_rentals_file(filename):
     with open(filename) as file:
         try:
             data = json.load(file)
-        except Exception:
-            exit(0)
+        except json.JSONDecodeError:
+            logging.error('Error decoding JSON file. See error message below.')
+            raise
     return data
 
 def calculate_additional_fields(data):
