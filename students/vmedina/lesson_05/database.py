@@ -1,21 +1,23 @@
 """
-Victor A Medina
+Victor Medina
 Assignment 5
 """
-
-import logging
 import csv
 import os
+import logging
 from pymongo import MongoClient
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
-class MongoDBConnection():
+
+class MongoDBConnection(object):
     """
-    MongoDB connection
+
     """
-    def __init__(self, host='localhost', port=27017):
+
+    def __init__(self, host='127.0.0.1', port=27017):
+        """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
         self.connection = None
@@ -28,87 +30,139 @@ class MongoDBConnection():
         self.connection.close()
 
 
-def import_data(directory_name, product_file, customer_file, rentals_file):
+def import_data(directory_name, product_file, customer_file, rental_file):
     """
 
     :param directory_name:
     :param product_file:
     :param customer_file:
-    :param rentals_file:
+    :param rental_file:
     :return:
     """
     mongo = MongoDBConnection()
+    customer_error = 0
+    product_error = 0
+    rental_error = 0
+
     with mongo:
-        database = mongo.connection.hpnorton
+        database = mongo.connection.HPNorton
 
-        product_file = os.path.join(directory_name, product_file)
-        customer_file = os.path.join(directory_name, customer_file)
-        rentals_file = os.path.join(directory_name, rentals_file)
-
-        LOGGER.debug("Importing %s", product_file)
-        products = database["products"]
-        with open(product_file) as product:
-            products_csv = csv.DictReader(product)
-            for row in products_csv:
-                print(row)
-                products.insert_one(row)
-
-        LOGGER.debug("Importing %s", customer_file)
         customers = database["customers"]
-        with open(customer_file) as product:
-            products_csv = csv.DictReader(product)
-            for row in products_csv:
-                print(row)
-                customers.insert_one(row)
+        customer_list = []
+        try:
+            with open(os.path.join(directory_name, customer_file)) as customer_csv:
+                csv_reader = csv.DictReader(customer_csv)
+                for row in csv_reader:
+                    customer_list.append({'customer_id': row['Customer ID'],
+                                          'first_name': row['First Name'],
+                                          'last_name': row['Last Name'],
+                                          'home_address': row['Home Address'],
+                                          'phone_number': row['Phone Number'],
+                                          'email_address': row['Email Address']})
+                try:
+                    customers.insert_many(customer_list)
+                except Exception as ex:
+                    LOGGER.info(ex)
+                    customer_error += 1
+        except Exception as ex:
+            LOGGER.info(ex)
+            LOGGER.info('error when opening customer file')
+            customer_error += 1
 
-        LOGGER.debug("Importing %s", rentals_file)
+        if customer_error > 0:
+            customer_count = 0
+        else:
+            customer_count = len(customer_list)
+
         rentals = database["rentals"]
-        with open(rentals_file) as product:
-            products_csv = csv.DictReader(product)
-            for row in products_csv:
-                print(row)
-                rentals.insert_one(row)
+        rental_list = []
 
-    with mongo:
-        db = mongo.connection.hpnorton
-        print("Printing the collection of DB")
-        print(db.list_collection_names())
+        try:
+            with open(os.path.join(directory_name, product_file)) as product_csv:
+                csv_reader = csv.DictReader(product_csv)
+
+                for row in csv_reader:
+                    product_list.append({'product_id': row['Product ID'],
+                                         'description': row['Description'],
+                                         'type': row['Type'],
+                                         'total_quantity': row['Total Quantity']})
+                try:
+                    products.insert_many(product_list)
+                except Exception as ex:
+                    LOGGER.info(ex)
+                    product_error += 1
+        except Exception as ex:
+            LOGGER.info(ex)
+            LOGGER.info('error when opening product file')
+            product_error += 1
+        if product_error > 0:
+            product_count = 0
+        else:
+            product_count = len(product_list)
+
+        products = database["products"]
+        product_list = []
+        try:
+            with open(os.path.join(directory_name, rental_file)) as rental_csv:
+                csv_reader = csv.DictReader(rental_csv)
+
+                for row in csv_reader:
+                    rental_list.append({'rental_id': row['Rental ID'],
+                                        'customer_id': row['Customer ID'],
+                                        'product_id': row['Product ID'],
+                                        'quantity': row['Quantity']})
+                try:
+                    rentals.insert_many(rental_list)
+                except Exception as ex:
+                    LOGGER.info(ex)
+                    rental_error += 1
+        except Exception as ex:
+            LOGGER.info(ex)
+            LOGGER.info('error when opening rental file')
+            rental_error += 1
+
+        if rental_error > 0:
+            rental_count = 0
+        else:
+            rental_count = len(rental_list)
+
+        record_count = (product_count, customer_count, rental_count)
+        error_count = (product_error, customer_error, rental_error)
+        return (record_count, error_count)
 
 
 def show_available_products():
-    """Display the products in inventory"""
+    """
+    :return:
+    """
+
     mongo = MongoDBConnection()
     with mongo:
-        database = mongo.connection.rental_company
-        available_products = {}
-        for entry in database.product.find():
-            for key, value in entry.items():
-                if key != '_id':
-                    if value['quantity_available'] != '0':
-                        available_products[key] = value
-        return available_products
+        database = mongo.connection.HPNorton
+        product_dict = {}
+        for product in database.products.find():
+            total_count = int(product['total_quantity']) - total_rented(product['product_id'])
+            product_dict[product['product_id']] = {
+                'description': product['description'],
+                'product_type': product['type'],
+                'total_quantity': product['total_quantity'],
+                'available_quantity': total_count}
+    return product_dict
 
 
 def show_rentals(product_id):
-    """Display the users who rented a product"""
+    """lists all rentals"""
     mongo = MongoDBConnection()
     with mongo:
-        database = mongo.connection.rental_company
-        renters_dict = {}
-        for entry in database.rentals.find():
-            for key, value in entry.items():
-                if key != '_id':
-                    if product_id in value['rentals']:
-                        for customer in database.customer.find():
-                            renters_dict[key] = customer[key]
-                    else:
-                        LOGGER.debug("No matches found")
-
-        LOGGER.debug('The returned rentals matched are: %s', renters_dict)
-        return renters_dict
-
-
-if __name__ == '__main__':
-    directory_Name = "D:/Users/Victor/Desktop/python_pwe/SP_Python220B_2019" \
-                     "/students/vmedina/lesson_05/data"
-    import_data(directory_Name, "customers.csv", "products.csv", "rentals.csv")
+        database = mongo.connection.HPNorton
+        rental_dict = {}
+        for rental in database.rentals.find({'product_id': product_id}):
+            for customer in database.customers.find({'customer_id': rental['customer_id']}):
+                rental_dict[rental['rental_id']] = {
+                    'customer_id': rental['customer_id'],
+                    'customer_name': customer['first_name'] + ' ' + customer['last_name'],
+                    'customer_address': customer['home_address'],
+                    'phone_number': customer['phone_number'],
+                    'email': customer['email_address'],
+                    'quantity': rental['quantity']}
+        return rental_dict
