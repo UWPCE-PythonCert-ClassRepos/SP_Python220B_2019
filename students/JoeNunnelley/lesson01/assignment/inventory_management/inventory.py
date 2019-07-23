@@ -19,5 +19,3 @@ class Inventory:
         output['rentalPrice'] = self.rental_price
 
         return output
-
-
