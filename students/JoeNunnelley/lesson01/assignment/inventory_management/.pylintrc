@@ -11,11 +11,11 @@ ignore=CVS
 
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
-ignore-patterns=
+# ignore-patterns=
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-#init-hook=
+# init-hook=
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use.
@@ -28,13 +28,13 @@ limit-inference-results=100
 
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
-load-plugins=
+# load-plugins=
 
 # Pickle collected data for later comparisons.
 persistent=yes
 
 # Specify a configuration file.
-#rcfile=
+rcfile=
 
 # When enabled, pylint would attempt to guess common misconfiguration and emit
 # user-friendly hints instead of false-positive error messages.
@@ -166,7 +166,7 @@ evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / stateme
 
 # Template used to display messages. This is a python new-style format string
 # used to format the message information. See doc for all details.
-#msg-template=
+msg-template=
 
 # Set the output format. Available formats are text, parseable, colorized, json
 # and msvs (visual studio). You can also give a reporter class, e.g.
@@ -199,14 +199,14 @@ argument-naming-style=snake_case
 
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style.
-#argument-rgx=
+argument-rgx=
 
 # Naming style matching correct attribute names.
 attr-naming-style=snake_case
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style.
-#attr-rgx=
+attr-rgx=
 
 # Bad variable names which should always be refused, separated by a comma.
 bad-names=foo,
@@ -221,21 +221,21 @@ class-attribute-naming-style=any
 
 # Regular expression matching correct class attribute names. Overrides class-
 # attribute-naming-style.
-#class-attribute-rgx=
+class-attribute-rgx=
 
 # Naming style matching correct class names.
 class-naming-style=PascalCase
 
 # Regular expression matching correct class names. Overrides class-naming-
 # style.
-#class-rgx=
+class-rgx=
 
 # Naming style matching correct constant names.
 const-naming-style=UPPER_CASE
 
 # Regular expression matching correct constant names. Overrides const-naming-
 # style.
-#const-rgx=
+const-rgx=
 
 # Minimum line length for functions/classes that require docstrings, shorter
 # ones are exempt.
@@ -246,7 +246,7 @@ function-naming-style=snake_case
 
 # Regular expression matching correct function names. Overrides function-
 # naming-style.
-#function-rgx=
+function-rgx=
 
 # Good variable names which should always be accepted, separated by a comma.
 good-names=i,
@@ -271,14 +271,14 @@ method-naming-style=snake_case
 
 # Regular expression matching correct method names. Overrides method-naming-
 # style.
-#method-rgx=
+method-rgx=
 
 # Naming style matching correct module names.
 module-naming-style=snake_case
 
 # Regular expression matching correct module names. Overrides module-naming-
 # style.
-#module-rgx=
+module-rgx=
 
 # Colon-delimited sets of names that determine each other's naming style when
 # the name regexes allow several styles.
@@ -298,13 +298,13 @@ variable-naming-style=snake_case
 
 # Regular expression matching correct variable names. Overrides variable-
 # naming-style.
-#variable-rgx=
+variable-rgx=
 
 
 [FORMAT]
 
 # Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
-expected-line-ending-format=
+# expected-line-ending-format=
 
 # Regexp for a line that is allowed to be longer than the limit.
 ignore-long-lines=^\s*(# )?<?https?://\S+>?$
@@ -379,13 +379,13 @@ max-spelling-suggestions=4
 
 # Spelling dictionary name. Available dictionaries: none. To make it working
 # install python-enchant package..
-spelling-dict=
+# spelling-dict=
 
 # List of comma separated words that should not be checked.
-spelling-ignore-words=
+# spelling-ignore-words=
 
 # A path to a file that contains private dictionary; one word per line.
-spelling-private-dict-file=
+# spelling-private-dict-file=
 
 # Tells whether to store unknown words to indicated private dictionary in
 # --spelling-private-dict-file option instead of raising a message.
@@ -410,7 +410,7 @@ contextmanager-decorators=contextlib.contextmanager
 # List of members which are set dynamically and missed by pylint inference
 # system, and so shouldn't trigger E1101 when accessed. Python regular
 # expressions are accepted.
-generated-members=
+# generated-members=
 
 # Tells whether missing members accessed in mixin class should be ignored. A
 # mixin class is detected if its name ends with "mixin" (case insensitive).
@@ -437,7 +437,7 @@ ignored-classes=optparse.Values,thread._local,_thread._local
 # (useful for modules/projects where namespaces are manipulated during runtime
 # and thus existing member attributes cannot be deduced by static analysis. It
 # supports qualified module names, as well as Unix pattern matching.
-ignored-modules=
+# ignored-modules=
 
 # Show a hint with possible names when a member name was not found. The aspect
 # of finding the hint is based on edit distance.

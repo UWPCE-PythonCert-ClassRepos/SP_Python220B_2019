@@ -4,10 +4,12 @@ Main Module : Launches the user interface for the inventory management system
 """
 
 import sys
-import inventory as inv
+import electric_appliances as e_app
 import furniture as fur
-import electric_appliances as app
+import inventory as inv
 import market_prices as pri
+
+FULL_INVENTORY = {}
 
 def main_menu(user_prompt=None):
     """ The main menu function """
@@ -28,6 +30,7 @@ def main_menu(user_prompt=None):
 def get_price(_item_code):
     """ Get the price of an item """
     print("Get price for {_item_code}")
+    return pri.get_latest_price(_item_code)
 
 def add_new_item():
     """ Add an item to the inventory """
@@ -49,15 +52,14 @@ def add_new_item():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = app.ElectricAppliances(item_code, item_description,
-                                              item_price, item_rental_price,
-                                              item_brand, item_voltage)
+            new_item = e_app.ElectricAppliances(item_code, item_description,
+                                                item_price, item_rental_price,
+                                                item_brand, item_voltage)
         else:
             new_item = inv.Inventory(item_code, item_description, item_price,
                                      item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
-
 
 def item_info():
     """ Output th item information """
@@ -73,8 +75,7 @@ def exit_program():
     """ Terminate the program """
     sys.exit()
 
-if __name__ == '__main__':
-    FULL_INVENTORY = {}
+if __name__ == '__main__': # pragma: no cover
     while True:
         print(FULL_INVENTORY)
         main_menu()()
