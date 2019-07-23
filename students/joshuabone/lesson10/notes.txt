@@ -1,0 +1,15 @@
+Joshua Bone, UW Python 220, 7/7/2019
+
+Our timing experiment yields some useful information.
+
+As expected, the slowest portion of the program is the import code.
+
+The good news is that it seems to scale at better than O(n_records), possibly at
+O(log(n_records)).
+
+Data (from timings.txt):
+
+n_records       total_import_time
+3000            0.26 sec
+30000           0.82 sec
+300000          6.43 sec
