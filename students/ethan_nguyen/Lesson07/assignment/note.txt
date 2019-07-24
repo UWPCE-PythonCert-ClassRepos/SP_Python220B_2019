@@ -1,0 +1,32 @@
+
+Updated customer file to have 10 K customers, and inventory files to have 20 K items
+
+Use timeit to run the import_data_into_mango() function in linear.py file and it
+ran in 8.615216185506036 seconds
+
+(Imported Records, Old Records, Total Records, time for module)
+
+((12000, 12000, 24000, 1.532), (21912, 21912, 43824, 2.504), (42042, 42042, 84084, 4.511))
+
+Total Time = 8.615 seconds
+
+First I tried multi-threading with queue
+
+I looped through the file_name list and called import_file function for each file on seperate thread, 
+
+I then added queue to capture the result from each thread.  To prevent contention, I added thread.join() then queue.append 
+Thread join will waits for the previous thread to finish before adding to the queue
+
+However the multi-threading and queue didn't improve the performance.  The total time was on par with linear approach.
+Mango db engine seems to handle each thread sequentially and not conccurently.  
+
+I then switched to using Pool from multiprocessing.  Each process is called for each file. This approach seems to work better than 
+multi-threading
+
+Use timeit to run the import_data_into_mango() function in parallel.py file and it
+ran in 2.816 seconds
+
+[(12000, 24000, 36000, 0.655), (21912, 43824, 65736, 0.950), (42042, 84084, 126126, 1.668)]
+Total Time = 2.816 seconds
+
+

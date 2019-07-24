@@ -12,6 +12,7 @@ FILE_NAME = "data/exercise_file.csv"
 
 
 def analyze(filename):
+    """function to read csv file and count the record by year"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -37,9 +38,9 @@ def analyze(filename):
 
 
 def main():
-
+    """function to print time it takes to run analyze function"""
     print(timeit.timeit("analyze(FILE_NAME)",
-                        setup="from __main__ import analyze, FILE_NAME", 
+                        setup="from __main__ import analyze, FILE_NAME",
                         number=1))
 
 
