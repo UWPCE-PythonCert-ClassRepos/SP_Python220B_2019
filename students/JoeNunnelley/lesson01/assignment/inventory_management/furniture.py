@@ -5,6 +5,7 @@ Furniture Module
 
 from inventory import Inventory
 
+
 class Furniture(Inventory):
     """ The Furniture Class """
     def __init__(self, product_code, description, market_price,

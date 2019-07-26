@@ -2,6 +2,8 @@
 """
 The Inventory Module
 """
+
+
 class Inventory:
     """ The InventoryItem Class """
     def __init__(self, product_code, description, market_price, rental_price):
