@@ -18,16 +18,20 @@ def func_timer(func):
     def timer_data(*args, **kwargs):
         """Finds all functions in a class and outputs timing info to a file"""
         start_time = datetime.datetime.now()
+        pre_counts = (db_store.products.count_documents({}), db_store.customers.count_documents({}),
+                      db_store.rentals.count_documents({}))
         result = func(*args, **kwargs)
         end_time = datetime.datetime.now()
-
-        counts = (db_store.products.count_documents({}), db_store.customers.count_documents({}),
-                  db_store.rentals.count_documents({}))
+        post_counts = (db_store.products.count_documents({}),
+                       db_store.customers.count_documents({}),
+                       db_store.rentals.count_documents({}))
+        counts = (abs(post_counts[0]-pre_counts[0]), abs(post_counts[1]-pre_counts[1]),
+                  abs(post_counts[2]-pre_counts[2]))
 
         with open('timings.txt', mode='a+') as file:
-            file.write('Function: {}, Time: {}, Records: {}\n'.format(func.__name__,
-                                                                      end_time-start_time,
-                                                                      counts))
+            file.write('Function: {}, Time: {}, Records Processed: {}\n'.format(func.__name__,
+                                                                                end_time-start_time,
+                                                                                counts))
         return result
     return timer_data
 
@@ -37,7 +41,6 @@ class DBTimer(type):
     """
 
     def __new__(cls, clsname, bases, _dict):
-        print(_dict)
         for attr, value in _dict.items():
             if isinstance(value, types.FunctionType):
                 _dict[attr] = func_timer(value)
