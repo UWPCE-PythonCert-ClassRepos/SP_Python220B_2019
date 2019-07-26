@@ -2,6 +2,7 @@
 The Divider Module
 """
 
+
 class Divider():
     """ The Divider Class """
     @staticmethod

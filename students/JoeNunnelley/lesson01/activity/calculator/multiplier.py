@@ -2,6 +2,7 @@
 The Multiplier Module
 """
 
+
 class Multiplier():
     """ The Multiplier Class """
     @staticmethod

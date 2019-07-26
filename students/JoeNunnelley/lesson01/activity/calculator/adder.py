@@ -2,6 +2,7 @@
 The Adder Module
 """
 
+
 class Adder():
     """ The Adder Class """
 

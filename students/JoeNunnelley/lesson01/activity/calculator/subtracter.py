@@ -2,6 +2,7 @@
 This module provides a subtraction operator
 """
 
+
 class Subtracter():
     """ The Subtractor Class """
     @staticmethod
