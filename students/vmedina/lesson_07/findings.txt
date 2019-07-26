@@ -1,0 +1,7 @@
+Lesson 7 Findings
+
+Parallel: .0214 seconds
+Linear: .052 seconds
+
+Parallel is roughly 2x faster. Given this is only comparing 1000 records
+I'd expect the difference to grow as the record count grows
