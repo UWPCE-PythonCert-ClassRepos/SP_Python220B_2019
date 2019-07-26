@@ -2,7 +2,7 @@
 
 echo 'PYLINT EXAMINATION'
 export PYTHONPATH=$PYTHONPATH:"${PWD}/inventory_management"
-python3 -m pylint ./inventory_management/ --rcfile=./inventory_management/.pylintrc
+python3 -m pylint ./inventory_management/ --rcfile=./inventory_management/pylintrc
 echo 'COVERAGE RUN'
 python3 -m coverage run --source=inventory_management -m unittest test_unit.py test_integration.py
 echo 'COVERAGE REPORT'
