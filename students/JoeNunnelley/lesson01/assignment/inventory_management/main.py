@@ -3,6 +3,7 @@
 Main Module : Launches the user interface for the inventory management system
 """
 
+
 import sys
 import electric_appliances as e_app
 import furniture as fur
@@ -11,26 +12,27 @@ import market_prices as pri
 
 FULL_INVENTORY = {}
 
+
 def main_menu(user_prompt=None):
     """ The main menu function """
     valid_prompts = {"1": add_new_item,
                      "2": item_info,
                      "q": exit_program}
-    options = list(valid_prompts.keys())
 
     while user_prompt not in valid_prompts:
-        _options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({_options_str}):")
+        print("Please choose from the following options:")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
+
 def get_price(_item_code):
     """ Get the price of an item """
     print("Get price for {_item_code}")
     return pri.get_latest_price(_item_code)
+
 
 def add_new_item():
     """ Add an item to the inventory """
@@ -61,6 +63,7 @@ def add_new_item():
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
+
 def item_info():
     """ Output th item information """
     item_code = input("Enter item code: ")
@@ -71,11 +74,13 @@ def item_info():
     else:
         print("Item not found in inventory")
 
+
 def exit_program():
     """ Terminate the program """
     sys.exit()
 
-if __name__ == '__main__': # pragma: no cover
+
+if __name__ == '__main__':  # pragma: no cover
     while True:
         print(FULL_INVENTORY)
         main_menu()()

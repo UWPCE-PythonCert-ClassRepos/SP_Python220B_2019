@@ -1,5 +1,6 @@
 """ Market Prices Module """
 
+
 def get_latest_price(_item_code):
     """ Function to get the latest price """
     return 24

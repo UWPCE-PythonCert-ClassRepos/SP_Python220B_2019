@@ -5,6 +5,7 @@ Electric appliances Module
 
 from inventory import Inventory
 
+
 class ElectricAppliances(Inventory):
     """ The ElectricAppliances class """
     def __init__(self, product_code, description, market_price,
