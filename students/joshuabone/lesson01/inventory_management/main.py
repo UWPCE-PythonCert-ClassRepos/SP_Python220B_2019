@@ -70,12 +70,13 @@ class MainMenu:
         else:
             print("Item not found in inventory")
 
-    def do_menu(self):
+    def do_menu(self, loop=True):
         """Do the main menu loop"""
-        while True:
-            print(self.inventory)
-            self.main_menu()()
-            input("Press Enter to continue...........")
+        print(self.inventory)
+        self.main_menu()()
+        input("Press Enter to continue...........")
+        if loop:
+            self.do_menu()
 
     @staticmethod
     def get_price():

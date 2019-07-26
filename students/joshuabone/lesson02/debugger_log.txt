@@ -1,0 +1,71 @@
+> /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(3)<module>()
+-> '''
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(4)<module>()
+-> import argparse
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(5)<module>()
+-> import json
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(6)<module>()
+-> import datetime
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(7)<module>()
+-> import math
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) --Call--
+> /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb)  20  	            data = json.load(file)
+ 21  	        except:
+ 22  	            exit(0)
+ 23  	    return data
+ 24  	
+ 25  ->	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) *** SyntaxError: unexpected EOF while parsing
+(Pdb) -82
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) ValueError: math domain error
+> /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(34)calculate_additional_fields()
+-> except:
+(Pdb) > /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) SystemExit: 0
+> /Users/joshuabone/PycharmProjects/SP_Python220B_2019/students/joshuabone/lesson02debugger/charges_calc.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py(126)cmdloop()
+-> line = input(self.prompt)
+(Pdb) 

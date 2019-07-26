@@ -1,7 +1,7 @@
 """
 Module that includes operations on the customers database
 """
-# pylint: disable= W0401,W1202
+# pylint: disable= W0401,W1202,R0913
 import logging
 import peewee
 from HP import Customer
@@ -72,7 +72,7 @@ def search_customer(customer_id):
         LOGGER.info(error)
         return {}
 
-    return {}
+
 
 
 def delete_customer(customer_id):

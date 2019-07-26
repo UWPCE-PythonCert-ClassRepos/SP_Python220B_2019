@@ -5,14 +5,14 @@ sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
 import unittest
 import database
 
+directory_name = "../src/data"
+
 
 class TestDatabase(unittest.TestCase):
     """Test cases for database.py methods"""
 
     def test_import_data(self):
         """Testing of the import data"""
-        directory_name = "/Users/guntur/PycharmProjects/uw/" \
-                         "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
         added, errors = database.import_data(directory_name, "products1.csv",
                                              "customers1.csv", "rentals1.csv")
         actual_output = added, errors
@@ -21,8 +21,6 @@ class TestDatabase(unittest.TestCase):
 
     def test_show_available_products(self):
         """Testing the available products function"""
-        directory_name = "/Users/guntur/PycharmProjects/uw/" \
-                         "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
         database.import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
 
         expected_output = {'p101': {'Electronics', '5', 'TV'},
@@ -41,8 +39,6 @@ class TestDatabase(unittest.TestCase):
 
     def test_show_rentals(self):
         """Function to test the return of user details for a product that is rented"""
-        directory_name = "/Users/guntur/PycharmProjects/uw/" \
-                         "p220/SP_Python220B_2019/students/g_rama/lesson05/src/data"
         database.import_data(directory_name, "products.csv", "customers.csv", "rentals.csv")
         expected_data = {'UID103': {'dom@gmail.com', '3 Seattle Dr', 'Dom'},
                          'UID105': {'5 Vincent dr', 'Dan', 'dan@gmail.com'},

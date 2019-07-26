@@ -1,0 +1,31 @@
+Joshua Bone, UW Python 220, 7/7/2019
+
+With 10,000 rows each in the customter, product, and rentals CSV files, the
+linear/sequential version gave the following results:
+
+INFO:root:Imported 10000 products. (split time: 3.413662 secs, total time: 3.413662 secs).
+INFO:root:Imported 10000 customers. (split time: 3.458679 secs, total time: 6.872341 secs).
+INFO:root:Imported 10000 rentals. (split time: 3.094805 secs, total time: 9.967146 secs).
+
+The concurrent version using a ThreadPoolExecutor gave the following results:
+INFO:root:Imported 10000 products, 10000 customers, and 10000 rentals. (split time: 7.373854 secs, total time: 7.373854 secs).
+
+This shows a 26% improvement in import time.
+
+Recommendation to management is to shorten import time by using the concurrent
+version.
+
+--------------------------------------------------------------------------------
+An example of where the program fails due to contention:
+
+The only reason the concurrent import approach works is because the MongoDB
+setup does not enforce foreign key constraints in the rentals table!
+
+Each row in the rental table references a product ID and a customer ID.
+
+This means that some rental records get imported before their associated product
+and/or customer records get imported. In the MongoDB case, this is acceptable
+because we don't enforce foreign key constraints, however this approach should
+be used with caution. (Even with foreign key constraints, it would still be
+OK to import the customer and product records concurrently, and then import the
+rentals after both are complete).

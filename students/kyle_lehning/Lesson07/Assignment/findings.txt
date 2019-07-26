@@ -1,0 +1,8 @@
+In the parallel file I avoided contention between my threads by having each thread write to its
+own list. These lists are changed to tuples and returned as a list of tuples at the end that don't
+need to be combined so avoiding writing to the same list works well. I also pass different database
+tables to write to instead of the same table, mongodb also has it's own locking during inserts.
+
+My findings for changing from linear to parallel yielded around 45% improvement. During a run of
+linear it took ~1.131177s while running the same files with parallel reduced the time to
+~0.611577s. For my parallel strategy I used threading.

@@ -1,0 +1,11 @@
+﻿_id,product_id,user_id
+rent001,prd0005,cust0001
+rent002,prd0005,cust0010
+rent003,prd0001,cust0008
+rent004,prd0005,cust0002
+rent005,prd0001,cust0003
+rent006,prd0005,cust0009
+rent007,prd0002,cust0006
+rent008,prd0002,cust0005
+rent009,prd0003,cust0004
+rent010,prd0002,cust0007

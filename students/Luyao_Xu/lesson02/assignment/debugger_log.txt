@@ -1,0 +1,89 @@
+~/D/U/S/s/L/l/a/src ❯❯❯ python3 -m pdb charges_cal.py -i source.json -o out.json
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(3)<module>()
+-> '''
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(4)<module>()
+-> import argparse
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(5)<module>()
+-> import json
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(6)<module>()
+-> import datetime
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(7)<module>()
+-> import math
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(10)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(18)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(27)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(41)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(45)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(46)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) l
+ 41  	def save_to_json(filename, data):
+ 42  	    with open(filename, 'w') as file:
+ 43  	        json.dump(data, file)
+ 44  	
+ 45  	if __name__ == "__main__":
+ 46  ->	    args = parse_cmd_arguments()
+ 47  	    data = load_rentals_file(args.input)
+ 48  	    data = calculate_additional_fields(data)
+ 49  	    save_to_json(args.output, data)
+[EOF]
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(47)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(48)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(27)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) l
+ 22  	            return data
+ 23  	        except:
+ 24  	            exit(0)
+ 25  	
+ 26  	
+ 27  ->	def calculate_additional_fields(data):
+ 28  	    for value in data.values():
+ 29  	        try:
+ 30  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 31  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 32  	            value['total_days'] = (rental_end - rental_start).days
+(Pdb) ll
+ 27  ->	def calculate_additional_fields(data):
+ 28  	    for value in data.values():
+ 29  	        try:
+ 30  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 31  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 32  	            value['total_days'] = (rental_end - rental_start).days
+ 33  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 34  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 35  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 36  	        except:
+ 37  	            exit(0)
+ 38  	
+ 39  	    return data
+(Pdb) b 36
+Breakpoint 1 at /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py:36
+(Pdb) c
+> /Users/luyaoxu/Desktop/UWPCE/SP_Python220B_2019/students/Luyao_Xu/lesson02/assignment/src/charges_cal.py(36)calculate_additional_fields()
+-> except:
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542}
+(Pdb) q
+
