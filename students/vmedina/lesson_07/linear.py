@@ -60,11 +60,9 @@ def import_customers(directory_name, customer_file):
                                           'phone_number': row['Phone Number'],
                                           'status': row['Status'],
                                           'credit_limit': row['Credit Limit']})
-                try:
                     customers.insert_many(customer_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-        except Exception as ex:
+
+        except IOError as ex:
             LOGGER.warning(ex)
             LOGGER.warning("Can't open customer file")
         customer_count_new = database.customers.count_documents({})
@@ -97,11 +95,9 @@ def import_rentals(directory_name, rental_file):
                                         'customer_id': row['Customer ID'],
                                         'product_id': row['Product ID'],
                                         'quantity': row['Quantity']})
-                try:
                     rentals.insert_many(rental_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-        except Exception as ex:
+
+        except IOError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('error when opening rental file')
         rental_count_new = database.rentals.count_documents({})
@@ -135,11 +131,9 @@ def import_products(directory_name, product_file):
                                          'description': row['Description'],
                                          'type': row['Type'],
                                          'total_quantity': row['Total Quantity']})
-                try:
                     products.insert_many(product_list)
-                except Exception as ex:
-                    LOGGER.warning(ex)
-        except Exception as ex:
+
+        except IOError as ex:
             LOGGER.warning(ex)
             LOGGER.warning('Cant open product file')
 

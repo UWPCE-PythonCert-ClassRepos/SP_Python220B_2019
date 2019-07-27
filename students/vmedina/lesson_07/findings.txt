@@ -4,4 +4,9 @@ Parallel: .0214 seconds
 Linear: .052 seconds
 
 Parallel is roughly 2x faster. Given this is only comparing 1000 records
-I'd expect the difference to grow as the record count grows
+I'd expect the difference to grow as the record count grows.
+
+Parallel runs faster since it utilizes parallelization for better performance.
+Since the imports are independent from one another it is more efficient to split the
+task into subtasks and assign each subtask to separate processors. Then while each subtask
+is being computed in parallel it is later combined for the final results at the end.
