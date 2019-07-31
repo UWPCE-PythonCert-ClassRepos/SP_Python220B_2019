@@ -1,0 +1,6 @@
+﻿_id,description,product_type,quantity_available
+prd001,table,diningroom,2
+prd002,lamp,office,3
+prd003,desk,office,1
+prd004,lawnmower,yard,0
+prd005,shovel,yard,5
