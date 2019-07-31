@@ -1,0 +1,143 @@
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L4
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>cd L4
+
+(base) C:\Users\Florentin\Desktop\L4>python -m coverage run --source=customer_model,basic_operations -m unittest test_basic_operations.py
+basic_operation.py
+database 'customers.db' initialised
+loger active
+connected to database
+error creating a non-unique customer id None
+NOT NULL constraint failed: customer.customer_id
+database closed
+connected to database
+new customer added to database
+database closed
+database closed
+test of 'add_customer' sucesfull
+tested customer removed; database cleared
+database closed
+.connected to database
+customer with id 0 not deleted
+<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+database closed
+connected to database
+new customer added to database
+database closed
+connected to database
+customer 1 found
+database closed
+customer sucesfully inserted into database
+connected to database
+id 1 customer deleted
+database closed
+delete operation implemented
+connected to database
+customer id 1 not found
+<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['1', 1, 0]
+database closed
+database closed
+database cleared
+database closed
+.connected to database
+Display the customer name
+customer name cannot be displayed                     because there are no customers in database
+EmptyDatabase
+database closed
+connected to database
+new customer added to database
+database closed
+connected to database
+new customer added to database
+database closed
+connected to database
+Display the customer name
+database closed
+database closed
+inserted customer removed; database cleared
+database closed
+.connected to database
+database has 0 active customers
+empty database
+database closed
+connected to database
+new customer added to database
+database closed
+connected to database
+database has 1 active customers
+database closed
+number of customers in database tested sucesfully
+id 1 customer exist in database
+inserted customer removed; database cleared
+database closed
+.connected to database
+new customer added to database
+database closed
+connected to database
+customer 1 found
+database closed
+test of 'search_customer' sucesfull
+database closed
+tested customer removed; database cleared
+database closed
+.connected to database
+new customer added to database
+database closed
+connected to database
+customer id 0 not found
+credit limit of 200 for customer id 0 not updated
+<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+database closed
+connected to database
+credit limit updated for customer id 1
+database closed
+credit limit updated sucesfully
+database closed
+inserted customer removed; database cleared
+database closed
+.connected to database
+new customer added to database
+database closed
+connected to database
+customer id 0 not found
+<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+database closed
+connected to database
+status neither active or inactive
+status wasn't updated
+database closed
+connected to database
+status updated for customer id 1
+database closed
+status changed succesfully
+database closed
+inserted customer removed; database cleared
+database closed
+.
+----------------------------------------------------------------------
+Ran 7 tests in 0.473s
+
+OK
+
+(base) C:\Users\Florentin\Desktop\L4>python -m coverage report -m
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+basic_operations.py     119      0   100%
+customer_model.py        22      0   100%
+---------------------------------------------------
+TOTAL                   141      0   100%
+
+(base) C:\Users\Florentin\Desktop\L4>
