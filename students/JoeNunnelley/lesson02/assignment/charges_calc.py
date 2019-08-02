@@ -9,21 +9,55 @@ import json
 import logging
 import math
 
-LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-FORMATTER = logging.Formatter(LOG_FORMAT)
-FILE_HANDLER = logging.FileHandler(LOG_FILE, mode='w')
-FILE_HANDLER.setLevel(logging.DEBUG)
-FILE_HANDLER.setFormatter(FORMATTER)
-
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.WARNING)
-CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
-LOGGER.addHandler(CONSOLE_HANDLER)
-LOGGER.addHandler(FILE_HANDLER)
+
+
+def setup_logging(_log_level=None):
+    """
+        0: No debug messages or log file.
+        1: Only error messages.
+        2: Error messages and warnings.
+        3: Error messages, warnings and debug messages.
+    """
+    log_level = logging.INFO
+    if _log_level is None:
+        print('No debug logging')
+        LOGGER.addHandler(logging.NullHandler())
+    elif int(_log_level) == 1:
+        print('Error message logging')
+        log_level = logging.ERROR
+    elif int(_log_level) == 2:
+        print('Error and Warning messages logging')
+        log_level = logging.WARNING
+    elif int(_log_level) == 3:
+        print('Error, Warning and Debug message logging')
+        log_level = logging.DEBUG
+    else:
+        print("Invalid log_level. Expected values 1 - 3. "
+              "This argument is optional.")
+        exit(1)
+
+    if _log_level:
+        log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
+        log_format = "%(asctime)s %(filename)s:%(lineno)-3d " \
+                     "%(levelname)s %(message)s"
+        formatter = logging.Formatter(log_format)
+        file_handler = logging.FileHandler(log_file, mode='w')
+
+        # We don't want to log DEBUG messages to the log file
+        if log_level == logging.DEBUG:
+            file_handler.setLevel(logging.WARNING)
+        else:
+            file_handler.setLevel(log_level)
+
+        file_handler.setFormatter(formatter)
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(log_level)
+        console_handler.setFormatter(formatter)
+        LOGGER.setLevel(log_level)
+        LOGGER.addHandler(console_handler)
+        LOGGER.addHandler(file_handler)
 
 
 def parse_cmd_arguments():
@@ -53,13 +87,12 @@ def load_rentals_file(filename):
             data = json.load(file)
         except FileNotFoundError:
             LOGGER.error("Missing file %s", filename)
-            exit(0)
+            exit(1)
     return data
 
 
 def calculate_additional_fields(data):
     """ this function creates secondary data points from the primary ones """
-    #clean_data = True
     cleaned_data = {}
     for key, value in data.items():
         try:
@@ -103,15 +136,15 @@ def calculate_additional_fields(data):
                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
                 value['unit_cost'] = (value['total_price'] /
                                       value['units_rented'])
-                cleaned_data.update({ key : value})
+                cleaned_data.update({key: value})
                 LOGGER.debug("Added validated item to scrubbed dataset:\n%s",
                              value)
             else:
                 LOGGER.debug("Skipping item due to invalid data issues:\n%s",
                              value)
         except ValueError as value_error:
-            LOGGER.error(value_error)
-            exit(0)
+            LOGGER.error("%s\n%s", value_error, value)
+    #        exit(1)
 
     return cleaned_data
 
@@ -121,26 +154,34 @@ def check_value_set(value):
     function to attempt to validate the inputs are within
     expected values / ranges
     """
+    validated = True
     try:
-        LOGGER.debug("Checking price_per_day value")
+        LOGGER.debug("Checking for missing values")
         assert value['price_per_day'], 'missing price_per_day'
-        assert value['price_per_day'] >= 0, 'invalid price_per_day'
-        LOGGER.debug("Checking product_code value")
         assert value['product_code'], 'missing product code'
-        LOGGER.debug("Making sure rental date values are present")
         assert value['rental_start'], 'missing rental_start value'
         assert value['rental_end'], 'missing rental_end value'
-        LOGGER.debug("Checking rental date values make sense")
+        assert value['units_rented'] is not None, 'missing units_rented value'
+    except AssertionError as assert_error:
+        LOGGER.warning("Data missing check failed: %s\n%s",
+                       assert_error,
+                       value)
+        validated = False
+
+    try:
+        LOGGER.debug("Checking values make sense")
+        assert value['price_per_day'] >= 0, 'invalid price_per_day'
         start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         assert start <= end, 'invalid rental dates'
-        LOGGER.debug("Checking units_rented value")
-        assert value['units_rented'], 'missing units_rented value'
         assert value['units_rented'] >= 0, 'invalid units_rented value'
-        return True
-    except AssertionError as ae:
-        LOGGER.warning("Data validation failed: {}".format(ae))
-        return False
+    except AssertionError as assert_error:
+        LOGGER.error("Data acceptability check failed: %s\n%s",
+                     assert_error,
+                     value)
+        validated = False
+
+    return validated
 
 
 def save_to_json(filename, data):
@@ -156,6 +197,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
+    setup_logging(ARGS.debug)
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
