@@ -1,6 +1,6 @@
-'''
-Returns total price paid for individual rentals 
-'''
+"""
+Returns total price paid for individual rentals
+"""
 import argparse
 import json
 import datetime
@@ -14,7 +14,8 @@ def logger_decorator(function):
     :param function:
     :return:
     """
-    def init_logger(level,*args,**kwargs):
+
+    def init_logger(level, *args, **kwargs):
 
         """
         Sets logging level
@@ -59,8 +60,10 @@ def logger_decorator(function):
         else:
             print('Invalid Debug Level, Please enter a number from 0 to 3')
             exit(0)
-        return function(*args,**kwargs)
+        return function(*args, **kwargs)
+
     return init_logger
+
 
 def parse_cmd_arguments():
     """
@@ -71,6 +74,7 @@ def parse_cmd_arguments():
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-d', '--debug', help='Debug Level', required=True)
     return parser.parse_args()
+
 
 @logger_decorator
 def load_rentals_file(filename):
@@ -88,6 +92,7 @@ def load_rentals_file(filename):
         data = None
 
     return data
+
 
 @logger_decorator
 def calculate_additional_fields(data):
@@ -127,6 +132,7 @@ def calculate_additional_fields(data):
             logging.debug(value['units_rented'])
 
     return data
+
 
 @logger_decorator
 def save_to_json(filename, data):

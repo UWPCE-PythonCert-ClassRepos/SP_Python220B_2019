@@ -2,8 +2,6 @@
 Victor Medina
 Assignment 9: Recursive PNG read
 """
-
-"""list png files and their paths"""
 import glob
 import os
 import logging
