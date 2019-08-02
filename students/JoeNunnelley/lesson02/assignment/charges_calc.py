@@ -9,9 +9,10 @@ import json
 import logging
 import math
 
-LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
+LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
-FILE_HANDLER = logging.FileHandler('charges_calc.log')
+FILE_HANDLER = logging.FileHandler(LOG_FILE, mode='w')
 FILE_HANDLER.setLevel(logging.DEBUG)
 FILE_HANDLER.setFormatter(FORMATTER)
 
@@ -37,6 +38,11 @@ def parse_cmd_arguments():
                         help='ouput JSON file',
                         required=True)
 
+    parser.add_argument('-d',
+                        '--debug',
+                        help='set the log output level',
+                        required=False)
+
     return parser.parse_args()
 
 
@@ -53,14 +59,14 @@ def load_rentals_file(filename):
 
 def calculate_additional_fields(data):
     """ this function creates secondary data points from the primary ones """
-    clean_data = True
-    for value in data.values():
+    #clean_data = True
+    cleaned_data = {}
+    for key, value in data.items():
         try:
             # The data provided in the input file is radically incorrect
             # in several way:
             # 1.) start and end dates are frequently backward in that
-            #     the start date happens after the end date. By my
-            #     count 998 out of 999 rental dates are reversed.
+            #     the start date happens after the end date.
             # 2.) we are not doing any bounds checking on any of the
             #     following values:
             #    a.) price_per_day
@@ -80,6 +86,8 @@ def calculate_additional_fields(data):
             # 7.) we are calculating additional fields over the entire
             #     set which makes allowing valid entries through more
             #     difficult than in these operations were atomic.
+            # 8.) This input file is significantly messed up and should
+            #     be fixed.
             if check_value_set(value):
                 rental_start = (datetime
                                 .datetime
@@ -95,15 +103,17 @@ def calculate_additional_fields(data):
                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
                 value['unit_cost'] = (value['total_price'] /
                                       value['units_rented'])
+                cleaned_data.update({ key : value})
+                LOGGER.debug("Added validated item to scrubbed dataset:\n%s",
+                             value)
             else:
                 LOGGER.debug("Skipping item due to invalid data issues:\n%s",
                              value)
-                clean_data = False
         except ValueError as value_error:
             LOGGER.error(value_error)
             exit(0)
 
-    return data if clean_data else None
+    return cleaned_data
 
 
 def check_value_set(value):
@@ -113,20 +123,23 @@ def check_value_set(value):
     """
     try:
         LOGGER.debug("Checking price_per_day value")
-        assert value['price_per_day'] and value['price_per_day'] >= 0
+        assert value['price_per_day'], 'missing price_per_day'
+        assert value['price_per_day'] >= 0, 'invalid price_per_day'
         LOGGER.debug("Checking product_code value")
-        assert value['product_code']
+        assert value['product_code'], 'missing product code'
         LOGGER.debug("Making sure rental date values are present")
-        assert value['rental_start'] and value['rental_end']
+        assert value['rental_start'], 'missing rental_start value'
+        assert value['rental_end'], 'missing rental_end value'
         LOGGER.debug("Checking rental date values make sense")
         start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
-        assert start < end
+        assert start <= end, 'invalid rental dates'
         LOGGER.debug("Checking units_rented value")
-        assert value['units_rented'] and value['units_rented'] >= 0
+        assert value['units_rented'], 'missing units_rented value'
+        assert value['units_rented'] >= 0, 'invalid units_rented value'
         return True
-    except AssertionError:
-        LOGGER.warning("Data validation failed")
+    except AssertionError as ae:
+        LOGGER.warning("Data validation failed: {}".format(ae))
         return False
 
 
@@ -136,7 +149,7 @@ def save_to_json(filename, data):
     if data:
         LOGGER.debug("Saving file %s", filename)
         with open(filename, 'w') as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=2)
     else:
         LOGGER.warning("Data is invalid. Skipping file writing")
 
