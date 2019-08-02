@@ -1,0 +1,278 @@
+python3 -m pdb charges_calc.py -i ./source.json -o dest.json
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 60
+Breakpoint 1 at /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py:60
+(Pdb) c
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(60)<module>()
+-> ARGS = parse_cmd_arguments()
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(61)<module>()
+-> DATA = load_rentals_file(ARGS.input)
+(Pdb) pp ARGS
+Namespace(input='./source.json', output='dest.json')
+(Pdb) s
+--Call--
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(25)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(27)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(28)load_rentals_file()
+-> try:
+(Pdb) pp filename
+'./source.json'
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(29)load_rentals_file()
+-> data = json.load(file)
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(32)load_rentals_file()
+-> return data
+(Pdb) pp data
+{'RNT001': {'price_per_day': 31,
+            'product_code': 'PRD80',
+            'rental_end': '3/22/17',
+            'rental_start': '6/12/17',
+            'units_rented': 8},
+ 'RNT002': {'price_per_day': 16,
+            'product_code': 'PRD11',
+            'rental_end': '9/30/18',
+            'rental_start': '7/20/16',
+            'units_rented': 1},
+...<really long file>...
+            'units_rented': 6},
+ 'RNT997': {'price_per_day': 11,
+            'product_code': 'PRD30',
+            'rental_end': '1/29/18',
+            'rental_start': '4/25/16',
+            'units_rented': 1},
+ 'RNT998': {'price_per_day': 30,
+            'product_code': 'PRD73',
+            'rental_end': '4/14/16',
+            'rental_start': '9/2/18',
+            'units_rented': 7},
+ 'RNT999': {'price_per_day': 36,
+            'product_code': 'PRD69',
+            'rental_end': '10/2/16',
+            'rental_start': '10/12/18',
+            'units_rented': 8}}
+
+# huh, seeing lots of dates that are invalid.
+
+(Pdb) n
+--Return--
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(32)load_rentals_file()->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17', 'rental_start': '8/14/16', ...}, ...}
+-> return data
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(62)<module>()
+-> DATA = calculate_additional_fields(DATA)
+(Pdb) s
+--Call--
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(35)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(37)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(38)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(39)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'],
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(40)calculate_additional_fields()
+-> '%m/%d/%y')
+(Pdb) pp rental_star
+*** NameError: name 'rental_star' is not defined
+(Pdb) pp rental_start
+*** NameError: name 'rental_start' is not defined
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(41)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'],
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(42)calculate_additional_fields()
+-> '%m/%d/%y')
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(43)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(44)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(45)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(45)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(47)calculate_additional_fields()
+-> except ValueError:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'total_price': -2542,
+ 'units_rented': 8}
+
+(Pdb) n
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(48)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(48)calculate_additional_fields()
+-> exit(0)
+(Pdb) Traceback (most recent call last):
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 45, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 62, in <module>
+    DATA = calculate_additional_fields(DATA)
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 48, in calculate_additional_fields
+    exit(0)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> /usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py(126)cmdloop()
+-> line = input(self.prompt)
+(Pdb) Traceback (most recent call last):
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 45, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 62, in <module>
+    DATA = calculate_additional_fields(DATA)
+  File "/Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py", line 48, in calculate_additional_fields
+    exit(0)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1728, in <module>
+    pdb.main()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1720, in main
+    pdb.interaction(None, t)
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+ python3 -m pdb charges_calc.py -i ./source.json -o dest.json
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 45
+Breakpoint 1 at /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py:45
+(Pdb) l
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8
+  9
+ 10  	def parse_cmd_arguments():
+ 11  	    """ this function parses the command line arguments """
+(Pdb) c
+> /Users/joe.nunnelley/Documents/Node/git/python_playground/SP_Python220B_2019/students/JoeNunnelley/lesson02/assignment/charges_calc.py(45)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) ls
+*** NameError: name 'ls' is not defined
+(Pdb) l
+ 40  	                                                      '%m/%d/%y')
+ 41  	            rental_end = datetime.datetime.strptime(value['rental_end'],
+ 42  	                                                    '%m/%d/%y')
+ 43  	            value['total_days'] = (rental_end - rental_start).days
+ 44  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 45 B->	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 46  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 47  	        except ValueError:
+ 48  	            exit(0)
+ 49
+ 50  	    return data
+(Pdb) ll
+ 35  	def calculate_additional_fields(data):
+ 36  	    """ this function creates secondary data points from the primary ones """
+ 37  	    for value in data.values():
+ 38  	        try:
+ 39  	            rental_start = datetime.datetime.strptime(value['rental_start'],
+ 40  	                                                      '%m/%d/%y')
+ 41  	            rental_end = datetime.datetime.strptime(value['rental_end'],
+ 42  	                                                    '%m/%d/%y')
+ 43  	            value['total_days'] = (rental_end - rental_start).days
+ 44  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 45 B->	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 46  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 47  	        except ValueError:
+ 48  	            exit(0)
+ 49
+ 50  	    return data
+(Pdb) p value['rental_start']
+'6/12/17'
+(Pdb) p value['total_price']
+-2542
+(Pdb) math.sqrt(-36)
+*** ValueError: math domain error
+(Pdb) math.sqrt(-2542)
+*** ValueError: math domain error
+(Pdb)
+## Hm so we are trying to get the sqrt of a negative which is a mathematically invalid operation.

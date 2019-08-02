@@ -15,10 +15,13 @@ LOGGER = logging.getLogger()
 
 def setup_logging(_log_level=None):
     """
-        0: No debug messages or log file.
+        Accepts None (no -d sent in) and 1 - 3.
+        All other values are invalid including 0
+        None: No debug messages or log file.
         1: Only error messages.
         2: Error messages and warnings.
         3: Error messages, warnings and debug messages.
+        *  No debug message to logfile
     """
     log_level = logging.INFO
     if _log_level is None:
@@ -74,7 +77,7 @@ def parse_cmd_arguments():
 
     parser.add_argument('-d',
                         '--debug',
-                        help='set the log output level',
+                        help='set the log output level (1-3)',
                         required=False)
 
     return parser.parse_args()
@@ -152,7 +155,10 @@ def calculate_additional_fields(data):
 def check_value_set(value):
     """
     function to attempt to validate the inputs are within
-    expected values / ranges
+    expected values / ranges. If problems with an entry are
+    found, it will not make it into the output file. It will
+    be noted in the debug log so that the source file may
+    be repaired by the file originator.
     """
     validated = True
     try:
