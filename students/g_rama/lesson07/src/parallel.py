@@ -2,12 +2,12 @@
 import csv
 import os
 import time
-import pymongo
-from pymongo import MongoClient
-from line_profiler import LineProfiler
 import atexit
 import multiprocessing
 from multiprocessing.pool import Pool
+import pymongo
+from pymongo import MongoClient
+from line_profiler import LineProfiler
 profile = LineProfiler()
 atexit.register(profile.print_stats)
 # acquire_lock = threading.Lock()
@@ -31,21 +31,20 @@ class MongoDBConnection:
 
 
 @profile
-def import_data(directory_name, customer_file, product_file, rental_file):
+def import_data(directory_name, customer_file, product_file):
     """Import data for inventory management"""
 
     with multiprocessing.pool.Pool() as pool:
-        """Using apply_asyn to run two jobs parllely"""
         cust = pool.apply_async(import_generic, (directory_name, customer_file, "customers"))
         prod = pool.apply_async(import_generic, (directory_name, product_file, "products"))
-        customer_prior_imported_table_count, customer_imported_table_count, customer_after_imported_table_count, cust_time = \
+        cus_pri_imp_tab_count, cus_imp_tab_count, cus_aft_imp_tab_count, cust_time = \
             cust.get()
-        product_prior_imported_table_count, product_imported_table_count, product_after_imported_table_count, prod_time = \
+        prod_pri_imp_tab_count, prod_imp_tab_count, pro_aft_imp_tab_count, prod_time = \
             prod.get()
-        customer_tuple = (customer_prior_imported_table_count, customer_imported_table_count,
-                          customer_after_imported_table_count, cust_time)
-        product_tuple = (product_prior_imported_table_count, product_imported_table_count,
-                         product_after_imported_table_count, prod_time)
+        customer_tuple = (cus_pri_imp_tab_count, cus_imp_tab_count,
+                          cus_aft_imp_tab_count, cust_time)
+        product_tuple = (prod_pri_imp_tab_count, prod_imp_tab_count,
+                         pro_aft_imp_tab_count, prod_time)
         print(customer_tuple)
         print(product_tuple)
         return customer_tuple, product_tuple
@@ -53,6 +52,7 @@ def import_data(directory_name, customer_file, product_file, rental_file):
 
 @profile
 def import_generic(directory_name, import_file, imported_table):
+    """Generic import function"""
     imp_start = time.time()
     mongo = MongoDBConnection()
     with mongo:
@@ -85,7 +85,8 @@ def import_generic(directory_name, import_file, imported_table):
         print(imported_error)
         imp_end = time.time()
 
-        return prior_imported_table_count, imported_table_count, after_imported_table_count, imp_end-imp_start
+        return prior_imported_table_count, imported_table_count, after_imported_table_count, \
+               imp_end-imp_start
 
 
 def show_available_products():
