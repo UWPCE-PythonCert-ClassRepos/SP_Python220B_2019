@@ -1,0 +1,19 @@
+1.  Function Execution Times for short records (~10)
+   
+    import_data: .06682 seconds
+    show_available_products: .00499 seconds
+    show_rentals: .00898 seconds
+
+2.  Function Execution Times for long records (~1000)
+    
+    import_data: .15711 seconds
+    show_available_products: .02194 seconds
+    show_rentals: .01093 seconds
+    
+    
+3.  As expected, the larger databases yield longer function
+    execution times. However, the execution times don't increase
+    by much, at least for records on the order of 1000 entries.
+    It will scale up as the number of entries increase, but at
+    these quantities, the difference in time is fairly negligible.
+    

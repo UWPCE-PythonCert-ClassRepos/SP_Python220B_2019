@@ -1,0 +1,1848 @@
+
+(base) C:\Users\Florentin>cd C:\Users\Florentin\Desktop\L2
+
+(base) C:\Users\Florentin\Desktop\L2>prompt $g
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/29/2019  04:07 PM    <DIR>          .
+06/29/2019  04:07 PM    <DIR>          ..
+06/29/2019  04:08 PM             1,472 charges_calc.py
+               1 File(s)          1,472 bytes
+               2 Dir(s)  144,052,965,376 bytes free
+
+>python -m pdb charges_calc.py
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 44
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:44
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_pe
+r_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_ren
+ted']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44 B       args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--o
+utput
+SystemExit: 2
+> c:\users\florentin\desktop\l2\charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) print('MUST ADD -i source.json -o out.json TO COMMAND LINE')
+MUST ADD -i source.json -o out.json TO COMMAND LINE
+(Pdb)
+
+
+
+#=============================================================================
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/29/2019  04:07 PM    <DIR>          .
+06/29/2019  04:07 PM    <DIR>          ..
+06/29/2019  04:08 PM             1,472 charges_calc.py
+               1 File(s)          1,472 bytes
+               2 Dir(s)  144,048,824,320 bytes free
+
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 44
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:44
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_pe
+r_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_ren
+ted']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44 B       args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(14)parse_cmd_arguments()->Namesp
+ace(inp...ut='out.json')
+-> return parser.parse_args()
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+FileNotFoundError: [Errno 2] No such file or directory: 'source.json'
+> c:\users\florentin\desktop\l2\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(45)<module>()->None
+-> data = load_rentals_file(args.input)
+(Pdb) disable 1
+Disabled breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:44
+(Pdb) print('NEEED TO ADD source.jpeg TO THE CURRENT DIRECTORY AND logging.error
+AND logging.debug TO THE CODE')
+NEEED TO ADD source.jpeg TO THE CURRENT DIRECTORY AND logging.errorAND logging.d
+ebug TO THE CODE
+(Pdb)
+FileNotFoundError: NEED TO ADD source.json TO CURRENT DIRECTORY AND INSERT loggi
+ng.error AND logging.debug IN EXCEPT CONDITION
+(Pdb)
+
+#============================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 61
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:61
+(Pdb) print('WILL INVESTIGATE IF DATA LOADS CORRECTLY AND ITS STRUCTURE')
+WILL INVESTIGATE IF DATA LOADS CORRECTLY AND ITS STRUCTURE
+(Pdb) C
+*** NameError: name 'C' is not defined
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(61)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(25)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(29)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(30)load_rentals_file()
+-> try:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(31)load_rentals_file()
+-> data = json.load(file)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(36)load_rentals_file()
+-> return data
+(Pdb) pp list(data.keys())[0]
+'RNT001'
+(Pdb) pp list(data.keys())[0:5]
+['RNT001', 'RNT002', 'RNT003', 'RNT004', 'RNT005']
+(Pdb) pp list(data.values())[0]
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'units_rented': 8}
+(Pdb) pp list(data.values())[0:5]
+[{'price_per_day': 31,
+  'product_code': 'PRD80',
+  'rental_end': '3/22/17',
+  'rental_start': '6/12/17',
+  'units_rented': 8},
+ {'price_per_day': 16,
+  'product_code': 'PRD11',
+  'rental_end': '9/30/18',
+  'rental_start': '7/20/16',
+  'units_rented': 1},
+ {'price_per_day': 40,
+  'product_code': 'PRD22',
+  'rental_end': '6/4/17',
+  'rental_start': '2/1/16',
+  'units_rented': 4},
+ {'price_per_day': 40,
+  'product_code': 'PRD86',
+  'rental_end': '12/7/17',
+  'rental_start': '8/14/16',
+  'units_rented': 6},
+ {'price_per_day': 7,
+  'product_code': 'PRD70',
+  'rental_end': '11/23/18',
+  'rental_start': '7/12/17',
+  'units_rented': 8}]
+(Pdb) pp list(data.values())[0]['price_per_day']
+31
+(Pdb) pp list(data.values())[0]['product_code']
+'PRD80'
+(Pdb) pp list(data.values())[0]['rental_start']
+'6/12/17'
+(Pdb) formated_rental_start = datetime.datetime.strptime(data['RNT001']['rental_
+start'], '%m/%d/%y')
+(Pdb) pp formated_rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) pp formated_rental_start.year
+2017
+(Pdb) pp formated_rental_start.month
+6
+(Pdb) pp formated_rental_start.day
+12
+(Pdb)
+#============================================================================
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/29/2019  05:02 PM    <DIR>          .
+06/29/2019  05:02 PM    <DIR>          ..
+06/29/2019  05:22 PM             2,166 charges_calc.py
+06/21/2019  12:16 PM           154,635 source.json
+               2 File(s)        156,801 bytes
+               2 Dir(s)  144,009,515,008 bytes free
+
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 62
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:62
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(62)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(39)calculate_additional_fields()
+
+-> def calculate_additional_fields(data):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(40)calculate_additional_fields()
+
+-> for value in data.values():
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(41)calculate_additional_fields()
+
+-> try:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(42)calculate_additional_fields()
+
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(43)calculate_additional_fields()
+
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) print(rental_start)
+2017-06-12 00:00:00
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(44)calculate_additional_fields()
+
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) print(rental_end)
+2017-03-22 00:00:00
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(45)calculate_additional_fields()
+
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) print(value)
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start'
+: '6/12/17', 'rental_end': '3/22/17', 'total_days': -82}
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'units_rented': 8}
+(Pdb) print(value['product_code'])
+PRD80
+(Pdb) print(value['price_per_day'])
+31
+(Pdb) print(value['total_days'])
+-82
+(Pdb) print('FIRST RECORD IN THE DATA SHOWS NEGATIVE CALCULATED TOTAL_DAYS')
+FIRST RECORD IN THE DATA SHOWS NEGATIVE CALCULATED TOTAL_DAYS
+(Pdb) n
+ValueError: math domain error
+> c:\users\florentin\desktop\l2\charges_calc.py(46)calculate_additional_fields()
+
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) print('MATH ERROR DETECTED DUE TO SQUARE ROOT OF NEGATIVE NUMBERS')
+MATH ERROR DETECTED DUE TO SQUARE ROOT OF NEGATIVE NUMBERS
+(Pdb) pp value['total_price']
+-2542
+(Pdb) print('CALCULATED TOTAL_PRICE IS NEGATIVE DUE TO NEGATIVE TOTAL_DAYS')
+CALCULATED TOTAL_PRICE IS NEGATIVE DUE TO NEGATIVE TOTAL_DAYS
+
+#============================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     # set log file's name
+ 15     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(mess
+age)s"
+ 16     log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m-%d'
+)+'.log'
+ 17
+ 18     # formater
+ 19     formatter = logging.Formatter(log_format)
+ 20
+ 21     # file handler
+ 22     file_handler = logging.FileHandler(log_file)
+ 23     file_handler.setLevel(logging.WARNING)
+ 24     file_handler.setFormatter(formatter)
+ 25
+ 26     # console handler
+ 27     console_handler = logging.StreamHandler()
+ 28     console_handler.setLevel(logging.DEBUG)
+ 29     console_handler.setFormatter(formatter)
+ 30
+ 31     # handles to logger
+ 32     logger = logging.getLogger()
+ 33     logger.addHandler(file_handler)
+ 34     logger.addHandler(console_handler)
+ 35
+ 36     #========================================
+ 37     def parse_cmd_arguments():
+ 38         '''
+ 39         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 40         '''
+ 41         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 42         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 43         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 44
+ 45         return parser.parse_args()
+ 46
+ 47     #========================================
+ 48     def load_rentals_file(filename):
+ 49         '''
+ 50         Load data from source.json file
+ 51         '''
+ 52         with open(filename) as file:
+ 53             try:
+ 54                 data = json.load(file)
+ 55             except FileNotFoundError:
+ 56                 logging.error("add %s datafile to current directory", filena
+me)
+ 57                 logging.debug("stop script if input json file not in directo
+ry")
+ 58                 exit(0)
+ 59         return data
+ 60
+ 61     #========================================
+ 62     def calculate_additional_fields(data):
+ 63         for value in data.values():
+ 64             try:
+ 65                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+ 66                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+ 67                 value['total_days'] = (rental_end - rental_start).days
+ 68                 value['total_price'] = value['total_days'] * value['price_pe
+r_day']
+ 69                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 70                 value['unit_cost'] = value['total_price'] / value['units_ren
+ted']
+ 71             except:
+ 72                 exit(0)
+ 73
+ 74         return data
+ 75
+ 76     #========================================
+ 77     def save_to_json(filename, data):
+ 78         with open(filename, 'w') as file:
+ 79             json.dump(data, file)
+ 80
+ 81     #========================================
+ 82     if __name__ == "__main__":
+ 83         args = parse_cmd_arguments()
+ 84         data = load_rentals_file(args.input)
+ 85         data = calculate_additional_fields(data)
+ 86         save_to_json(args.output, data)
+ 87     #========================================
+ 88     #------------ END -----------------------
+ 89     #========================================
+(Pdb) c
+The program exited via sys.exit(). Exit status: 0
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) exit
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/29/2019  10:11 PM    <DIR>          .
+06/29/2019  10:11 PM    <DIR>          ..
+06/29/2019  10:11 PM             2,841 charges_calc.py
+06/29/2019  10:11 PM                 0 charges_calc_2019-06-29.log
+06/21/2019  12:16 PM           154,635 source.json
+               3 File(s)        157,476 bytes
+               2 Dir(s)  144,021,639,168 bytes free
+
+>print('LOG FILE charges_calc_2019-06-29.log CREATED IN DIRECTORY')
+Unable to initialize device PRN
+
+#============================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     def init_logger(level):
+ 15         '''sets up logger'''
+ 16         # set log file's name
+ 17         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(
+message)s"
+ 18         log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m
+-%d')+'.log'
+ 19
+ 20         #------------------------------------
+ 21         # string conversion to int for logging level
+ 22         try:
+ 23             level = int(level)
+ 24         except (ValueError, KeyError) as err:
+ 25             print(err," - not a valid format for logging level")
+ 26             level = logging.CRITICAL
+ 27
+ 28         #------------------------------------
+ 29         # formater
+ 30         formatter = logging.Formatter(log_format)
+ 31
+ 32         #------------------------------------
+ 33         # file handler
+ 34         file_handler = logging.FileHandler(log_file)
+ 35         file_handler.setFormatter(formatter)
+ 36
+ 37         #------------------------------------
+ 38         # console handler
+ 39         console_handler = logging.StreamHandler()
+ 40         console_handler.setFormatter(formatter)
+ 41
+ 42         #------------------------------------
+ 43         # handles to logger
+ 44         logger = logging.getLogger()
+ 45         logger.addHandler(file_handler)
+ 46         logger.addHandler(console_handler)
+ 47
+ 48         #------------------------------------
+ 49         # level 0: no debug messages or log file.
+ 50         if level == 0:
+ 51             logger.setLevel(logging.CRITICAL)
+ 52
+ 53         # level 1: only error messages.
+ 54         if level == 1:
+ 55             logger.setLevel(logging.ERROR)
+ 56             console_handler.setLevel(logging.ERROR)
+ 57             file_handler.setLevel(logging.ERROR)
+ 58
+ 59         # level 2: errors and warnings.
+ 60         elif level == 2:
+ 61             logger.setLevel(logging.WARNING)
+ 62             console_handler.setLevel(logging.WARNING)
+ 63
+ 64         # 3: Error messages, warnings and debug messages.
+ 65         elif level == 3:
+ 66             logger.setLevel(logging.DEBUG)
+ 67             console_handler.setLevel(logging.DEBUG)
+ 68
+ 69     #========================================
+ 70     def parse_cmd_arguments():
+ 71         '''
+ 72         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 73         '''
+ 74         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 75         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 76         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 77
+ 78         return parser.parse_args()
+ 79
+ 80     #========================================
+ 81     def load_rentals_file(filename):
+ 82         '''
+ 83         Load data from source.json file
+ 84         '''
+ 85         with open(filename) as file:
+ 86             try:
+ 87                 data = json.load(file)
+ 88             except FileNotFoundError:
+ 89                 logging.error("add %s datafile to current directory", filena
+me)
+ 90                 logging.debug("stop script if input json file not in directo
+ry")
+ 91                 exit(0)
+ 92         return data
+ 93
+ 94     #========================================
+ 95     def calculate_additional_fields(data):
+ 96         for value in data.values():
+ 97             try:
+ 98                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+ 99                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+100                 value['total_days'] = (rental_end - rental_start).days
+101                 value['total_price'] = value['total_days'] * value['price_pe
+r_day']
+102                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+103                 value['unit_cost'] = value['total_price'] / value['units_ren
+ted']
+104             except:
+105                 exit(0)
+106
+107         return data
+108
+109     #========================================
+110     def save_to_json(filename, data):
+111         with open(filename, 'w') as file:
+112             json.dump(data, file)
+113
+114     #========================================
+115     if __name__ == "__main__":
+116         args = parse_cmd_arguments()
+117         init_logger(args.debug)
+118         data = load_rentals_file(args.input)
+119         data = calculate_additional_fields(data)
+120         save_to_json(args.output, data)
+121     #========================================
+122     #------------ END -----------------------
+123     #========================================
+(Pdb) b 117
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:117
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(117)<module>()
+-> init_logger(args.debug)
+(Pdb) s
+AttributeError: 'Namespace' object has no attribute 'debug'
+> c:\users\florentin\desktop\l2\charges_calc.py(117)<module>()
+-> init_logger(args.debug)
+(Pdb) print('ERROR ENCOUNTERD, NEED TO ADD -debug ARGUMENT TO PARSER')
+ERROR ENCOUNTERD, NEED TO ADD -debug ARGUMENT TO PARSER
+(Pdb)
+
+#============================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 117
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:117
+(Pdb) b 118
+Breakpoint 2 at c:\users\florentin\desktop\l2\charges_calc.py:118
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(117)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(70)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(74)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(75)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(76)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(77)parse_cmd_arguments()
+-> parser.add_argument('-d', '--debug', help='level selection\n 0=None,\n 1=Erro
+r,\n 2=Error/Warning,\n 3=Error/Warning/Debug', default=0, type=int, choices = r
+ange(0,4))
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(79)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(118)<module>()
+-> init_logger(args.debug)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(14)init_logger()
+-> def init_logger(level):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(17)init_logger()
+-> log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s
+"
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(18)init_logger()
+-> log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m-%d')+'.l
+og'
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(22)init_logger()
+-> try:
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(23)init_logger()
+-> level = int(level)
+(Pdb) pp level
+0
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(30)init_logger()
+-> formatter = logging.Formatter(log_format)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(34)init_logger()
+-> file_handler = logging.FileHandler(log_file)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(35)init_logger()
+-> file_handler.setFormatter(formatter)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(39)init_logger()
+-> console_handler = logging.StreamHandler()
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(40)init_logger()
+-> console_handler.setFormatter(formatter)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(44)init_logger()
+-> logger = logging.getLogger()
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(45)init_logger()
+-> logger.addHandler(file_handler)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(46)init_logger()
+-> logger.addHandler(console_handler)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(50)init_logger()
+-> if level == 0:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(51)init_logger()
+-> logger.setLevel(logging.CRITICAL)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(54)init_logger()
+-> if level == 1:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(60)init_logger()
+-> elif level == 2:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(65)init_logger()
+-> elif level == 3:
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(65)init_logger()->None
+-> elif level == 3:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(119)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) print('LOOGING LEVEL SET AT DEFAULT 0 AND LOGGING SET AT CRITICAL')
+LOOGING LEVEL SET AT DEFAULT 0 AND LOGGING SET AT CRITICAL
+(Pdb)
+
+#============================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) print('ADD LOOGING FOR CALCULATED FIELDS IN THE LOADED DATA')
+ADD LOOGING FOR CALCULATED FIELDS IN THE LOADED DATA
+(Pdb)
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 139
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:139
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     def init_logger(level):
+ 15         '''sets up logger'''
+ 16         # set log file's name
+ 17         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(
+message)s"
+ 18         log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m
+-%d')+'.log'
+ 19
+ 20         #------------------------------------
+ 21         # string conversion to int for logging level
+ 22         try:
+ 23             level = int(level)
+ 24         except (ValueError, KeyError) as err:
+ 25             print(err," - not a valid format for logging level")
+ 26             level = logging.CRITICAL
+ 27
+ 28         #------------------------------------
+ 29         # formater
+ 30         formatter = logging.Formatter(log_format)
+ 31
+ 32         #------------------------------------
+ 33         # file handler
+ 34         file_handler = logging.FileHandler(log_file)
+ 35         file_handler.setFormatter(formatter)
+ 36
+ 37         #------------------------------------
+ 38         # console handler
+ 39         console_handler = logging.StreamHandler()
+ 40         console_handler.setFormatter(formatter)
+ 41
+ 42         #------------------------------------
+ 43         # handles to logger
+ 44         logger = logging.getLogger()
+ 45         logger.addHandler(file_handler)
+ 46         logger.addHandler(console_handler)
+ 47
+ 48         #------------------------------------
+ 49         # level 0: no debug messages or log file.
+ 50         if level == 0:
+ 51             logger.setLevel(logging.CRITICAL)
+ 52
+ 53         # level 1: only error messages.
+ 54         if level == 1:
+ 55             logger.setLevel(logging.ERROR)
+ 56             console_handler.setLevel(logging.ERROR)
+ 57             file_handler.setLevel(logging.ERROR)
+ 58
+ 59         # level 2: errors and warnings.
+ 60         elif level == 2:
+ 61             logger.setLevel(logging.WARNING)
+ 62             console_handler.setLevel(logging.WARNING)
+ 63
+ 64         # 3: Error messages, warnings and debug messages.
+ 65         elif level == 3:
+ 66             logger.setLevel(logging.DEBUG)
+ 67             console_handler.setLevel(logging.DEBUG)
+ 68
+ 69     #========================================
+ 70     def parse_cmd_arguments():
+ 71         '''
+ 72         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 73         '''
+ 74         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 75         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 76         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 77         parser.add_argument('-d', '--debug', help='level selection\n 0=None,
+\n 1=Error,\n 2=Error/Warning,\n 3=Error/Warning/Debug', default=0, type=int, ch
+oices = range(0,4))
+ 78
+ 79         return parser.parse_args()
+ 80
+ 81     #========================================
+ 82     def load_rentals_file(filename):
+ 83         '''
+ 84         Load data from source.json file
+ 85         '''
+ 86         with open(filename) as file:
+ 87             try:
+ 88                 data = json.load(file)
+ 89             except FileNotFoundError:
+ 90                 logging.error("add %s datafile to current directory", filena
+me)
+ 91                 logging.debug("stop script if input json file not in directo
+ry")
+ 92                 exit(0)
+ 93         return data
+ 94
+ 95     #========================================
+ 96     def calculate_additional_fields(data):
+ 97         for key, value in data.items():
+ 98             #--------------------------------
+ 99             try:
+100                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+101             except (SyntaxError, ValueError) as err:
+102                 logging.warning(f'rental start date for {key} has incorrect
+format not matching m-d-y', key)
+103                 logging.debug(f'rectify rental start date for {key}: {value}
+')
+104             #--------------------------------
+105             try:
+106                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+107             except (SyntaxError, ValueError):
+108                 logging.warning(f'rental end date for {key} has incorrect fo
+rmat not matching m-d-y', key)
+109                 logging.debug(f'rectify rental end date for: {key}: {value}'
+)
+110             #--------------------------------
+111             value['total_days'] = (rental_end - rental_start).days
+112             if value['total_days'] < 0:
+113                logging.warning(f'for {key} the rental start date {rental_sta
+rt} comes after rental end date {rental_end}')
+114                logging.debug(f'rectify rental start date for {key}: {value}'
+)
+115             #--------------------------------
+116             value['total_price'] = value['total_days'] * value['price_per_da
+y']
+117             if value['total_price'] < 0:
+118                 logging.warning(f'for {key} the calculated total price is ne
+gative because calculated rental duration ended up being negative')
+119             #--------------------------------
+120
+121             try:
+122                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+123                 value['unit_cost'] = value['total_price'] / value['units_ren
+ted']
+124             except:
+125                 exit(0)
+126
+127         return data
+128
+129     #========================================
+130     def save_to_json(filename, data):
+131         with open(filename, 'w') as file:
+132             json.dump(data, file)
+133
+134     #========================================
+135     if __name__ == "__main__":
+136         args = parse_cmd_arguments()
+137         init_logger(args.debug)
+138         data = load_rentals_file(args.input)
+139 B       data = calculate_additional_fields(data)
+140         save_to_json(args.output, data)
+141     #========================================
+142     #------------ END -----------------------
+143     #========================================
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(139)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(96)calculate_additional_fields()
+
+-> def calculate_additional_fields(data):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(97)calculate_additional_fields()
+
+-> for key, value in data.items():
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(99)calculate_additional_fields()
+
+-> try:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(100)calculate_additional_fields(
+)
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(105)calculate_additional_fields(
+)
+-> try:
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(106)calculate_additional_fields(
+)
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(111)calculate_additional_fields(
+)
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) pp rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(112)calculate_additional_fields(
+)
+-> if value['total_days'] < 0:
+(Pdb) pp value['total_days']
+-82
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(113)calculate_additional_fields(
+)
+-> logging.warning(f'for {key} the rental start date {rental_start} comes after
+rental end date {rental_end}')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(114)calculate_additional_fields(
+)
+-> logging.debug(f'rectify rental start date for {key}: {value}')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(116)calculate_additional_fields(
+)
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(117)calculate_additional_fields(
+)
+-> if value['total_price'] < 0:
+(Pdb) pp value['total_price']
+-2542
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(118)calculate_additional_fields(
+)
+-> logging.warning(f'for {key} the calculated total price is negative because ca
+lculated rental duration ended up being negative')
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(121)calculate_additional_fields(
+)
+-> try:
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(122)calculate_additional_fields(
+)
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> c:\users\florentin\desktop\l2\charges_calc.py(122)calculate_additional_fields(
+)
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp value['sqrt_total_price']
+*** KeyError: 'sqrt_total_price'
+(Pdb) print('MATH ERROR DETECTED WHEN TAKING THE SQUARE ROOT')
+MATH ERROR DETECTED WHEN TAKING THE SQUARE ROOT
+(Pdb)
+
+#================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 146
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:146
+(Pdb) b 129
+Breakpoint 2 at c:\users\florentin\desktop\l2\charges_calc.py:129
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     def init_logger(level):
+ 15         '''sets up logger'''
+ 16         # set log file's name
+ 17         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(
+message)s"
+ 18         log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m
+-%d')+'.log'
+ 19
+ 20         #------------------------------------
+ 21         # string conversion to int for logging level
+ 22         try:
+ 23             level = int(level)
+ 24         except (ValueError, KeyError) as err:
+ 25             print(err," - not a valid format for logging level")
+ 26             level = logging.CRITICAL
+ 27
+ 28         #------------------------------------
+ 29         # formater
+ 30         formatter = logging.Formatter(log_format)
+ 31
+ 32         #------------------------------------
+ 33         # file handler
+ 34         file_handler = logging.FileHandler(log_file)
+ 35         file_handler.setFormatter(formatter)
+ 36
+ 37         #------------------------------------
+ 38         # console handler
+ 39         console_handler = logging.StreamHandler()
+ 40         console_handler.setFormatter(formatter)
+ 41
+ 42         #------------------------------------
+ 43         # handles to logger
+ 44         logger = logging.getLogger()
+ 45         logger.addHandler(file_handler)
+ 46         logger.addHandler(console_handler)
+ 47
+ 48         #------------------------------------
+ 49         # level 0: no debug messages or log file.
+ 50         if level == 0:
+ 51             logger.setLevel(logging.CRITICAL)
+ 52
+ 53         # level 1: only error messages.
+ 54         if level == 1:
+ 55             logger.setLevel(logging.ERROR)
+ 56             console_handler.setLevel(logging.ERROR)
+ 57             file_handler.setLevel(logging.ERROR)
+ 58
+ 59         # level 2: errors and warnings.
+ 60         elif level == 2:
+ 61             logger.setLevel(logging.WARNING)
+ 62             console_handler.setLevel(logging.WARNING)
+ 63
+ 64         # 3: Error messages, warnings and debug messages.
+ 65         elif level == 3:
+ 66             logger.setLevel(logging.DEBUG)
+ 67             console_handler.setLevel(logging.DEBUG)
+ 68
+ 69     #========================================
+ 70     def parse_cmd_arguments():
+ 71         '''
+ 72         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 73         '''
+ 74         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 75         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 76         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 77         parser.add_argument('-d', '--debug', help='level selection\n 0=None,
+\n 1=Error,\n 2=Error/Warning,\n 3=Error/Warning/Debug', default=0, type=int, ch
+oices = range(0,4))
+ 78
+ 79         return parser.parse_args()
+ 80
+ 81     #========================================
+ 82     def load_rentals_file(filename):
+ 83         '''
+ 84         Load data from source.json file
+ 85         '''
+ 86         with open(filename) as file:
+ 87             try:
+ 88                 data = json.load(file)
+ 89             except FileNotFoundError:
+ 90                 logging.error("add %s datafile to current directory", filena
+me)
+ 91                 logging.debug("stop script if input json file not in directo
+ry")
+ 92                 exit(0)
+ 93         return data
+ 94
+ 95     #========================================
+ 96     def calculate_additional_fields(data):
+ 97         for key, value in data.items():
+ 98             #--------------------------------
+ 99             try:
+100                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+101             except (SyntaxError, ValueError) as err:
+102                 logging.warning(f'rental start date for {key} has incorrect
+format not matching m-d-y', key)
+103                 logging.debug(f'rectify rental start date for {key}: {value}
+')
+104             #--------------------------------
+105             try:
+106                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+107             except (SyntaxError, ValueError):
+108                 logging.warning(f'rental end date for {key} has incorrect fo
+rmat not matching m-d-y', key)
+109                 logging.debug(f'rectify rental end date for: {key}: {value}'
+)
+110             #--------------------------------
+111             value['total_days'] = (rental_end - rental_start).days
+112             if value['total_days'] < 0:
+113                logging.warning(f'for {key} the rental start date {rental_sta
+rt} comes after rental end date {rental_end}')
+114                logging.debug(f'rectify rental start date for {key}: {value}'
+)
+115                #--------------------------------
+116             value['total_price'] = value['total_days'] * value['price_per_da
+y']
+117             if value['total_price'] < 0:
+118                 logging.warning(f'for {key} the calculated total price is ne
+gative because calculated rental duration ended up being negative')
+119                 try:
+120                     value['sqrt_total_price'] = math.sqrt(value['total_price
+'])
+121                 except (ValueError, KeyError) as err:
+122                     logging.warning(f'perhaps for {key} the rental start and
+ end dates were reversely inserted leading to a math error {err.args}; correctin
+g negativity could lead to a valid business result')
+123                 finally:
+124                     logging.warning(f'corrected square root total price for
+{key}')
+125                     value['sqrt_total_price'] = round(math.sqrt(abs(value['t
+otal_price'])),2)
+126             else:
+127                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+128             #--------------------------------
+129 B           try:
+130                 value['unit_cost'] = round(value['total_price'] / value['uni
+ts_rented'], 2)
+131             except:
+132                 exit(0)
+133
+134         return data
+135
+136     #========================================
+137     def save_to_json(filename, data):
+138         with open(filename, 'w') as file:
+139             json.dump(data, file)
+140
+141     #========================================
+142     if __name__ == "__main__":
+143         args = parse_cmd_arguments()
+144         init_logger(args.debug)
+145         data = load_rentals_file(args.input)
+146 B       data = calculate_additional_fields(data)
+147         save_to_json(args.output, data)
+148     #========================================
+149     #------------ END -----------------------
+150     #========================================
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(146)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(96)calculate_additional_fields()
+
+-> def calculate_additional_fields(data):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(97)calculate_additional_fields()
+
+-> for key, value in data.items():
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(129)calculate_additional_fields(
+)
+-> try:
+(Pdb) pp value['sqrt_total_price']
+50.42
+(Pdb) print('SQUARE ROOT OF TOTAL PRICE IS CORRECTED WHEN RENTAL START AND END D
+ATES APPEAR INVERSED BY ERROR IN THE DATASET; WARNING ISSSUED')
+SQUARE ROOT OF TOTAL PRICE IS CORRECTED WHEN RENTAL START AND END DATES APPEAR I
+NVERSED BY ERROR IN THE DATASET; WARNING ISSSUED
+(Pdb)
+
+#================================================================
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 170
+Breakpoint 1 at c:\users\florentin\desktop\l2\charges_calc.py:170
+(Pdb) b 155
+Breakpoint 2 at c:\users\florentin\desktop\l2\charges_calc.py:155
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     def init_logger(level):
+ 15         '''sets up logger'''
+ 16         # set log file's name
+ 17         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(
+message)s"
+ 18         log_file = 'charges_calc_' + datetime.datetime.now().strftime('%Y-%m
+-%d')+'.log'
+ 19         #------------------------------------
+ 20         # string conversion to int for logging level
+ 21         try:
+ 22             level = int(level)
+ 23         except (ValueError, KeyError) as err:
+ 24             print(err, " - not a valid format for logging level")
+ 25             level = logging.CRITICAL
+ 26
+ 27         #------------------------------------
+ 28         # formater
+ 29         formatter = logging.Formatter(log_format)
+ 30
+ 31         #------------------------------------
+ 32         # file handler
+ 33         file_handler = logging.FileHandler(log_file)
+ 34         file_handler.setFormatter(formatter)
+ 35
+ 36         #------------------------------------
+ 37         # console handler
+ 38         console_handler = logging.StreamHandler()
+ 39         console_handler.setFormatter(formatter)
+ 40
+ 41         #------------------------------------
+ 42         # handles to logger
+ 43         logger = logging.getLogger()
+ 44         logger.addHandler(file_handler)
+ 45         logger.addHandler(console_handler)
+ 46
+ 47         #------------------------------------
+ 48         # level 0: no debug messages or log file.
+ 49         if level == 0:
+ 50             logger.setLevel(logging.CRITICAL)
+ 51
+ 52         # level 1: only error messages.
+ 53         if level == 1:
+ 54             logger.setLevel(logging.ERROR)
+ 55             console_handler.setLevel(logging.ERROR)
+ 56             file_handler.setLevel(logging.ERROR)
+ 57
+ 58         # level 2: errors and warnings.
+ 59         elif level == 2:
+ 60             logger.setLevel(logging.WARNING)
+ 61             console_handler.setLevel(logging.WARNING)
+ 62
+ 63         # 3: Error messages, warnings and debug messages.
+ 64         elif level == 3:
+ 65             logger.setLevel(logging.DEBUG)
+ 66             console_handler.setLevel(logging.DEBUG)
+ 67
+ 68     #========================================
+ 69     def parse_cmd_arguments():
+ 70         '''
+ 71         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 72         '''
+ 73         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 74         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 75         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 76         parser.add_argument('-d', '--debug', help='level selection\n 0=None,
+\n \
+ 77                             1=Error,\n 2=Error/Warning,\n 3=Error/Warning/De
+bug',
+ 78                             default=0, type=int, choices=range(0, 4))
+ 79         return parser.parse_args()
+ 80
+ 81     #========================================
+ 82     def load_rentals_file(filename):
+ 83         ''' Load data from source.json file '''
+ 84         with open(filename) as file:
+ 85             try:
+ 86                 data = json.load(file)
+ 87             except FileNotFoundError:
+ 88                 logging.error("add %s datafile to current directory", filena
+me)
+ 89                 logging.debug("stop script if input json file not in directo
+ry")
+ 90                 exit(0)
+ 91         return data
+ 92
+ 93     #========================================
+ 94     def calculate_additional_fields(data):
+ 95         '''
+ 96         add calculated fields to data: \
+ 97         total days, total price, \
+ 98         total square root of price, unit cost
+ 99         '''
+100         for key, value in data.items():
+101             #--------------------------------
+102             try:
+103                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+104             except (SyntaxError, ValueError) as err:
+105                 logging.error('incorect formatting at %s generates %s', key,
+ err)
+106                 logging.warning('rental start date for %s has incorrect form
+at not matching m-d-y', key)
+107                 logging.debug('rectify rental start date for %s: %s', key, v
+alue)
+108             #--------------------------------
+109             try:
+110                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+111             except (SyntaxError, ValueError):
+112                 logging.warning('rental end date for %s has incorrect format
+ \
+113                                 not matching m-d-y', key)
+114                 logging.debug(f'rectify rental end date for %s: %s', key, va
+lue)
+115             #--------------------------------
+116             value['total_days'] = (rental_end - rental_start).days
+117             if value['total_days'] < 0:
+118                 logging.warning('for %s the rental start date %s \
+119                                 comes after rental end date %s', key, rental
+_start, rental_end)
+120                 logging.debug('rectify rental start date for %s: %s', key, v
+alue)
+121             #--------------------------------
+122             value['rental_start'], value['rental_end'] = value['rental_end']
+, value['rental_start']
+123             value['total_price'] = value['total_days'] * value['price_per_da
+y']
+124             if value['total_price'] < 0:
+125                 logging.warning('for %s the calculated total price is negati
+ve \
+126                                 because calculated rental duration ended up
+\
+127                                 being negative', key)
+128                 try:
+129                     value['sqrt_total_price'] = math.sqrt(value['total_price
+'])
+130                 except (ValueError, KeyError) as err:
+131                     logging.warning('the rental start and end dates were rev
+ersely \
+132                                     inserted leading to a math error %s; \
+133                                     correcting negativity could lead to \
+134                                     a valid business result', err.args)
+135                     logging.debug('reverse dates insertion to correct at %s'
+, key)
+136                 finally:
+137                     logging.warning('corrected square root total price for %
+s', key)
+138                     value['sqrt_total_price'] = round(math.sqrt(abs(value['t
+otal_price'])), 2)
+139                     value['total_price'] = abs(value['total_price'])
+140             else:
+141                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+142             #--------------------------------
+143             if value['units_rented'] <= 0:
+144                 try:
+145                     value['unit_cost'] = value['total_price'] / value['units
+_rented']
+146                 except (ArithmeticError, ZeroDivisionError) as err:
+147                     logging.warning("for %s the unit cost \
+148                                     cannot be calculated because %s units \
+149                                     are rented", key, value['units_rented'])
+
+150                     logging.error('division by zero: %s', err)
+151             else:
+152                 value['unit_cost'] = round(value['total_price'] / value['uni
+ts_rented'], 2)
+153             value['total_days'] = abs(value['total_days'])
+154             #exit(0)
+155 B       return data
+156
+157     #========================================
+158     def save_to_json(filename, data):
+159         '''
+160         save processed data to a json file
+161         '''
+162         with open(filename, 'w') as file:
+163             json.dump(data, file)
+164
+165     #========================================
+166     if __name__ == "__main__":
+167         ARGS = parse_cmd_arguments()
+168         init_logger(ARGS.debug)
+169         DATA = load_rentals_file(ARGS.input)
+170 B       DATA = calculate_additional_fields(DATA)
+171         save_to_json(ARGS.output, DATA)
+172
+173     #========================================
+174     #------------ END -----------------------
+175     #========================================
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(170)<module>()
+-> DATA = calculate_additional_fields(DATA)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(94)calculate_additional_fields()
+
+-> def calculate_additional_fields(data):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(100)calculate_additional_fields(
+)
+-> for key, value in data.items():
+(Pdb) c
+> c:\users\florentin\desktop\l2\charges_calc.py(155)calculate_additional_fields(
+)
+-> return data
+(Pdb) pp value
+{'price_per_day': 36,
+ 'product_code': 'PRD69',
+ 'rental_end': '10/12/18',
+ 'rental_start': '10/2/16',
+ 'sqrt_total_price': 163.22,
+ 'total_days': 740,
+ 'total_price': 26640,
+ 'unit_cost': 3330.0,
+ 'units_rented': 8}
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(155)calculate_additional_fields(
+)->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '6/12
+/17', 'rental_start': '3/22/17', ...}, 'RNT002': {'price_per_day': 16, 'product_
+code': 'PRD11', 'rental_end': '7/20/16', 'rental_start': '9/30/18', ...}, 'RNT00
+3': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '2/1/16', 'rent
+al_start': '6/4/17', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD8
+6', 'rental_end': '8/14/16', 'rental_start': '12/7/17', ...}, ...}
+-> return data
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(171)<module>()
+-> save_to_json(ARGS.output, DATA)
+(Pdb) s
+--Call--
+> c:\users\florentin\desktop\l2\charges_calc.py(158)save_to_json()
+-> def save_to_json(filename, data):
+(Pdb) s
+> c:\users\florentin\desktop\l2\charges_calc.py(162)save_to_json()
+-> with open(filename, 'w') as file:
+(Pdb) n
+> c:\users\florentin\desktop\l2\charges_calc.py(163)save_to_json()
+-> json.dump(data, file)
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(163)save_to_json()->None
+-> json.dump(data, file)
+(Pdb) n
+--Return--
+> c:\users\florentin\desktop\l2\charges_calc.py(171)<module>()->None
+-> save_to_json(ARGS.output, DATA)
+(Pdb) c
+The program finished and will be restarted
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) exit
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/30/2019  03:16 PM    <DIR>          .
+06/30/2019  03:16 PM    <DIR>          ..
+06/30/2019  03:08 PM             7,054 charges_calc.py
+06/30/2019  03:12 PM           222,308 out.json
+06/21/2019  12:16 PM           154,635 source.json
+               3 File(s)        383,997 bytes
+               2 Dir(s)  142,511,710,208 bytes free
+
+>
+>JSON FILE out.json GENERATED WITH CORRECTED INPUTS AND CALCULATED FIELD
+
+
+
+#================================================================
+>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\florentin\desktop\l2\charges_calc.py(3)<module>()
+-> '''
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     # original imports
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9
+ 10     # new imports
+ 11     import logging
+ 12
+ 13     #========================================
+ 14     def init_logger(level):
+ 15         '''sets up logger'''
+ 16         # set log file's name
+ 17         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(
+message)s"
+ 18         log_file = "_".join(['charges_calc',
+ 19                              datetime.datetime.now().strftime('%Y-%m-%d'),
+ 20                              '.log', f'level_{level}'])
+ 21         #------------------------------------
+ 22         # string conversion to int for logging level
+ 23         try:
+ 24             level = int(level)
+ 25         except (ValueError, KeyError) as err:
+ 26             print(err, " - not a valid format for logging level")
+ 27             level = logging.CRITICAL
+ 28
+ 29         #------------------------------------
+ 30         # formater
+ 31         formatter = logging.Formatter(log_format)
+ 32
+ 33         #------------------------------------
+ 34         # file handler
+ 35         file_handler = logging.FileHandler(log_file)
+ 36         file_handler.setFormatter(formatter)
+ 37
+ 38         #------------------------------------
+ 39         # console handler
+ 40         console_handler = logging.StreamHandler()
+ 41         console_handler.setFormatter(formatter)
+ 42
+ 43         #------------------------------------
+ 44         # handles to logger
+ 45         logger = logging.getLogger()
+ 46         logger.addHandler(file_handler)
+ 47         logger.addHandler(console_handler)
+ 48
+ 49         #------------------------------------
+ 50         # level 0: no debug messages or log file.
+ 51         if level == 0:
+ 52             logger.setLevel(logging.CRITICAL)
+ 53
+ 54         # level 1: only error messages.
+ 55         if level == 1:
+ 56             logger.setLevel(logging.ERROR)
+ 57             console_handler.setLevel(logging.ERROR)
+ 58             file_handler.setLevel(logging.ERROR)
+ 59
+ 60         # level 2: errors and warnings.
+ 61         elif level == 2:
+ 62             logger.setLevel(logging.WARNING)
+ 63             console_handler.setLevel(logging.WARNING)
+ 64
+ 65         # 3: Error messages, warnings and debug messages.
+ 66         elif level == 3:
+ 67             logger.setLevel(logging.DEBUG)
+ 68             console_handler.setLevel(logging.DEBUG)
+ 69
+ 70     #========================================
+ 71     def parse_cmd_arguments():
+ 72         '''
+ 73         cmd line: python -m pdb charges_calc.py -i source.json -o src.json
+ 74         '''
+ 75         parser = argparse.ArgumentParser(description='Process some integers.
+')
+ 76         parser.add_argument('-i', '--input', help='input JSON file', require
+d=True)
+ 77         parser.add_argument('-o', '--output', help='ouput JSON file', requir
+ed=True)
+ 78         parser.add_argument('-d', '--debug', help='level selection\n 0=None,
+\n \
+ 79                             1=Error,\n 2=Error/Warning,\n 3=Error/Warning/De
+bug',
+ 80                             default=0, type=int, choices=range(0, 4))
+ 81         return parser.parse_args()
+ 82
+ 83     #========================================
+ 84     def load_rentals_file(filename):
+ 85         ''' Load data from source.json file '''
+ 86         with open(filename) as file:
+ 87             try:
+ 88                 data = json.load(file)
+ 89             except FileNotFoundError:
+ 90                 logging.error("add %s datafile to current directory", filena
+me)
+ 91                 logging.debug("stop script if input json file not in directo
+ry")
+ 92                 exit(0)
+ 93         return data
+ 94
+ 95     #========================================
+ 96     def calculate_additional_fields(data):
+ 97         '''
+ 98         add calculated fields to data: \
+ 99         total days, total price, \
+100         total square root of price, unit cost
+101         '''
+102         for key, value in data.items():
+103             #--------------------------------
+104             try:
+105                 rental_start = datetime.datetime.strptime(value['rental_star
+t'], '%m/%d/%y')
+106             except (SyntaxError, ValueError) as err:
+107                 logging.error('incorect formatting at %s generates %s', key,
+ err)
+108                 logging.warning('rental start date for %s has incorrect form
+at not matching m-d-y', key)
+109                 logging.debug('rectify rental start date for %s: %s', key, v
+alue)
+110             #--------------------------------
+111             try:
+112                 rental_end = datetime.datetime.strptime(value['rental_end'],
+ '%m/%d/%y')
+113             except (SyntaxError, ValueError):
+114                 logging.warning('rental end date for %s has incorrect format
+ \
+115                                 not matching m-d-y', key)
+116                 logging.debug(f'rectify rental end date for %s: %s', key, va
+lue)
+117             #--------------------------------
+118             value['total_days'] = (rental_end - rental_start).days
+119             if value['total_days'] < 0:
+120                 logging.warning('for %s the rental start date %s \
+121                                 comes after rental end date %s', key, rental
+_start, rental_end)
+122                 logging.debug('rectify rental start date for %s: %s', key, v
+alue)
+123             #--------------------------------
+124             value['rental_start'], value['rental_end'] = value['rental_end']
+, value['rental_start']
+125             value['total_price'] = value['total_days'] * value['price_per_da
+y']
+126             if value['total_price'] < 0:
+127                 logging.warning('for %s the calculated total price is negati
+ve \
+128                                 because calculated rental duration ended up
+\
+129                                 being negative', key)
+130                 try:
+131                     value['sqrt_total_price'] = math.sqrt(value['total_price
+'])
+132                 except (ValueError, KeyError) as err:
+133                     logging.warning('the rental start and end dates were rev
+ersely \
+134                                     inserted leading to a math error %s; \
+135                                     correcting negativity could lead to \
+136                                     a valid business result', err.args)
+137                     logging.debug('reverse dates insertion to correct at %s'
+, key)
+138                 finally:
+139                     logging.warning('corrected square root total price for %
+s', key)
+140                     value['sqrt_total_price'] = round(math.sqrt(abs(value['t
+otal_price'])), 2)
+141                     value['total_price'] = abs(value['total_price'])
+142             else:
+143                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+144             #--------------------------------
+145             if value['units_rented'] <= 0:
+146                 try:
+147                     value['unit_cost'] = value['total_price'] / value['units
+_rented']
+148                 except (ArithmeticError, ZeroDivisionError) as err:
+149                     logging.warning("for %s the unit cost \
+150                                     cannot be calculated because %s units \
+151                                     are rented", key, value['units_rented'])
+
+152                     logging.error('division by zero: %s', err)
+153             else:
+154                 value['unit_cost'] = round(value['total_price'] / value['uni
+ts_rented'], 2)
+155             value['total_days'] = abs(value['total_days'])
+156             #exit(0)
+157         return data
+158
+159     #========================================
+160     def save_to_json(filename, data):
+161         '''
+162         save processed data to a json file
+163         '''
+164         with open(filename, 'w') as file:
+165             json.dump(data, file)
+166
+167     #========================================
+168     if __name__ == "__main__":
+169         ARGS = parse_cmd_arguments()
+170         init_logger(ARGS.debug)
+171         DATA = load_rentals_file(ARGS.input)
+172         DATA = calculate_additional_fields(DATA)
+173         save_to_json(ARGS.output, DATA)
+174
+175     #========================================
+176     #------------ END -----------------------
+177     #========================================
+(Pdb) exit
+
+>python charges_calc.py -i source.json -o out.json -d 0
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/30/2019  04:37 PM    <DIR>          .
+06/30/2019  04:37 PM    <DIR>          ..
+06/30/2019  04:26 PM             7,133 charges_calc.py
+06/30/2019  04:33 PM                 0 charges_calc_2019-06-30_.log_level_0
+06/30/2019  03:25 PM            58,002 log_file.txt
+06/30/2019  04:36 PM           222,308 out.json
+06/21/2019  12:16 PM           154,635 source.json
+               5 File(s)        442,078 bytes
+               2 Dir(s)  142,500,737,024 bytes free
+
+>python charges_calc.py -i source.json -o out.json -d 1
+2019-06-30 16:37:15,033 charges_calc.py:152 ERROR division by zero: division by
+zero
+
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/30/2019  04:37 PM    <DIR>          .
+06/30/2019  04:37 PM    <DIR>          ..
+06/30/2019  04:26 PM             7,133 charges_calc.py
+06/30/2019  04:33 PM                 0 charges_calc_2019-06-30_.log_level_0
+06/30/2019  04:37 PM                86 charges_calc_2019-06-30_.log_level_1
+06/30/2019  03:25 PM            58,002 log_file.txt
+06/30/2019  04:37 PM           222,308 out.json
+06/21/2019  12:16 PM           154,635 source.json
+               6 File(s)        442,164 bytes
+               2 Dir(s)  142,500,212,736 bytes free
+
+>python charges_calc.py -i source.json -o out.json -d 2
+...
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/30/2019  04:40 PM    <DIR>          .
+06/30/2019  04:40 PM    <DIR>          ..
+06/30/2019  04:26 PM             7,133 charges_calc.py
+06/30/2019  04:33 PM                 0 charges_calc_2019-06-30_.log_level_0
+06/30/2019  04:37 PM                86 charges_calc_2019-06-30_.log_level_1
+06/30/2019  04:40 PM           402,184 charges_calc_2019-06-30_.log_level_2
+06/30/2019  03:25 PM            58,002 log_file.txt
+06/30/2019  04:40 PM           222,308 out.json
+06/21/2019  12:16 PM           154,635 source.json
+               7 File(s)        844,348 bytes
+               2 Dir(s)  142,500,282,368 bytes free
+
+>python charges_calc.py -i source.json -o out.json -d 3
+...
+
+>dir
+ Volume in drive C has no label.
+ Volume Serial Number is EA23-1BBB
+
+ Directory of C:\Users\Florentin\Desktop\L2
+
+06/30/2019  04:45 PM    <DIR>          .
+06/30/2019  04:45 PM    <DIR>          ..
+06/30/2019  04:26 PM             7,133 charges_calc.py
+06/30/2019  04:33 PM                 0 charges_calc_2019-06-30_.log_level_0
+06/30/2019  04:37 PM                86 charges_calc_2019-06-30_.log_level_1
+06/30/2019  04:40 PM           402,184 charges_calc_2019-06-30_.log_level_2
+06/30/2019  04:45 PM           562,389 charges_calc_2019-06-30_.log_level_3
+06/30/2019  03:25 PM            58,002 log_file.txt
+06/30/2019  04:45 PM           222,308 out.json
+06/21/2019  12:16 PM           154,635 source.json
+               8 File(s)      1,406,737 bytes
+               2 Dir(s)  142,500,634,624 bytes free
+
+
+
+
+
+
+
