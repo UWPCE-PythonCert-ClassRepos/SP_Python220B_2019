@@ -14,6 +14,7 @@ import inventory_management.electric_appliances_class as ec
 import inventory_management.main as main
 import unittest as ut
 from unittest.mock import patch, MagicMock
+import io
 
 
 class TestInventoryClass(ut.TestCase):
@@ -123,21 +124,21 @@ class TestMain(ut.TestCase):
         with patch("builtins.input", side_effect = user_input_1):
             main.add_new_item()
             self.assertEqual(main.FULL_INVENTORY, furniture_dict)
-
         user_input_2 =  ( "001", "table", "$3", "n","n")
         inventory_dict = {"001":{"product_code":"001","description":"table",
                                    "market_price":24,"rental_price":"$3"}}
         with patch("builtins.input", side_effect = user_input_2):
             main.add_new_item()
             self.assertEqual(main.FULL_INVENTORY, inventory_dict)
-        main.FULL_INVENTORY.clear()
         user_input_3 =  ( "003", "battery", "$5", "n", "y", "legend", "20V")
-        elec_app_dict = {"003":{"product_code":"003","description":"battery",
+        inventory_dict = {"001":{"product_code":"001","description":"table",
+                                "market_price":24,"rental_price":"$3"},
+                         "003":{"product_code":"003","description":"battery",
                          "market_price":24,"rental_price":"$5","brand":"legend",
                          "voltage":"20V"}}
         with patch("builtins.input", side_effect = user_input_3):
             main.add_new_item()
-            self.assertEqual(main.FULL_INVENTORY, elec_app_dict)
+            self.assertEqual(main.FULL_INVENTORY, inventory_dict)
 
 
     def test_exit_program(self):
@@ -149,27 +150,65 @@ class TestMain(ut.TestCase):
     def test_get_price(self):
         """test get price """
         self.price = MagicMock(return_value=24)
+        self.price = '{}\n'.format(self.price())
+        with patch('sys.stdout', new = io.StringIO()) as actual_result:
+            main.get_price()
+        self.assertEqual(actual_result.getvalue(), self.price)
 
 
-    def test_main_menu(self):
+    def test_add_main_menu(self):
         """Test the main menu"""
-        option_input = ('1','2','q')
+        option_input = ('1')
         with patch('builtins.input', side_effect= option_input):
             self.assertEqual(main.main_menu(), main.add_new_item)
+
+
+    def test_info_main_menu(self):
+        option_input = ('2')
+        with patch('builtins.input', side_effect = option_input):
             self.assertEqual(main.main_menu(), main.item_info)
+
+
+    def test_exit_main_menu(self):
+        option_input = ('q')
+        with patch('builtins.input', side_effect = option_input):
             self.assertEqual(main.main_menu(), main.exit_program)
 
 
-    def test_item_info(self):
+    def test_item_info_no_item(self):
         """Test item info."""
-        user_input_1 =  ( "001", "table", "$3", 'y',"wood","L" )
-        furniture_dict = {"001":{"product_code":"001","description":"table",
+        main.FULL_INVENTORY = {"001":{"product_code":"001","description":"table",
                                 "market_price":24,"rental_price":"$3",
                                 "material":"wood","size":"L"}}
-        with patch('builtins.input', side_effect = user_input_1):
-            main.add_new_item()
-        with patch('builtins.input', side_effect = "001"):
-            self.assertEqual(main.item_info(), None)
+        with patch('builtins.input', side_effect = "003"):
+            with patch('sys.stdout', new = io.StringIO() ) as actual_result:
+                main.item_info()
+                test_value = "Item not found in inventory\n"
+                self.assertEqual(actual_result.getvalue(), test_value)
+
+    def test_item_info_print(self):
+        """test the item info function with printed results"""
+        main.FULL_INVENTORY = {'2': {'product_code': '2',
+                         'description': 'table',
+                         'market_price': 24,
+                         'rental_price': 50,
+                         'material': 'wood',
+                         'size': 'L'},
+                         '3': {'product_code': '3',
+                         'description': 'vase',
+                         'market_price': 24,
+                         'rental_price': 10,}}
+        with patch('builtins.input', side_effect = '2'):
+            with patch('sys.stdout', new=io.StringIO()) as actual_result:
+                main.item_info()
+        test_value = '''product_code:2
+description:table
+market_price:24
+rental_price:50
+material:wood
+size:L
+'''
+        self.assertEqual(actual_result.getvalue(), test_value)
 
 
 if __name__ == "__main__":
