@@ -6,10 +6,7 @@ from inventory_management import market_prices
 from inventory_management import inventory_class
 from inventory_management import furniture_class
 from inventory_management import electric_appliances_class
-# import market_prices
-# import inventory_class
-# import furniture_class
-# import electric_appliances_class
+
 
 FULL_INVENTORY = dict()
 
