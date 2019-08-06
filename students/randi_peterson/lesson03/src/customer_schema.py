@@ -6,6 +6,7 @@ database = peewee.SqliteDatabase('customers.db')
 database.connect()
 database.execute_sql('PRAGMA foreign_keys = ON')
 
+
 class BaseModel(peewee.Model):
     """Set up database"""
     class Meta:
