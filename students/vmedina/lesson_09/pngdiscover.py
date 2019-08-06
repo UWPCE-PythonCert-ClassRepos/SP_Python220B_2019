@@ -9,16 +9,19 @@ import logging
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
+png_list = []
+
 
 def find_png(path):
     """search for png files"""
 
-    files = [f for f in glob.glob(path + "**/*.png", recursive=True)]
-    LOGGER.info(files)
-    for file in files:
-        print(file)
-    return files
+    for file in os.listdir(path):
+        if os.path.isdir(os.path.join(path, file)):
+            find_png(os.path.join(path, file))
+        elif file.endswith('png'):
+            png_list.append(file)
+    return png_list
 
 
 if __name__ == '__main__':
-    find_png(os.getcwd())
+    print(find_png(os.getcwd()))
