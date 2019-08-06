@@ -2,7 +2,8 @@
 Electric appliances class
 """
 from inventory_management.inventory_class import Inventory
-# from inventory_class import Inventory
+
+#pylint: disable = R0903, R0913
 
 class ElectricAppliances(Inventory):
     """ The electric appliance class."""

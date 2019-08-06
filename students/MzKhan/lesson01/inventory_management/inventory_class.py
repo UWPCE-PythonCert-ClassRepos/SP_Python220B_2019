@@ -2,6 +2,8 @@
 This is an inventory module.
 """
 
+#pylint: disable = R0903, R0913
+
 class Inventory:
     """ This class contains the definition of inventory products """
 
