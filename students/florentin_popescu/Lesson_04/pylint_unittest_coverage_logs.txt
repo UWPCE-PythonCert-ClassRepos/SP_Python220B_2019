@@ -1,4 +1,16 @@
 
+ Directory of C:\Users\Florentin\Desktop\L4
+
+08/05/2019  10:44 AM    <DIR>          .
+08/05/2019  10:44 AM    <DIR>          ..
+08/05/2019  10:43 AM             9,160 basic_operations.py
+07/30/2019  02:30 PM             1,540 customer_model.py
+08/05/2019  10:28 AM            22,449 test_basic_operations.py
+               3 File(s)         33,149 bytes
+               2 Dir(s)  149,930,131,456 bytes free
+
+(base) C:\Users\Florentin\Desktop\L4>cd ..
+
 (base) C:\Users\Florentin\Desktop>python -m pylint ./L4
 
 --------------------------------------------------------------------
@@ -128,16 +140,16 @@ inserted customer removed; database cleared
 database closed
 .
 ----------------------------------------------------------------------
-Ran 7 tests in 0.473s
+Ran 7 tests in 0.577s
 
 OK
 
 (base) C:\Users\Florentin\Desktop\L4>python -m coverage report -m
 Name                  Stmts   Miss  Cover   Missing
 ---------------------------------------------------
-basic_operations.py     119      0   100%
+basic_operations.py     121      0   100%
 customer_model.py        22      0   100%
 ---------------------------------------------------
-TOTAL                   141      0   100%
+TOTAL                   143      0   100%
 
 (base) C:\Users\Florentin\Desktop\L4>

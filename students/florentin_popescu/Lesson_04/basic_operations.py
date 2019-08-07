@@ -41,6 +41,11 @@ DATABASE = SqliteDatabase("customers.db")
 LOGGER.info("database 'customers.db' initialised")
 
 # ========================================
+# initialize the database
+DATABASE.create_tables([Customer])
+DATABASE.close()
+
+# ========================================
 
 
 def add_customer(customer_id, first_name, last_name,

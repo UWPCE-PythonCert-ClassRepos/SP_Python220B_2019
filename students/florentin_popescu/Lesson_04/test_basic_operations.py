@@ -565,6 +565,6 @@ class TestOperations(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    DATABASE.create_tables([Customer])
+    #DATABASE.create_tables([Customer])
     unittest.main()
-# ===========================================
+# =========================================
