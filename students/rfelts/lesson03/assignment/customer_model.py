@@ -1,9 +1,13 @@
 """ Define the Customer DB model """
 
+# Russell Felts
+# Assignment 3 - DB Model
+
 # pylint: disable=too-few-public-methods
 
 import logging
-from peewee import SqliteDatabase, IntegerField, CharField, BooleanField, DecimalField, Model
+from peewee import SqliteDatabase, CharField, \
+    BooleanField, DecimalField, Model, AutoField
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -25,11 +29,11 @@ class Customer(BaseModel):
     """ Defines the customer table of the DB """
     LOGGER.info("Specify the fields and their attributes.")
 
-    customer_id = IntegerField(primary_key=True, default=1)
+    customer_id = AutoField(primary_key=True)
     name = CharField(max_length=40, null=False)
     last_name = CharField(max_length=40, null=False)
-    home_address = CharField(max_length=100)
-    phone_number = CharField(max_length=11, null=False, unique=True)
-    email = CharField(max_length=35, null=False, unique=True)
+    home_address = CharField(max_length=100, null=True)
+    phone_number = CharField(max_length=11, null=False)
+    email = CharField(max_length=35, null=False)
     status = BooleanField(default=True)
     credit_limit = DecimalField(decimal_places=2)
