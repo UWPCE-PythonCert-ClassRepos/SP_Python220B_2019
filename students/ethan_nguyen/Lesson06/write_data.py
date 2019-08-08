@@ -4,6 +4,8 @@ import time
 from random import randint
 from datetime import datetime
 
+
+
 def write_file():
     
     filename = "data/exercise_file.csv"

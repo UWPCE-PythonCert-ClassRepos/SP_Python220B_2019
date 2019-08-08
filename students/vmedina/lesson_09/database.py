@@ -13,7 +13,7 @@ LOGGER = logging.getLogger(__name__)
 
 class MongoDBConnection(object):
     """
-
+    Mongodb Connection
     """
 
     def __init__(self, host='127.0.0.1', port=27017):
@@ -70,10 +70,11 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                           'email_address': row['Email Address']})
                 try:
                     customers.insert_many(customer_list)
-                except Exception as ex:
+                except AttributeError as ex:
                     LOGGER.info(ex)
                     customer_error += 1
-        except Exception as ex:
+
+        except IOError as ex:
             LOGGER.info(ex)
             LOGGER.info('error when opening customer file')
             customer_error += 1
@@ -97,10 +98,10 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                          'total_quantity': row['Total Quantity']})
                 try:
                     products.insert_many(product_list)
-                except Exception as ex:
+                except AttributeError as ex:
                     LOGGER.info(ex)
                     product_error += 1
-        except Exception as ex:
+        except IOError as ex:
             LOGGER.info(ex)
             LOGGER.info('error when opening product file')
             product_error += 1
@@ -108,7 +109,6 @@ def import_data(directory_name, product_file, customer_file, rental_file):
             product_count = 0
         else:
             product_count = len(product_list)
-
         products = database["products"]
         product_list = []
         try:
@@ -122,10 +122,10 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                         'quantity': row['Quantity']})
                 try:
                     rentals.insert_many(rental_list)
-                except Exception as ex:
+                except AttributeError as ex:
                     LOGGER.info(ex)
                     rental_error += 1
-        except Exception as ex:
+        except IOError as ex:
             LOGGER.info(ex)
             LOGGER.info('error when opening rental file')
             rental_error += 1
@@ -137,7 +137,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
         record_count = (product_count, customer_count, rental_count)
         error_count = (product_error, customer_error, rental_error)
-        return (record_count, error_count)
+        return record_count, error_count
 
 
 def show_available_products():
