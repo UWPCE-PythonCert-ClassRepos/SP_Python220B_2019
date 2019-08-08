@@ -75,6 +75,21 @@ class Job(BaseModel):
     logger.info('Which person had the Job')
     person_employed = ForeignKeyField(Person, related_name='was_filled_by', null = False)
 
+class Department(BaseModel):
+    """
+        This class defines Department, which maintains details of which deparment
+        a person held a particular job in
+    """
+    logger.info('Finally, creating the Department class with a similar approach')
+    dep_number = CharField(primary_key = True, max_length = 4)
+    logger.info('Department name and manager')
+    dep_name = CharField(max_length = 30)
+    dep_manager = CharField(max_length = 30)
+    logger.info('Which job was in this department')
+    job = ForeignKeyField(Job, related_name='job_within_department', null = False)
+    logger.info('Also, how long was the job held for (use start/end dates)')
+    duration = IntegerField(default = 0)
+
 class PersonNumKey(BaseModel):
     """
         This class defines Person, which maintains details of someone

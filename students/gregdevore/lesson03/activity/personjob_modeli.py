@@ -36,6 +36,17 @@ class Job(BaseModel):
     salary = DecimalField(max_digits = 7, decimal_places = 2)
     person_employed = ForeignKeyField(Person, related_name='was_filled_by', null = False)
 
+class Department(BaseModel):
+    """
+        This class defines Department, which maintains details of which deparment
+        a person held a particular job in
+    """
+    dep_number = CharField(primary_key = True, max_length = 4)
+    dep_name = CharField(max_length = 30)
+    dep_manager = CharField(max_length = 30)
+    job = ForeignKeyField(Job, related_name='job_within_department', null = False)
+    duration = IntegerField(default = 0)
+
 class PersonNumKey(BaseModel):
     """
         This class defines Person, which maintains details of someone

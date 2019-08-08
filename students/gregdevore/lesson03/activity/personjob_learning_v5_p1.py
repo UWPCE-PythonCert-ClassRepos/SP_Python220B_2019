@@ -27,8 +27,8 @@ jobs = [
     ('Analyst', '2001-09-22', '2003-01-30',65500, 'Andrew'),
     ('Senior analyst', '2003-02-01', '2006-10-22', 70000, 'Andrew'),
     ('Senior business analyst', '2006-10-23', '2016-12-24', 80000, 'Andrew'),
-    ('Admin supervisor', '2012-10-01', '2014-11,10', 45900, 'Peter'),
-    ('Admin manager', '2014-11-14', '2018-01,05', 45900, 'Peter')
+    ('Admin supervisor', '2012-10-01', '2014-11-10', 45900, 'Peter'),
+    ('Admin manager', '2014-11-14', '2018-01-05', 45900, 'Peter')
     ]
 
 for job in jobs:
