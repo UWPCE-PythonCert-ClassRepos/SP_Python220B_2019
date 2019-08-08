@@ -1,0 +1,27 @@
+poor_perf.py performance on 1 million rows:
+
+$python3 -m cProfile -s cumtime poor_perf.py
+{'2013': 91242, '2014': 91059, '2015': 91134, '2016': 91462, '2017': 182017, '2018': 0}
+'ao' was found 499797 times
+         1039951 function calls (1039934 primitive calls) in 6.652 seconds
+
+   Ordered by: cumulative time
+
+good_perf.py performance on the same 1 million rows:
+
+$python3 -m cProfile -s cumtime good_perf.py
+{'2013': 91242, '2014': 91059, '2015': 91134, '2016': 91462, '2017': 91014, '2018': 91003}
+'ao' was found 499797 times
+         20763 function calls (20746 primitive calls) in 2.448 seconds
+
+   Ordered by: cumulative time
+
+
+As the profiling report shows, the number of function calls has been reduced by ~5 times in the optimized code.
+poor_perf has sereral issues:
+
+- It has read the file twice while the data needed can be obtained in a single read.
+- It converts the rows to list items.
+- It does too many string comparison and slicing operations.
+
+Thus the speed is reduce by ~3 times after the optimization.

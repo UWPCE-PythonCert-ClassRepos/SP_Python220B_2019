@@ -61,6 +61,7 @@ def search_customer(customer_id):
     except Customer.DoesNotExist as error:
         LOGGER.info('Customer with id %s not found.', customer_id)
         LOGGER.info(error)
+        raise ValueError
         return dict()
 
 
@@ -79,6 +80,7 @@ def delete_customer(customer_id):
         LOGGER.info('Delete failed.')
         LOGGER.info('Customer with id %s not found.', customer_id)
         LOGGER.info(error)
+        raise ValueError
 
 
 def update_customer_credit(customer_id, credit_limit):

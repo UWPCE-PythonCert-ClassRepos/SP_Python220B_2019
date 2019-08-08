@@ -21,26 +21,32 @@ class BasicOperationsTests(TestCase):
         :return: None
         """
 
-        set_up()
-        customer = (1, 'Amy', 'Walker', 'Washington', '12345',
-                    'amywalker@gmail.com', True, 750)
-        add_customer(*customer)
-        a_customer = Customer.get(Customer.customer_id == 1)
+        try:
+            set_up()
+            customer = (1, 'Amy', 'Walker', 'Washington', '12345',
+                        'amywalker@gmail.com', True, 750)
+            add_customer(*customer)
+            a_customer = Customer.get(Customer.customer_id == 1)
 
-        self.assertEqual(a_customer.customer_id, 1)
-        self.assertEqual(a_customer.first_name, 'Amy')
-        self.assertEqual(a_customer.last_name, 'Walker')
-        self.assertEqual(a_customer.home_address, 'Washington')
-        self.assertEqual(a_customer.phone_number, '12345')
-        self.assertEqual(a_customer.is_active, True)
-        self.assertEqual(a_customer.email_address, 'amywalker@gmail.com')
-        self.assertEqual(a_customer.credit_limit, 750)
+            self.assertEqual(a_customer.customer_id, 1)
+            self.assertEqual(a_customer.first_name, 'Amy')
+            self.assertEqual(a_customer.last_name, 'Walker')
+            self.assertEqual(a_customer.home_address, 'Washington')
+            self.assertEqual(a_customer.phone_number, '12345')
+            self.assertEqual(a_customer.is_active, True)
+            self.assertEqual(a_customer.email_address, 'amywalker@gmail.com')
+            self.assertEqual(a_customer.credit_limit, 750)
+
+        except IntegrityError as error:
+            LOGGER.info(error)
+            LOGGER.info('Error occurred')
 
     def test_search_customer(self):
         """
         Test search_customer
         :return: None
         """
+
         set_up()
         customer = (1, 'Amy', 'Walker', 'Washington', '12345',
                     'amywalker@gmail.com', True, 750)
@@ -49,7 +55,11 @@ class BasicOperationsTests(TestCase):
         expected = {'first_name': 'Amy', 'last_name': 'Walker',
                     'email_address': 'amywalker@gmail.com',
                     'phone_number': '12345'}
+
         self.assertEqual(actual, expected)
+
+        with self.assertRaises(ValueError):
+            search_customer(100)
 
     def test_delete_customer(self):
         """
@@ -61,6 +71,10 @@ class BasicOperationsTests(TestCase):
                     'amywalker@gmail.com', True, 750)
         add_customer(*customer)
         delete_customer(1)
+
+        with self.assertRaises(ValueError):
+            delete_customer(100)
+
 
 
     def test_update_customer_credit(self):
