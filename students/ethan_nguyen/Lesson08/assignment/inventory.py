@@ -1,26 +1,26 @@
-
+""" module for inventory """
 import csv
-import pandas as pd
 from functools import partial
+import pandas as pd
 
 
 def add_furniture(invoice_file, customer_name,
                   item_code, item_description,
                   item_monthly_price):
+
     """function to add a new line to csv file"""
 
     filename = invoice_file
 
-    with open(filename, mode='a', newline='') as invoice_file:
-        invoice_writer = csv.writer(invoice_file, delimiter=',', quotechar='"')
+    with open(filename, mode='a', newline='') as invoice:
+        invoice_writer = csv.writer(invoice, delimiter=',', quotechar='"')
 
         try:
             invoice_writer.writerow([customer_name, item_code,
-                                    item_description,
-                                    item_monthly_price])
-        except Exception as ex:
+                                     item_description,
+                                     item_monthly_price])
+        except IOError as ex:
             print(ex)
-            pass
 
 
 def single_customer(customer_name, invoice_file):
@@ -29,6 +29,8 @@ def single_customer(customer_name, invoice_file):
         using closure and currying"""
 
     def process_rental(rental_items):
+
+        """function to add new line to csv file a give rental item"""
 
         input_df = pd.read_csv(rental_items, header=None)
         input_df.columns = ['code', 'description', 'price']
