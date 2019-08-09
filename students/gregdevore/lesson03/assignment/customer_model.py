@@ -4,8 +4,8 @@
     Use logging for messages so they can be turned off
 
 """
+from peewee import Model, CharField, BooleanField, DecimalField, SqliteDatabase
 import logging
-from peewee import *
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

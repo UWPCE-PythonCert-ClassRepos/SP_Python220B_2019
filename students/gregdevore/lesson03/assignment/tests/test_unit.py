@@ -10,16 +10,20 @@ import basic_operations
 class CustomerTests(TestCase):
 
     def test_customer_add(self):
+        new_customer = {'id':'00001', 'firstname':'Ron', 'lastname':'Swanson',
+        'address':'123 Fake Street', 'phone':'555-867-5309',
+        'email':'ronswanson@pawnee.gov', 'status':0, 'credit_limit':10000}
         # Add customer to database
-        basic_operations.add_customer('00001', 'Ron', 'Swanson',
-        '123 Fake Street', '555-867-5309', 'ronswanson@pawnee.gov', 0, 10000)
+        basic_operations.add_customer(new_customer['id'], new_customer['firstname'],
+        new_customer['lastname'], new_customer['address'], new_customer['phone'],
+        new_customer['email'], new_customer['status'], new_customer['credit_limit'])
         # Retrieve customer to all fields were added
-        customer = Customer.get(Customer.id == '00001')
-        self.assertEqual(customer.id,'00001')
-        self.assertEqual(customer.firstname,'Ron')
-        self.assertEqual(customer.lastname,'Swanson')
-        self.assertEqual(customer.address,'123 Fake Street')
-        self.assertEqual(customer.phone,'555-867-5309')
-        self.assertEqual(customer.email,'ronswanson@pawnee.gov')
-        self.assertEqual(customer.status,0)
-        self.assertEqual(customer.credit_limit,10000)
+        customer = Customer.get(Customer.id == new_customer['id'])
+        self.assertEqual(customer.id,new_customer['id'])
+        self.assertEqual(customer.firstname,new_customer['firstname'])
+        self.assertEqual(customer.lastname,new_customer['lastname'])
+        self.assertEqual(customer.address,new_customer['address'])
+        self.assertEqual(customer.phone,new_customer['phone'])
+        self.assertEqual(customer.email,new_customer['email'])
+        self.assertEqual(customer.status,new_customer['status'])
+        self.assertEqual(customer.credit_limit,new_customer['credit_limit'])
