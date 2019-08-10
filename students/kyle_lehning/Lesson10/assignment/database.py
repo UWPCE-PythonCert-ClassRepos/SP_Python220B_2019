@@ -183,19 +183,19 @@ def show_rentals(product_id):
 
 
 if __name__ == '__main__':
-    my_import_data = import_data('', 'Products.csv', 'Customers.csv', 'Rentals.csv')
-    available_prods = show_available_products()
-    rental = show_rentals('prd00001')
+    MY_IMPORT_DATA = import_data('', 'Products.csv', 'Customers.csv', 'Rentals.csv')
+    MY_AVAILABLE_PRODUCTS = show_available_products()
+    MY_RENTALS = show_rentals('prd00001')
     with MONGO:
-        db = MONGO.connection.media  # pylint: disable=C0103
-        db['products'].drop()
-        db['customers'].drop()
-        db['rentals'].drop()
-    my_import_data2 = import_data('', 'Products_big.csv', 'Customers_big.csv', 'Rentals_big.csv')
-    available_prods2 = show_available_products()
-    rental2 = show_rentals('prd00001')
+        DB = MONGO.connection.media  # pylint: disable=C0103
+        DB['products'].drop()
+        DB['customers'].drop()
+        DB['rentals'].drop()
+    MY_IMPORT_DATA_2 = import_data('', 'Products_big.csv', 'Customers_big.csv', 'Rentals_big.csv')
+    MY_AVAILABLE_PRODUCTS_2 = show_available_products()
+    MY_RENTALS_2 = show_rentals('prd00001')
     with MONGO:
-        db = MONGO.connection.media  # pylint: disable=C0103
-        db['products'].drop()
-        db['customers'].drop()
-        db['rentals'].drop()
+        DB = MONGO.connection.media  # pylint: disable=C0103
+        DB['products'].drop()
+        DB['customers'].drop()
+        DB['rentals'].drop()
