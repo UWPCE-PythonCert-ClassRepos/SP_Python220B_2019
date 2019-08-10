@@ -1,13 +1,13 @@
 """
-poorly performing, poorly written module
+better module
 
 """
 
 import datetime
 import csv
-from timeit import timeit as timer
 
 def analyze(filename):
+    """function to count occurences of years and ao"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -48,6 +48,7 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    """function to run analyze"""
     filename = "data/exercise.csv"
     analyze(filename)
 
