@@ -1,0 +1,22 @@
+Parallel output:
+Products
+(1000, 5120, 6120, 0.29320669174194336)
+Customers
+(1000, 2120, 3120, 0.2829110622406006)
+Total Time
+0.8451776504516602
+
+Linear output:
+Products
+(1000, 6120, 7120, 0.29105496406555176)
+Customers
+(1000, 3120, 4120, 0.286074161529541)
+Total Time
+0.852196216583252
+
+
+The parallel calculation did have a slight advantage, but with a ~0.007 second difference, switching to parallel processing is probably not worth it.
+
+
+Contention
+Contention could occur when using shared data, however, each import function imports to a seperate collection, avoiding this issue.
