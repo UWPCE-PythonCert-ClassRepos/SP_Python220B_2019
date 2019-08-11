@@ -9,6 +9,7 @@ import logging
 
 
 def logged_func(func):
+    """Decorator function"""
     def log_debug(debug):
         """Function to enable the required debugging level"""
         logging.debug(ARGS)
@@ -38,7 +39,8 @@ def logged_func(func):
             console_handler.setLevel(logging.ERROR)
             file_handler.setLevel(logging.ERROR)
         elif debug_level == 2:
-            # """WARNING messages print to console and file; Tis prints Warning and above messages"""
+            # """WARNING messages print to console and file;
+            # Tis prints Warning and above messages"""
             logger.setLevel(logging.WARNING)
             console_handler.setLevel(logging.WARNING)
             file_handler.setLevel(logging.WARNING)
