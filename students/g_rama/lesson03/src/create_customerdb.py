@@ -1,6 +1,6 @@
 """Creates a customer database with peewee ORM, sqlite and python"""
 import logging
-from customer_model import Customer, DB, IntegrityError
+from customer_model import Customer, DB
 
 logging.basicConfig(level=logging.INFO)
 

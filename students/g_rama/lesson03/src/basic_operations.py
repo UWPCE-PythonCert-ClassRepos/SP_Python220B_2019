@@ -4,6 +4,7 @@ import logging
 import sys
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
                 r"SP_Python220B_2019/students/g_rama/lesson03/src")
+from peewee import IntegrityError
 from customer_model import *
 from create_customerdb import *
 logging.basicConfig(level=logging.INFO)
