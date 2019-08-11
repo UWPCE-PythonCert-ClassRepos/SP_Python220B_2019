@@ -13,7 +13,7 @@ class CustomerTests(TestCase):
     def setUpClass(cls):
         # Clear database for tests
         cls.clearDatabase()
-        # Create new customer visible by all test cases
+        # Create new customers, visible by all test cases
         cls.new_customer = {'id':'00001', 'firstname':'Ron', 'lastname':'Swanson',
         'address':'123 Fake Street', 'phone':'555-867-5309',
         'email':'ronswanson@pawnee.gov', 'status':0, 'credit_limit':10000}
@@ -79,3 +79,39 @@ class CustomerTests(TestCase):
         # Deleting a nonexistant customer should raise an error
         with self.assertRaises(DoesNotExist):
             basic_operations.delete_customer('99999')
+
+    def test_update_customer_credit(self):
+        self.add_customer_to_database()
+        # Update credit limit
+        basic_operations.update_customer_credit(self.new_customer['id'],15000)
+        # Verify that credit limit has been updated
+        updated_customer = Customer.get(Customer.id == self.new_customer['id'])
+        self.assertEqual(updated_customer.credit_limit, 15000)
+
+    def test_update_fake_customer_credit(self):
+        # Ensure that updating a fake customer's credit raises a value error
+        with self.assertRaises(ValueError):
+            basic_operations.update_customer_credit('99999',5000)
+
+    def test_active_customers(self):
+        # Empty database should have no active customers
+        num_active = basic_operations.list_active_customers()
+        self.assertEqual(num_active, 0)
+
+        # Add first customer and ensure that active count returns 0
+        self.add_customer_to_database()
+        num_active = basic_operations.list_active_customers()
+        self.assertEqual(num_active, 0)
+
+        # Change customer status to active
+        customer = Customer.get(Customer.id == self.new_customer['id'])
+        customer.status = 1
+        customer.save()
+
+        # Query number of active customers, should now be 1
+        num_active = basic_operations.list_active_customers()
+        self.assertEqual(num_active, 1)
+
+        # Change customer status back to inactive (for other tests)
+        customer.status = 0
+        customer.save()
