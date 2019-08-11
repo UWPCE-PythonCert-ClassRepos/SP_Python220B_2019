@@ -10,9 +10,9 @@ import logging
 
 def logged_func(func):
     """Decorator function"""
-    def log_debug(debug):
+    def log_debug(debug, *args, **kwargs):
         """Function to enable the required debugging level"""
-        logging.debug(ARGS)
+        #logging.debug(ARGS)
         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
         log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '_charges_calc.log'
         formatter = logging.Formatter(log_format)
@@ -50,7 +50,7 @@ def logged_func(func):
             logger.setLevel(logging.DEBUG)
             console_handler.setLevel(logging.DEBUG)
             file_handler.setLevel(logging.WARNING)
-        return func(debug)
+        return func(*args, **kwargs)
     return log_debug
 
 
@@ -164,5 +164,6 @@ if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
     # log_debug(ARGS.debug)
     # logging.debug(ARGS)
-    NEW_DATA = calculate_additional_fields(load_rentals_file(ARGS.input))
+    DATA = load_rentals_file(ARGS.debug, ARGS.input)
+    NEW_DATA = calculate_additional_fields(ARGS.debug, DATA)
     save_to_json(ARGS.output, NEW_DATA)
