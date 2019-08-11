@@ -5,7 +5,10 @@ import sys
 import datetime
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
                 r"SP_Python220B_2019/students/g_rama/lesson04/src")
+<<<<<<< HEAD
 from peewee import IntegrityError
+=======
+>>>>>>> 4ac53ea01d4e497495a3c3acfbb6ca719fec7eaf
 from customer_model import  Customer
 from create_customerdb import *
 # log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
