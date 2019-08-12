@@ -1,0 +1,22 @@
+Parallel output:
+Products
+(1000, 9192, 10192, 0.5141141414642334)
+Customers
+(1000, 6230, 7230, 0.511113166809082)
+Total Time
+0.5181059837341309
+
+Linear output:
+Products
+(1000, 10192, 11192, 0.28307390213012695)
+Customers
+(1000, 7192, 8192, 0.27706193923950195)
+Total Time
+0.844200849533081
+
+
+The parallel program reduces the time the program takes by more than 38%, making a switch to a parallel program worthwhile.
+
+
+Contention
+Contention could occur when using shared data, however, each import function imports to a seperate collection, avoiding this issue.
