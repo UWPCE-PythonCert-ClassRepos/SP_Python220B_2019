@@ -1,5 +1,4 @@
 """Database schema class"""
-# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments,wrong-import-position
 from peewee import SqliteDatabase, Model, CharField
 
 DB = SqliteDatabase('customers.db')
