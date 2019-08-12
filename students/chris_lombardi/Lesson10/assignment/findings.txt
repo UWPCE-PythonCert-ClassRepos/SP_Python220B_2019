@@ -1,0 +1,30 @@
+Lesson10 Conclusions
+
+In this lesson, I expanded the code from Lesson05 to add a timing feature to each function that performed
+an action on the MongoDB database using MetaClasses. This timing data was useful in understanding how long
+certain actions took in the database as a function of the number of records being added, viewed, or deleted.
+
+First, I started with a simple dataset containing 10 customers, 10 products, and 10 rentals. I was able to 
+successfully run this code and observed that importing all of the records into the MongoDB database took 
+0.124 seconds. Showing the available products only took 0.00598 seconds and showing the rentals only took
+0.00859 seconds. Finally, deleting all of the records from the database (a total of 25 records) took 
+0.0339 seconds. 
+
+Next, I used the data expander I developed in Lesson07 to generate random entries of data to be used. I 
+elected to use 100 products, 100 customers, and 10 rentals. This time, importing the data took 0.738 seconds, 
+which was a 495% increase in time. The functions to show available products and rentals had 
+comparable times (0.00895s and 0.0109s) to the first test using a smaller dataset. Additionally, deleting 
+all of the records form the database took 0.0388 seconds, which was very similar to deleting only 25 records.
+
+The final set of data I used to test the timing was to use 1000 customers, 1000 products, and 10 rentals. 
+Timing the import of this data into the database resulted in a total time of 5.5216 seconds, which was a
+648% increase in time. The time to show all available products was 0.149 seconds and the time to show 
+all rentals was 0.00698 seconds. These times were similar to the times from the previous two iterations. 
+The time to drop all records was, again, not impacted by the number of records to be processed/removed.
+
+Reviewing the timing results shows that adding items to the database is really the only function that is 
+affected by time. By looking at the proportion of total time compared to number of records, the time/record
+is similar across all three iterations. This indicates that the total amount of time to import data is directly
+correlated (linear) to the number of records. When deleting records, the time remains fairly constant, which
+I assume is because the program is not iterating through every record in the database and is instead removing
+groups, or columns, of records which remained constant at 3 throughout the time testing.

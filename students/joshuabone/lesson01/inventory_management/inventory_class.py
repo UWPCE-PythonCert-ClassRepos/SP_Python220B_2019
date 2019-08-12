@@ -18,5 +18,4 @@ class Inventory:  # pylint: disable=too-few-public-methods
         output_dict['description'] = self.description
         output_dict['marketPrice'] = self.market_price
         output_dict['rentalPrice'] = self.rental_price
-
         return output_dict
