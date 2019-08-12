@@ -1,21 +1,21 @@
 Parallel output:
 Products
-(1000, 5120, 6120, 0.29320669174194336)
+(1000, 9192, 10192, 0.5141141414642334)
 Customers
-(1000, 2120, 3120, 0.2829110622406006)
+(1000, 6230, 7230, 0.511113166809082)
 Total Time
-0.8451776504516602
+0.5181059837341309
 
 Linear output:
 Products
-(1000, 6120, 7120, 0.29105496406555176)
+(1000, 10192, 11192, 0.28307390213012695)
 Customers
-(1000, 3120, 4120, 0.286074161529541)
+(1000, 7192, 8192, 0.27706193923950195)
 Total Time
-0.852196216583252
+0.844200849533081
 
 
-The parallel calculation did have a slight advantage, but with a ~0.007 second difference, switching to parallel processing is probably not worth it.
+The parallel program reduces the time the program takes by more than 38%, making a switch to a parallel program worthwhile.
 
 
 Contention
