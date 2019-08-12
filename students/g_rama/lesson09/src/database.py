@@ -87,7 +87,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                     print(row)
                     try:
                         mongo.rentals.insert_one(row)
-                    except Exception as ex:
+                    except Exception:
                         rentals_error += 1
         except FileNotFoundError:
             rentals_error += 1
