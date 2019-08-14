@@ -19,7 +19,6 @@ import sys
 
 def image_recursion(root_dir):
     dirs = os.listdir(root_dir)
-    print("rmakanth")
     print(dirs)
     #return dirs
     images = []
