@@ -15,13 +15,15 @@ class TestBasicOperations(TestCase):
     @classmethod
     def test_database_creation(self):
         """ Create the database """
-        basic_operations.DATABASE.connect()
         assert basic_operations.create_database()
+        basic_operations.DATABASE.connect()
+        assert not basic_operations.DATABASE.is_closed()
 
 
     @classmethod
     def test_add_customer(cls):
         """ Ensure can add a customer to the database """
+        assert basic_operations.create_database()
         added_user = basic_operations.add_customer(0,
                                                    'jaimes',
                                                    'hernandez',
@@ -35,8 +37,9 @@ class TestBasicOperations(TestCase):
 
 
     @classmethod
-    def test_add_customer(cls):
-        """ Ensure can add a customer to the database """
+    def test_add_customer_with_id(cls):
+        """ Ensure can add a customer to the database with id """
+        assert basic_operations.create_database()
         added_user = basic_operations.add_customer(0,
                                                    'jaimes',
                                                    'hernandez',
@@ -60,6 +63,7 @@ class TestBasicOperations(TestCase):
     @classmethod
     def test_search_customer_valid(cls):
         """ Ensure can search a customer to the database """
+        assert basic_operations.create_database()
         basic_operations.add_customer(0,
                                      'jaimes',
                                      'hernandez',
@@ -74,12 +78,22 @@ class TestBasicOperations(TestCase):
     @classmethod
     def test_search_customer_invalid(cls):
         """ Ensure proper result when searching for invalid customer """
+        assert basic_operations.create_database()
         assert basic_operations.search_customer(2) is None
 
 
     @classmethod
     def test_update_customer_credit_valid(cls):
         """ Ensure can update an active customer's credit in the database """
+        assert basic_operations.create_database()
+        basic_operations.add_customer(0,
+                                     'jaimes',
+                                     'hernandez',
+                                     '101 Elliot Ave. SE',
+                                     '205-222-1111',
+                                     'jh@gmail.com',
+                                     True,
+                                     2000)
         assert basic_operations.update_customer_credit(1, 3000)
         results = basic_operations.search_customer_status(1)
         for result in results:
@@ -93,14 +107,7 @@ class TestBasicOperations(TestCase):
         """
         Ensure can update an invalid customer's credit in the database  fails
         """
-        assert not basic_operations.update_customer_credit(10, 3000)
-        result = basic_operations.search_customer_status(10)
-        assert len(result) == 0
-
-
-    @classmethod
-    def test_list_active_customer(cls):
-        """ Ensure can list all active customers from the database """
+        assert basic_operations.create_database()
         basic_operations.add_customer(0,
                                      'jaimes',
                                      'hernandez',
@@ -109,12 +116,38 @@ class TestBasicOperations(TestCase):
                                      'jh@gmail.com',
                                      True,
                                      2000)
-        assert int(basic_operations.list_active_customers()) > 0
+        assert not basic_operations.update_customer_credit(10, 3000)
+        result = basic_operations.search_customer_status(10)
+        assert len(result) == 0
+
+
+    @classmethod
+    def test_list_active_customer(cls):
+        """ Ensure can list all active customers from the database """
+        assert basic_operations.create_database()
+        basic_operations.add_customer(0,
+                                     'jaimes',
+                                     'hernandez',
+                                     '101 Elliot Ave. SE',
+                                     '205-222-1111',
+                                     'jh@gmail.com',
+                                     True,
+                                     2000)
+        assert int(basic_operations.list_active_customers()) == 1
 
 
     @classmethod
     def test_delete_customer_valid(cls):
         """ Ensure can delete a customer from the database """
+        assert basic_operations.create_database()
+        basic_operations.add_customer(0,
+                                     'jaimes',
+                                     'hernandez',
+                                     '101 Elliot Ave. SE',
+                                     '205-222-1111',
+                                     'jh@gmail.com',
+                                     True,
+                                     2000)
         before = basic_operations.list_active_customers()
         assert before > 0
         assert basic_operations.delete_customer(1)
@@ -125,6 +158,15 @@ class TestBasicOperations(TestCase):
     @classmethod
     def test_delete_customer_invalid(cls):
         """ Ensure can delete a customer from the database """
+        assert basic_operations.create_database()
+        basic_operations.add_customer(0,
+                                     'jaimes',
+                                     'hernandez',
+                                     '101 Elliot Ave. SE',
+                                     '205-222-1111',
+                                     'jh@gmail.com',
+                                     True,
+                                     2000)
         before = basic_operations.list_active_customers()
         assert before > 0
         basic_operations.delete_customer(10)

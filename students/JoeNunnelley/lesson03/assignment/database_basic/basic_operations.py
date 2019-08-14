@@ -42,13 +42,14 @@ The Database Basic Operations Module
         with the number of customers whose status is currently active.
 """
 import logging
+import os
 from peewee import SqliteDatabase, Model
 from peewee import CharField, BooleanField
 from peewee import IntegerField, ForeignKeyField
 from peewee import IntegrityError, DatabaseError
 
 
-DATABASE_NAME = './customer.db'
+DATABASE_NAME = 'customer.db'
 DATABASE = SqliteDatabase(DATABASE_NAME)
 DATABASE.execute_sql('PRAGMA foreign_keys = ON;')  # needed for sqlite only
 FORMAT = '%(asctime)-15s %(message)s'
@@ -241,6 +242,11 @@ def list_active_customers():
     return active_count
 
 
+def delete_database():
+    """ Remove the database from the filesystem """
+    os.remove(DATABASE_NAME)
+
+
 if __name__ == '__main__':  # pragma: no cover
     create_database()
     ADDED_CUSTOMER = add_customer(0,
@@ -257,3 +263,5 @@ if __name__ == '__main__':  # pragma: no cover
     print("Customers with Active status: %s", list_active_customers())
     delete_customer(ADDED_CUSTOMER['customer_id'])
     print("Customers with Active status: %s", list_active_customers())
+    delete_database()
+    print("Database removed")
