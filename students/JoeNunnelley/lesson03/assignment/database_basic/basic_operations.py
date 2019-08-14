@@ -45,7 +45,7 @@ import logging
 from peewee import SqliteDatabase, Model
 from peewee import CharField, BooleanField
 from peewee import IntegerField, ForeignKeyField
-from peewee import IntegrityError
+from peewee import IntegrityError, DatabaseError
 
 
 DATABASE_NAME = './customer.db'
@@ -89,9 +89,14 @@ class CustomerStatus(BaseModel):
 
 def create_database():
     """ Create the database if needed """
-    DATABASE.create_tables([Customer, CustomerStatus])
-    DATABASE.close()
-    LOGGER.debug("Database is closed: %s", DATABASE.is_closed())
+    try:
+        DATABASE.create_tables([Customer, CustomerStatus])
+        DATABASE.close()
+        LOGGER.debug("Database is closed: %s", DATABASE.is_closed())
+        return True
+    except DatabaseError as exception:
+        LOGGER.debug("ERROR: %s", exception)
+        return False
 
 
 def create_or_get_customer(customer_id, name, last_name,
@@ -100,24 +105,32 @@ def create_or_get_customer(customer_id, name, last_name,
     customer = None
 
     try:
-        if customer_id > 0:
+        DATABASE.connect(reuse_if_open=True)
+        count = Customer.select().where(Customer.name == name,
+                                        Customer.last_name == last_name,
+                                        Customer.address == address,
+                                        Customer.phone_number == phone_number,
+                                        Customer.email == email).count()
+        if customer_id > 0 and count > 0:
             customer = Customer.get_by_id(customer_id)
-        else:
+        elif count > 0:
             customer = Customer.get(name=name,
                                     last_name=last_name,
                                     address=address,
                                     phone_number=phone_number,
                                     email=email)
 
-        LOGGER.debug("Retrieved Existing User: %s", customer)
-    except IntegrityError:
-        customer = Customer.create(name=name,
-                                   last_name=last_name,
-                                   address=address,
-                                   phone_number=phone_number,
-                                   email=email)
+            LOGGER.debug("Retrieved Existing User: %s", customer)
+        else:
+            customer = Customer.create(name=name,
+                                       last_name=last_name,
+                                       address=address,
+                                       phone_number=phone_number,
+                                       email=email)
 
-        LOGGER.debug("Created User: %s", customer)
+            LOGGER.debug("Created User: %s", customer)
+    finally:
+        DATABASE.close()
 
     return customer
 
@@ -126,13 +139,22 @@ def create_or_get_customer_status(customer_id, status, credit_limit):
     """ Function to create or get the customer status details """
     customer_status = None
     try:
-        customer_status = CustomerStatus.get(customer_id=customer_id)
-        LOGGER.debug("Retrieved Existing Status: %s", customer_status)
-    except IntegrityError:
-        customer_status = CustomerStatus.create(customer_id=customer_id,
-                                                status=status,
-                                                credit_limit=credit_limit)
-        LOGGER.debug("Created User Status: %s", customer_status)
+        DATABASE.connect(reuse_if_open=True)
+        count = CustomerStatus.select() \
+                              .where(
+                                  CustomerStatus.customer_id == customer_id) \
+                              .count()
+
+        if count > 0:
+            customer_status = CustomerStatus.get(customer_id=customer_id)
+            LOGGER.debug("Retrieved Existing Status: %s", customer_status)
+        else:
+            customer_status = CustomerStatus.create(customer_id=customer_id,
+                                                    status=status,
+                                                    credit_limit=credit_limit)
+            LOGGER.debug("Created User Status: %s", customer_status)
+    finally:
+        DATABASE.close()
 
     return customer_status
 
@@ -140,27 +162,43 @@ def create_or_get_customer_status(customer_id, status, credit_limit):
 def add_customer(customer_id, name, last_name, address,
                  phone_number, email, status, credit_limit):
     """ Add a customer ot the database """
+    DATABASE.connect(reuse_if_open=True)
     customer = create_or_get_customer(customer_id, name, last_name,
                                       address, phone_number, email)
     customer_status = create_or_get_customer_status(customer.id, status,
                                                     credit_limit)
 
+    DATABASE.close()
     return {"customer_id": customer.id,
             "customer_status_id": customer_status.id}
 
 
 def search_customer(customer_id):
     """ Search for a customer in the database """
+    DATABASE.connect(reuse_if_open=True)
     query = Customer.select().where(Customer.id == customer_id).dicts()
     for customer in query:
         print(customer)
 
+    DATABASE.close()
     return query or None
+
+
+def search_customer_status(customer_id):
+    """ Search the customer status in the database """
+    DATABASE.connect(reuse_if_open=True)
+    query = CustomerStatus.select() \
+                          .where(
+                              CustomerStatus.customer_id == customer_id)  \
+                          .dicts()
+
+    return query
 
 
 def delete_customer(customer_id):
     """ Delete a customer from the database """
     try:
+        DATABASE.connect(reuse_if_open=True)
         customer = Customer.delete().where(Customer.id == customer_id)
         status = CustomerStatus.delete().where(CustomerStatus.customer_id ==
                                                customer_id)
@@ -171,27 +209,36 @@ def delete_customer(customer_id):
     except IntegrityError:
         LOGGER.debug("Customer %s deletion failed", customer_id)
         return False
+    finally:
+        DATABASE.close()
 
 
 def update_customer_credit(customer_id, credit_limit):
     """ Update a customer's credit limit """
     try:
-        current = CustomerStatus.get(CustomerStatus.customer_id == customer_id)
-        current.credit_limit = credit_limit
-        current.save()
-        LOGGER.debug("Updated credit limit to %s for customer %s",
-                     credit_limit, customer_id)
-        return True
-    except IntegrityError as error:
-        LOGGER.debug("Invalid customer id provided: %s\n%s",
-                     customer_id,
-                     error)
+        DATABASE.connect(reuse_if_open=True)
+        if CustomerStatus.select() \
+                         .where(CustomerStatus.customer_id == customer_id):
+            current = CustomerStatus.get(CustomerStatus.customer_id ==
+                                         customer_id)
+            current.credit_limit = credit_limit
+            current.save()
+            LOGGER.debug("Updated credit limit to %s for customer %s",
+                         credit_limit, customer_id)
+            return True
+
+        LOGGER.debug("Invalid customer id provided: %s", customer_id)
         return False
+    finally:
+        DATABASE.close()
 
 
 def list_active_customers():
     """ List all the active cusomters in the database """
-    return CustomerStatus.select().where(CustomerStatus.status).count()
+    DATABASE.connect(reuse_if_open=True)
+    active_count = CustomerStatus.select().where(CustomerStatus.status).count()
+    DATABASE.close()
+    return active_count
 
 
 if __name__ == '__main__':  # pragma: no cover
