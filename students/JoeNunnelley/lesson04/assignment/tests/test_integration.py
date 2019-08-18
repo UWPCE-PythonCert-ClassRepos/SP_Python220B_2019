@@ -40,9 +40,9 @@ class TestIntegrationScenario(TestCase):
             assert result['status']
             assert int(result['credit_limit']) == 3000
 
-        assert int(basic_operations.list_active_customers()) > 0
+        assert int(basic_operations.get_active_customer_count()) > 0
         assert basic_operations.delete_customer(1)
-        assert int(basic_operations.list_active_customers()) == 0
+        assert int(basic_operations.get_active_customer_count()) == 0
 
         basic_operations.delete_database()
         assert not os.path.exists(basic_operations.DATABASE_NAME)

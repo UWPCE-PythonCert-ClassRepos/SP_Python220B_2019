@@ -133,7 +133,7 @@ class TestBasicOperations(TestCase):
                                      'jh@gmail.com',
                                      True,
                                      2000)
-        assert int(basic_operations.list_active_customers()) == 1
+        assert int(basic_operations.get_active_customer_count()) == 1
 
 
     @classmethod
@@ -148,10 +148,10 @@ class TestBasicOperations(TestCase):
                                      'jh@gmail.com',
                                      True,
                                      2000)
-        before = basic_operations.list_active_customers()
+        before = basic_operations.get_active_customer_count()
         assert before > 0
         assert basic_operations.delete_customer(1)
-        after = basic_operations.list_active_customers()
+        after = basic_operations.get_active_customer_count()
         assert before > after
 
 
@@ -167,8 +167,8 @@ class TestBasicOperations(TestCase):
                                      'jh@gmail.com',
                                      True,
                                      2000)
-        before = basic_operations.list_active_customers()
+        before = basic_operations.get_active_customer_count()
         assert before > 0
         basic_operations.delete_customer(10)
-        after = basic_operations.list_active_customers()
+        after = basic_operations.get_active_customer_count()
         assert before == after

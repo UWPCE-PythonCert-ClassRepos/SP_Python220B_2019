@@ -42,6 +42,7 @@ The Database Basic Operations Module
         with the number of customers whose status is currently active.
 """
 import logging
+import json
 import os
 from peewee import SqliteDatabase, Model
 from peewee import CharField, BooleanField
@@ -98,6 +99,17 @@ def create_database():
     except DatabaseError as exception:
         LOGGER.debug("ERROR: %s", exception)
         return False
+
+
+def load_customers():
+    """ Load the database with data """
+    with open('customer.json') as json_file:
+        data = json.load(json_file)
+        for customer in data['customers']:  # itertable collection
+            add_customer(0, customer['name'], customer['last_name'],
+                         customer['address'], customer['phone_number'],
+                         customer['email'], customer['active'],
+                         customer['credit_limit'])
 
 
 def create_or_get_customer(customer_id, name, last_name,
@@ -162,7 +174,7 @@ def create_or_get_customer_status(customer_id, status, credit_limit):
 
 def add_customer(customer_id, name, last_name, address,
                  phone_number, email, status, credit_limit):
-    """ Add a customer ot the database """
+    """ Add a customer to the database """
     DATABASE.connect(reuse_if_open=True)
     customer = create_or_get_customer(customer_id, name, last_name,
                                       address, phone_number, email)
@@ -194,6 +206,24 @@ def search_customer_status(customer_id):
                           .dicts()
 
     return query
+
+
+def delete_customers():
+    """ Delete all customers from the database """
+    try:
+        DATABASE.connect(reuse_if_open=True)
+        for customer in Customer.select():  # iterable
+            _customer = Customer.delete().where(Customer.id == customer.id)
+            status = CustomerStatus.delete() \
+                                   .where(CustomerStatus.customer_id ==
+                                          customer.id)
+            status.execute()
+            _customer.execute()
+            LOGGER.debug("Customer %s:%s deleted", customer.id, customer.name)
+    except DatabaseError:
+        logging.error("Unable to connect to the database")
+    finally:
+        DATABASE.close()
 
 
 def delete_customer(customer_id):
@@ -234,12 +264,40 @@ def update_customer_credit(customer_id, credit_limit):
         DATABASE.close()
 
 
-def list_active_customers():
-    """ List all the active cusomters in the database """
+def get_active_customer_count():
+    """ List the count of all active cusomters in the database """
     DATABASE.connect(reuse_if_open=True)
     active_count = CustomerStatus.select().where(CustomerStatus.status).count()
     DATABASE.close()
     return active_count
+
+
+def list_active_customers():
+    """ List the customer data for each active customer """
+    DATABASE.connect(reuse_if_open=True)
+    active_customers = Customer.select(Customer, CustomerStatus.credit_limit) \
+                               .join(CustomerStatus,
+                                     on=(CustomerStatus.customer_id ==
+                                         Customer.id)) \
+                               .where(CustomerStatus.status).dicts()
+
+    for customer in active_customers.iterator():  # convert to interator
+        print(customer)
+
+
+def list_inactive_customers():
+    """ List the inactive customers in the databse """
+    DATABASE.connect(reuse_if_open=True)
+    inactive_customers = Customer.select(Customer,
+                                         CustomerStatus.credit_limit) \
+                                 .join(CustomerStatus,
+                                       on=(CustomerStatus.customer_id ==
+                                           Customer.id)) \
+                                 .where(CustomerStatus.status == False) \
+                                 .dicts()
+
+    for customer in inactive_customers.iterator():
+        print(customer)
 
 
 def delete_database():
@@ -257,11 +315,28 @@ if __name__ == '__main__':  # pragma: no cover
                                   'jcnunnelley@gmail.com',
                                   True,
                                   1000)
+    print("\nAdd Customers")
+    load_customers()
+    print("\nList Active Customers")
+    list_active_customers()
+    print("\nList Inactive Customers")
+    list_inactive_customers()
+    print("\nSearch Valid Customer")
     print(search_customer(ADDED_CUSTOMER['customer_id']))
+    print("\nSearch Invalid Customer")
     print(search_customer(20))
+    print("\nUpdate Customer")
     update_customer_credit(ADDED_CUSTOMER['customer_id'], 2000)
-    print("Customers with Active status: %s", list_active_customers())
+    print("\nCustomers with Active status: %s", list_active_customers())
+    print("\nActive Customer Details")
+    list_active_customers()
+    print("\nDelete the customer : %s", ADDED_CUSTOMER['customer_id'])
     delete_customer(ADDED_CUSTOMER['customer_id'])
-    print("Customers with Active status: %s", list_active_customers())
+    list_active_customers()
+    print("\nDelete all customers from the database")
+    delete_customers()
+    list_active_customers()
+    print("\nCustomers with Active status: %s", get_active_customer_count())
     delete_database()
-    print("Database removed")
+    print("\nDatabase removed")
+    print("\b")
