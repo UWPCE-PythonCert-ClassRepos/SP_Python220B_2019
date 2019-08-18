@@ -3,27 +3,45 @@ This file contains basic operations for interacting with a customer database
 '''
 
 import logging
-import datetime
 from peewee import OperationalError, IntegrityError, DoesNotExist, fn
 from customer_model import database, Customer
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.INFO)
 
-log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-formatter = logging.Formatter(log_format)
+LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+FORMATTER = logging.Formatter(LOG_FORMAT)
 
 # Create log file for warning and error messages
-log_file = 'db.log'
-file_handler = logging.FileHandler(log_file)
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(formatter)
+LOG_FILE = 'db.log'
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setLevel(logging.INFO)
+FILE_HANDLER.setFormatter(FORMATTER)
 # Add handlers to logger
-LOGGER.addHandler(file_handler)
+LOGGER.addHandler(FILE_HANDLER)
 
 LOGGER.info('One off program to build the class from the model in the database')
 database.create_tables([Customer])
 database.close()
+
+def add_customers(customer_dict):
+    '''
+    Add multiple customer to database
+
+    Args:
+        customer_dict (dict):
+            Nested dictionary of customers to add, key is customer_id, value is
+            dictionary of remaining customer attributes
+    '''
+    for customer in customer_dict:
+        add_customer(customer,
+                     customer_dict[customer]['firstname'],
+                     customer_dict[customer]['lastname'],
+                     customer_dict[customer]['address'],
+                     customer_dict[customer]['phone'],
+                     customer_dict[customer]['email'],
+                     customer_dict[customer]['status'],
+                     customer_dict[customer]['credit_limit'])
 
 def add_customer(customer_id, firstname, lastname, address, phone, email, status, credit_limit):
     '''
@@ -47,7 +65,6 @@ def add_customer(customer_id, firstname, lastname, address, phone, email, status
             Customer's status (active or not)
         credit_limit (float):
             Customer's credit limit in dollars
-
     '''
     try:
         with database.transaction():
@@ -61,7 +78,7 @@ def add_customer(customer_id, firstname, lastname, address, phone, email, status
                 status=status,
                 credit_limit=credit_limit)
         new_customer.save()
-        LOGGER.info('Database add successful')
+        LOGGER.info(f'Added customer {customer_id} to database')
     except (OperationalError, IntegrityError, DoesNotExist) as exc:
         LOGGER.info(f'Error creating entry for customer {customer_id}, see error below')
         LOGGER.info(exc)
@@ -87,6 +104,28 @@ def search_customer(customer_id):
         # Customer not found, return empty dictionary
         return {}
 
+def return_customer_ids():
+    '''
+    Return all customer IDs from database.
+    Note that this function returns a generator so all customers aren't
+    collected at once (provision for large customer database).
+    '''
+    for customer_id in Customer.select(Customer.id):
+        yield search_customer(customer_id)
+
+def print_all_customers():
+    '''
+    Print all customers names, email addresses, and phone numbers
+    Since return_customer_ids() produces a generator, need to handle
+    StopIteration error that will be thrown when generator is exhausted.
+    '''
+    customers = return_customer_ids()
+    try:
+        while customers:
+            print('{firstname} {lastname}, {email}, {phone}'.format(**next(customers)))
+    except StopIteration:
+        pass
+
 def delete_customer(customer_id):
     '''
     Delete customer from database.
@@ -96,6 +135,7 @@ def delete_customer(customer_id):
             Unique customer ID (5 characters)
     '''
     # Retrieve and delete customer from database
+    LOGGER.info(f'Deleted customer {customer_id} from database')
     customer = Customer.get(Customer.id == customer_id)
     customer.delete_instance()
 
@@ -114,6 +154,7 @@ def update_customer_credit(customer_id, credit_limit):
         customer = Customer.get(Customer.id == customer_id)
         customer.credit_limit = credit_limit
         customer.save()
+        LOGGER.info(f'Updated credit limit of customer {customer_id} to {credit_limit} dollars')
     except DoesNotExist:
         raise ValueError(f'Customer with id {customer_id} does not exist.')
 
