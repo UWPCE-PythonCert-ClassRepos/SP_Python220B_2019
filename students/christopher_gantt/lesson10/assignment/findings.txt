@@ -1,0 +1,1 @@
+Timings of the import csv functions seem to indicate that there are no bottlenecks with regards to the different imports. The timings all indicate a very similar import time with a slight variance which can be ascribed to the slightly different number of data points in each of the import files. 
