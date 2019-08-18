@@ -7,6 +7,7 @@ from customer_schema import *
 from basic_operations import *
 from unittest import TestCase
 
+
 def setup():
     database.drop_tables([Customer])
     database.create_tables([Customer])
@@ -44,7 +45,7 @@ class TestingBasicOperations(TestCase):
                 'Email': 'whiskeybusiness@aol.com', 'Phone Number': '773-202-LUNA'}
         self.assertEqual(retrieved_data, expected_data)
 
-        #Test negative case (ID not found)
+        '''Test negative case (ID not found)'''
         nonexisting_search = search_customer('345')
         self.assertEqual(nonexisting_search,{})
 
@@ -55,6 +56,11 @@ class TestingBasicOperations(TestCase):
         add_customer(*test_customer)
         delete_customer('42')
 
+        '''Tests customer not existing'''
+        with self.assertRaises(DoesNotExist):
+            '''Uses an invalid customer ID'''
+            delete_customer('12')
+
     def test_update_customer_credit(self):
         setup()
         test_customer = ('42', 'Ron', 'Swanson', 'Pawnee, Ind', '773-202-LUNA',
@@ -64,10 +70,14 @@ class TestingBasicOperations(TestCase):
         test_cust = Customer.get(Customer.customer_id == '42')
         self.assertEqual(test_cust.credit_limit, 700)
 
+        '''Tests customer not existing'''
+        with self.assertRaises(DoesNotExist):
+            '''Uses an invalid customer ID'''
+            update_customer_credit('12',750)
 
     def test_list_active_customers(self):
         setup()
         test_customer = ('42', 'Ron', 'Swanson', 'Pawnee, Ind', '773-202-LUNA',
                          'whiskeybusiness@aol.com', True, 500)
         add_customer(*test_customer)
-        self.assertEqual(list_active_customers(),1)
+        self.assertEqual(list_active_customers(), 1)
