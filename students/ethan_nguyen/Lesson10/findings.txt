@@ -1,0 +1,31 @@
+
+First run 
+Started with importing 106 records for rentals, customers and inventory.  
+The import_data function took .5936 seconds to complete
+The show_customers function took .1059 seconds to complete
+The delete_function which delete all records took .3108 seconds to complete
+
+Second run 
+Started with importing 148 records for rentals, customers and inventory.  
+The import_data function took .4956 seconds to complete
+The show_customers function took .0505 seconds to complete
+The delete_function which delete all records took .4607 seconds to complete
+
+Third run 
+Started with importing 820 records for rentals, customers and inventory.  
+The import_data function took .5149 seconds to complete
+The show_customers function took .2656 seconds to complete
+The delete_function which delete all records took .2588 seconds to complete
+
+Fourth run 
+Started with importing 75954 records for rentals, customers and inventory.  
+The import_data function took 8.767 seconds to complete
+The show_customers function took .2688 seconds to complete
+The delete_function which delete all records took .2326 seconds to complete
+
+From these simple experiments above, it appears that the "delete" and "select" oprations are
+invariant to number of records, at least for these four conducted runs.  The results could be different 
+if more records are used in the experiments.  On the other hand, "insert" operation seems to have
+a relationship with number of records being imported, more records seems to lead to longer run time.
+The import_data functionality is the bottle of the system and should be addressed accordingly using techniques
+such as threading or multiprocessing 
