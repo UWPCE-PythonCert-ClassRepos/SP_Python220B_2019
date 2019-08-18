@@ -3,11 +3,23 @@ This file contains basic operations for interacting with a customer database
 '''
 
 import logging
+import datetime
 from peewee import OperationalError, IntegrityError, DoesNotExist, fn
 from customer_model import database, Customer
 
-logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.INFO)
+
+log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+formatter = logging.Formatter(log_format)
+
+# Create log file for warning and error messages
+log_file = 'db.log'
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(formatter)
+# Add handlers to logger
+LOGGER.addHandler(file_handler)
 
 LOGGER.info('One off program to build the class from the model in the database')
 database.create_tables([Customer])

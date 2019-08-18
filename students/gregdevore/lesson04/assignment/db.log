@@ -1,0 +1,10 @@
+2019-08-14 18:22:27,748 basic_operations.py:24  INFO One off program to build the class from the model in the database
+2019-08-14 18:22:27,757 basic_operations.py:64  INFO Database add successful
+2019-08-14 18:22:27,766 basic_operations.py:66  INFO Error creating entry for customer 00001, see error below
+2019-08-14 18:22:27,766 basic_operations.py:67  INFO UNIQUE constraint failed: customer.id
+2019-08-14 18:22:27,774 basic_operations.py:64  INFO Database add successful
+2019-08-17 21:05:12,045 basic_operations.py:24  INFO One off program to build the class from the model in the database
+2019-08-17 21:05:12,088 basic_operations.py:64  INFO Database add successful
+2019-08-17 21:05:12,098 basic_operations.py:66  INFO Error creating entry for customer 00001, see error below
+2019-08-17 21:05:12,099 basic_operations.py:67  INFO UNIQUE constraint failed: customer.id
+2019-08-17 21:05:12,109 basic_operations.py:64  INFO Database add successful
