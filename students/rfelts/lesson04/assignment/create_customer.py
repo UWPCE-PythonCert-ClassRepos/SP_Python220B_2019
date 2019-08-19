@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Russell Felts
-# Assignment 4 - Unit Tests
+# Assignment 4
 
 """ Creates the Customer Table in the Customer DB """
 
