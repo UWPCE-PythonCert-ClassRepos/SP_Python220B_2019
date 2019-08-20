@@ -1,0 +1,108 @@
+(base) C:\Users\Florentin\Desktop>cd L5
+
+(base) C:\Users\Florentin\Desktop\L5>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L5
+
+08/14/2019  05:18 PM    <DIR>          .
+08/14/2019  05:18 PM    <DIR>          ..
+08/14/2019  05:02 PM    <DIR>          csvdata
+08/14/2019  04:58 PM             6,011 database.py
+08/14/2019  04:14 PM            10,319 test_database.py
+               2 File(s)         16,330 bytes
+               3 Dir(s)  150,139,899,904 bytes free
+
+(base) C:\Users\Florentin\Desktop\L5>cd csvdata
+
+(base) C:\Users\Florentin\Desktop\L5\csvdata>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L5\csvdata
+
+08/14/2019  05:02 PM    <DIR>          .
+08/14/2019  05:02 PM    <DIR>          ..
+08/13/2019  09:22 AM             5,200 customers.csv
+08/14/2019  05:13 PM             4,340 generator_csv.py
+08/13/2019  09:22 AM             1,488 products.csv
+08/14/2019  05:11 PM             4,799 records.py
+08/13/2019  09:22 AM             1,384 rentals.csv
+07/28/2019  10:49 AM                 0 __init__.py
+               6 File(s)         17,211 bytes
+               2 Dir(s)  150,139,899,904 bytes free
+
+(base) C:\Users\Florentin\Desktop\L5\csvdata>cd ..
+
+(base) C:\Users\Florentin\Desktop\L5>python -m pylint ./csvdata
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop\L5>cd ..
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L5
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>cd L5
+
+(base) C:\Users\Florentin\Desktop\L5>python -m coverage run --source=database -m unittest test_database.py
+INFO:database:database.py
+INFO:database:loger active
+INFO:test_database:loger active
+INFO:test_database:test showing available products
+INFO:test_database:test of showing available products passed
+.INFO:test_database:test show rentals
+INFO:test_database:test show rentals passed
+..INFO:test_database:test csv-files insertion
+INFO:test_database:test of csv insertion sucesfull
+INFO:test_database:test of csv insertion sucesfull
+INFO:test_database:test of csv insertion sucesfull
+INFO:test_database:test exception when importing non-existent file
+INFO:database:path-indicated file not found
+INFO:database:[Errno 2] No such file or directory: 'csvdata/searched_product_file.csv'
+INFO:database:path-indicated file not found
+INFO:database:[Errno 2] No such file or directory: 'csvdata/searched_customer_file.csv'
+INFO:database:path-indicated file not found
+INFO:database:[Errno 2] No such file or directory: 'csvdata/searched_rental_file.csv'
+INFO:test_database:validating missing-values exception on a test csv-file
+INFO:database:inserted file has missing values
+INFO:database:inserted file has missing values
+INFO:test_database:test file has 2 rows, total missing values 3
+INFO:test_database:test file removed
+..INFO:test_database:loaded 50 products, 50 customers, and 50 rentals
+INFO:test_database:test printing products on console
+INFO:test_database: succesfull products printing
+.
+----------------------------------------------------------------------
+Ran 6 tests in 2.379s
+
+OK
+
+(base) C:\Users\Florentin\Desktop\L5>python -m coverage report -m
+Name          Stmts   Miss  Cover   Missing
+-------------------------------------------
+database.py      74      0   100%
+
+(base) C:\Users\Florentin\Desktop\L5>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L5
+
+08/14/2019  05:22 PM    <DIR>          .
+08/14/2019  05:22 PM    <DIR>          ..
+08/14/2019  05:22 PM               406 .coverage
+08/14/2019  05:22 PM    <DIR>          csvdata
+08/14/2019  04:58 PM             6,011 database.py
+08/14/2019  04:14 PM            10,319 test_database.py
+08/14/2019  05:22 PM    <DIR>          __pycache__
+               3 File(s)         16,736 bytes
+               4 Dir(s)  150,138,609,664 bytes free
+
+(base) C:\Users\Florentin\Desktop\L5>
