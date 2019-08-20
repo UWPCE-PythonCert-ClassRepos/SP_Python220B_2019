@@ -1,0 +1,50 @@
+2019-08-18 17:43:46,384 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,400 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,403 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:46,407 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:46,424 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,426 basic_operations.py:93  INFO Deleting customer ID 1:
+2019-08-18 17:43:46,430 basic_operations.py:95  INFO Customer ID 1 was deleted.
+2019-08-18 17:43:46,445 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,451 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:46,454 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:46,456 basic_operations.py:146 INFO Fetching the name of every active customer
+2019-08-18 17:43:46,470 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,476 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:46,479 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:46,481 basic_operations.py:136 INFO Fetching the number of active customers
+2019-08-18 17:43:46,496 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,498 basic_operations.py:75  INFO Looking up customer ID 1:
+2019-08-18 17:43:46,500 basic_operations.py:79  INFO Found customer ID 1, Bruce Wayne
+2019-08-18 17:43:46,508 basic_operations.py:75  INFO Looking up customer ID 1:
+2019-08-18 17:43:46,512 basic_operations.py:84  INFO Customer ID 1 was not found.
+2019-08-18 17:43:46,524 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:46,527 basic_operations.py:108 INFO Updating credit limit for Customer ID 1
+2019-08-18 17:43:46,530 basic_operations.py:116 INFO Updating customer, Bruce Wayne's credit limit to 500000.0
+2019-08-18 17:43:46,541 basic_operations.py:108 INFO Updating credit limit for Customer ID 2
+2019-08-18 17:43:46,545 basic_operations.py:119 INFO Can not modify credit limit because customer ID 2 doesn't exist.
+2019-08-18 17:43:49,085 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,098 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,103 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:49,107 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:49,122 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,124 basic_operations.py:93  INFO Deleting customer ID 1:
+2019-08-18 17:43:49,127 basic_operations.py:95  INFO Customer ID 1 was deleted.
+2019-08-18 17:43:49,138 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,142 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:49,145 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:49,147 basic_operations.py:146 INFO Fetching the name of every active customer
+2019-08-18 17:43:49,159 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,164 basic_operations.py:53  INFO A new customer record, Clark Kent, was added
+2019-08-18 17:43:49,168 basic_operations.py:53  INFO A new customer record, Diana Prince, was added
+2019-08-18 17:43:49,169 basic_operations.py:136 INFO Fetching the number of active customers
+2019-08-18 17:43:49,184 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,186 basic_operations.py:75  INFO Looking up customer ID 1:
+2019-08-18 17:43:49,189 basic_operations.py:79  INFO Found customer ID 1, Bruce Wayne
+2019-08-18 17:43:49,197 basic_operations.py:75  INFO Looking up customer ID 1:
+2019-08-18 17:43:49,201 basic_operations.py:84  INFO Customer ID 1 was not found.
+2019-08-18 17:43:49,213 basic_operations.py:53  INFO A new customer record, Bruce Wayne, was added
+2019-08-18 17:43:49,215 basic_operations.py:108 INFO Updating credit limit for Customer ID 1
+2019-08-18 17:43:49,222 basic_operations.py:116 INFO Updating customer, Bruce Wayne's credit limit to 500000.0
+2019-08-18 17:43:49,235 basic_operations.py:108 INFO Updating credit limit for Customer ID 2
+2019-08-18 17:43:49,238 basic_operations.py:119 INFO Can not modify credit limit because customer ID 2 doesn't exist.
