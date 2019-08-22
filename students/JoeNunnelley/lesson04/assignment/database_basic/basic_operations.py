@@ -209,12 +209,10 @@ def search_customer_status(customer_id):
     """ Search the customer status in the database """
     DATABASE.connect(reuse_if_open=True)
     LOGGER.debug("Searching for CustomerStatus for ID: %s", customer_id)
-    query = CustomerStatus.select() \
-                          .where(
-                              CustomerStatus.customer_id == customer_id)  \
-                          .dicts()
-
-    return query
+    return CustomerStatus.select() \
+                         .where(
+                             CustomerStatus.customer_id == customer_id)  \
+                         .dicts()
 
 
 def delete_customers():
