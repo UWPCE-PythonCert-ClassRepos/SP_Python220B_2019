@@ -56,6 +56,11 @@ DATABASE.execute_sql('PRAGMA foreign_keys = ON;')  # needed for sqlite only
 FORMAT = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 LOGGER = logging.getLogger('console')
+FH = logging.FileHandler('db.log', 'w+')
+FH.setLevel(logging.DEBUG)
+FORMATTER = logging.Formatter(FORMAT)
+FH.setFormatter(FORMATTER)
+LOGGER.addHandler(FH)
 
 
 class BaseModel(Model):
@@ -92,6 +97,7 @@ class CustomerStatus(BaseModel):
 def create_database():
     """ Create the database if needed """
     try:
+        LOGGER.debug("Create database: %s", DATABASE_NAME)
         DATABASE.create_tables([Customer, CustomerStatus])
         DATABASE.close()
         LOGGER.debug("Database is closed: %s", DATABASE.is_closed())
@@ -103,6 +109,7 @@ def create_database():
 
 def load_customers():
     """ Load the database with data """
+    LOGGER.debug("Load data from file: customer.json")
     with open('customer.json') as json_file:
         data = json.load(json_file)
         for customer in data['customers']:  # itertable collection
@@ -133,7 +140,7 @@ def create_or_get_customer(customer_id, name, last_name,
                                     phone_number=phone_number,
                                     email=email)
 
-            LOGGER.debug("Retrieved Existing User: %s", customer)
+            LOGGER.debug("Retrieved Existing User: %s", str(customer))
         else:
             customer = Customer.create(name=name,
                                        last_name=last_name,
@@ -141,7 +148,7 @@ def create_or_get_customer(customer_id, name, last_name,
                                        phone_number=phone_number,
                                        email=email)
 
-            LOGGER.debug("Created User: %s", customer)
+            LOGGER.debug("Created User: %s", str(customer))
     finally:
         DATABASE.close()
 
@@ -180,7 +187,7 @@ def add_customer(customer_id, name, last_name, address,
                                       address, phone_number, email)
     customer_status = create_or_get_customer_status(customer.id, status,
                                                     credit_limit)
-
+    LOGGER.debug("Create Customer: %s", str(customer))
     DATABASE.close()
     return {"customer_id": customer.id,
             "customer_status_id": customer_status.id}
@@ -191,6 +198,7 @@ def search_customer(customer_id):
     DATABASE.connect(reuse_if_open=True)
     query = Customer.select().where(Customer.id == customer_id).dicts()
     for customer in query:
+        LOGGER.debug("Found Customer: %s", str(customer))
         print(customer)
 
     DATABASE.close()
@@ -200,6 +208,7 @@ def search_customer(customer_id):
 def search_customer_status(customer_id):
     """ Search the customer status in the database """
     DATABASE.connect(reuse_if_open=True)
+    LOGGER.debug("Searching for CustomerStatus for ID: %s", customer_id)
     query = CustomerStatus.select() \
                           .where(
                               CustomerStatus.customer_id == customer_id)  \
@@ -269,6 +278,7 @@ def get_active_customer_count():
     DATABASE.connect(reuse_if_open=True)
     active_count = CustomerStatus.select().where(CustomerStatus.status).count()
     DATABASE.close()
+    LOGGER.debug("Active customer count: %s", active_count)
     return active_count
 
 
@@ -282,6 +292,7 @@ def list_active_customers():
                                .where(CustomerStatus.status).dicts()
 
     for customer in active_customers.iterator():  # convert to interator
+        LOGGER.debug("Active Customer: %s", str(customer))
         print(customer)
 
 
@@ -294,14 +305,16 @@ def list_inactive_customers():
                                        on=(CustomerStatus.customer_id ==
                                            Customer.id)) \
                                  .where(CustomerStatus.status == False) \
-                                 .dicts()
+                                 .dicts()  # noqa: E712
 
     for customer in inactive_customers.iterator():
+        LOGGER.debug("Inactive Customer: %s", str(customer))
         print(customer)
 
 
 def delete_database():
     """ Remove the database from the filesystem """
+    LOGGER.debug("Deleting Database: %s", DATABASE_NAME)
     os.remove(DATABASE_NAME)
 
 
@@ -315,28 +328,28 @@ if __name__ == '__main__':  # pragma: no cover
                                   'jcnunnelley@gmail.com',
                                   True,
                                   1000)
-    print("\nAdd Customers")
+    LOGGER.debug("\nAdd Customers")
     load_customers()
-    print("\nList Active Customers")
+    LOGGER.debug("\nList Active Customers")
     list_active_customers()
-    print("\nList Inactive Customers")
+    LOGGER.debug("\nList Inactive Customers")
     list_inactive_customers()
-    print("\nSearch Valid Customer")
-    print(search_customer(ADDED_CUSTOMER['customer_id']))
-    print("\nSearch Invalid Customer")
-    print(search_customer(20))
-    print("\nUpdate Customer")
+    LOGGER.debug("\nSearch Valid Customer")
+    LOGGER.debug(search_customer(ADDED_CUSTOMER['customer_id']))
+    LOGGER.debug("\nSearch Invalid Customer")
+    LOGGER.debug(search_customer(20))
+    LOGGER.debug("\nUpdate Customer")
     update_customer_credit(ADDED_CUSTOMER['customer_id'], 2000)
-    print("\nCustomers with Active status: %s", list_active_customers())
-    print("\nActive Customer Details")
+    LOGGER.debug("\nCustomers with Active status: %s", list_active_customers())
+    LOGGER.debug("\nActive Customer Details")
     list_active_customers()
-    print("\nDelete the customer : %s", ADDED_CUSTOMER['customer_id'])
+    LOGGER.debug("\nDelete the customer : %s", ADDED_CUSTOMER['customer_id'])
     delete_customer(ADDED_CUSTOMER['customer_id'])
     list_active_customers()
-    print("\nDelete all customers from the database")
+    LOGGER.debug("\nDelete all customers from the database")
     delete_customers()
     list_active_customers()
-    print("\nCustomers with Active status: %s", get_active_customer_count())
+    LOGGER.debug("\nCustomers with Active status: %s",
+                 get_active_customer_count())
     delete_database()
-    print("\nDatabase removed")
-    print("\b")
+    LOGGER.debug("\nDatabase removed")
