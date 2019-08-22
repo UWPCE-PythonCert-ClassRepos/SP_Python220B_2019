@@ -291,9 +291,11 @@ def list_active_customers():
                                          Customer.id)) \
                                .where(CustomerStatus.status).dicts()
 
-    for customer in active_customers.iterator():  # convert to interator
+    for customer in active_customers:  # iteratable
         LOGGER.debug("Active Customer: %s", str(customer))
         print(customer)
+
+    return active_customers
 
 
 def list_inactive_customers():
@@ -307,9 +309,11 @@ def list_inactive_customers():
                                  .where(CustomerStatus.status == False) \
                                  .dicts()  # noqa: E712
 
-    for customer in inactive_customers.iterator():
+    for customer in inactive_customers:  # iteratable
         LOGGER.debug("Inactive Customer: %s", str(customer))
         print(customer)
+
+    return inactive_customers
 
 
 def delete_database():
