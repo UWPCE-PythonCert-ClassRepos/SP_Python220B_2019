@@ -6,20 +6,20 @@ from inventory_class import Inventory
 
 class Furniture(Inventory):
     """Defines the furniture class."""
-    def __init__(self, product_code, description, market_price, rental_price, material, size):
+    def __init__(self, product_code, description, market_price, rental_price, **kwargs):
         Inventory.__init__(self, product_code, description, market_price,
                            rental_price)  # Creates common instance variables from the parent class
 
-        self.material = material
-        self.size = size
+        self.material = kwargs['material']
+        self.size = kwargs['size']
 
     def return_as_dictionary(self):
-        """Return the furniture object as a dictionary"""
-        output_dict = {}
-        output_dict['productCode'] = self.product_code
-        output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
+        """
+        Return the furniture object as a dictionary
+        Use the parent class function to assign all the attributes that we inherit from the parent.
+        """
+
+        output_dict = Inventory.return_as_dictionary(self)
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 
