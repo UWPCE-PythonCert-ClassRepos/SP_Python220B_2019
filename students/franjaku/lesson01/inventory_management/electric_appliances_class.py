@@ -2,16 +2,16 @@
 """
 Module contains the electric appliance class.
 """
-from inventoryClass import inventory
+from inventory_class import Inventory
 
 
-class ElectricAppliances(inventory):
+class ElectricAppliances(Inventory):
     """
     Electric appliances class.
     Define electric appliances I guess...
     """
     def __init__(self, product_code, description, market_price, rental_price, brand, voltage):
-        inventory.__init__(self, product_code, description, market_price,
+        Inventory.__init__(self, product_code, description, market_price,
                            rental_price)  # Creates common instance variables from the parent class
 
         self.brand = brand
@@ -23,10 +23,10 @@ class ElectricAppliances(inventory):
         :return: output dictionary with all the appliance properties
         """
         output_dict = {}
-        output_dict['productCode'] = self.productCode
+        output_dict['productCode'] = self.product_code
         output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.marketPrice
-        output_dict['rentalPrice'] = self.rentalPrice
+        output_dict['marketPrice'] = self.market_price
+        output_dict['rentalPrice'] = self.rental_price
         output_dict['brand'] = self.brand
         output_dict['voltage'] = self.voltage
 
