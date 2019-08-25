@@ -3,6 +3,7 @@
 import unittest
 
 from inventory_management.inventory_class import Inventory
+from inventory_management.furniture_class import Furniture
 
 
 class InventoryTest(unittest.TestCase):
@@ -26,3 +27,13 @@ class InventoryTest(unittest.TestCase):
         self.assertEqual(inven_dict["description"], "test item")
         self.assertEqual(inven_dict["market_price"], 80.00)
         self.assertEqual(inven_dict["rental_price"], 10.00)
+
+
+class FurnitureTest(unittest.TestCase):
+    """Contains all the tests for the Furniture Class."""
+
+    def test_init(self):
+        self.assert_(False)
+
+    def test_return_as_dict(self):
+        self.assert_(False)
