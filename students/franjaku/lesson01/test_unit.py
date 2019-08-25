@@ -59,7 +59,17 @@ class ElectricAppliancesTest(unittest.TestCase):
     """ElectricAppliances class tests."""
 
     def test_init(self):
-        self.assert_(False)
+        toaster = ElectricAppliances(526, "toaster", 50.00, 23.26)
+        self.assertEqual(toaster.brand, "N/A")
+        self.assertEqual(toaster.voltage, "N/A")
+
+        fridge = ElectricAppliances(9610, "fridge", 850.00, 150.00, voltage=120, brand="whirlpool")
+        self.assertEqual(fridge.voltage, 120)
+        self.assertEqual(fridge.brand, "whirlpool")
 
     def test_return_as_dict(self):
-        self.assert_(False)
+        fridge = ElectricAppliances(9610, "fridge", 850.00, 150.00, voltage=120, brand="whirlpool")
+        fridge_dict = fridge.return_as_dictionary()
+
+        self.assertEqual(fridge_dict["brand"], "whirlpool")
+        self.assertEqual(fridge_dict["voltage"], 120)
