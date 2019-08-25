@@ -14,8 +14,15 @@ class ElectricAppliances(Inventory):
         Inventory.__init__(self, product_code, description, market_price,
                            rental_price)  # Creates common instance variables from the parent class
 
-        self.brand = kwargs['brand']
-        self.voltage = kwargs['voltage']
+        if "brand" in kwargs:
+            self.brand = kwargs['brand']
+        else:
+            self.brand = "N/A"
+
+        if "voltage" in kwargs:
+            self.voltage = kwargs['voltage']
+        else:
+            self.voltage = "N/A"
 
     def return_as_dictionary(self):
         """
