@@ -4,6 +4,7 @@ import unittest
 
 from inventory_management.inventory_class import Inventory
 from inventory_management.furniture_class import Furniture
+from inventory_management.electric_appliances_class import ElectricAppliances
 
 
 class InventoryTest(unittest.TestCase):
@@ -53,3 +54,12 @@ class FurnitureTest(unittest.TestCase):
         self.assertEqual(chair2_dict["size"], "small")
         self.assertEqual(chair2_dict["material"], "Leather")
 
+
+class ElectricAppliancesTest(unittest.TestCase):
+    """ElectricAppliances class tests."""
+
+    def test_init(self):
+        self.assert_(False)
+
+    def test_return_as_dict(self):
+        self.assert_(False)
