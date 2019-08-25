@@ -93,7 +93,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     LOGGER.info("Adding items to the %s database.", item.get("name"))
                     item.get("db").insert_many(temp_list)
                 except BulkWriteError:
-                    LOGGER.info("BulkWriteError adding items to the %s collection.", item.get("name"))
+                    LOGGER.info("BulkWriteError adding items to the %s collection.",
+                                item.get("name"))
                     item["errors"] += 1
                 except DuplicateKeyError:
                     LOGGER.info("DuplicateKeyError adding items to the %s collection.",
@@ -124,8 +125,8 @@ def show_available_products():
         mongo_db = mongo.connection.media
         LOGGER.info("Finding all available products")
         for prod in mongo_db.products_col.find({"available": {"$gt": "0"}}):
-            product_dict[prod["id"]] = {'description': prod['description'],
-                                     'type': prod['type'], 'available': prod['available']}
+            product_dict[prod["id"]] = {"description": prod["description"],
+                                        "type": prod["type"], "available": prod["available"]}
         return product_dict
 
 
