@@ -10,8 +10,15 @@ class Furniture(Inventory):
         Inventory.__init__(self, product_code, description, market_price,
                            rental_price)  # Creates common instance variables from the parent class
 
-        self.material = kwargs['material']
-        self.size = kwargs['size']
+        if "size" in kwargs:
+            self.size = kwargs["size"]
+        else:
+            self.size = "N/A"
+
+        if "material" in kwargs:
+            self.material = kwargs["material"]
+        else:
+            self.material = "N/A"
 
     def return_as_dictionary(self):
         """
