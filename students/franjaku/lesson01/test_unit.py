@@ -33,7 +33,23 @@ class FurnitureTest(unittest.TestCase):
     """Contains all the tests for the Furniture Class."""
 
     def test_init(self):
-        self.assert_(False)
+        """Test we can initialize a piece of Furniture properly."""
+        # test chair with no material or size
+        chair = Furniture(100, "this is a chair", 150.00, 5.00)
+        self.assertEqual(chair.size, "N/A")
+        self.assertEqual(chair.material, "N/A")
+
+        # test chair with material and size defined
+        chair2 = Furniture(120, "this is chair #2", 180.00, 0.00, material="Leather", size="small")
+        self.assertEqual(chair2.size, "small")
+        self.assertEqual(chair2.material, "Leather")
 
     def test_return_as_dict(self):
-        self.assert_(False)
+        """Test dictionary function for extended furniture needs."""
+        chair2 = Furniture(120, "this is chair #2", 180.00, 0.00, material="Leather", size="small")
+        chair2_dict = chair2.return_as_dictionary()
+
+        self.assertIsInstance(chair2_dict, dict)
+        self.assertEqual(chair2_dict["size"], "small")
+        self.assertEqual(chair2_dict["material"], "Leather")
+
