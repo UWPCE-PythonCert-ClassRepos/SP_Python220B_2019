@@ -1,10 +1,10 @@
 # Launches the user interface for the inventory management system
 """Main run file."""
 import sys
-from lesson01.inventory_management import market_prices
-from lesson01.inventory_management import inventory_class
-from lesson01.inventory_management import furniture_class
-from lesson01.inventory_management import electric_appliances_class
+from inventory_management import market_prices
+from inventory_management import inventory_class
+from inventory_management import furniture_class
+from inventory_management import electric_appliances_class
 
 FULL_INVENTORY = {}
 
