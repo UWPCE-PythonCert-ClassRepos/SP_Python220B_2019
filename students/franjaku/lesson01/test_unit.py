@@ -7,7 +7,7 @@ from inventory_management.furniture_class import Furniture
 from inventory_management.electric_appliances_class import ElectricAppliances
 
 
-class InventoryTest(unittest.TestCase):
+class InventoryTests(unittest.TestCase):
     """Inventory class tests."""
 
     def test_init(self):
@@ -30,7 +30,7 @@ class InventoryTest(unittest.TestCase):
         self.assertEqual(inven_dict["rental_price"], 10.00)
 
 
-class FurnitureTest(unittest.TestCase):
+class FurnitureTests(unittest.TestCase):
     """Contains all the tests for the Furniture Class."""
 
     def test_init(self):
@@ -55,7 +55,7 @@ class FurnitureTest(unittest.TestCase):
         self.assertEqual(chair2_dict["material"], "Leather")
 
 
-class ElectricAppliancesTest(unittest.TestCase):
+class ElectricAppliancesTests(unittest.TestCase):
     """ElectricAppliances class tests."""
 
     def test_init(self):
@@ -73,3 +73,7 @@ class ElectricAppliancesTest(unittest.TestCase):
 
         self.assertEqual(fridge_dict["brand"], "whirlpool")
         self.assertEqual(fridge_dict["voltage"], 120)
+
+
+class MarketPriceTest(unittest.TestCase):
+    pass
