@@ -5,7 +5,6 @@ from inventory_management import market_prices
 from inventory_management import inventory_class
 from inventory_management import furniture_class
 from inventory_management import electric_appliances_class
-
 FULL_INVENTORY = {}
 
 
@@ -22,7 +21,7 @@ def main_menu(user_prompt=None):
 
     while user_prompt not in valid_prompts:
         options_str = ("{}" + ", {}" * (len(options)-1)).format(*options)
-        print(f"Please choose from the following options ({options_str}):")
+        print(f"\nPlease choose from the following options ({options_str}):")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
@@ -32,7 +31,7 @@ def main_menu(user_prompt=None):
 
 def get_price():
     """pretty self explanatory"""
-    print("Get price")
+    print(market_prices.get_latest_price())
 
 
 def add_new_item():
