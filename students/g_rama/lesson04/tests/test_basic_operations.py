@@ -1,11 +1,12 @@
 """Test case class for basic operations"""
-# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments,wrong-import-position
 import logging
 import unittest
 import sys
+from peewee import SqliteDatabase
+# from io import StringIO
+# from unittest.mock import patch
 sys.path.append('/Users/guntur/PycharmProjects/uw/p220/SP_Python220B_2019/'
                 'students/g_rama/lesson04/src/')
-from peewee import *
 import basic_operations as bo
 import customer_model as cm
 LOGGER = logging.getLogger(__name__)
@@ -50,24 +51,37 @@ class TestBasicOperations(unittest.TestCase):
         actual_data = bo.search_customer("200")
         self.assertEqual(expected_data, actual_data)
 
-    # def test_display_all_customer_names(self):
-    #     """Test function to list the active customers"""
-    #     bo.add_customer("700", "TestFirst7", "TestLast7", "TestAddress7",
-    #                     "TestPhone7", "test7@test.com", "1", "1000")
-    #     bo.add_customer("800", "TestFirst8", "TestLast8", "TestAddress8",
-    #                     "TestPhone8", "test8@test.com", "1", "5000")
-    #     bo.add_customer("900", "TestFirst9", "TestLast9", "TestAddress9",
-    #                     "TestPhone9", "test9@test.com", "0", "5000")
-    #     with patch('bo.print') as mock_print:
-    #         bo.display_all_customer_names()
-    #         added_customer1 = bo.Customer.get(bo.Customer.customer_id == "700")
-    #         added_customer2 = bo.Customer.get(bo.Customer.customer_id == "800")
-    #         added_customer3 = bo.Customer.get(bo.Customer.customer_id == "900")
-    #         added_customer1.delete_instance()
-    #         added_customer2.delete_instance()
-    #         added_customer3.delete_instance()
-    #         mock_print.assert_called_once_with("['TestFirst7 TestLast7',
-    #         'TestFirst8 TestLast8', 'TestFirst9 TestLast9']")
+    #@patch('sys.stdout', new_callable=StringIO)
+    def test_display_all_customer_names(self):
+        """Test function to list the active customers"""
+        bo.add_customer("700", "TestFirst7", "TestLast7", "TestAddress7",
+                        "TestPhone7", "test7@test.com", "1", "1000")
+        bo.add_customer("800", "TestFirst8", "TestLast8", "TestAddress8",
+                        "TestPhone8", "test8@test.com", "1", "5000")
+        bo.add_customer("900", "TestFirst9", "TestLast9", "TestAddress9",
+                        "TestPhone9", "test9@test.com", "0", "5000")
+        # with patch('bo.display_all_customer_names') as mock_print:
+        #     bo.display_all_customer_names()
+        #     added_customer1 = bo.Customer.get(bo.Customer.customer_id == "700")
+        #     added_customer2 = bo.Customer.get(bo.Customer.customer_id == "800")
+        #     added_customer3 = bo.Customer.get(bo.Customer.customer_id == "900")
+        #     added_customer1.delete_instance()
+        #     added_customer2.delete_instance()
+        #     added_customer3.delete_instance()
+        #     mock_print.assert_called_once_with(['TestFirst7 TestLast7',
+        #     'TestFirst8 TestLast8', 'TestFirst9 TestLast9'])
+        actual = bo.display_all_customer_names()
+        added_customer1 = bo.Customer.get(bo.Customer.customer_id == "700")
+        added_customer2 = bo.Customer.get(bo.Customer.customer_id == "800")
+        added_customer3 = bo.Customer.get(bo.Customer.customer_id == "900")
+        added_customer1.delete_instance()
+        added_customer2.delete_instance()
+        added_customer3.delete_instance()
+        #print(mock_stdout.getvalue())
+        expected = ['TestFirst7 TestLast7', 'TestFirst8 TestLast8', 'TestFirst9 TestLast9']
+        # assert mock_stdout.getvalue() == ['TestFirst7 TestLast7', 'TestFirst8 TestLast8',
+        #                                   'TestFirst9 TestLast9']
+        self.assertEqual(actual, expected)
 
     def test_list_active_customers(self):
         """Test function to list the active customers"""
