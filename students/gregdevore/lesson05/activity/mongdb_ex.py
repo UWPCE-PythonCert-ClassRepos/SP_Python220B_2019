@@ -32,6 +32,14 @@ def print_mdb_collection(collection_name):
     for doc in collection_name.find():
         print(doc)
 
+def add_to_collection(collection, data):
+    # Call insertion method based on type of data passed
+    if type(data).__name__ == 'dict': # Single record
+        collection.insert_one(data)
+    elif type(data).__name__ == 'list': # Multiple records
+        collection.insert_many(data)
+    else:
+        raise ValueError('Data type {} not supported, only list or dict.'.format(type(data).__name__))
 
 def main():
     mongo = MongoDBConnection()
@@ -48,7 +56,7 @@ def main():
         # rather than the database which just stores what it is told
 
         cd_ip = {"artist": "The Who", "Title": "By Numbers"}
-        result = cd.insert_one(cd_ip)
+        add_to_collection(cd, cd_ip)
 
         cd_ip = [
             {"artist": "Deep Purple", "Title": "Made In Japan", "name": "Andy"},
@@ -57,8 +65,7 @@ def main():
             {"artist": "Albert Hammond", "Title": "Free Electric Band", "name": "Sam"},
             {"artist": "Nilsson", "Title": "Without You", "name": "Sam"}
         ]
-
-        result = cd.insert_many(cd_ip)
+        add_to_collection(cd, cd_ip)
 
         print_mdb_collection(cd)
 
@@ -69,7 +76,7 @@ def main():
             {"name": "Andy", "preference": "Rock"},
             {"name": "Sam", "preference": "Pop"}
         ]
-        result = collector.insert_many(collector_ip)
+        add_to_collection(collector, collector_ip)
 
         print_mdb_collection(collector)
 
@@ -90,4 +97,3 @@ def main():
 
 if __name__== "__main__":
     main()
-
