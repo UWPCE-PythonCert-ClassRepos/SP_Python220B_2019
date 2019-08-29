@@ -10,6 +10,7 @@ pip install pymongo
 
 """
 from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure
 
 
 class MongoDBConnection(object):
@@ -47,56 +48,60 @@ def add_to_collection(collection, data):
 def main():
     mongo = MongoDBConnection()
 
-    with mongo:
-        # mongodb database; it all starts here
-        db = mongo.connection.media
+    try:
+        with mongo:
+            # mongodb database; it all starts here
+            db = mongo.connection.media
 
-        # collection in database
-        cd = create_collection(db,'cd')
+            # collection in database
+            cd = create_collection(db,'cd')
 
-        # notice how easy these are to create and that they are "schemaless"
-        # that is, the Python module defines the data structure in a dict,
-        # rather than the database which just stores what it is told
+            # notice how easy these are to create and that they are "schemaless"
+            # that is, the Python module defines the data structure in a dict,
+            # rather than the database which just stores what it is told
 
-        cd_ip = {"artist": "The Who", "Title": "By Numbers"}
-        add_to_collection(cd, cd_ip)
+            cd_ip = {"artist": "The Who", "Title": "By Numbers"}
+            add_to_collection(cd, cd_ip)
 
-        cd_ip = [
-            {"artist": "Deep Purple", "Title": "Made In Japan", "name": "Andy"},
-            {"artist": "Led Zeppelin", "Title": "House of the Holy", "name": "Andy"},
-            {"artist": "Pink Floyd", "Title": "DSOM", "name": "Andy"},
-            {"artist": "Albert Hammond", "Title": "Free Electric Band", "name": "Sam"},
-            {"artist": "Nilsson", "Title": "Without You", "name": "Sam"}
-        ]
-        add_to_collection(cd, cd_ip)
+            cd_ip = [
+                {"artist": "Deep Purple", "Title": "Made In Japan", "name": "Andy"},
+                {"artist": "Led Zeppelin", "Title": "House of the Holy", "name": "Andy"},
+                {"artist": "Pink Floyd", "Title": "DSOM", "name": "Andy"},
+                {"artist": "Albert Hammond", "Title": "Free Electric Band", "name": "Sam"},
+                {"artist": "Nilsson", "Title": "Without You", "name": "Sam"}
+            ]
+            add_to_collection(cd, cd_ip)
 
-        print_mdb_collection(cd)
+            print_mdb_collection(cd)
 
-        # another collection
-        collector = create_collection(db,'collector')
+            # another collection
+            collector = create_collection(db,'collector')
 
-        collector_ip = [
-            {"name": "Andy", "preference": "Rock"},
-            {"name": "Sam", "preference": "Pop"}
-        ]
-        add_to_collection(collector, collector_ip)
+            collector_ip = [
+                {"name": "Andy", "preference": "Rock"},
+                {"name": "Sam", "preference": "Pop"}
+            ]
+            add_to_collection(collector, collector_ip)
 
-        print_mdb_collection(collector)
+            print_mdb_collection(collector)
 
-        # related data
-        for name in collector.find():
-            print(f'List for {name["name"]}')
-            query = {"name": name["name"]}
-            for a_cd in cd.find(query):
-                print(f'{name["name"]} has collected {a_cd}')
+            # related data
+            for name in collector.find():
+                print(f'List for {name["name"]}')
+                query = {"name": name["name"]}
+                for a_cd in cd.find(query):
+                    print(f'{name["name"]} has collected {a_cd}')
 
 
-        # start afresh next time?
-        yorn = input("Drop data?")
-        if yorn.upper() == 'Y':
-            cd.drop()
-            collector.drop()
+            # start afresh next time?
+            yorn = input("Drop data?")
+            if yorn.upper() == 'Y':
+                cd.drop()
+                collector.drop()
 
+    except ConnectionFailure as connection_error:
+        print('Could not connect to MongoDB database.')
+        print(f'Error message: {connection_error}')
 
 if __name__== "__main__":
     main()
