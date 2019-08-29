@@ -32,6 +32,9 @@ def print_mdb_collection(collection_name):
     for doc in collection_name.find():
         print(doc)
 
+def create_collection(database, name):
+    return database[name]
+
 def add_to_collection(collection, data):
     # Call insertion method based on type of data passed
     if type(data).__name__ == 'dict': # Single record
@@ -49,7 +52,7 @@ def main():
         db = mongo.connection.media
 
         # collection in database
-        cd = db["cd"]
+        cd = create_collection(db,'cd')
 
         # notice how easy these are to create and that they are "schemaless"
         # that is, the Python module defines the data structure in a dict,
@@ -70,7 +73,7 @@ def main():
         print_mdb_collection(cd)
 
         # another collection
-        collector = db["collector"]
+        collector = create_collection(db,'collector')
 
         collector_ip = [
             {"name": "Andy", "preference": "Rock"},
