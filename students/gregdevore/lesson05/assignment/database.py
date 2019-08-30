@@ -147,24 +147,35 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
 def show_available_products():
     '''
-    Returns a Python dictionary of products listed as available with the following fields:
-        product_id.
-        description.
-        product_type.
-        quantity_available.
+    Method to return a nested python dictionary of available products. Products
+    with a quantity_available value of 0 are considered not available
 
-        {
-        ‘prd001’:
-            {‘description’:‘60-inch TV stand’,
-            ’product_type’:’livingroom’,
-            ’quantity_available’:‘3’},
-        ’prd002’:
-            {‘description’:’L-shaped sofa’,
-            ’product_type’:’livingroom’,
-            ’quantity_available’:‘1’}
-        }
+    Returns:
+        product_dict (dict):
+            Nested python dictionary with key = product_id,
+            value = python dictionary with description, product_type, and
+            quantity_available keys, and associated values from database
     '''
-    pass
+    # Create mongo database connection
+    mongo = MongoDBConnection()
+    product_dict = {}
+    try:
+        with mongo:
+            LOGGER.info('Creating mongo connection')
+            db = mongo.connection.HPNorton
+            LOGGER.info(f'Querying product database for available products')
+            # Filter query to return products with non-zero quanitity
+            query = db['product'].find({'quantity_available': {'$ne':'0'}})
+            for item in query:
+                # Populate product dictionary
+                product_dict[item['product_id']] = {'description': item['description'],
+                                                    'product_type': item['product_type'],
+                                                    'quantity_available': item['quantity_available']}
+    except ConnectionFailure as CF: # MongoDB connection issue
+        LOGGER.error('Could not connect to MongoDB database.')
+        LOGGER.error(f'Error message: {CF}')
+
+    return product_dict
 
 def show_rentals(product_id):
     '''

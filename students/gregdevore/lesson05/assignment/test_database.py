@@ -104,3 +104,26 @@ class DBTests(TestCase):
         counts, errors = import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
         self.assertEqual(counts,(10,7,6))
         self.assertEqual(errors,(0,0,0))
+
+    def test_available_products(self):
+        available_expected = {'prd001': {'description': 'sofa',
+         'product_type': 'livingroom', 'quantity_available': '4'},
+         'prd002': {'description': 'coffee table',
+         'product_type': 'livingroom', 'quantity_available': '2'},
+         'prd004': {'description': 'refrigerator',
+         'product_type': 'kitchen', 'quantity_available': '2'},
+         'prd005': {'description': 'microwave',
+         'product_type': 'kitchen', 'quantity_available': '5'},
+         'prd006': {'description': 'toaster',
+         'product_type': 'kitchen', 'quantity_available': '1'},
+         'prd007': {'description': 'night stand',
+         'product_type': 'bedroom', 'quantity_available': '6'},
+         'prd009': {'description': 'queen mattress',
+         'product_type': 'bedroom', 'quantity_available': '3'},
+         'prd010': {'description': 'queen box spring',
+         'product_type': 'bedroom', 'quantity_available': '3'}}
+
+        import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        product_dict = show_available_products()
+
+        self.assertEqual(product_dict, available_expected)
