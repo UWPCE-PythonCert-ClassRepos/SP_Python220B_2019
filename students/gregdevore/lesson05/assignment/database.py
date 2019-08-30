@@ -1,13 +1,12 @@
 '''
 This file contains functions for converting CSV data to a MongoDB database
 '''
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 import os
-import sys
 import csv
 import json
 import logging
+from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.INFO)
@@ -23,7 +22,7 @@ FILE_HANDLER.setFormatter(FORMATTER)
 # Add handlers to logger
 LOGGER.addHandler(FILE_HANDLER)
 
-class MongoDBConnection(object):
+class MongoDBConnection():
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows"""
@@ -58,8 +57,8 @@ def import_csv_to_json(csv_file):
     errors = 0
     try:
         LOGGER.info(f'Reading file \'{csv_file}\'')
-        with open(csv_file) as f:
-            json_list = [json.loads(json.dumps(row)) for row in csv.DictReader(f)]
+        with open(csv_file) as filex:
+            json_list = [json.loads(json.dumps(row)) for row in csv.DictReader(filex)]
     except FileNotFoundError:
         LOGGER.error(f'{csv_file} not found. Check file path and/or name.')
         errors += 1
@@ -129,9 +128,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     '''
 
     # Convert csv files to JSON data
-    product_json, product_csv_errors = import_csv_to_json(os.path.join(directory_name, product_file))
-    customer_json, customer_errors = import_csv_to_json(os.path.join(directory_name, customer_file))
-    rentals_json, rentals_errors = import_csv_to_json(os.path.join(directory_name, rentals_file))
+    product_json, product_csv_errors = import_csv_to_json(
+        os.path.join(directory_name, product_file))
+    customer_json, customer_errors = import_csv_to_json(
+        os.path.join(directory_name, customer_file))
+    rentals_json, rentals_errors = import_csv_to_json(
+        os.path.join(directory_name, rentals_file))
 
     # Add JSON data to mongo database
     product_count, product_db_errors = add_json_to_mongodb(product_json, 'product')
@@ -168,9 +170,12 @@ def show_available_products():
             query = db['product'].find({'quantity_available': {'$ne':'0'}})
             for item in query:
                 # Populate product dictionary
-                product_dict[item['product_id']] = {'description': item['description'],
-                                                    'product_type': item['product_type'],
-                                                    'quantity_available': item['quantity_available']}
+                product_dict[item['product_id']] = {'description':
+                                                    item['description'],
+                                                    'product_type':
+                                                    item['product_type'],
+                                                    'quantity_available':
+                                                    item['quantity_available']}
     except ConnectionFailure as CF: # MongoDB connection issue
         LOGGER.error('Could not connect to MongoDB database.')
         LOGGER.error(f'Error message: {CF}')
@@ -202,7 +207,7 @@ def show_rentals(product_id):
             LOGGER.info(f'Querying rentals database for customers renting product {product_id}')
             # Filter query to return customers who rented specific product
             query = db['rentals'].find({'product_id': {'$eq':product_id}})
-            customers = [ item['customer_id'] for item in query ]
+            customers = [item['customer_id'] for item in query]
             customers.sort()
             query = db['customer'].find({'user_id': {'$in':customers}})
             for item in query:
