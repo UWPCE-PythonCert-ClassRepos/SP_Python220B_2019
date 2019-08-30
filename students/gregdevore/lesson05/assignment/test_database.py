@@ -54,12 +54,14 @@ class DBTests(TestCase):
         'email': 'glinetti@brooklyn.pd'}]
 
         cls.rentals_json = [{'rental_id': 'rnt001', 'customer_id': 'user003',
-        'product_id': 'prd001'}, {'rental_id': 'rnt002', 'customer_id': 'user005',
-        'product_id': 'prd005'}, {'rental_id': 'rnt003', 'customer_id': 'user002',
-        'product_id': 'prd004'}, {'rental_id': 'rnt004', 'customer_id': 'user006',
-        'product_id': 'prd009'}, {'rental_id': 'rnt005', 'customer_id': 'user006',
-        'product_id': 'prd010'}, {'rental_id': 'rnt006', 'customer_id': 'user001',
-        'product_id': 'prd002'}]
+        'product_id': 'prd001'},
+        {'rental_id': 'rnt002', 'customer_id': 'user005','product_id': 'prd005'},
+        {'rental_id': 'rnt003', 'customer_id': 'user002','product_id': 'prd004'},
+        {'rental_id': 'rnt004', 'customer_id': 'user006','product_id': 'prd009'},
+        {'rental_id': 'rnt005', 'customer_id': 'user006','product_id': 'prd010'},
+        {'rental_id': 'rnt006', 'customer_id': 'user001','product_id': 'prd002'},
+        {'rental_id': 'rnt007', 'customer_id': 'user002','product_id': 'prd001'},
+        {'rental_id': 'rnt008', 'customer_id': 'user002','product_id': 'prd005'}]
 
     @classmethod
     def tearDown(cls):
@@ -72,6 +74,10 @@ class DBTests(TestCase):
             db['product'].drop()
             db['customer'].drop()
             db['rentals'].drop()
+
+    @staticmethod
+    def load_data():
+        import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
 
     def test_csv_to_json(self):
         directory = 'data'
@@ -98,11 +104,11 @@ class DBTests(TestCase):
         rentals_counts = add_json_to_mongodb(self.rentals_json,'rentals')
         self.assertEqual(product_counts,(10,0))
         self.assertEqual(customer_counts,(7,0))
-        self.assertEqual(rentals_counts,(6,0))
+        self.assertEqual(rentals_counts,(8,0))
 
     def test_import_data(self):
         counts, errors = import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
-        self.assertEqual(counts,(10,7,6))
+        self.assertEqual(counts,(10,7,8))
         self.assertEqual(errors,(0,0,0))
 
     def test_available_products(self):
@@ -123,7 +129,24 @@ class DBTests(TestCase):
          'prd010': {'description': 'queen box spring',
          'product_type': 'bedroom', 'quantity_available': '3'}}
 
-        import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        self.load_data()
         product_dict = show_available_products()
 
         self.assertEqual(product_dict, available_expected)
+
+    def test_show_rentals(self):
+        rentals_expected = {'user002':
+        {'name': 'Rose Diaz', 'address': '123 Precinct Lane',
+        'phone_number': '917-555-0002', 'email': 'rdiaz@brooklyn.pd'},
+        'user003':
+        {'name': 'Terry Jeffords','address': '123 Precinct Lane',
+        'phone_number': '917-555-0003', 'email': 'tjeffords@brooklyn.pd'}}
+
+        self.load_data()
+        rentals_dict = show_rentals('prd001')
+
+        self.assertEqual(rentals_dict, rentals_expected)
+
+    def test_show_rentals_empty(self):
+        self.load_data()
+        self.assertEqual({}, show_rentals('prd999'))

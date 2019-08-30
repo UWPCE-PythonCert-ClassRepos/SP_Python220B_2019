@@ -154,7 +154,7 @@ def show_available_products():
         product_dict (dict):
             Nested python dictionary with key = product_id,
             value = python dictionary with description, product_type, and
-            quantity_available keys, and associated values from database
+            quantity_available keys, and associated values from product database
     '''
     # Create mongo database connection
     mongo = MongoDBConnection()
@@ -179,23 +179,39 @@ def show_available_products():
 
 def show_rentals(product_id):
     '''
-    Returns a Python dictionary with the following user information from users that have rented products matching product_id:
-        user_id.
-        name.
-        address.
-        phone_number.
-        email.
+    Method to return data for customers that have rented products matching product_id
 
-        {
-        ‘user001’:
-            {‘name’:’Elisa Miles’,
-            ’address’:‘4490 Union Street’,
-            ’phone_number’:‘206-922-0882’,
-            ’email’:’elisa.miles@yahoo.com’},
-        ’user002’:
-            {‘name’:’Maya Data’,
-            ’address’:‘4936 Elliot Avenue’,
-            ’phone_number’:‘206-777-1927’,
-            ’email’:’mdata@uw.edu’}}
+    Args:
+        product_id (str):
+            Product ID of interest
+
+    Returns:
+        rentals_dict (dict):
+            Nested python dictionary with key = customer_id,
+            value = python dictionary with name, address, phone_number and
+            email keys, and associated values from customer database
     '''
-    pass
+    # Create mongo database connection
+    mongo = MongoDBConnection()
+    customers = []
+    rentals_dict = {}
+    try:
+        with mongo:
+            LOGGER.info('Creating mongo connection')
+            db = mongo.connection.HPNorton
+            LOGGER.info(f'Querying rentals database for customers renting product {product_id}')
+            # Filter query to return customers who rented specific product
+            query = db['rentals'].find({'product_id': {'$eq':product_id}})
+            customers = [ item['customer_id'] for item in query ]
+            customers.sort()
+            query = db['customer'].find({'user_id': {'$in':customers}})
+            for item in query:
+                rentals_dict[item['user_id']] = {'name': item['name'],
+                                                 'address': item['address'],
+                                                 'phone_number': item['phone_number'],
+                                                 'email': item['email']}
+    except ConnectionFailure as CF: # MongoDB connection issue
+        LOGGER.error('Could not connect to MongoDB database.')
+        LOGGER.error(f'Error message: {CF}')
+
+    return rentals_dict
