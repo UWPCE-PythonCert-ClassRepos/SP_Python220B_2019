@@ -8,7 +8,7 @@ def make_date():
     start_date = datetime(2010, 1, 1)
     end_date = datetime(2020, 1, 1)
     random_date = start_date + (end_date-start_date)*uniform(0, 1)
-    return random_date.strftime("%m/%d%Y")
+    return random_date.strftime("%m/%d/%Y")
 
 def yes_ao():
     if randint(0,1)>0:
