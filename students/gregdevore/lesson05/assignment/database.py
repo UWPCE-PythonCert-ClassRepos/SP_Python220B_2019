@@ -209,6 +209,7 @@ def show_rentals(product_id):
             query = db['rentals'].find({'product_id': {'$eq':product_id}})
             customers = [item['customer_id'] for item in query]
             customers.sort()
+            # Filter query results to find relevant customer details
             query = db['customer'].find({'user_id': {'$in':customers}})
             for item in query:
                 rentals_dict[item['user_id']] = {'name': item['name'],
