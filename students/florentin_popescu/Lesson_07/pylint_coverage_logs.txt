@@ -1,0 +1,218 @@
+(base) C:\Users\Florentin\Desktop\L7>
+(base) C:\Users\Florentin\Desktop\L7>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L7
+
+08/31/2019  06:57 PM    <DIR>          .
+08/31/2019  06:57 PM    <DIR>          ..
+08/30/2019  11:27 AM    <DIR>          csvdata
+08/31/2019  06:32 PM             7,309 database_linear.py
+08/31/2019  06:55 PM             9,834 database_parallel_thread_futures.py
+08/31/2019  06:02 PM             3,442 findings_lesson7.txt
+08/31/2019  06:03 PM             9,646 test_database_linear.py
+08/30/2019  02:17 PM            11,699 test_database_parallel_thread_futures.py
+               5 File(s)         41,930 bytes
+               3 Dir(s)  149,208,526,848 bytes free
+
+(base) C:\Users\Florentin\Desktop\L7>cd csvdata
+
+(base) C:\Users\Florentin\Desktop\L7\csvdata>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L7\csvdata
+
+08/30/2019  11:27 AM    <DIR>          .
+08/30/2019  11:27 AM    <DIR>          ..
+08/30/2019  11:26 AM           102,942 customers.csv
+08/30/2019  11:23 AM             4,551 generator_csv.py
+08/30/2019  11:26 AM            28,511 products.csv
+08/14/2019  05:11 PM             4,799 records.py
+08/30/2019  11:26 AM            27,034 rentals.csv
+07/28/2019  10:49 AM                 0 __init__.py
+               6 File(s)        167,837 bytes
+               2 Dir(s)  149,208,526,848 bytes free
+
+(base) C:\Users\Florentin\Desktop\L7\csvdata>cd ..
+
+(base) C:\Users\Florentin\Desktop\L7>python -m pylint ./csvdata/records.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop\L7>python -m pylint ./csvdata/generator_csv.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop\L7>cd ..
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L7/database_linear.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L7/test_database_linear.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L7/database_parallel_thread_futures.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L7/test_database_parallel_thread_futures.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>cd L7
+
+(base) C:\Users\Florentin\Desktop\L7>python -m coverage run --source=database_linear -m unittest test_database_linear.py
+INFO:database_linear:database_linear.py
+INFO:database_linear:loger active
+INFO:test_database_linear:loger active
+INFO:test_database_linear:test showing available products
+INFO:test_database_linear:test of showing available products passed
+.INFO:test_database_linear:test show rentals
+INFO:test_database_linear:test show rentals passed
+.INFO:test_database_linear:test csv-files insertion
+INFO:test_database_linear:test of csv insertion sucesfull
+INFO:test_database_linear:test of csv insertion sucesfull
+INFO:test_database_linear:test exception when importing non-existent file
+INFO:database_linear:path-indicated file not found
+INFO:database_linear:[Errno 2] No such file or directory: 'csvdata/searched_customer_file.csv'
+INFO:database_linear:path-indicated file not found
+INFO:database_linear:[Errno 2] No such file or directory: 'csvdata/searched_product_file.csv'
+.INFO:test_database_linear:test drop data from mongo
+.INFO:test_database_linear:test loading executor
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 28.8%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:121
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 25.0%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:110
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 36.1%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:115
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 34.1%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:121
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 33.3%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:113
+INFO:database_linear:inserted file:csvdata/customers.csv
+INFO:database_linear:inserted file:csvdata/products.csv
+INFO:database_linear:<L> script cpu usage: 41.7%
+INFO:database_linear:<L> script memory usage  = [43.78515625]
+INFO:database_linear:<L> script total runtime: h:m:s:ms>> 00:00:00:117
+.INFO:test_database_linear:loaded 1000 products
+INFO:test_database_linear:test printing products on console
+INFO:test_database_linear:products printing succesfull
+.
+----------------------------------------------------------------------
+Ran 6 tests in 2.394s
+
+OK
+
+(base) C:\Users\Florentin\Desktop\L7>python -m coverage report -m
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+database_linear.py      92      1    99%   39
+
+(base) C:\Users\Florentin\Desktop\L7>python -m coverage run --source=database_parallel_thread_futures -m unittest test_database_parallel_thread_futures.py
+INFO:database_parallel_thread_futures:database_parallel_thread_futures.py
+INFO:database_parallel_thread_futures:loger active
+INFO:test_database_parallel_thread_futures:loger active
+INFO:test_database_parallel_thread_futures:test showing available products
+INFO:test_database_parallel_thread_futures:test of showing available products passed
+.INFO:test_database_parallel_thread_futures:test show rentals
+INFO:test_database_parallel_thread_futures:test show rentals passed
+.INFO:test_database_parallel_thread_futures:test csv-files insertion
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test exception when importing non-existent file
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_customer_file.csv'
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_product_file.csv'
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_rental_file.csv'
+.INFO:test_database_parallel_thread_futures:test csv-files insertion
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test of csv insertion sucesfull
+INFO:test_database_parallel_thread_futures:test exception when importing non-existent file
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_customer_file.csv'
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_product_file.csv'
+INFO:database_parallel_thread_futures:path-indicated file not found
+INFO:database_parallel_thread_futures:[Errno 2] No such file or directory: 'csvdata/searched_rental_file.csv'
+.INFO:test_database_parallel_thread_futures:test drop data from mongo
+.INFO:test_database_parallel_thread_futures:test loading executor <Futures>
+INFO:database_parallel_thread_futures:<Futures> inserted file:csvdata/customers.csv
+INFO:database_parallel_thread_futures:<Futures> inserted file:csvdata/products.csv
+INFO:database_parallel_thread_futures:<F> script cpu usage: 28.3%
+INFO:database_parallel_thread_futures:<F> script memory usage:[43.69921875]
+INFO:database_parallel_thread_futures:<F> script total runtime: h:m:s:ms>> 00:00:00: 99
+.INFO:test_database_parallel_thread_futures:test loading executor <Thread>
+INFO:database_parallel_thread_futures:<Thread> inserted file:csvdata/customers.csv
+INFO:database_parallel_thread_futures:<Thread> inserted file:csvdata/products.csv
+INFO:database_parallel_thread_futures:<T> script cpu usage: 27.5%
+INFO:database_parallel_thread_futures:<T> script memory usage:[43.69921875]
+INFO:database_parallel_thread_futures:<T> script total runtime: h:m:s:ms>> 00:00:00:119
+.INFO:test_database_parallel_thread_futures:loaded 1000 products
+INFO:test_database_parallel_thread_futures:test printing products on console
+INFO:test_database_parallel_thread_futures:products printing succesfull
+.
+----------------------------------------------------------------------
+Ran 8 tests in 2.143s
+
+OK
+
+(base) C:\Users\Florentin\Desktop\L7>python -m coverage report -m
+Name                                  Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------
+database_parallel_thread_futures.py     129      1    99%   45
+
+(base) C:\Users\Florentin\Desktop\L7>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L7
+
+08/31/2019  07:04 PM    <DIR>          .
+08/31/2019  07:04 PM    <DIR>          ..
+08/31/2019  07:04 PM               641 .coverage
+08/30/2019  11:27 AM    <DIR>          csvdata
+08/31/2019  06:32 PM             7,309 database_linear.py
+08/31/2019  06:55 PM             9,834 database_parallel_thread_futures.py
+08/31/2019  06:02 PM             3,442 findings_lesson7.txt
+08/31/2019  06:03 PM             9,646 test_database_linear.py
+08/30/2019  02:17 PM            11,699 test_database_parallel_thread_futures.py
+08/31/2019  07:04 PM    <DIR>          __pycache__
+               6 File(s)         42,571 bytes
+               4 Dir(s)  149,207,015,424 bytes free
+
+(base) C:\Users\Florentin\Desktop\L7>
