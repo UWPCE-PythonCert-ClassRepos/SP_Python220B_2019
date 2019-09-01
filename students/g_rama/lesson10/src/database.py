@@ -2,7 +2,22 @@
 import csv
 import os
 import pymongo
+import time
 from pymongo import MongoClient
+
+
+# reference: https://stackabuse.com/python-metaclasses-and-metaprogramming/
+def timefunc(fn, *args, **kwargs):
+    """A timer to calculate the time of elapsed time for a function"""
+
+    def fncomposite(*args, **kwargs):
+        start_timer = time.time()
+        rt = fn(*args, **kwargs)
+        elapsed_time = time.time() - start_timer
+        print("Executing %s took %s seconds." % (fn.__name__, elapsed_time))
+        return rt
+    # return the composite function
+    return fncomposite
 
 
 class MongoDBConnection:
