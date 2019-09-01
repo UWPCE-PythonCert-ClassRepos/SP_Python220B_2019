@@ -6,7 +6,7 @@ import csv
 import json
 import logging
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
+from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.INFO)
@@ -37,6 +37,13 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
+def create_mongo_connection(host='127.0.0.1', port=27017):
+    '''
+    Method to create mongo DB connection, allows user to change host or port
+    from default values
+    '''
+    return MongoDBConnection(host, port)
+
 def import_csv_to_json(csv_file):
     '''
     Method to convert a csv file to a JSON string object
@@ -59,15 +66,13 @@ def import_csv_to_json(csv_file):
         LOGGER.info(f'Reading file \'{csv_file}\'')
         with open(csv_file) as filex:
             json_list = [json.loads(json.dumps(row)) for row in csv.DictReader(filex)]
-    except FileNotFoundError:
-        LOGGER.error(f'{csv_file} not found. Check file path and/or name.')
-        errors += 1
-    except IOError:
-        LOGGER.error(f'Could not read {csv_file}, check file permissions.')
+    except (FileNotFoundError, IOError) as ERR:
+        LOGGER.error(f'Could not read {csv_file}. Check file existence and/or permissions.')
+        LOGGER.error(f'Error message: {ERR}')
         errors += 1
     return json_list, errors
 
-def add_json_to_mongodb(json_data, db_name):
+def add_json_to_mongodb(json_data, db_name, mongo=None):
     '''
     Method to add JSON formatted data to a mongo database
 
@@ -83,8 +88,9 @@ def add_json_to_mongodb(json_data, db_name):
         error_count (int):
             Count of errors generated during document add
     '''
-    # Create mongo database connection
-    mongo = MongoDBConnection()
+    # Create mongo database connection if not provided
+    if not mongo:
+        mongo = create_mongo_connection()
 
     errors = 0
     try:
@@ -94,12 +100,12 @@ def add_json_to_mongodb(json_data, db_name):
             LOGGER.info(f'Creating {db_name} database and adding records')
             new_db = db[db_name]
             new_db.insert_many(json_data)
-    except ConnectionFailure as CF: # MongoDB connection issue
+            collection_count = new_db.estimated_document_count()
+    except (ConnectionFailure, ServerSelectionTimeoutError) as CF: # MongoDB connection issue
         LOGGER.error('Could not connect to MongoDB database.')
         LOGGER.error(f'Error message: {CF}')
+        collection_count = 0
         errors += 1
-
-    collection_count = new_db.estimated_document_count()
 
     return collection_count, errors
 
@@ -147,7 +153,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
     return counts, errors
 
-def show_available_products():
+def show_available_products(mongo=None):
     '''
     Method to return a nested python dictionary of available products. Products
     with a quantity_available value of 0 are considered not available
@@ -159,7 +165,9 @@ def show_available_products():
             quantity_available keys, and associated values from product database
     '''
     # Create mongo database connection
-    mongo = MongoDBConnection()
+    if not mongo:
+        mongo = create_mongo_connection()
+
     product_dict = {}
     try:
         with mongo:
@@ -176,13 +184,13 @@ def show_available_products():
                                                     item['product_type'],
                                                     'quantity_available':
                                                     item['quantity_available']}
-    except ConnectionFailure as CF: # MongoDB connection issue
+    except (ConnectionFailure, ServerSelectionTimeoutError) as CF: # MongoDB connection issue
         LOGGER.error('Could not connect to MongoDB database.')
         LOGGER.error(f'Error message: {CF}')
 
     return product_dict
 
-def show_rentals(product_id):
+def show_rentals(product_id, mongo=None):
     '''
     Method to return data for customers that have rented products matching product_id
 
@@ -197,7 +205,9 @@ def show_rentals(product_id):
             email keys, and associated values from customer database
     '''
     # Create mongo database connection
-    mongo = MongoDBConnection()
+    if not mongo:
+        mongo = create_mongo_connection()
+
     customers = []
     rentals_dict = {}
     try:
@@ -216,7 +226,7 @@ def show_rentals(product_id):
                                                  'address': item['address'],
                                                  'phone_number': item['phone_number'],
                                                  'email': item['email']}
-    except ConnectionFailure as CF: # MongoDB connection issue
+    except (ConnectionFailure, ServerSelectionTimeoutError) as CF: # MongoDB connection issue
         LOGGER.error('Could not connect to MongoDB database.')
         LOGGER.error(f'Error message: {CF}')
 
