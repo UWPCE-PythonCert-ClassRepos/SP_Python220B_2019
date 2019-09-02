@@ -5,6 +5,7 @@ import os
 from unittest import TestCase
 from database import import_data, import_csv_to_json, add_json_to_mongodb
 from database import show_available_products, show_rentals, MongoDBConnection
+from database import create_mongo_connection
 
 class DBTests(TestCase):
     '''
@@ -44,6 +45,16 @@ class DBTests(TestCase):
         test_show_rentals_empty(self):
             Test method to confirm behavior when product with no rentals is
             queried
+
+        test_bad_connection(self):
+            Test method to ensure bad mongo DB connection is properly handled
+
+        test_bad_show_available(self):
+            Test method to ensure bad mongo DB connection is properly handled
+
+        test_bad_show_rentals(self):
+            Test method to ensure bad mongo DB connection is properly handled
+
     '''
     @classmethod
     def setUpClass(cls):
@@ -237,3 +248,27 @@ class DBTests(TestCase):
         '''
         self.load_data()
         self.assertEqual({}, show_rentals('prd999'))
+
+    def test_bad_connection(self):
+        '''
+        Test method to ensure bad mongo DB connection is properly handled
+        '''
+        mongo = create_mongo_connection(host='127.0.0.1', port=27018)
+        item_counts = add_json_to_mongodb([{'test':'test'}], 'zzz', mongo)
+        self.assertEqual(item_counts, (0, 1))
+
+    def test_bad_show_available(self):
+        '''
+        Test method to ensure bad mongo DB connection is properly handled
+        '''
+        mongo = create_mongo_connection(host='127.0.0.1', port=27018)
+        product_dict = show_available_products(mongo)
+        self.assertEqual(product_dict, {})
+
+    def test_bad_show_rentals(self):
+        '''
+        Test method to ensure bad mongo DB connection is properly handled
+        '''
+        mongo = create_mongo_connection(host='127.0.0.1', port=27018)
+        rentals_dict = show_rentals('prd001', mongo)
+        self.assertEqual(rentals_dict, {})
