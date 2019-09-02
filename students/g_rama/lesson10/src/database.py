@@ -1,14 +1,16 @@
 """Mongo DB class to import the CSV data and to display the data"""
 import csv
 import os
-import pymongo
-import time
-from pymongo import MongoClient
 import types
+import time
+import pymongo
+from pymongo import MongoClient
 
 
 function_times = 'timings.txt'
 # reference: https://stackabuse.com/python-metaclasses-and-metaprogramming/
+
+
 def timefunc(fn, *args, **kwargs):
     """A timer to calculate the time of elapsed time for a function"""
 
@@ -16,7 +18,8 @@ def timefunc(fn, *args, **kwargs):
         start_timer = time.time()
         rt = fn(*args, **kwargs)
         elapsed_time = time.time() - start_timer
-        print("Executing %s took %s seconds." % (fn.__name__, elapsed_time), file=open("timings.txt", "a"))
+        print("Executing %s took %s seconds." % (fn.__name__, elapsed_time),
+              file=open("timings.txt", "a"))
         return rt
     # return the composite function
     return fncomposite
@@ -53,7 +56,8 @@ class MongoDBConnection:
         self.connection.close()
 
 
-class Timing(metaclass=Timed):
+class Timing(object, metaclass=Timed):
+    """Metaclass timed for timing all the norton HP database functions"""
 
     def import_data(self, directory_name, product_file, customer_file, rental_file):
         """Import data for inventory management"""
@@ -176,3 +180,7 @@ class Timing(metaclass=Timed):
             DB.rentals.drop()
             print("deleted the rentals")
 
+
+DIRPATH = os.getcwd()
+functions_time = Timing()
+functions_time.import_data(DIRPATH, "products1.csv", "customers1.csv", "rentals1.csv")
