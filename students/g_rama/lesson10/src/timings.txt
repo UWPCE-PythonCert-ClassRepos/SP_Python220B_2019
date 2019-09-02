@@ -1,0 +1,3 @@
+Executing import_data took 0.62027907371521 seconds.
+Executing import_data took 0.5129096508026123 seconds.
+Executing import_data took 0.5474507808685303 seconds.
