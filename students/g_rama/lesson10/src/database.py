@@ -8,7 +8,8 @@ from pymongo import MongoClient
 
 
 function_times = 'timings.txt'
-# reference: https://stackabuse.com/python-metaclasses-and-metaprogramming/
+# reference1: https://stackabuse.com/python-metaclasses-and-metaprogramming/
+# reference2: https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/
 
 
 def timefunc(fn, *args, **kwargs):
@@ -18,7 +19,7 @@ def timefunc(fn, *args, **kwargs):
         start_timer = time.time()
         rt = fn(*args, **kwargs)
         elapsed_time = time.time() - start_timer
-        print("Executing %s took %s seconds." % (fn.__name__, elapsed_time),
+        print("Executing %s with %s took %s seconds." % (fn.__name__, rt, elapsed_time),
               file=open("timings.txt", "a"))
         return rt
     # return the composite function
@@ -182,5 +183,8 @@ class Timing(object, metaclass=Timed):
 
 
 DIRPATH = os.getcwd()
+print(DIRPATH)
+print(os.path.join(DIRPATH, "products1.csv"))
 functions_time = Timing()
-functions_time.import_data(DIRPATH, "products1.csv", "customers1.csv", "rentals1.csv")
+functions_time.import_data(DIRPATH, "products.csv", "customers.csv", "rentals.csv")
+functions_time.drop_collections()
