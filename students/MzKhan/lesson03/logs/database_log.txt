@@ -1,0 +1,1 @@
+2019-09-02 22:52:58,769 basic_operations.py:75  WARNING Customer 2 is not found in the database
