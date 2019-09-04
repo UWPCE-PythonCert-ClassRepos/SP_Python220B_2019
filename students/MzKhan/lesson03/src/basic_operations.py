@@ -52,8 +52,8 @@ def add_customer(customer_id, name, last_name, home_address, phone_number,
         LOGGER.debug("New customer added.")
     except peewee.IntegrityError:
         msg = f'Unique constrain failed for customer id = {customer_id}'
-        LOGGER.warning(msg)
-        print(msg)
+        LOGGER.error(msg)
+        raise peewee.IntegrityError
 
 
 def search_customer(customer_id):
@@ -73,7 +73,6 @@ def search_customer(customer_id):
     except peewee.DoesNotExist:
         msg = f'Customer {customer_id} is not found in the database'
         LOGGER.warning(msg)
-
     return data_dict
 
 
@@ -91,7 +90,8 @@ def delete_customer(customer_id):
         customer.save()
     except peewee.DoesNotExist:
         msg = f'Customer {customer_id} is not found in the database'
-        LOGGER.warning(msg)
+        LOGGER.error(msg)
+        raise peewee.DoesNotExist
 
 
 def update_customer(customer_id, credit_limit):
@@ -115,27 +115,25 @@ def update_customer(customer_id, credit_limit):
 
 def list_active_customer():
     """ Return the number of customers with the active status."""
-
     active_members = Customer.select().where(Customer.status).count()
     msg = f'Active Customers = {active_members}'
     LOGGER.debug(msg)
     return active_members
 
 
-
 if __name__ == "__main__":
 
     DATABASE.create_tables([Customer])
-    add_customer(1, 'Muhammad', 'Khan',
-                 '9x9 xyzxy Dr. Apt # 529D xxxxxx SC. 29403',
-                 '202-755-3xx1', 'mxmxmx@gmail.com', True, 244.20)
-    add_customer(2, 'Kristina', 'Lawry',
-                 '8x8 xyzxy Dr. Apt # 200D xxxxxx WA. 60089',
-                 '747-900-4950', 'yyyymmm@gmail.com', True, 399)
+    # add_customer(1, 'Muhammad', 'Khan',
+    #              '9x9 xyzxy Dr. Apt # 529D xxxxxx SC. 29403',
+    #              '202-755-3xx1', 'mxmxmx@gmail.com', True, 244.20)
+    # add_customer(2, 'Kristina', 'Lawry',
+    #              '8x8 xyzxy Dr. Apt # 200D xxxxxx WA. 60089',
+    #              '747-900-4950', 'yyyymmm@gmail.com', True, 399)
+    # # update_customer(3, 500.00)
+    # print(search_customer(2))
+    # delete_customer(2)
+    # print(search_customer(2))
     # update_customer(3, 500.00)
-    print(search_customer(2))
-    delete_customer(2)
-    print(search_customer(2))
-    # update_customer(3, 500.00)
-    # for data in Customer.select():
-    #     print(data.credit_limit)
+#     # for data in Customer.select():
+#     #     print(data.credit_limit)
