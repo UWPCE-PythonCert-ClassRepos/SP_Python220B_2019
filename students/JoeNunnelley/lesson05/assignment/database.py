@@ -22,9 +22,19 @@ You implementation should address the following requirements:
     a certain product.
 """
 import json
+import logging
 from os import path
 import pandas as pd
 from pymongo import MongoClient
+
+FORMAT = '%(asctime)-15s %(message)s'
+logging.basicConfig(format=FORMAT, level=logging.DEBUG)
+LOGGER = logging.getLogger('console')
+FH = logging.FileHandler('mongodb.log', 'w+')
+FH.setLevel(logging.DEBUG)
+FORMATTER = logging.Formatter(FORMAT)
+FH.setFormatter(FORMATTER)
+LOGGER.addHandler(FH)
 
 
 class MongoDBConnection():
@@ -53,28 +63,48 @@ def drop_database(database_name):
         dblist = mongo.connection.list_database_names()
         if database_name in dblist:
             mongo.connection.drop_database(database_name)
-            print("The database: {} dropped.".format(database_name))
+            LOGGER.debug("The database: %s dropped.", database_name)
 
 
 def csv_to_json(directory_name, filename):
     """ Load a csv file to a list """
     path_file = directory_name + "/" + filename
     if path.isfile(path_file):
+        LOGGER.debug('Loading file: %s', path_file)
         data = pd.read_csv(path_file)
         return json.loads(data.to_json(orient='records'))
 
+    LOGGER.error('Failed to load file: %s', path_file)
     return {}
 
 
 def insert_to_mongo(collection_name, collection):
     """ Insert a collection into the Mongo db """
     mongo = MongoDBConnection()
-    with mongo:
-        db = mongo.connection.hpnorton
+    insertions = 0
+    errors = 0
 
-        db_collection = db[collection_name]
-        result = db_collection.insert_many(collection)
-        return result
+    with mongo:
+        database = mongo.connection.hpnorton
+
+        db_collection = database[collection_name]
+        for item in collection:
+            count = db_collection.find({"ID": item['ID']}).count()
+            LOGGER.debug("ID: %s COUNT: %s", item['ID'], count)
+            if count == 0:
+                LOGGER.debug("Inserting: %s", item)
+                db_collection.insert_one(item)
+                insertions += 1
+            elif count == 1:
+                LOGGER.debug("Updating: %s", item)
+                db_collection.update_one({"ID": item['ID']}, {"$set": item},
+                                         upsert=False)
+            else:
+                LOGGER.error("Invalid data state. Too many entries for %s",
+                             item['ID'])
+                errors += 1
+
+        return (insertions, errors)
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -89,34 +119,41 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     products, customers and rentals added (in that order), the second with a
     count of any errors that occurred, in the same order.
     """
-    record_counts = ()
-    error_counts = ()
 
     # load the csv files
+    LOGGER.debug("Reading CSV Files")
     products = csv_to_json(directory_name, product_file)
-    for product in products:
-        print(product)
     customers = csv_to_json(directory_name, customer_file)
-    for customer in customers:
-        print(customer)
     rentals = csv_to_json(directory_name, rentals_file)
-    for rental in rentals:
-        print(rental)
 
+    LOGGER.debug("Inserting Data Into Mongo")
     product_results = insert_to_mongo('products', products)
-    print(product_results)
     customer_results = insert_to_mongo('customers', customers)
-    print(customer_results)
     rental_results = insert_to_mongo('rentals', rentals)
-    print(rental_results)
 
-    return {'record_counts': record_counts, 'error_counts': error_counts}
+    # return array of tuples
+    # [(products_added, customers_added, rentals_added),
+    #  (product_errors, customer_errors, rentals_errors)]
+    return [(product_results[0], customer_results[0],
+             rental_results[0]),
+            (product_results[1], customer_results[1],
+             rental_results[1])]
 
 
 def print_mdb_collection(collection_name):
     """ Generic collection printer """
     for doc in collection_name.find():
         print(doc)
+
+
+def print_raw_products():
+    """ Print Raw List of Products """
+    mongo = MongoDBConnection()
+
+    with mongo:
+        database = mongo.connection.hpnorton
+        products = database['products']
+        print_mdb_collection(products)
 
 
 def show_available_products():
@@ -138,10 +175,18 @@ def show_available_products():
     mongo = MongoDBConnection()
 
     with mongo:
-        db = mongo.connection.hpnorton
+        database = mongo.connection.hpnorton
+        products = database['products']
+        dictionary = {}
 
-        products = db['products']
-        print_mdb_collection(products)
+        for product in products.find():
+            value = {'description': product['DESCRIPTION'],
+                     'product_type': product['PRODUCT_TYPE'],
+                     'quantity_available': product['QUANTITY_AVAILABLE']}
+            dictionary[product['ID']] = value
+
+        for item in dictionary.items():
+            print(item)
 
 
 def show_rentals(product_id=None):
@@ -165,12 +210,30 @@ def show_rentals(product_id=None):
     mongo = MongoDBConnection()
 
     with mongo:
-        db = mongo.connection.hpnorton
-        rentals = db['rentals']
-
+        database = mongo.connection.hpnorton
+        customers = database['customers']
+        rentals = database['rentals']
+        dictionary = {}
         if product_id:
             # special handling
-            print("Finding product_id: %s", product_id)
+            LOGGER.debug("Finding product_id: %s", product_id)
+            _rentals = rentals.find({"PRODUCT_ID": product_id})
+
+            if _rentals is not None:
+                LOGGER.debug("Searching for rentals of : '%s'", product_id)
+                for rental in _rentals:
+                    _customers = customers.find({"ID": rental['CUSTOMER_ID']})
+                    for customer in _customers:
+                        value = {'name': customer['NAME'],
+                                 'address': customer['ADDRESS'],
+                                 'phone_number': customer['PHONE_NUMBER'],
+                                 'email': customer['EMAIL']}
+                        dictionary[customer['ID']] = value
+
+                for item in dictionary.items():
+                    print(item)
+            else:
+                LOGGER.debug("%s not found", product_id)
         else:
             print_mdb_collection(rentals)
 
@@ -182,9 +245,9 @@ def show_customers():
     mongo = MongoDBConnection()
 
     with mongo:
-        db = mongo.connection.hpnorton
+        database = mongo.connection.hpnorton
 
-        customers = db['customers']
+        customers = database['customers']
         print_mdb_collection(customers)
 
 
@@ -196,12 +259,27 @@ def main():
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
-    print(import_stats)
+    print("Insertions:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
+          .format(import_stats[0][0],
+                  import_stats[0][1],
+                  import_stats[0][2]))
+    print("Errors:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
+          .format(import_stats[1][0],
+                  import_stats[1][1],
+                  import_stats[1][2]))
+    print("\nProduct List")
     show_available_products()
-    show_rentals(product_id='prd001')
+    print("\nRaw Product List")
+    print_raw_products()
+    print("\nCustomer List")
     show_customers()
-    drop_database('hpnorton')
+    print("\nShow Rentals")
+    show_rentals(product_id='prd001')
+    print("\nShow All Rentals")
+    show_rentals()
+    print("Done")
 
 
 if __name__ == "__main__":
     main()
+    drop_database('hpnorton')
