@@ -1,7 +1,8 @@
 # Furniture class
 from inventoryClass import inventory
 
-class furniture(inventory):
+
+class Furniture(inventory):
 
     def __init__(self, productCode, description, marketPrice, rentalPrice, material, size):
         inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class

@@ -1,12 +1,13 @@
 """basic operations class"""
-# pylint: disable=unused-wildcard-import,wildcard-import,too-many-arguments,wrong-import-position
 import logging
 import sys
 import datetime
+from peewee import IntegrityError
+from customer_model import  Customer
+from create_customerdb import *
 sys.path.append(r"/Users/guntur/PycharmProjects/uw/p220/"
                 r"SP_Python220B_2019/students/g_rama/lesson04/src")
-from customer_model import *
-from create_customerdb import *
+
 # log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 # formatter = logging.Formatter(log_format)
 # logging.basicConfig(level=logging.INFO)
@@ -96,4 +97,6 @@ def display_all_customer_names():
     """Function to display the customers using comprehensions"""
     all_customers = Customer.select()
     customer_names = [customer.name + " " + customer.last_name for customer in all_customers]
-    print(customer_names)
+    LOGGER.info(f"customer_names {customer_names}")
+    return customer_names
+

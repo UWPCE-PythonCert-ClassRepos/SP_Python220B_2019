@@ -1,0 +1,41 @@
+Notes for Lesson 06
+
+First run results: {'2013': 99179, '2014': 100570, '2015': 99821, '2016': 100265, '2017': 199439, '2018': 0}
+'ao' was found 499692 times
+2018 being found 0 times is a red flag. While not impossible, seems unlikely. Typo found in code, 
+	if new[0][6:] == '2018':
+                year_count["2018"] += 1 THIS LINE ORIGINALLY HAD "2017"
+
+New stats with typo fixed: {'2013': 99179, '2014': 100570, '2015': 99821, '2016': 100265, '2017': 99627, '2018': 99812}
+'ao' was found 499692 times
+
+The total run time of poor_perf.py is: 72.97875492600001 (5 runs) = 14.595750985200002 average
+
+1.) Should not read through the file twice (once for each): modified code to do both counts at once
+New run time: 54.315162764 (5 runs) = 10.8630325528 average
+
+2.) No reason to make row into a list. deleted lrow, just used row:
+New run time: 45.936974946999996 (5 runs) = 9.1873949894 average
+
+3.) Changed all the if statements after the first to be elif so they are only checked if it has not been satisfied yet. 
+New run time: 42.030016986 (5 runs) = 8.4060033972 average
+
+4.) Changed new[:][6] to only be calculated once rather than every if statement.
+New run time: 39.16382724 (5 runs) = 7.832765448000001 average
+
+5.) Replaced if statements with:
+" year_check = new[0][6:]
+            try:
+                year_count[year_check] += 1
+
+            except KeyError:
+                pass"
+New run time: 40.324365357000005 (5 runs) = 8.064873071400001 average. SAD! Got slower. Maybe because of try-except? 
+ 
+6.) Removed the try-except block.  
+Changed to only do it if the key is valid. 
+if year_check in year_count:
+                year_count[year_check] += 1
+New run time: 37.627793552 (5 runs) = 7.5255587104. Seems that it had too many excepts (years we didn't care about) in the 1000000 entry set.
+
+With these changes, a ~50% run time improvement was achieved. More performance could likely be gathered with further refinement/modifications. 
