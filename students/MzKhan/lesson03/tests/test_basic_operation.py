@@ -26,6 +26,7 @@ class TestBasicOperations(unittest.TestCase):
         DATABASE.drop_tables([Customer])
         DATABASE.create_tables([Customer])
 
+
     @classmethod
     def tearDownClass(cls):
         """
@@ -34,9 +35,9 @@ class TestBasicOperations(unittest.TestCase):
         # print('teardown method is called')
         DATABASE.close()
 
+
     def test_add_customer(self):
         """Test the add customer method"""
-
         new_customer = (1, 'Benjamin', 'Thomson',
                         '9x9 xyzxy Dr. Apt # 529D xxxxxx SC. 29403',
                         '202-755-3xx1', 'mxmxmx@gmail.com', True, 244.20)
@@ -62,6 +63,9 @@ class TestBasicOperations(unittest.TestCase):
         new_row = Customer.get(Customer.customer_id == 2)
         self.assertFalse(new_row.status)
 
+        with self.assertRaises(peewee.IntegrityError):
+            add_customer(*new_customer)
+
 
     def test_search_customer(self):
         """Test the search customer method """
@@ -85,6 +89,8 @@ class TestBasicOperations(unittest.TestCase):
         """Delete the customer"""
         delete_customer(3)
         self.assertEqual(search_customer(3), dict())
+        with self.assertRaises(peewee.DoesNotExist):
+            delete_customer(3)
 
 
     def test_list_active_customer(self):
