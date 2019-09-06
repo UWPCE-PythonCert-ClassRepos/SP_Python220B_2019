@@ -45,7 +45,7 @@ def generate_newline():
     year = generate_year()
     ints = generate_ints()
     uuid = generate_uuid()
-    return '\n{},{},{},{},{},{}/{}/{},'.format(uuid, *ints, month, day, year)
+    return '\n{},{},{},{},{},{:02d}/{:02d}/{},'.format(uuid, *ints, month, day, year)
 
 if __name__ == "__main__":
     # Generate enough random lines to reach 1,000,000 records

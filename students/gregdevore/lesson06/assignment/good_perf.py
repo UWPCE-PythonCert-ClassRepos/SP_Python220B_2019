@@ -5,43 +5,59 @@ better performing, well written module
 
 import datetime
 import csv
+import sys
 
 def analyze(filename):
+    '''
+    Method to read csv file and count the number of records that reference
+    a particular year, and the occurences of 'ao' in the last field
+
+    Args:
+        filename (str):
+            CSV file to process
+
+    Returns:
+        start (datetime object):
+            Start time when program was run
+        end (datetime object):
+            End time when program was run
+        year_count (dict):
+            Dictionary containing year counts (key = string representation of
+            year, value = count of year)
+        found (int):
+            Count of the number of records that contained 'ao' in the last field
+    '''
     start = datetime.datetime.now()
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    try:
+        with open(filename) as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+            found = 0
+            year_count = {key:0 for key in map(str, range(2013, 2019))}
 
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
+            for row in reader:
+                year = row[5][-4:]
+                if year > '2012':
+                    year_count[year] += 1
+                if 'ao' in row[-1]:
+                    found += 1
 
-        for row in reader:
-            year = row[5][-4:]
-            if year > '2012':
-                year_count[year] += 1
+    except FileNotFoundError:
+        print('Error, {} not found. Check file location.'.format(filename))
+        sys.exit()
+    except IOError:
+        print('Error reading {}. Check file contents and permissions.'.format(filename))
+        sys.exit()
 
-        print(year_count)
-
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-
-        found = 0
-
-        for line in reader:
-            if "ao" in line[6]:
-                found += 1
-
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
+    print(year_count)
+    print(f"'ao' was found {found} times")
+    end = datetime.datetime.now()
 
     return (start, end, year_count, found)
 
 def main():
+    '''
+    Main function, will run analyze function with a default csv file.
+    '''
     filename = "data/exercise.csv"
     analyze(filename)
 
