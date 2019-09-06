@@ -1,0 +1,69 @@
+Here is my first run of cProfile on 'poor_perf.py', ordered by cumulative time
+
+1029116 function calls (1029099 primitive calls) in 3.766 seconds
+
+Ordered by: cumulative time
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   3/1    0.000    0.000    3.749    3.749 {built-in method builtins.exec}
+     1    0.000    0.000    3.749    3.749 poor_perf.py:4(<module>)
+     1    0.087    0.087    3.746    3.746 poor_perf.py:59(main)
+     1    3.560    3.560    3.659    3.659 poor_perf.py:9(analyze)
+1000012    0.071    0.000    0.071    0.000 {method 'append' of 'list' objects}
+ 13764    0.010    0.000    0.027    0.000 codecs.py:318(decode)
+ 13764    0.017    0.000    0.017    0.000 {built-in method _codecs.utf_8_decode}
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:966(_find_and_load)
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:936(_find_and_load_unlocked)
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:651(_load_unlocked)
+     2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:672(exec_module)
+   8/2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+
+Right away, I notice that the 'append' method is being called over 1 million
+times (probably once per line of the CSV file). Perhaps this part of the code
+could be better structured.
+
+First, on line 15, the row returned by the CSV reader is already a list, so the
+list conversion step is not needed.
+
+1029116 function calls (1029099 primitive calls) in 3.360 seconds
+
+Ordered by: cumulative time
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   3/1    0.000    0.000    3.360    3.360 {built-in method builtins.exec}
+     1    0.000    0.000    3.360    3.360 good_perf.py:4(<module>)
+     1    0.085    0.085    3.357    3.357 good_perf.py:57(main)
+     1    3.174    3.174    3.272    3.272 good_perf.py:9(analyze)
+1000012    0.071    0.000    0.071    0.000 {method 'append' of 'list' objects}
+ 13764    0.010    0.000    0.026    0.000 codecs.py:318(decode)
+ 13764    0.017    0.000    0.017    0.000 {built-in method _codecs.utf_8_decode}
+   5/2    0.000    0.000    0.003    0.002 <frozen importlib._bootstrap>:966(_find_and_load)
+   5/2    0.000    0.000    0.003    0.002 <frozen importlib._bootstrap>:936(_find_and_load_unlocked)
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:651(_load_unlocked)
+     2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap_external>:672(exec_module)
+   8/2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+
+The performance has already improved by 0.4 seconds.
+
+Next, the creation of a new list for dates after 2012 is not needed. Removing
+this would eliminate the all of the append calls.
+
+29116 function calls (29099 primitive calls) in 2.244 seconds
+
+Ordered by: cumulative time
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   3/1    0.000    0.000    2.244    2.244 {built-in method builtins.exec}
+     1    0.000    0.000    2.244    2.244 good_perf.py:4(<module>)
+     1    0.000    0.000    2.241    2.241 good_perf.py:44(main)
+     1    2.214    2.214    2.241    2.241 good_perf.py:9(analyze)
+ 13764    0.010    0.000    0.026    0.000 codecs.py:318(decode)
+ 13764    0.016    0.000    0.016    0.000 {built-in method _codecs.utf_8_decode}
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:966(_find_and_load)
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:936(_find_and_load_unlocked)
+   5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:651(_load_unlocked)
+     2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap_external>:672(exec_module)
+   8/2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+
+The performance improved again by over one second, and the total number
+of function calls is down to just under 30,000

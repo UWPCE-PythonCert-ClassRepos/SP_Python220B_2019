@@ -22,7 +22,7 @@ def generate_year():
     '''
     Generate a random year (integer between 2010 and 2019)
     '''
-    return random.randint(2010, 2019)
+    return random.randint(2010, 2018)
 
 def generate_ints():
     '''
