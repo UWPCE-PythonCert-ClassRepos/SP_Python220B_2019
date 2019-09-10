@@ -1,0 +1,36 @@
+The following is the output from linear.py:
+
+products: (100000, 0, 100000, 3.0903067588806152)
+customers: (100000, 0, 100000, 3.5298821926116943)
+rentals: (100000, 0, 100000, 3.1195292472839355)
+
+Each database processes 100,000 records and takes between 3 and 4 seconds to run.
+Running cProfile on linear.py produces the following:
+
+13587679 function calls (13585704 primitive calls) in 12.267 seconds
+
+Ordered by: cumulative time
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+ 138/1    0.006    0.000   12.267   12.267 {built-in method builtins.exec}
+     1    0.091    0.091   12.267   12.267 linear.py:4(<module>)
+     1    0.000    0.000   12.026   12.026 linear.py:131(import_data)
+     3    0.016    0.005    6.288    2.096 linear.py:93(add_json_to_mongodb)
+     3    0.001    0.000    6.259    2.086 collection.py:701(insert_many)
+     3    0.000    0.000    5.738    1.913 linear.py:64(import_csv_to_json)
+     3    0.465    0.155    5.737    1.912 linear.py:85(<listcomp>)
+     3    0.048    0.016    3.193    1.064 collection.py:757(<listcomp>)
+300003    0.451    0.000    3.145    0.000 collection.py:745(gen)
+     3    0.000    0.000    3.065    1.022 bulk.py:489(execute)
+     3    0.000    0.000    3.064    1.021 bulk.py:322(execute_command)
+     3    0.000    0.000    3.064    1.021 mongo_client.py:1349(_retry_with_session)
+     3    0.004    0.001    3.063    1.021 bulk.py:338(retryable_bulk)
+     3    0.009    0.003    3.059    1.020 bulk.py:253(_execute_command)
+     3    0.000    0.000    2.815    0.938 message.py:894(execute)
+300000    0.169    0.000    1.815    0.000 __init__.py:183(dumps)
+300003    0.989    0.000    1.772    0.000 csv.py:108(__next__)
+300000    0.263    0.000    1.685    0.000 __init__.py:302(loads)
+300000    0.322    0.000    1.646    0.000 encoder.py:182(encode)
+
+Note that the script takes just over 12 seconds to run, which indicates that all
+of the processing is done serially.

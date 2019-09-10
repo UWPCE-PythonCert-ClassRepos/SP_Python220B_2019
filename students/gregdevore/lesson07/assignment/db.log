@@ -1,0 +1,15 @@
+2019-09-10 15:20:08,198 linear.py:54  INFO Dropping table products from database
+2019-09-10 15:20:08,219 linear.py:54  INFO Dropping table customers from database
+2019-09-10 15:20:08,232 linear.py:54  INFO Dropping table rentals from database
+2019-09-10 15:20:08,241 linear.py:81  INFO Starting read of 'sample_csv_files/products.csv'
+2019-09-10 15:20:09,625 linear.py:90  INFO Finishing read of 'sample_csv_files/products.csv'
+2019-09-10 15:20:09,625 linear.py:81  INFO Starting read of 'sample_csv_files/customers.csv'
+2019-09-10 15:20:11,221 linear.py:90  INFO Finishing read of 'sample_csv_files/customers.csv'
+2019-09-10 15:20:11,221 linear.py:81  INFO Starting read of 'sample_csv_files/rentals.csv'
+2019-09-10 15:20:12,616 linear.py:90  INFO Finishing read of 'sample_csv_files/rentals.csv'
+2019-09-10 15:20:12,618 linear.py:115 INFO Creating mongo connection
+2019-09-10 15:20:12,618 linear.py:117 INFO Creating products database and adding records
+2019-09-10 15:20:14,324 linear.py:115 INFO Creating mongo connection
+2019-09-10 15:20:14,324 linear.py:117 INFO Creating customers database and adding records
+2019-09-10 15:20:16,258 linear.py:115 INFO Creating mongo connection
+2019-09-10 15:20:16,258 linear.py:117 INFO Creating rentals database and adding records

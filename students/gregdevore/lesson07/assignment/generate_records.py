@@ -67,7 +67,7 @@ def generate_rental():
 
 if __name__ == "__main__":
     FOLDER = 'sample_csv_files'
-    RECORDS = 1000
+    RECORDS = 100000
 
     print('Writing customer RECORDS...')
     with open(os.path.join(FOLDER, 'customers.csv'), 'w') as customers:
