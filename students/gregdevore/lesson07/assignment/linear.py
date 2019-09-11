@@ -40,19 +40,19 @@ class MongoDBConnection():
         self.connection.close()
 
 def drop_tables(tables):
-        '''
-        Drop selected tables from mongo DB
+    '''
+    Drop selected tables from mongo DB
 
-        Args:
-            tables (list):
-                List of table names to drop
-        '''
-        mongo = MongoDBConnection()
-        with mongo:
-            db = mongo.connection.HPNorton
-            for table in tables:
-                LOGGER.info('Dropping table {} from database'.format(table))
-                db[table].drop()
+    Args:
+        tables (list):
+            List of table names to drop
+    '''
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.HPNorton
+        for table in tables:
+            LOGGER.info('Dropping table {} from database'.format(table))
+            db[table].drop()
 
 def create_mongo_connection(host='127.0.0.1', port=27017):
     '''
@@ -161,13 +161,19 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         os.path.join(directory_name, rentals_file))
 
     # Add JSON data to mongo database
-    product_count_before, product_count_after, product_db_time = add_json_to_mongodb(product_json, 'products')
-    customer_count_before, customer_count_after, customer_db_time = add_json_to_mongodb(customer_json, 'customers')
-    rentals_count_before, rentals_count_after, rentals_db_time = add_json_to_mongodb(rentals_json, 'rentals')
+    product_count_before, product_count_after, product_db_time = \
+    add_json_to_mongodb(product_json, 'products')
+    customer_count_before, customer_count_after, customer_db_time = \
+    add_json_to_mongodb(customer_json, 'customers')
+    rentals_count_before, rentals_count_after, rentals_db_time = \
+    add_json_to_mongodb(rentals_json, 'rentals')
 
-    product_data = (len(product_json), product_count_before, product_count_after, product_csv_time+product_db_time)
-    customer_data = (len(customer_json), customer_count_before, customer_count_after, customer_csv_time+customer_db_time)
-    rentals_data = (len(rentals_json), rentals_count_before, rentals_count_after, rentals_csv_time+rentals_db_time)
+    product_data = (len(product_json), product_count_before,
+                    product_count_after, product_csv_time+product_db_time)
+    customer_data = (len(customer_json), customer_count_before,
+                     customer_count_after, customer_csv_time+customer_db_time)
+    rentals_data = (len(rentals_json), rentals_count_before,
+                    rentals_count_after, rentals_csv_time+rentals_db_time)
 
     return [product_data, customer_data, rentals_data]
 
@@ -252,12 +258,12 @@ def show_rentals(product_id, mongo=None):
 
 if __name__ == "__main__":
     directory = 'sample_csv_files'
-    product_file = 'products.csv'
-    customer_file = 'customers.csv'
-    rentals_file = 'rentals.csv'
-    files = [string.split('.')[0] for string in [product_file, customer_file, rentals_file]]
+    product_csv = 'products.csv'
+    customer_csv = 'customers.csv'
+    rentals_csv = 'rentals.csv'
+    files = [string.split('.')[0] for string in [product_csv, customer_csv, rentals_csv]]
     # Drop tables before loading new data
     drop_tables(files)
-    data = import_data(directory, product_file, customer_file, rentals_file)
-    for index, item in enumerate(data):
-        print('{}: {}'.format(files[index], item))
+    data = import_data(directory, product_csv, customer_csv, rentals_csv)
+    for index, result in enumerate(data):
+        print('{}: {}'.format(files[index], result))
