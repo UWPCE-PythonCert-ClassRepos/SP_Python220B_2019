@@ -1,10 +1,12 @@
 #! /usr/bin/env bash
 
-echo "PYLINT EXAMINATION [$1]"
+FILE='good_perf.py'
+
+echo "PYLINT EXAMINATION [$FILE]"
 export PYTHONPATH=$PYTHONPATH:"${PWD}"
-python3 -m pylint $1 --rcfile=pylintrc
-echo "FLAKE8 EXAMINATION OF [$1]"
-python3 -m flake8 .
-echo "RUN CODE [$1]"
-python3 $1
+python3 -m pylint $FILE --rcfile=pylintrc
+echo "FLAKE8 EXAMINATION OF [$FILE]"
+python3 -m flake8 $FILE
+echo "RUN CODE [$FILE]"
+python3 $FILE
 echo 'DONE'
