@@ -1,35 +1,35 @@
-Assignment:
+### Assignment:
 
 In this lesson’s assignment, we are going to apply techniques to identify the right way to find bottlenecks in modules. We will use an evidence based approach to implement the right improvements.
 Here is what you need to do:
 
-    The assignment repository for this lesson contains a file with 10 records and a module that reads that file.
+-  The assignment repository for this lesson contains a file with 10 records and a module that reads that file.
 
-    Your first task is to take the data file, and expand it (following the format for the 10 records) so that it contains one million records. Write some Python code to do this. One of the columns is a guid (a unique identity). See if you can find an easy way to generate these (look online?).
+- Your first task is to take the data file, and expand it (following the format for the 10 records) so that it contains one million records. Write some Python code to do this. One of the columns is a guid (a unique identity). See if you can find an easy way to generate these (look online?).
 
-    The module that reads the file is badly written and probably can be made to run more quickly and efficiently!
+- The module that reads the file is badly written and probably can be made to run more quickly and efficiently!
 
-    You will look at the code and may immediately form a judgment about where performance can be improved. Do not be tempted to make immediate changes!
+- You will look at the code and may immediately form a judgment about where performance can be improved. Do not be tempted to make immediate changes!
 
-    Be sure to use an evidence based approach, and show, with data, how you were able to make improvements.
+- Be sure to use an evidence based approach, and show, with data, how you were able to make improvements.
 
-    Rewrite the module to improve performance. Provide evidence to demonstrate the improvement.
+- Rewrite the module to improve performance. Provide evidence to demonstrate the improvement.
 
-    Your new module should be called good_perf.py, it should use identical input and produce identical output to poor_perf.py
+- Your new module should be called good_perf.py, it should use identical input and produce identical output to poor_perf.py
 
-Other requirements:
+#### Other requirements:
 
-As always, you should ensure your code produces no errors or warnings from pylint.
+- As always, you should ensure your code produces no errors or warnings from pylint.
 Submission
 
-You submission should include the good_perf.py file, along with notes on your findings, performance improvements, and notes on your approach. For notes, you can use regular text format (.txt) or try restructured text (.rst) format. It should also include the program you write to generate 1 million records.
+- You submission should include the good_perf.py file, along with notes on your findings, performance improvements, and notes on your approach. For notes, you can use regular text format (.txt) or try restructured text (.rst) format. It should also include the program you write to generate 1 million records.
 
-Measurement:
+### Measurement:
 
-*********************
-poor_perf.py under cProfile (cProfile.run('main()', sort='time'))
+#### poor_perf.py under cProfile (cProfile.run('main()', sort='time'))
 
-         1032554 function calls in 4.675 seconds
+```         
+   1032554 function calls in 4.675 seconds
 
    Ordered by: internal time
 
@@ -51,12 +51,13 @@ poor_perf.py under cProfile (cProfile.run('main()', sort='time'))
         1    0.000    0.000    4.675    4.675 <string>:1(<module>)
         2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+```
 
 
-*********************
-good_perf.py under cProfile (cProfile('main()', sort='time'))
+#### good_perf.py under cProfile (cProfile('main()', sort='time'))
 
-         16284 function calls in 1.896 seconds
+```
+   16284 function calls in 1.896 seconds
 
    Ordered by: internal time
 
@@ -79,11 +80,12 @@ good_perf.py under cProfile (cProfile('main()', sort='time'))
         1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
         1    0.000    0.000    1.896    1.896 <string>:1(<module>)
+```
 
 
-*********************
-poor_perf.py under memory_profiler (python3 -m memory_profiler poor_perf.py)
+#### poor_perf.py under memory_profiler (python3 -m memory_profiler poor_perf.py)
 
+```
 Filename: poor_perf.py
 
 Line #    Mem usage    Increment   Line Contents
@@ -138,12 +140,13 @@ Line #    Mem usage    Increment   Line Contents
     58  277.730 MiB    0.000 MiB           end = datetime.datetime.now()
     59
     60  277.730 MiB    0.000 MiB       return (start, end, year_count, found)
+```
 
 
-    **************************
-    good_perf.py under memory_profiler (python3 -m memory_profiler good_perf.py)
+#### good_perf.py under memory_profiler (python3 -m memory_profiler good_perf.py)
 
-    Filename: good_perf.py
+```
+Filename: good_perf.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
@@ -170,9 +173,10 @@ Line #    Mem usage    Increment   Line Contents
     31
     32   52.094 MiB    0.000 MiB       end = datetime.datetime.now()
     33   52.094 MiB    0.000 MiB       return (start, end, year_count, found)
+```
 
 
-Notes:
+### Notes:
 
 - Noticed that there were duplicate loops so I was able to move the processing into a single loop.
 - Changed the year_count dictionary from one that is statically defined to one that is dynamic
@@ -183,7 +187,7 @@ Notes:
 - Converted years_count unsorted dict to ordereddict and back for better output formatting.
 
 
-Summary:
+### Summary:
 
 - 64x reduction in the number of call as measured by cProfile
 - 41% reduction in execution time as measured by cProfile
