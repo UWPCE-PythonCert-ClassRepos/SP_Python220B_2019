@@ -128,54 +128,74 @@ def add_json_to_mongodb(json_data, db_name, mongo=None):
 
     return before_count, collection_count, end-start
 
-def import_data(directory_name, product_file, customer_file, rentals_file):
+def import_products(directory_name, csv_name):
     '''
-    Method to import CSV data and add to a mongo database
+    Method to process product data
 
     Args:
         directory_name (str):
-            Directory where CSV files are located
-            Pass empty string if files in current directory
-        product_file (str):
-            Name of CSV file containing product data
-        customer_file (str):
-            Name of CSV file containing customer data
-        rentals_file (str):
-            Name of CSV file containing rentals data
+            Directory to read product data
+        csv_name (str):
+            Product csv
 
     Returns:
-        counts (tuple):
-            Count of documents added for the product, customer, and rentals
-            database, in that order
-        errors (tuple):
-            Count of errors encountered while adding documents for the product,
-            customer, and rentals database, in that order
+        product_data (tuple):
+            Tuple consisting of CSV record count, number of records in database
+            prior to adding data, number of records in database after adding data,
+            and elapsed time for CSV read and database add
     '''
-
-    # Convert csv files to JSON data
-    product_json, product_csv_time = import_csv_to_json(
-        os.path.join(directory_name, product_file))
-    customer_json, customer_csv_time = import_csv_to_json(
-        os.path.join(directory_name, customer_file))
-    rentals_json, rentals_csv_time = import_csv_to_json(
-        os.path.join(directory_name, rentals_file))
-
-    # Add JSON data to mongo database
+    product_json, product_csv_time = import_csv_to_json(os.path.join(directory_name, csv_name))
     product_count_before, product_count_after, product_db_time = \
     add_json_to_mongodb(product_json, 'products')
-    customer_count_before, customer_count_after, customer_db_time = \
-    add_json_to_mongodb(customer_json, 'customers')
-    rentals_count_before, rentals_count_after, rentals_db_time = \
-    add_json_to_mongodb(rentals_json, 'rentals')
-
     product_data = (len(product_json), product_count_before,
                     product_count_after, product_csv_time+product_db_time)
+    return product_data
+
+def import_customers(directory_name, csv_name):
+    '''
+    Method to process customer data
+
+    Args:
+        directory_name (str):
+            Directory to read customer data
+        csv_name (str):
+            Customer csv
+
+    Returns:
+        customer_data (tuple):
+            Tuple consisting of CSV record count, number of records in database
+            prior to adding data, number of records in database after adding data,
+            and elapsed time for CSV read and database add
+    '''
+    customer_json, customer_csv_time = import_csv_to_json(os.path.join(directory_name, csv_name))
+    customer_count_before, customer_count_after, customer_db_time = \
+    add_json_to_mongodb(customer_json, 'customers')
     customer_data = (len(customer_json), customer_count_before,
                      customer_count_after, customer_csv_time+customer_db_time)
+    return customer_data
+
+def import_rentals(directory_name, csv_name):
+    '''
+    Method to process rentals data
+
+    Args:
+        directory_name (str):
+            Directory to read rentals data
+        csv_name (str):
+            Rentals csv
+
+    Returns:
+        rentals_data (tuple):
+            Tuple consisting of CSV record count, number of records in database
+            prior to adding data, number of records in database after adding data,
+            and elapsed time for CSV read and database add
+    '''
+    rentals_json, rentals_csv_time = import_csv_to_json(os.path.join(directory_name, csv_name))
+    rentals_count_before, rentals_count_after, rentals_db_time = \
+    add_json_to_mongodb(rentals_json, 'rentals')
     rentals_data = (len(rentals_json), rentals_count_before,
                     rentals_count_after, rentals_csv_time+rentals_db_time)
-
-    return [product_data, customer_data, rentals_data]
+    return rentals_data
 
 def show_available_products(mongo=None):
     '''
@@ -257,6 +277,7 @@ def show_rentals(product_id, mongo=None):
     return rentals_dict
 
 if __name__ == "__main__":
+    main_start = time.time()
     directory = 'sample_csv_files'
     product_csv = 'products.csv'
     customer_csv = 'customers.csv'
@@ -264,6 +285,14 @@ if __name__ == "__main__":
     files = [string.split('.')[0] for string in [product_csv, customer_csv, rentals_csv]]
     # Drop tables before loading new data
     drop_tables(files)
-    data = import_data(directory, product_csv, customer_csv, rentals_csv)
-    for index, result in enumerate(data):
-        print('{}: {}'.format(files[index], result))
+
+    product_output = import_products(directory, product_csv)
+    customer_output = import_customers(directory, customer_csv)
+    rentals_output = import_rentals(directory, rentals_csv)
+
+    print(product_output)
+    print(customer_output)
+    print(rentals_output)
+
+    main_end = time.time()
+    print('Total elapsed time: {:f} seconds'.format(main_end-main_start))

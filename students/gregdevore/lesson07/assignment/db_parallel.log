@@ -1,0 +1,15 @@
+2019-09-11 15:04:49,316 parallel.py:56  INFO Dropping table products from database
+2019-09-11 15:04:49,331 parallel.py:56  INFO Dropping table customers from database
+2019-09-11 15:04:49,340 parallel.py:56  INFO Dropping table rentals from database
+2019-09-11 15:04:49,355 parallel.py:83  INFO Starting read of 'sample_csv_files/products.csv'
+2019-09-11 15:04:49,355 parallel.py:83  INFO Starting read of 'sample_csv_files/customers.csv'
+2019-09-11 15:04:49,356 parallel.py:83  INFO Starting read of 'sample_csv_files/rentals.csv'
+2019-09-11 15:04:49,401 parallel.py:92  INFO Finishing read of 'sample_csv_files/products.csv'
+2019-09-11 15:04:49,401 parallel.py:92  INFO Finishing read of 'sample_csv_files/rentals.csv'
+2019-09-11 15:04:49,401 parallel.py:92  INFO Finishing read of 'sample_csv_files/customers.csv'
+2019-09-11 15:04:49,403 parallel.py:117 INFO Creating mongo connection
+2019-09-11 15:04:49,403 parallel.py:117 INFO Creating mongo connection
+2019-09-11 15:04:49,403 parallel.py:119 INFO Creating products database and adding records
+2019-09-11 15:04:49,404 parallel.py:119 INFO Creating rentals database and adding records
+2019-09-11 15:04:49,404 parallel.py:117 INFO Creating mongo connection
+2019-09-11 15:04:49,405 parallel.py:119 INFO Creating customers database and adding records
