@@ -80,7 +80,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                    'quantity_available':line[3]}
                     products.insert_one(new_product)
                     product_count += 1
-        except:
+        except (FileNotFoundError, KeyError, IndexError):
             product_err += 1
 
         try:
@@ -92,7 +92,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                     'email': line[4]}
                     customers.insert_one(new_customer)
                     customer_count += 1
-        except:
+        except (FileNotFoundError, KeyError, IndexError):
             customer_err += 1
 
         try:
@@ -105,7 +105,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                   'cost_per_day': line[4]}
                     rentals.insert_one(new_rental)
                     rental_count += 1
-        except:
+        except (FileNotFoundError, KeyError, IndexError):
             rental_err += 1
 
     return (product_count, customer_count, rental_count), (product_err,
@@ -155,5 +155,7 @@ def show_rentals(product_id):
 
 if __name__ == "__main__":
     COUNT, ERROR = import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
-    print(show_available_products())
-    print(show_rentals('prd005'))
+    # print(show_available_products())
+    for renter_id, renter_info in show_rentals('prd002').items():
+        name = renter_info['name']
+        print(name)
