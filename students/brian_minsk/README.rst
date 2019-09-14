@@ -7,7 +7,11 @@ where I lived for 12 years. My home is now way out in the country in Chiang
 Mai province of Thailand very close to the border with Myanmar. I am
 temporarily back in Washington state, near Silverdale, and plan to return
 home to Thailand later this year.
-![My fiance's house](https://i.imgur.com/msP9xLh.jpg)
+
+My fiance's home in Thailand:
+
+.. image:: https://i.imgur.com/msP9xLh.jpg
+   :width: 100%
 
 My largest software development project was the Windows text mining tool,
 VantagePoint, which was coded almost entirely by me and one other developer
