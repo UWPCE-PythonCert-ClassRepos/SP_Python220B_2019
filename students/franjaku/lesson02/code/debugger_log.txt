@@ -1,0 +1,171 @@
+PS \code> ls
+
+    Directory: C:\Users\USer\Documents\UW_Python_Certificate\Course_2\SP_Python220B_2019\students\franjaku\lesson02\code
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         9/12/2019  6:31 PM         100381 2019-09-12.log
+-a----         9/14/2019  1:41 PM              0 2019-09-14.log
+-a----         9/14/2019  1:41 PM           4433 charges_calc.py
+-a----         8/11/2019  4:34 PM           1519 charges_calc_orig.py
+-a----         9/14/2019  1:41 PM         180019 output.json
+-a----          9/6/2019 11:07 PM         161629 source.json
+
+PS \code> py -m pdb .\charges_calc_orig.py                                                                                                               > c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(3)<module>()
+-> '''
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) until 43
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) s
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+usage: charges_calc_orig.py [-h] -i INPUT -o OUTPUT
+charges_calc_orig.py: error: the following arguments are required: -i/--input, -o/--output
+SystemExit: 2
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) q
+PS \code> py -m pdb .\charges_calc_orig.py -i .\source.json -o .\outputtest.json
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(3)<module>()
+-> '''
+(Pdb) until 43
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) s
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(34)calculate_additional_fields()
+-> except:
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+--Return--
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(35)calculate_additional_fields()->None
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) n
+--Return--
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(46)<module>()->None
+-> data = calculate_additional_fields(data)
+(Pdb) s
+SystemExit: 0
+> <string>(1)<module>()->None
+(Pdb)
+--Return--
+> <string>(1)<module>()->None
+(Pdb) q
+PS \code> py -m pdb .\charges_calc_orig.py -i .\source.json -o .\outputtest.json
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(3)<module>()
+-> '''
+(Pdb) ul 46
+*** SyntaxError: invalid syntax
+(Pdb) unitl 46
+*** SyntaxError: invalid syntax
+(Pdb) until 46
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp
+*** SyntaxError: unexpected EOF while parsing
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'total_price': -2542,
+ 'units_rented': 8}
+(Pdb) q
+The program exited via sys.exit(). Exit status: 0
+> c:\users\user\documents\uw_python_certificate\course_2\sp_python220b_2019\students\franjaku\lesson02\code\charges_calc_orig.py(3)<module>()
+-> '''
+(Pdb) q
+PS \code>
