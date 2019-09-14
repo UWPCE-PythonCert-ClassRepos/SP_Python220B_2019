@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 10 09:54:36 2019
+Modified  on Fri Sep 13 20:03:33 2019
 @author: Florentin Popescu
 """
-#pylint: disable-msg=too-many-arguments
-#pylint: disable=W0401  #disable 'Wildcard import peewee'
-#pylint: disable=W0614
+# pylint: disable-msg=too-many-arguments
+# pylint: disable=W0401  #disable 'Wildcard import peewee'
+# pylint: disable=W0614
 
 # imports
 import logging
@@ -14,16 +15,22 @@ from peewee import *
 # import external files
 from customer_model import Customer
 
-#========================================
-#set basic looging level as INFO
+# ========================================
+# set basic looging level as INFO
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
-#========================================
+# ========================================
 # define database
 DATABASE = SqliteDatabase("customers.db")
 
-#========================================
+# ========================================
+# initialize database
+DATABASE.create_tables([Customer])
+DATABASE.close()
+# ========================================
+
+
 def add_customer(customer_id, first_name, last_name,
                  home_address, email_address, phone_number,
                  status, credit_limit, join_date,
@@ -55,20 +62,17 @@ def add_customer(customer_id, first_name, last_name,
             # message if customer added
             LOGGER.info("new customer added to database")
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
-        LOGGER.info(err)
-
-    except (InternalError, InterfaceError, IntegrityError) as err:
-        LOGGER.info("error creating a non-unique customer id %s", customer_id)
-        LOGGER.info(err)
+    except IntegrityError as err:
+        LOGGER.error("error creating a non-unique customer id %s", customer_id)
+        LOGGER.error(err)
 
     finally:
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
+# =======================================
 
-#======================================== OK
+
 def search_customer(customer_id):
     """
         search a customer by id
@@ -92,25 +96,24 @@ def search_customer(customer_id):
                 "phone_number": searched_customer.phone_number,
                 "status": searched_customer.status,
                 "credit_limit": searched_customer.credit_limit,
-                #-------------------------
+                # -------------------------
                 "join_date": searched_customer.join_date,
                 "insertion_date": searched_customer.insertion_date,
                 "time_stamp": searched_customer.time_stamp,
                 "hobby": searched_customer.hobby}
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
+    except DoesNotExist as err:
+        LOGGER.info("customer id %s not found", customer_id)
         LOGGER.info(err)
-
-    except IntegrityError as err:
-        LOGGER.info("customer not found")
+        return {}
 
     finally:
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
+# ========================================
 
-#======================================== OK
+
 def delete_customer(customer_id):
     """
         delete a customer by id
@@ -125,20 +128,17 @@ def delete_customer(customer_id):
         Customer.get_by_id(customer_id).delete_instance()
         LOGGER.info("id %s customer deleted", customer_id)
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
-        LOGGER.info(err)
-
-    except IntegrityError as err:
-        LOGGER.info("customer with id %s not found", customer_id)
+    except DoesNotExist as err:
+        LOGGER.info("customer with id %s not deleted", customer_id)
         LOGGER.info(err)
 
     finally:
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
+# ========================================
 
-#======================================== ???
+
 def update_credit(customer_id, credit_limit):
     """
         search customer by id and update credit limit
@@ -159,11 +159,7 @@ def update_credit(customer_id, credit_limit):
         # save updated customer
         searched_customer.save()
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
-        LOGGER.info(err)
-
-    except (IntegrityError, DataError) as err:
+    except DoesNotExist as err:
         LOGGER.info("customer id %s not found", customer_id)
         LOGGER.info("credit limit of %s for customer id %s not updated",
                     credit_limit, customer_id)
@@ -173,8 +169,9 @@ def update_credit(customer_id, credit_limit):
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
+# ========================================
 
-#========================================
+
 def update_status(customer_id, new_status):
     """
         update customer status
@@ -198,11 +195,7 @@ def update_status(customer_id, new_status):
             LOGGER.info("status neither active or inactive")
             LOGGER.info("status wasn't updated")
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
-        LOGGER.info(err)
-
-    except IntegrityError as err:
+    except DoesNotExist as err:
         LOGGER.info("customer id %s not found", customer_id)
         LOGGER.info(err)
 
@@ -210,11 +203,13 @@ def update_status(customer_id, new_status):
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
+# ========================================
 
-#========================================
+
 def list_active_customers():
     """
-        return number of active customers and list their ids
+        use list comprehension
+        to return number of active customers and their ids
     """
     try:
         # open database
@@ -224,22 +219,19 @@ def list_active_customers():
 
         # return number of active customers and their ids
         active_ids = [cid.customer_id for cid in
-                      Customer.select().where(Customer.status == "active")]
+                      Customer.select().where(Customer.status == "active")
+                      if Customer.customer_id is not None]
         LOGGER.info("database has %s active customers", len(active_ids))
+
+        if not bool(len(active_ids)):
+            raise ValueError('empty database')
+
         return {len(active_ids): active_ids}
 
-    except OperationalError as err:
-        LOGGER.info("conection to database failed")
-        LOGGER.info(err)
-
-    except (IntegrityError, DataError) as err:
+    except ValueError as err:
         LOGGER.info(err)
 
     finally:
         # close database
         DATABASE.close()
         LOGGER.info("database closed")
-
-#========================================
-#--------------- END --------------------
-#========================================
