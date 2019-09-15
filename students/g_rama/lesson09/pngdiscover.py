@@ -22,23 +22,25 @@ def image_recursion(root_dir):
     print(dirs)
     #return dirs
     images = []
+    images.append(dirs)
     for file in dirs:
-        print(file)
-        images.append(file)
+        if
         if os.path.isdir(os.path.join(root_dir, file)):
             path_in = os.path.join(root_dir, file)
             print(path_in)
-            dirs_in  = os.listdir(path_in)
+            dirs_in = os.listdir(path_in)
             images.append(dirs_in)
             images_in = []
+            images_in.append(dirs_in)
             for file_in in dirs_in:
-                images_in.append(file)
+                #images_in.append(file)
                 #images.append(images_in)
                 if os.path.isdir(os.path.join(path_in, file_in)):
                     print(os.path.join(path_in, file_in))
                     inside_image = image_recursion(os.path.join(path_in, file_in))
                     print(inside_image)
                     images_in.append(inside_image)
+                    images.append(images_in)
 
     return images
 

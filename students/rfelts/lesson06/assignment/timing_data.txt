@@ -1,0 +1,20 @@
+For the initial timing I chose to focus on the times it took to:
+- append the date info to the list
+- add up the year counts
+- count the number of ao's found
+
+The results showed the actions took approximately 8.631 seconds to complete.
+
+/usr/local/bin/python3.7 ... time_poor_perf.py
+4.059319221 seconds to append new dates to the list
+1.3936375920000001 seconds to add up year counts
+3.1790028109999993 seconds to count the number of ao's found
+
+I decided to optimize the code by doing the following:
+- only read/loop over the file once
+- add the new year data directly to the dictionary
+
+This resulted in the time to complete the actions be shrunk down to approximately 3.826 seconds
+
+/usr/local/bin/python3.7 ... time_good_perf.py
+3.826443421 seconds to loop over the file and add new dates and ao count
