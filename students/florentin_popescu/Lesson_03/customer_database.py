@@ -3,8 +3,8 @@
 Created on Wed Jul 10 09:56:03 2019
 @author: Florentin Popescu
 """
-#pylint: disable=W0401  #disable 'Wildcard import peewee'
-#pylint: disable=W0614
+# pylint: disable=W0401  #disable 'Wildcard import peewee'
+# pylint: disable=W0614
 
 # imports
 import logging
@@ -13,12 +13,12 @@ from peewee import *
 # import external files
 from customer_model import Customer
 
-#========================================
+# ========================================
 # set basic looging level as INFO
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
-#========================================
+# ========================================
 # define database
 DATABASE = SqliteDatabase("customers.db")
 
@@ -26,7 +26,12 @@ DATABASE = SqliteDatabase("customers.db")
 DATABASE.connect()
 DATABASE.execute_sql("PRAGMA foreign_keys = ON;")
 
-#========================================
+# ========================================
+# initialize database
+DATABASE.create_tables([Customer])
+DATABASE.close()
+
+# ========================================
 # sample customers for insertion to database
 CUSTOMERS = [
         ("1", "Florentin", "Popescu", "Chicago", "private01@yahoo.com",
@@ -63,7 +68,7 @@ for customer in CUSTOMERS:
         LOGGER.info("conection to database failed")
         LOGGER.info(err)
 
-    except (InternalError, InterfaceError, IntegrityError) as err:
+    except (IntegrityError, InternalError, InterfaceError) as err:
         LOGGER.info("Error creating a non-unique customer id %s", customer[0])
         LOGGER.info(err)
 
@@ -83,4 +88,3 @@ for customer in Customer:
 # close database
 DATABASE.close()
 LOGGER.info("database closed")
-#=======================================

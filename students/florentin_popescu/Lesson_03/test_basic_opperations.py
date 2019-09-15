@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 10 09:57:06 2019
+Modified  on Fri Sep 13 23:56:18 2019
 @author: Florentin Popescu
 """
-#pylint: disable=W0401  #disable 'Wildcard import peewee'
-#pylint: disable=W0614
-#pylint: disable=W0703
+# pylint: disable=W0401  #disable 'Wildcard import peewee'
+# pylint: disable=W0614
+# pylint: disable=W0703
 
 # imports
 import logging
@@ -14,29 +15,35 @@ from peewee import *
 
 # import external files
 import basic_operations
-from basic_operations import *
-from customer_model import Customer
+# from basic_operations import *
 
-#======================================
-#set basic looging level as INFO
+from customer_model import Customer
+# ======================================
+
+# set basic looging level as INFO
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
+# ======================================
 
-#======================================
 # define database
-#DATABASE = SqliteDatabase(':memory:')
 DATABASE = SqliteDatabase("customers.db")
+# ======================================
 
-#======================================
+
 class TestOperations(unittest.TestCase):
     """
         test methods
     """
-    #----------------------------------
+    # ----------------------------------
     def test_add_customer(self):
         """
             test customer addition
         """
+        # test exception (adding nothing)
+        basic_operations.add_customer(None, None, None, None,
+                                      None, None, None, None,
+                                      None, None, None, None)
+
         # define a test customer
         inserted_customer = ("1", "Lara", "Croft", "Los Angeles",
                              "private01@yahoo.com", "888-888-8888",
@@ -59,7 +66,7 @@ class TestOperations(unittest.TestCase):
 
         # retrive customer from database and compare with inserted
         try:
-            #open database
+            # open database
             DATABASE.connect()
             DATABASE.execute_sql("PRAGMA foreign_keys = ON;")
 
@@ -113,7 +120,7 @@ class TestOperations(unittest.TestCase):
             LOGGER.info("database closed")
             LOGGER.info("==================================")
 
-    #-------------------------------------- above tests OK
+    # --------------------------------------
     def test_search_customer(self):
         """
             test search method
@@ -141,7 +148,8 @@ class TestOperations(unittest.TestCase):
         # search customer in database and test if it's the same as inserted
         try:
             # search for customer in database via 'search_customer' method
-            searched_customer = basic_operations.search_customer(inserted_customer[0])
+            searched_customer = basic_operations.search_customer(
+                inserted_customer[0])
             expected_customer = {"customer_id": "1",
                                  "first_name": "Lara",
                                  "last_name": "Croft",
@@ -189,11 +197,14 @@ class TestOperations(unittest.TestCase):
             LOGGER.info("database closed")
             LOGGER.info("==================================")
 
-    #-------------------------------------- OK
+    # --------------------------------
     def test_delete_customer(self):
         """
             test delete customer method
         """
+        # test_exception (delete non-existent)
+        basic_operations.delete_customer('0')
+
         # define a test customer
         inserted_customer = ("1", "Lara", "Croft", "Los Angeles",
                              "private01@yahoo.com", "888-888-8888",
@@ -214,7 +225,8 @@ class TestOperations(unittest.TestCase):
                                       inserted_customer[10],
                                       inserted_customer[11])
 
-        searched_customer = basic_operations.search_customer(inserted_customer[0])
+        searched_customer = basic_operations.search_customer(
+            inserted_customer[0])
         expected_customer = {"customer_id": "1",
                              "first_name": "Lara",
                              "last_name": "Croft",
@@ -238,7 +250,7 @@ class TestOperations(unittest.TestCase):
             basic_operations.delete_customer(inserted_customer[0])
             LOGGER.info("delete operation implemented")
 
-        except (OperationalError, IndexError) as err:
+        except Exception as err:
             LOGGER.info("customer not deleted")
             LOGGER.info(err)
 
@@ -256,7 +268,7 @@ class TestOperations(unittest.TestCase):
                 LOGGER.info("searched customer not found in database")
                 LOGGER.info("test of 'delete_customer' succesfull")
 
-        except OperationalError as err:
+        except Exception as err:
             LOGGER.info("connection to database failed")
             LOGGER.info(err)
 
@@ -271,12 +283,12 @@ class TestOperations(unittest.TestCase):
             DATABASE.connect()
             DATABASE.execute_sql("PRAGMA foreign_keys = ON;")
 
-            # remove inserted customer
+        # remove inserted customer
             for customer in Customer:
                 customer.delete_instance()
             LOGGER.info("database cleared")
 
-        except IndexError as err:
+        except Exception as err:
             LOGGER.info("failed to remove customer; database not cleared")
             LOGGER.info(err)
 
@@ -284,9 +296,8 @@ class TestOperations(unittest.TestCase):
             # close database
             DATABASE.close()
             LOGGER.info("database closed")
-            LOGGER.info("==================================")
 
-    #--------------------------------------
+    # --------------------------------------
     def test_update_credit(self):
         """
             test credit update method
@@ -313,6 +324,9 @@ class TestOperations(unittest.TestCase):
 
         # update credit limit for inserted customer
         try:
+            # test exception
+            basic_operations.update_credit("0", 200)
+
             # set customer's new credit limit to $200 via 'update_credit'
             basic_operations.update_credit(inserted_customer[0], 200)
 
@@ -359,7 +373,7 @@ class TestOperations(unittest.TestCase):
             LOGGER.info("database closed")
             LOGGER.info("==================================")
 
-    #--------------------------------------
+    # --------------------------------------
     def test_update_status(self):
         """
             test update status
@@ -386,6 +400,10 @@ class TestOperations(unittest.TestCase):
 
         # update inserted customer's status
         try:
+            # test exception
+            basic_operations.update_status("0", "inactive")
+            basic_operations.update_status(inserted_customer[0], 100)
+
             # update inserted customer's status via 'update_status' method
             basic_operations.update_status(inserted_customer[0], "inactive")
 
@@ -412,7 +430,7 @@ class TestOperations(unittest.TestCase):
             DATABASE.close()
             LOGGER.info("database closed")
 
-       # clean database -------------------
+        # clean database -------------------
         try:
             # open database
             DATABASE.connect()
@@ -433,11 +451,14 @@ class TestOperations(unittest.TestCase):
             LOGGER.info("database closed")
             LOGGER.info("==================================")
 
-    #--------------------------------------
+    # --------------------------------------
     def test_list_active_customers(self):
         """
             test active customers
         """
+        # test exception (empty dataset)
+        number_list_active = basic_operations.list_active_customers()
+
         # define a test customer
         inserted_customer = ("1", "Lara", "Croft", "Los Angeles",
                              "private01@yahoo.com", "888-888-8888",
@@ -468,11 +489,13 @@ class TestOperations(unittest.TestCase):
             LOGGER.info("number of customers in database tested sucesfully")
 
             # test if inserted customer is in list of active customers
-            self.assertEqual(list(number_list_active.values())[0], [inserted_customer[0]])
-            LOGGER.info("id %s customer exist in database", inserted_customer[0])
+            self.assertEqual(list(number_list_active.values())[0],
+                             [inserted_customer[0]])
+            LOGGER.info("id %s customer exist in database",
+                        inserted_customer[0])
 
-        except (IndexError, #AssertionError,
-                IntegrityError, OperationalError) as err:
+        except DoesNotExist as err:
+            assert False
             LOGGER.info(err)
 
         # clean database -------------------
@@ -495,8 +518,8 @@ class TestOperations(unittest.TestCase):
             DATABASE.close()
             LOGGER.info("database closed")
             LOGGER.info("==================================")
+# ===========================================
 
-#===========================================
+
 if __name__ == '__main__':
     unittest.main()
-#===========================================
