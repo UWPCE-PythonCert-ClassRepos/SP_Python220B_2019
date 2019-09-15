@@ -253,9 +253,7 @@ def show_customers():
 
 def main():
     """ The main function for the program """
-    import_stats = import_data("/Users/joe.nunnelley/Documents/Node/git/"
-                               "python_playground/SP_Python220B_2019/"
-                               "students/JoeNunnelley/lesson05/assignment",
+    import_stats = import_data(".",
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
