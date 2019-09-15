@@ -4,6 +4,7 @@ Classes:
     Multiplier
 """
 
+
 class Multiplier():
     """ Class for multiplying two numbers. """
 

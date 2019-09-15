@@ -6,6 +6,7 @@ Classes:
 
 from .exceptions import InsufficientOperands
 
+
 class Calculator():
     """ Class for arithmetical operations. """
 
@@ -41,11 +42,13 @@ class Calculator():
         return self._do_calc(self.adder)
 
     def subtract(self):
-        """ Call _do_calc with the subtract attribute and return the result. """
+        """ Call _do_calc with the subtract attribute and return the result.
+        """
         return self._do_calc(self.subtracter)
 
     def multiply(self):
-        """ Call _do_calc with the multiply attribute and return the result. """
+        """ Call _do_calc with the multiply attribute and return the result.
+        """
         return self._do_calc(self.multiplier)
 
     def divide(self):

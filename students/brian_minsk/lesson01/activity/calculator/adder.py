@@ -4,6 +4,7 @@ Classes:
     Adder
 """
 
+
 class Adder():
     """ Class for adding two numbers. """
 

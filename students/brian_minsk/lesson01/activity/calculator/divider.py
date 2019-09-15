@@ -4,6 +4,7 @@ Classes:
     Divider
 """
 
+
 class Divider():
     """ Class for dividing two numbers. """
 
