@@ -1,0 +1,196 @@
+
+(base) C:\Users\Florentin\Desktop>cd L3
+
+(base) C:\Users\Florentin\Desktop\L3>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L3
+
+09/14/2019  04:38 PM    <DIR>          .
+09/14/2019  04:38 PM    <DIR>          ..
+09/14/2019  03:01 PM             7,650 basic_operations.py
+09/14/2019  03:54 PM             2,889 customer_database.py
+09/14/2019  02:08 PM             1,490 customer_model.py
+09/14/2019  03:26 PM            20,528 test_basic_opperations.py
+               4 File(s)         32,557 bytes
+               2 Dir(s)  145,814,208,512 bytes free
+
+(base) C:\Users\Florentin\Desktop\L3>cd ..
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L3/customer_model.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L3/customer_database.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L3/basic_operations.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L3/test_basic_opperations.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>cd L3
+
+(base) C:\Users\Florentin\Desktop\L3>python -m coverage run --source=customer_model,basic_operations -m unittest test_basic_opperations.py
+INFO:basic_operations:connected to database
+ERROR:basic_operations:error creating a non-unique customer id None
+ERROR:basic_operations:NOT NULL constraint failed: customer.customer_id
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:test of 'add_customer' sucesfull
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:tested customer removed; database cleared
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:==================================
+.INFO:basic_operations:connected to database
+INFO:basic_operations:customer with id 0 not deleted
+INFO:basic_operations:<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:customer 1 found
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:customer sucesfully inserted into database
+INFO:basic_operations:connected to database
+INFO:basic_operations:id 1 customer deleted
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:delete operation implemented
+INFO:basic_operations:connected to database
+INFO:basic_operations:customer id 1 not found
+INFO:basic_operations:<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['1', 1, 0]
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:database cleared
+INFO:test_basic_opperations:database closed
+.INFO:basic_operations:connected to database
+INFO:basic_operations:database has 0 active customers
+INFO:basic_operations:empty database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:database has 1 active customers
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:number of customers in database tested sucesfully
+INFO:test_basic_opperations:id 1 customer exist in database
+INFO:test_basic_opperations:inserted customer removed; database cleared
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:==================================
+.INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:customer 1 found
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:test of 'search_customer' sucesfull
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:tested customer removed; database cleared
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:==================================
+.INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:customer id 0 not found
+INFO:basic_operations:credit limit of 200 for customer id 0 not updated
+INFO:basic_operations:<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:credit limit updated for customer id 1
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:credit limit updated sucesfully
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:inserted customer removed; database cleared
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:==================================
+.INFO:basic_operations:connected to database
+INFO:basic_operations:new customer added to database
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:customer id 0 not found
+INFO:basic_operations:<Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."email_address", "t1"."phone_number", "t1"."status", "t1"."credit_limit", "t1"."join_date", "t1"."insertion_date", "t1"."time_stamp", "t1"."hobby" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['0', 1, 0]
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:status neither active or inactive
+INFO:basic_operations:status wasn't updated
+INFO:basic_operations:database closed
+INFO:basic_operations:connected to database
+INFO:basic_operations:status updated for customer id 1
+INFO:basic_operations:database closed
+INFO:test_basic_opperations:status changed succesfully
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:inserted customer removed; database cleared
+INFO:test_basic_opperations:database closed
+INFO:test_basic_opperations:==================================
+.
+----------------------------------------------------------------------
+Ran 6 tests in 0.438s
+
+OK
+
+(base) C:\Users\Florentin\Desktop\L3>python -m coverage report -m
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+basic_operations.py      95      0   100%
+customer_model.py        22      0   100%
+---------------------------------------------------
+TOTAL                   117      0   100%
+
+(base) C:\Users\Florentin\Desktop\L3>python customer_database.py
+INFO:__main__:<bound method Model.__str__ of <Customer: 1>>
+INFO:__main__:customer: 1- Popescu, Florentin
+INFO:__main__:<bound method Model.__str__ of <Customer: 2>>
+INFO:__main__:customer: 2- Popesco, Florentino
+INFO:__main__:<bound method Model.__str__ of <Customer: 3>>
+INFO:__main__:customer: 3- Popescoo, Florentinoo
+INFO:__main__:customer id 1 erased from database
+INFO:__main__:customer id 2 erased from database
+INFO:__main__:customer id 3 erased from database
+INFO:__main__:database closed
+
+(base) C:\Users\Florentin\Desktop\L3>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L3
+
+09/14/2019  04:44 PM    <DIR>          .
+09/14/2019  04:44 PM    <DIR>          ..
+09/14/2019  04:42 PM               691 .coverage
+09/14/2019  03:01 PM             7,650 basic_operations.py
+09/14/2019  04:44 PM            12,288 customers.db
+09/14/2019  03:54 PM             2,889 customer_database.py
+09/14/2019  02:08 PM             1,490 customer_model.py
+09/14/2019  03:26 PM            20,528 test_basic_opperations.py
+09/14/2019  04:42 PM    <DIR>          __pycache__
+               6 File(s)         45,536 bytes
+               3 Dir(s)  145,813,233,664 bytes free
+
+(base) C:\Users\Florentin\Desktop\L3>
+
