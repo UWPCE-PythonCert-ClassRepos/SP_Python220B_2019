@@ -1,28 +1,36 @@
 #! /usr/bin/env python3
 
 """
-Lesson 05 : Migrate CSV data to MongoDB and be able to report on it:
+Lesson 07 : Migrate CSV data to MongoDB and be able to report on it:
 
-This week, you have been assigned to work on a prototype migration of product
-data from a sample csv file into MongoDB. You will use the MongoDB API while
-exploiting mongo’s ability to allow the Python module, not the database, to
-specify the schema for the data to be stored.
 
-You implementation should address the following requirements:
+Demonstrate with real profile data the time taken to run your existing
+import logic from lesson 5
 
-    As a HP Norton customer I want to see a list of all products available
-    for rent so that I can make a rental choice.
+Amend the import logic so that it can process the imports in parallel.
+Your module should launch the imports simultaneously. Provide real timing
+data for your new approach.
 
-    As a HP Norton salesperson I want to see a list of all of the different
-    products, showing product ID, description, product type and quantity
-    available.
+Compare and contrast parallel vs. linear performance and recommend to
+management if a change is worthwhile.
 
-    As a HP Norton salesperson I want to see a list of the names and contact
-    details (address, phone number and email) of all customers who have rented
-    a certain product.
+To show you have thought through your design, create and provide an
+example of where the program fails due to contention and explain why
+in code comments, and how that will be avoided when the system is running.
+
+You will submit two modules: linear.py and parallel.py
+
+Each module will return a list of tuples, one tuple for customer and one
+for products. Each tuple will contain 4 values: the number of records
+processed (int), the record count in the database prior to running (int),
+the record count after running (int), and the time taken to run the module
+(float).
+
+You will also submit a text file containing your findings.
 """
 import json
 import logging
+import multiprocessing as mp
 from os import path
 import pandas as pd
 from pymongo import MongoClient
@@ -107,6 +115,13 @@ def insert_to_mongo(collection_name, collection):
         return (insertions, errors)
 
 
+def import_data(directory_name, filename, collection_name):
+    LOGGER.debug("Reading CSV File: {}".format(filename))
+    contents = csv_to_json(directory_name, filename)
+    LOGGER.debug("Inserting Data Into Mongo: {}".format(collection_name))
+    { collection_name, insert_to_mongo(collection_name, contents) }
+
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import the data into mongo from csv files
@@ -119,17 +134,22 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     products, customers and rentals added (in that order), the second with a
     count of any errors that occurred, in the same order.
     """
+    pool = mp.Pool(mp.cpu_count())
 
+    # this section could be parallelized
     # load the csv files
     LOGGER.debug("Reading CSV Files")
-    products = csv_to_json(directory_name, product_file)
-    customers = csv_to_json(directory_name, customer_file)
-    rentals = csv_to_json(directory_name, rentals_file)
+    csv_files = [product_file, customer_file, rentals_file]
+    results = [pool.apply(import_data, args=(directory_name, filename, filename.split('.')[:-1])) for filename in csv_files]
+    pool.close()
+    #products = csv_to_json(directory_name, product_file)
+    #customers = csv_to_json(directory_name, customer_file)
+    #rentals = csv_to_json(directory_name, rentals_file)
 
-    LOGGER.debug("Inserting Data Into Mongo")
-    product_results = insert_to_mongo('products', products)
-    customer_results = insert_to_mongo('customers', customers)
-    rental_results = insert_to_mongo('rentals', rentals)
+    #LOGGER.debug("Inserting Data Into Mongo")
+    #product_results = insert_to_mongo('products', products)
+    #customer_results = insert_to_mongo('customers', customers)
+    #rental_results = insert_to_mongo('rentals', rentals)
 
     # return array of tuples
     # [(products_added, customers_added, rentals_added),
