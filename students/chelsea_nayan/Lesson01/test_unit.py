@@ -80,6 +80,7 @@ class TestMain(TestCase):
 
     def test_get_price(self):
         self.get_price = MagicMock(return_value=24)
+        self.assertEqual(main.get_price(), print('Get price'))
 
     def test_add_new_item(self):
         '''Test that new items are added'''
@@ -137,23 +138,42 @@ class TestMain(TestCase):
     def test_item_info(self):
         '''Check if item is in the inventory list when item code is inputted'''
 
-        details = {'product_code': '001',
-                   'description': 'clouds',
-                   'market_price': 100000.00,
-                   'rental_price': 25}
-        expected = ('product_code: 1234\n'
-                    'description: clouds\n'
-                    'market_price: 100000.00\n'
-                    'rental_price: 25\n')
-
+        expected = {'product_code': '001',
+                    'description': 'clouds',
+                    'market_price': 100000.00,
+                    'rental_price': 25}
+        # Test
         with patch('builtins.input', side_effect=['001']):
-            main.FULL_INVENTORY['1234'] = details
             self.assertEqual(main.item_info(), print(expected))
 
-        with patch('builtins.input', side_effect=['999']):
-            main.FULL_INVENTORY = []
-            expected_message = 'Item not found in inventory'
-            self.assertEqual(main.item_info(), print(expected_message))
+    def test_item_info_other(self):
+        '''Check if inventory list works'''
+
+        expected = {
+        'code 1': {'product_code': 'code 1',
+                   'description': 'item 1',
+                   'market_price': 24,
+                   'rental_price': 10.00,
+                   'material': 'material',
+                   'size': 'size'},
+        'code 2': {'product_code': 'code 2',
+                   'description': 'item 2',
+                   'market_price': 24,
+                   'rental_price': 20.00,
+                   'brand': 'brand',
+                   'voltage': 2.4},
+        'code 3': {'product_code': 'code 3',
+                   'description': 'item 3',
+                   'market_price': 24,
+                   'rental_price': 30.00},
+        }
+        main.FULL_INVENTORY = {}
+        main.FULL_INVENTORY = expected
+
+        with patch('builtins.input', side_effect=['code 1']):
+            self.assertEqual(main.item_info(), print(expected.get('code 1')))
+            self.assertEqual(main.FULL_INVENTORY['code 1'], expected.get('code 1'))
+
 
     def test_exit_program(self):
         '''Test the ability of the program to exit'''

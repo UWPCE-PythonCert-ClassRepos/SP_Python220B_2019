@@ -17,7 +17,7 @@ class TestInventoryManagment(TestCase):
     def test_integration(self):
         # Set up clear inventory
         main.FULL_INVENTORY = {}
-
+        print(main.FULL_INVENTORY)
         # Add some inventory items
         furn_details = ['code 1', 'item 1', 10.0, 'y', 'material', 'size']
         ea_details = ['code 2', 'item 2', 20.00, 'N', 'Y', 'brand', 2.4]
@@ -27,19 +27,19 @@ class TestInventoryManagment(TestCase):
         expected = {
         'code 1': {'product_code': 'code 1',
                    'description': 'item 1',
-                   'market_price': 10.0,
+                   'market_price': 24,
                    'rental_price': 10.00,
                    'material': 'material',
                    'size': 'size'},
         'code 2': {'product_code': 'code 2',
                    'description': 'item 2',
-                   'market_price': 20.0,
+                   'market_price': 24,
                    'rental_price': 20.00,
                    'brand': 'brand',
                    'voltage': 2.4},
         'code 3': {'product_code': 'code 3',
                    'description': 'item 3',
-                   'market_price': 30.0,
+                   'market_price': 24,
                    'rental_price': 30.00},
         }
 
@@ -53,6 +53,7 @@ class TestInventoryManagment(TestCase):
 
         # Test if all items were added to the expected full inventory
         self.assertEqual(main.FULL_INVENTORY, expected)
+
 
         # This is the expected item info output
         expected_1 = ('product_code: code 1\n',

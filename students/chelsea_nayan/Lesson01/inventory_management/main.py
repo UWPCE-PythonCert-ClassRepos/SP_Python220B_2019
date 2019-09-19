@@ -23,7 +23,7 @@ def main_menu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 def get_price():
-    '''Print the price'''
+    '''Print the get price'''
     print("Get price")
 
 def add_new_item():
