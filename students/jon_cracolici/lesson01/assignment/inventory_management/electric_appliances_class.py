@@ -2,7 +2,16 @@
 """
 Electronic Appliance class module
 """
+
+import sys
+import os
 from inventory_class import Inventory
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(DIR_PATH)
+
+#from inventory_management.inventory_class import Inventory
+
+
 
 
 class ElectricAppliances(Inventory):

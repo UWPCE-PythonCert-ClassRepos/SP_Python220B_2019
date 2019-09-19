@@ -1,5 +1,6 @@
 """Market Prices module"""
 
+
 # pylint: disable=unused-argument
 
 

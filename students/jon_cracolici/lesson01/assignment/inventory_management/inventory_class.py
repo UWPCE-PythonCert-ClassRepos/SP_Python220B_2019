@@ -2,10 +2,13 @@
 """
 Inventory Class Module
 """
-
+#import sys
+#import os
+#DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+#sys.path.append(DIR_PATH)
 
 class Inventory:
-    """Inventory class - intitiales and returns properties as
+    """Inventory class - initiates and returns properties as
     as dictionary to be included in database."""
 
     def __init__(self, product_code, description, market_price, rental_price):
