@@ -4,6 +4,7 @@
 *.iml
 .coverage
 *.zip
+*.db
 
 # Folders
 */activity/*
