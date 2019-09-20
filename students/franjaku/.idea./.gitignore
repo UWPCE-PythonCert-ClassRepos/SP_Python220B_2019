@@ -1,0 +1,10 @@
+
+# Default ignored files
+*.xml
+*.iml
+.coverage
+*.zip
+*.db
+
+# Folders
+*/activity/*
