@@ -115,11 +115,14 @@ def insert_to_mongo(collection_name, collection):
         return (insertions, errors)
 
 
-def import_data(directory_name, filename, collection_name):
-    LOGGER.debug("Reading CSV File: {}".format(filename))
-    contents = csv_to_json(directory_name, filename)
-    LOGGER.debug("Inserting Data Into Mongo: {}".format(collection_name))
-    { collection_name, insert_to_mongo(collection_name, contents) }
+def import_csv(directory_name, filename, collection_name):
+    """ fucntion to import the csv files """
+    LOGGER.debug("Reading CSV File: %s", str(filename))
+    contents = csv_to_json(directory_name, str(filename))
+    collection = collection_name.split('.')[0]
+    LOGGER.debug("Inserting Data Into Mongo: %s", collection)
+    results = insert_to_mongo(collection, contents)
+    return {collection : results}
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -137,27 +140,20 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     pool = mp.Pool(mp.cpu_count())
 
     # this section could be parallelized
-    # load the csv files
+    # load the csv files and insert them.
     LOGGER.debug("Reading CSV Files")
     csv_files = [product_file, customer_file, rentals_file]
-    results = [pool.apply(import_data, args=(directory_name, filename, filename.split('.')[:-1])) for filename in csv_files]
+    results = [pool.apply(import_csv,
+                          args=(directory_name,
+                                filename,
+                                filename)) for filename in csv_files]
     pool.close()
-    #products = csv_to_json(directory_name, product_file)
-    #customers = csv_to_json(directory_name, customer_file)
-    #rentals = csv_to_json(directory_name, rentals_file)
+    print(results)
 
-    #LOGGER.debug("Inserting Data Into Mongo")
-    #product_results = insert_to_mongo('products', products)
-    #customer_results = insert_to_mongo('customers', customers)
-    #rental_results = insert_to_mongo('rentals', rentals)
-
-    # return array of tuples
-    # [(products_added, customers_added, rentals_added),
-    #  (product_errors, customer_errors, rentals_errors)]
-    return [(product_results[0], customer_results[0],
-             rental_results[0]),
-            (product_results[1], customer_results[1],
-             rental_results[1])]
+    return [(results[0]['products'][0], results[1]['customers'][0],
+             results[2]['rentals'][0]),
+            (results[0]['products'][1], results[1]['customers'][1],
+             results[2]['rentals'][1])]
 
 
 def print_mdb_collection(collection_name):

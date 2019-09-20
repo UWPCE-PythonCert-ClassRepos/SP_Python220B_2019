@@ -1,3 +1,11 @@
 ID,DESCRIPTION,PRODUCT_TYPE,QUANTITY_AVAILABLE
 "prd001","60-inch TV","livingroom",3
 "prd002","L-Shaped Sofa","livingroom",1
+"prd003","Toilet","bathroom",50
+"prd004","bed","bedroom",150
+"prd005","bureau","bedroom",5
+"prd006","loveseat","livingroom",7
+"prd007","chair","kitchen",5
+"prd008","table","kitchen",5
+"prd009","bench","porch",6
+"prd010","carpet","livingroom",5
