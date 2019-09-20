@@ -4,3 +4,6 @@
 *.iml
 .coverage
 *.zip
+
+# Folders
+*/activity/*
