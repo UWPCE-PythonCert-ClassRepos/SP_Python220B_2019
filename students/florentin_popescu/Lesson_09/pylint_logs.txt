@@ -1,0 +1,390 @@
+(base) C:\Users\Florentin\Desktop\L9>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L9
+
+09/13/2019  12:04 PM    <DIR>          .
+09/13/2019  12:04 PM    <DIR>          ..
+09/13/2019  10:18 PM             8,150 charges_calc.py
+09/13/2019  12:08 PM    <DIR>          csvdata
+09/10/2019  09:23 AM    <DIR>          data
+09/14/2019  05:13 PM             7,711 database.py
+09/13/2019  11:28 AM               749 pngdiscover.py
+09/12/2019  09:15 AM           154,635 source.json
+               4 File(s)        171,245 bytes
+               4 Dir(s)  145,803,223,040 bytes free
+
+(base) C:\Users\Florentin\Desktop\L9>cd..
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L9/charges_calc.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L9/database.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L9/pngdiscover.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>python -m pylint ./L9
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+(base) C:\Users\Florentin\Desktop>cd L9
+
+(base) C:\Users\Florentin\Desktop\L9>python charges_calc.py -i source.json -o src.json -d 0
+enter number or character to activate logger, or skip (press enter) to inactivate logger
+
+'logger is inactive'
+'logger is inactive'
+'logger is inactive'
+
+(base) C:\Users\Florentin\Desktop\L9>
+(base) C:\Users\Florentin\Desktop\L9>python charges_calc.py -i source.json -o src.json -d 0
+enter number or character to activate logger, or skip (press enter) to inactivate logger
+1
+'logger is active in function: init_logger'
+'logger is active in function: load_rentals_file'
+'logger is active in function: calculate_additional_fields'
+
+(base) C:\Users\Florentin\Desktop\L9>python charges_calc.py -i source.json -o src.json -d 1
+enter number or character to activate logger, or skip (press enter) to inactivate logger
+
+'logger is inactive'
+'logger is inactive'
+'logger is inactive'
+
+(base) C:\Users\Florentin\Desktop\L9>python charges_calc.py -i source.json -o src.json -d 1
+enter number or character to activate logger, or skip (press enter) to inactivate logger
+1
+'logger is active in function: init_logger'
+'logger is active in function: load_rentals_file'
+'logger is active in function: calculate_additional_fields'
+2019-09-14 17:20:22,070 charges_calc.py: 190ERROR division by zero: division by zero
+
+(base) C:\Users\Florentin\Desktop\L9>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L9
+
+09/14/2019  05:21 PM    <DIR>          .
+09/14/2019  05:21 PM    <DIR>          ..
+09/13/2019  10:18 PM             8,150 charges_calc.py
+09/14/2019  05:21 PM                 0 charges_calc_2019-09-14_.log_level_0
+09/14/2019  05:20 PM                86 charges_calc_2019-09-14_.log_level_1
+09/13/2019  12:08 PM    <DIR>          csvdata
+09/10/2019  09:23 AM    <DIR>          data
+09/14/2019  05:13 PM             7,711 database.py
+09/13/2019  11:28 AM               749 pngdiscover.py
+09/12/2019  09:15 AM           154,635 source.json
+09/14/2019  05:21 PM           222,287 src.json
+               7 File(s)        393,618 bytes
+               4 Dir(s)  145,802,444,800 bytes free
+
+(base) C:\Users\Florentin\Desktop\L9>python database.py
+INFO:__main__:database.py
+INFO:__main__:loger active
+'entering: import_data'
+INFO:__main__:connected to mongo
+INFO:__main__:entering host 127.0.0.1 via port 27017
+INFO:__main__:database Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB') established on mongo
+INFO:__main__:collections Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'product'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'customer'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'rental') available in Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB')
+'entering: import_csv'
+'exiting: import_csv'
+'entering: import_csv'
+'exiting: import_csv'
+'entering: import_csv'
+'exiting: import_csv'
+INFO:__main__:disconected from mongo
+'exiting: import_data'
+((50, 0), (50, 0), (50, 0))
+'entering: show_rentals'
+INFO:__main__:connected to mongo
+INFO:__main__:entering host 127.0.0.1 via port 27017
+INFO:__main__:database Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB') established on mongo
+INFO:__main__:collections Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'product'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'customer'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'rental') available in Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB')
+INFO:__main__:disconected from mongo
+'exiting: show_rentals'
+{'user0016': {'address': '4796 787th St., Des Moines, Iowa 48821',
+              'email': 'George_Thompson@hotmail.com',
+              'name': 'George Thompson',
+              'phone': '4420077840'}}
+'entering: print_products'
+'start printing'
+'entering: show_available_products'
+INFO:__main__:connected to mongo
+INFO:__main__:entering host 127.0.0.1 via port 27017
+INFO:__main__:database Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB') established on mongo
+INFO:__main__:collections Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'product'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'customer'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'rental') available in Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB')
+INFO:__main__:disconected from mongo
+'exiting: show_available_products'
+prd0000 {'description': 'Apartment', 'product_type': 'Necessity', 'quantity_available': 83}
+prd0001 {'description': 'Acumulator', 'product_type': 'Luxury', 'quantity_available': 11}
+prd0002 {'description': 'Airbag', 'product_type': 'Necessity', 'quantity_available': 83}
+prd0003 {'description': 'Aspirator', 'product_type': 'Necessity', 'quantity_available': 67}
+prd0004 {'description': 'Bike', 'product_type': 'Necessity', 'quantity_available': 70}
+prd0005 {'description': 'Book', 'product_type': 'Necessity', 'quantity_available': 64}
+prd0006 {'description': 'Bookcase', 'product_type': 'Convenience', 'quantity_available': 26}
+prd0007 {'description': 'Ballon', 'product_type': 'Luxury', 'quantity_available': 100}
+prd0008 {'description': 'Car', 'product_type': 'Luxury', 'quantity_available': 40}
+prd0009 {'description': 'Chair', 'product_type': 'Convenience', 'quantity_available': 40}
+prd0010 {'description': 'Clock', 'product_type': 'Convenience', 'quantity_available': 58}
+prd0011 {'description': 'Celphone', 'product_type': 'Convenience', 'quantity_available': 2}
+prd0012 {'description': 'Desk', 'product_type': 'Luxury', 'quantity_available': 79}
+prd0013 {'description': 'Desktop', 'product_type': 'Necessity', 'quantity_available': 60}
+prd0014 {'description': 'Dress', 'product_type': 'Luxury', 'quantity_available': 40}
+prd0015 {'description': 'Drum', 'product_type': 'Convenience', 'quantity_available': 75}
+prd0016 {'description': 'Earings', 'product_type': 'Convenience', 'quantity_available': 82}
+prd0017 {'description': 'Expresso', 'product_type': 'Convenience', 'quantity_available': 92}
+prd0018 {'description': 'Exchibit', 'product_type': 'Convenience', 'quantity_available': 52}
+prd0019 {'description': 'Expo', 'product_type': 'Convenience', 'quantity_available': 38}
+prd0020 {'description': 'Glasses', 'product_type': 'Necessity', 'quantity_available': 75}
+prd0021 {'description': 'Guitar', 'product_type': 'Luxury', 'quantity_available': 11}
+prd0022 {'description': 'Garage', 'product_type': 'Necessity', 'quantity_available': 31}
+prd0023 {'description': 'Garderope', 'product_type': 'Necessity', 'quantity_available': 42}
+prd0024 {'description': 'Handbag', 'product_type': 'Luxury', 'quantity_available': 20}
+prd0025 {'description': 'House', 'product_type': 'Luxury', 'quantity_available': 51}
+prd0026 {'description': 'Hat', 'product_type': 'Necessity', 'quantity_available': 36}
+prd0027 {'description': 'Horn', 'product_type': 'Convenience', 'quantity_available': 50}
+prd0028 {'description': 'Laptop', 'product_type': 'Luxury', 'quantity_available': 40}
+prd0029 {'description': 'Lamp', 'product_type': 'Necessity', 'quantity_available': 92}
+prd0030 {'description': 'Laminate', 'product_type': 'Convenience', 'quantity_available': 16}
+prd0031 {'description': 'Laser', 'product_type': 'Convenience', 'quantity_available': 65}
+prd0032 {'description': 'Oven', 'product_type': 'Luxury', 'quantity_available': 38}
+prd0033 {'description': 'Orange', 'product_type': 'Luxury', 'quantity_available': 81}
+prd0034 {'description': 'Onion', 'product_type': 'Convenience', 'quantity_available': 56}
+prd0035 {'description': 'Ornament', 'product_type': 'Luxury', 'quantity_available': 45}
+prd0036 {'description': 'Movie', 'product_type': 'Necessity', 'quantity_available': 80}
+prd0037 {'description': 'Map', 'product_type': 'Luxury', 'quantity_available': 23}
+prd0038 {'description': 'Matress', 'product_type': 'Convenience', 'quantity_available': 7}
+prd0039 {'description': 'Mobile', 'product_type': 'Convenience', 'quantity_available': 56}
+prd0040 {'description': 'Truck', 'product_type': 'Luxury', 'quantity_available': 13}
+prd0041 {'description': 'Table', 'product_type': 'Necessity', 'quantity_available': 65}
+prd0042 {'description': 'Teapot', 'product_type': 'Luxury', 'quantity_available': 28}
+prd0043 {'description': 'Toothpaste', 'product_type': 'Necessity', 'quantity_available': 79}
+prd0044 {'description': 'Pencil', 'product_type': 'Luxury', 'quantity_available': 51}
+prd0045 {'description': 'Pen', 'product_type': 'Convenience', 'quantity_available': 29}
+prd0046 {'description': 'Plane', 'product_type': 'Necessity', 'quantity_available': 75}
+prd0047 {'description': 'Paperholder', 'product_type': 'Luxury', 'quantity_available': 1}
+prd0048 {'description': 'Radio', 'product_type': 'Convenience', 'quantity_available': 79}
+prd0049 {'description': 'Rotor', 'product_type': 'Convenience', 'quantity_available': 68}
+'end printing'
+'exiting: print_products'
+'entering: show_available_products'
+INFO:__main__:connected to mongo
+INFO:__main__:entering host 127.0.0.1 via port 27017
+INFO:__main__:database Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB') established on mongo
+INFO:__main__:collections Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'product'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'customer'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'rental') available in Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB')
+INFO:__main__:disconected from mongo
+'exiting: show_available_products'
+{'prd0000': {'description': 'Apartment',
+             'product_type': 'Necessity',
+             'quantity_available': 83},
+ 'prd0001': {'description': 'Acumulator',
+             'product_type': 'Luxury',
+             'quantity_available': 11},
+ 'prd0002': {'description': 'Airbag',
+             'product_type': 'Necessity',
+             'quantity_available': 83},
+ 'prd0003': {'description': 'Aspirator',
+             'product_type': 'Necessity',
+             'quantity_available': 67},
+ 'prd0004': {'description': 'Bike',
+             'product_type': 'Necessity',
+             'quantity_available': 70},
+ 'prd0005': {'description': 'Book',
+             'product_type': 'Necessity',
+             'quantity_available': 64},
+ 'prd0006': {'description': 'Bookcase',
+             'product_type': 'Convenience',
+             'quantity_available': 26},
+ 'prd0007': {'description': 'Ballon',
+             'product_type': 'Luxury',
+             'quantity_available': 100},
+ 'prd0008': {'description': 'Car',
+             'product_type': 'Luxury',
+             'quantity_available': 40},
+ 'prd0009': {'description': 'Chair',
+             'product_type': 'Convenience',
+             'quantity_available': 40},
+ 'prd0010': {'description': 'Clock',
+             'product_type': 'Convenience',
+             'quantity_available': 58},
+ 'prd0011': {'description': 'Celphone',
+             'product_type': 'Convenience',
+             'quantity_available': 2},
+ 'prd0012': {'description': 'Desk',
+             'product_type': 'Luxury',
+             'quantity_available': 79},
+ 'prd0013': {'description': 'Desktop',
+             'product_type': 'Necessity',
+             'quantity_available': 60},
+ 'prd0014': {'description': 'Dress',
+             'product_type': 'Luxury',
+             'quantity_available': 40},
+ 'prd0015': {'description': 'Drum',
+             'product_type': 'Convenience',
+             'quantity_available': 75},
+ 'prd0016': {'description': 'Earings',
+             'product_type': 'Convenience',
+             'quantity_available': 82},
+ 'prd0017': {'description': 'Expresso',
+             'product_type': 'Convenience',
+             'quantity_available': 92},
+ 'prd0018': {'description': 'Exchibit',
+             'product_type': 'Convenience',
+             'quantity_available': 52},
+ 'prd0019': {'description': 'Expo',
+             'product_type': 'Convenience',
+             'quantity_available': 38},
+ 'prd0020': {'description': 'Glasses',
+             'product_type': 'Necessity',
+             'quantity_available': 75},
+ 'prd0021': {'description': 'Guitar',
+             'product_type': 'Luxury',
+             'quantity_available': 11},
+ 'prd0022': {'description': 'Garage',
+             'product_type': 'Necessity',
+             'quantity_available': 31},
+ 'prd0023': {'description': 'Garderope',
+             'product_type': 'Necessity',
+             'quantity_available': 42},
+ 'prd0024': {'description': 'Handbag',
+             'product_type': 'Luxury',
+             'quantity_available': 20},
+ 'prd0025': {'description': 'House',
+             'product_type': 'Luxury',
+             'quantity_available': 51},
+ 'prd0026': {'description': 'Hat',
+             'product_type': 'Necessity',
+             'quantity_available': 36},
+ 'prd0027': {'description': 'Horn',
+             'product_type': 'Convenience',
+             'quantity_available': 50},
+ 'prd0028': {'description': 'Laptop',
+             'product_type': 'Luxury',
+             'quantity_available': 40},
+ 'prd0029': {'description': 'Lamp',
+             'product_type': 'Necessity',
+             'quantity_available': 92},
+ 'prd0030': {'description': 'Laminate',
+             'product_type': 'Convenience',
+             'quantity_available': 16},
+ 'prd0031': {'description': 'Laser',
+             'product_type': 'Convenience',
+             'quantity_available': 65},
+ 'prd0032': {'description': 'Oven',
+             'product_type': 'Luxury',
+             'quantity_available': 38},
+ 'prd0033': {'description': 'Orange',
+             'product_type': 'Luxury',
+             'quantity_available': 81},
+ 'prd0034': {'description': 'Onion',
+             'product_type': 'Convenience',
+             'quantity_available': 56},
+ 'prd0035': {'description': 'Ornament',
+             'product_type': 'Luxury',
+             'quantity_available': 45},
+ 'prd0036': {'description': 'Movie',
+             'product_type': 'Necessity',
+             'quantity_available': 80},
+ 'prd0037': {'description': 'Map',
+             'product_type': 'Luxury',
+             'quantity_available': 23},
+ 'prd0038': {'description': 'Matress',
+             'product_type': 'Convenience',
+             'quantity_available': 7},
+ 'prd0039': {'description': 'Mobile',
+             'product_type': 'Convenience',
+             'quantity_available': 56},
+ 'prd0040': {'description': 'Truck',
+             'product_type': 'Luxury',
+             'quantity_available': 13},
+ 'prd0041': {'description': 'Table',
+             'product_type': 'Necessity',
+             'quantity_available': 65},
+ 'prd0042': {'description': 'Teapot',
+             'product_type': 'Luxury',
+             'quantity_available': 28},
+ 'prd0043': {'description': 'Toothpaste',
+             'product_type': 'Necessity',
+             'quantity_available': 79},
+ 'prd0044': {'description': 'Pencil',
+             'product_type': 'Luxury',
+             'quantity_available': 51},
+ 'prd0045': {'description': 'Pen',
+             'product_type': 'Convenience',
+             'quantity_available': 29},
+ 'prd0046': {'description': 'Plane',
+             'product_type': 'Necessity',
+             'quantity_available': 75},
+ 'prd0047': {'description': 'Paperholder',
+             'product_type': 'Luxury',
+             'quantity_available': 1},
+ 'prd0048': {'description': 'Radio',
+             'product_type': 'Convenience',
+             'quantity_available': 79},
+ 'prd0049': {'description': 'Rotor',
+             'product_type': 'Convenience',
+             'quantity_available': 68}}
+'entering: drop_data'
+INFO:__main__:connected to mongo
+INFO:__main__:entering host 127.0.0.1 via port 27017
+INFO:__main__:database Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB') established on mongo
+INFO:__main__:collections Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'product'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'customer'), Collection(Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB'), 'rental') available in Database(MongoClient(host=['127.0.0.1:27017'], document_class=dict, tz_aware=False, connect=True), 'FlorentinDB')
+'data has been dropped from Mongo database'
+INFO:__main__:disconected from mongo
+'exiting: drop_data'
+
+(base) C:\Users\Florentin\Desktop\L9>python pngdiscover.py
+'C:\\Users\\Florentin\\Desktop\\L9/data/furniture/chair/couch'
+'sofa_400_clr_10056.png'
+'C:\\Users\\Florentin\\Desktop\\L9/data/furniture/chair'
+'metal_chair_back_isometric_400_clr_17527.png'
+'C:\\Users\\Florentin\\Desktop\\L9/data/furniture/table'
+'basic_desk_main_400_clr_17523.png'
+'desk_isometric_back_400_clr_17524.png'
+'table_with_cloth_400_clr_10664.png'
+'C:\\Users\\Florentin\\Desktop\\L9/data/furniture'
+'C:\\Users\\Florentin\\Desktop\\L9/data/new'
+'chairs_balancing_stacked_400_clr_11525.png'
+'hotel_room_400_clr_12721.png'
+'C:\\Users\\Florentin\\Desktop\\L9/data/old'
+'couple_on_swing_bench_400_clr_12844.png'
+'sitting_in_chair_relaxing_400_clr_6028.png'
+'C:\\Users\\Florentin\\Desktop\\L9/data'
+
+(base) C:\Users\Florentin\Desktop\L9>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 7808-6CD2
+
+ Directory of C:\Users\Florentin\Desktop\L9
+
+09/14/2019  05:21 PM    <DIR>          .
+09/14/2019  05:21 PM    <DIR>          ..
+09/13/2019  10:18 PM             8,150 charges_calc.py
+09/14/2019  05:21 PM                 0 charges_calc_2019-09-14_.log_level_0
+09/14/2019  05:20 PM                86 charges_calc_2019-09-14_.log_level_1
+09/13/2019  12:08 PM    <DIR>          csvdata
+09/10/2019  09:23 AM    <DIR>          data
+09/14/2019  05:13 PM             7,711 database.py
+09/13/2019  11:28 AM               749 pngdiscover.py
+09/12/2019  09:15 AM           154,635 source.json
+09/14/2019  05:21 PM           222,287 src.json
+               7 File(s)        393,618 bytes
+               4 Dir(s)  145,801,314,304 bytes free
+
+(base) C:\Users\Florentin\Desktop\L9>
+
