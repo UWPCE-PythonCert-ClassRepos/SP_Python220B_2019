@@ -13,9 +13,9 @@ class Inventory:
     def return_as_dictionary(self):
         '''takes product info and returns a dictionary'''
         output_dict = {}
-        output_dict['productCode'] = self.product_code
+        output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
+        output_dict['market_price'] = self.market_price
+        output_dict['rental_price'] = self.rental_price
 
         return output_dict
