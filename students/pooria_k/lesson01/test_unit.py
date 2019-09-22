@@ -1,5 +1,8 @@
 #/usr/bin/python3
 
+"""test_unit for unittesting inventory_management package
+and all classes in the inventory management system"""
+
 from unittest import TestCase
 from unittest.mock import Mock, patch
 from inventory_management.inventory_class import Inventory
@@ -7,9 +10,12 @@ from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management import main
 from inventory_management.market_prices import get_latest_price
+
 class InventoryTest(TestCase):
+    """ CLass to test each individual python file inside inventory_management """
 
     def setUp(self):
+        """setUP Method to create instances of each class"""
         self.inventory_1 = Inventory('1234', 'lamp', '45', '10')
         self.inventory_1_dic = self.inventory_1.return_as_dictionary()
         self.electric_appliances_1 =ElectricAppliances('4455', 'TV', '2200', '140','Samsung', '120')
@@ -18,12 +24,14 @@ class InventoryTest(TestCase):
         self.furniture_1_dic = self.furniture_1.return_as_dictionary()
 
     def test_inventory(self):
+        """Method to test inventory_class"""
         self.assertEqual(self.inventory_1_dic['product_code'],'1234')
         self.assertEqual(self.inventory_1_dic['description'], 'lamp')
         self.assertEqual(self.inventory_1_dic['market_price'], '45')
         self.assertEqual(self.inventory_1_dic['rental_price'], '10')
 
     def test_electric_appliances(self):
+        """Method to test electric_appliances_class"""
         self.assertEqual(self.electric_appliances_1_dic['product_code'],'4455')
         self.assertEqual(self.electric_appliances_1_dic['description'], 'TV')
         self.assertEqual(self.electric_appliances_1_dic['market_price'], '2200')
@@ -32,6 +40,7 @@ class InventoryTest(TestCase):
         self.assertEqual(self.electric_appliances_1_dic['voltage'], '120')
 
     def test_furniture(self):
+        """Method to test furniture_class"""
         self.assertEqual(self.furniture_1_dic['product_code'],'2020')
         self.assertEqual(self.furniture_1_dic['description'], 'sofa')
         self.assertEqual(self.furniture_1_dic['market_price'], '1200')
@@ -43,7 +52,10 @@ class InventoryTest(TestCase):
 
 class MainModuleTest_addnew_item(TestCase):
 
-    def test_addnew_furniture(self):
+    """This is the class for unittesting adding new item to the inventory"""
+
+    def test_addnew(self):
+        """Defining what we will use as input to the addnew_item()"""
         input_furniture = ('444', 'bed', 150, 'y', 'wood', 'L')
         input_app = ('555', 'laptop', 50, 'n', 'y', 'samsung', 120)
         input_inventory = ('666', 'test', 5, 'n', 'n')
@@ -69,20 +81,17 @@ class MainModuleTest_addnew_item(TestCase):
         with patch('builtins.input', side_effect=input_furniture):
             main.FULL_INVENTORY = {}
             with patch('inventory_management.market_prices.get_latest_price', return_value=180.0):
-
                 main.addnew_item()
                 self.assertDictEqual(main.FULL_INVENTORY['444'], expected_item_dic['444'] )
 
         with patch('builtins.input', side_effect=input_app):
             main.FULL_INVENTORY = {}
             with patch('inventory_management.market_prices.get_latest_price', return_value=120.0):
-
                 main.addnew_item()
                 self.assertDictEqual(main.FULL_INVENTORY['555'], expected_item_dic['555'] )
 
         with patch('builtins.input', side_effect = input_inventory):
             with patch('inventory_management.market_prices.get_latest_price', return_value=10.0):
-
                 main.addnew_item()
                 self.assertEqual(main.FULL_INVENTORY['666'], expected_item_dic['666'])
 
@@ -93,11 +102,11 @@ class MainModuleTest_addnew_item(TestCase):
 
     def test_item_info(self):
 
-        with patch ('builtins.input', side_effect = '444'):
+        with patch ('builtins.input', side_effect =['444']):
             main.FULL_INVENTORY={}
             self.assertEqual(main.item_info(),  print("Item not found in inventory"))
 
-        with patch ('builtins.input', side_effect = '444'):
+        with patch ('builtins.input', side_effect =['444']):
             main.FULL_INVENTORY = {'444': {'description': 'bed',
                                      'market_price': 180.0,
                                      'product_code': '444',
@@ -121,6 +130,7 @@ class MainModuleTest_addnew_item(TestCase):
             self.assertEqual(main.item_info(), print("Item not found in inventory"))
 
 class MarketPrice(TestCase):
+    """Testing market_price.py"""
 
     def test_market_price(self):
         self.assertEqual(get_latest_price('444'), 24)
@@ -132,15 +142,15 @@ class GetPrice(TestCase):
         self.assertEqual(main.get_price('444'), print("Get price") )
 
 class MainMenu(TestCase):
-
-    def test_main_menu(self):
+    """Testing main.py"""
+    def test_main_menu_1(self):
         with patch('builtins.input', side_effect = '1'):
             self.assertEqual(main.main_menu().__name__, 'addnew_item')
 
-    def test_main_menu(self):
+    def test_main_menu_2(self):
         with patch('builtins.input', side_effect = '2'):
             self.assertEqual(main.main_menu().__name__, 'item_info')
 
-    def test_main_menu(self):
+    def test_main_menu_3(self):
         with patch('builtins.input', side_effect = 'q'):
             self.assertEqual(main.main_menu().__name__, 'exit_program')
