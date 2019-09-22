@@ -1,7 +1,8 @@
 '''module that creates an electric appliances class'''
 
 # Electric appliances class
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
+
 
 class ElectricAppliances(Inventory):
     '''class that creates an electrical appliance version of inventory item'''

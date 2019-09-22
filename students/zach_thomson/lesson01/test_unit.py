@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 '''unit testing individual components of inventory management'''
 
 from unittest import TestCase
@@ -7,6 +6,8 @@ from unittest import TestCase
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
+#from inventory_management.market_prices import get_latest_price
+#from inventory_management.main import *
 
 
 class InventoryTests(TestCase):
@@ -40,3 +41,12 @@ class FurnitureTests(TestCase):
         output = furniture.return_as_dictionary()
         self.assertEqual(output['material'], 'wood')
         self.assertEqual(output['size'], '72in x 48in')
+
+class MarketPrices(TestCase):
+    '''test market price module'''
+
+    def test_market_price(self):
+        pass
+
+class Main(TestCase):
+    pass
