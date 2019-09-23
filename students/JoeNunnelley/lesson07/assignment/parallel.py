@@ -34,6 +34,8 @@ import multiprocessing as mp
 from os import path
 import pandas as pd
 from pymongo import MongoClient
+import threading as th
+import time
 
 FORMAT = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
@@ -89,10 +91,10 @@ def csv_to_json(directory_name, filename):
 def insert_to_mongo(collection_name, collection):
     """ Insert a collection into the Mongo db """
     mongo = MongoDBConnection()
-    insertions = 0
-    errors = 0
 
     with mongo:
+        insertions = 0
+        errors = 0
         database = mongo.connection.hpnorton
 
         db_collection = database[collection_name]
@@ -112,6 +114,7 @@ def insert_to_mongo(collection_name, collection):
                              item['ID'])
                 errors += 1
 
+        LOGGER.debug("{},{}".format(insertions, errors))
         return (insertions, errors)
 
 
@@ -122,10 +125,12 @@ def import_csv(directory_name, filename, collection_name):
     collection = collection_name.split('.')[0]
     LOGGER.debug("Inserting Data Into Mongo: %s", collection)
     results = insert_to_mongo(collection, contents)
+
     return {collection : results}
 
 
-def import_data(directory_name, product_file, customer_file, rentals_file):
+def import_data(directory_name, product_file, customer_file,
+                rentals_file):
     """
     Import the data into mongo from csv files
 
@@ -137,23 +142,37 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     products, customers and rentals added (in that order), the second with a
     count of any errors that occurred, in the same order.
     """
-    pool = mp.Pool(mp.cpu_count())
+
 
     # this section could be parallelized
     # load the csv files and insert them.
     LOGGER.debug("Reading CSV Files")
     csv_files = [product_file, customer_file, rentals_file]
-    results = [pool.apply(import_csv,
-                          args=(directory_name,
-                                filename,
-                                filename)) for filename in csv_files]
-    pool.close()
-    print(results)
+    results = []
+    start_time = time.time()
 
-    return [(results[0]['products'][0], results[1]['customers'][0],
-             results[2]['rentals'][0]),
-            (results[0]['products'][1], results[1]['customers'][1],
-             results[2]['rentals'][1])]
+    LOGGER.debug("Insertion method: Multiprocessing")
+    pool = mp.Pool(mp.cpu_count())
+    results = [pool.apply_async(import_csv,
+                                args=(directory_name,
+                                      filename,
+                                      filename)) for filename in csv_files]
+    pool.close()
+
+    end_time = time.time()
+    execution_time = end_time - start_time
+
+    stats = {}
+    for result in results:
+        LOGGER.debug("RESULT: {}".format(result.get()))
+        stats.update(result.get())
+
+    print("Execution Time: {}".format(execution_time))
+
+    return [(stats['products'][0], stats['customers'][0],
+             stats['rentals'][0]),
+            (stats['products'][1], stats['customers'][1],
+             stats['rentals'][1])]
 
 
 def print_mdb_collection(collection_name):
