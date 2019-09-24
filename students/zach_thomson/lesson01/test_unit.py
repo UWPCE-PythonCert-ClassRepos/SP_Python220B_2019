@@ -47,7 +47,7 @@ class MarketPrices(TestCase):
     '''test market price module'''
 
     def test_market_price(self):
-        self.assertEqual(get_latest_price('test'), 24)
+        self.assertEqual(get_latest_price(), 24)
 
 class Main(TestCase):
 
@@ -62,7 +62,7 @@ class Main(TestCase):
             self.assertEqual(main.main_menu().__name__, 'exit_program')
 
     def test_get_price(self):
-        self.assertEqual(main.get_price('test'), 24)
+        self.assertEqual(main.get_price(), 24)
 
     def test_add_item(self):
         '''test add generic item'''
