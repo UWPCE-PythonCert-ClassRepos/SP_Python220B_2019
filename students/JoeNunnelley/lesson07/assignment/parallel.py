@@ -9,10 +9,10 @@ import logic from lesson 5
 
 Amend the import logic so that it can process the imports in parallel.
 Your module should launch the imports simultaneously. Provide real timing
-data for your new approach.
+data for your new approach. [DONE]
 
 Compare and contrast parallel vs. linear performance and recommend to
-management if a change is worthwhile.
+management if a change is worthwhile. [DONE]
 
 To show you have thought through your design, create and provide an
 example of where the program fails due to contention and explain why
@@ -24,18 +24,18 @@ Each module will return a list of tuples, one tuple for customer and one
 for products. Each tuple will contain 4 values: the number of records
 processed (int), the record count in the database prior to running (int),
 the record count after running (int), and the time taken to run the module
-(float).
+(float).  [DONE]
 
 You will also submit a text file containing your findings.
 """
 import json
 import logging
 import multiprocessing as mp
+import time
 from os import path
 import pandas as pd
 from pymongo import MongoClient
-import threading as th
-import time
+
 
 FORMAT = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
@@ -98,8 +98,9 @@ def insert_to_mongo(collection_name, collection):
         database = mongo.connection.hpnorton
 
         db_collection = database[collection_name]
+        baseline_count = db_collection.count_documents({})
         for item in collection:
-            count = db_collection.find({"ID": item['ID']}).count()
+            count = db_collection.count_documents({"ID": item['ID']})
             LOGGER.debug("ID: %s COUNT: %s", item['ID'], count)
             if count == 0:
                 LOGGER.debug("Inserting: %s", item)
@@ -114,8 +115,9 @@ def insert_to_mongo(collection_name, collection):
                              item['ID'])
                 errors += 1
 
-        LOGGER.debug("{},{}".format(insertions, errors))
-        return (insertions, errors)
+        total_records = baseline_count + insertions + errors
+        LOGGER.debug("%s,%s", insertions, errors)
+        return (baseline_count, insertions, errors, total_records)
 
 
 def import_csv(directory_name, filename, collection_name):
@@ -126,7 +128,7 @@ def import_csv(directory_name, filename, collection_name):
     LOGGER.debug("Inserting Data Into Mongo: %s", collection)
     results = insert_to_mongo(collection, contents)
 
-    return {collection : results}
+    return (collection, results)
 
 
 def import_data(directory_name, product_file, customer_file,
@@ -143,14 +145,12 @@ def import_data(directory_name, product_file, customer_file,
     count of any errors that occurred, in the same order.
     """
 
-
     # this section could be parallelized
     # load the csv files and insert them.
     LOGGER.debug("Reading CSV Files")
     csv_files = [product_file, customer_file, rentals_file]
     results = []
     start_time = time.time()
-
     LOGGER.debug("Insertion method: Multiprocessing")
     pool = mp.Pool(mp.cpu_count())
     results = [pool.apply_async(import_csv,
@@ -162,17 +162,15 @@ def import_data(directory_name, product_file, customer_file,
     end_time = time.time()
     execution_time = end_time - start_time
 
-    stats = {}
+    stats = []
     for result in results:
-        LOGGER.debug("RESULT: {}".format(result.get()))
-        stats.update(result.get())
+        LOGGER.debug("RESULT: %s", result.get())
+        stats.append(result.get())
 
     print("Execution Time: {}".format(execution_time))
 
-    return [(stats['products'][0], stats['customers'][0],
-             stats['rentals'][0]),
-            (stats['products'][1], stats['customers'][1],
-             stats['rentals'][1])]
+    return [(stats[0][0], execution_time,) + stats[0][1],
+            (stats[1][0], execution_time,) + stats[1][1]]
 
 
 def print_mdb_collection(collection_name):
@@ -202,7 +200,7 @@ def show_available_products():
 
     For example:
 
-    {‘prd001’:{‘description’:‘60-inch TV stand’,’product_type’:’livingroom’,
+    {‘prd001’:{‘description’:‘60-inch TV stand’,’product_type’:'livingroom’,
     ’quantity_available’:‘3’},
     ’prd002’:{‘description’:’L-shaped sofa’,’product_type’:’livingroom’,
     ’quantity_available’:‘1’}}
@@ -292,14 +290,7 @@ def main():
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
-    print("Insertions:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
-          .format(import_stats[0][0],
-                  import_stats[0][1],
-                  import_stats[0][2]))
-    print("Errors:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
-          .format(import_stats[1][0],
-                  import_stats[1][1],
-                  import_stats[1][2]))
+
     print("\nProduct List")
     show_available_products()
     print("\nRaw Product List")
@@ -310,6 +301,23 @@ def main():
     show_rentals(product_id='prd001')
     print("\nShow All Rentals")
     show_rentals()
+
+    print(import_stats)
+
+    for stats in import_stats:
+        print("\n\tCollection:\t{:>20}"
+              "\n\tTime (seconds):\t{:>20}"
+              "\n\tInitial Value:\t{:>20}"
+              "\n\tInsertions:\t{:>20}"
+              "\n\tErrors:\t\t{:>20}"
+              "\n\tFinal Count:\t{:>20}"
+            .format(stats[0],
+                    stats[1],
+                    stats[2],
+                    stats[3],
+                    stats[4],
+                    stats[5]))
+
     print("Done")
 
 

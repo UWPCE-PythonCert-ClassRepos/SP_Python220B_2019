@@ -27,6 +27,7 @@ from os import path
 import pandas as pd
 from pymongo import MongoClient
 
+
 FORMAT = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 LOGGER = logging.getLogger('console')
@@ -89,7 +90,7 @@ def insert_to_mongo(collection_name, collection):
 
         db_collection = database[collection_name]
         for item in collection:
-            count = db_collection.find({"ID": item['ID']}).count()
+            count = db_collection.count_documents({"ID": item['ID']})
             LOGGER.debug("ID: %s COUNT: %s", item['ID'], count)
             if count == 0:
                 LOGGER.debug("Inserting: %s", item)
