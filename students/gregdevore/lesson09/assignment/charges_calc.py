@@ -33,6 +33,46 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
+def logging_decorator(function):
+    def set_logger(log_level, *args, **kwargs):
+        # Initialize logger
+        logger = logging.getLogger()
+
+        if log_level: # If debug level is supplied and > 0
+            log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+            formatter = logging.Formatter(log_format)
+
+            # Create log file for warning and error messages
+            log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
+            file_handler = logging.FileHandler(log_file)
+            file_handler.setLevel(logging.WARNING)
+            file_handler.setFormatter(formatter)
+
+            # Create stream handler for debug, warning, and error messages
+            console_handler = logging.StreamHandler()
+            console_handler.setLevel(logging.DEBUG)
+            console_handler.setFormatter(formatter)
+
+            # Set logger level based on user input
+            if log_level == 1: # Error messages only
+                logger.setLevel(logging.ERROR)
+            elif log_level == 2: # Error and warning messages
+                logger.setLevel(logging.WARNING)
+            elif log_level == 3: # Error, warning, and debug messages
+                logger.setLevel(logging.DEBUG)
+            else:
+                raise ValueError('Incorrect debug level, only 0-3 accepted.')
+
+            # Add handlers to logger
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
+        else: # If debug value is not supplied, or is 0, disable logging
+            logger.disabled = True
+
+        return function(*args, **kwargs)
+    return set_logger
+
+@logging_decorator
 def load_rentals_file(filename):
     """
     Load JSON file using python json module
@@ -46,6 +86,7 @@ def load_rentals_file(filename):
             raise
     return data
 
+@logging_decorator
 def calculate_additional_fields(data):
     """
     Iterate over each value in input JSON file
@@ -87,6 +128,7 @@ Cannot take square root. Check start and end dates.'.format(value['product_code'
 
     return data
 
+@logging_decorator
 def save_to_json(filename, data):
     """
     Write updated data to JSON file
@@ -99,43 +141,9 @@ if __name__ == "__main__":
     # Parse command line arguments
     args = parse_cmd_arguments()
 
-    # Initialize logger
-    logger = logging.getLogger()
-
-    if args.debug: # If debug level is supplied and > 0
-        log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-        formatter = logging.Formatter(log_format)
-
-        # Create log file for warning and error messages
-        log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(logging.WARNING)
-        file_handler.setFormatter(formatter)
-
-        # Create stream handler for debug, warning, and error messages
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
-        console_handler.setFormatter(formatter)
-
-        # Set logger level based on user input
-        if args.debug == 1: # Error messages only
-            logger.setLevel(logging.ERROR)
-        elif args.debug == 2: # Error and warning messages
-            logger.setLevel(logging.WARNING)
-        elif args.debug == 3: # Error, warning, and debug messages
-            logger.setLevel(logging.DEBUG)
-        else:
-            raise ValueError('Incorrect debug level, only 0-3 accepted.')
-
-        # Add handlers to logger
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
-    else: # If debug value is not supplied, or is 0, disable logging
-        logger.disabled = True
-
     # Load the data from the input JSON file
-    data = load_rentals_file(args.input)
+    data = load_rentals_file(args.debug, args.input)
     # Modify the JSON data by adding additional fields
-    data = calculate_additional_fields(data)
+    data = calculate_additional_fields(args.debug, data)
     # Save modified JSON data to output JSON file
-    save_to_json(args.output, data)
+    save_to_json(args.debug, args.output, data)
