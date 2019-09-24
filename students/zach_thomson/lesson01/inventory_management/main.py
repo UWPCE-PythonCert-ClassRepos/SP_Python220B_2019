@@ -17,26 +17,26 @@ def main_menu(user_prompt=None):
 
     while user_prompt not in valid_prompts:
         options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({options_str}):")
+        print(f"Please choose from the following options({options_str}):")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
-def get_price(item_code):
-    '''function that gets a price for an item'''
-    print("Get price")
+def get_price():
+    '''function that gets a price for an item - currently unused?'''
+    item_price = market_prices.get_latest_price()
+    return item_price
 
 def add_new_item():
-    '''adds a new item to the inventory'''
-    global FULL_INVENTORY
+    '''Adds a new item to the inventory'''
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
 
     # Get price from the market prices module
-    item_price = market_prices.get_latest_price(item_code)
+    item_price = market_prices.get_latest_price()
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
     if is_furniture.lower() == "y":
@@ -64,7 +64,8 @@ def add_new_item():
 
 
 def item_info():
-    '''determines if an item is in inventory'''
+    '''Determines if an item is in inventory. If so, prints all descriptive
+    elemens. If not, prints that it is not found in inventory'''
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
         print_dict = FULL_INVENTORY[item_code]
