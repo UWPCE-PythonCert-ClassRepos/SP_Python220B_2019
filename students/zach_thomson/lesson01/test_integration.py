@@ -27,18 +27,11 @@ class ModuleTests(TestCase):
                           'MICWV': {'brand': 'Whirlpool', 'description': 'Microwave',
                                     'market_price': 24, 'product_code': 'MICWV',
                                     'rental_price': 10, 'voltage': '1000V'}}
-        get_item_sofa = '''product_code:SOFA
-description:Sectional
-market_price:24
-rental_price:100
-'''
-        get_item_micwv = '''product_code:MICWV
-description:Microwave
-market_price:24
-rental_price:10
-brand:Whirlpool
-voltage:1000V
-'''
+        get_item_sofa = 'product_code:SOFA\ndescription:Sectional\n' \
+                        'market_price:24\nrental_price:100\n'
+        get_item_micwv = 'product_code:MICWV\ndescription:Microwave\n' \
+                         'market_price:24\nrental_price:10\n' \
+                         'brand:Whirlpool\nvoltage:1000V\n'
 
         with patch('builtins.input', side_effect=first_item):
             main.add_new_item()
