@@ -3,10 +3,13 @@
 """
 
 
+import sys
+sys.path.append('../')
+
 import unittest
 from unittest import mock
-from ../basic_operations import *
-from ../customer_model import *
+from basic_operations import *
+from customer_model import *
 
 class Customer_Model_Tests(unittest.TestCase):
     """Customer model tests."""

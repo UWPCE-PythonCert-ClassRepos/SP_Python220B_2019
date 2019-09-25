@@ -6,6 +6,8 @@
 from peewee import *
 import logging
 
+database = SqliteDatabase('customer_database.db')
+
 
 class BaseModel(Model):
     class Meta:
@@ -14,7 +16,7 @@ class BaseModel(Model):
 
 class Customer(BaseModel):
     """
-        Defines the customer table for the datbase.
+        Defines the customer table for the database.
         Customer ID will be used as the primary key.
     """
     pass
