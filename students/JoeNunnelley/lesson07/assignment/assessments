@@ -3,9 +3,14 @@ SUMMARY:
 Linear : 691462 function calls (678666 primitive calls) in 5.154 seconds$
 Parallel : 259849 function calls (253522 primitive calls) in 0.842 seconds
 
+Possible Design Issues:
+
+There is the possiblility of a race condition when inserting the rentals relationship if the system is under active query operations. If the users information or product information lags behind the insertion of the rental relationships a user might request a customer or product detail from a rental entry that doesn't yet exist.  The possiblility of this issue could be avoided by one of two ways. 1.) reworking the code to coordinate customer, product and rental inserts to occur in bulk and grouped by customer and product or 2.) load these data into the database when the system is in maintenance or during off hours when user traffic is low.
+
+
 Details:
- 
-linear : 
+
+linear :
 
 2019-09-23 19:54:10,081 The database: hpnorton dropped.
          691462 function calls (678666 primitive calls) in 5.154 seconds

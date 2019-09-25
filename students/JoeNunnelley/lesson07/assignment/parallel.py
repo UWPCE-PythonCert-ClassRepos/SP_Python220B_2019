@@ -17,6 +17,7 @@ management if a change is worthwhile. [DONE]
 To show you have thought through your design, create and provide an
 example of where the program fails due to contention and explain why
 in code comments, and how that will be avoided when the system is running.
+[DONE]
 
 You will submit two modules: linear.py and parallel.py
 
@@ -99,6 +100,7 @@ def insert_to_mongo(collection_name, collection):
 
         db_collection = database[collection_name]
         baseline_count = db_collection.count_documents({})
+
         for item in collection:
             count = db_collection.count_documents({"ID": item['ID']})
             LOGGER.debug("ID: %s COUNT: %s", item['ID'], count)
@@ -167,7 +169,7 @@ def import_data(directory_name, product_file, customer_file,
         LOGGER.debug("RESULT: %s", result.get())
         stats.append(result.get())
 
-    print("Execution Time: {}".format(execution_time))
+    LOGGER.debug("Execution Time: %s", execution_time)
 
     return [(stats[0][0], execution_time,) + stats[0][1],
             (stats[1][0], execution_time,) + stats[1][1]]
@@ -311,12 +313,12 @@ def main():
               "\n\tInsertions:\t{:>20}"
               "\n\tErrors:\t\t{:>20}"
               "\n\tFinal Count:\t{:>20}"
-            .format(stats[0],
-                    stats[1],
-                    stats[2],
-                    stats[3],
-                    stats[4],
-                    stats[5]))
+              .format(stats[0],
+                      stats[1],
+                      stats[2],
+                      stats[3],
+                      stats[4],
+                      stats[5]))
 
     print("Done")
 

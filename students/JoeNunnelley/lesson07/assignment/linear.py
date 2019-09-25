@@ -23,6 +23,7 @@ You implementation should address the following requirements:
 """
 import json
 import logging
+import time
 from os import path
 import pandas as pd
 from pymongo import MongoClient
@@ -89,6 +90,8 @@ def insert_to_mongo(collection_name, collection):
         database = mongo.connection.hpnorton
 
         db_collection = database[collection_name]
+        baseline_count = db_collection.count_documents({})
+
         for item in collection:
             count = db_collection.count_documents({"ID": item['ID']})
             LOGGER.debug("ID: %s COUNT: %s", item['ID'], count)
@@ -105,7 +108,8 @@ def insert_to_mongo(collection_name, collection):
                              item['ID'])
                 errors += 1
 
-        return (insertions, errors)
+        total_records = baseline_count + insertions + errors
+        return (baseline_count, insertions, errors, total_records)
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -123,22 +127,26 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
     # load the csv files
     LOGGER.debug("Reading CSV Files")
+    start_time = time.time()
+
     products = csv_to_json(directory_name, product_file)
     customers = csv_to_json(directory_name, customer_file)
     rentals = csv_to_json(directory_name, rentals_file)
 
     LOGGER.debug("Inserting Data Into Mongo")
+
     product_results = insert_to_mongo('products', products)
     customer_results = insert_to_mongo('customers', customers)
-    rental_results = insert_to_mongo('rentals', rentals)
+    insert_to_mongo('rentals', rentals)
 
-    # return array of tuples
-    # [(products_added, customers_added, rentals_added),
-    #  (product_errors, customer_errors, rentals_errors)]
-    return [(product_results[0], customer_results[0],
-             rental_results[0]),
-            (product_results[1], customer_results[1],
-             rental_results[1])]
+    end_time = time.time()
+    execution_time = end_time - start_time
+    LOGGER.debug("Execution Time: %s", execution_time)
+
+    products_tuple = ('products', execution_time,) + product_results
+    customers_tuple = ('customers', execution_time,) + customer_results
+
+    return [products_tuple, customers_tuple]
 
 
 def print_mdb_collection(collection_name):
@@ -258,14 +266,7 @@ def main():
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
-    print("Insertions:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
-          .format(import_stats[0][0],
-                  import_stats[0][1],
-                  import_stats[0][2]))
-    print("Errors:\n\tProducts:\t{}\n\tCustomers:\t{}\n\tRentals:\t{}\n"
-          .format(import_stats[1][0],
-                  import_stats[1][1],
-                  import_stats[1][2]))
+
     print("\nProduct List")
     show_available_products()
     print("\nRaw Product List")
@@ -276,6 +277,21 @@ def main():
     show_rentals(product_id='prd001')
     print("\nShow All Rentals")
     show_rentals()
+
+    for stats in import_stats:
+        print("\n\tCollection:\t{:>20}"
+              "\n\tTime (seconds):\t{:>20}"
+              "\n\tInitial Value:\t{:>20}"
+              "\n\tInsertions:\t{:>20}"
+              "\n\tErrors:\t\t{:>20}"
+              "\n\tFinal Count:\t{:>20}"
+              .format(stats[0],
+                      stats[1],
+                      stats[2],
+                      stats[3],
+                      stats[4],
+                      stats[5]))
+
     print("Done")
 
 

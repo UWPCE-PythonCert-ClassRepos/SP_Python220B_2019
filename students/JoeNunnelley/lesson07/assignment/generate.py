@@ -6,7 +6,6 @@ import csv
 import datetime
 from random import choice, randint
 from string import ascii_uppercase
-import sys
 
 
 def phn():
@@ -44,7 +43,11 @@ def generate_customers(number=10):
         address = ''.join(choice(ascii_uppercase) for i in range(128))
         phone_number = phn()
         email = "{}.domain.com".format(customer_id)
-        contents[customer_id] = [customer_id, name, address, phone_number, email]
+        contents[customer_id] = [customer_id,
+                                 name,
+                                 address,
+                                 phone_number,
+                                 email]
 
     write('customers.csv', header, contents)
 
@@ -62,7 +65,10 @@ def generate_products(number=10):
         description = ''.join(choice(ascii_uppercase) for i in range(32))
         product_type = 'type_{:0>10}'.format(i)
         quantity = str(randint(0, 1000))
-        contents[product_id] = [product_id, description, product_type, quantity]
+        contents[product_id] = [product_id,
+                                description,
+                                product_type,
+                                quantity]
 
     write('products.csv', header, contents)
 
@@ -102,4 +108,5 @@ def main(entrycount):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    ENTRY_COUNT = 100
+    main(ENTRY_COUNT)
