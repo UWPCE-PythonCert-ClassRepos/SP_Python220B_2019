@@ -1,0 +1,11 @@
+product_id,description,product_type,quantity_available
+prd0000,Aspirator,Luxury,26
+prd0001,Expo,Necessity,88
+prd0002,Mobile,Luxury,12
+prd0003,Desk,Necessity,80
+prd0004,Handbag,Convenience,80
+prd0005,Expresso,Necessity,10
+prd0006,Laptop,Convenience,35
+prd0007,Truck,Luxury,55
+prd0008,Mobile,Luxury,49
+prd0009,Desk,Convenience,66
