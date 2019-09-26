@@ -13,3 +13,5 @@
 2019-09-11 15:04:47,076 linear.py:90  INFO Finishing read of 'sample_csv_files/rentals.csv'
 2019-09-11 15:04:47,077 linear.py:115 INFO Creating mongo connection
 2019-09-11 15:04:47,077 linear.py:117 INFO Creating rentals database and adding records
+2019-09-11 15:19:59,657 linear.py:115 INFO Creating mongo connection
+2019-09-11 15:19:59,657 linear.py:117 INFO Creating zzz database and adding records
