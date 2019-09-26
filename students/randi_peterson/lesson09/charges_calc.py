@@ -56,8 +56,8 @@ def log_decorator(func):
             file_handler.setLevel(logging.DEBUG)
             console_handler.setLevel(logging.DEBUG)
 
-            return func(*args)
-        return make_logger
+        return func(*args)
+    return make_logger
 
 
 def parse_cmd_arguments():

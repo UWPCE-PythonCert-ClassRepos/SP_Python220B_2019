@@ -35,7 +35,7 @@ class MongoDBConnection(object):
 
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
-        return self
+        return self.connection.media
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
@@ -44,9 +44,7 @@ class MongoDBConnection(object):
 def clear_database():
     """Clear database for a new run"""
     #   Set up Mongo
-    mongo = MongoDBConnection()
-    with mongo:
-        my_db = mongo.connection.media
+    with MongoDBConnection() as my_db:
         my_db.customers.drop()
         my_db.products.drop()
         my_db.rentals.drop()
@@ -70,9 +68,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     """This function creates a new MongoDB database"""
 
     #   Set up Mongo
-    mongo = MongoDBConnection()
-    with mongo:
-        my_db = mongo.connection.media
+    with MongoDBConnection() as my_db:
 
         #   Set up the database categories
         customers = my_db['customers']
@@ -134,9 +130,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 def show_available_products():
     """Shows products available"""
     #   Set up Mongo
-    mongo = MongoDBConnection()
-    with mongo:
-        my_db = mongo.connection.media
+    with MongoDBConnection() as my_db:
         products = my_db['products']
         display_product_dict = {}
         for items in products.find():
@@ -150,11 +144,9 @@ def show_available_products():
 def show_rentals(product_id):
     """Returns a Python dictionary with information from users who have rented the product"""
     # Set up Mongo
-    mongo = MongoDBConnection()
     rental_list = []
     rental_dict = {}
-    with mongo:
-        my_db = mongo.connection.media
+    with MongoDBConnection() as my_db:
         rentals = my_db['rentals']
 
         #   Find users who have rented the given product
