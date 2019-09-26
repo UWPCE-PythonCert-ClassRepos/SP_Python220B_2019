@@ -1,0 +1,1992 @@
+2019-09-25 15:41:29,971 charges_calc.py:121 ERROR Total_days is less than 0: -82
+2019-09-25 15:41:29,973 charges_calc.py:122 ERROR Rejecting this record RNT001.
+2019-09-25 15:41:29,974 charges_calc.py:121 ERROR Total_days is less than 0: -28
+2019-09-25 15:41:29,982 charges_calc.py:122 ERROR Rejecting this record RNT006.
+2019-09-25 15:41:29,983 charges_calc.py:121 ERROR Total_days is less than 0: -40
+2019-09-25 15:41:29,983 charges_calc.py:122 ERROR Rejecting this record RNT007.
+2019-09-25 15:41:29,984 charges_calc.py:121 ERROR Total_days is less than 0: -113
+2019-09-25 15:41:29,985 charges_calc.py:122 ERROR Rejecting this record RNT008.
+2019-09-25 15:41:29,992 charges_calc.py:121 ERROR Total_days is less than 0: -828
+2019-09-25 15:41:29,993 charges_calc.py:122 ERROR Rejecting this record RNT009.
+2019-09-25 15:41:29,993 charges_calc.py:121 ERROR Total_days is less than 0: -200
+2019-09-25 15:41:29,994 charges_calc.py:122 ERROR Rejecting this record RNT010.
+2019-09-25 15:41:29,995 charges_calc.py:121 ERROR Total_days is less than 0: -518
+2019-09-25 15:41:29,995 charges_calc.py:122 ERROR Rejecting this record RNT011.
+2019-09-25 15:41:29,996 charges_calc.py:121 ERROR Total_days is less than 0: -648
+2019-09-25 15:41:29,997 charges_calc.py:122 ERROR Rejecting this record RNT012.
+2019-09-25 15:41:29,998 charges_calc.py:121 ERROR Total_days is less than 0: -184
+2019-09-25 15:41:29,999 charges_calc.py:122 ERROR Rejecting this record RNT014.
+2019-09-25 15:41:29,999 charges_calc.py:121 ERROR Total_days is less than 0: -864
+2019-09-25 15:41:30,000 charges_calc.py:122 ERROR Rejecting this record RNT016.
+2019-09-25 15:41:30,000 charges_calc.py:121 ERROR Total_days is less than 0: -17
+2019-09-25 15:41:30,001 charges_calc.py:122 ERROR Rejecting this record RNT017.
+2019-09-25 15:41:30,002 charges_calc.py:121 ERROR Total_days is less than 0: -216
+2019-09-25 15:41:30,007 charges_calc.py:122 ERROR Rejecting this record RNT018.
+2019-09-25 15:41:30,009 charges_calc.py:121 ERROR Total_days is less than 0: -585
+2019-09-25 15:41:30,010 charges_calc.py:122 ERROR Rejecting this record RNT019.
+2019-09-25 15:41:30,010 charges_calc.py:121 ERROR Total_days is less than 0: -890
+2019-09-25 15:41:30,011 charges_calc.py:122 ERROR Rejecting this record RNT020.
+2019-09-25 15:41:30,012 charges_calc.py:121 ERROR Total_days is less than 0: -569
+2019-09-25 15:41:30,012 charges_calc.py:122 ERROR Rejecting this record RNT021.
+2019-09-25 15:41:30,013 charges_calc.py:121 ERROR Total_days is less than 0: -643
+2019-09-25 15:41:30,014 charges_calc.py:122 ERROR Rejecting this record RNT025.
+2019-09-25 15:41:30,015 charges_calc.py:121 ERROR Total_days is less than 0: -705
+2019-09-25 15:41:30,015 charges_calc.py:122 ERROR Rejecting this record RNT026.
+2019-09-25 15:41:30,016 charges_calc.py:121 ERROR Total_days is less than 0: -426
+2019-09-25 15:41:30,017 charges_calc.py:122 ERROR Rejecting this record RNT028.
+2019-09-25 15:41:30,018 charges_calc.py:121 ERROR Total_days is less than 0: -74
+2019-09-25 15:41:30,018 charges_calc.py:122 ERROR Rejecting this record RNT030.
+2019-09-25 15:41:30,019 charges_calc.py:121 ERROR Total_days is less than 0: -370
+2019-09-25 15:41:30,020 charges_calc.py:122 ERROR Rejecting this record RNT031.
+2019-09-25 15:41:30,025 charges_calc.py:121 ERROR Total_days is less than 0: -556
+2019-09-25 15:41:30,026 charges_calc.py:122 ERROR Rejecting this record RNT034.
+2019-09-25 15:41:30,027 charges_calc.py:121 ERROR Total_days is less than 0: -336
+2019-09-25 15:41:30,028 charges_calc.py:122 ERROR Rejecting this record RNT040.
+2019-09-25 15:41:30,029 charges_calc.py:121 ERROR Total_days is less than 0: -326
+2019-09-25 15:41:30,029 charges_calc.py:122 ERROR Rejecting this record RNT041.
+2019-09-25 15:41:30,030 charges_calc.py:121 ERROR Total_days is less than 0: -624
+2019-09-25 15:41:30,031 charges_calc.py:122 ERROR Rejecting this record RNT044.
+2019-09-25 15:41:30,032 charges_calc.py:121 ERROR Total_days is less than 0: -37
+2019-09-25 15:41:30,032 charges_calc.py:122 ERROR Rejecting this record RNT045.
+2019-09-25 15:41:30,033 charges_calc.py:121 ERROR Total_days is less than 0: -280
+2019-09-25 15:41:30,033 charges_calc.py:122 ERROR Rejecting this record RNT046.
+2019-09-25 15:41:30,034 charges_calc.py:121 ERROR Total_days is less than 0: -770
+2019-09-25 15:41:30,035 charges_calc.py:122 ERROR Rejecting this record RNT047.
+2019-09-25 15:41:30,040 charges_calc.py:121 ERROR Total_days is less than 0: -312
+2019-09-25 15:41:30,041 charges_calc.py:122 ERROR Rejecting this record RNT048.
+2019-09-25 15:41:30,042 charges_calc.py:121 ERROR Total_days is less than 0: -524
+2019-09-25 15:41:30,042 charges_calc.py:122 ERROR Rejecting this record RNT050.
+2019-09-25 15:41:30,043 charges_calc.py:121 ERROR Total_days is less than 0: -775
+2019-09-25 15:41:30,044 charges_calc.py:122 ERROR Rejecting this record RNT056.
+2019-09-25 15:41:30,045 charges_calc.py:121 ERROR Total_days is less than 0: -170
+2019-09-25 15:41:30,045 charges_calc.py:122 ERROR Rejecting this record RNT058.
+2019-09-25 15:41:30,046 charges_calc.py:121 ERROR Total_days is less than 0: -28
+2019-09-25 15:41:30,046 charges_calc.py:122 ERROR Rejecting this record RNT060.
+2019-09-25 15:41:30,047 charges_calc.py:121 ERROR Total_days is less than 0: -349
+2019-09-25 15:41:30,048 charges_calc.py:122 ERROR Rejecting this record RNT061.
+2019-09-25 15:41:30,048 charges_calc.py:121 ERROR Total_days is less than 0: -83
+2019-09-25 15:41:30,049 charges_calc.py:122 ERROR Rejecting this record RNT062.
+2019-09-25 15:41:30,050 charges_calc.py:121 ERROR Total_days is less than 0: -668
+2019-09-25 15:41:30,050 charges_calc.py:122 ERROR Rejecting this record RNT065.
+2019-09-25 15:41:30,051 charges_calc.py:121 ERROR Total_days is less than 0: -92
+2019-09-25 15:41:30,052 charges_calc.py:122 ERROR Rejecting this record RNT067.
+2019-09-25 15:41:30,058 charges_calc.py:121 ERROR Total_days is less than 0: -133
+2019-09-25 15:41:30,058 charges_calc.py:122 ERROR Rejecting this record RNT071.
+2019-09-25 15:41:30,059 charges_calc.py:121 ERROR Total_days is less than 0: -57
+2019-09-25 15:41:30,060 charges_calc.py:122 ERROR Rejecting this record RNT074.
+2019-09-25 15:41:30,061 charges_calc.py:121 ERROR Total_days is less than 0: -755
+2019-09-25 15:41:30,061 charges_calc.py:122 ERROR Rejecting this record RNT076.
+2019-09-25 15:41:30,062 charges_calc.py:121 ERROR Total_days is less than 0: -634
+2019-09-25 15:41:30,063 charges_calc.py:122 ERROR Rejecting this record RNT077.
+2019-09-25 15:41:30,063 charges_calc.py:121 ERROR Total_days is less than 0: -304
+2019-09-25 15:41:30,064 charges_calc.py:122 ERROR Rejecting this record RNT079.
+2019-09-25 15:41:30,065 charges_calc.py:121 ERROR Total_days is less than 0: -379
+2019-09-25 15:41:30,065 charges_calc.py:122 ERROR Rejecting this record RNT084.
+2019-09-25 15:41:30,066 charges_calc.py:121 ERROR Total_days is less than 0: -258
+2019-09-25 15:41:30,067 charges_calc.py:122 ERROR Rejecting this record RNT086.
+2019-09-25 15:41:30,067 charges_calc.py:121 ERROR Total_days is less than 0: -53
+2019-09-25 15:41:30,068 charges_calc.py:122 ERROR Rejecting this record RNT087.
+2019-09-25 15:41:30,069 charges_calc.py:121 ERROR Total_days is less than 0: -82
+2019-09-25 15:41:30,075 charges_calc.py:122 ERROR Rejecting this record RNT089.
+2019-09-25 15:41:30,077 charges_calc.py:121 ERROR Total_days is less than 0: -291
+2019-09-25 15:41:30,077 charges_calc.py:122 ERROR Rejecting this record RNT092.
+2019-09-25 15:41:30,078 charges_calc.py:121 ERROR Total_days is less than 0: -378
+2019-09-25 15:41:30,079 charges_calc.py:122 ERROR Rejecting this record RNT095.
+2019-09-25 15:41:30,079 charges_calc.py:121 ERROR Total_days is less than 0: -135
+2019-09-25 15:41:30,080 charges_calc.py:122 ERROR Rejecting this record RNT097.
+2019-09-25 15:41:30,081 charges_calc.py:121 ERROR Total_days is less than 0: -763
+2019-09-25 15:41:30,082 charges_calc.py:122 ERROR Rejecting this record RNT099.
+2019-09-25 15:41:30,082 charges_calc.py:121 ERROR Total_days is less than 0: -756
+2019-09-25 15:41:30,083 charges_calc.py:122 ERROR Rejecting this record RNT100.
+2019-09-25 15:41:30,083 charges_calc.py:121 ERROR Total_days is less than 0: -439
+2019-09-25 15:41:30,084 charges_calc.py:122 ERROR Rejecting this record RNT101.
+2019-09-25 15:41:30,085 charges_calc.py:121 ERROR Total_days is less than 0: -221
+2019-09-25 15:41:30,085 charges_calc.py:122 ERROR Rejecting this record RNT102.
+2019-09-25 15:41:30,090 charges_calc.py:121 ERROR Total_days is less than 0: -341
+2019-09-25 15:41:30,091 charges_calc.py:122 ERROR Rejecting this record RNT103.
+2019-09-25 15:41:30,092 charges_calc.py:121 ERROR Total_days is less than 0: -477
+2019-09-25 15:41:30,093 charges_calc.py:122 ERROR Rejecting this record RNT104.
+2019-09-25 15:41:30,094 charges_calc.py:121 ERROR Total_days is less than 0: -678
+2019-09-25 15:41:30,094 charges_calc.py:122 ERROR Rejecting this record RNT105.
+2019-09-25 15:41:30,095 charges_calc.py:121 ERROR Total_days is less than 0: -72
+2019-09-25 15:41:30,096 charges_calc.py:122 ERROR Rejecting this record RNT106.
+2019-09-25 15:41:30,096 charges_calc.py:121 ERROR Total_days is less than 0: -360
+2019-09-25 15:41:30,097 charges_calc.py:122 ERROR Rejecting this record RNT107.
+2019-09-25 15:41:30,098 charges_calc.py:121 ERROR Total_days is less than 0: -533
+2019-09-25 15:41:30,099 charges_calc.py:122 ERROR Rejecting this record RNT109.
+2019-09-25 15:41:30,100 charges_calc.py:121 ERROR Total_days is less than 0: -514
+2019-09-25 15:41:30,112 charges_calc.py:122 ERROR Rejecting this record RNT114.
+2019-09-25 15:41:30,113 charges_calc.py:121 ERROR Total_days is less than 0: -828
+2019-09-25 15:41:30,114 charges_calc.py:122 ERROR Rejecting this record RNT115.
+2019-09-25 15:41:30,114 charges_calc.py:121 ERROR Total_days is less than 0: -253
+2019-09-25 15:41:30,115 charges_calc.py:122 ERROR Rejecting this record RNT116.
+2019-09-25 15:41:30,116 charges_calc.py:121 ERROR Total_days is less than 0: -414
+2019-09-25 15:41:30,116 charges_calc.py:122 ERROR Rejecting this record RNT118.
+2019-09-25 15:41:30,117 charges_calc.py:121 ERROR Total_days is less than 0: -213
+2019-09-25 15:41:30,118 charges_calc.py:122 ERROR Rejecting this record RNT119.
+2019-09-25 15:41:30,119 charges_calc.py:121 ERROR Total_days is less than 0: -155
+2019-09-25 15:41:30,124 charges_calc.py:122 ERROR Rejecting this record RNT120.
+2019-09-25 15:41:30,125 charges_calc.py:121 ERROR Total_days is less than 0: -643
+2019-09-25 15:41:30,126 charges_calc.py:122 ERROR Rejecting this record RNT121.
+2019-09-25 15:41:30,126 charges_calc.py:121 ERROR Total_days is less than 0: -608
+2019-09-25 15:41:30,127 charges_calc.py:122 ERROR Rejecting this record RNT122.
+2019-09-25 15:41:30,128 charges_calc.py:121 ERROR Total_days is less than 0: -220
+2019-09-25 15:41:30,128 charges_calc.py:122 ERROR Rejecting this record RNT123.
+2019-09-25 15:41:30,129 charges_calc.py:121 ERROR Total_days is less than 0: -138
+2019-09-25 15:41:30,130 charges_calc.py:122 ERROR Rejecting this record RNT125.
+2019-09-25 15:41:30,131 charges_calc.py:121 ERROR Total_days is less than 0: -304
+2019-09-25 15:41:30,132 charges_calc.py:122 ERROR Rejecting this record RNT129.
+2019-09-25 15:41:30,132 charges_calc.py:121 ERROR Total_days is less than 0: -544
+2019-09-25 15:41:30,133 charges_calc.py:122 ERROR Rejecting this record RNT130.
+2019-09-25 15:41:30,134 charges_calc.py:121 ERROR Total_days is less than 0: -63
+2019-09-25 15:41:30,134 charges_calc.py:122 ERROR Rejecting this record RNT135.
+2019-09-25 15:41:30,135 charges_calc.py:121 ERROR Total_days is less than 0: -135
+2019-09-25 15:41:30,141 charges_calc.py:122 ERROR Rejecting this record RNT139.
+2019-09-25 15:41:30,142 charges_calc.py:121 ERROR Total_days is less than 0: -304
+2019-09-25 15:41:30,143 charges_calc.py:122 ERROR Rejecting this record RNT141.
+2019-09-25 15:41:30,143 charges_calc.py:121 ERROR Total_days is less than 0: -197
+2019-09-25 15:41:30,144 charges_calc.py:122 ERROR Rejecting this record RNT142.
+2019-09-25 15:41:30,145 charges_calc.py:121 ERROR Total_days is less than 0: -1052
+2019-09-25 15:41:30,145 charges_calc.py:122 ERROR Rejecting this record RNT143.
+2019-09-25 15:41:30,146 charges_calc.py:121 ERROR Total_days is less than 0: -743
+2019-09-25 15:41:30,147 charges_calc.py:122 ERROR Rejecting this record RNT145.
+2019-09-25 15:41:30,149 charges_calc.py:121 ERROR Total_days is less than 0: -33
+2019-09-25 15:41:30,149 charges_calc.py:122 ERROR Rejecting this record RNT148.
+2019-09-25 15:41:30,150 charges_calc.py:121 ERROR Total_days is less than 0: -695
+2019-09-25 15:41:30,152 charges_calc.py:122 ERROR Rejecting this record RNT149.
+2019-09-25 15:41:30,157 charges_calc.py:121 ERROR Total_days is less than 0: -725
+2019-09-25 15:41:30,158 charges_calc.py:122 ERROR Rejecting this record RNT151.
+2019-09-25 15:41:30,159 charges_calc.py:121 ERROR Total_days is less than 0: -420
+2019-09-25 15:41:30,160 charges_calc.py:122 ERROR Rejecting this record RNT154.
+2019-09-25 15:41:30,161 charges_calc.py:121 ERROR Total_days is less than 0: -172
+2019-09-25 15:41:30,161 charges_calc.py:122 ERROR Rejecting this record RNT155.
+2019-09-25 15:41:30,162 charges_calc.py:121 ERROR Total_days is less than 0: -583
+2019-09-25 15:41:30,163 charges_calc.py:122 ERROR Rejecting this record RNT157.
+2019-09-25 15:41:30,163 charges_calc.py:121 ERROR Total_days is less than 0: -856
+2019-09-25 15:41:30,164 charges_calc.py:122 ERROR Rejecting this record RNT158.
+2019-09-25 15:41:30,165 charges_calc.py:121 ERROR Total_days is less than 0: -65
+2019-09-25 15:41:30,166 charges_calc.py:122 ERROR Rejecting this record RNT160.
+2019-09-25 15:41:30,166 charges_calc.py:121 ERROR Total_days is less than 0: -97
+2019-09-25 15:41:30,167 charges_calc.py:122 ERROR Rejecting this record RNT163.
+2019-09-25 15:41:30,168 charges_calc.py:121 ERROR Total_days is less than 0: -260
+2019-09-25 15:41:30,168 charges_calc.py:122 ERROR Rejecting this record RNT164.
+2019-09-25 15:41:30,174 charges_calc.py:121 ERROR Total_days is less than 0: -789
+2019-09-25 15:41:30,175 charges_calc.py:122 ERROR Rejecting this record RNT166.
+2019-09-25 15:41:30,176 charges_calc.py:121 ERROR Total_days is less than 0: -54
+2019-09-25 15:41:30,177 charges_calc.py:122 ERROR Rejecting this record RNT167.
+2019-09-25 15:41:30,177 charges_calc.py:121 ERROR Total_days is less than 0: -143
+2019-09-25 15:41:30,178 charges_calc.py:122 ERROR Rejecting this record RNT168.
+2019-09-25 15:41:30,179 charges_calc.py:121 ERROR Total_days is less than 0: -539
+2019-09-25 15:41:30,180 charges_calc.py:122 ERROR Rejecting this record RNT169.
+2019-09-25 15:41:30,180 charges_calc.py:121 ERROR Total_days is less than 0: -613
+2019-09-25 15:41:30,181 charges_calc.py:122 ERROR Rejecting this record RNT170.
+2019-09-25 15:41:30,182 charges_calc.py:121 ERROR Total_days is less than 0: -62
+2019-09-25 15:41:30,183 charges_calc.py:122 ERROR Rejecting this record RNT175.
+2019-09-25 15:41:30,183 charges_calc.py:121 ERROR Total_days is less than 0: -116
+2019-09-25 15:41:30,184 charges_calc.py:122 ERROR Rejecting this record RNT178.
+2019-09-25 15:41:30,185 charges_calc.py:121 ERROR Total_days is less than 0: -10
+2019-09-25 15:41:30,185 charges_calc.py:122 ERROR Rejecting this record RNT179.
+2019-09-25 15:41:30,191 charges_calc.py:121 ERROR Total_days is less than 0: -842
+2019-09-25 15:41:30,192 charges_calc.py:122 ERROR Rejecting this record RNT180.
+2019-09-25 15:41:30,194 charges_calc.py:121 ERROR Total_days is less than 0: -53
+2019-09-25 15:41:30,194 charges_calc.py:122 ERROR Rejecting this record RNT183.
+2019-09-25 15:41:30,195 charges_calc.py:121 ERROR Total_days is less than 0: -530
+2019-09-25 15:41:30,196 charges_calc.py:122 ERROR Rejecting this record RNT184.
+2019-09-25 15:41:30,197 charges_calc.py:121 ERROR Total_days is less than 0: -633
+2019-09-25 15:41:30,198 charges_calc.py:122 ERROR Rejecting this record RNT187.
+2019-09-25 15:41:30,199 charges_calc.py:121 ERROR Total_days is less than 0: -95
+2019-09-25 15:41:30,200 charges_calc.py:122 ERROR Rejecting this record RNT189.
+2019-09-25 15:41:30,201 charges_calc.py:121 ERROR Total_days is less than 0: -10
+2019-09-25 15:41:30,201 charges_calc.py:122 ERROR Rejecting this record RNT192.
+2019-09-25 15:41:30,202 charges_calc.py:121 ERROR Total_days is less than 0: -849
+2019-09-25 15:41:30,207 charges_calc.py:122 ERROR Rejecting this record RNT195.
+2019-09-25 15:41:30,208 charges_calc.py:121 ERROR Total_days is less than 0: -907
+2019-09-25 15:41:30,209 charges_calc.py:122 ERROR Rejecting this record RNT196.
+2019-09-25 15:41:30,210 charges_calc.py:121 ERROR Total_days is less than 0: -108
+2019-09-25 15:41:30,211 charges_calc.py:122 ERROR Rejecting this record RNT197.
+2019-09-25 15:41:30,212 charges_calc.py:121 ERROR Total_days is less than 0: -390
+2019-09-25 15:41:30,212 charges_calc.py:122 ERROR Rejecting this record RNT201.
+2019-09-25 15:41:30,213 charges_calc.py:121 ERROR Total_days is less than 0: -1001
+2019-09-25 15:41:30,214 charges_calc.py:122 ERROR Rejecting this record RNT202.
+2019-09-25 15:41:30,215 charges_calc.py:121 ERROR Total_days is less than 0: -650
+2019-09-25 15:41:30,216 charges_calc.py:122 ERROR Rejecting this record RNT207.
+2019-09-25 15:41:30,216 charges_calc.py:121 ERROR Total_days is less than 0: -6
+2019-09-25 15:41:30,217 charges_calc.py:122 ERROR Rejecting this record RNT208.
+2019-09-25 15:41:30,218 charges_calc.py:121 ERROR Total_days is less than 0: -184
+2019-09-25 15:41:30,219 charges_calc.py:122 ERROR Rejecting this record RNT210.
+2019-09-25 15:41:30,225 charges_calc.py:121 ERROR Total_days is less than 0: -158
+2019-09-25 15:41:30,226 charges_calc.py:122 ERROR Rejecting this record RNT214.
+2019-09-25 15:41:30,227 charges_calc.py:121 ERROR Total_days is less than 0: -70
+2019-09-25 15:41:30,228 charges_calc.py:122 ERROR Rejecting this record RNT216.
+2019-09-25 15:41:30,229 charges_calc.py:121 ERROR Total_days is less than 0: -744
+2019-09-25 15:41:30,229 charges_calc.py:122 ERROR Rejecting this record RNT217.
+2019-09-25 15:41:30,230 charges_calc.py:121 ERROR Total_days is less than 0: -353
+2019-09-25 15:41:30,232 charges_calc.py:122 ERROR Rejecting this record RNT218.
+2019-09-25 15:41:30,233 charges_calc.py:121 ERROR Total_days is less than 0: -820
+2019-09-25 15:41:30,233 charges_calc.py:122 ERROR Rejecting this record RNT221.
+2019-09-25 15:41:30,234 charges_calc.py:121 ERROR Total_days is less than 0: -646
+2019-09-25 15:41:30,235 charges_calc.py:122 ERROR Rejecting this record RNT223.
+2019-09-25 15:41:30,236 charges_calc.py:121 ERROR Total_days is less than 0: -394
+2019-09-25 15:41:30,241 charges_calc.py:122 ERROR Rejecting this record RNT224.
+2019-09-25 15:41:30,242 charges_calc.py:121 ERROR Total_days is less than 0: -142
+2019-09-25 15:41:30,243 charges_calc.py:122 ERROR Rejecting this record RNT225.
+2019-09-25 15:41:30,244 charges_calc.py:121 ERROR Total_days is less than 0: -827
+2019-09-25 15:41:30,245 charges_calc.py:122 ERROR Rejecting this record RNT227.
+2019-09-25 15:41:30,246 charges_calc.py:121 ERROR Total_days is less than 0: -112
+2019-09-25 15:41:30,246 charges_calc.py:122 ERROR Rejecting this record RNT229.
+2019-09-25 15:41:30,248 charges_calc.py:121 ERROR Total_days is less than 0: -641
+2019-09-25 15:41:30,248 charges_calc.py:122 ERROR Rejecting this record RNT233.
+2019-09-25 15:41:30,249 charges_calc.py:121 ERROR Total_days is less than 0: -95
+2019-09-25 15:41:30,250 charges_calc.py:122 ERROR Rejecting this record RNT234.
+2019-09-25 15:41:30,250 charges_calc.py:121 ERROR Total_days is less than 0: -997
+2019-09-25 15:41:30,251 charges_calc.py:122 ERROR Rejecting this record RNT236.
+2019-09-25 15:41:30,253 charges_calc.py:121 ERROR Total_days is less than 0: -147
+2019-09-25 15:41:30,253 charges_calc.py:122 ERROR Rejecting this record RNT238.
+2019-09-25 15:41:30,259 charges_calc.py:121 ERROR Total_days is less than 0: -207
+2019-09-25 15:41:30,260 charges_calc.py:122 ERROR Rejecting this record RNT241.
+2019-09-25 15:41:30,261 charges_calc.py:121 ERROR Total_days is less than 0: -348
+2019-09-25 15:41:30,262 charges_calc.py:122 ERROR Rejecting this record RNT242.
+2019-09-25 15:41:30,263 charges_calc.py:121 ERROR Total_days is less than 0: -421
+2019-09-25 15:41:30,263 charges_calc.py:122 ERROR Rejecting this record RNT243.
+2019-09-25 15:41:30,264 charges_calc.py:121 ERROR Total_days is less than 0: -647
+2019-09-25 15:41:30,265 charges_calc.py:122 ERROR Rejecting this record RNT244.
+2019-09-25 15:41:30,266 charges_calc.py:121 ERROR Total_days is less than 0: -158
+2019-09-25 15:41:30,267 charges_calc.py:122 ERROR Rejecting this record RNT246.
+2019-09-25 15:41:30,268 charges_calc.py:121 ERROR Total_days is less than 0: -30
+2019-09-25 15:41:30,269 charges_calc.py:122 ERROR Rejecting this record RNT247.
+2019-09-25 15:41:30,275 charges_calc.py:121 ERROR Total_days is less than 0: -197
+2019-09-25 15:41:30,276 charges_calc.py:122 ERROR Rejecting this record RNT254.
+2019-09-25 15:41:30,278 charges_calc.py:121 ERROR Total_days is less than 0: -194
+2019-09-25 15:41:30,278 charges_calc.py:122 ERROR Rejecting this record RNT258.
+2019-09-25 15:41:30,279 charges_calc.py:121 ERROR Total_days is less than 0: -547
+2019-09-25 15:41:30,280 charges_calc.py:122 ERROR Rejecting this record RNT259.
+2019-09-25 15:41:30,281 charges_calc.py:121 ERROR Total_days is less than 0: -374
+2019-09-25 15:41:30,281 charges_calc.py:122 ERROR Rejecting this record RNT260.
+2019-09-25 15:41:30,282 charges_calc.py:121 ERROR Total_days is less than 0: -124
+2019-09-25 15:41:30,283 charges_calc.py:122 ERROR Rejecting this record RNT261.
+2019-09-25 15:41:30,284 charges_calc.py:121 ERROR Total_days is less than 0: -729
+2019-09-25 15:41:30,285 charges_calc.py:122 ERROR Rejecting this record RNT264.
+2019-09-25 15:41:30,286 charges_calc.py:121 ERROR Total_days is less than 0: -1
+2019-09-25 15:41:30,291 charges_calc.py:122 ERROR Rejecting this record RNT265.
+2019-09-25 15:41:30,293 charges_calc.py:121 ERROR Total_days is less than 0: -37
+2019-09-25 15:41:30,293 charges_calc.py:122 ERROR Rejecting this record RNT270.
+2019-09-25 15:41:30,295 charges_calc.py:121 ERROR Total_days is less than 0: -842
+2019-09-25 15:41:30,296 charges_calc.py:122 ERROR Rejecting this record RNT271.
+2019-09-25 15:41:30,297 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,297 charges_calc.py:122 ERROR Rejecting this record RNT272.
+2019-09-25 15:41:30,299 charges_calc.py:121 ERROR Total_days is less than 0: -671
+2019-09-25 15:41:30,299 charges_calc.py:122 ERROR Rejecting this record RNT274.
+2019-09-25 15:41:30,300 charges_calc.py:121 ERROR Total_days is less than 0: -655
+2019-09-25 15:41:30,301 charges_calc.py:122 ERROR Rejecting this record RNT277.
+2019-09-25 15:41:30,302 charges_calc.py:121 ERROR Total_days is less than 0: -152
+2019-09-25 15:41:30,309 charges_calc.py:122 ERROR Rejecting this record RNT282.
+2019-09-25 15:41:30,310 charges_calc.py:121 ERROR Total_days is less than 0: -18
+2019-09-25 15:41:30,310 charges_calc.py:122 ERROR Rejecting this record RNT283.
+2019-09-25 15:41:30,312 charges_calc.py:121 ERROR Total_days is less than 0: -109
+2019-09-25 15:41:30,313 charges_calc.py:122 ERROR Rejecting this record RNT288.
+2019-09-25 15:41:30,314 charges_calc.py:121 ERROR Total_days is less than 0: -5
+2019-09-25 15:41:30,315 charges_calc.py:122 ERROR Rejecting this record RNT290.
+2019-09-25 15:41:30,317 charges_calc.py:121 ERROR Total_days is less than 0: -199
+2019-09-25 15:41:30,318 charges_calc.py:122 ERROR Rejecting this record RNT295.
+2019-09-25 15:41:30,319 charges_calc.py:121 ERROR Total_days is less than 0: -574
+2019-09-25 15:41:30,327 charges_calc.py:122 ERROR Rejecting this record RNT296.
+2019-09-25 15:41:30,328 charges_calc.py:121 ERROR Total_days is less than 0: -156
+2019-09-25 15:41:30,329 charges_calc.py:122 ERROR Rejecting this record RNT298.
+2019-09-25 15:41:30,330 charges_calc.py:121 ERROR Total_days is less than 0: -5
+2019-09-25 15:41:30,330 charges_calc.py:122 ERROR Rejecting this record RNT299.
+2019-09-25 15:41:30,331 charges_calc.py:121 ERROR Total_days is less than 0: -211
+2019-09-25 15:41:30,332 charges_calc.py:122 ERROR Rejecting this record RNT300.
+2019-09-25 15:41:30,333 charges_calc.py:121 ERROR Total_days is less than 0: -559
+2019-09-25 15:41:30,333 charges_calc.py:122 ERROR Rejecting this record RNT301.
+2019-09-25 15:41:30,334 charges_calc.py:121 ERROR Total_days is less than 0: -284
+2019-09-25 15:41:30,335 charges_calc.py:122 ERROR Rejecting this record RNT302.
+2019-09-25 15:41:30,336 charges_calc.py:121 ERROR Total_days is less than 0: -405
+2019-09-25 15:41:30,341 charges_calc.py:122 ERROR Rejecting this record RNT303.
+2019-09-25 15:41:30,342 charges_calc.py:121 ERROR Total_days is less than 0: -180
+2019-09-25 15:41:30,343 charges_calc.py:122 ERROR Rejecting this record RNT304.
+2019-09-25 15:41:30,344 charges_calc.py:121 ERROR Total_days is less than 0: -630
+2019-09-25 15:41:30,344 charges_calc.py:122 ERROR Rejecting this record RNT305.
+2019-09-25 15:41:30,345 charges_calc.py:121 ERROR Total_days is less than 0: -562
+2019-09-25 15:41:30,345 charges_calc.py:122 ERROR Rejecting this record RNT306.
+2019-09-25 15:41:30,346 charges_calc.py:121 ERROR Total_days is less than 0: -88
+2019-09-25 15:41:30,347 charges_calc.py:122 ERROR Rejecting this record RNT308.
+2019-09-25 15:41:30,348 charges_calc.py:121 ERROR Total_days is less than 0: -38
+2019-09-25 15:41:30,348 charges_calc.py:122 ERROR Rejecting this record RNT309.
+2019-09-25 15:41:30,349 charges_calc.py:121 ERROR Total_days is less than 0: -876
+2019-09-25 15:41:30,350 charges_calc.py:122 ERROR Rejecting this record RNT310.
+2019-09-25 15:41:30,350 charges_calc.py:121 ERROR Total_days is less than 0: -584
+2019-09-25 15:41:30,351 charges_calc.py:122 ERROR Rejecting this record RNT311.
+2019-09-25 15:41:30,352 charges_calc.py:121 ERROR Total_days is less than 0: -83
+2019-09-25 15:41:30,353 charges_calc.py:122 ERROR Rejecting this record RNT312.
+2019-09-25 15:41:30,359 charges_calc.py:121 ERROR Total_days is less than 0: -340
+2019-09-25 15:41:30,360 charges_calc.py:122 ERROR Rejecting this record RNT313.
+2019-09-25 15:41:30,361 charges_calc.py:121 ERROR Total_days is less than 0: -506
+2019-09-25 15:41:30,361 charges_calc.py:122 ERROR Rejecting this record RNT314.
+2019-09-25 15:41:30,362 charges_calc.py:121 ERROR Total_days is less than 0: -272
+2019-09-25 15:41:30,362 charges_calc.py:122 ERROR Rejecting this record RNT315.
+2019-09-25 15:41:30,363 charges_calc.py:121 ERROR Total_days is less than 0: -270
+2019-09-25 15:41:30,364 charges_calc.py:122 ERROR Rejecting this record RNT316.
+2019-09-25 15:41:30,365 charges_calc.py:121 ERROR Total_days is less than 0: -417
+2019-09-25 15:41:30,365 charges_calc.py:122 ERROR Rejecting this record RNT320.
+2019-09-25 15:41:30,366 charges_calc.py:121 ERROR Total_days is less than 0: -313
+2019-09-25 15:41:30,367 charges_calc.py:122 ERROR Rejecting this record RNT321.
+2019-09-25 15:41:30,368 charges_calc.py:121 ERROR Total_days is less than 0: -1060
+2019-09-25 15:41:30,368 charges_calc.py:122 ERROR Rejecting this record RNT324.
+2019-09-25 15:41:30,369 charges_calc.py:121 ERROR Total_days is less than 0: -707
+2019-09-25 15:41:30,369 charges_calc.py:122 ERROR Rejecting this record RNT325.
+2019-09-25 15:41:30,376 charges_calc.py:121 ERROR Total_days is less than 0: -2
+2019-09-25 15:41:30,377 charges_calc.py:122 ERROR Rejecting this record RNT331.
+2019-09-25 15:41:30,378 charges_calc.py:121 ERROR Total_days is less than 0: -15
+2019-09-25 15:41:30,379 charges_calc.py:122 ERROR Rejecting this record RNT335.
+2019-09-25 15:41:30,380 charges_calc.py:121 ERROR Total_days is less than 0: -264
+2019-09-25 15:41:30,381 charges_calc.py:122 ERROR Rejecting this record RNT336.
+2019-09-25 15:41:30,381 charges_calc.py:121 ERROR Total_days is less than 0: -266
+2019-09-25 15:41:30,382 charges_calc.py:122 ERROR Rejecting this record RNT337.
+2019-09-25 15:41:30,383 charges_calc.py:121 ERROR Total_days is less than 0: -498
+2019-09-25 15:41:30,385 charges_calc.py:122 ERROR Rejecting this record RNT339.
+2019-09-25 15:41:30,386 charges_calc.py:121 ERROR Total_days is less than 0: -29
+2019-09-25 15:41:30,394 charges_calc.py:122 ERROR Rejecting this record RNT343.
+2019-09-25 15:41:30,395 charges_calc.py:121 ERROR Total_days is less than 0: -205
+2019-09-25 15:41:30,396 charges_calc.py:122 ERROR Rejecting this record RNT345.
+2019-09-25 15:41:30,397 charges_calc.py:121 ERROR Total_days is less than 0: -545
+2019-09-25 15:41:30,398 charges_calc.py:122 ERROR Rejecting this record RNT346.
+2019-09-25 15:41:30,398 charges_calc.py:121 ERROR Total_days is less than 0: -208
+2019-09-25 15:41:30,399 charges_calc.py:122 ERROR Rejecting this record RNT347.
+2019-09-25 15:41:30,400 charges_calc.py:121 ERROR Total_days is less than 0: -547
+2019-09-25 15:41:30,401 charges_calc.py:122 ERROR Rejecting this record RNT352.
+2019-09-25 15:41:30,402 charges_calc.py:121 ERROR Total_days is less than 0: -295
+2019-09-25 15:41:30,402 charges_calc.py:122 ERROR Rejecting this record RNT353.
+2019-09-25 15:41:30,404 charges_calc.py:121 ERROR Total_days is less than 0: -45
+2019-09-25 15:41:30,410 charges_calc.py:122 ERROR Rejecting this record RNT355.
+2019-09-25 15:41:30,411 charges_calc.py:121 ERROR Total_days is less than 0: -148
+2019-09-25 15:41:30,412 charges_calc.py:122 ERROR Rejecting this record RNT356.
+2019-09-25 15:41:30,413 charges_calc.py:121 ERROR Total_days is less than 0: -695
+2019-09-25 15:41:30,414 charges_calc.py:122 ERROR Rejecting this record RNT361.
+2019-09-25 15:41:30,415 charges_calc.py:121 ERROR Total_days is less than 0: -22
+2019-09-25 15:41:30,417 charges_calc.py:122 ERROR Rejecting this record RNT363.
+2019-09-25 15:41:30,417 charges_calc.py:121 ERROR Total_days is less than 0: -41
+2019-09-25 15:41:30,418 charges_calc.py:122 ERROR Rejecting this record RNT364.
+2019-09-25 15:41:30,419 charges_calc.py:121 ERROR Total_days is less than 0: -289
+2019-09-25 15:41:30,425 charges_calc.py:122 ERROR Rejecting this record RNT366.
+2019-09-25 15:41:30,427 charges_calc.py:121 ERROR Total_days is less than 0: -528
+2019-09-25 15:41:30,427 charges_calc.py:122 ERROR Rejecting this record RNT371.
+2019-09-25 15:41:30,428 charges_calc.py:121 ERROR Total_days is less than 0: -362
+2019-09-25 15:41:30,428 charges_calc.py:122 ERROR Rejecting this record RNT372.
+2019-09-25 15:41:30,429 charges_calc.py:121 ERROR Total_days is less than 0: -164
+2019-09-25 15:41:30,430 charges_calc.py:122 ERROR Rejecting this record RNT374.
+2019-09-25 15:41:30,431 charges_calc.py:121 ERROR Total_days is less than 0: -214
+2019-09-25 15:41:30,431 charges_calc.py:122 ERROR Rejecting this record RNT376.
+2019-09-25 15:41:30,432 charges_calc.py:121 ERROR Total_days is less than 0: -659
+2019-09-25 15:41:30,433 charges_calc.py:122 ERROR Rejecting this record RNT379.
+2019-09-25 15:41:30,434 charges_calc.py:121 ERROR Total_days is less than 0: -518
+2019-09-25 15:41:30,434 charges_calc.py:122 ERROR Rejecting this record RNT381.
+2019-09-25 15:41:30,435 charges_calc.py:121 ERROR Total_days is less than 0: -22
+2019-09-25 15:41:30,441 charges_calc.py:122 ERROR Rejecting this record RNT383.
+2019-09-25 15:41:30,442 charges_calc.py:121 ERROR Total_days is less than 0: -183
+2019-09-25 15:41:30,443 charges_calc.py:122 ERROR Rejecting this record RNT384.
+2019-09-25 15:41:30,444 charges_calc.py:121 ERROR Total_days is less than 0: -210
+2019-09-25 15:41:30,445 charges_calc.py:122 ERROR Rejecting this record RNT386.
+2019-09-25 15:41:30,445 charges_calc.py:121 ERROR Total_days is less than 0: -893
+2019-09-25 15:41:30,446 charges_calc.py:122 ERROR Rejecting this record RNT387.
+2019-09-25 15:41:30,447 charges_calc.py:121 ERROR Total_days is less than 0: -587
+2019-09-25 15:41:30,447 charges_calc.py:122 ERROR Rejecting this record RNT388.
+2019-09-25 15:41:30,448 charges_calc.py:121 ERROR Total_days is less than 0: -12
+2019-09-25 15:41:30,449 charges_calc.py:122 ERROR Rejecting this record RNT391.
+2019-09-25 15:41:30,450 charges_calc.py:121 ERROR Total_days is less than 0: -104
+2019-09-25 15:41:30,450 charges_calc.py:122 ERROR Rejecting this record RNT392.
+2019-09-25 15:41:30,451 charges_calc.py:121 ERROR Total_days is less than 0: -401
+2019-09-25 15:41:30,452 charges_calc.py:122 ERROR Rejecting this record RNT394.
+2019-09-25 15:41:30,452 charges_calc.py:121 ERROR Total_days is less than 0: -92
+2019-09-25 15:41:30,458 charges_calc.py:122 ERROR Rejecting this record RNT395.
+2019-09-25 15:41:30,460 charges_calc.py:121 ERROR Total_days is less than 0: -407
+2019-09-25 15:41:30,461 charges_calc.py:122 ERROR Rejecting this record RNT397.
+2019-09-25 15:41:30,462 charges_calc.py:121 ERROR Total_days is less than 0: -585
+2019-09-25 15:41:30,462 charges_calc.py:122 ERROR Rejecting this record RNT400.
+2019-09-25 15:41:30,463 charges_calc.py:121 ERROR Total_days is less than 0: -540
+2019-09-25 15:41:30,464 charges_calc.py:122 ERROR Rejecting this record RNT405.
+2019-09-25 15:41:30,465 charges_calc.py:121 ERROR Total_days is less than 0: -30
+2019-09-25 15:41:30,466 charges_calc.py:122 ERROR Rejecting this record RNT408.
+2019-09-25 15:41:30,467 charges_calc.py:121 ERROR Total_days is less than 0: -271
+2019-09-25 15:41:30,467 charges_calc.py:122 ERROR Rejecting this record RNT409.
+2019-09-25 15:41:30,468 charges_calc.py:121 ERROR Total_days is less than 0: -287
+2019-09-25 15:41:30,469 charges_calc.py:122 ERROR Rejecting this record RNT412.
+2019-09-25 15:41:30,470 charges_calc.py:121 ERROR Total_days is less than 0: -356
+2019-09-25 15:41:30,475 charges_calc.py:122 ERROR Rejecting this record RNT413.
+2019-09-25 15:41:30,476 charges_calc.py:121 ERROR Total_days is less than 0: -274
+2019-09-25 15:41:30,477 charges_calc.py:122 ERROR Rejecting this record RNT414.
+2019-09-25 15:41:30,478 charges_calc.py:121 ERROR Total_days is less than 0: -250
+2019-09-25 15:41:30,479 charges_calc.py:122 ERROR Rejecting this record RNT416.
+2019-09-25 15:41:30,481 charges_calc.py:121 ERROR Total_days is less than 0: -601
+2019-09-25 15:41:30,481 charges_calc.py:122 ERROR Rejecting this record RNT421.
+2019-09-25 15:41:30,482 charges_calc.py:121 ERROR Total_days is less than 0: -159
+2019-09-25 15:41:30,483 charges_calc.py:122 ERROR Rejecting this record RNT422.
+2019-09-25 15:41:30,484 charges_calc.py:121 ERROR Total_days is less than 0: -266
+2019-09-25 15:41:30,485 charges_calc.py:122 ERROR Rejecting this record RNT423.
+2019-09-25 15:41:30,485 charges_calc.py:121 ERROR Total_days is less than 0: -883
+2019-09-25 15:41:30,486 charges_calc.py:122 ERROR Rejecting this record RNT424.
+2019-09-25 15:41:30,492 charges_calc.py:121 ERROR Total_days is less than 0: -481
+2019-09-25 15:41:30,493 charges_calc.py:122 ERROR Rejecting this record RNT427.
+2019-09-25 15:41:30,494 charges_calc.py:121 ERROR Total_days is less than 0: -153
+2019-09-25 15:41:30,495 charges_calc.py:122 ERROR Rejecting this record RNT428.
+2019-09-25 15:41:30,496 charges_calc.py:121 ERROR Total_days is less than 0: -22
+2019-09-25 15:41:30,496 charges_calc.py:122 ERROR Rejecting this record RNT430.
+2019-09-25 15:41:30,498 charges_calc.py:121 ERROR Total_days is less than 0: -303
+2019-09-25 15:41:30,499 charges_calc.py:122 ERROR Rejecting this record RNT435.
+2019-09-25 15:41:30,499 charges_calc.py:121 ERROR Total_days is less than 0: -345
+2019-09-25 15:41:30,500 charges_calc.py:122 ERROR Rejecting this record RNT436.
+2019-09-25 15:41:30,501 charges_calc.py:121 ERROR Total_days is less than 0: -721
+2019-09-25 15:41:30,502 charges_calc.py:122 ERROR Rejecting this record RNT440.
+2019-09-25 15:41:30,503 charges_calc.py:121 ERROR Total_days is less than 0: -901
+2019-09-25 15:41:30,510 charges_calc.py:122 ERROR Rejecting this record RNT443.
+2019-09-25 15:41:30,511 charges_calc.py:121 ERROR Total_days is less than 0: -121
+2019-09-25 15:41:30,512 charges_calc.py:122 ERROR Rejecting this record RNT445.
+2019-09-25 15:41:30,514 charges_calc.py:121 ERROR Total_days is less than 0: -734
+2019-09-25 15:41:30,516 charges_calc.py:122 ERROR Rejecting this record RNT446.
+2019-09-25 15:41:30,518 charges_calc.py:121 ERROR Total_days is less than 0: -130
+2019-09-25 15:41:30,528 charges_calc.py:122 ERROR Rejecting this record RNT447.
+2019-09-25 15:41:30,530 charges_calc.py:121 ERROR Total_days is less than 0: -444
+2019-09-25 15:41:30,555 charges_calc.py:122 ERROR Rejecting this record RNT449.
+2019-09-25 15:41:30,557 charges_calc.py:121 ERROR Total_days is less than 0: -158
+2019-09-25 15:41:30,557 charges_calc.py:122 ERROR Rejecting this record RNT451.
+2019-09-25 15:41:30,558 charges_calc.py:121 ERROR Total_days is less than 0: -809
+2019-09-25 15:41:30,559 charges_calc.py:122 ERROR Rejecting this record RNT453.
+2019-09-25 15:41:30,560 charges_calc.py:121 ERROR Total_days is less than 0: -34
+2019-09-25 15:41:30,561 charges_calc.py:122 ERROR Rejecting this record RNT454.
+2019-09-25 15:41:30,562 charges_calc.py:121 ERROR Total_days is less than 0: -619
+2019-09-25 15:41:30,563 charges_calc.py:122 ERROR Rejecting this record RNT457.
+2019-09-25 15:41:30,564 charges_calc.py:121 ERROR Total_days is less than 0: -775
+2019-09-25 15:41:30,565 charges_calc.py:122 ERROR Rejecting this record RNT461.
+2019-09-25 15:41:30,566 charges_calc.py:121 ERROR Total_days is less than 0: -38
+2019-09-25 15:41:30,566 charges_calc.py:122 ERROR Rejecting this record RNT462.
+2019-09-25 15:41:30,567 charges_calc.py:121 ERROR Total_days is less than 0: -249
+2019-09-25 15:41:30,568 charges_calc.py:122 ERROR Rejecting this record RNT463.
+2019-09-25 15:41:30,569 charges_calc.py:121 ERROR Total_days is less than 0: -417
+2019-09-25 15:41:30,570 charges_calc.py:122 ERROR Rejecting this record RNT465.
+2019-09-25 15:41:30,580 charges_calc.py:121 ERROR Total_days is less than 0: -725
+2019-09-25 15:41:30,581 charges_calc.py:122 ERROR Rejecting this record RNT467.
+2019-09-25 15:41:30,582 charges_calc.py:121 ERROR Total_days is less than 0: -51
+2019-09-25 15:41:30,583 charges_calc.py:122 ERROR Rejecting this record RNT472.
+2019-09-25 15:41:30,584 charges_calc.py:121 ERROR Total_days is less than 0: -609
+2019-09-25 15:41:30,585 charges_calc.py:122 ERROR Rejecting this record RNT476.
+2019-09-25 15:41:30,586 charges_calc.py:121 ERROR Total_days is less than 0: -481
+2019-09-25 15:41:30,591 charges_calc.py:122 ERROR Rejecting this record RNT480.
+2019-09-25 15:41:30,592 charges_calc.py:121 ERROR Total_days is less than 0: -421
+2019-09-25 15:41:30,593 charges_calc.py:122 ERROR Rejecting this record RNT485.
+2019-09-25 15:41:30,594 charges_calc.py:121 ERROR Total_days is less than 0: -318
+2019-09-25 15:41:30,594 charges_calc.py:122 ERROR Rejecting this record RNT487.
+2019-09-25 15:41:30,595 charges_calc.py:121 ERROR Total_days is less than 0: -104
+2019-09-25 15:41:30,596 charges_calc.py:122 ERROR Rejecting this record RNT489.
+2019-09-25 15:41:30,597 charges_calc.py:121 ERROR Total_days is less than 0: -37
+2019-09-25 15:41:30,597 charges_calc.py:122 ERROR Rejecting this record RNT490.
+2019-09-25 15:41:30,598 charges_calc.py:121 ERROR Total_days is less than 0: -484
+2019-09-25 15:41:30,599 charges_calc.py:122 ERROR Rejecting this record RNT491.
+2019-09-25 15:41:30,599 charges_calc.py:121 ERROR Total_days is less than 0: -682
+2019-09-25 15:41:30,600 charges_calc.py:122 ERROR Rejecting this record RNT493.
+2019-09-25 15:41:30,601 charges_calc.py:121 ERROR Total_days is less than 0: -326
+2019-09-25 15:41:30,601 charges_calc.py:122 ERROR Rejecting this record RNT495.
+2019-09-25 15:41:30,602 charges_calc.py:121 ERROR Total_days is less than 0: -358
+2019-09-25 15:41:30,603 charges_calc.py:122 ERROR Rejecting this record RNT496.
+2019-09-25 15:41:30,608 charges_calc.py:121 ERROR Total_days is less than 0: -423
+2019-09-25 15:41:30,609 charges_calc.py:122 ERROR Rejecting this record RNT497.
+2019-09-25 15:41:30,609 charges_calc.py:121 ERROR Total_days is less than 0: -118
+2019-09-25 15:41:30,610 charges_calc.py:122 ERROR Rejecting this record RNT501.
+2019-09-25 15:41:30,610 charges_calc.py:121 ERROR Total_days is less than 0: -113
+2019-09-25 15:41:30,612 charges_calc.py:122 ERROR Rejecting this record RNT503.
+2019-09-25 15:41:30,612 charges_calc.py:121 ERROR Total_days is less than 0: -384
+2019-09-25 15:41:30,613 charges_calc.py:122 ERROR Rejecting this record RNT507.
+2019-09-25 15:41:30,613 charges_calc.py:121 ERROR Total_days is less than 0: -436
+2019-09-25 15:41:30,614 charges_calc.py:122 ERROR Rejecting this record RNT508.
+2019-09-25 15:41:30,614 charges_calc.py:121 ERROR Total_days is less than 0: -276
+2019-09-25 15:41:30,615 charges_calc.py:122 ERROR Rejecting this record RNT509.
+2019-09-25 15:41:30,615 charges_calc.py:121 ERROR Total_days is less than 0: -12
+2019-09-25 15:41:30,616 charges_calc.py:122 ERROR Rejecting this record RNT512.
+2019-09-25 15:41:30,617 charges_calc.py:121 ERROR Total_days is less than 0: -169
+2019-09-25 15:41:30,617 charges_calc.py:122 ERROR Rejecting this record RNT513.
+2019-09-25 15:41:30,618 charges_calc.py:121 ERROR Total_days is less than 0: -327
+2019-09-25 15:41:30,624 charges_calc.py:122 ERROR Rejecting this record RNT514.
+2019-09-25 15:41:30,625 charges_calc.py:121 ERROR Total_days is less than 0: -216
+2019-09-25 15:41:30,626 charges_calc.py:122 ERROR Rejecting this record RNT515.
+2019-09-25 15:41:30,627 charges_calc.py:121 ERROR Total_days is less than 0: -334
+2019-09-25 15:41:30,627 charges_calc.py:122 ERROR Rejecting this record RNT516.
+2019-09-25 15:41:30,628 charges_calc.py:121 ERROR Total_days is less than 0: -605
+2019-09-25 15:41:30,629 charges_calc.py:122 ERROR Rejecting this record RNT517.
+2019-09-25 15:41:30,629 charges_calc.py:121 ERROR Total_days is less than 0: -619
+2019-09-25 15:41:30,631 charges_calc.py:122 ERROR Rejecting this record RNT518.
+2019-09-25 15:41:30,632 charges_calc.py:121 ERROR Total_days is less than 0: -127
+2019-09-25 15:41:30,633 charges_calc.py:122 ERROR Rejecting this record RNT520.
+2019-09-25 15:41:30,633 charges_calc.py:121 ERROR Total_days is less than 0: -169
+2019-09-25 15:41:30,634 charges_calc.py:122 ERROR Rejecting this record RNT522.
+2019-09-25 15:41:30,635 charges_calc.py:121 ERROR Total_days is less than 0: -129
+2019-09-25 15:41:30,640 charges_calc.py:122 ERROR Rejecting this record RNT524.
+2019-09-25 15:41:30,641 charges_calc.py:121 ERROR Total_days is less than 0: -115
+2019-09-25 15:41:30,642 charges_calc.py:122 ERROR Rejecting this record RNT525.
+2019-09-25 15:41:30,642 charges_calc.py:121 ERROR Total_days is less than 0: -844
+2019-09-25 15:41:30,643 charges_calc.py:122 ERROR Rejecting this record RNT528.
+2019-09-25 15:41:30,644 charges_calc.py:121 ERROR Total_days is less than 0: -403
+2019-09-25 15:41:30,645 charges_calc.py:122 ERROR Rejecting this record RNT532.
+2019-09-25 15:41:30,645 charges_calc.py:121 ERROR Total_days is less than 0: -456
+2019-09-25 15:41:30,646 charges_calc.py:122 ERROR Rejecting this record RNT533.
+2019-09-25 15:41:30,647 charges_calc.py:121 ERROR Total_days is less than 0: -560
+2019-09-25 15:41:30,647 charges_calc.py:122 ERROR Rejecting this record RNT535.
+2019-09-25 15:41:30,648 charges_calc.py:121 ERROR Total_days is less than 0: -179
+2019-09-25 15:41:30,648 charges_calc.py:122 ERROR Rejecting this record RNT536.
+2019-09-25 15:41:30,649 charges_calc.py:121 ERROR Total_days is less than 0: -305
+2019-09-25 15:41:30,650 charges_calc.py:122 ERROR Rejecting this record RNT537.
+2019-09-25 15:41:30,650 charges_calc.py:121 ERROR Total_days is less than 0: -276
+2019-09-25 15:41:30,651 charges_calc.py:122 ERROR Rejecting this record RNT538.
+2019-09-25 15:41:30,651 charges_calc.py:121 ERROR Total_days is less than 0: -390
+2019-09-25 15:41:30,657 charges_calc.py:122 ERROR Rejecting this record RNT539.
+2019-09-25 15:41:30,659 charges_calc.py:121 ERROR Total_days is less than 0: -829
+2019-09-25 15:41:30,660 charges_calc.py:122 ERROR Rejecting this record RNT541.
+2019-09-25 15:41:30,661 charges_calc.py:121 ERROR Total_days is less than 0: -204
+2019-09-25 15:41:30,661 charges_calc.py:122 ERROR Rejecting this record RNT544.
+2019-09-25 15:41:30,662 charges_calc.py:121 ERROR Total_days is less than 0: -407
+2019-09-25 15:41:30,662 charges_calc.py:122 ERROR Rejecting this record RNT545.
+2019-09-25 15:41:30,663 charges_calc.py:121 ERROR Total_days is less than 0: -147
+2019-09-25 15:41:30,664 charges_calc.py:122 ERROR Rejecting this record RNT546.
+2019-09-25 15:41:30,664 charges_calc.py:121 ERROR Total_days is less than 0: -372
+2019-09-25 15:41:30,665 charges_calc.py:122 ERROR Rejecting this record RNT548.
+2019-09-25 15:41:30,666 charges_calc.py:121 ERROR Total_days is less than 0: -463
+2019-09-25 15:41:30,666 charges_calc.py:122 ERROR Rejecting this record RNT550.
+2019-09-25 15:41:30,667 charges_calc.py:121 ERROR Total_days is less than 0: -320
+2019-09-25 15:41:30,667 charges_calc.py:122 ERROR Rejecting this record RNT551.
+2019-09-25 15:41:30,668 charges_calc.py:121 ERROR Total_days is less than 0: -61
+2019-09-25 15:41:30,674 charges_calc.py:122 ERROR Rejecting this record RNT555.
+2019-09-25 15:41:30,675 charges_calc.py:121 ERROR Total_days is less than 0: -106
+2019-09-25 15:41:30,676 charges_calc.py:122 ERROR Rejecting this record RNT558.
+2019-09-25 15:41:30,677 charges_calc.py:121 ERROR Total_days is less than 0: -790
+2019-09-25 15:41:30,677 charges_calc.py:122 ERROR Rejecting this record RNT561.
+2019-09-25 15:41:30,678 charges_calc.py:121 ERROR Total_days is less than 0: -96
+2019-09-25 15:41:30,678 charges_calc.py:122 ERROR Rejecting this record RNT562.
+2019-09-25 15:41:30,679 charges_calc.py:121 ERROR Total_days is less than 0: -1002
+2019-09-25 15:41:30,680 charges_calc.py:122 ERROR Rejecting this record RNT566.
+2019-09-25 15:41:30,681 charges_calc.py:121 ERROR Total_days is less than 0: -124
+2019-09-25 15:41:30,681 charges_calc.py:122 ERROR Rejecting this record RNT569.
+2019-09-25 15:41:30,682 charges_calc.py:121 ERROR Total_days is less than 0: -131
+2019-09-25 15:41:30,682 charges_calc.py:122 ERROR Rejecting this record RNT570.
+2019-09-25 15:41:30,683 charges_calc.py:121 ERROR Total_days is less than 0: -797
+2019-09-25 15:41:30,684 charges_calc.py:122 ERROR Rejecting this record RNT572.
+2019-09-25 15:41:30,685 charges_calc.py:121 ERROR Total_days is less than 0: -191
+2019-09-25 15:41:30,685 charges_calc.py:122 ERROR Rejecting this record RNT575.
+2019-09-25 15:41:30,686 charges_calc.py:121 ERROR Total_days is less than 0: -434
+2019-09-25 15:41:30,690 charges_calc.py:122 ERROR Rejecting this record RNT580.
+2019-09-25 15:41:30,691 charges_calc.py:121 ERROR Total_days is less than 0: -4
+2019-09-25 15:41:30,692 charges_calc.py:122 ERROR Rejecting this record RNT582.
+2019-09-25 15:41:30,693 charges_calc.py:121 ERROR Total_days is less than 0: -756
+2019-09-25 15:41:30,694 charges_calc.py:122 ERROR Rejecting this record RNT585.
+2019-09-25 15:41:30,695 charges_calc.py:121 ERROR Total_days is less than 0: -206
+2019-09-25 15:41:30,696 charges_calc.py:122 ERROR Rejecting this record RNT586.
+2019-09-25 15:41:30,696 charges_calc.py:121 ERROR Total_days is less than 0: -407
+2019-09-25 15:41:30,697 charges_calc.py:122 ERROR Rejecting this record RNT587.
+2019-09-25 15:41:30,698 charges_calc.py:121 ERROR Total_days is less than 0: -545
+2019-09-25 15:41:30,698 charges_calc.py:122 ERROR Rejecting this record RNT590.
+2019-09-25 15:41:30,699 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,700 charges_calc.py:122 ERROR Rejecting this record RNT591.
+2019-09-25 15:41:30,700 charges_calc.py:121 ERROR Total_days is less than 0: -114
+2019-09-25 15:41:30,701 charges_calc.py:122 ERROR Rejecting this record RNT592.
+2019-09-25 15:41:30,702 charges_calc.py:121 ERROR Total_days is less than 0: -64
+2019-09-25 15:41:30,702 charges_calc.py:122 ERROR Rejecting this record RNT593.
+2019-09-25 15:41:30,708 charges_calc.py:121 ERROR Total_days is less than 0: -418
+2019-09-25 15:41:30,709 charges_calc.py:122 ERROR Rejecting this record RNT595.
+2019-09-25 15:41:30,710 charges_calc.py:121 ERROR Total_days is less than 0: -615
+2019-09-25 15:41:30,711 charges_calc.py:122 ERROR Rejecting this record RNT597.
+2019-09-25 15:41:30,711 charges_calc.py:121 ERROR Total_days is less than 0: -550
+2019-09-25 15:41:30,712 charges_calc.py:122 ERROR Rejecting this record RNT598.
+2019-09-25 15:41:30,712 charges_calc.py:121 ERROR Total_days is less than 0: -856
+2019-09-25 15:41:30,713 charges_calc.py:122 ERROR Rejecting this record RNT599.
+2019-09-25 15:41:30,713 charges_calc.py:121 ERROR Total_days is less than 0: -151
+2019-09-25 15:41:30,714 charges_calc.py:122 ERROR Rejecting this record RNT601.
+2019-09-25 15:41:30,715 charges_calc.py:121 ERROR Total_days is less than 0: -181
+2019-09-25 15:41:30,715 charges_calc.py:122 ERROR Rejecting this record RNT602.
+2019-09-25 15:41:30,716 charges_calc.py:121 ERROR Total_days is less than 0: -588
+2019-09-25 15:41:30,716 charges_calc.py:122 ERROR Rejecting this record RNT603.
+2019-09-25 15:41:30,717 charges_calc.py:121 ERROR Total_days is less than 0: -373
+2019-09-25 15:41:30,718 charges_calc.py:122 ERROR Rejecting this record RNT604.
+2019-09-25 15:41:30,718 charges_calc.py:121 ERROR Total_days is less than 0: -424
+2019-09-25 15:41:30,719 charges_calc.py:122 ERROR Rejecting this record RNT605.
+2019-09-25 15:41:30,724 charges_calc.py:121 ERROR Total_days is less than 0: -873
+2019-09-25 15:41:30,726 charges_calc.py:122 ERROR Rejecting this record RNT606.
+2019-09-25 15:41:30,727 charges_calc.py:121 ERROR Total_days is less than 0: -34
+2019-09-25 15:41:30,727 charges_calc.py:122 ERROR Rejecting this record RNT611.
+2019-09-25 15:41:30,728 charges_calc.py:121 ERROR Total_days is less than 0: -260
+2019-09-25 15:41:30,729 charges_calc.py:122 ERROR Rejecting this record RNT613.
+2019-09-25 15:41:30,729 charges_calc.py:121 ERROR Total_days is less than 0: -93
+2019-09-25 15:41:30,730 charges_calc.py:122 ERROR Rejecting this record RNT615.
+2019-09-25 15:41:30,731 charges_calc.py:121 ERROR Total_days is less than 0: -126
+2019-09-25 15:41:30,732 charges_calc.py:122 ERROR Rejecting this record RNT622.
+2019-09-25 15:41:30,733 charges_calc.py:121 ERROR Total_days is less than 0: -355
+2019-09-25 15:41:30,733 charges_calc.py:122 ERROR Rejecting this record RNT626.
+2019-09-25 15:41:30,734 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,735 charges_calc.py:122 ERROR Rejecting this record RNT630.
+2019-09-25 15:41:30,735 charges_calc.py:121 ERROR Total_days is less than 0: -6
+2019-09-25 15:41:30,741 charges_calc.py:122 ERROR Rejecting this record RNT632.
+2019-09-25 15:41:30,742 charges_calc.py:121 ERROR Total_days is less than 0: -158
+2019-09-25 15:41:30,742 charges_calc.py:122 ERROR Rejecting this record RNT633.
+2019-09-25 15:41:30,743 charges_calc.py:121 ERROR Total_days is less than 0: -40
+2019-09-25 15:41:30,744 charges_calc.py:122 ERROR Rejecting this record RNT634.
+2019-09-25 15:41:30,744 charges_calc.py:121 ERROR Total_days is less than 0: -413
+2019-09-25 15:41:30,745 charges_calc.py:122 ERROR Rejecting this record RNT636.
+2019-09-25 15:41:30,746 charges_calc.py:121 ERROR Total_days is less than 0: -341
+2019-09-25 15:41:30,746 charges_calc.py:122 ERROR Rejecting this record RNT638.
+2019-09-25 15:41:30,747 charges_calc.py:121 ERROR Total_days is less than 0: -455
+2019-09-25 15:41:30,747 charges_calc.py:122 ERROR Rejecting this record RNT639.
+2019-09-25 15:41:30,748 charges_calc.py:121 ERROR Total_days is less than 0: -498
+2019-09-25 15:41:30,749 charges_calc.py:122 ERROR Rejecting this record RNT640.
+2019-09-25 15:41:30,749 charges_calc.py:121 ERROR Total_days is less than 0: -22
+2019-09-25 15:41:30,750 charges_calc.py:122 ERROR Rejecting this record RNT642.
+2019-09-25 15:41:30,751 charges_calc.py:121 ERROR Total_days is less than 0: -980
+2019-09-25 15:41:30,751 charges_calc.py:122 ERROR Rejecting this record RNT643.
+2019-09-25 15:41:30,752 charges_calc.py:121 ERROR Total_days is less than 0: -209
+2019-09-25 15:41:30,753 charges_calc.py:122 ERROR Rejecting this record RNT647.
+2019-09-25 15:41:30,758 charges_calc.py:121 ERROR Total_days is less than 0: -388
+2019-09-25 15:41:30,758 charges_calc.py:122 ERROR Rejecting this record RNT648.
+2019-09-25 15:41:30,759 charges_calc.py:121 ERROR Total_days is less than 0: -243
+2019-09-25 15:41:30,760 charges_calc.py:122 ERROR Rejecting this record RNT649.
+2019-09-25 15:41:30,761 charges_calc.py:121 ERROR Total_days is less than 0: -960
+2019-09-25 15:41:30,761 charges_calc.py:122 ERROR Rejecting this record RNT651.
+2019-09-25 15:41:30,762 charges_calc.py:121 ERROR Total_days is less than 0: -150
+2019-09-25 15:41:30,763 charges_calc.py:122 ERROR Rejecting this record RNT653.
+2019-09-25 15:41:30,763 charges_calc.py:121 ERROR Total_days is less than 0: -823
+2019-09-25 15:41:30,764 charges_calc.py:122 ERROR Rejecting this record RNT656.
+2019-09-25 15:41:30,765 charges_calc.py:121 ERROR Total_days is less than 0: -373
+2019-09-25 15:41:30,765 charges_calc.py:122 ERROR Rejecting this record RNT659.
+2019-09-25 15:41:30,766 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,767 charges_calc.py:122 ERROR Rejecting this record RNT662.
+2019-09-25 15:41:30,768 charges_calc.py:121 ERROR Total_days is less than 0: -348
+2019-09-25 15:41:30,768 charges_calc.py:122 ERROR Rejecting this record RNT663.
+2019-09-25 15:41:30,769 charges_calc.py:121 ERROR Total_days is less than 0: -681
+2019-09-25 15:41:30,774 charges_calc.py:122 ERROR Rejecting this record RNT664.
+2019-09-25 15:41:30,775 charges_calc.py:121 ERROR Total_days is less than 0: -216
+2019-09-25 15:41:30,775 charges_calc.py:122 ERROR Rejecting this record RNT665.
+2019-09-25 15:41:30,776 charges_calc.py:121 ERROR Total_days is less than 0: -644
+2019-09-25 15:41:30,777 charges_calc.py:122 ERROR Rejecting this record RNT667.
+2019-09-25 15:41:30,777 charges_calc.py:121 ERROR Total_days is less than 0: -47
+2019-09-25 15:41:30,778 charges_calc.py:122 ERROR Rejecting this record RNT668.
+2019-09-25 15:41:30,778 charges_calc.py:121 ERROR Total_days is less than 0: -302
+2019-09-25 15:41:30,779 charges_calc.py:122 ERROR Rejecting this record RNT670.
+2019-09-25 15:41:30,780 charges_calc.py:121 ERROR Total_days is less than 0: -262
+2019-09-25 15:41:30,780 charges_calc.py:122 ERROR Rejecting this record RNT671.
+2019-09-25 15:41:30,781 charges_calc.py:121 ERROR Total_days is less than 0: -456
+2019-09-25 15:41:30,782 charges_calc.py:122 ERROR Rejecting this record RNT674.
+2019-09-25 15:41:30,782 charges_calc.py:121 ERROR Total_days is less than 0: -17
+2019-09-25 15:41:30,783 charges_calc.py:122 ERROR Rejecting this record RNT677.
+2019-09-25 15:41:30,784 charges_calc.py:121 ERROR Total_days is less than 0: -14
+2019-09-25 15:41:30,784 charges_calc.py:122 ERROR Rejecting this record RNT678.
+2019-09-25 15:41:30,785 charges_calc.py:121 ERROR Total_days is less than 0: -657
+2019-09-25 15:41:30,785 charges_calc.py:122 ERROR Rejecting this record RNT679.
+2019-09-25 15:41:30,791 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,792 charges_calc.py:122 ERROR Rejecting this record RNT682.
+2019-09-25 15:41:30,793 charges_calc.py:121 ERROR Total_days is less than 0: -449
+2019-09-25 15:41:30,794 charges_calc.py:122 ERROR Rejecting this record RNT684.
+2019-09-25 15:41:30,795 charges_calc.py:121 ERROR Total_days is less than 0: -34
+2019-09-25 15:41:30,796 charges_calc.py:122 ERROR Rejecting this record RNT688.
+2019-09-25 15:41:30,797 charges_calc.py:121 ERROR Total_days is less than 0: -739
+2019-09-25 15:41:30,797 charges_calc.py:122 ERROR Rejecting this record RNT691.
+2019-09-25 15:41:30,798 charges_calc.py:121 ERROR Total_days is less than 0: -29
+2019-09-25 15:41:30,798 charges_calc.py:122 ERROR Rejecting this record RNT692.
+2019-09-25 15:41:30,799 charges_calc.py:121 ERROR Total_days is less than 0: -450
+2019-09-25 15:41:30,800 charges_calc.py:122 ERROR Rejecting this record RNT694.
+2019-09-25 15:41:30,800 charges_calc.py:121 ERROR Total_days is less than 0: -131
+2019-09-25 15:41:30,801 charges_calc.py:122 ERROR Rejecting this record RNT695.
+2019-09-25 15:41:30,802 charges_calc.py:121 ERROR Total_days is less than 0: -496
+2019-09-25 15:41:30,807 charges_calc.py:122 ERROR Rejecting this record RNT698.
+2019-09-25 15:41:30,808 charges_calc.py:121 ERROR Total_days is less than 0: -292
+2019-09-25 15:41:30,809 charges_calc.py:122 ERROR Rejecting this record RNT702.
+2019-09-25 15:41:30,809 charges_calc.py:121 ERROR Total_days is less than 0: -106
+2019-09-25 15:41:30,810 charges_calc.py:122 ERROR Rejecting this record RNT703.
+2019-09-25 15:41:30,810 charges_calc.py:121 ERROR Total_days is less than 0: -630
+2019-09-25 15:41:30,811 charges_calc.py:122 ERROR Rejecting this record RNT704.
+2019-09-25 15:41:30,812 charges_calc.py:121 ERROR Total_days is less than 0: -114
+2019-09-25 15:41:30,812 charges_calc.py:122 ERROR Rejecting this record RNT706.
+2019-09-25 15:41:30,813 charges_calc.py:121 ERROR Total_days is less than 0: -123
+2019-09-25 15:41:30,814 charges_calc.py:122 ERROR Rejecting this record RNT709.
+2019-09-25 15:41:30,815 charges_calc.py:121 ERROR Total_days is less than 0: -365
+2019-09-25 15:41:30,815 charges_calc.py:122 ERROR Rejecting this record RNT711.
+2019-09-25 15:41:30,816 charges_calc.py:121 ERROR Total_days is less than 0: -427
+2019-09-25 15:41:30,816 charges_calc.py:122 ERROR Rejecting this record RNT712.
+2019-09-25 15:41:30,817 charges_calc.py:121 ERROR Total_days is less than 0: -426
+2019-09-25 15:41:30,818 charges_calc.py:122 ERROR Rejecting this record RNT715.
+2019-09-25 15:41:30,818 charges_calc.py:121 ERROR Total_days is less than 0: -987
+2019-09-25 15:41:30,824 charges_calc.py:122 ERROR Rejecting this record RNT717.
+2019-09-25 15:41:30,825 charges_calc.py:121 ERROR Total_days is less than 0: -170
+2019-09-25 15:41:30,826 charges_calc.py:122 ERROR Rejecting this record RNT719.
+2019-09-25 15:41:30,827 charges_calc.py:121 ERROR Total_days is less than 0: -201
+2019-09-25 15:41:30,827 charges_calc.py:122 ERROR Rejecting this record RNT721.
+2019-09-25 15:41:30,828 charges_calc.py:121 ERROR Total_days is less than 0: -577
+2019-09-25 15:41:30,828 charges_calc.py:122 ERROR Rejecting this record RNT722.
+2019-09-25 15:41:30,829 charges_calc.py:121 ERROR Total_days is less than 0: -94
+2019-09-25 15:41:30,830 charges_calc.py:122 ERROR Rejecting this record RNT725.
+2019-09-25 15:41:30,830 charges_calc.py:121 ERROR Total_days is less than 0: -567
+2019-09-25 15:41:30,831 charges_calc.py:122 ERROR Rejecting this record RNT726.
+2019-09-25 15:41:30,832 charges_calc.py:121 ERROR Total_days is less than 0: -117
+2019-09-25 15:41:30,832 charges_calc.py:122 ERROR Rejecting this record RNT729.
+2019-09-25 15:41:30,833 charges_calc.py:121 ERROR Total_days is less than 0: -76
+2019-09-25 15:41:30,834 charges_calc.py:122 ERROR Rejecting this record RNT731.
+2019-09-25 15:41:30,834 charges_calc.py:121 ERROR Total_days is less than 0: -267
+2019-09-25 15:41:30,835 charges_calc.py:122 ERROR Rejecting this record RNT732.
+2019-09-25 15:41:30,836 charges_calc.py:121 ERROR Total_days is less than 0: -202
+2019-09-25 15:41:30,841 charges_calc.py:122 ERROR Rejecting this record RNT733.
+2019-09-25 15:41:30,842 charges_calc.py:121 ERROR Total_days is less than 0: -126
+2019-09-25 15:41:30,843 charges_calc.py:122 ERROR Rejecting this record RNT740.
+2019-09-25 15:41:30,844 charges_calc.py:121 ERROR Total_days is less than 0: -319
+2019-09-25 15:41:30,845 charges_calc.py:122 ERROR Rejecting this record RNT745.
+2019-09-25 15:41:30,845 charges_calc.py:121 ERROR Total_days is less than 0: -69
+2019-09-25 15:41:30,846 charges_calc.py:122 ERROR Rejecting this record RNT746.
+2019-09-25 15:41:30,847 charges_calc.py:121 ERROR Total_days is less than 0: -168
+2019-09-25 15:41:30,847 charges_calc.py:122 ERROR Rejecting this record RNT748.
+2019-09-25 15:41:30,848 charges_calc.py:121 ERROR Total_days is less than 0: -137
+2019-09-25 15:41:30,848 charges_calc.py:122 ERROR Rejecting this record RNT750.
+2019-09-25 15:41:30,849 charges_calc.py:121 ERROR Total_days is less than 0: -203
+2019-09-25 15:41:30,850 charges_calc.py:122 ERROR Rejecting this record RNT751.
+2019-09-25 15:41:30,850 charges_calc.py:121 ERROR Total_days is less than 0: -71
+2019-09-25 15:41:30,851 charges_calc.py:122 ERROR Rejecting this record RNT753.
+2019-09-25 15:41:30,852 charges_calc.py:121 ERROR Total_days is less than 0: -142
+2019-09-25 15:41:30,852 charges_calc.py:122 ERROR Rejecting this record RNT756.
+2019-09-25 15:41:30,858 charges_calc.py:121 ERROR Total_days is less than 0: -160
+2019-09-25 15:41:30,859 charges_calc.py:122 ERROR Rejecting this record RNT757.
+2019-09-25 15:41:30,861 charges_calc.py:121 ERROR Total_days is less than 0: -767
+2019-09-25 15:41:30,862 charges_calc.py:122 ERROR Rejecting this record RNT759.
+2019-09-25 15:41:30,863 charges_calc.py:121 ERROR Total_days is less than 0: -230
+2019-09-25 15:41:30,864 charges_calc.py:122 ERROR Rejecting this record RNT766.
+2019-09-25 15:41:30,865 charges_calc.py:121 ERROR Total_days is less than 0: -1061
+2019-09-25 15:41:30,865 charges_calc.py:122 ERROR Rejecting this record RNT770.
+2019-09-25 15:41:30,866 charges_calc.py:121 ERROR Total_days is less than 0: -117
+2019-09-25 15:41:30,867 charges_calc.py:122 ERROR Rejecting this record RNT772.
+2019-09-25 15:41:30,868 charges_calc.py:121 ERROR Total_days is less than 0: -10
+2019-09-25 15:41:30,868 charges_calc.py:122 ERROR Rejecting this record RNT773.
+2019-09-25 15:41:30,869 charges_calc.py:121 ERROR Total_days is less than 0: -562
+2019-09-25 15:41:30,874 charges_calc.py:122 ERROR Rejecting this record RNT774.
+2019-09-25 15:41:30,875 charges_calc.py:148 ERROR Rejecting this record RNT776.
+2019-09-25 15:41:30,876 charges_calc.py:121 ERROR Total_days is less than 0: -375
+2019-09-25 15:41:30,877 charges_calc.py:122 ERROR Rejecting this record RNT778.
+2019-09-25 15:41:30,877 charges_calc.py:121 ERROR Total_days is less than 0: -163
+2019-09-25 15:41:30,878 charges_calc.py:122 ERROR Rejecting this record RNT779.
+2019-09-25 15:41:30,879 charges_calc.py:121 ERROR Total_days is less than 0: -284
+2019-09-25 15:41:30,879 charges_calc.py:122 ERROR Rejecting this record RNT782.
+2019-09-25 15:41:30,880 charges_calc.py:121 ERROR Total_days is less than 0: -615
+2019-09-25 15:41:30,880 charges_calc.py:122 ERROR Rejecting this record RNT783.
+2019-09-25 15:41:30,882 charges_calc.py:121 ERROR Total_days is less than 0: -400
+2019-09-25 15:41:30,882 charges_calc.py:122 ERROR Rejecting this record RNT790.
+2019-09-25 15:41:30,883 charges_calc.py:121 ERROR Total_days is less than 0: -288
+2019-09-25 15:41:30,883 charges_calc.py:122 ERROR Rejecting this record RNT791.
+2019-09-25 15:41:30,884 charges_calc.py:121 ERROR Total_days is less than 0: -974
+2019-09-25 15:41:30,884 charges_calc.py:122 ERROR Rejecting this record RNT794.
+2019-09-25 15:41:30,885 charges_calc.py:121 ERROR Total_days is less than 0: -132
+2019-09-25 15:41:30,886 charges_calc.py:122 ERROR Rejecting this record RNT795.
+2019-09-25 15:41:30,891 charges_calc.py:121 ERROR Total_days is less than 0: -219
+2019-09-25 15:41:30,892 charges_calc.py:122 ERROR Rejecting this record RNT796.
+2019-09-25 15:41:30,893 charges_calc.py:121 ERROR Total_days is less than 0: -250
+2019-09-25 15:41:30,894 charges_calc.py:122 ERROR Rejecting this record RNT803.
+2019-09-25 15:41:30,895 charges_calc.py:121 ERROR Total_days is less than 0: -258
+2019-09-25 15:41:30,895 charges_calc.py:122 ERROR Rejecting this record RNT807.
+2019-09-25 15:41:30,896 charges_calc.py:121 ERROR Total_days is less than 0: -222
+2019-09-25 15:41:30,896 charges_calc.py:122 ERROR Rejecting this record RNT808.
+2019-09-25 15:41:30,897 charges_calc.py:121 ERROR Total_days is less than 0: -241
+2019-09-25 15:41:30,898 charges_calc.py:122 ERROR Rejecting this record RNT809.
+2019-09-25 15:41:30,898 charges_calc.py:121 ERROR Total_days is less than 0: -68
+2019-09-25 15:41:30,899 charges_calc.py:122 ERROR Rejecting this record RNT812.
+2019-09-25 15:41:30,900 charges_calc.py:121 ERROR Total_days is less than 0: -378
+2019-09-25 15:41:30,900 charges_calc.py:122 ERROR Rejecting this record RNT814.
+2019-09-25 15:41:30,901 charges_calc.py:121 ERROR Total_days is less than 0: -248
+2019-09-25 15:41:30,902 charges_calc.py:122 ERROR Rejecting this record RNT815.
+2019-09-25 15:41:30,902 charges_calc.py:121 ERROR Total_days is less than 0: -167
+2019-09-25 15:41:30,903 charges_calc.py:122 ERROR Rejecting this record RNT816.
+2019-09-25 15:41:30,904 charges_calc.py:121 ERROR Total_days is less than 0: -1020
+2019-09-25 15:41:30,909 charges_calc.py:122 ERROR Rejecting this record RNT817.
+2019-09-25 15:41:30,910 charges_calc.py:121 ERROR Total_days is less than 0: -549
+2019-09-25 15:41:30,910 charges_calc.py:122 ERROR Rejecting this record RNT818.
+2019-09-25 15:41:30,911 charges_calc.py:121 ERROR Total_days is less than 0: -73
+2019-09-25 15:41:30,912 charges_calc.py:122 ERROR Rejecting this record RNT819.
+2019-09-25 15:41:30,912 charges_calc.py:121 ERROR Total_days is less than 0: -8
+2019-09-25 15:41:30,913 charges_calc.py:122 ERROR Rejecting this record RNT820.
+2019-09-25 15:41:30,914 charges_calc.py:121 ERROR Total_days is less than 0: -126
+2019-09-25 15:41:30,915 charges_calc.py:122 ERROR Rejecting this record RNT822.
+2019-09-25 15:41:30,916 charges_calc.py:121 ERROR Total_days is less than 0: -113
+2019-09-25 15:41:30,916 charges_calc.py:122 ERROR Rejecting this record RNT825.
+2019-09-25 15:41:30,917 charges_calc.py:121 ERROR Total_days is less than 0: -3
+2019-09-25 15:41:30,918 charges_calc.py:122 ERROR Rejecting this record RNT831.
+2019-09-25 15:41:30,919 charges_calc.py:121 ERROR Total_days is less than 0: -594
+2019-09-25 15:41:30,924 charges_calc.py:122 ERROR Rejecting this record RNT835.
+2019-09-25 15:41:30,925 charges_calc.py:121 ERROR Total_days is less than 0: -5
+2019-09-25 15:41:30,926 charges_calc.py:122 ERROR Rejecting this record RNT836.
+2019-09-25 15:41:30,927 charges_calc.py:121 ERROR Total_days is less than 0: -179
+2019-09-25 15:41:30,927 charges_calc.py:122 ERROR Rejecting this record RNT839.
+2019-09-25 15:41:30,928 charges_calc.py:121 ERROR Total_days is less than 0: -635
+2019-09-25 15:41:30,928 charges_calc.py:122 ERROR Rejecting this record RNT840.
+2019-09-25 15:41:30,929 charges_calc.py:121 ERROR Total_days is less than 0: -548
+2019-09-25 15:41:30,930 charges_calc.py:122 ERROR Rejecting this record RNT842.
+2019-09-25 15:41:30,930 charges_calc.py:121 ERROR Total_days is less than 0: -499
+2019-09-25 15:41:30,931 charges_calc.py:122 ERROR Rejecting this record RNT843.
+2019-09-25 15:41:30,931 charges_calc.py:121 ERROR Total_days is less than 0: -217
+2019-09-25 15:41:30,932 charges_calc.py:122 ERROR Rejecting this record RNT844.
+2019-09-25 15:41:30,933 charges_calc.py:121 ERROR Total_days is less than 0: -436
+2019-09-25 15:41:30,933 charges_calc.py:122 ERROR Rejecting this record RNT846.
+2019-09-25 15:41:30,934 charges_calc.py:121 ERROR Total_days is less than 0: -226
+2019-09-25 15:41:30,934 charges_calc.py:122 ERROR Rejecting this record RNT847.
+2019-09-25 15:41:30,935 charges_calc.py:121 ERROR Total_days is less than 0: -700
+2019-09-25 15:41:30,936 charges_calc.py:122 ERROR Rejecting this record RNT849.
+2019-09-25 15:41:30,941 charges_calc.py:121 ERROR Total_days is less than 0: -825
+2019-09-25 15:41:30,943 charges_calc.py:122 ERROR Rejecting this record RNT853.
+2019-09-25 15:41:30,944 charges_calc.py:121 ERROR Total_days is less than 0: -112
+2019-09-25 15:41:30,944 charges_calc.py:122 ERROR Rejecting this record RNT855.
+2019-09-25 15:41:30,945 charges_calc.py:121 ERROR Total_days is less than 0: -69
+2019-09-25 15:41:30,946 charges_calc.py:122 ERROR Rejecting this record RNT858.
+2019-09-25 15:41:30,947 charges_calc.py:121 ERROR Total_days is less than 0: -505
+2019-09-25 15:41:30,947 charges_calc.py:122 ERROR Rejecting this record RNT861.
+2019-09-25 15:41:30,948 charges_calc.py:121 ERROR Total_days is less than 0: -219
+2019-09-25 15:41:30,949 charges_calc.py:122 ERROR Rejecting this record RNT863.
+2019-09-25 15:41:30,949 charges_calc.py:121 ERROR Total_days is less than 0: -8
+2019-09-25 15:41:30,950 charges_calc.py:122 ERROR Rejecting this record RNT864.
+2019-09-25 15:41:30,951 charges_calc.py:121 ERROR Total_days is less than 0: -239
+2019-09-25 15:41:30,951 charges_calc.py:122 ERROR Rejecting this record RNT866.
+2019-09-25 15:41:30,952 charges_calc.py:121 ERROR Total_days is less than 0: -146
+2019-09-25 15:41:30,953 charges_calc.py:122 ERROR Rejecting this record RNT867.
+2019-09-25 15:41:30,953 charges_calc.py:121 ERROR Total_days is less than 0: -299
+2019-09-25 15:41:30,958 charges_calc.py:122 ERROR Rejecting this record RNT869.
+2019-09-25 15:41:30,959 charges_calc.py:121 ERROR Total_days is less than 0: -69
+2019-09-25 15:41:30,960 charges_calc.py:122 ERROR Rejecting this record RNT871.
+2019-09-25 15:41:30,961 charges_calc.py:121 ERROR Total_days is less than 0: -76
+2019-09-25 15:41:30,962 charges_calc.py:122 ERROR Rejecting this record RNT873.
+2019-09-25 15:41:30,962 charges_calc.py:121 ERROR Total_days is less than 0: -3
+2019-09-25 15:41:30,963 charges_calc.py:122 ERROR Rejecting this record RNT874.
+2019-09-25 15:41:30,964 charges_calc.py:121 ERROR Total_days is less than 0: -222
+2019-09-25 15:41:30,964 charges_calc.py:122 ERROR Rejecting this record RNT876.
+2019-09-25 15:41:30,965 charges_calc.py:121 ERROR Total_days is less than 0: -693
+2019-09-25 15:41:30,966 charges_calc.py:122 ERROR Rejecting this record RNT879.
+2019-09-25 15:41:30,966 charges_calc.py:121 ERROR Total_days is less than 0: -654
+2019-09-25 15:41:30,967 charges_calc.py:122 ERROR Rejecting this record RNT882.
+2019-09-25 15:41:30,968 charges_calc.py:121 ERROR Total_days is less than 0: -206
+2019-09-25 15:41:30,968 charges_calc.py:122 ERROR Rejecting this record RNT883.
+2019-09-25 15:41:30,969 charges_calc.py:121 ERROR Total_days is less than 0: -216
+2019-09-25 15:41:30,973 charges_calc.py:122 ERROR Rejecting this record RNT884.
+2019-09-25 15:41:30,974 charges_calc.py:121 ERROR Total_days is less than 0: -93
+2019-09-25 15:41:30,975 charges_calc.py:122 ERROR Rejecting this record RNT886.
+2019-09-25 15:41:30,976 charges_calc.py:121 ERROR Total_days is less than 0: -813
+2019-09-25 15:41:30,977 charges_calc.py:122 ERROR Rejecting this record RNT890.
+2019-09-25 15:41:30,978 charges_calc.py:121 ERROR Total_days is less than 0: -129
+2019-09-25 15:41:30,978 charges_calc.py:122 ERROR Rejecting this record RNT892.
+2019-09-25 15:41:30,979 charges_calc.py:121 ERROR Total_days is less than 0: -281
+2019-09-25 15:41:30,979 charges_calc.py:122 ERROR Rejecting this record RNT893.
+2019-09-25 15:41:30,980 charges_calc.py:121 ERROR Total_days is less than 0: -89
+2019-09-25 15:41:30,981 charges_calc.py:122 ERROR Rejecting this record RNT894.
+2019-09-25 15:41:30,981 charges_calc.py:121 ERROR Total_days is less than 0: -914
+2019-09-25 15:41:30,982 charges_calc.py:122 ERROR Rejecting this record RNT895.
+2019-09-25 15:41:30,982 charges_calc.py:121 ERROR Total_days is less than 0: -94
+2019-09-25 15:41:30,983 charges_calc.py:122 ERROR Rejecting this record RNT896.
+2019-09-25 15:41:30,984 charges_calc.py:121 ERROR Total_days is less than 0: -285
+2019-09-25 15:41:30,984 charges_calc.py:122 ERROR Rejecting this record RNT898.
+2019-09-25 15:41:30,985 charges_calc.py:121 ERROR Total_days is less than 0: -140
+2019-09-25 15:41:30,986 charges_calc.py:122 ERROR Rejecting this record RNT901.
+2019-09-25 15:41:30,991 charges_calc.py:121 ERROR Total_days is less than 0: -117
+2019-09-25 15:41:30,992 charges_calc.py:122 ERROR Rejecting this record RNT903.
+2019-09-25 15:41:30,993 charges_calc.py:121 ERROR Total_days is less than 0: -16
+2019-09-25 15:41:30,994 charges_calc.py:122 ERROR Rejecting this record RNT905.
+2019-09-25 15:41:30,995 charges_calc.py:121 ERROR Total_days is less than 0: -736
+2019-09-25 15:41:30,995 charges_calc.py:122 ERROR Rejecting this record RNT909.
+2019-09-25 15:41:30,996 charges_calc.py:121 ERROR Total_days is less than 0: -271
+2019-09-25 15:41:30,997 charges_calc.py:122 ERROR Rejecting this record RNT911.
+2019-09-25 15:41:30,997 charges_calc.py:121 ERROR Total_days is less than 0: -806
+2019-09-25 15:41:30,998 charges_calc.py:122 ERROR Rejecting this record RNT912.
+2019-09-25 15:41:30,999 charges_calc.py:121 ERROR Total_days is less than 0: -731
+2019-09-25 15:41:30,999 charges_calc.py:122 ERROR Rejecting this record RNT914.
+2019-09-25 15:41:31,000 charges_calc.py:121 ERROR Total_days is less than 0: -233
+2019-09-25 15:41:31,000 charges_calc.py:122 ERROR Rejecting this record RNT915.
+2019-09-25 15:41:31,001 charges_calc.py:121 ERROR Total_days is less than 0: -263
+2019-09-25 15:41:31,002 charges_calc.py:122 ERROR Rejecting this record RNT917.
+2019-09-25 15:41:31,002 charges_calc.py:121 ERROR Total_days is less than 0: -21
+2019-09-25 15:41:31,003 charges_calc.py:122 ERROR Rejecting this record RNT918.
+2019-09-25 15:41:31,003 charges_calc.py:121 ERROR Total_days is less than 0: -416
+2019-09-25 15:41:31,009 charges_calc.py:122 ERROR Rejecting this record RNT919.
+2019-09-25 15:41:31,011 charges_calc.py:121 ERROR Total_days is less than 0: -221
+2019-09-25 15:41:31,012 charges_calc.py:122 ERROR Rejecting this record RNT922.
+2019-09-25 15:41:31,013 charges_calc.py:121 ERROR Total_days is less than 0: -769
+2019-09-25 15:41:31,014 charges_calc.py:122 ERROR Rejecting this record RNT924.
+2019-09-25 15:41:31,015 charges_calc.py:121 ERROR Total_days is less than 0: -149
+2019-09-25 15:41:31,015 charges_calc.py:122 ERROR Rejecting this record RNT926.
+2019-09-25 15:41:31,016 charges_calc.py:121 ERROR Total_days is less than 0: -30
+2019-09-25 15:41:31,017 charges_calc.py:122 ERROR Rejecting this record RNT927.
+2019-09-25 15:41:31,018 charges_calc.py:121 ERROR Total_days is less than 0: -557
+2019-09-25 15:41:31,019 charges_calc.py:122 ERROR Rejecting this record RNT928.
+2019-09-25 15:41:31,020 charges_calc.py:121 ERROR Total_days is less than 0: -160
+2019-09-25 15:41:31,026 charges_calc.py:122 ERROR Rejecting this record RNT930.
+2019-09-25 15:41:31,027 charges_calc.py:121 ERROR Total_days is less than 0: -478
+2019-09-25 15:41:31,028 charges_calc.py:122 ERROR Rejecting this record RNT931.
+2019-09-25 15:41:31,029 charges_calc.py:121 ERROR Total_days is less than 0: -745
+2019-09-25 15:41:31,030 charges_calc.py:122 ERROR Rejecting this record RNT932.
+2019-09-25 15:41:31,031 charges_calc.py:121 ERROR Total_days is less than 0: -9
+2019-09-25 15:41:31,031 charges_calc.py:122 ERROR Rejecting this record RNT935.
+2019-09-25 15:41:31,032 charges_calc.py:121 ERROR Total_days is less than 0: -13
+2019-09-25 15:41:31,033 charges_calc.py:122 ERROR Rejecting this record RNT937.
+2019-09-25 15:41:31,033 charges_calc.py:121 ERROR Total_days is less than 0: -327
+2019-09-25 15:41:31,034 charges_calc.py:122 ERROR Rejecting this record RNT938.
+2019-09-25 15:41:31,035 charges_calc.py:121 ERROR Total_days is less than 0: -627
+2019-09-25 15:41:31,035 charges_calc.py:122 ERROR Rejecting this record RNT939.
+2019-09-25 15:41:31,036 charges_calc.py:121 ERROR Total_days is less than 0: -8
+2019-09-25 15:41:31,043 charges_calc.py:122 ERROR Rejecting this record RNT940.
+2019-09-25 15:41:31,044 charges_calc.py:121 ERROR Total_days is less than 0: -45
+2019-09-25 15:41:31,045 charges_calc.py:122 ERROR Rejecting this record RNT942.
+2019-09-25 15:41:31,046 charges_calc.py:121 ERROR Total_days is less than 0: -525
+2019-09-25 15:41:31,047 charges_calc.py:122 ERROR Rejecting this record RNT943.
+2019-09-25 15:41:31,048 charges_calc.py:121 ERROR Total_days is less than 0: -362
+2019-09-25 15:41:31,048 charges_calc.py:122 ERROR Rejecting this record RNT944.
+2019-09-25 15:41:31,049 charges_calc.py:121 ERROR Total_days is less than 0: -85
+2019-09-25 15:41:31,050 charges_calc.py:122 ERROR Rejecting this record RNT946.
+2019-09-25 15:41:31,050 charges_calc.py:121 ERROR Total_days is less than 0: -76
+2019-09-25 15:41:31,051 charges_calc.py:122 ERROR Rejecting this record RNT947.
+2019-09-25 15:41:31,052 charges_calc.py:121 ERROR Total_days is less than 0: -570
+2019-09-25 15:41:31,052 charges_calc.py:122 ERROR Rejecting this record RNT948.
+2019-09-25 15:41:31,053 charges_calc.py:121 ERROR Total_days is less than 0: -224
+2019-09-25 15:41:31,060 charges_calc.py:122 ERROR Rejecting this record RNT949.
+2019-09-25 15:41:31,061 charges_calc.py:121 ERROR Total_days is less than 0: -619
+2019-09-25 15:41:31,062 charges_calc.py:122 ERROR Rejecting this record RNT951.
+2019-09-25 15:41:31,063 charges_calc.py:121 ERROR Total_days is less than 0: -98
+2019-09-25 15:41:31,064 charges_calc.py:122 ERROR Rejecting this record RNT955.
+2019-09-25 15:41:31,064 charges_calc.py:121 ERROR Total_days is less than 0: -78
+2019-09-25 15:41:31,065 charges_calc.py:122 ERROR Rejecting this record RNT956.
+2019-09-25 15:41:31,066 charges_calc.py:121 ERROR Total_days is less than 0: -225
+2019-09-25 15:41:31,066 charges_calc.py:122 ERROR Rejecting this record RNT957.
+2019-09-25 15:41:31,067 charges_calc.py:121 ERROR Total_days is less than 0: -220
+2019-09-25 15:41:31,068 charges_calc.py:122 ERROR Rejecting this record RNT958.
+2019-09-25 15:41:31,068 charges_calc.py:121 ERROR Total_days is less than 0: -202
+2019-09-25 15:41:31,069 charges_calc.py:122 ERROR Rejecting this record RNT959.
+2019-09-25 15:41:31,070 charges_calc.py:121 ERROR Total_days is less than 0: -495
+2019-09-25 15:41:31,075 charges_calc.py:122 ERROR Rejecting this record RNT960.
+2019-09-25 15:41:31,076 charges_calc.py:121 ERROR Total_days is less than 0: -56
+2019-09-25 15:41:31,076 charges_calc.py:122 ERROR Rejecting this record RNT961.
+2019-09-25 15:41:31,077 charges_calc.py:121 ERROR Total_days is less than 0: -56
+2019-09-25 15:41:31,078 charges_calc.py:122 ERROR Rejecting this record RNT962.
+2019-09-25 15:41:31,078 charges_calc.py:121 ERROR Total_days is less than 0: -34
+2019-09-25 15:41:31,079 charges_calc.py:122 ERROR Rejecting this record RNT963.
+2019-09-25 15:41:31,080 charges_calc.py:121 ERROR Total_days is less than 0: -63
+2019-09-25 15:41:31,081 charges_calc.py:122 ERROR Rejecting this record RNT965.
+2019-09-25 15:41:31,081 charges_calc.py:121 ERROR Total_days is less than 0: -560
+2019-09-25 15:41:31,082 charges_calc.py:122 ERROR Rejecting this record RNT967.
+2019-09-25 15:41:31,083 charges_calc.py:121 ERROR Total_days is less than 0: -762
+2019-09-25 15:41:31,083 charges_calc.py:122 ERROR Rejecting this record RNT969.
+2019-09-25 15:41:31,084 charges_calc.py:121 ERROR Total_days is less than 0: -678
+2019-09-25 15:41:31,084 charges_calc.py:122 ERROR Rejecting this record RNT970.
+2019-09-25 15:41:31,085 charges_calc.py:121 ERROR Total_days is less than 0: -311
+2019-09-25 15:41:31,086 charges_calc.py:122 ERROR Rejecting this record RNT971.
+2019-09-25 15:41:31,086 charges_calc.py:121 ERROR Total_days is less than 0: -237
+2019-09-25 15:41:31,092 charges_calc.py:122 ERROR Rejecting this record RNT974.
+2019-09-25 15:41:31,094 charges_calc.py:121 ERROR Total_days is less than 0: -177
+2019-09-25 15:41:31,095 charges_calc.py:122 ERROR Rejecting this record RNT977.
+2019-09-25 15:41:31,096 charges_calc.py:121 ERROR Total_days is less than 0: -525
+2019-09-25 15:41:31,096 charges_calc.py:122 ERROR Rejecting this record RNT979.
+2019-09-25 15:41:31,097 charges_calc.py:121 ERROR Total_days is less than 0: -232
+2019-09-25 15:41:31,098 charges_calc.py:122 ERROR Rejecting this record RNT982.
+2019-09-25 15:41:31,099 charges_calc.py:121 ERROR Total_days is less than 0: -300
+2019-09-25 15:41:31,100 charges_calc.py:122 ERROR Rejecting this record RNT983.
+2019-09-25 15:41:31,101 charges_calc.py:121 ERROR Total_days is less than 0: -131
+2019-09-25 15:41:31,102 charges_calc.py:122 ERROR Rejecting this record RNT985.
+2019-09-25 15:41:31,103 charges_calc.py:121 ERROR Total_days is less than 0: -984
+2019-09-25 15:41:31,110 charges_calc.py:122 ERROR Rejecting this record RNT986.
+2019-09-25 15:41:31,111 charges_calc.py:121 ERROR Total_days is less than 0: -560
+2019-09-25 15:41:31,112 charges_calc.py:122 ERROR Rejecting this record RNT987.
+2019-09-25 15:41:31,113 charges_calc.py:121 ERROR Total_days is less than 0: -931
+2019-09-25 15:41:31,114 charges_calc.py:122 ERROR Rejecting this record RNT989.
+2019-09-25 15:41:31,116 charges_calc.py:121 ERROR Total_days is less than 0: -153
+2019-09-25 15:41:31,116 charges_calc.py:122 ERROR Rejecting this record RNT994.
+2019-09-25 15:41:31,118 charges_calc.py:121 ERROR Total_days is less than 0: -871
+2019-09-25 15:41:31,119 charges_calc.py:122 ERROR Rejecting this record RNT998.
+2019-09-25 15:41:31,120 charges_calc.py:121 ERROR Total_days is less than 0: -740
+2019-09-25 15:41:31,126 charges_calc.py:122 ERROR Rejecting this record RNT999.
+2019-09-25 17:32:22,903 charges_calc.py:129 ERROR Total_days is less than 0: -82
+2019-09-25 17:32:22,904 charges_calc.py:130 ERROR Rejecting this record RNT001.
+2019-09-25 17:32:22,935 charges_calc.py:129 ERROR Total_days is less than 0: -28
+2019-09-25 17:32:22,935 charges_calc.py:130 ERROR Rejecting this record RNT006.
+2019-09-25 17:32:22,938 charges_calc.py:129 ERROR Total_days is less than 0: -40
+2019-09-25 17:32:22,939 charges_calc.py:130 ERROR Rejecting this record RNT007.
+2019-09-25 17:32:22,950 charges_calc.py:129 ERROR Total_days is less than 0: -113
+2019-09-25 17:32:22,951 charges_calc.py:130 ERROR Rejecting this record RNT008.
+2019-09-25 17:32:22,953 charges_calc.py:129 ERROR Total_days is less than 0: -828
+2019-09-25 17:32:22,953 charges_calc.py:130 ERROR Rejecting this record RNT009.
+2019-09-25 17:32:22,956 charges_calc.py:129 ERROR Total_days is less than 0: -200
+2019-09-25 17:32:22,965 charges_calc.py:130 ERROR Rejecting this record RNT010.
+2019-09-25 17:32:22,968 charges_calc.py:129 ERROR Total_days is less than 0: -518
+2019-09-25 17:32:22,968 charges_calc.py:130 ERROR Rejecting this record RNT011.
+2019-09-25 17:32:22,971 charges_calc.py:129 ERROR Total_days is less than 0: -648
+2019-09-25 17:32:22,971 charges_calc.py:130 ERROR Rejecting this record RNT012.
+2019-09-25 17:32:22,987 charges_calc.py:129 ERROR Total_days is less than 0: -184
+2019-09-25 17:32:22,988 charges_calc.py:130 ERROR Rejecting this record RNT014.
+2019-09-25 17:32:23,002 charges_calc.py:129 ERROR Total_days is less than 0: -864
+2019-09-25 17:32:23,003 charges_calc.py:130 ERROR Rejecting this record RNT016.
+2019-09-25 17:32:23,005 charges_calc.py:129 ERROR Total_days is less than 0: -17
+2019-09-25 17:32:23,006 charges_calc.py:130 ERROR Rejecting this record RNT017.
+2019-09-25 17:32:23,016 charges_calc.py:129 ERROR Total_days is less than 0: -216
+2019-09-25 17:32:23,017 charges_calc.py:130 ERROR Rejecting this record RNT018.
+2019-09-25 17:32:23,020 charges_calc.py:129 ERROR Total_days is less than 0: -585
+2019-09-25 17:32:23,021 charges_calc.py:130 ERROR Rejecting this record RNT019.
+2019-09-25 17:32:23,031 charges_calc.py:129 ERROR Total_days is less than 0: -890
+2019-09-25 17:32:23,033 charges_calc.py:130 ERROR Rejecting this record RNT020.
+2019-09-25 17:32:23,036 charges_calc.py:129 ERROR Total_days is less than 0: -569
+2019-09-25 17:32:23,036 charges_calc.py:130 ERROR Rejecting this record RNT021.
+2019-09-25 17:32:23,065 charges_calc.py:129 ERROR Total_days is less than 0: -643
+2019-09-25 17:32:23,066 charges_calc.py:130 ERROR Rejecting this record RNT025.
+2019-09-25 17:32:23,069 charges_calc.py:129 ERROR Total_days is less than 0: -705
+2019-09-25 17:32:23,070 charges_calc.py:130 ERROR Rejecting this record RNT026.
+2019-09-25 17:32:23,084 charges_calc.py:129 ERROR Total_days is less than 0: -426
+2019-09-25 17:32:23,085 charges_calc.py:130 ERROR Rejecting this record RNT028.
+2019-09-25 17:32:23,100 charges_calc.py:129 ERROR Total_days is less than 0: -74
+2019-09-25 17:32:23,101 charges_calc.py:130 ERROR Rejecting this record RNT030.
+2019-09-25 17:32:23,104 charges_calc.py:129 ERROR Total_days is less than 0: -370
+2019-09-25 17:32:23,105 charges_calc.py:130 ERROR Rejecting this record RNT031.
+2019-09-25 17:32:23,133 charges_calc.py:129 ERROR Total_days is less than 0: -556
+2019-09-25 17:32:23,134 charges_calc.py:130 ERROR Rejecting this record RNT034.
+2019-09-25 17:32:23,170 charges_calc.py:136 WARNING Total_days is 0. Billing for one day.
+2019-09-25 17:32:23,171 charges_calc.py:139 WARNING Changed value['total_days'] to 1
+2019-09-25 17:32:23,185 charges_calc.py:129 ERROR Total_days is less than 0: -336
+2019-09-25 17:32:23,185 charges_calc.py:130 ERROR Rejecting this record RNT040.
+2019-09-25 17:32:23,188 charges_calc.py:129 ERROR Total_days is less than 0: -326
+2019-09-25 17:32:23,188 charges_calc.py:130 ERROR Rejecting this record RNT041.
+2019-09-25 17:32:23,215 charges_calc.py:129 ERROR Total_days is less than 0: -624
+2019-09-25 17:32:23,216 charges_calc.py:130 ERROR Rejecting this record RNT044.
+2019-09-25 17:32:23,219 charges_calc.py:129 ERROR Total_days is less than 0: -37
+2019-09-25 17:32:23,219 charges_calc.py:130 ERROR Rejecting this record RNT045.
+2019-09-25 17:32:23,221 charges_calc.py:129 ERROR Total_days is less than 0: -280
+2019-09-25 17:32:23,222 charges_calc.py:130 ERROR Rejecting this record RNT046.
+2019-09-25 17:32:23,233 charges_calc.py:129 ERROR Total_days is less than 0: -770
+2019-09-25 17:32:23,234 charges_calc.py:130 ERROR Rejecting this record RNT047.
+2019-09-25 17:32:23,237 charges_calc.py:129 ERROR Total_days is less than 0: -312
+2019-09-25 17:32:23,237 charges_calc.py:130 ERROR Rejecting this record RNT048.
+2019-09-25 17:32:23,251 charges_calc.py:129 ERROR Total_days is less than 0: -524
+2019-09-25 17:32:23,252 charges_calc.py:130 ERROR Rejecting this record RNT050.
+2019-09-25 17:32:23,288 charges_calc.py:129 ERROR Total_days is less than 0: -775
+2019-09-25 17:32:23,289 charges_calc.py:130 ERROR Rejecting this record RNT056.
+2019-09-25 17:32:23,303 charges_calc.py:129 ERROR Total_days is less than 0: -170
+2019-09-25 17:32:23,304 charges_calc.py:130 ERROR Rejecting this record RNT058.
+2019-09-25 17:32:23,320 charges_calc.py:129 ERROR Total_days is less than 0: -28
+2019-09-25 17:32:23,321 charges_calc.py:130 ERROR Rejecting this record RNT060.
+2019-09-25 17:32:23,330 charges_calc.py:129 ERROR Total_days is less than 0: -349
+2019-09-25 17:32:23,332 charges_calc.py:130 ERROR Rejecting this record RNT061.
+2019-09-25 17:32:23,335 charges_calc.py:129 ERROR Total_days is less than 0: -83
+2019-09-25 17:32:23,336 charges_calc.py:130 ERROR Rejecting this record RNT062.
+2019-09-25 17:32:23,353 charges_calc.py:129 ERROR Total_days is less than 0: -668
+2019-09-25 17:32:23,354 charges_calc.py:130 ERROR Rejecting this record RNT065.
+2019-09-25 17:32:23,367 charges_calc.py:129 ERROR Total_days is less than 0: -92
+2019-09-25 17:32:23,368 charges_calc.py:130 ERROR Rejecting this record RNT067.
+2019-09-25 17:32:23,387 charges_calc.py:129 ERROR Total_days is less than 0: -133
+2019-09-25 17:32:23,388 charges_calc.py:130 ERROR Rejecting this record RNT071.
+2019-09-25 17:32:23,406 charges_calc.py:129 ERROR Total_days is less than 0: -57
+2019-09-25 17:32:23,407 charges_calc.py:130 ERROR Rejecting this record RNT074.
+2019-09-25 17:32:23,420 charges_calc.py:129 ERROR Total_days is less than 0: -755
+2019-09-25 17:32:23,420 charges_calc.py:130 ERROR Rejecting this record RNT076.
+2019-09-25 17:32:23,423 charges_calc.py:129 ERROR Total_days is less than 0: -634
+2019-09-25 17:32:23,423 charges_calc.py:130 ERROR Rejecting this record RNT077.
+2019-09-25 17:32:23,439 charges_calc.py:129 ERROR Total_days is less than 0: -304
+2019-09-25 17:32:23,440 charges_calc.py:130 ERROR Rejecting this record RNT079.
+2019-09-25 17:32:23,474 charges_calc.py:129 ERROR Total_days is less than 0: -379
+2019-09-25 17:32:23,474 charges_calc.py:130 ERROR Rejecting this record RNT084.
+2019-09-25 17:32:23,489 charges_calc.py:129 ERROR Total_days is less than 0: -258
+2019-09-25 17:32:23,490 charges_calc.py:130 ERROR Rejecting this record RNT086.
+2019-09-25 17:32:23,501 charges_calc.py:129 ERROR Total_days is less than 0: -53
+2019-09-25 17:32:23,502 charges_calc.py:130 ERROR Rejecting this record RNT087.
+2019-09-25 17:32:23,517 charges_calc.py:129 ERROR Total_days is less than 0: -82
+2019-09-25 17:32:23,518 charges_calc.py:130 ERROR Rejecting this record RNT089.
+2019-09-25 17:32:23,537 charges_calc.py:129 ERROR Total_days is less than 0: -291
+2019-09-25 17:32:23,538 charges_calc.py:130 ERROR Rejecting this record RNT092.
+2019-09-25 17:32:23,555 charges_calc.py:129 ERROR Total_days is less than 0: -378
+2019-09-25 17:32:23,556 charges_calc.py:130 ERROR Rejecting this record RNT095.
+2019-09-25 17:32:23,574 charges_calc.py:129 ERROR Total_days is less than 0: -135
+2019-09-25 17:32:23,582 charges_calc.py:130 ERROR Rejecting this record RNT097.
+2019-09-25 17:32:23,588 charges_calc.py:129 ERROR Total_days is less than 0: -763
+2019-09-25 17:32:23,589 charges_calc.py:130 ERROR Rejecting this record RNT099.
+2019-09-25 17:32:23,600 charges_calc.py:129 ERROR Total_days is less than 0: -756
+2019-09-25 17:32:23,601 charges_calc.py:130 ERROR Rejecting this record RNT100.
+2019-09-25 17:32:23,604 charges_calc.py:129 ERROR Total_days is less than 0: -439
+2019-09-25 17:32:23,605 charges_calc.py:130 ERROR Rejecting this record RNT101.
+2019-09-25 17:32:23,618 charges_calc.py:129 ERROR Total_days is less than 0: -221
+2019-09-25 17:32:23,618 charges_calc.py:130 ERROR Rejecting this record RNT102.
+2019-09-25 17:32:23,621 charges_calc.py:129 ERROR Total_days is less than 0: -341
+2019-09-25 17:32:23,622 charges_calc.py:130 ERROR Rejecting this record RNT103.
+2019-09-25 17:32:23,631 charges_calc.py:129 ERROR Total_days is less than 0: -477
+2019-09-25 17:32:23,631 charges_calc.py:130 ERROR Rejecting this record RNT104.
+2019-09-25 17:32:23,634 charges_calc.py:129 ERROR Total_days is less than 0: -678
+2019-09-25 17:32:23,635 charges_calc.py:130 ERROR Rejecting this record RNT105.
+2019-09-25 17:32:23,637 charges_calc.py:129 ERROR Total_days is less than 0: -72
+2019-09-25 17:32:23,638 charges_calc.py:130 ERROR Rejecting this record RNT106.
+2019-09-25 17:32:23,641 charges_calc.py:129 ERROR Total_days is less than 0: -360
+2019-09-25 17:32:23,649 charges_calc.py:130 ERROR Rejecting this record RNT107.
+2019-09-25 17:32:23,655 charges_calc.py:129 ERROR Total_days is less than 0: -533
+2019-09-25 17:32:23,655 charges_calc.py:130 ERROR Rejecting this record RNT109.
+2019-09-25 17:32:23,688 charges_calc.py:129 ERROR Total_days is less than 0: -514
+2019-09-25 17:32:23,688 charges_calc.py:130 ERROR Rejecting this record RNT114.
+2019-09-25 17:32:23,691 charges_calc.py:129 ERROR Total_days is less than 0: -828
+2019-09-25 17:32:23,698 charges_calc.py:130 ERROR Rejecting this record RNT115.
+2019-09-25 17:32:23,703 charges_calc.py:129 ERROR Total_days is less than 0: -253
+2019-09-25 17:32:23,703 charges_calc.py:130 ERROR Rejecting this record RNT116.
+2019-09-25 17:32:23,716 charges_calc.py:129 ERROR Total_days is less than 0: -414
+2019-09-25 17:32:23,717 charges_calc.py:130 ERROR Rejecting this record RNT118.
+2019-09-25 17:32:23,719 charges_calc.py:129 ERROR Total_days is less than 0: -213
+2019-09-25 17:32:23,720 charges_calc.py:130 ERROR Rejecting this record RNT119.
+2019-09-25 17:32:23,722 charges_calc.py:129 ERROR Total_days is less than 0: -155
+2019-09-25 17:32:23,723 charges_calc.py:130 ERROR Rejecting this record RNT120.
+2019-09-25 17:32:23,733 charges_calc.py:129 ERROR Total_days is less than 0: -643
+2019-09-25 17:32:23,734 charges_calc.py:130 ERROR Rejecting this record RNT121.
+2019-09-25 17:32:23,736 charges_calc.py:129 ERROR Total_days is less than 0: -608
+2019-09-25 17:32:23,737 charges_calc.py:130 ERROR Rejecting this record RNT122.
+2019-09-25 17:32:23,739 charges_calc.py:129 ERROR Total_days is less than 0: -220
+2019-09-25 17:32:23,740 charges_calc.py:130 ERROR Rejecting this record RNT123.
+2019-09-25 17:32:23,754 charges_calc.py:129 ERROR Total_days is less than 0: -138
+2019-09-25 17:32:23,755 charges_calc.py:130 ERROR Rejecting this record RNT125.
+2019-09-25 17:32:23,782 charges_calc.py:129 ERROR Total_days is less than 0: -304
+2019-09-25 17:32:23,783 charges_calc.py:130 ERROR Rejecting this record RNT129.
+2019-09-25 17:32:23,785 charges_calc.py:129 ERROR Total_days is less than 0: -544
+2019-09-25 17:32:23,787 charges_calc.py:130 ERROR Rejecting this record RNT130.
+2019-09-25 17:32:23,818 charges_calc.py:129 ERROR Total_days is less than 0: -63
+2019-09-25 17:32:23,819 charges_calc.py:130 ERROR Rejecting this record RNT135.
+2019-09-25 17:32:23,838 charges_calc.py:129 ERROR Total_days is less than 0: -135
+2019-09-25 17:32:23,839 charges_calc.py:130 ERROR Rejecting this record RNT139.
+2019-09-25 17:32:23,851 charges_calc.py:129 ERROR Total_days is less than 0: -304
+2019-09-25 17:32:23,851 charges_calc.py:130 ERROR Rejecting this record RNT141.
+2019-09-25 17:32:23,854 charges_calc.py:129 ERROR Total_days is less than 0: -197
+2019-09-25 17:32:23,854 charges_calc.py:130 ERROR Rejecting this record RNT142.
+2019-09-25 17:32:23,856 charges_calc.py:129 ERROR Total_days is less than 0: -1052
+2019-09-25 17:32:23,857 charges_calc.py:130 ERROR Rejecting this record RNT143.
+2019-09-25 17:32:23,869 charges_calc.py:129 ERROR Total_days is less than 0: -743
+2019-09-25 17:32:23,869 charges_calc.py:130 ERROR Rejecting this record RNT145.
+2019-09-25 17:32:23,885 charges_calc.py:129 ERROR Total_days is less than 0: -33
+2019-09-25 17:32:23,886 charges_calc.py:130 ERROR Rejecting this record RNT148.
+2019-09-25 17:32:23,888 charges_calc.py:129 ERROR Total_days is less than 0: -695
+2019-09-25 17:32:23,889 charges_calc.py:130 ERROR Rejecting this record RNT149.
+2019-09-25 17:32:23,902 charges_calc.py:129 ERROR Total_days is less than 0: -725
+2019-09-25 17:32:23,903 charges_calc.py:130 ERROR Rejecting this record RNT151.
+2019-09-25 17:32:23,905 charges_calc.py:136 WARNING Total_days is 0. Billing for one day.
+2019-09-25 17:32:23,905 charges_calc.py:139 WARNING Changed value['total_days'] to 1
+2019-09-25 17:32:23,919 charges_calc.py:129 ERROR Total_days is less than 0: -420
+2019-09-25 17:32:23,920 charges_calc.py:130 ERROR Rejecting this record RNT154.
+2019-09-25 17:32:23,922 charges_calc.py:129 ERROR Total_days is less than 0: -172
+2019-09-25 17:32:23,922 charges_calc.py:130 ERROR Rejecting this record RNT155.
+2019-09-25 17:32:23,935 charges_calc.py:129 ERROR Total_days is less than 0: -583
+2019-09-25 17:32:23,935 charges_calc.py:130 ERROR Rejecting this record RNT157.
+2019-09-25 17:32:23,937 charges_calc.py:129 ERROR Total_days is less than 0: -856
+2019-09-25 17:32:23,938 charges_calc.py:130 ERROR Rejecting this record RNT158.
+2019-09-25 17:32:23,951 charges_calc.py:129 ERROR Total_days is less than 0: -65
+2019-09-25 17:32:23,951 charges_calc.py:130 ERROR Rejecting this record RNT160.
+2019-09-25 17:32:23,970 charges_calc.py:129 ERROR Total_days is less than 0: -97
+2019-09-25 17:32:23,970 charges_calc.py:130 ERROR Rejecting this record RNT163.
+2019-09-25 17:32:23,972 charges_calc.py:129 ERROR Total_days is less than 0: -260
+2019-09-25 17:32:23,973 charges_calc.py:130 ERROR Rejecting this record RNT164.
+2019-09-25 17:32:23,985 charges_calc.py:129 ERROR Total_days is less than 0: -789
+2019-09-25 17:32:23,985 charges_calc.py:130 ERROR Rejecting this record RNT166.
+2019-09-25 17:32:23,988 charges_calc.py:129 ERROR Total_days is less than 0: -54
+2019-09-25 17:32:23,988 charges_calc.py:130 ERROR Rejecting this record RNT167.
+2019-09-25 17:32:23,990 charges_calc.py:129 ERROR Total_days is less than 0: -143
+2019-09-25 17:32:23,991 charges_calc.py:130 ERROR Rejecting this record RNT168.
+2019-09-25 17:32:24,001 charges_calc.py:129 ERROR Total_days is less than 0: -539
+2019-09-25 17:32:24,002 charges_calc.py:130 ERROR Rejecting this record RNT169.
+2019-09-25 17:32:24,005 charges_calc.py:129 ERROR Total_days is less than 0: -613
+2019-09-25 17:32:24,006 charges_calc.py:130 ERROR Rejecting this record RNT170.
+2019-09-25 17:32:24,037 charges_calc.py:129 ERROR Total_days is less than 0: -62
+2019-09-25 17:32:24,038 charges_calc.py:130 ERROR Rejecting this record RNT175.
+2019-09-25 17:32:24,054 charges_calc.py:129 ERROR Total_days is less than 0: -116
+2019-09-25 17:32:24,054 charges_calc.py:130 ERROR Rejecting this record RNT178.
+2019-09-25 17:32:24,056 charges_calc.py:129 ERROR Total_days is less than 0: -10
+2019-09-25 17:32:24,057 charges_calc.py:130 ERROR Rejecting this record RNT179.
+2019-09-25 17:32:24,065 charges_calc.py:129 ERROR Total_days is less than 0: -842
+2019-09-25 17:32:24,066 charges_calc.py:130 ERROR Rejecting this record RNT180.
+2019-09-25 17:32:24,074 charges_calc.py:129 ERROR Total_days is less than 0: -53
+2019-09-25 17:32:24,074 charges_calc.py:130 ERROR Rejecting this record RNT183.
+2019-09-25 17:32:24,084 charges_calc.py:129 ERROR Total_days is less than 0: -530
+2019-09-25 17:32:24,085 charges_calc.py:130 ERROR Rejecting this record RNT184.
+2019-09-25 17:32:24,100 charges_calc.py:129 ERROR Total_days is less than 0: -633
+2019-09-25 17:32:24,101 charges_calc.py:130 ERROR Rejecting this record RNT187.
+2019-09-25 17:32:24,114 charges_calc.py:129 ERROR Total_days is less than 0: -95
+2019-09-25 17:32:24,115 charges_calc.py:130 ERROR Rejecting this record RNT189.
+2019-09-25 17:32:24,124 charges_calc.py:129 ERROR Total_days is less than 0: -10
+2019-09-25 17:32:24,124 charges_calc.py:130 ERROR Rejecting this record RNT192.
+2019-09-25 17:32:24,140 charges_calc.py:129 ERROR Total_days is less than 0: -849
+2019-09-25 17:32:24,141 charges_calc.py:130 ERROR Rejecting this record RNT195.
+2019-09-25 17:32:24,150 charges_calc.py:129 ERROR Total_days is less than 0: -907
+2019-09-25 17:32:24,150 charges_calc.py:130 ERROR Rejecting this record RNT196.
+2019-09-25 17:32:24,153 charges_calc.py:129 ERROR Total_days is less than 0: -108
+2019-09-25 17:32:24,153 charges_calc.py:130 ERROR Rejecting this record RNT197.
+2019-09-25 17:32:24,172 charges_calc.py:129 ERROR Total_days is less than 0: -390
+2019-09-25 17:32:24,173 charges_calc.py:130 ERROR Rejecting this record RNT201.
+2019-09-25 17:32:24,176 charges_calc.py:129 ERROR Total_days is less than 0: -1001
+2019-09-25 17:32:24,182 charges_calc.py:130 ERROR Rejecting this record RNT202.
+2019-09-25 17:32:24,205 charges_calc.py:129 ERROR Total_days is less than 0: -650
+2019-09-25 17:32:24,205 charges_calc.py:130 ERROR Rejecting this record RNT207.
+2019-09-25 17:32:24,208 charges_calc.py:129 ERROR Total_days is less than 0: -6
+2019-09-25 17:32:24,214 charges_calc.py:130 ERROR Rejecting this record RNT208.
+2019-09-25 17:32:24,220 charges_calc.py:129 ERROR Total_days is less than 0: -184
+2019-09-25 17:32:24,221 charges_calc.py:130 ERROR Rejecting this record RNT210.
+2019-09-25 17:32:24,240 charges_calc.py:129 ERROR Total_days is less than 0: -158
+2019-09-25 17:32:24,241 charges_calc.py:130 ERROR Rejecting this record RNT214.
+2019-09-25 17:32:24,253 charges_calc.py:129 ERROR Total_days is less than 0: -70
+2019-09-25 17:32:24,253 charges_calc.py:130 ERROR Rejecting this record RNT216.
+2019-09-25 17:32:24,255 charges_calc.py:129 ERROR Total_days is less than 0: -744
+2019-09-25 17:32:24,256 charges_calc.py:130 ERROR Rejecting this record RNT217.
+2019-09-25 17:32:24,258 charges_calc.py:129 ERROR Total_days is less than 0: -353
+2019-09-25 17:32:24,264 charges_calc.py:130 ERROR Rejecting this record RNT218.
+2019-09-25 17:32:24,274 charges_calc.py:129 ERROR Total_days is less than 0: -820
+2019-09-25 17:32:24,275 charges_calc.py:130 ERROR Rejecting this record RNT221.
+2019-09-25 17:32:24,287 charges_calc.py:129 ERROR Total_days is less than 0: -646
+2019-09-25 17:32:24,287 charges_calc.py:130 ERROR Rejecting this record RNT223.
+2019-09-25 17:32:24,289 charges_calc.py:129 ERROR Total_days is less than 0: -394
+2019-09-25 17:32:24,290 charges_calc.py:130 ERROR Rejecting this record RNT224.
+2019-09-25 17:32:24,297 charges_calc.py:129 ERROR Total_days is less than 0: -142
+2019-09-25 17:32:24,299 charges_calc.py:130 ERROR Rejecting this record RNT225.
+2019-09-25 17:32:24,305 charges_calc.py:129 ERROR Total_days is less than 0: -827
+2019-09-25 17:32:24,305 charges_calc.py:130 ERROR Rejecting this record RNT227.
+2019-09-25 17:32:24,319 charges_calc.py:129 ERROR Total_days is less than 0: -112
+2019-09-25 17:32:24,320 charges_calc.py:130 ERROR Rejecting this record RNT229.
+2019-09-25 17:32:24,338 charges_calc.py:129 ERROR Total_days is less than 0: -641
+2019-09-25 17:32:24,339 charges_calc.py:130 ERROR Rejecting this record RNT233.
+2019-09-25 17:32:24,341 charges_calc.py:129 ERROR Total_days is less than 0: -95
+2019-09-25 17:32:24,341 charges_calc.py:130 ERROR Rejecting this record RNT234.
+2019-09-25 17:32:24,353 charges_calc.py:129 ERROR Total_days is less than 0: -997
+2019-09-25 17:32:24,354 charges_calc.py:130 ERROR Rejecting this record RNT236.
+2019-09-25 17:32:24,365 charges_calc.py:129 ERROR Total_days is less than 0: -147
+2019-09-25 17:32:24,366 charges_calc.py:130 ERROR Rejecting this record RNT238.
+2019-09-25 17:32:24,374 charges_calc.py:129 ERROR Total_days is less than 0: -207
+2019-09-25 17:32:24,375 charges_calc.py:130 ERROR Rejecting this record RNT241.
+2019-09-25 17:32:24,385 charges_calc.py:129 ERROR Total_days is less than 0: -348
+2019-09-25 17:32:24,385 charges_calc.py:130 ERROR Rejecting this record RNT242.
+2019-09-25 17:32:24,388 charges_calc.py:129 ERROR Total_days is less than 0: -421
+2019-09-25 17:32:24,388 charges_calc.py:130 ERROR Rejecting this record RNT243.
+2019-09-25 17:32:24,390 charges_calc.py:129 ERROR Total_days is less than 0: -647
+2019-09-25 17:32:24,391 charges_calc.py:130 ERROR Rejecting this record RNT244.
+2019-09-25 17:32:24,403 charges_calc.py:129 ERROR Total_days is less than 0: -158
+2019-09-25 17:32:24,404 charges_calc.py:130 ERROR Rejecting this record RNT246.
+2019-09-25 17:32:24,406 charges_calc.py:129 ERROR Total_days is less than 0: -30
+2019-09-25 17:32:24,407 charges_calc.py:130 ERROR Rejecting this record RNT247.
+2019-09-25 17:32:24,439 charges_calc.py:129 ERROR Total_days is less than 0: -197
+2019-09-25 17:32:24,440 charges_calc.py:130 ERROR Rejecting this record RNT254.
+2019-09-25 17:32:24,458 charges_calc.py:129 ERROR Total_days is less than 0: -194
+2019-09-25 17:32:24,464 charges_calc.py:130 ERROR Rejecting this record RNT258.
+2019-09-25 17:32:24,468 charges_calc.py:129 ERROR Total_days is less than 0: -547
+2019-09-25 17:32:24,469 charges_calc.py:130 ERROR Rejecting this record RNT259.
+2019-09-25 17:32:24,471 charges_calc.py:129 ERROR Total_days is less than 0: -374
+2019-09-25 17:32:24,471 charges_calc.py:130 ERROR Rejecting this record RNT260.
+2019-09-25 17:32:24,474 charges_calc.py:129 ERROR Total_days is less than 0: -124
+2019-09-25 17:32:24,475 charges_calc.py:130 ERROR Rejecting this record RNT261.
+2019-09-25 17:32:24,489 charges_calc.py:129 ERROR Total_days is less than 0: -729
+2019-09-25 17:32:24,490 charges_calc.py:130 ERROR Rejecting this record RNT264.
+2019-09-25 17:32:24,498 charges_calc.py:129 ERROR Total_days is less than 0: -1
+2019-09-25 17:32:24,501 charges_calc.py:130 ERROR Rejecting this record RNT265.
+2019-09-25 17:32:24,524 charges_calc.py:129 ERROR Total_days is less than 0: -37
+2019-09-25 17:32:24,524 charges_calc.py:130 ERROR Rejecting this record RNT270.
+2019-09-25 17:32:24,534 charges_calc.py:129 ERROR Total_days is less than 0: -842
+2019-09-25 17:32:24,535 charges_calc.py:130 ERROR Rejecting this record RNT271.
+2019-09-25 17:32:24,538 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:24,539 charges_calc.py:130 ERROR Rejecting this record RNT272.
+2019-09-25 17:32:24,550 charges_calc.py:129 ERROR Total_days is less than 0: -671
+2019-09-25 17:32:24,550 charges_calc.py:130 ERROR Rejecting this record RNT274.
+2019-09-25 17:32:24,566 charges_calc.py:129 ERROR Total_days is less than 0: -655
+2019-09-25 17:32:24,566 charges_calc.py:130 ERROR Rejecting this record RNT277.
+2019-09-25 17:32:24,589 charges_calc.py:129 ERROR Total_days is less than 0: -152
+2019-09-25 17:32:24,591 charges_calc.py:130 ERROR Rejecting this record RNT282.
+2019-09-25 17:32:24,600 charges_calc.py:129 ERROR Total_days is less than 0: -18
+2019-09-25 17:32:24,600 charges_calc.py:130 ERROR Rejecting this record RNT283.
+2019-09-25 17:32:24,621 charges_calc.py:129 ERROR Total_days is less than 0: -109
+2019-09-25 17:32:24,622 charges_calc.py:130 ERROR Rejecting this record RNT288.
+2019-09-25 17:32:24,635 charges_calc.py:129 ERROR Total_days is less than 0: -5
+2019-09-25 17:32:24,635 charges_calc.py:130 ERROR Rejecting this record RNT290.
+2019-09-25 17:32:24,656 charges_calc.py:129 ERROR Total_days is less than 0: -199
+2019-09-25 17:32:24,656 charges_calc.py:130 ERROR Rejecting this record RNT295.
+2019-09-25 17:32:24,663 charges_calc.py:129 ERROR Total_days is less than 0: -574
+2019-09-25 17:32:24,664 charges_calc.py:130 ERROR Rejecting this record RNT296.
+2019-09-25 17:32:24,671 charges_calc.py:129 ERROR Total_days is less than 0: -156
+2019-09-25 17:32:24,671 charges_calc.py:130 ERROR Rejecting this record RNT298.
+2019-09-25 17:32:24,673 charges_calc.py:129 ERROR Total_days is less than 0: -5
+2019-09-25 17:32:24,674 charges_calc.py:130 ERROR Rejecting this record RNT299.
+2019-09-25 17:32:24,683 charges_calc.py:129 ERROR Total_days is less than 0: -211
+2019-09-25 17:32:24,684 charges_calc.py:130 ERROR Rejecting this record RNT300.
+2019-09-25 17:32:24,686 charges_calc.py:129 ERROR Total_days is less than 0: -559
+2019-09-25 17:32:24,687 charges_calc.py:130 ERROR Rejecting this record RNT301.
+2019-09-25 17:32:24,689 charges_calc.py:129 ERROR Total_days is less than 0: -284
+2019-09-25 17:32:24,689 charges_calc.py:130 ERROR Rejecting this record RNT302.
+2019-09-25 17:32:24,699 charges_calc.py:129 ERROR Total_days is less than 0: -405
+2019-09-25 17:32:24,700 charges_calc.py:130 ERROR Rejecting this record RNT303.
+2019-09-25 17:32:24,702 charges_calc.py:129 ERROR Total_days is less than 0: -180
+2019-09-25 17:32:24,703 charges_calc.py:130 ERROR Rejecting this record RNT304.
+2019-09-25 17:32:24,705 charges_calc.py:129 ERROR Total_days is less than 0: -630
+2019-09-25 17:32:24,705 charges_calc.py:130 ERROR Rejecting this record RNT305.
+2019-09-25 17:32:24,707 charges_calc.py:129 ERROR Total_days is less than 0: -562
+2019-09-25 17:32:24,713 charges_calc.py:130 ERROR Rejecting this record RNT306.
+2019-09-25 17:32:24,720 charges_calc.py:129 ERROR Total_days is less than 0: -88
+2019-09-25 17:32:24,720 charges_calc.py:130 ERROR Rejecting this record RNT308.
+2019-09-25 17:32:24,723 charges_calc.py:129 ERROR Total_days is less than 0: -38
+2019-09-25 17:32:24,723 charges_calc.py:130 ERROR Rejecting this record RNT309.
+2019-09-25 17:32:24,732 charges_calc.py:129 ERROR Total_days is less than 0: -876
+2019-09-25 17:32:24,733 charges_calc.py:130 ERROR Rejecting this record RNT310.
+2019-09-25 17:32:24,735 charges_calc.py:129 ERROR Total_days is less than 0: -584
+2019-09-25 17:32:24,735 charges_calc.py:130 ERROR Rejecting this record RNT311.
+2019-09-25 17:32:24,737 charges_calc.py:129 ERROR Total_days is less than 0: -83
+2019-09-25 17:32:24,738 charges_calc.py:130 ERROR Rejecting this record RNT312.
+2019-09-25 17:32:24,740 charges_calc.py:129 ERROR Total_days is less than 0: -340
+2019-09-25 17:32:24,741 charges_calc.py:130 ERROR Rejecting this record RNT313.
+2019-09-25 17:32:24,751 charges_calc.py:129 ERROR Total_days is less than 0: -506
+2019-09-25 17:32:24,752 charges_calc.py:130 ERROR Rejecting this record RNT314.
+2019-09-25 17:32:24,754 charges_calc.py:129 ERROR Total_days is less than 0: -272
+2019-09-25 17:32:24,754 charges_calc.py:130 ERROR Rejecting this record RNT315.
+2019-09-25 17:32:24,756 charges_calc.py:129 ERROR Total_days is less than 0: -270
+2019-09-25 17:32:24,757 charges_calc.py:130 ERROR Rejecting this record RNT316.
+2019-09-25 17:32:24,774 charges_calc.py:129 ERROR Total_days is less than 0: -417
+2019-09-25 17:32:24,775 charges_calc.py:130 ERROR Rejecting this record RNT320.
+2019-09-25 17:32:24,784 charges_calc.py:129 ERROR Total_days is less than 0: -313
+2019-09-25 17:32:24,785 charges_calc.py:130 ERROR Rejecting this record RNT321.
+2019-09-25 17:32:24,799 charges_calc.py:129 ERROR Total_days is less than 0: -1060
+2019-09-25 17:32:24,800 charges_calc.py:130 ERROR Rejecting this record RNT324.
+2019-09-25 17:32:24,802 charges_calc.py:129 ERROR Total_days is less than 0: -707
+2019-09-25 17:32:24,803 charges_calc.py:130 ERROR Rejecting this record RNT325.
+2019-09-25 17:32:24,834 charges_calc.py:129 ERROR Total_days is less than 0: -2
+2019-09-25 17:32:24,835 charges_calc.py:130 ERROR Rejecting this record RNT331.
+2019-09-25 17:32:24,853 charges_calc.py:129 ERROR Total_days is less than 0: -15
+2019-09-25 17:32:24,854 charges_calc.py:130 ERROR Rejecting this record RNT335.
+2019-09-25 17:32:24,856 charges_calc.py:129 ERROR Total_days is less than 0: -264
+2019-09-25 17:32:24,856 charges_calc.py:130 ERROR Rejecting this record RNT336.
+2019-09-25 17:32:24,864 charges_calc.py:129 ERROR Total_days is less than 0: -266
+2019-09-25 17:32:24,865 charges_calc.py:130 ERROR Rejecting this record RNT337.
+2019-09-25 17:32:24,871 charges_calc.py:129 ERROR Total_days is less than 0: -498
+2019-09-25 17:32:24,872 charges_calc.py:130 ERROR Rejecting this record RNT339.
+2019-09-25 17:32:24,892 charges_calc.py:129 ERROR Total_days is less than 0: -29
+2019-09-25 17:32:24,898 charges_calc.py:130 ERROR Rejecting this record RNT343.
+2019-09-25 17:32:24,904 charges_calc.py:129 ERROR Total_days is less than 0: -205
+2019-09-25 17:32:24,905 charges_calc.py:130 ERROR Rejecting this record RNT345.
+2019-09-25 17:32:24,907 charges_calc.py:129 ERROR Total_days is less than 0: -545
+2019-09-25 17:32:24,907 charges_calc.py:130 ERROR Rejecting this record RNT346.
+2019-09-25 17:32:24,916 charges_calc.py:129 ERROR Total_days is less than 0: -208
+2019-09-25 17:32:24,916 charges_calc.py:130 ERROR Rejecting this record RNT347.
+2019-09-25 17:32:24,938 charges_calc.py:129 ERROR Total_days is less than 0: -547
+2019-09-25 17:32:24,938 charges_calc.py:130 ERROR Rejecting this record RNT352.
+2019-09-25 17:32:24,940 charges_calc.py:129 ERROR Total_days is less than 0: -295
+2019-09-25 17:32:24,941 charges_calc.py:130 ERROR Rejecting this record RNT353.
+2019-09-25 17:32:24,953 charges_calc.py:129 ERROR Total_days is less than 0: -45
+2019-09-25 17:32:24,953 charges_calc.py:130 ERROR Rejecting this record RNT355.
+2019-09-25 17:32:24,955 charges_calc.py:129 ERROR Total_days is less than 0: -148
+2019-09-25 17:32:24,956 charges_calc.py:130 ERROR Rejecting this record RNT356.
+2019-09-25 17:32:24,983 charges_calc.py:129 ERROR Total_days is less than 0: -695
+2019-09-25 17:32:24,985 charges_calc.py:130 ERROR Rejecting this record RNT361.
+2019-09-25 17:32:24,990 charges_calc.py:129 ERROR Total_days is less than 0: -22
+2019-09-25 17:32:24,991 charges_calc.py:130 ERROR Rejecting this record RNT363.
+2019-09-25 17:32:25,001 charges_calc.py:129 ERROR Total_days is less than 0: -41
+2019-09-25 17:32:25,001 charges_calc.py:130 ERROR Rejecting this record RNT364.
+2019-09-25 17:32:25,006 charges_calc.py:129 ERROR Total_days is less than 0: -289
+2019-09-25 17:32:25,007 charges_calc.py:130 ERROR Rejecting this record RNT366.
+2019-09-25 17:32:25,027 charges_calc.py:129 ERROR Total_days is less than 0: -528
+2019-09-25 17:32:25,033 charges_calc.py:130 ERROR Rejecting this record RNT371.
+2019-09-25 17:32:25,036 charges_calc.py:129 ERROR Total_days is less than 0: -362
+2019-09-25 17:32:25,036 charges_calc.py:130 ERROR Rejecting this record RNT372.
+2019-09-25 17:32:25,042 charges_calc.py:129 ERROR Total_days is less than 0: -164
+2019-09-25 17:32:25,047 charges_calc.py:130 ERROR Rejecting this record RNT374.
+2019-09-25 17:32:25,054 charges_calc.py:129 ERROR Total_days is less than 0: -214
+2019-09-25 17:32:25,055 charges_calc.py:130 ERROR Rejecting this record RNT376.
+2019-09-25 17:32:25,070 charges_calc.py:129 ERROR Total_days is less than 0: -659
+2019-09-25 17:32:25,070 charges_calc.py:130 ERROR Rejecting this record RNT379.
+2019-09-25 17:32:25,075 charges_calc.py:129 ERROR Total_days is less than 0: -518
+2019-09-25 17:32:25,075 charges_calc.py:130 ERROR Rejecting this record RNT381.
+2019-09-25 17:32:25,087 charges_calc.py:129 ERROR Total_days is less than 0: -22
+2019-09-25 17:32:25,087 charges_calc.py:130 ERROR Rejecting this record RNT383.
+2019-09-25 17:32:25,089 charges_calc.py:129 ERROR Total_days is less than 0: -183
+2019-09-25 17:32:25,090 charges_calc.py:130 ERROR Rejecting this record RNT384.
+2019-09-25 17:32:25,104 charges_calc.py:129 ERROR Total_days is less than 0: -210
+2019-09-25 17:32:25,105 charges_calc.py:130 ERROR Rejecting this record RNT386.
+2019-09-25 17:32:25,108 charges_calc.py:129 ERROR Total_days is less than 0: -893
+2019-09-25 17:32:25,109 charges_calc.py:130 ERROR Rejecting this record RNT387.
+2019-09-25 17:32:25,118 charges_calc.py:129 ERROR Total_days is less than 0: -587
+2019-09-25 17:32:25,119 charges_calc.py:130 ERROR Rejecting this record RNT388.
+2019-09-25 17:32:25,134 charges_calc.py:129 ERROR Total_days is less than 0: -12
+2019-09-25 17:32:25,134 charges_calc.py:130 ERROR Rejecting this record RNT391.
+2019-09-25 17:32:25,137 charges_calc.py:129 ERROR Total_days is less than 0: -104
+2019-09-25 17:32:25,137 charges_calc.py:130 ERROR Rejecting this record RNT392.
+2019-09-25 17:32:25,143 charges_calc.py:129 ERROR Total_days is less than 0: -401
+2019-09-25 17:32:25,149 charges_calc.py:130 ERROR Rejecting this record RNT394.
+2019-09-25 17:32:25,152 charges_calc.py:129 ERROR Total_days is less than 0: -92
+2019-09-25 17:32:25,153 charges_calc.py:130 ERROR Rejecting this record RNT395.
+2019-09-25 17:32:25,158 charges_calc.py:129 ERROR Total_days is less than 0: -407
+2019-09-25 17:32:25,159 charges_calc.py:130 ERROR Rejecting this record RNT397.
+2019-09-25 17:32:25,174 charges_calc.py:129 ERROR Total_days is less than 0: -585
+2019-09-25 17:32:25,175 charges_calc.py:130 ERROR Rejecting this record RNT400.
+2019-09-25 17:32:25,203 charges_calc.py:129 ERROR Total_days is less than 0: -540
+2019-09-25 17:32:25,204 charges_calc.py:130 ERROR Rejecting this record RNT405.
+2019-09-25 17:32:25,218 charges_calc.py:129 ERROR Total_days is less than 0: -30
+2019-09-25 17:32:25,219 charges_calc.py:130 ERROR Rejecting this record RNT408.
+2019-09-25 17:32:25,221 charges_calc.py:129 ERROR Total_days is less than 0: -271
+2019-09-25 17:32:25,221 charges_calc.py:130 ERROR Rejecting this record RNT409.
+2019-09-25 17:32:25,235 charges_calc.py:129 ERROR Total_days is less than 0: -287
+2019-09-25 17:32:25,236 charges_calc.py:130 ERROR Rejecting this record RNT412.
+2019-09-25 17:32:25,238 charges_calc.py:129 ERROR Total_days is less than 0: -356
+2019-09-25 17:32:25,239 charges_calc.py:130 ERROR Rejecting this record RNT413.
+2019-09-25 17:32:25,241 charges_calc.py:129 ERROR Total_days is less than 0: -274
+2019-09-25 17:32:25,241 charges_calc.py:130 ERROR Rejecting this record RNT414.
+2019-09-25 17:32:25,253 charges_calc.py:129 ERROR Total_days is less than 0: -250
+2019-09-25 17:32:25,254 charges_calc.py:130 ERROR Rejecting this record RNT416.
+2019-09-25 17:32:25,274 charges_calc.py:129 ERROR Total_days is less than 0: -601
+2019-09-25 17:32:25,275 charges_calc.py:130 ERROR Rejecting this record RNT421.
+2019-09-25 17:32:25,283 charges_calc.py:129 ERROR Total_days is less than 0: -159
+2019-09-25 17:32:25,284 charges_calc.py:130 ERROR Rejecting this record RNT422.
+2019-09-25 17:32:25,286 charges_calc.py:129 ERROR Total_days is less than 0: -266
+2019-09-25 17:32:25,287 charges_calc.py:130 ERROR Rejecting this record RNT423.
+2019-09-25 17:32:25,289 charges_calc.py:129 ERROR Total_days is less than 0: -883
+2019-09-25 17:32:25,290 charges_calc.py:130 ERROR Rejecting this record RNT424.
+2019-09-25 17:32:25,305 charges_calc.py:129 ERROR Total_days is less than 0: -481
+2019-09-25 17:32:25,306 charges_calc.py:130 ERROR Rejecting this record RNT427.
+2019-09-25 17:32:25,308 charges_calc.py:129 ERROR Total_days is less than 0: -153
+2019-09-25 17:32:25,308 charges_calc.py:130 ERROR Rejecting this record RNT428.
+2019-09-25 17:32:25,321 charges_calc.py:129 ERROR Total_days is less than 0: -22
+2019-09-25 17:32:25,321 charges_calc.py:130 ERROR Rejecting this record RNT430.
+2019-09-25 17:32:25,342 charges_calc.py:129 ERROR Total_days is less than 0: -303
+2019-09-25 17:32:25,342 charges_calc.py:130 ERROR Rejecting this record RNT435.
+2019-09-25 17:32:25,351 charges_calc.py:129 ERROR Total_days is less than 0: -345
+2019-09-25 17:32:25,352 charges_calc.py:130 ERROR Rejecting this record RNT436.
+2019-09-25 17:32:25,368 charges_calc.py:129 ERROR Total_days is less than 0: -721
+2019-09-25 17:32:25,369 charges_calc.py:130 ERROR Rejecting this record RNT440.
+2019-09-25 17:32:25,384 charges_calc.py:129 ERROR Total_days is less than 0: -901
+2019-09-25 17:32:25,385 charges_calc.py:130 ERROR Rejecting this record RNT443.
+2019-09-25 17:32:25,390 charges_calc.py:129 ERROR Total_days is less than 0: -121
+2019-09-25 17:32:25,390 charges_calc.py:130 ERROR Rejecting this record RNT445.
+2019-09-25 17:32:25,397 charges_calc.py:129 ERROR Total_days is less than 0: -734
+2019-09-25 17:32:25,399 charges_calc.py:130 ERROR Rejecting this record RNT446.
+2019-09-25 17:32:25,402 charges_calc.py:129 ERROR Total_days is less than 0: -130
+2019-09-25 17:32:25,403 charges_calc.py:130 ERROR Rejecting this record RNT447.
+2019-09-25 17:32:25,408 charges_calc.py:129 ERROR Total_days is less than 0: -444
+2019-09-25 17:32:25,408 charges_calc.py:130 ERROR Rejecting this record RNT449.
+2019-09-25 17:32:25,419 charges_calc.py:129 ERROR Total_days is less than 0: -158
+2019-09-25 17:32:25,420 charges_calc.py:130 ERROR Rejecting this record RNT451.
+2019-09-25 17:32:25,430 charges_calc.py:129 ERROR Total_days is less than 0: -809
+2019-09-25 17:32:25,432 charges_calc.py:130 ERROR Rejecting this record RNT453.
+2019-09-25 17:32:25,435 charges_calc.py:129 ERROR Total_days is less than 0: -34
+2019-09-25 17:32:25,435 charges_calc.py:130 ERROR Rejecting this record RNT454.
+2019-09-25 17:32:25,451 charges_calc.py:129 ERROR Total_days is less than 0: -619
+2019-09-25 17:32:25,451 charges_calc.py:130 ERROR Rejecting this record RNT457.
+2019-09-25 17:32:25,472 charges_calc.py:129 ERROR Total_days is less than 0: -775
+2019-09-25 17:32:25,473 charges_calc.py:130 ERROR Rejecting this record RNT461.
+2019-09-25 17:32:25,480 charges_calc.py:129 ERROR Total_days is less than 0: -38
+2019-09-25 17:32:25,482 charges_calc.py:130 ERROR Rejecting this record RNT462.
+2019-09-25 17:32:25,485 charges_calc.py:129 ERROR Total_days is less than 0: -249
+2019-09-25 17:32:25,486 charges_calc.py:130 ERROR Rejecting this record RNT463.
+2019-09-25 17:32:25,491 charges_calc.py:129 ERROR Total_days is less than 0: -417
+2019-09-25 17:32:25,492 charges_calc.py:130 ERROR Rejecting this record RNT465.
+2019-09-25 17:32:25,504 charges_calc.py:129 ERROR Total_days is less than 0: -725
+2019-09-25 17:32:25,504 charges_calc.py:130 ERROR Rejecting this record RNT467.
+2019-09-25 17:32:25,535 charges_calc.py:129 ERROR Total_days is less than 0: -51
+2019-09-25 17:32:25,536 charges_calc.py:130 ERROR Rejecting this record RNT472.
+2019-09-25 17:32:25,553 charges_calc.py:129 ERROR Total_days is less than 0: -609
+2019-09-25 17:32:25,553 charges_calc.py:130 ERROR Rejecting this record RNT476.
+2019-09-25 17:32:25,570 charges_calc.py:129 ERROR Total_days is less than 0: -481
+2019-09-25 17:32:25,571 charges_calc.py:130 ERROR Rejecting this record RNT480.
+2019-09-25 17:32:25,591 charges_calc.py:129 ERROR Total_days is less than 0: -421
+2019-09-25 17:32:25,597 charges_calc.py:130 ERROR Rejecting this record RNT485.
+2019-09-25 17:32:25,605 charges_calc.py:129 ERROR Total_days is less than 0: -318
+2019-09-25 17:32:25,605 charges_calc.py:130 ERROR Rejecting this record RNT487.
+2019-09-25 17:32:25,617 charges_calc.py:129 ERROR Total_days is less than 0: -104
+2019-09-25 17:32:25,618 charges_calc.py:130 ERROR Rejecting this record RNT489.
+2019-09-25 17:32:25,620 charges_calc.py:129 ERROR Total_days is less than 0: -37
+2019-09-25 17:32:25,620 charges_calc.py:130 ERROR Rejecting this record RNT490.
+2019-09-25 17:32:25,622 charges_calc.py:129 ERROR Total_days is less than 0: -484
+2019-09-25 17:32:25,623 charges_calc.py:130 ERROR Rejecting this record RNT491.
+2019-09-25 17:32:25,634 charges_calc.py:129 ERROR Total_days is less than 0: -682
+2019-09-25 17:32:25,635 charges_calc.py:130 ERROR Rejecting this record RNT493.
+2019-09-25 17:32:25,639 charges_calc.py:129 ERROR Total_days is less than 0: -326
+2019-09-25 17:32:25,640 charges_calc.py:130 ERROR Rejecting this record RNT495.
+2019-09-25 17:32:25,648 charges_calc.py:129 ERROR Total_days is less than 0: -358
+2019-09-25 17:32:25,649 charges_calc.py:130 ERROR Rejecting this record RNT496.
+2019-09-25 17:32:25,652 charges_calc.py:129 ERROR Total_days is less than 0: -423
+2019-09-25 17:32:25,653 charges_calc.py:130 ERROR Rejecting this record RNT497.
+2019-09-25 17:32:25,670 charges_calc.py:129 ERROR Total_days is less than 0: -118
+2019-09-25 17:32:25,671 charges_calc.py:130 ERROR Rejecting this record RNT501.
+2019-09-25 17:32:25,681 charges_calc.py:129 ERROR Total_days is less than 0: -113
+2019-09-25 17:32:25,682 charges_calc.py:130 ERROR Rejecting this record RNT503.
+2019-09-25 17:32:25,700 charges_calc.py:129 ERROR Total_days is less than 0: -384
+2019-09-25 17:32:25,701 charges_calc.py:130 ERROR Rejecting this record RNT507.
+2019-09-25 17:32:25,703 charges_calc.py:129 ERROR Total_days is less than 0: -436
+2019-09-25 17:32:25,703 charges_calc.py:130 ERROR Rejecting this record RNT508.
+2019-09-25 17:32:25,706 charges_calc.py:129 ERROR Total_days is less than 0: -276
+2019-09-25 17:32:25,706 charges_calc.py:130 ERROR Rejecting this record RNT509.
+2019-09-25 17:32:25,721 charges_calc.py:129 ERROR Total_days is less than 0: -12
+2019-09-25 17:32:25,722 charges_calc.py:130 ERROR Rejecting this record RNT512.
+2019-09-25 17:32:25,724 charges_calc.py:129 ERROR Total_days is less than 0: -169
+2019-09-25 17:32:25,724 charges_calc.py:130 ERROR Rejecting this record RNT513.
+2019-09-25 17:32:25,733 charges_calc.py:129 ERROR Total_days is less than 0: -327
+2019-09-25 17:32:25,734 charges_calc.py:130 ERROR Rejecting this record RNT514.
+2019-09-25 17:32:25,736 charges_calc.py:129 ERROR Total_days is less than 0: -216
+2019-09-25 17:32:25,737 charges_calc.py:130 ERROR Rejecting this record RNT515.
+2019-09-25 17:32:25,739 charges_calc.py:129 ERROR Total_days is less than 0: -334
+2019-09-25 17:32:25,739 charges_calc.py:130 ERROR Rejecting this record RNT516.
+2019-09-25 17:32:25,741 charges_calc.py:129 ERROR Total_days is less than 0: -605
+2019-09-25 17:32:25,742 charges_calc.py:130 ERROR Rejecting this record RNT517.
+2019-09-25 17:32:25,751 charges_calc.py:129 ERROR Total_days is less than 0: -619
+2019-09-25 17:32:25,751 charges_calc.py:130 ERROR Rejecting this record RNT518.
+2019-09-25 17:32:25,756 charges_calc.py:129 ERROR Total_days is less than 0: -127
+2019-09-25 17:32:25,757 charges_calc.py:130 ERROR Rejecting this record RNT520.
+2019-09-25 17:32:25,769 charges_calc.py:129 ERROR Total_days is less than 0: -169
+2019-09-25 17:32:25,770 charges_calc.py:130 ERROR Rejecting this record RNT522.
+2019-09-25 17:32:25,775 charges_calc.py:129 ERROR Total_days is less than 0: -129
+2019-09-25 17:32:25,776 charges_calc.py:130 ERROR Rejecting this record RNT524.
+2019-09-25 17:32:25,784 charges_calc.py:129 ERROR Total_days is less than 0: -115
+2019-09-25 17:32:25,785 charges_calc.py:130 ERROR Rejecting this record RNT525.
+2019-09-25 17:32:25,793 charges_calc.py:129 ERROR Total_days is less than 0: -844
+2019-09-25 17:32:25,799 charges_calc.py:130 ERROR Rejecting this record RNT528.
+2019-09-25 17:32:25,818 charges_calc.py:129 ERROR Total_days is less than 0: -403
+2019-09-25 17:32:25,818 charges_calc.py:130 ERROR Rejecting this record RNT532.
+2019-09-25 17:32:25,821 charges_calc.py:129 ERROR Total_days is less than 0: -456
+2019-09-25 17:32:25,821 charges_calc.py:130 ERROR Rejecting this record RNT533.
+2019-09-25 17:32:25,826 charges_calc.py:129 ERROR Total_days is less than 0: -560
+2019-09-25 17:32:25,827 charges_calc.py:130 ERROR Rejecting this record RNT535.
+2019-09-25 17:32:25,835 charges_calc.py:129 ERROR Total_days is less than 0: -179
+2019-09-25 17:32:25,836 charges_calc.py:130 ERROR Rejecting this record RNT536.
+2019-09-25 17:32:25,838 charges_calc.py:129 ERROR Total_days is less than 0: -305
+2019-09-25 17:32:25,839 charges_calc.py:130 ERROR Rejecting this record RNT537.
+2019-09-25 17:32:25,841 charges_calc.py:129 ERROR Total_days is less than 0: -276
+2019-09-25 17:32:25,841 charges_calc.py:130 ERROR Rejecting this record RNT538.
+2019-09-25 17:32:25,849 charges_calc.py:129 ERROR Total_days is less than 0: -390
+2019-09-25 17:32:25,850 charges_calc.py:130 ERROR Rejecting this record RNT539.
+2019-09-25 17:32:25,856 charges_calc.py:129 ERROR Total_days is less than 0: -829
+2019-09-25 17:32:25,856 charges_calc.py:130 ERROR Rejecting this record RNT541.
+2019-09-25 17:32:25,870 charges_calc.py:129 ERROR Total_days is less than 0: -204
+2019-09-25 17:32:25,871 charges_calc.py:130 ERROR Rejecting this record RNT544.
+2019-09-25 17:32:25,873 charges_calc.py:129 ERROR Total_days is less than 0: -407
+2019-09-25 17:32:25,874 charges_calc.py:130 ERROR Rejecting this record RNT545.
+2019-09-25 17:32:25,876 charges_calc.py:129 ERROR Total_days is less than 0: -147
+2019-09-25 17:32:25,881 charges_calc.py:130 ERROR Rejecting this record RNT546.
+2019-09-25 17:32:25,888 charges_calc.py:129 ERROR Total_days is less than 0: -372
+2019-09-25 17:32:25,888 charges_calc.py:130 ERROR Rejecting this record RNT548.
+2019-09-25 17:32:25,900 charges_calc.py:129 ERROR Total_days is less than 0: -463
+2019-09-25 17:32:25,901 charges_calc.py:130 ERROR Rejecting this record RNT550.
+2019-09-25 17:32:25,904 charges_calc.py:129 ERROR Total_days is less than 0: -320
+2019-09-25 17:32:25,904 charges_calc.py:130 ERROR Rejecting this record RNT551.
+2019-09-25 17:32:25,922 charges_calc.py:129 ERROR Total_days is less than 0: -61
+2019-09-25 17:32:25,923 charges_calc.py:130 ERROR Rejecting this record RNT555.
+2019-09-25 17:32:25,939 charges_calc.py:129 ERROR Total_days is less than 0: -106
+2019-09-25 17:32:25,940 charges_calc.py:130 ERROR Rejecting this record RNT558.
+2019-09-25 17:32:25,956 charges_calc.py:129 ERROR Total_days is less than 0: -790
+2019-09-25 17:32:25,957 charges_calc.py:130 ERROR Rejecting this record RNT561.
+2019-09-25 17:32:25,959 charges_calc.py:129 ERROR Total_days is less than 0: -96
+2019-09-25 17:32:25,964 charges_calc.py:130 ERROR Rejecting this record RNT562.
+2019-09-25 17:32:25,983 charges_calc.py:129 ERROR Total_days is less than 0: -1002
+2019-09-25 17:32:25,984 charges_calc.py:130 ERROR Rejecting this record RNT566.
+2019-09-25 17:32:25,992 charges_calc.py:129 ERROR Total_days is less than 0: -124
+2019-09-25 17:32:25,993 charges_calc.py:130 ERROR Rejecting this record RNT569.
+2019-09-25 17:32:26,001 charges_calc.py:129 ERROR Total_days is less than 0: -131
+2019-09-25 17:32:26,002 charges_calc.py:130 ERROR Rejecting this record RNT570.
+2019-09-25 17:32:26,007 charges_calc.py:129 ERROR Total_days is less than 0: -797
+2019-09-25 17:32:26,007 charges_calc.py:130 ERROR Rejecting this record RNT572.
+2019-09-25 17:32:26,022 charges_calc.py:129 ERROR Total_days is less than 0: -191
+2019-09-25 17:32:26,022 charges_calc.py:130 ERROR Rejecting this record RNT575.
+2019-09-25 17:32:26,042 charges_calc.py:129 ERROR Total_days is less than 0: -434
+2019-09-25 17:32:26,048 charges_calc.py:130 ERROR Rejecting this record RNT580.
+2019-09-25 17:32:26,055 charges_calc.py:129 ERROR Total_days is less than 0: -4
+2019-09-25 17:32:26,055 charges_calc.py:130 ERROR Rejecting this record RNT582.
+2019-09-25 17:32:26,071 charges_calc.py:129 ERROR Total_days is less than 0: -756
+2019-09-25 17:32:26,071 charges_calc.py:130 ERROR Rejecting this record RNT585.
+2019-09-25 17:32:26,073 charges_calc.py:129 ERROR Total_days is less than 0: -206
+2019-09-25 17:32:26,074 charges_calc.py:130 ERROR Rejecting this record RNT586.
+2019-09-25 17:32:26,082 charges_calc.py:129 ERROR Total_days is less than 0: -407
+2019-09-25 17:32:26,083 charges_calc.py:130 ERROR Rejecting this record RNT587.
+2019-09-25 17:32:26,092 charges_calc.py:129 ERROR Total_days is less than 0: -545
+2019-09-25 17:32:26,093 charges_calc.py:130 ERROR Rejecting this record RNT590.
+2019-09-25 17:32:26,103 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:26,104 charges_calc.py:130 ERROR Rejecting this record RNT591.
+2019-09-25 17:32:26,107 charges_calc.py:129 ERROR Total_days is less than 0: -114
+2019-09-25 17:32:26,107 charges_calc.py:130 ERROR Rejecting this record RNT592.
+2019-09-25 17:32:26,115 charges_calc.py:129 ERROR Total_days is less than 0: -64
+2019-09-25 17:32:26,117 charges_calc.py:130 ERROR Rejecting this record RNT593.
+2019-09-25 17:32:26,122 charges_calc.py:129 ERROR Total_days is less than 0: -418
+2019-09-25 17:32:26,123 charges_calc.py:130 ERROR Rejecting this record RNT595.
+2019-09-25 17:32:26,134 charges_calc.py:129 ERROR Total_days is less than 0: -615
+2019-09-25 17:32:26,135 charges_calc.py:130 ERROR Rejecting this record RNT597.
+2019-09-25 17:32:26,137 charges_calc.py:129 ERROR Total_days is less than 0: -550
+2019-09-25 17:32:26,138 charges_calc.py:130 ERROR Rejecting this record RNT598.
+2019-09-25 17:32:26,140 charges_calc.py:129 ERROR Total_days is less than 0: -856
+2019-09-25 17:32:26,140 charges_calc.py:130 ERROR Rejecting this record RNT599.
+2019-09-25 17:32:26,152 charges_calc.py:129 ERROR Total_days is less than 0: -151
+2019-09-25 17:32:26,153 charges_calc.py:130 ERROR Rejecting this record RNT601.
+2019-09-25 17:32:26,155 charges_calc.py:129 ERROR Total_days is less than 0: -181
+2019-09-25 17:32:26,156 charges_calc.py:130 ERROR Rejecting this record RNT602.
+2019-09-25 17:32:26,158 charges_calc.py:129 ERROR Total_days is less than 0: -588
+2019-09-25 17:32:26,158 charges_calc.py:130 ERROR Rejecting this record RNT603.
+2019-09-25 17:32:26,166 charges_calc.py:129 ERROR Total_days is less than 0: -373
+2019-09-25 17:32:26,167 charges_calc.py:130 ERROR Rejecting this record RNT604.
+2019-09-25 17:32:26,170 charges_calc.py:129 ERROR Total_days is less than 0: -424
+2019-09-25 17:32:26,171 charges_calc.py:130 ERROR Rejecting this record RNT605.
+2019-09-25 17:32:26,173 charges_calc.py:129 ERROR Total_days is less than 0: -873
+2019-09-25 17:32:26,174 charges_calc.py:130 ERROR Rejecting this record RNT606.
+2019-09-25 17:32:26,201 charges_calc.py:129 ERROR Total_days is less than 0: -34
+2019-09-25 17:32:26,202 charges_calc.py:130 ERROR Rejecting this record RNT611.
+2019-09-25 17:32:26,207 charges_calc.py:129 ERROR Total_days is less than 0: -260
+2019-09-25 17:32:26,207 charges_calc.py:130 ERROR Rejecting this record RNT613.
+2019-09-25 17:32:26,219 charges_calc.py:129 ERROR Total_days is less than 0: -93
+2019-09-25 17:32:26,220 charges_calc.py:130 ERROR Rejecting this record RNT615.
+2019-09-25 17:32:26,253 charges_calc.py:129 ERROR Total_days is less than 0: -126
+2019-09-25 17:32:26,254 charges_calc.py:130 ERROR Rejecting this record RNT622.
+2019-09-25 17:32:26,271 charges_calc.py:129 ERROR Total_days is less than 0: -355
+2019-09-25 17:32:26,271 charges_calc.py:130 ERROR Rejecting this record RNT626.
+2019-09-25 17:32:26,289 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:26,289 charges_calc.py:130 ERROR Rejecting this record RNT630.
+2019-09-25 17:32:26,300 charges_calc.py:129 ERROR Total_days is less than 0: -6
+2019-09-25 17:32:26,301 charges_calc.py:130 ERROR Rejecting this record RNT632.
+2019-09-25 17:32:26,303 charges_calc.py:129 ERROR Total_days is less than 0: -158
+2019-09-25 17:32:26,304 charges_calc.py:130 ERROR Rejecting this record RNT633.
+2019-09-25 17:32:26,306 charges_calc.py:129 ERROR Total_days is less than 0: -40
+2019-09-25 17:32:26,307 charges_calc.py:130 ERROR Rejecting this record RNT634.
+2019-09-25 17:32:26,318 charges_calc.py:129 ERROR Total_days is less than 0: -413
+2019-09-25 17:32:26,319 charges_calc.py:130 ERROR Rejecting this record RNT636.
+2019-09-25 17:32:26,324 charges_calc.py:129 ERROR Total_days is less than 0: -341
+2019-09-25 17:32:26,325 charges_calc.py:130 ERROR Rejecting this record RNT638.
+2019-09-25 17:32:26,327 charges_calc.py:129 ERROR Total_days is less than 0: -455
+2019-09-25 17:32:26,333 charges_calc.py:130 ERROR Rejecting this record RNT639.
+2019-09-25 17:32:26,336 charges_calc.py:129 ERROR Total_days is less than 0: -498
+2019-09-25 17:32:26,337 charges_calc.py:130 ERROR Rejecting this record RNT640.
+2019-09-25 17:32:26,342 charges_calc.py:129 ERROR Total_days is less than 0: -22
+2019-09-25 17:32:26,342 charges_calc.py:130 ERROR Rejecting this record RNT642.
+2019-09-25 17:32:26,351 charges_calc.py:129 ERROR Total_days is less than 0: -980
+2019-09-25 17:32:26,352 charges_calc.py:130 ERROR Rejecting this record RNT643.
+2019-09-25 17:32:26,370 charges_calc.py:129 ERROR Total_days is less than 0: -209
+2019-09-25 17:32:26,371 charges_calc.py:130 ERROR Rejecting this record RNT647.
+2019-09-25 17:32:26,373 charges_calc.py:129 ERROR Total_days is less than 0: -388
+2019-09-25 17:32:26,373 charges_calc.py:130 ERROR Rejecting this record RNT648.
+2019-09-25 17:32:26,375 charges_calc.py:129 ERROR Total_days is less than 0: -243
+2019-09-25 17:32:26,376 charges_calc.py:130 ERROR Rejecting this record RNT649.
+2019-09-25 17:32:26,388 charges_calc.py:129 ERROR Total_days is less than 0: -960
+2019-09-25 17:32:26,389 charges_calc.py:130 ERROR Rejecting this record RNT651.
+2019-09-25 17:32:26,399 charges_calc.py:129 ERROR Total_days is less than 0: -150
+2019-09-25 17:32:26,400 charges_calc.py:130 ERROR Rejecting this record RNT653.
+2019-09-25 17:32:26,408 charges_calc.py:129 ERROR Total_days is less than 0: -823
+2019-09-25 17:32:26,409 charges_calc.py:130 ERROR Rejecting this record RNT656.
+2019-09-25 17:32:26,424 charges_calc.py:129 ERROR Total_days is less than 0: -373
+2019-09-25 17:32:26,425 charges_calc.py:130 ERROR Rejecting this record RNT659.
+2019-09-25 17:32:26,440 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:26,440 charges_calc.py:130 ERROR Rejecting this record RNT662.
+2019-09-25 17:32:26,442 charges_calc.py:129 ERROR Total_days is less than 0: -348
+2019-09-25 17:32:26,443 charges_calc.py:130 ERROR Rejecting this record RNT663.
+2019-09-25 17:32:26,451 charges_calc.py:129 ERROR Total_days is less than 0: -681
+2019-09-25 17:32:26,452 charges_calc.py:130 ERROR Rejecting this record RNT664.
+2019-09-25 17:32:26,454 charges_calc.py:129 ERROR Total_days is less than 0: -216
+2019-09-25 17:32:26,455 charges_calc.py:130 ERROR Rejecting this record RNT665.
+2019-09-25 17:32:26,460 charges_calc.py:129 ERROR Total_days is less than 0: -644
+2019-09-25 17:32:26,465 charges_calc.py:130 ERROR Rejecting this record RNT667.
+2019-09-25 17:32:26,470 charges_calc.py:129 ERROR Total_days is less than 0: -47
+2019-09-25 17:32:26,470 charges_calc.py:130 ERROR Rejecting this record RNT668.
+2019-09-25 17:32:26,476 charges_calc.py:129 ERROR Total_days is less than 0: -302
+2019-09-25 17:32:26,477 charges_calc.py:130 ERROR Rejecting this record RNT670.
+2019-09-25 17:32:26,485 charges_calc.py:129 ERROR Total_days is less than 0: -262
+2019-09-25 17:32:26,486 charges_calc.py:130 ERROR Rejecting this record RNT671.
+2019-09-25 17:32:26,494 charges_calc.py:129 ERROR Total_days is less than 0: -456
+2019-09-25 17:32:26,494 charges_calc.py:130 ERROR Rejecting this record RNT674.
+2019-09-25 17:32:26,636 charges_calc.py:129 ERROR Total_days is less than 0: -17
+2019-09-25 17:32:26,637 charges_calc.py:130 ERROR Rejecting this record RNT677.
+2019-09-25 17:32:26,639 charges_calc.py:129 ERROR Total_days is less than 0: -14
+2019-09-25 17:32:26,640 charges_calc.py:130 ERROR Rejecting this record RNT678.
+2019-09-25 17:32:26,642 charges_calc.py:129 ERROR Total_days is less than 0: -657
+2019-09-25 17:32:26,642 charges_calc.py:130 ERROR Rejecting this record RNT679.
+2019-09-25 17:32:26,685 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:26,685 charges_calc.py:130 ERROR Rejecting this record RNT682.
+2019-09-25 17:32:26,691 charges_calc.py:129 ERROR Total_days is less than 0: -449
+2019-09-25 17:32:26,691 charges_calc.py:130 ERROR Rejecting this record RNT684.
+2019-09-25 17:32:26,709 charges_calc.py:129 ERROR Total_days is less than 0: -34
+2019-09-25 17:32:26,709 charges_calc.py:130 ERROR Rejecting this record RNT688.
+2019-09-25 17:32:26,724 charges_calc.py:129 ERROR Total_days is less than 0: -739
+2019-09-25 17:32:26,725 charges_calc.py:130 ERROR Rejecting this record RNT691.
+2019-09-25 17:32:26,727 charges_calc.py:129 ERROR Total_days is less than 0: -29
+2019-09-25 17:32:26,733 charges_calc.py:130 ERROR Rejecting this record RNT692.
+2019-09-25 17:32:26,740 charges_calc.py:129 ERROR Total_days is less than 0: -450
+2019-09-25 17:32:26,740 charges_calc.py:130 ERROR Rejecting this record RNT694.
+2019-09-25 17:32:26,742 charges_calc.py:129 ERROR Total_days is less than 0: -131
+2019-09-25 17:32:26,743 charges_calc.py:130 ERROR Rejecting this record RNT695.
+2019-09-25 17:32:26,758 charges_calc.py:129 ERROR Total_days is less than 0: -496
+2019-09-25 17:32:26,758 charges_calc.py:130 ERROR Rejecting this record RNT698.
+2019-09-25 17:32:26,776 charges_calc.py:129 ERROR Total_days is less than 0: -292
+2019-09-25 17:32:26,776 charges_calc.py:130 ERROR Rejecting this record RNT702.
+2019-09-25 17:32:26,786 charges_calc.py:129 ERROR Total_days is less than 0: -106
+2019-09-25 17:32:26,787 charges_calc.py:130 ERROR Rejecting this record RNT703.
+2019-09-25 17:32:26,789 charges_calc.py:129 ERROR Total_days is less than 0: -630
+2019-09-25 17:32:26,789 charges_calc.py:130 ERROR Rejecting this record RNT704.
+2019-09-25 17:32:26,794 charges_calc.py:129 ERROR Total_days is less than 0: -114
+2019-09-25 17:32:26,801 charges_calc.py:130 ERROR Rejecting this record RNT706.
+2019-09-25 17:32:26,811 charges_calc.py:129 ERROR Total_days is less than 0: -123
+2019-09-25 17:32:26,817 charges_calc.py:130 ERROR Rejecting this record RNT709.
+2019-09-25 17:32:26,823 charges_calc.py:129 ERROR Total_days is less than 0: -365
+2019-09-25 17:32:26,824 charges_calc.py:130 ERROR Rejecting this record RNT711.
+2019-09-25 17:32:26,826 charges_calc.py:129 ERROR Total_days is less than 0: -427
+2019-09-25 17:32:26,827 charges_calc.py:130 ERROR Rejecting this record RNT712.
+2019-09-25 17:32:26,841 charges_calc.py:129 ERROR Total_days is less than 0: -426
+2019-09-25 17:32:26,842 charges_calc.py:130 ERROR Rejecting this record RNT715.
+2019-09-25 17:32:26,854 charges_calc.py:129 ERROR Total_days is less than 0: -987
+2019-09-25 17:32:26,854 charges_calc.py:130 ERROR Rejecting this record RNT717.
+2019-09-25 17:32:26,859 charges_calc.py:129 ERROR Total_days is less than 0: -170
+2019-09-25 17:32:26,860 charges_calc.py:130 ERROR Rejecting this record RNT719.
+2019-09-25 17:32:26,872 charges_calc.py:129 ERROR Total_days is less than 0: -201
+2019-09-25 17:32:26,872 charges_calc.py:130 ERROR Rejecting this record RNT721.
+2019-09-25 17:32:26,875 charges_calc.py:129 ERROR Total_days is less than 0: -577
+2019-09-25 17:32:26,875 charges_calc.py:130 ERROR Rejecting this record RNT722.
+2019-09-25 17:32:26,891 charges_calc.py:129 ERROR Total_days is less than 0: -94
+2019-09-25 17:32:26,891 charges_calc.py:130 ERROR Rejecting this record RNT725.
+2019-09-25 17:32:26,893 charges_calc.py:129 ERROR Total_days is less than 0: -567
+2019-09-25 17:32:26,894 charges_calc.py:130 ERROR Rejecting this record RNT726.
+2019-09-25 17:32:26,909 charges_calc.py:129 ERROR Total_days is less than 0: -117
+2019-09-25 17:32:26,909 charges_calc.py:130 ERROR Rejecting this record RNT729.
+2019-09-25 17:32:26,922 charges_calc.py:129 ERROR Total_days is less than 0: -76
+2019-09-25 17:32:26,922 charges_calc.py:130 ERROR Rejecting this record RNT731.
+2019-09-25 17:32:26,925 charges_calc.py:129 ERROR Total_days is less than 0: -267
+2019-09-25 17:32:26,925 charges_calc.py:130 ERROR Rejecting this record RNT732.
+2019-09-25 17:32:26,927 charges_calc.py:129 ERROR Total_days is less than 0: -202
+2019-09-25 17:32:26,928 charges_calc.py:130 ERROR Rejecting this record RNT733.
+2019-09-25 17:32:26,961 charges_calc.py:129 ERROR Total_days is less than 0: -126
+2019-09-25 17:32:26,966 charges_calc.py:130 ERROR Rejecting this record RNT740.
+2019-09-25 17:32:26,991 charges_calc.py:129 ERROR Total_days is less than 0: -319
+2019-09-25 17:32:26,991 charges_calc.py:130 ERROR Rejecting this record RNT745.
+2019-09-25 17:32:26,993 charges_calc.py:129 ERROR Total_days is less than 0: -69
+2019-09-25 17:32:26,993 charges_calc.py:130 ERROR Rejecting this record RNT746.
+2019-09-25 17:32:27,006 charges_calc.py:129 ERROR Total_days is less than 0: -168
+2019-09-25 17:32:27,006 charges_calc.py:130 ERROR Rejecting this record RNT748.
+2019-09-25 17:32:27,011 charges_calc.py:129 ERROR Total_days is less than 0: -137
+2019-09-25 17:32:27,012 charges_calc.py:130 ERROR Rejecting this record RNT750.
+2019-09-25 17:32:27,021 charges_calc.py:129 ERROR Total_days is less than 0: -203
+2019-09-25 17:32:27,022 charges_calc.py:130 ERROR Rejecting this record RNT751.
+2019-09-25 17:32:27,027 charges_calc.py:129 ERROR Total_days is less than 0: -71
+2019-09-25 17:32:27,027 charges_calc.py:130 ERROR Rejecting this record RNT753.
+2019-09-25 17:32:27,042 charges_calc.py:129 ERROR Total_days is less than 0: -142
+2019-09-25 17:32:27,043 charges_calc.py:130 ERROR Rejecting this record RNT756.
+2019-09-25 17:32:27,051 charges_calc.py:129 ERROR Total_days is less than 0: -160
+2019-09-25 17:32:27,052 charges_calc.py:130 ERROR Rejecting this record RNT757.
+2019-09-25 17:32:27,058 charges_calc.py:129 ERROR Total_days is less than 0: -767
+2019-09-25 17:32:27,058 charges_calc.py:130 ERROR Rejecting this record RNT759.
+2019-09-25 17:32:27,091 charges_calc.py:129 ERROR Total_days is less than 0: -230
+2019-09-25 17:32:27,091 charges_calc.py:130 ERROR Rejecting this record RNT766.
+2019-09-25 17:32:27,120 charges_calc.py:129 ERROR Total_days is less than 0: -1061
+2019-09-25 17:32:27,120 charges_calc.py:130 ERROR Rejecting this record RNT770.
+2019-09-25 17:32:27,126 charges_calc.py:129 ERROR Total_days is less than 0: -117
+2019-09-25 17:32:27,126 charges_calc.py:130 ERROR Rejecting this record RNT772.
+2019-09-25 17:32:27,136 charges_calc.py:129 ERROR Total_days is less than 0: -10
+2019-09-25 17:32:27,136 charges_calc.py:130 ERROR Rejecting this record RNT773.
+2019-09-25 17:32:27,139 charges_calc.py:129 ERROR Total_days is less than 0: -562
+2019-09-25 17:32:27,139 charges_calc.py:130 ERROR Rejecting this record RNT774.
+2019-09-25 17:32:27,144 charges_calc.py:154 ERROR Exception while calculating additional fields: time data '' does not match format '%m/%d/%y' 
+2019-09-25 17:32:27,150 charges_calc.py:156 ERROR Rejecting this record RNT776.
+2019-09-25 17:32:27,156 charges_calc.py:129 ERROR Total_days is less than 0: -375
+2019-09-25 17:32:27,157 charges_calc.py:130 ERROR Rejecting this record RNT778.
+2019-09-25 17:32:27,159 charges_calc.py:129 ERROR Total_days is less than 0: -163
+2019-09-25 17:32:27,159 charges_calc.py:130 ERROR Rejecting this record RNT779.
+2019-09-25 17:32:27,175 charges_calc.py:129 ERROR Total_days is less than 0: -284
+2019-09-25 17:32:27,175 charges_calc.py:130 ERROR Rejecting this record RNT782.
+2019-09-25 17:32:27,177 charges_calc.py:129 ERROR Total_days is less than 0: -615
+2019-09-25 17:32:27,184 charges_calc.py:130 ERROR Rejecting this record RNT783.
+2019-09-25 17:32:27,216 charges_calc.py:129 ERROR Total_days is less than 0: -400
+2019-09-25 17:32:27,217 charges_calc.py:130 ERROR Rejecting this record RNT790.
+2019-09-25 17:32:27,220 charges_calc.py:129 ERROR Total_days is less than 0: -288
+2019-09-25 17:32:27,221 charges_calc.py:130 ERROR Rejecting this record RNT791.
+2019-09-25 17:32:27,235 charges_calc.py:129 ERROR Total_days is less than 0: -974
+2019-09-25 17:32:27,236 charges_calc.py:130 ERROR Rejecting this record RNT794.
+2019-09-25 17:32:27,238 charges_calc.py:129 ERROR Total_days is less than 0: -132
+2019-09-25 17:32:27,239 charges_calc.py:130 ERROR Rejecting this record RNT795.
+2019-09-25 17:32:27,241 charges_calc.py:129 ERROR Total_days is less than 0: -219
+2019-09-25 17:32:27,242 charges_calc.py:130 ERROR Rejecting this record RNT796.
+2019-09-25 17:32:27,277 charges_calc.py:129 ERROR Total_days is less than 0: -250
+2019-09-25 17:32:27,278 charges_calc.py:130 ERROR Rejecting this record RNT803.
+2019-09-25 17:32:27,303 charges_calc.py:129 ERROR Total_days is less than 0: -258
+2019-09-25 17:32:27,303 charges_calc.py:130 ERROR Rejecting this record RNT807.
+2019-09-25 17:32:27,305 charges_calc.py:129 ERROR Total_days is less than 0: -222
+2019-09-25 17:32:27,306 charges_calc.py:130 ERROR Rejecting this record RNT808.
+2019-09-25 17:32:27,308 charges_calc.py:129 ERROR Total_days is less than 0: -241
+2019-09-25 17:32:27,308 charges_calc.py:130 ERROR Rejecting this record RNT809.
+2019-09-25 17:32:27,323 charges_calc.py:129 ERROR Total_days is less than 0: -68
+2019-09-25 17:32:27,324 charges_calc.py:130 ERROR Rejecting this record RNT812.
+2019-09-25 17:32:27,336 charges_calc.py:129 ERROR Total_days is less than 0: -378
+2019-09-25 17:32:27,336 charges_calc.py:130 ERROR Rejecting this record RNT814.
+2019-09-25 17:32:27,339 charges_calc.py:129 ERROR Total_days is less than 0: -248
+2019-09-25 17:32:27,339 charges_calc.py:130 ERROR Rejecting this record RNT815.
+2019-09-25 17:32:27,341 charges_calc.py:129 ERROR Total_days is less than 0: -167
+2019-09-25 17:32:27,342 charges_calc.py:130 ERROR Rejecting this record RNT816.
+2019-09-25 17:32:27,344 charges_calc.py:129 ERROR Total_days is less than 0: -1020
+2019-09-25 17:32:27,350 charges_calc.py:130 ERROR Rejecting this record RNT817.
+2019-09-25 17:32:27,354 charges_calc.py:129 ERROR Total_days is less than 0: -549
+2019-09-25 17:32:27,355 charges_calc.py:130 ERROR Rejecting this record RNT818.
+2019-09-25 17:32:27,357 charges_calc.py:129 ERROR Total_days is less than 0: -73
+2019-09-25 17:32:27,357 charges_calc.py:130 ERROR Rejecting this record RNT819.
+2019-09-25 17:32:27,359 charges_calc.py:129 ERROR Total_days is less than 0: -8
+2019-09-25 17:32:27,360 charges_calc.py:130 ERROR Rejecting this record RNT820.
+2019-09-25 17:32:27,372 charges_calc.py:129 ERROR Total_days is less than 0: -126
+2019-09-25 17:32:27,372 charges_calc.py:130 ERROR Rejecting this record RNT822.
+2019-09-25 17:32:27,387 charges_calc.py:129 ERROR Total_days is less than 0: -113
+2019-09-25 17:32:27,387 charges_calc.py:130 ERROR Rejecting this record RNT825.
+2019-09-25 17:32:27,419 charges_calc.py:129 ERROR Total_days is less than 0: -3
+2019-09-25 17:32:27,420 charges_calc.py:130 ERROR Rejecting this record RNT831.
+2019-09-25 17:32:27,439 charges_calc.py:129 ERROR Total_days is less than 0: -594
+2019-09-25 17:32:27,440 charges_calc.py:130 ERROR Rejecting this record RNT835.
+2019-09-25 17:32:27,442 charges_calc.py:129 ERROR Total_days is less than 0: -5
+2019-09-25 17:32:27,442 charges_calc.py:130 ERROR Rejecting this record RNT836.
+2019-09-25 17:32:27,457 charges_calc.py:129 ERROR Total_days is less than 0: -179
+2019-09-25 17:32:27,458 charges_calc.py:130 ERROR Rejecting this record RNT839.
+2019-09-25 17:32:27,460 charges_calc.py:129 ERROR Total_days is less than 0: -635
+2019-09-25 17:32:27,461 charges_calc.py:130 ERROR Rejecting this record RNT840.
+2019-09-25 17:32:27,473 charges_calc.py:129 ERROR Total_days is less than 0: -548
+2019-09-25 17:32:27,473 charges_calc.py:130 ERROR Rejecting this record RNT842.
+2019-09-25 17:32:27,475 charges_calc.py:129 ERROR Total_days is less than 0: -499
+2019-09-25 17:32:27,476 charges_calc.py:130 ERROR Rejecting this record RNT843.
+2019-09-25 17:32:27,484 charges_calc.py:129 ERROR Total_days is less than 0: -217
+2019-09-25 17:32:27,485 charges_calc.py:130 ERROR Rejecting this record RNT844.
+2019-09-25 17:32:27,491 charges_calc.py:129 ERROR Total_days is less than 0: -436
+2019-09-25 17:32:27,491 charges_calc.py:130 ERROR Rejecting this record RNT846.
+2019-09-25 17:32:27,493 charges_calc.py:129 ERROR Total_days is less than 0: -226
+2019-09-25 17:32:27,494 charges_calc.py:130 ERROR Rejecting this record RNT847.
+2019-09-25 17:32:27,506 charges_calc.py:129 ERROR Total_days is less than 0: -700
+2019-09-25 17:32:27,506 charges_calc.py:130 ERROR Rejecting this record RNT849.
+2019-09-25 17:32:27,523 charges_calc.py:129 ERROR Total_days is less than 0: -825
+2019-09-25 17:32:27,524 charges_calc.py:130 ERROR Rejecting this record RNT853.
+2019-09-25 17:32:27,535 charges_calc.py:129 ERROR Total_days is less than 0: -112
+2019-09-25 17:32:27,536 charges_calc.py:130 ERROR Rejecting this record RNT855.
+2019-09-25 17:32:27,551 charges_calc.py:129 ERROR Total_days is less than 0: -69
+2019-09-25 17:32:27,552 charges_calc.py:130 ERROR Rejecting this record RNT858.
+2019-09-25 17:32:27,560 charges_calc.py:129 ERROR Total_days is less than 0: -505
+2019-09-25 17:32:27,561 charges_calc.py:130 ERROR Rejecting this record RNT861.
+2019-09-25 17:32:27,573 charges_calc.py:129 ERROR Total_days is less than 0: -219
+2019-09-25 17:32:27,574 charges_calc.py:130 ERROR Rejecting this record RNT863.
+2019-09-25 17:32:27,576 charges_calc.py:129 ERROR Total_days is less than 0: -8
+2019-09-25 17:32:27,576 charges_calc.py:130 ERROR Rejecting this record RNT864.
+2019-09-25 17:32:27,588 charges_calc.py:129 ERROR Total_days is less than 0: -239
+2019-09-25 17:32:27,589 charges_calc.py:130 ERROR Rejecting this record RNT866.
+2019-09-25 17:32:27,591 charges_calc.py:129 ERROR Total_days is less than 0: -146
+2019-09-25 17:32:27,592 charges_calc.py:130 ERROR Rejecting this record RNT867.
+2019-09-25 17:32:27,604 charges_calc.py:129 ERROR Total_days is less than 0: -299
+2019-09-25 17:32:27,605 charges_calc.py:130 ERROR Rejecting this record RNT869.
+2019-09-25 17:32:27,610 charges_calc.py:129 ERROR Total_days is less than 0: -69
+2019-09-25 17:32:27,610 charges_calc.py:130 ERROR Rejecting this record RNT871.
+2019-09-25 17:32:27,622 charges_calc.py:129 ERROR Total_days is less than 0: -76
+2019-09-25 17:32:27,623 charges_calc.py:130 ERROR Rejecting this record RNT873.
+2019-09-25 17:32:27,625 charges_calc.py:129 ERROR Total_days is less than 0: -3
+2019-09-25 17:32:27,625 charges_calc.py:130 ERROR Rejecting this record RNT874.
+2019-09-25 17:32:27,637 charges_calc.py:129 ERROR Total_days is less than 0: -222
+2019-09-25 17:32:27,638 charges_calc.py:130 ERROR Rejecting this record RNT876.
+2019-09-25 17:32:27,654 charges_calc.py:129 ERROR Total_days is less than 0: -693
+2019-09-25 17:32:27,655 charges_calc.py:130 ERROR Rejecting this record RNT879.
+2019-09-25 17:32:27,670 charges_calc.py:129 ERROR Total_days is less than 0: -654
+2019-09-25 17:32:27,671 charges_calc.py:130 ERROR Rejecting this record RNT882.
+2019-09-25 17:32:27,673 charges_calc.py:129 ERROR Total_days is less than 0: -206
+2019-09-25 17:32:27,674 charges_calc.py:130 ERROR Rejecting this record RNT883.
+2019-09-25 17:32:27,676 charges_calc.py:129 ERROR Total_days is less than 0: -216
+2019-09-25 17:32:27,676 charges_calc.py:130 ERROR Rejecting this record RNT884.
+2019-09-25 17:32:27,688 charges_calc.py:129 ERROR Total_days is less than 0: -93
+2019-09-25 17:32:27,689 charges_calc.py:130 ERROR Rejecting this record RNT886.
+2019-09-25 17:32:27,708 charges_calc.py:129 ERROR Total_days is less than 0: -813
+2019-09-25 17:32:27,708 charges_calc.py:130 ERROR Rejecting this record RNT890.
+2019-09-25 17:32:27,721 charges_calc.py:129 ERROR Total_days is less than 0: -129
+2019-09-25 17:32:27,721 charges_calc.py:130 ERROR Rejecting this record RNT892.
+2019-09-25 17:32:27,723 charges_calc.py:129 ERROR Total_days is less than 0: -281
+2019-09-25 17:32:27,724 charges_calc.py:130 ERROR Rejecting this record RNT893.
+2019-09-25 17:32:27,726 charges_calc.py:129 ERROR Total_days is less than 0: -89
+2019-09-25 17:32:27,727 charges_calc.py:130 ERROR Rejecting this record RNT894.
+2019-09-25 17:32:27,736 charges_calc.py:129 ERROR Total_days is less than 0: -914
+2019-09-25 17:32:27,736 charges_calc.py:130 ERROR Rejecting this record RNT895.
+2019-09-25 17:32:27,739 charges_calc.py:129 ERROR Total_days is less than 0: -94
+2019-09-25 17:32:27,739 charges_calc.py:130 ERROR Rejecting this record RNT896.
+2019-09-25 17:32:27,744 charges_calc.py:129 ERROR Total_days is less than 0: -285
+2019-09-25 17:32:27,745 charges_calc.py:130 ERROR Rejecting this record RNT898.
+2019-09-25 17:32:27,760 charges_calc.py:129 ERROR Total_days is less than 0: -140
+2019-09-25 17:32:27,766 charges_calc.py:130 ERROR Rejecting this record RNT901.
+2019-09-25 17:32:27,773 charges_calc.py:129 ERROR Total_days is less than 0: -117
+2019-09-25 17:32:27,774 charges_calc.py:130 ERROR Rejecting this record RNT903.
+2019-09-25 17:32:27,785 charges_calc.py:129 ERROR Total_days is less than 0: -16
+2019-09-25 17:32:27,786 charges_calc.py:130 ERROR Rejecting this record RNT905.
+2019-09-25 17:32:27,804 charges_calc.py:129 ERROR Total_days is less than 0: -736
+2019-09-25 17:32:27,805 charges_calc.py:130 ERROR Rejecting this record RNT909.
+2019-09-25 17:32:27,810 charges_calc.py:129 ERROR Total_days is less than 0: -271
+2019-09-25 17:32:27,810 charges_calc.py:130 ERROR Rejecting this record RNT911.
+2019-09-25 17:32:27,819 charges_calc.py:129 ERROR Total_days is less than 0: -806
+2019-09-25 17:32:27,820 charges_calc.py:130 ERROR Rejecting this record RNT912.
+2019-09-25 17:32:27,825 charges_calc.py:129 ERROR Total_days is less than 0: -731
+2019-09-25 17:32:27,825 charges_calc.py:130 ERROR Rejecting this record RNT914.
+2019-09-25 17:32:27,828 charges_calc.py:129 ERROR Total_days is less than 0: -233
+2019-09-25 17:32:27,833 charges_calc.py:130 ERROR Rejecting this record RNT915.
+2019-09-25 17:32:27,840 charges_calc.py:129 ERROR Total_days is less than 0: -263
+2019-09-25 17:32:27,841 charges_calc.py:130 ERROR Rejecting this record RNT917.
+2019-09-25 17:32:27,843 charges_calc.py:129 ERROR Total_days is less than 0: -21
+2019-09-25 17:32:27,843 charges_calc.py:130 ERROR Rejecting this record RNT918.
+2019-09-25 17:32:27,852 charges_calc.py:129 ERROR Total_days is less than 0: -416
+2019-09-25 17:32:27,853 charges_calc.py:130 ERROR Rejecting this record RNT919.
+2019-09-25 17:32:27,866 charges_calc.py:129 ERROR Total_days is less than 0: -221
+2019-09-25 17:32:27,868 charges_calc.py:130 ERROR Rejecting this record RNT922.
+2019-09-25 17:32:27,875 charges_calc.py:129 ERROR Total_days is less than 0: -769
+2019-09-25 17:32:27,875 charges_calc.py:130 ERROR Rejecting this record RNT924.
+2019-09-25 17:32:27,889 charges_calc.py:129 ERROR Total_days is less than 0: -149
+2019-09-25 17:32:27,889 charges_calc.py:130 ERROR Rejecting this record RNT926.
+2019-09-25 17:32:27,892 charges_calc.py:129 ERROR Total_days is less than 0: -30
+2019-09-25 17:32:27,892 charges_calc.py:130 ERROR Rejecting this record RNT927.
+2019-09-25 17:32:27,894 charges_calc.py:129 ERROR Total_days is less than 0: -557
+2019-09-25 17:32:27,895 charges_calc.py:130 ERROR Rejecting this record RNT928.
+2019-09-25 17:32:27,907 charges_calc.py:129 ERROR Total_days is less than 0: -160
+2019-09-25 17:32:27,907 charges_calc.py:130 ERROR Rejecting this record RNT930.
+2019-09-25 17:32:27,909 charges_calc.py:129 ERROR Total_days is less than 0: -478
+2019-09-25 17:32:27,910 charges_calc.py:130 ERROR Rejecting this record RNT931.
+2019-09-25 17:32:27,918 charges_calc.py:129 ERROR Total_days is less than 0: -745
+2019-09-25 17:32:27,919 charges_calc.py:130 ERROR Rejecting this record RNT932.
+2019-09-25 17:32:27,928 charges_calc.py:129 ERROR Total_days is less than 0: -9
+2019-09-25 17:32:27,933 charges_calc.py:130 ERROR Rejecting this record RNT935.
+2019-09-25 17:32:27,940 charges_calc.py:129 ERROR Total_days is less than 0: -13
+2019-09-25 17:32:27,941 charges_calc.py:130 ERROR Rejecting this record RNT937.
+2019-09-25 17:32:27,943 charges_calc.py:129 ERROR Total_days is less than 0: -327
+2019-09-25 17:32:27,943 charges_calc.py:130 ERROR Rejecting this record RNT938.
+2019-09-25 17:32:27,952 charges_calc.py:129 ERROR Total_days is less than 0: -627
+2019-09-25 17:32:27,953 charges_calc.py:130 ERROR Rejecting this record RNT939.
+2019-09-25 17:32:27,955 charges_calc.py:129 ERROR Total_days is less than 0: -8
+2019-09-25 17:32:27,956 charges_calc.py:130 ERROR Rejecting this record RNT940.
+2019-09-25 17:32:27,961 charges_calc.py:129 ERROR Total_days is less than 0: -45
+2019-09-25 17:32:27,962 charges_calc.py:130 ERROR Rejecting this record RNT942.
+2019-09-25 17:32:27,970 charges_calc.py:129 ERROR Total_days is less than 0: -525
+2019-09-25 17:32:27,971 charges_calc.py:130 ERROR Rejecting this record RNT943.
+2019-09-25 17:32:27,973 charges_calc.py:129 ERROR Total_days is less than 0: -362
+2019-09-25 17:32:27,974 charges_calc.py:130 ERROR Rejecting this record RNT944.
+2019-09-25 17:32:27,985 charges_calc.py:129 ERROR Total_days is less than 0: -85
+2019-09-25 17:32:27,985 charges_calc.py:130 ERROR Rejecting this record RNT946.
+2019-09-25 17:32:27,988 charges_calc.py:129 ERROR Total_days is less than 0: -76
+2019-09-25 17:32:27,989 charges_calc.py:130 ERROR Rejecting this record RNT947.
+2019-09-25 17:32:27,991 charges_calc.py:129 ERROR Total_days is less than 0: -570
+2019-09-25 17:32:27,991 charges_calc.py:130 ERROR Rejecting this record RNT948.
+2019-09-25 17:32:27,993 charges_calc.py:129 ERROR Total_days is less than 0: -224
+2019-09-25 17:32:27,994 charges_calc.py:130 ERROR Rejecting this record RNT949.
+2019-09-25 17:32:28,005 charges_calc.py:129 ERROR Total_days is less than 0: -619
+2019-09-25 17:32:28,006 charges_calc.py:130 ERROR Rejecting this record RNT951.
+2019-09-25 17:32:28,025 charges_calc.py:129 ERROR Total_days is less than 0: -98
+2019-09-25 17:32:28,025 charges_calc.py:130 ERROR Rejecting this record RNT955.
+2019-09-25 17:32:28,027 charges_calc.py:129 ERROR Total_days is less than 0: -78
+2019-09-25 17:32:28,028 charges_calc.py:130 ERROR Rejecting this record RNT956.
+2019-09-25 17:32:28,036 charges_calc.py:129 ERROR Total_days is less than 0: -225
+2019-09-25 17:32:28,037 charges_calc.py:130 ERROR Rejecting this record RNT957.
+2019-09-25 17:32:28,039 charges_calc.py:129 ERROR Total_days is less than 0: -220
+2019-09-25 17:32:28,040 charges_calc.py:130 ERROR Rejecting this record RNT958.
+2019-09-25 17:32:28,042 charges_calc.py:129 ERROR Total_days is less than 0: -202
+2019-09-25 17:32:28,042 charges_calc.py:130 ERROR Rejecting this record RNT959.
+2019-09-25 17:32:28,044 charges_calc.py:129 ERROR Total_days is less than 0: -495
+2019-09-25 17:32:28,050 charges_calc.py:130 ERROR Rejecting this record RNT960.
+2019-09-25 17:32:28,054 charges_calc.py:129 ERROR Total_days is less than 0: -56
+2019-09-25 17:32:28,055 charges_calc.py:130 ERROR Rejecting this record RNT961.
+2019-09-25 17:32:28,057 charges_calc.py:129 ERROR Total_days is less than 0: -56
+2019-09-25 17:32:28,057 charges_calc.py:130 ERROR Rejecting this record RNT962.
+2019-09-25 17:32:28,059 charges_calc.py:129 ERROR Total_days is less than 0: -34
+2019-09-25 17:32:28,060 charges_calc.py:130 ERROR Rejecting this record RNT963.
+2019-09-25 17:32:28,073 charges_calc.py:129 ERROR Total_days is less than 0: -63
+2019-09-25 17:32:28,073 charges_calc.py:130 ERROR Rejecting this record RNT965.
+2019-09-25 17:32:28,085 charges_calc.py:129 ERROR Total_days is less than 0: -560
+2019-09-25 17:32:28,086 charges_calc.py:130 ERROR Rejecting this record RNT967.
+2019-09-25 17:32:28,091 charges_calc.py:129 ERROR Total_days is less than 0: -762
+2019-09-25 17:32:28,092 charges_calc.py:130 ERROR Rejecting this record RNT969.
+2019-09-25 17:32:28,094 charges_calc.py:129 ERROR Total_days is less than 0: -678
+2019-09-25 17:32:28,095 charges_calc.py:130 ERROR Rejecting this record RNT970.
+2019-09-25 17:32:28,106 charges_calc.py:129 ERROR Total_days is less than 0: -311
+2019-09-25 17:32:28,107 charges_calc.py:130 ERROR Rejecting this record RNT971.
+2019-09-25 17:32:28,123 charges_calc.py:129 ERROR Total_days is less than 0: -237
+2019-09-25 17:32:28,124 charges_calc.py:130 ERROR Rejecting this record RNT974.
+2019-09-25 17:32:28,138 charges_calc.py:129 ERROR Total_days is less than 0: -177
+2019-09-25 17:32:28,138 charges_calc.py:130 ERROR Rejecting this record RNT977.
+2019-09-25 17:32:28,143 charges_calc.py:129 ERROR Total_days is less than 0: -525
+2019-09-25 17:32:28,144 charges_calc.py:130 ERROR Rejecting this record RNT979.
+2019-09-25 17:32:28,158 charges_calc.py:129 ERROR Total_days is less than 0: -232
+2019-09-25 17:32:28,159 charges_calc.py:130 ERROR Rejecting this record RNT982.
+2019-09-25 17:32:28,161 charges_calc.py:129 ERROR Total_days is less than 0: -300
+2019-09-25 17:32:28,161 charges_calc.py:130 ERROR Rejecting this record RNT983.
+2019-09-25 17:32:28,173 charges_calc.py:129 ERROR Total_days is less than 0: -131
+2019-09-25 17:32:28,174 charges_calc.py:130 ERROR Rejecting this record RNT985.
+2019-09-25 17:32:28,176 charges_calc.py:129 ERROR Total_days is less than 0: -984
+2019-09-25 17:32:28,176 charges_calc.py:130 ERROR Rejecting this record RNT986.
+2019-09-25 17:32:28,178 charges_calc.py:129 ERROR Total_days is less than 0: -560
+2019-09-25 17:32:28,185 charges_calc.py:130 ERROR Rejecting this record RNT987.
+2019-09-25 17:32:28,191 charges_calc.py:129 ERROR Total_days is less than 0: -931
+2019-09-25 17:32:28,191 charges_calc.py:130 ERROR Rejecting this record RNT989.
+2019-09-25 17:32:28,212 charges_calc.py:129 ERROR Total_days is less than 0: -153
+2019-09-25 17:32:28,217 charges_calc.py:130 ERROR Rejecting this record RNT994.
+2019-09-25 17:32:28,234 charges_calc.py:129 ERROR Total_days is less than 0: -871
+2019-09-25 17:32:28,237 charges_calc.py:130 ERROR Rejecting this record RNT998.
+2019-09-25 17:32:28,239 charges_calc.py:129 ERROR Total_days is less than 0: -740
+2019-09-25 17:32:28,240 charges_calc.py:130 ERROR Rejecting this record RNT999.
+2019-09-25 17:32:28,241 charges_calc.py:160 WARNING Deleting 497 keys containing bad data

@@ -1,0 +1,251 @@
+PS C:\Users\erica\Desktop\Python220\SP_Python220B_2019\students\erica_edwards\lesson02\assignment\code> DIR
+
+
+    Directory: C:\Users\erica\Desktop\Python220\SP_Python220B_2019\students\erica_edwards\lesson02\assignment\code
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/24/2019  11:27 AM           1519 charges_calc.py
+-a----        9/21/2019   7:07 PM            196 debug1.log
+-a----        8/24/2019  11:27 AM         200814 out.json
+-a----        8/24/2019  11:27 AM         161629 source.json
+
+
+PS C:\Users\erica\Desktop\Python220\SP_Python220B_2019\students\erica_edwards\lesson02\assignment\code> python -m pdb .\charges_calc.py | tee debug1.log
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(3)<module>()
+-> '''
+ll
+(Pdb)   1       '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44         args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+s
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(4)<module>()
+-> import argparse
+s
+(Pdb) --Call--
+> <frozen importlib._bootstrap>(978)_find_and_load()
+s
+(Pdb) > <frozen importlib._bootstrap>(980)_find_and_load()
+s
+(Pdb) --Call--
+> <frozen importlib._bootstrap>(143)__init__()
+s
+(Pdb) > <frozen importlib._bootstrap>(144)__init__()
+n
+(Pdb) > <frozen importlib._bootstrap>(145)__init__()
+n
+(Pdb) --Return--
+> <frozen importlib._bootstrap>(145)__init__()->None
+n
+(Pdb) --Call--
+> <frozen importlib._bootstrap>(147)__enter__()
+n
+(Pdb) > <frozen importlib._bootstrap>(148)__enter__()
+n
+(Pdb) > <frozen importlib._bootstrap>(149)__enter__()
+u
+(Pdb) > <frozen importlib._bootstrap>(980)_find_and_load()
+u
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(4)<module>()
+-> import argparse
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(5)<module>()
+-> import json
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(6)<module>()
+-> import datetime
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(7)<module>()
+-> import math
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+n
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--output
+(Pdb) SystemExit: 2
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+n
+(Pdb) --Return--
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(44)<module>()->None
+-> args = parse_cmd_arguments()
+n
+(Pdb) SystemExit: 2
+> <string>(1)<module>()->None
+restart -i source.json -o out2.json
+(Pdb) Restarting .\charges_calc.py with arguments:
+        .\charges_calc.py
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(3)<module>()
+-> '''
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(4)<module>()
+-> import argparse
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(5)<module>()
+-> import json
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(6)<module>()
+-> import datetime
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(7)<module>()
+-> import math
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+n
+(Pdb) > c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+n
+(Pdb) SystemExit: 0
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py(46)<module>()
+Traceback (most recent call last):
+-> data = calculate_additional_fields(data)  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1697, in main
+    pdb._runscript(mainpyfile)
+
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1566, in _runscript
+    self.run(statement)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Traceback (most recent call last):
+(Pdb) Uncaught exception. Entering post mortem debugging  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1697, in main
+
+    pdb._runscript(mainpyfile)
+Running 'cont' or 'step' will restart the program  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1566, in _runscript
+
+    self.run(statement)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 585, in run
+> c:\users\erica\appdata\local\programs\python\python37\lib\cmd.py(126)cmdloop()    exec(cmd, globals, locals)
+
+  File "<string>", line 1, in <module>
+  File "c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\assignment\code\charges_calc.py", line 46, in <module>
+-> line = input(self.prompt)    data = calculate_additional_fields(data)
+
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1724, in <module>
+    pdb.main()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1716, in main
+    pdb.interaction(None, t)
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\erica\AppData\Local\Programs\Python\Python37\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+(Pdb)
+PS C:\Users\erica\Desktop\Python220\SP_Python220B_2019\students\erica_edwards\lesson02\assignment\code>
