@@ -1,5 +1,5 @@
 """
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 """
 
 import argparse
@@ -10,6 +10,7 @@ import logging
 
 
 def log_decorator(func):
+    """Create decorator for log"""
     def make_logger(lvl, *args):
         """Creates logging for file"""
         log_format = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
@@ -75,7 +76,7 @@ def load_rentals_file(filename):
     with open(filename) as file:
         try:
             data = json.load(file)
-        except:
+        except json.JSONDecodeError:
             exit(0)
     return data
 
@@ -105,7 +106,7 @@ def calculate_additional_fields(data):
 #       Capture the value error caused by the start date being after the end date
         except ValueError:
             logging.debug("calculate_additional_fields function encountered a ValueError")
-            logging.warning("Start date is later than end date for %s",key)
+            logging.warning("Start date is later than end date for %s", key)
     return data
 
 
