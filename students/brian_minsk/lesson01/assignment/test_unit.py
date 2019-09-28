@@ -289,3 +289,7 @@ class MainTest(TestCase):
         main.get_item_code = MagicMock(return_value="XYZ789")
         self.assertEqual(main.item_info(), "Item not found in inventory")
 
+class MarketPricesTests(TestCase):
+    def test_market_prices(self):
+        self.assertEqual(mp.get_latest_price(1), 24)
+
