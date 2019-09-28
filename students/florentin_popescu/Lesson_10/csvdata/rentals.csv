@@ -1,0 +1,11 @@
+rental_id,customer_id,product_id
+rnt00000,user0004,prd0007
+rnt00001,user0003,prd0000
+rnt00002,user0009,prd0009
+rnt00003,user0004,prd0000
+rnt00004,user0001,prd0008
+rnt00005,user0002,prd0000
+rnt00006,user0007,prd0007
+rnt00007,user0009,prd0000
+rnt00008,user0005,prd0003
+rnt00009,user0006,prd0007

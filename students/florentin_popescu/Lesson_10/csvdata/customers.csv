@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,address,phone,email
+user0000,Christopher,Brown,"8381 16th St., Harrisburg, Pennsylvania 36753",6477865054,Christopher_Brown@hotmail.com
+user0001,Paul,Clark,"9438 280th St., Des Moines, Iowa 51154",4132160338,Paul_Clark@usa.com
+user0002,Camila,Scott,"6464 900th St., Trenton, New Jersey 11612",7983519673,Camila_Scott@gmail.com
+user0003,Kevin,Scott,"777 693rd Ave., Saint Paul, Minnesota 10999",7525539117,Kevin_Scott@hotmail.com
+user0004,Jason,Gonzalez,"4761 852nd St., Annapolis, Maryland 84706",5122971171,Jason_Gonzalez@usa.com
+user0005,Brian,Lewis,"2214 84th St., Lansing, Michigan 46676",5987371128,Brian_Lewis@hotmail.com
+user0006,Isabella,Wilson,"9040 183rd St., Indianapolis, Indiana 18486",1976480053,Isabella_Wilson@usa.com
+user0007,James,Gonzalez,"469 251st St., Phoenix, Arizona 65408",2842486561,James_Gonzalez@yahoo.com
+user0008,Evelyn,Anderson,"2427 545th Ave., Santa Fe, New Mexico 71532",8369417521,Evelyn_Anderson@yahoo.com
+user0009,Evelyn,Wright,"9799 144th Ave., Cheyenne, Wyoming 36989",4222421442,Evelyn_Wright@usa.com
