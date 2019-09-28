@@ -126,9 +126,8 @@ class DBTests(TestCase):
         '''
         Drop mongo collections after each test to ensure a fresh start
         '''
-        mongo = MongoDBConnection()
-        with mongo:
-            db = mongo.connection.HPNorton
+        mongo = create_mongo_connection()
+        with mongo as db:
             db['product'].drop()
             db['customer'].drop()
             db['rentals'].drop()

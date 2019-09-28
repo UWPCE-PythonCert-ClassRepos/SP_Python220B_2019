@@ -24,25 +24,29 @@ LOGGER.addHandler(FILE_HANDLER)
 
 class MongoDBConnection():
     """MongoDB Connection"""
-    def __init__(self, host='127.0.0.1', port=27017):
+    def __init__(self, host='127.0.0.1', port=27017, database='HPNorton'):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
         self.connection = None
+        self.database = database
 
     def __enter__(self):
+        '''
+        Return connection to database when 'with' is called
+        '''
         self.connection = MongoClient(self.host, self.port)
-        return self
+        return self.connection[self.database]
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
-def create_mongo_connection(host='127.0.0.1', port=27017):
+def create_mongo_connection(host='127.0.0.1', port=27017, database='HPNorton'):
     '''
     Method to create mongo DB connection, allows user to change host or port
     from default values
     '''
-    return MongoDBConnection(host, port)
+    return MongoDBConnection(host, port, database)
 
 def import_csv_to_json(csv_file):
     '''
@@ -94,9 +98,8 @@ def add_json_to_mongodb(json_data, db_name, mongo=None):
 
     errors = 0
     try:
-        with mongo:
-            LOGGER.info('Creating mongo connection')
-            db = mongo.connection.HPNorton
+        LOGGER.info('Creating mongo connection')
+        with mongo as db:
             LOGGER.info(f'Creating {db_name} database and adding records')
             new_db = db[db_name]
             new_db.insert_many(json_data)
@@ -170,9 +173,8 @@ def show_available_products(mongo=None):
 
     product_dict = {}
     try:
-        with mongo:
-            LOGGER.info('Creating mongo connection')
-            db = mongo.connection.HPNorton
+        LOGGER.info('Creating mongo connection')
+        with mongo as db:
             LOGGER.info(f'Querying product database for available products')
             # Filter query to return products with non-zero quanitity
             query = db['product'].find({'quantity_available': {'$ne':'0'}})
@@ -211,9 +213,8 @@ def show_rentals(product_id, mongo=None):
     customers = []
     rentals_dict = {}
     try:
-        with mongo:
-            LOGGER.info('Creating mongo connection')
-            db = mongo.connection.HPNorton
+        LOGGER.info('Creating mongo connection')
+        with mongo as db:
             LOGGER.info(f'Querying rentals database for customers renting product {product_id}')
             # Filter query to return customers who rented specific product
             query = db['rentals'].find({'product_id': {'$eq':product_id}})
