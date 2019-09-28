@@ -11,7 +11,7 @@ def find_pics(path):
         for each_file in files:
             if each_file.lower().endswith('.png'):
                 png_list.append(each_file)
-        if len(png_list) > 0:
+        if png_list:
             #   Returns the location and files found
             result.append(root)
             result.append(png_list)
