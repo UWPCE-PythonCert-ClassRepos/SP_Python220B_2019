@@ -4,7 +4,7 @@ Insert docstring
 import os
 from unittest import TestCase
 from database import import_data, import_csv_to_json, add_json_to_mongodb
-from database import show_available_products, show_rentals, MongoDBConnection
+from database import show_available_products, show_rentals
 from database import create_mongo_connection
 
 class DBTests(TestCase):
