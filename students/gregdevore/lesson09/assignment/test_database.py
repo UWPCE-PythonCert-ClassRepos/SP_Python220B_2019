@@ -4,7 +4,7 @@ Insert docstring
 import os
 from unittest import TestCase
 from database import import_data, import_csv_to_json, add_json_to_mongodb
-from database import show_available_products, show_rentals, MongoDBConnection
+from database import show_available_products, show_rentals
 from database import create_mongo_connection
 
 class DBTests(TestCase):
@@ -126,9 +126,8 @@ class DBTests(TestCase):
         '''
         Drop mongo collections after each test to ensure a fresh start
         '''
-        mongo = MongoDBConnection()
-        with mongo:
-            db = mongo.connection.HPNorton
+        mongo = create_mongo_connection()
+        with mongo as db:
             db['product'].drop()
             db['customer'].drop()
             db['rentals'].drop()
@@ -139,13 +138,13 @@ class DBTests(TestCase):
         Static method to load CSV data, convert to JSON, and add to mongo
         database
         '''
-        import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        import_data('csv_data', 'products.csv', 'customers.csv', 'rentals.csv')
 
     def test_csv_to_json(self):
         '''
         Test method to convert CSV files to JSON format
         '''
-        directory = 'data'
+        directory = 'csv_data'
         product_file = 'products.csv'
         customer_file = 'customers.csv'
         rentals_file = 'rentals.csv'
@@ -185,7 +184,7 @@ class DBTests(TestCase):
         Test method to read CSV data, convert to JSON, and add to mongo
         database
         '''
-        counts, errors = import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        counts, errors = import_data('csv_data', 'products.csv', 'customers.csv', 'rentals.csv')
         self.assertEqual(counts, (10, 7, 8))
         self.assertEqual(errors, (0, 0, 0))
 
