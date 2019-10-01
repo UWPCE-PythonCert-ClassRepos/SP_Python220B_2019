@@ -1,0 +1,7 @@
+Findings:
+
+- In general, it appears that the customer records data takes longer to process than the product records data
+- This is true for both CSV processing and adding the JSON data to the Mongo database
+- The problem becomes more pronounced as the number of records increases (particularly for 10,000 and 100,000 records) because the processing time becomes nontrivial
+- This makes some sense because there is more customer data per line than product data (more fields and more data in each field)
+- Looking at the raw CSV file sizes confirms that the customer data is larger for the same number of records

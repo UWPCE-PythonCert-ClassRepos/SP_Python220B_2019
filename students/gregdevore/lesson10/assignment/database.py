@@ -46,17 +46,24 @@ def create_mongo_connection(host='127.0.0.1', port=27017):
     return MongoDBConnection(host, port)
 
 def system_diagnostics(func):
+    '''
+    Decorator to time and report diagnostics on CSV read and MongoDB methods
+    Each function call is logged in terms of elapsed time, which function was
+    called, and how many records were processed
+    '''
     def inner(*args, **kwargs):
+        # Record elapsed time for function call
         ts = time.time()
         result = func(*args, **kwargs)
         te = time.time()
         elapsed = te - ts
-        # First result is either list or int, if list, get length
+        # First result is either list or int, if list, get length to retrieve
+        # number of records processed
         if type(result[0]).__name__ == 'list':
             records = len(result[0])
         else:
             records = result[0]
-        with open('timings.txt','a') as timefile:
+        with open('timings.txt', 'a') as timefile:
             timefile.write('function \'{}\' called, input = {}, \
 time = {:f} seconds, {} records processed\n'.format(func.__name__,
                                                     args[-1],
@@ -247,6 +254,9 @@ def show_rentals(product_id, mongo=None):
     return rentals_dict
 
 def clear_database():
+    '''
+    Delete databases for testing
+    '''
     # Clear database
     mongo = MongoDBConnection()
     with mongo:
@@ -256,12 +266,13 @@ def clear_database():
         db['rentals'].drop()
 
 if __name__ == "__main__":
+    # Run diagnostics on various sample sizes (10 through 100000 in powers of 10)
     os.remove('timings.txt')
-    trials = [10**x for x in range(1,6)]
-    product_file = 'products.csv'
-    customer_file = 'customers.csv'
-    rentals_file = 'rentals.csv'
+    trials = [10**x for x in range(1, 6)]
+    product_csv = 'products.csv'
+    customer_csv = 'customers.csv'
+    rentals_csv = 'rentals.csv'
     for trial in trials:
         clear_database()
-        directory_name = 'sample_csv_files_{:d}'.format(trial)
-        import_data(directory_name, product_file, customer_file, rentals_file)
+        directory = 'sample_csv_files_{:d}'.format(trial)
+        import_data(directory, product_csv, customer_csv, rentals_csv)
