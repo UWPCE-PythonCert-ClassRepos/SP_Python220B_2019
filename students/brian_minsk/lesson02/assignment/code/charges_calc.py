@@ -59,7 +59,7 @@ def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--debug', help='set logging level', required=False)
+    parser.add_argument('-d', '--debug', help='set logging level', required=False, default='0')
 
     return parser.parse_args()
 
