@@ -66,7 +66,7 @@ def generate_rental():
     return ','.join(list(map(str, [uuid4() for _ in range(3)])))
 
 if __name__ == "__main__":
-    RECORDS = 10
+    RECORDS = 100000
     FOLDER = 'sample_csv_files_{:d}'.format(RECORDS)
     if not os.path.exists(FOLDER):
         os.mkdir(FOLDER)

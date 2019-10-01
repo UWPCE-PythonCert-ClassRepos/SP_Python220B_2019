@@ -5,6 +5,7 @@ import os
 import csv
 import json
 import logging
+import time
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
 
@@ -44,6 +45,27 @@ def create_mongo_connection(host='127.0.0.1', port=27017):
     '''
     return MongoDBConnection(host, port)
 
+def system_diagnostics(func):
+    def inner(*args, **kwargs):
+        ts = time.time()
+        result = func(*args, **kwargs)
+        te = time.time()
+        elapsed = te - ts
+        # First result is either list or int, if list, get length
+        if type(result[0]).__name__ == 'list':
+            records = len(result[0])
+        else:
+            records = result[0]
+        with open('timings.txt','a') as timefile:
+            timefile.write('function \'{}\' called, input = {}, \
+time = {:f} seconds, {} records processed\n'.format(func.__name__,
+                                                    args[-1],
+                                                    elapsed,
+                                                    records))
+        return result
+    return inner
+
+@system_diagnostics
 def import_csv_to_json(csv_file):
     '''
     Method to convert a csv file to a JSON string object
@@ -70,6 +92,7 @@ def import_csv_to_json(csv_file):
         errors += 1
     return json_list, errors
 
+@system_diagnostics
 def add_json_to_mongodb(json_data, db_name, mongo=None):
     '''
     Method to add JSON formatted data to a mongo database
@@ -222,3 +245,23 @@ def show_rentals(product_id, mongo=None):
         LOGGER.error(f'Error message: {CF}')
 
     return rentals_dict
+
+def clear_database():
+    # Clear database
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.HPNorton
+        db['product'].drop()
+        db['customer'].drop()
+        db['rentals'].drop()
+
+if __name__ == "__main__":
+    os.remove('timings.txt')
+    trials = [10**x for x in range(1,6)]
+    product_file = 'products.csv'
+    customer_file = 'customers.csv'
+    rentals_file = 'rentals.csv'
+    for trial in trials:
+        clear_database()
+        directory_name = 'sample_csv_files_{:d}'.format(trial)
+        import_data(directory_name, product_file, customer_file, rentals_file)
