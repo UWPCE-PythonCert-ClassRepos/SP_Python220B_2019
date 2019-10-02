@@ -23,7 +23,7 @@ class BasicOpertationsTests(unittest.TestCase):
         database.create_tables([Customer])
 
     def tearDown(self):
-        Customer.delete()
+        Customer.delete().execute()
         database.close()
 
     def test_add_customer(self):
@@ -33,12 +33,19 @@ class BasicOpertationsTests(unittest.TestCase):
 
         query = Customer.get_or_none()
         print(f'Query object: {query}')
+        print(type(query))
         # checks that something got added
         self.assertIsNotNone(query)
 
         # check that the right unique person got added
-        for person in query:
-            self.assertEqual(person.customer_id == 100)
+        self.assertEqual(Customer[100].customer_id, 100)
+        self.assertEqual(Customer[100].name, 'Fran')
+        self.assertEqual(Customer[100].last_name, 'K')
+        self.assertEqual(Customer[100].home_address, '100 New York Ave, NYC, 98109')
+        self.assertEqual(Customer[100].phone_number, '248-331-6243')
+        self.assertEqual(Customer[100].email_address, 'my_email@gmail.com')
+        self.assertEqual(Customer[100].status, 'Active')
+        self.assertEqual(Customer[100].credit_limit, 5000)
 
     def test_search_customer(self):
         pass
