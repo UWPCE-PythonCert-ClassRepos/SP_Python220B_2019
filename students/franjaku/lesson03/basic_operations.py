@@ -10,17 +10,32 @@
 """
 
 from peewee import *
+from customer_model import *
+
 import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger()
 
 
-def add_customer(customer_id, name, lastname, home_address, phone_number, email_address, status,
+def add_customer(customer_id, name, last_name, home_address, phone_number, email_address, status,
                  credit_limit):
     """
         Adds a new customer to the database. Throw an exception if the customer already exists.
         Checks the input data to ensure its valid.
         Customer ID is used as the primary  key.
     """
-    pass
+    with database.transaction():
+        new_customer = Customer.create(customer_id=customer_id,
+                                       name=name,
+                                       last_name=last_name,
+                                       home_address=home_address,
+                                       phone_number=phone_number,
+                                       email_address=email_address,
+                                       status=status,
+                                       credit_limit=credit_limit)
+        logger.info(f'New Customer: {customer_id}, created.')
+        new_customer.save()
+        logger.info('Database add successful')
 
 
 def search_customer(customer_id):
