@@ -25,6 +25,7 @@ class Person(BaseModel):
     lives_in_town = CharField(max_length = 40)
     nickname = CharField(max_length = 20, null = True)
 
+
 class Job(BaseModel):
     """
         This class defines Job, which maintains details of past Jobs
@@ -35,6 +36,7 @@ class Job(BaseModel):
     end_date = DateField(formats = 'YYYY-MM-DD')
     salary = DecimalField(max_digits = 7, decimal_places = 2)
     person_employed = ForeignKeyField(Person, related_name='was_filled_by', null = False)
+
 
 class PersonNumKey(BaseModel):
     """

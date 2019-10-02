@@ -37,3 +37,5 @@ class Customer(BaseModel):
     email_address = CharField()
     status = CharField(null=False)
     credit_limit = CharField(null=False)
+
+database.create_tables([Customer])
