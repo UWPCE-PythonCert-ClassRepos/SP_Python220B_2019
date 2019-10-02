@@ -1,0 +1,418 @@
+Last login: Sun Sep 29 19:50:13 on ttys000
+Zacharys-MacBook-Pro:code zacharythomson$ python -m pdb charges_calc2.py -i dummy_info_fail.json -o test_out.json
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(3)<module>()
+-> '''
+(Pdb) ll
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8  	
+  9  	def parse_cmd_arguments():
+ 10  	    parser = argparse.ArgumentParser(description='Process some integers.')
+ 11  	    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12  	    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13  	
+ 14  	    return parser.parse_args()
+ 15  	
+ 16  	
+ 17  	def load_rentals_file(filename):
+ 18  	    with open(filename) as file:
+ 19  	        try:
+ 20  	            data = json.load(file)
+ 21  	        except:
+ 22  	            exit(0)
+ 23  	    return data
+ 24  	
+ 25  	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+ 31  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+ 38  	
+ 39  	def save_to_json(filename, data):
+ 40  	    with open(filename, 'w') as file:
+ 41  	        json.dump(data, file)
+ 42  	
+ 43  	if __name__ == "__main__":
+ 44  	    args = parse_cmd_arguments()
+ 45  	    data = load_rentals_file(args.input)
+ 46  	    data = calculate_additional_fields(data)
+ 47  	    save_to_json(args.output, data)
+(Pdb) b 43
+Breakpoint 1 at /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py:43
+(Pdb) c
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(34)calculate_additional_fields()
+-> except:
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) Traceback (most recent call last):
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 32, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py(126)cmdloop()
+-> line = input(self.prompt)
+(Pdb) Traceback (most recent call last):
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 32, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1728, in <module>
+    pdb.main()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1720, in main
+    pdb.interaction(None, t)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Zacharys-MacBook-Pro:code zacharythomson$ python -m pdb charges_calc2.py -i dummy_info_fail.json -o test_out.json
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(3)<module>()
+-> '''
+(Pdb) ll
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8  	
+  9  	def parse_cmd_arguments():
+ 10  	    parser = argparse.ArgumentParser(description='Process some integers.')
+ 11  	    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12  	    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13  	
+ 14  	    return parser.parse_args()
+ 15  	
+ 16  	
+ 17  	def load_rentals_file(filename):
+ 18  	    with open(filename) as file:
+ 19  	        try:
+ 20  	            data = json.load(file)
+ 21  	        except:
+ 22  	            exit(0)
+ 23  	    return data
+ 24  	
+ 25  	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+ 31  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+ 38  	
+ 39  	def save_to_json(filename, data):
+ 40  	    with open(filename, 'w') as file:
+ 41  	        json.dump(data, file)
+ 42  	
+ 43  	if __name__ == "__main__":
+ 44  	    args = parse_cmd_arguments()
+ 45  	    data = load_rentals_file(args.input)
+ 46  	    data = calculate_additional_fields(data)
+ 47  	    save_to_json(args.output, data)
+(Pdb) b 44
+Breakpoint 1 at /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py:44
+(Pdb) c
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+ValueError: time data '' does not match format '%m/%d/%y'
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(34)calculate_additional_fields()
+-> except:
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) Traceback (most recent call last):
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 28, in calculate_additional_fields
+    rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '' does not match format '%m/%d/%y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py(126)cmdloop()
+-> line = input(self.prompt)
+(Pdb) Traceback (most recent call last):
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 28, in calculate_additional_fields
+    rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '' does not match format '%m/%d/%y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "/Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1728, in <module>
+    pdb.main()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 1720, in main
+    pdb.interaction(None, t)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Zacharys-MacBook-Pro:code zacharythomson$ python -m pdb charges_calc2.py -i missing.json -o test_out.json
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(3)<module>()
+-> '''
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(4)<module>()
+-> import argparse
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(5)<module>()
+-> import json
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(6)<module>()
+-> import datetime
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(7)<module>()
+-> import math
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+FileNotFoundError: [Errno 2] No such file or directory: 'missing.json'
+> /Users/zacharythomson/py_cert/py220/SP_Python220B_2019/students/zach_thomson/lesson02/assignment/code/charges_calc2.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) quit
+Zacharys-MacBook-Pro:code zacharythomson$ 

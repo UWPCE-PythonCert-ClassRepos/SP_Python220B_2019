@@ -1,0 +1,11 @@
+product_id,description,product_type,quantity_available
+prd001,sofa,livingroom,4
+prd002,coffee table,livingroom,2
+prd003,lounge chair,livingroom,0
+prd004,refrigerator,kitchen,2
+prd005,microwave,kitchen,5
+prd006,toaster,kitchen,1
+prd007,night stand,bedroom,6
+prd008,dresser,bedroom,0
+prd009,queen mattress,bedroom,3
+prd010,queen box spring,bedroom,3
