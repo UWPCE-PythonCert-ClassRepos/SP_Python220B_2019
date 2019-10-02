@@ -13,7 +13,7 @@ from peewee import *
 from customer_model import *
 
 import logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger()
 
 
@@ -44,9 +44,26 @@ def search_customer(customer_id):
         An empty dictionary is returned if the customer does not exist in the database.
 
         :param customer_id: primary key used to search the database
-        :return: dict{name, lastname, email_address, phone_number}
+        :return: dict{customer_id, name, last_name, email_address, phone_number, email_address,
+                    status, credit_limit}
     """
-    pass
+    customer = Customer.get_or_none(Customer.customer_id==100)
+
+    # make a full dictionary if the person exists
+    if customer:
+        customer_dict = {'customer_id': customer.customer_id,
+                         'name': customer.name,
+                         'last_name': customer.last_name,
+                         'home_address': customer.home_address,
+                         'phone_number': customer.phone_number,
+                         'email_address': customer.email_address,
+                         'status': customer.status,
+                         'credit_limit': customer.credit_limit}
+    else:
+        # create an empty dict
+        customer_dict = {}
+
+    return customer_dict
 
 
 def delete_customer(customer_id):
