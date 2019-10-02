@@ -48,7 +48,40 @@ class BasicOpertationsTests(unittest.TestCase):
         self.assertEqual(Customer[100].credit_limit, 5000)
 
     def test_search_customer(self):
-        pass
+        """Test the search customer function. Assumes inputs are in correct format."""
+        customer1 = search_customer(100)
+
+        # check that we are returning a dict
+        self.assertIsInstance(customer1, dict)
+
+        # check that the dictionary is empty
+        if customer1:
+            print(f'Dict {customer1}: should be empty but is not')
+            assert False
+
+        add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+        customer2 = search_customer(100)
+
+        # check that all the correct fields are in the dictionary
+        self.assertIn('customer_id', customer2.keys())
+        self.assertIn('name', customer2.keys())
+        self.assertIn('last_name', customer2.keys())
+        self.assertIn('home_address', customer2.keys())
+        self.assertIn('phone_number', customer2.keys())
+        self.assertIn('email_address', customer2.keys())
+        self.assertIn('status', customer2.keys())
+        self.assertIn('credit_limit', customer2.keys())
+
+        # check that we get a dict with the correct customer
+        self.assertEqual(customer2['customer_id'], 100)
+        self.assertEqual(customer2['name'], 'Fran')
+        self.assertEqual(customer2['last_name'], 'K')
+        self.assertEqual(customer2['home_address'], '100 New York Ave, NYC, 98109')
+        self.assertEqual(customer2['phone_number'], '248-331-6243')
+        self.assertEqual(customer2['email_address'], 'my_email@gmail.com')
+        self.assertEqual(customer2['status'], 'Active')
+        self.assertEqual(customer2['credit_limit'], 5000)
 
     def test_delete_customer(self):
         pass
