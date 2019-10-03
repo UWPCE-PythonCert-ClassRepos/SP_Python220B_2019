@@ -115,13 +115,16 @@ class BasicOpertationsTests(unittest.TestCase):
         customer = Customer.get(Customer.customer_id == 100)
         self.assertEqual(customer.credit_limit, 5000)
 
-        update_customer_credit(100,10000)
+        update_customer_credit(100, 10000)
 
         customer_updated = Customer.get(Customer.customer_id == 100)
 
         self.assertEqual(customer_updated.credit_limit, 10000)
         self.assertEqual(customer.credit_limit, 5000)
 
+        # ensure a value error is raised if the customer does not exist
+        with self.assertRaises(ValueError):
+            update_customer_credit(250, 5000)
 
     def test_list_active_customer(self):
         pass
