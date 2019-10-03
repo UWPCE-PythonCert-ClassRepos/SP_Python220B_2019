@@ -8,7 +8,7 @@ sys.path.append('../')
 
 import unittest
 import warnings
-from unittest import mock
+
 from basic_operations import *
 from customer_model import *
 
