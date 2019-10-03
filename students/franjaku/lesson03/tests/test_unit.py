@@ -90,9 +90,9 @@ class BasicOpertationsTests(unittest.TestCase):
         # deleting a non existing customer should only cause a print statement and no run errors
         with warnings.catch_warnings(record=True) as w:
             delete_customer(100)
-            self.assertNotEqual(w,[])
-            self.assertIs(w[0].catergory,UserWarning)
-            self.assertEqual(str(w[0].message),'User with customer_id=100 does not exist in the '
+            self.assertNotEqual(w, [])
+            self.assertIs(w[0].category, UserWarning)
+            self.assertEqual(str(w[0].message), 'User with customer_id=100 does not exist in the '
                                            'database.')
 
         add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
@@ -104,7 +104,24 @@ class BasicOpertationsTests(unittest.TestCase):
         self.assertIsNone(customer, 'Should evaluate to none.')
 
     def test_update_customer_credit(self):
-        pass
+        """
+            Ensure that customer credit gets updates if inputs are in the correct format.
+            Ensure that a ValueError exception is thrown if the customer does not exist in the
+            database.
+        """
+        add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+
+        customer = Customer.get(Customer.customer_id == 100)
+        self.assertEqual(customer.credit_limit, 5000)
+
+        update_customer_credit(100,10000)
+
+        customer_updated = Customer.get(Customer.customer_id == 100)
+
+        self.assertEqual(customer_updated.credit_limit, 10000)
+        self.assertEqual(customer.credit_limit, 5000)
+
 
     def test_list_active_customer(self):
         pass
