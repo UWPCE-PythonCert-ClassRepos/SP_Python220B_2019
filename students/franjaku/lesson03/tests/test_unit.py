@@ -4,13 +4,13 @@
 
 
 import sys
-sys.path.append('../')
+sys.path.append('../src')
 
 import unittest
 import warnings
 
 from basic_operations import *
-from customer_model import *
+from customer_model import Customer
 
 class CustomerModelTests(unittest.TestCase):
     """Customer model tests."""

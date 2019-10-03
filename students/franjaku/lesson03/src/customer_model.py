@@ -9,7 +9,9 @@ database = pw.SqliteDatabase('customer_database.db')
 
 
 class BaseModel(pw.Model):
+    """Base clase...."""
     class Meta:
+        """Connects all the models to one database."""
         database = database
 
 
