@@ -33,8 +33,7 @@ class BasicOpertationsTests(unittest.TestCase):
                      'my_email@gmail.com', 'Active', 5000)
 
         query = Customer.get_or_none()
-        print(f'Query object: {query}')
-        print(type(query))
+
         # checks that something got added
         self.assertIsNotNone(query)
 
@@ -93,13 +92,13 @@ class BasicOpertationsTests(unittest.TestCase):
             self.assertNotEqual(w, [])
             self.assertIs(w[0].category, UserWarning)
             self.assertEqual(str(w[0].message), 'User with customer_id=100 does not exist in the '
-                                           'database.')
+                                                'database.')
 
         add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
                      'my_email@gmail.com', 'Active', 5000)
 
         delete_customer(100)
-        customer = Customer.get_or_none(Customer.customer_id==100)
+        customer = Customer.get_or_none(Customer.customer_id == 100)
 
         self.assertIsNone(customer, 'Should evaluate to none.')
 

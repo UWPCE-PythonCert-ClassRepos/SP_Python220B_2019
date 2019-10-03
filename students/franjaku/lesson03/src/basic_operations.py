@@ -14,7 +14,7 @@ import logging
 
 from customer_model import Customer, database
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 
 
