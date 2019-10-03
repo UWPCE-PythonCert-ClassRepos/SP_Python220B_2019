@@ -128,3 +128,31 @@ class BasicOpertationsTests(unittest.TestCase):
 
     def test_list_active_customer(self):
         pass
+        """Test that the correct number of active customers are counted in database."""
+
+        # ensure no current customers
+        active_customers = list_active_customers()
+        self.assertEqual(active_customers, 0)
+
+        # add a couple of customer whose status is all active
+        add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+
+        add_customer(200, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+
+        add_customer(300, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+        active_customers = list_active_customers()
+        self.assertEqual(active_customers, 3)
+
+        # add customers with inactive status
+        add_customer(400, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Inactive', 5000)
+
+        add_customer(500, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Inactive', 5000)
+
+        active_customers = list_active_customers()
+        self.assertEqual(active_customers, 3)
+        pass
