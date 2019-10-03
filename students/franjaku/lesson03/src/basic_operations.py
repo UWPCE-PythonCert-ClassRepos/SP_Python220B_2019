@@ -96,6 +96,7 @@ def update_customer_credit(customer_id, credit_limit):
     else:
         raise ValueError
 
+
 def list_active_customers():
     """
         Returns an integer with the number of customers whose status is active in the database.
