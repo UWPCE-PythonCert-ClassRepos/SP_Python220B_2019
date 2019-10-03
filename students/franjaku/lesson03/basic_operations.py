@@ -80,10 +80,17 @@ def delete_customer(customer_id):
 
 def update_customer_credit(customer_id, credit_limit):
     """
-        Updates a customers credit limit in the database. A ValueError expection is thrown if the
+        Updates a customers credit limit in the database. A ValueError exception is thrown if the
         customer does not exist in the database.
     """
-    pass
+    customer = Customer.get_or_none(Customer.customer_id == customer_id)
+
+    if not customer:
+        raise ValueError
+    else:
+        logger.info(f'Updating credit limit for customer with id: {customer}')
+        customer.credit_limit = credit_limit
+        customer.save()
 
 
 def list_active_customers():
