@@ -10,8 +10,9 @@
 """
 
 from peewee import *
-from customer_model import *
+from customer_model import Customer, database
 
+import warnings
 import logging
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger()
@@ -47,7 +48,7 @@ def search_customer(customer_id):
         :return: dict{customer_id, name, last_name, email_address, phone_number, email_address,
                     status, credit_limit}
     """
-    customer = Customer.get_or_none(Customer.customer_id==100)
+    customer = Customer.get_or_none(Customer.customer_id==customer_id)
 
     # make a full dictionary if the person exists
     if customer:
@@ -71,10 +72,13 @@ def delete_customer(customer_id):
         Deletes an existing customer from the database. A warning message is printed if the
         customer does not exist in the databse.
     """
-    pass
+    q = Customer.delete().where(Customer.customer_id == customer_id).execute()
+
+    if q == 0:
+        warnings.warn(f'User with customer_id={customer_id} does not exist in the database.',UserWarning)
 
 
-def update_customer_credit(customer_id):
+def update_customer_credit(customer_id, credit_limit):
     """
         Updates a customers credit limit in the database. A ValueError expection is thrown if the
         customer does not exist in the database.
