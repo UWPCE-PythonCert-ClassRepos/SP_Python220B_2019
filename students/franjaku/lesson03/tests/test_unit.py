@@ -127,7 +127,6 @@ class BasicOpertationsTests(unittest.TestCase):
             update_customer_credit(250, 5000)
 
     def test_list_active_customer(self):
-        pass
         """Test that the correct number of active customers are counted in database."""
 
         # ensure no current customers
@@ -155,4 +154,3 @@ class BasicOpertationsTests(unittest.TestCase):
 
         active_customers = list_active_customers()
         self.assertEqual(active_customers, 3)
-        pass
