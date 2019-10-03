@@ -97,4 +97,7 @@ def list_active_customers():
     """
         Returns an integer with the number of customers whose status is active in the database.
     """
-    pass
+    query = Customer.select().where(Customer.status == 'Active')
+    active_customers = len(query)
+    logger.info(f'Number of active customers: {active_customers}')
+    return active_customers
