@@ -7,6 +7,7 @@ import sys
 sys.path.append('../')
 
 import unittest
+import warnings
 from unittest import mock
 from basic_operations import *
 from customer_model import *
@@ -84,7 +85,23 @@ class BasicOpertationsTests(unittest.TestCase):
         self.assertEqual(customer2['credit_limit'], 5000)
 
     def test_delete_customer(self):
-        pass
+        """Deletes a customer properly if input is given in the correct format"""
+
+        # deleting a non existing customer should only cause a print statement and no run errors
+        with warnings.catch_warnings(record=True) as w:
+            delete_customer(100)
+            self.assertNotEqual(w,[])
+            self.assertIs(w[0].catergory,UserWarning)
+            self.assertEqual(str(w[0].message),'User with customer_id=100 does not exist in the '
+                                           'database.')
+
+        add_customer(100, 'Fran', 'K', '100 New York Ave, NYC, 98109', '248-331-6243',
+                     'my_email@gmail.com', 'Active', 5000)
+
+        delete_customer(100)
+        customer = Customer.get_or_none(Customer.customer_id==100)
+
+        self.assertIsNone(customer, 'Should evaluate to none.')
 
     def test_update_customer_credit(self):
         pass
