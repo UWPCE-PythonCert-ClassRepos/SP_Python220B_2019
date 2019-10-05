@@ -17,11 +17,11 @@ class Customer(BaseModel):
     """
     Customer class that contain data about HP Norton customers
     """
-    customer_id = AutoField() #maybe IntergerField(unique=TRUE)
+    customer_id = IntegerField(primary_key=True)
     name = CharField(max_length=40)
     last_name = CharField(max_length=30)
     home_address = CharField(max_length=40)
-    phone_number = CharField(min_length=10, max_length=10)
+    phone_number = CharField(max_length=10)
     email_address = CharField(max_length=40)
     status = BooleanField()
     credit_limit = DecimalField(max_digits=7, decimal_places=2)
