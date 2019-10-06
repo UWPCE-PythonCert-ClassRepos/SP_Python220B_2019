@@ -42,10 +42,16 @@ class BasicOperationsTest(TestCase):
         expected_dict = {'name': 'Zach', 'last_name': 'Thomson',
                          'email_address': 'ScubaSteve@gmail.com', 'phone_number': '2068675309'}
         self.assertEqual(search, expected_dict)
-        #search_2 = search_customer(900)
-        #new_exp_dict = {}
-        #self.assertEqual(search_2, new_exp_dict)
-        #need to work on when a customer doesn't exist, empty dict returns
+
+    def test_search_fail(self):
+        db_setup()
+
+        add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
+                     'ScubaSteve@gmail.com', True, 1000.00)
+        search_2 = search_customer(900)
+        new_exp_dict = {}
+        self.assertEqual(search_2, new_exp_dict)
+
 
     def test_delete_customer(self):
         db_setup()
@@ -53,18 +59,38 @@ class BasicOperationsTest(TestCase):
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
                      'ScubaSteve@gmail.com', True, 1000.00)
         delete_customer(1234)
-        #work in progress
+        search = search_customer(1234)
+        exp_dict = {}
+        self.assertEqual(search, exp_dict)
+
+    def test_delete_fail(self):
+        db_setup()
+        self.assertRaises(ValueError, delete_customer, 1)
+
 
     def test_update_customer_credit(self):
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
                      'ScubaSteve@gmail.com', True, 1000.00)
+        #test credit update success
         update_customer_credit(1234, 2000.00)
         new_credit = Customer.get(Customer.customer_id == 1234)
         self.assertEqual(new_credit.credit_limit, 2000.00)
-        #need to work on ValueError exception
+
+        #test credit update failure
+        self.assertRaises(ValueError, update_customer_credit, 9000, 10.00)
+
 
 
     def test_list_active_customers(self):
-        pass
+        db_setup()
+
+        add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
+                     'ScubaSteve@gmail.com', True, 1000.00)
+        add_customer(1235, 'Bob', 'Doe', '1001 John St', '2068675310',
+                     'ScubaSteve1@gmail.com', False, 1000.00)
+        add_customer(1236, 'Sally', 'Field', '1002 John St', '2068675311',
+                     'ScubaSteve2@gmail.com', True, 1000.00)
+
+        self.assertEqual(list_active_customers(), 2)
