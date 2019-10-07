@@ -89,7 +89,7 @@ def add_furniture(invoice_file, customer_name, item_code,
 
     write_header = not path.exists(invoice_file)
 
-    with open(invoice_file, mode='a+', newline='') as csv_file:
+    with open(invoice_file, mode='a', newline='') as csv_file:
         fieldnames = ['RENTER_NAME',
                       'PRODUCT_ID',
                       'PRODUCT_NAME',
@@ -126,9 +126,6 @@ def single_customer(customer_name, invoice_file):
         LOGGER.debug("Creating invoice for %s", customer_name)
         invoice = []
 
-        if path.exists(invoice_file):
-            remove(invoice_file)
-
         for rental in rentals:
             LOGGER.debug("Adding : %s", rental)
             invoice.append(rental)
@@ -143,9 +140,19 @@ def main():
     So, using create_invoice() will, in this case, add all items in
     test_items.csv to rented_items.csv under the name 'Susan Wong'.
     """
+    invoice_file = 'rented_items.csv'
+    if path.exists(invoice_file):
+        remove(invoice_file)
+
     items = csv_to_json('.', 'test_items.csv')
     LOGGER.debug(items)
-    create_invoice = single_customer("Elisa Miles", "rented_items.csv")
+    add_furniture("rented_items.csv", "Elisa Miles",
+                  "LR04", "Leather Sofa", 25)
+    add_furniture("rented_items.csv", "Edward Data",
+                  "KT78", "Kitchen Table", 10)
+    add_furniture("rented_items.csv", "Alex Gonzales",
+                  "BR02", "Queen Mattress", 17)
+    create_invoice = single_customer("Elisa Miles", invoice_file)
     create_invoice('test_items.csv')
 
 
