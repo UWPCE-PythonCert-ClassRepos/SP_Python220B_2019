@@ -1,4 +1,5 @@
 """ Module for getting item prices """
+# pylint: disable=unused-argument
 
 
 def get_latest_price(item_code):

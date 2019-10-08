@@ -10,6 +10,7 @@ from inventory_management import electric_appliances_class
 
 FULL_INVENTORY = {}
 
+
 def main_menu(user_prompt=None):
     """ Main Menu of Options for User """
     valid_prompts = {"1": add_new_item,
@@ -18,7 +19,7 @@ def main_menu(user_prompt=None):
     options = list(valid_prompts.keys())
 
     while user_prompt not in valid_prompts:
-        options_str = (("{}" + ", {}") * (len(options)-1)).format(*options)
+        options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
         print(f"Please choose from the following options ({options_str}):")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
@@ -29,7 +30,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """ Returns price to user """
-    print("Get price")
+    print("Getting price", market_prices.get_latest_price(item_code))
 
 
 def add_new_item():
