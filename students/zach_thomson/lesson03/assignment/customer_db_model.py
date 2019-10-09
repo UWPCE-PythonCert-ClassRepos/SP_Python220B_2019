@@ -1,16 +1,19 @@
+# pylint: disable=W0614, W0401, R0903
 """
 Database model file for HP Norton Customer database
 """
 
 from peewee import *
 
-database = SqliteDatabase('customers.db')
-database.connect()
-database.execute_sql('PRAGMA foreign_keys = ON;')
+DATABASE = SqliteDatabase('customers.db')
+DATABASE.connect()
+DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
 
 class BaseModel(Model):
+    '''initializing class'''
     class Meta:
-        database = database
+        '''initializing class'''
+        database = DATABASE
 
 
 class Customer(BaseModel):

@@ -1,3 +1,4 @@
+# pylint: disable=W0614, W0401
 '''
 tests for the basic operations/customer database
 '''
@@ -7,18 +8,19 @@ from peewee import *
 from customer_db_model import Customer
 from basic_operations import *
 
-test_db = SqliteDatabase('test.db')
+TEST_DB = SqliteDatabase('test.db')
 
 def db_setup():
-    test_db.drop_tables([Customer])
-    test_db.create_tables([Customer])
+    '''sets up an empty database for testing'''
+    TEST_DB.drop_tables([Customer])
+    TEST_DB.create_tables([Customer])
 
 
 class BasicOperationsTest(TestCase):
     '''tests for basic operations'''
 
     def test_add_customer(self):
-        '''test add customer function/'''
+        '''test add customer function'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
@@ -34,6 +36,7 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(generic.credit_limit, 1000.00)
 
     def test_search_customer(self):
+        '''tests search_customer function'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
@@ -44,6 +47,8 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(search, expected_dict)
 
     def test_search_fail(self):
+        '''tests exception handling of a search for a customer that is not in
+        the database'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
@@ -54,6 +59,7 @@ class BasicOperationsTest(TestCase):
 
 
     def test_delete_customer(self):
+        '''tests delete_customer function'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
@@ -64,11 +70,13 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(search, exp_dict)
 
     def test_delete_fail(self):
+        '''tests exception handling of attemting to delete a customer that
+        is not in the system'''
         db_setup()
         self.assertRaises(ValueError, delete_customer, 1)
 
-
     def test_update_customer_credit(self):
+        '''tests updating a customers credit'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',
@@ -81,9 +89,8 @@ class BasicOperationsTest(TestCase):
         #test credit update failure
         self.assertRaises(ValueError, update_customer_credit, 9000, 10.00)
 
-
-
     def test_list_active_customers(self):
+        '''tests the return of list_active_customers function'''
         db_setup()
 
         add_customer(1234, 'Zach', 'Thomson', '1000 John St', '2068675309',

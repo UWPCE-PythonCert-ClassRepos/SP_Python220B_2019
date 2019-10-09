@@ -1,3 +1,4 @@
+# pylint: disable=W0401, W0614, R0913
 '''
 basic operations for database
 '''
@@ -11,6 +12,7 @@ LOGGER = logging.getLogger(__name__)
 
 def add_customer(customer_id, name, last_name, home_address, phone_number,
                  email_address, status, credit_limit):
+    '''function to add a new customer to the database'''
     new_customer = Customer.create(
         customer_id=customer_id,
         name=name,
@@ -26,6 +28,7 @@ def add_customer(customer_id, name, last_name, home_address, phone_number,
 
 
 def search_customer(customer_id):
+    '''return a dictionary with customer information based on customer id'''
     search_dict = {}
     try:
         search = Customer.get(Customer.customer_id == customer_id)
@@ -41,6 +44,7 @@ def search_customer(customer_id):
 
 
 def delete_customer(customer_id):
+    '''deletes a customer based on customer id'''
     try:
         deletion = Customer.get(Customer.customer_id == customer_id)
         LOGGER.info('Deleting %s from the customer database', deletion.customer_id)
@@ -52,6 +56,7 @@ def delete_customer(customer_id):
 
 
 def update_customer_credit(customer_id, credit_limit):
+    '''updated customer credit limit based on customer id'''
     try:
         update_limit = Customer.get(Customer.customer_id == customer_id)
         update_limit.credit_limit = credit_limit
@@ -64,6 +69,7 @@ def update_customer_credit(customer_id, credit_limit):
 
 
 def list_active_customers():
+    '''return an integer for the number of active customers'''
     count = 0
     for customer in Customer:
         if customer.status is True:
