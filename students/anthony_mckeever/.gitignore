@@ -1,0 +1,17 @@
+# Git Ignore for Anthony McKeever's directory.
+
+# Caching
+__pycache__/
+*/.pytest_cache
+
+# Archives
+*.zip
+
+# Code Coverage
+htmlcov/
+.coverage
+.coveragerc
+
+# Output files
+*output*.html
+sample.html
