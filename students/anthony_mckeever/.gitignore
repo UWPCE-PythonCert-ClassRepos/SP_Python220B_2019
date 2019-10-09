@@ -1,5 +1,4 @@
 # Git Ignore for Anthony McKeever's directory.
-# Pycashe and PyTest
 
 # Caching
 __pycache__/
