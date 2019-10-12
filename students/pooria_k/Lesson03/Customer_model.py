@@ -1,26 +1,26 @@
 """
 customer database, to store required data for each customer
 """
-from peewee import *
+import peewee
 
-database = SqliteDatabase('customer.db')
-database.connect()
-database.execute_sql('PRAGMA foreign_keys = ON;')
+db= peewee.SqliteDatabase(None)
+# db.execute_sql('PRAGMA foreign_keys = ON;')
 
-class Basemodel(Model):
+
+class BaseModel(peewee.Model):
     class Meta:
-        database = database
+        database = db
 
-class Customer(Basemodel):
+class Customer(BaseModel):
     """
     This class defines Customer, which maintains details of
     a customer
      """
+    name = peewee.CharField(max_length=20, unique=True)
+    lastname = peewee.CharField(max_length=30)
+    home_address = peewee.CharField(max_length=50)
+    phone_number = peewee.IntegerField()
+    email_address = peewee.CharField(max_length=40)
+    status = peewee.BooleanField(default=True)
+    credit_limit = peewee.DecimalField()
 
-    name = CharField(max_length=20)
-    lastname = CharField(max_length=30)
-    home_address = CharField(max_length=50)
-    phone_number = IntegerField()
-    email_address = CharField(max_length=40)
-    status = BooleanField(default=True)
-    credit_limit = DecimalField()
