@@ -4,7 +4,7 @@
 Returns total price paid for individual rentals
 
 Revisit your logging assignment from lesson 2. We are going to make
-ogging selective, by using decorators.
+logging selective, by using decorators.
 
 Add decorator(s) to introduce conditional logging so that a single
 command line variable can turn logging on or off for decorated
