@@ -24,7 +24,7 @@ You implementation should address the following requirements:
 Change the lesson 5 assignment to Write a context manager to access MongoDB.
 There is already an example in lesson 5, but build on this example. Try to add
 useful features based on your experience of the Python techniques you have
-earned. It may not be obvious what to add, but think what would be useful when
+learned. It may not be obvious what to add, but think what would be useful when
 developing.
 """
 import json
@@ -43,21 +43,41 @@ FH.setFormatter(FORMATTER)
 LOGGER.addHandler(FH)
 
 
+def _retry(func, num_attempts=3):
+    """
+    decorator to retry calls
+    """
+    def wrapper(*args, **kwargs):
+        attempts = 0
+        while attempts < num_attempts:
+            try:
+                func(*args, **kwargs)
+            except MongoClient.Exception as ex:
+                LOGGER.debug('Caught Exception: %s. Retrying...', ex.msg)
+            finally:
+                attempts += 1
+
+    return wrapper
+
+
 class MongoDBConnection():
     """
     Class to make connecting to and acting upon a mongo database a little
     easier
     """
+    @_retry
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
         self.connection = None
 
+    @_retry
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
         return self
 
+    @_retry
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
@@ -259,9 +279,7 @@ def show_customers():
 
 def main():
     """ The main function for the program """
-    import_stats = import_data("/Users/joe.nunnelley/Documents/Node/git/"
-                               "python_playground/SP_Python220B_2019/"
-                               "students/JoeNunnelley/lesson05/assignment",
+    import_stats = import_data(path.curdir,
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
