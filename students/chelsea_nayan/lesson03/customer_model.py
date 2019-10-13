@@ -1,4 +1,4 @@
-'''Customer model for HP Norton database'''
+'''Customer model schema for HP Norton database'''
 
 # pylint: disable=unused-wildcard-import
 # pylint: disable=wildcard-import

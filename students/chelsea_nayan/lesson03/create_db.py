@@ -11,11 +11,8 @@ logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 LOGGER.info('Logger is active!')
 
-database.init('customers.db')
-LOGGER.info('Intialized customers.db!')
-
 database.create_tables([Customer])
 LOGGER.info('Intialized customer schema in database...')
 
-database.close()
+#database.close()
 LOGGER.info('Database closed!')
