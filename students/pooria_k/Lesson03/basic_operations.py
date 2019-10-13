@@ -4,14 +4,14 @@ operations on customer database
 """
 
 import logging
-from Customer_model import  Customer, peewee, db
+from customer_model import  Customer, peewee, DB
 
 
 
 CUSTOMER_LIST = [('Andrew', 'peterson', '344 james ave' \
-                  , 6308153728, 'a_peteerson@mail.com', True, 4500), \
+                  , 6308153728, 'a_peteerson@mail.com', False, 4500), \
                   ('Wang', 'Wou', '103 spring ave', \
-                   2223334456, 'wang_wou@gmail.com', True, 22000)]
+                   2223334456, 'wang_wou@gmail.com', False, 22000)]
 NAME = 0
 LASTNAME = 1
 ADDRESS = 2
@@ -38,8 +38,8 @@ def db_init():
     Function to initialize DB, create
     and add tables
     """
-    db.init('customer.db')
-    db.create_tables([Customer])
+    DB.init('customer.db')
+    DB.create_tables([Customer])
     add_customer(CUSTOMER_LIST)
 
 def add_customer(customer_data):
@@ -49,7 +49,7 @@ def add_customer(customer_data):
     """
     for customer in customer_data:
         try:
-            with db.transaction():
+            with DB.transaction():
                 LOGGER.info('Adding \"%s\" as new customer', (customer[NAME], customer[LASTNAME]))
                 new_customer = Customer.create(
                     name=customer[NAME],
@@ -133,16 +133,9 @@ def list_active_customers():
     This function will return an integer with the number of
     customers whose status is currently active.
     """
-    active_customer_count = Customer.select().where(Customer.status==True).count()
+    active_customer_count = Customer.select().where(Customer.status).count()
     return active_customer_count
 
 
 if __name__ == '__main__':
     db_init()
-    # search_customer(4)
-    # print(search_customer(3))
-    update_customer_credit(1, 25000)
-    # update_customer_credit(4, 35000)
-    # del_customer(4)
-    print(list_active_customers())
-    # db.close()

@@ -9,10 +9,10 @@ def db_init():
     Function to initialize DB, create
     and add tables
     """
-    db.init('customer.db')
-    db.drop_tables([Customer])
-    db.create_tables([Customer])
-    add_customer(CUSTOMER_LIST)
+    DB.init('customer.db')
+    DB.drop_tables([Customer])
+    DB.create_tables([Customer])
+
 
 class Integration_testing(TestCase):
     """Integration testing for basic_operations.py"""
@@ -37,5 +37,6 @@ class Integration_testing(TestCase):
         customer_2 = Customer.get(Customer.id ==2)
         self.assertEqual(customer_1.credit_limit, 6500)
         self.assertEqual(customer_2.credit_limit, 30000)
+        self.assertEqual(list_active_customers(), 2)
         del_customer(2)
         self.assertEqual(list_active_customers(), 1)
