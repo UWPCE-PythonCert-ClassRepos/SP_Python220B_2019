@@ -64,7 +64,7 @@ def logger_decorator(func, level=0):
         if level == 3:
             logger.setLevel(logging.DEBUG)
             # do not write debug logs to log file.
-            file_handler.setLevel(logging.WARNING)
+            file_handler.setLevel(logging.DEBUG)
             stream_handler.setLevel(logging.DEBUG)
 
         return func(*args, **kwargs)
@@ -72,6 +72,7 @@ def logger_decorator(func, level=0):
     return get_logger
 
 
+@logger_decorator
 def load_rentals_file(filename):
     """
     Load input data file.
@@ -86,6 +87,7 @@ def load_rentals_file(filename):
             exit(0)
 
 
+@logger_decorator
 def calculate_additional_fields(data):
     """
     Process data by calculating additional fields.
@@ -113,6 +115,7 @@ def calculate_additional_fields(data):
     return data
 
 
+@logger_decorator
 def save_to_json(filename, data):
     """
     Save data to JSON file.
