@@ -49,32 +49,48 @@ class FurnitureTests(TestCase):
 
 class MainTests(TestCase):
 
-    def test_get_latest_price(self):
-        market_prices.get_latest_price = MagicMock(return_value=market_prices.get_latest_price(''))
-        market_prices.get_latest_price('abc')
-        market_prices.get_latest_price.assert_called_with('abc')
-
     def test_mainMenu(self):
-        main.mainMenu = MagicMock(return_value=0)
-        main.mainMenu()
-        main.mainMenu.assert_called_with()
+        main.input = MagicMock(return_value='1')
+        expected_response = main.addNewItem
+        self.assertEqual(main.mainMenu(), expected_response)
 
     def test_getPrice(self):
         main.getPrice = MagicMock(return_value=main.getPrice(''))
         main.getPrice('abc')
         main.getPrice.assert_called_with('abc')
 
-    def test_addNewItem(self):
-        main.addNewItem = MagicMock(return_value=0)
-        main.addNewItem()
-        main.addNewItem.assert_called_with()
+    def test_get_latest_price(self):
+        expected_response = 24
+        self.assertEqual(main.market_prices.get_latest_price('code'), expected_response)
 
-    def test_itemInfo(self):
-        main.itemInfo = MagicMock(return_value=0)
-        main.itemInfo()
-        main.itemInfo.assert_called_with()
+    def test_add_furniture(self):
+        user_inputs = ['code','description','rental price','y','material','size']
+        main.input = MagicMock(side_effect=user_inputs)
+        main.fullInventory = MagicMock(return_value='full')
+        self.assertEqual(main.addNewItem(), None)
+
+    def test_add_electric_appliance(self):
+        user_inputs = ['code','description','rental price','n','y','brand','voltage']
+        main.input = MagicMock(side_effect=user_inputs)
+        main.fullInventory = MagicMock(return_value='full')
+        self.assertEqual(main.addNewItem(), None)
+
+    def test_add_inventory(self):
+        user_inputs = ['code','description','rental price','n','n']
+        main.input = MagicMock(side_effect=user_inputs)
+        main.fullInventory = MagicMock(return_value='full')
+        self.assertEqual(main.addNewItem(), None)
+
+    def test_item_found(self):
+        main.fullInventory = {1: {'productCode': 'abc'}}
+        main.input = MagicMock(return_value=1)
+        self.assertEqual(main.itemInfo(), None)
+
+    def test_item_not_found(self):
+        main.fullInventory = {1: {'productCode': 'abc'}}
+        main.input = MagicMock(return_value=0)
+        self.assertEqual(main.itemInfo(), None)
 
     def test_exitProgram(self):
-        main.exitProgram = MagicMock(return_value=0)
-        main.exitProgram()
-        main.exitProgram.assert_called_with()
+        main.sys.exit = MagicMock(return_value=0)
+        self.assertEqual(main.exitProgram(), None)
