@@ -122,5 +122,3 @@ if __name__ == "__main__":
     setup_logging(ARGS.debug)
     files = gather_files(ARGS.root_directory, ARGS.file_type, [])
     LOGGER.debug(files)
-    for filen in files:
-        LOGGER.info(filen)

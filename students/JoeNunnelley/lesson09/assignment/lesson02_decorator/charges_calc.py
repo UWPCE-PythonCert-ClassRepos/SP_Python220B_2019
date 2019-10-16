@@ -18,49 +18,56 @@ import math
 
 
 LOGGER = logging.getLogger()
+DEBUG = None
+LOG_LEVEL_DEFAULT = int(logging.CRITICAL / 10)
 
 
-def setup_logging(_log_level=None):
+def setup_logging():
     """
         Accepts None (no -d sent in) and 1 - 3.
         All other values are invalid including 0
-        None: No debug messages or log file.
-        1: Only error messages.
-        2: Error messages and warnings.
-        3: Error messages, warnings and debug messages.
+        None and 0: No debug messages or log file.
+        1: Debug message level.
+        2: Info message level
+        3: Warning mesage level.
+        4: Error message level.
+        5: Critical message level.
         *  No debug message to logfile
     """
-    log_level = logging.INFO
-    if _log_level is None:
+    if LOG_LEVEL_DEFAULT is None or LOG_LEVEL_DEFAULT == 0:
         print('No debug logging')
         LOGGER.addHandler(logging.NullHandler())
-    elif int(_log_level) == 1:
-        print('Error message logging')
-        log_level = logging.ERROR
-    elif int(_log_level) == 2:
-        print('Error and Warning messages logging')
-        log_level = logging.WARNING
-    elif int(_log_level) == 3:
-        print('Error, Warning and Debug message logging')
+    elif int(LOG_LEVEL_DEFAULT) == 1:
+        print('Debug level message logging')
         log_level = logging.DEBUG
+    elif int(LOG_LEVEL_DEFAULT) == 2:
+        print('Info level message logging')
+        log_level = logging.INFO
+    elif int(LOG_LEVEL_DEFAULT) == 3:
+        print('Warning level messages logging')
+        log_level = logging.WARNING
+    elif int(LOG_LEVEL_DEFAULT) == 4:
+        print('Error level message logging')
+        log_level = logging.ERROR
+    elif int(LOG_LEVEL_DEFAULT) == 5:
+        print('Critical level message logging')
+        log_level = logging.CRITICAL
     else:
-        print("Invalid log_level. Expected values 1 - 3. "
+        print("Invalid log_level. Expected values 0 - 5. "
               "This argument is optional.")
         exit(1)
 
-    if _log_level:
-        log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-        log_format = "%(asctime)s %(filename)s:%(lineno)-3d " \
-                     "%(levelname)s %(message)s"
-        formatter = logging.Formatter(log_format)
-        file_handler = logging.FileHandler(log_file, mode='w')
+    log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d " \
+                 "%(levelname)s %(message)s"
+    formatter = logging.Formatter(log_format)
+    file_handler = logging.FileHandler(log_file, mode='w')
 
-        # We don't want to log DEBUG messages to the log file
-        if log_level == logging.DEBUG:
-            file_handler.setLevel(logging.WARNING)
-        else:
-            file_handler.setLevel(log_level)
-
+    # We don't want to log DEBUG messages to the log file
+    if LOG_LEVEL_DEFAULT == logging.DEBUG:
+        file_handler.setLevel(logging.WARNING)
+    else:
+        file_handler.setLevel(log_level)
         file_handler.setFormatter(formatter)
         console_handler = logging.StreamHandler()
         console_handler.setLevel(log_level)
@@ -68,6 +75,32 @@ def setup_logging(_log_level=None):
         LOGGER.setLevel(log_level)
         LOGGER.addHandler(console_handler)
         LOGGER.addHandler(file_handler)
+
+    LOGGER.info('Logger Setup')
+
+
+def set_debug(func):
+    """
+    Function to temporarily turn on debug logging
+    """
+    def wrapper(*args, **kwargs):
+        current_level = LOGGER.level
+        if DEBUG:
+            print('>> Overriding Default Log Level <<')
+            for handler in LOGGER.handlers:
+                handler.setLevel(logging.DEBUG)
+            LOGGER.setLevel(logging.DEBUG)
+
+            func(*args, **kwargs)
+
+            for handler in LOGGER.handlers:
+                handler.setLevel(current_level)
+            LOGGER.setLevel(current_level)
+
+        else:
+            func(*args, **kwargs)
+
+    return wrapper
 
 
 def parse_cmd_arguments():
@@ -82,9 +115,15 @@ def parse_cmd_arguments():
                         help='ouput JSON file',
                         required=True)
 
+    parser.add_argument('-l',
+                        '--log_level',
+                        help='set the log output level (0-5)',
+                        required=False)
+
     parser.add_argument('-d',
                         '--debug',
-                        help='set the log output level (1-3)',
+                        help='turn on debug output',
+                        action='store_true',
                         required=False)
 
     return parser.parse_args()
@@ -101,6 +140,7 @@ def load_rentals_file(filename):
     return data
 
 
+@set_debug
 def calculate_additional_fields(data):
     """ this function creates secondary data points from the primary ones """
     cleaned_data = {}
@@ -153,12 +193,13 @@ def calculate_additional_fields(data):
                 LOGGER.debug("Skipping item due to invalid data issues:\n%s",
                              value)
         except ValueError as value_error:
-            LOGGER.error("%s\n%s", value_error, value)
-    #        exit(1)
+            LOGGER.critical("%s\n%s", value_error, value)
+            exit(1)
 
     return cleaned_data
 
 
+@set_debug
 def check_value_set(value):
     """
     function to attempt to validate the inputs are within
@@ -189,14 +230,15 @@ def check_value_set(value):
         assert start <= end, 'invalid rental dates'
         assert value['units_rented'] >= 0, 'invalid units_rented value'
     except AssertionError as assert_error:
-        LOGGER.error("Data acceptability check failed: %s\n%s",
-                     assert_error,
-                     value)
+        LOGGER.warning("Data acceptability check failed: %s\n%s",
+                       assert_error,
+                       value)
         validated = False
 
     return validated
 
 
+@set_debug
 def save_to_json(filename, data):
     """ this function will save the data to a json file """
     # checking to sef if we got a valid data object back to write
@@ -210,7 +252,9 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
-    setup_logging(ARGS.debug)
+    LOG_LEVEL_DEFAULT = ARGS.log_level if ARGS.log_level else LOG_LEVEL_DEFAULT
+    setup_logging()
+    DEBUG = ARGS.debug if ARGS.debug else None
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
