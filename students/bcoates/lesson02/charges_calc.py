@@ -37,7 +37,11 @@ def configure_logger(level):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-    if level == '1':
+    if level == '0':
+        logger.setLevel(logging.CRITICAL)
+        file_handler.setLevel(logging.CRITICAL)
+        console_handler.setLevel(logging.CRITICAL)
+    elif level == '1':
         logger.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
@@ -49,6 +53,9 @@ def configure_logger(level):
         logger.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.DEBUG)
+    else:
+        print("Debug value must be 3 or lower")
+        exit(1)
 
 def load_rentals_file(filename):
     """ Loads a JSON file and returns the data """

@@ -11,6 +11,7 @@
 
 import warnings
 import logging
+import peewee
 
 from customer_model import Customer, database
 
@@ -37,7 +38,7 @@ def add_customer(customer_id, name, last_name, home_address, phone_number, email
                                            credit_limit=credit_limit)
             new_customer.save()
             LOGGER.info('New Customer: %s, created and saved to the database.', customer_id)
-        except Exception as err:
+        except peewee.IntegrityError as err:
             print(err)
             LOGGER.warning('Error, could not add customer %s.', customer_id)
 
