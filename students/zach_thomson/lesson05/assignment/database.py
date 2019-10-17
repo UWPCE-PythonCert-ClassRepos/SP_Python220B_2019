@@ -3,6 +3,7 @@ Mongo DB assignment
 '''
 import csv
 import os
+import logging
 from pymongo import MongoClient
 
 
@@ -31,6 +32,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     1) Record count of number of products, customers and rentals added
     2) A count with any errors that occured in same order
     '''
+    #need to add exception handling
     product_added = 0
     customer_added = 0
     rentals_added = 0
@@ -44,7 +46,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         db = mongo.connection.media
 
-        product = db['product']
+        product_db = db['product']
 
         with open(os.path.join(directory_name, product_file)) as csvfile:
             product_reader = csv.DictReader(csvfile)
@@ -54,9 +56,10 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                'description':row['description'],
                                'product_type':row['product_type'],
                                'quantity_available':row['quantity_available']}
-                product.insert_one(new_product)
+                product_db.insert_one(new_product)
+        #product_added = product.find('product_id').count()
 
-        customer = db['customer']
+        customer_db = db['customer']
 
         with open(os.path.join(directory_name, customer_file)) as csvfile:
             customer_reader = csv.DictReader(csvfile)
@@ -66,9 +69,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                 'name':row['name'],
                                 'address':row['phone_number'],
                                 'email':row['email']}
-                customer.insert_one(new_customer)
+                customer_db.insert_one(new_customer)
 
-        rentals = db['rentals']
+        rentals_db = db['rentals']
 
         with open(os.path.join(directory_name, rentals_file)) as csvfile:
             rental_reader = csv.DictReader(csvfile)
@@ -76,20 +79,36 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 rentals_added += 1
                 new_rental = {'user_id':['user_id'],
                               'product_id':['product_id']}
-                rentals.insert_one(new_rental)
+                rentals_db.insert_one(new_rental)
 
     return [(product_added, customer_added, rentals_added),
             (product_errors, customer_errors, rental_errors)]
 
 
-
-
-
-
 def show_available_products():
     '''returns a dict of products listed as available with fields:
     product_id, description, product_type, quantity available'''
-    pass
+
+    mongo = MongoDBConnection()
+
+    product_dict = {}
+    with mongo:
+        db = mongo.connection.media
+        product_db = db['product']
+        avail_product = product_db.find({'quantity_available': {'$gt': '0'}})
+        for product in avail_product:
+            new_entry = {'description': product['description'],
+                         'product_type': product['product_type'],
+                         'quantity_available': product['quantity_available']}
+            product_dict[product['product_id']] = new_entry
+    return product_dict
+
+
+#    for name in collector.find():
+#        print(f'List for {name["name"]}')
+#        query = {"name": name["name"]}
+#        for a_cd in cd.find(query):
+#            print(f'{name["name"]} has collected {a_cd}')
 
 def show_rentals(product_id):
     '''returns a dict with the info from users who rented matching product_id:
