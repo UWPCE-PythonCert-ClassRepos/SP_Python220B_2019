@@ -17,7 +17,8 @@ class Divider():
     @staticmethod
     def calc(operand_a, operand_b):
         """
-        Return the first number (a) divided by the second number (b).
+        Return the first number (operand_a) divided by the
+        second number (operand_b).
 
         :operand_a: The first number to divid from.
         :operand_b: The second number to divid with.
