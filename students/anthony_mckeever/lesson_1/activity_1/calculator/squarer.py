@@ -1,9 +1,8 @@
 # Advanced Programming In Python - Lesson 1 Activity 1: Automated Testing
+# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
 # Code Poet: Anthony McKeever
 # Start Date: 10/15/2019
-# End Date: 
-# 
-# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
+# End Date: 10/16/2019
 
 """
 squarer Module:
@@ -12,9 +11,8 @@ squarer Module:
 """
 
 
-class Squarer(object):
+class Squarer():
     """ A class for calculating the square of an operand. """
-
 
     @staticmethod
     def calc(operand):

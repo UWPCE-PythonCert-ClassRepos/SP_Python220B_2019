@@ -1,9 +1,8 @@
 # Advanced Programming In Python - Lesson 1 Activity 1: Automated Testing
+# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
 # Code Poet: Anthony McKeever
 # Start Date: 10/15/2019
-# End Date: 
-# 
-# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
+# End Date: 10/16/2019
 
 """
 calculator Module:
@@ -14,7 +13,7 @@ calculator Module:
 from .exceptions import InsufficientOperands
 
 
-class Calculator(object):
+class Calculator():
     """
     A class that calculates numbers using a desired operation
 
@@ -24,7 +23,6 @@ class Calculator(object):
         calculator.enter_number(3)
         result = calculator.add() # Return value = 4
     """
-
 
     def __init__(self, adder, subtracter, multiplier, divider, squarer):
         """
@@ -45,7 +43,6 @@ class Calculator(object):
 
         self.stack = []
 
-
     def enter_number(self, number):
         """
         Insert a number into the calculator's stack at position stack[0]
@@ -54,7 +51,6 @@ class Calculator(object):
         :number:    The number to insert.
         """
         self.stack.insert(0, number)
-
 
     def _do_calc(self, operator):
         """
@@ -74,26 +70,28 @@ class Calculator(object):
         self.stack = [result]
         return result
 
-
     def add(self):
         """ Return the result of the numbers in the stack added together. """
         return self._do_calc(self.adder)
 
-
     def subtract(self):
-        """ Return the result of the numbers in the stack subtracted from each other. """
+        """
+        Return the result of the numbers in the stack subtracted from
+        each other.
+        """
         return self._do_calc(self.subtracter)
 
-
     def multiply(self):
-        """ Return the result of the numbers in the stack multiplied together. """
+        """
+        Return the result of the numbers in the stack multiplied together.
+        """
         return self._do_calc(self.multiplier)
 
-
     def divide(self):
-        """ Return the result of the numbers in the stack divided from each other. """
+        """
+        Return the result of the numbers in the stack divided from each other.
+        """
         return self._do_calc(self.divider)
-
 
     def square(self):
         """ Return the result of squaring the number in the stack. """
