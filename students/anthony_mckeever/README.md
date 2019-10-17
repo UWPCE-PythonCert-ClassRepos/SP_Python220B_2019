@@ -14,6 +14,8 @@ Each course lesson will contain its own folder.  The folders will use the naming
 ```
 <students directory>
     `-- anthony_mckeever        <Root folder of Anthony's course materials>
+        `-- lesson_1            <Content for Lesson 1>
+            `-- activity_1      <Content for Lesson 1 Activity 1 - Automated Testing>
 ```
 
 ## Branching
