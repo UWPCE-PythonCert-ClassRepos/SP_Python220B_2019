@@ -1,9 +1,22 @@
 # Advanced Programming In Python - Lesson 1 Activity 1: Automated Testing
+# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
 # Code Poet: Anthony McKeever
 # Start Date: 10/15/2019
-# End Date: 
-# 
-# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/10
+# End Date: 10/16/2019
+
+"""
+Module Unit Tests
+
+Tested Modules:
+    Calculator
+        Calculator
+        Adder
+        Subtacter
+        Multiplier
+        Divider
+        Squarer
+        Exceptions
+"""
 
 from unittest import TestCase
 from unittest.mock import MagicMock
@@ -18,8 +31,14 @@ from calculator.exceptions import InsufficientOperands
 
 
 class AdderTests(TestCase):
-    
+    """ A collection of Adder test cases """
+
     def test_adder(self):
+        """
+        Tests the Adder's calc method
+
+        Expected Result Example: 2 + 2 = 4
+        """
         adder = Adder()
 
         for i in range(-10, 10):
@@ -28,8 +47,14 @@ class AdderTests(TestCase):
 
 
 class SubtracterTests(TestCase):
-    
+    """ A collection of Subtracter test cases """
+
     def test_subtracter(self):
+        """
+        Tests the Subtracter's calc method
+
+        Expected Result Example: 4 - 2 = 2
+        """
         subtracter = Subtracter()
 
         for i in range(-10, 10):
@@ -38,8 +63,14 @@ class SubtracterTests(TestCase):
 
 
 class MultiplierTests(TestCase):
-    
+    """ A collection of Multiplier test cases """
+
     def test_multiplier(self):
+        """
+        Tests the Multiplier's calc method
+
+        Expected Result Example: 3 * 2 = 6
+        """
         multiplier = Multiplier()
 
         for i in range(-10, 10):
@@ -48,8 +79,14 @@ class MultiplierTests(TestCase):
 
 
 class DividerTests(TestCase):
-    
+    """ A collection of Divder test cases """
+
     def test_divider(self):
+        """
+        Tests the Divder's calc method
+
+        Expected Result Example: 10 / 2 = 5
+        """
         divider = Divider()
 
         for i in range(-10, 10):
@@ -59,8 +96,14 @@ class DividerTests(TestCase):
 
 
 class SquarerTests(TestCase):
-    
+    """ A collection of Squarer test cases """
+
     def test_adder(self):
+        """
+        Tests the Divder's calc method
+
+        Expected Result Example: -2^2 = 4
+        """
         squarer = Squarer()
 
         for i in range(-10, 10):
@@ -68,6 +111,7 @@ class SquarerTests(TestCase):
 
 
 class CalculatorTests(TestCase):
+    """ A Calculator of Squarer test cases """
 
     def setUp(self):
         self.adder = Adder()
@@ -76,10 +120,17 @@ class CalculatorTests(TestCase):
         self.divider = Divider()
         self.squarer = Squarer()
 
-        self.calculator = Calculator(self.adder, self.subtracter,self.multiplier, self.divider, self.squarer)
-
+        self.calculator = Calculator(self.adder,
+                                     self.subtracter,
+                                     self.multiplier,
+                                     self.divider,
+                                     self.squarer)
 
     def test_insufficient_operands(self):
+        """
+        Tests all calculator operations throws InsufficientOperands exceptions
+        if the inadequate amount of operands are provided.
+        """
         with self.assertRaises(InsufficientOperands):
             self.calculator.square()
 
@@ -97,8 +148,10 @@ class CalculatorTests(TestCase):
         with self.assertRaises(InsufficientOperands):
             self.calculator.divide()
 
-    
     def test_adder_call(self):
+        """
+        Tests that Add calls the adder's calc function
+        """
         self.adder.calc = MagicMock(return_value=0)
 
         self.calculator.enter_number(1)
@@ -107,8 +160,10 @@ class CalculatorTests(TestCase):
 
         self.adder.calc.assert_called_with(1, 2)
 
-
     def test_subtracter_call(self):
+        """
+        Tests that Subtract calls the subtracters's calc function
+        """
         self.subtracter.calc = MagicMock(return_value=0)
 
         self.calculator.enter_number(1)
@@ -117,8 +172,10 @@ class CalculatorTests(TestCase):
 
         self.subtracter.calc.assert_called_with(1, 2)
 
-
     def test_multiplier_call(self):
+        """
+        Tests that Multiply calls the multiplier's calc function
+        """
         self.multiplier.calc = MagicMock(return_value=0)
 
         self.calculator.enter_number(1)
@@ -127,8 +184,10 @@ class CalculatorTests(TestCase):
 
         self.multiplier.calc.assert_called_with(1, 2)
 
-
     def test_divider_call(self):
+        """
+        Tests that Divide calls the Divider's calc function
+        """
         self.divider.calc = MagicMock(return_value=0)
 
         self.calculator.enter_number(1)
@@ -137,34 +196,13 @@ class CalculatorTests(TestCase):
 
         self.divider.calc.assert_called_with(1, 2)
 
-
     def test_squarer_call(self):
+        """
+        Tests that Square calls the Squarer's calc function
+        """
         self.squarer.calc = MagicMock(return_value=0)
 
         self.calculator.enter_number(2)
         self.calculator.square()
 
-        self.squarer.calc.assert_called_with( 2)
-
-
-class ModuleTests(TestCase):
-
-    def test_module(self):
-        calculator = Calculator(Adder(), Subtracter(), Multiplier(), Divider(), Squarer())
-
-        calculator.enter_number(2)
-        calculator.square() # result = 4
-
-        calculator.enter_number(3)
-        calculator.multiply() # result = 12
-
-        calculator.enter_number(8)
-        calculator.add() # result = 20
-
-        calculator.enter_number(4)
-        calculator.divide() # result = 5
-
-        calculator.enter_number(6)
-        result = calculator.subtract() # result = -1
-
-        self.assertEqual(-1, result)
+        self.squarer.calc.assert_called_with(2)
