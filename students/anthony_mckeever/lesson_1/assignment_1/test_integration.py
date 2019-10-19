@@ -1,5 +1,5 @@
 # Advanced Programming In Python - Lesson 1 Activity 1: Automated Testing
-# Studio Starchelle RedMine - SchoolOps: http://redmine/issues/11
+# RedMine Issue - SchoolOps-11
 # Code Poet: Anthony McKeever
 # Start Date: 10/16/2019
 # End Date: 10/18/2019
