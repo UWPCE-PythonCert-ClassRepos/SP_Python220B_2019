@@ -28,4 +28,8 @@ class MongoDBTest(TestCase):
         self.assertEqual(actual_output, expected_dict)
 
     def test_show_rentals(self):
-        pass
+        import_data('csv_files', 'product_file.csv', 'customer_file.csv', 'rental_file.csv')
+        actual_output = show_rentals('prd002')
+        expected_dict = {'user001':{'name':'Elisa Miles', 'address':'4490 Union Street',
+                                    'phone_number':'206-922-0882', 'email':'elisa.miles@yahoo.com'}}
+        self.assertEqual(actual_output, expected_dict)

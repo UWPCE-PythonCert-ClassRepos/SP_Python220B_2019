@@ -6,6 +6,24 @@ import os
 import logging
 from pymongo import MongoClient
 
+#logging setup
+logging.basicConfig(level=logging.INFO)
+LOGGER = logging.getLogger(__name__)
+
+#formatting and file name
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+FORMATTER = logging.Formatter(LOG_FORMAT)
+LOG_FILE = 'db.log'
+
+#handling setup
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
+
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setFormatter(FORMATTER)
+
+LOGGER.addHandler(FILE_HANDLER)
+LOGGER.addHandler(CONSOLE_HANDLER)
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -46,8 +64,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         db = mongo.connection.media
 
+        #Create product collection
         product_db = db['product']
-
+        #product_db.drop()
         with open(os.path.join(directory_name, product_file)) as csvfile:
             product_reader = csv.DictReader(csvfile)
             for row in product_reader:
@@ -57,28 +76,30 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                'product_type':row['product_type'],
                                'quantity_available':row['quantity_available']}
                 product_db.insert_one(new_product)
-        #product_added = product.find('product_id').count()
 
+        #Create customer collection
         customer_db = db['customer']
-
+        #customer_db.drop()
         with open(os.path.join(directory_name, customer_file)) as csvfile:
             customer_reader = csv.DictReader(csvfile)
             for row in customer_reader:
                 customer_added += 1
                 new_customer = {'user_id':row['user_id'],
                                 'name':row['name'],
-                                'address':row['phone_number'],
+                                'address':row['address'],
+                                'phone_number':row['phone_number'],
                                 'email':row['email']}
                 customer_db.insert_one(new_customer)
 
+        #Create rentals collection
         rentals_db = db['rentals']
-
+        #rentals_db.drop()
         with open(os.path.join(directory_name, rentals_file)) as csvfile:
             rental_reader = csv.DictReader(csvfile)
             for row in rental_reader:
                 rentals_added += 1
-                new_rental = {'user_id':['user_id'],
-                              'product_id':['product_id']}
+                new_rental = {'user_id':row['user_id'],
+                              'product_id':row['product_id']}
                 rentals_db.insert_one(new_rental)
 
     return [(product_added, customer_added, rentals_added),
@@ -104,13 +125,22 @@ def show_available_products():
     return product_dict
 
 
-#    for name in collector.find():
-#        print(f'List for {name["name"]}')
-#        query = {"name": name["name"]}
-#        for a_cd in cd.find(query):
-#            print(f'{name["name"]} has collected {a_cd}')
-
 def show_rentals(product_id):
     '''returns a dict with the info from users who rented matching product_id:
     user_id, name, address, phone_number, email'''
-    pass
+
+    mongo = MongoDBConnection()
+
+    rentals_dict = {}
+    with mongo:
+        db = mongo.connection.media
+        customer_db = db['customer']
+        rentals_db = db['rentals']
+        renters = rentals_db.find({'product_id': product_id})
+        for renter in renters:
+            for customer in customer_db.find({'user_id': renter['user_id']}):
+                new_entry = {'name': customer['name'], 'address': customer['address'],
+                             'phone_number': customer['phone_number'],
+                             'email': customer['email']}
+                rentals_dict[customer['user_id']] = new_entry
+    return rentals_dict
