@@ -13,9 +13,12 @@ Each course lesson will contain its own folder.  The folders will use the naming
 ### Source Map:
 ```
 <students directory>
-    `-- anthony_mckeever        <Root folder of Anthony's course materials>
-        `-- lesson_1            <Content for Lesson 1>
-            `-- activity_1      <Content for Lesson 1 Activity 1 - Automated Testing>
+    `-- anthony_mckeever                    <Root folder of Anthony's course materials>
+        `-- lesson_1                        <Content for Lesson 1>
+            |-- activity_1                  <Content for Lesson 1 Activity 1 - Automated Testing>
+            `-- lesson_1                    <Content for Lesson 1 Assignment 1 - HP Norton Project>
+                |-- inventory_management    <Inventory management system (initially copied from Lessons directory in repo root)>
+                `-- tests                   <Inventory management system tests (initially copied from Lessons directory in repo root)>
 ```
 
 ## Branching
@@ -41,4 +44,4 @@ Before being merged into fork master (`Snip3rM00n/SP_Python220B_2019/Master`) ea
     * Ensure code is covered as close to 100% by unit tests as possible.
         * Excluding the "name is main" block if applicable.
 
-Once a branch meets the criteria above it can be merged to Master and a Pull Request can be made to merge to the upstream remote master and the assignment can be submitted.
+Once a branch meets the criteria above it can be *squashed* to Master and a Pull Request can be made to merge to the upstream remote master and the assignment can be submitted.
