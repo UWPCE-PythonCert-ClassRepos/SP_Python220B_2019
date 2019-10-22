@@ -159,13 +159,13 @@ class MainTest(TestCase):
         with patch('builtins.input', side_effect=example_item):
             add_new_item()
 
-        with patch('builtins.input', side_effect='45'):
+        with patch('builtins.input', side_effect=('45',)):
             self.assertEqual(item_info(), print(example_string))
 
         """ Verify that item_info function properly identifies non-existing items """
         example_failed_string = 'Item not found in inventory'
 
-        with patch('builtins.input', side_effect='1000'):
+        with patch('builtins.input', side_effect=('1000',)):
             self.assertEqual(item_info(), print(example_failed_string))
 
     def test_exit_program(self):
