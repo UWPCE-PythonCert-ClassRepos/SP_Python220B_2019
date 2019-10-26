@@ -24,17 +24,62 @@ You implementation should address the following requirements:
 import json
 import logging
 from os import path
+import time
 import pandas as pd
 from pymongo import MongoClient
 
 FORMAT = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 LOGGER = logging.getLogger('console')
+TIMING = logging.getLogger('timing')
 FH = logging.FileHandler('mongodb.log', 'w+')
 FH.setLevel(logging.DEBUG)
+TH = logging.FileHandler('timing.txt', 'w')
+TH.setLevel(logging.INFO)
 FORMATTER = logging.Formatter(FORMAT)
 FH.setFormatter(FORMATTER)
+TH.setFormatter(FORMATTER)
 LOGGER.addHandler(FH)
+TIMING.addHandler(TH)
+
+
+class Timer:
+    """ The timer function """
+    def __init__(self, func=time.perf_counter):
+        """ Initialize the timer object """
+        self.elapsed = 0.0
+        self._func = func
+        self._start = None
+
+    def start(self):
+        """ Start the timer """
+        if self._start is not None:
+            raise RuntimeError('Already started')
+        self._start = self._func()
+
+    def stop(self):
+        """ Stop the timer """
+        if self._start is None:
+            raise RuntimeError('Not started')
+        end = self._func()
+        self.elapsed += end - self._start
+        self._start = None
+
+
+def timing(func):
+    """ The timing decorate definition """
+    def wrapper(*args, **kwargs):
+        timer = Timer()
+        timer.start()
+        result = func(*args, **kwargs)
+        timer.stop()
+        message = (f"Function={func.__name__},"
+                   f"Duration={timer.elapsed},"
+                   f"Records={result}")
+        TIMING.info(message)
+        return result
+
+    return wrapper
 
 
 class MongoDBConnection():
@@ -42,20 +87,24 @@ class MongoDBConnection():
     Class to make connecting to and acting upon a mongo database a little
     easier
     """
+    @timing
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
         self.connection = None
 
+    @timing
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
         return self
 
+    @timing
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
 
+@timing
 def drop_database(database_name):
     """ Drop the a database in the mongo db """
     mongo = MongoDBConnection()
@@ -66,6 +115,7 @@ def drop_database(database_name):
             LOGGER.debug("The database: %s dropped.", database_name)
 
 
+@timing
 def csv_to_json(directory_name, filename):
     """ Load a csv file to a list """
     path_file = directory_name + "/" + filename
@@ -78,6 +128,7 @@ def csv_to_json(directory_name, filename):
     return {}
 
 
+@timing
 def insert_to_mongo(collection_name, collection):
     """ Insert a collection into the Mongo db """
     mongo = MongoDBConnection()
@@ -107,6 +158,7 @@ def insert_to_mongo(collection_name, collection):
         return (insertions, errors)
 
 
+@timing
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import the data into mongo from csv files
@@ -140,12 +192,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              rental_results[1])]
 
 
+@timing
 def print_mdb_collection(collection_name):
     """ Generic collection printer """
     for doc in collection_name.find():
         print(doc)
 
 
+@timing
 def print_raw_products():
     """ Print Raw List of Products """
     mongo = MongoDBConnection()
@@ -156,6 +210,7 @@ def print_raw_products():
         print_mdb_collection(products)
 
 
+@timing
 def show_available_products():
     """
     Output the available products from the database
@@ -189,6 +244,7 @@ def show_available_products():
             print(item)
 
 
+@timing
 def show_rentals(product_id=None):
     """
     Output the rental history for a/all products.
@@ -238,6 +294,7 @@ def show_rentals(product_id=None):
             print_mdb_collection(rentals)
 
 
+@timing
 def show_customers():
     """
     Output all customers
@@ -251,6 +308,7 @@ def show_customers():
         print_mdb_collection(customers)
 
 
+@timing
 def main():
     """ The main function for the program """
     import_stats = import_data("/Users/joe.nunnelley/Documents/Node/git/"
