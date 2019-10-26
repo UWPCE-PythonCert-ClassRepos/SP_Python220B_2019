@@ -1,0 +1,16 @@
+2019-10-25 15:45:12,321 database.py:63  INFO It took function drop_all_collections 0.010907070000000019 seconds to process
+2019-10-25 15:45:12,324 database.py:63  INFO It took function csv_to_list 0.000832025000000014 seconds to process
+2019-10-25 15:45:12,396 database.py:63  INFO It took function csv_to_list 0.00040525899999999115 seconds to process
+2019-10-25 15:45:12,452 database.py:63  INFO It took function csv_to_list 0.0004830209999999724 seconds to process
+2019-10-25 15:45:12,509 database.py:59  INFO It took function import_data 0.18740858200000005 seconds to process 14 records
+2019-10-25 15:45:12,515 database.py:61  INFO It took function show_available_products 0.006011256999999937 seconds to process 4 records
+2019-10-25 15:45:12,529 database.py:61  INFO It took function show_rentals 0.013255680000000103 seconds to process 4 records
+2019-10-25 15:45:12,623 database.py:63  INFO It took function drop_all_collections 0.0935101490000001 seconds to process
+2019-10-25 16:11:06,022 database.py:63  INFO It took function drop_all_collections 0.017137291 seconds to process
+2019-10-25 16:11:06,025 database.py:63  INFO It took function csv_to_list 0.0013889109999999927 seconds to process
+2019-10-25 16:11:06,134 database.py:63  INFO It took function csv_to_list 0.0013867049999999326 seconds to process
+2019-10-25 16:11:06,208 database.py:63  INFO It took function csv_to_list 0.0011227269999999345 seconds to process
+2019-10-25 16:11:06,281 database.py:59  INFO It took function import_data 0.25840399900000005 seconds to process 205 records
+2019-10-25 16:11:06,288 database.py:61  INFO It took function show_available_products 0.006819062000000042 seconds to process 99 records
+2019-10-25 16:11:06,295 database.py:61  INFO It took function show_rentals 0.006800509000000066 seconds to process 4 records
+2019-10-25 16:11:06,397 database.py:63  INFO It took function drop_all_collections 0.10181423200000006 seconds to process
