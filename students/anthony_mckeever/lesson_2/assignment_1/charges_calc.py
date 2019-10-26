@@ -6,6 +6,41 @@
 
 '''
 Returns total price paid for individual rentals
+
+Debug details:
+    Two bugs existed in this module:
+        1. If the date range created by rental_start and rental_end was invalid
+           result in a negative value for total_days
+        2. If either of the date ranges were empty.
+
+    Both bugs would cause the application to silently fail due to swallowing
+    the exception and calling exit with exit code 0.  With no logging it was
+    unclear a problem had occured except for the fact that no output file was
+    produced.
+
+    Debugging for this came in two parts:
+        1. Identifying the first failure using PDB.  Luckily the first error
+           was surfaced quickly (in the first and item of the source.json file)
+           allowing for a quick resolution.
+            a. To resolve this issue, the calculations of
+               calculate_additional_fields were wrapped in a try/except block
+               and logging was enabled to log the error, and what value failed.
+        2. When testing the fix, a second unhandled error occured when the
+           source.json file had an item where the rental_end value was empty.
+           PDB was used to trace this down with a conditional break point that
+           broke code execution upon either rental_start or rental_end were
+           empty.  Upon hitting this breakpoint, evaluating the value object
+           confirmed that the rental_end was empty.
+            a. To resolve this issue, the try/except block was refactored to
+               wrap all logic in the calculate_additional_fields method and
+               additional logging was added to provide details about the
+               failing value option.
+
+    With both resolutions, the application was made to log a warning if the
+    date range was invalid, an error for the exception and a debug statement
+    for the failing value for debugging later.  After logging, the application
+    is allowed to resume processing valid data items and save the output upon
+    completion.
 '''
 
 import argparse
