@@ -1,0 +1,102 @@
+Advanced Programming In Python - Lesson 2 Activity 1: Automated Testing
+RedMine Issue - SchoolOps-12
+Code Poet: Anthony McKeever
+Start Date: 10/23/2019
+End Date: 10/23/2019
+
+Bug Summary:
+Numbers that are not a multiple of 2 will never satisfy the conditional statement in my_fun.
+Infinite recursion occurs as n continues to be divided in half and becomes impossibly tiny numbers while never reaching 2.
+
+Repro Steps:
+	1. Run the application with an odd number (such as 15)
+		a. Example command: python recursive.py 15
+	2. Note how the application will eventually throw a RecursionError.
+
+Suggestions:
+* Add an additional check in my fun for if the number decreases less than 1.  At that point, return false. 
+
+
+F:\gitUwPython\SP_Python220B_2019\students\anthony_mckeever\lesson_2\activity_1>python -m pdb recursive.py 15
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(3)<module>()
+-> """
+(Pdb) ll
+  1     """
+  2     recursion for debuging
+  3  -> """
+  4
+  5     import sys
+  6
+  7
+  8     def my_fun(n):
+  9         if n == 2:
+ 10             return True
+ 11         return my_fun(n / 2)
+ 12
+ 13
+ 14     if __name__ == '__main__':
+ 15         n = int(sys.argv[1])
+ 16         print(my_fun(n))
+(Pdb) b 9
+Breakpoint 1 at f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py:9
+(Pdb) condition 1 n <= 2
+New condition set for breakpoint 1.
+(Pdb) ll
+  1     """
+  2     recursion for debuging
+  3  -> """
+  4
+  5     import sys
+  6
+  7
+  8     def my_fun(n):
+  9 B       if n == 2:
+ 10             return True
+ 11         return my_fun(n / 2)
+ 12
+ 13
+ 14     if __name__ == '__main__':
+ 15         n = int(sys.argv[1])
+ 16         print(my_fun(n))
+(Pdb) c
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) display n
+display n: 1.875
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) display n
+display n: 0.9375
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) display n
+display n: 0.46875
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> f:\gituwpython\sp_python220b_2019\students\anthony_mckeever\lesson_2\activity_1\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) display n
+display n: 0.234375
+(Pdb) q
