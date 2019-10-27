@@ -46,11 +46,10 @@ def main():
         result = cd.insert_one(cd_ip)
 
         cd_ip = [{
-            "artist": "Deep Purple",
-            "Title": "Made In Japan",
-            "name": "Andy"
-        },
-                 {
+                    "artist": "Deep Purple",
+                    "Title": "Made In Japan",
+                    "name": "Andy"
+                 }, {
                      "artist": "Led Zeppelin",
                      "Title": "House of the Holy",
                      "name": "Andy"
@@ -58,8 +57,7 @@ def main():
                      "artist": "Pink Floyd",
                      "Title": "DSOM",
                      "name": "Andy"
-                 },
-                 {
+                 }, {
                      "artist": "Albert Hammond",
                      "Title": "Free Electric Band",
                      "name": "Sam"
