@@ -13,7 +13,7 @@ class databaseTests(unittest.TestCase):
         """Clean up database before each test."""
         mongo = database.MongoDBConnection()
         with mongo:
-            db = mongo.connection.media
+            db = mongo.connection.HPNortonDatabase
             product_data = db['product_data']
             customer_data = db['customer_data']
             rental_data = db['rental_data']
