@@ -170,6 +170,7 @@ def calculate_additional_fields(rental_info):
 
     return rental_info
 
+
 def save_to_json(filename, rental_info):
     """Save data to output.json file"""
     with open(filename, 'w') as file:
