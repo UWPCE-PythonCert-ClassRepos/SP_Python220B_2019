@@ -117,3 +117,17 @@ def show_rentals(product_id):
         email
     """
     pass
+
+
+def main():
+    directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
+                     'SP_Python220B_2019/students/franjaku/lesson05/data_files'
+    tup1, tup2 = import_data(directory_path, 'product_data.csv',
+                                      'customer_data.csv', 'rental_data.csv')
+
+    print(tup1)
+    print(tup2)
+
+
+if __name__ == "__main__":
+    main()
