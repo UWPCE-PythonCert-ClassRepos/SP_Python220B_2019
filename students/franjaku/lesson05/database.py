@@ -43,11 +43,11 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              tuple2, count of any errors that occurred, in the same order
     """
     pass
-    #
-    # # Place holders
-    # tuple1 = ()
-    # tuple2 = ()
-    # return tuple1, tuple2
+
+    # Place holders
+    tuple1 = ()
+    tuple2 = ()
+    return tuple1, tuple2
 
 
 def show_available_products():

@@ -12,15 +12,16 @@ class databaseTests(unittest.TestCase):
     def setUp(self):
         """Clean up database before each test."""
         mongo = database.MongoDBConnection()
-        db = mongo.connection.HPNortonDatabase
-        product_data = db['product_data']
-        customer_data = db['customer_data']
-        rental_data = db['rental_data']
+        with mongo:
+            db = mongo.connection.media
+            product_data = db['product_data']
+            customer_data = db['customer_data']
+            rental_data = db['rental_data']
 
-        # drop all data in collections
-        product_data.drop()
-        customer_data.drop()
-        rental_data.drop()
+            # drop all data in collections
+            product_data.drop()
+            customer_data.drop()
+            rental_data.drop()
 
     def test_import_data(self):
         """Test import function"""
