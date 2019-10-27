@@ -126,4 +126,4 @@ def list_active_customer():
     """
     active_customer = Customer.select().where(Customer.is_active)
     LOGGER.info('Number of active customers retrieved.')
-    return len([customer.cust_id for customer in active_customer])
+    return len([customer.customer_id for customer in active_customer])
