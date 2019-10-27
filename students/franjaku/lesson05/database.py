@@ -42,7 +42,52 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     :return: tuple1, record count of the # of products, customers, rentals added
              tuple2, count of any errors that occurred, in the same order
     """
-    pass
+    # Open connection
+    mongo = MongoDBConnection()
+
+    with mongo:
+        # Create connection to database
+        db = mongo.connection.HPNortonDatabase
+
+        # create/connect to collections
+        product_data = db['product_data']
+        customer_data = db['customer_data']
+        rental_data = db['rental_data']
+
+        # load product data
+        with open(directory_name + '/' + product_file) as prod_file:
+            reader = csv.DictReader(prod_file)
+            data = []
+            for row in reader:
+                data.append({'product_id': row['product_id'],
+                             'description': row['description'],
+                             'product_type': row['product_type'],
+                             'quantity_available': row['quantity_available']})
+        product_data.insert_many(data)
+
+        # load customer data
+        with open(directory_name + '/' + customer_file) as cust_file:
+            reader = csv.DictReader(cust_file)
+            data = []
+            for row in reader:
+                data.append({'customer_id': row['customer_id'],
+                             'name': row['name'],
+                             'address': row['address'],
+                             'phone_number': row['phone_number'],
+                             'email': row['email']})
+
+        customer_data.insert_many(data)
+
+        # load rental data
+        with open(directory_name + '/' + rentals_file) as rent_file:
+            reader = csv.DictReader(rent_file)
+            data = []
+            for row in reader:
+                data.apppend({'rental_id': row['rental_id'],
+                              'customer_id': row['customer_id'],
+                              'product_id': row['product_id']})
+
+        product_data.insert_many(data)
 
     # Place holders
     tuple1 = ()
