@@ -13,6 +13,26 @@ import logging
 import csv
 from pymongo import MongoClient
 
+# File logging setup
+LOG_FILE = 'HP.log'
+FILE_LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
+FILE_FORMATTER = logging.Formatter(FILE_LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler(LOG_FILE, mode="w")
+FILE_HANDLER.setLevel(logging.INFO)
+FILE_HANDLER.setFormatter(FILE_FORMATTER)
+
+# Console logging setup
+CONSOLE_LOG_FORMAT = "%(filename)s:%(lineno)-4d %(message)s"
+CONSOLE_FORMATTER = logging.Formatter(CONSOLE_LOG_FORMAT)
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(CONSOLE_FORMATTER)
+
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
+LOGGER.addHandler(FILE_HANDLER)
+LOGGER.addHandler(CONSOLE_HANDLER)
+
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -43,27 +63,42 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              tuple2, count of any errors that occurred, in the same order
     """
     # Open connection
+    logging.info('Importing datafiles in %s', directory_name)
+    logging.info('Opening connection to mongodb.')
     mongo = MongoDBConnection()
+    logging.info('Connection open.')
 
     with mongo:
         # Create connection to database
+        logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
         db = mongo.connection.HPNortonDatabase
+        logging.info('Connected HPNortonDatabase.')
 
         # create/connect to collections
+        logging.info('Connecting to collections...')
         product_data = db['product_data']
+        logging.info('*connected to collection: product_data')
         customer_data = db['customer_data']
+        logging.info('*connected to collection: customer_data')
         rental_data = db['rental_data']
+        logging.info('*connected to collection: rental_data')
 
         # load product data
+        logging.info('Attempting to open: %s', product_file)
         with open(directory_name + '/' + product_file) as prod_file:
+            logging.info('File opened.')
             reader = csv.DictReader(prod_file)
+            logging.debug('Created reader to process file.')
             data = []
             for row in reader:
+                logging.debug('Adding to data list %s', row)
                 data.append({'product_id': row['product_id'],
                              'description': row['description'],
                              'product_type': row['product_type'],
                              'quantity_available': row['quantity_available']})
+                logging.debug('Data added to list.')
         product_data.insert_many(data)
+        logging.info('File data loaded.')
 
         # load customer data
         with open(directory_name + '/' + customer_file) as cust_file:
