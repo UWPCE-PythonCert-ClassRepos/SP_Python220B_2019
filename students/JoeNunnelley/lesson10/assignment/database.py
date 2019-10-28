@@ -66,6 +66,17 @@ class Timer:
         self._start = None
 
 
+def records_processed(result):
+    """ Get record count from a results tuple """
+    if isinstance(result, tuple):
+        return sum(result)
+
+    if isinstance(result, int):
+        return result
+
+    return 0
+
+
 def timing(func):
     """ The timing decorate definition """
     def wrapper(*args, **kwargs):
@@ -75,7 +86,7 @@ def timing(func):
         timer.stop()
         message = (f"Function={func.__name__},"
                    f"Duration={timer.elapsed},"
-                   f"Records={result}")
+                   f"Records={records_processed(result)}")
         TIMING.info(message)
         return result
 
@@ -208,6 +219,9 @@ def print_raw_products():
         database = mongo.connection.hpnorton
         products = database['products']
         print_mdb_collection(products)
+        return products.count
+
+    return 0
 
 
 @timing
@@ -242,6 +256,8 @@ def show_available_products():
 
         for item in dictionary.items():
             print(item)
+
+    return len(dictionary)
 
 
 @timing
@@ -293,6 +309,8 @@ def show_rentals(product_id=None):
         else:
             print_mdb_collection(rentals)
 
+    return len(dictionary)
+
 
 @timing
 def show_customers():
@@ -307,13 +325,13 @@ def show_customers():
         customers = database['customers']
         print_mdb_collection(customers)
 
+    return customers.count
+
 
 @timing
 def main():
     """ The main function for the program """
-    import_stats = import_data("/Users/joe.nunnelley/Documents/Node/git/"
-                               "python_playground/SP_Python220B_2019/"
-                               "students/JoeNunnelley/lesson05/assignment",
+    import_stats = import_data("./data",
                                'products.csv',
                                'customers.csv',
                                'rentals.csv')
