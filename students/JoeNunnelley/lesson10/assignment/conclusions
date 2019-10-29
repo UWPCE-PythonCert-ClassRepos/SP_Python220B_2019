@@ -1,0 +1,27 @@
+I ran the process and timed it for the following scenarios:
+
+100 items per csv file
+1_000 items per csv file
+100_000 items per csv file
+
+With regards to times I saw the following main areas taking most of the time:
+
+- loading the csv to json (function: csv_to_json)
+- inserting items into mongo (insert_to_mongo)
+- importing data (import_data)
+- outputing sets (show_available_products, print_mdb_collection, show_customers, show_rentals)
+
+The remaining functions consisted of object creating and destruction and took very little time.
+
+I observed that as I increased the number of csv rows consumed, the time importing from csv to json,
+printing results and inserting into mongo all increased. Ingesting the json increased and printing the
+collections increased but seemed to increase much more slowly. Csv consumption saw a 3x increase in processing
+time with an associated 1000x increase in row count.  Printing the collection saw a ~200x increase with an
+associated 1000x increase in row count. However inserting into mongo saw an ~3000x time increase for a 1000x
+row count increase. Obviously, inserting into mongo is the moste expensive of these operations and steps
+should be taken to distribute that work as efficiently as possible.
+
+                        100             1_000               100_000
+csv_to_json             ~.01s            ~.01s              ~0.33
+print_mdb_collection    ~.05s            ~.05s              ~8.6s
+insert_to_mongo         ~0.77s           ~5.1s              ~3374s
