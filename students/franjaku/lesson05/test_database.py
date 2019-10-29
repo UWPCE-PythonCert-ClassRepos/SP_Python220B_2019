@@ -2,8 +2,8 @@
     Test suite for the mongodb database functions
 
 """
-import database
 import unittest
+import database
 
 
 class DatabaseTests(unittest.TestCase):
@@ -13,10 +13,10 @@ class DatabaseTests(unittest.TestCase):
         """Clean up database before each test."""
         mongo = database.MongoDBConnection()
         with mongo:
-            db = mongo.connection.HPNortonDatabase
-            product_data = db['product_data']
-            customer_data = db['customer_data']
-            rental_data = db['rental_data']
+            hp_db = mongo.connection.HPNortonDatabase
+            product_data = hp_db['product_data']
+            customer_data = hp_db['customer_data']
+            rental_data = hp_db['rental_data']
 
             # drop all data in collections
             product_data.drop()
@@ -56,8 +56,8 @@ class DatabaseTests(unittest.TestCase):
         # Add products and check we return the added products
         directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                          'SP_Python220B_2019/students/franjaku/lesson05/data_files'
-        tup1, tup2 = database.import_data(directory_path, 'product_data.csv',
-                                          'customer_data.csv', 'rental_data.csv')
+        database.import_data(directory_path, 'product_data.csv', 'customer_data.csv',
+                             'rental_data.csv')
 
         test_dict2 = database.show_available_products()
 
@@ -101,8 +101,8 @@ class DatabaseTests(unittest.TestCase):
         # Add rentals and check we return the added rentals by prod_id
         directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                          'SP_Python220B_2019/students/franjaku/lesson05/data_files'
-        tup1, tup2 = database.import_data(directory_path, 'product_data.csv',
-                                          'customer_data.csv', 'rental_data.csv')
+        database.import_data(directory_path, 'product_data.csv', 'customer_data.csv',
+                             'rental_data.csv')
 
         test_dict2 = database.show_rentals('1')
 
