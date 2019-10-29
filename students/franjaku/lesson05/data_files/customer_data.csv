@@ -1,5 +1,5 @@
 customer_id,name,address,phone_number,email
-1,Jim,test1,245,1@1
-2,Jon,test2,246,2@2
-3,Jane ,test3,247,3@3
-4,Jarel,test4,248,4@4
+1,Jim,"105 Main Street, Seattle, WA 98109",254-553-3600,test1@test.com
+2,Jon,"1900 43rd Ave E, Seattle WA 98112",538-987-0245,test2@test.com
+3,Jane ,"903 19th Ave E, Seattle, WA 98112",876-134-5268,Email23@email.com
+4,Jarel,"9600 College Way N, Seattle, WA 98103",555-666-7777,jut@g.com
