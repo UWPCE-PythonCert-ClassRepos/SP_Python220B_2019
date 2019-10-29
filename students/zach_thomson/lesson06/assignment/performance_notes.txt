@@ -1,0 +1,51 @@
+Notes on poor_perf:
+
+- Initial overview:
+  - Creates a new list for each line in the document
+  - Then creates a new list with filtered entries
+  - Then loops over that new list to count years
+  - Also a typo with year 2018 being 2017 (fixed)
+  - Opens document again
+  - Iterates over each line again, creating a list for each line
+  - Counts if 'ao' is in that line
+
+Initial Poor_perf.py
+real = 5.088s
+user = 4.8005s
+sys = 0.195s
+
+Testing adding list or dict comprehensions and using .count() function
+
+With list comprehension for year count part:
+real = 4.970s
+user = 4.687s
+sys = 0.198s
+
+With Dict comprehension and .count():
+real = 4.682s
+user = 4.289s
+sys = 0.229s
+
+With list comprehension and .count() for 'ao' part:
+real = 4.423s
+user = 4.117s
+sys = 0.208s
+
+15% max performance boost from comprehensions and built-in .count() function
+
+Script iterates through massive .csv file twice and creates multiple new lists
+or dictionaries that are then iterated through solely to count. Could refactor to
+count both years and 'ao' in one iteration through .csv file
+
+One iteration through csv file, create list for years but count 'ao':
+real = 3.410s
+user = 3.144s
+sys = 0.181s
+49% performance boost
+
+
+Final = One iteration, count year as iterating, count 'ao' as iterating:
+real = 2.259s
+user = 2.171s
+sys = 0.059s
+125% performance boost
