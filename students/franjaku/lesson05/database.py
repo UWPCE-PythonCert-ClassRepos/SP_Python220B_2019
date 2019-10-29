@@ -146,12 +146,18 @@ def show_available_products():
         logging.info('Connected HPNortonDatabase.')
 
         # Query database
+        logging.debug('Attemping to connect to collection: product_data')
         products = db['product_data']
+        logging.debug('Connected to collection.')
 
+        logging.info('Querying product collection and adding products to output_dict.')
         for product in products.find():
+            logging.debug('Adding product to output_dict: %s', product['product_id'])
             prod_str = f"prod{product['product_id']}"
             product.pop('_id')
             output_dict[prod_str] = product
+            logging.debug('Product added.')
+        logging.info('Output dictionary created.')
 
     return output_dict
 
