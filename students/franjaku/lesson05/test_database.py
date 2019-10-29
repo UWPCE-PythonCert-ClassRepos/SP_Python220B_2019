@@ -6,7 +6,7 @@ import database
 import unittest
 
 
-class databaseTests(unittest.TestCase):
+class DatabaseTests(unittest.TestCase):
     """ Tests for database module"""
 
     def setUp(self):
@@ -31,14 +31,12 @@ class databaseTests(unittest.TestCase):
                                           'customer_data.csv', 'rental_data.csv')
 
         # assert the correct number of items were added
-        self.assertEqual(tup1[0], 5)  # check number of products added
+        self.assertEqual(tup1[0], 4)  # check number of products added
         self.assertEqual(tup1[1], 4)  # check number of customers added
-        self.assertEqual(tup1[2], 3)  # check number of rentals added
+        self.assertEqual(tup1[2], 4)  # check number of rentals added
 
         # check no errors occurred during addition
-        self.assertEqual(tup2[0], 0)
-        self.assertEqual(tup2[0], 0)
-        self.assertEqual(tup2[0], 0)
+        self.assertEqual(tup2, ())
 
     def test_show_available_products(self):
         pass
