@@ -106,12 +106,12 @@ class DatabaseTests(unittest.TestCase):
 
         test_dict2 = database.show_rentals('1')
 
-        expected_dict = {'rental_2': {'user_id': '2',
+        expected_dict = {'rental_2': {'customer_id': '2',
                                       'name': 'Jon',
                                       'address': '1900 43rd Ave E, Seattle WA 98112',
                                       'phone_number': '538-987-0245',
                                       'email': 'test2@test.com'},
-                         'rental_3': {'user_id': '1',
+                         'rental_3': {'customer_id': '1',
                                       'name': 'Jim',
                                       'address': '105 Main Street, Seattle WA 98109',
                                       'phone_number': '254-553-3600',
