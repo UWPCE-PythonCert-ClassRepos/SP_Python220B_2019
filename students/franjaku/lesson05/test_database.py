@@ -39,7 +39,47 @@ class DatabaseTests(unittest.TestCase):
         self.assertEqual(tup2, ())
 
     def test_show_available_products(self):
-        pass
+        """
+        Test that show_available_products() satisfies the following requirement:
+            Returns a Python dictionary of products listed as available with the following fields:
+                product_id
+                description
+                product_type
+                quantity_available
+        Assumes that import_data() works as intended
+        """
+        test_dict1 = database.show_available_products()
+
+        # Check that an empty database returns an empty dict
+        self.assertDictEqual(test_dict1, {})
+
+        # Add products and check we return the added products
+        directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
+                         'SP_Python220B_2019/students/franjaku/lesson05/data_files'
+        tup1, tup2 = database.import_data(directory_path, 'product_data.csv',
+                                          'customer_data.csv', 'rental_data.csv')
+
+        test_dict2 = database.show_available_products()
+
+        expected_dict = {'prod1': {'product_id': '1',
+                                   'description': 'Table',
+                                   'product_type': 'Dining Room',
+                                   'quantity_available': 25},
+                         'prod2': {'product_id': '2',
+                                   'description': 'Chair',
+                                   'product_type': 'Dining Room',
+                                   'quantity_available': 654},
+                         'prod3': {'product_id': '3',
+                                   'description': 'Mattress',
+                                   'product_type': 'Bedroom',
+                                   'quantity_available': 200},
+                         'prod4': {'product_id': '4',
+                                   'description': 'Couch',
+                                   'product_type': 'Living Room',
+                                   'quantity_available': 36}
+                         }
+
+        self.assertDictEqual(test_dict2, expected_dict)
 
     def test_show_rentals(self):
         pass
