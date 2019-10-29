@@ -14,10 +14,13 @@ Each course lesson will contain its own folder.  The folders will use the naming
 ```
 <students directory>
     `-- anthony_mckeever                    <Root folder of Anthony's course materials>
-        `-- lesson_1                        <Content for Lesson 1>
-            |-- activity_1                  <Content for Lesson 1 Activity 1 - Automated Testing>
-            `-- lesson_1                    <Content for Lesson 1 Assignment 1 - HP Norton Project>
-                `-- inventory_management    <Inventory management system (initially copied from Lessons directory in repo root)>
+        |-- lesson_1                        <Content for Lesson 1>
+        |   |-- activity_1                  <Content for Lesson 1 Activity 1 - Automated Testing>
+        |   `-- assignment_1                <Content for Lesson 1 Assignment 1 - HP Norton Project>
+        |       `-- inventory_management    <Inventory management system (initially copied from Lessons directory in repo root)>
+        `-- lesson_2                        <Content for Lesson 2>
+            |-- activity_1                  <Content for Lesson 2 Activity 1 - Recusion Debugging>
+            `-- assignment_1                <Content for Lesson 2 Assignment 1 - Debugging charges_calc.py>                
 ```
 
 ## Branching
