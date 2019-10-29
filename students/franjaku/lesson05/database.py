@@ -62,12 +62,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     :return: tuple1, record count of the # of products, customers, rentals added
              tuple2, count of any errors that occurred, in the same order
     """
+    logging.info('--------Importing datafiles in %s', directory_name)
     count_list = []
     error_list = []
     files = (product_file, customer_file, rentals_file)
 
     # Open connection
-    logging.info('Importing datafiles in %s', directory_name)
     logging.info('Opening connection to mongodb.')
     mongo = MongoDBConnection()
     logging.info('Connection open.')
@@ -112,9 +112,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 logging.info('Error %s: ', e)
                 error_list.append(e)
 
+    logging.info('--------All data import complete.')
     # Outputs
     tuple1 = tuple(count_list)
     tuple2 = tuple(error_list)
+
+
+
     return tuple1, tuple2
 
 
@@ -128,7 +132,7 @@ def show_available_products():
     """
 
     # Open connection
-    logging.info('Showing available products in HPNortonDatabase')
+    logging.info('--------Showing available products in HPNortonDatabase')
     logging.info('Opening connection to mongodb.')
     mongo = MongoDBConnection()
     logging.info('Connection open.')
@@ -173,6 +177,7 @@ def main():
 
     output_dict = show_available_products()
     print(output_dict)
+
 
 if __name__ == "__main__":
     main()
