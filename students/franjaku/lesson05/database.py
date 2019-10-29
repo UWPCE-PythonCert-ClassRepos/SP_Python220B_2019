@@ -91,17 +91,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         # load data
         for file, collection in zip(files, collections):
             logging.info('Attempting to open: %s', file)
-            with open(directory_name + '/' + product_file) as file:
+            with open(directory_name + '/' + file) as f:
                 logging.info('File opened.')
-                reader = csv.DictReader(file)
+                reader = csv.DictReader(f)
                 logging.debug('Created reader to process file.')
                 data = []
                 for row in reader:
                     logging.debug('Adding to data list %s', row)
-                    data.append({'product_id': row['product_id'],
-                                 'description': row['description'],
-                                 'product_type': row['product_type'],
-                                 'quantity_available': row['quantity_available']})
+                    data.append(row)
                     logging.debug('Data added to list.')
 
             try:
@@ -172,7 +169,30 @@ def show_rentals(product_id):
         phone_number
         email
     """
-    pass
+    # Open connection
+    logging.info('--------Searching HPNortonDatabase for rentals of product: %s', product_id)
+    logging.info('Opening connection to mongodb.')
+    mongo = MongoDBConnection()
+    logging.info('Connection open.')
+
+    output_dict = {}
+
+    with mongo:
+        # Create connection to database
+        logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
+        db = mongo.connection.HPNortonDatabase
+        logging.info('Connected HPNortonDatabase.')
+
+        rental_data = db['rental_data']
+        customer_data = db['customer_data']
+
+        for rental in rental_data.find({'product_id': product_id}):
+            rental_str = f"rental_{rental['rental_id']}"
+            customer = customer_data.find_one({'customer_id': rental['customer_id']})
+            customer.pop('_id')
+            output_dict[rental_str] = customer
+
+    return output_dict
 
 
 def main():
@@ -180,10 +200,8 @@ def main():
                      'SP_Python220B_2019/students/franjaku/lesson05/data_files'
     tup1, tup2 = import_data(directory_path, 'product_data.csv',
                                       'customer_data.csv', 'rental_data.csv')
-
-    output_dict = show_available_products()
+    output_dict = show_rentals('1')
     print(output_dict)
-
 
 if __name__ == "__main__":
     main()
