@@ -7,17 +7,10 @@ import csv
 
 
 def analyze(filename):
+    '''main analysis function'''
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        found = 0
-        for row in reader:
-            lrow = list(row)
-            if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
-            if lrow[6] == 'ao':
-                found += 1
 
         year_count = {
             "2013": 0,
@@ -28,19 +21,14 @@ def analyze(filename):
             "2018": 0
         }
 
-        for new in new_ones:
-            if new[0][6:] == '2013':
-                year_count["2013"] += 1
-            if new[0][6:] == '2014':
-                year_count["2014"] += 1
-            if new[0][6:] == '2015':
-                year_count["2015"] += 1
-            if new[0][6:] == '2016':
-                year_count["2016"] += 1
-            if new[0][6:] == '2017':
-                year_count["2017"] += 1
-            if new[0][6:] == '2018':
-                year_count["2018"] += 1
+        found = 0
+
+        for row in reader:
+            lrow = list(row)
+            if '2019' > lrow[5][6:] > '2012':
+                year_count[lrow[5][6:]] += 1
+            if lrow[6] == 'ao':
+                found += 1
 
         print(year_count)
 
@@ -50,6 +38,7 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    '''main function that finds data file and runs analyze func'''
     filename = "data/exercise.csv"
     analyze(filename)
 
