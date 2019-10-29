@@ -64,6 +64,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     count_list = []
     error_list = []
+    files = (product_file, customer_file, rentals_file)
 
     # Open connection
     logging.info('Importing datafiles in %s', directory_name)
@@ -85,75 +86,77 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         logging.info('*connected to collection: customer_data')
         rental_data = db['rental_data']
         logging.info('*connected to collection: rental_data')
+        collections = (product_data, customer_data, rental_data)
 
-        # load product data
-        logging.info('Attempting to open: %s', product_file)
-        with open(directory_name + '/' + product_file) as prod_file:
-            logging.info('File opened.')
-            reader = csv.DictReader(prod_file)
-            logging.debug('Created reader to process file.')
-            data = []
-            for row in reader:
-                logging.debug('Adding to data list %s', row)
-                data.append({'product_id': row['product_id'],
-                             'description': row['description'],
-                             'product_type': row['product_type'],
-                             'quantity_available': row['quantity_available']})
-                logging.debug('Data added to list.')
+        # load data
+        for file, collection in zip(files, collections):
+            logging.info('Attempting to open: %s', file)
+            with open(directory_name + '/' + product_file) as file:
+                logging.info('File opened.')
+                reader = csv.DictReader(file)
+                logging.debug('Created reader to process file.')
+                data = []
+                for row in reader:
+                    logging.debug('Adding to data list %s', row)
+                    data.append({'product_id': row['product_id'],
+                                 'description': row['description'],
+                                 'product_type': row['product_type'],
+                                 'quantity_available': row['quantity_available']})
+                    logging.debug('Data added to list.')
 
-        try:
-            product_data.insert_many(data)
-            count_list.append(data.__len__())
-            logging.info('File data loaded.')
-        except TypeError as e: # may need to figure out how to accommodate more errors...
-            logging.info('Error %s: ', e)
-            error_list.append(e)
+            try:
+                collection.insert_many(data)
+                count_list.append(data.__len__())
+                logging.info('File data loaded.')
+            except TypeError as e: # may need to figure out how to accommodate more errors...
+                logging.info('Error %s: ', e)
+                error_list.append(e)
 
-        # load customer data
-        logging.info('Attempting to open %s', customer_file)
-        with open(directory_name + '/' + customer_file) as cust_file:
-            logging.info('File opened.')
-            reader = csv.DictReader(cust_file)
-            logging.info('Created reader to process file.')
-            data = []
-            for row in reader:
-                logging.info('Adding to data list %s', row)
-                data.append({'customer_id': row['customer_id'],
-                             'name': row['name'],
-                             'address': row['address'],
-                             'phone_number': row['phone_number'],
-                             'email': row['email']})
-                logging.debug('Data added to list.')
-
-        try:
-            customer_data.insert_many(data)
-            count_list.append(data.__len__())
-            logging.info('File data loaded.')
-        except TypeError as e:
-            logging.info('Error %s', e)
-            error_list.append(e)
-
-        # load rental data
-        logging.info('Attempting to open %s', rentals_file)
-        with open(directory_name + '/' + rentals_file) as rent_file:
-            logging.info('File opened.')
-            reader = csv.DictReader(rent_file)
-            logging.info('Created reader to process file.')
-            data = []
-            for row in reader:
-                logging.info('Adding to data list %s:', row)
-                data.append({'rental_id': row['rental_id'],
-                              'customer_id': row['customer_id'],
-                              'product_id': row['product_id']})
-                logging.debug('Data added to list.')
-
-        try:
-            rental_data.insert_many(data)
-            count_list.append(data.__len__())
-            logging.info('File data loaded.')
-        except TypeError as e:
-            logging.info('Error %s:', e)
-            error_list.append(e)
+        # # load customer data
+        # logging.info('Attempting to open %s', customer_file)
+        # with open(directory_name + '/' + customer_file) as cust_file:
+        #     logging.info('File opened.')
+        #     reader = csv.DictReader(cust_file)
+        #     logging.info('Created reader to process file.')
+        #     data = []
+        #     for row in reader:
+        #         logging.info('Adding to data list %s', row)
+        #         data.append({'customer_id': row['customer_id'],
+        #                      'name': row['name'],
+        #                      'address': row['address'],
+        #                      'phone_number': row['phone_number'],
+        #                      'email': row['email']})
+        #         logging.debug('Data added to list.')
+        #
+        # try:
+        #     customer_data.insert_many(data)
+        #     count_list.append(data.__len__())
+        #     logging.info('File data loaded.')
+        # except TypeError as e:
+        #     logging.info('Error %s', e)
+        #     error_list.append(e)
+        #
+        # # load rental data
+        # logging.info('Attempting to open %s', rentals_file)
+        # with open(directory_name + '/' + rentals_file) as rent_file:
+        #     logging.info('File opened.')
+        #     reader = csv.DictReader(rent_file)
+        #     logging.info('Created reader to process file.')
+        #     data = []
+        #     for row in reader:
+        #         logging.info('Adding to data list %s:', row)
+        #         data.append({'rental_id': row['rental_id'],
+        #                       'customer_id': row['customer_id'],
+        #                       'product_id': row['product_id']})
+        #         logging.debug('Data added to list.')
+        #
+        # try:
+        #     rental_data.insert_many(data)
+        #     count_list.append(data.__len__())
+        #     logging.info('File data loaded.')
+        # except TypeError as e:
+        #     logging.info('Error %s:', e)
+        #     error_list.append(e)
 
     # Place holders
     tuple1 = tuple(count_list)
