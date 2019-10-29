@@ -112,53 +112,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 logging.info('Error %s: ', e)
                 error_list.append(e)
 
-        # # load customer data
-        # logging.info('Attempting to open %s', customer_file)
-        # with open(directory_name + '/' + customer_file) as cust_file:
-        #     logging.info('File opened.')
-        #     reader = csv.DictReader(cust_file)
-        #     logging.info('Created reader to process file.')
-        #     data = []
-        #     for row in reader:
-        #         logging.info('Adding to data list %s', row)
-        #         data.append({'customer_id': row['customer_id'],
-        #                      'name': row['name'],
-        #                      'address': row['address'],
-        #                      'phone_number': row['phone_number'],
-        #                      'email': row['email']})
-        #         logging.debug('Data added to list.')
-        #
-        # try:
-        #     customer_data.insert_many(data)
-        #     count_list.append(data.__len__())
-        #     logging.info('File data loaded.')
-        # except TypeError as e:
-        #     logging.info('Error %s', e)
-        #     error_list.append(e)
-        #
-        # # load rental data
-        # logging.info('Attempting to open %s', rentals_file)
-        # with open(directory_name + '/' + rentals_file) as rent_file:
-        #     logging.info('File opened.')
-        #     reader = csv.DictReader(rent_file)
-        #     logging.info('Created reader to process file.')
-        #     data = []
-        #     for row in reader:
-        #         logging.info('Adding to data list %s:', row)
-        #         data.append({'rental_id': row['rental_id'],
-        #                       'customer_id': row['customer_id'],
-        #                       'product_id': row['product_id']})
-        #         logging.debug('Data added to list.')
-        #
-        # try:
-        #     rental_data.insert_many(data)
-        #     count_list.append(data.__len__())
-        #     logging.info('File data loaded.')
-        # except TypeError as e:
-        #     logging.info('Error %s:', e)
-        #     error_list.append(e)
-
-    # Place holders
+    # Outputs
     tuple1 = tuple(count_list)
     tuple2 = tuple(error_list)
     return tuple1, tuple2
