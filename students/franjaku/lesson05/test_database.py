@@ -64,21 +64,22 @@ class DatabaseTests(unittest.TestCase):
         expected_dict = {'prod1': {'product_id': '1',
                                    'description': 'Table',
                                    'product_type': 'Dining Room',
-                                   'quantity_available': 25},
+                                   'quantity_available': '25'},
                          'prod2': {'product_id': '2',
                                    'description': 'Chair',
                                    'product_type': 'Dining Room',
-                                   'quantity_available': 654},
+                                   'quantity_available': '654'},
                          'prod3': {'product_id': '3',
                                    'description': 'Mattress',
                                    'product_type': 'Bedroom',
-                                   'quantity_available': 200},
+                                   'quantity_available': '200'},
                          'prod4': {'product_id': '4',
                                    'description': 'Couch',
                                    'product_type': 'Living Room',
-                                   'quantity_available': 36}
+                                   'quantity_available': '36'}
                          }
-
+        # print(expected_dict)
+        # print(test_dict2)
         self.assertDictEqual(test_dict2, expected_dict)
 
     def test_show_rentals(self):
