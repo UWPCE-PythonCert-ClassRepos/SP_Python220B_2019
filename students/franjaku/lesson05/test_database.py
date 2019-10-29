@@ -83,4 +83,39 @@ class DatabaseTests(unittest.TestCase):
         self.assertDictEqual(test_dict2, expected_dict)
 
     def test_show_rentals(self):
-        pass
+        """
+        Test that show_rentals(product_id) satisfies the following requirement:
+            Returns a Python dictionary with the following user information from users that have
+            rented products matching product_id:
+                user_id
+                name
+                address
+                phone_number
+                email
+        """
+        test_dict1 = database.show_rentals('1')
+
+        # Check an empty collection returns an empty dict
+        self.assertDictEqual(test_dict1, {})
+
+        # Add rentals and check we return the added rentals by prod_id
+        directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
+                         'SP_Python220B_2019/students/franjaku/lesson05/data_files'
+        tup1, tup2 = database.import_data(directory_path, 'product_data.csv',
+                                          'customer_data.csv', 'rental_data.csv')
+
+        test_dict2 = database.show_rentals('1')
+
+        expected_dict = {'rental_2': {'user_id': '2',
+                                      'name': 'Jon',
+                                      'address': '1900 43rd Ave E, Seattle WA 98112',
+                                      'phone_number': '538-987-0245',
+                                      'email': 'test2@test.com'},
+                         'rental_3': {'user_id': '1',
+                                      'name': 'Jim',
+                                      'address': '105 Main Street, Seattle WA 98109',
+                                      'phone_number': '254-553-3600',
+                                      'email': 'test1@test.com'}
+                         }
+
+        self.assertDictEqual(test_dict2, expected_dict)
