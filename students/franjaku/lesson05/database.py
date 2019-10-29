@@ -126,7 +126,30 @@ def show_available_products():
         product_type
         quantity_available
     """
-    pass
+
+    # Open connection
+    logging.info('Showing available products in HPNortonDatabase')
+    logging.info('Opening connection to mongodb.')
+    mongo = MongoDBConnection()
+    logging.info('Connection open.')
+
+    output_dict = {}
+
+    with mongo:
+        # Create connection to database
+        logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
+        db = mongo.connection.HPNortonDatabase
+        logging.info('Connected HPNortonDatabase.')
+
+        # Query database
+        products = db['product_data']
+
+        for product in products.find():
+            prod_str = f"prod{product['product_id']}"
+            product.pop('_id')
+            output_dict[prod_str] = product
+
+    return output_dict
 
 
 def show_rentals(product_id):
@@ -148,9 +171,8 @@ def main():
     tup1, tup2 = import_data(directory_path, 'product_data.csv',
                                       'customer_data.csv', 'rental_data.csv')
 
-    print(tup1)
-    print(tup2)
-
+    output_dict = show_available_products()
+    print(output_dict)
 
 if __name__ == "__main__":
     main()
