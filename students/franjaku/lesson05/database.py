@@ -75,25 +75,25 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         # Create connection to database
         logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
-        db = mongo.connection.HPNortonDatabase
+        hp_db = mongo.connection.HPNortonDatabase
         logging.info('Connected HPNortonDatabase.')
 
         # create/connect to collections
         logging.info('Connecting to collections...')
-        product_data = db['product_data']
+        product_data = hp_db['product_data']
         logging.info('*connected to collection: product_data')
-        customer_data = db['customer_data']
+        customer_data = hp_db['customer_data']
         logging.info('*connected to collection: customer_data')
-        rental_data = db['rental_data']
+        rental_data = hp_db['rental_data']
         logging.info('*connected to collection: rental_data')
         collections = (product_data, customer_data, rental_data)
 
         # load data
         for file, collection in zip(files, collections):
             logging.info('Attempting to open: %s', file)
-            with open(directory_name + '/' + file) as f:
+            with open(directory_name + '/' + file) as curr_f:
                 logging.info('File opened.')
-                reader = csv.DictReader(f)
+                reader = csv.DictReader(curr_f)
                 logging.debug('Created reader to process file.')
                 data = []
                 for row in reader:
@@ -105,16 +105,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 collection.insert_many(data)
                 count_list.append(data.__len__())
                 logging.info('File data loaded.')
-            except TypeError as e: # may need to figure out how to accommodate more errors...
-                logging.info('Error %s: ', e)
-                error_list.append(e)
+            except TypeError as error: # may need to figure out how to accommodate more errors...
+                logging.info('Error %s: ', error)
+                error_list.append(error)
 
     logging.info('--------All data import complete.')
     # Outputs
     tuple1 = tuple(count_list)
     tuple2 = tuple(error_list)
-
-
 
     return tuple1, tuple2
 
@@ -139,12 +137,12 @@ def show_available_products():
     with mongo:
         # Create connection to database
         logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
-        db = mongo.connection.HPNortonDatabase
+        hp_db = mongo.connection.HPNortonDatabase
         logging.info('Connected HPNortonDatabase.')
 
         # Query database
         logging.debug('Attemping to connect to collection: product_data')
-        products = db['product_data']
+        products = hp_db['product_data']
         logging.debug('Connected to collection.')
 
         logging.info('Querying product collection and adding products to output_dict.')
@@ -180,11 +178,11 @@ def show_rentals(product_id):
     with mongo:
         # Create connection to database
         logging.info('Attempting to connect to mongodb: HPNortonDatabase in local')
-        db = mongo.connection.HPNortonDatabase
+        hp_db = mongo.connection.HPNortonDatabase
         logging.info('Connected HPNortonDatabase.')
 
-        rental_data = db['rental_data']
-        customer_data = db['customer_data']
+        rental_data = hp_db['rental_data']
+        customer_data = hp_db['customer_data']
 
         for rental in rental_data.find({'product_id': product_id}):
             rental_str = f"rental_{rental['rental_id']}"
@@ -196,10 +194,10 @@ def show_rentals(product_id):
 
 
 def main():
+    """Used for testing purposes."""
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                      'SP_Python220B_2019/students/franjaku/lesson05/data_files'
-    tup1, tup2 = import_data(directory_path, 'product_data.csv',
-                                      'customer_data.csv', 'rental_data.csv')
+    import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
     output_dict = show_rentals('1')
     print(output_dict)
 
