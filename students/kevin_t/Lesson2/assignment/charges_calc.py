@@ -28,20 +28,25 @@ def setup_logger(level):
     if level == '0':
         logger.setLevel(logging.CRITICAL)
 
-    if level == '1':
+    elif level == '1':
         logger.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
 
-    if level == '2':
+    elif level == '2':
         logger.setLevel(logging.WARNING)
         file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.WARNING)
 
-    if level == '3':
+    elif level == '3':
         logger.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
+
+    else:
+        print('Please select a debug level of 0, 1, 2 or 3')
+        sys.exit(0)
+
 
 def parse_cmd_arguments():
     """ Parses user input into variables """
