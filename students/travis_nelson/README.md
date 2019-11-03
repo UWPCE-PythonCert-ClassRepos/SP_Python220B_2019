@@ -1,5 +1,3 @@
-# UW Certificate in Python Programming
-
 ## Python 220 - Advanced Programming in Python
 
 Code written for PYTHON220 by Travis Nelson in 2019 (and probably 2020).
