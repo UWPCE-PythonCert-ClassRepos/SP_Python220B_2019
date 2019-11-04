@@ -65,6 +65,7 @@ def update_customer_credit(customer_id, customer_credit_limit):
             LOGGER.info(f"Customer {customer_id} does not exist")
             raise ValueError(ex)
 
+
 def list_active_customers():
     """Checks for active customer status"""
     result = Customer.select().where(Customer.customer_status).count()
