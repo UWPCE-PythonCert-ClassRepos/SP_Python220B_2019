@@ -70,6 +70,7 @@ def update_customer_credit(customer_id, credit_limit):
         LOGGER.info('Customer [%s]\'s credit limit updated!', customer_id)
     except DoesNotExist:
         LOGGER.info(' Tried updating credit limit. Customer id [%s] was not found.', customer_id)
+        raise ValueError
 
 def list_active_customers():
     '''
