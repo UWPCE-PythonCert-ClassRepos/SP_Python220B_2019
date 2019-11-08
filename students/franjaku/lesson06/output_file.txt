@@ -1,0 +1,68 @@
+--------------------------------------------
+POOR PERFORMANCE STATS
+Time: 21.580920399999982
+Function Calls: 1039563
+Top cumulative times
+Mon Nov  4 18:23:08 2019    poor_perf.log
+
+         1039563 function calls (1039544 primitive calls) in 21.581 seconds
+
+   Ordered by: cumulative time
+   List reduced from 166 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      5/1    0.000    0.000   21.581   21.581 {built-in method builtins.exec}
+        1    0.000    0.000   21.581   21.581 .\poor_perf.py:4(<module>)
+        1    0.275    0.275   21.568   21.568 .\poor_perf.py:59(main)
+        1   19.681   19.681   21.293   21.293 .\poor_perf.py:9(analyze)
+    18928    0.037    0.000    1.279    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\encodings\cp1252.py:22(decode)
+    18928    1.241    0.000    1.241    0.000 {built-in method _codecs.charmap_decode}
+  1000018    0.324    0.000    0.324    0.000 {method 'append' of 'list' objects}
+      7/4    0.000    0.000    0.019    0.005 <frozen importlib._bootstrap>:978(_find_and_load)
+      7/4    0.000    0.000    0.018    0.005 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+      7/4    0.000    0.000    0.010    0.003 <frozen importlib._bootstrap>:663(_load_unlocked)
+        4    0.000    0.000    0.010    0.002 <frozen importlib._bootstrap_external>:722(exec_module)
+        7    0.000    0.000    0.008    0.001 <frozen importlib._bootstrap>:882(_find_spec)
+        4    0.000    0.000    0.008    0.002 <frozen importlib._bootstrap_external>:1272(find_spec)
+        4    0.000    0.000    0.008    0.002 <frozen importlib._bootstrap_external>:1240(_get_spec)
+        2    0.001    0.001    0.007    0.004 {built-in method io.open}
+       22    0.000    0.000    0.007    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
+       13    0.000    0.000    0.007    0.001 <frozen importlib._bootstrap_external>:1356(find_spec)
+       22    0.007    0.000    0.007    0.000 {built-in method nt.stat}
+        4    0.000    0.000    0.006    0.001 <frozen importlib._bootstrap_external>:793(get_code)
+     10/4    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+
+
+--------------------------------------------
+GOOD PERFORMANCE STATS
+Time: 7.300853999999999
+Function Calls: 20153
+Top 20 cumulative times
+Mon Nov  4 18:22:31 2019    good_perf.log
+
+         20153 function calls (20136 primitive calls) in 7.301 seconds
+
+   Random listing order was used
+   List reduced from 150 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\codecs.py:309(__init__)
+     9464    0.027    0.000    0.086    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\codecs.py:319(decode)
+        1    7.201    7.201    7.287    7.287 .\good_perf.py:9(analyze)
+        1    0.000    0.000    7.288    7.288 .\good_perf.py:78(main)
+        1    0.000    0.000    7.301    7.301 .\good_perf.py:4(<module>)
+        3    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:41(_days_before_year)
+        5    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:46(_days_in_month)
+       35    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:379(_check_int_field)
+        5    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:396(_check_date_fields)
+        5    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:409(_check_time_fields)
+        5    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:426(_check_tzinfo_arg)
+        9    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:473(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:646(__neg__)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:454(timedelta)
+        2    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:804(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:774(date)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:1092(tzinfo)
+        2    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:1187(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Users\USer\AppData\Local\Programs\Python\Python37\lib\datetime.py:1162(time)
