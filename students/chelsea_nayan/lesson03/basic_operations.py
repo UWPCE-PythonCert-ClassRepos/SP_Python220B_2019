@@ -28,8 +28,7 @@ def add_customer(customer_id, firstname, lastname, home_address,
         new_customer.save()
         LOGGER.info('Added the new customer, [%s %s]!', firstname, lastname)
 
-    except IntegrityError as error_1:
-        LOGGER.info(error_1)
+    except DoesNotExist:
         LOGGER.info('Tried adding customer. Customer id [%s] cannot be added!', customer_id)
 
 def search_customer(customer_id):
@@ -45,7 +44,8 @@ def search_customer(customer_id):
                 'lastname': some_customer.c_lastname,
                 'email_address': some_customer.c_email_address,
                 'phone_number': some_customer.c_phone_number}
-    except DoesNotExist:
+    except DoesNotExist as error_1:
+        LOGGER.info(error_1)
         LOGGER.info(' Tried searching for customer. Customer id [%s] was not found.', customer_id)
         return {}
 
@@ -54,23 +54,19 @@ def delete_customer(customer_id):
     try:
         some_customer = Customer.get(Customer.c_id == customer_id)
         some_customer.delete_instance()
-    except DoesNotExist as error_1:
-        LOGGER.info(error_1)
+    except IndexError:
         LOGGER.info('Tried deleting customer. Customer id [%s] was not found.', customer_id)
+        raise ValueError
 
 def update_customer_credit(customer_id, credit_limit):
     '''
     Search as existing customer by id and update their credit limit...
     Or raise a ValueError exception if the customer does not exist
     '''
-    try:
-        some_customer = Customer.get(Customer.c_id == customer_id)
-        some_customer.c_credit_limit = credit_limit
-        some_customer.save()
-        LOGGER.info('Customer [%s]\'s credit limit updated!', customer_id)
-    except DoesNotExist:
-        LOGGER.info(' Tried updating credit limit. Customer id [%s] was not found.', customer_id)
-        raise ValueError
+    some_customer = Customer.get(Customer.c_id == customer_id)
+    some_customer.c_credit_limit = credit_limit
+    some_customer.save()
+    LOGGER.info('Customer [%s]\'s credit limit updated!', customer_id)
 
 def list_active_customers():
     '''
