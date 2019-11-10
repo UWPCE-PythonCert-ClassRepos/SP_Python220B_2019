@@ -14,5 +14,5 @@ LOGGER.info('Logger is active!')
 database.create_tables([Customer])
 LOGGER.info('Intialized customer schema in database...')
 
-#database.close()
+database.close()
 LOGGER.info('Database closed!')

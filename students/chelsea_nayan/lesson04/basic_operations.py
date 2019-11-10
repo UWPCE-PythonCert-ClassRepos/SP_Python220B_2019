@@ -8,8 +8,21 @@ import logging
 from peewee import *
 from customer_model import Customer
 
-logging.basicConfig(level=logging.INFO)
-LOGGER = logging.getLogger(__name__)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+FORMATTER = logging.Formatter(LOG_FORMAT)
+# Log all database data achanges to a file called db.log
+FILE_HANDLER = logging.FileHandler('db.log')
+FILE_HANDLER.setLevel(logging.INFO)
+FILE_HANDLER.setFormatter(FORMATTER)
+
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
+
+LOGGER = logging.getLogger()
+LOGGER.addHandler(FILE_HANDLER)
+LOGGER.addHandler(CONSOLE_HANDLER)
+LOGGER.setLevel(logging.INFO)
 LOGGER.info('Logger is active!')
 
 def add_customer(customer_id, firstname, lastname, home_address,
