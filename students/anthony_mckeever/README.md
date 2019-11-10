@@ -18,9 +18,12 @@ Each course lesson will contain its own folder.  The folders will use the naming
         |   |-- activity_1                  <Content for Lesson 1 Activity 1 - Automated Testing>
         |   `-- assignment_1                <Content for Lesson 1 Assignment 1 - HP Norton Project>
         |       `-- inventory_management    <Inventory management system (initially copied from Lessons directory in repo root)>
-        `-- lesson_2                        <Content for Lesson 2>
-            |-- activity_1                  <Content for Lesson 2 Activity 1 - Recusion Debugging>
-            `-- assignment_1                <Content for Lesson 2 Assignment 1 - Debugging charges_calc.py>                
+        |-- lesson_2                        <Content for Lesson 2>
+        |   |-- activity_1                  <Content for Lesson 2 Activity 1 - Recusion Debugging>
+        |   `-- assignment_1                <Content for Lesson 2 Assignment 1 - Debugging charges_calc.py>
+        `-- lesson_3                        <Content for Lesson 3>
+            |-- activity_1                  <Content for Lesson 3 Activity 1 - Relational Databases>
+            `-- assignment_1                <Content for Lesson 3 Assignment 1 - Relational Databases>
 ```
 
 ## Branching
