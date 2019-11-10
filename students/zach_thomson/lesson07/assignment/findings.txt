@@ -13,7 +13,8 @@ Total time = 0.80s
 
 2nd Test - Refactoring:
 Want to add threading to test parallel vs linear. Threading needs a specific
-function to target so refactoring to have a function to target.
+function to target so refactoring to have a function to target. Specifically,
+going to make product entry, customer entry and rental entry all different threads.
 
 Test run after re-factoring linear to have a function to thread in the future:
 (Adding 1000 customer, 1000 product and 500 rental entries):
@@ -75,4 +76,4 @@ Total time = 0.59s (39% improvement)
 
 So the threading with insert_one method increased the performance nearly 40% which could be noticeable with large
 data inputs. Again, this exercise really spoke to the performance gains that can be obtained simply from refactoring
-code to be more efficient without the need for threading. 
+code to be more efficient without the need for threading.
