@@ -45,17 +45,14 @@ class MongoDBConnection():
         self.connection.close()
 
 def dict_to_import(database, file):
-    '''function take a file, reads each row creating a dict and then appends
-    to a list. That list is now formatted for entry into a mongoDB and inserted'''
+    '''func takes a csvfile and reads in each row into a database'''
     with open(file) as csvfile:
-        list_to_import = []
         reader = csv.DictReader(csvfile)
         for row in reader:
             new_entry = {}
             for key, val in row.items():
                 new_entry[key] = val
-            list_to_import.append(new_entry)
-    database.insert_many(list_to_import)
+            database.insert_one(new_entry)
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -91,7 +88,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                              initial_product_count,
                              final_product_count, p_elapsed)
         except FileNotFoundError:
-            print('Product file not found')
+            pass
 
         #Create customer collection
         c_time_start = time.time()
@@ -107,7 +104,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                               initial_cust_count,
                               final_cust_count, c_elapsed)
         except FileNotFoundError:
-            print('Customer file not found')
+            pass
 
         #Create rentals collection
         rentals_db = db['rentals']
@@ -116,7 +113,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             dict_to_import(rentals_db, os.path.join(directory_name, rentals_file))
             LOGGER.info('Rentals info added to database')
         except FileNotFoundError:
-            print('Rentals file not found')
+            pass
 
     return [customer_tuple, product_tuple]
 

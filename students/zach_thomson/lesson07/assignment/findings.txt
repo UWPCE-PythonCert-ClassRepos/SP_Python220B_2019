@@ -1,0 +1,78 @@
+Notes on Linear vs Parallelization assignment
+
+1st Test - Initial Code:
+Carried over code from lesson05 assignment and re-worked slightly to return new
+tuples per assignment.
+Initial Run (Adding 1000 customer, 1000 product and 500 rental entries):
+
+Product addition = 0.32s
+Customer addition = 0.32s
+Total time = 0.80s
+
+
+
+2nd Test - Refactoring:
+Want to add threading to test parallel vs linear. Threading needs a specific
+function to target so refactoring to have a function to target.
+
+Test run after re-factoring linear to have a function to thread in the future:
+(Adding 1000 customer, 1000 product and 500 rental entries):
+
+Product addition = 0.023s
+Customer addition = 0.023s
+Total time = 0.056s
+
+So refactoring the linear module sped up the data entry by about 1300%!
+
+
+
+3rd Test - Parallelization:
+Added threading to each of the 3 different types of import(produces, customers, rentals)
+
+Product addition = 0.023s
+Customer addition = 0.021s
+Total time = 0.055s
+
+So far no real performance gains from threading. Going to refactor code to see if order matters.
+
+
+
+4th Test - Parallelization Refactored:
+Cleaned up the code and refactored it to be more readable as well as adjusting the order to see if
+that affects the threading. Due to start and ending timers being in different spots, the timing for
+the addition of products and customers increased but the overall time decreased (probably within range of variability)
+
+Product addition = 0.046s
+Customer addition = 0.046s
+Total time = 0.048s (14.5% improvement)
+
+
+Overall I would not recommend parallelization, at least in its current state/implementation, unless the data
+to be imported was massive. The current parallelization strategy sees about 15% performance gains. However,
+with a total time of under 5 hundredths of a second, the difference is imperceptible. The biggest gains came
+simply from the initial refactoring of the code which was a little surprising at how much of a difference
+that made over the original code. Out of curiosity, I wanted to know where this big gain in refactoring came from.
+
+
+5th Test - Linear with insert_one (instead of insert_many):
+Replacing insert_many with insert_one, so each line of the csv file gets inserted one at a time, instead of
+compiling into a big list/dict for a single insert.
+
+Product addition = 0.33s
+Customer addition = 0.33s
+Total time = 0.82s
+So times are back to Test#1 lengths. insert_one takes a lot longer than insert_many. So if we run parallelization
+on insert_one, do we see performance gains there?
+
+
+
+6th Test - Parallelization with insert_one
+Updated with threading for insert_one instead of insert_many
+
+Product addition = 0.59s
+Customer addition = 0.59s
+Total time = 0.59s (39% improvement)
+
+So the threading with insert_one method increased the performance nearly 40% which could be noticeable with large
+data inputs. Again, this exercise really spoke to the performance gains that can be obtained simply from refactoring
+code to be more efficient without the need for threading. 

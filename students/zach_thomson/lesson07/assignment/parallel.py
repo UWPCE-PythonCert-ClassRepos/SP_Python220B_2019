@@ -1,11 +1,12 @@
 # pylint: disable=R0914, C0103
 '''
-Linear vs parallelization lesson (linear module)
+Linear vs parallelization lesson (parallel module)
 '''
 import csv
 import os
 import logging
 import time
+import threading
 from pymongo import MongoClient
 
 #logging setup
@@ -44,6 +45,7 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
+
 def dict_to_import(database, file):
     '''function take a file, reads each row creating a dict and then appends
     to a list. That list is now formatted for entry into a mongoDB and inserted'''
@@ -77,46 +79,65 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         db = mongo.connection.media
 
-        #Create product collection
-        p_time_start = time.time()
+        #Create databases
         product_db = db['product']
+        customer_db = db['customer']
+        rentals_db = db['rentals']
+
+        #Start timers
+        p_time_start = time.time()
+        c_time_start = time.time()
+
+        #Initial counts
         initial_product_count = product_db.count_documents({})
+        initial_cust_count = customer_db.count_documents({})
+
         try:
-            dict_to_import(product_db, os.path.join(directory_name, product_file))
+            #Create threads
+            product_thread = threading.Thread(target=dict_to_import,
+                                              args=(product_db,
+                                                    os.path.join(directory_name, product_file)))
+            product_thread.start()
+
+            customer_thread = threading.Thread(target=dict_to_import,
+                                               args=(customer_db,
+                                                     os.path.join(directory_name, customer_file)))
+            customer_thread.start()
+
+            rentals_thread = threading.Thread(target=dict_to_import,
+                                              args=(rentals_db,
+                                                    os.path.join(directory_name, rentals_file)))
+            rentals_thread.start()
+
+            #Join Threads
+            product_thread.join()
+            customer_thread.join()
+            rentals_thread.join()
+
+            #Finalize counts
             final_product_count = product_db.count_documents({})
+            final_cust_count = customer_db.count_documents({})
+
+            #End timers
             p_time_end = time.time()
             p_elapsed = (p_time_end - p_time_start)
+            c_time_end = time.time()
+            c_elapsed = (c_time_end - c_time_start)
+
+            #Logger info
             LOGGER.info('Product info addition took %s', p_elapsed)
+            LOGGER.info('Customer info addition took %s', c_elapsed)
+            LOGGER.info('Rentals info added to database')
+
+            #Create tuples
             product_tuple = ((final_product_count-initial_product_count),
                              initial_product_count,
                              final_product_count, p_elapsed)
-        except FileNotFoundError:
-            print('Product file not found')
-
-        #Create customer collection
-        c_time_start = time.time()
-        customer_db = db['customer']
-        initial_cust_count = customer_db.count_documents({})
-        try:
-            dict_to_import(customer_db, os.path.join(directory_name, customer_file))
-            final_cust_count = customer_db.count_documents({})
-            c_time_end = time.time()
-            c_elapsed = (c_time_end - c_time_start)
-            LOGGER.info('Customer info addition took %s', c_elapsed)
             customer_tuple = ((final_cust_count - initial_cust_count),
                               initial_cust_count,
                               final_cust_count, c_elapsed)
         except FileNotFoundError:
-            print('Customer file not found')
-
-        #Create rentals collection
-        rentals_db = db['rentals']
-
-        try:
-            dict_to_import(rentals_db, os.path.join(directory_name, rentals_file))
-            LOGGER.info('Rentals info added to database')
-        except FileNotFoundError:
-            print('Rentals file not found')
+            print('FileNotFoundError')
 
     return [customer_tuple, product_tuple]
 
