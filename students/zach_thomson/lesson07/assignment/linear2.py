@@ -1,6 +1,7 @@
 # pylint: disable=R0914, C0103
 '''
 Linear vs parallelization lesson (linear module)
+Testing insert_one
 '''
 import csv
 import os
