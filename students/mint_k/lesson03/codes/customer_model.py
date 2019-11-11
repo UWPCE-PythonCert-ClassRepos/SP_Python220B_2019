@@ -5,7 +5,7 @@
 
 """
 import logging
-from peewee import *
+from peewee import Model, CharField, BooleanField, DecimalField, SqliteDatabase
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -25,6 +25,7 @@ LOGGER.info('Enable the Peewee magic! This base class does it all')
 class BaseModel(Model):
     """This is to setup Pewee and database"""
     class Meta:
+        """this is to set up meta"""
         database = DATABASE
 
 class Customer(BaseModel):

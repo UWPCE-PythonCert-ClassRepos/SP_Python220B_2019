@@ -11,7 +11,7 @@ LOGGER = logging.getLogger(__name__)
 
 LOGGER.info('Working with Customer class')
 
-def add_customer(customer_id, name, lastname, home_address, 
+def add_customer(customer_id, name, lastname, home_address,
                  phone_number, email_address, status, credit_limit):
     """this is for adding customer"""
     try:
