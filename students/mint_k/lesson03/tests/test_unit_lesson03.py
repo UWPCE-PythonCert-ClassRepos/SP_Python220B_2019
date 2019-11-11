@@ -1,5 +1,6 @@
+"""Unit testing"""
+
 from unittest import TestCase
-import sys
 from peewee import DoesNotExist
 from codes import basic_operations
 from codes.customer_model import Customer, DATABASE

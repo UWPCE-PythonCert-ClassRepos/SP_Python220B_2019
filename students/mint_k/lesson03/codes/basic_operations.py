@@ -1,6 +1,10 @@
-from codes.customer_model import *
+"""This contains functions for basic operation for working with database"""
 
 import logging
+from peewee import OperationalError, IntegrityError, DoesNotExist
+from codes.customer_model import Customer, DATABASE
+
+
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -61,7 +65,6 @@ def list_active_customers():
     query = Customer.select().where(Customer.customer_status)
     for my_c in query:
         print(my_c.customer_id, my_c.customer_name, my_c.lastname, my_c.customer_status)
-    print(query.count())
     return query.count()
 
 
