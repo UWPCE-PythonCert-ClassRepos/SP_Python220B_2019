@@ -83,11 +83,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     logging.debug('Data added to list.')
 
             try:
+                print('awaiting insertion into collection: %s', file)
+                t1 = time.time()
                 collection.insert_many(data)
+                print(time.time()-t1)
                 count_list.append(data.__len__())
+                print('File data loaded for collection: %s', file)
                 logging.info('File data loaded.')
             except TypeError as error: # may need to figure out how to accommodate more errors...
-                logging.info('Error %s: ', error)
+                logging.error('Error %s: ', error)
                 error_list.append(error)
 
     logging.info('--------All data import complete.')

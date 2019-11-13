@@ -7,6 +7,7 @@ import logging
 import time
 import sys
 import csv
+import asyncio
 sys.path.append('../')
 from lesson05.database import MongoDBConnection
 
@@ -33,7 +34,11 @@ LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
 
-async def import_data(directory_name, product_file, customer_file, rentals_file):
+async def call_insert_many(collection, data):
+    return collection.insert_many(data)
+
+
+async def import_data(directory_name, file, file_type):
     """
      This function takes a directory name three csv files as input, one with product data, one with
     customer data and the third one with rentals data and creates and populates a new MongoDB
@@ -47,7 +52,9 @@ async def import_data(directory_name, product_file, customer_file, rentals_file)
     logging.info('--------Importing datafiles in %s', directory_name)
     count_list = []
     error_list = []
-    files = (product_file, customer_file, rentals_file)
+    files_types = {'product': 'product_data',
+                   'customer': 'customer_data',
+                   'rental': 'rental_data'}
 
     # Open connection
     logging.info('Opening connection to mongodb.')
@@ -61,47 +68,50 @@ async def import_data(directory_name, product_file, customer_file, rentals_file)
         logging.info('Connected HPNortonDatabase.')
 
         # create/connect to collections
-        logging.info('Connecting to collections...')
-        product_data = hp_db['product_data']
+        logging.info('Connecting to collection...')
+        collection_data = hp_db[files_types[file_type]]
         logging.info('*connected to collection: product_data')
-        customer_data = hp_db['customer_data']
-        logging.info('*connected to collection: customer_data')
-        rental_data = hp_db['rental_data']
-        logging.info('*connected to collection: rental_data')
-        collections = (product_data, customer_data, rental_data)
 
         # load data
-        for file, collection in zip(files, collections):
-            logging.info('Attempting to open: %s', file)
-            with open(directory_name + '/' + file) as curr_f:
-                logging.info('File opened.')
-                reader = csv.DictReader(curr_f)
-                logging.debug('Created reader to process file.')
-                data = []
-                for row in reader:
-                    logging.debug('Adding to data list %s', row)
-                    data.append(row)
-                    logging.debug('Data added to list.')
+        logging.info('Attempting to open: %s', file)
+        with open(directory_name + '/' + file) as curr_f:
+            logging.info('File opened.')
+            reader = csv.DictReader(curr_f)
+            logging.debug('Created reader to process file.')
+            data = []
+            for row in reader:
+                logging.debug('Adding to data list %s', row)
+                data.append(row)
+                logging.debug('Data added to list.')
 
-            try:
-                await collection.insert_many(data)
-                count_list.append(data.__len__())
-                logging.info('File data loaded.')
-            except TypeError as error: # may need to figure out how to accommodate more errors...
-                logging.info('Error %s: ', error)
-                error_list.append(error)
+        try:
+            print('awaiting insertion into collection: %s', files_types[file_type])
+            result = await collection_data.insert_many(data)
+            # await call_insert_many(collection_data, data)
+            count_list.append(data.__len__())
+            print('File data loaded for collection: %s', files_types[file_type])
+            logging.info('File data loaded.')
+        except TypeError as er:  # may need to figure out how to accommodate more errors...
+            logging.error('Error %s: ', er)
+            error_list.append(er)
 
     logging.info('--------All data import complete.')
     # Outputs
     tuple1 = tuple(count_list)
     tuple2 = tuple(error_list)
 
-    return tuple1, tuple2
+    return tuple1, tuple2, result
 
 if __name__ == '__main__':
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                      'SP_Python220B_2019/students/franjaku/lesson07'
     start = time.time()
-    _, __ = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
+    files = ['customer_data.csv', 'product_data.csv', 'rental_data.csv']
+    file_types = ['customer', 'product', 'rental']
+    loop = asyncio.get_event_loop()
+    jobs = asyncio.gather(*(import_data(directory_path, file, file_type) for file, file_type in
+                            zip(files, file_types)))
+    loop.run_until_complete(jobs)
+
     tottime = time.time() - start
     print('Time: %s', tottime)
