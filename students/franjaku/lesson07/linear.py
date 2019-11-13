@@ -126,6 +126,8 @@ if __name__ == '__main__':
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                      'SP_Python220B_2019/students/franjaku/lesson07'
     start = time.time()
-    _, __ = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
+    record_tupe, error_tupe = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
     tottime = time.time() - start
     print('Time to load all data: %s', tottime)
+    print(record_tupe)
+    print(error_tupe)
