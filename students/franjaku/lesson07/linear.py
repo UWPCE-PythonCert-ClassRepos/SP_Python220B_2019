@@ -72,6 +72,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         # load data
         for file, collection in zip(files, collections):
             logging.info('Attempting to open: %s', file)
+
+            # Refactor this to its own function
             with open(directory_name + '/' + file) as curr_f:
                 logging.info('File opened.')
                 reader = csv.DictReader(curr_f)
@@ -82,6 +84,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     data.append(row)
                     logging.debug('Data added to list.')
 
+            # Refactor this to its own function
             try:
                 print('awaiting insertion into collection: %s', file)
                 t1 = time.time()
