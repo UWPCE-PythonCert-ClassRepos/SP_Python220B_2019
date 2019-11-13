@@ -34,11 +34,40 @@ LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
 
-async def call_insert_many(collection, data):
-    return collection.insert_many(data)
+def get_file_data(directory_name, file):
+    """Extract data from different files"""
+
+    with open(directory_name + '/' + file) as curr_f:
+        logging.info('File opened.')
+        reader = csv.DictReader(curr_f)
+        logging.debug('Created reader to process file.')
+        data = []
+        for row in reader:
+            logging.debug('Adding to data list %s', row)
+            data.append(row)
+            logging.debug('Data added to list.')
+    return data
 
 
-async def import_data(directory_name, file, file_type):
+def insert_data(collection, data):
+    """Insert data into mongodb database"""
+    record_count = []
+    error_count = []
+    try:
+        print('awaiting insertion into collection: ', collection.name)
+        t1 = time.time()
+        collection.insert_many(data)
+        print(time.time()-t1)
+        record_count.append(data.__len__())
+        print('File data loaded for collection')
+        logging.info('File data loaded.')
+    except TypeError as error: # may need to figure out how to accommodate more errors...
+        logging.error('Error %s: ', error)
+        error_count.append(error)
+    return record_count, error_count
+
+
+def import_data(directory_name, product_file, customer_file, rentals_file):
     """
      This function takes a directory name three csv files as input, one with product data, one with
     customer data and the third one with rentals data and creates and populates a new MongoDB
@@ -50,11 +79,9 @@ async def import_data(directory_name, file, file_type):
              tuple2, count of any errors that occurred, in the same order
     """
     logging.info('--------Importing datafiles in %s', directory_name)
-    count_list = []
-    error_list = []
-    files_types = {'product': 'product_data',
-                   'customer': 'customer_data',
-                   'rental': 'rental_data'}
+    record_count = []
+    error_count = []
+    files = (product_file, customer_file, rentals_file)
 
     # Open connection
     logging.info('Opening connection to mongodb.')
@@ -68,39 +95,34 @@ async def import_data(directory_name, file, file_type):
         logging.info('Connected HPNortonDatabase.')
 
         # create/connect to collections
-        logging.info('Connecting to collection...')
-        collection_data = hp_db[files_types[file_type]]
+        logging.info('Connecting to collections...')
+        product_data = hp_db['product_data']
         logging.info('*connected to collection: product_data')
+        customer_data = hp_db['customer_data']
+        logging.info('*connected to collection: customer_data')
+        rental_data = hp_db['rental_data']
+        logging.info('*connected to collection: rental_data')
+        collections = (product_data, customer_data, rental_data)
 
         # load data
-        logging.info('Attempting to open: %s', file)
-        with open(directory_name + '/' + file) as curr_f:
-            logging.info('File opened.')
-            reader = csv.DictReader(curr_f)
-            logging.debug('Created reader to process file.')
-            data = []
-            for row in reader:
-                logging.debug('Adding to data list %s', row)
-                data.append(row)
-                logging.debug('Data added to list.')
+        for file, collection in zip(files, collections):
+            logging.info('Attempting to open: %s', file)
 
-        try:
-            print('awaiting insertion into collection: %s', files_types[file_type])
-            result = await collection_data.insert_many(data)
-            # await call_insert_many(collection_data, data)
-            count_list.append(data.__len__())
-            print('File data loaded for collection: %s', files_types[file_type])
-            logging.info('File data loaded.')
-        except TypeError as er:  # may need to figure out how to accommodate more errors...
-            logging.error('Error %s: ', er)
-            error_list.append(er)
+            data = get_file_data(directory_name, file)
+
+            records, errors = insert_data(collection, data)
+
+            # Add counts to total
+            record_count.append(records)
+            error_count.append(errors)
 
     logging.info('--------All data import complete.')
     # Outputs
-    tuple1 = tuple(count_list)
-    tuple2 = tuple(error_list)
+    tuple1 = tuple(record_count)
+    tuple2 = tuple(error_count)
 
-    return tuple1, tuple2, result
+    return tuple1, tuple2
+
 
 if __name__ == '__main__':
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
