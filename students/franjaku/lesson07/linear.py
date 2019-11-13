@@ -32,6 +32,39 @@ LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
 
+def get_file_data(directory_name, file):
+    """Extract data from different files"""
+
+    with open(directory_name + '/' + file) as curr_f:
+        logging.info('File opened.')
+        reader = csv.DictReader(curr_f)
+        logging.debug('Created reader to process file.')
+        data = []
+        for row in reader:
+            logging.debug('Adding to data list %s', row)
+            data.append(row)
+            logging.debug('Data added to list.')
+    return data
+
+
+def insert_data(collection, data):
+    """Insert data into mongodb database"""
+    record_count = []
+    error_count = []
+    try:
+        print('awaiting insertion into collection: ', collection.name)
+        t1 = time.time()
+        collection.insert_many(data)
+        print(time.time()-t1)
+        record_count.append(data.__len__())
+        print('File data loaded for collection')
+        logging.info('File data loaded.')
+    except TypeError as error: # may need to figure out how to accommodate more errors...
+        logging.error('Error %s: ', error)
+        error_count.append(error)
+    return record_count, error_count
+
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
      This function takes a directory name three csv files as input, one with product data, one with
@@ -44,8 +77,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              tuple2, count of any errors that occurred, in the same order
     """
     logging.info('--------Importing datafiles in %s', directory_name)
-    count_list = []
-    error_list = []
+    record_count = []
+    error_count = []
     files = (product_file, customer_file, rentals_file)
 
     # Open connection
@@ -73,34 +106,18 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         for file, collection in zip(files, collections):
             logging.info('Attempting to open: %s', file)
 
-            # Refactor this to its own function
-            with open(directory_name + '/' + file) as curr_f:
-                logging.info('File opened.')
-                reader = csv.DictReader(curr_f)
-                logging.debug('Created reader to process file.')
-                data = []
-                for row in reader:
-                    logging.debug('Adding to data list %s', row)
-                    data.append(row)
-                    logging.debug('Data added to list.')
+            data = get_file_data(directory_name, file)
 
-            # Refactor this to its own function
-            try:
-                print('awaiting insertion into collection: %s', file)
-                t1 = time.time()
-                collection.insert_many(data)
-                print(time.time()-t1)
-                count_list.append(data.__len__())
-                print('File data loaded for collection: %s', file)
-                logging.info('File data loaded.')
-            except TypeError as error: # may need to figure out how to accommodate more errors...
-                logging.error('Error %s: ', error)
-                error_list.append(error)
+            records, errors = insert_data(collection, data)
+
+            # Add counts to total
+            record_count.append(records)
+            error_count.append(errors)
 
     logging.info('--------All data import complete.')
     # Outputs
-    tuple1 = tuple(count_list)
-    tuple2 = tuple(error_list)
+    tuple1 = tuple(record_count)
+    tuple2 = tuple(error_count)
 
     return tuple1, tuple2
 
@@ -111,4 +128,4 @@ if __name__ == '__main__':
     start = time.time()
     _, __ = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
     tottime = time.time() - start
-    print('Time: %s', tottime)
+    print('Time to load all data: %s', tottime)
