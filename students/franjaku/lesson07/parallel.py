@@ -49,7 +49,7 @@ def get_file_data(directory_name, file):
     return data
 
 
-def insert_data(collection, data):
+async def insert_data(collection, data):
     """Insert data into mongodb database"""
     record_count = []
     error_count = []
@@ -61,13 +61,13 @@ def insert_data(collection, data):
         record_count.append(data.__len__())
         print('File data loaded for collection')
         logging.info('File data loaded.')
-    except TypeError as error: # may need to figure out how to accommodate more errors...
+    except TypeError as error:  # may need to figure out how to accommodate more errors...
         logging.error('Error %s: ', error)
         error_count.append(error)
     return record_count, error_count
 
 
-def import_data(directory_name, product_file, customer_file, rentals_file):
+async def import_data(directory_name, product_file, customer_file, rentals_file):
     """
      This function takes a directory name three csv files as input, one with product data, one with
     customer data and the third one with rentals data and creates and populates a new MongoDB
@@ -110,7 +110,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
             data = get_file_data(directory_name, file)
 
-            records, errors = insert_data(collection, data)
+            records, errors = await insert_data(collection, data)
 
             # Add counts to total
             record_count.append(records)
@@ -120,7 +120,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     # Outputs
     tuple1 = tuple(record_count)
     tuple2 = tuple(error_count)
-
+    print(tuple1)
+    print(tuple2)
     return tuple1, tuple2
 
 
@@ -129,11 +130,9 @@ if __name__ == '__main__':
                      'SP_Python220B_2019/students/franjaku/lesson07'
     start = time.time()
     files = ['customer_data.csv', 'product_data.csv', 'rental_data.csv']
-    file_types = ['customer', 'product', 'rental']
+
     loop = asyncio.get_event_loop()
-    jobs = asyncio.gather(*(import_data(directory_path, file, file_type) for file, file_type in
-                            zip(files, file_types)))
-    loop.run_until_complete(jobs)
+    loop.run_until_complete(import_data(directory_path, files[0], files[1], files[2]))
 
     tottime = time.time() - start
     print('Time: %s', tottime)
