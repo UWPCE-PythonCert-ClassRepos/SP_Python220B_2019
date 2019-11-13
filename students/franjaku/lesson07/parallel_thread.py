@@ -79,7 +79,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     logging.info('--------Importing datafiles in %s', directory_name)
     record_count = []
     error_count = []
-    files = (product_file, customer_file, rentals_file)
+    # files = (product_file, customer_file, rentals_file)
 
     # Open connection
     logging.info('Opening connection to mongodb.')
@@ -100,19 +100,27 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         logging.info('*connected to collection: customer_data')
         rental_data = hp_db['rental_data']
         logging.info('*connected to collection: rental_data')
-        collections = (product_data, customer_data, rental_data)
+        # collections = (product_data, customer_data, rental_data)
 
         # Refactor to use threads
-        for file, collection in zip(files, collections):
-            logging.info('Attempting to open: %s', file)
+        customers_data = get_file_data(directory_name, customer_file)
+        products_data = get_file_data(directory_name, product_file)
+        rentals_data = get_file_data(directory_name, rentals_file)
 
-            data = get_file_data(directory_name, file)
+        # get threads
+        customer_thread = threading.Thread(target=insert_data, args=(customer_data, customers_data))
+        prodcut_thread = threading.Thread(target=insert_data, args=(product_data, products_data))
+        rental_thread = threading.Thread(target=insert_data, args=(rental_data, rentals_data))
 
-            records, errors = insert_data(collection, data)
+        # start threads
+        customer_thread.start()
+        prodcut_thread.start()
+        rental_thread.start()
 
-            # Add counts to total
-            record_count.append(records)
-            error_count.append(errors)
+        # join threads
+        customer_thread.join()
+        prodcut_thread.join()
+        rental_thread.join()
 
     logging.info('--------All data import complete.')
     # Outputs
@@ -129,8 +137,7 @@ if __name__ == '__main__':
     start = time.time()
     files = ['customer_data.csv', 'product_data.csv', 'rental_data.csv']
 
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(import_data(directory_path, files[0], files[1], files[2]))
+    import_data(directory_path, files[0], files[1], files[2])
 
     tottime = time.time() - start
     print('Time: %s', tottime)
