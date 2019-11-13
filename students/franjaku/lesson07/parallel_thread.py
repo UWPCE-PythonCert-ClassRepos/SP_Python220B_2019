@@ -7,11 +7,9 @@ import logging
 import time
 import sys
 import csv
-import asyncio
+import threading
 sys.path.append('../')
 from lesson05.database import MongoDBConnection
-
-
 
 # File logging setup
 LOG_FILE = 'HP.log'
@@ -49,7 +47,7 @@ def get_file_data(directory_name, file):
     return data
 
 
-async def insert_data(collection, data):
+def insert_data(collection, data):
     """Insert data into mongodb database"""
     record_count = []
     error_count = []
@@ -67,7 +65,7 @@ async def insert_data(collection, data):
     return record_count, error_count
 
 
-async def import_data(directory_name, product_file, customer_file, rentals_file):
+def import_data(directory_name, product_file, customer_file, rentals_file):
     """
      This function takes a directory name three csv files as input, one with product data, one with
     customer data and the third one with rentals data and creates and populates a new MongoDB
@@ -104,13 +102,13 @@ async def import_data(directory_name, product_file, customer_file, rentals_file)
         logging.info('*connected to collection: rental_data')
         collections = (product_data, customer_data, rental_data)
 
-        # load data
+        # Refactor to use threads
         for file, collection in zip(files, collections):
             logging.info('Attempting to open: %s', file)
 
             data = get_file_data(directory_name, file)
 
-            records, errors = await insert_data(collection, data)
+            records, errors = insert_data(collection, data)
 
             # Add counts to total
             record_count.append(records)
