@@ -49,20 +49,21 @@ def get_file_data(directory_name, file):
 
 def insert_data(collection, data):
     """Insert data into mongodb database"""
-    record_count = []
+    start_time = time.time()
     error_count = []
     try:
         print('awaiting insertion into collection: ', collection.name)
         t1 = time.time()
         collection.insert_many(data)
         print(time.time()-t1)
-        record_count.append(data.__len__())
+        record_int = data.__len__()
         print('File data loaded for collection')
         logging.info('File data loaded.')
     except TypeError as error: # may need to figure out how to accommodate more errors...
         logging.error('Error %s: ', error)
         error_count.append(error)
-    return record_count, error_count
+        record_int = -1000
+    return record_int, error_count, time.time() - start_time
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -77,8 +78,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              tuple2, count of any errors that occurred, in the same order
     """
     logging.info('--------Importing datafiles in %s', directory_name)
-    record_count = []
-    error_count = []
+    output = []
     files = (product_file, customer_file, rentals_file)
 
     # Open connection
@@ -108,26 +108,25 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
             data = get_file_data(directory_name, file)
 
-            records, errors = insert_data(collection, data)
+            records_before = collection.count_documents({})
+            records, errors, tot_time = insert_data(collection, data)
+            records_after = collection.count_documents({})
 
             # Add counts to total
-            record_count.append(records)
-            error_count.append(errors)
+            output.append((records, records_before, records_after, tot_time))
 
     logging.info('--------All data import complete.')
     # Outputs
-    tuple1 = tuple(record_count)
-    tuple2 = tuple(error_count)
 
-    return tuple1, tuple2
+    output.pop(-1)
+    return output
 
 
 if __name__ == '__main__':
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                      'SP_Python220B_2019/students/franjaku/lesson07'
     start = time.time()
-    record_tupe, error_tupe = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
+    output = import_data(directory_path, 'product_data.csv', 'customer_data.csv', 'rental_data.csv')
     tottime = time.time() - start
     print('Time to load all data: %s', tottime)
-    print(record_tupe)
-    print(error_tupe)
+    print(output)
