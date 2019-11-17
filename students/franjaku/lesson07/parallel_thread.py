@@ -8,6 +8,7 @@ import time
 import sys
 import csv
 import threading
+from queue import Queue
 sys.path.append('../')
 from lesson05.database import MongoDBConnection
 
@@ -49,20 +50,23 @@ def get_file_data(directory_name, file):
 
 def insert_data(collection, data):
     """Insert data into mongodb database"""
-    record_count = []
     error_count = []
+    t1 = time.time()
     try:
         print('awaiting insertion into collection: ', collection.name)
-        t1 = time.time()
+        records_before = collection.count_documents({})
         collection.insert_many(data)
-        print(time.time()-t1)
-        record_count.append(data.__len__())
+        records_after = collection.count_documents({})
+        record_int = data.__len__()
         print('File data loaded for collection')
         logging.info('File data loaded.')
     except TypeError as error:  # may need to figure out how to accommodate more errors...
         logging.error('Error %s: ', error)
         error_count.append(error)
-    return record_count, error_count
+        records_before = -1000
+        records_after = -1000
+        record_int = -1000
+    return record_int, records_before, records_after, time.time() - t1, collection.name, error_count
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -77,10 +81,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              tuple2, count of any errors that occurred, in the same order
     """
     logging.info('--------Importing datafiles in %s', directory_name)
-    record_count = []
-    error_count = []
-    # files = (product_file, customer_file, rentals_file)
-
+    temp_out = []
+    output = []
     # Open connection
     logging.info('Opening connection to mongodb.')
     mongo = MongoDBConnection()
@@ -94,50 +96,46 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
         # create/connect to collections
         logging.info('Connecting to collections...')
-        product_data = hp_db['product_data']
+        product_collection = hp_db['product_data']
         logging.info('*connected to collection: product_data')
-        customer_data = hp_db['customer_data']
+        customer_collection = hp_db['customer_data']
         logging.info('*connected to collection: customer_data')
-        rental_data = hp_db['rental_data']
+        rental_collection = hp_db['rental_data']
         logging.info('*connected to collection: rental_data')
-        # collections = (product_data, customer_data, rental_data)
 
         # Refactor to use threads
-        customers_data = get_file_data(directory_name, customer_file)
-        products_data = get_file_data(directory_name, product_file)
-        rentals_data = get_file_data(directory_name, rentals_file)
+        threads = []
+        files = (product_file, customer_file, rentals_file)
+        collections = (product_collection, customer_collection, rental_collection)
+        for file, collection in zip(files, collections):
+            data = get_file_data(directory_name, file)
+            records_before = collection.count_documents({})
+            records = data.__len__()
+            records_after = records_before + records
+            threads.append(threading.Thread(target=insert_data, args=(collection, data)))
+            temp_out.append([records, records_before, records_after])
 
-        # get threads
-        customer_thread = threading.Thread(target=insert_data, args=(customer_data, customers_data))
-        prodcut_thread = threading.Thread(target=insert_data, args=(product_data, products_data))
-        rental_thread = threading.Thread(target=insert_data, args=(rental_data, rentals_data))
+        start_time = time.time()
+        for thread in threads:
+            thread.start()
+            thread.join()
 
-        # start threads
-        customer_thread.start()
-        prodcut_thread.start()
-        rental_thread.start()
-
-        # join threads
-        customer_thread.join()
-        prodcut_thread.join()
-        rental_thread.join()
-
+    tot_time = time.time() - start_time
+    temp_out[0].append(tot_time)
+    temp_out[1].append(tot_time)
     logging.info('--------All data import complete.')
     # Outputs
-    tuple1 = tuple(record_count)
-    tuple2 = tuple(error_count)
-    print(tuple1)
-    print(tuple2)
-    return tuple1, tuple2
+
+    return (temp_out[0]), (temp_out[1])
 
 
 if __name__ == '__main__':
     directory_path = 'C:/Users/USer/Documents/UW_Python_Certificate/Course_2/' \
                      'SP_Python220B_2019/students/franjaku/lesson07'
     start = time.time()
-    files = ['customer_data.csv', 'product_data.csv', 'rental_data.csv']
-
-    import_data(directory_path, files[0], files[1], files[2])
-
+    data_files = ['customer_data.csv', 'product_data.csv', 'rental_data.csv']
+    output = import_data(directory_path, data_files[0], data_files[1],
+                                            data_files[2])
     tottime = time.time() - start
-    print('Time: %s', tottime)
+    print('Time to load all data: %s', tottime)
+    print(output)
