@@ -4,7 +4,21 @@
 """
 
 import csv
+import logging
 from functools import partial
+import os
+
+
+# Setup logging
+CONSOLE_LOG_FORMAT = "%(filename)s:%(lineno)-4d %(message)s"
+CONSOLE_FORMATTER = logging.Formatter(CONSOLE_LOG_FORMAT)
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.WARNING)
+CONSOLE_HANDLER.setFormatter(CONSOLE_FORMATTER)
+
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
+LOGGER.addHandler(CONSOLE_HANDLER)
 
 
 def add_furniture(invoice_file, customer_name, item_code, item_description, item_monthly_price):
@@ -20,7 +34,20 @@ def add_furniture(invoice_file, customer_name, item_code, item_description, item
     :param item_monthly_price: int
     :return: None
     """
-    pass
+    field_names = ['customer_name', 'item_code', 'item_description', 'item_monthly_price']
+    # Test if file exists
+    if not os.path.exists(invoice_file):
+        with open(invoice_file, 'w', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=field_names)
+            writer.writeheader()
+
+    with open(invoice_file, 'a', newline='') as file:
+        logging.debug('%s found, appending data.', file.name)
+        writer = csv.DictWriter(file, fieldnames=field_names)
+        writer.writerow({'customer_name': customer_name,
+                         'item_code': item_code,
+                         'item_description': item_description,
+                         'item_monthly_price': item_monthly_price})
 
 
 def single_customer(customer_name, invoice_file):
@@ -31,4 +58,13 @@ def single_customer(customer_name, invoice_file):
     :param invoice_file: string
     :return: f(rental_items)
     """
-    pass
+    def single_customer_bulk(rental_items):
+        # Use functools.partial
+        partial_add = partial(add_furniture, invoice_file=invoice_file, customer_name=customer_name)
+        # Read/write bulk records
+        with open(rental_items, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                partial_add(item_code=row[1], item_description=row[2], item_monthly_price=row[3])
+
+    return single_customer_bulk
