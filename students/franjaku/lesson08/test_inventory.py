@@ -3,9 +3,9 @@ Test the inventory module
 """
 
 from unittest import TestCase
-import inventory
 import os
 import csv
+import inventory
 
 
 class InventoryTests(TestCase):
