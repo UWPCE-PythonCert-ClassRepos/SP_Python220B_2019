@@ -12,7 +12,7 @@ class InventoryTests(TestCase):
 
     def setUp(self):
         """Set up .csv test file"""
-        if 'test_rented_items.csv':
+        if os.path.exists('test_rented_items.csv'):
             os.remove('test_rented_items.csv')
 
     def tearDown(self):
