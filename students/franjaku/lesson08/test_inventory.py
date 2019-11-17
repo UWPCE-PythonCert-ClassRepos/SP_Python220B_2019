@@ -7,6 +7,7 @@ import inventory
 import os
 import csv
 
+
 class InventoryTests(TestCase):
     """Test the add_furniture and single_customer funcs"""
 
@@ -14,9 +15,6 @@ class InventoryTests(TestCase):
         """Set up .csv test file"""
         if os.path.exists('test_rented_items.csv'):
             os.remove('test_rented_items.csv')
-
-    def tearDown(self):
-        pass
 
     def test_add_furniture(self):
         """Test add_furniture()"""
