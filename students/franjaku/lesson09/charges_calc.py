@@ -1,5 +1,7 @@
 """
-Returns total price paid for individual rentals
+    Returns total price paid for individual rentals
+    Update this module to be able to toggle logging on and off with a decorator
+
 """
 import argparse
 import json
@@ -30,19 +32,28 @@ LOG_DICT = {'0': 60,
             '2': 30,
             '3': 10}
 
+
+def logging_decorator(func):
+    """Any functioned passed in turns console logging off for that function"""
+    def turn_log_off(*args, **kwargs):
+        LOGGER.setLevel(70)
+        func(*args, **kwargs)
+        LOGGER.setLevel(logging.DEBUG)
+    return turn_log_off
+
+
 def parse_cmd_arguments():
     """Parse the inputs/outputs to setup input and outout files"""
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='output JSON file', required=True)
-    # add option for debug level
-    parser.add_argument('-d', '--debug', help='debug level', required=False, default='0')
+    parser.add_argument('-d', '--debug', help='debug level', required=False, default='1')
 
     return parser.parse_args()
 
 
 def load_rentals_file(filename):
-    """Load the rental file and infrom the user if not possible."""
+    """Load the rental file and inform the user if not possible."""
     logging.debug('Loading data from %s', filename)
     try:
         with open(filename) as file:
@@ -50,7 +61,7 @@ def load_rentals_file(filename):
             logging.debug('Data successfully loaded.')
     except FileNotFoundError:
         logging.error('Failed to load data from %s', filename)
-        exit(0)
+        data = []
     return data
 
 
@@ -106,8 +117,13 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
-    # choose logging level based on input or default to none
-    LOGGER.setLevel(LOG_DICT[args.debug])
+    # choose logging functions based on input or default to none
+    # Toggle all console logging of if args.debug == 0
+    if args.debug == '0':
+        load_rentals_file = logging_decorator(load_rentals_file)
+        calculate_additional_fields = logging_decorator(calculate_additional_fields)
+        save_to_json = logging_decorator(save_to_json)
+
     logging.debug('Input file: %s Output file: %s', args.input, LOG_FILE)
     all_data = load_rentals_file(args.input)
     all_data = calculate_additional_fields(all_data)
