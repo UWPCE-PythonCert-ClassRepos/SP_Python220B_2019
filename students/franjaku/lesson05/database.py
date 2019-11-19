@@ -201,5 +201,6 @@ def main():
     output_dict = show_rentals('1')
     print(output_dict)
 
+
 if __name__ == "__main__":
     main()
