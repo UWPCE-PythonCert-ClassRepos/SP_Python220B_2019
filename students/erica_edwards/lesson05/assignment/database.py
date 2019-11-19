@@ -8,8 +8,8 @@ import pprint
 from pymongo import MongoClient
 from pymongo import errors as pyerror
 
-#pylint: disable=invalid-name
-#pylint: disable=unused-argument
+# pylint: disable=invalid-name
+# pylint: disable=unused-argument
 
 
 logging.basicConfig(filename="db.log", filemode="w", level=logging.DEBUG)
@@ -84,18 +84,17 @@ def show_available_products(table='product'):
     return result
 
 
-def show_rentals(product_id):
+def show_rentals(product_id, rental_table="rental", customer_table="customer"):
     """Based on product_id return the customer information on customers who rented the product."""
     result = dict()
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.hp_norton_prototype
-        for doc in db.rental.find({'product_id': product_id}):
+        for doc in db[rental_table].find({'product_id': product_id}):
             LOGGER.info(doc)
-            for cust in db.customer.find({'_id': doc['customer_id']}):
+            for cust in db[customer_table].find({'_id': doc['customer_id']}):
                 LOGGER.info(cust)
-                result[cust["_id"]] = {k: v for k,
-                                       v in cust.items() if k != '_id'}
+                result[cust["_id"]] = {k: v for k, v in cust.items() if k != '_id'}
                 LOGGER.info(result[cust["_id"]])
     return result
 

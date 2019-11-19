@@ -14,6 +14,14 @@ class TestDatabase(unittest.TestCase):
     """Tests for importing .csv files"""
     def setUp(self):
 
+        mongo = MongoDBConnection()
+        with mongo:
+            db = mongo.connection.hp_norton_prototype
+            db["product"].drop()
+            db["customer"].drop()
+            db["rental"].drop()
+
+
         # generate product file
         with open("./assignment/tests/test_product.csv", "w") as file:
             file.writelines(
@@ -42,11 +50,6 @@ class TestDatabase(unittest.TestCase):
                 "customer_id,name,product_id\n"
                 "A003,Kelly Frost,D452\n"
                 "A004,John Williams,E453\n")
-
-        # generate customer file
-        # generate rental file
-        # create test mongodb
-        # mongo = MongoDBConnection()
 
     def tearDown(self):
         """Clear the database for each collection"""
@@ -91,7 +94,9 @@ class TestDatabase(unittest.TestCase):
 
     def test_show_rentals(self):
         """Test results returned show customers who are currently renting"""
-        result = show_rentals('D452')
+        import_data('./assignment/tests', 'test_product',
+                                'test_customer', 'test_rental')
+        result = show_rentals('D452', "test_rental", "test_customer")
         expected = {'A003': {'address': '285 Frost Street',
                              'email': 'frost@hotmail.com',
                              'name': 'Kelly Frost',
@@ -107,3 +112,4 @@ class TestDatabase(unittest.TestCase):
                              'product_type': 'livingroom',
                              'quantity_available': '1'}}
         self.assertEqual(expected, result)
+
