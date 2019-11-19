@@ -6,8 +6,18 @@ from codes.customer_model import Customer, DATABASE
 
 
 
-logging.basicConfig(level=logging.INFO)
-LOGGER = logging.getLogger(__name__)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+LOG_FILE = 'DB.log'
+FORMATTER = logging.Formatter(LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
+
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
+
+LOGGER = logging.getLogger()
+LOGGER.addHandler(FILE_HANDLER)
 
 LOGGER.info('Working with Customer class')
 
@@ -28,8 +38,8 @@ def add_customer(customer_id, name, lastname, home_address,
             new_customer.save()
             LOGGER.info('New customer added to the database')
     except (OperationalError, IntegrityError, DoesNotExist) as myerror:
-        LOGGER.info(f'Error occured while adding customer: {customer_id} to database')
-        LOGGER.info(myerror)
+        LOGGER.error(f'Error occured while adding customer: {customer_id} to database')
+        LOGGER.error(myerror)
 
 def search_customer(customer_id):
     """this is for searching customer"""
@@ -47,7 +57,7 @@ def delete_customer(customer_id):
         LOGGER.info(f'deleting customer {customer_id}')
         mycustomer.delete_instance()
     except DoesNotExist:
-        LOGGER.info("Cannot delete because that customer_id does not exist")
+        LOGGER.error("Cannot delete because that customer_id does not exist")
 
 def update_customer_credit(customer_id, credit_limit):
     """This is for updating customer credit limit"""
@@ -57,7 +67,7 @@ def update_customer_credit(customer_id, credit_limit):
         mycustomer.save()
         return mycustomer.credit_limit
     except DoesNotExist:
-        LOGGER.info("Cannot update because that customer_id does not exist")
+        LOGGER.error("Cannot update because that customer_id does not exist")
         return ValueError
 
 def list_active_customers():
