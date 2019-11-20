@@ -1,0 +1,82 @@
+Linear vs. Parallel Findings
+
+Summary
+-----------------------------
+- Adjusted Linear to return requested tuples (1,000 rows)
+ - Customer Import:  .41 seconds
+ - Products Import:  .42 seconds
+ - Total Run Time: 1.32 seconds
+ 
+- Refactored Linear with Threads to run Parallel (1,000 rows)
+ - Customer Import:  .79 seconds
+ - Products Import:  .84 seconds
+ - Total Run Time:  .93 seconds
+
+Based on the findings, the data in question, and the added complexity of the threading, I would not recommend the changes.  Importing data in parallel for records that reference each other could cause data issues should one record import at a different time than another record with a cross reference (rental collections using user_id and product_id).  If the number of import files was to increase, quantity of records, or the desired output/counts be changed to include other variables, the output could become inconsistent or take longer to import due to additional overhead of the GIL.
+
+
+Timing Information
+-----------------------------
+Danielles-MBP:lesson07 danicoates$ gtime --verbose python linear.py 
+INFO:root:Creating MongoDB Collections...
+INFO:root:Dropping existing Collections...
+INFO:root:Importing csv_files/products.csv
+INFO:root:Importing csv_files/customers.csv
+INFO:root:Importing csv_files/rentals.csv
+[(999, 0, 999, 0.41175293922424316), (999, 0, 999, 0.42018771171569824)]
+Total Run Time:  1.317413091659546 seconds
+	Command being timed: "python linear.py"
+	User time (seconds): 0.85
+	System time (seconds): 0.11
+	Percent of CPU this job got: 55%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 15496
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 169
+	Minor (reclaiming a frame) page faults: 6948
+	Voluntary context switches: 3181
+	Involuntary context switches: 125
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 3010
+	Socket messages received: 6020
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Danielles-MBP:lesson07 danicoates$ gtime --verbose python parallel.py 
+INFO:root:Creating MongoDB Collections...
+INFO:root:Dropping existing Collections...
+INFO:root:Importing csv_files/products.csv
+INFO:root:Importing csv_files/customers.csv
+INFO:root:Importing csv_files/rentals.csv
+[(999, 0, 999, 0.7850301265716553), (999, 0, 999, 0.8410658836364746)]
+Total Run Time:  0.934136152267456 seconds
+	Command being timed: "python parallel.py"
+	User time (seconds): 0.87
+	System time (seconds): 0.19
+	Percent of CPU this job got: 85%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 15608
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 169
+	Minor (reclaiming a frame) page faults: 6998
+	Voluntary context switches: 1317
+	Involuntary context switches: 10658
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 3012
+	Socket messages received: 6024
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
