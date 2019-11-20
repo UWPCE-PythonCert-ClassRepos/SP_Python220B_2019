@@ -45,11 +45,11 @@ class MongoDBConnection():
 
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
-        print('Connected to: {}'.format(self.connection.__name__))
+        print('Connected to: {}'.format(self.connection))
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print('Closing connection: {}'.format(self.connection.__name__))
+        print('Closing connection: {}'.format(self.connection))
         print('__exit__({}, {}, {})'.format(exc_type, exc_val, exc_tb))
         self.connection.close()
 
