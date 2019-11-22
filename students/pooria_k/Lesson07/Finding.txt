@@ -1,0 +1,75 @@
+Running parallel.py takes 0.6s
+--------------------------------------
+f45c89aa3a19% python3 parallel.py
+(80, 880, 960, 0.5353732109069824)
+(0, 0, 24, 0.5363209247589111)
+(0, 660, 720, 0.6305558681488037)
+Total time: 0.6328859329223633
+
+Running parallel.py takes 1.6s
+--------------------------------------
+f45c89aa3a19% python3 linear.py
+(80, 960, 1040, 0.5147659778594971)
+(2, 0, 26, 0.5097708702087402)
+(60, 720, 780, 0.6057050228118896)
+Total time: 1.630821943283081
+
+
+f45c89aa3a19% gtime --verbos python3 linear.py
+(80, 1040, 1120, 0.5168511867523193)
+(2, 0, 28, 0.510066032409668)
+(60, 780, 840, 0.6043479442596436)
+Total time: 1.6316165924072266
+	Command being timed: "python3 linear.py"
+	User time (seconds): 0.18
+	System time (seconds): 0.06
+	Percent of CPU this job got: 11%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 14788
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 191
+	Minor (reclaiming a frame) page faults: 7259
+	Voluntary context switches: 460
+	Involuntary context switches: 555
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 283
+	Socket messages received: 566
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+f45c89aa3a19% gtime --verbos python3 parallel.py
+(80, 1120, 1200, 0.5176060199737549)
+(0, 0, 30, 0.5175449848175049)
+(0, 840, 900, 0.6273598670959473)
+Total time: 0.6299409866333008
+	Command being timed: "python3 parallel.py"
+	User time (seconds): 0.19
+	System time (seconds): 0.06
+	Percent of CPU this job got: 21%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.21
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 14932
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 191
+	Minor (reclaiming a frame) page faults: 7294
+	Voluntary context switches: 433
+	Involuntary context switches: 811
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 283
+	Socket messages received: 566
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
