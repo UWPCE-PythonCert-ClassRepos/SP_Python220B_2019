@@ -78,6 +78,7 @@ def import_product_info(dir_name, product_info_file_name, queue):
                           'product_count': row[3]
                           }
             product_info.insert_one(date_input)
+            records_added += 1
     final_product_records_count = mongo_db.product_info.count_documents({})
     queue.put((records_added, initial_product_records_count,\
     final_product_records_count, time.time()-start_time))
@@ -105,6 +106,7 @@ def import_rental_info(dir_name, rental_info_file_name, queue):
                           }
 
             rental_info.insert_one(date_input)
+            records_added += 1
             query = {'id': row[0]}
             product = product_info.find_one(query)
             new_value = (int(product['product_count']) - int(row[2]))
