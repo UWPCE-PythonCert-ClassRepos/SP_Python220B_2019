@@ -55,13 +55,13 @@ class TestDatabase(TestCase):
                       'c005': {'name': 'Toph', 'address': 'Southern Earth Kingdom',
                                'phone_number': '1-206-555-5555', 'email': 'earth@gmail.com'}}
 
-        expected_2 = {'c006': {'name': 'Zuko', 'address': 'Fire Nation',
-                               'phone_number': '1-206-666-6666', 'email': 'pride@gmail.com'},
-                      'c001': {'name': 'Aang', 'address': 'Eastern Air Temple',
-                               'phone_number': '1-206-111-1111', 'email': 'avatar@gmail.com'}}
+        expected_2 = {'c001': {'name': 'Aang', 'address': 'Eastern Air Temple',
+                               'phone_number': '1-206-111-1111', 'email': 'avatar@gmail.com'},
+                      'c006': {'name': 'Zuko', 'address': 'Fire Nation',
+                               'phone_number': '1-206-666-6666', 'email': 'pride@gmail.com'}}
 
-        dict_test_1 = database.show_rentals('p004')
-        dict_test_2 = database.show_rentals('p006')
+        dict_test_1 = database.show_rentals('p004') # meat jerky
+        dict_test_2 = database.show_rentals('p006') # blue mask
 
         self.assertEqual(expected_1, dict_test_1)
         self.assertEqual(expected_2, dict_test_2)

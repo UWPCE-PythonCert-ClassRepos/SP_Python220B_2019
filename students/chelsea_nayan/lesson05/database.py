@@ -127,8 +127,10 @@ def show_available_products():
     mongo = MongoDBConnection()
     available_products = {}
     with mongo:
-        db = mongo.connection
+        db = mongo.connection.media
         for each in db.products.find({'quantity_available': {'$gt': '0'}}):
+            # ''$gt' selects those documents where the value of the field
+            # is greater than specfied value AKA 'not available'
             product_info = {'description': each['description'],
                             'product_type': each['product_type'],
                             'quantity_available': each['quantity_available']}
