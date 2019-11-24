@@ -25,21 +25,27 @@ LOGGER = logging.getLogger(__name__)
 class MongoDBConnection():
     '''MongoDBConnection'''
 
-    def __int__(self, host='127.0.0.1', port=27101):
-        '''Be sure to use the ip address, not the name for local windows'''
+    def __init__(self, host='127.0.0.1', port=27101):
+        '''Be sure to use the ip address, not the name for local windows, intializes'''
         self.host = host
         self.port = port
         self.connection = None
 
     def __enter__(self):
+        '''Enters connection?'''
         self.connection = MongoClient(self.host, self.port)
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        '''Exits connection'''
         self.connection.close()
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
-    '''Populate new MongoDB database using the three csv file inputs'''
+    '''
+    Populate new MongoDB database using the three csv file inputs.
+    Returns two tuples (1) record count of # of products, customers, rentals
+                       (2) count of any errors that occured
+    '''
     product_error, customer_error, rentals_error = 0, 0, 0
     product_file_path = os.path.join(directory_name, product_file)
     customer_file_path = os.path.join(directory_name, customer_file)
@@ -47,17 +53,17 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.hp_norton
+        db = mongo.connection.media
         products = db['products']
         customers = db['customers']
         rentals = db['rentals']
 
-    # Attempt to import product data file into MongoDB db
+    # Attempt to import product data file into MongoDB db, create product collection
     try:
         with open(product_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_product = {'_id': row['id'],
+                add_product = {'_id': row['_id'],
                                'description': row['description'],
                                'product_type': row['product_type'],
                                'quantity_available': row['quantity_available']}
@@ -71,12 +77,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         LOGGER.info('Product file not found.')
         product_error += 1
 
-    # Attempt to import customer data into the MongoDB db
+    # Attempt to import customer data into the MongoDB db, create customer collection
     try:
         with open(customer_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_customer = {'_id': row['id'],
+                add_customer = {'_id': row['_id'],
                                 'name': row['description'],
                                 'address': row['product_type'],
                                 'phone_number': row['quantity_available'],
@@ -91,12 +97,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         LOGGER.info('Customer file not found.')
         customer_error += 1
 
-    # Attempt to import rentals file into the MongoDB db
+    # Attempt to import rentals file into the MongoDB db, create rentals collection
     try:
         with open(rentals_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_rentals = {'_id': row['id'],
+                add_rentals = {'_id': row['_id'],
                                'product_id': row['product_id'],
                                'user_id': row['user_id']}
                 try:
@@ -121,7 +127,7 @@ def show_available_products():
     mongo = MongoDBConnection()
     available_products = {}
     with mongo:
-        db = mongo.connection.hp_norton
+        db = mongo.connection
         for each in db.products.find({'quantity_available': {'$gt': '0'}}):
             product_info = {'description': each['description'],
                             'product_type': each['product_type'],
@@ -135,7 +141,7 @@ def show_rentals(product_id):
     mongo = MongoDBConnection()
     rental_list = {}
     with mongo:
-        db = mongo.connection.hp_norton
+        db = mongo.connection.media
         for each in db.rentals.find({'product_id': product_id}):
             for pers in db.customers.find({'_id': each['user_id']}):
                 entry = {'name': pers['name'],
@@ -150,8 +156,8 @@ def clear_all():
     '''Clears all database collections'''
     mongo = MongoDBConnection()
     with mongo:
-        db = mongo.connection.hp_norton
-        LOGGER.info('Dropping the databaaaaaase...')
+        db = mongo.connection.media
+
         db.products.drop()
         db.customers.drop()
         db.rentals.drop()

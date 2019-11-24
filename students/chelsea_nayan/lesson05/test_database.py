@@ -1,27 +1,26 @@
 '''Testing database.py'''
 
-import unittest
+from unittest import TestCase
 import logging
-from pymongo import errors as pyerror
 import database
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 PATH = ('C:\\Users\\chels\\SP_Python220B_2019\\students\\chelsea_nayan\\lesson05\\')
 
-class TestDatabase(unittest.TestCase):
-    '''test database.py'''
+class TestDatabase(TestCase):
+    '''test the basic functions in database.py'''
 
     def test_import_data(self):
         '''Test import_data function'''
         database.clear_all()
 
         # Test that the file not found error works for all three csv files
-        test_one = database.import_data(PATH, 'DNE_products.csv', 'DNE_customers.csv',
-                                        'DNE_rentals.csv')
-        test_two = database.import_data(PATH, 'products.csv', 'customers.csv', 'rentals.csv')
-        self.assertEqual(test_one, (0, 0, 0)) # File Not Found
-        self.assertEqual(test_two, (1, 1, 1)) # File exists
+        import_test_one = database.import_data(PATH, 'DNE_products.csv', 'DNE_customers.csv',
+                                               'DNE_rentals.csv')
+        import_test_two = database.import_data(PATH, 'products.csv', 'customers.csv', 'rentals.csv')
+        self.assertEqual(import_test_one, [(0, 0, 0), (1, 1, 1)]) # File Not Found
+        self.assertEqual(import_test_two, [(6, 6, 9), (0, 0, 0)]) # File exists
 
     def test_show_available_products(self):
         '''Test show_available_products function'''
