@@ -1,0 +1,64 @@
+exercise.csv notes:
+- A column: randlen8-randlen4-randlen4-randlen4-randlen12 (only a-f, 0-9)
+- B column: 1...
+- C column: 2...
+- D column: 3...
+- E column: 4...
+- F column: random date > 2009? (MM/DD/YYYY)
+- G column: random 'ao'?
+
+====================================================================
+
+poor_perf.py notes:
+
+What it Does:
+	- Prints a count of years in the csv file from 2013-2018
+	- Prints the count of 'ao'
+	- Creates a new list every with every read row... 
+	- Fixed a typo on the year_count dict (2017-->2018)
+	
+- I used cProfile to time the execution.
+
+- #1: Initial poor_perf.py execution took 7.669s with 1039505 function calls.
+
+Subsequent changes:
+	------->
+	if '2019' > lrow[5][6:] > '2012':
+               year_count[lrow[5][6:]] += 1
+
+- #2: poor_perf_test.py execution took 6.019s with 39505 function calls. 
+
+Subsequent changes: Remove the need to create new lists
+	 --------->
+        for row in reader:
+            try:
+                year_count[row[5][6:]] += 1
+            except KeyError: # ignore the years that do not count
+                pass
+
+        for row in reader:
+            if "ao" in row[6]:
+                found += 1
+
+- #3: poor_perf_test.py took 5.428s with 39505 function calls
+
+Subsequent changes: Combine the 'ao' counter and year counter in the same open csv file
+	---------->
+        for row in reader:
+            try:
+                year_count[row[5][6:]] += 1
+            except KeyError: # ignore the years that do not count
+                pass
+            if "ao" in row[6]:
+                found += 1
+
+- #4: poor_perf_test.py took 3.114s with 20576 function calls
+	--------->
+
+Fix some things from pylint... rename some variables to make more sense, transfer to good_perf.py
+
+- #5: Good_perf.py took 3.141s, 3.137s, 3.180s in three conseuctive runs. 
+
+Summary: Using the longest runtime from good_perf.py, I was able to reduce the runtime from poor_perf.py (58.53% decrease). 
+
+===================================================================
