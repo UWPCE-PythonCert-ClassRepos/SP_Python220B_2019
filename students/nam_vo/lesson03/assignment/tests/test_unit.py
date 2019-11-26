@@ -1,3 +1,4 @@
+""" Run unit tests """
 import logging
 
 from unittest import TestCase
@@ -37,6 +38,7 @@ class BasicOperationsTest(TestCase):
     """ Test basic operations on the Customer database """
 
     def test_add_customer(self):
+        """ Test add_customer() """
         logging.info("test_add_customer()")
         # Initial database set up
         set_up()
@@ -49,6 +51,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_add_customer_invalid_phone(self):
+        """ Test add_customer() with an invalid phone number """
         CLIENTS_INVALID_PHONE = [
             {'customer_id': 1, 'name': 'Andrew', 'lastname': 'York', 'home_address': "This is Andrew's home address", 'phone_number': '425-111-1111-dummy', 'email_address': 'andrew.york@gmail.com', 'status': True, 'credit_limit': 10000},
             {'customer_id': 2, 'name': 'Peter', 'lastname': 'Young', 'home_address': "This is Peter's home address", 'phone_number': '425-222-2222-extra', 'email_address': 'peter.young@gmail.com', 'status': False, 'credit_limit': 5000},
@@ -65,6 +68,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_search_customer(self):
+        """ Test search_customer() """
         logging.info("test_search_customer()")
         expected_result = {'name': 'Andrew', 'lastname': 'York', 'email_address': 'andrew.york@gmail.com', 'phone_number': '425-111-1111'}
         # Initial database set up
@@ -77,6 +81,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_search_customer_not_found(self):
+        """ Test search_customer() with a non-existent customer id """
         logging.info("test_search_customer_not_found()")
         # Initial database set up
         set_up()
@@ -88,6 +93,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_delete_customer(self):
+        """ Test delete_customer() """
         logging.info("test_delete_customer()")
         # Initial database set up
         set_up()
@@ -101,6 +107,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_update_customer_credit(self):
+        """ Test update_customer_credit() """
         logging.info("test_update_customer_credit()")
         # Initial database set up
         set_up()
@@ -114,6 +121,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_update_customer_credit_not_found(self):
+        """ Test update_customer_credit() with a non-existent customer id """
         logging.info("test_update_customer_credit_not_found()")
         # Initial database set up
         set_up()
@@ -127,6 +135,7 @@ class BasicOperationsTest(TestCase):
         tear_down()
 
     def test_list_active_customers(self):
+        """ Test list_active_customers() """
         logging.info("test_list_active_customers()")
         # Initial database set up
         set_up()

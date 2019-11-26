@@ -1,3 +1,4 @@
+""" Implement basic operations for the database """
 import logging
 
 from peewee import IntegrityError, DoesNotExist
