@@ -9,37 +9,42 @@ import datetime
 import math
 import logging
 
-# Setup logging params
-LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
-FORMATTER = logging.Formatter(LOG_FORMAT)
-LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
 
-FILE_HANDLER = logging.FileHandler(LOG_FILE, mode="w")
-FILE_HANDLER.setLevel(logging.WARNING)
-FILE_HANDLER.setFormatter(FORMATTER)
+def get_logger(log_level):
+    """Get a logger"""
+    # Setup logging params
+    log_dict = {'0': 60,
+                '1': 40,
+                '2': 30,
+                '3': 10}
 
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
-CONSOLE_HANDLER.setFormatter(FORMATTER)
+    log_level = log_dict[log_level]
 
-LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
-LOGGER.addHandler(FILE_HANDLER)
-LOGGER.addHandler(CONSOLE_HANDLER)
+    log_format = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
+    formatter = logging.Formatter(log_format)
+    log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
 
-LOG_DICT = {'0': 60,
-            '1': 40,
-            '2': 30,
-            '3': 10}
+    file_handler = logging.FileHandler(log_file, mode="w")
+    file_handler.setLevel(log_level)
+    file_handler.setFormatter(formatter)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(log_level)
+    console_handler.setFormatter(formatter)
+
+    logger = logging.getLogger()
+    logger.setLevel(log_level)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    return logger
 
 
 def logging_decorator(func):
-    """Any functioned passed in turns console logging off for that function"""
-    def turn_log_off(*args, **kwargs):
-        LOGGER.setLevel(70)
-        func(*args, **kwargs)
-        LOGGER.setLevel(logging.DEBUG)
-    return turn_log_off
+    """Any function passed in turns console logging off for that function"""
+    def toggle_logger(toggle, *args):
+        get_logger(toggle)
+        return func(*args)
+    return toggle_logger
 
 
 def parse_cmd_arguments():
@@ -51,7 +56,7 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
-
+@logging_decorator
 def load_rentals_file(filename):
     """Load the rental file and inform the user if not possible."""
     logging.debug('Loading data from %s', filename)
@@ -65,6 +70,7 @@ def load_rentals_file(filename):
     return data
 
 
+@logging_decorator
 def calculate_additional_fields(data):
     """Calculate additional data for each rental id in the data structure."""
     # capturing rental_id to better help debugging, changed var names to be more descriptive
@@ -117,14 +123,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
-    # choose logging functions based on input or default to none
-    # Toggle all console logging of if args.debug == 0
-    if args.debug == '0':
-        load_rentals_file = logging_decorator(load_rentals_file)
-        calculate_additional_fields = logging_decorator(calculate_additional_fields)
-        save_to_json = logging_decorator(save_to_json)
-
-    logging.debug('Input file: %s Output file: %s', args.input, LOG_FILE)
-    all_data = load_rentals_file(args.input)
-    all_data = calculate_additional_fields(all_data)
+    logging.debug('Input file: %s Output file: %s', args.input, datetime.datetime.now().strftime("%Y-%m-%d")+'.log')
+    all_data = load_rentals_file(args.debug, args.input)
+    all_data = calculate_additional_fields(args.debug, all_data)
     save_to_json(args.output, all_data)
