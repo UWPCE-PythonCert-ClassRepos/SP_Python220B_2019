@@ -1,14 +1,14 @@
 """Provides classes for electric appliances."""
-from inventory_class import inventory
+from inventory_class import Inventory
 
 
-class ElectricAppliances(inventory):
+class ElectricAppliances(Inventory):
     """Class for standard electric appliance."""
 
     def __init__(self, product_code, description, market_price, rental_price,
                  brand, voltage):
         # Creates common instance variables from the parent class
-        inventory.__init__(self, product_code, description, market_price,
+        Inventory.__init__(self, product_code, description, market_price,
                            rental_price)
 
         self.brand = brand

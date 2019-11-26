@@ -1,13 +1,13 @@
 """This module provides a class for tracking furniture in inventory."""
-from inventory_class import inventory
+from inventory_class import Inventory
 
 
-class Furniture(inventory):
+class Furniture(Inventory):
     """Creats a furniture class for furniture in inventory."""
     def __init__(self, product_code, description, market_price, rental_price,
                  material, size):
         # Creates common instance variables from the parent class
-        inventory.__init__(self, product_code, description, market_price,
+        Inventory.__init__(self, product_code, description, market_price,
                            rental_price)
 
         self.material = material
