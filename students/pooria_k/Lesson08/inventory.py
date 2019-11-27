@@ -1,3 +1,4 @@
+"""Inventory module, update, a CSV file that lists which furniture is rented to which customer  """
 import csv
 from functools import partial
 
