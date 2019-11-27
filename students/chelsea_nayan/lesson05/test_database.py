@@ -19,15 +19,15 @@ class TestDatabase(TestCase):
         import_test_one = database.import_data(PATH, 'DNE_products.csv', 'DNE_customers.csv',
                                                'DNE_rentals.csv')
         import_test_two = database.import_data(PATH, 'products.csv', 'customers.csv', 'rentals.csv')
-        self.assertEqual(import_test_one, [(0, 0, 0), (1, 1, 1)]) # File Not Found
-        self.assertEqual(import_test_two, [(6, 6, 9), (0, 0, 0)]) # File exists
+        self.assertEqual(list(import_test_one), [(0, 0, 0), (1, 1, 1)]) # File Not Found
+        self.assertEqual(list(import_test_two), [(6, 6, 9), (0, 0, 0)]) # File exists
 
     def test_show_available_products(self):
         '''Test show_available_products function'''
         database.clear_all()
         database.import_data(PATH, 'products.csv', 'customers.csv', 'rentals.csv')
 
-        expected = {'p001': {'description': 'water bending scroll', 'product_type': 'artificat',
+        expected = {'p001': {'description': 'water bending scroll', 'product_type': 'artifact',
                              'quantity_available': '10'},
                     'p002': {'description': 'space sword', 'product_type': 'weaponry',
                              'quantity_available': '1'},
@@ -36,9 +36,9 @@ class TestDatabase(TestCase):
                     'p004': {'description': 'meat jerky', 'product_type': 'food',
                              'quantity_available': '15'},
                     'p005': {'description': 'dual swords', 'product_type': 'weaponry',
-                             'quantity_available': '2'},
-                    'p006': {'description': 'blue mask', 'product_type': 'artifact',
-                             'quantity_available': '0'}}
+                             'quantity_available': '2'}}
+                    # 'p006': {'description': 'blue mask', 'product_type': 'artifact',
+                    #          'quantity_available': '0'}}
 
         dict_test = database.show_available_products()
 
@@ -55,10 +55,10 @@ class TestDatabase(TestCase):
                       'c005': {'name': 'Toph', 'address': 'Southern Earth Kingdom',
                                'phone_number': '1-206-555-5555', 'email': 'earth@gmail.com'}}
 
-        expected_2 = {'c001': {'name': 'Aang', 'address': 'Eastern Air Temple',
-                               'phone_number': '1-206-111-1111', 'email': 'avatar@gmail.com'},
-                      'c006': {'name': 'Zuko', 'address': 'Fire Nation',
-                               'phone_number': '1-206-666-6666', 'email': 'pride@gmail.com'}}
+        expected_2 = {'c006': {'name': 'Zuko', 'address': 'Fire Nation',
+                               'phone_number': '1-206-666-6666', 'email': 'pride@gmail.com'},
+                      'c001': {'name': 'Aang', 'address': 'Eastern Air Temple',
+                               'phone_number': '1-206-111-1111', 'email': 'avatar@gmail.com'}}
 
         dict_test_1 = database.show_rentals('p004') # meat jerky
         dict_test_2 = database.show_rentals('p006') # blue mask

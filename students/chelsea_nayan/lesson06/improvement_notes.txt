@@ -57,8 +57,12 @@ Subsequent changes: Combine the 'ao' counter and year counter in the same open c
 
 Fix some things from pylint... rename some variables to make more sense, transfer to good_perf.py
 
-- #5: Good_perf.py took 3.141s, 3.137s, 3.180s in three conseuctive runs. 
+- #5: good_perf.py took 3.141s, 3.137s, 3.180s in three conseuctive runs. 
 
-Summary: Using the longest runtime from good_perf.py, I was able to reduce the runtime from poor_perf.py (58.53% decrease). 
+` #6: Fixed the strftime formatting from %m%d%y to %m%d%Y to make it a four-digit year. Using cProfile, good_perf.py took 3.604 seconds.
+
+
+Summary: With good_perf.py, I was able to reduce the runtime from poor_perf.py by (53.00% decrease). 
+
 
 ===================================================================

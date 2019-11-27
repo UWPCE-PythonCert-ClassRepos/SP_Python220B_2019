@@ -25,7 +25,7 @@ LOGGER = logging.getLogger(__name__)
 class MongoDBConnection():
     '''MongoDBConnection'''
 
-    def __init__(self, host='127.0.0.1', port=27101):
+    def __init__(self, host='127.0.0.1', port=27017):
         '''Be sure to use the ip address, not the name for local windows, intializes'''
         self.host = host
         self.port = port
@@ -54,6 +54,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
+
+        # Create collections
         products = db['products']
         customers = db['customers']
         rentals = db['rentals']
@@ -63,12 +65,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         with open(product_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_product = {'_id': row['_id'],
+                add_product = {'p_id': row['p_id'],
                                'description': row['description'],
                                'product_type': row['product_type'],
                                'quantity_available': row['quantity_available']}
                 try:
-                    products.insert_single(add_product)
+                    products.insert_one(add_product) # Fixed to use correct method
                     LOGGER.info('Product added!')
                 except NameError:
                     LOGGER.info('Error adding product to database')
@@ -82,13 +84,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         with open(customer_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_customer = {'_id': row['_id'],
-                                'name': row['description'],
-                                'address': row['product_type'],
-                                'phone_number': row['quantity_available'],
+                add_customer = {'c_id': row['c_id'],
+                                'name': row['name'],
+                                'address': row['address'],
+                                'phone_number': row['phone_number'],
                                 'email': row['email']}
                 try:
-                    customers.insert_single(add_customer)
+                    customers.insert_one(add_customer)
                     LOGGER.info('Customer added!')
                 except NameError:
                     LOGGER.info('Error adding customer to database')
@@ -102,11 +104,11 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         with open(rentals_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_rentals = {'_id': row['_id'],
-                               'product_id': row['product_id'],
-                               'user_id': row['user_id']}
+                add_rentals = {'r_id': row['r_id'],
+                               'p_id': row['p_id'],
+                               'c_id': row['c_id']}
                 try:
-                    rentals.insert_single(add_rentals)
+                    rentals.insert_one(add_rentals)
                     LOGGER.info('Rentals added!')
                 except NameError:
                     LOGGER.info('Error adding rentals to database')
@@ -134,23 +136,23 @@ def show_available_products():
             product_info = {'description': each['description'],
                             'product_type': each['product_type'],
                             'quantity_available': each['quantity_available']}
-            available_products[each['_id']] = product_info
+            available_products[each['p_id']] = product_info
 
     return available_products
 
-def show_rentals(product_id):
+def show_rentals(p_id):
     '''Return a dictionary with info from users that have rented with the product id'''
     mongo = MongoDBConnection()
     rental_list = {}
     with mongo:
         db = mongo.connection.media
-        for each in db.rentals.find({'product_id': product_id}):
-            for pers in db.customers.find({'_id': each['user_id']}):
-                entry = {'name': pers['name'],
-                         'address': pers['address'],
-                         'phone_number': pers['phone_number'],
-                         'email': pers['email']}
-                rental_list[pers['_id']] = entry
+        for each in db.rentals.find({'p_id': p_id}):
+            for pers in db.customers.find({'c_id': each['c_id']}):
+                rental_list[pers['c_id']] = {'name': pers['name'],
+                                             'address': pers['address'],
+                                             'phone_number': pers['phone_number'],
+                                             'email': pers['email']}
+
 
     return rental_list
 
