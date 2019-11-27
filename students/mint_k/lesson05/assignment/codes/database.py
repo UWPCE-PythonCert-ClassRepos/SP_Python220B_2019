@@ -42,15 +42,6 @@ def access_csv(file_name):
     return my_list
 
 
-
-
-    with mongo:
-        # mongodb database; it all starts here
-        db = mongo.connection.media
-
-        # collection in database
-        cd = db["cd"]
-
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """This function takes a directory name three csv files as input, 
     one with product data, one with customer data and the third one 
