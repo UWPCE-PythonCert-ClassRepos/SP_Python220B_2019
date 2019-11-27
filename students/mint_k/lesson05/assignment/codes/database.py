@@ -69,6 +69,10 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         products = my_db['products']
         rentals = my_db['rentals']
 
+        products.drop()
+        customers.drop()
+        rentals.drop()
+
         #reading data from csv files
         #to do this, gotta define file name based on input
         customer_csv = os.path.join(directory_name, customer_file)
@@ -129,6 +133,52 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         return (prod_count, cust_count, rentals_count), (prod_errors, cust_errors, rentals_errors)
 
 
+def show_available_products():
+    """Returns a Python dictionary of products listed as available with the following fields:
+    product_id
+    description
+    product_type
+    quantity_available"""
+
+    mongo = MongoDBConnection()
+    prod_dict = {}
+    with mongo:
+        my_db = mongo.connection.media
+        #finding products with availabilty. $gt means greater than.
+        available_prod = my_db['products'].find({'quantity_available':{"$gt":'0'}})
+        for prod in available_prod:
+            prod_dict[prod['product_id']] = {
+                'description':prod['description'],
+                'product_type':prod['product_type'],
+                'quantity_available':prod['quantity_available']}
+    
+    return prod_dict
+
+def show_rentals(product_id):
+    """Returns a Python dictionary with the following user information from users 
+    that have rented products matching product_id:
+    user_id.
+    name.
+    address.
+    phone_number.
+    email."""
+
+    #product_id = 'prd002'
+    mongo = MongoDBConnection()
+    rental_dict = {}
+    with mongo:
+        my_db = mongo.connection.media
+        #finding user that rented matching product id.
+        renters = my_db['rentals'].find({'product_id':product_id})
+        for renter in renters:
+            user = my_db['customers'].find_one({'user_id':renter['user_id']})
+            rental_dict[renter['user_id']] = {
+                'name':user['name'],
+                'address':user['address'],
+                'phone_number':user['phone_number'],
+                'email':user['email']}
+     
+    return rental_dict
 
 
 
