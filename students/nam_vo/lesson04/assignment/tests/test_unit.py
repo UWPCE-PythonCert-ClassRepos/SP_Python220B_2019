@@ -1,21 +1,24 @@
-""" Run unit tests """
-import logging
+""" Unit tests for basic database functionalities """
+
+# pylint: disable=line-too-long, wildcard-import, invalid-name, unused-wildcard-import, no-self-use
 
 from unittest import TestCase
 
 from peewee import *
 from customer_model import Customer
-from basic_operations import add_customer, search_customer, delete_customer, update_customer_credit, list_active_customers
+from basic_operations import setup_logger, display_customers, add_customer, search_customer, delete_customer, update_customer_credit, list_active_customers, logging
 
-# logging.basicConfig(level=logging.INFO)
-logging.basicConfig(level=logging.ERROR)
-
+# Database model
 MODELS = [Customer]
 
+# Database data for test
 CLIENTS = [
     {'customer_id': 1, 'name': 'Andrew', 'lastname': 'York', 'home_address': "This is Andrew's home address", 'phone_number': '425-111-1111', 'email_address': 'andrew.york@gmail.com', 'status': True, 'credit_limit': 10000},
     {'customer_id': 2, 'name': 'Peter', 'lastname': 'Young', 'home_address': "This is Peter's home address", 'phone_number': '425-222-2222', 'email_address': 'peter.young@gmail.com', 'status': True, 'credit_limit': 5000},
 ]
+
+# Set up logging
+setup_logger()
 
 # use an in-memory SQLite for tests.
 test_db = SqliteDatabase(':memory:')
@@ -37,6 +40,19 @@ def tear_down():
 class BasicOperationsTest(TestCase):
     """ Test basic operations on the Customer database """
 
+    def test_display_customers(self):
+        """ Test display_customers() """
+        logging.info("test_display_customers()")
+        # Initial database set up
+        set_up()
+        # Populate customers data into the database
+        for person in CLIENTS:
+            add_customer(**person)
+        # Display all customers
+        display_customers()
+        # Remove data and exit database
+        tear_down()
+
     def test_add_customer(self):
         """ Test add_customer() """
         logging.info("test_add_customer()")
@@ -45,8 +61,8 @@ class BasicOperationsTest(TestCase):
         # Populate customers data into the database
         for person in CLIENTS:
             add_customer(**person)
-            logging.info(Customer.get_by_id(person['customer_id']).phone_number)
             self.assertEqual(person['phone_number'], Customer.get_by_id(person['customer_id']).phone_number)
+            logging.critical(f"Add new customer to database: {person['name']} {person['lastname']} (id={person['customer_id']})")
         # Remove data and exit database
         tear_down()
 
@@ -103,6 +119,7 @@ class BasicOperationsTest(TestCase):
         # Delete customer with id = 1
         delete_customer(1)
         self.assertDictEqual({}, search_customer(1))
+        logging.critical(f"Delete customer from database: {CLIENTS[0]['name']} {CLIENTS[0]['lastname']} (id={CLIENTS[0]['customer_id']})")
         # Remove data and exit database
         tear_down()
 
@@ -117,6 +134,7 @@ class BasicOperationsTest(TestCase):
         # Update credit limit of customer id = 2
         update_customer_credit(2, 15000)
         self.assertEqual(15000, Customer.get_by_id(2).credit_limit)
+        logging.critical(f"Update credit limit of customer {CLIENTS[1]['name']} {CLIENTS[1]['lastname']} (id={CLIENTS[1]['customer_id']}) from ${CLIENTS[1]['credit_limit']} to $15000")
         # Remove data and exit database
         tear_down()
 
