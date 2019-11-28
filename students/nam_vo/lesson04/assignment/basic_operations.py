@@ -1,24 +1,54 @@
-""" Implement basic operations for the database """
+""" Implement basic database functionlities """
+
+# pylint: disable=line-too-long, too-many-arguments, logging-format-interpolation, invalid-name, no-value-for-parameter, lost-exception, redefined-outer-name
+
 import logging
 
-from peewee import IntegrityError, DoesNotExist
+from peewee import OperationalError, IntegrityError, DoesNotExist
 from customer_model import database, Customer
 
-# logging.basicConfig(level=logging.INFO)
-logging.basicConfig(level=logging.ERROR)
+def setup_logger():
+    """ Set up console and database file logging """
+    # Create root logging and set logging level to error
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    # Create format for logging message and file
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    formatter = logging.Formatter(log_format)
+    # Create logging console handler, set logging level to error, format and attach it to root
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    # console_handler.setLevel(logging.INFO)
+    console_handler.setLevel(logging.ERROR)
+    logger.addHandler(console_handler)
+    # Create logging file handler, set logging level to critical, format and attach it to root
+    log_file = 'db.log'
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.CRITICAL)
+    logger.addHandler(file_handler)
+
+def display_customers():
+    """ Display all customer data from database """
+    # Display customer data to db.log file
+    client_generator = (client for client in Customer.select())
+    logging.critical("-" * 100)
+    for client in client_generator:
+        logging.critical(", ".join(["{}"] * 8).format(client.customer_id, client.name, client.lastname, client.home_address, client.phone_number, client.email_address, client.status, client.credit_limit))
+    logging.critical("-" * 100)
+
+def get_customer_generator(customer_id, name, lastname, home_address, phone_number, email_address, status, credit_limit):
+    """ Get customer data as a generator """
+    yield {'customer_id': customer_id, 'name': name, 'lastname': lastname, 'home_address': home_address, 'phone_number': phone_number, 'email_address': email_address, 'status': status, 'credit_limit': credit_limit}
 
 def add_customer(customer_id, name, lastname, home_address, phone_number, email_address, status, credit_limit):
     """ Add a new customer to the database """
     logging.info("add_customer()")
-    # Convert inputs into a dictionary
-    customer_dict = [
-        {'customer_id': customer_id, 'name': name, 'lastname': lastname, 'home_address': home_address, 'phone_number': phone_number, 'email_address': email_address, 'status': status, 'credit_limit': credit_limit},
-    ]
     # Insert the given customer data into the database
     try:
         with database.atomic():
-            Customer.insert_many(customer_dict).execute()
-    except IntegrityError as err_msg:
+            Customer.insert_many(get_customer_generator(customer_id, name, lastname, home_address, phone_number, email_address, status, credit_limit)).execute()
+    except (OperationalError, IntegrityError) as err_msg:
         logging.error(f"Failed to add customer {customer_id}: {name} {lastname} to the database: {err_msg}")
         raise IntegrityError
 
@@ -27,7 +57,7 @@ def search_customer(customer_id):
     logging.info("search_customer()")
     result = {}
     try:
-        with database.transaction():
+        with database.atomic():
             person = Customer.get_by_id(customer_id)
             result = {'name': person.name, 'lastname': person.lastname, 'email_address': person.email_address, 'phone_number': person.phone_number}
     except DoesNotExist:
@@ -41,7 +71,7 @@ def delete_customer(customer_id):
     # Try to find given customer in the database, just want to see logging error
     search_customer(customer_id)
     # Try to delete whether it is found or not
-    with database.transaction():
+    with database.atomic():
         Customer.delete_by_id(customer_id)
 
 def update_customer_credit(customer_id, credit_limit):
