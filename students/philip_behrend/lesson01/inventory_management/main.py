@@ -6,6 +6,7 @@ import inventory_management.product_classes as prod
 #import furniture_class
 #import electric_appliances_class
 
+
 def main_menu(user_prompt=None):
     """Main menu options"""
 

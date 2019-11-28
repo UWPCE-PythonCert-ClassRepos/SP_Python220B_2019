@@ -1,9 +1,10 @@
 """Unit testing for inventory management system"""
 
+from unittest import TestCase
+from unittest.mock import Mock
+from unittest.mock import patch
 from inventory_management.product_classes import Inventory, Furniture, ElectricAppliances
 import inventory_management.main as menu
-from unittest import TestCase
-from unittest.mock import MagicMock
 
 
 class InventoryTests(TestCase):
@@ -67,40 +68,65 @@ class MainTests(TestCase):
     """ Tests for functions in main """
 
     def test_main_menu(self):
-        """ Tests main menu functionality """
+        """ Tests main menu selection functionality """
 
         self.assertEqual(menu.main_menu('1'),menu.add_new_item)
         self.assertEqual(menu.main_menu('2'),menu.item_info)
         self.assertEqual(menu.main_menu('q'),menu.exit_program)
 
-    def test_add_new_item(self):
-        """ Tests add item function """
+    def test_add_new_furniture(self):
+        """ Tests add item function IF furniture """
 
-        menu.add_new_item = MagicMock(
-            item_code = 44, item_description = 'Test description',
-            item_rental_price = 50, item_price = 1000,
-            item_material = 'leather', item_size = 'Large',
-            item_brand = 'JD', item_voltage = 200,
-            is_furniture = 'Y')
+        responses = (44, 'Test description', 50, 'y', 'leather', 'L')
+        expected_dict = {'product_code': 44, 'description': 'Test description', 
+                        'market_price': 24, 'rental_price': 50, 
+                        'material': 'leather', 'size': 'L'}
+        with patch('builtins.input', side_effect = responses):
+            menu.FULL_INVENTORY = {}
+            menu.add_new_item()
+            self.assertEqual(menu.FULL_INVENTORY[44], expected_dict)
 
-        # Test for furniture call -- PROBLEMS HERE
-        menu.add_new_item.assert_called_with(44, 'Test description', 
-        1000, 50, 'leather', 'Large')
+    def test_add_new_electric(self):
+        """ Tests add item function IF electrical applicance """
 
-    def test_item_info(self):
+        responses = (22, 'Test description', 50, 'n', 'y', 'John Deere', 200)
+        expected_dict = {'product_code': 22, 'description': 'Test description', 
+                        'market_price': 24, 'rental_price': 50, 
+                        'brand': 'John Deere', 'voltage': 200}
+        with patch('builtins.input', side_effect = responses):
+            menu.FULL_INVENTORY = {}
+            menu.add_new_item()
+            self.assertEqual(menu.FULL_INVENTORY[22], expected_dict)
+
+    def test_add_new_other(self):
+        """ Tests add item function IF electrical applicance """
+
+        responses = (99, 'Test description', 50, 'n', 'n')
+        expected_dict = {'product_code': 99, 'description': 'Test description', 
+                        'market_price': 24, 'rental_price': 50}
+        with patch('builtins.input', side_effect = responses):
+            menu.FULL_INVENTORY = {}
+            menu.add_new_item()
+            self.assertEqual(menu.FULL_INVENTORY[99], expected_dict)
+
+
+    def test_item_info_negative(self):
+        """ Tests item info function if item code not present """
+
+        menu.input = Mock(return_value = 44)
+        FULL_INVENTORY = {'item_code': 99, 'description': 'Test description', 
+                        'market_price': 24, 'rental_price': 50}
+        self.assertEqual(menu.item_info(),print("Item not found in inventory"))
+
+    def test_item_info_positive(self):
         """ Tests item info function """
-
-        # Test case: item code not in full inventory -- HOW TO GET AT IF STATEMENT
-        FULL_INVENTORY = [40,50]
-        menu.item_info = MagicMock(item_code = 56)
-        self.assertEqual(menu.item_info(), "Item not found in inventory")
-
-        
-
-    
+        menu.input = Mock(return_value = 99)
+        FULL_INVENTORY = {'item_code': 99, 'description': 'Test description', 
+                        'market_price': 24, 'rental_price': 50}
+        self.assertEqual(menu.item_info(),print(FULL_INVENTORY))
+ 
     def test_exit(self):
         """ Tests system exit """
-
         with self.assertRaises(SystemExit):
             menu.exit_program()
     
