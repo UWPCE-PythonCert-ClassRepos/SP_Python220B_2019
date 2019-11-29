@@ -1,0 +1,33 @@
+-----------------------------
+With 4 records per file.
+Time to run import_data: 0.555
+Number of rentals found: 48
+Time to run show_rentals: 0.133
+Number of products found: 96
+Time to run show_available_products: 0.02599
+-----------------------------
+With 100 records per file.
+Time to import_data: 0.0779
+Number of rentals found: 48
+Time to run show_rentals: 0.237
+Number of products found: 96
+Time to run show_available_products: 0.0379
+-----------------------------
+With 10000 rental records.
+Time to run import_data: 1.18932
+Number of rentals found: 992
+Time to run show_rentals: 2.364
+Number of products found: 96
+Time to run show_available_products: 0.0319
+
+Based on the timing information above we can see that the database lookups are the source of the
+bottleneck.
+
+Importing takes a couple of orders of magnitude longer when the records increase from ~10 to ~10000.
+
+The rental and product look ups also take longer and even more so than data imports. When the rental
+records found increased by ~2 orders of magnitude the time increase by an order of magnitude. As the
+amount of records increase into the hundreds of thousands each look up would take up in the minutes.
+This would substantial bog down operations. It worth noting that as the rentals get looked up they
+get added to an output dictionary so there will be an increase in time to construct that dictionary
+as the number of records increases.
