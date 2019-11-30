@@ -31,7 +31,7 @@ def create_one_millon():
     with open(filename, 'a', newline='') as csvfile:
         mywriter = csv.writer(csvfile, delimiter=',', quotechar='"')
         mylist = []
-        for _ in range(100000):
+        for _ in range(1000000):
             mylist.append([uuid.uuid4(), *my_4random_int(1, 10),
                            random_date(), choice(['', 'ao'])])
         mywriter.writerows(mylist)
