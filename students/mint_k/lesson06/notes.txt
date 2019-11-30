@@ -1,0 +1,3 @@
+Notes for approach
+
+1. Started with refractoring codes. year_count_func and find_ao
