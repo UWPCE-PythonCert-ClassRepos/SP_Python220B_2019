@@ -1,10 +1,12 @@
 """Integration testing for inventory management system"""
 
 from unittest import TestCase
-from unittest.mock import Mock
+#from unittest.mock import Mock
 from unittest.mock import patch
 from inventory_management.market_prices import get_latest_price
-from inventory_management.product_classes import Inventory, Furniture, ElectricAppliances
+#from inventory_management.inventory_class import Inventory
+#from inventory_management.furniture_class import Furniture
+#from inventory_mangement.electric_appliance_class import ElectricAppliances
 import inventory_management.main as menu
 
 class IntegrationTest(TestCase):

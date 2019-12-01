@@ -1,11 +1,9 @@
 """Launches the user interface for the inventory management system"""
 import sys
 import inventory_management.market_prices as mkt
-import inventory_management.product_classes as prod
-#inventory_class
-#import furniture_class
-#import electric_appliances_class
-
+from inventory_management.electric_appliance_class import ElectricAppliances
+from inventory_management.inventory_class import Inventory
+from inventory_management.furniture_class import Furniture
 
 def main_menu(user_prompt=None):
     """Main menu options"""
@@ -43,17 +41,17 @@ def add_new_item():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = prod.Furniture(item_code, item_description, \
+        new_item = Furniture(item_code, item_description, \
         item_price, item_rental_price, item_material, item_size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = prod.ElectricAppliances(item_code, \
+            new_item = ElectricAppliances(item_code, \
                 item_description, item_price, item_rental_price, item_brand, item_voltage)
         else:
-            new_item = prod.Inventory(item_code, item_description, \
+            new_item = Inventory(item_code, item_description, \
                 item_price, item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")

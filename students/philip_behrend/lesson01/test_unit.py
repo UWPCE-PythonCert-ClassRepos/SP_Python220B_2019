@@ -3,7 +3,9 @@
 from unittest import TestCase
 from unittest.mock import Mock
 from unittest.mock import patch
-from inventory_management.product_classes import Inventory, Furniture, ElectricAppliances
+from inventory_management.electric_appliance_class import ElectricAppliances
+from inventory_management.inventory_class import Inventory
+from inventory_management.furniture_class import Furniture
 import inventory_management.main as menu
 
 
@@ -70,9 +72,16 @@ class MainTests(TestCase):
     def test_main_menu(self):
         """ Tests main menu selection functionality """
 
-        self.assertEqual(menu.main_menu('1'),menu.add_new_item)
-        self.assertEqual(menu.main_menu('2'),menu.item_info)
-        self.assertEqual(menu.main_menu('q'),menu.exit_program)
+        with patch('builtins.input', side_effect=('1')):
+            self.assertEqual(menu.main_menu(), menu.add_new_item)
+        with patch('builtins.input', side_effect='2'):
+            self.assertEqual(menu.main_menu(), menu.item_info)
+        with patch('builtins.input', side_effect='q'):
+            self.assertEqual(menu.main_menu(), menu.exit_program)
+
+        #self.assertEqual(menu.main_menu('1'),menu.add_new_item)
+        #self.assertEqual(menu.main_menu('2'),menu.item_info)
+        #self.assertEqual(menu.main_menu('q'),menu.exit_program)
 
     def test_add_new_furniture(self):
         """ Tests add item function IF furniture """
@@ -130,6 +139,9 @@ class MainTests(TestCase):
         with self.assertRaises(SystemExit):
             menu.exit_program()
     
-
+    def test_get_price(self):
+        """ Tests get_price function """
+        item_code = 44
+        self.assertEqual(print("Get price"),menu.get_price(item_code))
 
 

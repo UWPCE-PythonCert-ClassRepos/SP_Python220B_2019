@@ -56,7 +56,7 @@ confidence=
 # --disable=W"
 disable=too-few-public-methods,too-many-arguments,missing-final-newline,
       unused-variable, unused-argument, missing-docstring, global-statement,
-      print-statement, invalid-name,
+      print-statement, invalid-name, duplicate-code,
         parameter-unpacking,
         unpacking-in-except,
         old-raise-syntax,
