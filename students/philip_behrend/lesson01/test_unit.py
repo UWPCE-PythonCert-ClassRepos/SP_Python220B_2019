@@ -69,10 +69,10 @@ class FurnitureTests(TestCase):
 class MainTests(TestCase):
     """ Tests for functions in main """
 
-    def test_main_menu(self):
+    def test_A_main_menu(self):
         """ Tests main menu selection functionality """
 
-        with patch('builtins.input', side_effect=('1')):
+        with patch('builtins.input', side_effect='1'):
             self.assertEqual(menu.main_menu(), menu.add_new_item)
         with patch('builtins.input', side_effect='2'):
             self.assertEqual(menu.main_menu(), menu.item_info)
