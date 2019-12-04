@@ -19,10 +19,10 @@ def set_logging(log_level):
     }
 
     try: 
-        log_level = options.get(int(log_level))
+        log_level = options[int(log_level)]
     except KeyError:
         print("Invalid Entry. Defaulting to setting logging.CRITICAL")
-        log_level = 'logging.CRITICAL'
+        log_level = logging.CRITICAL
     logging.basicConfig(level=log_level, format = log_format, filename = log_file)
 
 def parse_cmd_arguments():

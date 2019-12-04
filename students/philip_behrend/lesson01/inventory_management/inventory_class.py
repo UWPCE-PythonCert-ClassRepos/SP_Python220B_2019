@@ -1,4 +1,4 @@
-# Inventory class
+""" Inventory class """
 class Inventory:
     """Inventory class"""
     def __init__(self, product_code, description, market_price, rental_price):
