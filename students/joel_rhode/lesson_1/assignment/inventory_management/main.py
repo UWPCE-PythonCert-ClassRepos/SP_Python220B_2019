@@ -33,7 +33,7 @@ def add_new_item():
     """Adds a new item to the inventory"""
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
-    item_rental_price = input("Enter item rental price: ")
+    item_rental_price = float(input("Enter item rental price: "))
 
     # Get price from the market prices module
     item_price = market_prices.get_latest_price(item_code)
@@ -65,8 +65,7 @@ def item_info():
     """Provides information on item using item code input."""
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
-        print_dict = FULL_INVENTORY[item_code]
-        for key, val in print_dict.items():
+        for key, val in sorted(FULL_INVENTORY[item_code].items()):
             print("{}: {}".format(key, val))
     else:
         print("Item not found in inventory.")
@@ -75,6 +74,7 @@ def item_info():
 def exit_program():
     """Exits the program."""
     sys.exit()
+
 
 
 if __name__ == '__main__':
