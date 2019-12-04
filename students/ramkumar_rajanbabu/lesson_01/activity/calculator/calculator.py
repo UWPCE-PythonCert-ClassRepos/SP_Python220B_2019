@@ -1,5 +1,5 @@
 """
-Module Docustring: This module creates a calculator.
+This module creates a calculator.
 """
 
 from .exceptions import InsufficientOperands
@@ -20,7 +20,9 @@ class Calculator(object):
 
     def _do_calc(self, operator):
         try:
-            result = operator.calc(self.stack[0], self.stack[1])
+            #Old result = operator.calc(self.stack[0], self.stack[1])
+            #The old affects subtract and divide by causing issues
+            result = operator.calc(self.stack[1], self.stack[0])
         except IndexError:
             raise InsufficientOperands
 

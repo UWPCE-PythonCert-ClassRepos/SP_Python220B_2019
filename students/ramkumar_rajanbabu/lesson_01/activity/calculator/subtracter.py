@@ -1,9 +1,11 @@
 """
-Module Docustring: This module provides a subtraction operator.
+This module provides a subtraction operator
 """
 
 class Subtracter(object):
-    """A class for subtracting operands."""
+    """
+    A class for subtracting operands.
+    """
         
     @staticmethod
     def calc(operand_1, operand_2):

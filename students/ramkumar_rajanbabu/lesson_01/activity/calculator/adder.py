@@ -1,9 +1,11 @@
 """
-Module Docustring: This module provides a addition operator.
+This module provides a addition operator.
 """
 
 class Adder(object):
-    """A class for adding operands."""
+    """
+    A class for adding operands.
+    """
 
     @staticmethod
     def calc(operand_1, operand_2):
