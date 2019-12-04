@@ -1,7 +1,12 @@
+"""
+Module Docustring: This module creates a calculator.
+"""
+
 from .exceptions import InsufficientOperands
 
 class Calculator(object):
-
+    """Creating a calculator."""
+    
     def __init__(self, adder, subtracter, multiplier, divider):
         self.adder = adder
         self.subtracter = subtracter

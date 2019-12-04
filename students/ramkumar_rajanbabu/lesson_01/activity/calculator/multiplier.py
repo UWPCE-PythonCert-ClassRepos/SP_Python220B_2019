@@ -1,3 +1,7 @@
+"""
+Module Docustring: This module provides a multiplication operator.
+"""
+
 class Multiplier(object):
 
     @staticmethod
