@@ -1,8 +1,8 @@
 """This module provides a subtraction operator."""
 
-class Subtracter(object):
+
+class Subtracter:
     """A class for subtracting operands."""
-    
     @staticmethod
     def calc(operand_1, operand_2):
         """Subtracts the numbers.

@@ -1,27 +1,18 @@
-"""
-Module Integration Tests
-"""
+"""Module Integration Tests"""
 
 from unittest import TestCase
-#from unittest.mock import MagicMock
 
 from calculator.adder import Adder
 from calculator.subtracter import Subtracter
 from calculator.multiplier import Multiplier
 from calculator.divider import Divider
 from calculator.calculator import Calculator
-#from calculator.exceptions import InsufficientOperands
-
 
 class ModuleTests(TestCase):
-    """
-    Tests module integration
-    """
+    """Tests module integration"""
     
     def test_module(self):
-        """
-        Tests all calculator modules
-        """
+        """Tests all calculator modules."""
     
         calculator = Calculator(Adder(), 
                                 Subtracter(), 

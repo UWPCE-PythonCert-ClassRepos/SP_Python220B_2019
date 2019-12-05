@@ -3,8 +3,8 @@ Module Unit Tests
 """
 
 from unittest import TestCase
-#from unittest.mock import MagicMock
-from mock import MagicMock
+from unittest.mock import MagicMock #python3
+#from mock import MagicMock #python2
 
 from calculator.adder import Adder
 from calculator.subtracter import Subtracter

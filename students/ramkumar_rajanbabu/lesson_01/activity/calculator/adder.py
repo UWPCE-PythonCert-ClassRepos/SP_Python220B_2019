@@ -1,8 +1,8 @@
 """This module provides a addition operator."""
 
-class Adder(object):
-    """A class for adding operands."""
 
+class Adder:
+    """A class for adding operands."""
     @staticmethod
     def calc(operand_1, operand_2):
         """Adds the numbers.
