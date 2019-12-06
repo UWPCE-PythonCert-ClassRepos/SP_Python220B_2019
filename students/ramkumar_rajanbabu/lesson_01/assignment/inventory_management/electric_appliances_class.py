@@ -1,14 +1,14 @@
 """Module for electric appliances"""
 
-from inventory_class import inventory
+from inventory_class import Inventory
 
 
-class ElectricAppliances(inventory):
+class ElectricAppliances(Inventory):
     """Class for electric appliances"""
 
     def __init__(self, product_code, description, market_price, rental_price, brand, voltage):
         """Initializes electric appliances class"""
-        inventory.__init__(self,
+        Inventory.__init__(self,
                            product_code,
                            description,
                            market_price,
@@ -16,7 +16,7 @@ class ElectricAppliances(inventory):
         self.brand = brand
         self.voltage = voltage
 
-    def returnAsDictionary(self):
+    def return_as_dictionary(self):
         """Returns a dictionary with attributes"""
         output_dict = {}
         output_dict['product_code'] = self.product_code

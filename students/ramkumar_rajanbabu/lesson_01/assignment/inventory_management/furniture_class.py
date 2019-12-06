@@ -1,14 +1,14 @@
 """Module for furniture"""
 
-from inventory_class import inventory
+from inventory_class import Inventory
 
 
-class Furniture(inventory):
+class Furniture(Inventory):
     """Class for furniture"""
 
     def __init__(self, product_code, description, market_price, rental_price, material, size):
         """Initializes furniture class"""
-        inventory.__init__(self,
+        Inventory.__init__(self,
                            product_code,
                            description,
                            market_price,
@@ -17,7 +17,7 @@ class Furniture(inventory):
         self.material = material
         self.size = size
 
-    def returnAsDictionary(self):
+    def return_as_dictionary(self):
         """Returns a dictionary with attributes"""
         output_dict = {}
         output_dict['product_code'] = self.product_code

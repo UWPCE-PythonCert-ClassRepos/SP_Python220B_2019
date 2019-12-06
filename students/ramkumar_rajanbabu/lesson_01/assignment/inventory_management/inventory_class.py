@@ -11,7 +11,7 @@ class Inventory:
         self.market_price = market_price
         self.rental_price = rental_price
 
-    def returnAsDictionary(self):
+    def return_as_dictionary(self):
         """Returns a dictionary with attributes"""
         output_dict = {}
         output_dict['product_code'] = self.product_code
