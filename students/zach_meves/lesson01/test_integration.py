@@ -25,6 +25,7 @@ class TestManagement(unittest.TestCase):
 
         # All market prices will be 1
         market_prices.get_latest_price = MagicMock(return_value=1)
+        main.exit_program = MagicMock()
 
         with patch("builtins.input") as input_mock, patch("builtins.print") as print_mock:
             # Add a furniture item
@@ -67,3 +68,9 @@ class TestManagement(unittest.TestCase):
             input_mock.side_effect = ["2", "code4"]
             main.main_menu()()
             print_mock.assert_called_with("Item not found in inventory")
+
+            # Exit
+            input_mock.side_effect = ['q']
+            main.main_menu()()
+
+            main.exit_program.assert_called()
