@@ -9,6 +9,9 @@ import furniture_class
 import electric_appliances_class
 
 
+FULLINVENTORY = {}
+
+
 def main_menu(user_prompt=None):
     """
     Main menu function.
@@ -23,7 +26,7 @@ def main_menu(user_prompt=None):
 
     while user_prompt not in valid_prompts:
         options_str = ("{}" + ", {}" * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({options_str}):")
+        print(f"Please choose from the following options ({options_str}):")
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
@@ -46,7 +49,7 @@ def add_new_item():
 
     :return:
     """
-    global FULLINVENTORY
+
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -102,7 +105,7 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    FULLINVENTORY = {}
+    FULLINVENTORY.clear()
     while True:
         print(FULLINVENTORY)
         main_menu()()
