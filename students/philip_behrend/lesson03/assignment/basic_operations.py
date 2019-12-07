@@ -1,7 +1,9 @@
 """ Operations file to interact with Customer database """
 import logging
 import traceback
+from peewee import IntegrityError
 from customer_model import *
+
 
 logging.basicConfig(level=(logging.INFO))
 logger = logging.getLogger(__name__)
@@ -13,19 +15,20 @@ def add_customer(**kwargs):
             new_cust = (Customer.create)(**kwargs)
             new_cust.save()
             logger.info('Customer addition successful')
-    except Exception as e:
-        logger.info('Error adding customer: {} {}'.format(kwargs['firstname'], kwargs['lastname']))
+    except IntegrityError as e:
+        logger.info('Error adding customer')
         logger.info(e)
-        logger.info(traceback.format_exc())
+        raise IntegrityError      
 
 
 def search_customer(customer_id):
     """ Search for customer by customer_id """
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
-    except Exception as e:
+    except DoesNotExist as e:
         print('Customer not found')
         print(e)
+        raise ValueError
 
     return {'firstname':customer.firstname, 'lastname':customer.lastname, 'email':customer.email,
             'phone_no':customer.phone_no}
