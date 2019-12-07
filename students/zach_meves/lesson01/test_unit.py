@@ -158,8 +158,11 @@ class TestMain(unittest.TestCase):
     @mock.patch("builtins.print")
     def test_get_price(self, print_mock):
 
-        # get_price doesn't do anything, just call it
-        main.get_price(0)
+        with mock.patch("market_prices.get_latest_price") as market_patch:
+            market_patch.return_value = 1
+            main.get_price('abc')
+            market_patch.assert_called()
+            print_mock.assert_called_with(1)
 
     @mock.patch("builtins.print")
     def test_add_new_item(self, print_mock):

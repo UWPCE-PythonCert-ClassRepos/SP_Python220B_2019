@@ -40,7 +40,7 @@ def get_price(item_code):
     :param item_code: unknown
     :return:
     """
-    print("Get price")
+    print(market_prices.get_latest_price(item_code))
 
 
 def add_new_item():
