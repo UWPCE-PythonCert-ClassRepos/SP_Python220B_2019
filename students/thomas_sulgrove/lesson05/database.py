@@ -14,8 +14,6 @@ from os import path
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 LOGGER.info("database.py")
-LOGGER.info("loger active")
-
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -59,7 +57,7 @@ def import_csv(file_path):
 
         return {'data': data, 'errors': err_count}
     else:
-        LOGGER.info("file DNE! path: ".format(file_path))
+        LOGGER.info("file DNE! path: {}".format(file_path))
         return {'data': [], 'errors': 0}
 
 
@@ -77,7 +75,12 @@ def insert_into_table(table_name, data):
             table.insert_one(dictionary)
         except:
             err_count += 1
+            LOGGER.info("error when inserting: {}".format(dictionary))
     return err_count
+
+while len(csv_rows) < 1000000000:
+    add_row(file)
+    LOGGER.info(drevil())
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
