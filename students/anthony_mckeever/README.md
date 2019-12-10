@@ -24,8 +24,11 @@ Each course lesson will contain its own folder.  The folders will use the naming
         |-- lesson_3                        <Content for Lesson 3>
         |   |-- activity_1                  <Content for Lesson 3 Activity 1 - Relational Databases>
         |   `-- assignment_1                <Content for Lesson 3 Assignment 1 - Relational Databases>
-        `-- lesson_4                        <Content for Lesson 4>                
-            `-- assignment_1                <Content for Lesson 4 Assignment 1 - Iterators, Comprehensions, and Generators>
+        |-- lesson_4                        <Content for Lesson 4>                
+        |   `-- assignment_1                <Content for Lesson 4 Assignment 1 - Iterators, Comprehensions, and Generators>
+        `-- lesson_5                        <Content for Lesson 5>
+            |-- activity_1                  <Content for Lesson 5 Activity 1 - Intro to NoSQL>
+            `-- assignment_1                <Content for Lesson 5 Assignment 1 - NoSQL HP Norton>
 ```
 
 ## Branching
