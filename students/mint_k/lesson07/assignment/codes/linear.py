@@ -3,6 +3,7 @@
 import os
 import csv
 import logging
+import time
 from pymongo import MongoClient
 
 logging.basicConfig(level=logging.INFO)
@@ -81,6 +82,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         cust_errors = 0
         rentals_errors = 0
 
+        customer_start = time.time()
+        customer_s_count = customers.count_documents({})
+
         #now, reading data from csv files and writing them db via mongo
         try:
             customer_list = access_csv(customer_csv)
@@ -95,6 +99,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             cust_errors += 1
             LOGGER.error(my_e)
 
+        customer_e_count = customers.count_documents({})
+        customer_time = time.time() - customer_start
+        customer_output = ('customer', cust_count, customer_s_count, 
+                           customer_e_count, customer_time)
+
+        prod_start = time.time()
+        prod_s_count = products.count_documents({})
+
         try:
             prod_list = access_csv(products_csv)
             LOGGER.info(f'prod_list is {prod_list}')
@@ -107,6 +119,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         except (FileNotFoundError, KeyError, IndexError) as my_e:
             prod_errors += 1
             LOGGER.error(my_e)
+
+        prod_e_count = products.count_documents({})
+        prod_time = time.time() - prod_start
+        prod_output = ('products', prod_count, prod_s_count, prod_e_count, prod_time)
+
+        rent_start = time.time()
+        rent_s_count = rentals.count_documents({})
 
         try:
             rental_list = access_csv(rentals_csv)
@@ -121,7 +140,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             rentals_errors += 1
             LOGGER.error(my_e)
 
-        return (prod_count, cust_count, rentals_count), (prod_errors, cust_errors, rentals_errors)
+        rent_e_count = rentals.count_documents({})
+        rent_time = time.time() - rent_start
+        rent_output = ('rentals', rentals_count, rent_s_count, rent_e_count, rent_time)
+
+        return customer_output, prod_output, rent_output
+
 
 
 def show_available_products():
@@ -171,6 +195,15 @@ def show_rentals(product_id):
      
     return rental_dict
 
-
+if __name__ == "__main__":
+    start_time = time.time()
+    directory_name = ''
+    product_file = 'products.csv'
+    customer_file = 'customers.csv'
+    rentals_file = 'rentals.csv'
+    customer_o, prod_o, rentals_o = import_data(directory_name, product_file, 
+                                                customer_file, rentals_file)
+    end_time = time.time()
+    print('Run time: {}'.format(end_time - start_time))
 
 

@@ -3,7 +3,11 @@
 import os
 import csv
 import logging
+import time
+import queue as Queue
+from threading import Thread
 from pymongo import MongoClient
+
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -170,6 +174,7 @@ def show_rentals(product_id):
                 'email':user['email']}
      
     return rental_dict
+
 
 
 
