@@ -5,6 +5,7 @@ import csv
 import logging
 import time
 from pymongo import MongoClient
+#pylint: disable = W1202, R0914, R0915
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -31,7 +32,7 @@ def access_csv(file_name):
     and compile them to a list"""
     my_list = []
 
-    #open csv with option as read only 
+    #open csv with option as read only
     with open(file_name, 'r') as my_csv:
         reader = csv.reader(my_csv, delimiter=',')
         header = next(reader)
@@ -44,11 +45,11 @@ def access_csv(file_name):
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
-    """This function takes a directory name three csv files as input, 
-    one with product data, one with customer data and the third one 
-    with rentals data and creates and populates a new MongoDB database 
-    with these data. It returns 2 tuples: the first with a record count of 
-    the number of products, customers and rentals added (in that order), 
+    """This function takes a directory name three csv files as input,
+    one with product data, one with customer data and the third one
+    with rentals data and creates and populates a new MongoDB database
+    with these data. It returns 2 tuples: the first with a record count of
+    the number of products, customers and rentals added (in that order),
     the second with a count of any errors that occurred, in the same order."""
 
     #Setting up Mongo
@@ -71,7 +72,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         products_csv = os.path.join(directory_name, product_file)
         rentals_csv = os.path.join(directory_name, rentals_file)
 
-        #this function need to return counts of products and etc.
+        #this function need to return counts of products and etc
         #to do this, declare variables to collect number of counts.
         prod_count = 0
         cust_count = 0
@@ -101,7 +102,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
         customer_e_count = customers.count_documents({})
         customer_time = time.time() - customer_start
-        customer_output = ('customer', cust_count, customer_s_count, 
+        customer_output = ('customer', cust_count, customer_s_count,
                            customer_e_count, customer_time)
 
         prod_start = time.time()
@@ -166,11 +167,11 @@ def show_available_products():
                 'description':prod['description'],
                 'product_type':prod['product_type'],
                 'quantity_available':prod['quantity_available']}
-    
+
     return prod_dict
 
 def show_rentals(product_id):
-    """Returns a Python dictionary with the following user information from users 
+    """Returns a Python dictionary with the following user information from users
     that have rented products matching product_id:
     user_id.
     name.
@@ -192,18 +193,15 @@ def show_rentals(product_id):
                 'address':user['address'],
                 'phone_number':user['phone_number'],
                 'email':user['email']}
-     
+
     return rental_dict
 
 if __name__ == "__main__":
-    start_time = time.time()
-    directory_name = ''
-    product_file = 'products.csv'
-    customer_file = 'customers.csv'
-    rentals_file = 'rentals.csv'
-    customer_o, prod_o, rentals_o = import_data(directory_name, product_file, 
-                                                customer_file, rentals_file)
-    end_time = time.time()
-    print('Run time: {}'.format(end_time - start_time))
-
-
+    START_TIME = time.time()
+    DIRECTORY_NAME = ''
+    PRODUCT_FILE = 'products.csv'
+    CUSTOMER_FILE = 'customers.csv'
+    RENTALS_FILE = 'rentals.csv'
+    print(import_data(DIRECTORY_NAME, PRODUCT_FILE, CUSTOMER_FILE, RENTALS_FILE))
+    END_TIME = time.time()
+    print('Run time: {}'.format(END_TIME - START_TIME))

@@ -4,10 +4,10 @@ import os
 import csv
 import logging
 import time
-import queue as Queue
-from threading import Thread
+import threading
+import queue
 from pymongo import MongoClient
-
+#pylint: disable = W1202
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -34,7 +34,7 @@ def access_csv(file_name):
     and compile them to a list"""
     my_list = []
 
-    #open csv with option as read only 
+    #open csv with option as read only
     with open(file_name, 'r') as my_csv:
         reader = csv.reader(my_csv, delimiter=',')
         header = next(reader)
@@ -46,86 +46,76 @@ def access_csv(file_name):
     return my_list
 
 
+class MyThread(threading.Thread):
+    """my thread class that can be used to run things in parallel"""
+
+    def __init__(self, myqueue, category_name, file_name):
+        """setting up initial variables"""
+        self.queue = myqueue
+        self.category_name = category_name
+        self.file_name = file_name
+        super().__init__()
+
+
+    def run(self):
+        """create db, do the counts"""
+        start_time = time.time()
+        mongo = MongoDBConnection()
+        with mongo:
+            my_db = mongo.connection.media
+            categories = my_db[self.category_name]
+            categories.drop()
+            start_count = categories.count_documents({})
+            my_errors = 0
+
+
+            try:
+                categ_list = access_csv(self.file_name)
+                LOGGER.info(f'{self.category_name} is {categ_list}')
+                #Writing to database using mongo
+                categories.insert_many(categ_list)
+                #Recording number of customer added
+                categ_count = len(categ_list)
+            except (FileNotFoundError, KeyError, IndexError) as my_e:
+                my_errors += 1
+                LOGGER.error(my_e)
+
+            end_count = categories.count_documents({})
+            end_time = time.time() - start_time
+            my_output = (self.category_name, categ_count, start_count,
+                         end_count, end_time)
+        self.queue.put(my_output)
+        self.queue.task_done()
+
+
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
-    """This function takes a directory name three csv files as input, 
-    one with product data, one with customer data and the third one 
-    with rentals data and creates and populates a new MongoDB database 
-    with these data. It returns 2 tuples: the first with a record count of 
-    the number of products, customers and rentals added (in that order), 
+    """This function takes a directory name three csv files as input,
+    one with product data, one with customer data and the third one
+    with rentals data and creates and populates a new MongoDB database
+    with these data. It returns 2 tuples: the first with a record count of
+    the number of products, customers and rentals added (in that order),
     the second with a count of any errors that occurred, in the same order."""
 
-    #Setting up Mongo
-    mongo = MongoDBConnection()
-    with mongo:
-        my_db = mongo.connection.media
+    results = queue.Queue()
+    customer_csv = os.path.join(directory_name, customer_file)
+    products_csv = os.path.join(directory_name, product_file)
+    rentals_csv = os.path.join(directory_name, rentals_file)
 
-        #Setting up DB categories for mongo
-        customers = my_db['customers']
-        products = my_db['products']
-        rentals = my_db['rentals']
+    customer_thread = MyThread(results, 'customers', customer_csv)
+    product_thread = MyThread(results, 'products', products_csv)
+    rentals_thread = MyThread(results, 'rentals', rentals_csv)
 
-        products.drop()
-        customers.drop()
-        rentals.drop()
+    threads = [customer_thread, product_thread, rentals_thread]
 
-        #reading data from csv files
-        #to do this, gotta define file name based on input
-        customer_csv = os.path.join(directory_name, customer_file)
-        products_csv = os.path.join(directory_name, product_file)
-        rentals_csv = os.path.join(directory_name, rentals_file)
+    for thread in threads:
+        thread.start()
 
-        #this function need to return counts of products and etc.
-        #to do this, declare variables to collect number of counts.
-        prod_count = 0
-        cust_count = 0
-        rentals_count = 0
+    results.join()
 
-        #also assignment wants to count errors
-        prod_errors = 0
-        cust_errors = 0
-        rentals_errors = 0
+    my_output = [results.get() for things in range(len(threads))]
 
-        #now, reading data from csv files and writing them db via mongo
-        try:
-            customer_list = access_csv(customer_csv)
-            LOGGER.info(f'customer_list is {customer_list}')
-            #Writing to database using mongo
-            customers.insert_many(customer_list)
-            #Recording number of customer added
-            cust_count = len(customer_list)
-            LOGGER.info(f'Number of added customer is {cust_count}')
-
-        except (FileNotFoundError, KeyError, IndexError) as my_e:
-            cust_errors += 1
-            LOGGER.error(my_e)
-
-        try:
-            prod_list = access_csv(products_csv)
-            LOGGER.info(f'prod_list is {prod_list}')
-            #Writing to database using mongo
-            products.insert_many(prod_list)
-            #Recording number of products added
-            prod_count = len(prod_list)
-            LOGGER.info(f'Number of added product is {prod_count}')
-
-        except (FileNotFoundError, KeyError, IndexError) as my_e:
-            prod_errors += 1
-            LOGGER.error(my_e)
-
-        try:
-            rental_list = access_csv(rentals_csv)
-            LOGGER.info(f'rental_list is {rental_list}')
-            #Writing to database using mongo
-            rentals.insert_many(rental_list)
-            #Recording number of customer added
-            rentals_count = len(rental_list)
-            LOGGER.info(f'Number of added rentals is {rentals_count}')
-
-        except (FileNotFoundError, KeyError, IndexError) as my_e:
-            rentals_errors += 1
-            LOGGER.error(my_e)
-
-        return (prod_count, cust_count, rentals_count), (prod_errors, cust_errors, rentals_errors)
+    return my_output
 
 
 def show_available_products():
@@ -146,11 +136,11 @@ def show_available_products():
                 'description':prod['description'],
                 'product_type':prod['product_type'],
                 'quantity_available':prod['quantity_available']}
-    
+
     return prod_dict
 
 def show_rentals(product_id):
-    """Returns a Python dictionary with the following user information from users 
+    """Returns a Python dictionary with the following user information from users
     that have rented products matching product_id:
     user_id.
     name.
@@ -172,10 +162,16 @@ def show_rentals(product_id):
                 'address':user['address'],
                 'phone_number':user['phone_number'],
                 'email':user['email']}
-     
+
     return rental_dict
 
-
-
-
-
+if __name__ == "__main__":
+    START_TIME = time.time()
+    DIRECTORY_NAME = ''
+    PRODUCT_FILE = 'products.csv'
+    CUSTOMER_FILE = 'customers.csv'
+    RENTALS_FILE = 'rentals.csv'
+    RESULTS = import_data(DIRECTORY_NAME, PRODUCT_FILE, CUSTOMER_FILE, RENTALS_FILE)
+    END_TIME = time.time()
+    print('Run time: {}'.format(END_TIME - START_TIME))
+    print(RESULTS)
