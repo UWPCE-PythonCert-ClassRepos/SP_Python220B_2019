@@ -14,4 +14,10 @@ I figured running in parallel would have been faster, so I was surprised. The se
 
 It seems that both modules (parallel.py and linear.py) are similar in their runtimes.
 
-A point of contention could possibly be when one thread is waiting for an object that is currently being held ny another thread. So if you lock the object in the queue when another thread is expecting it, then the for loop that runs the threads will be running forever. In parallel.py if you take away the output_queue.put(...), then the for loop in main will never stop. 
+A point of contention could possibly be when one thread is waiting for an object that is currently being held ny another thread. So if you lock the object in the queue when another thread is expecting it, then the for loop that runs the threads will be running forever. In parallel.py if you take away the output_queue.put(...), then the for loop in main will never stop.
+
+----------Findings after revisions---------
+
+After launching a separate join in a different loop to make sure all threads finish (and removing storage_queue()), parallel.py seemed to take 6.301 seconds to run. Adding the different entries for each of the three csv files happened 'at the same time.' It took linear.py 6.784 seconds to run. this was about an 8% decrease in time. Running concurrently seems to be faster than running linearly, but not by much (at least by my oldie laptop) but it would still be worth it. 
+
+Contention could be caused if all the threads were writing to the same database. In parallel.py, there was a separate database I was writing to with each thread. 

@@ -74,14 +74,11 @@ def import_products(directory_name, product_file):
     p_end = time.time()
     p_overall_time = p_end - p_start
 
-    print('-----Product Data Import Timing-----')
-    print(p_overall_time)
+    # print('-----Product Data Import Timing-----')
+    # print(p_overall_time)
 
-    # There will be contention if output_queue.put(...) is commented out because the
-    # for loop that runs through the threads will be expecting something in the queue.
-    # If there is nothing in the lineup then the loop will always be running
     output_queue.put((attempts, initial_num, db.products.count_documents({}),
-                      p_overall_time), product_error)
+                      p_overall_time), product_error, 'product_results')
 
 def import_customers(directory_name, customer_file):
     '''Populate MongoDB database '''
@@ -120,14 +117,11 @@ def import_customers(directory_name, customer_file):
     c_end = time.time()
     c_overall_time = c_end - c_start
 
-    print('-----Customer Data Import Timing-----')
-    print(c_overall_time)
+    # print('-----Customer Data Import Timing-----')
+    # print(c_overall_time)
 
-    # There will be contention if output_queue.put(...) is commented out because the
-    # for loop that runs through the threads will be expecting something in the queue.
-    # If there is nothing in the lineup then the loop will always be running
     output_queue.put((attempts, initial_num, db.customers.count_documents({}),
-                      c_overall_time), customer_error)
+                      c_overall_time), customer_error, 'customer_results')
 
 def import_rentals(directory_name, rental_file):
     '''Populate MongoDB database'''
@@ -163,15 +157,11 @@ def import_rentals(directory_name, rental_file):
     r_end = time.time()
     r_overall_time = r_end - r_start
 
-    print('-----Rental Data Import Timing-----')
-    print(r_overall_time)
+    # print('-----Rental Data Import Timing-----')
+    # print(r_overall_time)
 
-
-    # There will be contention if output_queue.put(...) is commented out because the
-    # for loop that runs through the threads will be expecting something in the queue.
-    # If there is nothing in the lineup then the loop will always be running
     output_queue.put((attempts, initial_num, db.rentals.count_documents({}),
-                      r_overall_time), rental_error)
+                      r_overall_time), rental_error, 'rental_results')
 #
 def show_available_products():
     '''Return a dictionary of products listed as available'''
@@ -220,7 +210,7 @@ if __name__ == '__main__':
     path = ('C:\\Users\\chels\\SP_Python220B_2019\\students\\chelsea_nayan\\lesson07\\data')
 
     output_queue = Queue()
-    queue_storage = []
+    #queue_storage = []
     threads = []
 
     threads.append(threading.Thread(target=import_products,
@@ -232,7 +222,9 @@ if __name__ == '__main__':
 
     for thread in threads:
         thread.start()
-        queue_storage.append(output_queue.get())
+        #queue_storage.append(output_queue.get())
+    for thread in threads:
+        thread.join()
 
     parallel_end = time.time()
 
