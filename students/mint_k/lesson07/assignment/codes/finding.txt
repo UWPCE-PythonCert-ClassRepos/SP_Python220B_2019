@@ -1,0 +1,5 @@
+Mintae Kim
+Fidnings for Lesson 07
+
+Running the linear.py results:
+Run time: 0.09702181816101074
