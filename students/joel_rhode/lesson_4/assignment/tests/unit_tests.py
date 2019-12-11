@@ -23,12 +23,12 @@ class BasicOperationsUnitTests(TestCase):
     def setUp(self):
         """Defines starting test database used for function testing."""
         self.starting_db = [(1, 'Bob', 'Bobbo', '12 Green St', '1112223344',
-                        'bobbo@python.org', False, 85000),
-                       (2, 'Jane', 'Janeo', '1550 Red Rd', '1118675309',
-                        'jane@therealjane.com', True, 150000),
-                       (5, 'Wilson', 'Volleyball', '1 Castaway Island', '0000000000',
-                        'wilson@ImLost.com', True, 0)
-                       ]
+                             'bobbo@python.org', False, 85000),
+                            (2, 'Jane', 'Janeo', '1550 Red Rd', '1118675309',
+                             'jane@therealjane.com', True, 150000),
+                            (5, 'Wilson', 'Volleyball', '1 Castaway Island', '0000000000',
+                             'wilson@ImLost.com', True, 0)
+                            ]
         database.init(TEST_DATABASE)
         database.connect()
         database.execute_sql('PRAGMA foreign_keys = ON')
@@ -111,7 +111,7 @@ class BasicOperationsUnitTests(TestCase):
         table_columns = ('customer_id', 'name', 'lastname', 'home_address', 'phone_number',
                          'email_address', 'active_status', 'credit_limit')
         expected_print = ((' | '.join(('{:^20}'.format(column) for column in table_columns))) + '\n'
-                         + ' | '.join(('{:^20}'.format(str(x)) for x in self.starting_db[1])))
+                          + ' | '.join(('{:^20}'.format(str(x)) for x in self.starting_db[1])))
         with patch('sys.stdout', new=StringIO()) as captured_output:
             report_single_customer(2)
             self.assertEqual(captured_output.getvalue().rstrip('\n'), expected_print)
@@ -142,7 +142,7 @@ class BasicOperationsUnitTests(TestCase):
         table_columns = ('customer_id', 'name', 'lastname', 'home_address', 'phone_number',
                          'email_address', 'active_status', 'credit_limit')
         expected_print = ((' | '.join(('{:^20}'.format(column) for column in table_columns))) + '\n'
-                         + ' | '.join(('{:^20}'.format(str(x)) for x in self.starting_db[0])))
+                          + ' | '.join(('{:^20}'.format(str(x)) for x in self.starting_db[0])))
         with patch('sys.stdout', new=StringIO()) as captured_output:
             report_customers_by_status(False)
             self.assertEqual(captured_output.getvalue().rstrip('\n'), expected_print)

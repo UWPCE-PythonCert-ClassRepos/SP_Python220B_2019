@@ -63,13 +63,13 @@ class BasicOperationsIntegrationTests(TestCase):
         self.assertEqual(list_active_customers(), 3)
 
         ending_db = [(1, 'Bob', 'Bobbo', '12 Green St', '1112223344',
-                     'bobbo@python.org', False, 85000),
+                      'bobbo@python.org', False, 85000),
                      (2, 'Jane', 'Janeo', '1550 Red Rd', '1118675309',
-                     'jane@therealjane.com', True, 150000),
+                      'jane@therealjane.com', True, 150000),
                      (5, 'Wilson', 'Volleyball', '1 Castaway Island', '0000000000',
-                     'wilson@ImLost.com', True, 0),
+                      'wilson@ImLost.com', True, 0),
                      (17, 'Bob1', 'Testy', '111 Test St', 1234567890,
-                     'bob@thetest.net', True, 70000),
+                      'bob@thetest.net', True, 70000),
                      (19, 'Bob3', 'Testi', '113 Test St', 3234567890,
                       'b3@thetest.net', False, 50000)
                      ]
