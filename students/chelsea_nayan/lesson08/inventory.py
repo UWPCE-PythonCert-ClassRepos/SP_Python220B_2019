@@ -10,7 +10,9 @@ def add_furniture(invoice_file, customer_name, item_code, item_description,
     '''Create invoice_file if it doesn't exist or append a new line to add in furniture'''
     with open(invoice_file, mode='a+', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([customer_name, item_code, item_description,
+        writer.writerow([customer_name,
+                         item_code,
+                         item_description,
                          item_monthly_price])
 
 # Need to use functools.partial and closures
@@ -21,15 +23,25 @@ def single_customer(customer_name, invoice_file):
         try:
             with open(rental_items, mode='r', newline='') as file:
                 reader = csv.reader(file)
-                add_row = partial(add_furniture, customer_name, invoice_file)
+
+                # partial(): return a new partial object
+                # https://docs.python.org/2/library/functools.html
+                add_row = partial(add_furniture,
+                                  customer_name=customer_name, # Fixed
+                                  invoice_file=invoice_file) # Fixed
                 for row in reader:
-                    add_row(row[0], row[1], row[2])
+                    add_row(item_code=row[0], # Fixed
+                            item_description=row[1], # Fixed
+                            item_monthly_price=row[2]) # Fixed
         except FileNotFoundError:
             print('The file was not found.')
 
     return single_rentals
 
 if __name__ == '__main__':
-    add_furniture('rented_items.csv', 'Elisa Miles', 'LR04', 'Leather Sofa', 25.01)
-    add_furniture('rented_items.csv', 'Edward Data', 'KT78', 'Kitchen Table', 10.00)
-    add_furniture('rented_items.csv', 'Alex Gonzales', 'BR02', 'Queen Mattress', 17.00)
+    # add_furniture('rented_items.csv', 'Elisa Miles', 'LR04', 'Leather Sofa', 25.01)
+    # add_furniture('rented_items.csv', 'Edward Data', 'KT78', 'Kitchen Table', 10.00)
+    # add_furniture('rented_items.csv', 'Alex Gonzales', 'BR02', 'Queen Mattress', 17.00)
+
+    CREATE_INVOICE = single_customer('Susan Wong', 'rented_items_susan.csv')
+    CREATE_INVOICE('test_items.csv')
