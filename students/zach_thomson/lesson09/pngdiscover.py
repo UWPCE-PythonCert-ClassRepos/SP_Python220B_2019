@@ -25,6 +25,7 @@ def png_discovery(path):
 PNG_DICT = {}
 
 def png_disc_recursive(path):
+    '''function for discovering pngs using recursion'''
     for item in os.listdir(path):
         item_path = os.path.join(path, item)
         if os.path.isfile(item_path) and item.lower().endswith('.png'):
