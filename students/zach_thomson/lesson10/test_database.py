@@ -1,10 +1,12 @@
 '''
 tests for the MongoDB database assignment
 '''
+#pylint: disable=C0103
 from unittest import TestCase
 from database import import_data, show_available_products, show_rentals, MongoDBConnection
 
 def clear_db():
+    '''func to clear database of entries'''
     mongo = MongoDBConnection()
 
     with mongo:

@@ -5,6 +5,7 @@ Mongo DB assignment
 import csv
 import os
 import logging
+import time
 from pymongo import MongoClient
 
 #logging setup
@@ -26,6 +27,16 @@ CONSOLE_HANDLER.setFormatter(FORMATTER)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
+def timer(func):
+    '''timer decorator function'''
+    def timed(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        time_elapsed = time.time() - start_time
+        print('%s took %.3f seconds to run' % (func.__name__, time_elapsed))
+        return result
+    return timed
+
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -43,7 +54,7 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
-
+@timer
 def import_data(directory_name, product_file, customer_file, rentals_file):
     '''
     Function takes a directory name and three csv files as input (product data,
@@ -78,7 +89,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                    'description':row['description'],
                                    'product_type':row['product_type'],
                                    'quantity_available':row['quantity_available']}
-                    LOGGER.info('%s added to database', new_product['product_id'])
+                    #LOGGER.info('%s added to database', new_product['product_id'])
                     product_db.insert_one(new_product)
         except FileNotFoundError:
             product_errors += 1
@@ -97,7 +108,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                     'address':row['address'],
                                     'phone_number':row['phone_number'],
                                     'email':row['email']}
-                    LOGGER.info('%s added to database', new_customer['user_id'])
+                    #LOGGER.info('%s added to database', new_customer['user_id'])
                     customer_db.insert_one(new_customer)
         except FileNotFoundError:
             customer_errors += 1
@@ -113,7 +124,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     rentals_added += 1
                     new_rental = {'user_id':row['user_id'],
                                   'product_id':row['product_id']}
-                    LOGGER.info('%s rental added to database', new_rental['product_id'])
+                    #LOGGER.info('%s rental added to database', new_rental['product_id'])
                     rentals_db.insert_one(new_rental)
         except FileNotFoundError:
             rental_errors += 1
@@ -121,7 +132,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     return [(product_added, customer_added, rentals_added),
             (product_errors, customer_errors, rental_errors)]
 
-
+@timer
 def show_available_products():
     '''returns a dict of products listed as available with fields:
     product_id, description, product_type, quantity available'''
@@ -139,7 +150,7 @@ def show_available_products():
                                                 'quantity_available': item['quantity_available']}
     return product_dict
 
-
+@timer
 def show_rentals(product_id):
     '''returns a dict with the info from users who rented matching product_id:
     user_id, name, address, phone_number, email'''
@@ -158,3 +169,26 @@ def show_rentals(product_id):
                                                      'phone_number': customer['phone_number'],
                                                      'email': customer['email']}
     return rentals_dict
+
+def clear_db():
+    '''func to clear database of entries'''
+    mongo = MongoDBConnection()
+
+    with mongo:
+        db = mongo.connection.media
+        product_db = db['product']
+        customer_db = db['customer']
+        rentals_db = db['rentals']
+        product_db.drop()
+        customer_db.drop()
+        rentals_db.drop()
+
+if __name__ == "__main__":
+    #clear_db()
+    DIR_NAME = input('Directory name: ')
+    PRODUCT_FILE = input('Product file: ')
+    CUSTOMER_FILE = input('Customer file: ')
+    RENTAL_FILE = input('Rental file: ')
+    import_data(DIR_NAME, PRODUCT_FILE, CUSTOMER_FILE, RENTAL_FILE)
+    show_available_products()
+    show_rentals('prd002')
