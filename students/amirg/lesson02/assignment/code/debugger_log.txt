@@ -1,0 +1,366 @@
+Amir G@Amir MINGW64 ~/SP_Python220B_2019/students/amirg/lesson02/assignment/code (master)
+$ python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(3)<module>()
+-> '''
+(Pdb) l
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) l
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9  -> def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+(Pdb) s
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) l
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10  ->     parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) p parser
+ArgumentParser(prog='charges_calc.py', usage=None, description='Process some integers.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+(Pdb) n
+--Return--
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(14)parse_cmd_arguments()->Namespace(inp...ut='out.json')
+-> return parser.parse_args()
+(Pdb) l
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14  ->     return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) l
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44         args = parse_cmd_arguments()
+ 45  ->     data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+[EOF]
+(Pdb) p data
+*** NameError: name 'data' is not defined
+(Pdb) s
+--Call--
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(17)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) l
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17  -> def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(18)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(19)load_rentals_file()
+-> try:
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(20)load_rentals_file()
+-> data = json.load(file)
+(Pdb)
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(23)load_rentals_file()
+-> return data
+(Pdb) l
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23  ->     return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+--Return--
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(23)load_rentals_file()->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17', 'rental_start': '8/14/16', ...}, ...}
+-> return data
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) l
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44         args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46  ->     data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+[EOF]
+(Pdb) s
+--Call--
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) l
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25  -> def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+(Pdb) s
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) l
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26  ->     for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) p value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) l
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28  ->             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) p rental_start
+*** NameError: name 'rental_start' is not defined
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) p rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) p rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) p value['total_days']
+-82
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) l
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  ->             value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+(Pdb) value['total_price']
+-2542
+(Pdb) value['sqrt_total_price']
+*** KeyError: 'sqrt_total_price'
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(34)calculate_additional_fields()
+-> except:
+(Pdb) value['sqrt_total_price']
+*** SyntaxError: invalid syntax
+(Pdb) n
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+Traceback (most recent call last):
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 32, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> c:\users\amir g\appdata\local\programs\python\python37-32\lib\cmd.py(126)cmdloop()
+-> line = input(self.prompt)
+(Pdb) Traceback (most recent call last):
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 32, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 46, in <module>
+    data = calculate_additional_fields(data)
+  File "c:\users\amir g\sp_python220b_2019\students\amirg\lesson02\assignment\code\charges_calc.py", line 35, in calculate_additional_fields
+    exit(0)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\bdb.py", line 173, in dispatch_exception
+    self.user_exception(frame, arg)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 312, in user_exception
+    self.interaction(frame, exc_traceback)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1728, in <module>
+    pdb.main()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 1720, in main
+    pdb.interaction(None, t)
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 352, in interaction
+    self._cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\pdb.py", line 321, in _cmdloop
+    self.cmdloop()
+  File "C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+ValueError: I/O operation on closed file.

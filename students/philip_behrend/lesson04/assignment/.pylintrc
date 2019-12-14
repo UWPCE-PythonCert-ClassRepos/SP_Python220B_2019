@@ -57,7 +57,7 @@ confidence=
 disable=too-few-public-methods,too-many-arguments, global-statement,
       print-statement, invalid-name, duplicate-code, logging-format-interpolation,
       expression-not-assigned, wildcard-import, unused-wildcard-import,
-        parameter-unpacking, broad-except,
+        parameter-unpacking, broad-except, assignment-from-no-return,
         unpacking-in-except,
         old-raise-syntax,
         backtick,
