@@ -1,0 +1,85 @@
+The issue with recursive.py is that the only exit condition is on line 9, when the
+condition of n equaling 2 is satisfied. If any number is provided that is not a power of two,
+this condition can never be satisfied, and the program continues to run and call itself, halving
+n until a recursion error is called. In most cases, n will be smaller than 2 when the program throws
+an error (during the process of halving n on line 11, the result skips the 2, missing the exit condition).
+
+Debug example:
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(3)<module>()
+-> """
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(5)<module>()
+-> import sys
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)<module>()
+-> def my_fun(n):
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(14)<module>()
+-> if __name__ == '__main__':
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(15)<module>()
+-> n = int(sys.argv[1])
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(16)<module>()
+-> print(my_fun(n))
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) pp n
+0.9375
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) n
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) a
+n = 0.9375
+(Pdb) s
+--Call--
+> /home/joelrhode/Python220/SP_Python220B_2019/students/joel_rhode/lesson_2/activity/recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) pp n
+0.46875
+(Pdb)
