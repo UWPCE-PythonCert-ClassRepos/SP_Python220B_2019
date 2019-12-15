@@ -8,6 +8,22 @@ database = SqliteDatabase('customer.db')
 database.connect()
 database.execute_sql('Pragma foreign_keys = ON;')
 
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+log_file = 'db.log'
+
+formatter = logging.Formatter(log_format)
+
+file_handler = logging.FileHandler(log_file)
+file_handler.setFormatter(formatter)
+
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
+
+logging.basicConfig(level=logging.INFO)
+LOGGER = logging.getLogger()
+LOGGER.addHandler(file_handler)
+LOGGER.addHandler(console_handler)
+
 class BaseModel(Model):
     """ Set up database """
     class Meta:
@@ -28,9 +44,6 @@ class Customer(BaseModel):
     email_address = CharField()
     status = BooleanField()
     credit_limit = DecimalField()
-
-logging.basicConfig(level=logging.INFO)
-LOGGER = logging.getLogger(__name__)
 
 def add_customer(customer_id, first_name, last_name, home_address, phone_number,
                  email_address, status, credit_limit):
