@@ -1,6 +1,6 @@
 """ Operations file to interact with Customer database """
 import logging
-from peewee import IntegrityError
+from peewee import IntegrityError, DoesNotExist
 from playhouse.shortcuts import model_to_dict
 from customer_model import *
 
@@ -47,8 +47,9 @@ def update_customer_credit(customer_id, credit_limit):
             customer.credit_limit = credit_limit
             customer.save()
             logger.info('Customer credit limit modified to: {}'.format(credit_limit))
-    except ValueError:
+    except DoesNotExist:
         print('Customer does not exist')
+        raise DoesNotExist
 
 
 def count_active_customers():

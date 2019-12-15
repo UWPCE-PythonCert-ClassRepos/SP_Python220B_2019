@@ -1,7 +1,6 @@
 """ Operations file to interact with Customer database """
 import logging
-import traceback
-from peewee import IntegrityError
+from peewee import IntegrityError, DoesNotExist
 from customer_model import *
 
 
@@ -18,7 +17,7 @@ def add_customer(**kwargs):
     except IntegrityError as e:
         logger.info('Error adding customer')
         logger.info(e)
-        raise IntegrityError      
+        raise IntegrityError
 
 
 def search_customer(customer_id):
@@ -42,8 +41,9 @@ def update_customer_credit(customer_id, credit_limit):
             customer.credit_limit = credit_limit
             customer.save()
             logger.info('Customer credit limit modified to: {}'.format(credit_limit))
-    except ValueError:
+    except DoesNotExist:
         print('Customer does not exist')
+        raise DoesNotExist
 
 
 def list_active_customers():
