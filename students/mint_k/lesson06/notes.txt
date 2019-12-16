@@ -1,0 +1,33 @@
+Notes for approach
+
+1. Started with refractoring codes. year_count_func and find_ao
+    a) Time took to run the code after refractoring 0:00:06.341412
+
+2. Doesnt seem necessary to read the csv file twice for year count and ao.
+    a) changing the code to not read twice reduce time to: 0:00:04.417269
+
+3. No need to create new list: lrow = list(row)
+    a) deleting that line reduce time to 0:00:03.949888
+
+4. Not using data from row[0] at new_ones.append(row[5], row[0])).
+    b) deleting row[0]: 0:00:03.532060
+
+
+
+5. Running cProfile results that append is being called more than 1 million.
+    0:00:03.720624
+    1101184 function calls (1101167 primitive calls) in 3.739 seconds
+
+    Ordered by: standard name
+
+     ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+
+     1100013    0.106    0.000    0.106    0.000 {method 'append' of 'list' objects}
+
+6. Noticed that append is causing lots of load time.
+    a) instead of creating a list to check through again, using dict and matching key to add year count.
+    b) Since just need to get the year, using last 4 indices (row[5][-4:])
+    1182 function calls (1165 primitive calls) in 2.486 seconds
+
+
+

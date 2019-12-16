@@ -1,0 +1,6 @@
+The poor_perf.py execution took approximately 5.5 seconds, while the 
+improved good_perf.py too about a third of the time: 2.12 seconds.
+Changes included:
+    - Removal of multiple for loops
+    - Removal of main() function
+    - 

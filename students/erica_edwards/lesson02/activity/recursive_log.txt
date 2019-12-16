@@ -1,0 +1,38 @@
+What’s wrong with the logic?
+If the value of n is not a power of 2. The program will never reach the value of two and will continue to divide by two.
+Why doesn’t the function stop calling itself?
+The function does not calling itself because there is no catch for number that are not powers of 2.
+What’s happening to the value of n?
+The value of n is decreasing by half each time the function runs. With a number that is not a power of two this will continue because the recursion is not stopped with a check for false.
+
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(8)my_fun()
+-> def my_fun(n):
+(Pdb) s
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) s
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(11)my_fun()
+-> return my_fun(n / 2)
+(Pdb) b 9
+Breakpoint 1 at c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py:9
+(Pdb) ll
+  8     def my_fun(n):
+  9 B       if n == 2:
+ 10             return True
+ 11  ->     return my_fun(n / 2)
+(Pdb) c
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+3.75
+(Pdb) c
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+1.875
+(Pdb) c
+> c:\users\erica\desktop\python220\sp_python220b_2019\students\erica_edwards\lesson02\activity\recursive.py(9)my_fun()
+-> if n == 2:
+(Pdb) pp n
+0.9375
+(Pdb
