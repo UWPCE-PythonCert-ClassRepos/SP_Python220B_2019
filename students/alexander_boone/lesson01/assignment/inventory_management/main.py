@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 main.py launches the user interface for the inventory management system.
 """
@@ -52,11 +53,12 @@ def addnew_item():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = (electric_appliances_class.ElectricAppliances(
-                item_code, item_description, item_price,
-                item_rental_price,
-                item_brand,
-                item_voltage)
+            new_item = (electric_appliances_class.ElectricAppliance
+                        (item_code, item_description, item_price,
+                         item_rental_price,
+                         item_brand,
+                         item_voltage
+                         )
                         )
         else:
             new_item = inventory_class.Inventory(item_code, item_description,
@@ -71,7 +73,7 @@ def item_info():
     if item_code in FULL_INVENTORY:
         print_dict = FULL_INVENTORY[item_code]
         for key, value in print_dict.items():
-            print("{}:{}".format(key, value))
+            print("{}: {}".format(key, value))
     else:
         print("Item not found in inventory")
 
@@ -86,4 +88,4 @@ if __name__ == '__main__':
     while True:
         print(FULL_INVENTORY)
         main_menu()()
-        input("Press Enter to continue...........")
+        input("Press Enter to continue...")

@@ -5,7 +5,7 @@ This module contains a class for electric appliances.
 from inventory_management import inventory_class as inv
 
 
-class ElectricAppliances(inv.Inventory):
+class ElectricAppliance(inv.Inventory):
     """Contains class methods and attributes for electric appliances."""
     def __init__(self, item_code, description, market_price,
                  rental_price, brand, voltage):
