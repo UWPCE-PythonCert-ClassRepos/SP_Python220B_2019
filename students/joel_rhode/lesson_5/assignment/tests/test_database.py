@@ -15,7 +15,7 @@ from tests.test_files.expected_lists import (customer_list, product_list, rental
 
 
 TEST_DIRECTORY = 'tests/test_files'
-TEST_DATABASE = 'test'
+TEST_DATABASE = 'test3'
 
 
 class DatabaseUnitTests(TestCase):
@@ -115,5 +115,5 @@ class DatabaseSystemTests(TestCase):
                                                   'test_customers.csv', 'test_rentals.csv')
         self.assertEqual(result_count, (7, 5, 8))
         self.assertEqual(result_errors, (0, 2, 1))
-        self.assertDictEqual(show_rentals('F-25'), rental_customers_dict)
-        self.assertDictEqual(show_available_products(), available_products_dict)
+        self.assertDictEqual(show_rentals('F-25', TEST_DATABASE), rental_customers_dict)
+        self.assertDictEqual(show_available_products(TEST_DATABASE), available_products_dict)
