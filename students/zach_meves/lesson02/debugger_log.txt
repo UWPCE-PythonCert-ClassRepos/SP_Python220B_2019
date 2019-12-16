@@ -1,0 +1,45 @@
+ll
+b 44
+b 45
+b 46
+c
+s
+ll
+n
+n
+n
+n
+n
+n
+s
+n
+l
+n
+n
+n
+pp data
+type(data)
+l
+n
+n
+s
+l
+n
+n
+pp value
+n
+n
+n
+pp rental_start
+pp rental_end
+pp value['total_days']
+n
+pp value['total_price']
+n
+n
+n
+n
+n
+n
+c
+quit
