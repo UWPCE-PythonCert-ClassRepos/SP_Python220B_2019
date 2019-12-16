@@ -7,6 +7,7 @@ import csv
 
 
 def analyze(filename):
+    """Analyze function"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -57,9 +58,11 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    """main function"""
     filename = "exercise_out.csv"
     start, end, year_count, found = analyze(filename)
     print(f'Elapsed time: {(end-start).total_seconds()} seconds')
+    print(year_count, found)
 
 
 if __name__ == "__main__":

@@ -4,14 +4,13 @@ Improved module to import and analyze data
 
 import datetime
 import csv
-import time
 
 def analyze(filename):
     """ Analyzes input file, outputs performance metrics and count data """
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
+        # new_ones = []
         found = 0
         year_count = {
             "2010": 0,
@@ -40,6 +39,6 @@ def analyze(filename):
 
 
 if __name__ == "__main__":
-    start, end, year_count, found = analyze("exercise_out.csv")
-    print(f'Elapsed time: {(end-start).total_seconds()} seconds')
-
+    strt, ending, yr_count, fnd = analyze("exercise_out.csv")
+    print(f'Elapsed time: {(ending-strt).total_seconds()} seconds')
+    print(yr_count, fnd)

@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 def read_csv(file_name):
+    """ Read CSV file and output values """
     row_list = []
     try:
         with open(file_name) as file:
@@ -23,35 +24,36 @@ def read_csv(file_name):
 
 t1 = read_csv('exercise.csv')
 
-def gen_random_date(prop,start='1/1/2010',end = '1/1/2019',format = '%m/%d/%Y'):
-    stime = time.mktime(time.strptime(start, format))
-    etime = time.mktime(time.strptime(end, format))
+def gen_random_date(prop, start='1/1/2010', end='1/1/2019', dt_format='%m/%d/%Y'):
+    """ Generate random date given input start and end dates and format """
+    stime = time.mktime(time.strptime(start, dt_format))
+    etime = time.mktime(time.strptime(end, dt_format))
     ptime = stime + prop * (etime - stime)
-    return time.strftime(format, time.localtime(ptime))
+    return time.strftime(dt_format, time.localtime(ptime))
 
 def gen_ao():
-    if random.random()>0.5:
+    """ Generate ao variable """
+    if random.random() > 0.5:
         return 'ao'
-    else:
-        return None
 
 def expand_data(data_list):
-    for i in range(len(data_list),1000000): 
-        data_list.append([uuid.uuid1(), i, i+1, i+2, i+3, gen_random_date(random.random()),gen_ao()])
+    """ Expand data to one million rows given prior format """
+    for i in range(len(data_list), 1000000):
+        data_list.append([uuid.uuid1(), i, i+1, i+2, i+3,
+                          gen_random_date(random.random()), gen_ao()])
     return data_list
 
 def write_output(output_file):
+    """ Write data to output file """
     try:
-        with open('exercise_out.csv', 'w',newline="") as csv_file:
-            writer = csv.writer(csv_file, delimiter=',',quotechar='"')
+        with open('exercise_out.csv', 'w', newline="") as csv_file:
+            writer = csv.writer(csv_file, delimiter=',', quotechar='"')
             writer.writerows(output_file)
         logging.info(f'Data written to file: {output_file}')
     except IOError:
         logging.error(f'Error exporting data')
 
-if __name__=="__main__":
+if __name__ == "__main__":
     initial_list = read_csv('exercise.csv')
     expanded = expand_data(initial_list)
     write_output(expanded)
-
-
