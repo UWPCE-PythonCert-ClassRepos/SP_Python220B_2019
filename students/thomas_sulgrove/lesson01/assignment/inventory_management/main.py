@@ -1,19 +1,18 @@
 # pylint: disable = unused-argument
 # pylint: disable-msg=too-many-arguments
-
+# pylint: disable-msg=too-many-function-args
 """The main course"""
 import sys
-import market_prices
-import inventory_class
-import furniture_class
-import electric_appliances_class
+from inventory_management.electric_appliances_class import ElectricAppliances
+from inventory_management.furniture_class import Furniture
+from inventory_management.inventory_class import Inventory
+from inventory_management.market_prices import get_latest_price
+
 
 FULL_INVENTORY = {}
 def main_menu(user_prompt=None):
     """
-    String of the docs
-    :param user_prompt:
-    :return:
+    the main menu for the user to interact with
     """
     valid_prompts = {"1": add_new_item,
                      "2": item_info,
@@ -49,13 +48,13 @@ def add_new_item():
     item_rental_price = input("Enter item rental price: ")
 
     # Get price from the market prices module
-    item_price = market_prices.get_latest_price(item_code)
+    item_price = get_latest_price(item_code)
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.Furniture(item_code, item_description,
+        new_item = Furniture(item_code, item_description,
                                              item_price, item_rental_price,
                                              item_material, item_size)
     else:
@@ -63,21 +62,19 @@ def add_new_item():
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = electric_appliances_class.ElectricAppliances(item_code, item_description,
+            new_item = ElectricAppliances(item_code, item_description,
                                                                     item_price, item_rental_price,
                                                                     item_brand, item_voltage)
         else:
-            new_item = inventory_class.Inventory(item_code, item_description,
+            new_item = Inventory(item_code, item_description,
                                                  item_price, item_rental_price)
 
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
-
 def item_info():
     """
     get info about an item
-    :return:
     """
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
@@ -91,7 +88,6 @@ def item_info():
 def exit_program():
     """
     exits program
-    :return:
     """
     sys.exit()
 

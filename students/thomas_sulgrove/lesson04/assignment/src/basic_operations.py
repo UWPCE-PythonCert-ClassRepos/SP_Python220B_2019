@@ -8,6 +8,7 @@ from cust_schema import Customer
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
+
 # pylint: disable=too-many-arguments
 def add_customer(customer_id, first_name, last_name, home_address,
                  phone_number, email, status, credit_limit):
@@ -30,6 +31,7 @@ def add_customer(customer_id, first_name, last_name, home_address,
     except pw.IntegrityError:
         LOGGER.info('id: % already exists', customer_id)
 
+
 def search_customer(customer_id):
     """
     Return a dict object with first_name, last_name, email address, phone number, or empty if DNE
@@ -45,6 +47,7 @@ def search_customer(customer_id):
         LOGGER.warning('%d not found', customer_id)
         return {}
 
+
 def delete_customer(customer_id):
     """
     Delete a customer from the DB
@@ -56,6 +59,7 @@ def delete_customer(customer_id):
     except:
         LOGGER.info('%d not found', customer_id)
         raise
+
 
 def update_customer(customer_id, credit_limit):
     """
@@ -72,6 +76,7 @@ def update_customer(customer_id, credit_limit):
     except pw.DoesNotExist:
         LOGGER.info('credit limit unsuccessful for id %d', customer_id)
         raise
+
 
 def list_active_customers():
     """

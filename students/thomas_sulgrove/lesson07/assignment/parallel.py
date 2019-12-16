@@ -1,21 +1,18 @@
-""""
-must use 127.0.0.1 on windows
-pip install pymongo
+"""
+parallel process to compare with linear
 """
 
 import csv
 import logging
 import json
-from pymongo import MongoClient
-import os.path
 from os import path
+from multiprocessing import Pool
+from pymongo import MongoClient
 
 # Set up the logging
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
-LOGGER.info("database.py")
-LOGGER.info("loger active")
-
+LOGGER.info("logger active")
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -48,18 +45,18 @@ def import_csv(file_path):
     data = []
     err_count = 0
     if path.exists(file_path):
-        with open(file_path) as csvFile:
-            csv_reader = csv.DictReader(csvFile)
+        with open(file_path) as csv_file:
+            csv_reader = csv.DictReader(csv_file)
             for row in csv_reader:
                 try:
                     data.append(json.loads(json.dumps(row)))
-                except:
+                except AttributeError:
                     LOGGER.info("inserted file has missing values")
                     err_count += 1
 
-        return {'data': data, 'errors': err_count}
+            return {'data': data, 'errors': err_count}
     else:
-        LOGGER.info("file DNE! path: {}".format(file_path))
+        LOGGER.info("file DNE! path: %s", file_path)
         return {'data': [], 'errors': 0}
 
 
@@ -75,10 +72,20 @@ def insert_into_table(table_name, data):
     for dictionary in data:
         try:
             table.insert_one(dictionary)
-        except:
+        except MongoClient.error.OperationFailure:
             err_count += 1
-            LOGGER.info("error when inserting: {}".format(dictionary))
+            LOGGER.info("error when inserting: %s", dictionary)
     return err_count
+
+
+def async_import(directory_name, file_name, table_name):
+    """imports the files"""
+    errors = 0
+    file_import = import_csv(directory_name + file_name)
+    errors += file_import['errors']
+    errors += insert_into_table(table_name, file_import['data'])
+    records_processed = len(file_import['data'])
+    return records_processed, errors
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -87,49 +94,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
      and creates and populates a new MongoDB database with these data.
      It returns 2 tuples: the first with a record count of the number of"""
 
-    #todo rebuild for async
-    mongo = MongoDBConnection()
-    with mongo:
-        database = mongo.connection.myDB
-
-    import multiprocessing
-    import os
-    import time
-
-    def func():
-        print
-        "hello from process %s" % os.getpid()
-        time.sleep(1)
-
-    proc = multiprocessing.Process(target=func, args=())
-    proc.start()
-    proc = multiprocessing.Process(target=func, args=())
-    proc.start()
-
-    from multiprocessing import Pool, cpu_count
-
-    with Pool(cpu_count()) as p:
-        inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        results = p.map(main, inputs)
-
-
-    product_err = 0
-    import_product = import_csv(directory_name + product_file)
-    product_err += import_product['errors']
-    product_err += insert_into_table('product', import_product['data'])
-
-    customer_err = 0
-    import_customer = import_csv(directory_name + customer_file)
-    customer_err += import_customer['errors']
-    customer_err += insert_into_table('customer', import_customer['data'])
-
-    rental_err = 0
-    import_rentals = import_csv(directory_name + rentals_file)
-    rental_err += import_rentals['errors']
-    rental_err += insert_into_table('rentals', import_rentals['data'])
-
-    return ((len(import_product['data']), len(import_customer['data']), len(import_rentals['data'])),
-            (product_err, customer_err, rental_err))
+    with Pool(processes=3) as pool:
+        r_1 = pool.apply_async(async_import, (directory_name, product_file, 'product',))
+        r_2 = pool.apply_async(async_import, (directory_name, customer_file, 'customer',))
+        r_3 = pool.apply_async(async_import, (directory_name, rentals_file, 'rentals',))
+        product_results = r_1.get()
+        customer_results = r_2.get()
+        rental_results = r_3.get()
+    return ((product_results[0], customer_results[0], rental_results[0]),
+            (product_results[1], customer_results[1], rental_results[1]))
 
 
 def show_available_products():
@@ -151,11 +124,13 @@ def show_rentals(product_id):
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.myDB
-    #todo build with async and a wait at the end before merging
+
     rentals = database.rentals.find(filter={"product_id": product_id},
                                     projection={'_id': False})
 
-    customers = database.customer.find(filter={'user_id': {'$in': [rental["customer_id"] for rental in rentals]}},
+    customers = database.customer.find(filter={'user_id':
+                                                   {'$in': [rental["customer_id"]
+                                                            for rental in rentals]}},
                                        projection={'_id': False})
 
     return {customer.pop('user_id'): customer for customer in customers}

@@ -1,26 +1,28 @@
 # Furniture class
 # pylint: disable=too-few-public-methods
+# pylint: disable=too-many-arguments
 """
-docstring
+Everything to do with dealing with furniture
 """
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 
 class Furniture(Inventory):
     """
-    docstring
+    The furniture class to end all furniture classes
     """
 
-    def __init__(self, material, size, **kwargs):
+    def __init__(self, product_code, description, market_price,
+                 rental_price, material, size):
         # Creates common instance variables from the parent class
-        Inventory.__init__(self, **kwargs)
+        Inventory.__init__(self, product_code, description, market_price,
+                           rental_price)
         self.material = material
         self.size = size
 
     def return_as_dictionary(self):
         """
-        Does a thing
-        :return:
+        Returns furniture data as a dictionary
         """
         furniture_dict = {'product_code': self.product_code,
                           'description': self.description,

@@ -1,4 +1,4 @@
-"""returns martket price"""
+"""returns market price"""
 # pylint: disable = unused-argument
 def get_latest_price(item_code):
     """returns price"""

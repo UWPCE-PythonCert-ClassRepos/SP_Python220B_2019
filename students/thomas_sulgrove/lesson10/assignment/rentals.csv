@@ -1,0 +1,2 @@
+rental_id,product_id,customer_id,amount,time,price,total
+rnt001,prd001,user001,1,7,10,70

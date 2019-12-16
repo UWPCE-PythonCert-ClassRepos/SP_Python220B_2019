@@ -4,8 +4,7 @@
 import sys
 
 sys.path.append("..\\src")
-#sys.path.append('C:\\Users\\tsulgrov\\PycharmProjects\\SP_Python220B_2019\\students\\'
-#                'thomas_sulgrove\\Lesson03\\assignment\\src')
+
 # pylint: enable=wrong-import-position
 
 # pylint: disable=import-error
@@ -85,4 +84,3 @@ class TestBasicOps(TestCase):
 
         delete_customer(1)
         self.assertEqual(search_customer(1), dict())
-

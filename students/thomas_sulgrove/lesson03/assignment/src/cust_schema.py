@@ -2,9 +2,10 @@
 
 import peewee as pw
 
-database = pw.SqliteDatabase('customers.db')
-database.connect()
-database.execute_sql('PRAGMA foreign_keys = ON')
+DATABASE = pw.SqliteDatabase('customers.db')
+DATABASE.connect()
+DATABASE.execute_sql('PRAGMA foreign_keys = ON')
+
 
 # pylint: disable=too-few-public-methods
 class BaseModel(pw.Model):
@@ -12,7 +13,7 @@ class BaseModel(pw.Model):
 
     class Meta:
         """META"""
-        database = database
+        database = DATABASE
 
 
 class Customer(BaseModel):

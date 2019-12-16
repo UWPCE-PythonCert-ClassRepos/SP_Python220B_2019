@@ -1,13 +1,13 @@
 # Inventory class
 # pylint: disable=too-few-public-methods
 """
-docstring
+Base inventory functionality
 """
 
 
 class Inventory:
     """
-    docstring
+    Base class for all other inventory
     """
 
     def __init__(self, product_code, description, market_price, rental_price):
@@ -18,8 +18,7 @@ class Inventory:
 
     def return_as_dictionary(self):
         """
-        Does a thing
-        :return:
+        Returns data about the inventory as a dictionary
         """
         inventory_dict = {'product_code': self.product_code,
                           'description': self.description,

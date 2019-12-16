@@ -1,26 +1,28 @@
 # Electric appliances class
 # pylint: disable=too-few-public-methods
+# pylint: disable=too-many-arguments
 """
-module docstring
+Everything to do with dealing with appliances
 """
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 
 class ElectricAppliances(Inventory):
     """
-    It does some stuff
+    Electric appliance class
     """
 
-    def __init__(self, brand, voltage, **kwargs):
+    def __init__(self, product_code, description,
+                 market_price, rental_price, brand, voltage):
         # Creates common instance variables from the parent class
-        Inventory.__init__(self, **kwargs)
+        Inventory.__init__(self, product_code, description, market_price,
+                           rental_price)
         self.brand = brand
         self.voltage = voltage
 
     def return_as_dictionary(self):
         """
-        Does a thing
-        :return:
+        Returns electric appliance data as a dictionary
         """
         electric_dict = {'product_code': self.product_code,
                          'description': self.description,
