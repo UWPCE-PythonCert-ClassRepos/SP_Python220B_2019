@@ -1,17 +1,19 @@
+"""Testing module to evalute the practicality and performance of HP Norton interface"""
+
 import sys
 import os
-sys.path.append(os.getcwd()+'/inventory_management')
-
 from unittest import TestCase
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
+import inventory_management.market_prices as mp
+import inventory_management.main as main
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
-import inventory_management.market_prices as mp
-import inventory_management.main as main
+
+sys.path.append(os.getcwd()+'/inventory_management')
 
 class TestInventoryClass(TestCase):
-
+    """Test the inventory class in inventory_class.py module"""
     def test_inventory(self):
         """Test that a inventory object is created"""
 
@@ -25,7 +27,7 @@ class TestInventoryClass(TestCase):
         self.assertEqual(test_inv_obj, item_test.return_as_dictionary())
 
 class TestElectricAppliancesClass(TestCase):
-
+    """Test the electric_applicances_class.py module"""
     def test_electric_appliances(self):
         """Test that an electric appliance object is created"""
 
@@ -41,7 +43,7 @@ class TestElectricAppliancesClass(TestCase):
         self.assertEqual(elec_app, item_test.return_as_dictionary())
 
 class TestFurnitureClass(TestCase):
-
+    """Test the furniture_class.py module"""
     def test_furniture(self):
         """Test that a furniture object is created"""
 
@@ -57,13 +59,15 @@ class TestFurnitureClass(TestCase):
         self.assertEqual(furn_obj, item_test.return_as_dictionary())
 
 class TestMarketPrices(TestCase):
-
+    """market_prices.py has no classes and one function. checking to see
+    if the hard coded number is returned"""
     def test_get_latest_price(self):
         """Test that latest price is returned"""
         self.assertEqual(24, mp.get_latest_price(24))
 
 class TestMain(TestCase):
-
+    """Testing the interface of main.py. Menu, exit, get price, adding an item,
+    and item info"""
     def test_main_menu(self):
         """Test that the user input selects the appropriate menu option"""
 
@@ -77,6 +81,7 @@ class TestMain(TestCase):
             self.assertEqual(main.main_menu(), main.exit_program)
 
     def test_exit_program(self):
+        """exit the program properly"""
         with self.assertRaises(SystemExit):
             main.exit_program()
 
@@ -89,17 +94,19 @@ class TestMain(TestCase):
         """Test that new items of the appropriate type are added."""
 
         # Test that a new inventory object is added.
-        inv_obj_details = ['001', 'Painting', 6.0, 'n', 'n'] #not furniture and not electrical apliance
-        app_obj_details = ['002', 'Microwave', 5.0, 'n', 'y', 'GE', 3.2] #not furniture and yes electrical
-        furn_obj_details = ['003', 'Desk', 15.0, 'y', 'Mahogany', 'L'] #yes furniture and not electrical
-
+        inv_obj_details = ['001', 'Painting', 6.0, 'n', 'n']
+        #not furniture and not electrical apliance
+        app_obj_details = ['002', 'Microwave', 5.0, 'n', 'y', 'GE', 3.2]
+        #not furniture and yes electrical
+        furn_obj_details = ['003', 'Desk', 15.0, 'y', 'Mahogany', 'L']
+        #yes furniture and not electrical
         expected_dict = {
-        '001': {'product_code': '001', 'description': 'Painting',
-                'market_price': 180.0, 'rental_price': 6.0},
-        '002': {'product_code': '002', 'description': 'Microwave', 'market_price': 322.0,
-                'rental_price': 5.0, 'brand': 'GE', 'voltage': 3.2},
-        '003': {'product_code': '003', 'description': 'Desk', 'market_price': 1030.0,
-                'rental_price': 15.0, 'material': 'Mahogany', 'size': 'L'}
+            '001': {'product_code': '001', 'description': 'Painting',
+                    'market_price': 180.0, 'rental_price': 6.0},
+            '002': {'product_code': '002', 'description': 'Microwave', 'market_price': 322.0,
+                    'rental_price': 5.0, 'brand': 'GE', 'voltage': 3.2},
+            '003': {'product_code': '003', 'description': 'Desk', 'market_price': 1030.0,
+                    'rental_price': 15.0, 'material': 'Mahogany', 'size': 'L'}
         }
 
         # Test that an inventory object is added to the full inventory.
@@ -107,12 +114,10 @@ class TestMain(TestCase):
             with patch('builtins.input', side_effect=inv_obj_details):
                 main.FULLINVENTORY = {}
                 #res_string = main.add_new_item()
-                self.assertEqual(main.add_new_item(), "New inventory item added")
+                self.assertEqual(main.add_new_item(), print("New inventory item added"))
                 test_inv = {}
                 test_inv.setdefault('001', expected_dict.get('001'))
                 self.assertEqual(main.FULLINVENTORY, test_inv)
-            
-
 
         # Test that a new electric appliance object is added to the full inventory.
         with patch('market_prices.get_latest_price', return_value=322.0):

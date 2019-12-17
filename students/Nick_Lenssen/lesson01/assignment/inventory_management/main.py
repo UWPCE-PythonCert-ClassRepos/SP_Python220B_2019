@@ -61,7 +61,7 @@ def add_new_item():
             new_item = inventory_class.Inventory(item_code, item_description,
                                                  item_price, item_rental_price)
     FULLINVENTORY[item_code] = new_item.return_as_dictionary()
-    print  ("New inventory item added")
+    print("New inventory item added")
 
 
 def item_info():
