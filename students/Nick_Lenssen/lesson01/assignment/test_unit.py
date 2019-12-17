@@ -4,13 +4,14 @@ import sys
 import os
 from unittest import TestCase
 from unittest.mock import patch
+sys.path.append(os.getcwd()+'/inventory_management')
 import inventory_management.market_prices as mp
 import inventory_management.main as main
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 
-sys.path.append(os.getcwd()+'/inventory_management')
+
 
 class TestInventoryClass(TestCase):
     """Test the inventory class in inventory_class.py module"""
