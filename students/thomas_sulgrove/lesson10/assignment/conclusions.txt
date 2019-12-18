@@ -1,0 +1,16 @@
+INFO:__main__:Changing process size to 10000 records
+INFO:__main__:0.121 seconds for import_csv to run
+INFO:__main__:4.178 seconds for insert_into_table to run
+INFO:__main__:0.206 seconds for import_csv to run
+INFO:__main__:4.081 seconds for insert_into_table to run
+INFO:__main__:0.161 seconds for import_csv to run
+INFO:__main__:4.094 seconds for insert_into_table to run
+INFO:__main__:12.869 seconds for import_data to run
+INFO:__main__:0.017 seconds for show_available_products to run
+INFO:__main__:0.026 seconds for show_rentals to run
+
+
+Looking at the last run, which had 10k records, the insert_into_table took longest to run.
+This function calls import_csv, and insert_into_table, the latter taking a considerable amount of time.
+The import function is definitely the bottleneck, and probably due to me inserting one row at a time to check for errors on each row.
+Better solution would be to batch the inserts and figure out a way to count errors from there.

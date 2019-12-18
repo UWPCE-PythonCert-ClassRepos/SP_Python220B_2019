@@ -1,5 +1,5 @@
 """tests for basic operations """
-# pylint: disable=unnecessary-comprehension
+
 from unittest import TestCase
 import csv
 import os
@@ -41,13 +41,19 @@ def build_test_csvs():
                               'amount', 'time', 'price', 'total'])
         file_writer.writerow(['rnt001', 'prd001', 'user001', 1, 7, 10, 70])
 
+    with open('missing.csv', 'w') as csv_file:
+        file_writer = csv.writer(csv_file, delimiter=',')
+        file_writer.writerow(['rental_id', 'product_id', 'customer_id',
+                              'amount', 'time', 'price', 'total'])
+        file_writer.writerow([''])
+
 
 def delete_test_csv():
     """Removes the test csvs"""
     os.remove('customers.csv')
     os.remove('products.csv')
     os.remove("rentals.csv")
-
+    os.remove("missing.csv")
 
 class TestBasicOps(TestCase):
     """Class for housing the tests"""
@@ -82,7 +88,12 @@ class TestBasicOps(TestCase):
         self.assertEqual(test['data'][0]['total'], '70')
         self.assertEqual(test['errors'], 0)
 
+        test = import_csv('missing.csv')
+        self.assertEqual(test, {'data': [], 'errors': 1})
         delete_test_csv()
+
+        test = import_csv("does_not_exist.csv")
+        self.assertEqual(test, {'data': [], 'errors': 0})
 
     def test_insert_into_table(self):
         """takes json and sticks into database"""
@@ -106,6 +117,9 @@ class TestBasicOps(TestCase):
 
         database.test.drop()
 
+        self.assertEqual(insert_into_table('test', [None]), 1)
+
+        database.test.drop()
 
     def test_import_data(self):
         """Test the import of data"""

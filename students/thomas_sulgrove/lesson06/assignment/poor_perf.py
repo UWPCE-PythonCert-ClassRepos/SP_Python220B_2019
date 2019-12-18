@@ -60,7 +60,7 @@ def analyze(filename):
 
 def main():
     """runs the function"""
-    filename = os.getcwd() + '\\data\exercise.csv'
+    filename = os.getcwd() + '\\data\\exercise.csv'
     analyze(filename)
 
 

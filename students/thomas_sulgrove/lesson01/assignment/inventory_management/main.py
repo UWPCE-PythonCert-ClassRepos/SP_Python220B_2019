@@ -3,13 +3,14 @@
 # pylint: disable-msg=too-many-function-args
 """The main course"""
 import sys
-from inventory_management.electric_appliances_class import ElectricAppliances
-from inventory_management.furniture_class import Furniture
-from inventory_management.inventory_class import Inventory
-from inventory_management.market_prices import get_latest_price
-
+from electric_appliances_class import ElectricAppliances
+from furniture_class import Furniture
+from inventory_class import Inventory
+from market_prices import get_latest_price
 
 FULL_INVENTORY = {}
+
+
 def main_menu(user_prompt=None):
     """
     the main menu for the user to interact with
@@ -55,22 +56,23 @@ def add_new_item():
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
         new_item = Furniture(item_code, item_description,
-                                             item_price, item_rental_price,
-                                             item_material, item_size)
+                             item_price, item_rental_price,
+                             item_material, item_size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
             new_item = ElectricAppliances(item_code, item_description,
-                                                                    item_price, item_rental_price,
-                                                                    item_brand, item_voltage)
+                                          item_price, item_rental_price,
+                                          item_brand, item_voltage)
         else:
             new_item = Inventory(item_code, item_description,
-                                                 item_price, item_rental_price)
+                                 item_price, item_rental_price)
 
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
+
 
 def item_info():
     """

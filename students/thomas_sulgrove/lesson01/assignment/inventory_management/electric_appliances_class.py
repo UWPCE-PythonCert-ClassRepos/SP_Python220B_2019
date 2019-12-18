@@ -4,7 +4,7 @@
 """
 Everything to do with dealing with appliances
 """
-from inventory_management.inventory_class import Inventory
+from inventory_class import Inventory
 
 
 class ElectricAppliances(Inventory):

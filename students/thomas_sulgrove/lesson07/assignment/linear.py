@@ -7,6 +7,7 @@ import logging
 import json
 from os import path
 from pymongo import MongoClient
+import pymongo
 
 # Set up the logging
 logging.basicConfig(level=logging.INFO)
@@ -48,12 +49,18 @@ def import_csv(file_path):
         with open(file_path) as csv_file:
             csv_reader = csv.DictReader(csv_file)
             for row in csv_reader:
-                try:
-                    data.append(json.loads(json.dumps(row)))
-                except AttributeError:
+                if any(row[key] in (None, "") for key in row):
                     LOGGER.info("inserted file has missing values")
                     err_count += 1
-
+                else:
+                    data.append(json.loads(json.dumps(row)))
+                    out = {}
+                    for key, val in data[0].items():
+                        try:
+                            out[key] = int(val)
+                        except ValueError:
+                            out[key] = val
+                    data = [out]
             return {'data': data, 'errors': err_count}
     else:
         LOGGER.info("file DNE! path: %s", file_path)
@@ -72,7 +79,7 @@ def insert_into_table(table_name, data):
     for dictionary in data:
         try:
             table.insert_one(dictionary)
-        except MongoClient.error.OperationFailure:
+        except (TypeError, pymongo.errors.OperationFailure):
             err_count += 1
             LOGGER.info("error when inserting: %s", dictionary)
     return err_count
@@ -111,8 +118,9 @@ def show_available_products():
     with mongo:
         database = mongo.connection.myDB
 
-    products = database.product.find({"$expr":
-                                          {"$lte": [{"$toDouble": "$quantity_available"}, 0]}})
+    products = database.product.find(
+        {"$expr": {"$gte": [{"$toDouble": "$quantity_available"}, 0]}},
+        projection={'_id': False})
     return {product.pop('product_id'): product for product in products}
 
 

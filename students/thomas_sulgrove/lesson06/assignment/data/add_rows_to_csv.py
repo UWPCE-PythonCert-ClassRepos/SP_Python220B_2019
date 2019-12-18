@@ -1,10 +1,13 @@
+"""Generate csvs for the project"""
+
 from random import randrange, randint
 from datetime import datetime, timedelta
 import uuid
 import csv
 
 def random_string():
-    if randint(0, 10) <=3:
+    """Return ao"""
+    if randint(0, 10) <= 3:
         return 'ao'
     return ''
 
@@ -19,13 +22,16 @@ def random_date(start, end):
     date_time = start + timedelta(seconds=random_second)
     return date_time.date().strftime('%m/%d/%Y')
 
-date_start = datetime.strptime('01/01/2010', '%m/%d/%Y')
-date_end = datetime.strptime('01/01/2019', '%m/%d/%Y')
+DATE_START = datetime.strptime('01/01/2010', '%m/%d/%Y')
+DATA_END = datetime.strptime('01/01/2019', '%m/%d/%Y')
 
 with open('students/thomas_sulgrove/lesson06/assignment/data/exercise.csv', 'r+') as file:
-    row_num = sum(1 for line in csv.reader(file))
-    while row_num <= 1000000:
-        new_row = ('\n{},{},{},{},{},{},{}'.format(str(uuid.uuid4()), row_num + 1, row_num + 2, row_num + 3,
-                                                   row_num + 4, str(random_date(date_start, date_end)), random_string()))
-        file.write(new_row)
-        row_num += 1
+    ROW_NUM = sum(1 for line in csv.reader(file))
+    while ROW_NUM <= 1000000:
+        NEW_ROW = ('\n{},{},{},{},{},{},{}'.format(str(uuid.uuid4()),
+                                                   ROW_NUM + 1, ROW_NUM + 2, ROW_NUM + 3,
+                                                   ROW_NUM + 4,
+                                                   str(random_date(DATE_START, DATA_END)),
+                                                   random_string()))
+        file.write(NEW_ROW)
+        ROW_NUM += 1

@@ -6,10 +6,10 @@ import os
 import os.path
 from faker import Faker
 
+
 # pylint: disable=too-many-locals
 
-
-def csv_gen(desired_row_count, cust_file_name, product_file_name, rental_file_name):
+def csv_gen(desired_row_count, product_file_name, cust_file_name, rental_file_name):
     """quickly making this a function so can be called elsewhere"""
     desired_row_count = desired_row_count - 1  # b/c python
 
@@ -43,13 +43,14 @@ def csv_gen(desired_row_count, cust_file_name, product_file_name, rental_file_na
     with open(cust_file_name, 'w+') as file:
         row_num = sum(1 for line in csv.reader(file))
         while row_num <= desired_row_count:
+
             if row_num == 0:
                 file.write('user_id,name,address,phone,email')
-                continue
             new_row = (
                 '\nuser{},{},{},{},{}'.format(str(row_num).zfill(len(str(desired_row_count))),
                                               fake.name(), fake.address().replace("\n", " "),
                                               fake.phone_number(), fake.email()))
+
             file.write(new_row)
             row_num += 1
 
@@ -61,7 +62,6 @@ def csv_gen(desired_row_count, cust_file_name, product_file_name, rental_file_na
         while row_num <= desired_row_count:
             if row_num == 0:
                 file.write('product_id,description,product_type,quantity_available')
-                continue
             furniture_name = descriptions[randint(0, len(descriptions) - 1)] + ' ' + \
                              material[randint(0, len(material) - 1)] + ' ' + \
                              furniture[randint(0, len(furniture) - 1)]
@@ -78,7 +78,6 @@ def csv_gen(desired_row_count, cust_file_name, product_file_name, rental_file_na
         while row_num <= desired_row_count:
             if row_num == 0:
                 file.write('rental_id,product_id,customer_id,amount,time,price,total')
-                continue
             amount = randint(0, 100)
             time = randint(0, 365)
             price = randint(0, 500)

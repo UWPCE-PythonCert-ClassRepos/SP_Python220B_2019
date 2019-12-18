@@ -30,10 +30,11 @@ def single_customer(invoice_file, customer_name):
                         item_monthly_price=row[2])
     return rentals
 
-
+'''
 if __name__ == "__main__":
     add_furniture("rented_items.csv", "Elisa Miles", "LR04", "Leather Sofa", 25)
     add_furniture("rented_items.csv", "Edward Data", "KT78", "Kitchen Table", 10)
     add_furniture("rented_items.csv", "Alex Gonzales", "BR02", "Queen Mattress", 17)
     NEW_INVOICE = single_customer("rented_items.csv", "Susan Wong")
     NEW_INVOICE("data.csv")
+'''

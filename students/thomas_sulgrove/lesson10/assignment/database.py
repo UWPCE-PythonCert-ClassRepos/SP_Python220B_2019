@@ -12,10 +12,11 @@ from pymongo import MongoClient
 from csv_gen import csv_gen
 
 # Engage the logging
-os.remove('results.txt')
+if os.path.isfile('timings.txt'):
+    os.remove('timings.txt')
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
-LOGGER.addHandler(logging.FileHandler('results.txt'))
+LOGGER.addHandler(logging.FileHandler('timings.txt'))
 
 
 class MongoDBConnection():
@@ -157,7 +158,7 @@ def show_rentals(product_id):
 
 if __name__ == '__main__':
     WD = os.getcwd() + '\\'
-    for i in range(10000, 110000, 10000):
+    for i in range(1000, 11000, 1000):
         LOGGER.info('Changing process size to %s records', i)
         drop_collections()
         csv_gen(i, 'products.csv', 'customers.csv', 'rentals.csv')

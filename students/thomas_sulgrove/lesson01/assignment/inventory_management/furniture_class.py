@@ -4,7 +4,7 @@
 """
 Everything to do with dealing with furniture
 """
-from inventory_management.inventory_class import Inventory
+from inventory_class import Inventory
 
 
 class Furniture(Inventory):

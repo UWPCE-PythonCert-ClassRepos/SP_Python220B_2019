@@ -9,16 +9,17 @@ sys.path.append("..\\src")
 
 # pylint: disable=import-error
 from unittest import TestCase
+import peewee as pw
 from basic_operations import add_customer, search_customer, \
     delete_customer, update_customer, list_active_customers
-from cust_schema import Customer, database
+from cust_schema import Customer, DATABASE
 
 
 def database_setup():
     """function for setting up clean table each time"""
-    database.drop_tables([Customer])
-    database.create_tables([Customer])
-    database.close()
+    DATABASE.drop_tables([Customer])
+    DATABASE.create_tables([Customer])
+    DATABASE.close()
 
 
 class TestBasicOps(TestCase):
@@ -39,6 +40,9 @@ class TestBasicOps(TestCase):
         self.assertEqual(test.customer_email, 'Guy_Dudeman01@gmail.com.com')
         self.assertEqual(test.customer_status, True)
         self.assertEqual(test.customer_credit_limit, 1000000)
+
+        with self.assertRaises(pw.IntegrityError):
+            add_customer(1, 'Guy', 'Dudeman', '1', '8', 'G', True, 1)
 
     def test_search_customer(self):
         """Test the ability to search for a customer"""
@@ -66,6 +70,9 @@ class TestBasicOps(TestCase):
         update_customer(1, 1000)
         self.assertAlmostEqual(Customer.get(Customer.customer_id == 1).customer_credit_limit, 1000)
 
+        with self.assertRaises(pw.DoesNotExist):
+            update_customer(0, 1000)
+
     def test_list_active_customers(self):
         """Test the ability to test active customer"""
         database_setup()
@@ -84,3 +91,6 @@ class TestBasicOps(TestCase):
 
         delete_customer(1)
         self.assertEqual(search_customer(1), dict())
+
+        with self.assertRaises(pw.DoesNotExist):
+            delete_customer(1)

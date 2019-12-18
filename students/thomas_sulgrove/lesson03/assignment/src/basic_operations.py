@@ -30,7 +30,7 @@ def add_customer(customer_id, first_name, last_name, home_address,
         LOGGER.info('successfully added: %s', str(first_name + ' ' + last_name))
     except pw.IntegrityError:
         LOGGER.info('id: % already exists', customer_id)
-
+        raise
 
 def search_customer(customer_id):
     """
@@ -56,7 +56,7 @@ def delete_customer(customer_id):
     try:
         Customer.get(Customer.customer_id == customer_id).delete_instance()
         LOGGER.info('% successfully deleted', customer_id)
-    except:
+    except pw.DoesNotExist:
         LOGGER.info('%d not found', customer_id)
         raise
 

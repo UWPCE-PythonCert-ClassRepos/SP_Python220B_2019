@@ -4,25 +4,25 @@
 import sys
 
 sys.path.append("..\\src")
-# sys.path.append('C:\\Users\\tsulgrov\\PycharmProjects\\SP_Python220B_2019\\students\\'
-#                'thomas_sulgrove\\Lesson03\\assignment\\src')
+
 # pylint: enable=wrong-import-position
 
 # pylint: disable=import-error
 import random
 from unittest import TestCase
+import peewee as pw
 from basic_operations import add_customer, search_customer, \
     delete_customer, update_customer, list_active_customers
-from cust_schema import Customer, database
+from cust_schema import Customer, DATABASE
 
 random.randint(0, 10)
 
 
 def database_setup():
     """function for setting up clean table each time"""
-    database.drop_tables([Customer])
-    database.create_tables([Customer])
-    database.close()
+    DATABASE.drop_tables([Customer])
+    DATABASE.create_tables([Customer])
+    DATABASE.close()
 
 
 TEST_CUSTOMERS = [{'id': 1, 'first_name': 'Guy', 'last_name': 'Dudeman',
@@ -73,6 +73,11 @@ class TestBasicOps(TestCase):
             self.assertEqual(test.customer_status, customer['status'])
             self.assertEqual(test.customer_credit_limit, customer['credit_limit'])
 
+            with self.assertRaises(pw.IntegrityError):
+                add_customer(customer['id'], customer['first_name'], customer['last_name'],
+                             customer['address'], customer['phone_number'], customer['email'],
+                             customer['status'], customer['credit_limit'])
+
     def test_search_customer(self):
         """Test the ability to search for a customer"""
         database_setup()
@@ -108,6 +113,8 @@ class TestBasicOps(TestCase):
 
         self.assertAlmostEqual(Customer.get(Customer.customer_id
                                             == cust_id).customer_credit_limit, test_value)
+        with self.assertRaises(pw.DoesNotExist):
+            update_customer(0, 1000)
 
     def test_list_active_customers(self):
         """Test the ability to test active customer"""
@@ -140,3 +147,5 @@ class TestBasicOps(TestCase):
             self.assertNotEqual(search_customer(customer_id), dict())
             delete_customer(customer_id)
             self.assertEqual(search_customer(customer_id), dict())
+            with self.assertRaises(pw.DoesNotExist):
+                delete_customer(customer_id)
