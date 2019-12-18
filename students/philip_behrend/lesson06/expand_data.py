@@ -18,8 +18,9 @@ def read_csv(file_name):
             for row in csv_reader:
                 row_list.append(row)
         LOGGER.info('Data successfully imported')
-    except IOError as e:
+    except FileNotFoundError as e:
         LOGGER.error(f'Error importing file. Exception {e}')
+        raise FileNotFoundError
     return row_list
 
 t1 = read_csv('exercise.csv')
@@ -43,17 +44,17 @@ def expand_data(data_list):
                           gen_random_date(random.random()), gen_ao()])
     return data_list
 
-def write_output(output_file):
+def write_output(output_data, outfile):
     """ Write data to output file """
     try:
-        with open('exercise_out.csv', 'w', newline="") as csv_file:
+        with open(outfile, 'w', newline="") as csv_file:
             writer = csv.writer(csv_file, delimiter=',', quotechar='"')
-            writer.writerows(output_file)
-        logging.info(f'Data written to file: {output_file}')
+            writer.writerows(output_data)
+        logging.info(f'Data written to file: {outfile}')
     except IOError:
         logging.error(f'Error exporting data')
 
 if __name__ == "__main__":
     initial_list = read_csv('exercise.csv')
     expanded = expand_data(initial_list)
-    write_output(expanded)
+    write_output(expanded, 'exercise_out.csv')
