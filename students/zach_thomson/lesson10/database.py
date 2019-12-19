@@ -9,23 +9,13 @@ import time
 from pymongo import MongoClient
 
 #logging setup
-logging.basicConfig(level=logging.INFO)
-LOGGER = logging.getLogger(__name__)
-
-#formatting and file name
-LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-FORMATTER = logging.Formatter(LOG_FORMAT)
-LOG_FILE = 'db.log'
-
-#handling setup
-FILE_HANDLER = logging.FileHandler(LOG_FILE)
-FILE_HANDLER.setFormatter(FORMATTER)
-
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setFormatter(FORMATTER)
-
-LOGGER.addHandler(FILE_HANDLER)
-LOGGER.addHandler(CONSOLE_HANDLER)
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+formatter = logging.Formatter(log_format)
+file_handler = logging.FileHandler('timings.txt')
+file_handler.setFormatter(formatter)
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+logger.setLevel(logging.INFO)
 
 def timer(func):
     '''timer decorator function'''
@@ -33,7 +23,7 @@ def timer(func):
         start_time = time.time()
         result = func(*args, **kwargs)
         time_elapsed = time.time() - start_time
-        print('%s took %.3f seconds to run' % (func.__name__, time_elapsed))
+        logging.info('%s took %.3f seconds to run', func.__name__, time_elapsed)
         return result
     return timed
 
@@ -184,11 +174,13 @@ def clear_db():
         rentals_db.drop()
 
 if __name__ == "__main__":
-    #clear_db()
+    clear_db()
     DIR_NAME = input('Directory name: ')
     PRODUCT_FILE = input('Product file: ')
     CUSTOMER_FILE = input('Customer file: ')
     RENTAL_FILE = input('Rental file: ')
+    RECORDS_IMPORTED = input('Approx. number of records importing?: ')
+    logging.info('Approximate number of records processed: %s', RECORDS_IMPORTED)
     import_data(DIR_NAME, PRODUCT_FILE, CUSTOMER_FILE, RENTAL_FILE)
     show_available_products()
     show_rentals('prd002')
