@@ -17,10 +17,14 @@ class MongoDBConnection():
         self.host = host
         self.port = port
         self.connection = None
+        self.products = None
+        self.customers = None
+        self.rentals = None
+        self.my_db = None
 
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
-        self.my_db - self.connect.media
+        self.my_db = self.connection.media
         self.products = self.my_db["products"]
         self.customers = self.my_db["customers"]
         self.rentals = self.my_db["rentals"]
@@ -139,9 +143,8 @@ def show_available_products():
     mongo = MongoDBConnection()
     prod_dict = {}
     with mongo:
-        my_db = mongo.connection.media
         #finding products with availabilty. $gt means greater than.
-        available_prod = my_db['products'].find({'quantity_available':{"$gt":'0'}})
+        available_prod = mongo.products.find({'quantity_available':{"$gt":'0'}})
         for prod in available_prod:
             prod_dict[prod['product_id']] = {
                 'description':prod['description'],
@@ -163,11 +166,10 @@ def show_rentals(product_id):
     mongo = MongoDBConnection()
     rental_dict = {}
     with mongo:
-        my_db = mongo.connection.media
         #finding user that rented matching product id.
-        renters = my_db['rentals'].find({'product_id':product_id})
+        renters = mongo.rentals.find({'product_id':product_id})
         for renter in renters:
-            user = my_db['customers'].find_one({'user_id':renter['user_id']})
+            user = mongo.customers.find_one({'user_id':renter['user_id']})
             rental_dict[renter['user_id']] = {
                 'name':user['name'],
                 'address':user['address'],
