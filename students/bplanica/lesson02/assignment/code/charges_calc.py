@@ -10,25 +10,29 @@ import math
 
 import sys
 import logging
-LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 
-FORMATTER = logging.Formatter(LOG_FORMAT)
 
-FILE_HANDLER = logging.FileHandler(LOG_FILE)
-FILE_HANDLER.setLevel(logging.WARNING)
-FILE_HANDLER.setFormatter(FORMATTER)
+def setup_logging(level):
+    """setup file and console logging"""
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
+    debug_level = [logging.NOTSET, logging.ERROR, logging.WARNING, logging.DEBUG]
 
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
-CONSOLE_HANDLER.setFormatter(FORMATTER)
+    formatter = logging.Formatter(log_format)
 
-LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
-LOGGER.addHandler(FILE_HANDLER)
-LOGGER.addHandler(CONSOLE_HANDLER)
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.WARNING)
+    file_handler.setFormatter(formatter)
 
-DEBUG_LEVEL = [logging.NOTSET, logging.ERROR, logging.WARNING, logging.DEBUG]
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(formatter)
+
+    logger = logging.getLogger()
+    logger.setLevel(debug_level[level])
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
 
 def parse_cmd_arguments():
     """parse command string arguments"""
@@ -45,8 +49,8 @@ def load_rentals_file(filename):
         try:
             data = json.load(file)
             logging.info("Data has been sucessfully imported")
-        except Exception as exc:
-            logging.error(f"Data has not been imported; Exception: {exc}")
+        except json.decoder.JSONDecodeError as exc:
+            logging.error("JSON source file contains formatting errors; Exception: %s", exc)
             sys.exit()
     return data
 
@@ -59,41 +63,40 @@ def calculate_additional_fields(data):
             try:
                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             except ValueError:
-                logging.warning(f"{key}: rental has not initiated")
+                logging.warning("%s: rental has not initiated", key)
 
             logging.debug("Format rental end date")
             try:
                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             except ValueError:
-                logging.warning(f"{key}: rental has not been returned")
+                logging.warning("%s: rental has not been returned", key)
 
             logging.debug("Calculate total days rented")
             value['total_days'] = (rental_end - rental_start).days
             if (value['total_days']) < 0:
-                logging.warning(f"{key}: rental start date ({rental_start.strftime('%D')}) " +
-                                f"is greater than rental end date ({rental_end.strftime('%D')})")
+                logging.warning("%s: rental start date (%s) is greater than rental end date (%s)",
+                                key, rental_start.strftime('%D'), rental_end.strftime('%D'))
 
             logging.debug("Calculate total price on rental")
             value['total_price'] = value['total_days'] * value['price_per_day']
             if value['price_per_day'] < 0:
-                logging.warning(f"{key}: invalid price per day ({value['price_per_day']})")
+                logging.warning("%s: invalid price per day (%.02f)", key, value['price_per_day'])
 
             logging.debug("Take squareroot of total price")
             try:
                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
             except ValueError:
                 if value['total_price'] < 0:
-                    logging.error(f"{key}: invalid total price ({value['total_price']})" +
-                                  f", squareroot returns imaginary value")
+                    logging.error("%s: invalid total price (%.02f)", key, value['total_price'])
 
             logging.debug("Calculate cost per unit")
             try:
                 value['unit_cost'] = value['total_price'] / value['units_rented']
             except ZeroDivisionError:
-                logging.error(f"{key}: invalid units rented ({value['units_rented']})")
+                logging.error("%s: invalid units rented (%d)", key, value['units_rented'])
 
-        except Exception as exc:
-            logging.critical(f"{key}: Exception has been thrown: {exc}")
+        except ValueError as exc:
+            logging.error("An exception has occurred; Exception: %s", exc)
             sys.exit()
 
     return data
@@ -108,7 +111,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
-    LOGGER.setLevel(DEBUG_LEVEL[int(ARGS.debug)])
+    setup_logging(int(ARGS.debug))
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
