@@ -1,5 +1,7 @@
 """Module for inventory"""
 
+# pylint: disable=too-few-public-methods
+
 
 class Inventory:
     """Class for inventory"""
