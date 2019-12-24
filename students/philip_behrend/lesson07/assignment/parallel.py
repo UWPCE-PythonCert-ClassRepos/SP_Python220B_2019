@@ -1,11 +1,11 @@
 """ Database file for HP Norton furniture store """
 
 import logging
-import pandas as pd
-from pymongo import MongoClient
 from datetime import datetime
+from multiprocessing import Queue
 from threading import Thread
-from multiprocessing import Queue 
+from pymongo import MongoClient
+import pandas as pd
 
 LOGGER = logging.getLogger()
 LOGGER.setLevel(logging.INFO)
@@ -39,11 +39,6 @@ def reset_db():
     """ This module deletes all records in the database"""
     mongo = MongoDBConnection()
 
-    start_prod = 0
-    end_prod = 0
-    start_cust = 0
-    end_cust = 0
-
     with mongo:
         # Mongo database connection
         db = mongo.connection.NortonFurniture
@@ -61,12 +56,14 @@ def reset_db():
     LOGGER.info("Successfully deleted documents")
 
 def read_csv_file(filename, collect_name):
+    """ Read csv file """
     result_data = pd.read_csv(filename)
-    result_records = result_data.iloc[:, 0].count()
+    # result_records = result_data.iloc[:, 0].count()
     result_data = result_data.to_dict('records')
     return result_data
 
 def write_to_mongo(filename, collect_name):
+    """ Write to mongo """
     #init_time = datetime.now()
     try:
         input_data = read_csv_file(filename, collect_name)
@@ -99,8 +96,8 @@ def import_file(data_queue, filename, collect_no=0, sep=',', encoding='ISO-8859-
         start_ct = collection.estimated_document_count()
 
         # Insert file data from csv
-        records = write_to_mongo(filename, collection)
-    
+        write_to_mongo(filename, collection)
+
     end_ct = collection.estimated_document_count()
     end = datetime.now()
     elapsed_time = (end - start).total_seconds()
@@ -143,23 +140,22 @@ def show_rentals(product_id):
 
 
 if __name__ == '__main__':
-    t1 = import_file('products.csv')
-    out_data = Queue()
-    prod_thread = Thread(target=import_file, args=(out_data, 'products.csv',0))
-    prod_thread.start()
-    cust_thread = Thread(target=import_file, args=(out_data, 'customers.csv',1))
-    cust_thread.start()
-    rent_thread = Thread(target=import_file, args=(out_data, 'rentals.csv',2))
-    rent_thread.start()
+    #t1 = import_file('products.csv')
+    output_data = Queue()
+    threads = []
+    csv_list = ['products.csv', 'customers.csv', 'rentals.csv']
+    for i, itm in enumerate(csv_list):
+        item_thread = Thread(target=import_file, args=(output_data, itm, i))
+        item_thread.start()
+        threads.append(item_thread)
 
-    prod_thread.join()
-    cust_thread.join()
-    rent_thread.join()
-    prod_output = out_data.get()
-    cust_output = out_data.get()
-    rent_output = out_data.get()
+    for thread in threads:
+        thread.join()
 
-    logging.info(f'Product entry elapsed time: {prod_output[3]}')
-    logging.info(f'Customer entry elapsed time: {cust_output[3]}')
-    logging.info(f'Rental entry elapsed time: {rent_output[3]}')
+    prod_output = output_data.get()
+    cust_output = output_data.get()
+    rent_output = output_data.get()
 
+    logging.info(f'Product entry metrics: {prod_output}')
+    logging.info(f'Customer entry metrics: {cust_output}')
+    logging.info(f'Rental entry metrics: {rent_output}')
