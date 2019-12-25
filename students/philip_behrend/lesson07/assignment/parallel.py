@@ -101,7 +101,7 @@ def import_file(data_queue, filename, collect_no=0, sep=',', encoding='ISO-8859-
     end_ct = collection.estimated_document_count()
     end = datetime.now()
     elapsed_time = (end - start).total_seconds()
-    out_data = (end_ct - start_ct, start_ct, end_ct, elapsed_time)
+    out_data = (filename, end_ct - start_ct, start_ct, end_ct, elapsed_time)
     data_queue.put(out_data)
 
 def show_available_products():
@@ -152,10 +152,5 @@ if __name__ == '__main__':
     for thread in threads:
         thread.join()
 
-    prod_output = output_data.get()
-    cust_output = output_data.get()
-    rent_output = output_data.get()
-
-    logging.info(f'Product entry metrics: {prod_output}')
-    logging.info(f'Customer entry metrics: {cust_output}')
-    logging.info(f'Rental entry metrics: {rent_output}')
+    while not output_data.empty():
+        logging.info(output_data.get())
