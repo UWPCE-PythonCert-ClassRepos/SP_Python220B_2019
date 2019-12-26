@@ -9,6 +9,7 @@ from electric_appliances_class import ElectricAppliances
 
 FULL_INVENTORY = {}
 
+
 def main_menu(user_prompt=None):
     """Main menu for user to access"""
     valid_prompts = {"1": add_new_item,
@@ -28,12 +29,11 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Gets market price"""
-    print(get_latest_price(item_code))
-    return get_latest_price(item_code)
+    print("Market price", get_latest_price(item_code))
 
 
 def add_new_item():
-    """"""
+    """Adds new item to inventory"""
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -64,7 +64,7 @@ def add_new_item():
 
 
 def item_info():
-    """"""
+    """Item information into inventory management"""
     item_code = input("Enter item code: ")
     if item_code in FULL_INVENTORY:
         print_dict = FULL_INVENTORY[item_code]
@@ -72,7 +72,6 @@ def item_info():
             print("{}:{}".format(item_code, inventory))
     else:
         print("Item not found in inventory")
-    return FULL_INVENTORY.get(item_code)
 
 
 def exit_program():
@@ -81,6 +80,7 @@ def exit_program():
 
 
 if __name__ == '__main__':
+    FULL_INVENTORY = {}
     while True:
         print(FULL_INVENTORY)
         main_menu()()
