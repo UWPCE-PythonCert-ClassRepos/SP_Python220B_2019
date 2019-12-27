@@ -1,10 +1,12 @@
 """Main"""
 # Launches the user interface for the inventory management system
 import sys
-import market_prices
-import inventory_class
-import furniture_class
-import electric_appliances_class
+from inventory_management import market_prices as market_prices
+from inventory_management import inventory_class as inventory_class
+from inventory_management import furniture_class as furniture_class
+from inventory_management import electric_appliances_class as electric_appliances_class
+
+FULL_INVENTORY = {}
 
 def main_menu(user_prompt=None):
     """Main Menu"""
@@ -24,9 +26,9 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Get price of item given the item's code"""
-    print(item_code)
+    print(market_prices.get_latest_price(item_code))
 
-def add_new_item(given_inventory):
+def add_new_item():
     """adds a new item"""
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
@@ -58,15 +60,15 @@ def add_new_item(given_inventory):
                                                  item_description,
                                                  item_price,
                                                  item_rental_price)
-    given_inventory[item_code] = new_item.return_as_dictionary()
+    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 
-def item_info(given_inventory):
+def item_info():
     """gets item info"""
     item_code = input("Enter item code: ")
-    if item_code in given_inventory:
-        print_dict = given_inventory[item_code]
+    if item_code in FULL_INVENTORY:
+        print_dict = FULL_INVENTORY[item_code]
         for key, value in print_dict.items():
             print("{}:{}".format(key, value))
     else:
@@ -77,7 +79,6 @@ def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
     while True:
         print(FULL_INVENTORY)
         main_menu()()

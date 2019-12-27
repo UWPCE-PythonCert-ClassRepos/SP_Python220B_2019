@@ -1,6 +1,6 @@
 """Main Electric Appliance Class"""
 # Electric appliances class
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 class ElectricAppliances(Inventory):
     """electric appliances class"""
@@ -13,4 +13,12 @@ class ElectricAppliances(Inventory):
 
         self.brand = brand
         self.voltage = voltage
+    
+    def return_as_dictionary(self):
+        """return as dictionary"""
+        output_dict = Inventory.return_as_dictionary(self)
+        output_dict['brand'] = self.brand
+        output_dict['voltage'] = self.voltage
+
+        return output_dict
     
