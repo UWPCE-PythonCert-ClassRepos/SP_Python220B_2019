@@ -86,6 +86,8 @@ def calculate_additional_fields(data):
     for key, value in data.items():
         logging.debug(f'Calculating fields for {key}')
         try:
+            if value['rental_end'] == '':
+                logging.warning('Rental end date blank. Item not yet returned.')
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
