@@ -13,7 +13,7 @@ class ElectricAppliances(Inventory):
 
         self.brand = brand
         self.voltage = voltage
-    
+
     def return_as_dictionary(self):
         """return as dictionary"""
         output_dict = Inventory.return_as_dictionary(self)

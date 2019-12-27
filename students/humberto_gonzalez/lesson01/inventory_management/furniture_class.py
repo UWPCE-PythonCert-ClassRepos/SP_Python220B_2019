@@ -14,7 +14,7 @@ class Furniture(Inventory):
 
         self.material = material
         self.size = size
-    
+
     def return_as_dictionary(self):
         """returning as dictionary"""
         output_dict = Inventory.return_as_dictionary(self)
