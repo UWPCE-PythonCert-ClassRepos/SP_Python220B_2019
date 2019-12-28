@@ -1,5 +1,5 @@
 """
-recursion for debuging
+recursion for debugging
 """
 
 import sys
