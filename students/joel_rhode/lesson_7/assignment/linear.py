@@ -1,15 +1,17 @@
 """
 MongoDB database code for HP Norton customer, rental, and inventory system.
 """
-# pylint: disable=too-many-locals
+# pylint: disable=too-many-locals, unused-argument, unused-variable
 
 from csv import reader
 import os
 import logging
+from datetime import datetime
+from pprint import pprint
 
 from pymongo import MongoClient
 
-DATABASE = 'hp_norton'
+DATABASE = 'hp_norton_linear'
 
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 LOG_FILE = 'database.log'
@@ -40,21 +42,25 @@ class MongoDBConnection():
         self.connection.close()
 
 
-def import_data(directory_name, product_file, customers_file, rentals_file):
+def import_all_data(directory_name, product_file, customers_file, rentals_file):
     """Imports product, customer, and rental .csv files into the database."""
+    start = datetime.now()
     product_fields = ('product_id', 'description', 'product_type', 'quantity_available')
     customer_fields = ('customer_id', 'name', 'address', 'phone_number', 'email')
     rental_fields = ('rental_id', 'product_id', 'customer_id', 'rental_start', 'rental_end')
     product_list, product_errors = read_csv(directory_name, product_file, product_fields)
     for item in product_list:
         item['quantity_available'] = int(item['quantity_available'])
-    product_count = write_many_to_database(DATABASE, 'products', product_list)
+    product_count, prod_init_db_size = write_many_to_database(DATABASE, 'products', product_list)
     customer_list, customer_errors = read_csv(directory_name, customers_file, customer_fields)
-    customer_count = write_many_to_database(DATABASE, 'customers', customer_list)
+    customer_count, cust_init_db_size = write_many_to_database(DATABASE, 'customers', customer_list)
     rentals_list, rental_errors = read_csv(directory_name, rentals_file, rental_fields)
-    rental_count = write_many_to_database(DATABASE, 'rentals', rentals_list)
-    return (product_count, customer_count, rental_count), \
-           (product_errors, customer_errors, rental_errors)
+    rental_count, rent_init_db_size = write_many_to_database(DATABASE, 'rentals', rentals_list)
+    end = datetime.now()
+    return [(customer_count, cust_init_db_size, cust_init_db_size + customer_count,
+             (end - start).total_seconds()),
+            (product_count, prod_init_db_size, prod_init_db_size + product_count,
+             (end - start).total_seconds())]
 
 
 def read_csv(directory_name, file_name, fields):
@@ -79,9 +85,10 @@ def write_many_to_database(database_name, collection, data_list):
     with mongo:
         database = mongo.connection[database_name]
         collection = database[collection]
+        initial_size = collection.count_documents({})
         result = collection.insert_many(data_list)
     if result.acknowledged:
-        return len(result.inserted_ids)
+        return len(result.inserted_ids), initial_size
     return False
 
 
@@ -91,7 +98,7 @@ def show_available_products(database_name=DATABASE, collection='products'):
     products_avail = {}
     with mongo:
         database = mongo.connection[database_name]
-        product_query = database[collection].find({'quantity_available': {'$gt': 0}})
+        product_query = database[collection].find({'quantity_available': {'$gt': '0'}})
         for product in product_query:
             products_avail[product['product_id']] = product
             del products_avail[product['product_id']]['_id']
@@ -113,3 +120,7 @@ def show_rentals(product_id, database_name=DATABASE):
                 logging.error('Key not found in database.')
                 raise
     return rental_customers
+
+
+if __name__ == '__main__':
+    pprint(import_all_data('sample_csv_files', 'products.csv', 'customers.csv', 'rentals.csv'))
