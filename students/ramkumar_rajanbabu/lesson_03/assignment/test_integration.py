@@ -3,11 +3,9 @@
 from unittest import TestCase
 import customer_model as cm
 import basic_operations as bo
-import peewee as pw
 
-database = cm.DATABASE
-#database.drop_tables([cm.Customer])
-database.create_tables([cm.Customer])
+cm.DATABASE.drop_tables([cm.Customer])
+cm.DATABASE.create_tables([cm.Customer])
 
 
 class BasicOperationsTest(TestCase):
@@ -15,10 +13,6 @@ class BasicOperationsTest(TestCase):
 
     def test_integration(self):
         """Testing integration of the modules"""
-        cm.DATABASE.drop_tables([cm.Customer])
-        cm.DATABASE.create_tables([cm.Customer])
-        cm.DATABASE.close()
-
         bo.add_customer("100", "Peter", "Parker",
                         "135 W. 50th Street, New York City, NY 10011",
                         "212-576-4000", "peter.parker@marvel.com",

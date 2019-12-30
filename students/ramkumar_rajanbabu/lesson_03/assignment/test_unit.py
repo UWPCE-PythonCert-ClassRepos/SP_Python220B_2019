@@ -11,7 +11,6 @@ def setup_database():
     """Setup for database"""
     cm.DATABASE.drop_tables([cm.Customer])
     cm.DATABASE.create_tables([cm.Customer])
-    cm.DATABASE.close()
 
 
 class BasicOperationsTest(TestCase):

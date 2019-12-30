@@ -1,6 +1,7 @@
 """Module for basic operations"""
 
 # pylint: disable=too-many-arguments
+# pylint: disable=logging-format-interpolation
 
 import logging
 import peewee as pw
@@ -15,22 +16,19 @@ def add_customer(customer_id, first_name, last_name, home_address,
     """Add a new customer to the database"""
     # database.transaction; all work given to database gets done or none of it
     with cm.DATABASE.transaction():
-        try:
-            # .create inserts the data into the database
-            LOGGER.info(f"In process of adding customer {customer_id}")
-            new_customer = cm.Customer.create(customer_id=customer_id,
-                                              first_name=first_name,
-                                              last_name=last_name,
-                                              home_address=home_address,
-                                              phone_number=phone_number,
-                                              email_address=email_address,
-                                              status=status,
-                                              credit_limit=credit_limit)
-            # .save() will write the data to the database
-            new_customer.save()
-            LOGGER.info(f"Added a new customer {first_name} {last_name}")
-        except Exception as e:
-            LOGGER.info(e)
+        # .create inserts the data into the database
+        LOGGER.info(f"In process of adding customer {customer_id}")
+        new_customer = cm.Customer.create(customer_id=customer_id,
+                                          first_name=first_name,
+                                          last_name=last_name,
+                                          home_address=home_address,
+                                          phone_number=phone_number,
+                                          email_address=email_address,
+                                          status=status,
+                                          credit_limit=credit_limit)
+        # .save() will write the data to the database
+        new_customer.save()
+        LOGGER.info(f"Added a new customer {first_name} {last_name}")
 
 
 def search_customer(customer_id):
@@ -66,7 +64,7 @@ def delete_customer(customer_id):
             LOGGER.info("Deleted customer information")
         else:
             LOGGER.info("Customer not found")
-            # raise pw.DoesNotExist
+            raise pw.DoesNotExist
 
 
 def update_customer_credit(customer_id, credit_limit):
