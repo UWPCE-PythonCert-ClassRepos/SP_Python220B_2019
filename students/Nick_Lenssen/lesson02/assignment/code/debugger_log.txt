@@ -1,0 +1,80 @@
+#error seems to arrise in the calculate_additional_fields fuction
+#break to the line in the code that calls it
+#continue and go into the code, press next until error arrises
+#print out start_time
+#print out end time
+#end time is before start time and should raise errors that should be logged to a file
+
+
+Nicholass-MacBook-Air:code nicholaslenssen$ python3 -m pdb charges_calc.py -i source.json -o out.json
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 46
+Breakpoint 1 at /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py:46
+(Pdb) c
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) ll
+ 25  ->	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+ 31  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) pp rental_end
+*** NameError: name 'rental_end' is not defined
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) pp rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) ll
+ 25  	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  ->	            value['total_days'] = (rental_end - rental_start).days
+ 31  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) pp value['total_days']
+-82
+(Pdb) n
+> /Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/students/Nick_Lenssen/lesson02/assignment/code/charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp value['total_price']
+-2542
+(Pdb) 
