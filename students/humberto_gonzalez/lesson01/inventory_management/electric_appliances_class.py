@@ -1,5 +1,7 @@
 """Main Electric Appliance Class"""
+# pylint: disable=too-many-arguments,too-few-public-methods
 # Electric appliances class
+
 from inventory_management.inventory_class import Inventory
 
 class ElectricAppliances(Inventory):

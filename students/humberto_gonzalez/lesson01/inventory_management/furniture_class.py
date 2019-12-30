@@ -1,5 +1,7 @@
 """Main Furniture Class"""
 # Furniture class
+# pylint: disable=too-many-arguments,too-few-public-methods
+
 from inventory_management.inventory_class import Inventory
 
 class Furniture(Inventory):
