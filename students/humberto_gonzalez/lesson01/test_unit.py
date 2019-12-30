@@ -5,6 +5,7 @@ Created on Wed Dec 11 17:56:48 2019
 @author: Humberto
 """
 
+import io
 from unittest import TestCase
 from unittest.mock import patch
 import inventory_management.main as main
@@ -86,7 +87,7 @@ class MainTests(TestCase):
         self.assertEqual(function.__name__, 'add_new_item')
         with patch('builtins.input', side_effect='2'):
             function = main.main_menu()
-        self.assertEqual(function.__name__, 'item_info') 
+        self.assertEqual(function.__name__, 'item_info')
         with patch('builtins.input', side_effect='q'):
             function = main.main_menu()
         self.assertEqual(function.__name__, 'exit_program')
@@ -127,3 +128,44 @@ class MainTests(TestCase):
         with patch('builtins.input', side_effect=item_inputs):
             main.add_new_item()
         self.assertEqual(main.FULL_INVENTORY['B33'], compare)
+
+    def test_item_info_success(self):
+        """Test to make sure item info is retrieved"""
+        main.FULL_INVENTORY = {'C74':{'productCode':'C74',
+                                      'description':'IKEA Malmer Couch',
+                                      'marketPrice':24,
+                                      'rentalPrice':650,
+                                      'material':'Leather',
+                                      'size':'L'}}
+
+        with patch('builtins.input', side_effect=['C74']):
+            with patch('sys.stdout', new=io.StringIO()) as result:
+                main.item_info()
+
+        compare = ["productCode:C74", "description:IKEA Malmer Couch",
+                   "marketPrice:24", "rentalPrice:650", "material:Leather",
+                   "size:L"]
+
+        self.assertEqual(compare, result.getvalue().splitlines())
+
+    def test_item_info_failure(self):
+        """Test to make sure item info is retrieved"""
+        main.FULL_INVENTORY = {'C74':{'productCode':'C74',
+                                      'description':'IKEA Malmer Couch',
+                                      'marketPrice':24,
+                                      'rentalPrice':650,
+                                      'material':'Leather',
+                                      'size':'L'}}
+
+        with patch('builtins.input', side_effect=['B33']):
+            with patch('sys.stdout', new=io.StringIO()) as result:
+                main.item_info()
+
+        compare = "Item not found in inventory\n"
+
+        self.assertEqual(compare, result.getvalue())
+
+    def test_exit_program(self):
+        """Test to make sure the program"""
+        with self.assertRaises(SystemExit):
+            main.exit_program()

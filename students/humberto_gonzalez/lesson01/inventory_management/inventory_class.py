@@ -1,5 +1,7 @@
 """Main Inventory Class"""
 # Inventory class
+# pylint: disable=too-many-arguments,too-few-public-methods
+
 class Inventory():
     """inventory base class"""
     def __init__(self, product_code, description, market_price, rental_price):

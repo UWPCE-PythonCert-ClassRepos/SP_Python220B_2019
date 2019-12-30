@@ -1,10 +1,10 @@
 """Main"""
 # Launches the user interface for the inventory management system
 import sys
-from inventory_management import market_prices as market_prices
-from inventory_management import inventory_class as inventory_class
-from inventory_management import furniture_class as furniture_class
-from inventory_management import electric_appliances_class as electric_appliances_class
+from inventory_management import market_prices
+from inventory_management import inventory_class
+from inventory_management import furniture_class
+from inventory_management import electric_appliances_class
 
 FULL_INVENTORY = {}
 
@@ -26,7 +26,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Get price of item given the item's code"""
-    return(market_prices.get_latest_price(item_code))
+    return market_prices.get_latest_price(item_code)
 
 def add_new_item():
     """adds a new item"""
