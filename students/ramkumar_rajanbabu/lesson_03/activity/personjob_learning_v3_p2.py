@@ -29,7 +29,7 @@ logger.info(f'{aperson.person_name} lives in {aperson.lives_in_town} ' + \
 
 logger.info('Search and display Person with missing nicknames')
 logger.info('Our person class inherits select(). Specify search with .where()')
-logger.info('Peter gets a nickname but noone else')
+logger.info('Peter gets a nickname but no one else')
 
 for person in Person.select().where(Person.nickname == None):
     logger.info(f'{person.person_name} does not have a nickname; see: {person.nickname}')

@@ -19,6 +19,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+database = SqliteDatabase('personjob.db')
+
 logger.info('Working with Person class')
 logger.info('Note how I use constants and a list of tuples as a simple schema')
 logger.info('Normally you probably will have prompted for this from a user')
@@ -32,7 +34,7 @@ people = [
     ('Peter', 'Seattle', None),
     ('Susan', 'Boston', 'Beannie'),
     ('Pam', 'Coventry', 'PJ'),
-    ('Steven', 'Colchester', None),
+    ('Steven', 'Colchester', None), # better to do none than empty in database
     ]
 
 logger.info('Creating Person records: iterate through the list of tuples')
@@ -41,7 +43,7 @@ logger.info('and the transaction tells the database to rollback on error')
 
 for person in people:
     try:
-        with database.transaction():
+        with database.transaction():  #transcation all or none data 
             new_person = Person.create(
                     person_name = person[PERSON_NAME],
                     lives_in_town = person[LIVES_IN_TOWN],

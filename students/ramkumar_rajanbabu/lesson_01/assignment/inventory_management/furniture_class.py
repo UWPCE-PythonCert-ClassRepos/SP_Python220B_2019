@@ -2,10 +2,9 @@
 
 # pylint: disable=too-few-public-methods
 # pylint: disable=too-many-arguments
-# pylint: disable=import-error
 
 
-from inventory_management.inventory_class import Inventory
+from inventory_class import Inventory
 
 
 class Furniture(Inventory):
