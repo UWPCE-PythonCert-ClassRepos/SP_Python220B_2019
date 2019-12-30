@@ -1,5 +1,5 @@
 """
-MongoDB database code for HP Norton customer, rental, and inventory system.
+MongoDB database code for HP Norton customer, rental, and inventory system using parallel threads.
 """
 # pylint: disable=too-many-locals, unused-argument, unused-variable
 
@@ -13,7 +13,7 @@ from queue import Queue
 
 from pymongo import MongoClient
 
-DATABASE = 'hp_norton_linear'
+DATABASE = 'hp_norton_parallel'
 
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 LOG_FILE = 'database.log'
