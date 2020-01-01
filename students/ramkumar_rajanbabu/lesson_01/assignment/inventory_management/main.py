@@ -30,7 +30,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """Gets market price"""
-    print("Market price", get_latest_price(item_code))
+    return get_latest_price(item_code)
 
 
 def add_new_item():
@@ -62,6 +62,8 @@ def add_new_item():
                                  item_price, item_rental_price)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
+    return FULL_INVENTORY
+
 
 
 def item_info():

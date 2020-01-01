@@ -91,28 +91,32 @@ class ElectricAppliancesTest(TestCase):
 
 class MarketPricesTest(TestCase):
     """Unit tests for Market Prices module"""
-
     def test_mark_price(self):
         """Test price"""
-        self.assertEqual(get_latest_price(24), 24)
+        self.assertEqual(get_latest_price(25), 24)
 
 
 class MainTest(TestCase):
     """Unit tests for Main module"""
 
-    def test_main(self):
-        """Test main menu options"""
+    def test_main_menu_1(self):
+        """Test main menu 1"""
         with patch("builtins.input", side_effect="1"):
             self.assertEqual(Main.main_menu().__name__, "add_new_item")
+
+    def test_main_menu_2(self):
+        """Test main menu 2"""
         with patch("builtins.input", side_effect="2"):
-            self.assertEqual(Main.main_menu().__name__, "item_info")
+            self.assertEqual(Main.main_menu().__name__, "item_info")          
+            
+    def test_main_menu_q(self):
+        """Test main menu q"""
         with patch("builtins.input", side_effect="q"):
             self.assertEqual(Main.main_menu().__name__, "exit_program")
 
-    def test_exit(self):
-        """Test exit"""
-        with self.assertRaises(SystemExit):
-            Main.exit_program()
+    def test_get_price(self):
+        """Test get price"""
+        self.assertEqual(Main.get_price(20), 24)
 
     def test_add_new_item(self):
         """Test add new item"""
@@ -149,11 +153,16 @@ class MainTest(TestCase):
     def test_item_info(self):
         """Test item information"""
         Main.FULL_INVENTORY = {3: {"product_code": 3, "description": "PS4",
-                                   "market_price": 399, "rental_price": 98}}
+                                   "market_price": 24, "rental_price": 98}}
         item_info = {3: {"product_code": 3, "description": "PS4",
-                         "market_price": 399, "rental_price": 98}}
+                         "market_price": 24, "rental_price": 98}}
         with patch("builtins.input", side_effect="3"):
             self.assertEqual(Main.item_info(), print(item_info))
+
+    def test_exit(self):
+        """Test exit"""
+        with self.assertRaises(SystemExit):
+            Main.exit_program()
 
 
 if __name__ == "__main__":
