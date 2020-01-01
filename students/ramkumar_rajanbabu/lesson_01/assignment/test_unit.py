@@ -151,13 +151,21 @@ class MainTest(TestCase):
         self.assertEqual(Main.FULL_INVENTORY, inventory)
 
     def test_item_info(self):
-        """Test item information"""
-        Main.FULL_INVENTORY = {3: {"product_code": 3, "description": "PS4",
-                                   "market_price": 24, "rental_price": 98}}
-        item_info = {3: {"product_code": 3, "description": "PS4",
-                         "market_price": 24, "rental_price": 98}}
+        """Test item information"""        
+        item_dict = {"product_code": 3, "description": "PS4",
+                     "market_price": 24, "rental_price": 98}
+        expected = ("product_code: 3\n" 
+                    "description: PS4\n"
+                    "market_price: 24\n"
+                    "rental_price: 98\n")
         with patch("builtins.input", side_effect="3"):
-            self.assertEqual(Main.item_info(), print(item_info))
+            Main.FULL_INVENTORY["3"] = item_dict
+            self.assertEqual(Main.item_info(), print(expected))
+        
+        with patch("builtins.input", side_effect="4"):
+            Main.FULL_INVENTORY = {}
+            expected = "Item not found in inventory"
+            self.assertEqual(Main.item_info(), print(expected))
 
     def test_exit(self):
         """Test exit"""

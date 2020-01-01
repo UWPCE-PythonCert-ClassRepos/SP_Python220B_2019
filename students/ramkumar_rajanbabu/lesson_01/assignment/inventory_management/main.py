@@ -65,7 +65,6 @@ def add_new_item():
     return FULL_INVENTORY
 
 
-
 def item_info():
     """Item information into inventory management"""
     item_code = input("Enter item code: ")
