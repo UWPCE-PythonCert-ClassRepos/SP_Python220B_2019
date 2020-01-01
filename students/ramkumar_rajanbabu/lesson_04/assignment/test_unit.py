@@ -7,17 +7,28 @@ import customer_model as cm
 import basic_operations as bo
 
 
-def setup_database():
-    """Setup for database"""
+"""def setup_database():
     cm.DATABASE.drop_tables([cm.Customer])
     cm.DATABASE.create_tables([cm.Customer])
+    cm.DATABASE.close()"""
 
 
 class BasicOperationsTest(TestCase):
     """Testing basic operations"""
+    def database_tearDown(self):
+        """"""
+        cm.DATABASE.drop_tables([cm.Customer])
+        cm.DATABASE.close()
+        
+    def database_setUp(self):
+        """"""
+        database_tearDown()
+        cm.DATABASE.create_tables([cm.Customer])
+        cm.DATABASE.close()
+    
     def test_add_customer(self):
         """Test adding a new customer"""
-        setup_database()
+        database_setUp()
 
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
@@ -54,7 +65,7 @@ class BasicOperationsTest(TestCase):
 
     def test_search_customer(self):
         """Test searching for a customer"""
-        setup_database()
+        database_setUp()
 
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
@@ -73,7 +84,7 @@ class BasicOperationsTest(TestCase):
 
     def test_search_customer_fail(self):
         """Test searching for a customer (fail)"""
-        setup_database()
+        database_setUp()
 
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
@@ -89,8 +100,8 @@ class BasicOperationsTest(TestCase):
 
     def test_delete_customer(self):
         """Test deleting a customer"""
-        setup_database()
-
+        database_setUp()
+        
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
                         "135 W. 50th Street, New York City, NY 10011",
@@ -105,7 +116,7 @@ class BasicOperationsTest(TestCase):
 
     def test_delete_customer_fail(self):
         """Test deleting a customer (fail)"""
-        setup_database()
+        database_setUp()
 
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
@@ -118,8 +129,8 @@ class BasicOperationsTest(TestCase):
 
     def test_update_customer_credit(self):
         """Test updating customer credit limit"""
-        setup_database()
-
+        database_setUp()
+        
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
                         "135 W. 50th Street, New York City, NY 10011",
@@ -132,7 +143,7 @@ class BasicOperationsTest(TestCase):
 
     def test_update_customer_credit_fail(self):
         """Test updating customer credit limit (fail)"""
-        setup_database()
+        database_setUp()
 
         # Adding sample data
         bo.add_customer("100", "Peter", "Parker",
@@ -145,7 +156,7 @@ class BasicOperationsTest(TestCase):
 
     def test_list_active_customers(self):
         """Test listing active customers"""
-        setup_database()
+        database_setUp()
 
         bo.add_customer("100", "Peter", "Parker",
                         "135 W. 50th Street, New York City, NY 10011",
