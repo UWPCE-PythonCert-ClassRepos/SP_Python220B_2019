@@ -17,8 +17,7 @@ class ModuleTest(TestCase):
         with patch("builtins.input", side_effect=inventory_item):
             Main.add_new_item()
         self.assertEqual(Main.FULL_INVENTORY, inventory_1)
-        
-        
+
         furniture_item = [902, "Bed Frame", 95, "y", "Steel", "L"]
         inventory_2 = {901: {"product_code": 901, "description": "Keyboard",
                              "market_price": 24, "rental_price": 5},

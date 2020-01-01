@@ -6,8 +6,6 @@ import unittest
 from unittest import TestCase
 from unittest.mock import patch
 
-# import sys
-# sys.path.append('./inventory_management')
 from inventory_management.inventory_class import Inventory
 from inventory_management.furniture_class import Furniture
 from inventory_management.electric_appliances_class import ElectricAppliances
@@ -107,8 +105,8 @@ class MainTest(TestCase):
     def test_main_menu_2(self):
         """Test main menu 2"""
         with patch("builtins.input", side_effect="2"):
-            self.assertEqual(Main.main_menu().__name__, "item_info")          
-            
+            self.assertEqual(Main.main_menu().__name__, "item_info")
+
     def test_main_menu_q(self):
         """Test main menu q"""
         with patch("builtins.input", side_effect="q"):
@@ -151,17 +149,17 @@ class MainTest(TestCase):
         self.assertEqual(Main.FULL_INVENTORY, inventory)
 
     def test_item_info(self):
-        """Test item information"""        
+        """Test item information"""
         item_dict = {"product_code": 3, "description": "PS4",
                      "market_price": 24, "rental_price": 98}
-        expected = ("product_code: 3\n" 
+        expected = ("product_code: 3\n"
                     "description: PS4\n"
                     "market_price: 24\n"
                     "rental_price: 98\n")
         with patch("builtins.input", side_effect="3"):
             Main.FULL_INVENTORY["3"] = item_dict
             self.assertEqual(Main.item_info(), print(expected))
-        
+
         with patch("builtins.input", side_effect="4"):
             Main.FULL_INVENTORY = {}
             expected = "Item not found in inventory"
