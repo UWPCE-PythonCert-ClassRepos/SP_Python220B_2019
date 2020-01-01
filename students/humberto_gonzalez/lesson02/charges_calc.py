@@ -86,6 +86,10 @@ if __name__ == "__main__":
         LOGGER.setLevel(logging.DEBUG)
         FILE_HANDLER.setLevel(logging.DEBUG)
         CONSOLE_HANDLER.setLevel(logging.DEBUG)
+    else:
+        logging.debug("ValueError in given arguement for debug level")
+        logging.error("Debug level must 0, 1, 2, or 3")
+        raise ValueError
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
