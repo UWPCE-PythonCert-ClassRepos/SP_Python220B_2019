@@ -1,6 +1,6 @@
 """Module for test integration for inventory management"""
 
-
+import unittest
 from unittest import TestCase
 from unittest.mock import patch
 import inventory_management.main as Main
@@ -45,3 +45,7 @@ class ModuleTest(TestCase):
                         "market_price": 25, "rental_price": 5}
         with patch("builtins.input", side_effect="901"):
             self.assertEqual(Main.item_info(), print(product_dict))
+
+
+if __name__ == "__main__":
+    unittest.main()

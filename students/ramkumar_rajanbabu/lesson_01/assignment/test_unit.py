@@ -2,11 +2,12 @@
 
 # pylint: disable=wrong-import-position
 
+import unittest
 from unittest import TestCase
 from unittest.mock import patch
 
-import sys
-sys.path.append('./inventory_management')
+# import sys
+# sys.path.append('./inventory_management')
 from inventory_management.inventory_class import Inventory
 from inventory_management.furniture_class import Furniture
 from inventory_management.electric_appliances_class import ElectricAppliances
@@ -153,3 +154,7 @@ class MainTest(TestCase):
                          "market_price": 399, "rental_price": 98}}
         with patch("builtins.input", side_effect="3"):
             self.assertEqual(Main.item_info(), print(item_info))
+
+
+if __name__ == "__main__":
+    unittest.main()
