@@ -21,7 +21,5 @@ def single_customer(customer_name, invoice_file):
         """Adds rental items to invoice file csv"""
         for item in rental_items:
             add_furniture(invoice_file, customer_name, *item)
-        #with open(invoice_file, mode='a', newline='') as write_file:
-        #    writer(write_file).writerows([customer_name, rental_items])
 
     return partial(add_rental_items, invoice_file, customer_name)
