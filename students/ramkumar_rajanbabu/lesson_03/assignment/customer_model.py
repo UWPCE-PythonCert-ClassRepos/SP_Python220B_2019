@@ -4,9 +4,9 @@
 
 import peewee as pw
 
-DATABASE = pw.SqliteDatabase('customers.db')  # Global variable
+DATABASE = pw.SqliteDatabase('customers.db')
 DATABASE.connect()
-DATABASE.execute_sql('PRAGMA foreign_keys = ON;')  # Needed for sqlite only
+DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
 
 
 class BaseModel(pw.Model):
@@ -27,4 +27,4 @@ class Customer(BaseModel):
     phone_number = pw.CharField(max_length=10)
     email_address = pw.CharField(max_length=50)
     status = pw.BooleanField(default=True)  # True=active/false=inactive
-    credit_limit = pw.DecimalField(decimal_places=2)
+    credit_limit = pw.IntegerField()
