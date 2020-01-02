@@ -45,15 +45,15 @@ def add_customer(customer_id, first_name, last_name, home_address,
     """Add a new customer to the database"""
     with cm.DATABASE.transaction():
         try:
-            new_customer = cm.Customer.create(customer_id=customer_id,
-                                              first_name=first_name,
-                                              last_name=last_name,
-                                              home_address=home_address,
-                                              phone_number=phone_number,
-                                              email_address=email_address,
-                                              status=status,
-                                              credit_limit=credit_limit)
-            new_customer.save()
+            cus = cm.Customer.create(customer_id=customer_id,
+                                     first_name=first_name, 
+                                     last_name=last_name, 
+                                     home_address=home_address, 
+                                     phone_number=phone_number, 
+                                     email_address=email_address, 
+                                     status=status, 
+                                     credit_limit=credit_limit)
+            cus.save()
             LOGGER.info(f"Added customer #{customer_id}")
         except pw.IntegrityError:
             LOGGER.info(f"Unique constraint failed for customer {customer_id}")
@@ -64,18 +64,17 @@ def search_customer(customer_id):
     """Return a dictionary with customer information"""
     with cm.DATABASE.transaction():
         try:
-            a_customer = cm.Customer.get(
-                cm.Customer.customer_id == customer_id)
-            a_customer = {'first_name': a_customer.first_name,
-                          'last_name': a_customer.last_name,
-                          'email_address': a_customer.email_address,
-                          'phone_number': a_customer.phone_number}
+            cus = cm.Customer.get(cm.Customer.customer_id == customer_id)
+            cus = {'first_name': cus.first_name,
+                   'last_name': cus.last_name,
+                   'email_address': cus.email_address,
+                   'phone_number': cus.phone_number}
             LOGGER.info(f"Found customer #{customer_id}")
-            return a_customer
+            return cus
         except pw.DoesNotExist:
             LOGGER.info(f"Customer #{customer_id} not found")
-            a_customer = {}
-            return a_customer
+            cus = {}
+            return cus
 
 
 def delete_customer(customer_id):
@@ -83,10 +82,9 @@ def delete_customer(customer_id):
     with cm.DATABASE.transaction():
         try:
             LOGGER.info(f"Searching for customer #{customer_id}")
-            a_customer = cm.Customer.get(
-                cm.Customer.customer_id == customer_id)
-            a_customer.delete_instance()
-            a_customer.save()
+            cus = cm.Customer.get(cm.Customer.customer_id == customer_id)
+            cus.delete_instance()
+            cus.save()
             LOGGER.info("Deleted customer")
         except pw.DoesNotExist:
             LOGGER.info(f"Customer #{customer_id} not found")
@@ -97,10 +95,9 @@ def update_customer_credit(customer_id, credit_limit):
     """Search an existing customer and update their credit limit"""
     with cm.DATABASE.transaction():
         try:
-            a_customer = cm.Customer.get(
-                cm.Customer.customer_id == customer_id)
-            a_customer.credit_limit = credit_limit
-            a_customer.save()
+            cus = cm.Customer.get(cm.Customer.customer_id == customer_id)
+            cus.credit_limit = credit_limit
+            cus.save()
             LOGGER.info(f"Updating credit limit to ${credit_limit}")
         except pw.DoesNotExist:
             LOGGER.info(f"Customer {customer_id} not found")
@@ -110,11 +107,25 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_customers():
     """Return an integer with the number of active customers"""
     with cm.DATABASE.transaction():
-        active_customers = cm.Customer.select().where(
-            cm.Customer.status == "Active").count()
-        LOGGER.info(f"Count of active customers: {active_customers}")
-        return active_customers
+        active = cm.Customer.select().where(cm.Customer.status).count()
+        LOGGER.info(f"Active customers: {active}")
+        return active
 
 if __name__ == "__main__":
     setup_database()
+    add_customer(100, 'Peter', 'Parker',
+                 '135 W. 50th Street, New York City, NY 10011',
+                 '212-576-4000', 'peter.parker@marvel.com', True, 1000)
+    add_customer(200, 'Iron', 'Man',
+                 '17801 International Blvd, Seattle, WA 98101',
+                 '206-787-5388', 'iron.man@gmail.com', True, 5000)
+    add_customer(300, 'Ramkumar', 'Rajanbabu',
+                 '7525 166th Ave NE, Redmond, WA 98052',
+                 '425-556-2900', 'ram.kumar@gmail.com', False, 7078)
+    search_customer(200)
+    update_customer_credit(200, 9000)
+    list_active_customers()
+    delete_customer(200)
+    list_active_customers()
+    #delete_customer(200)
     teardown_database()

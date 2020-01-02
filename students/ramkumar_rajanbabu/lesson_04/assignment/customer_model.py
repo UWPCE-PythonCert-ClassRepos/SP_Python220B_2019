@@ -24,11 +24,11 @@ class BaseModel(pw.Model):
 
 class Customer(BaseModel):
     """Create customer details"""
-    customer_id = pw.CharField(primary_key=True, max_length=3)
-    first_name = pw.CharField(max_length=20)
-    last_name = pw.CharField(max_length=20)
+    customer_id = pw.IntegerField(primary_key=True)
+    first_name = pw.CharField(max_length=30)
+    last_name = pw.CharField(max_length=30)
     home_address = pw.CharField(max_length=50)
     phone_number = pw.CharField(max_length=10)
     email_address = pw.CharField(max_length=50)
-    status = pw.BooleanField(default=True)
+    status = pw.BooleanField(default=False)
     credit_limit = pw.DecimalField(decimal_places=2)
