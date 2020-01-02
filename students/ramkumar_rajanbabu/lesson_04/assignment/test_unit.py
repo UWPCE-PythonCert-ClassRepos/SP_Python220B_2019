@@ -1,5 +1,6 @@
 """Module for testing individual functions of basic operations"""
 
+import unittest
 from unittest import TestCase
 
 import peewee as pw
@@ -7,43 +8,27 @@ import customer_model as cm
 import basic_operations as bo
 
 
-"""def setup_database():
+def setup_database():
+    """Setup for database"""
     cm.DATABASE.drop_tables([cm.Customer])
     cm.DATABASE.create_tables([cm.Customer])
-    cm.DATABASE.close()"""
-
 
 class BasicOperationsTest(TestCase):
     """Testing basic operations"""
-    def database_tearDown(self):
-        """"""
-        cm.DATABASE.drop_tables([cm.Customer])
-        cm.DATABASE.close()
-        
-    def database_setUp(self):
-        """"""
-        database_tearDown()
-        cm.DATABASE.create_tables([cm.Customer])
-        cm.DATABASE.close()
-    
     def test_add_customer(self):
         """Test adding a new customer"""
-        database_setUp()
-
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
                         True, 1000.10)
-
-        bo.add_customer("200", "Iron", "Man",
-                        "17801 International Blvd, Seattle, WA 98101",
-                        "206-787-5388", "iron.man@gmail.com",
+        bo.add_customer('200', 'Iron', 'Man',
+                        '17801 International Blvd, Seattle, WA 98101',
+                        '206-787-5388', 'iron.man@gmail.com',
                         True, 5000)
 
-        bo.add_customer("300", "Ramkumar", "Rajanbabu",
-                        "7525 166th Ave NE, Remond, WA 98052",
-                        "425-556-2900", "ram.kumar@gmail.com",
+        bo.add_customer('300', 'Ramkumar', 'Rajanbabu',
+                        '7525 166th Ave NE, Redmond, WA 98052',
+                        '425-556-2900', 'ram.kumar@gmail.com',
                         False, 7078.25)
 
         # Checking expected results
@@ -65,12 +50,9 @@ class BasicOperationsTest(TestCase):
 
     def test_search_customer(self):
         """Test searching for a customer"""
-        database_setUp()
-
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
                         True, 1000.10)
 
         a_customer = bo.search_customer('100')
@@ -78,100 +60,77 @@ class BasicOperationsTest(TestCase):
                            'last_name': 'Parker',
                            'email_address': 'peter.parker@marvel.com',
                            'phone_number': '212-576-4000'}
-
-        # Checking expected results
         self.assertEqual(a_customer, a_customer_dict)
 
     def test_search_customer_fail(self):
         """Test searching for a customer (fail)"""
-        database_setUp()
-
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
                         True, 1000.10)
 
         a_customer = bo.search_customer('100')
         a_customer_dict = {}
-
-        # Checking expected results
         self.assertEqual(a_customer, a_customer_dict)
 
     def test_delete_customer(self):
         """Test deleting a customer"""
-        database_setUp()
-        
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
                         True, 1000.10)
 
         bo.delete_customer('100')
         a_customer_dict = {}
-
-        # Checking expected results
         self.assertEqual(bo.search_customer('100'), a_customer_dict)
 
     def test_delete_customer_fail(self):
         """Test deleting a customer (fail)"""
-        database_setUp()
-
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
-                        True, "1000.10")
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
+                        True, 1000.10)
 
         with self.assertRaises(pw.DoesNotExist):  # Specific exception raised
             bo.delete_customer('100')
 
     def test_update_customer_credit(self):
         """Test updating customer credit limit"""
-        database_setUp()
-        
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
                         True, 1000.10)
-        bo.update_customer_credit('100', 1000.10)
+        
+        bo.update_customer_credit('100', 2000.51)
         a_customer = cm.Customer.get(cm.Customer.customer_id == '100')
-
-        self.assertEqual(a_customer.credit_limit, 1000.10)
+        self.assertEqual(a_customer.credit_limit, 2000.51)
 
     def test_update_customer_credit_fail(self):
         """Test updating customer credit limit (fail)"""
-        database_setUp()
-
-        # Adding sample data
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
-                        True, "1000.10")
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
+                        True, 1000.10)
 
         with self.assertRaises(pw.DoesNotExist):  # Specific exception raised
             bo.delete_customer('100')
 
     def test_list_active_customers(self):
         """Test listing active customers"""
-        database_setUp()
+        bo.add_customer('100', 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
+                        True, 1000.10)
+        bo.add_customer('200', 'Iron', 'Man',
+                        '17801 International Blvd, Seattle, WA 98101',
+                        '206-787-5388', 'iron.man@gmail.com',
+                        True, 5000)
+        bo.add_customer('300', 'Ramkumar', 'Rajanbabu',
+                        '7525 166th Ave NE, Redmond, WA 98052',
+                        '425-556-2900', 'ram.kumar@gmail.com',
+                        False, 7078.25)
 
-        bo.add_customer("100", "Peter", "Parker",
-                        "135 W. 50th Street, New York City, NY 10011",
-                        "212-576-4000", "peter.parker@marvel.com",
-                        True, "1000.10")
-
-        bo.add_customer("200", "Iron", "Man",
-                        "17801 International Blvd, Seattle, WA 98101",
-                        "206-787-5388", "iron.man@gmail.com",
-                        True, "5000")
-
-        bo.add_customer("300", "Ramkumar", "Rajanbabu",
-                        "7525 166th Ave NE, Remond, WA 98052",
-                        "425-556-2900", "ram.kumar@gmail.com",
-                        False, "7078.25")
-
-        # Only 2 active customers (2 True)
         self.assertEqual(bo.list_active_customers(), 2)
+
+if __name__ == "__main__":
+    unittest.main()
