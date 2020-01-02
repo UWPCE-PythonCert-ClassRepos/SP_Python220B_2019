@@ -1,5 +1,6 @@
 """Module for testing individual functions of basic operations"""
 
+import unittest
 from unittest import TestCase
 
 import peewee as pw
@@ -164,3 +165,8 @@ class BasicOperationsTest(TestCase):
 
         # Only 2 active customers (2 True)
         self.assertEqual(bo.list_active_customers(), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
