@@ -35,6 +35,7 @@ class MongodbConnection():
 
 
 def import_products(directory_name, product_file):
+    """ Imports any product data into the database """
     mongo = MongodbConnection()
     with mongo:
         LOGGER.info('Creating Database')
@@ -73,6 +74,7 @@ def import_products(directory_name, product_file):
 
 
 def import_customers(directory_name, customer_file):
+    """ Imports any customer data into the database """
     mongo = MongodbConnection()
     with mongo:
         LOGGER.info('Creating Database')
@@ -110,6 +112,7 @@ def import_customers(directory_name, customer_file):
 
 
 def import_rentals(directory_name, rental_file):
+    """ Imports any rental data into the database """
     mongo = MongodbConnection()
     with mongo:
         LOGGER.info('Creating Database')
@@ -206,6 +209,8 @@ if __name__ == '__main__':
 
     for thread in threads:
         thread.start()
+    for thread in threads:
+        thread.join()
 
     end_time = time.time()
     total_time = end_time - start_time

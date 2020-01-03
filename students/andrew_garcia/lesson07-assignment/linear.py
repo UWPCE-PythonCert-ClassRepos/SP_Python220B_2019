@@ -52,13 +52,12 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         customers = db['customers']
         rentals = db['rentals']
 
-
         LOGGER.info('Adding Product file')
         product_start_time = time.time()
         product_file = os.path.join(directory_name, product_file)
         added_products = 0
         product_count_start = products.count_documents({})
-        # product_errors = 0
+
         try:
             LOGGER.info('Converting Product CSV File to Dictionary')
             with open(product_file, 'r') as csv_file:
@@ -74,13 +73,11 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
         except FileNotFoundError:
             LOGGER.error('File Not Found.')
-            # product_errors += 1
             print('File %s Does Not Exist', product_file)
 
         product_end_time = time.time()
         product_time = product_end_time - product_start_time
         product_count_end = products.count_documents({})
-
         product_details = (added_products, product_count_start, product_count_end, product_time)
 
 
@@ -89,7 +86,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         customer_file = os.path.join(directory_name, customer_file)
         added_customers = 0
         customer_count_start = customers.count_documents({})
-        # customer_errors = 0
+
         try:
             LOGGER.info('Converting Customer CSV File to Dictionary')
             with open(customer_file, 'r') as csv_file:
@@ -104,13 +101,11 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
         except FileNotFoundError:
             LOGGER.error('File Not Found.')
-            # customer_errors += 1
             print('File %s Does Not Exist', customer_file)
 
         customer_end_time = time.time()
         customer_time = customer_end_time - customer_start_time
         customer_count_end = customers.count_documents({})
-
         customer_details = (added_customers, customer_count_start, customer_count_end,
                             customer_time)
 
@@ -120,7 +115,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         rental_file = os.path.join(directory_name, rental_file)
         added_rentals = 0
         rental_count_start = rentals.count_documents({})
-        # rental_errors = 0
+
         try:
             LOGGER.info('Converting Rental CSV File to Dictionary')
             with open(rental_file, 'r') as csv_file:
@@ -136,23 +131,12 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
         except FileNotFoundError:
             LOGGER.error('File Not Found.')
-            # rental_errors += 1
             print('File %s Does Not Exist', rental_file)
 
         rental_end_time = time.time()
         rental_time = rental_end_time - rental_start_time
         rental_count_end = rentals.count_documents({})
-
         rental_details = (added_rentals, rental_count_start, rental_count_end, rental_time)
-
-        # LOGGER.info('Counting Added Items and Failed Items')
-        # total_count = (products.count_documents({}), customers.count_documents({}),
-        #                rentals.count_documents({}))
-
-        # total_errors = (product_errors, customer_errors, rental_errors)
-
-        # total = total_count, total_errors
-        # return total
 
         LOGGER.info('Getting Information about Imported Data')
         return product_details, customer_details, rental_details
