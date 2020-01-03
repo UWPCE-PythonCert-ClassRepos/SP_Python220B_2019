@@ -123,6 +123,21 @@ class BasicOperationsTest(TestCase):
 
         self.assertEqual(bo.list_active_customers(), 2)
 
+    def test_display_customers(self):
+        """Testing display customers"""
+        bo.add_customer(100, 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
+                        True, 1000)
+        bo.add_customer(200, 'Iron', 'Man',
+                        '17801 International Blvd, Seattle, WA 98101',
+                        '206-787-5388', 'iron.man@gmail.com',
+                        True, 5000)
+
+        cus = bo.display_customers()
+        expected = "Iron Man"
+        self.assertEqual(cus[1], expected)
+
 
 if __name__ == "__main__":
     unittest.main()

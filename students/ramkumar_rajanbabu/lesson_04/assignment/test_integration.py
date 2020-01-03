@@ -43,13 +43,16 @@ class BasicOperationsTest(TestCase):
         self.assertEqual(bo.list_active_customers(), 2)
 
         cus_2 = bo.search_customer(100)
-        cus_2_dict = {'first_name': 'Peter', 'last_name': 'Parker', 
-                      'email_address': 'peter.parker@marvel.com', 
+        cus_2_dict = {'first_name': 'Peter', 'last_name': 'Parker',
+                      'email_address': 'peter.parker@marvel.com',
                       'phone_number': '212-576-4000'}
         self.assertEqual(cus_2, cus_2_dict)
 
         bo.delete_customer(100)
         self.assertEqual(bo.search_customer(100), dict())
+
+        cus = bo.display_customers()
+        self.assertEqual(cus[1], "Ramkumar Rajanbabu")
 
 
 if __name__ == "__main__":
