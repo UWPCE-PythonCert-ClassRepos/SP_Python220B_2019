@@ -36,21 +36,21 @@ class BasicOperationsTest(TestCase):
                         '425-556-2900', 'ram.kumar@gmail.com',
                         False, 7078)
 
-        a_customer_1 = cm.Customer.get(cm.Customer.customer_id == 100)
-        self.assertEqual(a_customer_1.customer_id, 100)
-        self.assertEqual(a_customer_1.phone_number, '212-576-4000')
-        self.assertEqual(a_customer_1.status, True)
+        cus_1 = cm.Customer.get(cm.Customer.customer_id == 100)
+        self.assertEqual(cus_1.customer_id, 100)
+        self.assertEqual(cus_1.phone_number, '212-576-4000')
+        self.assertEqual(cus_1.status, True)
 
-        a_customer_2 = cm.Customer.get(cm.Customer.customer_id == 200)
-        self.assertEqual(a_customer_2.customer_id, 200)
-        self.assertEqual(a_customer_2.home_address,
+        cus_2 = cm.Customer.get(cm.Customer.customer_id == 200)
+        self.assertEqual(cus_2.customer_id, 200)
+        self.assertEqual(cus_2.home_address,
                          '17801 International Blvd, Seattle, WA 98101')
-        self.assertEqual(a_customer_2.email_address, 'iron.man@gmail.com')
+        self.assertEqual(cus_2.email_address, 'iron.man@gmail.com')
 
-        a_customer_3 = cm.Customer.get(cm.Customer.customer_id == 300)
-        self.assertEqual(a_customer_3.customer_id, 300)
-        self.assertEqual(a_customer_3.status, False)
-        self.assertEqual(a_customer_3.credit_limit, 7078)
+        cus_3 = cm.Customer.get(cm.Customer.customer_id == 300)
+        self.assertEqual(cus_3.customer_id, 300)
+        self.assertEqual(cus_3.status, False)
+        self.assertEqual(cus_3.credit_limit, 7078)
 
     def test_search_customer(self):
         """Test searching for a customer"""
@@ -68,7 +68,7 @@ class BasicOperationsTest(TestCase):
     def test_search_customer_fail(self):
         """Test searching for a customer (fail)"""
         actual = bo.search_customer(100)  # Not in table
-        expected = {}
+        expected = dict()
         self.assertEqual(actual, expected)
 
     def test_delete_customer(self):
@@ -80,7 +80,7 @@ class BasicOperationsTest(TestCase):
 
         bo.delete_customer(100)
         actual = bo.search_customer(100)
-        expected = {}
+        expected = dict()
         self.assertEqual(actual, expected)
 
     def test_delete_customer_fail(self):
@@ -96,8 +96,8 @@ class BasicOperationsTest(TestCase):
                         True, 1000)
 
         bo.update_customer_credit(100, 2000)
-        a_customer = cm.Customer.get(cm.Customer.customer_id == 100)
-        actual = a_customer.credit_limit
+        cus = cm.Customer.get(cm.Customer.customer_id == 100)
+        actual = cus.credit_limit
         expected = 2000
         self.assertEqual(actual, expected)
 
@@ -122,6 +122,21 @@ class BasicOperationsTest(TestCase):
                         False, 7078)
 
         self.assertEqual(bo.list_active_customers(), 2)
+
+    def test_display_customers(self):
+        """Testing display customers"""
+        bo.add_customer(100, 'Peter', 'Parker',
+                        '135 W. 50th Street, New York City, NY 10011',
+                        '212-576-4000', 'peter.parker@marvel.com',
+                        True, 1000)
+        bo.add_customer(200, 'Iron', 'Man',
+                        '17801 International Blvd, Seattle, WA 98101',
+                        '206-787-5388', 'iron.man@gmail.com',
+                        True, 5000)
+
+        cus = bo.display_customers()
+        expected = "Iron Man"
+        self.assertEqual(cus[1], expected)
 
 
 if __name__ == "__main__":
