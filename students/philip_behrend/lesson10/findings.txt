@@ -1,0 +1,4 @@
+Function: print_mdb_collection
+Time elapsed: 0:00:06.281210
+Records Processed:
+products: 0customers: 0rentals: 0
