@@ -28,7 +28,7 @@ class Customer(BaseModel):
     first_name = pw.CharField(max_length=30)
     last_name = pw.CharField(max_length=30)
     home_address = pw.CharField(max_length=50)
-    phone_number = pw.CharField(max_length=10)
+    phone_number = pw.CharField(max_length=12)
     email_address = pw.CharField(max_length=50)
     status = pw.BooleanField(default=False)
     credit_limit = pw.DecimalField(decimal_places=2)

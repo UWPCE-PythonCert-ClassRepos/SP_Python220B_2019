@@ -1,7 +1,6 @@
 """Module for basic operations"""
 
 # pylint: disable=too-many-arguments
-# pylint: disable=logging-format-interpolation
 
 import logging
 import peewee as pw
@@ -9,20 +8,6 @@ import customer_model as cm
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
-
-
-def setup_database():
-    """Setup database"""
-    cm.DATABASE.drop_tables([cm.Customer])
-    LOGGER.info("Cleared the database")
-    cm.DATABASE.create_tables([cm.Customer])
-    LOGGER.info("Created a table in database")
-
-
-def teardown_database():
-    """Close database"""
-    cm.DATABASE.close()
-    LOGGER.info("Closed database")
 
 
 def add_customer(customer_id, first_name, last_name, home_address,
@@ -42,9 +27,9 @@ def add_customer(customer_id, first_name, last_name, home_address,
                                               credit_limit=credit_limit)
             # .save() will write the data to the database
             new_customer.save()
-            LOGGER.info(f"Added customer #{customer_id}")
+            LOGGER.info("Added customer [%s]", customer_id)
         except pw.IntegrityError:
-            LOGGER.info(f"Unique constraint failed for customer {customer_id}")
+            LOGGER.error("Customer [%s] not added to database!", customer_id)
             raise pw.IntegrityError
 
 
@@ -60,10 +45,10 @@ def search_customer(customer_id):
                           'last_name': a_customer.last_name,
                           'email_address': a_customer.email_address,
                           'phone_number': a_customer.phone_number}
-            LOGGER.info(f"Found customer #{customer_id}")
+            LOGGER.info("Found customer [%s]", customer_id)
             return a_customer
         except pw.DoesNotExist:
-            LOGGER.info(f"Customer #{customer_id} not found")
+            LOGGER.warning("Customer [%s] not in database!", customer_id)
             a_customer = {}
             return a_customer  # Empty dictionary if no customer was found
 
@@ -72,7 +57,7 @@ def delete_customer(customer_id):
     """Delete a customer from the database"""
     with cm.DATABASE.transaction():
         try:
-            LOGGER.info(f"Searching for customer #{customer_id}")
+            LOGGER.info("Searching for customer [%s]", customer_id)
             a_customer = cm.Customer.get(
                 cm.Customer.customer_id == customer_id)
             # .delete_instance() will delete the record
@@ -80,7 +65,7 @@ def delete_customer(customer_id):
             a_customer.save()
             LOGGER.info("Deleted customer")
         except pw.DoesNotExist:
-            LOGGER.info(f"Customer #{customer_id} not found")
+            LOGGER.warning("Customer [%s] not in database!", customer_id)
             raise ValueError
 
 
@@ -92,9 +77,11 @@ def update_customer_credit(customer_id, credit_limit):
                 cm.Customer.customer_id == customer_id)
             a_customer.credit_limit = credit_limit
             a_customer.save()
-            LOGGER.info(f"Updating credit limit to ${credit_limit}")
+            LOGGER.info("Updating customer [%s] credit limit to $%s",
+                        customer_id, credit_limit)
         except pw.DoesNotExist:
-            LOGGER.info(f"Customer {customer_id} not found")
+            LOGGER.warning("Error updating credit limit for customer [%s]!",
+                           customer_id)
             raise ValueError
 
 
@@ -104,10 +91,10 @@ def list_active_customers():
         # .select() has a .where() method to specify criteria for searching
         active_customers = cm.Customer.select().where(
             cm.Customer.status == "Active").count()
-        LOGGER.info(f"Count of active customers: {active_customers}")
+        LOGGER.info("Active customers: %s", active_customers)
         return active_customers
 
 
 if __name__ == "__main__":
-    setup_database()
-    teardown_database()
+    cm.DATABASE.drop_tables([cm.Customer])
+    cm.DATABASE.create_tables([cm.Customer])

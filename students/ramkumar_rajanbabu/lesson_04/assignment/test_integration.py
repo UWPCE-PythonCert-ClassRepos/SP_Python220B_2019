@@ -32,8 +32,8 @@ class BasicOperationsTest(TestCase):
                         True, 5000)
 
         bo.update_customer_credit(200, 9000)
-        a_customer = cm.Customer.get(cm.Customer.customer_id == 200)
-        self.assertEqual(a_customer.credit_limit, 9000)
+        cus = cm.Customer.get(cm.Customer.customer_id == 200)
+        self.assertEqual(cus.credit_limit, 9000)
 
         bo.add_customer(300, 'Ramkumar', 'Rajanbabu',
                         '7525 166th Ave NE, Redmond, WA 98052',
@@ -42,15 +42,17 @@ class BasicOperationsTest(TestCase):
 
         self.assertEqual(bo.list_active_customers(), 2)
 
-        a_customer_2 = bo.search_customer(100)
-        a_customer_2_dict = {'first_name': 'Peter',
-                             'last_name': 'Parker',
-                             'email_address': 'peter.parker@marvel.com',
-                             'phone_number': '212-576-4000'}
-        self.assertEqual(a_customer_2, a_customer_2_dict)
+        cus_2 = bo.search_customer(100)
+        cus_2_dict = {'first_name': 'Peter', 'last_name': 'Parker',
+                      'email_address': 'peter.parker@marvel.com',
+                      'phone_number': '212-576-4000'}
+        self.assertEqual(cus_2, cus_2_dict)
 
         bo.delete_customer(100)
-        self.assertEqual(bo.search_customer(100), {})
+        self.assertEqual(bo.search_customer(100), dict())
+
+        cus = bo.display_customers()
+        self.assertEqual(cus[1], "Ramkumar Rajanbabu")
 
 
 if __name__ == "__main__":
