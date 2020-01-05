@@ -20,20 +20,22 @@ def diagnostic_decorator(func):
     @wraps(func)
     def timing_wrapper(*args, **kwargs):
         db_collections = {}
+        before_count = {}
         start = datetime.now()
         for collection in db.collection_names():
-            db_collections[collection] = db[collection].count_documents({})
+            before_count[collection] = db[collection].count_documents({})
         out_data = func(*args, **kwargs)
         for collection in db.collection_names():
-            db_collections[collection] -= db[collection].count_documents({})
+            db_collections[collection] = db[collection].count_documents({}) - before_count[collection]
         end = datetime.now()
 
-        with open('findings.txt', 'w') as f:
+        with open('findings.txt', 'a') as f:
             f.write('Function: '+ func.__name__ + '\n')
             f.write('Time elapsed: ' + str(end-start) + '\n')
             f.write('Records Processed:\n')
             for key, val in db_collections.items():
-                f.write(str(key) + ': ' + str(val) + ' \n')        
+                f.write('\t' + str(key) + ': ' + str(val) + ' \n') 
+            f.write('\n')       
         return out_data
     return timing_wrapper
 
@@ -155,3 +157,17 @@ class MongoDBMethods():
                                             'phone': cust_info['phone']
                                             }
         return rent_dict
+
+if __name__ == "__main__":
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.NortonFurniture 
+        db["products"].remove({})
+        db["customers"].remove({})
+        db["rentals"].remove({})
+
+        mongo_test = MongoDBMethods()
+        mongo_test.import_file('products.csv', 'customers.csv', 'rentals.csv')
+        mongo_test.print_mdb_collection('products')
+        mongo_test.show_available_products()
+        mongo_test.show_rentals(99)
