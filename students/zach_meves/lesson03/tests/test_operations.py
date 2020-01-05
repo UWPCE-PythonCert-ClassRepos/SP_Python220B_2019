@@ -13,16 +13,16 @@ sys.path.append(os.path.dirname(_dir))
 from customer_model import Customer
 import basic_operations as bo
 
-DB = pw.SqliteDatabase(':memory:')
+TEST_DB = pw.SqliteDatabase(':memory:')
 
 
 class TestOperations(unittest.TestCase):
     """Test all basic operations."""
 
     def setUp(self) -> None:
-        DB.bind([Customer])
-        DB.connect()
-        DB.create_tables([Customer])
+        TEST_DB.bind([Customer])
+        TEST_DB.connect()
+        TEST_DB.create_tables([Customer])
 
         self.definitions = {'Bob': {'id': 1, 'name': 'Bob', 'last_name': 'Xavi',
                                     'address': "505 N Thayer", 'phone': '713-874-2356',
@@ -44,8 +44,8 @@ class TestOperations(unittest.TestCase):
                         bob['phone'], bob['email'], bob['status'], bob['credit_limit'])
 
     def tearDown(self) -> None:
-        DB.drop_tables([Customer])
-        DB.close()
+        TEST_DB.drop_tables([Customer])
+        TEST_DB.close()
 
     def test_add_customer(self):
         # Add Bob2
@@ -85,9 +85,8 @@ class TestOperations(unittest.TestCase):
 
         self.assertEqual(0, Customer.select().count())
 
-        # # Delete non-existent ID
-        # with self.assertRaises(ValueError):
-        #     bo.delete_customer(6)
+        # Delete non-existent ID
+        bo.delete_customer(6)
 
     def test_update_customer_credit(self):
         # Update Bob's credit
@@ -95,6 +94,10 @@ class TestOperations(unittest.TestCase):
 
         bob = Customer.get(Customer.id == 1)
         self.assertEqual(3000, bob.credit_limit)
+
+        # Update non-existent customer
+        with self.assertRaises(ValueError):
+            bo.update_customer_credit(6, 100)
 
     def test_list_active_customers(self):
         self.assertEqual(1, bo.list_active_customers())
@@ -117,11 +120,11 @@ class TestOperations(unittest.TestCase):
 
         # Modify Alice's credit limit
         bo.update_customer_credit(alice['id'], 12.32)
-        self.assertEqual(12.32, Customer.get(Customer.name == 'Alice').credit_limit)
+        self.assertEqual(12.32, float(Customer.get(Customer.name == 'Alice').credit_limit))
 
         # Search for Bob2
         res = bo.search_customer(bob2['id'])
-        for k in ['id', 'name', 'last_name', 'email', 'phone']:
+        for k in ['name', 'last_name', 'email', 'phone']:
             self.assertEqual(bob2[k], res[k])
 
         # Delete Bob2

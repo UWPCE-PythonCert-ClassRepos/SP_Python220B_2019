@@ -2,7 +2,7 @@
 Basic database operations.
 """
 
-import peewee
+from customer_model import Customer, DB
 
 
 def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
@@ -20,7 +20,16 @@ def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
     :param credit_limit: float, credit limit
     """
 
-    pass
+    # Create a new customer object
+    with DB.transaction():
+        try:
+            cust = Customer.create(id=customer_id, name=name, last_name=lastname,
+                                   address=home_address, phone=phone_number, email=email_address,
+                                   status=status, credit_limit=credit_limit)
+        except Exception as err:
+            raise ValueError(err)
+        else:
+            cust.save()
 
 
 def search_customer(customer_id: int) -> dict:
@@ -30,7 +39,13 @@ def search_customer(customer_id: int) -> dict:
     :return: dict
     """
 
-    pass
+    try:
+        res = _get_by_id(customer_id)
+    except Exception:
+        return {}
+    else:
+        return {'name': res.name, 'last_name': res.last_name, 'email': res.email,
+                'phone': res.phone}
 
 
 def delete_customer(customer_id: int):
@@ -40,7 +55,12 @@ def delete_customer(customer_id: int):
     :param customer_id: int, customer ID
     """
 
-    pass
+    try:
+        res = _get_by_id(customer_id)
+    except Exception:
+        pass
+    else:
+        res.delete_instance()
 
 
 def update_customer_credit(customer_id: int, credit_limit: float):
@@ -52,7 +72,14 @@ def update_customer_credit(customer_id: int, credit_limit: float):
     :param credit_limit: float, new credit limit
     """
 
-    pass
+    try:
+        res = _get_by_id(customer_id)
+    except Exception:
+        raise ValueError(f"No customer with ID {customer_id}")
+    else:
+        with DB.transaction():
+            res.credit_limit = credit_limit
+            res.save()
 
 
 def list_active_customers() -> int:
@@ -62,4 +89,8 @@ def list_active_customers() -> int:
     :return: int
     """
 
-    pass
+    return Customer.select().where(Customer.status == True).count()
+
+
+def _get_by_id(cid: int) -> Customer:
+    return Customer.get(Customer.id == cid)

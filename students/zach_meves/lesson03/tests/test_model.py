@@ -12,7 +12,7 @@ _dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.dirname(_dir))
 from customer_model import Customer
 
-DB = pw.SqliteDatabase(':memory:')
+TEST_DB = pw.SqliteDatabase(':memory:')
 
 
 class TestCustomer(unittest.TestCase):
@@ -22,9 +22,9 @@ class TestCustomer(unittest.TestCase):
 
     def setUp(self) -> None:
 
-        DB.bind([Customer])
-        DB.connect()
-        DB.create_tables([Customer])
+        TEST_DB.bind([Customer])
+        TEST_DB.connect()
+        TEST_DB.create_tables([Customer])
 
         self.definitions = {'Bob': {'id': 1, 'name': 'Bob', 'last_name': 'Xavi',
                                     'address': "505 N Thayer", 'phone': '713-874-2356',
@@ -47,8 +47,8 @@ class TestCustomer(unittest.TestCase):
 
     def tearDown(self) -> None:
         # Delete everything from database
-        DB.drop_tables([Customer])
-        DB.close()
+        TEST_DB.drop_tables([Customer])
+        TEST_DB.close()
 
     def test_create_customer(self):
         """Tests creating a customer."""

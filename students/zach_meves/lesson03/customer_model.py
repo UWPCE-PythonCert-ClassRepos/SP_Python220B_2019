@@ -4,7 +4,8 @@ Customer model definition.
 
 import peewee as pw
 
-INIT_DB = pw.SqliteDatabase("customers.db")
+DB_NAME = 'customers.db'
+DB = pw.SqliteDatabase(DB_NAME)
 
 
 class Customer(pw.Model):
@@ -30,4 +31,9 @@ class Customer(pw.Model):
     credit_limit = pw.DecimalField(decimal_places=2, max_digits=10)
 
     class Meta:
-        database = INIT_DB
+        database = DB
+
+
+# Create tables if required
+DB.connect()
+DB.create_tables([Customer])
