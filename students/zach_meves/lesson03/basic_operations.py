@@ -2,8 +2,8 @@
 Basic database operations.
 """
 
-from customer_model import Customer, DB
 import peewee as pw
+from customer_model import Customer, DB
 
 def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
                  phone_number: str, email_address: str, status: bool, credit_limit: float):
