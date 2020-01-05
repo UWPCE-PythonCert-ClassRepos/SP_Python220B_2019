@@ -50,7 +50,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                     customer_info = {"user_id": row[0], "name": row[1], "address": row[2],
                                      "phone_number": row[3], "email": row[4]}
                     customer.insert_one(customer_info)
-        except:
+        except FileNotFoundError:
             customer_errors += 1
 
         try:
@@ -61,7 +61,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                     product_info = {"product_id": row[0], "description": row[1],
                                     "product_type": row[2], "quantity_available": row[3]}
                     product.insert_one(product_info)
-        except:
+        except FileNotFoundError:
             product_errors += 1
 
         try:
@@ -72,7 +72,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                     rental_info = {"product_id": row[0], "user_id": row[1], "rental_date": row[2],
                                    "return_date": row[3]}
                     rental.insert_one(rental_info)
-        except:
+        except FileNotFoundError:
             rental_errors += 1
 
     return ((customer_count, product_count, rental_count),
