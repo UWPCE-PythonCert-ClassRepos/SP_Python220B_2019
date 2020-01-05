@@ -44,8 +44,8 @@ class MongoDBConnection():
 def timer_func(func):
     """Decorator function for timing execution"""
     log_file = 'timings.txt'
-    database_name = DATABASE
     def timed_func(*args, **kwargs):
+        database_name = getattr(func, 'database_name', DATABASE)
         start_count = get_database_document_count(database_name)
         start_time = datetime.now()
         result = func(*args, **kwargs)
@@ -63,9 +63,9 @@ def get_database_document_count(database_name):
     record_count = 0
     mongo = MongoDBConnection()
     with mongo:
-        cols = mongo.connection[database_name].collection_names
+        cols = mongo.connection[database_name].list_collection_names()
         for col in cols:
-            record_count += col.count()
+            record_count += mongo.connection[database_name][col].estimated_document_count()
     return record_count
 
 
@@ -76,8 +76,6 @@ def import_data(directory_name, product_file, customers_file, rentals_file):
     customer_fields = ('customer_id', 'name', 'address', 'phone_number', 'email')
     rental_fields = ('rental_id', 'product_id', 'customer_id', 'rental_start', 'rental_end')
     product_list, product_errors = read_csv(directory_name, product_file, product_fields)
-    for item in product_list:
-        item['quantity_available'] = int(item['quantity_available'])
     product_count = write_many_to_database(DATABASE, 'products', product_list)
     customer_list, customer_errors = read_csv(directory_name, customers_file, customer_fields)
     customer_count = write_many_to_database(DATABASE, 'customers', customer_list)
@@ -124,7 +122,7 @@ def show_available_products(database_name=DATABASE, collection='products'):
     products_avail = {}
     with mongo:
         database = mongo.connection[database_name]
-        product_query = database[collection].find({'quantity_available': {'$gt': 0}})
+        product_query = database[collection].find({'quantity_available': {'$gt': '0'}})
         for product in product_query:
             products_avail[product['product_id']] = product
             del products_avail[product['product_id']]['_id']
