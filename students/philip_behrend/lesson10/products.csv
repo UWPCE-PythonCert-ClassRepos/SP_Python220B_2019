@@ -1,0 +1,1001 @@
+id,description,product_type,quantity_available
+prd00001,desk,living room,16
+prd00002,table,living room,15
+prd00003,chair,bedroom,6
+prd00004,bed,bedroom,7
+prd00005,table,living room,17
+prd00006,table,kitchen,1
+prd00007,table,bedroom,7
+prd00008,bed,living room,2
+prd00009,chair,kitchen,9
+prd00010,bed,living room,2
+prd00011,chair,living room,16
+prd00012,bed,living room,6
+prd00013,desk,kitchen,11
+prd00014,chair,bedroom,13
+prd00015,bed,kitchen,12
+prd00016,chair,living room,19
+prd00017,desk,kitchen,0
+prd00018,chair,bedroom,1
+prd00019,chair,kitchen,1
+prd00020,table,kitchen,16
+prd00021,table,bedroom,6
+prd00022,bed,bedroom,1
+prd00023,table,kitchen,0
+prd00024,TV,bedroom,6
+prd00025,chair,living room,12
+prd00026,TV,living room,8
+prd00027,table,kitchen,10
+prd00028,table,bedroom,0
+prd00029,table,bedroom,8
+prd00030,table,bedroom,9
+prd00031,table,living room,14
+prd00032,chair,kitchen,2
+prd00033,table,kitchen,20
+prd00034,desk,living room,10
+prd00035,desk,kitchen,9
+prd00036,chair,living room,1
+prd00037,bed,living room,3
+prd00038,chair,bedroom,0
+prd00039,bed,kitchen,14
+prd00040,TV,living room,18
+prd00041,table,kitchen,14
+prd00042,TV,kitchen,8
+prd00043,TV,bedroom,15
+prd00044,bed,kitchen,10
+prd00045,TV,kitchen,20
+prd00046,TV,bedroom,20
+prd00047,bed,kitchen,19
+prd00048,chair,living room,1
+prd00049,desk,kitchen,0
+prd00050,chair,kitchen,13
+prd00051,desk,living room,2
+prd00052,desk,living room,5
+prd00053,bed,living room,4
+prd00054,desk,kitchen,11
+prd00055,desk,living room,1
+prd00056,TV,living room,12
+prd00057,desk,bedroom,19
+prd00058,desk,bedroom,4
+prd00059,bed,bedroom,4
+prd00060,TV,kitchen,17
+prd00061,desk,bedroom,1
+prd00062,chair,bedroom,2
+prd00063,table,kitchen,18
+prd00064,desk,kitchen,19
+prd00065,bed,living room,7
+prd00066,desk,living room,0
+prd00067,table,kitchen,4
+prd00068,desk,bedroom,9
+prd00069,table,bedroom,0
+prd00070,desk,living room,11
+prd00071,chair,kitchen,13
+prd00072,chair,bedroom,6
+prd00073,chair,kitchen,13
+prd00074,bed,kitchen,6
+prd00075,table,bedroom,18
+prd00076,TV,kitchen,15
+prd00077,chair,bedroom,1
+prd00078,desk,bedroom,20
+prd00079,bed,living room,18
+prd00080,TV,living room,17
+prd00081,table,living room,12
+prd00082,chair,living room,8
+prd00083,bed,living room,18
+prd00084,bed,living room,17
+prd00085,bed,bedroom,3
+prd00086,table,kitchen,9
+prd00087,table,bedroom,0
+prd00088,TV,bedroom,8
+prd00089,TV,bedroom,1
+prd00090,bed,living room,8
+prd00091,TV,living room,8
+prd00092,table,kitchen,19
+prd00093,chair,kitchen,8
+prd00094,bed,bedroom,17
+prd00095,desk,kitchen,17
+prd00096,table,kitchen,10
+prd00097,bed,bedroom,12
+prd00098,chair,bedroom,3
+prd00099,table,living room,17
+prd00100,table,living room,10
+prd00101,bed,living room,8
+prd00102,bed,bedroom,0
+prd00103,TV,living room,7
+prd00104,chair,bedroom,11
+prd00105,bed,living room,15
+prd00106,table,living room,10
+prd00107,bed,bedroom,18
+prd00108,TV,kitchen,4
+prd00109,TV,bedroom,11
+prd00110,bed,living room,4
+prd00111,table,kitchen,13
+prd00112,table,kitchen,5
+prd00113,desk,kitchen,15
+prd00114,TV,kitchen,8
+prd00115,table,bedroom,4
+prd00116,desk,kitchen,15
+prd00117,table,kitchen,7
+prd00118,chair,kitchen,2
+prd00119,desk,bedroom,20
+prd00120,desk,kitchen,1
+prd00121,desk,living room,1
+prd00122,table,kitchen,7
+prd00123,TV,kitchen,1
+prd00124,table,bedroom,8
+prd00125,table,bedroom,7
+prd00126,desk,kitchen,7
+prd00127,desk,bedroom,12
+prd00128,table,kitchen,10
+prd00129,table,kitchen,9
+prd00130,table,living room,4
+prd00131,TV,kitchen,7
+prd00132,table,kitchen,6
+prd00133,table,kitchen,7
+prd00134,chair,bedroom,13
+prd00135,desk,living room,15
+prd00136,TV,living room,18
+prd00137,desk,living room,16
+prd00138,bed,living room,10
+prd00139,bed,bedroom,3
+prd00140,desk,living room,11
+prd00141,desk,living room,6
+prd00142,bed,bedroom,12
+prd00143,bed,living room,19
+prd00144,chair,kitchen,20
+prd00145,table,kitchen,8
+prd00146,desk,living room,18
+prd00147,chair,kitchen,2
+prd00148,desk,bedroom,19
+prd00149,TV,kitchen,5
+prd00150,TV,kitchen,12
+prd00151,chair,bedroom,1
+prd00152,chair,bedroom,2
+prd00153,desk,kitchen,4
+prd00154,chair,living room,7
+prd00155,desk,living room,16
+prd00156,bed,kitchen,13
+prd00157,table,living room,10
+prd00158,table,living room,20
+prd00159,desk,bedroom,4
+prd00160,chair,bedroom,20
+prd00161,desk,living room,14
+prd00162,bed,bedroom,3
+prd00163,bed,living room,10
+prd00164,chair,bedroom,2
+prd00165,desk,bedroom,14
+prd00166,bed,living room,8
+prd00167,TV,kitchen,7
+prd00168,chair,living room,6
+prd00169,TV,kitchen,17
+prd00170,table,kitchen,9
+prd00171,desk,living room,14
+prd00172,chair,kitchen,15
+prd00173,bed,kitchen,2
+prd00174,bed,bedroom,0
+prd00175,chair,kitchen,19
+prd00176,desk,living room,0
+prd00177,TV,kitchen,3
+prd00178,chair,living room,14
+prd00179,chair,kitchen,10
+prd00180,bed,bedroom,1
+prd00181,chair,bedroom,20
+prd00182,desk,kitchen,10
+prd00183,TV,bedroom,13
+prd00184,TV,bedroom,9
+prd00185,table,bedroom,14
+prd00186,TV,living room,6
+prd00187,table,living room,11
+prd00188,bed,kitchen,20
+prd00189,chair,bedroom,9
+prd00190,table,kitchen,2
+prd00191,chair,living room,9
+prd00192,bed,kitchen,3
+prd00193,TV,living room,13
+prd00194,bed,kitchen,8
+prd00195,chair,kitchen,12
+prd00196,TV,living room,6
+prd00197,table,living room,5
+prd00198,TV,bedroom,5
+prd00199,TV,bedroom,6
+prd00200,TV,living room,4
+prd00201,table,bedroom,6
+prd00202,desk,bedroom,3
+prd00203,desk,bedroom,10
+prd00204,chair,kitchen,13
+prd00205,bed,kitchen,6
+prd00206,chair,living room,12
+prd00207,chair,bedroom,3
+prd00208,TV,kitchen,9
+prd00209,desk,kitchen,8
+prd00210,bed,bedroom,20
+prd00211,desk,living room,18
+prd00212,desk,kitchen,12
+prd00213,TV,kitchen,15
+prd00214,table,bedroom,19
+prd00215,chair,bedroom,5
+prd00216,table,living room,19
+prd00217,bed,bedroom,7
+prd00218,bed,bedroom,4
+prd00219,table,living room,15
+prd00220,table,living room,12
+prd00221,bed,living room,10
+prd00222,chair,living room,8
+prd00223,chair,living room,0
+prd00224,chair,bedroom,17
+prd00225,desk,kitchen,15
+prd00226,table,kitchen,13
+prd00227,desk,living room,2
+prd00228,TV,living room,10
+prd00229,desk,bedroom,8
+prd00230,bed,bedroom,10
+prd00231,table,living room,3
+prd00232,TV,kitchen,2
+prd00233,desk,kitchen,13
+prd00234,chair,bedroom,15
+prd00235,TV,bedroom,11
+prd00236,TV,bedroom,18
+prd00237,chair,bedroom,15
+prd00238,bed,bedroom,20
+prd00239,desk,kitchen,7
+prd00240,table,living room,20
+prd00241,desk,kitchen,9
+prd00242,bed,living room,1
+prd00243,chair,bedroom,17
+prd00244,desk,kitchen,10
+prd00245,table,kitchen,7
+prd00246,TV,bedroom,6
+prd00247,TV,bedroom,6
+prd00248,desk,bedroom,8
+prd00249,desk,kitchen,12
+prd00250,chair,kitchen,8
+prd00251,TV,living room,8
+prd00252,table,bedroom,10
+prd00253,bed,kitchen,11
+prd00254,desk,bedroom,8
+prd00255,TV,living room,16
+prd00256,table,living room,13
+prd00257,TV,bedroom,3
+prd00258,table,bedroom,20
+prd00259,desk,living room,12
+prd00260,chair,living room,0
+prd00261,bed,bedroom,9
+prd00262,desk,kitchen,8
+prd00263,chair,bedroom,6
+prd00264,desk,living room,11
+prd00265,TV,living room,20
+prd00266,TV,living room,20
+prd00267,table,kitchen,12
+prd00268,desk,bedroom,17
+prd00269,desk,kitchen,0
+prd00270,chair,bedroom,16
+prd00271,bed,bedroom,20
+prd00272,bed,living room,2
+prd00273,chair,kitchen,6
+prd00274,chair,kitchen,15
+prd00275,chair,kitchen,4
+prd00276,bed,kitchen,3
+prd00277,desk,kitchen,1
+prd00278,bed,kitchen,15
+prd00279,TV,kitchen,20
+prd00280,table,kitchen,8
+prd00281,TV,living room,4
+prd00282,bed,kitchen,0
+prd00283,table,bedroom,19
+prd00284,chair,kitchen,4
+prd00285,table,living room,20
+prd00286,chair,bedroom,0
+prd00287,TV,kitchen,20
+prd00288,bed,kitchen,5
+prd00289,desk,living room,6
+prd00290,desk,bedroom,15
+prd00291,desk,bedroom,13
+prd00292,chair,bedroom,14
+prd00293,chair,kitchen,9
+prd00294,desk,kitchen,14
+prd00295,chair,bedroom,9
+prd00296,table,living room,1
+prd00297,desk,living room,7
+prd00298,chair,living room,10
+prd00299,TV,living room,9
+prd00300,desk,living room,8
+prd00301,bed,bedroom,6
+prd00302,chair,living room,10
+prd00303,chair,bedroom,6
+prd00304,table,living room,9
+prd00305,bed,bedroom,8
+prd00306,TV,living room,18
+prd00307,TV,bedroom,8
+prd00308,bed,living room,20
+prd00309,table,living room,18
+prd00310,TV,bedroom,5
+prd00311,table,kitchen,9
+prd00312,desk,kitchen,19
+prd00313,TV,living room,0
+prd00314,bed,kitchen,4
+prd00315,table,bedroom,12
+prd00316,chair,kitchen,4
+prd00317,bed,kitchen,5
+prd00318,table,kitchen,8
+prd00319,bed,bedroom,14
+prd00320,desk,living room,8
+prd00321,chair,bedroom,5
+prd00322,bed,kitchen,18
+prd00323,table,kitchen,6
+prd00324,table,living room,16
+prd00325,TV,kitchen,18
+prd00326,table,kitchen,20
+prd00327,chair,bedroom,8
+prd00328,table,bedroom,20
+prd00329,table,living room,14
+prd00330,table,bedroom,11
+prd00331,bed,bedroom,13
+prd00332,bed,living room,8
+prd00333,table,kitchen,7
+prd00334,chair,living room,20
+prd00335,chair,bedroom,14
+prd00336,chair,bedroom,15
+prd00337,desk,kitchen,18
+prd00338,chair,living room,20
+prd00339,table,living room,0
+prd00340,chair,bedroom,2
+prd00341,TV,living room,16
+prd00342,chair,bedroom,1
+prd00343,bed,kitchen,18
+prd00344,table,living room,5
+prd00345,bed,living room,8
+prd00346,chair,bedroom,20
+prd00347,TV,bedroom,10
+prd00348,chair,living room,19
+prd00349,chair,living room,1
+prd00350,chair,bedroom,20
+prd00351,desk,living room,4
+prd00352,chair,living room,1
+prd00353,chair,kitchen,3
+prd00354,TV,kitchen,12
+prd00355,chair,bedroom,7
+prd00356,table,kitchen,2
+prd00357,TV,bedroom,10
+prd00358,TV,bedroom,10
+prd00359,bed,living room,3
+prd00360,chair,kitchen,6
+prd00361,bed,kitchen,4
+prd00362,chair,kitchen,15
+prd00363,desk,living room,20
+prd00364,desk,bedroom,2
+prd00365,bed,living room,18
+prd00366,table,kitchen,18
+prd00367,bed,kitchen,7
+prd00368,chair,kitchen,14
+prd00369,bed,living room,11
+prd00370,chair,kitchen,2
+prd00371,desk,living room,8
+prd00372,bed,bedroom,15
+prd00373,desk,kitchen,13
+prd00374,chair,living room,6
+prd00375,TV,living room,6
+prd00376,table,kitchen,0
+prd00377,bed,kitchen,7
+prd00378,bed,living room,5
+prd00379,table,living room,0
+prd00380,table,kitchen,2
+prd00381,TV,living room,11
+prd00382,table,living room,0
+prd00383,table,living room,14
+prd00384,desk,living room,19
+prd00385,table,kitchen,2
+prd00386,table,bedroom,19
+prd00387,bed,kitchen,8
+prd00388,chair,living room,5
+prd00389,desk,kitchen,15
+prd00390,chair,living room,18
+prd00391,TV,bedroom,14
+prd00392,desk,living room,8
+prd00393,chair,kitchen,9
+prd00394,desk,bedroom,14
+prd00395,desk,living room,5
+prd00396,chair,bedroom,19
+prd00397,TV,living room,6
+prd00398,table,living room,17
+prd00399,bed,living room,7
+prd00400,chair,living room,9
+prd00401,desk,living room,8
+prd00402,chair,living room,15
+prd00403,chair,kitchen,1
+prd00404,desk,kitchen,2
+prd00405,chair,bedroom,1
+prd00406,chair,kitchen,17
+prd00407,chair,living room,16
+prd00408,bed,living room,11
+prd00409,chair,living room,0
+prd00410,table,bedroom,9
+prd00411,bed,bedroom,16
+prd00412,chair,kitchen,18
+prd00413,TV,kitchen,2
+prd00414,bed,bedroom,16
+prd00415,TV,bedroom,19
+prd00416,table,kitchen,15
+prd00417,table,kitchen,9
+prd00418,desk,kitchen,15
+prd00419,TV,living room,13
+prd00420,chair,living room,8
+prd00421,table,living room,6
+prd00422,chair,bedroom,12
+prd00423,bed,bedroom,18
+prd00424,TV,kitchen,17
+prd00425,bed,kitchen,18
+prd00426,bed,living room,1
+prd00427,desk,living room,3
+prd00428,chair,kitchen,13
+prd00429,table,bedroom,13
+prd00430,bed,living room,7
+prd00431,desk,kitchen,13
+prd00432,bed,bedroom,1
+prd00433,desk,living room,0
+prd00434,table,kitchen,7
+prd00435,TV,bedroom,9
+prd00436,chair,bedroom,5
+prd00437,bed,kitchen,2
+prd00438,table,bedroom,3
+prd00439,bed,kitchen,9
+prd00440,bed,living room,10
+prd00441,chair,living room,12
+prd00442,TV,living room,10
+prd00443,TV,bedroom,18
+prd00444,bed,bedroom,10
+prd00445,chair,kitchen,18
+prd00446,table,living room,5
+prd00447,bed,bedroom,7
+prd00448,desk,bedroom,6
+prd00449,table,living room,12
+prd00450,bed,bedroom,3
+prd00451,chair,kitchen,11
+prd00452,table,kitchen,7
+prd00453,TV,living room,10
+prd00454,bed,kitchen,9
+prd00455,table,living room,4
+prd00456,chair,bedroom,12
+prd00457,table,living room,4
+prd00458,chair,living room,9
+prd00459,chair,kitchen,4
+prd00460,table,living room,0
+prd00461,chair,kitchen,9
+prd00462,TV,living room,15
+prd00463,bed,living room,0
+prd00464,chair,kitchen,1
+prd00465,desk,living room,20
+prd00466,desk,kitchen,12
+prd00467,chair,bedroom,13
+prd00468,TV,bedroom,16
+prd00469,desk,kitchen,4
+prd00470,TV,bedroom,15
+prd00471,TV,kitchen,11
+prd00472,TV,bedroom,16
+prd00473,desk,living room,4
+prd00474,TV,living room,12
+prd00475,bed,kitchen,11
+prd00476,chair,bedroom,2
+prd00477,chair,living room,17
+prd00478,desk,kitchen,11
+prd00479,table,bedroom,2
+prd00480,bed,kitchen,13
+prd00481,desk,living room,0
+prd00482,desk,living room,12
+prd00483,chair,living room,1
+prd00484,desk,bedroom,9
+prd00485,bed,bedroom,5
+prd00486,chair,bedroom,0
+prd00487,desk,kitchen,1
+prd00488,desk,bedroom,0
+prd00489,table,living room,9
+prd00490,TV,living room,10
+prd00491,TV,kitchen,10
+prd00492,chair,kitchen,9
+prd00493,desk,kitchen,16
+prd00494,desk,kitchen,1
+prd00495,TV,bedroom,17
+prd00496,desk,kitchen,19
+prd00497,bed,bedroom,16
+prd00498,desk,kitchen,8
+prd00499,chair,bedroom,2
+prd00500,bed,living room,13
+prd00501,table,kitchen,10
+prd00502,table,kitchen,15
+prd00503,bed,living room,1
+prd00504,chair,kitchen,14
+prd00505,table,living room,8
+prd00506,desk,kitchen,13
+prd00507,table,living room,3
+prd00508,TV,kitchen,6
+prd00509,TV,living room,8
+prd00510,desk,bedroom,11
+prd00511,desk,kitchen,20
+prd00512,bed,kitchen,19
+prd00513,desk,kitchen,17
+prd00514,bed,kitchen,13
+prd00515,desk,kitchen,5
+prd00516,bed,living room,0
+prd00517,chair,bedroom,20
+prd00518,bed,living room,9
+prd00519,TV,kitchen,16
+prd00520,desk,living room,18
+prd00521,table,kitchen,18
+prd00522,table,bedroom,9
+prd00523,desk,kitchen,4
+prd00524,bed,bedroom,8
+prd00525,chair,kitchen,19
+prd00526,desk,kitchen,7
+prd00527,bed,bedroom,16
+prd00528,table,living room,19
+prd00529,bed,kitchen,13
+prd00530,bed,kitchen,15
+prd00531,bed,living room,8
+prd00532,table,bedroom,18
+prd00533,bed,kitchen,15
+prd00534,chair,bedroom,1
+prd00535,TV,kitchen,16
+prd00536,chair,kitchen,4
+prd00537,table,kitchen,6
+prd00538,table,living room,4
+prd00539,table,bedroom,19
+prd00540,TV,bedroom,18
+prd00541,desk,bedroom,11
+prd00542,bed,bedroom,2
+prd00543,bed,living room,9
+prd00544,chair,living room,18
+prd00545,chair,living room,13
+prd00546,table,kitchen,3
+prd00547,TV,living room,16
+prd00548,chair,bedroom,9
+prd00549,chair,kitchen,11
+prd00550,chair,living room,9
+prd00551,bed,kitchen,6
+prd00552,TV,living room,15
+prd00553,chair,kitchen,14
+prd00554,chair,bedroom,3
+prd00555,table,bedroom,8
+prd00556,bed,bedroom,6
+prd00557,TV,living room,6
+prd00558,table,bedroom,17
+prd00559,chair,kitchen,17
+prd00560,table,living room,12
+prd00561,bed,bedroom,13
+prd00562,TV,living room,10
+prd00563,table,bedroom,13
+prd00564,table,living room,9
+prd00565,table,kitchen,2
+prd00566,bed,bedroom,8
+prd00567,TV,kitchen,14
+prd00568,chair,living room,5
+prd00569,bed,bedroom,16
+prd00570,bed,bedroom,12
+prd00571,desk,living room,6
+prd00572,table,bedroom,10
+prd00573,chair,kitchen,6
+prd00574,desk,living room,5
+prd00575,desk,bedroom,15
+prd00576,chair,bedroom,0
+prd00577,bed,kitchen,9
+prd00578,desk,kitchen,18
+prd00579,chair,kitchen,19
+prd00580,chair,bedroom,6
+prd00581,chair,bedroom,11
+prd00582,chair,bedroom,11
+prd00583,table,kitchen,5
+prd00584,chair,kitchen,1
+prd00585,TV,living room,14
+prd00586,TV,kitchen,13
+prd00587,bed,bedroom,7
+prd00588,chair,kitchen,6
+prd00589,table,bedroom,0
+prd00590,bed,living room,11
+prd00591,desk,bedroom,12
+prd00592,chair,living room,12
+prd00593,bed,living room,8
+prd00594,desk,living room,20
+prd00595,chair,bedroom,16
+prd00596,desk,bedroom,16
+prd00597,table,bedroom,7
+prd00598,bed,kitchen,17
+prd00599,bed,living room,3
+prd00600,TV,living room,0
+prd00601,bed,living room,17
+prd00602,table,bedroom,6
+prd00603,desk,living room,6
+prd00604,desk,living room,10
+prd00605,table,kitchen,5
+prd00606,TV,bedroom,14
+prd00607,TV,kitchen,20
+prd00608,desk,living room,13
+prd00609,TV,living room,1
+prd00610,bed,living room,14
+prd00611,chair,living room,8
+prd00612,bed,kitchen,9
+prd00613,chair,living room,2
+prd00614,table,living room,7
+prd00615,desk,bedroom,1
+prd00616,chair,bedroom,1
+prd00617,chair,kitchen,18
+prd00618,TV,kitchen,11
+prd00619,desk,living room,3
+prd00620,bed,kitchen,10
+prd00621,desk,bedroom,10
+prd00622,chair,bedroom,0
+prd00623,TV,kitchen,20
+prd00624,table,kitchen,8
+prd00625,bed,bedroom,1
+prd00626,chair,kitchen,12
+prd00627,TV,kitchen,6
+prd00628,TV,bedroom,16
+prd00629,table,living room,9
+prd00630,chair,kitchen,6
+prd00631,desk,kitchen,18
+prd00632,chair,bedroom,7
+prd00633,desk,kitchen,11
+prd00634,desk,kitchen,9
+prd00635,desk,living room,12
+prd00636,chair,living room,2
+prd00637,table,kitchen,19
+prd00638,desk,living room,18
+prd00639,chair,bedroom,15
+prd00640,bed,bedroom,5
+prd00641,desk,kitchen,19
+prd00642,TV,living room,2
+prd00643,bed,kitchen,11
+prd00644,TV,kitchen,19
+prd00645,bed,living room,7
+prd00646,TV,living room,4
+prd00647,chair,bedroom,11
+prd00648,TV,living room,3
+prd00649,TV,living room,12
+prd00650,chair,kitchen,10
+prd00651,desk,living room,11
+prd00652,desk,living room,6
+prd00653,TV,kitchen,2
+prd00654,chair,bedroom,10
+prd00655,desk,living room,4
+prd00656,bed,kitchen,15
+prd00657,chair,kitchen,8
+prd00658,table,kitchen,10
+prd00659,table,bedroom,0
+prd00660,desk,living room,7
+prd00661,table,bedroom,12
+prd00662,chair,bedroom,4
+prd00663,bed,living room,18
+prd00664,bed,living room,18
+prd00665,table,kitchen,0
+prd00666,chair,kitchen,9
+prd00667,table,living room,4
+prd00668,chair,living room,8
+prd00669,table,living room,12
+prd00670,desk,living room,16
+prd00671,bed,kitchen,6
+prd00672,chair,bedroom,4
+prd00673,chair,kitchen,13
+prd00674,table,bedroom,18
+prd00675,chair,kitchen,2
+prd00676,desk,kitchen,4
+prd00677,table,bedroom,16
+prd00678,table,bedroom,2
+prd00679,TV,kitchen,6
+prd00680,desk,bedroom,2
+prd00681,bed,bedroom,5
+prd00682,bed,living room,19
+prd00683,bed,bedroom,8
+prd00684,table,living room,14
+prd00685,desk,kitchen,1
+prd00686,desk,bedroom,0
+prd00687,desk,kitchen,9
+prd00688,chair,kitchen,0
+prd00689,bed,living room,16
+prd00690,desk,kitchen,3
+prd00691,table,bedroom,0
+prd00692,bed,kitchen,12
+prd00693,TV,bedroom,1
+prd00694,chair,kitchen,13
+prd00695,TV,kitchen,3
+prd00696,TV,living room,7
+prd00697,chair,kitchen,9
+prd00698,TV,kitchen,16
+prd00699,bed,kitchen,20
+prd00700,desk,kitchen,20
+prd00701,desk,living room,1
+prd00702,TV,kitchen,17
+prd00703,TV,kitchen,8
+prd00704,table,kitchen,18
+prd00705,table,kitchen,16
+prd00706,bed,bedroom,0
+prd00707,desk,living room,7
+prd00708,chair,kitchen,14
+prd00709,table,kitchen,2
+prd00710,bed,kitchen,11
+prd00711,table,bedroom,15
+prd00712,table,kitchen,19
+prd00713,chair,kitchen,2
+prd00714,table,living room,17
+prd00715,desk,living room,17
+prd00716,bed,kitchen,7
+prd00717,desk,bedroom,16
+prd00718,desk,living room,11
+prd00719,desk,living room,11
+prd00720,table,bedroom,13
+prd00721,bed,bedroom,0
+prd00722,TV,bedroom,1
+prd00723,bed,kitchen,17
+prd00724,bed,kitchen,15
+prd00725,desk,kitchen,6
+prd00726,table,living room,16
+prd00727,desk,kitchen,6
+prd00728,TV,bedroom,13
+prd00729,chair,bedroom,20
+prd00730,bed,living room,5
+prd00731,bed,living room,9
+prd00732,chair,living room,8
+prd00733,bed,bedroom,15
+prd00734,TV,bedroom,16
+prd00735,chair,living room,6
+prd00736,desk,kitchen,0
+prd00737,TV,kitchen,10
+prd00738,bed,kitchen,10
+prd00739,bed,kitchen,17
+prd00740,table,bedroom,16
+prd00741,desk,living room,11
+prd00742,table,living room,20
+prd00743,chair,bedroom,8
+prd00744,chair,bedroom,19
+prd00745,desk,kitchen,3
+prd00746,desk,living room,6
+prd00747,table,kitchen,1
+prd00748,bed,living room,4
+prd00749,bed,bedroom,8
+prd00750,bed,living room,3
+prd00751,bed,bedroom,14
+prd00752,chair,kitchen,20
+prd00753,table,bedroom,16
+prd00754,chair,bedroom,17
+prd00755,desk,kitchen,11
+prd00756,TV,bedroom,10
+prd00757,chair,kitchen,13
+prd00758,desk,kitchen,18
+prd00759,TV,living room,11
+prd00760,bed,kitchen,18
+prd00761,bed,bedroom,10
+prd00762,desk,bedroom,13
+prd00763,bed,bedroom,8
+prd00764,chair,living room,2
+prd00765,TV,kitchen,10
+prd00766,table,bedroom,3
+prd00767,desk,bedroom,11
+prd00768,bed,living room,10
+prd00769,desk,living room,19
+prd00770,TV,kitchen,17
+prd00771,bed,bedroom,13
+prd00772,table,bedroom,11
+prd00773,table,living room,3
+prd00774,desk,kitchen,2
+prd00775,desk,kitchen,19
+prd00776,table,kitchen,2
+prd00777,chair,living room,4
+prd00778,table,living room,13
+prd00779,table,kitchen,18
+prd00780,bed,bedroom,13
+prd00781,chair,living room,10
+prd00782,desk,bedroom,7
+prd00783,table,living room,16
+prd00784,table,bedroom,17
+prd00785,chair,bedroom,6
+prd00786,table,living room,4
+prd00787,chair,kitchen,1
+prd00788,chair,bedroom,19
+prd00789,chair,bedroom,16
+prd00790,chair,bedroom,14
+prd00791,chair,living room,13
+prd00792,chair,living room,7
+prd00793,desk,living room,13
+prd00794,bed,kitchen,13
+prd00795,desk,living room,9
+prd00796,table,living room,1
+prd00797,bed,living room,7
+prd00798,TV,living room,2
+prd00799,chair,kitchen,3
+prd00800,table,living room,11
+prd00801,chair,living room,5
+prd00802,table,kitchen,2
+prd00803,TV,bedroom,16
+prd00804,desk,kitchen,7
+prd00805,TV,kitchen,17
+prd00806,table,bedroom,14
+prd00807,chair,living room,9
+prd00808,chair,bedroom,17
+prd00809,bed,bedroom,17
+prd00810,chair,living room,8
+prd00811,bed,kitchen,20
+prd00812,table,living room,12
+prd00813,chair,kitchen,0
+prd00814,TV,living room,10
+prd00815,TV,living room,18
+prd00816,bed,kitchen,16
+prd00817,table,kitchen,0
+prd00818,TV,bedroom,19
+prd00819,bed,bedroom,8
+prd00820,bed,living room,6
+prd00821,table,kitchen,14
+prd00822,table,kitchen,5
+prd00823,TV,kitchen,15
+prd00824,desk,living room,4
+prd00825,bed,living room,20
+prd00826,chair,kitchen,19
+prd00827,bed,kitchen,14
+prd00828,table,kitchen,5
+prd00829,desk,kitchen,3
+prd00830,chair,living room,4
+prd00831,table,living room,2
+prd00832,table,living room,2
+prd00833,chair,bedroom,6
+prd00834,desk,kitchen,15
+prd00835,bed,kitchen,13
+prd00836,desk,living room,10
+prd00837,table,kitchen,20
+prd00838,table,kitchen,7
+prd00839,bed,living room,5
+prd00840,chair,kitchen,10
+prd00841,TV,living room,5
+prd00842,desk,bedroom,13
+prd00843,desk,bedroom,9
+prd00844,table,living room,0
+prd00845,bed,living room,16
+prd00846,TV,kitchen,11
+prd00847,TV,living room,2
+prd00848,TV,bedroom,5
+prd00849,chair,bedroom,7
+prd00850,TV,bedroom,5
+prd00851,desk,bedroom,9
+prd00852,chair,bedroom,6
+prd00853,chair,living room,16
+prd00854,desk,living room,17
+prd00855,bed,bedroom,19
+prd00856,desk,bedroom,19
+prd00857,chair,bedroom,9
+prd00858,TV,bedroom,20
+prd00859,bed,living room,13
+prd00860,desk,kitchen,20
+prd00861,TV,bedroom,2
+prd00862,table,living room,0
+prd00863,TV,living room,14
+prd00864,desk,bedroom,19
+prd00865,desk,living room,8
+prd00866,bed,bedroom,5
+prd00867,TV,bedroom,2
+prd00868,desk,bedroom,2
+prd00869,TV,kitchen,15
+prd00870,bed,kitchen,19
+prd00871,table,living room,19
+prd00872,table,bedroom,1
+prd00873,chair,bedroom,6
+prd00874,bed,living room,12
+prd00875,bed,bedroom,14
+prd00876,desk,living room,9
+prd00877,chair,kitchen,6
+prd00878,desk,bedroom,14
+prd00879,TV,living room,18
+prd00880,table,living room,10
+prd00881,bed,kitchen,7
+prd00882,chair,living room,12
+prd00883,table,kitchen,0
+prd00884,table,kitchen,8
+prd00885,desk,bedroom,13
+prd00886,TV,bedroom,5
+prd00887,bed,living room,14
+prd00888,TV,bedroom,7
+prd00889,bed,kitchen,4
+prd00890,TV,living room,8
+prd00891,chair,living room,5
+prd00892,TV,kitchen,2
+prd00893,chair,bedroom,2
+prd00894,TV,bedroom,7
+prd00895,desk,kitchen,2
+prd00896,chair,kitchen,6
+prd00897,chair,kitchen,17
+prd00898,TV,kitchen,14
+prd00899,chair,bedroom,4
+prd00900,chair,kitchen,8
+prd00901,chair,kitchen,20
+prd00902,table,living room,0
+prd00903,table,living room,12
+prd00904,desk,bedroom,10
+prd00905,TV,living room,16
+prd00906,table,bedroom,18
+prd00907,table,living room,11
+prd00908,desk,living room,7
+prd00909,desk,kitchen,12
+prd00910,table,bedroom,20
+prd00911,table,bedroom,10
+prd00912,TV,kitchen,11
+prd00913,bed,living room,16
+prd00914,TV,kitchen,0
+prd00915,TV,living room,7
+prd00916,TV,bedroom,3
+prd00917,chair,living room,17
+prd00918,TV,living room,2
+prd00919,chair,bedroom,4
+prd00920,table,bedroom,1
+prd00921,desk,kitchen,7
+prd00922,TV,living room,16
+prd00923,desk,living room,13
+prd00924,table,bedroom,15
+prd00925,TV,kitchen,2
+prd00926,chair,bedroom,13
+prd00927,TV,kitchen,0
+prd00928,bed,living room,2
+prd00929,chair,living room,10
+prd00930,desk,kitchen,13
+prd00931,bed,bedroom,8
+prd00932,desk,bedroom,10
+prd00933,chair,living room,3
+prd00934,bed,bedroom,12
+prd00935,desk,living room,18
+prd00936,table,bedroom,9
+prd00937,TV,bedroom,17
+prd00938,table,bedroom,15
+prd00939,table,living room,3
+prd00940,table,living room,20
+prd00941,chair,bedroom,10
+prd00942,desk,kitchen,1
+prd00943,bed,kitchen,6
+prd00944,chair,bedroom,13
+prd00945,TV,living room,9
+prd00946,table,kitchen,2
+prd00947,table,kitchen,2
+prd00948,bed,bedroom,10
+prd00949,TV,living room,7
+prd00950,TV,kitchen,1
+prd00951,desk,living room,1
+prd00952,chair,kitchen,17
+prd00953,table,living room,9
+prd00954,desk,kitchen,6
+prd00955,chair,bedroom,17
+prd00956,chair,kitchen,3
+prd00957,table,kitchen,0
+prd00958,desk,living room,4
+prd00959,desk,bedroom,16
+prd00960,bed,bedroom,19
+prd00961,table,kitchen,3
+prd00962,desk,living room,9
+prd00963,chair,kitchen,16
+prd00964,chair,kitchen,5
+prd00965,TV,bedroom,16
+prd00966,table,bedroom,1
+prd00967,TV,bedroom,3
+prd00968,bed,kitchen,7
+prd00969,TV,bedroom,9
+prd00970,bed,living room,1
+prd00971,chair,kitchen,7
+prd00972,table,living room,0
+prd00973,desk,kitchen,19
+prd00974,desk,kitchen,13
+prd00975,TV,living room,9
+prd00976,bed,living room,20
+prd00977,TV,bedroom,15
+prd00978,bed,kitchen,3
+prd00979,chair,kitchen,5
+prd00980,chair,kitchen,17
+prd00981,TV,kitchen,10
+prd00982,bed,bedroom,6
+prd00983,TV,kitchen,11
+prd00984,chair,bedroom,20
+prd00985,bed,kitchen,15
+prd00986,desk,kitchen,15
+prd00987,table,kitchen,12
+prd00988,TV,kitchen,14
+prd00989,chair,kitchen,2
+prd00990,chair,kitchen,18
+prd00991,chair,kitchen,18
+prd00992,bed,living room,16
+prd00993,table,bedroom,3
+prd00994,bed,bedroom,5
+prd00995,TV,bedroom,9
+prd00996,desk,living room,5
+prd00997,table,bedroom,5
+prd00998,chair,kitchen,15
+prd00999,TV,living room,17
+prd01000,table,kitchen,3
