@@ -1,0 +1,27 @@
+From initial observations, the database write functionality is where the 
+majority of the time is spent. Cases were run with approximately 8 records per
+list (products, customers, rentals), 100 records/list, and 10000 records/list.
+
+For the small record case, approximately .023 sec are spent writing each
+list to the database. There is some additional overhead in the import_data
+function (unusual, since it primarily just calls the read_csv and
+write_many_to_database functions) that is unaccounted for in the sum of the 
+relavent function calls.
+
+For the medium (1000 records/list) case, approximately .027 seconds are spent
+writing each list to the database. From this, it is predicted that the overhead
+of opening the MongoDB database is ~.023 seconds, since a significant increase
+isn't seen from the small list case. The same goes for the read_csv case for
+reading from the input csv files, where there is negligible change from the
+small list case (the read csv portion is small).
+
+For the large (10000 records/list) case, approximately .225 seconds are spent
+writing each list to the database. This is by far the single largest contributer
+to the total time and appears to be roughly a linear increase with data size.
+
+For the increasing database size, the show_rentals function appears to be an 
+insignificant amount of time and is unaffected by database size in these examples
+(actually saw a reduction in time with increasing database size). The
+show_available_products function time is increasing with database size (less 
+than linear increase to datasize), but represents roughly 10% of the total time
+of importing data.
