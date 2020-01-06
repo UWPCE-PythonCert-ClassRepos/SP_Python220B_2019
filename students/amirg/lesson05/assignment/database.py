@@ -2,6 +2,7 @@
 Class for the interactions of the database
 """
 #pylint: disable=invalid-name
+#pylint: disable=too-many-locals
 import csv
 import logging
 from pymongo import MongoClient
