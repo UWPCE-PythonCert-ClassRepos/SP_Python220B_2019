@@ -1,0 +1,29 @@
+Function: read_csv, execution time: 0:00:00, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.023986, database records processed: 7
+Function: read_csv, execution time: 0:00:00.000999, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.024093, database records processed: 5
+Function: read_csv, execution time: 0:00:00.001011, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.023012, database records processed: 8
+Function: import_data, execution time: 0:00:00.371191, database records processed: 20
+Function: show_available_products, execution time: 0:00:00.028970, database records processed: 0
+Function: show_rentals, execution time: 0:00:00.073057, database records processed: 0
+
+Function: read_csv, execution time: 0:00:00.000999, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.025052, database records processed: 100
+Function: read_csv, execution time: 0:00:00.001012, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.025974, database records processed: 100
+Function: read_csv, execution time: 0:00:00, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.026985, database records processed: 100
+Function: import_data, execution time: 0:00:00.387150, database records processed: 300
+Function: show_available_products, execution time: 0:00:00.040049, database records processed: 0
+Function: show_rentals, execution time: 0:00:00.065962, database records processed: 0
+
+Function: read_csv, execution time: 0:00:00.024996, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.226699, database records processed: 10000
+Function: read_csv, execution time: 0:00:00.030977, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.239063, database records processed: 10000
+Function: read_csv, execution time: 0:00:00.048946, database records processed: 0
+Function: write_many_to_database, execution time: 0:00:00.221890, database records processed: 10000
+Function: import_data, execution time: 0:00:01.047526, database records processed: 30000
+Function: show_available_products, execution time: 0:00:00.118935, database records processed: 0
+Function: show_rentals, execution time: 0:00:00.042975, database records processed: 0

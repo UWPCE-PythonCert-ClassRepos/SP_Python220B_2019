@@ -1,0 +1,5 @@
+The time to process more entries increased dramatically in the import data function. This most
+likely stems from importing one entry at a time instead of importing the entire batch at once which
+was previously identified in a different assignment. The other two functions
+(show_available_products, show_rentals) were either not as affected by the number of entries or did
+not increase in a way that would be noticeable to a user. 

@@ -1,0 +1,56 @@
+Some re-configuring of the linear file to return data similar to problem statement of homework assignment. Ran 3 times with following results:
+	Customers
+	(999, 0, 999, 0.8368151187896729)
+	Products
+	(999, 0, 999, 0.8141248226165771)
+	Rentals
+	(999, 0, 999, 0.8433101177215576)
+	Total time
+	2.4942500591278076
+	
+	Customers
+	(999, 0, 999, 0.8137927055358887)
+	Products
+	(999, 0, 999, 0.7476098537445068)
+	Rentals
+	(999, 0, 999, 0.7886559963226318)
+	Total time
+	2.3500585556030273
+	
+	Customers
+	(999, 0, 999, 0.7876567840576172)
+	Products
+	(999, 0, 999, 0.8512086868286133)
+	Rentals
+	(999, 0, 999, 0.8220477104187012)
+	Total time
+	2.4609131813049316
+
+Code was re-configured to run using threading. Total time to run was reduced from approximately 2.5 sec to 1.5 sec. A noticeable reduction in time to run, would recommend to management.
+
+	Customers
+	(999, 0, 999, 1.378561019897461)
+	Products
+	(999, 0, 999, 1.4175400733947754)
+	Rentals
+	(999, 0, 999, 1.4555160999298096)
+	Total time
+	1.4585177898406982
+	
+	Customers
+	(999, 0, 894, 1.6658821105957031)
+	Products
+	(999, 0, 996, 1.7418429851531982)
+	Rentals
+	(999, 0, 999, 1.7478396892547607)
+	Total time
+	1.7478396892547607
+	
+	Customers
+	(999, 0, 999, 1.4014453887939453)
+	Products
+	(999, 0, 999, 1.4624087810516357)
+	Rentals
+	(999, 0, 999, 1.5253732204437256)
+	Total time
+	1.529371976852417
