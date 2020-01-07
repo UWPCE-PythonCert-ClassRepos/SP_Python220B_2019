@@ -9,6 +9,7 @@ This is a temporary script file.
 import logging
 import os
 import csv
+import peewee
 from pymongo import MongoClient
 
 logging.basicConfig(level=logging.INFO)
@@ -66,7 +67,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     products.insert_one(product_entry)
                     product_count += 1
                     LOGGER.info(f"Added {entry[0]} to product database")
-                except:
+                except peewee.IntegrityError:
                     LOGGER.info(f"Error adding {entry[0]} to product database")
                     product_errors += 1
 
@@ -83,7 +84,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     customers.insert_one(customer_entry)
                     customer_count += 1
                     LOGGER.info(f"Added {entry[0]} to customer database")
-                except:
+                except peewee.IntegrityError:
                     LOGGER.info(f"Error adding {entry[0]} to customer database")
                     customer_errors += 1
 
@@ -98,7 +99,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     rentals.insert_one(rental_entry)
                     rental_count += 1
                     LOGGER.info(f"Added {entry[0]} to rentals database")
-                except:
+                except peewee.IntegrityError:
                     LOGGER.info(f"Error adding {entry[0]} to rentals database")
                     rental_errors += 1
 
