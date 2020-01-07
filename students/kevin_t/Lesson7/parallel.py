@@ -48,7 +48,8 @@ def import_customers(directory_name, customer_file, my_queue):
 
     local_end_time = time.time()
 
-    my_queue.put((customer_count, initial_count, final_count, local_end_time - local_start_time))
+    my_queue.put(('Customers', customer_count, initial_count, final_count,
+                  local_end_time - local_start_time))
 
 def import_products(directory_name, customer_file, my_queue):
     """Brings in products csv files, counts lines and adds to database"""
@@ -76,7 +77,8 @@ def import_products(directory_name, customer_file, my_queue):
 
     local_end_time = time.time()
 
-    my_queue.put((products_count, initial_count, final_count, local_end_time - local_start_time))
+    my_queue.put(('Products', products_count, initial_count, final_count,
+                  local_end_time - local_start_time))
 
 def import_rentals(directory_name, customer_file, my_queue):
     """Brings in rental csv files, counts lines and adds to database"""
@@ -104,7 +106,8 @@ def import_rentals(directory_name, customer_file, my_queue):
 
     local_end_time = time.time()
 
-    my_queue.put((rentals_count, initial_count, final_count, local_end_time - local_start_time))
+    my_queue.put(('Rentals', rentals_count, initial_count, final_count,
+                  local_end_time - local_start_time))
 
 if __name__ == '__main__':
     TOTAL_START_TIME = time.time()
@@ -124,18 +127,15 @@ if __name__ == '__main__':
     THREAD2.join()
     THREAD3.join()
 
-    CUSTOMERS = MY_QUEUE.get()
-    PRODUCTS = MY_QUEUE.get()
-    RENTALS = MY_QUEUE.get()
+    FIRST_DONE = MY_QUEUE.get()
+    SECOND_DONE = MY_QUEUE.get()
+    THIRD_DONE = MY_QUEUE.get()
 
     TOTAL_END_TIME = time.time()
 
-    print("Customers")
-    print(CUSTOMERS)
-    print("Products")
-    print(PRODUCTS)
-    print("Rentals")
-    print(RENTALS)
+    print(FIRST_DONE)
+    print(SECOND_DONE)
+    print(THIRD_DONE)
     print("Total time")
     print(TOTAL_END_TIME - TOTAL_START_TIME)
     
