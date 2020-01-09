@@ -1,4 +1,5 @@
 from unittest import TestCase
+from unittest.mock import patch
 
 from customer_model import *
 import basic_operations as bo
@@ -28,8 +29,24 @@ class BasicTests(TestCase):
         self.assertEqual(status, a_customer.status)
         self.assertEqual(credit_limit, a_customer.credit_limit)
 
-        a_customer = bo.add_customer(name, lastname, home_address, phone_number,
+
+    def test_a_add_customer_integrityerror_exception(self):
+        name = "Bree"
+        lastname = "Planica"
+        home_address = "123 Main, Palatine, IL 60067"
+        phone_number = 1234567899
+        email_address = "bplanica@uw.edu"
+        status = 1
+        credit_limit = 2000
+
+        with self.assertLogs(level = 'ERROR'):
+            bo.add_customer(name, lastname, home_address, phone_number,
                                      email_address, status, credit_limit)
+
+
+    def test_a_add_customer_typeerror_exception(self):
+        with self.assertRaises(TypeError):
+            bo.add_customer()
 
 
     def test_b_search_customer(self):
@@ -89,6 +106,16 @@ class BasicTests(TestCase):
         self.assertEqual (expected, bo.search_customer(1))
 
 
-    def test_h_list_active_customers_empty(self):
+    def test_g_list_active_customers_empty(self):
         expected = 0
         self.assertEqual(expected, bo.list_active_customers())
+
+
+    def test_g_delete_customer_empty(self):
+        with self.assertLogs(level ='ERROR'):
+            bo.delete_customer(1)
+
+
+    def test_g_update_customer_credit_empty(self):
+        with self.assertLogs(level = 'ERROR'):
+            bo.update_customer_credit(1, 5000)

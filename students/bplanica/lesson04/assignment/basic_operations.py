@@ -48,7 +48,7 @@ def add_customer(name, lastname, home_address, phone_number, email_address,
                          name, lastname)
             return new_customer
     except pw.IntegrityError as exc:
-        logging.info("Error creating %s; Exception: %s", name, exc)
+        logging.error("Error creating %s; Exception: %s", name, exc)
 
 
 def search_customer(customer_id):
@@ -88,7 +88,7 @@ def delete_customer(customer_id):
         a_customer.delete_instance()
         logging.info("Database delete successful: %s: %s", customer_id, fullname)
     except pw.DoesNotExist:
-        logging.info('Customer ID provided does not exist')
+        logging.error('Customer ID provided does not exist')
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -101,7 +101,7 @@ def update_customer_credit(customer_id, credit_limit):
                      a_customer.customer_id, a_customer.name, a_customer.lastname,
                      a_customer.credit_limit)
     except pw.DoesNotExist:
-        logging.info('Customer ID provided does not exist')
+        logging.error('Customer ID provided does not exist')
 
 
 def list_active_customers():
