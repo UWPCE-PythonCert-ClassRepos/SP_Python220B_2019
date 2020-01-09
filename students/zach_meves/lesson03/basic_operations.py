@@ -2,8 +2,8 @@
 Basic database operations.
 """
 
+import peewee as pw
 from customer_model import Customer, DB
-
 
 def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
                  phone_number: str, email_address: str, status: bool, credit_limit: float):
@@ -26,7 +26,7 @@ def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
             cust = Customer.create(id=customer_id, name=name, last_name=lastname,
                                    address=home_address, phone=phone_number, email=email_address,
                                    status=status, credit_limit=credit_limit)
-        except Exception as err:
+        except pw.IntegrityError as err:
             raise ValueError(err)
         else:
             cust.save()
@@ -41,7 +41,7 @@ def search_customer(customer_id: int) -> dict:
 
     try:
         res = _get_by_id(customer_id)
-    except Exception:
+    except pw.DoesNotExist:
         return {}
     else:
         return {'name': res.name, 'last_name': res.last_name, 'email': res.email,
@@ -57,7 +57,7 @@ def delete_customer(customer_id: int):
 
     try:
         res = _get_by_id(customer_id)
-    except Exception:
+    except pw.DoesNotExist:
         pass
     else:
         res.delete_instance()
@@ -74,7 +74,7 @@ def update_customer_credit(customer_id: int, credit_limit: float):
 
     try:
         res = _get_by_id(customer_id)
-    except Exception:
+    except pw.DoesNotExist:
         raise ValueError(f"No customer with ID {customer_id}")
     else:
         with DB.transaction():
@@ -89,7 +89,7 @@ def list_active_customers() -> int:
     :return: int
     """
 
-    return Customer.select().where(Customer.status == True).count()
+    return Customer.select().where(Customer.status).count()
 
 
 def _get_by_id(cid: int) -> Customer:
