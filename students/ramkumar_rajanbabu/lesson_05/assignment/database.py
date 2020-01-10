@@ -127,7 +127,7 @@ def show_available_products():
     product_type, quantity_available
     
     Returns:
-        product_dict: 
+        product_dict: dictionary of product information
     """
     mongo = MongoDBConnection()
     product_dict = dict()
@@ -147,15 +147,15 @@ def show_available_products():
         
 
 
-def show_rental(product_id):
+def show_rentals(product_id):
     """Return dictionary with user information from users that have
     rented products matching product_id
     
     Args:
-        product_id:
+        product_id: product id number
     
     Returns:
-        rental_dict:
+        rental_dict: dictionary of rental information
     """
     mongo = MongoDBConnection()
     rental_dict = dict()
