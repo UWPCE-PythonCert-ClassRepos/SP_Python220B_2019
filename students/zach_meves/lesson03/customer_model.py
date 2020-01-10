@@ -31,6 +31,9 @@ class Customer(pw.Model):
     credit_limit = pw.DecimalField(decimal_places=2, max_digits=10)
 
     class Meta:
+        """
+        Database reference.
+        """
         database = DB
 
 
