@@ -24,6 +24,7 @@ def clear_database():
     """clears a given database for testing purposes"""
     logging.info('Clearing database...')
     TEST_DB.drop_tables([Customer])
+    logging.info('Creating table in database..')
     TEST_DB.create_tables([Customer])
 
 class TestBasicOperation(unittest.TestCase):
