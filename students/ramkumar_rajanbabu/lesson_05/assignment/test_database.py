@@ -33,6 +33,7 @@ class TestDatabase(TestCase):
                          "quantity_available": "25"}}
         self.assertEqual(actual.show_available_products(), expected)
         
+        #test msg
         
 if __name__ == "__main__":
     unittest.main()
