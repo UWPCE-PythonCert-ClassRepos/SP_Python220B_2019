@@ -4,6 +4,7 @@ directory up where basic_operations.py"""
 #pylint: disable=unused-wildcard-import
 #pylint: disable=wildcard-import
 #pylint: disable=too-many-arguments
+#pylint: disable=invalid-name
 
 import unittest
 import logging
@@ -15,15 +16,19 @@ import basic_operations
 sys.path.append('/Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/'
                 'students/Nick_Lenssen/lesson03')
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+TEST_DB = SqliteDatabase('test.db')
 
-
+def clear_database():
+    """clears a given database for testing purposes"""
+    logging.info('Clearing database...')
+    TEST_DB.drop_tables([Customer])
+    TEST_DB.create_tables([Customer])
 
 class TestBasicOperation(unittest.TestCase):
     """class to test the add search and delete operations.
     Create example data entries to test functions in module"""
-    database_f = SqliteDatabase('customers.db')
-    database_f.connect()
-    database_f.execute_sql('PRAGMA foreign_keys = ON;')
 
     customer_list = [('1', 'Nick', 'Lenssen', '801 Clay Ave',
                       '6709807722', 'myemail@hotspot.com', 'Active', 5000.07),
@@ -34,7 +39,7 @@ class TestBasicOperation(unittest.TestCase):
 
     def test_add_customer(self):
         """tests the add_customer function"""
-        self.clear_database()
+        clear_database()
         logging.info('Testing the add_customer function')
         basic_operations.add_customer(*self.customer_list[0])
         basic_operations.add_customer(*self.customer_list[1])
@@ -55,7 +60,7 @@ class TestBasicOperation(unittest.TestCase):
 
     def test_search_customer(self):
         """will test for the search for the customer_id in the database"""
-        self.clear_database()
+        clear_database()
         logging.info('Testing the search_database function in basic operations')
         basic_operations.add_customer(*self.customer_list[0])
         logging.info('The entries in the database are...')
@@ -70,7 +75,6 @@ class TestBasicOperation(unittest.TestCase):
         try:
             test_entry = basic_operations.search_customer('1')
             #test_no_entry = basic_operations.search_customer('4')
-
             self.assertEqual(test_entry, expected_dic_1)
             #self.assertEqual(test_no_entry, {})
         except peewee.IntegrityError:
@@ -79,7 +83,7 @@ class TestBasicOperation(unittest.TestCase):
     def test_delete_customer(self):
         """tests the function delete_customer that will delete there
         customer with the entered customer id in the database"""
-        self.clear_database()
+        clear_database()
         logging.info('testing the delete_customer function')
         basic_operations.add_customer(*self.customer_list[0])
         basic_operations.add_customer(*self.customer_list[1])
@@ -99,7 +103,7 @@ class TestBasicOperation(unittest.TestCase):
         """tests the function update_customer_credit that will count
                 the active customers in the database"""
         logging.info('Testing update_customer_credit...')
-        self.clear_database()
+        clear_database()
         basic_operations.add_customer(*self.customer_list[2])
         new_credit = 40000
 
@@ -125,7 +129,7 @@ class TestBasicOperation(unittest.TestCase):
         the active customers in the database"""
         logging.info('Testing list_active_customer...')
         # Clean the database so that it is empty.
-        self.clear_database()
+        clear_database()
         try:
             # Confirm empty database.
             self.assertEqual(basic_operations.list_active_customers(), 0)
@@ -139,14 +143,3 @@ class TestBasicOperation(unittest.TestCase):
 
         except peewee.DoesNotExist:
             assert False
-
-    def clear_database(self):
-        """clears a given database for testing purposes"""
-        logging.info('Clearing database...')
-        for customer in self.customer_list:
-            try:
-                cust_exit = Customer.get(Customer.cust_id == customer[0])
-                cust_exit.delete_instance()
-            except peewee.DoesNotExist:
-                logger.info('DNE')
-        logger.info('Database Clear!')
