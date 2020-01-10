@@ -1,5 +1,5 @@
-﻿rental_id,product_id,user_id,name,address,phone_number,email
-521,51,100,Peter Parker,"135 W. 50th Street, New York City, NY 10011",212-576-4000,peter.parker@marvel.com
-125,999,200,Iron Man,"17801 International Blvd, Seattle, WA 98101",206-787-5388,iron.man@gmail.com
-784,325,300,Ramkumar Rajanbabu,"7525 166th Ave NE, Redmond, WA 98052",425-556-2900,ram.kumar@gmail.com
-785,999,300,Ramkumar Rajanbabu,"7525 166th Ave NE, Redmond, WA 98052",425-556-2900,ram.kumar@gmail.com
+﻿rental_id,product_id,user_id
+521,51,100
+125,999,200
+784,325,300
+785,999,300
