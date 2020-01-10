@@ -16,7 +16,7 @@ def add_customer(customer_id, first_n, last_n, h_address, phone_num,
     """given all the filds for a customer, this function will add the customer
     as an entry into the database"""
     try:
-        with database.transaction():
+        with DATABASE.transaction():
             logging.info("Attempt to add customer %s", customer_id)
             new_customer = Customer.create(
                 cust_id=customer_id,
@@ -69,7 +69,7 @@ def update_customer_credit(customer_id, credit_limit):
     credit_limit = new credit limit to be set for the customer
     """
     try:
-        with database.transaction():
+        with DATABASE.transaction():
             acustomer = Customer.get(Customer.cust_id == customer_id)
             acustomer.cust_credit_limit = credit_limit
             acustomer.save()
