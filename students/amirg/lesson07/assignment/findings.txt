@@ -1,0 +1,311 @@
+First run profile of import_data after expanding to 1000 records in each file:
+
+/////////////////////////////////////////////////////////////////
+ 280164 function calls (280117 primitive calls) in 0.606 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     3001    0.055    0.000    0.250    0.000 __init__.py:746(_dict_to_bson)
+        8    0.051    0.006    0.051    0.006 {method 'recv' of '_socket.socket' objects}
+     2998    0.040    0.000    0.050    0.000 objectid.py:165(__generate)
+11006/10997    0.038    0.000    0.156    0.000 __init__.py:731(_element_to_bson)
+    10999    0.038    0.000    0.055    0.000 __init__.py:514(_encode_text)
+        3    0.038    0.013    0.371    0.124 message.py:706(_do_batched_write_command)
+     3000    0.030    0.000    0.052    0.000 csv.py:108(__next__)
+14003/13994    0.027    0.000    0.091    0.000 __init__.py:698(_name_value_to_bson)
+     3000    0.024    0.000    0.105    0.000 collection.py:699(gen)
+       90    0.022    0.000    0.022    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+    11006    0.018    0.000    0.027    0.000 __init__.py:443(_make_name)
+    22006    0.016    0.000    0.016    0.000 {built-in method _codecs.utf_8_encode}
+    20150    0.015    0.000    0.026    0.000 {built-in method builtins.isinstance}
+     3001    0.012    0.000    0.262    0.000 __init__.py:949(encode)
+    10993    0.011    0.000    0.011    0.000 {method 'startswith' of 'str' objects}
+3025/3012    0.011    0.000    0.016    0.000 {built-in method builtins.next}
+    29011    0.009    0.000    0.009    0.000 {method 'append' of 'list' objects}
+     5997    0.008    0.000    0.009    0.000 csv.py:94(fieldnames)
+    14004    0.008    0.000    0.008    0.000 {method 'pack' of 'Struct' objects}
+        1    0.008    0.008    0.606    0.606 database.py:52(import_data)
+    26184    0.007    0.000    0.007    0.000 {built-in method builtins.len}
+     2997    0.007    0.000    0.008    0.000 __init__.py:548(_encode_objectid)
+     6000    0.006    0.000    0.006    0.000 {built-in method _abc._abc_instancecheck}
+     9012    0.006    0.000    0.006    0.000 {built-in method _struct.pack}
+////////////////////////////////////////////////////////////////
+
+Now adjusting linear file to adjust to assignment requirements (list of 2 tuples with 4 elements each)
+File adjusted with output shown below (products first then customers). Time to import data and add 999
+records to database is about 0.38 seconds for each file as shown in output below for a total of 0.77 seconds
+
+////////////////////////////////////////////////////////////////
+2020-01-09 04:11:41,896 linear.py: 59  DEBUG Attempting to import file data
+2020-01-09 04:11:41,900 linear.py: 65  DEBUG Successfully obtained file list
+2020-01-09 04:11:41,901 linear.py: 72  DEBUG Got database list, going through files now
+2020-01-09 04:11:41,902 linear.py: 76  DEBUG Attempting to open data/products.csv
+2020-01-09 04:11:41,909 linear.py: 82  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv
+' mode='r' encoding='cp1252'>
+2020-01-09 04:11:41,909 linear.py: 84  DEBUG Lopping through data in csv file
+2020-01-09 04:11:41,928 linear.py: 88  DEBUG Attempting to insert data in database
+2020-01-09 04:11:42,279 linear.py: 91  DEBUG Successfully added data into database
+2020-01-09 04:11:42,281 linear.py: 76  DEBUG Attempting to open data/customers.csv
+2020-01-09 04:11:42,283 linear.py: 82  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.cs
+v' mode='r' encoding='cp1252'>
+2020-01-09 04:11:42,285 linear.py: 84  DEBUG Lopping through data in csv file
+2020-01-09 04:11:42,304 linear.py: 88  DEBUG Attempting to insert data in database
+2020-01-09 04:11:42,664 linear.py: 91  DEBUG Successfully added data into database
+[(999, 0, 999, 0.37711215019226074), (999, 0, 999, 0.3838627338409424)]
+         204601 function calls (204514 primitive calls) in 0.773 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       14    0.398    0.028    0.398    0.028 {method 'recv' of '_socket.socket' objects}
+     2005    0.041    0.000    0.192    0.000 __init__.py:746(_dict_to_bson)
+9010/9001    0.032    0.000    0.125    0.000 __init__.py:731(_element_to_bson)
+     9004    0.031    0.000    0.044    0.000 __init__.py:514(_encode_text)
+        2    0.026    0.013    0.635    0.318 message.py:706(_do_batched_write_command)
+     1999    0.025    0.000    0.031    0.000 objectid.py:165(__generate)
+11008/10999    0.020    0.000    0.070    0.000 __init__.py:698(_name_value_to_bson)
+     2000    0.019    0.000    0.033    0.000 csv.py:108(__next__)
+     2000    0.015    0.000    0.065    0.000 collection.py:699(gen)
+     9010    0.014    0.000    0.021    0.000 __init__.py:443(_make_name)
+    18019    0.013    0.000    0.013    0.000 {built-in method _codecs.utf_8_encode}
+    15130    0.010    0.000    0.017    0.000 {built-in method builtins.isinstance}
+     8995    0.009    0.000    0.009    0.000 {method 'startswith' of 'str' objects}
+     2005    0.008    0.000    0.201    0.000 __init__.py:949(encode)
+2053/2020    0.008    0.000    0.014    0.000 {built-in method builtins.next}
+    21021    0.006    0.000    0.006    0.000 {method 'append' of 'list' objects}
+    11013    0.006    0.000    0.006    0.000 {method 'pack' of 'Struct' objects}
+    19127    0.005    0.000    0.005    0.000 {built-in method builtins.len}
+     3998    0.005    0.000    0.005    0.000 csv.py:94(fieldnames)
+     1998    0.004    0.000    0.006    0.000 __init__.py:548(_encode_objectid)
+       15    0.004    0.000    0.004    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        1    0.004    0.004    0.772    0.772 linear.py:53(import_data)
+     4000    0.004    0.000    0.004    0.000 {built-in method _abc._abc_instancecheck}
+     6035    0.004    0.000    0.004    0.000 {built-in method _struct.pack}
+ ////////////////////////////////////////////////////////////////
+
+
+Tests drawn up and run for linear. Tests run show 100% coverage (shown below)
+
+ ////////////////////////////////////////////////////////////////
+ $ python -m coverage run -m unittest test_linear.py
+2020-01-09 04:14:23,641 linear.py: 59  DEBUG Attempting to import file data
+2020-01-09 04:14:23,645 linear.py: 65  DEBUG Successfully obtained file list
+2020-01-09 04:14:23,646 linear.py: 72  DEBUG Got database list, going through files now
+2020-01-09 04:14:23,646 linear.py: 76  DEBUG Attempting to open data/products.csv
+2020-01-09 04:14:23,653 linear.py: 82  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-09 04:14:23,654 linear.py: 84  DEBUG Lopping through data in csv file
+2020-01-09 04:14:23,672 linear.py: 88  DEBUG Attempting to insert data in database
+C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymongo\collection.py:696: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  if not isinstance(documents, collections.Iterable) or not documents:
+2020-01-09 04:14:24,089 linear.py: 91  DEBUG Successfully added data into database
+2020-01-09 04:14:24,090 linear.py: 76  DEBUG Attempting to open data/customers.csv
+2020-01-09 04:14:24,092 linear.py: 82  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv' mode='r' encoding='cp1252'>
+2020-01-09 04:14:24,093 linear.py: 84  DEBUG Lopping through data in csv file
+2020-01-09 04:14:24,115 linear.py: 88  DEBUG Attempting to insert data in database
+2020-01-09 04:14:24,506 linear.py: 91  DEBUG Successfully added data into database
+2020-01-09 04:14:24,700 linear.py: 59  DEBUG Attempting to import file data
+2020-01-09 04:14:24,703 linear.py: 65  DEBUG Successfully obtained file list
+2020-01-09 04:14:24,704 linear.py: 72  DEBUG Got database list, going through files now
+2020-01-09 04:14:24,704 linear.py: 76  DEBUG Attempting to open data/products.csv
+2020-01-09 04:14:24,711 linear.py: 82  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-09 04:14:24,712 linear.py: 84  DEBUG Lopping through data in csv file
+2020-01-09 04:14:24,731 linear.py: 88  DEBUG Attempting to insert data in database
+2020-01-09 04:14:25,115 linear.py: 91  DEBUG Successfully added data into database
+2020-01-09 04:14:25,117 linear.py: 76  DEBUG Attempting to open data/nothing.csv
+2020-01-09 04:14:25,117 linear.py: 97  ERROR Could not open file nothing.csv
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.683s
+
+OK
+[(999, 0, 999, 0.44258880615234375), (999, 0, 999, 0.4169435501098633)]
+[(999, 0, 999, 0.4110419750213623)]
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+$ python -m coverage report
+Name             Stmts   Miss  Cover
+------------------------------------
+linear.py           69      0   100%
+test_linear.py      22      0   100%
+------------------------------------
+TOTAL               91      0   100%
+////////////////////////////////////////////////////////////////
+
+Now adjusting parallel file to adjust to assignment requirements (list of 2 tuples with 4 elements each) using the threading method.
+File adjusted with output shown below (products first then customers). Time to import data and add 999
+records to database is about 0.5 - 0.6 seconds for each file as shown in output below for a total of 0.625 seconds
+
+////////////////////////////////////////////////////////////////
+In [14]: prun import_data_thread('data','products.csv','customers.csv')
+2020-01-10 00:40:14,451 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:40:14,451 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:40:14,451 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:40:14,451 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:40:14,457 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:40:14,457 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:40:14,457 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:40:14,457 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:40:14,461 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:40:14,461 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:40:14,461 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:40:14,461 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:40:14,466 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:40:14,466 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:40:14,466 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:40:14,466 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:40:14,469 parallel.py: 101 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:40:14,469 parallel.py: 101 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:40:14,469 parallel.py: 101 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:40:14,469 parallel.py: 101 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:40:14,475 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv'
+mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,475 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv'
+mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,477 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv'
+ mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,475 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv'
+mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,477 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv'
+ mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,475 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv'
+mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,477 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv'
+ mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,480 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,477 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv'
+ mode='r' encoding='cp1252'>
+2020-01-10 00:40:14,480 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,482 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,480 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,482 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,480 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,482 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,482 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:40:14,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,523 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,523 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,523 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:14,523 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:40:15,001 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,001 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,001 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,001 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,070 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,070 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,070 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:40:15,070 parallel.py: 72  DEBUG Successfully added data into database
+[(999, 0, 999, 0.5338687896728516), (999, 0, 999, 0.5999891757965088)]
+         1886 function calls in 0.625 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       36    0.606    0.017    0.606    0.017 {method 'acquire' of '_thread.lock' objects}
+       22    0.006    0.000    0.006    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        7    0.001    0.000    0.001    0.000 {built-in method _thread.start_new_thread}
+       20    0.001    0.000    0.001    0.000 {built-in method time.localtime}
+       20    0.001    0.000    0.001    0.000 {built-in method time.strftime}
+       22    0.000    0.000    0.007    0.000 ansitowin32.py:177(write_and_convert)
+       42    0.000    0.000    0.000    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+       22    0.000    0.000    0.000    0.000 ansitowin32.py:245(convert_osc)
+        3    0.000    0.000    0.000    0.000 {function socket.close at 0x030E5858}
+       20    0.000    0.000    0.001    0.000 __init__.py:539(formatTime)
+       47    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       20    0.000    0.000    0.000    0.000 __init__.py:432(format)
+        5    0.000    0.000    0.001    0.000 __init__.py:293(__init__)
+       20    0.000    0.000    0.001    0.000 __init__.py:1011(flush)
+       12    0.000    0.000    0.000    0.000 threading.py:216(__init__)
+       20    0.000    0.000    0.010    0.001 __init__.py:1022(emit)
+       20    0.000    0.000    0.002    0.000 __init__.py:606(format)
+        1    0.000    0.000    0.625    0.625 <string>:1(<module>)
+       22    0.000    0.000    0.006    0.000 ansitowin32.py:193(write_plain_text)
+       27    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       44    0.000    0.000    0.000    0.000 {method 'finditer' of 're.Pattern' objects}
+        1    0.000    0.000    0.003    0.003 mongo_client.py:79(__init__)
+        1    0.000    0.000    0.624    0.624 parallel.py:80(import_data_thread)
+        9    0.000    0.000    0.606    0.067 threading.py:264(wait)
+        5    0.000    0.000    0.011    0.002 __init__.py:1575(callHandlers)
+////////////////////////////////////////////////////////////////
+
+
+Tests drawn up and run for parallel. Tests run show 100% coverage (shown below)
+
+////////////////////////////////////////////////////////////////
+$ python -m coverage run -m unittest test_parallel.py
+2020-01-10 00:43:15,013 parallel.py: 120 DEBUG Attempting to import file data
+2020-01-10 00:43:15,018 parallel.py: 126 DEBUG Successfully obtained file list
+2020-01-10 00:43:15,019 parallel.py: 130 DEBUG Got database list, going through files now
+2020-01-10 00:43:15,020 parallel.py: 133 DEBUG Attempting to open data/products.csv
+2020-01-10 00:43:15,029 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:15,029 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:15,052 parallel.py: 69  DEBUG Attempting to insert data in database
+C:\Users\Amir G\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pymongo\collection.py:696: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  if not isinstance(documents, collections.Iterable) or not documents:
+2020-01-10 00:43:15,353 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:43:15,356 parallel.py: 133 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:43:15,358 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:15,359 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:15,384 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:43:15,719 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:43:15,930 parallel.py: 120 DEBUG Attempting to import file data
+2020-01-10 00:43:15,933 parallel.py: 126 DEBUG Successfully obtained file list
+2020-01-10 00:43:15,934 parallel.py: 130 DEBUG Got database list, going through files now
+2020-01-10 00:43:15,934 parallel.py: 133 DEBUG Attempting to open data/products.csv
+2020-01-10 00:43:15,942 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:15,943 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:15,978 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:43:16,311 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:43:16,314 parallel.py: 133 DEBUG Attempting to open data/nothing.csv
+2020-01-10 00:43:16,315 parallel.py: 78  ERROR Could not open file nothing.csv
+.2020-01-10 00:43:16,438 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:43:16,441 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:43:16,442 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:43:16,458 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:43:16,459 parallel.py: 101 DEBUG Attempting to open data/customers.csv
+2020-01-10 00:43:16,467 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:16,467 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:16,475 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/customers.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:16,481 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:16,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:43:16,512 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:43:17,062 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:43:17,137 parallel.py: 72  DEBUG Successfully added data into database
+2020-01-10 00:43:17,313 parallel.py: 86  DEBUG Attempting to import file data
+2020-01-10 00:43:17,317 parallel.py: 92  DEBUG Successfully obtained file list
+2020-01-10 00:43:17,317 parallel.py: 96  DEBUG Got database list, going through files now
+2020-01-10 00:43:17,323 parallel.py: 101 DEBUG Attempting to open data/products.csv
+2020-01-10 00:43:17,324 parallel.py: 101 DEBUG Attempting to open data/nothing.csv
+2020-01-10 00:43:17,325 parallel.py: 78  ERROR Could not open file nothing.csv
+2020-01-10 00:43:17,330 parallel.py: 63  DEBUG Opened csv file <_io.TextIOWrapper name='data/products.csv' mode='r' encoding='cp1252'>
+2020-01-10 00:43:17,330 parallel.py: 65  DEBUG Lopping through data in csv file
+2020-01-10 00:43:17,350 parallel.py: 69  DEBUG Attempting to insert data in database
+2020-01-10 00:43:17,636 parallel.py: 72  DEBUG Successfully added data into database
+.
+----------------------------------------------------------------------
+Ran 2 tests in 2.749s
+
+OK
+[(999, 0, 999, 0.3335747718811035), (999, 0, 999, 0.3644716739654541)]
+[(999, 0, 999, 0.3763694763183594), None]
+[(999, 0, 999, 0.6034634113311768), (999, 0, 999, 0.6785125732421875)]
+[(999, 0, 999, 0.3132598400115967), None]
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+$ python -m coverage report
+Name               Stmts   Miss  Cover
+--------------------------------------
+parallel.py           98      0   100%
+test_parallel.py      41      0   100%
+--------------------------------------
+TOTAL                139      0   100%
+
+
+////////////////////////////////////////////////////////////////
+
+AS SEEN FROM THE RESULTS ABOVE, THE PARALLEL MODULE (.625s) RAN FASTER
+THAN THE LINEAR MODULE (.77s) by about 0.15s. I WOULD RECOMMEND TO 
+MANAGEMENT CHANGING TO A PARALLEL PROCESS IN ORDER TO CUT DOWN TIME.
