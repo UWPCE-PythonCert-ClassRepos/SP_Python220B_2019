@@ -53,7 +53,7 @@ class BasicOperationsTest(TestCase):
         """Test search function returns empty dict if no customer found."""
         self.assertEqual(search_customer('5678'), {})
 
-    def test_delete_customer(self):
+    def test_delete_customer(self):cd
         """Test customer deletion."""
         add_customer(self.customer_list)
         delete_customer(self.customer_list[0])
