@@ -4,7 +4,7 @@
 
 from peewee import *
 
-database = SqliteDatabase('customer.db')
+database = SqliteDatabase('customers.db')
 database.connect()
 database.execute_sql('PRAGMA foreign_keys = ON;')
 
@@ -18,11 +18,11 @@ class Customer(BaseModel):
     """
         This class defines Customer.
     """
-    customer_id = CharField(primary_key=True, max_length=15)
-    name = CharField(max_length=15)
-    last_name = CharField(max_length=30)
-    home_address = CharField(max_length=40, null=True)
-    phone_number = CharField(max_length=15, null=True)
-    email_address = CharField(max_length=40, null=True)
-    status = CharField(max_length=15, null=False)
-    credit_limit = DecimalField(max_digits=7, decimal_places=2, null=False)
+    customer_id = CharField(primary_key=True, max_length=30)
+    name = CharField(max_length=30)
+    lastname = CharField(max_length=30)
+    home_address = CharField(max_length=30, null=True)
+    phone_number = CharField(max_length=30, null=True)
+    email_address = CharField(max_length=30, null=True)
+    status = CharField(max_length=30)
+    credit_limit = IntegerField()
