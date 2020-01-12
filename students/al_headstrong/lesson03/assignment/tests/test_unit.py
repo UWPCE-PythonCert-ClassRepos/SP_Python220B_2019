@@ -59,6 +59,12 @@ class BasicOperationsTest(TestCase):
         delete_customer(self.customer_list[0])
         self.assertEqual(search_customer(self.customer_list[0]), {})
 
+    def test_delete_customer_none(self):
+        """Test exception handling on delete_customer."""
+        add_customer(*self.customer_list)
+        with self.assertRaises(DoesNotExist):
+            delete_customer('5678')
+
     def test_update_customer_credit(self):
         """Confirm customer at customer_id gets updated credit limit."""
         add_customer(*self.customer_list)

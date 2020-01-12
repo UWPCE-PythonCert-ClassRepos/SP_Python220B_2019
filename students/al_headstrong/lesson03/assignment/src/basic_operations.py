@@ -37,6 +37,7 @@ def add_customer(customer_id,
         logger.info(e)
         raise e
 
+
 def search_customer(customer_id):
     """Return dict with customer data based on customer_id."""
     try:
@@ -55,3 +56,15 @@ def search_customer(customer_id):
         customer_dict = {}
 
     return customer_dict
+
+
+def delete_customer(customer_id):
+    """Delete customer from database from customer_id."""
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        customer.delete_instance()
+    except DoesNotExist as e:
+        logger.info(f'Could not find = Customer {customer_id}')
+        logger.info(e)
+        raise e
+
