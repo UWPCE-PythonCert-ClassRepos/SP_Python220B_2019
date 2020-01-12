@@ -35,4 +35,23 @@ def add_customer(customer_id,
     except Exception as e:
         logger.info(f'Error creating = Customer {customer_id}')
         logger.info(e)
-        raise err
+        raise e
+
+def search_customer(customer_id):
+    """Return dict with customer data based on customer_id."""
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        customer_dict = {'customer_id': customer.customer_id,
+                         'name': customer.name,
+                         'lastname': customer.lastname,
+                         'home_address': customer.home_address,
+                         'phone_number': customer.phone_number,
+                         'email_address': customer.email_address,
+                         'status': customer.status,
+                         'credit_limit': customer.credit_limit}
+    except DoesNotExist as e:
+        logger.info(f'Could not find = Customer {customer_id}')
+        logger.info(e)
+        customer_dict = {}
+
+    return customer_dict

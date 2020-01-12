@@ -46,22 +46,22 @@ class BasicOperationsTest(TestCase):
 
     def test_search_customer(self):
         """Confirm search_customer returns dict with customer data from a customer id"""
-        add_customer(self.customer_list)
+        add_customer(*self.customer_list)
         self.assertEqual(search_customer(self.customer_list[0]), self.customer_dict)
 
     def test_search_customer_none(self):
         """Test search function returns empty dict if no customer found."""
         self.assertEqual(search_customer('5678'), {})
 
-    def test_delete_customer(self):cd
+    def test_delete_customer(self):
         """Test customer deletion."""
-        add_customer(self.customer_list)
+        add_customer(*self.customer_list)
         delete_customer(self.customer_list[0])
         self.assertEqual(search_customer(self.customer_list[0]), {})
 
     def test_update_customer_credit(self):
         """Confirm customer at customer_id gets updated credit limit."""
-        add_customer(self.customer_list)
+        add_customer(*self.customer_list)
         update_customer_credit(self.customer_list[0], 0)
         updated = search_customer(self.customer_list[0])
         self.assertEqual(updated[credit_limit], 0)
@@ -73,5 +73,5 @@ class BasicOperationsTest(TestCase):
 
     def test_list_active_customers(self):
         """Confirm correct number of customers is returned."""
-        add_customer(self.customer_list)
+        add_customer(*self.customer_list)
         self.assertEqual(list_active_customers(), 1)
