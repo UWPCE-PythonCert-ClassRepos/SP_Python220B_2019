@@ -59,6 +59,19 @@ class TestBasicOperation(unittest.TestCase):
         except peewee.IntegrityError:
             assert False
 
+    def test_add_existing_customer(self):
+        """tests the exception handling in add_customer"""
+        clear_database()
+        logging.info('Testing the add_customer exception handle')
+        basic_operations.add_customer(*self.customer_list[0])
+        try:
+            #test that an Integrity Error is raised if the same customer is entered
+            with self.assertRaises(IntegrityError):
+                basic_operations.add_customer(*self.customer_list[0])
+
+        except peewee.IntegrityError:
+            assert False
+
     def test_search_customer(self):
         """will test for the search for the customer_id in the database"""
         clear_database()
@@ -80,6 +93,17 @@ class TestBasicOperation(unittest.TestCase):
             #self.assertEqual(test_no_entry, {})
         except peewee.IntegrityError:
             assert False
+
+    def test_search_invalid_customer(self):
+        clear_database()
+        logging.info('Testing the search_database function to raise Integrity Error')
+        basic_operations.add_customer(*self.customer_list[0])
+        empty_dict = {}
+        try:
+            self.assertEqual(empty_dict, basic_operations.search_customer('30'))
+        except peewee.IntegrityError:
+            assert False
+
 
     def test_delete_customer(self):
         """tests the function delete_customer that will delete there
