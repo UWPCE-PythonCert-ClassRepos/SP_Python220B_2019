@@ -81,3 +81,7 @@ def update_customer_credit(customer_id, new_credit_limit):
         raise ValueError
 
 
+def list_active_customers():
+    """Return integer value of number of active customers in list."""
+    query = Customer.select().where(Customer.status == 'active')
+    return len(query)
