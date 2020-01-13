@@ -68,3 +68,16 @@ def delete_customer(customer_id):
         logger.info(e)
         raise e
 
+
+def update_customer_credit(customer_id, new_credit_limit):
+    """Change credit_limit at customer_id to new_credit_limit."""
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        customer.credit_limit = new_credit_limit
+        customer.save()
+    except DoesNotExist as e:
+        logger.info(f'Could not find = Customer {customer_id}')
+        logger.info(e)
+        raise ValueError
+
+

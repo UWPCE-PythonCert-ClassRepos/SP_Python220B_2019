@@ -69,8 +69,8 @@ class BasicOperationsTest(TestCase):
         """Confirm customer at customer_id gets updated credit limit."""
         add_customer(*self.customer_list)
         update_customer_credit(self.customer_list[0], 0)
-        updated = search_customer(self.customer_list[0])
-        self.assertEqual(updated[credit_limit], 0)
+        customer = Customer.get(Customer.customer_id == self.customer_list[0])
+        self.assertEqual(customer.credit_limit,0)
 
     def test_update_customer_credit_exception(self):
         """Confirm 'update_customer_credit' raises ValueError on non-existent customer."""
