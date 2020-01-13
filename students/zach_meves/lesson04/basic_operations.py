@@ -88,7 +88,7 @@ def update_customer_credit(customer_id: int, credit_limit: float):
         with DB.transaction():
             res.credit_limit = credit_limit
             res.save()
-        logging.info(f"Updated credit for customer with ID={customer_id")
+        logging.info(f"Updated credit for customer with ID={customer_id}")
 
 
 def list_active_customers() -> int:
