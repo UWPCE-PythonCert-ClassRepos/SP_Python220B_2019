@@ -8,7 +8,7 @@ import logging
 
 # Set up log file
 logging.basicConfig(filename="db.log", format='%(asctime)s:%(levelname)s:%(message)s',
-                    datefmt='%m/%d/%Y %I:%M %p')
+                    datefmt='%m/%d/%Y %I:%M %p', level=logging.INFO)
 
 
 def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
