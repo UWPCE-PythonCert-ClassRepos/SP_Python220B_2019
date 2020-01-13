@@ -2,9 +2,9 @@
 Basic database operations.
 """
 
+import logging
 import peewee as pw
 from customer_model import Customer, DB
-import logging
 
 # Set up log file
 logging.basicConfig(filename="db.log", format='%(asctime)s:%(levelname)s:%(message)s',
@@ -36,7 +36,7 @@ def add_customer(customer_id: int, name: str, lastname: str, home_address: str,
             raise ValueError(err)
         else:
             cust.save()
-            logging.info(f"Added customer with ID={customer_id}")
+            logging.info("Added customer with ID=%d", customer_id)
 
 
 def search_customer(customer_id: int) -> dict:
@@ -68,7 +68,7 @@ def delete_customer(customer_id: int):
         pass
     else:
         res.delete_instance()
-        logging.info(f"Deleted customer with ID={customer_id}")
+        logging.info("Deleted customer with ID=%d", customer_id)
 
 
 def update_customer_credit(customer_id: int, credit_limit: float):
@@ -88,7 +88,7 @@ def update_customer_credit(customer_id: int, credit_limit: float):
         with DB.transaction():
             res.credit_limit = credit_limit
             res.save()
-        logging.info(f"Updated credit for customer with ID={customer_id}")
+        logging.info("Updated credit for customer with ID=%d", customer_id)
 
 
 def list_active_customers() -> int:
