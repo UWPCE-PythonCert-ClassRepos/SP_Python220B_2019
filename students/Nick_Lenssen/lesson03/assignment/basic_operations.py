@@ -34,6 +34,7 @@ def add_customer(customer_id, first_n, last_n, h_address, phone_num,
     except peewee.IntegrityError as e_1:
         LOGGER.info(e_1)
         LOGGER.info('Customer id currently exists: %s', customer_id)
+        raise IntegrityError
 
 def search_customer(customer_id):
     """search the database by customer ID. return with rest of the data
