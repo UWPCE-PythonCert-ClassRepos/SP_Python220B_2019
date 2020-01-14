@@ -29,8 +29,12 @@ Each course lesson will contain its own folder.  The folders will use the naming
         |-- lesson_5                        <Content for Lesson 5>
         |   |-- activity_1                  <Content for Lesson 5 Activity 1 - Intro to NoSQL>
         |   `-- assignment_1                <Content for Lesson 5 Assignment 1 - NoSQL HP Norton>
-        `-- lesson_6                        <Content for Lesson 6>
-            `-- assignment_1                <Content for Lesson 6 Assignment 1 - Profiling and performance>
+        |-- lesson_6                        <Content for Lesson 6>
+        |   `-- assignment_1                <Content for Lesson 6 Assignment 1 - Profiling and performance>
+        `-- lesson_7                        <Content for Lesson 7>
+            |-- activity_1                  <Content for Lesson 7 Activity 1 - Locking Activity>
+            `-- assignment_1                <Content for Lesson 7 Assignment 1 - Threading and Concurrency>
+                `-- data                    <Example data for HP Norton DB.>
 ```
 
 ## Branching
