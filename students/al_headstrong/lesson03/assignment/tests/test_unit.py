@@ -4,7 +4,6 @@ Module for testing unit function.
 import sys
 sys.path.append("../src")
 from unittest import TestCase
-from unittest.mock import patch
 from basic_operations import *
 from customer_model import *
 
@@ -14,9 +13,9 @@ class BasicOperationsTest(TestCase):
 
     def setUp(self):
         """Multi-use dicts and lists for testing."""
-        database.drop_tables([Customer])
-        database.create_tables([Customer])
-        database.close()
+        DATABASE.drop_tables([Customer])
+        DATABASE.create_tables([Customer])
+        DATABASE.close()
 
         self.customer_list = ['1234',
                               'Fun',

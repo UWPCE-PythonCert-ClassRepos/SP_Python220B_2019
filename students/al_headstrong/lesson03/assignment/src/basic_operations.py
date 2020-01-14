@@ -1,12 +1,14 @@
 """
     This module contains functions to use and manipulate the customer database.
 """
+# pylint: disable=unused-import, unused-wildcard-import,
+# pylint: disable=too-few-public-methods, too-many-arguments, wildcard-import
 
-from customer_model import *
 import logging
+from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 
 def add_customer(customer_id,
@@ -20,7 +22,7 @@ def add_customer(customer_id,
     """This function adds customer data to 'customer.db' database."""
 
     try:
-        with database.transaction():
+        with DATABASE.transaction():
             new_customer = Customer.create(customer_id=customer_id,
                                            name=name,
                                            lastname=lastname,
@@ -30,12 +32,12 @@ def add_customer(customer_id,
                                            status=status,
                                            credit_limit=credit_limit)
             new_customer.save()
-            logger.info('Database add successful')
+            LOGGER.info('Database add successful')
 
-    except Exception as e:
-        logger.info(f'Error creating = Customer {customer_id}')
-        logger.info(e)
-        raise e
+    except Exception as error:
+        LOGGER.info('Error creating = Customer %s', customer_id)
+        LOGGER.info(error)
+        raise error
 
 
 def search_customer(customer_id):
@@ -50,9 +52,9 @@ def search_customer(customer_id):
                          'email_address': customer.email_address,
                          'status': customer.status,
                          'credit_limit': customer.credit_limit}
-    except DoesNotExist as e:
-        logger.info(f'Could not find = Customer {customer_id}')
-        logger.info(e)
+    except DoesNotExist as error:
+        LOGGER.info('Could not find = Customer %s', customer_id)
+        LOGGER.info(error)
         customer_dict = {}
 
     return customer_dict
@@ -63,10 +65,10 @@ def delete_customer(customer_id):
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.delete_instance()
-    except DoesNotExist as e:
-        logger.info(f'Could not find = Customer {customer_id}')
-        logger.info(e)
-        raise e
+    except DoesNotExist as error:
+        LOGGER.info('Could not find = Customer %s', customer_id)
+        LOGGER.info(error)
+        raise error
 
 
 def update_customer_credit(customer_id, new_credit_limit):
@@ -75,9 +77,9 @@ def update_customer_credit(customer_id, new_credit_limit):
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.credit_limit = new_credit_limit
         customer.save()
-    except DoesNotExist as e:
-        logger.info(f'Could not find = Customer {customer_id}')
-        logger.info(e)
+    except DoesNotExist as error:
+        LOGGER.info('Could not find = Customer %s', customer_id)
+        LOGGER.info(error)
         raise ValueError
 
 

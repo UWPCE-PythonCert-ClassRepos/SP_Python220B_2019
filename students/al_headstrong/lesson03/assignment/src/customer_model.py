@@ -1,17 +1,24 @@
 """
     Schema for customer database.
 """
+# pylint: disable=unused-import,too-few-public-methods, unused-wildcard-import, wildcard-import
 
 from peewee import *
 
-database = SqliteDatabase('customers.db')
-database.connect()
-database.execute_sql('PRAGMA foreign_keys = ON;')
+DATABASE = SqliteDatabase('customers.db')
+DATABASE.connect()
+DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
 
 
 class BaseModel(Model):
+    """
+        Class inheriting from Model, adding Meta
+    """
     class Meta:
-        database = database
+        """
+            Class assigning DATABASE to class attribute DATABASE.
+        """
+        database = DATABASE
 
 
 class Customer(BaseModel):
