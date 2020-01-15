@@ -1,1 +1,5 @@
 product_id, description, product_type, quantity
+prod001, 50-inch TV, electronics, 4
+prod002, leather couch, furniture, 2
+prod003, leather chair, furniture, 3
+prod004, blu-ray player, electronics, 8
