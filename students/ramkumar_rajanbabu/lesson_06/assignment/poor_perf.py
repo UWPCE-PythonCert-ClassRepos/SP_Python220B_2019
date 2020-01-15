@@ -1,12 +1,11 @@
-"""
-poorly performing, poorly written module
-
-"""
+"""poorly performing, poorly written module"""
 
 import datetime
 import csv
 
+
 def analyze(filename):
+    """Analyze file"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -56,7 +55,9 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 
+
 def main():
+    """Main function"""
     filename = "data/exercise.csv"
     analyze(filename)
 

@@ -1,12 +1,11 @@
-"""
-poorly performing, poorly written module
-
-"""
+"""Module for improving performance of poor_perf.py"""
 
 import datetime
 import csv
 
+
 def analyze(filename):
+    """Return year of occurrencesa and count for ao"""
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -16,14 +15,8 @@ def analyze(filename):
             if lrow[5] > '00/00/2012':
                 new_ones.append((lrow[5], lrow[0]))
 
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
+        year_count = {"2013": 0, "2014": 0, "2015": 0, "2016": 0, "2017": 0,
+                      "2018": 0}
 
         for new in new_ones:
             if new[0][6:] == '2013':
@@ -56,10 +49,7 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 
-def main():
-    filename = "data/exercise.csv"
-    analyze(filename)
-
 
 if __name__ == "__main__":
-    main()
+    FILE_NAME = "data/exercise.csv"
+    analyze(FILE_NAME)
