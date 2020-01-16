@@ -1,0 +1,14 @@
+To get meaningful time and attempt to get increased differentiation between linear and parallel
+options 10,000 items were used in each csv file (products, rentals, customers).
+
+Time for linear run was found to be (including unused rental import) 1.332 seconds (average across
+three runs).
+
+Time for parallel run, using a dedicated thread for each import (reading and placing into database
+for rentals, customers, and products), was found to be 1.316 seconds.
+
+Based on the findings above, a parallel threaded solution may provide a very slight benefit, but not
+substantial enough to warrant any significant updates to the code.
+
+Threading was selected because the I/O nature of database entry. Multiprocessing was not
+investigated.

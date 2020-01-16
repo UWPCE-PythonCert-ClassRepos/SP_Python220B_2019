@@ -1,0 +1,63 @@
+** Baseline Run (CPython) **
+Initial baseline run (note: poor_perf modified to change f string to string format (for Python 2.x
+compatibility, for later PyPy runs) and correction of year_count to properly count year 2018)
+Result (for checks on modifications):
+
+{'2013': 99922, '2014': 100028, '2015': 100264, '2016': 100089, '2017': 100466, '2018': 99711}
+'ao' was found 333419 times
+
+Time (3 Runs): 9.409s / 9.581s / 9.225s
+Profile run showed main bottlenecks (limited visibility) to be calls to the analyze function and
+appending of lists:
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1   15.073   15.073   17.098   17.098 poor_perf.py:9(analyze)
+  1000012    1.785    0.000    1.785    0.000 {method 'append' of 'list' objects}
+        1    0.134    0.134   17.232   17.232 poor_perf.py:59(main)
+    19100    0.117    0.000    0.233    0.000 codecs.py:319(decode)
+    19100    0.116    0.000    0.116    0.000 {built-in method _codecs.utf_8_decode}
+
+
+** Baseline Run (PyPy) **
+Initial baseline run in PyPy.
+Time: 2.522s / 2.502s / 2.486s
+Profile shows similar bottlenecks, but with greatly reduced times for each:
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.403    2.403    2.511    2.511 poor_perf.py:9(analyze)
+  1000012    0.107    0.000    0.107    0.000 {method 'append' of 'list' objects}
+        1    0.002    0.002    2.513    2.513 poor_perf.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 datetime.py:1(<module>)
+
+
+** First Modification **
+Counting for 'ao' moving under with open statement for year counting, to avoid having to
+read csv file a second time (eliminate need for second iterator).
+Time (CPython): 6.039s / 5.956s / 6.372s
+Time (PyPy): 1.833s / 1.917s / 2.178s
+
+
+** Second Modification **
+Eliminated creation of unnecessary list 'lrow', using the iterator 'reader' instead.
+Time (CPython): 5.574s / 5.861s / 6.559s
+Time (PyPy): 1.676s / 1.639s / 1.912s
+
+
+** Third Modification (Final)**
+Eliminated creation of unnecessary list 'new_ones'. Min year filter statement to filter years
+properly, and between 2012 and 2019. Eliminated year_count for loop, and changed multi if statement
+to use year as key.
+Time (CPython): 3.893s / 3.980s / 4.044s
+Time (PyPy): 1.027s / 1.134s / 1.018s
+
+Overall a total improvement of an order of magnitude (between baseline CPython and modified on PyPy)
+
+Note: I tried to use the map and filter functions to further reduce the time. However, since the
+filter function consumes the iterator (and since the year count and ao count portions require
+different filtering critera), I found that creating a second iterator (via new csv reader, making a
+list, or tee) caused more overhead than gain.
+
