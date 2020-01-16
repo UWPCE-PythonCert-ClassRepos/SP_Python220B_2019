@@ -9,6 +9,14 @@ Zach Meves
 
 import pymongo
 import csv
+import os
+
+CLIENT = pymongo.MongoClient()
+DB = CLIENT['hp_norton']
+
+PRODUCTS = DB.products
+CUSTOMERS = DB.customers
+RENTALS = DB.rentals
 
 
 def read_csv(file, keyed=False):
@@ -57,7 +65,21 @@ def import_data(directory, products, customers, rentals):
     :returns: tuple, errors that occur for adding products, customers, and rentals
     """
 
-    pass
+    product_data = read_csv(os.path.join(directory, products))
+    customer_data = read_csv(os.path.join(directory, customers))
+    rental_data = read_csv(os.path.join(directory, rentals))
+
+    res_prod = PRODUCTS.insert_many(product_data)
+    res_cust = CUSTOMERS.insert_many(customer_data)
+    res_rent = RENTALS.insert_many(rental_data)
+
+    inserted_prods = len(res_prod.inserted_ids)
+    inserted_custs = len(res_cust.inserted_ids)
+    inserted_rents = len(res_rent.inserted_ids)
+
+    return (inserted_prods, inserted_custs, inserted_rents), \
+           (len(product_data) - inserted_prods, len(customer_data) - inserted_custs,
+            len(rental_data) - inserted_rents)
 
 
 def show_available_products():
@@ -65,6 +87,17 @@ def show_available_products():
     Return products that are currently available in dictionary format.
 
     :return: dict
+    """
+
+    pass
+
+
+
+def show_products_for_customer():
+    """
+    Return list of all available products.
+
+    :return: list
     """
 
     pass
@@ -78,4 +111,13 @@ def show_rentals(product_id):
     :return: dict
     """
 
-    pass
+    output = {}
+
+    results = RENTALS.find({"product_id": product_id})
+    for rental in results:
+        uid = rental['user_id']
+        output[uid] = CUSTOMERS.find_one({"user_id": uid},
+                                         projection={'_id': False, "user_id": False})
+
+    return output
+
