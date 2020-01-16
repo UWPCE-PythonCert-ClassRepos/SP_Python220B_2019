@@ -21,3 +21,21 @@ def add_furniture(invoice_file, customer_name, item_code, item_description,
 def single_customer(customer_name, invoice_file):
     """Iterate through rental_items and add each item to invoice_file"""
     pass
+
+
+"""
+Code:
+def single_customer()
+def return_function(rental_items):
+
+
+
+
+Example:
+
+def closure(internal_state):
+	def return_function(args):
+		return internal_state combined with args
+	return return_function
+
+"""
