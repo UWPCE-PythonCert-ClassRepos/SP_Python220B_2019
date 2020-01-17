@@ -1,0 +1,13 @@
+Data Type / Amount Added / Time
+
+('Products', 100, 0.08975863456726074)('Customers', 100, 0.09275293350219727)('Rentals', 100, 0.08477354049682617)
+
+('Products', 1000, 0.7808408737182617)('Customers', 1000, 0.7451198101043701)('Rentals', 1000, 0.7445673942565918)
+
+('Products', 5000, 4.2276623249053955)('Customers', 5000, 3.4270384311676025)('Rentals', 5000, 3.3450918197631836)
+
+('Products', 10000, 7.190126419067383)('Customers', 10000, 7.28777003288269)('Rentals', 10000, 6.772192716598511)
+('Products', 10000, 9.123563766479492)('Customers', 10000, 9.799337387084961)('Rentals', 10000, 8.094250440597534)
+('Products', 10000, 7.981036424636841)('Customers', 10000, 8.199598789215088)('Rentals', 10000, 8.020100355148315
+
+It seems that importing customers takes a bit more longer than importing products or rentals as the amount of entries processed goes up.
