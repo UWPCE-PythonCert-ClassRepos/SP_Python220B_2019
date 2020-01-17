@@ -36,23 +36,24 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 
-def explore_folders(filepath):
+def explore_folders(filepath, contents):
     """Given a root, find all PNG files within"""
     if not os.path.exists(filepath):
         logging.debug("FileNotFound")
         logging.error(f"{filepath} does not exist, please enter a valid file path")
         raise ValueError
-    results = []
-    for root, dirs, files in os.walk(filepath):
-        results.append(root)
-        file_list = []
-        for file in files:
-            if file.lower().endswith(".png"):
-                file_list.append(file)
-        results.append(file_list)
-    return results
+    contents.append(filepath)
+    file_list = []
+    for item in os.listdir(filepath):
+        if item.lower().endswith(".png"):
+            file_list.append(item)
+    contents.append(file_list)
+    for item in os.listdir(filepath):
+        if os.path.isdir(os.path.join(filepath, item)):
+            contents = explore_folders(os.path.join(filepath, item), contents)
+    return contents
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
-    explored = explore_folders(ARGS)
+    explored = explore_folders(ARGS, [])
     print(explored)
