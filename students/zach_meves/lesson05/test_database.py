@@ -157,9 +157,9 @@ class TestDatabase(unittest.TestCase):
 
         # Assert they were added to the database correctly
         with database.MongoManager() as mm:
-            self.assertEqual(len(self.rental_data), mm.db.rentals.count(), "Rental count")
-            self.assertEqual(len(self.product_keys), mm.db.products.count(), "Prod count")
-            self.assertEqual(len(self.customer_keys), mm.db.customers.count(), "Cust count")
+            self.assertEqual(len(self.rental_data), mm.db.rentals.count_documents({}), "Rental count")
+            self.assertEqual(len(self.product_keys), mm.db.products.count_documents({}), "Prod count")
+            self.assertEqual(len(self.customer_keys), mm.db.customers.count_documents({}), "Cust count")
 
     def test_show_available_products(self):
         """Test database.show_available_products"""

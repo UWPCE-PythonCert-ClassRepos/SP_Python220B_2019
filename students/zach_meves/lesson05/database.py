@@ -7,9 +7,10 @@ Lesson 05
 Zach Meves
 """
 
-import pymongo
 import csv
 import os
+import pymongo
+
 
 # CLIENT = pymongo.MongoClient()
 DB_NAME = 'hp_norton'
@@ -66,9 +67,9 @@ def read_csv(file, keyed=False):
         for line in reader:
             line_values = [_.strip() for _ in line]
             # Check if need to convert to floats or ints
-            for i in range(len(line_values)):
+            for i, val in enumerate(line_values[:]):
                 try:
-                    line_values[i] = float(line_values[i])
+                    line_values[i] = float(val)
                 except ValueError:
                     pass
 
@@ -98,10 +99,10 @@ def import_data(directory, products, customers, rentals):
     customer_data = read_csv(os.path.join(directory, customers))
     rental_data = read_csv(os.path.join(directory, rentals))
 
-    with MongoManager() as mm:
-        res_prod = mm.db.products.insert_many(product_data)
-        res_cust = mm.db.customers.insert_many(customer_data)
-        res_rent = mm.db.rentals.insert_many(rental_data)
+    with MongoManager() as manager:
+        res_prod = manager.db.products.insert_many(product_data)
+        res_cust = manager.db.customers.insert_many(customer_data)
+        res_rent = manager.db.rentals.insert_many(rental_data)
 
     inserted_prods = len(res_prod.inserted_ids)
     inserted_custs = len(res_cust.inserted_ids)
@@ -121,13 +122,13 @@ def show_available_products():
 
     output = {}
 
-    with MongoManager() as mm:
-        for product in mm.db.products.find():
+    with MongoManager() as manager:
+        for product in manager.db.products.find():
             pid = product['product_id']
             count = product['quantity']
 
             # Find corresponding rentals
-            for rental in mm.db.rentals.find({'product_id': pid}):
+            for rental in manager.db.rentals.find({'product_id': pid}):
                 count -= rental['quantity_rented']
 
             if count:
@@ -158,12 +159,11 @@ def show_rentals(product_id):
 
     output = {}
 
-    with MongoManager() as mm:
-        results = mm.db.rentals.find({"product_id": product_id})
+    with MongoManager() as manager:
+        results = manager.db.rentals.find({"product_id": product_id})
         for rental in results:
             uid = rental['user_id']
-            output[uid] = mm.db.customers.find_one({"user_id": uid},
-                                                   projection={'_id': False, "user_id": False})
+            output[uid] = manager.db.customers.find_one({"user_id": uid},
+                                                        projection={'_id': False, "user_id": False})
 
     return output
-
