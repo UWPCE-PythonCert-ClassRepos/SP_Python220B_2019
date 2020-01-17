@@ -49,4 +49,6 @@ class ModuleTests(TestCase):
                 self.assertEqual(print_out.getvalue(), 'productCode:1\ndescription:Frame\nmarketPrice:24\nrentalPrice:25\n')
         self.assertEqual(main.FULLINVENTORY, full_inventory)
         with patch('sys.stdout', new=io.StringIO()) as print_out:
-            self.assertEqual(main.getprice(), 24)
+            main.getprice()
+            self.assertEqual(print_out.getvalue(), 'Get price\n')
+
