@@ -78,14 +78,19 @@ class TestCsvIO(unittest.TestCase):
         except FileNotFoundError:
             pass
 
-
-@mock.patch('database.DB', database.CLIENT['test_db'])
-@mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
-@mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
-@mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
+# @mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
+# @mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
+# @mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
+# @mock.patch('database.DB', database.CLIENT['test_db'])
+@mock.patch('database.DB_NAME', 'test_db')
 class TestDatabase(unittest.TestCase):
     """Test cases for database"""
 
+    # @mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
+    # @mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
+    # @mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
+    # @mock.patch('database.DB', database.CLIENT['test_db'])
+    @mock.patch('database.DB_NAME', 'test_db')
     def setUp(self) -> None:
         """Set up test case"""
 
@@ -111,17 +116,28 @@ class TestDatabase(unittest.TestCase):
                 if self.products_remaining[prod] <= 0:
                     self.products_remaining.pop(prod)
 
+    # @mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
+    # @mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
+    # @mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
+    # @mock.patch('database.DB', database.CLIENT['test_db'])
+    @mock.patch('database.DB_NAME', 'test_db')
     def tearDown(self) -> None:
         """
-        Remove database data
+        Remove database data.
+
+        .. note::
+            For some reason, the patch decorators on the class
+            DO NOT get applied to ``setUp`` or ``tearDown``.
         """
 
-        database.PRODUCTS.delete_many({})
-        database.CUSTOMERS.delete_many({})
-        database.RENTALS.delete_many({})
+        with database.MongoManager() as mm:
 
-        for name in ('products', 'customers', 'rentals'):
-            database.DB.drop_collection(name)
+            mm.db.product.delete_many({})
+            mm.db.customers.delete_many({})
+            mm.db.rentals.delete_many({})
+
+            for name in ('products', 'customers', 'rentals'):
+                mm.db.drop_collection(name)
 
     def test_import_data(self):
         """Test database.import_data"""
@@ -139,10 +155,11 @@ class TestDatabase(unittest.TestCase):
 
         self.assertEqual((0, 0, 0), fail, "Fail count")
 
-         # Assert they were added to the database correctly
-        self.assertEqual(len(self.rental_data), database.RENTALS.count(), "Rental count")
-        self.assertEqual(len(self.product_keys), database.PRODUCTS.count(), "Prod count")
-        self.assertEqual(len(self.customer_keys), database.CUSTOMERS.count(), "Cust count")
+        # Assert they were added to the database correctly
+        with database.MongoManager() as mm:
+            self.assertEqual(len(self.rental_data), mm.db.rentals.count(), "Rental count")
+            self.assertEqual(len(self.product_keys), mm.db.products.count(), "Prod count")
+            self.assertEqual(len(self.customer_keys), mm.db.customers.count(), "Cust count")
 
     def test_show_available_products(self):
         """Test database.show_available_products"""
@@ -151,7 +168,7 @@ class TestDatabase(unittest.TestCase):
 
         success, fail = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
-        prods_to_show = self.products_remaining.keys()
+        prods_to_show = database.show_available_products()
         correct = dict(zip(prods_to_show, ({PROD_DESC: self.product_data[prod][PROD_DESC],
                                             PROD_TYPE: self.product_data[prod][PROD_TYPE],
                                             PROD_REMAIN: self.products_remaining[prod]}
@@ -176,7 +193,10 @@ class TestDatabase(unittest.TestCase):
                 user, prod, qty = entry[USER_ID], entry[PROD_ID], entry[RENT_QTY]
                 if prod == product:  # Add as rental for this product
                     correct[user] = self.customer_data[user]
-                    correct[user].pop(USER_ID)
+                    try:
+                        correct[user].pop(USER_ID)
+                    except KeyError:
+                        pass
 
             self.assertEqual(correct, database.show_rentals(product))
 
@@ -185,11 +205,10 @@ class TestDatabase(unittest.TestCase):
 
         _, _ = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
-        self.assertEqual(set(database.show_products_for_customer()),
-                         set(self.products_remaining.keys()))
-
-    # def tearDown(self) -> None:
-    #     """Drop all collections"""
-    #
-    #     for collection in self.db.list_collection_names():
-    #         self.db.drop_collection(collection)
+        correct = []
+        for key in sorted(self.products_remaining):
+            correct.append({PROD_DESC: self.product_data[key][PROD_DESC],
+                            PROD_TYPE: self.product_data[key][PROD_TYPE],
+                            'quantity_available': self.products_remaining[key]})
+        self.assertEqual(correct,
+                         database.show_products_for_customer())

@@ -11,12 +11,41 @@ import pymongo
 import csv
 import os
 
-CLIENT = pymongo.MongoClient()
-DB = CLIENT['hp_norton']
+# CLIENT = pymongo.MongoClient()
+DB_NAME = 'hp_norton'
 
-PRODUCTS = DB.products
-CUSTOMERS = DB.customers
-RENTALS = DB.rentals
+# PRODUCTS = DB.products
+# CUSTOMERS = DB.customers
+# RENTALS = DB.rentals
+
+
+class MongoManager:
+    """Context manager for MongoDB connection."""
+
+    def __init__(self, host='127.0.0.1', port=27017):
+        """Construct context manager.
+
+        :param host: str, host address
+        :param port: int, port number
+        """
+
+        self.host = host
+        self.port = port
+        self.connection = None
+        self.db = None
+
+    def __enter__(self):
+        """Enter context manager"""
+
+        self.connection = pymongo.MongoClient(self.host, self.port)
+        self.db = self.connection[DB_NAME]
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Exit context manager"""
+
+        self.connection.close()
+        self.db = None
 
 
 def read_csv(file, keyed=False):
@@ -69,9 +98,10 @@ def import_data(directory, products, customers, rentals):
     customer_data = read_csv(os.path.join(directory, customers))
     rental_data = read_csv(os.path.join(directory, rentals))
 
-    res_prod = PRODUCTS.insert_many(product_data)
-    res_cust = CUSTOMERS.insert_many(customer_data)
-    res_rent = RENTALS.insert_many(rental_data)
+    with MongoManager() as mm:
+        res_prod = mm.db.products.insert_many(product_data)
+        res_cust = mm.db.customers.insert_many(customer_data)
+        res_rent = mm.db.rentals.insert_many(rental_data)
 
     inserted_prods = len(res_prod.inserted_ids)
     inserted_custs = len(res_cust.inserted_ids)
@@ -89,18 +119,33 @@ def show_available_products():
     :return: dict
     """
 
-    pass
+    output = {}
 
+    with MongoManager() as mm:
+        for product in mm.db.products.find():
+            pid = product['product_id']
+            count = product['quantity']
+
+            # Find corresponding rentals
+            for rental in mm.db.rentals.find({'product_id': pid}):
+                count -= rental['quantity_rented']
+
+            if count:
+                output[pid] = {k: product[k] for k in ('description', 'product_type')}
+                output[pid]['quantity_available'] = count
+
+    return output
 
 
 def show_products_for_customer():
     """
     Return list of all available products.
 
-    :return: list
+    :return: list of dict
     """
 
-    pass
+    output = show_available_products()
+    return [output[k] for k in sorted(output.keys())]
 
 
 def show_rentals(product_id):
@@ -113,11 +158,12 @@ def show_rentals(product_id):
 
     output = {}
 
-    results = RENTALS.find({"product_id": product_id})
-    for rental in results:
-        uid = rental['user_id']
-        output[uid] = CUSTOMERS.find_one({"user_id": uid},
-                                         projection={'_id': False, "user_id": False})
+    with MongoManager() as mm:
+        results = mm.db.rentals.find({"product_id": product_id})
+        for rental in results:
+            uid = rental['user_id']
+            output[uid] = mm.db.customers.find_one({"user_id": uid},
+                                                   projection={'_id': False, "user_id": False})
 
     return output
 
