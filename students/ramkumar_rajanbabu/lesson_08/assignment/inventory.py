@@ -20,22 +20,19 @@ def add_furniture(invoice_file, customer_name, item_code, item_description,
 
 def single_customer(customer_name, invoice_file):
     """Iterate through rental_items and add each item to invoice_file"""
-    pass
+    def return_rental(rental_file):
+    	""""""
+    	# partial makes a new version with arguments filled in
+    	rental = partial(add_furniture, invoice_file, customer_name)
+    	with open(rental_file, "r", newline="") as file:
+	        reader = csv.reader(file)
+	        for row in reader:
+	        	item_code = row[0]
+	        	item_description = row[1] 
+	        	item_monthly_price = row[2]
+	        	rental(item_code, item_description, item_monthly_price)
+    return return_rental
 
 
-"""
-Code:
-def single_customer()
-def return_function(rental_items):
-
-
-
-
-Example:
-
-def closure(internal_state):
-	def return_function(args):
-		return internal_state combined with args
-	return return_function
-
-"""
+if __name__ == "__main__":
+    
