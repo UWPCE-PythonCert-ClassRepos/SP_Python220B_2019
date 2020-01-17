@@ -1,9 +1,13 @@
-# test_unit
+'''
+
+Module use to unit test inventory management
+
+'''
 import sys
 import io
-sys.path.append('inventory_management')
 from unittest import TestCase
-from unittest.mock import MagicMock, patch, Mock
+from unittest.mock import MagicMock, patch
+sys.path.append('inventory_management')
 from inventory_management.furnitureclass import Furniture
 from inventory_management.electricappliancesclass import ElectricAppliances
 from inventory_management.inventoryclass import Inventory
@@ -13,10 +17,15 @@ import inventory_management.main as main
 sys.path.append('inventory_management')
 
 class InventoryTest(TestCase):
+    '''
 
+    Class use to unit test inventory management
+
+    '''
     def test_inventory(self):
         """ Test the adding of inventory item """
-        expected = {'productCode': 'AX003C', 'description': 'Modulator', 'marketPrice': 1000, 'rentalPrice': 250}
+        expected = {'productCode': 'AX003C', 'description': 'Modulator',
+                    'marketPrice': 1000, 'rentalPrice': 250}
         inventory_item = Inventory('AX003C', 'Modulator', 1000, 250)
         self.assertEqual(expected, inventory_item.return_as_dictionary())
 
@@ -66,7 +75,8 @@ class MainTest(TestCase):
     def test_add_inventory(self):
         """ testing the adding of an inventory item """
         inventory_input = ['1', 'Frame', 25, 'N', 'N']
-        expected = {'1':{'productCode': '1', 'description': 'Frame', 'marketPrice': 24, 'rentalPrice': 25}}
+        expected = {'1': {'productCode': '1', 'description': 'Frame',
+                          'marketPrice': 24, 'rentalPrice': 25}}
         with patch('builtins.input', side_effect=inventory_input):
             main.addnewitem()
         self.assertEqual(main.FULLINVENTORY, expected)
@@ -74,8 +84,8 @@ class MainTest(TestCase):
     def test_add_appliance(self):
         """ testing the adding of an appliance item """
         appliance_input = ['1', 'Toaster', 25, 'N', 'Y', 'LG', '220V']
-        expected = {'1':{'productCode': '1', 'description': 'Toaster', 'marketPrice': 24,
-                         'rentalPrice': 25, 'brand': 'LG', 'voltage': '220V'}}
+        expected = {'1': {'productCode': '1', 'description': 'Toaster', 'marketPrice': 24,
+                          'rentalPrice': 25, 'brand': 'LG', 'voltage': '220V'}}
         with patch('builtins.input', side_effect=appliance_input):
             main.addnewitem()
         self.assertEqual(main.FULLINVENTORY, expected)
@@ -83,8 +93,8 @@ class MainTest(TestCase):
     def test_add_furniture(self):
         """ testing the adding of an inventory item """
         furniture_input = ['1', 'Chair', 25, 'Y', 'WOOD', 'XL']
-        expected = {'1':{'productCode': '1', 'description': 'Chair', 'marketPrice': 24,
-                         'rentalPrice': 25, 'material': 'WOOD', 'size': 'XL'}}
+        expected = {'1': {'productCode': '1', 'description': 'Chair', 'marketPrice': 24,
+                          'rentalPrice': 25, 'material': 'WOOD', 'size': 'XL'}}
         with patch('builtins.input', side_effect=furniture_input):
             main.addnewitem()
         self.assertEqual(main.FULLINVENTORY, expected)
@@ -108,7 +118,6 @@ class MainTest(TestCase):
             with patch('sys.stdout', new=io.StringIO()) as print_out:
                 main.iteminfo()
                 self.assertEqual(print_out.getvalue(), expected)
-
 
     def test_exit(self):
         with self.assertRaises(SystemExit):

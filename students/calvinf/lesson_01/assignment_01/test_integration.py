@@ -1,23 +1,22 @@
-import sys
-import io
-sys.path.append('inventory_management')
-from unittest import TestCase
-from unittest.mock import MagicMock, patch, Mock
-from inventory_management.furnitureclass import Furniture
-from inventory_management.electricappliancesclass import ElectricAppliances
-from inventory_management.inventoryclass import Inventory
-import inventory_management.market_prices as mp
-import inventory_management.main as main
-
 """
-
 Test integration of inventory management system.
 
-
 """
+
+import sys
+import io
+from unittest import TestCase
+from unittest.mock import patch
+sys.path.append('inventory_management')
+import inventory_management.main as main
+
+
 class ModuleTests(TestCase):
+    ''' Class to test integration of inventory management '''
     maxDiff = None
+
     def test_inventory_integration(self):
+        ''' Function to test integration of inventory management '''
         inventory_input = ['1', 'Frame', 25, 'N', 'N']
         appliance_input = ['2', 'Toaster', 25, 'N', 'Y', 'LG', '220V']
         furniture_input = ['3', 'Chair', 25, 'Y', 'WOOD', 'XL']
@@ -27,9 +26,16 @@ class ModuleTests(TestCase):
                          'rentalPrice': 25, 'material': 'WOOD', 'size': 'XL'}
         expected_inv = {'productCode': '1', 'description': 'Frame',
                         'marketPrice': 24, 'rentalPrice': 25}
-        full_inventory = {'1': { 'productCode': '1','description': 'Frame', 'marketPrice': 24,
-                          'rentalPrice': 25}, '2': {'productCode': '2', 'brand': 'LG', 'description': 'Toaster', 'marketPrice': 24,
-                                                    'rentalPrice': 25, 'voltage': '220V'}, '3': {'productCode': '3', 'description': 'Chair', 'marketPrice': 24,'rentalPrice': 25, 'material': 'WOOD', 'size': 'XL'}}
+        full_inventory = {'1': {'productCode': '1', 'description': 'Frame',
+                                'marketPrice': 24, 'rentalPrice': 25},
+                          '2': {'productCode': '2',
+                                'brand': 'LG', 'description': 'Toaster',
+                                'marketPrice': 24,
+                                'rentalPrice': 25, 'voltage': '220V'},
+                          '3': {'productCode': '3',
+                                'description': 'Chair',
+                                'marketPrice': 24, 'rentalPrice': 25,
+                                'material': 'WOOD', 'size': 'XL'}}
 
         with patch('builtins.input', side_effect=inventory_input):
             main.addnewitem()
@@ -43,12 +49,13 @@ class ModuleTests(TestCase):
         with patch('builtins.input', side_effect=['4', '1']):
             with patch('sys.stdout', new=io.StringIO()) as print_out:
                 main.iteminfo()
-                self.assertEqual(print_out.getvalue(), 'Item not found in inventory\n')
+                self.assertEqual(print_out.getvalue(),
+                                 'Item not found in inventory\n')
             with patch('sys.stdout', new=io.StringIO()) as print_out:
                 main.iteminfo()
-                self.assertEqual(print_out.getvalue(), 'productCode:1\ndescription:Frame\nmarketPrice:24\nrentalPrice:25\n')
+                self.assertEqual(print_out.getvalue(),
+                                 'productCode:1\ndescription:Frame\nmarketPrice:24\nrentalPrice:25\n')
         self.assertEqual(main.FULLINVENTORY, full_inventory)
         with patch('sys.stdout', new=io.StringIO()) as print_out:
             main.getprice()
             self.assertEqual(print_out.getvalue(), 'Get price\n')
-
