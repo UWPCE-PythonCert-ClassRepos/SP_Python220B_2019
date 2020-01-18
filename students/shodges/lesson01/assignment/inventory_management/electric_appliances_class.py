@@ -18,6 +18,7 @@ class electric_appliances(inventory):
 
         self.brand = brand
         self.voltage = voltage
+        inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
     def returnAsDictionary(self):
         """
@@ -25,10 +26,10 @@ class electric_appliances(inventory):
         elsewhere.
         """
         outputDict = {}
-        outputDict['productCode'] = self.productCode
+        outputDict['productCode'] = self.product_code
         outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
+        outputDict['marketPrice'] = self.market_price
+        outputDict['rentalPrice'] = self.rental_price
         outputDict['brand'] = self.brand
         outputDict['voltage'] = self.voltage
 
