@@ -42,7 +42,7 @@ def addNewItem():
         if isElectricAppliance.lower() == "y":
             itemBrand = input("Enter item brand: ")
             itemVoltage = input("Enter item voltage: ")
-            newItem = electric_appliances_class.electric_appliances(itemCode,itemDescription,itemPrice,itemRentalPrice,itemBrand,itemVoltage)
+            newItem = electric_appliances_class.ElectricAppliances(itemCode,itemDescription,itemPrice,itemRentalPrice,itemBrand,itemVoltage)
         else:
             newItem = inventory_class.inventory(itemCode,itemDescription,itemPrice,itemRentalPrice)
     fullInventory[itemCode] = newItem.return_as_dictionary()

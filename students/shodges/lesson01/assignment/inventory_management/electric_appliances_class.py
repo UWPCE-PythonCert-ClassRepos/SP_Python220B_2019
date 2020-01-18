@@ -6,7 +6,7 @@ inventory_class.py)
 # Electric appliances class
 from inventory_class import inventory
 
-class electric_appliances(inventory):
+class ElectricAppliances(inventory):
     """
     Inventory sub-class to create more fine-grained attributes specific to furniture.
     """
