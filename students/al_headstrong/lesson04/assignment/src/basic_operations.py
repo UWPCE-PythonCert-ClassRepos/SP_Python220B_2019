@@ -6,7 +6,6 @@
 
 import logging
 from customer_model import *
-from itertools import *
 
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 
@@ -114,11 +113,10 @@ def list_customer_names():
 def total_credit_active():
     """Return the total amount of credit available to customers."""
     query = Customer.select().where(Customer.status == 'active')
-    return sum(customer.credit_limit for customer in  query)
+    return sum(customer.credit_limit for customer in query)
 
 
 def active_customer_name_iter():
     """Return one active customer name at a time."""
     query = Customer.select().where(Customer.status == 'active')
     return (f'{customer.lastname}, {customer.name}' for customer in query)
-
