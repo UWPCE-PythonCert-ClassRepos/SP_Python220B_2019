@@ -2,16 +2,16 @@
 class inventory:
 
     def __init__(self, productCode, description, marketPrice, rentalPrice):
-        self.productCode = productCode
+        self.product_code = productCode
         self.description = description
-        self.marketPrice = marketPrice
-        self.rentalPrice = rentalPrice
+        self.market_price = marketPrice
+        self.rental_price = rentalPrice
 
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
+    def return_as_dictionary(self):
+        output_dict = {}
+        output_dict['productCode'] = self.product_code
+        output_dict['description'] = self.description
+        output_dict['marketPrice'] = self.market_price
+        output_dict['rentalPrice'] = self.rental_price
 
-        return outputDict
+        return output_dict
