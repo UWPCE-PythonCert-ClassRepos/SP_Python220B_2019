@@ -1,5 +1,5 @@
 # Electric appliances class
-from inventoryClass import inventory
+from inventory_class import inventory
 
 class electricAppliances(inventory):
 

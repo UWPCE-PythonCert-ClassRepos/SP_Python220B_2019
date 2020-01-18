@@ -1,5 +1,5 @@
 # Furniture class
-from inventoryClass import inventory
+from inventory_class import inventory
 
 class furniture(inventory):
 
