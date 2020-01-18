@@ -3,7 +3,7 @@ This module provides common high-level class structures for individual pieces of
 """
 
 # Inventory class
-class inventory:
+class Inventory:
     """
     Super-class for inventory management.
     """

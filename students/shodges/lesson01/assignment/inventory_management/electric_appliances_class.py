@@ -4,21 +4,21 @@ inventory_class.py)
 """
 
 # Electric appliances class
-from inventory_class import inventory
+from inventory_class import Inventory
 
-class ElectricAppliances(inventory):
+class ElectricAppliances(Inventory):
     """
     Inventory sub-class to create more fine-grained attributes specific to furniture.
     """
 
     def __init__(self, productCode, description, marketPrice, rentalPrice, brand, voltage):
-        inventory.__init__(self, productCode, description, marketPrice, rentalPrice) # Creates
+        Inventory.__init__(self, productCode, description, marketPrice, rentalPrice) # Creates
             #common instance variables from the parent class
 
 
         self.brand = brand
         self.voltage = voltage
-        inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
+        Inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
     def return_as_dictionary(self):
         """
