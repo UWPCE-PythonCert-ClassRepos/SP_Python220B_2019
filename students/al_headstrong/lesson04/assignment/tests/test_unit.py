@@ -27,16 +27,25 @@ class BasicOperationsTest(TestCase):
                               100000
                               ]
 
-        self.customer_list_un = ['2345',
-                                'Unfun',
-                                'Unguy',
+        self.customer_list_a = ['2345',
+                                'No fun',
+                                'Guy',
                                 'No place Pl.',
                                 'Unlisted',
                                 'Unlisted',
                                 'inactive',
-                                 20]
+                                20]
 
-        self.customer_lists = [self.customer_list, self.customer_list_un]
+        self.customer_list_test = ['3456',
+                                   'Test',
+                                   'Name',
+                                   'Address',
+                                   'Phone',
+                                   'email',
+                                   'active',
+                                   20]
+
+        self.customer_lists = [self.customer_list, self.customer_list_a, self.customer_list_test]
 
         self.customer_dict = {'customer_id': '1234',
                               'name': 'Fun',
@@ -99,5 +108,14 @@ class BasicOperationsTest(TestCase):
 
     def test_total_credit_active(self):
         """Confirm tested function returns sum of credit of active customers."""
-        add_customer(*customer for customer in customer_lists)
-        self.assertEqual(total_credit_active(), 10000)
+        for customer in self.customer_lists:
+            add_customer(*customer)
+        self.assertEqual(total_credit_active(), 100020)
+
+    def test_active_customer_name_iter(self):
+        """Confirm function returns an active customer name."""
+        for customer in self.customer_lists:
+            add_customer(*customer)
+        a = active_customer_name_iter()
+        self.assertEqual(next(a), "Guy, Fun")
+        self.assertEqual(next(a), "Name, Test")
