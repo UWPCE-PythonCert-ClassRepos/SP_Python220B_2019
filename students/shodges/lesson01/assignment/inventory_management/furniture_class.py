@@ -17,6 +17,7 @@ class Furniture(inventory):
 
         self.material = material
         self.size = size
+        inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
     def return_as_dictionary(self):
         """
@@ -24,10 +25,10 @@ class Furniture(inventory):
         elsewhere.
         """
         output_dict = {}
-        output_dict['productCode'] = self.productCode
+        output_dict['productCode'] = self.product_code
         output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.marketPrice
-        output_dict['rentalPrice'] = self.rentalPrice
+        output_dict['marketPrice'] = self.market_price
+        output_dict['rentalPrice'] = self.rental_price
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 
