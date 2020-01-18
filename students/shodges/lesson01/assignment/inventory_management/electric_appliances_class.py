@@ -11,8 +11,8 @@ class ElectricAppliances(Inventory):
     Inventory sub-class to create more fine-grained attributes specific to furniture.
     """
 
-    def __init__(self, productCode, description, marketPrice, rentalPrice, brand, voltage):
-        Inventory.__init__(self, productCode, description, marketPrice, rentalPrice) # Creates
+    def __init__(self, productCode, description, rentalPrice, brand, voltage):
+        Inventory.__init__(self, productCode, description, rentalPrice) # Creates
             #common instance variables from the parent class
 
 
