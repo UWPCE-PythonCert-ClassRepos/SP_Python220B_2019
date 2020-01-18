@@ -24,12 +24,6 @@ def main_menu(user_prompt=None):
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
-def get_price(item_code):
-    """
-    Function to retrieve the price given item_code
-    """
-    print("Get price")
-
 def add_new_item():
     """
     Function to add an item (with user input) to the FULL_INVENTORY
