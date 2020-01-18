@@ -45,7 +45,7 @@ def addNewItem():
             newItem = electric_appliances_class.electric_appliances(itemCode,itemDescription,itemPrice,itemRentalPrice,itemBrand,itemVoltage)
         else:
             newItem = inventory_class.inventory(itemCode,itemDescription,itemPrice,itemRentalPrice)
-    fullInventory[itemCode] = newItem.returnAsDictionary()
+    fullInventory[itemCode] = newItem.return_as_dictionary()
     print("New inventory item added")
 
 

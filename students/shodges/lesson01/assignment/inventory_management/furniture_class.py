@@ -18,7 +18,7 @@ class furniture(inventory):
         self.material = material
         self.size = size
 
-    def returnAsDictionary(self):
+    def return_as_dictionary(self):
         """
         Return the current attributes of the instantiated class as a dictionary for processsing
         elsewhere.
