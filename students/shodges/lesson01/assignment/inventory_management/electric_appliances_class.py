@@ -18,7 +18,6 @@ class ElectricAppliances(Inventory):
 
         self.brand = brand
         self.voltage = voltage
-        Inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
     def return_as_dictionary(self):
         """

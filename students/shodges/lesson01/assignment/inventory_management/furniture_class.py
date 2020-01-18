@@ -17,7 +17,6 @@ class Furniture(Inventory):
 
         self.material = material
         self.size = size
-        Inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
     def return_as_dictionary(self):
         """
