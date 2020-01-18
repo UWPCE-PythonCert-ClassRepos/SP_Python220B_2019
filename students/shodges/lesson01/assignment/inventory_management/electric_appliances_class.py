@@ -4,7 +4,7 @@ inventory_class.py)
 """
 
 # Electric appliances class
-from inventory_class import inventory
+from inventory_class import Inventory
 
 class ElectricAppliances(inventory):
     """
