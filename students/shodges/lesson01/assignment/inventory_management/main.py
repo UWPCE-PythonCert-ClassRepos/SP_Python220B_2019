@@ -36,7 +36,7 @@ def add_new_item():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.furniture(item_code, item_description, item_price,
+        new_item = furniture_class.Furniture(item_code, item_description, item_price,
                                              item_rental_price, item_material, item_size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
