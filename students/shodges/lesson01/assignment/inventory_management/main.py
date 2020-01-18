@@ -28,7 +28,6 @@ def add_new_item():
     """
     Function to add an item (with user input) to the FULL_INVENTORY
     """
-    global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
 
