@@ -1,9 +1,9 @@
 # Launches the user interface for the inventory management system
 import sys
 import market_prices
-import inventoryClass
-import furnitureClass
-import electricAppliancesClass
+import inventory_class
+import furniture_class
+import electric_appliances_class
 
 def mainMenu(user_prompt=None):
     valid_prompts = {"1": addNewItem,
