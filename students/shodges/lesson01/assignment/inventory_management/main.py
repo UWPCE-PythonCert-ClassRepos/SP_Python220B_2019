@@ -24,7 +24,7 @@ def get_price(item_code):
     print("Get price")
 
 def add_new_item():
-    global full_inventory
+    global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -49,14 +49,14 @@ def add_new_item():
         else:
             new_item = inventory_class.Inventory(item_code, item_description, item_price,
                                                  item_rental_price)
-    full_inventory[item_code] = new_item.return_as_dictionary()
+    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 
 def item_info():
     item_code = input("Enter item code: ")
-    if item_code in full_inventory:
-        print_dict = full_inventory[item_code]
+    if item_code in FULL_INVENTORY:
+        print_dict = FULL_INVENTORY[item_code]
         for k, v in print_dict.items():
             print("{}:{}".format(k, v))
     else:
@@ -66,8 +66,8 @@ def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
-    full_inventory = {}
+    FULL_INVENTORY = {}
     while True:
-        print(full_inventory)
+        print(FULL_INVENTORY)
         main_menu()()
         input("Press Enter to continue...........")
