@@ -1,7 +1,7 @@
 # Electric appliances class
 from inventory_class import inventory
 
-class electricAppliances(inventory):
+class electric_appliances(inventory):
 
     def __init__(self, productCode, description, marketPrice, rentalPrice, brand, voltage):
         inventory.__init__(self, productCode, description, marketPrice, rentalPrice) # Creates
