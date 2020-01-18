@@ -30,4 +30,9 @@ class Inventory:
         """
         Mock-up of price retrieval.
         """
-        return 24
+        price_list = {'COUCH': 100.00, 'TABLE': 57.25, 'OVEN': 375.99, 'REFRIGERATOR': 276.50}
+
+        try:
+            return price_list[item_code]
+        except KeyError:
+            return 50.00
