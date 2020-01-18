@@ -20,17 +20,17 @@ class electric_appliances(inventory):
         self.voltage = voltage
         inventory.__init__(self, productCode, description, marketPrice, rentalPrice)
 
-    def returnAsDictionary(self):
+    def return_as_dictionary(self):
         """
         Return the current attributes of the instantiated class as a dictionary for processsing
         elsewhere.
         """
-        outputDict = {}
-        outputDict['productCode'] = self.product_code
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.market_price
-        outputDict['rentalPrice'] = self.rental_price
-        outputDict['brand'] = self.brand
-        outputDict['voltage'] = self.voltage
+        output_dict = {}
+        output_dict['productCode'] = self.product_code
+        output_dict['description'] = self.description
+        output_dict['marketPrice'] = self.market_price
+        output_dict['rentalPrice'] = self.rental_price
+        output_dict['brand'] = self.brand
+        output_dict['voltage'] = self.voltage
 
-        return outputDict
+        return output_dict
