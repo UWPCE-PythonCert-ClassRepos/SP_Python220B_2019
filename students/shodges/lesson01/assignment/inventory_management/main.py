@@ -36,15 +36,15 @@ def addNewItem():
     if isFurniture.lower() == "y":
         itemMaterial = input("Enter item material: ")
         itemSize = input("Enter item size (S,M,L,XL): ")
-        newItem = furniture_class.furniture(itemCode,itemDescription,itemPrice,itemRentalPrice,itemMaterial,itemSize)
+        newItem = furniture_class.furniture(itemCode, itemDescription, itemPrice, itemRentalPrice, itemMaterial, itemSize)
     else:
         isElectricAppliance = input("Is this item an electric appliance? (Y/N): ")
         if isElectricAppliance.lower() == "y":
             itemBrand = input("Enter item brand: ")
             itemVoltage = input("Enter item voltage: ")
-            newItem = electric_appliances_class.ElectricAppliances(itemCode,itemDescription,itemPrice,itemRentalPrice,itemBrand,itemVoltage)
+            newItem = electric_appliances_class.ElectricAppliances(itemCode, itemDescription, itemPrice, itemRentalPrice, itemBrand, itemVoltage)
         else:
-            newItem = inventory_class.inventory(itemCode,itemDescription,itemPrice,itemRentalPrice)
+            newItem = inventory_class.inventory(itemCode, itemDescription, itemPrice, itemRentalPrice)
     fullInventory[itemCode] = newItem.return_as_dictionary()
     print("New inventory item added")
 
@@ -53,8 +53,8 @@ def itemInfo():
     itemCode = input("Enter item code: ")
     if itemCode in fullInventory:
         printDict = fullInventory[itemCode]
-        for k,v in printDict.items():
-            print("{}:{}".format(k,v))
+        for k, v in printDict.items():
+            print("{}:{}".format(k, v))
     else:
         print("Item not found in inventory")
 
