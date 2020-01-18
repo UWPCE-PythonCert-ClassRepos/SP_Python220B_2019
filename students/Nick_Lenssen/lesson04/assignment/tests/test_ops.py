@@ -14,7 +14,7 @@ from customer_model import *
 import basic_operations
 
 sys.path.append('/Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/'
-                'students/Nick_Lenssen/lesson03')
+                'students/Nick_Lenssen/lesson04')
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
