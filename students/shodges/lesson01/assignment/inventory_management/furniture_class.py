@@ -23,12 +23,12 @@ class Furniture(inventory):
         Return the current attributes of the instantiated class as a dictionary for processsing
         elsewhere.
         """
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
-        outputDict['material'] = self.material
-        outputDict['size'] = self.size
+        output_dict = {}
+        output_dict['productCode'] = self.productCode
+        output_dict['description'] = self.description
+        output_dict['marketPrice'] = self.marketPrice
+        output_dict['rentalPrice'] = self.rentalPrice
+        output_dict['material'] = self.material
+        output_dict['size'] = self.size
 
-        return outputDict
+        return output_dict
