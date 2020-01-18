@@ -13,7 +13,7 @@ def main_menu(user_prompt=None):
 
     while user_prompt not in valid_prompts:
         options_str = ("{}" + (", {}") * (len(options)-1)).format(*options)
-        print("Please choose from the following options ({options_str}):")
+        print("Please choose from the following options ({}):".format(options_str))
         print("1. Add a new item to the inventory")
         print("2. Get item information")
         print("q. Quit")
