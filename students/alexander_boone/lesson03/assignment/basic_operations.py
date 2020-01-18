@@ -2,8 +2,8 @@
 This module performs basic operations on
 the customer database.
 '''
-from customer_model import *
 import logging
+from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -14,21 +14,21 @@ def add_customer(customer_id, name, lastname, home_address,
     try:
         with database.transaction():
             new_customer = Customer.create(
-                customer_id = customer_id,
-                name = name,
-                lastname = lastname,
-                home_address = home_address,
-                phone_number = phone_number,
-                email_address = email_address,
-                status = status,
-                credit_limit = credit_limit
+                customer_id=customer_id,
+                name=name,
+                lastname=lastname,
+                home_address=home_address,
+                phone_number=phone_number,
+                email_address=email_address,
+                status=status,
+                credit_limit=credit_limit
             )
             new_customer.save()
             logger.info('Saved new customer to DB')
 
-    except Exception as e:
+    except Exception as exc:
         logger.info('Error while trying to save new customer to DB')
-        logger.info(e)
+        logger.info(exc)
 
 
 def search_customer(customer_id):
@@ -39,7 +39,7 @@ def search_customer(customer_id):
     '''
     try:
         with database.transaction():
-            customer_found = Customer.get(Customer.customer_id==customer_id)
+            customer_found = Customer.get(Customer.customer_id == customer_id)
             customer_dict = {
                 'name': customer_found.name,
                 'lastname': customer_found.lastname,
@@ -50,7 +50,9 @@ def search_customer(customer_id):
                 'credit_limit': customer_found.credit_limit
             }
             return customer_dict
-    except:
+    except Exception as exc:
+        logger.info('Customer not found')
+        logger.info(exc)
         return {}
 
 
@@ -58,16 +60,14 @@ def delete_customer(customer_id):
     '''Delete a customer from the customer database.'''
     try:
         with database.transaction():
-            cust_to_delete = Customer.get_or_none(Customer.customer_id==customer_id)
-            if cust_to_delete is None:
-                return False
-            else:
+            cust_to_delete = Customer.get_or_none(Customer.customer_id == customer_id)
+            if cust_to_delete is not None:
                 cust_to_delete.delete_instance()
                 return True
-    except Exception as e:
+    except Exception as exc:
         logger.info('Error while trying to delete customer from DB')
-        logger.info(e)
-        return False
+        logger.info(exc)
+    return False
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -78,16 +78,15 @@ def update_customer_credit(customer_id, credit_limit):
     '''
     try:
         with database.transaction():
-            cust_to_update = Customer.get_or_none(Customer.customer_id==customer_id)
+            cust_to_update = Customer.get_or_none(Customer.customer_id == customer_id)
             if cust_to_update is None:
                 return False
-            else:
-                cust_to_update.credit_limit = credit_limit
-                cust_to_update.save()
-                return True
-    except Exception as e:
-        logger.info('Error while trying to delete customer from DB') # not caught; no error thrown by Peewee
-        logger.info(e)
+            cust_to_update.credit_limit = credit_limit
+            cust_to_update.save()
+            return True
+    except Exception as exc:
+        logger.info('Error while trying to delete customer from DB')
+        logger.info(exc)
         return False
 
 def list_active_customers():
@@ -97,10 +96,9 @@ def list_active_customers():
     '''
     try:
         with database.transaction():
-            active_customers = Customer.select().where(Customer.status=='active')
-            n = active_customers.count()
-            return n
-    except Exception as e:
+            active_customers = Customer.select().where(Customer.status == 'active')
+            return active_customers.count()
+    except Exception as exc:
         logger.info('Error while trying to retrieve count of active customers.')
-        logger.info(e)
+        logger.info(exc)
         return None
