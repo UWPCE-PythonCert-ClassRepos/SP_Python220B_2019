@@ -15,9 +15,10 @@ logger.info('First name and connect to a database (sqlite here)')
 
 logger.info('The next 3 lines of code are the only database specific code')
 
-database = SqliteDatabase('personjob.db')
+database = SqliteDatabase('personjob_dept.db')
 database.connect()
 database.execute_sql('PRAGMA foreign_keys = ON;') # needed for sqlite only
+
 
 # if you wanted to use heroku postgres:
 #
@@ -60,6 +61,19 @@ class Person(BaseModel):
     lives_in_town = CharField(max_length = 40)
     nickname = CharField(max_length = 20, null = True)
 
+class Department(BaseModel):
+    """
+        This class defines a department, which is used to describe
+        what organization a job is being performed in.
+    """
+    logger.info('Department class with a similar approach')
+    logger.info('Department number')
+    dept_num = CharField(primary_key=True, max_length=4)
+    logger.info('Department name')
+    dept_name = CharField(max_length=30)
+    logger.info('Department manager')
+    dept_manager = ForeignKeyField(Person, related_name='is_led_by', null=False)
+
 class Job(BaseModel):
     """
         This class defines Job, which maintains details of past Jobs
@@ -74,6 +88,11 @@ class Job(BaseModel):
     salary = DecimalField(max_digits = 7, decimal_places = 2)
     logger.info('Which person had the Job')
     person_employed = ForeignKeyField(Person, related_name='was_filled_by', null = False)
+    logger.info('Which department the Job is in')
+    job_dept = ForeignKeyField(Department, related_name='in_dept', null=False)
+    logger.info('Length of time job held')
+    job_length = end_date - start_date
+
 
 class PersonNumKey(BaseModel):
     """
@@ -85,3 +104,5 @@ class PersonNumKey(BaseModel):
     person_name = CharField(max_length = 30)
     lives_in_town = CharField(max_length = 40)
     nickname = CharField(max_length = 20, null = True)
+
+database.create_tables([Person, PersonNumKey, Department, Job])
