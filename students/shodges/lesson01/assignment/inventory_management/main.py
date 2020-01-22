@@ -56,7 +56,7 @@ def get_price(item_code):
     """
     Function to retrieve the price given item_code
     """
-    print("Get price")
+    print("Current price of {}: {}".format(item_code, market_prices.get_latest_price(item_code)))
 
 
 def item_info():
