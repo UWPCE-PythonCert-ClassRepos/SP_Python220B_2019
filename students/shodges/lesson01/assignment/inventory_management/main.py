@@ -31,7 +31,7 @@ def add_new_item():
     """
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
-    market_price = market_prices.get_latest_price(itemCode)
+    market_price = market_prices.get_latest_price(item_code)
     rental_price = input("Enter item rental price: ")
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
