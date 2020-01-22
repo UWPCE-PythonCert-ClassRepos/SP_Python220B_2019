@@ -1,17 +1,16 @@
 """
 This module provides common high-level class structures for individual pieces of inventory.
 """
-import market_prices
 
 class Inventory:
     """
     Super-class for inventory management.
     """
 
-    def __init__(self, productCode, description, rental_price):
+    def __init__(self, productCode, description, market_price, rental_price):
         self.product_code = productCode
         self.description = description
-        self.market_price = market_prices.get_latest_price(productCode)
+        self.market_price = market_price
         self.rental_price = rental_price
 
     def return_as_dictionary(self):
