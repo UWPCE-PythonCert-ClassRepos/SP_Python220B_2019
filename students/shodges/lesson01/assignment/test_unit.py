@@ -3,12 +3,12 @@ import unittest
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
-#from inventory_management.market_prices import get_latest_price
+from inventory_management.market_prices import get_latest_price
 
 class InventoryTest(unittest.TestCase):
-    """Test cases for Inventory class"""
+    """Test cases for inventory_class module"""
     def test_inventory_class(self):
-        """Test the inventory instantiation and return_as_dictionary() method"""
+        """Test the Inventory instantiation and return_as_dictionary() method"""
         expected = {'productCode': 'DRYWALL',
                     'description': 'Just an ordinary drywall board.  Pretty boring.',
                     'marketPrice': '100.00',
@@ -22,7 +22,7 @@ class InventoryTest(unittest.TestCase):
         self.assertEqual(expected, self.item.return_as_dictionary())
 
 class ElectricApplianceTest(unittest.TestCase):
-    """Test cases for ElectricAppliances class"""
+    """Test cases for electric_appliances_class module"""
     def test_electric_appliances_class(self):
         """Test the ElectricAppliances instantiation and return_as_directory() method"""
         expected = {'productCode': 'OVEN',
@@ -47,7 +47,7 @@ class ElectricApplianceTest(unittest.TestCase):
         self.assertEqual(expected, self.item.return_as_dictionary())
 
 class FurnitureTest(unittest.TestCase):
-    """Test cases for ElectricAppliances class"""
+    """Test cases for furniture_class module"""
     def test_electric_appliances_class(self):
         """Test the ElectricAppliances instantiation and return_as_directory() method"""
         expected = {'productCode': 'SECTIONAL',
@@ -70,3 +70,9 @@ class FurnitureTest(unittest.TestCase):
         self.assertIsInstance(self.item, Inventory, Furniture)
 
         self.assertEqual(expected, self.item.return_as_dictionary())
+
+class MarketPricesTest(unittest.TestCase):
+    """Test cases for market_prices module"""
+    def test_market_prices(self):
+        """Test the get_latest_price() method"""
+        self.assertEqual(24, get_latest_price('SECTIONAL'))
