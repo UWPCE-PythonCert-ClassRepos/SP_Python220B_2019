@@ -2,6 +2,8 @@
 This module provides common high-level class structures for individual pieces of inventory.
 """
 
+# pylint: disable=too-few-public-methods
+
 class Inventory:
     """
     Super-class for inventory management.

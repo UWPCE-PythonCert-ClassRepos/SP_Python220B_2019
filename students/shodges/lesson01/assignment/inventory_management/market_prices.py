@@ -4,6 +4,8 @@ method:
     - get_latest_price(item_code)
 """
 
+# pylint: disable=unused-argument
+
 def get_latest_price(item_code):
     """
     Mock-up of price retrieval.

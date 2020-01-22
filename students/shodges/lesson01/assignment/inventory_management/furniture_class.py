@@ -3,6 +3,8 @@ This module contains the furniture class (which is a sub-class of inventory, fou
 inventory_class.py)
 """
 
+# pylint: disable=too-few-public-methods
+
 # Furniture class
 from inventory_class import Inventory
 

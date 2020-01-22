@@ -3,6 +3,8 @@ This module contains the electric_appliances class (which is a sub-class of inve
 inventory_class.py)
 """
 
+# pylint: disable=too-few-public-methods
+
 # Electric appliances class
 from inventory_class import Inventory
 
