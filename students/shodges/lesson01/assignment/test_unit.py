@@ -2,7 +2,7 @@ import unittest
 
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
-#from inventory_management.furniture_class import Furniture
+from inventory_management.furniture_class import Furniture
 #from inventory_management.market_prices import get_latest_price
 
 class InventoryTest(unittest.TestCase):
@@ -43,5 +43,30 @@ class ElectricApplianceTest(unittest.TestCase):
         self.item = ElectricAppliances(**item_attributes)
 
         self.assertIsInstance(self.item, Inventory, ElectricAppliances)
+
+        self.assertEqual(expected, self.item.return_as_dictionary())
+
+class FurnitureTest(unittest.TestCase):
+    """Test cases for ElectricAppliances class"""
+    def test_electric_appliances_class(self):
+        """Test the ElectricAppliances instantiation and return_as_directory() method"""
+        expected = {'productCode': 'SECTIONAL',
+                    'description': 'A pleather sectional sofa',
+                    'marketPrice': '1045.87',
+                    'rentalPrice': '102.77',
+                    'material': 'Pleather',
+                    'size': 'XL'}
+
+
+        item_attributes = {'productCode': 'SECTIONAL',
+                           'description': 'A pleather sectional sofa',
+                           'market_price': '1045.87',
+                           'rental_price': '102.77',
+                           'material': 'Pleather',
+                           'size': 'XL'}
+
+        self.item = Furniture(**item_attributes)
+
+        self.assertIsInstance(self.item, Inventory, Furniture)
 
         self.assertEqual(expected, self.item.return_as_dictionary())
