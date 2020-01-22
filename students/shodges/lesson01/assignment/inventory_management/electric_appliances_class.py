@@ -6,7 +6,7 @@ inventory_class.py)
 # pylint: disable=too-few-public-methods
 
 # Electric appliances class
-from inventory_management.inventory_class import Inventory
+from .inventory_class import Inventory
 
 class ElectricAppliances(Inventory):
     """

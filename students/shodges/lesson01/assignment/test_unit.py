@@ -4,6 +4,7 @@ from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management.market_prices import get_latest_price
+import inventory_management.main as main
 
 class InventoryTest(unittest.TestCase):
     """Test cases for inventory_class module"""

@@ -2,10 +2,10 @@
 Launches the user interface for the inventory management system
 """
 import sys
-import inventory_class
-import furniture_class
-import market_prices
-import electric_appliances_class
+from . import inventory_class
+from . import furniture_class
+from . import market_prices
+from . import electric_appliances_class
 
 def main_menu(user_prompt=None):
     """
