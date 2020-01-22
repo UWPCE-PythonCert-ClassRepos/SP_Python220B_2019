@@ -8,11 +8,11 @@ class Inventory:
     Super-class for inventory management.
     """
 
-    def __init__(self, productCode, description):
+    def __init__(self, productCode, description, rental_price):
         self.product_code = productCode
         self.description = description
         self.market_price = market_prices.get_latest_price(productCode)
-        self.rental_price = (self.market_price * 1.2) / 36 # market price +20% spread over 3 years
+        self.rental_price = rental_price
 
     def return_as_dictionary(self):
         """
