@@ -48,6 +48,12 @@ def add_new_item():
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
+def get_price(item_code):
+    """
+    Function to retrieve the price given item_code
+    """
+    print("Get price")
+
 
 def item_info():
     """
