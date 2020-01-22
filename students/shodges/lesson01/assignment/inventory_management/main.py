@@ -4,6 +4,7 @@ Launches the user interface for the inventory management system
 import sys
 import inventory_class
 import furniture_class
+import market_prices
 import electric_appliances_class
 
 def main_menu(user_prompt=None):
@@ -47,6 +48,12 @@ def add_new_item():
             new_item = inventory_class.Inventory(item_code, item_description)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
+
+def get_price(item_code):
+    """
+    Function to retrieve the price given item_code
+    """
+    print("Get price")
 
 
 def item_info():
