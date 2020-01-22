@@ -29,28 +29,26 @@ def add_new_item():
     """
     Function to add an item (with user input) to the FULL_INVENTORY
     """
+    inventory_data = {}
     item_code = input("Enter item code: ")
-    item_description = input("Enter item description: ")
-    market_price = market_prices.get_latest_price(item_code)
-    rental_price = input("Enter item rental price: ")
+    inventory_data['item_code'] = item_code
+    inventory_data['item_description'] = input("Enter item description: ")
+    inventory_data['market_price'] = market_prices.get_latest_price(item_code)
+    inventory_data['rental_price'] = input("Enter item rental price: ")
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
     if is_furniture.lower() == "y":
-        item_material = input("Enter item material: ")
-        item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.Furniture(item_code, item_description, rental_price,
-                                             market_price, item_material, item_size)
+        inventory_data['item_material'] = input("Enter item material: ")
+        inventory_data['item_size'] = input("Enter item size (S,M,L,XL): ")
+        new_item = furniture_class.Furniture(**inventory_data)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
-            item_brand = input("Enter item brand: ")
-            item_voltage = input("Enter item voltage: ")
-            new_item = electric_appliances_class.ElectricAppliances(item_code, item_description,
-                                                                    market_price, rental_price,
-                                                                    item_brand, item_voltage)
+            inventory_data['item_brand'] = input("Enter item brand: ")
+            inventory_data['item_voltage'] = input("Enter item voltage: ")
+            new_item = electric_appliances_class.ElectricAppliances(**inventory_data)
         else:
-            new_item = inventory_class.Inventory(item_code, item_description, market_price,
-                                                 rental_price)
+            new_item = inventory_class.Inventory(**inventory_data)
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 

@@ -11,12 +11,13 @@ class Furniture(Inventory):
     Inventory sub-class to create more fine-grained attributes specific to furniture.
     """
 
-    def __init__(self, productCode, description, market_price, rental_price, material, size):
-        Inventory.__init__(self, productCode, description, market_price, rental_price)
+    def __init__(self, **kwargs):
+        Inventory.__init__(self, kwargs['productCode'], kwargs['description'],
+                           kwargs['market_price'], kwargs['rental_price'])
             # Creates common instance variables from the parent class
 
-        self.material = material
-        self.size = size
+        self.material = kwargs['material']
+        self.size = kwargs['size']
 
     def return_as_dictionary(self):
         """
