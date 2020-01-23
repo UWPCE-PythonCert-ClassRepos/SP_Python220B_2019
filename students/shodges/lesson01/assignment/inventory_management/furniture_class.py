@@ -6,7 +6,7 @@ inventory_class.py)
 # pylint: disable=too-few-public-methods
 
 # Furniture class
-from .inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 class Furniture(Inventory):
     """
