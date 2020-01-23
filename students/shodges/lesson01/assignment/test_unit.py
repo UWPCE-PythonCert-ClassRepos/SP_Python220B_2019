@@ -87,9 +87,14 @@ class MainTest(unittest.TestCase):
     """Test cases for main module"""
     def test_menu(self):
         """Test the main_menu() method"""
-        self.assertEqual(main.main_menu("1"), main.add_new_item)
-        self.assertEqual(main.main_menu("2"), main.item_info)
-        self.assertEqual(main.main_menu("q"), main.exit_program)
+        with patch('builtins.input', side_effect=['1']):
+            self.assertEqual(main.main_menu(), main.add_new_item)
+
+        with patch('builtins.input', side_effect=['2']):
+            self.assertEqual(main.main_menu(), main.item_info)
+
+        with patch('builtins.input', side_effect=['q']):
+            self.assertEqual(main.main_menu(), main.exit_program)
 
     def test_add_item(self):
         """Test the add_new_item() method"""
