@@ -29,7 +29,7 @@ def main_menu(user_prompt=None):
 
 def add_new_item():
     """
-    Function to add an item (with user input) to the FULL_INVENTORY
+    Function to add an item (with user input) to the INVENTORY_DATA
     """
     item_code = input("Enter item code: ")
     INVENTORY_DATA['item_code'] = item_code
@@ -62,11 +62,11 @@ def get_price(item_code):
 
 def item_info():
     """
-    Function to retrieve the item (specified with user input) details from FULL_INVENTORY.
+    Function to retrieve the item (specified with user input) details from INVENTORY_DATA.
     """
     item_code = input("Enter item code: ")
-    if item_code in FULL_INVENTORY:
-        print_dict = FULL_INVENTORY[item_code]
+    if item_code in INVENTORY_DATA:
+        print_dict = INVENTORY_DATA[item_code]
         for item_key, item_value in print_dict.items():
             print("{}:{}".format(item_key, item_value))
     else:
@@ -79,8 +79,7 @@ def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
     while True:
-        print(FULL_INVENTORY)
+        print(INVENTORY_DATA)
         main_menu()()
         input("Press Enter to continue...........")
