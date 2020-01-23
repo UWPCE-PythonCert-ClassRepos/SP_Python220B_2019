@@ -10,8 +10,8 @@ class Inventory:
     """
 
     def __init__(self, **kwargs):
-        self.product_code = kwargs['productCode']
-        self.description = kwargs['description']
+        self.product_code = kwargs['item_code']
+        self.description = kwargs['item_description']
         self.market_price = kwargs['market_price']
         self.rental_price = kwargs['rental_price']
 

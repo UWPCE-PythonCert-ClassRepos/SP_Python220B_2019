@@ -49,7 +49,7 @@ def add_new_item():
             new_item = electric_appliances_class.ElectricAppliances(**inventory_data)
         else:
             new_item = inventory_class.Inventory(**inventory_data)
-    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
+    inventory_data[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
 def get_price(item_code):
