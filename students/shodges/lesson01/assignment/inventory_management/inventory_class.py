@@ -10,8 +10,8 @@ class Inventory:
     """
 
     def __init__(self, **kwargs):
-        self.product_code = kwargs['item_code']
-        self.description = kwargs['item_description']
+        self.item_code = kwargs['item_code']
+        self.description = kwargs['description']
         self.market_price = kwargs['market_price']
         self.rental_price = kwargs['rental_price']
 
@@ -20,9 +20,9 @@ class Inventory:
         Return inventory attributes as a dictionary.
         """
         output_dict = {}
-        output_dict['productCode'] = self.product_code
+        output_dict['item_code'] = self.item_code
         output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
+        output_dict['market_price'] = self.market_price
+        output_dict['rental_price'] = self.rental_price
 
         return output_dict

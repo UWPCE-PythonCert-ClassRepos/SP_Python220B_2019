@@ -33,7 +33,7 @@ def add_new_item():
     """
     item_code = input("Enter item code: ")
     INVENTORY_DATA['item_code'] = item_code
-    INVENTORY_DATA['item_description'] = input("Enter item description: ")
+    INVENTORY_DATA['description'] = input("Enter item description: ")
     INVENTORY_DATA['market_price'] = market_prices.get_latest_price(item_code)
     INVENTORY_DATA['rental_price'] = input("Enter item rental price: ")
 
