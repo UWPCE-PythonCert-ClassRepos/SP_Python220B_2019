@@ -90,3 +90,31 @@ class MainTest(unittest.TestCase):
         self.assertEqual(main.main_menu("1"), main.add_new_item)
         self.assertEqual(main.main_menu("2"), main.item_info)
         self.assertEqual(main.main_menu("q"), main.exit_program)
+
+    def test_add_item(self):
+        """Test the add_new_item() method"""
+        with patch('builtins.input', side_effect=['BOOK', 'A book', '2.50', 'n', 'n']):
+            main.add_new_item()
+            self.assertEqual(main.INVENTORY_DATA['BOOK'], {'item_code': 'BOOK',
+                                                           'description': 'A book',
+                                                           'market_price': 24,
+                                                           'rental_price': '2.50'})
+
+        with patch('builtins.input', side_effect=['KITCHAIR', 'Kitchen chair', '4.22', 'y', 'Wood', 'M']):
+            main.add_new_item()
+            self.assertEqual(main.INVENTORY_DATA['KITCHAIR'], {'item_code': 'KITCHAIR',
+                                                               'description': 'Kitchen chair',
+                                                               'market_price': 24,
+                                                               'rental_price': '4.22',
+                                                               'material': 'Wood',
+                                                               'size': 'M'})
+
+        with patch('builtins.input', side_effect=['DISH2K', 'Dishwasher with coffee maker',
+                                                  '9.55', 'n', 'y', 'Boosh', '120V']):
+            main.add_new_item()
+            self.assertEqual(main.INVENTORY_DATA['DISH2K'], {'item_code': 'DISH2K',
+                                                             'description': 'Dishwasher with coffee maker',
+                                                             'market_price': 24,
+                                                             'rental_price': '9.55',
+                                                             'brand': 'Boosh',
+                                                             'voltage': '120V'})
