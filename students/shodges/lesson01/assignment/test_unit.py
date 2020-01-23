@@ -127,3 +127,8 @@ class MainTest(unittest.TestCase):
         """Test the item_info() method"""
         with patch('builtins.input', side_effect=['DISH2K']):
             self.assertEqual(None, main.item_info())
+
+    def test_exit_program(self):
+        """Test the exit_program() method"""
+        with self.assertRaises(SystemExit):
+            main.exit_program()
