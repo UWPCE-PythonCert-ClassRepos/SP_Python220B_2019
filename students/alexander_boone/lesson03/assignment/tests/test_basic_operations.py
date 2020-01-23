@@ -60,10 +60,12 @@ class TestBasicOperations(TestCase):
     def test_delete_customer(self):
         '''Test deleting a customer from the database.'''
         customer_deleted = delete_customer(12345)
-
         self.assertTrue(customer_deleted)
         customer_in_db = Customer.get_or_none(Customer.customer_id == 12345)
         self.assertIsNone(customer_in_db)
+
+        customer_not_deleted = delete_customer(472)
+        self.assertFalse(customer_not_deleted)
 
     def test_update_customer_credit(self):
         '''Test updating a customer's credit.'''
@@ -71,6 +73,9 @@ class TestBasicOperations(TestCase):
         new_credit = Customer.get(Customer.customer_id == 12345).credit_limit
         self.assertTrue(credit_updated)
         self.assertEqual(new_credit, 300000)
+
+        credit_not_updated = update_customer_credit(2839, 200)
+        self.assertFalse(credit_not_updated)
 
     def test_list_active_customers(self):
         '''Test list of active customers.'''
