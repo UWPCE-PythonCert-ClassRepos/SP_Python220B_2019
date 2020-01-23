@@ -14,8 +14,7 @@ class Furniture(Inventory):
     """
 
     def __init__(self, **kwargs):
-        Inventory.__init__(self, kwargs['productCode'], kwargs['description'],
-                           kwargs['market_price'], kwargs['rental_price'])
+        Inventory.__init__(self, **kwargs)
             # Creates common instance variables from the parent class
 
         self.material = kwargs['material']

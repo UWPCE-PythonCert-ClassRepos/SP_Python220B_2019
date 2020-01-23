@@ -9,11 +9,11 @@ class Inventory:
     Super-class for inventory management.
     """
 
-    def __init__(self, productCode, description, market_price, rental_price):
-        self.product_code = productCode
-        self.description = description
-        self.market_price = market_price
-        self.rental_price = rental_price
+    def __init__(self, **kwargs):
+        self.product_code = kwargs['productCode']
+        self.description = kwargs['description']
+        self.market_price = kwargs['market_price']
+        self.rental_price = kwargs['rental_price']
 
     def return_as_dictionary(self):
         """

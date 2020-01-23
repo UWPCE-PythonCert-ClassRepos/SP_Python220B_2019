@@ -6,7 +6,6 @@ from inventory_management.furniture_class import Furniture
 from inventory_management.market_prices import get_latest_price
 import inventory_management.main as main
 from unittest.mock import patch
-import containers
 
 class InventoryTest(unittest.TestCase):
     """Test cases for inventory_class module"""
@@ -17,8 +16,12 @@ class InventoryTest(unittest.TestCase):
                     'marketPrice': '100.00',
                     'rentalPrice': '8.00'}
 
-        self.item = Inventory('DRYWALL', 'Just an ordinary drywall board.  Pretty boring.',
-                              '100.00', '8.00')
+        item_attributes = {'productCode': 'DRYWALL',
+                           'description': 'Just an ordinary drywall board.  Pretty boring.',
+                           'market_price': '100.00',
+                           'rental_price': '8.00'}
+
+        self.item = Inventory(**item_attributes)
 
         self.assertIsInstance(self.item, Inventory)
 
