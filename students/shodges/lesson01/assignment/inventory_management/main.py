@@ -32,24 +32,25 @@ def add_new_item():
     Function to add an item (with user input) to the INVENTORY_DATA
     """
     item_code = input("Enter item code: ")
-    INVENTORY_DATA['item_code'] = item_code
-    INVENTORY_DATA['description'] = input("Enter item description: ")
-    INVENTORY_DATA['market_price'] = market_prices.get_latest_price(item_code)
-    INVENTORY_DATA['rental_price'] = input("Enter item rental price: ")
+    temp_data = {}
+    temp_data['item_code'] = item_code
+    temp_data['description'] = input("Enter item description: ")
+    temp_data['market_price'] = market_prices.get_latest_price(item_code)
+    temp_data['rental_price'] = input("Enter item rental price: ")
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
     if is_furniture.lower() == "y":
-        INVENTORY_DATA['material'] = input("Enter item material: ")
-        INVENTORY_DATA['size'] = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.Furniture(**INVENTORY_DATA)
+        temp_data['material'] = input("Enter item material: ")
+        temp_data['size'] = input("Enter item size (S,M,L,XL): ")
+        new_item = furniture_class.Furniture(**temp_data)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
-            INVENTORY_DATA['brand'] = input("Enter item brand: ")
-            INVENTORY_DATA['voltage'] = input("Enter item voltage: ")
-            new_item = electric_appliances_class.ElectricAppliances(**INVENTORY_DATA)
+            temp_data['brand'] = input("Enter item brand: ")
+            temp_data['voltage'] = input("Enter item voltage: ")
+            new_item = electric_appliances_class.ElectricAppliances(**temp_data)
         else:
-            new_item = inventory_class.Inventory(**INVENTORY_DATA)
+            new_item = inventory_class.Inventory(**temp_data)
     INVENTORY_DATA[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
