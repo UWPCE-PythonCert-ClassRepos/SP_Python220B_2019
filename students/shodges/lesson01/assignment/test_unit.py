@@ -126,7 +126,12 @@ class MainTest(unittest.TestCase):
     def test_item_info(self):
         """Test the item_info() method"""
         with patch('builtins.input', side_effect=['DISH2K']):
+            #Test the valid key case
             self.assertEqual(None, main.item_info())
+        with patch('builtins.input', side_effect=['DISH3K']):
+            #Test the invalid key case
+            self.assertEqual(None, main.item_info())
+
 
     def test_exit_program(self):
         """Test the exit_program() method"""
