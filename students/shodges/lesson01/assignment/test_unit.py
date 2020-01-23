@@ -5,6 +5,8 @@ from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management.market_prices import get_latest_price
 import inventory_management.main as main
+from unittest.mock import patch
+import containers
 
 class InventoryTest(unittest.TestCase):
     """Test cases for inventory_class module"""
@@ -77,3 +79,11 @@ class MarketPricesTest(unittest.TestCase):
     def test_market_prices(self):
         """Test the get_latest_price() method"""
         self.assertEqual(24, get_latest_price('SECTIONAL'))
+
+class MainTest(unittest.TestCase):
+    """Test cases for main module"""
+    def test_menu(self):
+        """Test the main_menu() method"""
+        self.assertEqual(main.main_menu("1"), main.add_new_item)
+        self.assertEqual(main.main_menu("2"), main.item_info)
+        self.assertEqual(main.main_menu("q"), main.exit_program)
