@@ -7,6 +7,8 @@ from . import furniture_class
 from . import market_prices
 from . import electric_appliances_class
 
+inventory_data = {}
+
 def main_menu(user_prompt=None):
     """
     Standard function to prompt the user with a menu and wait for input.
@@ -29,7 +31,6 @@ def add_new_item():
     """
     Function to add an item (with user input) to the FULL_INVENTORY
     """
-    inventory_data = {}
     item_code = input("Enter item code: ")
     inventory_data['item_code'] = item_code
     inventory_data['item_description'] = input("Enter item description: ")
