@@ -118,3 +118,12 @@ class MainTest(unittest.TestCase):
                                                              'rental_price': '9.55',
                                                              'brand': 'Boosh',
                                                              'voltage': '120V'})
+
+    def test_get_price(self):
+        """Test the get_price() method"""
+        self.assertEqual(main.get_price('DISH2K'), 'Current price of DISH2K: 24')
+
+    def test_item_info(self):
+        """Test the item_info() method"""
+        with patch('builtins.input', side_effect=['DISH2K']):
+            self.assertEqual(None, main.item_info())
