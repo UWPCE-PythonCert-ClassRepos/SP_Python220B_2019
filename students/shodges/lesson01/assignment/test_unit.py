@@ -108,7 +108,8 @@ class MainTest(unittest.TestCase):
                                                            'market_price': 24,
                                                            'rental_price': '2.50'})
 
-        with patch('builtins.input', side_effect=['KITCHAIR', 'Kitchen chair', '4.22', 'y', 'Wood', 'M']):
+        with patch('builtins.input', side_effect=['KITCHAIR', 'Kitchen chair', '4.22', 'y', 'Wood',
+                                                  'M']):
             main.add_new_item()
             self.assertEqual(main.INVENTORY_DATA['KITCHAIR'], {'item_code': 'KITCHAIR',
                                                                'description': 'Kitchen chair',
