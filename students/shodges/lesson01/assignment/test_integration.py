@@ -10,6 +10,9 @@ class IntegrationTest(TestCase):
     """Integration test cases"""
     def test_integration(self):
         """Test the integrated application"""
+        with patch('builtins.input', side_effect=['1']):
+            self.assertEqual(main.main_menu(), main.add_new_item)
+
         expected_inventory = {'64': {'item_code': '64', 'description': 'Nintendo 64',
                                     'market_price': 24, 'rental_price': '5.64'},
                               'WD': {'item_code': 'WD', 'description': 'Combo washer/dryer',
@@ -26,6 +29,19 @@ class IntegrationTest(TestCase):
         with patch('builtins.input', side_effect=['DINTAB', 'Dining table', '7.99', 'y',
                                                   'Stainless steel', 'L']):
             main.add_new_item()
+        self.assertEqual(expected_inventory, main.INVENTORY_DATA)
+
         with patch('builtins.input', side_effect=['2']):
             self.assertEqual(main.main_menu(), main.item_info)
-        self.assertEqual(expected_inventory, main.INVENTORY_DATA)
+
+        expected_item_info = """Enter item code: 64
+item_code:64
+description:Nintendo 64
+market_price:24
+rental_price:5.64"""
+
+        with patch('builtins.input', side_effect=['64']):
+            self.assertEqual(main.item_info(), print(expected_item_info))
+
+        with patch('builtins.input', side_effect=['q']):
+            self.assertEqual(main.main_menu(), main.exit_program)
