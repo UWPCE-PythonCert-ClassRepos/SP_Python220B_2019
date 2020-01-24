@@ -1,10 +1,13 @@
 import unittest
+import sys
 
-from inventory_management.inventory_class import Inventory
-from inventory_management.electric_appliances_class import ElectricAppliances
-from inventory_management.furniture_class import Furniture
-from inventory_management.market_prices import get_latest_price
-import inventory_management.main as main
+sys.path.append('inventory_management')
+
+from inventory_class import Inventory
+from electric_appliances_class import ElectricAppliances
+from furniture_class import Furniture
+from market_prices import get_latest_price
+import main as main
 from unittest.mock import patch
 
 class InventoryTest(unittest.TestCase):
