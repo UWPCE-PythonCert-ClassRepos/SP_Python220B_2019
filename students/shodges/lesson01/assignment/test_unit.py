@@ -1,4 +1,5 @@
-import unittest
+from unittest import TestCase
+from unittest.mock import patch
 import sys
 
 sys.path.append('inventory_management')
@@ -8,9 +9,8 @@ from electric_appliances_class import ElectricAppliances
 from furniture_class import Furniture
 from market_prices import get_latest_price
 import main
-from unittest.mock import patch
 
-class InventoryTest(unittest.TestCase):
+class InventoryTest(TestCase):
     """Test cases for inventory_class module"""
     def test_inventory_class(self):
         """Test the Inventory instantiation and return_as_dictionary() method"""
@@ -30,7 +30,7 @@ class InventoryTest(unittest.TestCase):
 
         self.assertEqual(expected, self.item.return_as_dictionary())
 
-class ElectricApplianceTest(unittest.TestCase):
+class ElectricApplianceTest(TestCase):
     """Test cases for electric_appliances_class module"""
     def test_electric_appliances_class(self):
         """Test the ElectricAppliances instantiation and return_as_directory() method"""
@@ -55,7 +55,7 @@ class ElectricApplianceTest(unittest.TestCase):
 
         self.assertEqual(expected, self.item.return_as_dictionary())
 
-class FurnitureTest(unittest.TestCase):
+class FurnitureTest(TestCase):
     """Test cases for furniture_class module"""
     def test_electric_appliances_class(self):
         """Test the ElectricAppliances instantiation and return_as_directory() method"""
@@ -80,13 +80,13 @@ class FurnitureTest(unittest.TestCase):
 
         self.assertEqual(expected, self.item.return_as_dictionary())
 
-class MarketPricesTest(unittest.TestCase):
+class MarketPricesTest(TestCase):
     """Test cases for market_prices module"""
     def test_market_prices(self):
         """Test the get_latest_price() method"""
         self.assertEqual(24, get_latest_price('SECTIONAL'))
 
-class MainTest(unittest.TestCase):
+class MainTest(TestCase):
     """Test cases for main module"""
     def test_menu(self):
         """Test the main_menu() method"""
