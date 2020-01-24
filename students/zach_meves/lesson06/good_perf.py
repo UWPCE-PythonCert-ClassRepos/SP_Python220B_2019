@@ -14,6 +14,8 @@ except ImportError:
 
 
 def analyze(filename):
+    """Analyze the file."""
+
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -50,10 +52,11 @@ def analyze(filename):
 
 
 def main():
+    """Analyze file."""
     filename = "data/exercise.csv"
     try:
-        logging.info("Using Cython version of code")
         good_perf_cython.analyze(filename)
+        logging.info("Using Cython version of code")
     except NameError:
         logging.info("Using non-Cython version of code")
         analyze(filename)

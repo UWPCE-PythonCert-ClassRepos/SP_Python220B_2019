@@ -166,6 +166,5 @@ Code Changes
 
 #. C-style improvement
 
-
-
-
+    Writing the code in Cython did not result in a noticeable performance improvement. After
+    several time studies, the program ran between 0 and 0.1 seconds more quickly.
