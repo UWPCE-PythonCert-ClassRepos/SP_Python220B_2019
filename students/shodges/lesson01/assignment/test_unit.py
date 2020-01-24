@@ -7,7 +7,7 @@ from inventory_class import Inventory
 from electric_appliances_class import ElectricAppliances
 from furniture_class import Furniture
 from market_prices import get_latest_price
-import main as main
+import main
 from unittest.mock import patch
 
 class InventoryTest(unittest.TestCase):
