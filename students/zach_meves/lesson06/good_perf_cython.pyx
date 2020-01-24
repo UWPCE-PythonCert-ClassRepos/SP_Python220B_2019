@@ -1,16 +1,10 @@
 """
-Better performing code.
+Cython version of good_perf.py
 """
 
 import datetime
 import csv
-import logging
-
-# Attempt to use Cython version
-try:
-    import good_perf_cython
-except ImportError:
-    pass
+import Cython
 
 
 def analyze(filename):
@@ -47,17 +41,3 @@ def analyze(filename):
         end = datetime.datetime.now()
 
     return start, end, year_count, found
-
-
-def main():
-    filename = "data/exercise.csv"
-    try:
-        logging.info("Using Cython version of code")
-        good_perf_cython.analyze(filename)
-    except NameError:
-        logging.info("Using non-Cython version of code")
-        analyze(filename)
-
-
-if __name__ == "__main__":
-    main()

@@ -6,8 +6,10 @@ import os
 import good_perf
 import cProfile
 import pstats
+import logging
 from timeit import timeit
 
+logging.basicConfig(level=logging.INFO)
 NUMBER = 5
 
 time = timeit("good_perf.main()", number=NUMBER, globals=globals())
