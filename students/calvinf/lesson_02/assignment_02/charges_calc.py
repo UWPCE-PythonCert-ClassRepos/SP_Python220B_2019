@@ -1,36 +1,58 @@
 '''
 Returns total price paid for individual rentals
 '''
+import sys
 import argparse
 import json
 import datetime
 import math
 import logging
 
-log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-log_file = datetime.datetime.now().strftime("%Y-%m-%d")+".log"
-formatter = logging.Formatter(log_format)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d")+".log"
+FORMATTER = logging.Formatter(LOG_FORMAT)
 
-console_handler = logging.StreamHandler()
+CONSOLE_HANDLER = logging.StreamHandler()
 # Get the root logger
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-console_handler.setFormatter(formatter)
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 
 def setup_file_log(level):
-    file_handler = logging.FileHandler(log_file)
+    '''
+    Method to set file logging level for the script.
+    0: No debug messages or log file.
+    1: Only error messages.
+    2: Error messages and warnings.
+    3: Error messages, warnings and debug messages.
+    '''
+    file_handler = logging.FileHandler(LOG_FILE)
     file_handler.setLevel(level)
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
+    file_handler.setFormatter(FORMATTER)
+    LOGGER.addHandler(file_handler)
 
 
 def setup_console_log(level):
-    console_handler.setLevel(level)
-    logger.addHandler(console_handler)
+    '''
+    Method to set the Console logging level for the script.
+    0: No debug messages or log file.
+    1: Only error messages.
+    2: Error messages and warnings.
+    3: Error messages, warnings and debug messages.
+    '''
+    CONSOLE_HANDLER.setLevel(level)
+    LOGGER.addHandler(CONSOLE_HANDLER)
 
 
 def setup_logging_debug(mode):
+    '''
+    Method to set the logging level for the script.
+    0: No debug messages or log file.
+    1: Only error messages.
+    2: Error messages and warnings.
+    3: Error messages, warnings and debug messages.
+    '''
     if mode == 3:
         setup_file_log(logging.WARNING)
         setup_console_log(logging.DEBUG)
@@ -41,29 +63,37 @@ def setup_logging_debug(mode):
         setup_file_log(logging.ERROR)
         setup_console_log(logging.ERROR)
     else:
-        logger.disabled = True
+        LOGGER.disabled = True
 
 
 def parse_cmd_arguments():
+    '''
+    Parse the arguments passed into the script
+    for file inputs and logging level.
+    '''
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
-    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--debug', help='Turn on debugging', required=False, default=0, type=int)
+    parser.add_argument('-o', '--output', help='ouput JSON file',
+                        required=True)
+    parser.add_argument('-d', '--debug', help='Turn on debugging',
+                        required=False, default=0, type=int)
     return parser.parse_args()
 
 
 def load_rentals_file(filename):
+    ''' Method to read in the file for processing '''
     try:
-        logging.debug('Reading file ' + filename)
+        logging.debug('Reading file: {}'.format(filename))
         with open(filename) as file:
-            data = json.load(file)
+            in_data = json.load(file)
     except FileNotFoundError:
         logging.error("File not found")
-        exit(1)
-    return data
+        sys.exit(1)
+    return in_data
 
 
 def calculate_additional_fields(data):
+    ''' Calculates the input from the json file '''
     logging.debug('Starting calculations for additional fields')
     for value in data.values():
         try:
@@ -94,19 +124,20 @@ def calculate_additional_fields(data):
 
 
 def save_to_json(filename, data):
+    ''' Writes the output to filesystem as a json file '''
     logging.debug('Starting save_to_json function')
     try:
-        logging.debug('Writing to file ' + filename)
+        logging.debug('Writing to file: {}'.format(filename))
         with open(filename, 'w') as out_file:
             json.dump(data, out_file)
     except IOError:
         logging.error("Problems writing to file")
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
     setup_logging_debug(args.debug)
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    file_data = load_rentals_file(args.input)
+    result_data = calculate_additional_fields(file_data)
+    save_to_json(args.output, result_data)
