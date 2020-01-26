@@ -1,0 +1,4 @@
+user_id, name, address, email, phone_number
+user001, Fred Flintstone, 123 Bedrock Ln, fred@gmail.com, 832-234-5684
+user002, Batman, 3 BatCave Way, thebat@yahoo.com, 000-980-0001
+user003, Patrick Star, 342 Shellfish Dr, pat@ricks.com, 123-321-2321
