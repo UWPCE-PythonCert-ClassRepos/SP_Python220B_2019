@@ -60,13 +60,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             try:
                 data, count = import_csv(directory_name, file_name)
                 database.insert_many(data)
+                count_error = 0
 
             except FileNotFoundError as error:
-                LOGGER.error('Error %s loading %s.', error, file)
-                error_count += 1
+                LOGGER.error('Error %s loading %s.', error, file_name)
+                count_error = 1
                 count = 0
 
             input_count.append(count)
+            error_count.append(count_error)
 
         return tuple(input_count), tuple(error_count)
 
