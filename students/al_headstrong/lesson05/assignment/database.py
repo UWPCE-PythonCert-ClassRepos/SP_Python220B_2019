@@ -1,7 +1,12 @@
-from pymongo import MongoClient
-import pandas as pd
+"""
+Module to establish mongo database, add and view data.
+"""
+# pylint: disable=invalid-name
+
 import logging
 import os
+from pymongo import MongoClient
+import pandas as pd
 
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 
@@ -22,7 +27,7 @@ LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
 
-class MongoDBConnection(object):
+class MongoDBConnection():
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows"""
@@ -57,19 +62,19 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         error_count = []
 
         for file_name, database in zip(files, databases):
-
+            LOGGER.debug('Attempting to load %s.', file_name)
             try:
                 data, count = import_csv(directory_name, file_name)
                 database.insert_many(data)
-                count_error = 0
+                error_count.append(0)
+                LOGGER.debug('Successful addition to %s.', database)
 
             except FileNotFoundError as error:
                 LOGGER.error('Error %s loading %s.', error, file_name)
-                count_error = 1
+                error_count.append(1)
                 count = 0
 
             input_count.append(count)
-            error_count.append(count_error)
 
         return tuple(input_count), tuple(error_count)
 
@@ -101,14 +106,20 @@ def show_rentals(product_id):
         rentals = db['rentals']
         customers = db['customers']
         renters = {}
-        for rental in rentals.find({'product_id': product_id}):
-            for customer in customers.find({'customer_id': rental['customer_id']}):
-                renters[customer['customer_id']] = {
-                    'name': customer['name'],
-                    'address': customer['address'],
-                    'phone_number': customer['phone_number'],
-                    'email': customer['email']
-                }
+        rentals_found = rentals.find({'product_id': product_id})
+        if rentals_found:
+            for rental in rentals_found:
+                if not rental:
+                    LOGGER.warning('Product ')
+                for customer in customers.find({'customer_id': rental['customer_id']}):
+                    renters[customer['customer_id']] = {
+                        'name': customer['name'],
+                        'address': customer['address'],
+                        'phone_number': customer['phone_number'],
+                        'email': customer['email']
+                    }
+        else:
+            LOGGER.warning('Product not found in database.')
         return renters
 
 
@@ -121,3 +132,4 @@ def clear_database():
         db['products'].drop()
         db['customers'].drop()
         db['rentals'].drop()
+        LOGGER.debug('Cleared database.')
