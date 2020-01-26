@@ -45,6 +45,7 @@ def import_csv(directory, file):
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
+    """Add three files at directory to mongo db and return tuples of items added and errors."""
     mongo = MongoDBConnection()
 
     with mongo:
@@ -74,6 +75,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
 
 def show_available_products():
+    """Return dict of dicts showing available products."""
     mongo = MongoDBConnection()
 
     with mongo:
@@ -91,6 +93,7 @@ def show_available_products():
 
 
 def show_rentals(product_id):
+    """Return dict of dicts showing the customers renting the product with product_id argument."""
     mongo = MongoDBConnection()
 
     with mongo:
@@ -109,3 +112,12 @@ def show_rentals(product_id):
         return renters
 
 
+def clear_database():
+    """Delete database."""
+    mongo = MongoDBConnection()
+
+    with mongo:
+        db = mongo.connection.media
+        db['products'].drop()
+        db['customers'].drop()
+        db['rentals'].drop()

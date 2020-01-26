@@ -74,7 +74,6 @@ class DataBaseTest(TestCase):
                                                    'phone_number': '425-697-0192',
                                                    'email': 'bandit@aol.com'}}
 
-
     def test_import_csv(self):
         """Test import function."""
         input, count = database.import_csv('data/', 'products.csv')
@@ -88,7 +87,7 @@ class DataBaseTest(TestCase):
 
     def test_import_data_error(self):
         """Test error handling in import data function."""
-        import_tuples = database.import_data('wrong','place','to','look')
+        import_tuples = database.import_data('wrong', 'place', 'to', 'look')
         self.assertEqual(import_tuples, ((0, 0, 0), (1, 1, 1)))
 
     def test_show_available_products(self):
@@ -101,7 +100,13 @@ class DataBaseTest(TestCase):
         renters = database.show_rentals('prd008')
         self.assertEqual(self.test_show_rentals_dict, renters)
 
-    
+    def test_clear_database(self):
+        """Test that clear_database empties database."""
+        database.clear_database()
+        available_products = database.show_available_products()
+        self.assertEqual({}, available_products)
+
+
 
 
 
