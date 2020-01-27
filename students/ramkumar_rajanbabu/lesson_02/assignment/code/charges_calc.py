@@ -86,11 +86,14 @@ def calculate_additional_fields(data):
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             if value['unit_rented'] == 0:
-                logging.warning("This will cause ZeroDivisionError for unit cost")
+                logging.error("This will cause ZeroDivisionError for unit cost")
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        except ValueError as err:
-            logging.warning(err)
-
+        except ValueError as val_err:
+            logging.warning(val_err)
+            continue
+        except KeyError as key_err:
+            logging.warning(key_err)
+            continue
     return data
 
 

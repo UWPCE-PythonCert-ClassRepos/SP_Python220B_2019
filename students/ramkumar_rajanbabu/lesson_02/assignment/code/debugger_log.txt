@@ -1,7 +1,6 @@
 debugger_log.txt
 -Capture debug work
 -cmd line: python -m pdb charges_calc.py -i source.json -o out.json
--cd SP_Python220B_2019\students\ramkumar_rajanbabu\lesson_02\assignment\code
 
 Result: 
 -Orginal code doesn't have an output file because rental date start after the rental date which leads to an error.
