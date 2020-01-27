@@ -59,7 +59,14 @@ def calculate_additional_fields(data):
             else:
                 logging.debug('Calculated value for total_price ({} * {} = {})'.format(
                               value['total_days'], value['price_per_day'], value['total_price']))
-            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            try:
+                value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            except ValueError:
+                logging.error('Caught ValueError when calculating sqrt_total_price for {}'.format(
+                              value['total_price']))
+            else:
+                logging.debug('Calculated value for sqrt_total_price (sqrt({}) = {})'.format(
+                              value['total_price'], value['sqrt_total_price']))
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except Exception as e:
             # Leave this unchanged for now and add more specific exception blocks
