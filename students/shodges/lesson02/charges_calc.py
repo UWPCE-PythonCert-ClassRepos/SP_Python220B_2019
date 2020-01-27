@@ -53,6 +53,12 @@ def calculate_additional_fields(data):
                 logging.debug('Calculated value for total_days ({} - {} = {})'.format(
                               value['rental_start'], value['rental_end'], value['total_days']))
             value['total_price'] = value['total_days'] * value['price_per_day']
+            if value['total_price'] < 0:
+                logging.error('Calculated invalid value for total_price ({} * {} = {})'.format(
+                              value['total_days'], value['price_per_day'], value['total_price']))
+            else:
+                logging.debug('Calculated value for total_price ({} * {} = {})'.format(
+                              value['total_days'], value['price_per_day'], value['total_price']))
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except Exception as e:
