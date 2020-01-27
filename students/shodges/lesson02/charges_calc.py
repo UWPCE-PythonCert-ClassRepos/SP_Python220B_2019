@@ -46,6 +46,12 @@ def calculate_additional_fields(data):
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
+            if value['total_days'] < 0:
+                logging.error('Calculated invalid value for total_days ({} - {} = {})'.format(
+                              value['rental_start'], value['rental_end'], value['total_days']))
+            else:
+                logging.debug('Calculated value for total_days ({} - {} = {})'.format(
+                              value['rental_start'], value['rental_end'], value['total_days']))
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
