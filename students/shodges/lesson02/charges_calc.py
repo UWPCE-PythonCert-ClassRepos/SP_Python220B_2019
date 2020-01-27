@@ -1,10 +1,28 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 import argparse
 import json
 import datetime
 import math
+import logging
+
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+
+formatter = logging.Formatter(log_format)
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.WARNING)
+file_handler.setFormatter(formatter)
+
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_handler.setFormatter(formatter)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG) #hard-coding this for now
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -31,7 +49,9 @@ def calculate_additional_fields(data):
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        except:
+        except Exception as e:
+            # Leave this unchanged for now and add more specific exception blocks
+            logging.critical('Caught exception "' + repr(e) + '" -- exiting.')
             exit(0)
 
     return data
