@@ -19,7 +19,7 @@ FILE_HANDLER.setFormatter(FORMATTER)
 
 # Set up Console Handler
 CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setFormatter(formatter)
+CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 # Set up Logger and add handler(s)
 logging.basicConfig(level=logging.INFO)
@@ -44,11 +44,14 @@ def add_customer(customer_id, name, lastname, home_address,
             credit_limit=credit_limit
         )
         new_customer.save()
-        LOGGER.info(f'Saved new customer {customer_id} to DB')
+        LOGGER.info(f'{name} {lastname} (id: {customer_id}) added to DB')
     return new_customer
 
 def add_customers(customers):
-    '''Add customers from sequence and return list of customers.'''
+    '''
+    Add customers from sequence and return
+    list of customers.
+    '''
     return [add_customer(*customer) for customer in customers]
 
 def search_customer(customer_id):
@@ -84,6 +87,7 @@ def delete_customer(customer_id):
         cust_to_delete = Customer.get_or_none(Customer.customer_id == customer_id)
         if cust_to_delete is not None:
             cust_to_delete.delete_instance()
+            LOGGER.INFO(f'{cust_to_delete.name} {cust_to_delete.lastname} deleted')
             return cust_to_delete
         return False
 
@@ -92,7 +96,6 @@ def delete_customers(customer_ids):
     Return a list of customers deleted from db.
     '''
     return [delete_customer(customer_id) for customer_id in customer_ids]
-
 
 def update_customer_credit(customer_id, credit_limit):
     '''
@@ -106,6 +109,8 @@ def update_customer_credit(customer_id, credit_limit):
             return False
         cust_to_update.credit_limit = credit_limit
         cust_to_update.save()
+        LOGGER.info(f'{cust_to_update.name} {cust_to_update.lastname} \
+                    (id: {customer_id}) credit updated.')
         return True
 
 def list_active_customers():
