@@ -43,6 +43,7 @@ def load_rentals_file(filename):
 def calculate_additional_fields(data):
     for value in data.values():
         try:
+            logging.debug('Calculate additional fields with data: {}'.format(value))
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
