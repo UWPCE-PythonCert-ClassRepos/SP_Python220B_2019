@@ -35,9 +35,16 @@ Each course lesson will contain its own folder.  The folders will use the naming
         |   |-- activity_1                  <Content for Lesson 7 Activity 1 - Locking Activity>
         |   `-- assignment_1                <Content for Lesson 7 Assignment 1 - Threading and Concurrency>
         |       `-- data                    <Example data for HP Norton DB.>
-        `-- lesson_8                        <Content for Lesson 8>
-            `-- assignment_1                <Content for Lesson 8 Assignment 1 - Functional Techniques>
-                `-- test_files              <Test input/output files for Lesson 8 Assignment 1>
+        |-- lesson_8                        <Content for Lesson 8>
+        |   `-- assignment_1                <Content for Lesson 8 Assignment 1 - Functional Techniques>
+        |       `-- test_files              <Test input/output files for Lesson 8 Assignment 1>
+        `-- lesson_9                        <Content for Lesson 9>
+            |-- activity_1                  <Content for Lesson 9 Activity 1 - Context Managers>
+            `-- assignment_1                <Content for Lesson 9 Assignment 1 - Context Managers, Decorators, Recursion>
+                |-- context_managers        <Assignment content for Context Managers>
+                |-- decorators              <Assignment content for Decorators>
+                `-- recursion               <Assignment content for Recursion>
+                    `-- images              <A collection of directories and sample images for testing the recursion assignment>
 ```
 
 ## Branching
