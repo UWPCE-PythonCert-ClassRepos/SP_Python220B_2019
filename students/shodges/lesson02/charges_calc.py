@@ -9,11 +9,16 @@ import logging
 import sys
 
 def setup_logging(log_level):
-    if log_level != '0':
+    log_level_mapping = {'0': 99, '1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
+
+    # We want to setup the logger regardless of log_level -- if it's disabled, set it to level >50
+    logger = logging.getLogger()
+    logger.setLevel(log_level_mapping[log_level])
+
+    if log_level != '0': # Let's not bother to setup the rest if we're disabling logging
         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
         log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 
-        log_level_mapping = {'1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
 
         formatter = logging.Formatter(log_format)
         file_handler = logging.FileHandler(log_file)
@@ -24,8 +29,6 @@ def setup_logging(log_level):
         console_handler.setLevel(logging.DEBUG)
         console_handler.setFormatter(formatter)
 
-        logger = logging.getLogger()
-        logger.setLevel(log_level_mapping[log_level])
         logger.addHandler(file_handler)
         logger.addHandler(console_handler)
 
