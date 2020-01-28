@@ -1,28 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@mattcasari 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-UWPCE-PythonCert-ClassRepos
-/
-SP_Python220B_2019
-1
-153
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights
-SP_Python220B_2019/.gitignore
-@smckellips smckellips Add lesson01 pylint assignment
-3a3da06 2 days ago
-@PythonCHB@smckellips
-107 lines (84 sloc)  1.17 KB
-  
 # Mac files
 .DS_Store
 
@@ -130,4 +105,3 @@ ENV/
 
 #vscode
 .vscode
-
