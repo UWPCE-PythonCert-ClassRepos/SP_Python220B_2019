@@ -102,3 +102,13 @@ ENV/
 
 # mypy
 .mypy_cache/
+students/mattcasari/lesson01/activity/test_integration.py
+
+
+# Folders
+students/mattcasari/lesson01/activity/
+students/mattcasari/lesson01/assignments/.pytest_cache/
+students/mattcasari/lesson01/assignments/__pycache__/
+students/mattcasari/lesson01/assignments/htmlcov/
+students/mattcasari/lesson01/assignments/.venv/
+students/mattcasari/lesson01/assignments/.vscode/
