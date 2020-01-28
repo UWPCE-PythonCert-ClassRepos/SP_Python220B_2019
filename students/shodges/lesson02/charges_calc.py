@@ -42,51 +42,51 @@ def load_rentals_file(filename):
 
 def calculate_additional_fields(data):
     for value in data.values():
-        logging.debug('Calculate additional fields with data: {}'.format(value))
+        logging.debug('Calculate additional fields with data: %s', value)
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.error('Caught ValueError when converting {} to datetime'.format(
-                          value['rental_start']))
+            logging.error('Caught ValueError when converting %s to datetime',
+                          value['rental_start'])
 
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
-            logging.error('Caught ValueError when converting {} to datetime'.format(
-                          value['rental_start']))
+            logging.error('Caught ValueError when converting %s to datetime',
+                          value['rental_start'])
 
         value['total_days'] = (rental_end - rental_start).days
 
         if value['total_days'] < 0:
-            logging.error('Calculated invalid value for total_days ({} - {} = {})'.format(
-                          value['rental_start'], value['rental_end'], value['total_days']))
+            logging.error('Calculated invalid value for total_days (%s - %s = %s)',
+                          value['rental_start'], value['rental_end'], value['total_days'])
         else:
-            logging.debug('Calculated value for total_days ({} - {} = {})'.format(
-                          value['rental_start'], value['rental_end'], value['total_days']))
+            logging.debug('Calculated value for total_days (%s - %s = %s)',
+                          value['rental_start'], value['rental_end'], value['total_days'])
 
         value['total_price'] = value['total_days'] * value['price_per_day']
 
         if value['total_price'] < 0:
-            logging.error('Calculated invalid value for total_price ({} * {} = {})'.format(
-                          value['total_days'], value['price_per_day'], value['total_price']))
+            logging.error('Calculated invalid value for total_price (%s * %s = %s)',
+                          value['total_days'], value['price_per_day'], value['total_price'])
         else:
-            logging.debug('Calculated value for total_price ({} * {} = {})'.format(
-                          value['total_days'], value['price_per_day'], value['total_price']))
+            logging.debug('Calculated value for total_price (%s * %s = %s)',
+                          value['total_days'], value['price_per_day'], value['total_price'])
 
         try:
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
         except ValueError:
-            logging.error('Caught ValueError when calculating sqrt_total_price for {}'.format(
-                          value['total_price']))
+            logging.error('Caught ValueError when calculating sqrt_total_price for %s',
+                          value['total_price'])
         else:
-            logging.debug('Calculated value for sqrt_total_price (sqrt({}) = {})'.format(
-                          value['total_price'], value['sqrt_total_price']))
+            logging.debug('Calculated value for sqrt_total_price (sqrt(%s) = %s)',
+                          value['total_price'], value['sqrt_total_price'])
 
         try:
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ZeroDivisionError:
-            logging.error('Caught ZeroDivisionError when calculating unit_cost ({} / {})'.format(
-                          value['total_price'], value['units_rented']))
+            logging.error('Caught ZeroDivisionError when calculating unit_cost (%s / %s)',
+                          value['total_price'], value['units_rented'])
 
     return data
 
