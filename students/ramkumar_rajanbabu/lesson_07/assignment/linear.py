@@ -1,8 +1,5 @@
 """Module for linear"""
 
-# pylint: disable=too-many-locals, too-many-statements
-
-
 import csv
 import os
 import logging
@@ -30,6 +27,18 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Exit connection"""
         self.connection.close()
+
+
+def import_product():
+    pass
+
+
+def import_customer():
+    pass
+
+
+def import_rental():
+    pass
 
 
 def import_data(directory_name, product_file, customer_file, rental_file):
