@@ -33,11 +33,12 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
-    with open(filename) as file:
-        try:
+    try:
+        with open(filename) as file:
             data = json.load(file)
-        except:
-            exit(0)
+    except FileNotFoundError:
+        logging.error('File %s does not exist -- exiting.', filename)
+        exit(0)
     return data
 
 def calculate_additional_fields(data):
