@@ -128,8 +128,8 @@ def save_to_json(filename, data):
         json.dump(data, file)
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    setup_logging(args.debug)
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    ARGS = parse_cmd_arguments()
+    setup_logging(ARGS.debug)
+    DATA = load_rentals_file(ARGS.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(ARGS.output, DATA)
