@@ -8,22 +8,27 @@ import math
 import logging
 import sys
 
-log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+def setup_logging(log_level):
+    if log_level != '0':
+        log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+        log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 
-formatter = logging.Formatter(log_format)
-file_handler = logging.FileHandler(log_file)
-file_handler.setLevel(logging.WARNING)
-file_handler.setFormatter(formatter)
+        log_level_mapping = {'1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
 
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-console_handler.setFormatter(formatter)
+        formatter = logging.Formatter(log_format)
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setLevel(logging.WARNING)
+        file_handler.setFormatter(formatter)
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG) #hard-coding this for now
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+        console_handler.setFormatter(formatter)
+
+        logger = logging.getLogger()
+        logger.setLevel(log_level_mapping[log_level])
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -101,6 +106,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
+    setup_logging(args.debug)
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
