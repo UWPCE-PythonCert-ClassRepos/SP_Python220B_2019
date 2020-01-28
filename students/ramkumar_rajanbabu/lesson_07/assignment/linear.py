@@ -29,16 +29,60 @@ class MongoDBConnection():
         self.connection.close()
 
 
-def import_product():
-    pass
+def import_products_data(directory_name, product_file):
+    """"""
+    mongo = MongoDBConnection()
+    
+    LOGGER.info("Creating file paths for files")
+    product_file_path = os.path.join(directory_name, product_file)
+    
+    with mongo:
+        LOGGER.info("Creating mongo database")
+        database = mongo.connection.store
+        
+        LOGGER.info("Creating collections in database")
+        products = database["products"]
+        
+        LOGGER.info("Converting product csv file to dictionary")
+        with open(product_file_path, encoding="utf-8-sig") as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                p_info = {"product_id": row[0],
+                                "description": row[1],
+                                "product_type": row[2],
+                                "quantity_available": row[3]}
+                products.insert_one(p_info)
+                product_count += 1
+                LOGGER.info("Added product")
+
+def import_customers_data(directory_name, customer_file):
+    """"""
+    mongo = MongoDBConnection()
+    
+    LOGGER.info("Creating file paths for files")
+    customer_file_path = os.path.join(directory_name, customer_file)
+    
+    with mongo:
+        LOGGER.info("Creating mongo database")
+        database = mongo.connection.store
+        
+        LOGGER.info("Creating collections in database")
+        customers = database["customers"]
 
 
-def import_customer():
-    pass
-
-
-def import_rental():
-    pass
+def import_rentals_data(directory_name, rental_file):
+    """"""
+    mongo = MongoDBConnection()
+    
+    LOGGER.info("Creating file paths for files")
+    rental_file_path = os.path.join(directory_name, rental_file)
+    
+    with mongo:
+        LOGGER.info("Creating mongo database")
+        database = mongo.connection.store
+        
+        LOGGER.info("Creating collections in database")
+        rentals = database["rentals"]
 
 
 def import_data(directory_name, product_file, customer_file, rental_file):
@@ -60,10 +104,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     LOGGER.info("Creating error counts")
     product_error, customer_error, rental_error = 0, 0, 0
 
-    LOGGER.info("Creating file paths for files")
-    product_file_path = os.path.join(directory_name, product_file)
-    customer_file_path = os.path.join(directory_name, customer_file)
-    rental_file_path = os.path.join(directory_name, rental_file)
+
 
     mongo = MongoDBConnection()
 
@@ -75,11 +116,6 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         database.customers.drop()
         database.rental.drop()
         LOGGER.info("Cleared all databases")
-
-        LOGGER.info("Creating collections in database")
-        products = database["products"]
-        customers = database["customers"]
-        rentals = database["rentals"]
 
         try:
             LOGGER.info("Converting product csv file to dictionary")
