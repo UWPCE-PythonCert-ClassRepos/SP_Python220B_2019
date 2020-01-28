@@ -112,3 +112,7 @@ students/mattcasari/lesson01/assignments/__pycache__/
 students/mattcasari/lesson01/assignments/htmlcov/
 students/mattcasari/lesson01/assignments/.venv/
 students/mattcasari/lesson01/assignments/.vscode/
+students/mattcasari/lesson01/assignment/.pylintrc
+students/mattcasari/lesson01/assignment/.vscode/
+students/mattcasari/lesson01/assignment/tests/
+.vscode/
