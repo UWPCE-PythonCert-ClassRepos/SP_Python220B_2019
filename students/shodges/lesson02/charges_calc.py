@@ -29,6 +29,9 @@ def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+    parser.add_argument('-d', '--debug', help='debug level: 0 (default) = off, 1 = ERROR, ' +
+                        '2 = ERROR + WARNING, 3 = ERROR + WARNING + DEBUG', default='0',
+                        choices=('0', '1', '2', '3'))
 
     return parser.parse_args()
 
