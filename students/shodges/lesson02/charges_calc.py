@@ -9,6 +9,14 @@ import logging
 import sys
 
 def setup_logging(log_level):
+    '''
+    Setup standard logging.  Requires log_level variable to be set at this mapping:
+
+    0 = no logging
+    1 = ERROR and above (CRITICAL is not implemented)
+    2 = WARNING and above
+    3 = DEBUG and above
+    '''
     log_level_mapping = {'0': 99, '1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
 
     # We want to setup the logger regardless of log_level -- if it's disabled, set it to level >50
@@ -34,6 +42,9 @@ def setup_logging(log_level):
 
 
 def parse_cmd_arguments():
+    '''
+    Define script arguments.
+    '''
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -45,6 +56,9 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    '''
+    Load data (specified in filename variable) as json.
+    '''
     try:
         with open(filename) as file:
             data = json.load(file)
@@ -54,6 +68,9 @@ def load_rentals_file(filename):
     return data
 
 def calculate_additional_fields(data):
+    '''
+    Iterate through data and add additional calculated fields.
+    '''
     for value in data.values():
         logging.debug('Calculate additional fields with data: %s', value)
         try:
@@ -104,6 +121,9 @@ def calculate_additional_fields(data):
     return data
 
 def save_to_json(filename, data):
+    '''
+    Save processed data to filename as json.
+    '''
     with open(filename, 'w') as file:
         json.dump(data, file)
 
