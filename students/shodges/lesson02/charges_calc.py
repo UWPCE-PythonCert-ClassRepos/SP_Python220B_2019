@@ -59,14 +59,14 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.error('Caught ValueError when converting %s to datetime',
-                          value['rental_start'])
+            logging.warning('Caught ValueError when converting %s to datetime',
+                            value['rental_start'])
 
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
-            logging.error('Caught ValueError when converting %s to datetime',
-                          value['rental_start'])
+            logging.warning('Caught ValueError when converting %s to datetime',
+                            value['rental_start'])
 
         value['total_days'] = (rental_end - rental_start).days
 
