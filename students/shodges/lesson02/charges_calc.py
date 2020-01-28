@@ -42,10 +42,18 @@ def load_rentals_file(filename):
 
 def calculate_additional_fields(data):
     for value in data.values():
+        logging.debug('Calculate additional fields with data: {}'.format(value))
         try:
-            logging.debug('Calculate additional fields with data: {}'.format(value))
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+        except ValueError:
+            logging.error('Caught ValueError when converting {} to datetime'.format(
+                          value['rental_start']))
+        try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+        except ValueError:
+            logging.error('Caught ValueError when converting {} to datetime'.format(
+                          value['rental_start']))
+        try:
             value['total_days'] = (rental_end - rental_start).days
             if value['total_days'] < 0:
                 logging.error('Calculated invalid value for total_days ({} - {} = {})'.format(
