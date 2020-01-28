@@ -6,6 +6,7 @@ import json
 import datetime
 import math
 import logging
+import sys
 
 log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
@@ -38,7 +39,7 @@ def load_rentals_file(filename):
             data = json.load(file)
     except FileNotFoundError:
         logging.error('File %s does not exist -- exiting.', filename)
-        exit(0)
+        sys.exit()
     return data
 
 def calculate_additional_fields(data):
