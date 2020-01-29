@@ -126,6 +126,9 @@ def calculate_additional_fields(data):
         except ZeroDivisionError:
             logging.error('Caught ZeroDivisionError when calculating unit_cost (%s / %s)',
                           value['total_price'], value['units_rented'])
+        else:
+            logging.debug('Calculated value for unit_cost (%s / %s = %s)',
+                          value['total_price'], value['units_rented'], value['unit_cost'])
 
     return data
 
