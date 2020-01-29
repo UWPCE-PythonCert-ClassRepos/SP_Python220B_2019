@@ -85,6 +85,8 @@ def calculate_additional_fields(data):
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
             # rental_end may not be specified (i.e. if rental is ongoing), raising an exception
+            # We'll want to flow change this so that we are filtering out rentals in-progress
+            # (i.e., rental_end = '')
             logging.warning('Caught ValueError when converting %s to datetime',
                             value['rental_end'])
 
@@ -93,6 +95,10 @@ def calculate_additional_fields(data):
         if value['total_days'] < 0:
             # total_days is negative.
             # This occurs when rental_end occurs before rental_start (data may be flipped)
+            # We have two options here: we can add some input validation on the front-end
+            # to ensure that rental_end occurs after rental_start (preferred) or we can massage
+            # the data set such that the later date is assumed to be rental_end.  This /seems/
+            # fine but there may be unintended consequences of doing so so the preferred is safer.
             logging.error('Calculated invalid value for total_days (%s - %s = %s)',
                           value['rental_start'], value['rental_end'], value['total_days'])
         else:
@@ -121,7 +127,9 @@ def calculate_additional_fields(data):
                           value['total_price'], value['sqrt_total_price'])
 
         try:
-            # We'll get a divide-by-zero error if units_rented = 0 (which shouldn't happen)
+            # We'll get a divide-by-zero error if units_rented = 0 (which shouldn't happen).
+            # We'll want to add some input validation on the front-end to make sure we don't end
+            # up with this value in the data set.
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ZeroDivisionError:
             logging.error('Caught ZeroDivisionError when calculating unit_cost (%s / %s)',
