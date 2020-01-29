@@ -76,18 +76,23 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
+            # This isn't likely to happen (and it's not present in the source data like this)
+            # Adding a contingency for it anyway.
             logging.warning('Caught ValueError when converting %s to datetime',
                             value['rental_start'])
 
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
+            # rental_end may not be specified (i.e. if rental is ongoing), raising an exception
             logging.warning('Caught ValueError when converting %s to datetime',
                             value['rental_end'])
 
         value['total_days'] = (rental_end - rental_start).days
 
         if value['total_days'] < 0:
+            # total_days is negative.
+            # This occurs when rental_end occurs before rental_start (data may be flipped)
             logging.error('Calculated invalid value for total_days (%s - %s = %s)',
                           value['rental_start'], value['rental_end'], value['total_days'])
         else:
@@ -97,6 +102,7 @@ def calculate_additional_fields(data):
         value['total_price'] = value['total_days'] * value['price_per_day']
 
         if value['total_price'] < 0:
+            # total_days being negative leads to a negative total_price
             logging.error('Calculated invalid value for total_price (%s * %s = %s)',
                           value['total_days'], value['price_per_day'], value['total_price'])
         else:
@@ -104,6 +110,8 @@ def calculate_additional_fields(data):
                           value['total_days'], value['price_per_day'], value['total_price'])
 
         try:
+            # negative total_price causes a ValueError when trying to get the square root
+            # (evidently Python doesn't like imaginary numbers :) )
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
         except ValueError:
             logging.error('Caught ValueError when calculating sqrt_total_price for %s',
@@ -113,6 +121,7 @@ def calculate_additional_fields(data):
                           value['total_price'], value['sqrt_total_price'])
 
         try:
+            # We'll get a divide-by-zero error if units_rented = 0 (which shouldn't happen)
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except ZeroDivisionError:
             logging.error('Caught ZeroDivisionError when calculating unit_cost (%s / %s)',
