@@ -62,6 +62,7 @@ def load_rentals_file(filename):
     try:
         with open(filename) as file:
             data = json.load(file)
+            logging.debug('Successfully opened data file %s', filename)
     except FileNotFoundError:
         logging.error('File %s does not exist -- exiting.', filename)
         sys.exit()
@@ -146,6 +147,7 @@ def save_to_json(filename, data):
     '''
     with open(filename, 'w') as file:
         json.dump(data, file)
+        logging.debug('Wrote data to %s', filename)
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
