@@ -9,49 +9,51 @@ import logging  # new import
 
 def setup_debugger(level):
     """Set up logger and levels"""
-    
+
     # Set up format for logger messages and file name
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
     log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-    
+
     # Set up formatter
     formatter = logging.Formatter(log_format)
-    
+
     # Set up file handler
     file_handler = logging.FileHandler(log_file)
     file_handler.setFormatter(formatter)
-    
+
     # Set up console handler
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
-    
+
     # Set up logger
     logger = logging.getLogger()
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-    
+
     # Set up log level
     if level == 0:
         # No debug messages or log file
         logger.disabled = True
-        
+
     elif level == 1:
         # Only error messages
         logger.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
-        
+
     elif level == 2:
         # Error messages and warnings
         logger.setLevel(logging.WARNING)
         file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.WARNING)
-        
+
     elif level == 3:
         # Error messages, warnings and debug messages
         logger.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
+    else:
+        raise ValueError("Wrong level")
 
 
 def parse_cmd_arguments():
