@@ -1,5 +1,7 @@
 """Module for linear"""
 
+# pylint: disable=too-many-locals
+
 import csv
 import os
 import time
@@ -26,18 +28,17 @@ class MongoDBConnection():
 
 
 def import_products_data(directory_name, product_file):
-    """"""
-    
+    """Import data to products database"""
     p_start = time.time()
-    added_records = 0
-    
-    mongo = MongoDBConnection()    
+    p_added = 0
+
+    mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.store
         products = database["products"]
-        initial_records = products.count_documents({})
+        p_initial = products.count_documents({})
         product_file_path = os.path.join(directory_name, product_file)
-        
+
         with open(product_file_path, encoding="utf-8-sig") as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
@@ -46,26 +47,25 @@ def import_products_data(directory_name, product_file):
                           "product_type": row[2],
                           "quantity_available": row[3]}
                 products.insert_one(p_info)
-                added_records += 1
-        final_records = products.count_documents({})
+                p_added += 1
+        p_final = products.count_documents({})
         mod_time = time.time() - p_start
-        p_tup = (added_records, initial_records, final_records, mod_time)
-        return p_tup
+        p_tup = (p_added, p_initial, p_final, mod_time)
+    return p_tup
 
 
 def import_customers_data(directory_name, customer_file):
-    """"""
-    
+    """Import data to customers database"""
     c_start = time.time()
-    added_records = 0
-    
-    mongo = MongoDBConnection()    
+    c_added = 0
+
+    mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.store
         customers = database["customers"]
-        initial_records = customers.count_documents({})
+        c_initial = customers.count_documents({})
         customer_file_path = os.path.join(directory_name, customer_file)
-        
+
         with open(customer_file_path, encoding="utf-8-sig") as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
@@ -73,26 +73,25 @@ def import_customers_data(directory_name, customer_file):
                           "product_id": row[1],
                           "customer_id": row[2]}
                 customers.insert_one(c_info)
-                added_records += 1
-        final_records = customers.count_documents({})
+                c_added += 1
+        c_final = customers.count_documents({})
         mod_time = time.time() - c_start
-        c_tup = (added_records, initial_records, final_records, mod_time)
-        return c_tup
+        c_tup = (c_added, c_initial, c_final, mod_time)
+    return c_tup
 
 
 def import_rentals_data(directory_name, rental_file):
-    """"""
-    
+    """Import data to rentals database"""
     r_start = time.time()
-    added_records = 0
-    
-    mongo = MongoDBConnection()    
+    r_added = 0
+
+    mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.store
         rentals = database["rentals"]
-        initial_records = rentals.count_documents({})
+        r_initial = rentals.count_documents({})
         rental_file_path = os.path.join(directory_name, rental_file)
-        
+
         with open(rental_file_path, encoding="utf-8-sig") as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
@@ -102,22 +101,22 @@ def import_rentals_data(directory_name, rental_file):
                           "phone_number": row[3],
                           "email": row[4]}
                 rentals.insert_one(r_info)
-                added_records += 1
-        final_records = rentals.count_documents({})
+                r_added += 1
+        r_final = rentals.count_documents({})
         mod_time = time.time() - r_start
-        r_tup = (added_records, initial_records, final_records, mod_time)
-        return r_tup
+        r_tup = (r_added, r_initial, r_final, mod_time)
+    return r_tup
 
 
 if __name__ == "__main__":
-    start_time = time.time()
-    products = import_products_data("csv_files", "products.csv")
-    customers = import_customers_data("csv_files", "customers.csv")
-    end_time = time.time()
-    tot_time = end_time - start_time
-    
+    START_TIME = time.time()
+    PRODUCTS = import_products_data("sample_csv_files", "products.csv")
+    CUSTOMERS = import_customers_data("sample_csv_files", "customers.csv")
+    END_TIME = time.time()
+    TOT_TIME = END_TIME - START_TIME
+
     print("Products:")
-    print(products)
+    print(PRODUCTS)
     print("Customers:")
-    print(customers)
-    print("Total Time:", tot_time)
+    print(CUSTOMERS)
+    print("Total Time:", TOT_TIME)
