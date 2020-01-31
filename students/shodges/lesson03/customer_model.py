@@ -1,5 +1,4 @@
 from peewee import *
-import logging
 
 customer_db = SqliteDatabase('customers.db')
 customer_db.connect()
