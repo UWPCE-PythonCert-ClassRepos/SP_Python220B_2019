@@ -5,13 +5,15 @@ from peewee import *
 
 database = SqliteDatabase('customers.db')
 database.connect()
-database.execute_sql('PRAGMA foreign_keys = ON;') # needed for sqlite only
+database.execute_sql('PRAGMA foreign_keys = ON;')  # needed for sqlite only
+
 
 class BaseModel(Model):
     '''Base Model for DB classes.'''
     class Meta:
         '''Assign database for BaseModel.'''
         database = database
+
 
 class Customer(BaseModel):
     '''

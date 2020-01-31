@@ -36,6 +36,23 @@ class TestBasicOperations(TestCase):
             self.assertEqual(jeff.status, 'active')
             self.assertEqual(jeff.credit_limit, 200000)
 
+    def test_add_customers(self):
+        '''Test adding multiple customers to db.'''
+        cust1_info = [1, 'Alex', 'B', 'Address 1',
+                      1, 'Alex@website.com', 'active',
+                      100]
+        cust2_info = [2, 'Kels', 'B', 'Address 2',
+                      2, 'Kels@website.com', 'active',
+                      200]
+        with database.transaction():
+            cust_list = add_customers([cust1_info, cust2_info])
+            self.assertIsInstance(cust_list[0], Customer)
+            self.assertIsInstance(cust_list[1], Customer)
+            cust1 = Customer.get(Customer.customer_id == 1)
+            cust2 = Customer.get(Customer.customer_id == 2)
+            self.assertEqual(cust1.name, 'Alex')
+            self.assertEqual(cust2.name, 'Kels')
+
     def test_failure_add_customer(self):
         '''Test adding a customer without enough inputs.'''
         with self.assertRaises(TypeError):
@@ -57,6 +74,17 @@ class TestBasicOperations(TestCase):
         jeff_dict = search_customer(8675309)
         self.assertEqual(jeff_dict, {})
 
+    def test_search_customers(self):
+        '''Test searching for multiple customers.'''
+        customer_ids = [123, 12345, 1234567]
+        customers_list = search_customers(customer_ids)
+        self.assertEqual(customers_list[0]['name'],
+                         'Elon')
+        self.assertEqual(customers_list[1]['name'],
+                         'Jeff')
+        self.assertEqual(customers_list[2]['name'],
+                         'MacKenzie')
+
     def test_delete_customer(self):
         '''Test deleting a customer from the database.'''
         customer_deleted = delete_customer(12345)
@@ -66,6 +94,12 @@ class TestBasicOperations(TestCase):
 
         customer_not_deleted = delete_customer(472)
         self.assertFalse(customer_not_deleted)
+
+    def test_delete_customers(self):
+        '''Test delting multiple customers from the database.'''
+        customers_deleted = delete_customers([123, 12345])
+        self.assertTrue(customers_deleted[0])
+        self.assertTrue(customers_deleted[1])
 
     def test_update_customer_credit(self):
         '''Test updating a customer's credit.'''

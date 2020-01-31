@@ -29,6 +29,7 @@ LOGGER.addHandler(CONSOLE_HANDLER)
 
 # ----- CUSTOMER FUNCTIONS ----- #
 
+
 def add_customer(customer_id, name, lastname, home_address,
                  phone_number, email_address, status, credit_limit):
     '''Add a new customer to the customer database.'''
@@ -44,8 +45,9 @@ def add_customer(customer_id, name, lastname, home_address,
             credit_limit=credit_limit
         )
         new_customer.save()
-        LOGGER.info(f'{name} {lastname} (id: {customer_id}) added to DB')
+        LOGGER.info('%s %s (id: %d) added to DB.', name, lastname, customer_id)
     return new_customer
+
 
 def add_customers(customers):
     '''
@@ -54,6 +56,7 @@ def add_customers(customers):
     '''
     return [add_customer(*customer) for customer in customers]
 
+
 def search_customer(customer_id):
     '''
     Return a dictionary object with name, lastname, email address
@@ -61,7 +64,8 @@ def search_customer(customer_id):
     if no customer was found.
     '''
     with database.transaction():
-        customer_found = Customer.get_or_none(Customer.customer_id == customer_id)
+        customer_found = Customer.get_or_none(
+            Customer.customer_id == customer_id)
         if not customer_found:
             return {}
         customer_dict = {
@@ -75,27 +79,33 @@ def search_customer(customer_id):
         }
         return customer_dict
 
+
 def search_customers(customer_ids):
     '''
     Return a list of customers found from list of customer ids.
     '''
     return [search_customer(customer_id) for customer_id in customer_ids]
 
+
 def delete_customer(customer_id):
     '''Delete a customer from the customer database.'''
     with database.transaction():
-        cust_to_delete = Customer.get_or_none(Customer.customer_id == customer_id)
+        cust_to_delete = Customer.get_or_none(
+            Customer.customer_id == customer_id)
         if cust_to_delete is not None:
             cust_to_delete.delete_instance()
-            LOGGER.INFO(f'{cust_to_delete.name} {cust_to_delete.lastname} deleted')
+            LOGGER.info('%s %s deleted',
+                        cust_to_delete.name, cust_to_delete.lastname)
             return cust_to_delete
         return False
+
 
 def delete_customers(customer_ids):
     '''
     Return a list of customers deleted from db.
     '''
     return [delete_customer(customer_id) for customer_id in customer_ids]
+
 
 def update_customer_credit(customer_id, credit_limit):
     '''
@@ -104,14 +114,16 @@ def update_customer_credit(customer_id, credit_limit):
     does not exist.
     '''
     with database.transaction():
-        cust_to_update = Customer.get_or_none(Customer.customer_id == customer_id)
+        cust_to_update = Customer.get_or_none(
+            Customer.customer_id == customer_id)
         if cust_to_update is None:
             return False
         cust_to_update.credit_limit = credit_limit
         cust_to_update.save()
-        LOGGER.info(f'{cust_to_update.name} {cust_to_update.lastname} \
-                    (id: {customer_id}) credit updated.')
+        LOGGER.info('%s %s (id: %d) credit updated.', cust_to_update.name,
+                    cust_to_update.lastname, customer_id)
         return True
+
 
 def list_active_customers():
     '''
