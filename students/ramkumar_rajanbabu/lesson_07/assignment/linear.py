@@ -69,9 +69,11 @@ def import_customers_data(directory_name, customer_file):
         with open(customer_file_path, encoding="utf-8-sig") as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
-                c_info = {"rental_id": row[0],
-                          "product_id": row[1],
-                          "customer_id": row[2]}
+                c_info = {"customer_id": row[0],
+                          "name": row[1],
+                          "address": row[2],
+                          "phone_number": row[3],
+                          "email": row[4]}
                 customers.insert_one(c_info)
                 c_added += 1
         c_final = customers.count_documents({})
@@ -95,11 +97,9 @@ def import_rentals_data(directory_name, rental_file):
         with open(rental_file_path, encoding="utf-8-sig") as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
-                r_info = {"customer_id": row[0],
-                          "name": row[1],
-                          "address": row[2],
-                          "phone_number": row[3],
-                          "email": row[4]}
+                r_info = {"rental_id": row[0],
+                          "product_id": row[1],
+                          "customer_id": row[2]}
                 rentals.insert_one(r_info)
                 r_added += 1
         r_final = rentals.count_documents({})
