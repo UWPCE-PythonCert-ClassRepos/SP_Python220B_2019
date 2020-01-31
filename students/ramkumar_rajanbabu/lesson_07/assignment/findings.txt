@@ -1,1 +1,19 @@
 findings.txt
+
+Linear Results:
+Products:
+(1000, 7004, 8004, 0.31327247619628906)
+Customers:
+(1000, 7003, 8003, 0.29871678352355957)
+Total Time: 0.6119892597198486
+
+Parallel Results:
+Products:
+(1000, 8004, 9004, 0.29424118995666504)
+Customers:
+(1000, 8003, 9003, 0.3032069206237793)
+Total Time: 0.3042142391204834
+
+Results:
+-The parallel program is 50% faster than the linear program.
+-The program could fail due to contention when the data is not separated. This issue can be avoided by having multiple import functions for each collection rather than one import function for all of the collections.
