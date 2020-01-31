@@ -1,5 +1,7 @@
 """Module for parallel"""
 
+# pylint: disable=too-many-locals
+
 import csv
 import os
 import time
