@@ -1,6 +1,8 @@
 """Launches the user interface for the inventory management system"""
 
 import sys
+sys.path.append('../')
+
 import inventory_management.market_prices as market_prices
 import inventory_management.inventory_class as inventory
 import inventory_management.furniture_class as furniture
