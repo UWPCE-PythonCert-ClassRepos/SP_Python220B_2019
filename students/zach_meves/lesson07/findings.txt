@@ -68,4 +68,4 @@ run times also remain relatively constant. Threading does not speed up the opera
 and it introduces overhead that actually slows down the program.
 
 Based on these findings, concurrency is not recommended as it introduces overhead and potential
-bugs without offering much performance improvement. 
+bugs without offering much performance improvement.
