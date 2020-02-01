@@ -1,5 +1,5 @@
 """
-linear.py - copy of database.py from lesson 5
+parallel.py - parallel version of linear.py
 
 Represent customer and product data in a MongoDB.
 
@@ -11,6 +11,9 @@ import csv
 import os
 import pymongo
 from time import perf_counter
+import multiprocessing as mp
+import threading, queue
+from concurrent import futures
 
 
 # CLIENT = pymongo.MongoClient()
@@ -19,6 +22,8 @@ DB_NAME = 'hp_norton'
 # PRODUCTS = DB.products
 # CUSTOMERS = DB.customers
 # RENTALS = DB.rentals
+
+result_queue = queue.Queue()
 
 
 class MongoManager:
@@ -80,7 +85,21 @@ def read_csv(file, keyed=False):
         key = header[0]
         return dict(zip((entry[key] for entry in output), output))
 
+    # result_queue.put(output)
     return output
+
+
+def insert_many_db(db, data, name):
+    """Inserts items into a database.
+
+    :param db: Database
+    :param data: list of dictionaries
+    :param name: name to tie to result"""
+
+    with threading.Lock():  # Lock is acquired here to ensure database writing
+        # is completed before another thread can access database
+        inserted = db.insert_many(data)
+        result_queue.put((name, len(inserted.inserted_ids)))
 
 
 def import_data_base(directory, products, customers, rentals, manager=None):
@@ -92,23 +111,84 @@ def import_data_base(directory, products, customers, rentals, manager=None):
     :param products: str, name of file with product definitions
     :param customers: str, name of file with customer definitions
     :param rentals: str, name of file with rental information
-    :param manager: MongoManager to use for database access
+    :param manager: MongoManager, manager to use to access Database
     :returns: tuple, number of products, customers, and rentals added
     :returns: tuple, errors that occur for adding products, customers, and rentals
     """
+
+    # # Create multiprocessing pool
+    # pool = mp.Pool(processes=3)
+
+    # Create threads
+    # executor = futures.ThreadPoolExecutor(max_workers=3)
+    # future_results = []
+    # for file in (products, customers, rentals):
+    #     future_results.append(executor.submit(read_csv, os.path.join(directory, file)))
+    # threads = [threading.Thread(target=read_csv, args=(os.path.join(directory, _)))
+    #            for _ in (products, customers, rentals)]
+
+    # Start threads
+    # for t in threads:
+    #     t.start()
+
+    # # Launch imports in parallel
+    # product_data = pool.apply_async(read_csv, (os.path.join(directory, products),))
+    # customer_data = pool.apply_async(read_csv, (os.path.join(directory, customers),))
+    # rental_data = pool.apply_async(read_csv, (os.path.join(directory, rentals),))
 
     product_data = read_csv(os.path.join(directory, products))
     customer_data = read_csv(os.path.join(directory, customers))
     rental_data = read_csv(os.path.join(directory, rentals))
 
-    # with MongoManager() as manager:
-    res_prod = manager.db.products.insert_many(product_data)
-    res_cust = manager.db.customers.insert_many(customer_data)
-    res_rent = manager.db.rentals.insert_many(rental_data)
+    # # Close pool
+    # pool.close()
+    # pool.join()
 
-    inserted_prods = len(res_prod.inserted_ids)
-    inserted_custs = len(res_cust.inserted_ids)
-    inserted_rents = len(res_rent.inserted_ids)
+    # Get parallel results
+    # product_data = future_results[0].result()
+    # customer_data = future_results[1].result()
+    # rental_data = future_results[2].result()
+
+    # product_data = product_data.get()
+    # customer_data = customer_data.get()
+    # rental_data = rental_data.get()
+
+    # with MongoManager() as manager:
+    # future_results.clear()
+    # for data in (product_data, customer_data, rental_data):
+    #     future_results.append(executor.submit(manager.db.products.insert_many, data))
+    #
+    # res_prod = future_results[0].result()
+    # res_cust = future_results[1].result()
+    # res_rent = future_results[2].result()
+
+    prod_thread = threading.Thread(target=insert_many_db, args=(manager.db.products, product_data, 'prod'))
+    cust_thread = threading.Thread(target=insert_many_db, args=(manager.db.customers, customer_data, 'cust'))
+    rent_thread = threading.Thread(target=insert_many_db, args=(manager.db.rentals, rental_data, 'rent'))
+    threads = (prod_thread, cust_thread, rent_thread)
+
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()
+
+    results = {}
+    for i in range(3):
+        result = result_queue.get()
+        results[result[0]] = result[1]
+
+    inserted_prods = results['prod']
+    inserted_custs = results['cust']
+    inserted_rents = results['rent']
+
+    # res_prod = manager.db.products.insert_many(product_data)
+    # res_cust = manager.db.customers.insert_many(customer_data)
+    # res_rent = manager.db.rentals.insert_many(rental_data)
+
+    # inserted_prods = len(res_prod.inserted_ids)
+    # inserted_custs = len(res_cust.inserted_ids)
+    # inserted_rents = len(res_rent.inserted_ids)
 
     return (inserted_prods, inserted_custs, inserted_rents), \
            (len(product_data) - inserted_prods, len(customer_data) - inserted_custs,
@@ -116,7 +196,8 @@ def import_data_base(directory, products, customers, rentals, manager=None):
 
 
 def import_data(*args, **kwargs):
-    """Calls `import_data`, but with different return signature.
+    """Calls `import_data`, but with different return signature. Also
+    times the function call.
 
     :returns tuple: customer data
     :returns tuple: product data

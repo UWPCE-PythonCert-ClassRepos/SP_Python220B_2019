@@ -145,18 +145,18 @@ class TestDatabase(unittest.TestCase):
     def test_import_data(self):
         """Test database.import_data"""
 
-        success, fail = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         # Order = products, customers, rentals
-        names = ("Products", "Customers", "Rentals")
-        n_prod = len(self.product_keys)
-        n_cust = len(self.customer_keys)
-        n_rent = len(self.rental_data)
-
-        for correct, value, name in zip((n_prod, n_cust, n_rent), success, names):
-            self.assertEqual(correct, value, name)
-
-        self.assertEqual((0, 0, 0), fail, "Fail count")
+        # names = ("Products", "Customers", "Rentals")
+        # n_prod = len(self.product_keys)
+        # n_cust = len(self.customer_keys)
+        # n_rent = len(self.rental_data)
+        #
+        # for correct, value, name in zip((n_prod, n_cust, n_rent), success, names):
+        #     self.assertEqual(correct, value, name)
+        #
+        # self.assertEqual((0, 0, 0), fail, "Fail count")
 
         # Assert they were added to the database correctly
         with database.MongoManager() as mm:
@@ -169,7 +169,7 @@ class TestDatabase(unittest.TestCase):
 
         self.assertEqual({}, database.show_available_products(), "Nothing so far")
 
-        success, fail = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         prods_to_show = database.show_available_products()
         correct = dict(zip(prods_to_show, ({PROD_DESC: self.product_data[prod][PROD_DESC],
@@ -182,7 +182,7 @@ class TestDatabase(unittest.TestCase):
     def test_show_rentals(self):
         """Test database.show_rentals"""
 
-        _, _ = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         if "prodX" not in self.product_data:
             self.assertEqual({}, database.show_rentals("prodX"))
@@ -206,7 +206,7 @@ class TestDatabase(unittest.TestCase):
     def test_show_products_for_customer(self):
         """Tests database.show_products_for_customer"""
 
-        _, _ = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         correct = []
         for key in sorted(self.products_remaining):
