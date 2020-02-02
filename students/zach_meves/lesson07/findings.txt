@@ -1,0 +1,71 @@
+0) The files "customers.csv" and "products.csv" have 1,000 entries each. The files
+with "_million.csv" have 50,000 entries. The names are misnomers as the original intent
+was to expand to 1 million entries. Profiling is done with cProfile, and timing is
+done with timeit and 10 repetitions.
+
+1) Linear profile results
+    a) 1,000 entries:
+      66881 function calls (66806 primitive calls) in 0.181 seconds
+
+   Ordered by: internal time
+   List reduced from 490 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       18    0.080    0.004    0.080    0.004 {method 'recv_into' of '_socket.socket' objects}
+        3    0.025    0.008    0.030    0.010 linear.py:53(read_csv)
+        3    0.017    0.006    0.019    0.006 {built-in method pymongo._cmessage._batched_op_msg}
+     2006    0.009    0.000    0.013    0.000 objectid.py:175(__generate)
+     2008    0.007    0.000    0.036    0.000 collection.py:745(gen)
+     6069    0.005    0.000    0.009    0.000 {built-in method _abc._abc_instancecheck}
+     4119    0.003    0.000    0.013    0.000 {built-in method builtins.isinstance}
+     2005    0.003    0.000    0.004    0.000 linear.py:69(<listcomp>)
+     2009    0.002    0.000    0.003    0.000 {built-in method _abc._abc_subclasscheck}
+     6069    0.002    0.000    0.011    0.000 abc.py:137(__instancecheck__)
+       64    0.002    0.000    0.002    0.000 {method 'acquire' of'_thread.lock' objects}
+     2005    0.002    0.000    0.011    0.000 common.py:477(validate_is_document_type)
+     2006    0.002    0.000    0.002    0.000 objectid.py:165(_random)
+     2006    0.001    0.000    0.014    0.000 objectid.py:63(__init__)
+     8094    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+
+    b) 50,000 entries:
+     3155129 function calls (3155054 primitive calls) in 3.634 seconds
+
+   Ordered by: internal time
+   List reduced from 490 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       18    1.180    0.066    1.180    0.066 {method 'recv_into' of '_socket.socket' objects}
+        3    0.804    0.268    0.941    0.314 linear.py:53(read_csv)
+        3    0.370    0.123    0.415    0.138 {built-in method pymongo._cmessage._batched_op_msg}
+   100006    0.226    0.000    0.323    0.000 objectid.py:175(__generate)
+   100008    0.174    0.000    0.936    0.000 collection.py:745(gen)
+   300069    0.121    0.000    0.219    0.000 {built-in method _abc._abc_instancecheck}
+   200119    0.086    0.000    0.324    0.000 {built-in method builtins.isinstance}
+   100005    0.080    0.000    0.116    0.000 linear.py:69(<listcomp>)
+   100005    0.073    0.000    0.311    0.000 common.py:477(validate_is_document_type)
+   100007    0.059    0.000    0.076    0.000 {built-in method _abc._abc_subclasscheck}
+   300069    0.056    0.000    0.274    0.000 abc.py:137(__instancecheck__)
+        1    0.046    0.046    3.634    3.634 linear.py:118(import_data)
+   100006    0.040    0.000    0.053    0.000 objectid.py:165(_random)
+   450027    0.036    0.000    0.036    0.000 {method 'strip' of 'str' objects}
+   100006    0.033    0.000    0.357    0.000 objectid.py:63(__init__)
+
+The timeit results are 0.06 s and 2.25 s for the 1,000 and 50,000 entries. From the profile
+results, the largest component is socket interfacing. The largest user-written component
+is the .csv file reading.
+
+2) Parallel profile results
+
+The reading of .csv files was performed concurrently using threads, and the performance increase
+was negligible. The "acquire" method for threading locks was a significant portion of the
+computation time. For 1,000 entries, the time was 0.06 s, and for 50,000 entries it was 2.38 s, which is
+slightly slower than the linear version.
+
+If the database writing is also performed concurrently, then the run times remain relatively unchanged.
+
+If the database writing is the only concurrent operation (linear reading of .csv file), then the
+run times also remain relatively constant. Threading does not speed up the operations of this program,
+and it introduces overhead that actually slows down the program.
+
+Based on these findings, concurrency is not recommended as it introduces overhead and potential
+bugs without offering much performance improvement.
