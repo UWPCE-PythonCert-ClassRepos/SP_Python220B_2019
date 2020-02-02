@@ -1,0 +1,74 @@
+Advanced Programming In Python - Lesson 10 Assignment 1: Meta Programming
+RedMine Issue - SchoolOps-20
+Code Poet: Anthony McKeever
+Start Date: 01/30/2020
+End Date: 01/30/2020
+
+
+
+Function - format_row_integers - This function had an average run time of 0.0 seconds according to the logging.
+                                 Occasionally, the method would spike by a fraction (example: 0.001001119613647461 seconds)
+                                 of a second, but only 1 out of ~500 calls.
+
+
+
+
+Function - ingest_file Run Times:
+
+The ingest_file function is called in such a way that it really needed its own table.  This way
+we can track the execution time of each CSV file as it uploads to its dedicated collection in the
+MongoDB instance.
+
+Run:   | CSV File:     | Total Records:    | Runtime (Seconds):
+-------+---------------+-------------------+-----------------------
+       | products.csv  | 8                 | 0.0319974422454834
+ Run 1 | customers.csv | 9                 | 0.027997255325317383
+       | rentals.csv   | 21                | 0.04800271987915039
+-------+---------------+-------------------+-----------------------
+       | products.csv  | 50                | 0.08299803733825684
+ Run 2 | customers.csv | 50                | 0.08499979972839355
+       | rentals.csv   | 50                | 0.0970010757446289
+-------+---------------+-------------------+-----------------------
+       | products.csv  | 100               | 0.15399646759033203
+ Run 3 | customers.csv | 100               | 0.16299867630004883
+       | rentals.csv   | 100               | 0.15924644470214844
+-------+---------------+-------------------+-----------------------
+       | products.csv  | 500               | 0.7429978847503662
+ Run 4 | customers.csv | 500               | 0.7290019989013672
+       | rentals.csv   | 500               | 0.7361485958099365
+-------+---------------+-------------------+-----------------------
+       | products.csv  | 1000              | 1.5369958877563477
+ Run 5 | customers.csv | 1000              | 1.4389996528625488
+       | rentals.csv   | 1000              | 1.4210004806518555
+
+
+
+
+Function - import_data Run Times:
+
+These methods needed no specific inputs to work and so they are combined into their own table.
+
+Run:   | Function:                  | Total Records:    | Runtime (Seconds):
+-------+----------------------------+-------------------+----------------------
+       | import_data                | 38                | 0.1159982681274414
+ Run 1 | show_available_products    | 6                 | 0.013000011444091797
+       | show_rentals('FOM_001')    | 3                 | 0.013998746871948242
+-------+----------------------------+-------------------+----------------------
+       | import_data                | 150               | 0.270003080368042
+ Run 2 | show_available_products    | 50                | 0.014045476913452148
+       | show_rentals('AFM_882164') | 4                 | 0.013999700546264648
+-------+----------------------------+-------------------+----------------------
+       | import_data                | 300               | 0.4810004234313965
+ Run 3 | show_available_products    | 100               | 0.0149993896484375
+       | show_rentals('D_312306')   | 4                 | 0.014016389846801758
+-------+----------------------------+-------------------+----------------------
+       | import_data                | 1500              | 2.213144540786743
+ Run 4 | show_available_products    | 500               | 0.017014503479003906
+       | show_rentals('6D_462466')  | 6                 | 0.025002241134643555
+-------+----------------------------+-------------------+----------------------
+       | import_data                | 3000              | 4.400997877120972
+ Run 5 | show_available_products    | 1000              | 0.026999473571777344
+       | show_rentals('A_752127')   | 6                 | 0.025999069213867188
+
+Note: Given the nature of the random data generator - not many duplicate product rentals were generated.
+      This was done intentionally to replicate real customer rental paterns.
