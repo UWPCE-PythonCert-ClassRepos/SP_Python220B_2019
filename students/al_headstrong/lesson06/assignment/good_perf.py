@@ -1,5 +1,5 @@
 """
-poorly performing, poorly written module
+Better writting, better performing module
 
 """
 
@@ -8,8 +8,8 @@ import csv
 import timeit
 
 
-
 def analyze(filename):
+    """Print year counts, oa count and return start, end and both counts."""
     start = datetime.datetime.now()
     found = 0
     year_count = {
@@ -31,15 +31,15 @@ def analyze(filename):
                 year_count[row[5][6:]] += 1
 
         print(year_count)
-
         print(f"'ao' was found {found} times")
         end = datetime.datetime.now()
 
     return (start, end, year_count, found)
 
 def main():
-
-    print(timeit.timeit("analyze('data/exercise.csv')", setup='from __main__ import analyze', number=1))
+    """Main function changed to support timeit."""
+    print(timeit.timeit("analyze('data/exercise.csv')",
+                        setup='from __main__ import analyze', number=1))
 
 
 if __name__ == "__main__":
