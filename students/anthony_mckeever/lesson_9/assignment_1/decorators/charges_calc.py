@@ -54,7 +54,16 @@ from argparse import RawTextHelpFormatter
 
 
 def loggable(func):
+    """
+    A decorator function for logging the entry and exit of functions.
+    """
     def logged(*args, **kwargs):
+        """
+        Logs the entry and exit of a function.
+
+        :*args:     The arguments of the method.
+        :**kwargs:  The keyword arguments of the method.
+        """
         logging.info("Entering Function: %s", func.__name__)
         return_val = func(*args, **kwargs)
         logging.info("Exiting Function: %s", func.__name__)
@@ -222,6 +231,11 @@ def save_to_json(filename, data):
 
 
 def main(args):
+    """
+    The main method of the applicaiton.
+
+    :args:  The commandline arguments.
+    """
     set_logging(args.debug)
 
     data = load_rentals_file(ARGS.input)
