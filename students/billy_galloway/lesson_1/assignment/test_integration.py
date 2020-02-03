@@ -18,7 +18,16 @@ class MainTests(TestCase):
 
     def setUp(self):
         self.FULL_INVENTORY = {}
-        self.SIMPLE_INVENTORY = {}
+        self.SIMPLE_INVENTORY = {
+            4: {
+                    'product_code': 4,
+                    'description': 'television',
+                    'market_price': 24,
+                    'rental_price': 40,
+                    'brand': 'samsung',
+                    'voltage': 120
+                }
+            }
 
         self.refrigerator = ElectricAppliances(product_code=1, description="refrigerator",
                                                market_price=24, rental_price=15,
@@ -33,12 +42,6 @@ class MainTests(TestCase):
         sofa_output = self.sofa.return_as_dictionary()
         item_code = sofa_output['product_code']
         self.FULL_INVENTORY[item_code] = self.sofa.return_as_dictionary()
-
-        self.inventory = Inventory(product_code=1, description="refrigerator",
-                                   market_price=24, rental_price=15,)
-        invetory_output = self.inventory.return_as_dictionary()
-        item_code = invetory_output['product_code']
-        self.SIMPLE_INVENTORY[item_code] = self.inventory.return_as_dictionary()
 
         self.update_inventory = [
                                     [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
@@ -84,16 +87,6 @@ class MainTests(TestCase):
 
     def test_main_menu(self):
         main.FULL_INVENTORY = {}
-        full_run = {
-            4: {
-                    'product_code': 4,
-                    'description': 'television',
-                    'market_price': 24,
-                    'rental_price': 40,
-                    'brand': 'samsung',
-                    'voltage': 120
-                }
-            }
 
         # test the ability to add new items to the inventory
         with patch('builtins.input', side_effect=self.update_inventory[0]):
@@ -106,4 +99,4 @@ class MainTests(TestCase):
         with patch('builtins.input', side_effect=self.update_inventory[3]):
             main.main_menu()()
         
-        self.assertEqual(main.FULL_INVENTORY[4], full_run[4])
+        self.assertEqual(main.FULL_INVENTORY[4], self.SIMPLE_INVENTORY[4])
