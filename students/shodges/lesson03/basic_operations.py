@@ -8,4 +8,8 @@ def add_customer(**kwargs):
         new_customer = Customer.create(**kwargs)
         new_customer.save()
 
+def search_customer(customer_id):
+    customer = Customer.get(Customer.customer_id == customer_id)
+    return customer
+
 customer_db.close()
