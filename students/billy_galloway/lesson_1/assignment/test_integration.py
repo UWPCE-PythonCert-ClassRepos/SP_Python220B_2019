@@ -6,6 +6,7 @@ from unittest.mock import MagicMock
 from unittest.mock import patch
 
 import sys
+import io
 from inventory_management.market_prices import get_latest_price
 from inventory_management.inventory_class import Inventory
 from inventory_management.furniture_class import Furniture
@@ -42,27 +43,31 @@ class MainTests(TestCase):
         self.update_inventory = [
                                     [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
                                     [2, 'sofa', 12, 'y', 'leather', 'L'],
-                                    [3, 'hops', 20, 'n', 'n']
+                                    [3, 'hops', 20, 'n', 'n', '2', 'hops', 'q'],
+                                    ["1", 4, "television", 40, "n", "y", 'samsung', 120]
                                 ]
-   
-        self.prompt = [
-                        [1, 2, 'sofa', 12, 'y', 'leather', 'L'], 
-                        [2],
-                        ["q"]
-                      ]
-        
+           
     @patch('inventory_management.main.main_menu', spec=True)
     @patch('inventory_management.main.get_price', spec=True)
-    def test_main_menu(self, mock_get_price, mock_main_menu):
+    def test_building_inventory(self, mock_get_price, mock_main_menu):
+        main.FULL_INVENTORY = {}
+
         # test the ability to add new items to the inventory
         with patch('builtins.input', side_effect=self.update_inventory[0]):
             main.addnew_item()
         with patch('builtins.input', side_effect=self.update_inventory[1]):
             main.addnew_item()
+
         self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
 
         with patch('builtins.input', side_effect=self.update_inventory[2]):
             main.addnew_item()
+        with patch('builtins.input', side_effect=[1]):
+            main.item_info()
+
+        # Trigger else statement in item_info()
+        with patch('builtins.input', side_effect=[10]):
+            main.item_info()
 
         mock_get_price.return_value = 80
         self.assertEqual(main.get_price('hops'), 80)
@@ -72,31 +77,33 @@ class MainTests(TestCase):
 
         with patch('builtins.input', side_effect=outputs):
             main.addnew_item()
-
+        
         mock_main_menu.side_effect = "q"
         main.main_menu()
-    
+        self.assertRaises(SystemExit)
 
-    # def test_inventory_create(self):
-    #     with patch('builtins.input', side_effect=[1, 'refrigerator', 15, 'n', 'n']):
-    #         main.addnew_item()
+    def test_main_menu(self):
+        main.FULL_INVENTORY = {}
+        full_run = {
+            4: {
+                    'product_code': 4,
+                    'description': 'television',
+                    'market_price': 24,
+                    'rental_price': 40,
+                    'brand': 'samsung',
+                    'voltage': 120
+                }
+            }
 
-    
-    # def test_item_info(self):
-    #     # test that item info is working correctly
-    #     with patch('builtins.input', side_effect=[1, self.update_inventory[1]]):
-    #         main.item_info()
-    #     self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
-    
-    # def test_get_price(self):
-    #     # ensure that market price is always 24
-    #     item_code_1 = main.FULL_INVENTORY[1]
-    #     item_code_2 = self.FULL_INVENTORY[1]
-    #     self.assertEqual(24, main.get_price(item_code_1))
-    #     self.assertEqual(24, main.get_price(item_code_2))
-    
-    # def test_main_menu(self):
-    #     # test that program can exit
-    #     with patch('builtins.input', side_effect="q"):
-    #         main.main_menu()
+        # test the ability to add new items to the inventory
+        with patch('builtins.input', side_effect=self.update_inventory[0]):
+            main.addnew_item()
+        with patch('builtins.input', side_effect=self.update_inventory[1]):
+            main.addnew_item()
 
+        self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
+
+        with patch('builtins.input', side_effect=self.update_inventory[3]):
+            main.main_menu()()
+        
+        self.assertEqual(main.FULL_INVENTORY[4], full_run[4])
