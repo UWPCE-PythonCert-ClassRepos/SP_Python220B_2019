@@ -12,4 +12,9 @@ def search_customer(customer_id):
     customer = Customer.get(Customer.customer_id == customer_id)
     return customer
 
+def delete_customer(customer_id):
+    customer = Customer.get(Customer.customer_id == customer_id)
+    customer.delete_instance()
+
+
 customer_db.close()
