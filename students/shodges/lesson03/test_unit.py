@@ -73,7 +73,7 @@ class BaseDbTest(TestCase):
     def test_delete_records(self):
         """Test that a record is deleted if it exists."""
 
-        with self.assertRaises(IndexError): # customer_id 3 wasn't added successfully
+        with self.assertRaises(ValueError): # customer_id 3 wasn't added successfully
             basic_operations.delete_customer(3)
 
         self.assertEqual(basic_operations.delete_customer(1), True)
