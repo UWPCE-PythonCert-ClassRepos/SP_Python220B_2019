@@ -9,17 +9,26 @@ def add_customer(**kwargs):
         new_customer.save()
 
 def search_customer(customer_id):
-    customer = Customer.get(Customer.customer_id == customer_id)
-    return customer
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        return customer
+    except IndexError:
+        raise ValueError
 
 def delete_customer(customer_id):
-    customer = Customer.get(Customer.customer_id == customer_id)
-    customer.delete_instance()
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        customer.delete_instance()
+    except IndexError:
+        raise ValueError
 
 def update_customer_credit(customer_id, credit_limit):
-    customer = Customer.get(Customer.customer_id == customer_id)
-    customer.credit_limit = credit_limit
-    customer.save()
+    try:
+        customer = Customer.get(Customer.customer_id == customer_id)
+        customer.credit_limit = credit_limit
+        customer.save()
+    except IndexError:
+        raise ValueError
 
 
 def list_active_customers():
