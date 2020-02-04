@@ -86,19 +86,15 @@ def delete_customer(customer_id):
     """This function will delete a customer from the sqlite3 database."""
     try:
         with database.transaction():
-            del_customer = Customer.get(Customer.customerid == customer_id)
             logging.info('ATTEMPTING TO DELETE CUSTOMER: %s and dependent objects from '
                          'customer and customercontact tables', customer_id)
+            del_customer = Customer.get(Customer.customerid == customer_id)
             del_customer.delete_instance(recursive=True)
             logging.info('Customer: %s deleted', customer_id)
             return del_customer
-    except KeyError as deleteerror:
+    except (NameError, IndexError, KeyError):
         LOGGER.info('Delete failed for customer %s', customer_id)
-        LOGGER.info(str(deleteerror))
-        raise deleteerror
-    except IndexError:
-        LOGGER.info('Customer Id not found in database %s', customer_id)
-        raise IndexError
+        raise Exception
     #finally:
      #   return 0
 

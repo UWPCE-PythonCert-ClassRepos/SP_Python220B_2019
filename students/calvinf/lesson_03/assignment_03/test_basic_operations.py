@@ -52,7 +52,7 @@ class MyTestCase(TestCase):
 
     def test_delete_customer_fail(self):
         """Test deleting customer not in the database"""
-        with self.assertRaises(IndexError):
+        with self.assertRaises(Exception):
             delete_customer(1001)
 
     def test_customer_table_exists(self):
