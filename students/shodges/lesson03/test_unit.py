@@ -3,10 +3,10 @@ from unittest import TestCase
 import peewee, os
 
 # Remove customers.db if it exists so we can start fresh
-try:
-    os.remove("customers.db")
-except:
-    pass
+#try:
+    #os.remove("customers.db")
+#except:
+    #pass
 
 import basic_operations
 
@@ -41,25 +41,22 @@ class BaseDbTest(TestCase):
 
         self.assertEqual(basic_operations.list_active_customers(), (begin_record_count + 2))
 
-        self.assertEqual(basic_operations.search_customer(2), cust_2)
+        self.assertEqual(basic_operations.search_customer(2).home_address, cust_2['home_address'])
 
     def test_update_record(self):
         """Test that a record is updated when the credit_limit is <=7 digits."""
 
-        expected = {'customer_id': 2, 'first_name':'Bruce', 'last_name':'Wayne',
-                    'home_address': '1 Wayne Manor', 'phone_number':9125553131,
-                    'email_address':'bruce@notbatman.com', 'is_active':True,
-                    'credit_limit':1000.00}
-
         # This will fail
         self.assertEqual(basic_operations.update_customer_credit(3, 1000.00), False)
 
+        self.assertEqual(basic_operations.search_customer(2).credit_limit, 9999999.00)
         self.assertEqual(basic_operations.update_customer_credit(2, 1000.00), True)
-
-        self.assertEqual(basic_operations.search_customer(2), expected)
+        self.assertEqual(basic_operations.search_customer(2).credit_limit, 1000.00)
 
     def test_delete_records(self):
         """Test that a record is deleted if it exists."""
+
+        self.assertEqual(basic_operations.list_active_customers(), 2)
 
         self.assertEqual(basic_operations.delete_customer(1), True)
         self.assertEqual(basic_operations.delete_customer(2), True)
