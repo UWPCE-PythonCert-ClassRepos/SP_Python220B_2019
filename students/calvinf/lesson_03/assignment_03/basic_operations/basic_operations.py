@@ -87,16 +87,20 @@ def delete_customer(customer_id):
     try:
         with database.transaction():
             del_customer = Customer.get(Customer.customerid == customer_id)
-            logging.info('Attempting to Delete customer: %s and dependent objects from '
+            logging.info('ATTEMPTING TO DELETE CUSTOMER: %s and dependent objects from '
                          'customer and customercontact tables', customer_id)
             del_customer.delete_instance(recursive=True)
             logging.info('Customer: %s deleted', customer_id)
             return del_customer
-    except Exception as deleteerror:
+    except KeyError as deleteerror:
         LOGGER.info('Delete failed for customer %s', customer_id)
+        LOGGER.info(str(deleteerror))
         raise deleteerror
+    except IndexError:
+        LOGGER.info('Customer Id not found in database %s', customer_id)
+        raise IndexError
     #finally:
-        #return 0
+     #   return 0
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -115,7 +119,7 @@ def update_customer_credit(customer_id, credit_limit):
             if rowsupdated == 0:
                 raise ValueError('Customer %s was not found in database', customer_id)
             logging.info('%s -Records updated ', rowsupdated)
-    except Exception as customervalueerror:
+    except ValueError as customervalueerror:
         LOGGER.error(str(customervalueerror))
         raise customervalueerror
 
@@ -136,7 +140,6 @@ def list_active_customers():
     except Exception as customererror:
         LOGGER.error(str(customererror))
         raise customererror
-
 
 def main():
     """ Main function for basic operations. """

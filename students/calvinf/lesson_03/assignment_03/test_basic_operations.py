@@ -17,7 +17,8 @@ class MyTestCase(TestCase):
     def setUp(self):
         """Method used to create database, tables and test data"""
         #  database.connect()
-        database.create_tables([Customer, CustomerContact])
+        #database.create_tables([Customer, CustomerContact])
+        main()
         add_customer('101', 'Calvin', 'Fannin', '5678 Park Wood Drive Mount Pleasant AL 58741', '236-789-7865',
                      'plants@NO.com', 0, 85000)
         add_customer('201', 'Malvin', 'Sannin', '5678 Park Wood Drive Mount Pleasant AL 58741', '236-789-7865',
@@ -49,6 +50,11 @@ class MyTestCase(TestCase):
         self.assertNotEqual(foundcustomer, expected)
         self.assertEqual(foundcustomer, {})
 
+    def test_delete_customer_fail(self):
+        """Test deleting customer not in the database"""
+        with self.assertRaises(IndexError):
+            delete_customer(1001)
+
     def test_customer_table_exists(self):
         """Test if table was created in database"""
         self.assertTrue(Customer.table_exists())
@@ -68,10 +74,13 @@ class MyTestCase(TestCase):
         with self.assertRaises(ValueError):
             update_customer_credit('777', 12)
 
-    def test_active_user(self):
+    def test_active_customer(self):
         """Test method to count active users"""
         count = list_active_customers()
         self.assertEqual(count, 2)
+        with self.assertRaises(Exception):
+            database.drop_tables([Customer, CustomerContact])
+            count = list_active_customers()
 
     def tearDown(self):
         """Delete database after test cases have ran"""
