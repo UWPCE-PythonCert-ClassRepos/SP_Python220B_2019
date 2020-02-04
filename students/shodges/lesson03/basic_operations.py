@@ -1,5 +1,5 @@
-from customer_model import customer_db, Customer
 import logging
+from customer_model import customer_db, Customer
 
 customer_db.create_tables([Customer])
 
