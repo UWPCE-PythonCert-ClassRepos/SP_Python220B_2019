@@ -17,7 +17,7 @@ class BaseDbTest(TestCase):
 
         self.assertIsInstance(basic_operations.customer_db, peewee.SqliteDatabase)
 
-    def test_add_record(self):
+    def test_1_add_record(self):
         """Test that a record is successfully added when fields are correctly specified."""
         cust_1 = {'customer_id': 1, 'first_name':'John', 'last_name':'Doe',
                   'home_address': '123 Fake St', 'phone_number':5550111212,
@@ -43,7 +43,7 @@ class BaseDbTest(TestCase):
 
         self.assertEqual(basic_operations.search_customer(2).home_address, cust_2['home_address'])
 
-    def test_update_record(self):
+    def test_2_update_record(self):
         """Test that a record is updated when the credit_limit is <=7 digits."""
 
         # This will fail
@@ -53,7 +53,7 @@ class BaseDbTest(TestCase):
         self.assertEqual(basic_operations.update_customer_credit(2, 1000.00), True)
         self.assertEqual(basic_operations.search_customer(2).credit_limit, 1000.00)
 
-    def test_delete_records(self):
+    def test_3_delete_records(self):
         """Test that a record is deleted if it exists."""
 
         self.assertEqual(basic_operations.list_active_customers(), 2)
