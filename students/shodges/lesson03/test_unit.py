@@ -63,6 +63,9 @@ class BaseDbTest(TestCase):
                     'email_address':'bruce@notbatman.com', 'is_active':True,
                     'credit_limit':1000.00}
 
+        with self.assertRaises(ValueError): # customer_id 3 doesn't exist
+            basic_operations.update_customer_credit(3, 1000.00)
+
         self.assertEqual(basic_operations.update_customer_credit(2, 1000.00), True)
 
         self.assertEqual(basic_operations.search_customer(2), expected)
