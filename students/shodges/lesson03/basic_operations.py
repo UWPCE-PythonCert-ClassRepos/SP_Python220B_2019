@@ -39,7 +39,7 @@ def update_customer_credit(customer_id, credit_limit):
 
 
 def list_active_customers():
-    return 0
+    return Customer.select().count()
 
 
 customer_db.close()
