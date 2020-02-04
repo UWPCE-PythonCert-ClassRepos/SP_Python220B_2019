@@ -17,7 +17,7 @@ class Inventory:
         Return the inventory class as a dictionary.
         '''
         output_dict = {}
-        output_dict[''] = self.product_code
+        output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
         output_dict['market_price'] = self.market_price
         output_dict['rental_price'] = self.rental_price
