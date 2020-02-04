@@ -1,4 +1,4 @@
-from customer_model import *
+from customer_model import customer_db, Customer
 import logging
 
 customer_db.create_tables([Customer])
