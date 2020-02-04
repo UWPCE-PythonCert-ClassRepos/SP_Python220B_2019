@@ -13,23 +13,24 @@ class MongoDBConnection():
         self.host = host
         self.port = port
         self.connection = None
+        self.database = None
+        self.products = None
+        self.customers = None
+        self.rentals = None
 
     def __enter__(self):
         """Enter connection"""
         self.connection = MongoClient(self.host, self.port)
+        self.database = self.connection.media
+        self.products = self.database["products"]
+        self.customers = self.database["customers"]
+        self.rentals = self.database["rentals"]
+        
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Exit connection"""
         self.connection.close()
-
-
-def clear_database(mongo):
-    """Clear the database"""
-    with mongo:
-        mongo.products.drop()
-        mongo.customers.drop()
-        mongo.rental.drop()
 
 
 def import_data(directory_name, product_file, customer_file, rental_file):
@@ -71,7 +72,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                     "quantity_available": row[3]}
                     products.insert_one(product_info)
                     product_count += 1
-        except FileNotFoundError:
+        except:
             product_error += 1
 
         try:
@@ -85,7 +86,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                      "email": row[4]}
                     customers.insert_one(customer_info)
                     customer_count += 1
-        except FileNotFoundError:
+        except:
             customer_error += 1
 
         try:
@@ -97,7 +98,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
                                    "customer_id": row[2]}
                     rentals.insert_one(rental_info)
                     rental_count += 1
-        except FileNotFoundError:
+        except:
             rental_error += 1
 
         record_count = (product_count, customer_count, rental_count)
@@ -105,6 +106,15 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         total_count = record_count, fail_count
 
         return total_count
+
+
+def clear_database(mongo):
+    """Clears the database"""
+    mongo = MongoDBConnection()
+    with mongo:
+        mongo.products.drop()
+        mongo.customers.drop()
+        mongo.rental.drop()
 
 
 def show_available_products():
