@@ -3,13 +3,17 @@
 #unused-import flags on DoesNotExist, however that's necessary to allow downstream exception
 #catching in basic_operations (where it also flags)
 
+"""This module defines the structure of the Customer database."""
+
 from peewee import SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist
 
 customer_db = SqliteDatabase('customers.db')
 customer_db.connect()
 
 class BaseModel(Model):
+    """Peewee BaseModel"""
     class Meta:
+        """Peewee Meta class"""
         database = customer_db
 
 class Customer(BaseModel):
