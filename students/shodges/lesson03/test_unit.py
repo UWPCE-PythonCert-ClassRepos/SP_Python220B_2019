@@ -25,6 +25,11 @@ class BaseDbTest(TestCase):
 
         cust_3 = {'customer_id': 3}
 
+        cust_4 = {'customer_id': 4, 'first_name':'Jane', 'last_name':'Doe',
+                  'home_address': '0 Infinite Loop', 'phone_number':1112223333,
+                  'email_address':'jane@janedoe.com', 'is_active':False,
+                  'credit_limit':150000.00}
+
         begin_record_count = basic_operations.list_active_customers()
 
         self.assertEqual(basic_operations.add_customer(**cust_1), True)
@@ -33,9 +38,13 @@ class BaseDbTest(TestCase):
 
         self.assertEqual(basic_operations.add_customer(**cust_3), False)
 
+        self.assertEqual(basic_operations.add_customer(**cust_4), True)
+
         self.assertEqual(basic_operations.list_active_customers(), (begin_record_count + 2))
 
         self.assertEqual(basic_operations.search_customer(2).home_address, cust_2['home_address'])
+
+        self.assertEqual(basic_operations.search_customer(4).is_active, False)
 
     def test_2_update_record(self):
         """Test that a record is updated when the credit_limit is <=7 digits."""
