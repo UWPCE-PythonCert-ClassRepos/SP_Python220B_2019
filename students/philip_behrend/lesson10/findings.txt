@@ -1,0 +1,34 @@
+Function: import_file
+Time elapsed: 0:00:00.482723
+Records Processed:
+	products: 1000 
+	customers: 1000 
+	rentals: 1000 
+
+Function: print_mdb_collection
+Time elapsed: 0:00:00.132923
+Records Processed:
+	products: 0 
+	customers: 0 
+	rentals: 0 
+
+Function: show_available_products
+Time elapsed: 0:00:00.041976
+Records Processed:
+	products: 0 
+	customers: 0 
+	rentals: 0 
+
+Function: show_rentals
+Time elapsed: 0:00:00.158910
+Records Processed:
+	products: 0 
+	customers: 0 
+	rentals: 0 
+
+
+As expected, the file import took the most time. Printing all 1000 docs in 
+the product collection took less time than running a query to show information associated
+with rental id 99. 
+To optimize the script, we should consider threading for file imports. The 
+other functions are constrained by the performance of the print function.

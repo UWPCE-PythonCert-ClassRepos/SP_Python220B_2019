@@ -1,0 +1,48 @@
+Notes from profiling poor_perf.py:
+
+Testing:
+1.	First, I ran a test to see how long the program was taking to run. This took 4.552 seconds and varied by as much as a second. I noticed that it took 103,8224 function calls to complete the program. Appending information to the list was taking about .075 seconds. The biggest number of calls was coming from the built in method _codecs.charmap_decode at 19,100.
+2.	Next, I tried running the first for loop to see how long it took to complete the loop. It took approximately 2.340 seconds. It did not appear that it took much time for the .csv reader to be called but it did take up quite a bit of time for the loop.
+3.	I next ran the first and second loop together. The time for the second loop was approximately .998 seconds. This looked like a good area to look at a little bit of improving. I’m guessing the second loop took most of the time. If the date was 2018 it would require 6 different if statements to complete the loop.
+4.	The final check ran all three of the loops at one time. It took approximately 1.758 seconds to complete the third loop. I didn’t see a lot of time being taken up to call the .csv reader but again there was a loop that required the program to loop through all the entries in the list.
+5.	Based on the numbers I guessed that most of the time was being taken up with the for loops and some time was spent with appending date to the list.
+
+Conclusions:
+1.	For loops take time. When you cut down on the number of loops you save time even when you use a dot (call a method on the object).
+2.	Eliminating casting a list twice is a good thing to do but didn’t seem save time. I wonder if Python optimized that away and they are both the same object?
+3.	Priming the year count dictionary with a range didn’t save time but it seemed to be more readable code.
+4.	Counting the number of years in for loop could be done in the original for loop while reading the file, rather than going through an entire list in a second loop
+5.	Counting ao’s could also be optimized into the first loop in the same way. Essentially, we only visit each record once and perform all the counting on a single visit.
+6.	Counting additional years (2010-2011 and 2019) didn’t seem to hurt as badly as performing 6 comparisons in one loop iteration. It seems to be better to count all the years and throw out the extras at the end.
+
+Result:
+The result from the improved file showed a time of 1.965 seconds to run the whole script. There were only 19,126 function calls in that time as opposed to 103,8224. The old script ran in 4.552 seconds which is total savings of 2.587 seconds.
+
+Results from improved
+started at:2019-11-24 15:12:11.503687
+ended at:  2019-11-24 15:12:13.468555
+Total elapsed: 0:00:01.964868
+{2012: 100307, 2013: 100168, 2014: 100018, 2015: 99618, 2016: 100079, 2017: 100282, 2018: 100183}
+'ao' was found 333561 times
+         19126 function calls in 1.965 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    1.828    1.828    1.964    1.964 <string>:11(analyze)
+        1    0.000    0.000    0.000    0.000 <string>:21(<dictcomp>)
+        1    0.000    0.000    1.965    1.965 <string>:26(main)
+        1    0.000    0.000    1.965    1.965 <string>:4(<module>)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+     9550    0.003    0.000    0.136    0.000 cp1252.py:22(decode)
+     9550    0.132    0.000    0.132    0.000 {built-in method _codecs.charmap_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+        1    0.000    0.000    1.965    1.965 {built-in method builtins.exec}
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method fromkeys}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        7    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}

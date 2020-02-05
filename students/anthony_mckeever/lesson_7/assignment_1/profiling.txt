@@ -1,0 +1,113 @@
+Advanced Programming In Python - Lesson 7 Assignment 1: Threading & Concurrency
+RedMine Issue - SchoolOps-17
+Code Poet: Anthony McKeever
+Start Date: 01/10/2020
+End Date: 01/11/2020
+
+Profiling PC Specs:
+    OS: Windows 10 Pro 64-Bit (Version 1903, Build 18362.535)
+    Python Versions:
+        Windows 10: Python 3.7.2 (tags/v3.7.2:9a3ffc0492, Dec 23 2018, 23:09:28)
+    Processor: Intel Core i7-4770K 3.5GHz (Overclock to 4.2Ghz with Turbo Boost enabled)
+    RAM: 32 GB 1333Mhz DDR3 (4 x 8GB)
+
+Profile for linear data ingestion (linear.py)
+    Info from Logger:
+        Run 1:
+            INFO:__main__:Total time: 0.707989
+            INFO:__main__:Profile for Products: (992, 8, 1000, 0.24998760223388672)
+            INFO:__main__:Profile for Customers: (991, 9, 1000, 0.22501325607299805)
+            INFO:__main__:Profile for Rentals: (979, 21, 1000, 0.22800207138061523)
+
+        Run 2:
+            INFO:__main__:Total time: 0.704001
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.2529904842376709)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.2299976348876953)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.2190108299255371)
+
+        Run 3:
+            INFO:__main__:Total time: 0.702993
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.24499940872192383)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.23199892044067383)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.22100162506103516)
+
+        Run 4:
+            INFO:__main__:Total time: 0.661576
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.22050762176513672)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.21302533149719238)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.22304344177246094)
+
+        Run 5:
+            INFO:__main__:Total time: 0.708629
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.24438166618347168)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.23822283744812012)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.22105002403259277)
+
+    Break down:
+        Average time to ingest 3000 records: 0.6970376 seconds
+        Average time to ingest 1000 records into Products: 0.24257335662841797 seconds
+        Average time to ingest 1000 records into Customers: 0.227651596069335936 seconds
+        Average time to ingest 1000 records into Rentals: 0.22242159843444824 seconds
+
+    Observation:
+        Although seemingly performant, as data sizes increase the time it takes to process the files
+        will increase even on more powerful hardware.  It may be possible to reduce this processing
+        time with multithreading.
+
+    Recommendations:
+        Wrap each ingest_file call into its own thread to parallelize the data ingestion process.
+
+
+Profile for linear data ingestion (parallel.py)
+    Info from Logger:
+        Run 1:
+            INFO:__main__:Total time: 0.405987
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.3769996166229248)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.39800047874450684)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.40400052070617676)
+
+        Run 2:
+            INFO:__main__:Total time: 0.381988
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.3520243167877197)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.3729994297027588)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.3809990882873535)
+
+        Run 3:
+            INFO:__main__:Total time: 0.385985
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.351001501083374)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.37800049781799316)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.38100194931030273)
+
+        Run 4:
+            INFO:__main__:Total time: 0.383000
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.36099910736083984)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.37799763679504395)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.3770003318786621)
+
+        Run 5:
+            INFO:__main__:Total time: 0.375988
+            INFO:__main__:Profile for Products: (1000, 0, 1000, 0.3359982967376709)
+            INFO:__main__:Profile for Customers: (1000, 0, 1000, 0.3709859848022461)
+            INFO:__main__:Profile for Rentals: (1000, 0, 1000, 0.3719978332519531)
+
+        Break down:
+            Average time to ingest 3000 records: 0.3865896 seconds
+            Average time to ingest 1000 records into Products: 0.355404567718505668 seconds
+            Average time to ingest 1000 records into Customers: 0.37959680557250977 seconds
+            Average time to ingest 1000 records into Rentals: 0.382999944686889638 seconds
+
+    Average Differences:
+        Total Ingestion Difference: 0.310448 seconds decrease
+        Products Ingestion Difference: 0.24257335662841797 seconds increase
+        Customers Ingestion Difference: 0.151945209503173834 seconds increase
+        Rentals Ingestion Difference: 0.160578346252441398 seconds increase
+
+        Average File Ingestion time Increase: 0.18503230412801106733333333333333 seconds
+        
+        Overall Total Ingestion Performance Improvement: 44.538%
+    
+    Findings:
+        At immediate glance, it appears as thought multithreading negatively impacted the performance
+        of file ingestion by an average of approximately 0.19 seconds for 1000 records causing
+        potential slowdowns.  Although this is true, the overall time savings provided by multithreading
+        the individual file ingestion methods resulted in an approximately 44.54% performance improvement.

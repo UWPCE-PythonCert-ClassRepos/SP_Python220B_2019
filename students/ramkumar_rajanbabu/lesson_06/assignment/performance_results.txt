@@ -1,0 +1,50 @@
+"""Performance Results Notes"""
+
+
+exercise.csv notes:
+-Column A: random combination of letters (a-f) and numbers (0-9)
+-Column B: starts at "1" and keeps going sequentially
+-Column C: starts at "2" and keeps going sequentially
+-Column D: starts at "3" and keeps going sequentially
+-Column E: starts at "4" and keeps going sequentially
+-Column F: date format (MM/DD/YYYY) and dates from 2010-2018
+-Column G: "ao"
+
+
+poor_perf.py notes:
+*Fixed a typo (year_count["2017"] --> year_count["2018"])
+-Prints a count of years in the csv file from 2013-2018
+-Prints count of ao
+
+
+Performance Results:
+1) Time results
+$ time -p python poor_perf.py
+{'2013': 99237, '2014': 99842, '2015': 99944, '2016': 99511, '2017': 100069, '2018': 99393}
+'ao' was found 500230 times
+real 3.59
+user 0.00
+sys 0.00
+
+$ time -p python good_perf.py
+{'2013': 99237, '2014': 99842, '2015': 99944, '2016': 99511, '2017': 100069, '2018': 99393}
+'ao' was found 500230 times
+real 1.81
+user 0.00
+sys 0.01
+
+2) Profiling Results
+$ python -m cProfile -s cumtime poor_perf.py
+{'2013': 99237, '2014': 99842, '2015': 99944, '2016': 99511,'2017':100069,
+'2018': 99393}
+'ao' was found 500230 times
+1039557 function calls (1039540 primitive calls) in 3.634 seconds
+
+$ python -m cProfile -s cumtime good_perf.py
+{'2013': 99237, '2014': 99842, '2015': 99944, '2016': 99511, '2017': 100069, '2018': 99393}
+'ao' was found 500230 times
+20369 function calls (20352 primitive calls) in 1.766 seconds
+
+
+Results: 
+-The runtime was reduced close to half the time in the good_perf.py in comparison to poor_perf.py.
