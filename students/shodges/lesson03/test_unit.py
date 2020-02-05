@@ -65,5 +65,6 @@ class BaseDbTest(TestCase):
         self.assertEqual(basic_operations.delete_customer(2), True)
 
         self.assertEqual(basic_operations.delete_customer(3), False)
+        self.assertEqual(basic_operations.delete_customer(4), True)
 
         self.assertEqual(basic_operations.list_active_customers(), 0)
