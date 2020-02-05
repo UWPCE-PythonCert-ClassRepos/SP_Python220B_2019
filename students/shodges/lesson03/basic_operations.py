@@ -1,4 +1,4 @@
-# pylint: disable=unused-import
+# pylint: disable=unused-import, singleton-comparison
 
 """This module defines the standard set of CRUD operations for the Customer database."""
 
