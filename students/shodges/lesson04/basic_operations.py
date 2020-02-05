@@ -70,4 +70,34 @@ def list_active_customers():
     return Customer.select().where(Customer.is_active == True).count()
 
 
+class customer_list:
+    """
+    A class to provide a iterator to be step through the customer list.
+    """
+    def __init__(self, max=1000):
+        """
+        Initialize the iterator.
+        """
+        self.cur_customer = 0
+        self.full_list = Customer.select()
+        # The calling function can set a lower max than the length of the customer DB
+        self.max = max if max < len(self.full_list) else len(self.full_list)
+
+    def __iter__(self):
+        """
+        Define the iteration
+        """
+        return self
+
+    def __next__(self):
+        """
+        Define the next functionality of the iterator
+        """
+        if self.cur_customer > self.max:
+            raise StopIteration
+        return_val = self.full_list[self.cur_customer]
+        self.cur_customer += 1
+        return return_val
+
+
 CUSTOMER_DB.close()
