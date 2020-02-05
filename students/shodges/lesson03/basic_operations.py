@@ -3,9 +3,9 @@
 """This module defines the standard set of CRUD operations for the Customer database."""
 
 import logging
-from customer_model import customer_db, Customer, DoesNotExist, IntegrityError
+from customer_model import CUSTOMER_DB, Customer, DoesNotExist, IntegrityError
 
-customer_db.create_tables([Customer])
+CUSTOMER_DB.create_tables([Customer])
 
 def add_customer(**kwargs):
     """
@@ -13,7 +13,7 @@ def add_customer(**kwargs):
 
     Returns True on successful creation; otherwise, returns False.
     """
-    with customer_db.transaction():
+    with CUSTOMER_DB.transaction():
         try:
             new_customer = Customer.create(**kwargs)
         except IntegrityError:
@@ -69,4 +69,4 @@ def list_active_customers():
     return Customer.select().count()
 
 
-customer_db.close()
+CUSTOMER_DB.close()

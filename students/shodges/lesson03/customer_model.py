@@ -8,14 +8,14 @@
 from peewee import (SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist,
                     IntegrityError)
 
-customer_db = SqliteDatabase('customers.db')
-customer_db.connect()
+CUSTOMER_DB = SqliteDatabase('customers.db')
+CUSTOMER_DB.connect()
 
 class BaseModel(Model):
     """Peewee BaseModel"""
     class Meta:
         """Peewee Meta class"""
-        database = customer_db
+        database = CUSTOMER_DB
 
 class Customer(BaseModel):
     """This class defines the Customer DB schema."""

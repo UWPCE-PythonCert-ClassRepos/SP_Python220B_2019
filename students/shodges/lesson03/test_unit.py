@@ -9,7 +9,7 @@ class BaseDbTest(TestCase):
     def test_create_db(self):
         """Test that the database is successfully created."""
 
-        self.assertIsInstance(basic_operations.customer_db, peewee.SqliteDatabase)
+        self.assertIsInstance(basic_operations.CUSTOMER_DB, peewee.SqliteDatabase)
 
     def test_1_add_record(self):
         """Test that a record is successfully added when fields are correctly specified."""
