@@ -57,6 +57,8 @@ class BaseDbTest(TestCase):
         # The duplicate is True -- so if there was no overwrite, this will pass
         self.assertEqual(basic_operations.search_customer(4)['is_active'], False)
 
+        self.assertEqual('customer_id' in basic_operations.search_customer(3), False)
+
     def test_2_update_record(self):
         """Test that a record is updated when the credit_limit is <=7 digits."""
 
