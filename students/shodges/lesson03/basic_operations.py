@@ -66,7 +66,7 @@ def list_active_customers():
     """
     This function will return the count of active customers.
     """
-    return Customer.select().count()
+    return Customer.select().where(Customer.is_active == True).count()
 
 
 CUSTOMER_DB.close()
