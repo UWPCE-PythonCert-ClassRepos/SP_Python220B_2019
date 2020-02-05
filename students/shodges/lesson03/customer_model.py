@@ -1,4 +1,4 @@
-from peewee import SqliteDatabase, Model, DecimalField, CharField, BooleanField
+from peewee import SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist
 
 customer_db = SqliteDatabase('customers.db')
 customer_db.connect()

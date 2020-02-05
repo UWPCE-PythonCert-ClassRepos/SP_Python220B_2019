@@ -1,5 +1,5 @@
 import logging
-from customer_model import customer_db, Customer
+from customer_model import customer_db, Customer, DoesNotExist
 
 customer_db.create_tables([Customer])
 
@@ -34,7 +34,7 @@ def update_customer_credit(customer_id, credit_limit):
         customer.credit_limit = credit_limit
         customer.save()
         return True
-    except Exception as e:
+    except (IndexError, DoesNotExist):
         return False
 
 
