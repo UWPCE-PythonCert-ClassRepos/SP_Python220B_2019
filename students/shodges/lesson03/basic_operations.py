@@ -29,8 +29,8 @@ def search_customer(customer_id):
     If no Customer record is found, it will raise a ValueError.
     """
     try:
-        customer = Customer.get(Customer.customer_id == customer_id)
-        return customer
+        customer = Customer.select().where(Customer.customer_id == customer_id).dicts()
+        return customer.first()
     except (IndexError, DoesNotExist):
         raise ValueError
 
