@@ -32,8 +32,8 @@ def search_customer(customer_id):
     customer_record = customer.first()
     if customer_record is None:
         return {}
-    else:
-        return customer_record
+
+    return customer_record
 
 def delete_customer(customer_id):
     """
