@@ -30,6 +30,12 @@ class BaseDbTest(TestCase):
                   'email_address':'jane@janedoe.com', 'is_active':False,
                   'credit_limit':150000.00}
 
+        # Duplicate customer_id with a field that doesn't equal what we later test for
+        cust_4_b = {'customer_id': 4, 'first_name':'Jane', 'last_name':'Doe',
+                    'home_address': '0 Infinite Loop', 'phone_number':1112223333,
+                    'email_address':'jane@janedoe.com', 'is_active':True,
+                    'credit_limit':150000.00}
+
         begin_record_count = basic_operations.list_active_customers()
 
         self.assertEqual(basic_operations.add_customer(**cust_1), True)
@@ -40,10 +46,14 @@ class BaseDbTest(TestCase):
 
         self.assertEqual(basic_operations.add_customer(**cust_4), True)
 
+        # The PK exists, so this should fail
+        self.assertEqual(basic_operations.add_customer(**cust_4_b), False)
+
         self.assertEqual(basic_operations.list_active_customers(), (begin_record_count + 2))
 
         self.assertEqual(basic_operations.search_customer(2).home_address, cust_2['home_address'])
 
+        # The duplicate is True -- so if there was no overwrite, this will pass
         self.assertEqual(basic_operations.search_customer(4).is_active, False)
 
     def test_2_update_record(self):
