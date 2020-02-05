@@ -1,3 +1,5 @@
+# pylint: disable=unused-import
+
 import logging
 from customer_model import customer_db, Customer, DoesNotExist
 

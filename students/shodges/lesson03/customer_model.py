@@ -1,3 +1,8 @@
+# pylint: disable=too-few-public-methods, unused-import
+#too-few-public-methods flags on the classes -- however this is fundamental to the peewee structure
+#unused-import flags on DoesNotExist, however that's necessary to allow downstream exception
+#catching in basic_operations (where it also flags)
+
 from peewee import SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist
 
 customer_db = SqliteDatabase('customers.db')
