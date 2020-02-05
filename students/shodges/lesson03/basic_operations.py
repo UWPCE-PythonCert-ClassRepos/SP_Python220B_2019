@@ -32,7 +32,7 @@ def search_customer(customer_id):
         customer = Customer.select().where(Customer.customer_id == customer_id).dicts()
         return customer.first()
     except (IndexError, DoesNotExist):
-        raise ValueError
+        return {}
 
 def delete_customer(customer_id):
     """
