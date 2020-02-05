@@ -3,7 +3,7 @@
 """This module defines the standard set of CRUD operations for the Customer database."""
 
 import logging
-from customer_model import customer_db, Customer, DoesNotExist
+from customer_model import customer_db, Customer, DoesNotExist, IntegrityError
 
 customer_db.create_tables([Customer])
 
@@ -16,7 +16,7 @@ def add_customer(**kwargs):
     with customer_db.transaction():
         try:
             new_customer = Customer.create(**kwargs)
-        except:
+        except IntegrityError:
             return False
         else:
             new_customer.save()
@@ -44,7 +44,7 @@ def delete_customer(customer_id):
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.delete_instance()
         return True
-    except:
+    except (IndexError, DoesNotExist):
         return False
 
 def update_customer_credit(customer_id, credit_limit):

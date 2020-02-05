@@ -5,7 +5,8 @@
 
 """This module defines the structure of the Customer database."""
 
-from peewee import SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist
+from peewee import (SqliteDatabase, Model, DecimalField, CharField, BooleanField, DoesNotExist,
+                    IntegrityError)
 
 customer_db = SqliteDatabase('customers.db')
 customer_db.connect()
