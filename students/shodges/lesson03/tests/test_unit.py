@@ -1,6 +1,9 @@
 from unittest import TestCase
 
 import peewee, os
+import sys
+
+sys.path.append('..')
 
 import basic_operations
 
