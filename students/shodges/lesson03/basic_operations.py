@@ -28,11 +28,12 @@ def search_customer(customer_id):
 
     If no Customer record is found, it will raise a ValueError.
     """
-    try:
-        customer = Customer.select().where(Customer.customer_id == customer_id).dicts()
-        return customer.first()
-    except (IndexError, DoesNotExist):
+    customer = Customer.select().where(Customer.customer_id == customer_id).dicts()
+    customer_record = customer.first()
+    if customer_record is None:
         return {}
+    else:
+        return customer_record
 
 def delete_customer(customer_id):
     """
