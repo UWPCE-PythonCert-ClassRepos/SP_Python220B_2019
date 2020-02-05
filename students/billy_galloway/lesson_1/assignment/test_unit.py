@@ -15,7 +15,7 @@ class InventoryTests(TestCase):
     def setUp(self):
         self.FULL_INVENTORY = {}
         self.SIMPLE_INVENTORY = {}
-        
+
         # setup refrigerator in inventory
         self.refrigerator = ElectricAppliances(product_code=1, description="refrigerator",
                                                market_price=24, rental_price=15,
@@ -34,16 +34,16 @@ class InventoryTests(TestCase):
 
         # setup a simple inventory to test class
         self.simple_inventory = Inventory(product_code=1, description="refrigerator", 
-                                   market_price=24, rental_price=15)
+                                          market_price=24, rental_price=15)
         invetory_output = self.simple_inventory.return_as_dictionary()
         item_code = invetory_output['product_code']
         self.SIMPLE_INVENTORY[item_code] = invetory_output
 
-        # user inputs 
+        # user inputs
         self.update_inventory = [
-                                    [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
-                                    [2, 'sofa', 12, 'y', 'leather', 'L']
-                                ]
+            [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
+            [2, 'sofa', 12, 'y', 'leather', 'L']
+        ]
 
     def test_inventory(self):
         self.assertEqual(self.SIMPLE_INVENTORY[1]['product_code'], 1)
@@ -86,6 +86,17 @@ class InventoryTests(TestCase):
         self.assertEqual(24, main.get_price(item_code_2))
     
     def test_main_menu(self):
+        main.FULL_INVENTORY = {}
+
+        # test the ability to add new items to the inventory
+        with patch('builtins.input', side_effect=self.update_inventory[0]):
+            main.addnew_item()
+        with patch('builtins.input', side_effect=self.update_inventory[1]):
+            main.addnew_item()
+
+        self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
+
         # test that program can exit
         with patch('builtins.input', return_value="q"):
             main.main_menu()
+        

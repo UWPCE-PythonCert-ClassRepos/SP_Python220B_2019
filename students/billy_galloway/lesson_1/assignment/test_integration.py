@@ -20,12 +20,12 @@ class MainTests(TestCase):
         self.FULL_INVENTORY = {}
         self.SIMPLE_INVENTORY = {
             4: {
-                    'product_code': 4,
-                    'description': 'television',
-                    'market_price': 24,
-                    'rental_price': 40,
-                    'brand': 'samsung',
-                    'voltage': 120
+                'product_code': 4,
+                'description': 'television',
+                'market_price': 24,
+                'rental_price': 40,
+                'brand': 'samsung',
+                'voltage': 120
                 }
             }
 
@@ -44,12 +44,12 @@ class MainTests(TestCase):
         self.FULL_INVENTORY[item_code] = self.sofa.return_as_dictionary()
 
         self.update_inventory = [
-                                    [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
-                                    [2, 'sofa', 12, 'y', 'leather', 'L'],
-                                    [3, 'hops', 20, 'n', 'n', '2', 'hops', 'q'],
-                                    ["1", 4, "television", 40, "n", "y", 'samsung', 120]
-                                ]
-           
+            [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
+            [2, 'sofa', 12, 'y', 'leather', 'L'],
+            ["1", 3, 'hops', 20, 'n', 'n', '2', 'hops', 'q'],
+            ["1", 4, "television", 40, "n", "y", 'samsung', 120]
+        ]
+
     @patch('inventory_management.main.main_menu', spec=True)
     @patch('inventory_management.main.get_price', spec=True)
     def test_building_inventory(self, mock_get_price, mock_main_menu):
@@ -63,27 +63,32 @@ class MainTests(TestCase):
 
         self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
 
-        with patch('builtins.input', side_effect=self.update_inventory[2]):
-            main.addnew_item()
+        with patch('builtins.input', side_effect=[self.update_inventory[2]]):
+            main.main_menu()
+
         with patch('builtins.input', side_effect=[1]):
             main.item_info()
-
+        print(main.FULL_INVENTORY)
         # Trigger else statement in item_info()
-        with patch('builtins.input', side_effect=[10]):
-            main.item_info()
+        with patch('sys.stdout', new=io.StringIO()) as output:
+            with patch('builtins.input', side_effect=["1", 10]):
+                main.item_info()
+        self.assertEqual("Item not found in inventory\n", output.getvalue())
 
+        # override price with mock
         mock_get_price.return_value = 80
         self.assertEqual(main.get_price('hops'), 80)
 
-        mock_main_menu.side_effect = [self.update_inventory[2]]
-        outputs = main.main_menu()
+        with patch('builtins.input', side_effect=[self.update_inventory[2]]):
+            main.main_menu()
+        self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
 
-        with patch('builtins.input', side_effect=outputs):
-            main.addnew_item()
-        
-        mock_main_menu.side_effect = "q"
-        main.main_menu()
-        self.assertRaises(SystemExit)
+        with patch('builtins.input', side_effect=["1", "h"]):
+            main.main_menu()
+
+        with patch('builtins.input', return_value="q"):
+            main.main_menu()
+            self.assertRaises(SystemExit)
 
     def test_main_menu(self):
         main.FULL_INVENTORY = {}
@@ -98,5 +103,5 @@ class MainTests(TestCase):
 
         with patch('builtins.input', side_effect=self.update_inventory[3]):
             main.main_menu()()
-        
+  
         self.assertEqual(main.FULL_INVENTORY[4], self.SIMPLE_INVENTORY[4])
