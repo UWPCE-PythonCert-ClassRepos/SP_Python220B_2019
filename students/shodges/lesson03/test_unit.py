@@ -2,12 +2,6 @@ from unittest import TestCase
 
 import peewee, os
 
-# Remove customers.db if it exists so we can start fresh
-#try:
-    #os.remove("customers.db")
-#except:
-    #pass
-
 import basic_operations
 
 class BaseDbTest(TestCase):
