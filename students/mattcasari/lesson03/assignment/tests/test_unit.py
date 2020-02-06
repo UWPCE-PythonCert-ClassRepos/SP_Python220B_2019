@@ -12,6 +12,13 @@ from src import basic_operations
 
 DATABASE = SqliteDatabase('customers.db')
 
+try:
+    logging.info("Creating tables in database")
+    DATABASE.create_tables([Customers])
+except Exception as e_val:
+    logging.info("Could not create tables")
+    logging.info(e_val)
+
 logging.disable(logging.CRITICAL)
 
 CUSTOMER1 = (

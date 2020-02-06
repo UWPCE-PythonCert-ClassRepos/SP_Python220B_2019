@@ -8,14 +8,6 @@
 import logging
 from src.customer_model import Customers, DATABASE
 
-try:
-    logging.info("Creating tables in database")
-    DATABASE.create_tables([Customers])
-except Exception as e_val:
-    logging.info("Could not create tables")
-    logging.info(e_val)
-
-
 def add_customer(
         customer_id,
         name,
