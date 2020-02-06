@@ -14,18 +14,18 @@ def logger_decorator(func):
         # Set up format for logger messages and file name
         log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
         log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-    
+
         # Set up formatter
         formatter = logging.Formatter(log_format)
-    
+
         # Set up file handler
         file_handler = logging.FileHandler(log_file)
         file_handler.setFormatter(formatter)
-    
+
         # Set up console handler
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
-    
+
         # Set up logger
         logger = logging.getLogger()
         logger.addHandler(file_handler)
@@ -35,19 +35,19 @@ def logger_decorator(func):
         if level == 0:
             # No debug messages or log file
             logger.setLevel(logging.CRITICAL)  # Made a change to original code
-    
+
         elif level == 1:
             # Only error messages
             logger.setLevel(logging.ERROR)
             file_handler.setLevel(logging.ERROR)
             console_handler.setLevel(logging.ERROR)
-    
+
         elif level == 2:
             # Error messages and warnings
             logger.setLevel(logging.WARNING)
             file_handler.setLevel(logging.WARNING)
             console_handler.setLevel(logging.WARNING)
-    
+
         elif level == 3:
             # Error messages, warnings and debug messages
             logger.setLevel(logging.DEBUG)
@@ -55,7 +55,7 @@ def logger_decorator(func):
             console_handler.setLevel(logging.DEBUG)
         else:
             raise ValueError("Wrong level")
-            
+
         return func(*args)
     return setup_logger
 
@@ -66,9 +66,11 @@ def parse_cmd_arguments():
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-d', '--debug', help='logging level', required=False, default='0')
+
     return parser.parse_args()
 
 
+@logger_decorator
 def load_rentals_file(filename):
     """Load data from input file (source.json)"""
     with open(filename) as file:
@@ -76,9 +78,11 @@ def load_rentals_file(filename):
             data = json.load(file)
         except FileNotFoundError:
             logging.error("File does not exist")
+
     return data
 
 
+@logger_decorator
 def calculate_additional_fields(data):
     """Caculates total days, total price, total square root of price,
     unit cost"""
@@ -100,9 +104,11 @@ def calculate_additional_fields(data):
         except KeyError as key_err:
             logging.warning(key_err)
             continue
+
     return data
 
 
+@logger_decorator
 def save_to_json(filename, data):
     """Saves data to output file (out.json)"""
     with open(filename, 'w') as file:
@@ -111,7 +117,6 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
-    setup_debugger(ARGS.debug)
-    DATA = load_rentals_file(ARGS.input)
-    DATA = calculate_additional_fields(DATA)
-    save_to_json(ARGS.output, DATA)
+    INPUT_DATA = load_rentals_file(ARGS.input)
+    OUTPUT_DATA = calculate_additional_fields(INPUT_DATA)
+    save_to_json(ARGS.output, OUTPUT_DATA)

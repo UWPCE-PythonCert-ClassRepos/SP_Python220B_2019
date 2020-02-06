@@ -25,7 +25,7 @@ class MongoDBConnection():
         self.products = self.database["products"]
         self.customers = self.database["customers"]
         self.rentals = self.database["rentals"]
-        
+
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -56,7 +56,6 @@ def import_data(directory_name, product_file, customer_file, rental_file):
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.media
-        clear_database()
 
         products = database["products"]
         customers = database["customers"]

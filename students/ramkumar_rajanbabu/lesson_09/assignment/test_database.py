@@ -12,6 +12,7 @@ class TestDatabase(TestCase):
     """Test Database"""
     def test_import_data(self):
         """Testing import data"""
+        db.clear_database()
         actual = db.import_data(PATH, "products.csv", "customers.csv",
                                 "rentals.csv")
         expected = ((4, 3, 4), (0, 0, 0))
@@ -19,6 +20,7 @@ class TestDatabase(TestCase):
 
     def test_show_available_products(self):
         """Tetsing showing available products"""
+        db.clear_database()
         actual = db
         actual.import_data(PATH, "products.csv", "customers.csv",
                            "rentals.csv")
@@ -38,6 +40,7 @@ class TestDatabase(TestCase):
 
     def test_show_rentals(self):
         """Testing show rentals"""
+        db.clear_database()
         actual = db
         actual.import_data(PATH, "products.csv", "customers.csv",
                            "rentals.csv")
