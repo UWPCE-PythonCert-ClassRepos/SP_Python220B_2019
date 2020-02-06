@@ -50,9 +50,8 @@ class MainTests(TestCase):
             ["1", 4, "television", 40, "n", "y", 'samsung', 120]
         ]
 
-    @patch('inventory_management.main.main_menu', spec=True)
     @patch('inventory_management.main.get_price', spec=True)
-    def test_building_inventory(self, mock_get_price, mock_main_menu):
+    def test_building_inventory(self, mock_get_price):
         main.FULL_INVENTORY = {}
 
         # test the ability to add new items to the inventory

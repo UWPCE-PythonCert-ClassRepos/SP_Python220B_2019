@@ -1,0 +1,16 @@
+{
+    "RNT001": {
+      "product_code": "PR",
+      "units_rented": 8,
+      "price_per_day": 31,
+      "rental_start": "6/12/17",
+      "rental_end": "3/22/17"
+    },
+    "RNT002": {
+      "product_code": "PRD11",
+      "units_rented": "1",
+      "price_per_day": 16,
+      "rental_start": "7",
+      "rental_end": "9"
+    }
+}
