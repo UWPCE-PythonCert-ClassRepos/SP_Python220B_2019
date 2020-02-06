@@ -79,7 +79,7 @@ class customer_list:
         Initialize the iterator.
         """
         self.cur_customer = 0
-        self.full_list = Customer.select()
+        self.full_list = Customer.select().dicts()
         # The calling function can set a lower max than the length of the customer DB
         self.max = (max if max < len(self.full_list) else len(self.full_list)) - 1
 
