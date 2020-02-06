@@ -6,6 +6,7 @@ import json
 import datetime
 import math
 import logging
+from os import path
 
 
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -16,17 +17,19 @@ logger = logging.getLogger()
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
-    parser.add_argument('-o', '--output', help='ouput JSON file', required=False, default=None)
+    parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-v', '--verbose', default=0, action="count", help='logging verbosity')
 
     args = parser.parse_args()
 
-    if args.ouput is None:
-        logger.warning(f"{args.output}")
-    if args.output is None:
-        logger.warning(f"output file not found")
-    
-    return args # parser.parse_args()
+    if args.input:
+        try:
+            path.exists(args.input)
+            logger.info(f"searching for filename {args.input}")
+        except FileNotFoundError:
+            logger.warning(f"{args.input} was not found")
+  
+    return args
 
 
 def load_rentals_file(filename=None, verbose=None):
