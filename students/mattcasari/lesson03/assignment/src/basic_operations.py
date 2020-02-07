@@ -6,7 +6,7 @@
 # pylint: disable=broad-except
 
 import logging
-from src.customer_model import Customers, DATABASE
+from src.customer_model import Customers
 
 def add_customer(
         customer_id,
