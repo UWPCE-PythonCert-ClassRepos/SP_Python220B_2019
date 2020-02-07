@@ -5,6 +5,17 @@
 import logging
 from customer_model import CUSTOMER_DB, Customer, DoesNotExist, IntegrityError
 
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+log_file = 'db.log'
+
+formatter = logging.Formatter(log_format)
+file_handler = logging.FileHandler(log_file)
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+
 CUSTOMER_DB.create_tables([Customer])
 
 def add_customer(**kwargs):
