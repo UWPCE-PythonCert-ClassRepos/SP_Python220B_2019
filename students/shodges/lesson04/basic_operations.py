@@ -47,7 +47,8 @@ def search_customer(customer_id):
         logging.warning('Unable to find record for customer_id == %s', customer_id)
         return {}
 
-    logging.debug('Successfully found record for customer_id == %s (%s)', customer_id, customer_record)
+    logging.debug('Successfully found record for customer_id == %s (%s)',
+                  customer_id, customer_record)
     return customer_record
 
 def delete_customer(customer_id):
@@ -75,7 +76,8 @@ def update_customer_credit(customer_id, credit_limit):
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.credit_limit = credit_limit
         customer.save()
-        logging.debug('Successfully updated credit limit to %s for customer_id == %s', credit_limit, customer_id)
+        logging.debug('Successfully updated credit limit to %s for customer_id == %s',
+                      credit_limit, customer_id)
         return True
     except (IndexError, DoesNotExist):
         logging.error('Unable to update record for customer_id == %s', customer_id)
@@ -118,5 +120,14 @@ class customer_list:
         self.cur_customer += 1
         return return_val
 
+def customer_list_ids(max=1000):
+    customers = Customer.select().dicts()
+    if max >= len(customers):
+        max = len(customers)
+    max -= 1
+    i = 0
+    while i <= max:
+        yield customers[i]['customer_id']
+        i += 1
 
 CUSTOMER_DB.close()
