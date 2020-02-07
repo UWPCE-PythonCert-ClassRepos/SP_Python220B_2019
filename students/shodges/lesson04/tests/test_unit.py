@@ -62,6 +62,18 @@ class BaseDbTest(TestCase):
 
         self.assertEqual('customer_id' in basic_operations.search_customer(3), False)
 
+        # Verify the iterator CustomerList
+        all_customers = basic_operations.CustomerList()
+
+        for customer in all_customers:
+            self.assertEqual(customer, eval('cust_' + str(customer['customer_id'])))
+
+        # Verify the generator customer_list_ids
+        all_customer_ids = basic_operations.customer_list_ids()
+
+        for customer_id in all_customer_ids:
+            self.assertEqual(customer_id, eval('cust_' + str(customer_id))['customer_id'])
+
     def test_2_update_record(self):
         """Test that a record is updated when the credit_limit is <=7 digits."""
 
