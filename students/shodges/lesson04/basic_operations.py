@@ -32,7 +32,7 @@ def add_customer(**kwargs):
             return False
         else:
             new_customer.save()
-            logging.debug('Successfully creating record: %s', **kwargs)
+            logging.debug('Successfully creating record: %s', kwargs)
             return True
 
 def search_customer(customer_id):
