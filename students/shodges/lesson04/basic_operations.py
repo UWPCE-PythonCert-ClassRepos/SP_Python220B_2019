@@ -95,14 +95,14 @@ class CustomerList:
     """
     A class to provide a iterator to be step through the customer list.
     """
-    def __init__(self, max=1000):
+    def __init__(self, max_records=1000):
         """
         Initialize the iterator.
         """
         self.cur_customer = 0
         self.full_list = Customer.select().dicts()
         # The calling function can set a lower max than the length of the customer DB
-        self.max = (max if max < len(self.full_list) else len(self.full_list)) - 1
+        self.max = (max_records if max_records < len(self.full_list) else len(self.full_list)) - 1
 
     def __iter__(self):
         """
@@ -120,13 +120,13 @@ class CustomerList:
         self.cur_customer += 1
         return return_val
 
-def customer_list_ids(max=1000):
+def customer_list_ids(max_records=1000):
     customers = Customer.select().dicts()
-    if max >= len(customers):
-        max = len(customers)
-    max -= 1
+    if max_records >= len(customers):
+        max_records = len(customers)
+    max_records -= 1
     i = 0
-    while i <= max:
+    while i <= max_records:
         yield customers[i]['customer_id']
         i += 1
 
