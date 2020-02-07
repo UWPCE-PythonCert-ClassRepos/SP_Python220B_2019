@@ -121,6 +121,9 @@ class CustomerList:
         return return_val
 
 def customer_list_ids(max_records=1000):
+    """
+    A method to provide a generator to step through the customer list and yield the customer_id.
+    """
     customers = Customer.select().dicts()
     if max_records >= len(customers):
         max_records = len(customers)
