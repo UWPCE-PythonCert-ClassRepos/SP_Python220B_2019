@@ -5,16 +5,16 @@
 import logging
 from customer_model import CUSTOMER_DB, Customer, DoesNotExist, IntegrityError
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-log_file = 'db.log'
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+LOG_FILE = 'db.log'
 
-formatter = logging.Formatter(log_format)
-file_handler = logging.FileHandler(log_file)
-file_handler.setFormatter(formatter)
+FORMATTER = logging.Formatter(LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
 
-logger.addHandler(file_handler)
+LOGGER.addHandler(FILE_HANDLER)
 
 CUSTOMER_DB.create_tables([Customer])
 
@@ -27,8 +27,8 @@ def add_customer(**kwargs):
     with CUSTOMER_DB.transaction():
         try:
             new_customer = Customer.create(**kwargs)
-        except IntegrityError as e:
-            logging.error('Error creating record: %s', e)
+        except IntegrityError as exception_info:
+            logging.error('Error creating record: %s', exception_info)
             return False
         else:
             new_customer.save()
@@ -91,7 +91,7 @@ def list_active_customers():
     return Customer.select().where(Customer.is_active == True).count()
 
 
-class customer_list:
+class CustomerList:
     """
     A class to provide a iterator to be step through the customer list.
     """
