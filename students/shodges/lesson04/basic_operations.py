@@ -27,10 +27,12 @@ def add_customer(**kwargs):
     with CUSTOMER_DB.transaction():
         try:
             new_customer = Customer.create(**kwargs)
-        except IntegrityError:
+        except IntegrityError as e:
+            logging.error('Error creating record: %s', e)
             return False
         else:
             new_customer.save()
+            logging.debug('Successfully creating record: %s', **kwargs)
             return True
 
 def search_customer(customer_id):
@@ -42,8 +44,10 @@ def search_customer(customer_id):
     customer = Customer.select().where(Customer.customer_id == customer_id).dicts()
     customer_record = customer.first()
     if customer_record is None:
+        logging.warning('Unable to find record for customer_id == %s', customer_id)
         return {}
 
+    logging.debug('Successfully found record for customer_id == %s (%s)', customer_id, customer_record)
     return customer_record
 
 def delete_customer(customer_id):
@@ -55,8 +59,10 @@ def delete_customer(customer_id):
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.delete_instance()
+        logging.debug('Successfully deleted record for customer_id == %s', customer_id)
         return True
     except (IndexError, DoesNotExist):
+        logging.error('Unable to delete record for customer_id == %s', customer_id)
         return False
 
 def update_customer_credit(customer_id, credit_limit):
@@ -69,8 +75,10 @@ def update_customer_credit(customer_id, credit_limit):
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.credit_limit = credit_limit
         customer.save()
+        logging.debug('Successfully updated credit limit to %s for customer_id == %s', credit_limit, customer_id)
         return True
     except (IndexError, DoesNotExist):
+        logging.error('Unable to update record for customer_id == %s', customer_id)
         return False
 
 
