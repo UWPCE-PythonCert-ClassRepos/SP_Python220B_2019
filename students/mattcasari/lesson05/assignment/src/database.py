@@ -27,20 +27,50 @@ LOGGER.setLevel(logging.DEBUG)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
-
+def error_counter():
+    """ Error counter generator """
+    cnt = 0
+    while True:
+        yield cnt
+        cnt = cnt + 1
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
+    """ 
+    Import Data From files
+
+    This function imports the data from the files provided.  
+
+    Args:
+        directory_name: Path where csv files live
+        product_file: CSV file with product information (line 1 must be header!)
+        customer_file: CSV file with customer information (line 1 must be header!)
+        rentals_file: CSV file of rental information (line 1 must be header!)
+    Returns:
+        record_count: # of products, customers and rentals added (in that order)
+        error_count: # of errors occured with product, customer and rental add (in that order)
+    Raises:
+        IOError: Invalid File provided
+        IndexError: Mismatched data and header length in file
+    """
     directory_name = Path(directory_name)
+    record_count = [0, 0, 0]
+    
     try:
         with open(directory_name / product_file) as csvfile:
             csv_header = csv.reader(csvfile, delimiter=',')
     except IOError:
         LOGGER.error('Invalid product file name %s', product_file)
-        raise IOError('Invalid product file name %s', product_file)
+    except IndexError:
+        LOGGER.error('Mismatched data and header length')
+        LOGGER.error('Header: %s', csv_header)
+        LOGGER.error('Data:%s', csv_data)
+        
 
 
 def _product_file_parser(header, p_data):
     """ Parse a line of the product file """
+    if len(header) != len(p_data):
+        raise IndexError('Data is not the same length as header')
     d_vals = dict(zip(header,p_data))
     LOGGER.info('Created file data: %s', d_vals)
     return d_vals
