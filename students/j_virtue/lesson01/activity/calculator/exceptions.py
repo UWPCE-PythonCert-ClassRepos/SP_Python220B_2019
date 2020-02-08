@@ -1,2 +1,7 @@
+"""
+This module handles exceptions
+"""
+
+
 class InsufficientOperands(Exception):
-    pass
+    """This class handles exceptions"""
