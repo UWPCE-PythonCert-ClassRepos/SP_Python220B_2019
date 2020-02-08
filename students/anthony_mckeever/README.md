@@ -24,8 +24,30 @@ Each course lesson will contain its own folder.  The folders will use the naming
         |-- lesson_3                        <Content for Lesson 3>
         |   |-- activity_1                  <Content for Lesson 3 Activity 1 - Relational Databases>
         |   `-- assignment_1                <Content for Lesson 3 Assignment 1 - Relational Databases>
-        `-- lesson_4                        <Content for Lesson 4>                
-            `-- assignment_1                <Content for Lesson 4 Assignment 1 - Iterators, Comprehensions, and Generators>
+        |-- lesson_4                        <Content for Lesson 4>                
+        |   `-- assignment_1                <Content for Lesson 4 Assignment 1 - Iterators, Comprehensions, and Generators>
+        |-- lesson_5                        <Content for Lesson 5>
+        |   |-- activity_1                  <Content for Lesson 5 Activity 1 - Intro to NoSQL>
+        |   `-- assignment_1                <Content for Lesson 5 Assignment 1 - NoSQL HP Norton>
+        |-- lesson_6                        <Content for Lesson 6>
+        |   `-- assignment_1                <Content for Lesson 6 Assignment 1 - Profiling and performance>
+        |-- lesson_7                        <Content for Lesson 7>
+        |   |-- activity_1                  <Content for Lesson 7 Activity 1 - Locking Activity>
+        |   `-- assignment_1                <Content for Lesson 7 Assignment 1 - Threading and Concurrency>
+        |       `-- data                    <Example data for HP Norton DB.>
+        |-- lesson_8                        <Content for Lesson 8>
+        |   `-- assignment_1                <Content for Lesson 8 Assignment 1 - Functional Techniques>
+        |       `-- test_files              <Test input/output files for Lesson 8 Assignment 1>
+        |-- lesson_9                        <Content for Lesson 9>
+        |   |-- activity_1                  <Content for Lesson 9 Activity 1 - Context Managers>
+        |   `-- assignment_1                <Content for Lesson 9 Assignment 1 - Context Managers, Decorators, Recursion>
+        |       |-- context_managers        <Assignment content for Context Managers>
+        |       |-- decorators              <Assignment content for Decorators>
+        |       `-- recursion               <Assignment content for Recursion>
+        |           `-- images              <A collection of directories and sample images for testing the recursion assignment>
+        `-- lesson_10                       <Content for Lesson 10>
+            `-- assignment_1                <Content for Lesson 10 Assignment 1 - Metaprogramming>
+                `-- data                    <A collection of CSVs containing data used for testing the Lesson 10 assignment>
 ```
 
 ## Branching

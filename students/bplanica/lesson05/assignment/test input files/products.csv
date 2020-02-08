@@ -1,0 +1,5 @@
+ProductID, Description, ProductType, QuantityAvailable
+prd001, 60-inch TV stand, livingroom, 3
+prd011, 60-inch TV stand, livingroom
+prd002, L-shaped sofa, livingroom, 0
+prd002, L-shaped sofa, livingroom, one

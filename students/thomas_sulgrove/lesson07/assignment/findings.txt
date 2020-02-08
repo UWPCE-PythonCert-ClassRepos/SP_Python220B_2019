@@ -1,0 +1,9 @@
+The test repeated 10 times with 1 repetitions per function per test
+
+     |    Linear    |   Parallel   | Improvement  
+ max |    144.67    |    69.57     |     2.08     
+ min |    110.1     |    51.55     |     2.14     
+ avg |    121.67    |    60.46     |     2.01     
+ sum |   1095.04    |    544.11    |     2.01     
+
+I ran my test with a 2 core cpu so I would expect a 2x improvement, and the results seems to suggest its at 2 times or slightly better.

@@ -1,0 +1,6 @@
+user_id, product_id, quantity_rented
+user000, prod001, 2
+user000, prod000, 1
+user002, prod000, 1
+user002, prod002, 2
+user002, prod003, 2

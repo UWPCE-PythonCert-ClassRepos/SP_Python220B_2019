@@ -1,0 +1,63 @@
+1) In summary, importing data from customer.csv and product.csv files took about the same time whether running in 
+sequence or parallel. As a result, it is recommended to run it in sequence in order to avoid any potential 
+system overhead issue in running parallel.
+
+2) Running in sequence using linear.py:
+namvo@Nams-MacBook-Pro assignment % gtime --verbose python3 linear.py  
+INFO:root:Importing product.csv takes 0.04162716865539551 seconds.
+INFO:root:Importing customer.csv takes 0.04815101623535156 seconds.
+INFO:root:Records = [(0, 1000, 1000, 0.04162716865539551), (0, 1000, 1000, 0.04815101623535156)]
+INFO:root:Total running time for main() is 0.11494779586791992 seconds.
+        Command being timed: "python3 linear.py"
+        User time (seconds): 0.19
+        System time (seconds): 0.04
+        Percent of CPU this job got: 33%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.71
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 16776
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 11066
+        Voluntary context switches: 17
+        Involuntary context switches: 297
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 0
+        Socket messages sent: 12
+        Socket messages received: 24
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+3) Running in parallel using parallel.py:
+namvo@Nams-MacBook-Pro assignment % gtime --verbose python3 parallel.py
+INFO:root:Importing product.csv takes 0.04396700859069824 seconds.
+INFO:root:Importing customer.csv takes 0.05068087577819824 seconds.
+INFO:root:Records = [(0, 1000, 1000, 0.04396700859069824), (0, 1000, 1000, 0.05068087577819824)]
+INFO:root:Total running time for main() is 0.12076187133789062 seconds.
+        Command being timed: "python3 parallel.py"
+        User time (seconds): 0.26
+        System time (seconds): 0.04
+        Percent of CPU this job got: 39%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.78
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 19268
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 12429
+        Voluntary context switches: 17
+        Involuntary context switches: 204
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 0
+        Socket messages sent: 12
+        Socket messages received: 24
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
