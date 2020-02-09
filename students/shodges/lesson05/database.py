@@ -55,3 +55,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with open(data_directory/rentals_file, mode='r') as rentals_input:
         rentals_list = {row[0]:row[1] for row in csv.reader(rentals_input)}
         logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
+
+    mongo = DBConnection()
+
+    with mongo:
+        db = mongo.connection.media
+
+        products = db['products']
+
+        result = products.insert_many(product_list)
+        print(result)
+        print_mdb_collection(products)
