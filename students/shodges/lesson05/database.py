@@ -1,6 +1,17 @@
 from pymongo import MongoClient
 from pathlib import Path
-import csv
+import csv, logging
+
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
+LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+LOG_FILE = 'db.log'
+
+FORMATTER = logging.Formatter(LOG_FORMAT)
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
+
+LOGGER.addHandler(FILE_HANDLER)
 
 class DBConnection():
     """
@@ -35,9 +46,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     data_directory = Path(directory_name)
     with open(data_directory/product_file, mode='r') as product_input:
         product_list = {row[0]:row[1] for row in csv.reader(product_input)}
+        logging.debug('Read in product data from %s: %s', product_file, product_list)
 
     with open(data_directory/customer_file, mode='r') as customer_input:
         customer_list = {row[0]:row[1] for row in csv.reader(customer_input)}
+        logging.debug('Read in customer data from %s: %s', customer_file, customer_list)
 
     with open(data_directory/rentals_file, mode='r') as rentals_input:
         rentals_list = {row[0]:row[1] for row in csv.reader(rentals_input)}
+        logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
