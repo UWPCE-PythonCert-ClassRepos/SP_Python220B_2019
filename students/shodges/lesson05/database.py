@@ -1,6 +1,7 @@
+import csv
+importlogging
 from pymongo import MongoClient
 from pathlib import Path
-import csv, logging
 
 LOGGER = logging.getLogger()
 LOGGER.setLevel(logging.DEBUG)
