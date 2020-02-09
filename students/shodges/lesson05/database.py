@@ -102,6 +102,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 def show_available_products():
     mongo = DBConnection()
 
+    product_list = {}
+
     with mongo:
         db = mongo.connection.media
 
@@ -114,3 +116,9 @@ def show_available_products():
             for rental in rentals.find(query):
                 logging.debug('Rented to %s', rental['user_id'])
             logging.debug('Total rentals: %d', rentals.count_documents(query))
+            product_list[item['product_id']] = {'description': item['description'],
+                                                'product_type': item['product_type'],
+                                                'quantity_available': int(item['quantity_available'])
+                                                - rentals.count_documents(query)}
+
+    return product_list
