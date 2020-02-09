@@ -1,4 +1,3 @@
-# Launches the user interface for the inventory management system
 """
 This launches the user interface for the inventory management system
 """
@@ -12,7 +11,7 @@ def main_menu(user_prompt=None):
     """
     Prompts user with 3 options
     """
-    valid_prompts = {"1": addNewItem,
+    valid_prompts = {"1": add_new_item,
                      "2": itemInfo,
                      "q": exitProgram}
     options = list(valid_prompts.keys())
@@ -27,55 +26,57 @@ def main_menu(user_prompt=None):
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
-def get_price(item_code):
-    """
-    Gets Price
-    """
-    print("Get price")
+#def get_price(item_code):
+#    """
+#    Gets Price
+#    """
+#    print("Get price")
 
-def addNewItem():
-    global fullInventory
-    itemCode = input("Enter item code: ")
-    itemDescription = input("Enter item description: ")
-    itemRentalPrice = input("Enter item rental price: ")
+def add_new_item():
+    """
+    Prompts user to enter a new item, creates new object based on what it is
+    """
+    global FULL_INVENTORY
+    item_code = input("Enter item code: ")
+    item_description = input("Enter item description: ")
+    item_rental_price = input("Enter item rental price: ")
 
     # Get price from the market prices module
-    itemPrice = market_prices.get_latest_price(itemCode)
+    item_price = market_prices.get_latest_price(item_code)
 
-    isFurniture = input("Is this item a piece of furniture? (Y/N): ")
-    if isFurniture.lower() == "y":
-        itemMaterial = input("Enter item material: ")
-        itemSize = input("Enter item size (S,M,L,XL): ")
-        newItem = furniture_class.Furniture(itemCode,
-                                            itemDescription,
-                                            itemPrice,
-                                            itemRentalPrice,
-                                            itemMaterial,
-                                            itemSize)
+    is_furniture = input("Is this item a piece of furniture? (Y/N): ")
+    if is_furniture.lower() == "y":
+        item_material = input("Enter item material: ")
+        item_size = input("Enter item size (S,M,L,XL): ")
+        newItem = furniture_class.Furniture(item_code,
+                                            item_description,
+                                            item_price,
+                                            item_rental_price,
+                                            item_material,
+                                            item_size)
     else:
-        isElectricAppliance = input("Is this item an electric appliance? (Y/N): ")
-        if isElectricAppliance.lower() == "y":
-            itemBrand = input("Enter item brand: ")
-            itemVoltage = input("Enter item voltage: ")
-            newItem = electric_appliances_class.ElectricAppliances(itemCode,
-                                                                   itemDescription,
-                                                                   itemPrice,
-                                                                   itemRentalPrice,
-                                                                   itemBrand,
-                                                                   itemVoltage)
+        is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
+        if is_electric_appliance.lower() == "y":
+            item_brand = input("Enter item brand: ")
+            item_voltage = input("Enter item voltage: ")
+            new_item = electric_appliances_class.ElectricAppliances(item_code,
+                                                                    item_description,
+                                                                    item_price,
+                                                                    item_rental_price,
+                                                                    item_brand,
+                                                                    item_voltage)
         else:
-            newItem = inventory_class.Inventory(itemCode,
-                                                itemDescription,
-                                                itemPrice,
-                                                itemRentalPrice)
-    fullInventory[itemCode] = newItem.returnAsDictionary()
+            new_item = inventory_class.Inventory(item_code,
+                                                 item_description,
+                                                 item_price,
+                                                 item_rental_price)
+    FULL_INVENTORY[item_code] = new_item.returnAsDictionary()
     print("New inventory item added")
-
 
 def itemInfo():
     itemCode = input("Enter item code: ")
-    if itemCode in fullInventory:
-        printDict = fullInventory[itemCode]
+    if itemCode in FULL_INVENTORY:
+        printDict = FULL_INVENTORY[itemCode]
         for k, v in printDict.items():
             print("{}:{}".format(k, v))
     else:
@@ -85,8 +86,8 @@ def exitProgram():
     sys.exit()
 
 if __name__ == '__main__':
-    fullInventory = {}
+    FULL_INVENTORY = {}
     while True:
-        print(fullInventory)
+        print(FULL_INVENTORY)
         main_menu()()
         input("Press Enter to continue...........")
