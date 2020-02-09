@@ -114,12 +114,13 @@ def show_available_products():
         for item in products.find():
             logging.debug('Found product %s', item['product_id'])
             query = {'product_id': item['product_id']}
+            rented_quantity = rentals.count_documents(query)
             for rental in rentals.find(query):
                 logging.debug('Rented to %s', rental['user_id'])
-            logging.debug('Total rentals: %d', rentals.count_documents(query))
+            logging.debug('Total rentals: %d', rented_quantity)
             product_list[item['product_id']] = {'description': item['description'],
                                                 'product_type': item['product_type'],
                                                 'quantity_available': int(item['quantity_available'])
-                                                - rentals.count_documents(query)}
+                                                                      - rented_quantity}
 
     return product_list
