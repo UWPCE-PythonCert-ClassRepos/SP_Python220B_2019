@@ -62,7 +62,27 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         db = mongo.connection.media
 
         products = db['products']
+        product_result = products.insert_many(product_list)
+        if product_result.acknowledged is True:
+            logging.debug('Wrote %d records to products', len(product_result.inserted_ids))
+        else:
+            logging.warning('Failed to write records to products')
 
-        result = products.insert_many(product_list)
-        print(result)
-        print_mdb_collection(products)
+        customers = db['customers']
+        customer_result = customers.insert_many(customer_list)
+        if customer_result.acknowledged is True:
+            logging.debug('Wrote %d records to customers', len(customer_result.inserted_ids))
+        else:
+            logging.warning('Failed to write records to customers')
+
+        rentals = db['rentals']
+        rentals_result = rentals.insert_many(rentals_list)
+        if rentals_result.acknowledged is True:
+            logging.debug('Wrote %d records to rentals', len(rentals_result.inserted_ids))
+        else:
+            logging.warning('Failed to write records to rentals')
+
+    return ((len(product_result.inserted_ids), len(customer_result.inserted_ids),
+             len(rentals_result.inserted_ids)), (0 if product_result.acknowledged is True else 1) +
+            (0 if customer_result.acknowledged is True else 1) +
+            (0 if rentals_result.acknowledged is True else 1))
