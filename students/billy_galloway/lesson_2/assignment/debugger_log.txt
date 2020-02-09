@@ -238,3 +238,26 @@ SystemExit: 0
 (Pdb) n
 The program exited via sys.exit(). Exit status: 0
 > r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(3)<module>()
+
+# Switching rental start and end 
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) l
+ 76  	                switch_end = value['rental_start']
+ 77
+ 78  	                value['rental_end'] = switch_end
+ 79  	                value['rental_start'] = switch_start
+ 80
+ 81  ->	                value['total_price'] = value['total_days'] * value['price_per_day']
+ 82  	                print(value['total_price'])
+ 83  	                value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 84  	                continue
+ 85  	            # Prevent evaluation from breaking when no units rented
+ 86  	            if value['units_rented'] < 1:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '6/12/17',
+ 'rental_start': '3/22/17',
+ 'total_days': 82,
+ 'units_rented': 8}
+(Pdb)

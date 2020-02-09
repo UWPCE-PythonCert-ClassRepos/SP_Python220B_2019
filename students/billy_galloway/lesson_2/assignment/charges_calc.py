@@ -8,18 +8,19 @@ import math
 import logging
 import sys
 
-
+# setup logger and log formats
 logger = logging.getLogger(__name__)
-
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-
 formatter = logging.Formatter(LOG_FORMAT)
-
 log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
 file_handler = logging.FileHandler(log_file)
 file_handler.setFormatter(formatter)
 
 def logging_level(log_level):
+    """
+    sets log levels by taking a single argument
+    and matching it to key in the dictionary
+    """
     levels = {
         0: logging.NOTSET,
         1: logging.ERROR,
@@ -31,6 +32,7 @@ def logging_level(log_level):
 
 
 def parse_cmd_arguments():
+    """ Setups parser and returns arguments from the command line """
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -40,13 +42,14 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename=None, debug=None):
+    """ loads the file in json format from a file and returns it as a json object """
     try:
         with open(filename) as file:
             data = json.load(file)
-            logger.debug(f"file {filename} was loaded successfully")
+            logger.info(f"file {filename} was loaded successfully")
     except FileNotFoundError:
-        logger.debug(f"File \"{filename}\" was not found ")
-        exit(0)
+        logger.error(f"File \"{filename}\" was not found ")
+        sys.exit()
 
     return data
 
@@ -55,10 +58,10 @@ def calculate_additional_fields(data, debug=None):
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
-            logger.info(f"rental start {value['rental_start']}")
-
+            logger.debug(f"rental start: {value['rental_start']}")
+            
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
-            logger.info(f"rental end {value['rental_end']}")
+            logger.debug(f"rental end: {value['rental_end']}")
             
             # ensure that total days is always positive
             value['total_days'] = abs((rental_end - rental_start).days)
@@ -67,26 +70,12 @@ def calculate_additional_fields(data, debug=None):
             # added check to catch this issue of having the start data
             # after the end date, logged the reason, and continued
             if rental_end < rental_start:
-                logger.error(f"rental end is before rental start date")
-                logger.error(f"skipping calculations: total_price, sqrt_total_price, unit_cost")
-                rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
-                
+                logger.warning(f"rental end is before rental start date")                
                 # correct the start and end dates
                 switch_start = value['rental_end']
                 switch_end = value['rental_start']
-
                 value['rental_end'] = switch_end
                 value['rental_start'] = switch_start
-
-                value['total_price'] = value['total_days'] * value['price_per_day']
-                print(value['total_price'])
-                value['sqrt_total_price'] = math.sqrt(value['total_price'])
-                continue
-            # Prevent evaluation from breaking when no units rented
-            if value['units_rented'] < 1:
-                logger.debug(f"value cost: {value['unit_cost']} no units rented {value['units_rented']}")
-                value['unit_cost'] = 0
-                continue
 
             value['total_price'] = value['total_days'] * value['price_per_day']
             logger.debug(f"total price: {value['total_price']}")
@@ -95,7 +84,12 @@ def calculate_additional_fields(data, debug=None):
             logger.debug(f"square root price {value['sqrt_total_price']}")
             
             
-            value['unit_cost'] = value['total_price'] / value['units_rented']
+            # Prevent evaluation from breaking when no units rented
+            if value['units_rented'] <= 0:
+                value['unit_cost'] = 0
+                logger.warning(f"no units rented setting unit cost to zero")
+            else:
+                value['unit_cost'] = value['total_price'] / value['units_rented']
 
         except ValueError as value_error:
             logger.error(f"Value error caught {value_error}")
@@ -105,7 +99,9 @@ def calculate_additional_fields(data, debug=None):
 
 def save_to_json(filename, data, debug=None):
     with open(filename, 'w') as file:
+        logger.debug(f"writing {data} to file")
         json.dump(data, file)
+        logger.info(f"file successfully written to {filename}")
 
 
 if __name__ == "__main__":
@@ -133,7 +129,7 @@ if __name__ == "__main__":
             # and log the reason for exiting
             logger.setLevel(logging.ERROR)
             logger.error(f"Invalid debug option")
-            exit(0)
+            sys.exit()
         
         else:
             data = load_rentals_file(args.input, args.debug)
