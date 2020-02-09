@@ -69,15 +69,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     data_directory = Path(directory_name)
     with open(data_directory/product_file, mode='r') as csv_input:
-        product_list = [row for row in csv.DictReader(csv_input)]
+        product_list = list(csv.DictReader(csv_input))
         logging.debug('Read in product data from %s: %s', product_file, product_list)
 
     with open(data_directory/customer_file, mode='r') as csv_input:
-        customer_list = [row for row in csv.DictReader(csv_input)]
+        customer_list = list(csv.DictReader(csv_input))
         logging.debug('Read in customer data from %s: %s', customer_file, customer_list)
 
     with open(data_directory/rentals_file, mode='r') as csv_input:
-        rentals_list = [row for row in csv.DictReader(csv_input)]
+        rentals_list = list(csv.DictReader(csv_input))
         logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
 
     mongo = DBConnection()
