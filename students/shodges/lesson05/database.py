@@ -141,3 +141,37 @@ def show_available_products():
                                                 'quantity_available': quantity_available}
 
     return product_list
+
+def show_rentals(product_id):
+    """
+    Return a dictionary of all renters of product_id in the following format:
+    {'user_id': {'name': 'name',
+                 'address': 'address',
+                 'phone_number': 'phone_number'
+                 'email': 'email'
+                }
+    }
+    """
+    mongo = DBConnection()
+
+    renter_list = {}
+
+    with mongo:
+        inv_db = mongo.connection.media
+
+        rentals = inv_db['rentals']
+        customers = inv_db['customers']
+
+        logging.debug('Finding renters for %s', product_id)
+        query_1 = {'product_id': product_id}
+        for rental in rentals.find(query_1):
+            logging.debug('Found renter %s', rental['user_id'])
+            query_2 = {'user_id': rental['user_id']}
+            for renter in customers.find(query_2):
+                renter_list[renter['user_id']] = {'name': renter['name'],
+                                                  'address': renter['address'],
+                                                  'phone_number': renter['phone_number'],
+                                                  'email': renter['email']}
+                logging.debug('Renter info: %s', renter_list[renter['user_id']])
+
+        return renter_list
