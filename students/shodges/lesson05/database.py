@@ -39,6 +39,18 @@ class DBConnection():
         """
         self.connection.close()
 
+def drop_data():
+    mongo = DBConnection()
+
+    with mongo:
+        db = mongo.connection.media
+
+        db['products'].drop()
+        db['customers'].drop()
+        db['rentals'].drop()
+
+        logging.debug('Dropped all databases')
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
