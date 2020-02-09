@@ -98,3 +98,19 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
              len(rentals_result.inserted_ids)), (((0 if product_result.acknowledged is True else 1)
             + (0 if customer_result.acknowledged is True else 1) +
             (0 if rentals_result.acknowledged is True else 1)),))
+
+def show_available_products():
+    mongo = DBConnection()
+
+    with mongo:
+        db = mongo.connection.media
+
+        products = db['products']
+        rentals = db['rentals']
+
+        for item in products.find():
+            logging.debug('Found product %s', item['product_id'])
+            query = {'product_id': item['product_id']}
+            for rental in rentals.find(query):
+                logging.debug('Rented to %s', rental['user_id'])
+            logging.debug('Total rentals: %d', rentals.count_documents(query))
