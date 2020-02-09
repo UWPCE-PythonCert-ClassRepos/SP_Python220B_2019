@@ -97,8 +97,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
 
     return ((len(products_res.inserted_ids), len(customer_res.inserted_ids),
              len(rentals_res.inserted_ids)), (((0 if products_res.acknowledged is True else 1)
-            + (0 if customer_res.acknowledged is True else 1) +
-            (0 if rentals_res.acknowledged is True else 1)),))
+                                               + (0 if customer_res.acknowledged is True else 1) +
+                                               (0 if rentals_res.acknowledged is True else 1)),))
 
 def show_available_products():
     mongo = DBConnection()
