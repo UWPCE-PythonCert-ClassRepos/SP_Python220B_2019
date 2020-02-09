@@ -1,3 +1,11 @@
+"""
+Methods to allow processing of HP Norton inventory, including:
+
+drop_data() to clear the inventory db
+import_data(directory_name, product_file, customer_file, rentals_file) to intake existing CSV's
+show_available_products() to show available products, accounting for existing rentals
+show_rentals(product_id) to show all active rentals for product_id
+"""
 import csv
 import logging
 from pathlib import Path
@@ -41,6 +49,9 @@ class DBConnection():
         self.connection.close()
 
 def drop_data():
+    """
+    Drop the existing data from the database to allow a fresh start.
+    """
     mongo = DBConnection()
 
     with mongo:
@@ -101,6 +112,15 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                                (0 if rentals_res.acknowledged is True else 1)),))
 
 def show_available_products():
+    """
+    Return a dictionary of all available products of the following format:
+    {'product_id': {'description': 'description',
+                    'product_type': 'product_type',
+                    'quantity_available': 'quantity_available*'
+                   }
+    }
+    * NOTE: quantity_available will be the value of the total product quantity less current rentals
+    """
     mongo = DBConnection()
 
     product_list = {}
