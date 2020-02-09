@@ -1,5 +1,5 @@
 import csv
-importlogging
+import logging
 from pymongo import MongoClient
 from pathlib import Path
 
@@ -44,11 +44,11 @@ def drop_data():
     mongo = DBConnection()
 
     with mongo:
-        db = mongo.connection.media
+        inv_db = mongo.connection.media
 
-        db['products'].drop()
-        db['customers'].drop()
-        db['rentals'].drop()
+        inv_db['products'].drop()
+        inv_db['customers'].drop()
+        inv_db['rentals'].drop()
 
         logging.debug('Dropped all databases')
 
@@ -72,23 +72,23 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     mongo = DBConnection()
 
     with mongo:
-        db = mongo.connection.media
+        inv_db = mongo.connection.media
 
-        products = db['products']
+        products = inv_db['products']
         product_result = products.insert_many(product_list)
         if product_result.acknowledged is True:
             logging.debug('Wrote %d records to products', len(product_result.inserted_ids))
         else:
             logging.warning('Failed to write records to products')
 
-        customers = db['customers']
+        customers = inv_db['customers']
         customer_result = customers.insert_many(customer_list)
         if customer_result.acknowledged is True:
             logging.debug('Wrote %d records to customers', len(customer_result.inserted_ids))
         else:
             logging.warning('Failed to write records to customers')
 
-        rentals = db['rentals']
+        rentals = inv_db['rentals']
         rentals_result = rentals.insert_many(rentals_list)
         if rentals_result.acknowledged is True:
             logging.debug('Wrote %d records to rentals', len(rentals_result.inserted_ids))
@@ -106,10 +106,10 @@ def show_available_products():
     product_list = {}
 
     with mongo:
-        db = mongo.connection.media
+        inv_db = mongo.connection.media
 
-        products = db['products']
-        rentals = db['rentals']
+        products = inv_db['products']
+        rentals = inv_db['rentals']
 
         for item in products.find():
             logging.debug('Found product %s', item['product_id'])
