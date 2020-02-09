@@ -12,6 +12,7 @@ class RentalDbTest(TestCase):
         """
         # Start fresh so we don't mess up all our tests...
         database.drop_data()
+        self.assertEqual(database.show_available_products(), {})
 
         # These tests are hard-coded to the expected values from the incluced CSV's.
         # Your results may vary if the data sets change. :)
@@ -75,3 +76,6 @@ class RentalDbTest(TestCase):
         result = database.show_rentals('MOPED')
         self.assertEqual(len(result), 1)
         self.assertEqual(result['cust_3'], cust_3)
+
+        result = database.show_rentals('FUTON') # Validate an empty dict is received
+        self.assertEqual(result, {})
