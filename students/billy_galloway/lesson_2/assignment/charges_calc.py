@@ -1,5 +1,5 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 import argparse
 import json
@@ -59,10 +59,10 @@ def calculate_additional_fields(data, debug=None):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             logger.debug(f"rental start: {value['rental_start']}")
-            
+
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             logger.debug(f"rental end: {value['rental_end']}")
-            
+
             # ensure that total days is always positive
             value['total_days'] = abs((rental_end - rental_start).days)
             logger.debug(f"total days: {value['total_days']}")
@@ -70,7 +70,7 @@ def calculate_additional_fields(data, debug=None):
             # added check to catch this issue of having the start data
             # after the end date, logged the reason, and continued
             if rental_end < rental_start:
-                logger.warning(f"rental end is before rental start date")                
+                logger.warning(f"rental end is before rental start date")
                 # correct the start and end dates
                 switch_start = value['rental_end']
                 switch_end = value['rental_start']
@@ -82,8 +82,7 @@ def calculate_additional_fields(data, debug=None):
 
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             logger.debug(f"square root price {value['sqrt_total_price']}")
-            
-            
+
             # Prevent evaluation from breaking when no units rented
             if value['units_rented'] <= 0:
                 value['unit_cost'] = 0
@@ -105,13 +104,13 @@ def save_to_json(filename, data, debug=None):
 
 
 if __name__ == "__main__":
-    
+
     args = parse_cmd_arguments()
 
     if args.debug:
         try:
             # debug arg found and passing the
-            # integer to the logging_level 
+            # integer to the logging_level
             # method
             levels = logging_level(args.debug)
             if levels == 10:
@@ -122,7 +121,7 @@ if __name__ == "__main__":
             else:
                 logger.setLevel(levels)
                 logger.addHandler(file_handler)
-                
+
         except KeyError:
             # If the debug value does not match
             # a key in the log level dict then exit
@@ -130,11 +129,11 @@ if __name__ == "__main__":
             logger.setLevel(logging.ERROR)
             logger.error(f"Invalid debug option")
             sys.exit()
-        
+
         else:
             data = load_rentals_file(args.input, args.debug)
             data = calculate_additional_fields(data, args.debug)
-    
+
     else:
         logger.disabled = True
         data = load_rentals_file(args.input)
