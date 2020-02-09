@@ -32,3 +32,46 @@ class RentalDbTest(TestCase):
         self.assertEqual(result['DININGTABLE']['quantity_available'], 7)
         self.assertEqual(result['OVEN']['quantity_available'], 4)
         self.assertEqual(result['MOPED']['quantity_available'], 0)
+
+    def test_3_show_rentals(self):
+        """
+        Test the integrity of the returned dictionary of active rentals.
+        """
+
+        cust_1 = {'name': 'George Washington',
+                  'address': '4 Bowling Green',
+                  'phone_number': '2125555555',
+                  'email': 'george@governmenthouse.com'}
+
+        cust_2 = {'name': 'John Adams',
+                  'address': '524-30 Market St',
+                  'phone_number': '2675551212',
+                  'email': 'john@presidentshouse.com'}
+
+        cust_3 = {'name': 'Thomas Jefferson',
+                  'address': '1600 Pennsylvania Ave',
+                  'phone_number': '2029999999',
+                  'email': 'thomas@whitehouse.gov'}
+
+        result = database.show_rentals('SOFA')
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result['cust_1'], cust_1)
+        self.assertEqual(result['cust_3'], cust_3)
+
+        result = database.show_rentals('RECLINER')
+        self.assertEqual(len(result), 0)
+
+        result = database.show_rentals('DININGTABLE')
+        self.assertEqual(len(result), 3)
+        self.assertEqual(result['cust_1'], cust_1)
+        self.assertEqual(result['cust_2'], cust_2)
+        self.assertEqual(result['cust_3'], cust_3)
+
+        result = database.show_rentals('OVEN')
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result['cust_2'], cust_2)
+        self.assertEqual(result['cust_3'], cust_3)
+
+        result = database.show_rentals('MOPED')
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result['cust_3'], cust_3)
