@@ -75,30 +75,30 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         inv_db = mongo.connection.media
 
         products = inv_db['products']
-        product_result = products.insert_many(product_list)
-        if product_result.acknowledged is True:
-            logging.debug('Wrote %d records to products', len(product_result.inserted_ids))
+        products_res = products.insert_many(product_list)
+        if products_res.acknowledged is True:
+            logging.debug('Wrote %d records to products', len(products_res.inserted_ids))
         else:
             logging.warning('Failed to write records to products')
 
         customers = inv_db['customers']
-        customer_result = customers.insert_many(customer_list)
-        if customer_result.acknowledged is True:
-            logging.debug('Wrote %d records to customers', len(customer_result.inserted_ids))
+        customer_res = customers.insert_many(customer_list)
+        if customer_res.acknowledged is True:
+            logging.debug('Wrote %d records to customers', len(customer_res.inserted_ids))
         else:
             logging.warning('Failed to write records to customers')
 
         rentals = inv_db['rentals']
-        rentals_result = rentals.insert_many(rentals_list)
-        if rentals_result.acknowledged is True:
-            logging.debug('Wrote %d records to rentals', len(rentals_result.inserted_ids))
+        rentals_res = rentals.insert_many(rentals_list)
+        if rentals_res.acknowledged is True:
+            logging.debug('Wrote %d records to rentals', len(rentals_res.inserted_ids))
         else:
             logging.warning('Failed to write records to rentals')
 
-    return ((len(product_result.inserted_ids), len(customer_result.inserted_ids),
-             len(rentals_result.inserted_ids)), (((0 if product_result.acknowledged is True else 1)
-            + (0 if customer_result.acknowledged is True else 1) +
-            (0 if rentals_result.acknowledged is True else 1)),))
+    return ((len(products_res.inserted_ids), len(customer_res.inserted_ids),
+             len(rentals_res.inserted_ids)), (((0 if products_res.acknowledged is True else 1)
+            + (0 if customer_res.acknowledged is True else 1) +
+            (0 if rentals_res.acknowledged is True else 1)),))
 
 def show_available_products():
     mongo = DBConnection()
