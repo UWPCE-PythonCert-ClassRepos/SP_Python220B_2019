@@ -95,6 +95,6 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             logging.warning('Failed to write records to rentals')
 
     return ((len(product_result.inserted_ids), len(customer_result.inserted_ids),
-             len(rentals_result.inserted_ids)), (0 if product_result.acknowledged is True else 1) +
-            (0 if customer_result.acknowledged is True else 1) +
-            (0 if rentals_result.acknowledged is True else 1))
+             len(rentals_result.inserted_ids)), (((0 if product_result.acknowledged is True else 1)
+            + (0 if customer_result.acknowledged is True else 1) +
+            (0 if rentals_result.acknowledged is True else 1)),))
