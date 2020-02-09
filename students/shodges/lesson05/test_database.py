@@ -14,6 +14,10 @@ class RentalDbTest(TestCase):
         database.drop_data()
         self.assertEqual(database.show_available_products(), {})
 
+        # Check for proper error handling of import_data()
+        with self.assertRaises(FileNotFoundError):
+            result = database.import_data('data2', 'p.csv', 'c.csv', 'r.csv')
+
         # These tests are hard-coded to the expected values from the incluced CSV's.
         # Your results may vary if the data sets change. :)
         result = database.import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
