@@ -34,11 +34,36 @@ def error_counter():
         yield cnt
         cnt = cnt + 1
 
+def import_product_csv(directory_name, product_file):
+    """ Import Product CSV File
+    Import Product CSV File from given path and filename and returns
+    a dictionary of the data.
+
+    Args:
+        directory_name: Path where CSV file lives (from root directory)
+        product_file: File name of product CSV file
+    Returns:
+        dict: Dictionary of product data from CSV
+    """
+    directory_name = Path('./'+directory_name)
+    file_path = directory_name / product_file
+    LOGGER.info("Importing Product CSV file: %s", file_path)
+    product_dict = {}
+    with open(file_path, "r") as csvfile:
+        csv_data = csv.reader(csvfile, delimiter=',')
+        
+        for idx, row in enumerate(csv_data):
+            print(row)
+            if idx == 0:
+                csv_header = row
+            else:
+                product_dict.update(_product_file_parser(csv_header, row))
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """ 
     Import Data From files
 
-    This function imports the data from the files provided.  
+    This function imports the data from the files provided into the database. 
 
     Args:
         directory_name: Path where csv files live
@@ -56,8 +81,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     record_count = [0, 0, 0]
     
     try:
-        with open(directory_name / product_file) as csvfile:
-            csv_header = csv.reader(csvfile, delimiter=',')
+        pass
+        # with open(directory_name / product_file) as csvfile:
+        #     csv_header = csv.reader(csvfile, delimiter=',')
     except IOError:
         LOGGER.error('Invalid product file name %s', product_file)
     except IndexError:
