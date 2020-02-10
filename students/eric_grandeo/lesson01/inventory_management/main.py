@@ -12,8 +12,8 @@ def main_menu(user_prompt=None):
     Prompts user with 3 options
     """
     valid_prompts = {"1": add_new_item,
-                     "2": itemInfo,
-                     "q": exitProgram}
+                     "2": item_info,
+                     "q": exit_program}
     options = list(valid_prompts.keys())
 
     while user_prompt not in valid_prompts:
@@ -48,12 +48,12 @@ def add_new_item():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        newItem = furniture_class.Furniture(item_code,
-                                            item_description,
-                                            item_price,
-                                            item_rental_price,
-                                            item_material,
-                                            item_size)
+        new_item = furniture_class.Furniture(item_code,
+                                             item_description,
+                                             item_price,
+                                             item_rental_price,
+                                             item_material,
+                                             item_size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
@@ -70,19 +70,22 @@ def add_new_item():
                                                  item_description,
                                                  item_price,
                                                  item_rental_price)
-    FULL_INVENTORY[item_code] = new_item.returnAsDictionary()
+    FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
-def itemInfo():
-    itemCode = input("Enter item code: ")
-    if itemCode in FULL_INVENTORY:
-        printDict = FULL_INVENTORY[itemCode]
-        for k, v in printDict.items():
-            print("{}:{}".format(k, v))
+def item_info():
+    """
+    Get information about an item found in inventory
+    """
+    item_code = input("Enter item code: ")
+    if item_code in FULL_INVENTORY:
+        print_dict = FULL_INVENTORY[item_code]
+        for key, value in print_dict.items():
+            print("{}:{}".format(key, value))
     else:
         print("Item not found in inventory")
 
-def exitProgram():
+def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
