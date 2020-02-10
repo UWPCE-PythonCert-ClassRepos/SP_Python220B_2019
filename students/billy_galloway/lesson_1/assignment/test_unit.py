@@ -4,6 +4,7 @@ Unit testing module
 from unittest import TestCase
 from unittest.mock import patch
 
+import io
 from inventory_management.market_prices import get_latest_price
 from inventory_management.inventory_class import Inventory
 from inventory_management.furniture_class import Furniture
@@ -41,8 +42,9 @@ class InventoryTests(TestCase):
 
         # user inputs
         self.update_inventory = [
-            [1, 'refrigerator', 15, 'n', 'y', 'kenmore', 120],
-            [2, 'sofa', 12, 'y', 'leather', 'L']
+            [1, "refrigerator", 15, "n", "y", "kenmore", 120],
+            [2, "sofa", 12, "y", "leather", "L"],
+            [3, "hops", 20, "n", "n"]
         ]
 
     def test_inventory(self):
@@ -71,13 +73,21 @@ class InventoryTests(TestCase):
         with patch('builtins.input', side_effect=self.update_inventory[1]):
             main.addnew_item()
         self.assertEqual(self.FULL_INVENTORY, main.FULL_INVENTORY)
-    
+        with patch('builtins.input', side_effect=self.update_inventory[2]):
+            main.addnew_item()
+        self.assertEqual(main.FULL_INVENTORY[3]['description'], "hops")
+
+    def test_add_simple_object(self):
+        with patch('builtins.input', side_effect=self.update_inventory[1]):
+            main.addnew_item()
+        self.assertEqual(main.FULL_INVENTORY[2]['description'], "sofa")
+
     def test_item_info(self):
         # test that item info is working correctly
         with patch('builtins.input', side_effect=[1, self.update_inventory[1]]):
             main.item_info()
-        self.assertEqual(self.FULL_INVENTORY[1], main.FULL_INVENTORY[1])
-    
+        self.assertEqual(main.FULL_INVENTORY[1]['description'], "refrigerator")
+
     def test_get_price(self):
         # ensure that market price is always 24
         item_code_1 = main.FULL_INVENTORY[1]
@@ -99,4 +109,14 @@ class InventoryTests(TestCase):
         # test that program can exit
         with patch('builtins.input', return_value="q"):
             main.main_menu()
-        
+
+    def test_exit_program(self):
+        with self.assertRaises(SystemExit) as exit_program:
+            main.exit_program()
+            self.assertEqual(exit_program.exception.code, 0)
+
+    def test_item_not_found(self):
+        with patch('sys.stdout', new=io.StringIO()) as output:
+            with patch('builtins.input', side_effect=["1"]):
+                main.item_info()
+        self.assertEqual("Item not found in inventory\n", output.getvalue())

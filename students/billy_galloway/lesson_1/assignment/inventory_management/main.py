@@ -37,7 +37,7 @@ def addnew_item():
     """
     funciton to add a new item to the inventory
     """
-    item_code = input("Enter item code: ")
+    item_code = int(input("Enter item code: "))
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
 
@@ -45,13 +45,15 @@ def addnew_item():
     item_price = get_price(item_code)
 
     is_furniture = input("Is this item a piece of furniture? (Y/N): ")
+
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
         new_item = Furniture(item_code,
                              item_description, item_price,
                              item_rental_price, item_material, item_size)
-    else:
+
+    elif is_furniture.lower() == "n":
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
@@ -65,6 +67,7 @@ def addnew_item():
         else:
             new_item = Inventory(item_code, item_description,
                                  item_price, item_rental_price)
+
     FULL_INVENTORY[item_code] = new_item.return_as_dictionary()
     print("New inventory item added")
 
