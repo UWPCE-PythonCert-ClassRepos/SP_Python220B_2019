@@ -5,6 +5,8 @@ Classes:
 """
 from inventory_class import Inventory
 
+# pylint: disable=R0913
+
 class Furniture(Inventory): # pylint: disable=too-few-public-methods
     """
     This is a class for furniture.
@@ -16,19 +18,14 @@ class Furniture(Inventory): # pylint: disable=too-few-public-methods
         material: furniture material.
         size: size of furniture.
     """
-    def __init__(self, material, size):
+    def __init__(self, product_code, description, market_price, rental_price, material, size):
+        Inventory.__init__(self, product_code, description, market_price, rental_price)
         self.material = material
         self.size = size
-        super().__init__(self)
 
     def return_as_dictionary(self):
-        output_dict = {}
-        output_dict['productCode'] = self.product_code
-        output_dict['description'] = self.description
-        output_dict['marketPrice'] = self.market_price
-        output_dict['rentalPrice'] = self.rental_price
-        output_dict['material'] = self.material
-        output_dict['size'] = self.size
-
-        return output_dict
+        output_dict_furniture = Inventory.return_as_dictionary(self)
+        output_dict_furniture['material'] = self.material
+        output_dict_furniture['size'] = self.size
+        return output_dict_furniture
     

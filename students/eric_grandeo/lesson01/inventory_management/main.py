@@ -48,14 +48,22 @@ def add_new_item():
     if is_furniture.lower() == "y":
         item_material = input("Enter item material: ")
         item_size = input("Enter item size (S,M,L,XL): ")
-        new_item = furniture_class.Furniture(item_material,
+        new_item = furniture_class.Furniture(item_code,
+                                             item_description,
+                                             item_price,
+                                             item_rental_price,
+                                             item_material,
                                              item_size)
     else:
         is_electric_appliance = input("Is this item an electric appliance? (Y/N): ")
         if is_electric_appliance.lower() == "y":
             item_brand = input("Enter item brand: ")
             item_voltage = input("Enter item voltage: ")
-            new_item = electric_appliances_class.ElectricAppliances(item_brand,
+            new_item = electric_appliances_class.ElectricAppliances(item_code,
+                                                                    item_description,
+                                                                    item_price,
+                                                                    item_rental_price,
+                                                                    item_brand,
                                                                     item_voltage)
         else:
             new_item = inventory_class.Inventory(item_code,
