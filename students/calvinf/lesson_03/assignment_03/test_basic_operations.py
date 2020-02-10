@@ -38,14 +38,16 @@ class MyTestCase(TestCase):
 
     def test_search_customer(self):
         """Test searching for customer by id"""
-        expected = {'name': 'Calvin', 'lastname': 'Fannin', 'emailaddress': 'plants@NO.com', 'phonenumber': '236-789-7865'}
+        expected = {'name': 'Calvin', 'lastname': 'Fannin', 'emailaddress': 'plants@NO.com',
+                    'phonenumber': '236-789-7865'}
         foundcustomer = search_customer('101')
         self.assertEqual(foundcustomer, expected)
 
     def test_delete_customer(self):
         """Test deleting customer from database"""
-        expected = {'name': 'Calvin', 'lastname': 'Fannin', 'emailaddress': 'plants@NO.com', 'phonenumber': '236-789-7865'}
-        delete_customer(101)
+        expected = {'name': 'Calvin', 'lastname': 'Fannin', 'emailaddress': 'plants@NO.com',
+                    'phonenumber': '236-789-7865'}
+        delete_customer('101')
         foundcustomer = search_customer('101')
         self.assertNotEqual(foundcustomer, expected)
         self.assertEqual(foundcustomer, {})
@@ -53,7 +55,7 @@ class MyTestCase(TestCase):
     def test_delete_customer_fail(self):
         """Test deleting customer not in the database"""
         with self.assertRaises(Exception):
-            delete_customer(1001)
+            delete_customer('1001')
 
     def test_customer_table_exists(self):
         """Test if table was created in database"""
@@ -81,6 +83,16 @@ class MyTestCase(TestCase):
         with self.assertRaises(Exception):
             database.drop_tables([Customer, CustomerContact])
             count = list_active_customers()
+
+    def test_bulk_delete(self):
+        bulk_delete_customer(['101', '201', '301', '401'])
+        recordcnt = Customer.select().count()
+        self.assertEqual(recordcnt, 0)
+
+
+    def test_active_total_limits(self):
+        limitcount = active_total_limits()
+        self.assertEqual(limitcount, 170000)
 
     def tearDown(self):
         """Delete database after test cases have ran"""

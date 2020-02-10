@@ -1,8 +1,10 @@
 # pylint: disable=wildcard-import, unused-wildcard-import
 # pylint: disable=too-few-public-methods
+# pylint: disable=line-too-long
 """This model is used to perform basic database operations for sqlite3 database."""
 
 import logging
+import datetime
 from customer_model import *
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
@@ -12,9 +14,15 @@ CONSOLE_HANDLER = logging.StreamHandler()
 CONSOLE_HANDLER.setLevel(logging.INFO)
 CONSOLE_HANDLER.setFormatter(FORMATTER)
 
+LOG_FILE = "db" + datetime.datetime.now().strftime("%Y-%m-%d")+".log"
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setLevel(logging.INFO)
+FILE_HANDLER.setFormatter(FORMATTER)
+
 LOGGER = logging.getLogger()
 LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(CONSOLE_HANDLER)
+LOGGER.addHandler(FILE_HANDLER)
 
 
 def setup_database():
@@ -68,18 +76,42 @@ def search_customer(customer_id):
      of a customer or an empty dictionary object
     if no customer was found.
     """
-    query_customer = {}
+    customer_found = {}
     try:
         with database.transaction():
-            query_customer = (Customer.select(Customer.name, Customer.lastname, CustomerContact.emailaddress,
-                                              CustomerContact.phonenumber).join(CustomerContact).where(
-                                                  Customer.customerid == customer_id).dicts()[0])
-            return query_customer
-    except Exception as custerror:
+            LOGGER.info("SEARCHING for user %s", customer_id)
+            # query_customer = (Customer.select(Customer.name, Customer.lastname, CustomerContact.emailaddress,
+                                              # CustomerContact.phonenumber).join(CustomerContact).where(
+                                                  # Customer.customerid == customer_id).dicts()[0])
+            query_customer = (Customer.select(Customer.customerid, Customer.name, Customer.lastname,
+                                              CustomerContact.emailaddress,
+                                              CustomerContact.phonenumber).join(CustomerContact))
+            for customer in query_customer:  # iterable/iterator
+                if customer.customerid == customer_id:
+                    customer_found = {'name': customer.name, 'lastname': customer.lastname,
+                                      'emailaddress': customer.customercontact.emailaddress,
+                                      'phonenumber': customer.customercontact.phonenumber}
+                    LOGGER.info("FOUND user %s", customer_found)
+                    return customer_found
+    except (OperationalError, TypeError) as custerror:
         LOGGER.error(str(custerror))
         raise custerror
     finally:
-        return query_customer
+        return customer_found
+
+
+def bulk_delete_customer(customerslst):
+    """Deletes all customers in the list """
+    try:
+        with database.transaction():
+            LOGGER.info('Starting Bulk delete...')
+            for cust in customerslst:  # iterable/iterator
+                del_customer = Customer.get(Customer.customerid == cust)
+                del_customer.delete_instance(recursive=True)
+                logging.info('Customer: %s deleted', cust)
+    except (NameError, IndexError, KeyError):
+        LOGGER.info('Delete failed for customer %s', cust)
+        raise Exception
 
 
 def delete_customer(customer_id):
@@ -113,8 +145,8 @@ def update_customer_credit(customer_id, credit_limit):
                                .where(Customer.customerid == customer_id))
             rowsupdated = update_customer.execute()
             if rowsupdated == 0:
-                raise ValueError('Customer %s was not found in database', customer_id)
-            logging.info('%s -Records updated ', rowsupdated)
+                raise ValueError('Customer was not found in database', customer_id)
+            logging.info('%s Record(s) updated ', rowsupdated)
     except ValueError as customervalueerror:
         LOGGER.error(str(customervalueerror))
         raise customervalueerror
@@ -133,6 +165,26 @@ def list_active_customers():
                                      .scalar())
             logging.info('Active customer count is %s', query_customer_status)
             return query_customer_status
+    except Exception as customererror:
+        LOGGER.error(str(customererror))
+        raise customererror
+
+
+def active_total_limits():
+    """
+        This function will return an integer with the total credit
+        limits of customers whose status is currently active.
+    """
+    try:
+        with database.transaction():
+            LOGGER.info('Calculating credit limit totals')
+            query_customer = (Customer
+                              .select(Customer.creditlimit)
+                              .where(Customer.status == 0))
+            totallimits = sum(i.creditlimit for i in query_customer)  # iterable/iterator
+            LOGGER.info('Active totals are: %d', totallimits)
+            return totallimits
+
     except Exception as customererror:
         LOGGER.error(str(customererror))
         raise customererror
