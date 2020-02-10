@@ -77,7 +77,7 @@ def import_product(directory_name, product_file, mod_queue):
     after = record_count(products)
     end = time.time()
     logging.info("Product: %s, %s, %s, %s", processed, before, after, end - start)
-    mod_queue.put((processed, before, after, end - start))
+    mod_queue.put(("Product", (processed, before, after, end - start)))
 
 
 def import_customer(directory_name, customer_file, mod_queue):
@@ -115,7 +115,7 @@ def import_customer(directory_name, customer_file, mod_queue):
     after = record_count(customers)
     end = time.time()
     logging.info("Customer: %s, %s, %s, %s", processed, before, after, end - start)
-    mod_queue.put((processed, before, after, end - start))
+    mod_queue.put(("Customer", (processed, before, after, end - start)))
 
 
 def import_rental(directory_name, rental_file, mod_queue):
@@ -150,7 +150,7 @@ def import_rental(directory_name, rental_file, mod_queue):
     after = record_count(rentals)
     end = time.time()
     logging.info("Rental: %s, %s, %s, %s", processed, before, after, end - start)
-    mod_queue.put((processed, before, after, end - start))
+    mod_queue.put(("Rental", (processed, before, after, end - start)))
 
 
 def clear_data():
@@ -203,7 +203,13 @@ if __name__ == '__main__':
 
     for thread in THREADS:
         thread.start()
-        RESULTS.append(QUEUE.get())
+
+    for thread in THREADS:
+        thread.join()
+
+    RESULTS.append(QUEUE.get())
+    RESULTS.append(QUEUE.get())
+    RESULTS.append(QUEUE.get())
 
     TOTAL_END = time.time()
     print(f"total run time:{TOTAL_END - TOTAL_START}")
