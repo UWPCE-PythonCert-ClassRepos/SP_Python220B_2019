@@ -17,27 +17,27 @@ class BasicTests(TestCase):
         #expected to import all, no errors
         parallel.import_product(PATH, "products.csv", QUEUE)
         actual = QUEUE.get()
-        self.assertEqual(2, actual[0])
-        self.assertEqual(0, actual[1])
-        self.assertEqual(2, actual[2])
+        self.assertEqual(2, actual[1][0])
+        self.assertEqual(0, actual[1][1])
+        self.assertEqual(2, actual[1][2])
 
 
     def test_b_import_customer(self):
         #expected to import all, no errors
         parallel.import_customer(PATH, "customers.csv", QUEUE)
         actual = QUEUE.get()
-        self.assertEqual(2, actual[0])
-        self.assertEqual(0, actual[1])
-        self.assertEqual(2, actual[2])
+        self.assertEqual(2, actual[1][0])
+        self.assertEqual(0, actual[1][1])
+        self.assertEqual(2, actual[1][2])
 
 
     def test_b_import_rental(self):
         #expected to import all, no errors
         parallel.import_rental(PATH, "rentals.csv", QUEUE)
         actual = QUEUE.get()
-        self.assertEqual(2, actual[0])
-        self.assertEqual(0, actual[1])
-        self.assertEqual(2, actual[2])
+        self.assertEqual(2, actual[1][0])
+        self.assertEqual(0, actual[1][1])
+        self.assertEqual(2, actual[1][2])
 
 
     def test_c_show_available_products(self):
