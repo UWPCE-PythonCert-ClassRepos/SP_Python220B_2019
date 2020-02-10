@@ -1,11 +1,11 @@
+'''Contain module tests for database.py'''
+
 from unittest import TestCase
 from database import *
 
+
 class DatabaseTests(TestCase):
     '''Contains all of the tests for HP Norton's MongoDB database.'''
-    def setUp(self):
-        '''Prime databases used for tests.'''
-        pass
     def test_import_data(self):
         '''Test the database.py import_data function.'''
         directory = 'testfiles'
@@ -21,14 +21,52 @@ class DatabaseTests(TestCase):
         '''Test the database.py show_available_products function.'''
         products_available = show_available_products()
         expected_dict = {
-            'prd001':{
-                'description':'chair',
-                'product_type':'livingroom',
-                'quantity_available':'3'},
-            'prd003':{
-                'description':'refrigerator',
-                'product_type':'kitchen',
-                'quantity_available':'5'}
+            'prd001': {
+                'description': 'chair',
+                'product_type': 'livingroom',
+                'quantity_available': '3'},
+            'prd003': {
+                'description': 'refrigerator',
+                'product_type': 'kitchen',
+                'quantity_available': '5'}
         }
         self.assertEqual(products_available, expected_dict)
-        pass
+
+    def test_show_rentals(self):
+        '''Test the database.py show_rentals function.'''
+        p1_rentals = show_rentals('prd001')
+        p2_rentals = show_rentals('prd002')
+        p3_rentals = show_rentals('prd003')
+
+        self.assertEqual(p1_rentals, {
+            'user002': {
+                'name': 'homer simpson',
+                'address': '123 springfield dr',
+                'phone_number': '1112223334',
+                'email': 'homers@gmail.com'
+            }
+        })
+
+        self.assertEqual(p2_rentals, {
+            'user002': {
+                'name': 'homer simpson',
+                'address': '123 springfield dr',
+                'phone_number': '1112223334',
+                'email': 'homers@gmail.com'
+            }
+        })
+
+        self.assertEqual(p3_rentals, {
+            'user001': {
+                'name': 'jeff bezos',
+                'address': '123 main st',
+                'phone_number': '1234567890',
+                'email': 'jeffb@gmail.com'
+            },
+            'user003': {
+                'name': 'justin bieber',
+                'address': '123 canada rd',
+                'phone_number': '0987654321',
+                'email': 'justinb@gmail.com'
+            }
+        })
