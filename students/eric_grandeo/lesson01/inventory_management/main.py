@@ -7,6 +7,8 @@ import inventory_class
 import furniture_class
 import electric_appliances_class
 
+FULL_INVENTORY = {}
+
 def main_menu(user_prompt=None):
     """
     Prompts user with 3 options
@@ -36,7 +38,6 @@ def add_new_item():
     """
     Prompts user to enter a new item, creates new object based on what it is
     """
-    global FULL_INVENTORY
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -92,7 +93,6 @@ def exit_program():
     sys.exit()
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
     while True:
         print(FULL_INVENTORY)
         main_menu()()
