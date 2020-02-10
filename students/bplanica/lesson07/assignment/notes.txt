@@ -1,0 +1,62 @@
+Linear code out of ten runs had a high of 3.64 sec and a low of 2.86 sec.
+Parallel code out of ten runs had a high of 3.14 and a low of 2.92 sec.
+
+The linear code seemed to have a larger range than the parallel code, but the changes between the two are too similar in my findings to recommend parallel over linear.
+
+
+Linear:
+
+C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python linear.py
+INFO:root:All tables have been dropped.
+INFO:root:Product: 1001, 0, 1001, 1.005657434463501
+INFO:root:Customer: 1001, 0, 1001, 0.9995231628417969
+INFO:root:Rental: 1001, 0, 1001, 0.9663865566253662
+total run time:2.9736838340759277
+[(1001, 0, 1001, 1.005657434463501), (1001, 0, 1001, 0.9995231628417969), (1001, 0, 1001, 0.9663865566253662)]
+
+C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python -m cProfile linear.py
+INFO:root:All tables have been dropped.
+INFO:root:Product: 1001, 0, 1001, 1.2605180740356445
+INFO:root:Customer: 1001, 0, 1001, 1.2585902214050293
+INFO:root:Rental: 1001, 0, 1001, 1.1215453147888184
+total run time:3.6431796550750732
+[(1001, 0, 1001, 1.2605180740356445), (1001, 0, 1001, 1.2585902214050293), (1001, 0, 1001, 1.1215453147888184)]
+         975719 function calls (962213 primitive calls) in 4.142 seconds
+
+total run time:2.8634438514709473
+total run time:3.3149173259735107
+total run time:3.041816234588623
+total run time:2.99160099029541
+total run time:3.015253782272339
+total run time:2.938033103942871
+total run time:2.994842529296875
+total run time:3.1428661346435547
+
+
+Parallel:
+
+C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python parallel.py
+INFO:root:All tables have been dropped.
+INFO:root:Product: 1001, 0, 1001, 1.0199470520019531
+INFO:root:Customer: 1001, 0, 1001, 1.0356454849243164
+INFO:root:Rental: 1001, 0, 1001, 0.9888205528259277
+total run time:3.0532917976379395
+[(1001, 0, 1001, 1.0199470520019531), (1001, 0, 1001, 1.0356454849243164), (1001, 0, 1001, 0.9888205528259277)]
+
+C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python -m cProfile parallel.py
+INFO:root:All tables have been dropped.
+INFO:root:Product: 1001, 0, 1001, 0.9869625568389893
+INFO:root:Customer: 1001, 0, 1001, 1.0085740089416504
+INFO:root:Rental: 1001, 0, 1001, 0.9699296951293945
+total run time:2.9774413108825684
+[(1001, 0, 1001, 0.9869625568389893), (1001, 0, 1001, 1.0085740089416504), (1001, 0, 1001, 0.9699296951293945)]
+         59839 function calls (58423 primitive calls) in 3.378 seconds
+
+total run time:2.8341333866119385
+total run time:3.0373551845550537
+total run time:3.184356212615967
+total run time:3.134753465652466
+total run time:2.916651487350464
+total run time:3.0843992233276367
+total run time:2.9921135902404785
+total run time:3.065046787261963
