@@ -55,6 +55,7 @@ def load_rentals_file(filename=None, debug=None):
 
 
 def calculate_additional_fields(data, debug=None):
+    """ runs calculations based on data input from source file """
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
@@ -97,6 +98,7 @@ def calculate_additional_fields(data, debug=None):
 
 
 def save_to_json(filename, data, debug=None):
+    """ writes output to a file in json format """
     with open(filename, 'w') as file:
         logger.debug(f"writing {data} to file")
         json.dump(data, file)
