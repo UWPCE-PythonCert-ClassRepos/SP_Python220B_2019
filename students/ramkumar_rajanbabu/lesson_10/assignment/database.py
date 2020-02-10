@@ -1,6 +1,9 @@
 """Module for database"""
 
+# pylint: disable=line-too-long, too-many-locals, bare-except
+
 import csv
+import logging
 import time
 from os import path
 from pymongo import MongoClient
@@ -25,6 +28,31 @@ class MongoDBConnection():
         self.connection.close()
 
 
+def timing(func):
+    """Timing decorator"""
+    def wrapper(*args, **kwargs):
+        """Measure time function"""
+        log_format = logging.Formatter("%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s")
+        file_handler = logging.FileHandler("timings.txt")
+        file_handler.setFormatter(log_format)
+
+        logger = logging.getLogger()
+        logger.addHandler(file_handler)
+        logger.setLevel(logging.INFO)
+
+        start = time.time()
+        result = func(*args, **kwargs)
+        total = time.time() - start
+        if func.__name__ == "import_data":
+            time_records = result[0][0]
+            logging.info("The function %s took %s seconds to proccess %s records.", func.__name__, total, time_records)
+        else:
+            logging.info("The function %s took %s seconds.", func.__name__, total)
+        return result
+    return wrapper
+
+
+@timing
 def import_data(directory_name, product_file, customer_file, rental_file):
     """
     Create and populate a new MongoDB database with
@@ -99,7 +127,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         return total_count
 
 
-def clear_database(mongo):
+def clear_database():
     """Clears the database"""
     mongo = MongoDBConnection()
     with mongo:
@@ -112,6 +140,7 @@ def clear_database(mongo):
         rentals.drop()
 
 
+@timing
 def show_available_products():
     """Return dictionary of products listed as product_id, description,
     product_type, quantity_available
@@ -135,6 +164,7 @@ def show_available_products():
     return product_dict
 
 
+@timing
 def show_rentals(product_id):
     """Return dictionary with user information from users that have
     rented products matching product_id
@@ -165,5 +195,8 @@ def show_rentals(product_id):
 
 
 if __name__ == "__main__":
-    clear_database()
+    import_data("csv_files", "products.csv", "customers.csv", "rentals.csv")
+    import_data("csv_files", "products_l.csv", "customers_l.csv", "rentals_l.csv")
+    show_available_products()
+    show_rentals("999")
     clear_database()

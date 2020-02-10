@@ -1,1 +1,10 @@
-timings.txt
+2020-02-09 20:19:06,372 database.py:48  INFO The function import_data took 0.8250746726989746 seconds to proccess 1000 records.
+2020-02-09 20:19:10,512 database.py:48  INFO The function import_data took 4.140080451965332 seconds to proccess 10000 records.
+2020-02-09 20:19:10,512 database.py:48  INFO The function import_data took 4.140080451965332 seconds to proccess 10000 records.
+2020-02-09 20:19:10,664 database.py:50  INFO The function show_available_products took 0.15214252471923828 seconds.
+2020-02-09 20:19:10,664 database.py:50  INFO The function show_available_products took 0.15214252471923828 seconds.
+2020-02-09 20:19:10,664 database.py:50  INFO The function show_available_products took 0.15214252471923828 seconds.
+2020-02-09 20:19:10,673 database.py:50  INFO The function show_rentals took 0.006951093673706055 seconds.
+2020-02-09 20:19:10,673 database.py:50  INFO The function show_rentals took 0.006951093673706055 seconds.
+2020-02-09 20:19:10,673 database.py:50  INFO The function show_rentals took 0.006951093673706055 seconds.
+2020-02-09 20:19:10,673 database.py:50  INFO The function show_rentals took 0.006951093673706055 seconds.

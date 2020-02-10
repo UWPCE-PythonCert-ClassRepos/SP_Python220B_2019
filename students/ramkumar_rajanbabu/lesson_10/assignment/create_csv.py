@@ -1,5 +1,7 @@
 """Module for creating csv files"""
 
+# pylint: disable=unused-variable
+
 import csv
 import random
 from datetime import date
@@ -15,9 +17,9 @@ def rand_date():
 
 def create_products_data():
     """Create products.csv"""
-    with open("sample_csv_files/products.csv", "w", newline='') as csv_file:
+    with open("csv_files/products_l.csv", "w", newline='') as csv_file:
         writer = csv.writer(csv_file)
-        for row in range(1000):
+        for row in range(10000):
             product_id = "product_id{}".format(row+1)
             description = "description{}".format(row+1)
             product_type = "product_type{}".format(row+1)
@@ -29,9 +31,9 @@ def create_products_data():
 
 def create_customers_data():
     """Create customers.csv"""
-    with open("sample_csv_files/customers.csv", "w", newline='') as csv_file:
+    with open("csv_files/customers_l.csv", "w", newline='') as csv_file:
         writer = csv.writer(csv_file)
-        for row in range(1000):
+        for row in range(10000):
             customer_id = "customer_id{}".format(row+1)
             name = "name{}".format(row+1)
             address = "address{}".format(row+1)
@@ -43,9 +45,9 @@ def create_customers_data():
 
 def create_rentals_data():
     """Create rentals.csv"""
-    with open("sample_csv_files/rentals.csv", "w", newline='') as csv_file:
+    with open("csv_files/rentals_l.csv", "w", newline='') as csv_file:
         writer = csv.writer(csv_file)
-        for row in range(1000):
+        for row in range(10000):
             rental_id = "r_id{}".format(random.randint(0, 1000))
             product_id = "p_id{}".format(random.randint(0, 1000))
             customer_id = "c_id{}".format(random.randint(0, 1000))
@@ -57,4 +59,3 @@ if __name__ == "__main__":
     create_products_data()
     create_customers_data()
     create_rentals_data()
-
