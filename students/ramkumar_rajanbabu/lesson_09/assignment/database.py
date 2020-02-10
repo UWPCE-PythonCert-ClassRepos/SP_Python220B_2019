@@ -25,7 +25,6 @@ class MongoDBConnection():
         self.products = self.database["products"]
         self.customers = self.database["customers"]
         self.rentals = self.database["rentals"]
-
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -90,7 +89,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
 
         try:
             with open(rental_file_path, encoding="utf-8-sig") as csv_file:
-                rental_reader = csv.DictReader(csv_file)
+                rental_reader = csv.reader(csv_file)
                 for row in rental_reader:
                     rental_info = {"rental_id": row[0],
                                    "product_id": row[1],
@@ -103,17 +102,20 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         record_count = (product_count, customer_count, rental_count)
         fail_count = (product_error, customer_error, rental_error)
         total_count = record_count, fail_count
-
         return total_count
 
 
-def clear_database(mongo):
+def clear_database():
     """Clears the database"""
     mongo = MongoDBConnection()
     with mongo:
-        mongo.products.drop()
-        mongo.customers.drop()
-        mongo.rental.drop()
+        database = mongo.connection.media
+        products = database["products"]
+        customers = database["customers"]
+        rentals = database["rentals"]
+        products.drop()
+        customers.drop()
+        rentals.drop()
 
 
 def show_available_products():
@@ -132,10 +134,8 @@ def show_available_products():
         for product in database.products.find():
             product_info = {"description": product["description"],
                             "product_type": product["product_type"],
-                            "quantity_available":
-                            product["quantity_available"]}
+                            "quantity_available": product["quantity_available"]}
             product_dict[product["product_id"]] = product_info
-
     return product_dict
 
 
@@ -164,5 +164,4 @@ def show_rentals(product_id):
                                                "phone_number": person["phone_number"],
                                                "email": person["email"]}
                        for person in customers}
-
     return rental_dict

@@ -65,8 +65,7 @@ def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--debug', help='logging level', required=False, default='0')
-
+    parser.add_argument('-d', '--debug', help='logging level', required=False, default='0', choices=range(0,4))
     return parser.parse_args()
 
 
@@ -78,7 +77,6 @@ def load_rentals_file(filename):
             data = json.load(file)
         except FileNotFoundError:
             logging.error("File does not exist")
-
     return data
 
 
@@ -104,7 +102,6 @@ def calculate_additional_fields(data):
         except KeyError as key_err:
             logging.warning(key_err)
             continue
-
     return data
 
 

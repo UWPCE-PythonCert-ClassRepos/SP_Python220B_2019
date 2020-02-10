@@ -4,45 +4,43 @@ import unittest
 from unittest import TestCase
 import database as db
 
-PATH = "C:/Users/kumar/Documents/GitHub/SP_Python220B_2019/" \
-       "students/ramkumar_rajanbabu/lesson_05/assignment"
-
 
 class TestDatabase(TestCase):
     """Test Database"""
     def test_import_data(self):
         """Testing import data"""
         db.clear_database()
-        actual = db.import_data(PATH, "products.csv", "customers.csv",
+        actual = db.import_data("csv_files", "products.csv", "customers.csv",
                                 "rentals.csv")
-        expected = ((4, 3, 4), (0, 0, 0))
+        expected = ((5, 4, 5), (0, 0, 0))
         self.assertEqual(actual, expected)
 
     def test_show_available_products(self):
         """Tetsing showing available products"""
+        self.maxDiff = None
         db.clear_database()
         actual = db
-        actual.import_data(PATH, "products.csv", "customers.csv",
+        actual.import_data("csv_files", "products.csv", "customers.csv",
                            "rentals.csv")
         expected = {"51": {"description": "TV",
                            "product_type": "Electric",
                            "quantity_available": "4"},
-                    "999": {"description": "Couch",
-                            "product_type": "Furniture",
-                            "quantity_available": "15"},
                     "325": {"description": "Laptop",
                             "product_type": "Electric",
                             "quantity_available": "112"},
                     "223": {"description": "Table",
                             "product_type": "Furniture",
-                            "quantity_available": "25"}}
+                            "quantity_available": "25"},
+                    "999": {"description": "Couch",
+                            "product_type": "Furniture",
+                            "quantity_available": "15"}}
         self.assertEqual(actual.show_available_products(), expected)
 
     def test_show_rentals(self):
         """Testing show rentals"""
         db.clear_database()
         actual = db
-        actual.import_data(PATH, "products.csv", "customers.csv",
+        actual.import_data("csv_files", "products.csv", "customers.csv",
                            "rentals.csv")
         expected = {"200": {"name": "Iron Man",
                             "address":

@@ -16,11 +16,11 @@ def search_png(path):
             result.append(files)
         for folder in folders:
             search_png(folder)
-
     return result
 
 
 if __name__ == "__main__":
-    PNG_PATH = input("Enter file path:")
+    # PNG_PATH = input("Enter file path:")
+    PNG_PATH = os.path.join(os.getcwd(), "data", "new")
     PNG_FILES = search_png(PNG_PATH)
     print(PNG_FILES)
