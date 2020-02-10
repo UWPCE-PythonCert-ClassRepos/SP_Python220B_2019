@@ -1,9 +1,9 @@
-# Advanced Programming in Python -- Lesson 2 Assignment 2
+# Advanced Programming in Python -- Lesson 2 Assignment 1
 # Jason Virtue
 # Start Date 2/7/2020
 
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 
 import argparse
@@ -15,13 +15,13 @@ import logging
 '''
 There are two bugs in the program when reading in the data file
     1. Some rental items have not been returned so their end date are before the start date
-    This causes the total_days of a rental to be negative.  
+    This causes the total_days of a rental to be negative.
     2. Some rental items have missing values for end_date.
 
 The fixes for these issues are as follows;
-    1. The sqr_root_total_price can not square a negative value.  The program thru an error
-    and when into the excpetion section of the function.  The first version of the program would return
-    a system error code of 0 and abort the program without any error codes. 
+    1. The sqr_root_total_price can not square a negative value.  The program throws an error
+    and went into the exception section of the function.  The first version of the program would return
+    a system error code of 0 and abort the program without any error codes.
     2. The rental_end contains missing values and needed to handle this exception similar to #1
 '''
 
@@ -32,7 +32,7 @@ def parse_cmd_arguments():
        -o = output file
        -d = debugging Level
     """
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Process data')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-d', '--debug', help='Debugging level', required=False, default='0')
@@ -41,7 +41,7 @@ def parse_cmd_arguments():
 
 def init_logger(logger_level):
     '''Function to Initialize logger'''
-    
+
     log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
     log_file = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
 
@@ -81,12 +81,12 @@ def init_logger(logger_level):
         file_handler.setLevel(logging.DEBUG)
 
 def load_rentals_file(filename):
-    """Method reads data file as input"""
+    """Function reads data file as input"""
     with open(filename) as file:
         try:
             data = json.load(file)
         except:
-            logging.error('Input arguement not found in command line')
+            logging.error('Input argument not found in command line')
             logging.debug('Missing input file from command line')
             logging.debug('Program exits with error due to no input argument')
             exit(0)
@@ -94,7 +94,7 @@ def load_rentals_file(filename):
     return data
 
 def calculate_additional_fields(data):
-    """Method reads data file and dervives new fields"""
+    """Fuction reads data file and dervives new fields"""
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')

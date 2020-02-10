@@ -3,7 +3,7 @@
 # Goes to except of error handling routine due to negative and exits with system code of 0
 # Open JSON File and first row has a start date greater than the end date.
 # Assume this is due to rental items that are not returned
-# Handle rentals that are not returned (If Start > End reset end to today's date)
+# Handle rentals that are not returned (If Start > End read value and log it)
 
 #Stepped into calculate_additional_fields function from the if __name__ == "__main__":
 
@@ -32,28 +32,28 @@
 
 #Exit 0 due to square root of a negative number and goes to except routine
 (Pdb) n
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
 -> exit(0)
 
 #Except routine return error code of 0
 (Pdb) n
 SystemExit: 0
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
 -> exit(0)
 
 (Pdb) n
 --Return--
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()->None
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()->None
 -> exit(0)
 
 (Pdb) n
 SystemExit: 0
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()
 -> data = calculate_additional_fields(data)
 
 (Pdb) n
 --Return--
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()->None
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()->None
 -> data = calculate_additional_fields(data)
 
 (Pdb) n
@@ -66,10 +66,10 @@ SystemExit: 0
 
 (Pdb) n
 The program exited via sys.exit(). Exit status: 0
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(7)<module>()
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(7)<module>()
 -> '''
 
-#Here is record throwing the exception. Rental_end is less than Rental_start
+#Here is an example of the record with a rental_start > rental_end
 {
   "RNT001": {
     "product_code": "PRD80",
@@ -83,16 +83,16 @@ The program exited via sys.exit(). Exit status: 0
 #Added a condition since the next value error wasn't related to a negative total days
 #Added break point at exception and total days greater than zero
 #PP Showed me value and searched source.json
-#Valueerror due to blank rental_end
+#Value error due to blank rental_end
 
 (Pdb) b 39
-Breakpoint 1 at c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py:39
+Breakpoint 1 at c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py:39
 (Pdb) condition value['total_days'] > 0
 *** Non-numeric breakpoint number value['total_days']
 (Pdb) condition 1 value['total_days'] >= 1
 New condition set for breakpoint 1.
 (Pdb) c
-> c:\users\jvirtue\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(39)calculate_additional_fields()
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(39)calculate_additional_fields()
 -> except ValueError:
 (Pdb) pp value
 {'price_per_day': 14,      
