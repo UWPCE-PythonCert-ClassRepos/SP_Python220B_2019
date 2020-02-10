@@ -1,7 +1,5 @@
 Linear code out of ten runs had a high of 3.64 sec and a low of 2.86 sec.
-Parallel code out of ten runs had a high of 3.14 and a low of 2.92 sec.
-
-The linear code seemed to have a larger range than the parallel code, but the changes between the two are too similar in my findings to recommend parallel over linear.
+Parallel code out of ten runs had a high of 2.59 and a low of 2.25 sec.
 
 
 Linear:
@@ -37,26 +35,26 @@ Parallel:
 
 C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python parallel.py
 INFO:root:All tables have been dropped.
-INFO:root:Product: 1001, 0, 1001, 1.0199470520019531
-INFO:root:Customer: 1001, 0, 1001, 1.0356454849243164
-INFO:root:Rental: 1001, 0, 1001, 0.9888205528259277
-total run time:3.0532917976379395
-[(1001, 0, 1001, 1.0199470520019531), (1001, 0, 1001, 1.0356454849243164), (1001, 0, 1001, 0.9888205528259277)]
+INFO:root:Customer: 1001, 0, 1001, 2.109771490097046
+INFO:root:Rental: 1001, 0, 1001, 2.1872928142547607
+INFO:root:Product: 1001, 0, 1001, 2.2453277111053467
+total run time:2.2492661476135254
+[('Customer', (1001, 0, 1001, 2.109771490097046)), ('Rental', (1001, 0, 1001, 2.1872928142547607)), ('Product', (1001, 0, 1001, 2.2453277111053467))]
 
 C:\_PythonClass\AdvPython\SP_Python220B_2019\students\bplanica\lesson07\assignment>python -m cProfile parallel.py
 INFO:root:All tables have been dropped.
-INFO:root:Product: 1001, 0, 1001, 0.9869625568389893
-INFO:root:Customer: 1001, 0, 1001, 1.0085740089416504
-INFO:root:Rental: 1001, 0, 1001, 0.9699296951293945
-total run time:2.9774413108825684
-[(1001, 0, 1001, 0.9869625568389893), (1001, 0, 1001, 1.0085740089416504), (1001, 0, 1001, 0.9699296951293945)]
-         59839 function calls (58423 primitive calls) in 3.378 seconds
+INFO:root:Product: 1001, 0, 1001, 2.271003007888794
+INFO:root:Rental: 1001, 0, 1001, 2.3428070545196533
+INFO:root:Customer: 1001, 0, 1001, 2.3876535892486572
+total run time:2.3915798664093018
+[('Product', (1001, 0, 1001, 2.271003007888794)), ('Rental', (1001, 0, 1001, 2.3428070545196533)), ('Customer', (1001, 0, 1001, 2.3876535892486572))]
+         59788 function calls (58372 primitive calls) in 2.885 seconds
 
-total run time:2.8341333866119385
-total run time:3.0373551845550537
-total run time:3.184356212615967
-total run time:3.134753465652466
-total run time:2.916651487350464
-total run time:3.0843992233276367
-total run time:2.9921135902404785
-total run time:3.065046787261963
+total run time:2.27801513671875
+total run time:2.4243686199188232
+total run time:2.5887274742126465
+total run time:2.4858486652374268
+total run time:2.3106460571289062
+total run time:2.4038901329040527
+total run time:2.5001609325408936
+total run time:2.4762234687805176
