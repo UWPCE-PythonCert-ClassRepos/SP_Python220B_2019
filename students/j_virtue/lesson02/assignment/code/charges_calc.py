@@ -14,15 +14,17 @@ import logging
 
 '''
 There are two bugs in the program when reading in the data file
-    1. Some rental items have not been returned so their end date are before the start date
-    This causes the total_days of a rental to be negative.
+    1. Some rental items have not been returned so their end date are
+    before the start date. This causes the total_days of a rental to be negative.
     2. Some rental items have missing values for end_date.
 
 The fixes for these issues are as follows;
-    1. The sqr_root_total_price can not square a negative value.  The program throws an error
-    and went into the exception section of the function.  The first version of the program would return
-    a system error code of 0 and abort the program without any error codes.
-    2. The rental_end contains missing values and needed to handle this exception similar to #1
+    1. The sqr_root_total_price can not square a negative value.  The program
+    throws an error and went into the exception section of the function.  The
+    first version of the program would return a system error code of 0 and
+    abort the program without any error codes.
+    2. The rental_end contains missing values and needed to handle this
+    exception similar to #1
 '''
 
 def parse_cmd_arguments():
@@ -78,7 +80,7 @@ def init_logger(logger_level):
     if logger_level == '3':
         logger.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
-        file_handler.setLevel(logging.DEBUG)
+        file_handler.setLevel(logging.WARNING)
 
 def load_rentals_file(filename):
     """Function reads data file as input"""
@@ -87,8 +89,6 @@ def load_rentals_file(filename):
             data = json.load(file)
         except:
             logging.error('Input argument not found in command line')
-            logging.debug('Missing input file from command line')
-            logging.debug('Program exits with error due to no input argument')
             exit(0)
     logging.info("End to loading data file into program")
     return data
@@ -107,7 +107,7 @@ def calculate_additional_fields(data):
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except:
-            logging.debug("Exception logged for %s", str(value))
+            logging.info("Exception logged for %s", str(value))
     logging.info("End to derviving new fields from data file")
     return data
 
@@ -118,18 +118,16 @@ def save_to_json(filename, data):
             json.dump(data, file)
         except:
             logging.error('Output file not found in main directory')
-            logging.debug('Missing output file from command line')
-            logging.debug('Program exits with error due to no output argument')
             exit(0)
     logging.info("End to saving file to main directory")
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    init_logger(args.debug)
+    ARGS = parse_cmd_arguments()
+    init_logger(ARGS.debug)
     logging.info("Start to load data file into program")
-    data = load_rentals_file(args.input)
+    DATA = load_rentals_file(ARGS.input)
     logging.info("Start to dervive new fields from data file")
-    data = calculate_additional_fields(data)
+    DATA = calculate_additional_fields(DATA)
     logging.info("Start to save file to main directory")
-    save_to_json(args.output, data)
+    save_to_json(ARGS.output, DATA)
     logging.error("*************************ENDOFPROGRAM*******************")
