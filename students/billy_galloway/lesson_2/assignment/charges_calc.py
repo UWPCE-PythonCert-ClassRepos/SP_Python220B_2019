@@ -1,6 +1,8 @@
 '''
 Returns total price paid for individual rentals
 '''
+#!/usr/bin/env python
+
 import argparse
 import json
 import datetime
@@ -36,12 +38,12 @@ def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--debug', action='count', help='logging verbosity', required=False)
+    parser.add_argument('-d', '--debug', type=int, help='logging verbosity', required=False)
 
     return parser.parse_args()
 
 
-def load_rentals_file(filename=None, debug=None):
+def load_rentals_file(filename=None):
     """ loads the file in json format from a file and returns it as a json object """
     try:
         with open(filename) as file:
@@ -54,7 +56,7 @@ def load_rentals_file(filename=None, debug=None):
     return data
 
 
-def calculate_additional_fields(data, debug=None):
+def calculate_additional_fields(data):
     """ runs calculations based on data input from source file """
     for value in data.values():
         try:
@@ -92,12 +94,13 @@ def calculate_additional_fields(data, debug=None):
                 value['unit_cost'] = value['total_price'] / value['units_rented']
 
         except ValueError as value_error:
-            logger.error(f"Value error caught {value_error}")
+            logger.error(f"Value error caught: {value_error}")
+            logger.error(f"Empty value found in {value}")
 
     return data
 
 
-def save_to_json(filename, data, debug=None):
+def save_to_json(filename, data):#, debug=None):
     """ writes output to a file in json format """
     with open(filename, 'w') as file:
         logger.debug(f"writing {data} to file")
@@ -110,10 +113,10 @@ if __name__ == "__main__":
     args = parse_cmd_arguments()
 
     if args.debug:
-        try:
-            # debug arg found and passing the
-            # integer to the logging_level
-            # method
+        try:  
+        #     # debug arg found and passing the
+        #     # integer to the logging_level
+        #     # method
             levels = logging_level(args.debug)
             if levels == 10:
                 logger.setLevel(levels)
@@ -133,8 +136,8 @@ if __name__ == "__main__":
             sys.exit()
 
         else:
-            data = load_rentals_file(args.input, args.debug)
-            data = calculate_additional_fields(data, args.debug)
+            data = load_rentals_file(args.input)
+            data = calculate_additional_fields(data)
 
     else:
         logger.disabled = True
