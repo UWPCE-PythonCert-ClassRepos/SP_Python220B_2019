@@ -60,7 +60,7 @@ def analyze(filename):
 def generate_data(filename, target_count):
     current_count = 10
 
-    with open(filename, 'w') as csvfile:
+    with open(filename, 'a') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
         for i in range(current_count - 1, target_count):
