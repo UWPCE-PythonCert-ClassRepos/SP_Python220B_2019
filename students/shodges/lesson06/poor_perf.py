@@ -5,6 +5,7 @@ poorly performing, poorly written module
 
 import datetime
 import csv
+import uuid
 
 def analyze(filename):
     start = datetime.datetime.now()
@@ -55,6 +56,15 @@ def analyze(filename):
         end = datetime.datetime.now()
 
     return (start, end, year_count, found)
+
+def generate_data(filename, target_count):
+    current_count = 10
+
+    with open(filename, 'w') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',', quotechar='"')
+
+        for i in range(current_count - 1, target_count):
+            writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, 'test', 'ao'])
 
 def main():
     filename = "data/exercise.csv"
