@@ -60,7 +60,13 @@ def analyze(filename):
 def generate_data(filename, target_count):
     current_count = 10
 
+    with open(filename, 'r') as csvfile:
+        add_newline = False if csvfile.readlines()[-1][-1] == '\n' else True
+
     with open(filename, 'a') as csvfile:
+        if add_newline == True:
+            csvfile.write('\n')
+
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
         for i in range(current_count - 1, target_count):
