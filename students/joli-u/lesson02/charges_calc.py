@@ -1,5 +1,5 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 
 charges_calc.py
 joli umetsu
@@ -10,6 +10,7 @@ import json
 import datetime
 import math
 import logging
+import sys
 
 
 # define dictionary of debug levels
@@ -55,7 +56,7 @@ def parse_cmd_arguments():
 
 def load_rentals_file(filename):
     """ load the input file with rental data """
-    logging.debug("Loading input file {}...".format(filename))
+    logging.debug("Loading input file %s...", filename)
 
     try:
         with open(filename) as file:
@@ -63,10 +64,10 @@ def load_rentals_file(filename):
                 data = json.load(file)
             except ValueError:
                 logging.error("Could not locate input file (value error)")
-                exit(0)
+                sys.exit()
     except FileNotFoundError:
         logging.error("Could not locate input file (file did not exist)")
-        exit(0)
+        sys.exit()
 
     return data
 
@@ -75,19 +76,19 @@ def calculate_additional_fields(data):
     logging.debug("Calculating additional rental data...")
 
     for key, value in data.items():
-        logging.debug("*** Processing data for rental {}...***".format(key))
+        logging.debug("*** Processing data for rental %s...***", key)
 
         # get rental start date
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
-            logging.debug(f"[Rental start date: {rental_start}...]")
+            logging.debug("[Rental start date: %s...]", rental_start)
         except ValueError:
             logging.error("Invalid date format for rental start")
 
         # get rental end date
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
-            logging.debug(f"[Rental end date: {rental_end}...]")
+            logging.debug("[Rental end date: %s...]", rental_end)
         except ValueError:
             logging.error("Invalid date format for rental end")
 
@@ -96,42 +97,43 @@ def calculate_additional_fields(data):
 
         # calculate total rental days
         value['total_days'] = (rental_end - rental_start).days
-        logging.debug("Total rental days: {}".format(value['total_days']))
+        logging.debug("Total rental days: %s", value['total_days'])
 
         # calculate total rental price
         value['total_price'] = value['total_days'] * value['price_per_day']
-        logging.debug("Total rental price: {}".format(value['total_price']))
+        logging.debug("Total rental price: %s", value['total_price'])
 
         # calculate square root of the total rental price
         try:
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
-            logging.debug("Sqrt rental price: {}".format(value['sqrt_total_price']))
+            logging.debug("Sqrt rental price: %s", value['sqrt_total_price'])
         except ValueError:
-            logging.error(f"Could not compute square root price for {key} (value error)")
+            logging.error("Could not compute square root price for %s (value error)", key)
         except KeyError:
-            logging.error(f"Could not compute square root of {key} (key error)")
+            logging.error("Could not compute square root of %s (key error)", key)
 
         # calculate unit rental cost
         try:
             value['unit_cost'] = value['total_price'] / value['units_rented']
-            logging.debug("Unit cost: {}".format(value['unit_cost']))
+            logging.debug("Unit cost: %s", value['unit_cost'])
         except ZeroDivisionError:
-            logging.error(f"Could not compute unit cost of {key} (divide by 0 error)")
+            logging.error("Could not compute unit cost of %s (divide by 0 error)", key)
 
-    return data            
+    return data
+
 
 def save_to_json(filename, data):
     """ save the output file """
-    logging.debug("Saving output file {}...".format(filename))
+    logging.debug("Saving output file %s...", filename)
 
     with open(filename, 'w') as file:
         json.dump(data, file)
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    logger = setup_logging(args.debug)
-    logging.debug("Arguments %s passed in...", args)
-    logger.setLevel(DEBUG_LEVEL[args.debug])
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    ARGS = parse_cmd_arguments()
+    LOGGER = setup_logging(ARGS.debug)
+    logging.debug("Arguments %s passed in...", ARGS)
+    LOGGER.setLevel(DEBUG_LEVEL[ARGS.debug])
+    DATA = load_rentals_file(ARGS.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(ARGS.output, DATA)
