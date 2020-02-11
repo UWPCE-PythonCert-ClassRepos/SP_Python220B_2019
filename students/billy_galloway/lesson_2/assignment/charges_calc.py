@@ -132,6 +132,7 @@ if __name__ == "__main__":
             # a key in the log level dict then exit
             # and log the reason for exiting
             logger.setLevel(logging.ERROR)
+            logger.addHandler(file_handler)
             logger.error(f"Invalid debug option")
             sys.exit()
 
