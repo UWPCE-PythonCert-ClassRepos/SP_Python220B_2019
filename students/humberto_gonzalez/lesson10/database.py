@@ -189,8 +189,14 @@ if __name__ == "__main__":
     directory_name = "./csv_files"
     import_data(directory_name, "products_short.csv", 
                 "customers_short.csv", "rentals_short.csv")
+    show_available_products()
+    show_rentals("prd002")
+    tearDown()
     import_data(directory_name, "products_med.csv", 
                 "customers_med.csv", "rentals_med.csv")
+    show_available_products()
+    show_rentals("prd002")
+    tearDown()
     import_data(directory_name, "products_large.csv", 
                 "customers_large.csv", "rentals_large.csv")
     show_available_products()

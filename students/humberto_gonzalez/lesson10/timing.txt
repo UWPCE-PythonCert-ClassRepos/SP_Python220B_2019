@@ -1,15 +1,45 @@
-2020-01-28 18:27:34,007 database.py:48  INFO import_data took 0.056618452072143555 to process 14 entries
-2020-01-28 18:27:34,028 database.py:48  INFO import_data took 0.017880916595458984 to process 14 entries
-2020-01-28 18:27:34,028 database.py:48  INFO import_data took 0.017880916595458984 to process 14 entries
-2020-01-28 18:27:34,057 database.py:48  INFO import_data took 0.025922060012817383 to process 14 entries
-2020-01-28 18:27:34,057 database.py:48  INFO import_data took 0.025922060012817383 to process 14 entries
-2020-01-28 18:27:34,057 database.py:48  INFO import_data took 0.025922060012817383 to process 14 entries
-2020-01-28 18:27:34,090 database.py:50  INFO show_available_products took 0.028948068618774414 to run
-2020-01-28 18:27:34,090 database.py:50  INFO show_available_products took 0.028948068618774414 to run
-2020-01-28 18:27:34,090 database.py:50  INFO show_available_products took 0.028948068618774414 to run
-2020-01-28 18:27:34,090 database.py:50  INFO show_available_products took 0.028948068618774414 to run
-2020-01-28 18:27:34,406 database.py:50  INFO show_rentals took 0.04777026176452637 to run
-2020-01-28 18:27:34,406 database.py:50  INFO show_rentals took 0.04777026176452637 to run
-2020-01-28 18:27:34,406 database.py:50  INFO show_rentals took 0.04777026176452637 to run
-2020-01-28 18:27:34,406 database.py:50  INFO show_rentals took 0.04777026176452637 to run
-2020-01-28 18:27:34,406 database.py:50  INFO show_rentals took 0.04777026176452637 to run
+2020-02-10 19:06:25,397 database.py:48  INFO import_data took 0.48645615577697754 to process 14 entries
+2020-02-10 19:06:25,428 database.py:50  INFO show_available_products took 0.024837255477905273 to run
+2020-02-10 19:06:25,428 database.py:50  INFO show_available_products took 0.024837255477905273 to run
+2020-02-10 19:06:25,465 database.py:50  INFO show_rentals took 0.028551101684570312 to run
+2020-02-10 19:06:25,465 database.py:50  INFO show_rentals took 0.028551101684570312 to run
+2020-02-10 19:06:25,465 database.py:50  INFO show_rentals took 0.028551101684570312 to run
+2020-02-10 19:06:26,197 database.py:48  INFO import_data took 0.5379130840301514 to process 57 entries
+2020-02-10 19:06:26,197 database.py:48  INFO import_data took 0.5379130840301514 to process 57 entries
+2020-02-10 19:06:26,197 database.py:48  INFO import_data took 0.5379130840301514 to process 57 entries
+2020-02-10 19:06:26,197 database.py:48  INFO import_data took 0.5379130840301514 to process 57 entries
+2020-02-10 19:06:26,235 database.py:50  INFO show_available_products took 0.015890836715698242 to run
+2020-02-10 19:06:26,235 database.py:50  INFO show_available_products took 0.015890836715698242 to run
+2020-02-10 19:06:26,235 database.py:50  INFO show_available_products took 0.015890836715698242 to run
+2020-02-10 19:06:26,235 database.py:50  INFO show_available_products took 0.015890836715698242 to run
+2020-02-10 19:06:26,235 database.py:50  INFO show_available_products took 0.015890836715698242 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:26,292 database.py:50  INFO show_rentals took 0.037296295166015625 to run
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,699 database.py:48  INFO import_data took 1.1757395267486572 to process 375 entries
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,768 database.py:50  INFO show_available_products took 0.03972315788269043 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
+2020-02-10 19:06:27,845 database.py:50  INFO show_rentals took 0.043733835220336914 to run
