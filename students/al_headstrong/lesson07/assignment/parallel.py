@@ -78,11 +78,11 @@ def parallel_import(directory_name, product_file, customer_file, rental_file):
         process = Process(target=import_data, args=(directory_name, file_name, database_name, q))
         process.start()
         processes.append(process)
+    for process in processes:
+        process.join()
     for _ in processes:
         ret = q.get()
         return_list.append(ret)
-    for process in processes:
-        process.join()
     return return_list
 
 
