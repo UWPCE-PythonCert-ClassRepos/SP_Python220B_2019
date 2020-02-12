@@ -85,7 +85,8 @@ def generate_data(filename, target_count):
 
         for i in range(current_count + 1, target_count + 1):
             # Add lines in the same format
-            writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, random_date(), 'ao'])
+            writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, random_date(),
+                             'ao' if random.random() > .5 else ''])
 
 def main():
     filename = "data/exercise.csv"
