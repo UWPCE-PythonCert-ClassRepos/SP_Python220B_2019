@@ -1,8 +1,8 @@
 ## Analysis Overview
 | Timing Method  | Baseline | [Change 1](#good_perf-change-1) | [Change 2](#good_perf-change-2) |
 | -------------- | -------- | ------------------------------- | ------------------------------- |
-| Timestamp diff | 4.204673 | 2.522429                        | 2.26                            |
-| time -p        | 4.12     | 2.61                            | 2.293705                        |
+| Timestamp diff | 4.204673 | 2.432901                        | 2.123108                        |
+| time -p        | 4.12     | 2.70                            | 2.16                            |
 ## Initial analysis of poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
 ```python
@@ -128,23 +128,22 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 ```
-With this change, the timestamp diff shows 2.522429 seconds and time shows a runtime of 2.61 seconds.
+With this change, the timestamp diff shows 2.432901 seconds and time shows a runtime of 2.70 seconds.
 ```
->>> import good_perf
->>> good_results_1 = good_perf.analyze('data/exercise.csv')
+>>> import good_perf_1
+>>> good_results_1 = good_perf_1.analyze('data/exercise.csv')
 {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
 'ao' was found 500161 times
 >>> good_results_1
-(datetime.datetime(2020, 2, 12, 14, 5, 18, 766950), datetime.datetime(2020, 2, 12, 14, 5, 21, 289379), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}, 500161)
->>> good_results_1[1] - good_results_1[0]
-datetime.timedelta(seconds=2, microseconds=522429)
+(datetime.datetime(2020, 2, 12, 14, 37, 6, 418506), datetime.datetime(2020, 2, 12, 14, 37, 8, 851407), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}, 500161)
+datetime.timedelta(seconds=2, microseconds=432901)
 ```
 ```
-shodges-ltm:lesson06 shodges$ time -p python3 good_perf.py
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf_1.py
 {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
 'ao' was found 500161 times
-real 2.61
-user 2.52
+real 2.70
+user 2.60
 sys 0.08
 ```
 
@@ -193,22 +192,22 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 ```
-Timestamp diffs now show a runtime of 2.293705 seconds and time shows a runtime of 2.26 seconds.
+Timestamp diffs now show a runtime of 2.123108 seconds and time shows a runtime of 2.16 seconds.
 ```
-shodges-ltm:lesson06 shodges$ time -p python3 good_perf.py
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf_2.py
 {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
 'ao' was found 500161 times
-real 2.26
-user 2.22
+real 2.16
+user 2.12
 sys 0.02
 ```
 ```
->>> import good_perf
->>> good_results_2 = good_perf.analyze('data/exercise.csv')
+>>> import good_perf_2
+>>> good_results_2 = good_perf_2.analyze('data/exercise.csv')
 {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
 'ao' was found 500161 times
 >>> good_results_2
-(datetime.datetime(2020, 2, 12, 14, 28, 30, 813596), datetime.datetime(2020, 2, 12, 14, 28, 33, 107301), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}, 500161)
+(datetime.datetime(2020, 2, 12, 14, 38, 31, 426815), datetime.datetime(2020, 2, 12, 14, 38, 33, 549923), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}, 500161)
 >>> good_results_2[1] - good_results_2[0]
-datetime.timedelta(seconds=2, microseconds=293705)
+datetime.timedelta(seconds=2, microseconds=123108)
 ```
