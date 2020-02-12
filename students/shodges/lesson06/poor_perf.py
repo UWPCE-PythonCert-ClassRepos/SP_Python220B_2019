@@ -74,7 +74,7 @@ def generate_data(filename, target_count):
         # Also get the current length so we know how many new lines to add
         dataset_asis = csvfile.readlines()
         current_count = len(dataset_asis)
-        add_newline = False if dataset_asis[-1][-1] == '\n' else True
+        add_newline = not bool(dataset_asis[-1][-1] == '\n')
 
     with open(filename, 'a') as csvfile:
         if add_newline is True:
