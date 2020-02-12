@@ -5,6 +5,8 @@ poorly performing, poorly written module
 
 import datetime
 import csv
+import random
+import time
 import uuid
 
 def analyze(filename):
@@ -57,6 +59,12 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 
+def random_date(start_date = '01/01/2010', end_date = '12/31/2019'):
+    start_time = time.mktime(time.strptime(start_date, '%m/%d/%Y'))
+    end_time = time.mktime(time.strptime(end_date, '%m/%d/%Y'))
+    random_time = start_time + random.random() * (end_time - start_time)
+    return time.strftime('%m/%d/%Y', time.localtime(random_time))
+
 def generate_data(filename, target_count):
     current_count = 10
 
@@ -70,7 +78,7 @@ def generate_data(filename, target_count):
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
         for i in range(current_count - 1, target_count):
-            writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, 'test', 'ao'])
+            writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, random_date(), 'ao'])
 
 def main():
     filename = "data/exercise.csv"
