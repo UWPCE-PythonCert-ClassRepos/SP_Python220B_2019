@@ -23,8 +23,7 @@ def analyze(filename):
         }
 
         for row in reader:
-            if "ao" in row[6]:
-                found += 1
+            found += int("ao" in row[6])
 
             try:
                 year_count[row[5][6:]] += 1
