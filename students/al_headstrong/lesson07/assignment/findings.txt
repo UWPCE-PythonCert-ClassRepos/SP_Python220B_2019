@@ -1,0 +1,9 @@
+After extending the csv files to 1000 records each, updating 'database' to return a list of tuples for each file, and running the import through timeit, the linear database completes in about 0.2 seconds, or about .07 per 1000 row file.
+
+First parallelization attempt was to use multiprocessing.Process. With no process control or function returns, multiprocessing was faster, but adding in a manager to collect the record data added a lot of overhead, completing in 1.5 seconds for the 1000 row files.
+
+I wondered if multiprocessing would be more beneficial with larger data sets, so tried it on 100,000 row files. It completed in 4.5 seconds, vs 7.79 for the linear run. For very large data sets multiprocessing (at least with the processing attribute) would be helpful, but not for anything much smaller than 100,000 rows, or about a million values. Experimenting with pool yielded very similar results.
+
+
+
+
