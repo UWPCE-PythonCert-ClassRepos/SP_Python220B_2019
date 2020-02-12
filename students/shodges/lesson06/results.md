@@ -1,8 +1,8 @@
 ## Analysis Overview
-| Timing Method  | [Baseline](#poor_perfpy) | [Change 1](#good_perf_1py) | [Change 2](#good_perf_2py) | [Change 3](#good_perf_3py) |
-| -------------- | ------------------------ | -------------------------- | -------------------------- | -------------------------- |
-| Timestamp diff | 4.204673                 | 2.432901                   | 2.123108                   | 1.662266                   |
-| time -p        | 4.12                     | 2.70                       | 2.16                       | 1.73                       |
+| Timing Method  | [Baseline](#poor_perfpy) | [Change 1](#good_perf_1py) | [Change 2](#good_perf_2py) | [Change 3](#good_perf_3py) | [Change 4](#good_perf_4py) |
+| -------------- | ------------------------ | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| Timestamp diff | 4.204673                 | 2.432901                   | 2.123108                   | 1.662266                   | 1.747035                   |
+| time -p        | 4.12                     | 2.70                       | 2.16                       | 1.73                       | 1.79                       |
 ## poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
 
@@ -71,7 +71,7 @@ sys 0.02
 datetime.timedelta(seconds=2, microseconds=123108)
 ```
 
-## good_perf change 3
+## good_perf_3.py
 Rather than the successive conditionals for the year analysis, I changed it to directly leverage the year as the key.  We'll of course need to catch a KeyError here in case we have years in the dataset that we're not interested in counting (which we do).
 
 We now get runtimes of 1.662266 seconds and 1.73 seconds.
@@ -91,5 +91,28 @@ shodges-ltm:lesson06 shodges$ time -p python3 good_perf_3.py
 'ao' was found 500161 times
 real 1.73
 user 1.69
+sys 0.02
+```
+
+## good_perf_4.py
+This time I removed the conditional looking for 'ao' and add the integer representation of the boolean response of ```'ao' in row[6]``` to ```found```.
+
+We now get runtimes of 1.747035 seconds and 1.79 seconds.  We've actually made the runtime a bit worse.
+```
+>>> import good_perf_4
+>>> good_results_4 = good_perf_4.analyze('data/exercise.csv')
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}
+'ao' was found 500161 times
+>>> good_results_4
+(datetime.datetime(2020, 2, 12, 14, 58, 33, 452492), datetime.datetime(2020, 2, 12, 14, 58, 35, 199527), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}, 500161)
+>>> good_results_4[1] - good_results_4[0]
+datetime.timedelta(seconds=1, microseconds=747035)
+```
+```
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf_4.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}
+'ao' was found 500161 times
+real 1.79
+user 1.75
 sys 0.02
 ```
