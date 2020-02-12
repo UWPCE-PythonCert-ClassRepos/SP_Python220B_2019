@@ -41,4 +41,4 @@ def generate_data(filename, target_count):
                              'ao' if random.random() > .5 else ''])
 
 if __name__ == "__main__":
-    generate_data('data/exercise.csv', 100)
+    generate_data('data/exercise.csv', 1000000)
