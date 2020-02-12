@@ -10,6 +10,9 @@ import time
 import uuid
 
 def analyze(filename):
+    """
+    Analyze filename for data trends.
+    """
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -69,6 +72,10 @@ def random_date(start_date='01/01/2010', end_date='12/31/2019'):
     return time.strftime('%m/%d/%Y', time.localtime(random_time))
 
 def generate_data(filename, target_count):
+    """
+    Generate additional random data in filename.  target_count provides a declarative end-state
+    for the count of records in the CSV.
+    """
     with open(filename, 'r') as csvfile:
         # Evaluate whether the data file has a newline at the end of the file
         # Also get the current length so we know how many new lines to add
@@ -89,6 +96,9 @@ def generate_data(filename, target_count):
                              'ao' if random.random() > .5 else ''])
 
 def main():
+    """
+    Defines behavior for main script operation.
+    """
     filename = "data/exercise.csv"
     analyze(filename)
 
