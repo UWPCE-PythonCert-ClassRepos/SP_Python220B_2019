@@ -1,8 +1,8 @@
 ## Analysis Overview
 | Timing Method  | Baseline | [Change 1](#good_perf-change-1) |
-| -------------- | -------- | --------------------- |
-| Timestamp diff | 4.204673 | 2.522429              |
-| time -p        | 4.12     | 2.61                  |
+| -------------- | -------- | ------------------------------- |
+| Timestamp diff | 4.204673 | 2.522429                        |
+| time -p        | 4.12     | 2.61                            |
 ## Initial analysis of poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
 ```python
