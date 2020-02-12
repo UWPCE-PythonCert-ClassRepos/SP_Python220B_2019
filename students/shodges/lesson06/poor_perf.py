@@ -59,15 +59,6 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 
-def random_date(start_date='01/01/2010', end_date='12/31/2019'):
-    """
-    Generate a random date between start_date and end_date, and return in the same format.
-    """
-    start_time = time.mktime(time.strptime(start_date, '%m/%d/%Y'))
-    end_time = time.mktime(time.strptime(end_date, '%m/%d/%Y'))
-    random_time = start_time + random.random() * (end_time - start_time)
-    return time.strftime('%m/%d/%Y', time.localtime(random_time))
-
 def main():
     """
     Defines behavior for main script operation.
