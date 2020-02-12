@@ -126,3 +126,38 @@ sys 0.02
 
 ## Final results
 [Change 3](#good_perf_3py) resulted in a much more optimized version of [poor_perf.py](#poor_perfpy).  [Further changes](#good_perf_4py) resulted in slight increases in code runtime at the cost of decreased code readability.  As shown in the analysis block, the input and output are identical to poor_perf.py (after I corrected the logic error), so the core functionality of the analysis remained the same -- just faster!
+
+However, to ensure the output is the same as the original, the final submission has two copies with aligned outputs:
+poor_perf.py and good_perf.py (where the logic error is preserved in poor_perf.py and accounted for in good_perf.py)
+
+```
+shodges-ltm:lesson06 shodges$ time -p python3 poor_perf.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
+'ao' was found 500161 times
+real 4.04
+user 3.93
+sys 0.10
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
+'ao' was found 500161 times
+real 1.85
+user 1.82
+sys 0.02
+```
+and poor_perf_corrected.py and good_perf_corrected.py (where the logic error is corrected in poor_perf.py and good_perf.py utilizes change 3 without a workaround)
+```
+shodges-ltm:lesson06 shodges$ time -p python3 poor_perf_corrected.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}
+'ao' was found 500161 times
+real 4.08
+user 3.97
+sys 0.09
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf_corrected.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}
+'ao' was found 500161 times
+real 1.76
+user 1.72
+sys 0.02
+```
+
+As shown, there is a slight time penalty for working around the error, but we want to make sure that the data is output as expected.  Whether intended or not, the counting of data with a year of 2018 as 2017 is expected, so we want to ensure we're comparing like for like.
