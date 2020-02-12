@@ -12,7 +12,6 @@ def analyze(filename):
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
         found = 0
         year_count = {
             "2013": 0,
@@ -22,9 +21,8 @@ def analyze(filename):
             "2017": 0,
             "2018": 0
         }
-        
+
         for row in reader:
-            lrow = list(row)
             if "ao" in row[6]:
                 found += 1
 
