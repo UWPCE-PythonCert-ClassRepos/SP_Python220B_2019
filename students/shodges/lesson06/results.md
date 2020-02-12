@@ -128,15 +128,7 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 ```
-With this change, time shows a runtime of 2.61 seconds and the timestamp diff shows 2.522429 seconds.
-```
-shodges-ltm:lesson06 shodges$ time -p python3 good_perf.py
-{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
-'ao' was found 500161 times
-real 2.61
-user 2.52
-sys 0.08
-```
+With this change, the timestamp diff shows 2.522429 seconds and time shows a runtime of 2.61 seconds.
 ```
 >>> import good_perf
 >>> good_results_1 = good_perf.analyze('data/exercise.csv')
@@ -146,6 +138,14 @@ sys 0.08
 (datetime.datetime(2020, 2, 12, 14, 5, 18, 766950), datetime.datetime(2020, 2, 12, 14, 5, 21, 289379), {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}, 500161)
 >>> good_results_1[1] - good_results_1[0]
 datetime.timedelta(seconds=2, microseconds=522429)
+```
+```
+shodges-ltm:lesson06 shodges$ time -p python3 good_perf.py
+{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
+'ao' was found 500161 times
+real 2.61
+user 2.52
+sys 0.08
 ```
 
 ## good_perf change 2
