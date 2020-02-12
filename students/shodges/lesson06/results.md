@@ -1,3 +1,7 @@
+## Analysis Overview
+| Timing Method  | Baseline | [Change 1](#change-1) |
+| Timestamp diff | 4.204673 | 2.522429              |
+| time -p        | 4.12     | 2.61                  |
 ## Initial analysis of poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
 ```python
@@ -75,7 +79,7 @@ user 4.00
 sys 0.10
 ```
 
-## good_perf analysis 1
+## good_perf change 1 {#change-1}
 I removed the for loop that processed the CSV a second time and moved its analysis into the primary for loop:
 ```python
 def analyze(filename):
