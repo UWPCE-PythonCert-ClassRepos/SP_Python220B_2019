@@ -1,5 +1,6 @@
 ## Analysis Overview
 | Timing Method  | Baseline | [Change 1](#change-1) |
+| -------------- | -------- | --------------------- |
 | Timestamp diff | 4.204673 | 2.522429              |
 | time -p        | 4.12     | 2.61                  |
 ## Initial analysis of poor_perf.py
