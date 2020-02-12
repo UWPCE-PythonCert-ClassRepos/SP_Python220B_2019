@@ -26,18 +26,10 @@ def analyze(filename):
             if "ao" in row[6]:
                 found += 1
 
-            if row[5][6:] == '2013':
-                year_count["2013"] += 1
-            if row[5][6:] == '2014':
-                year_count["2014"] += 1
-            if row[5][6:] == '2015':
-                year_count["2015"] += 1
-            if row[5][6:] == '2016':
-                year_count["2016"] += 1
-            if row[5][6:] == '2017':
-                year_count["2017"] += 1
-            if row[5][6:] == '2018':
-                year_count["2017"] += 1
+            try:
+                year_count[row[5][6:]] += 1
+            except KeyError:
+                pass
 
         print(year_count)
         print(f"'ao' was found {found} times")
