@@ -77,7 +77,7 @@ def generate_data(filename, target_count):
         add_newline = False if dataset_asis[-1][-1] == '\n' else True
 
     with open(filename, 'a') as csvfile:
-        if add_newline == True:
+        if add_newline is True:
             # If there's no newline at the end, add one
             csvfile.write('\n')
 
