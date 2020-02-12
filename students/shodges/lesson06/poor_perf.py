@@ -83,7 +83,7 @@ def generate_data(filename, target_count):
 
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
-        for i in range(current_count - 1, target_count):
+        for i in range(current_count + 1, target_count + 1):
             # Add lines in the same format
             writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, random_date(), 'ao'])
 
