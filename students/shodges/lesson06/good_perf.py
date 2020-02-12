@@ -16,7 +16,7 @@ def analyze(filename):
         found = 0
         for row in reader:
             lrow = list(row)
-            if "ao" in line[6]:
+            if "ao" in row[6]:
                 found += 1
             if lrow[5] > '00/00/2012':
                 new_ones.append((lrow[5], lrow[0]))
