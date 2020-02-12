@@ -69,11 +69,12 @@ def random_date(start_date = '01/01/2010', end_date = '12/31/2019'):
     return time.strftime('%m/%d/%Y', time.localtime(random_time))
 
 def generate_data(filename, target_count):
-    current_count = 10
-
     with open(filename, 'r') as csvfile:
         # Evaluate whether the data file has a newline at the end of the file
-        add_newline = False if csvfile.readlines()[-1][-1] == '\n' else True
+        # Also get the current length so we know how many new lines to add
+        dataset_asis = csvfile.readlines()
+        current_count = len(dataset_asis)
+        add_newline = False if dataset_asis[-1][-1] == '\n' else True
 
     with open(filename, 'a') as csvfile:
         if add_newline == True:
