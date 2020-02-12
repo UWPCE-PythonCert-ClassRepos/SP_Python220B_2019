@@ -1,65 +1,12 @@
 ## Analysis Overview
-| Timing Method  | Baseline | [Change 1](#good_perf-change-1) | [Change 2](#good_perf-change-2) | [Change 3](#good_perf-change-3) |
-| -------------- | -------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| Timestamp diff | 4.204673 | 2.432901                        | 2.123108                        | 1.662266                        |
-| time -p        | 4.12     | 2.70                            | 2.16                            | 1.73                            |
-## Initial analysis of poor_perf.py
+| Timing Method  | Baseline(#poor_perf.py) | [Change 1](#good_perf_1.py) | [Change 2](#good_perf_2.py) | [Change 3](#good_perf_3.py) |
+| -------------- | ----------------------- | --------------------------- | --------------------------- | --------------------------- |
+| Timestamp diff | 4.204673                | 2.432901                    | 2.123108                    | 1.662266                    |
+| time -p        | 4.12                    | 2.70                        | 2.16                        | 1.73                        |
+## poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
-```python
-def analyze(filename):
-    """
-    Analyze filename for data trends.
-    """
-    start = datetime.datetime.now()
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        for row in reader:
-            lrow = list(row)
-            if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
 
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
-
-        for new in new_ones:
-            if new[0][6:] == '2013':
-                year_count["2013"] += 1
-            if new[0][6:] == '2014':
-                year_count["2014"] += 1
-            if new[0][6:] == '2015':
-                year_count["2015"] += 1
-            if new[0][6:] == '2016':
-                year_count["2016"] += 1
-            if new[0][6:] == '2017':
-                year_count["2017"] += 1
-            if new[0][6:] == '2018':
-                year_count["2017"] += 1
-
-        print(year_count)
-
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-
-        found = 0
-
-        for line in reader:
-            lrow = list(line)
-            if "ao" in line[6]:
-                found += 1
-
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
-
-    return (start, end, year_count, found)
-```
-With 1,000,000 records, analyze() took 4.204673 seconds according to the difference in timestamps:
+With 1,000,000 records, analyze() took 4.204673 seconds according to the difference in timestamps and 4.12 seconds according to time.
 ```
 >>> import poor_perf
 >>> poor_results = poor_perf.analyze('data/exercise.csv')
@@ -70,7 +17,6 @@ With 1,000,000 records, analyze() took 4.204673 seconds according to the differe
 >>> poor_results[1] - poor_results[0]
 datetime.timedelta(seconds=4, microseconds=204673)
 ```
-And 4.12 seconds according to time:
 ```
 shodges-ltm:lesson06 shodges$ time -p python3 poor_perf.py
 {'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 199631, '2018': 0}
@@ -80,54 +26,9 @@ user 4.00
 sys 0.10
 ```
 
-## good_perf change 1
-I removed the for loop that processed the CSV a second time and moved its analysis into the primary for loop:
-```python
-def analyze(filename):
-    """
-    Analyze filename for data trends.
-    """
-    start = datetime.datetime.now()
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        found = 0
-        for row in reader:
-            lrow = list(row)
-            if "ao" in row[6]:
-                found += 1
-            if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
+## good_perf_1.py
+I removed the for loop that processed the CSV a second time and moved its analysis into the primary for loop.
 
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
-
-        for new in new_ones:
-            if new[0][6:] == '2013':
-                year_count["2013"] += 1
-            if new[0][6:] == '2014':
-                year_count["2014"] += 1
-            if new[0][6:] == '2015':
-                year_count["2015"] += 1
-            if new[0][6:] == '2016':
-                year_count["2016"] += 1
-            if new[0][6:] == '2017':
-                year_count["2017"] += 1
-            if new[0][6:] == '2018':
-                year_count["2017"] += 1
-
-        print(year_count)
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
-
-    return (start, end, year_count, found)
-```
 With this change, the timestamp diff shows 2.432901 seconds and time shows a runtime of 2.70 seconds.
 ```
 >>> import good_perf_1
@@ -147,51 +48,9 @@ user 2.60
 sys 0.08
 ```
 
-## good_perf change 2
-I removed the usage of new_ones (and the secondary processing for loop) and moved the date analysis to the primary for loop:
-```python
-def analyze(filename):
-    """
-    Analyze filename for data trends.
-    """
-    start = datetime.datetime.now()
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        found = 0
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
+## good_perf_2.py
+I removed the usage of new_ones (and the secondary processing for loop) and moved the date analysis to the primary for loop.
 
-        for row in reader:
-            lrow = list(row)
-            if "ao" in row[6]:
-                found += 1
-
-            if row[5][6:] == '2013':
-                year_count["2013"] += 1
-            if row[5][6:] == '2014':
-                year_count["2014"] += 1
-            if row[5][6:] == '2015':
-                year_count["2015"] += 1
-            if row[5][6:] == '2016':
-                year_count["2016"] += 1
-            if row[5][6:] == '2017':
-                year_count["2017"] += 1
-            if row[5][6:] == '2018':
-                year_count["2017"] += 1
-
-        print(year_count)
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
-
-    return (start, end, year_count, found)
-```
 Timestamp diffs now show a runtime of 2.123108 seconds and time shows a runtime of 2.16 seconds.
 ```
 shodges-ltm:lesson06 shodges$ time -p python3 good_perf_2.py
@@ -214,39 +73,7 @@ datetime.timedelta(seconds=2, microseconds=123108)
 
 ## good_perf change 3
 Rather than the successive conditionals for the year analysis, I changed it to directly leverage the year as the key.  We'll of course need to catch a KeyError here in case we have years in the dataset that we're not interested in counting (which we do).
-```python
-def analyze(filename):
-    """
-    Analyze filename for data trends.
-    """
-    start = datetime.datetime.now()
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        found = 0
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
 
-        for row in reader:
-            if "ao" in row[6]:
-                found += 1
-
-            try:
-                year_count[row[5][6:]] += 1
-            except KeyError:
-                pass
-
-        print(year_count)
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
-
-    return (start, end, year_count, found)
-```
 We now get runtimes of 1.662266 seconds and 1.73 seconds.
 ```
 >>> import good_perf_3
