@@ -60,6 +60,9 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def random_date(start_date = '01/01/2010', end_date = '12/31/2019'):
+    """
+    Generate a random date between start_date and end_date, and return in the same format.
+    """
     start_time = time.mktime(time.strptime(start_date, '%m/%d/%Y'))
     end_time = time.mktime(time.strptime(end_date, '%m/%d/%Y'))
     random_time = start_time + random.random() * (end_time - start_time)
@@ -69,15 +72,18 @@ def generate_data(filename, target_count):
     current_count = 10
 
     with open(filename, 'r') as csvfile:
+        # Evaluate whether the data file has a newline at the end of the file
         add_newline = False if csvfile.readlines()[-1][-1] == '\n' else True
 
     with open(filename, 'a') as csvfile:
         if add_newline == True:
+            # If there's no newline at the end, add one
             csvfile.write('\n')
 
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
         for i in range(current_count - 1, target_count):
+            # Add lines in the same format
             writer.writerow([uuid.uuid4(), i, i + 1, i + 2, i + 3, random_date(), 'ao'])
 
 def main():
