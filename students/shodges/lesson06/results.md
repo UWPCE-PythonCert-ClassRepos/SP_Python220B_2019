@@ -1,8 +1,8 @@
 ## Analysis Overview
-| Timing Method  | Baseline(#poor_perf.py) | [Change 1](#good_perf_1.py) | [Change 2](#good_perf_2.py) | [Change 3](#good_perf_3.py) |
-| -------------- | ----------------------- | --------------------------- | --------------------------- | --------------------------- |
-| Timestamp diff | 4.204673                | 2.432901                    | 2.123108                    | 1.662266                    |
-| time -p        | 4.12                    | 2.70                        | 2.16                        | 1.73                        |
+| Timing Method  | [Baseline](#poor_perfpy) | [Change 1](#good_perf_1py) | [Change 2](#good_perf_2py) | [Change 3](#good_perf_3py) |
+| -------------- | ------------------------ | -------------------------- | -------------------------- | -------------------------- |
+| Timestamp diff | 4.204673                 | 2.432901                   | 2.123108                   | 1.662266                   |
+| time -p        | 4.12                     | 2.70                       | 2.16                       | 1.73                       |
 ## poor_perf.py
 These tests establish the baseline utilizing the following analyze() function:
 
