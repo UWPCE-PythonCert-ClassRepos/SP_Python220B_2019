@@ -74,6 +74,13 @@ datetime.timedelta(seconds=2, microseconds=123108)
 ## good_perf_3.py
 Rather than the successive conditionals for the year analysis, I changed it to directly leverage the year as the key.  We'll of course need to catch a KeyError here in case we have years in the dataset that we're not interested in counting (which we do).
 
+This also revealed a logic flaw in the original code:
+```python
+    if new[0][6:] == '2018':
+        year_count["2017"] += 1
+```
+Now that we're properly recording 2018 (and by extension, 2017) counts, the results will look a bit different.  The corrected results from poor_perf.py are: ```{'2013': 100148, '2014': 99915, '2015': 100652, '2016': 100129, '2017': 99778, '2018': 99853}```
+
 We now get runtimes of 1.662266 seconds and 1.73 seconds.
 ```
 >>> import good_perf_3
