@@ -118,4 +118,4 @@ sys 0.02
 ```
 
 ## Final results
-[Change 3](#good_perf_3py) Resulted in a much more optimized version of [poor_perf.py](#poor_perfpy).  [Further changes](#good_perf_4py) resulted in slight increases in code runtime at the cost of decreased code readability.
+[Change 3](#good_perf_3py) resulted in a much more optimized version of [poor_perf.py](#poor_perfpy).  [Further changes](#good_perf_4py) resulted in slight increases in code runtime at the cost of decreased code readability.
