@@ -2,6 +2,11 @@
 Functionality to generate additional test data.
 """
 
+import csv
+import random
+import time
+import uuid
+
 def generate_data(filename, target_count):
     """
     Generate additional random data in filename.  target_count provides a declarative end-state

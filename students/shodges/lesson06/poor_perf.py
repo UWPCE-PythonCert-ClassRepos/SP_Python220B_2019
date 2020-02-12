@@ -5,9 +5,6 @@ poorly performing, poorly written module
 
 import datetime
 import csv
-import random
-import time
-import uuid
 
 def analyze(filename):
     """
