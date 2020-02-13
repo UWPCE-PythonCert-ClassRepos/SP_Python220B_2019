@@ -1,6 +1,8 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 
+import sys
+sys.path.append('./inventory_management')
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture

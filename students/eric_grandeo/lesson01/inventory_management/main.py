@@ -2,10 +2,10 @@
 This launches the user interface for the inventory management system
 """
 import sys
-from inventory_management import market_prices
-from inventory_management import inventory_class
-from inventory_management import furniture_class
-from inventory_management import electric_appliances_class
+import market_prices
+import inventory_class
+import furniture_class
+import electric_appliances_class
 
 FULL_INVENTORY = {}
 
@@ -28,11 +28,11 @@ def main_menu(user_prompt=None):
         user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
-#def get_price(item_code):
-#    """
-#    Gets Price
-#    """
-#    print("Get price")
+def get_price(item_code):
+    """
+    Gets Price
+    """
+    return market_prices.get_latest_price(item_code)
 
 def add_new_item():
     """
