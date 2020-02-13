@@ -3,7 +3,7 @@ This is a module for Electric applicances.
 Classes:
     electricAppliances: class for electric appliances
 """
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 # pylint: disable=R0913
 
@@ -14,7 +14,7 @@ class ElectricAppliances(Inventory): # pylint: disable=too-few-public-methods
         productCode: Product Code.
         decription: appliance description.
         marketPrice: market price.
-        rentalPrice: renta price.
+        rentalPrice: rental price.
         brand: name brand.
         voltage: voltage.
     """
