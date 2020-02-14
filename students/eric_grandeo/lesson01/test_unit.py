@@ -6,6 +6,7 @@ sys.path.append('./inventory_management')
 from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
+from inventory_management.market_prices import get_latest_price
 
 class InventoryTests(TestCase):
 
@@ -36,7 +37,10 @@ class FurnitureTest(TestCase):
                      "size": "L"}
         self.assertDictEqual(test_furn_dict, test_furn.return_as_dictionary())
 
-
+class MarketPriceTest(TestCase):
+    
+    def test_market_price(self):
+        self.assertEqual(get_latest_price('test'),24)
 
 
 
