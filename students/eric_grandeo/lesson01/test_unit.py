@@ -1,5 +1,6 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
+from unittest.mock import patch
 
 import sys
 sys.path.append('./inventory_management')
@@ -7,6 +8,7 @@ from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management.market_prices import get_latest_price
+from inventory_management.main import main_menu, get_price, add_new_item, item_info, exit_program
 
 class InventoryTests(TestCase):
 
@@ -42,5 +44,15 @@ class MarketPriceTest(TestCase):
     def test_market_price(self):
         self.assertEqual(get_latest_price('test'),24)
 
-
-
+class MainTest(TestCase):
+    
+    def test_main_menu(self):
+        test_input = {"1": "add_new_item", "2": "item_info", "q": "exit_program"}
+        for key, value in test_input.items():
+            with patch('builtins.input', side_effect=key): 
+                main_resp = main_menu()
+                self.assertEqual(main_resp.__name__, value)
+                
+    
+            
+    
