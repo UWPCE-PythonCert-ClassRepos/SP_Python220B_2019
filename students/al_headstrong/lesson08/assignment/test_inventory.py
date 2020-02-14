@@ -3,8 +3,8 @@ Module for testing inventory module.
 """
 
 from unittest import TestCase
-import inventory
 import csv
+import inventory
 
 
 class InventoryTest(TestCase):
@@ -24,19 +24,17 @@ class InventoryTest(TestCase):
         open(self.test_invoice_file, 'w').close()
         inventory.add_furniture("rented_items.csv", "Elisa Miles", "LR04", "Leather Sofa", 25)
         inventory.add_furniture("rented_items.csv", "Edward Data", "KT78", "Kitchen Table", 10)
-        with open(self.test_invoice_file) as f:
-            contents = csv.reader(f)
-            for j,k in zip(contents, self.test_furniture_list):
-                self.assertEqual(j,k)
+        with open(self.test_invoice_file) as file:
+            contents = csv.reader(file)
+            for j, k in zip(contents, self.test_furniture_list):
+                self.assertEqual(j, k)
 
     def test_single_customer(self):
         """Test single_customer function."""
         open(self.test_invoice_file, 'w').close()
         create_invoice = inventory.single_customer("Susan Wong", "rented_items.csv")
         create_invoice("test_items.csv")
-        with open(self.test_invoice_file) as f:
-            contents = csv.reader(f)
+        with open(self.test_invoice_file) as file:
+            contents = csv.reader(file)
             for j, k in zip(contents, self.test_single_list):
                 self.assertEqual(j, k)
-
-
