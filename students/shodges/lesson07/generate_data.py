@@ -40,7 +40,7 @@ def generate_data(filename, target_count, data_type):
                             'napple.com', 'oreoz.com', 'pinternet.com', 'quorum.com']
 
             rows = [['cust_' + str(i),
-                     fn:=random.choice(first_names),
+                     fn:=random.choice(first_names) + " " +
                      ln:=random.choice(last_names),
                      str(random.randint(1,99999)) + ' ' + random.choice(street_names),
                      random.randint(1000000000,9999999999),
