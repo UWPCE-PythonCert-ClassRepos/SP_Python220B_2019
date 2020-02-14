@@ -7,6 +7,7 @@ show_available_products() to show available products, accounting for existing re
 show_rentals(product_id) to show all active rentals for product_id
 """
 import csv
+import datetime
 import logging
 from pathlib import Path
 from pymongo import MongoClient
@@ -67,6 +68,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
     """
+    start = datetime.datetime.now()
     data_directory = Path(directory_name)
     with open(data_directory/product_file, mode='r') as csv_input:
         product_list = list(csv.DictReader(csv_input))
@@ -102,6 +104,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             logging.debug('Wrote %d records to rentals', len(rentals_res.inserted_ids))
         else:
             logging.warning('Failed to write records to rentals')
+
+        logging.debug('Database import complete in %d seconds',
+                      (datetime.datetime.now() - start).total_seconds())
 
     return ((len(products_res.inserted_ids), len(customer_res.inserted_ids),
              len(rentals_res.inserted_ids)), (((0 if products_res.acknowledged is True else 1)
