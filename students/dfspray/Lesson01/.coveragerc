@@ -1,9 +1,0 @@
-[report]
-# Regexes for lines to exclude from consideration
-exclude_lines =
-    # main loop lines
-    if __name__ == '__main__':
-    while True:
-        print(FULL_INVENTORY)
-        main_menu()()
-        input("Press Enter to continue...........")

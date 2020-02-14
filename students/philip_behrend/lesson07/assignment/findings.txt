@@ -1,7 +1,0 @@
-It appears that parallel processing does not adequately improve performance
-of the module. For the linear case, data import and insertion into MongoDB took
-about 0.12 seconds for each file. In the parallel case, the same operation took
-about 0.5 seconds due to the fact that a separate function was created to allow for
-threading.
-
-It is my recommendation to remain with the linear module in this case.

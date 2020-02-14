@@ -1,9 +1,0 @@
-product_id,description,product_type,quantity_available
-prd001,desk,office,3
-prd002,dining table,living room,3
-prd003,sofa,living room,4
-prd004,microwave,kitchen,5
-prd005,office chair,office,6
-prd006,toaster,kitchen,2
-prd007,tv,living room,2
-prd008,soundbar,living room,0

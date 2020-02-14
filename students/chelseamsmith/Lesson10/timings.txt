@@ -1,5 +1,0 @@
-2019-08-12 18:27:15,631database.py:41  INFO import_data took 0.0189971923828125 seconds to process 13 records.
-2019-08-12 18:27:16,459database.py:41  INFO import_data took 0.8281955718994141 seconds to process 3000 records.
-2019-08-12 18:27:56,610database.py:41  INFO import_data took 40.15020513534546 seconds to process 150000 records.
-2019-08-12 18:27:56,920database.py:43  INFO show_available_products took 0.309070348739624 seconds.
-2019-08-12 18:27:57,005database.py:43  INFO show_rentals took 0.07701754570007324 seconds.

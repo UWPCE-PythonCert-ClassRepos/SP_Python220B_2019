@@ -1,6 +1,0 @@
-The function import_data took 8 seconds to process 39997 records
-
-The function show_available_products took 32 seconds to process 19998 records
-
-The function show_rentals took 30 seconds to process 9995 records
-

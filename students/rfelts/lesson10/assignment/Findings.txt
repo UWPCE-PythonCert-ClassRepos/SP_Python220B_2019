@@ -1,5 +1,0 @@
-The processing time for the import_data function seems to degrade faster as more records 
-are than other functions. This can be seen in the timing log where the import_data took 
-approx. 0.187 seconds to process 14 records and grew to approx. 0.258 seconds to process 
-205 records. While the show_available_products increased from approx. 0.00601 seconds to 
-process 4 records to approx. 0.00682 seconds to process 99 records.

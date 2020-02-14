@@ -1,5 +1,0 @@
-2019-09-06 00:59:26,672 basic_operations.py:52  INFO New customer added.
-2019-09-06 00:59:26,890 basic_operations.py:52  INFO New customer added.
-2019-09-06 00:59:26,892 basic_operations.py:74  INFO Customer 2 was found
-2019-09-06 00:59:26,992 basic_operations.py:94  INFO Customer 2 was deleted successfully
-2019-09-06 00:59:26,995 basic_operations.py:77  WARNING Customer 2 is not found in the database

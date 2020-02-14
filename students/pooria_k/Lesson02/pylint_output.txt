@@ -1,7 +1,0 @@
-f45c89aa3a19% pylint charges_calc.py
-No config file found, using default configuration
-************* Module charges_calc
-E: 64,15: Undefined variable 'FileNotFoundError' (undefined-variable)
-
-------------------------------------------------------------------
-Your code has been rated at 9.32/10 (previous run: 9.32/10, +0.00),

@@ -1,4 +1,0 @@
-When the program is run in parallel it is two times faster.
-
-Linear program time: 60.755775199999995 seconds
-Parallel program time: 30.158108499999997 seconds

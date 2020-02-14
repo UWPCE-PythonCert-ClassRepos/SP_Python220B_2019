@@ -1,2 +1,0 @@
-pandas==0.25.1
-pymongo==3.9.0

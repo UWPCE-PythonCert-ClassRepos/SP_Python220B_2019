@@ -1,9 +1,0 @@
-rental_id,customer_id,product_id
-rnt001,user003,prd001
-rnt002,user005,prd005
-rnt003,user002,prd004
-rnt004,user006,prd009
-rnt005,user006,prd010
-rnt006,user001,prd002
-rnt007,user002,prd001
-rnt008,user002,prd005

@@ -1,1 +1,0 @@
-Python code for UWPCE-PythonCert Class PY220, written by Chris Lombardi

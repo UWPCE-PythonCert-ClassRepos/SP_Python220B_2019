@@ -1,2 +1,0 @@
-The amount of time import_data takes becomes progressively longer as the amount of data increases, becoming cumbersome at high volumes.
-Changes to the import data code to improve quality is advisable.

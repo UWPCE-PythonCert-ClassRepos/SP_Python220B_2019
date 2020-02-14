@@ -1,6 +1,0 @@
-Code used to generate additional data (1 mil lines): generate_data.py
-
-Findings:
-- The original poor_perf code opened and read the file twice; this was adjusted so it only read the rows/file once
-- The original file also went through each key by name; this was adjusted so that the keys could be referenced using slicing and the count passed over if the key does not exist in the dictionary
-- The original file created a list of on the line/row data when searching for 'ao' in the last column of the data - this was unnecessary as the row can be indexed, so it was removed

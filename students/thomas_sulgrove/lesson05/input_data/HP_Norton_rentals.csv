@@ -1,6 +1,0 @@
-rental_id,product_id,customer_id,amount,time,price,total
-rnt001,prd001,user001,1,7,10,70
-rnt002,prd005,user002,1,14,20,280
-rnt003,prd002,user003,'5,3,20,60
-rnt004,prd003,user004,2,2,10,20
-rnt005,prd001,user005,1,7,70,490
