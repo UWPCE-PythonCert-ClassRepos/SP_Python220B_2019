@@ -2,7 +2,7 @@
 
 # pylint: disable=unused-wildcard-import
 # pylint: disable=wildcard-import
-# pylint: disable=broad-except
+
 
 import logging
 from unittest import TestCase
@@ -19,7 +19,7 @@ LOGGER.info("START: test_unit")
 try:
     LOGGER.info("Creating tables in database")
     DATABASE.create_tables([Customers])
-except Exception as e_val:
+except IntegrityError as e_val:
     LOGGER.warning("Could not create tables")
     LOGGER.warning(e_val)
 
@@ -101,7 +101,7 @@ class CustomerAdd(TestCase):
         # Then
         try:
             basic_operations.add_customer(*CUSTOMER1)
-        except Exception as e_val:
+        except IntegrityError as e_val:
             self.fail(e_val)
 
         db_customer1 = Customers.get(Customers.customer_id == "FY2020-001")
@@ -114,7 +114,7 @@ class CustomerTest(TestCase):
     def setUp(self):
         try:
             DATABASE.connect()
-        except Exception as e_val:
+        except NotImplementedError as e_val:
             LOGGER.debug(e_val)
         basic_operations.add_customer(*CUSTOMER1)
 
@@ -122,11 +122,11 @@ class CustomerTest(TestCase):
         try:
             db_customer = Customers.get(Customers.customer_id == "FY2020-001")
             db_customer.delete_instance()
-        except Exception as e_val:
+        except NotImplementedError as e_val:
             LOGGER.debug(e_val)
         try:
             DATABASE.close()
-        except Exception as e_val:
+        except NotImplementedError as e_val:
             LOGGER.debug(e_val)
 
     def test_search_customer_exists(self):
@@ -188,7 +188,7 @@ class CustomerTest(TestCase):
         try:
             # Just log warning, no exception and no failure
             basic_operations.delete_customer("Scooby")
-        except Exception as e_val:
+        except DoesNotExist as e_val:
             self.fail(e_val)
 
     def test_update_customer_credit(self):
@@ -216,7 +216,7 @@ class CustomerTest(TestCase):
         # Then
         try:
             basic_operations.update_customer_credit("FY2024-401", new_credit)
-        except Exception as e_val:
+        except DoesNotExist as e_val:
             self.fail("Non-existing id credit limit failure")
             LOGGER.warning(e_val)
 
@@ -234,6 +234,15 @@ class CustomerTest(TestCase):
 
         basic_operations.delete_customer(CUSTOMER2[0])
         basic_operations.delete_customer(CUSTOMER3[0])
+
+    def test_list_active_customer_when_there_are_none(self):
+        """Test the function list_active_customers when no active customers exist"""
+        LOGGER.info("*** TEST ***: list_active_customers when none")
+        # Given
+        basic_operations.delete_customer("FY2020-001")
+
+        # When
+        self.assertEqual(0, basic_operations.list_active_customers())
 
     def test_list_active_emails(self):
         """Test the function list_active_emails"""
