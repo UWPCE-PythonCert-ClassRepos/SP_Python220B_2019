@@ -1,9 +1,0 @@
-rental_id,user_id,product_id
-1,cust_1,SOFA
-2,cust_1,DININGTABLE
-3,cust_2,DININGTABLE
-4,cust_2,OVEN
-5,cust_3,SOFA
-6,cust_3,DININGTABLE
-7,cust_3,OVEN
-8,cust_3,MOPED
