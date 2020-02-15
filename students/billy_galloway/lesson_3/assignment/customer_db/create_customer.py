@@ -3,13 +3,13 @@
 """
 
 import logging
+from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-from .customer_model import Customer
 
-logger.info('Build classes from the model in the database')
+logger.info(f'Build customer.db database')
 
 database.create_tables([
         Customer
