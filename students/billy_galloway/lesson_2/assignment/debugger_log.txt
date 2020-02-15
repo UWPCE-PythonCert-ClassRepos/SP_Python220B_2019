@@ -1,0 +1,263 @@
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44 B       args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+(Pdb) c
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3     '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44 B       args = parse_cmd_arguments()
+ 45  ->     data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) l
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25  -> def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+(Pdb) s
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'units_rented': 8}
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) pp renta_start
+*** NameError: name 'renta_start' is not defined
+(Pdb) pp rental_start 
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) l
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  ->             value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(34)calculate_additional_fields()
+-> except:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'total_price': -2542,
+ 'units_rented': 8}
+(Pdb) l
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  ->         except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+(Pdb) n
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) l
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35  ->             exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+(Pdb) n
+--Return--
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(35)calculate_additional_fields()->None
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) l
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44 B       args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46  ->     data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+[EOF]
+(Pdb) n
+--Return--
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(46)<module>()->None
+-> data = calculate_additional_fields(data)
+(Pdb) n
+SystemExit: 0
+> <string>(1)<module>()->None
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+(Pdb) n
+The program exited via sys.exit(). Exit status: 0
+> r:\uw_python\sp_online_py220b\students\billy_galloway\lesson_2\assignment\charges_calc_copy.py(3)<module>()
+
+# Switching rental start and end 
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) l
+ 76  	                switch_end = value['rental_start']
+ 77
+ 78  	                value['rental_end'] = switch_end
+ 79  	                value['rental_start'] = switch_start
+ 80
+ 81  ->	                value['total_price'] = value['total_days'] * value['price_per_day']
+ 82  	                print(value['total_price'])
+ 83  	                value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 84  	                continue
+ 85  	            # Prevent evaluation from breaking when no units rented
+ 86  	            if value['units_rented'] < 1:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '6/12/17',
+ 'rental_start': '3/22/17',
+ 'total_days': 82,
+ 'units_rented': 8}
+(Pdb)
