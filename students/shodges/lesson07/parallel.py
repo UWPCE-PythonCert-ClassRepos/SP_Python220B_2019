@@ -90,7 +90,7 @@ class ImportData(threading.Thread):
             inv_db = mongo.connection.media
             db = inv_db[self._type]
 
-            self._startcount = db.count()
+            self._startcount = db.count_documents()
 
             import_res = db.insert_many(import_list)
             if import_res.acknowledged is True:
@@ -98,7 +98,7 @@ class ImportData(threading.Thread):
             else:
                 logging.warning('Failed to write records to %s', self._type)
 
-            self._endcount = db.count()
+            self._endcount = db.count_documents()
 
         self._endtime = datetime.datetime.now()
         self._runtime = (self._endtime - self._starttime).total_seconds()
