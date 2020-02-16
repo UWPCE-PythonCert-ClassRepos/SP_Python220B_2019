@@ -1,7 +1,7 @@
 """
 Functionality to generate additional test data.
 """
-
+# pylint: disable=too-many-locals
 import csv
 import random
 
@@ -79,9 +79,10 @@ def generate_data(filename, target_count, data_type):
                      'prod_' + str(random.randint(1, target_count)),]
                     for i in range(current_count + 1, target_count + 1)]
         else:
-            return None
+            return False
             # Add lines in the same format
         writer.writerows(rows)
+        return True
 
 if __name__ == "__main__":
     generate_data('data/customers.csv', 1000, 'customers')
