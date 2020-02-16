@@ -9,7 +9,7 @@ from string import ascii_letters, digits, ascii_lowercase
 
 
 # Global Variables
-SERIAL_LENGTHS = [8, 4, 4, 4, 12]
+#SERIAL_LENGTHS = [8, 4, 4, 4, 12]
 AO = ['ao', '']
 
 # Generate Serial Number

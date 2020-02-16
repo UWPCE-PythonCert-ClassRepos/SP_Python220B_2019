@@ -5,6 +5,8 @@ poorly performing, poorly written module
 
 import datetime
 import csv
+from timeit import repeat
+from statistics import mean
 
 def analyze(filename):
     start = datetime.datetime.now()
@@ -57,8 +59,22 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
-    filename = "data/exercise.csv"
+    filename = "data/new_exercise_data.csv"
     analyze(filename)
+#    testcode = '''
+#filename = "data/new_exercise_data.csv"
+#analyze(filename)
+#    '''
+#    n = 3
+#    time=repeat(
+#        stmt=testcode,
+#        globals=globals(),
+#        repeat=n,
+#        number=1
+#    )
+#
+#    print('Avg. of ' + str(n) + ' poor_perf timeit runs (s):')
+#    print(mean(time))
 
 
 if __name__ == "__main__":
