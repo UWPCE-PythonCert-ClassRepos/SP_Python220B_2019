@@ -8,21 +8,36 @@ import math
 import logging
 
 
+
+
 def configure_logging(level):
-    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-    logging.basicConfig(format=log_format)
     logger = logging.getLogger()
+
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
+    formatter = logging.Formatter(log_format)
+
+    fh = logging.FileHandler(log_file)
+    ch = logging.StreamHandler()
+    
+    fh.setFormatter(formatter)
+    ch.setFormatter(formatter)
+
     if level == 0:
         #Disable logging
         logger.disabled = True
     elif level == 1:
-        # logging.basicConfig(level=50, format=log_format)
-        logger.level = logging.ERROR
+        fh.setLevel(logging.ERROR)
+        ch.setLevel(logging.ERROR)
     elif level == 2:
-        logger.level = logging.WARNING
+        fh.setLevel(logging.WARNING)
+        ch.setLevel(logging.WARNING)
     elif level == 3:
-        logger.level = logging.DEBUG
+        fh.setLevel(logging.WARNING)
+        ch.setLevel(logging.DEBUG)
 
+    logger.addHandler(fh)
+#    logger.addHandler(ch)
 
 def parse_cmd_arguments():
     logging.debug("Parsing cmd args.")
@@ -54,21 +69,24 @@ def calculate_additional_fields(data):
             #if logging level > a given level for grouped logging evaluations.
             #would reduce calls to if statements to one.
             if not value['rental_start']:
-                logging.debug(f"Start date is missing for {value['product_code']}")
+                #Missing source data, resulting in an error.
+                logging.error(f"Start date is missing for {value['product_code']}")
                 continue
             if not value['rental_end']:
                 #Log warning if end date is missing
-                logging.Warning(f"End date is missing for {value['product_code']}")
+                logging.warning(f"End date is missing for {value['product_code']}")
                 logging.debug(f"{value}")
                 #skip calculations if end date is missing.
                 continue
             if value['units_rented'] < 1:
-                logging.Warning(f"Units rented of {value['product_code']} is less than one.")
+                logging.warning(f"Units rented of {value['product_code']} is less than one.")
                 continue
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             if rental_start > rental_end:
-                logging.warning(f"Rental end is before rental start.  {value['product_code']}")
+                #incorrect result, therefore an error.
+                #Supress noisy error, REMOVE!!
+                #logging.error(f"Rental end is before rental start.  {value['product_code']}")
                 #avoid except clause for this condition.
                 continue
             value['total_days'] = (rental_end - rental_start).days
@@ -102,11 +120,12 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
+
+    configure_logging(args.debug)
     logging.debug(f"Input file provided: {args.input}")
     logging.debug(f"Output file provided: {args.output}")
     logging.debug(f"Debug level is {args.debug}")
 
-    configure_logging(args.debug)
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
