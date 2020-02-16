@@ -51,15 +51,10 @@ class RentalDbTest(TestCase):
 
     def test_2_show_available(self):
         """
-        Test the integrity of the returned dictionary of available products.  We particularly
-        want to validate that quantity_available is deducted to account for existing rentals.
+        Test that the two import mechanisms are consistent.
         """
-        result = database.show_available_products()
-        self.assertEqual(result['SOFA']['quantity_available'], 16)
-        self.assertEqual(result['RECLINER']['quantity_available'], 0)
-        self.assertEqual(result['DININGTABLE']['quantity_available'], 7)
-        self.assertEqual(result['OVEN']['quantity_available'], 4)
-        self.assertEqual(result['MOPED']['quantity_available'], 0)
+
+        self.assertEqual(linear_available, parallel.show_available_products())
 
     def test_3_show_rentals(self):
         """
