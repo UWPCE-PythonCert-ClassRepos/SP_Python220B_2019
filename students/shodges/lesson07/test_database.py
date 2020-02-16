@@ -29,6 +29,25 @@ class RentalDbTest(TestCase):
         self.assertEqual(result[1][1], 0)
         self.assertEqual(result[1][2], 1000)
 
+        linear_available = linear.show_available_products()
+
+        # Run the parallel again -- we're going to grab the results of show_available_products()
+        # to consistency check later.
+        parallel.drop_data()
+        self.assertEqual(parallel.show_available_products(), {})
+
+        with self.assertRaises(FileNotFoundError):
+            result = linear.import_data('data2', 'p.csv', 'c.csv', 'r.csv')
+
+        result = parallel.import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        self.assertEqual(result[0][0], 1000)
+        self.assertEqual(result[0][1], 0)
+        self.assertEqual(result[0][2], 1000)
+        self.assertEqual(result[1][0], 1000)
+        self.assertEqual(result[1][1], 0)
+        self.assertEqual(result[1][2], 1000)
+
+        self.assertEqual(linear_available, parallel.show_available_products())
 
     def test_2_show_available(self):
         """
