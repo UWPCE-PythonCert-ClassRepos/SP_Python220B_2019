@@ -1,41 +1,65 @@
-from pymongo import MongoClient
-import pandas as pd
+"""Module to enter and view data in Mongo."""
+
+# pylint: disable = invalid-name, too-many-locals
+
 import logging
 import os
-
-LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-
-FORMATTER = logging.Formatter(LOG_FORMAT)
-
-LOG_FILE = 'db.log'
-
-FILE_HANDLER = logging.FileHandler(LOG_FILE)
-FILE_HANDLER.setLevel(logging.WARNING)
-FILE_HANDLER.setFormatter(FORMATTER)
-
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
-CONSOLE_HANDLER.setFormatter(FORMATTER)
-
-LOGGER = logging.getLogger()
-LOGGER.addHandler(FILE_HANDLER)
-LOGGER.addHandler(CONSOLE_HANDLER)
+import pandas as pd
+from pymongo import MongoClient
 
 
-class MongoDBConnection(object):
+def MongoLoggerConfigure(level):
+    """Configure mongo context logger."""
+
+    level_dict = {'0': logging.CRITICAL,
+                  '1': logging.ERROR,
+                  '2': logging.WARNING,
+                  '3': logging.DEBUG}
+
+    log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+
+    formatter = logging.Formatter(log_format)
+
+    log_file = 'db.log'
+
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.WARNING)
+    file_handler.setFormatter(formatter)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(formatter)
+
+    logger = logging.getLogger()
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    logger.setLevel(level_dict[level])
+
+    return logger
+
+
+class MongoDBConnection:
     """MongoDB Connection"""
-    def __init__(self, host='127.0.0.1', port=27017):
+    def __init__(self, host='127.0.0.1', port=27017, logging_level=1):
         """ be sure to use the ip address not name for local windows"""
         self.host = host
         self.port = port
         self.connection = None
+        self.logger = MongoLoggerConfigure(logging_level)
 
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
+        self.logger.info('Connecting to Mongo with host: %s and port: %s.', self.host, self.port)
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        self.logger.info('Closing connection to Mongo.')
+        if exc_type:
+            self.logger.info('exc_type: %s', exc_type)
+            self.logger.info('exc_val: %s', exc_val)
+            self.logger.info('exc_tb: %s', exc_tb)
         self.connection.close()
+
 
 
 def import_csv(directory, file):
@@ -64,7 +88,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 count_error = 0
 
             except FileNotFoundError as error:
-                LOGGER.error('Error %s loading %s.', error, file_name)
+                mongo.logger.error('Error %s loading %s.', error, file_name)
                 count_error = 1
                 count = 0
 
