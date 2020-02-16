@@ -73,8 +73,17 @@ def generate_data(filename, target_count, data_type):
                      pt,
                      random.randint(100, 999)]
                     for i in range(current_count + 1, target_count + 1)]
+        elif data_type == 'rentals':
+            rows = [['rent_' + str(i),
+                     'cust_' + str(random.randint(1, target_count)),
+                     'prod_' + str(random.randint(1, target_count)),]
+                    for i in range(current_count + 1, target_count + 1)]
+        else:
+            return None
             # Add lines in the same format
         writer.writerows(rows)
 
 if __name__ == "__main__":
-    generate_data('data/exercise.csv', 1000000)
+    generate_data('data/customers.csv', 1000, 'customers')
+    generate_data('data/products.csv', 1000, 'products')
+    generate_data('data/rentals.csv', 1000, 'rentals')
