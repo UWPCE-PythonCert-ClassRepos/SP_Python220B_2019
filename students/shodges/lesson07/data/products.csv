@@ -1,4 +1,4 @@
-prod_id,description,prod_type,quantity_available
+product_id,description,product_type,quantity_available
 prod_1,Brown Leather Sofa,Furniture,18
 prod_2,Gray Cloth Recliner,Furniture,0
 prod_3,Wood Dining Table,Furniture,10
