@@ -328,3 +328,13 @@ As you can see, the overall runtime was about 5% greater. I am not sure what the
     1.8449014666666665
 
 7. The final result was that poor_perf.py took 4.349/1.845 x 100% = 235.7% the time it took good_perf to achieve the same results.
+
+    ALEXANDER-BOONE-LAPTOP:assignment alexa$ python good_perf.py
+    {'2013': 0, '2014': 0, '2015': 0, '2016': 0, '2017': 0, '2018': 0}
+    'ao' was found 500328 times
+    {'2013': 0, '2014': 0, '2015': 0, '2016': 0, '2017': 0, '2018': 0}
+    'ao' was found 500328 times
+    {'2013': 0, '2014': 0, '2015': 0, '2016': 0, '2017': 0, '2018': 0}
+    'ao' was found 500328 times
+    Avg. of 3 poor_perf timeit runs (s):
+    1.8449014666666665

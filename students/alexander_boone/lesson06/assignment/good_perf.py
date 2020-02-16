@@ -8,7 +8,12 @@ import csv
 from timeit import repeat
 from statistics import mean
 
+
 def analyze(filename):
+    '''
+    Analyze csv file to sum counts of lines with each year
+    and count the amount of 'ao' strings at the row's end.
+    '''
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -23,7 +28,7 @@ def analyze(filename):
         }
         for row in reader:
             if row[5] in year_count.keys():
-                year_count[row[5][6:]] +=1
+                year_count[row[5][6:]] += 1
             if "ao" in row[6]:
                 found += 1
 
@@ -32,20 +37,22 @@ def analyze(filename):
     print(f"'ao' was found {found} times")
     return (start, end, year_count, found)
 
+
 def main():
+    '''Run main function code.'''
     testcode = '''
 filename = "data/new_exercise_data.csv"
 analyze(filename)
     '''
-    n = 3
-    time=repeat(
+    n_repeats = 3
+    time = repeat(
         stmt=testcode,
         globals=globals(),
-        repeat=n,
+        repeat=n_repeats,
         number=1
     )
 
-    print('Avg. of ' + str(n) + ' poor_perf timeit runs (s):')
+    print('Avg. of ' + str(n_repeats) + ' poor_perf timeit runs (s):')
     print(mean(time))
 
 
