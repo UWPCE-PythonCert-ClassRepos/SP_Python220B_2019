@@ -26,8 +26,13 @@ def generate_data(filename, target_count, data_type):
         writer = csv.writer(csvfile, delimiter=',', quotechar='"')
 
         if data_type == 'customers':
-            first_names = ['Alan', 'Beverly', 'Christopher', 'David']
-            last_names = ['Anderson', 'Borman', 'Cunningham', 'Dillinger', 'Livingston']
+            first_names = ['Alan', 'Beverly', 'Christopher', 'David', 'Elizabeth', 'Fred',
+                           'Ginny', 'Harold', 'Ines', 'Jessica', 'Katie', 'Liam', 'Michael',
+                           'Natalie', 'Philippa', 'Quincy', 'Sean', 'Tywin', 'William']
+            last_names = ['Anderson', 'Borman', 'Cunningham', 'Dillinger', 'Ellington',
+                          'Fitzgerald', 'Gutenberg', 'Hindenberg', 'Isaacson', 'King',
+                          'Livingston', 'Michaelson', 'Nelson', 'Sutherland', 'Thompson',
+                          'Wilson']
             street_names = ['Aardvark Ln', 'Birch St', 'Columbus Cir', 'Dragon Ave', 'Euclid Wy',
                             'First St', 'Gold Rd', 'Hacienda Ter', 'Island Dr', 'Jones Rd',
                             'King Pkwy', 'London Ave', 'Main St', 'North Pkwy', 'Oldtown Rd',
