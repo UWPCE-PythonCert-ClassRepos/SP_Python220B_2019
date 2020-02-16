@@ -84,20 +84,26 @@ def update_customer_credit(customer_id, credit_limit):
 
     except DoesNotExist:
         raise ValueError(f'{customer.customer_id} not found in database')
-    
-def list_active_customers():
-    pass
 
+def list_active_customers():
+    try:
+        active_customers = Customer.select().where(Customer.status).count()
+        active_cust_name = Customer.select().where(Customer.status)
+
+        logger.info(f'active customer count is {active_customers}')
+    except:
+        pass
+    return active_customers
 # add_customer(customers[0][CUST_ID], customers[0][NAME], customers[0][LAST_NAME],
 #              customers[0][HOME_ADDRESS], customers[0][EMAIL_ADDRESS],
 #              customers[0][PHONE], customers[0][STATUS], customers[0][CREDIT_LIMIT])
 
-add_customer(customers[1][CUST_ID], customers[1][NAME], customers[1][LAST_NAME],
-             customers[1][HOME_ADDRESS], customers[1][EMAIL_ADDRESS],
-             customers[1][PHONE], customers[1][STATUS], customers[1][CREDIT_LIMIT])
+# add_customer(customers[1][CUST_ID], customers[1][NAME], customers[1][LAST_NAME],
+#              customers[1][HOME_ADDRESS], customers[1][EMAIL_ADDRESS],
+#              customers[1][PHONE], customers[1][STATUS], customers[1][CREDIT_LIMIT])
 
-add_customer(customers[2][CUST_ID], customers[2][NAME], customers[2][LAST_NAME],
-             customers[2][HOME_ADDRESS], customers[2][EMAIL_ADDRESS],
-             customers[2][PHONE], customers[2][STATUS], customers[2][CREDIT_LIMIT])
+# add_customer(customers[2][CUST_ID], customers[2][NAME], customers[2][LAST_NAME],
+#              customers[2][HOME_ADDRESS], customers[2][EMAIL_ADDRESS],
+#              customers[2][PHONE], customers[2][STATUS], customers[2][CREDIT_LIMIT])
 
-print(search_customer('A500'))
+print(list_active_customers())
