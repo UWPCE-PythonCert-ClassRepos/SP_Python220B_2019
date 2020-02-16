@@ -1,6 +1,7 @@
 from unittest import TestCase
 
-import database
+import parallel
+import linear
 
 class RentalDbTest(TestCase):
     """
@@ -11,20 +12,23 @@ class RentalDbTest(TestCase):
         Test that the records are successfully imported.
         """
         # Start fresh so we don't mess up all our tests...
-        database.drop_data()
-        self.assertEqual(database.show_available_products(), {})
+        linear.drop_data()
+        self.assertEqual(linear.show_available_products(), {})
 
         # Check for proper error handling of import_data()
         with self.assertRaises(FileNotFoundError):
-            result = database.import_data('data2', 'p.csv', 'c.csv', 'r.csv')
+            result = linear.import_data('data2', 'p.csv', 'c.csv', 'r.csv')
 
         # These tests are hard-coded to the expected values from the incluced CSV's.
         # Your results may vary if the data sets change. :)
-        result = database.import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
-        self.assertEqual(result[0][0], 5) # Number of records added from products.csv
-        self.assertEqual(result[0][1], 3) # Number of records added from customers.csv
-        self.assertEqual(result[0][2], 8) # Number of records added from rentals.csv
-        self.assertEqual(result[1][0], 0) # No errors found
+        result = linear.import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
+        self.assertEqual(result[0][0], 1000)
+        self.assertEqual(result[0][1], 0)
+        self.assertEqual(result[0][2], 1000)
+        self.assertEqual(result[1][0], 1000)
+        self.assertEqual(result[1][1], 0)
+        self.assertEqual(result[1][2], 1000)
+
 
     def test_2_show_available(self):
         """
