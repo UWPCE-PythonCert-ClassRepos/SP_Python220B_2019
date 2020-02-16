@@ -49,13 +49,6 @@ class RentalDbTest(TestCase):
 
         self.assertEqual(linear_available, parallel.show_available_products())
 
-    def test_2_show_available(self):
-        """
-        Test that the two import mechanisms are consistent.
-        """
-
-        self.assertEqual(linear_available, parallel.show_available_products())
-
     def test_3_show_rentals(self):
         """
         Test the integrity of the returned dictionary of active rentals.
