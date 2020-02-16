@@ -91,14 +91,14 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         inv_db = mongo.connection.media
 
-        analytics['products_start'] = inv_db['products'].count()
+        analytics['products_start'] = inv_db['products'].count_documents({})
         products_res = inv_db['products'].insert_many(product_list)
         if products_res.acknowledged is True:
             logging.debug('Wrote %d records to products', len(products_res.inserted_ids))
         else:
             logging.warning('Failed to write records to products')
 
-        analytics['customers_start'] = inv_db['customers'].count()
+        analytics['customers_start'] = inv_db['customers'].count_documents({})
         customer_res = inv_db['customers'].insert_many(customer_list)
         if customer_res.acknowledged is True:
             logging.debug('Wrote %d records to customers', len(customer_res.inserted_ids))
@@ -115,8 +115,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         analytics['run_time'] = (analytics['end_time'] - analytics['start_time']).total_seconds()
         logging.debug('Database import complete in %d seconds', analytics['run_time'])
 
-        analytics['products_end'] = inv_db['products'].count()
-        analytics['customers_end'] = inv_db['customers'].count()
+        analytics['products_end'] = inv_db['products'].count_documents({})
+        analytics['customers_end'] = inv_db['customers'].count_documents({})
 
     return ((analytics['customers_processed'], analytics['customers_start'],
              analytics['customers_end'], analytics['run_time']),
