@@ -7,14 +7,30 @@ import datetime
 import math
 import logging
 
-log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-logging.basicConfig(level=logging.DEBUG, format=log_format) 
+
+def configure_logging(level):
+    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    logging.basicConfig(format=log_format)
+    logger = logging.getLogger()
+    if level == 0:
+        #Disable logging
+        logger.disabled = True
+    elif level == 1:
+        # logging.basicConfig(level=50, format=log_format)
+        logger.level = logging.ERROR
+    elif level == 2:
+        logger.level = logging.WARNING
+    elif level == 3:
+        logger.level = logging.DEBUG
+
 
 def parse_cmd_arguments():
     logging.debug("Parsing cmd args.")
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+    parser.add_argument('-d', '--debug', help='debug level', type=int, 
+                        default=0, choices=range(4), required=False)
     logging.debug("Parsed cmd args.")
     return parser.parse_args()
 
@@ -88,7 +104,9 @@ if __name__ == "__main__":
     args = parse_cmd_arguments()
     logging.debug(f"Input file provided: {args.input}")
     logging.debug(f"Output file provided: {args.output}")
+    logging.debug(f"Debug level is {args.debug}")
 
+    configure_logging(args.debug)
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
