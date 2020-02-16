@@ -1,5 +1,8 @@
 '''
-Returns total price paid for individual rentals
+Returns total price paid for individual rentals.
+
+Testing for possible fault and exiting the loop to continue on.
+Current implementation will stop processing after first fault.
 '''
 import argparse
 import json
