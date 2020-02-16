@@ -9,6 +9,7 @@ show_rentals(product_id) to show all active rentals for product_id
 import csv
 import datetime
 import logging
+import threading
 from pathlib import Path
 from pymongo import MongoClient
 
@@ -48,6 +49,69 @@ class DBConnection():
         Close the connection when exiting the context manager.
         """
         self.connection.close()
+
+class ImportData(threading.Thread):
+    """
+    Class to allow multithreading of data imports.
+    """
+
+    def __init__(self, group=None, target=None, name=None, args=(), kwargs={}, Verbose=None):
+        """
+        Override Thread __init__ to initialize analysis variables and allow run to leverage needed
+        kwargs.
+
+        Pass in file, which should be a Path to the correct file, and type, which should be:
+        customers, products, or rentals
+        """
+        threading.Thread.__init__(self, group, target, name, args, kwargs)
+        self._processed = None
+        self._startcount = None
+        self._endcount = None
+        self._starttime = None
+        self._endtime = None
+        self._runtime = None
+        self._file = kwargs['file']
+        self._type = kwargs['type']
+
+    def run(self):
+        """
+        Run the CSV import and DB insert.
+        """
+        self._starttime = datetime.datetime.now()
+
+        with open(self._file, mode='r') as csv_input:
+            import_list = list(csv.DictReader(csv_input))
+            logging.debug('Read in %s data from %s: %s', self._type, self._file.name, import_list)
+            self._processed = len(import_list)
+
+        mongo = DBConnection()
+
+        with mongo:
+            inv_db = mongo.connection.media
+            db = inv_db[self._type]
+
+            self._startcount = db.count()
+
+            import_res = db.insert_many(import_list)
+            if import_res.acknowledged is True:
+                logging.debug('Wrote %d records to %s', len(import_res.inserted_ids), self._type)
+            else:
+                logging.warning('Failed to write records to %s', self._type)
+
+            self._endcount = db.count()
+
+        self._endtime = datetime.datetime.now()
+        self._runtime = (self._endtime - self._starttime).total_seconds()
+
+        logging.debug('Database import complete in %d seconds', self._runtime)
+
+    def join(self, *args):
+        """
+        Override Thread join function to return tuple for analysis.
+        """
+        threading.Thread.join(self, *args)
+        return (self._processed, self._startcount, self._endcount, self._runtime)
+
 
 def drop_data():
     """
