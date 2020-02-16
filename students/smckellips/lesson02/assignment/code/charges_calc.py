@@ -7,46 +7,27 @@ import datetime
 import math
 import logging
 
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
+formatter = logging.Formatter(log_format)
 
+fh = logging.FileHandler(log_file)
+ch = logging.StreamHandler()
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
 
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logger.addHandler(fh)
+logger.addHandler(ch)
 
-def configure_logging(level):
-    logger = logging.getLogger()
-
-    log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-    log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-    formatter = logging.Formatter(log_format)
-
-    fh = logging.FileHandler(log_file)
-    ch = logging.StreamHandler()
-    
-    fh.setFormatter(formatter)
-    ch.setFormatter(formatter)
-
-    if level == 0:
-        #Disable logging
-        logger.disabled = True
-    elif level == 1:
-        fh.setLevel(logging.ERROR)
-        ch.setLevel(logging.ERROR)
-    elif level == 2:
-        fh.setLevel(logging.WARNING)
-        ch.setLevel(logging.WARNING)
-    elif level == 3:
-        fh.setLevel(logging.WARNING)
-        ch.setLevel(logging.DEBUG)
-
-    logger.addHandler(fh)
-#    logger.addHandler(ch)
 
 def parse_cmd_arguments():
-    logging.debug("Parsing cmd args.")
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-d', '--debug', help='debug level', type=int, 
                         default=0, choices=range(4), required=False)
-    logging.debug("Parsed cmd args.")
     return parser.parse_args()
 
 
@@ -85,8 +66,7 @@ def calculate_additional_fields(data):
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             if rental_start > rental_end:
                 #incorrect result, therefore an error.
-                #Supress noisy error, REMOVE!!
-                #logging.error(f"Rental end is before rental start.  {value['product_code']}")
+                logging.error(f"Rental end is before rental start.  {value['product_code']}")
                 #avoid except clause for this condition.
                 continue
             value['total_days'] = (rental_end - rental_start).days
@@ -120,11 +100,25 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
+    level = args.debug
+    if level == 0:
+        #Disable logging
+        logger.disabled = True
+    elif level == 1:
+        fh.setLevel(logging.ERROR)
+        ch.setLevel(logging.ERROR)
+    elif level == 2:
+        fh.setLevel(logging.WARNING)
+        ch.setLevel(logging.WARNING)
+    elif level == 3:
+        fh.setLevel(logging.WARNING)
+        ch.setLevel(logging.DEBUG)
 
-    configure_logging(args.debug)
     logging.debug(f"Input file provided: {args.input}")
     logging.debug(f"Output file provided: {args.output}")
     logging.debug(f"Debug level is {args.debug}")
+
+    logging.error("Generate an error.")
 
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
