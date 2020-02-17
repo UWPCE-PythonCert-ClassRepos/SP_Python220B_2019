@@ -46,6 +46,7 @@ def add_customer(customer_id, name, last_name,
 
 
 def search_customer(customer_id):
+    ''' searches for a customer by id '''
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
 
@@ -58,6 +59,7 @@ def search_customer(customer_id):
             'phone_number': customer.phone_number}
 
 def delete_customer(customer_id):
+    ''' remove a customer from the database '''
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
         customer.delete_instance()
@@ -80,6 +82,7 @@ def update_customer_credit(customer_id, credit_limit):
         raise ValueError(f'{customer_id} not found in database')
     
 def list_active_customers():
+    ''' return number of active customers in database '''
     active_customers = Customer.select().where(Customer.status).count()
     logger.info(f'active customer count is {active_customers}')
 
