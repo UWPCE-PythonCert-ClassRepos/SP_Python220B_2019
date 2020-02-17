@@ -49,7 +49,7 @@ class RentalDbTest(TestCase):
 
         self.assertEqual(linear_available, parallel.show_available_products())
 
-    def test_3_show_rentals(self):
+    def test_2_show_rentals(self):
         """
         Test the integrity of the returned dictionary of active rentals.
         """
@@ -69,28 +69,23 @@ class RentalDbTest(TestCase):
                   'phone_number': '2029999999',
                   'email': 'thomas@whitehouse.gov'}
 
-        result = database.show_rentals('SOFA')
-        self.assertEqual(len(result), 2)
+        result = linear.show_rentals('prod_1')
         self.assertEqual(result['cust_1'], cust_1)
         self.assertEqual(result['cust_3'], cust_3)
 
-        result = database.show_rentals('RECLINER')
-        self.assertEqual(len(result), 0)
-
-        result = database.show_rentals('DININGTABLE')
-        self.assertEqual(len(result), 3)
+        result = linear.show_rentals('prod_3')
         self.assertEqual(result['cust_1'], cust_1)
         self.assertEqual(result['cust_2'], cust_2)
         self.assertEqual(result['cust_3'], cust_3)
 
-        result = database.show_rentals('OVEN')
-        self.assertEqual(len(result), 2)
+        result = linear.show_rentals('prod_4')
         self.assertEqual(result['cust_2'], cust_2)
         self.assertEqual(result['cust_3'], cust_3)
 
-        result = database.show_rentals('MOPED')
-        self.assertEqual(len(result), 1)
+        result = linear.show_rentals('prod_5')
         self.assertEqual(result['cust_3'], cust_3)
 
-        result = database.show_rentals('FUTON') # Validate an empty dict is received
+        result = linear.show_rentals('prod_0') # Validate an empty dict is received
         self.assertEqual(result, {})
+
+        self.assertEqual(linear.show_rentals('prod_1'), parallel.show_rentals('prod_1'))
