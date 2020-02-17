@@ -64,18 +64,20 @@ def delete_customer(customer_id):
         logger.info(f'{customer.name} has been deleted')
 
     except DoesNotExist:
-        raise ValueError(f'{customer.customer_id} not found in database')
+        raise ValueError(f'{customer_id} not found in database')
 
 def update_customer_credit(customer_id, credit_limit):
     ''' update customers credit limit '''
+    logger.info(f'updating customers credit limt {credit_limit}')
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
+        logger.info(f'found customers id: {customer}')
         customer.credit_limit = credit_limit
         customer.save()
-        logger.info(f'{customer.credit_limit}')
+        logger.info(f'customers credit limit is now set to: ${customer.credit_limit}')
 
     except DoesNotExist:
-        raise ValueError(f'{customer.customer_id} not found in database')
+        raise ValueError(f'{customer_id} not found in database')
     
 def list_active_customers():
     active_customers = Customer.select().where(Customer.status).count()
@@ -83,13 +85,11 @@ def list_active_customers():
 
     return active_customers
 
-## testing search customer
+## testing
 # database.create_tables([Customer])
 # database.close()
-# customer = ('A500', 'Andrew', 'Smith',
+# customer = ['A500', 'Andrew', 'Smith',
 #             '23 Railroad Street Matthews, NC 28104', 'andrew@hpnorton.com',
-#             '202-555-0134', True, 1000)
+#             '202-555-0134', True, 1000]
 
-# add_customer(customer[0],customer[1],customer[2],customer[3],
-#              customer[4],customer[5],customer[6],customer[7])
-# search_customer('C200')
+# update_customer_credit('A600', 100)
