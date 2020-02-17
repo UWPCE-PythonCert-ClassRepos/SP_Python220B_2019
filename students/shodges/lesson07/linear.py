@@ -64,11 +64,11 @@ def drop_data():
 
         logging.debug('Dropped all databases')
 
-def do_import(file, type):
+def do_import(file, data_type):
     """
     Function to perform actual CSV import and db insert.
 
-    Pass in file, which should be a Path to the correct file, and type, which should be:
+    Pass in file, which should be a Path to the correct file, and data_type, which should be:
     customers, products, or rentals
     """
     analytics = {}
@@ -76,7 +76,7 @@ def do_import(file, type):
 
     with open(file, mode='r') as csv_input:
         import_list = list(csv.DictReader(csv_input))
-        logging.debug('Read in %s data from %s: %s', type, file.name, import_list)
+        logging.debug('Read in %s data from %s: %s', data_type, file.name, import_list)
         analytics['processed'] = len(import_list)
 
     mongo = DBConnection()
@@ -84,14 +84,14 @@ def do_import(file, type):
     with mongo:
         inv_db = mongo.connection.media
 
-        analytics['startcount'] = inv_db[type].count_documents({})
-        import_res = inv_db[type].insert_many(import_list)
+        analytics['startcount'] = inv_db[data_type].count_documents({})
+        import_res = inv_db[data_type].insert_many(import_list)
         if import_res.acknowledged is True:
-            logging.debug('Wrote %d records to %s', len(import_res.inserted_ids), type)
+            logging.debug('Wrote %d records to %s', len(import_res.inserted_ids), data_type)
         else:
-            logging.warning('Failed to write records to %s', type)
+            logging.warning('Failed to write records to %s', data_type)
 
-        analytics['endcount'] = inv_db[type].count_documents({})
+        analytics['endcount'] = inv_db[data_type].count_documents({})
 
     analytics['runtime'] = (datetime.datetime.now() - analytics['starttime']).total_seconds()
     logging.debug('Database import complete in %d seconds', analytics['runtime'])
