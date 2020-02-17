@@ -68,7 +68,6 @@ class ImportData(threading.Thread):
         self._startcount = None
         self._endcount = None
         self._starttime = None
-        self._endtime = None
         self._runtime = None
         self._file = kwargs['file']
         self._type = kwargs['type']
@@ -100,8 +99,7 @@ class ImportData(threading.Thread):
 
             self._endcount = db.count_documents({})
 
-        self._endtime = datetime.datetime.now()
-        self._runtime = (self._endtime - self._starttime).total_seconds()
+        self._runtime = (datetime.datetime.now() - self._starttime).total_seconds()
 
         logging.debug('Database import complete in %d seconds', self._runtime)
 
