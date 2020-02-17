@@ -64,6 +64,41 @@ def drop_data():
 
         logging.debug('Dropped all databases')
 
+def do_import(file, type):
+    """
+    Function to perform actual CSV import and db insert.
+
+    Pass in file, which should be a Path to the correct file, and type, which should be:
+    customers, products, or rentals
+    """
+    analytics = {}
+    analytics['starttime'] = datetime.datetime.now()
+
+    with open(file, mode='r') as csv_input:
+        import_list = list(csv.DictReader(csv_input))
+        logging.debug('Read in %s data from %s: %s', type, file.name, import_list)
+        analytics['processed'] = len(import_list)
+
+    mongo = DBConnection()
+
+    with mongo:
+        inv_db = mongo.connection.media
+
+        analytics['start_count'] = inv_db['products'].count_documents({})
+        import_res = inv_db[type].insert_many(import_list)
+        if import_res.acknowledged is True:
+            logging.debug('Wrote %d records to %s', len(import_res.inserted_ids), type)
+        else:
+            logging.warning('Failed to write records to %s', type)
+
+        analytics['endcount'] = inv_db[type].count_documents({})
+
+    analytics['runtime'] = (datetime.datetime.now() - analytics['starttime']).total_seconds()
+    logging.debug('Database import complete in %d seconds', analytics['runtime'])
+
+    return (analytics['processed'], analytics['startcount'], analytics['endcount'],
+            analytics['runtime'])
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
