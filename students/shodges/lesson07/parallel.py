@@ -103,11 +103,11 @@ class ImportData(threading.Thread):
 
         logging.debug('Database import complete in %d seconds', self._runtime)
 
-    def join(self, *args):
+    def join(self, timeout=None):
         """
         Override Thread join function to return tuple for analysis.
         """
-        threading.Thread.join(self, *args)
+        threading.Thread.join(self, timeout)
         return (self._processed, self._startcount, self._endcount, self._runtime)
 
 
