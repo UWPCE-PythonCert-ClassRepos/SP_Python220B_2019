@@ -109,7 +109,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     data_directory = Path(directory_name)
     prod_import = do_import(data_directory/product_file, 'products')
     cust_import = do_import(data_directory/customer_file, 'customers')
-    rent_import = do_import(data_directory/rentals_file, 'rentals')
+    do_import(data_directory/rentals_file, 'rentals')
 
     return (prod_import, cust_import)
 
