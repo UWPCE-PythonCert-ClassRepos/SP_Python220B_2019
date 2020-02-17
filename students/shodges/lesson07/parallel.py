@@ -6,6 +6,7 @@ import_data(directory_name, product_file, customer_file, rentals_file) to intake
 show_available_products() to show available products, accounting for existing rentals
 show_rentals(product_id) to show all active rentals for product_id
 """
+# pylint: disable=dangerous-default-value, too-many-arguments
 import csv
 import datetime
 import logging
