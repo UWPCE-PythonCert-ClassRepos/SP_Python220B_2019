@@ -1,0 +1,1372 @@
+C:\Users\steve\Dropbox\PyClass\SP_Python220B_2019\students\steve_walker\lesson02\Assignment>python -m pdb charges_calc.py
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(8)<module>()
+-> import logging
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(9)<module>()
+-> import sys
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(12)<module>()
+-> def setup_logging(level):
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(51)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(70)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(86)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(122)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(134)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(135)<module>()
+-> args = parse_cmd_arguments() # pylint: disable=invalid-name
+(Pdb) n
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT [-d {0,1,2,3}]
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--output
+SystemExit: 2
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(135)<module>()
+-> args = parse_cmd_arguments() # pylint: disable=invalid-name
+(Pdb)
+--Return--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(135)<module>()->None
+-> args = parse_cmd_arguments() # pylint: disable=invalid-name
+(Pdb)
+SystemExit: 2
+> <string>(1)<module>()->None
+(Pdb)
+--Return--
+> <string>(1)<module>()->None
+(Pdb)
+The program exited via sys.exit(). Exit status: 2
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+(Pdb) exit
+
+C:\Users\steve\Dropbox\PyClass\SP_Python220B_2019\students\steve_walker\lesson02\Assignment>python -m pdb charges_calc.py -i "source.json" -o output.json -d 2
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+(Pdb) l
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8     import logging
+  9     import sys
+ 10
+ 11
+(Pdb) b 134
+Breakpoint 1 at c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py:134
+(Pdb) c
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(134)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(135)<module>()
+-> args = parse_cmd_arguments() # pylint: disable=invalid-name
+(Pdb) s
+--Call--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(51)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(59)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser()
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(60)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(61)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(62)parse_cmd_arguments()
+-> parser.add_argument('-d', '--debug',
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(63)parse_cmd_arguments()
+-> help='set debug level: 0=No debug messages or log file, '
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(66)parse_cmd_arguments()
+-> default=0, type=int, choices=range(0, 4))
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(67)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+--Return--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(67)parse_cmd_arguments()->Namespace(deb...'output.json')
+-> return parser.parse_args()
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(136)<module>()
+-> setup_logging(args.debug)
+(Pdb) s
+--Call--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(12)setup_logging()
+-> def setup_logging(level):
+(Pdb) p level
+2
+(Pdb) p leveltype
+*** NameError: name 'leveltype' is not defined
+(Pdb) p logger.leveltype
+*** NameError: name 'logger' is not defined
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(15)setup_logging()
+-> log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(16)setup_logging()
+-> formatter = logging.Formatter(log_format)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(17)setup_logging()
+-> log_file = "_".join(["charges_calc", datetime.datetime.now().strftime('%Y-%m-%d'),
+(Pdb) p log_file
+*** NameError: name 'log_file' is not defined
+(Pdb)
+*** NameError: name 'log_file' is not defined
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(18)setup_logging()
+-> f"level_{level}.log"])
+(Pdb) p log_file
+*** NameError: name 'log_file' is not defined
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(21)setup_logging()
+-> file_handler = logging.FileHandler(log_file)
+(Pdb) p log_file
+'charges_calc_2020-02-16_level_2.log'
+(Pdb) pp log_file
+'charges_calc_2020-02-16_level_2.log'
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(22)setup_logging()
+-> file_handler.setFormatter(formatter)
+(Pdb) j
+*** The 'jump' command requires a line number
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(25)setup_logging()
+-> console_handler = logging.StreamHandler()
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(26)setup_logging()
+-> console_handler.setFormatter(formatter)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(29)setup_logging()
+-> logger = logging.getLogger()
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(30)setup_logging()
+-> logger.addHandler(file_handler)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(31)setup_logging()
+-> logger.addHandler(console_handler)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(33)setup_logging()
+-> if level == 0:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(36)setup_logging()
+-> if level == 1:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(41)setup_logging()
+-> elif level == 2:
+(Pdb) s
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(42)setup_logging()
+-> logger.setLevel(logging.WARNING)
+(Pdb) p logger.level
+30
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(43)setup_logging()
+-> console_handler.setLevel(logging.WARNING)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(44)setup_logging()
+-> file_handler.setLevel(logging.WARNING)
+(Pdb) n
+--Return--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(44)setup_logging()->None
+-> file_handler.setLevel(logging.WARNING)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(137)<module>()
+-> incoming_data = load_rentals_file(args.input) # pylint: disable=invalid-name
+(Pdb) s
+--Call--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(70)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) p filename
+'source.json'
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(76)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(77)load_rentals_file()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(78)load_rentals_file()
+-> data = json.load(file)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(83)load_rentals_file()
+-> return data
+(Pdb) pp list(data.keys())[0]
+'RNT001'
+(Pdb) pp list(data.values())[0:3]
+[{'price_per_day': 31,
+  'product_code': 'PRD80',
+  'rental_end': '3/22/17',
+  'rental_start': '6/12/17',
+  'units_rented': 8},
+ {'price_per_day': 16,
+  'product_code': 'PRD11',
+  'rental_end': '9/30/18',
+  'rental_start': '7/20/16',
+  'units_rented': 1},
+ {'price_per_day': 40,
+  'product_code': 'PRD22',
+  'rental_end': '6/4/17',
+  'rental_start': '2/1/16',
+  'units_rented': 4}]
+(Pdb) ll
+ 70     def load_rentals_file(filename):
+ 71         """
+ 72         Load the rentals file, a JSON containing the product_code, units_rented,
+ 73         price_per_day, rental_start date and rental_end date for each rental.
+ 74         """
+ 75
+ 76         with open(filename) as file:
+ 77             try:
+ 78                 data = json.load(file)
+ 79             except FileNotFoundError:
+ 80                 logging.error("Could not find input file %s. Exited program.", filename)
+ 81                 logging.debug("FileNotFoundError generated by load_rentals_file.")
+ 82                 sys.exit()
+ 83  ->     return data
+(Pdb) n
+--Return--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(83)load_rentals_file()->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17', 'rental_start': '8/14/16', ...}, ...}
+-> return data
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(138)<module>()
+-> processed_data = calculate_additional_fields(incoming_data) # pylint: disable=invalid-name
+(Pdb) s
+--Call--
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(86)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(89)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(92)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(93)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(94)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(103)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(104)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(105)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(106)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(106)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(109)calculate_additional_fields()
+-> except (ValueError, KeyError) as err:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(110)calculate_additional_fields()
+-> logging.error("Cannot take the square root of a negative number.")
+(Pdb) p err
+ValueError('math domain error')
+(Pdb) n
+2020-02-17 00:02:33,217 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(111)calculate_additional_fields()
+-> logging.warning("For %s, the total price is %s. This occurreed "
+(Pdb) p
+*** SyntaxError: unexpected EOF while parsing
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(113)calculate_additional_fields()
+-> "is %s.", key, value['total_price'],
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(114)calculate_additional_fields()
+-> value['price_per_day'], value['total_days'])
+(Pdb) n
+2020-02-17 00:03:01,214 charges_calc.py:114 WARNING For RNT001, the total price is -2542. This occurreed because the price_per_day is 31 and the total_days is -82.
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(115)calculate_additional_fields()
+-> logging.debug("%s generated by calculate_additional_fields "
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(117)calculate_additional_fields()
+-> "pricing.", err)
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(89)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(92)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(93)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(94)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(103)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(104)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(105)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(106)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(107)calculate_additional_fields()
+-> value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(89)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(92)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(93)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(94)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(103)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(104)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(105)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(106)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(107)calculate_additional_fields()
+-> value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) n
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(89)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) c
+2020-02-17 00:03:30,754 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,755 charges_calc.py:114 WARNING For RNT006, the total price is -560. This occurreed because the price_per_day is 20 and the total_days is -28.
+2020-02-17 00:03:30,758 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,758 charges_calc.py:114 WARNING For RNT007, the total price is -640. This occurreed because the price_per_day is 16 and the total_days is -40.
+2020-02-17 00:03:30,759 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,760 charges_calc.py:114 WARNING For RNT008, the total price is -1356. This occurreed because the price_per_day is 12 and the total_days is -113.
+2020-02-17 00:03:30,760 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,761 charges_calc.py:114 WARNING For RNT009, the total price is -4968. This occurreed because the price_per_day is 6 and the total_days is -828.
+2020-02-17 00:03:30,761 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,762 charges_calc.py:114 WARNING For RNT010, the total price is -5400. This occurreed because the price_per_day is 27 and the total_days is -200.
+2020-02-17 00:03:30,762 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,764 charges_calc.py:114 WARNING For RNT011, the total price is -13468. This occurreed because the price_per_day is 26 and the total_days is -518.
+2020-02-17 00:03:30,765 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,766 charges_calc.py:114 WARNING For RNT012, the total price is -11664. This occurreed because the price_per_day is 18 and the total_days is -648.
+2020-02-17 00:03:30,766 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,767 charges_calc.py:114 WARNING For RNT014, the total price is -6808. This occurreed because the price_per_day is 37 and the total_days is -184.
+2020-02-17 00:03:30,767 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,768 charges_calc.py:114 WARNING For RNT016, the total price is -9504. This occurreed because the price_per_day is 11 and the total_days is -864.
+2020-02-17 00:03:30,769 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,769 charges_calc.py:114 WARNING For RNT017, the total price is -612. This occurreed because the price_per_day is 36 and the total_days is -17.
+2020-02-17 00:03:30,770 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,771 charges_calc.py:114 WARNING For RNT018, the total price is -8640. This occurreed because the price_per_day is 40 and the total_days is -216.
+2020-02-17 00:03:30,772 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,772 charges_calc.py:114 WARNING For RNT019, the total price is -22815. This occurreed because the price_per_day is 39 and the total_days is -585.
+2020-02-17 00:03:30,773 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,775 charges_calc.py:114 WARNING For RNT020, the total price is -29370. This occurreed because the price_per_day is 33 and the total_days is -890.
+2020-02-17 00:03:30,776 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,776 charges_calc.py:114 WARNING For RNT021, the total price is -18777. This occurreed because the price_per_day is 33 and the total_days is -569.
+2020-02-17 00:03:30,777 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,777 charges_calc.py:114 WARNING For RNT025, the total price is -16718. This occurreed because the price_per_day is 26 and the total_days is -643.
+2020-02-17 00:03:30,778 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,779 charges_calc.py:114 WARNING For RNT026, the total price is -16920. This occurreed because the price_per_day is 24 and the total_days is -705.
+2020-02-17 00:03:30,779 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,780 charges_calc.py:114 WARNING For RNT028, the total price is -7242. This occurreed because the price_per_day is 17 and the total_days is -426.
+2020-02-17 00:03:30,780 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,781 charges_calc.py:114 WARNING For RNT030, the total price is -2294. This occurreed because the price_per_day is 31 and the total_days is -74.
+2020-02-17 00:03:30,781 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,782 charges_calc.py:114 WARNING For RNT031, the total price is -9990. This occurreed because the price_per_day is 27 and the total_days is -370.
+2020-02-17 00:03:30,783 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,783 charges_calc.py:114 WARNING For RNT034, the total price is -20016. This occurreed because the price_per_day is 36 and the total_days is -556.
+2020-02-17 00:03:30,785 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,788 charges_calc.py:114 WARNING For RNT040, the total price is -7728. This occurreed because the price_per_day is 23 and the total_days is -336.
+2020-02-17 00:03:30,789 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,790 charges_calc.py:114 WARNING For RNT041, the total price is -4564. This occurreed because the price_per_day is 14 and the total_days is -326.
+2020-02-17 00:03:30,790 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,791 charges_calc.py:114 WARNING For RNT044, the total price is -9360. This occurreed because the price_per_day is 15 and the total_days is -624.
+2020-02-17 00:03:30,791 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,792 charges_calc.py:114 WARNING For RNT045, the total price is -1221. This occurreed because the price_per_day is 33 and the total_days is -37.
+2020-02-17 00:03:30,793 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,793 charges_calc.py:114 WARNING For RNT046, the total price is -9520. This occurreed because the price_per_day is 34 and the total_days is -280.
+2020-02-17 00:03:30,794 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,794 charges_calc.py:114 WARNING For RNT047, the total price is -9240. This occurreed because the price_per_day is 12 and the total_days is -770.
+2020-02-17 00:03:30,795 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,795 charges_calc.py:114 WARNING For RNT048, the total price is -11232. This occurreed because the price_per_day is 36 and the total_days is -312.
+2020-02-17 00:03:30,795 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,796 charges_calc.py:114 WARNING For RNT050, the total price is -17816. This occurreed because the price_per_day is 34 and the total_days is -524.
+2020-02-17 00:03:30,797 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,799 charges_calc.py:114 WARNING For RNT056, the total price is -31000. This occurreed because the price_per_day is 40 and the total_days is -775.
+2020-02-17 00:03:30,800 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,801 charges_calc.py:114 WARNING For RNT058, the total price is -4760. This occurreed because the price_per_day is 28 and the total_days is -170.
+2020-02-17 00:03:30,802 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,804 charges_calc.py:114 WARNING For RNT060, the total price is -812. This occurreed because the price_per_day is 29 and the total_days is -28.
+2020-02-17 00:03:30,804 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,805 charges_calc.py:114 WARNING For RNT061, the total price is -8376. This occurreed because the price_per_day is 24 and the total_days is -349.
+2020-02-17 00:03:30,806 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,806 charges_calc.py:114 WARNING For RNT062, the total price is -996. This occurreed because the price_per_day is 12 and the total_days is -83.
+2020-02-17 00:03:30,806 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,807 charges_calc.py:114 WARNING For RNT065, the total price is -7348. This occurreed because the price_per_day is 11 and the total_days is -668.
+2020-02-17 00:03:30,808 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,810 charges_calc.py:114 WARNING For RNT067, the total price is -2852. This occurreed because the price_per_day is 31 and the total_days is -92.
+2020-02-17 00:03:30,811 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,812 charges_calc.py:114 WARNING For RNT071, the total price is -798. This occurreed because the price_per_day is 6 and the total_days is -133.
+2020-02-17 00:03:30,812 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,814 charges_calc.py:114 WARNING For RNT074, the total price is -1254. This occurreed because the price_per_day is 22 and the total_days is -57.
+2020-02-17 00:03:30,814 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,815 charges_calc.py:114 WARNING For RNT076, the total price is -15100. This occurreed because the price_per_day is 20 and the total_days is -755.
+2020-02-17 00:03:30,815 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,816 charges_calc.py:114 WARNING For RNT077, the total price is -8876. This occurreed because the price_per_day is 14 and the total_days is -634.
+2020-02-17 00:03:30,816 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,817 charges_calc.py:114 WARNING For RNT079, the total price is -6384. This occurreed because the price_per_day is 21 and the total_days is -304.
+2020-02-17 00:03:30,817 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,818 charges_calc.py:114 WARNING For RNT084, the total price is -6064. This occurreed because the price_per_day is 16 and the total_days is -379.
+2020-02-17 00:03:30,820 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,822 charges_calc.py:114 WARNING For RNT086, the total price is -10320. This occurreed because the price_per_day is 40 and the total_days is -258.
+2020-02-17 00:03:30,823 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,823 charges_calc.py:114 WARNING For RNT087, the total price is -1961. This occurreed because the price_per_day is 37 and the total_days is -53.
+2020-02-17 00:03:30,824 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,825 charges_calc.py:114 WARNING For RNT089, the total price is -1640. This occurreed because the price_per_day is 20 and the total_days is -82.
+2020-02-17 00:03:30,825 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,826 charges_calc.py:114 WARNING For RNT092, the total price is -5238. This occurreed because the price_per_day is 18 and the total_days is -291.
+2020-02-17 00:03:30,826 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,827 charges_calc.py:114 WARNING For RNT095, the total price is -2268. This occurreed because the price_per_day is 6 and the total_days is -378.
+2020-02-17 00:03:30,828 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,828 charges_calc.py:114 WARNING For RNT097, the total price is -3915. This occurreed because the price_per_day is 29 and the total_days is -135.
+2020-02-17 00:03:30,829 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,829 charges_calc.py:114 WARNING For RNT099, the total price is -13734. This occurreed because the price_per_day is 18 and the total_days is -763.
+2020-02-17 00:03:30,830 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,830 charges_calc.py:114 WARNING For RNT100, the total price is -7560. This occurreed because the price_per_day is 10 and the total_days is -756.
+2020-02-17 00:03:30,834 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,834 charges_calc.py:114 WARNING For RNT101, the total price is -3951. This occurreed because the price_per_day is 9 and the total_days is -439.
+2020-02-17 00:03:30,835 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,836 charges_calc.py:114 WARNING For RNT102, the total price is -7514. This occurreed because the price_per_day is 34 and the total_days is -221.
+2020-02-17 00:03:30,837 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,838 charges_calc.py:114 WARNING For RNT103, the total price is -6820. This occurreed because the price_per_day is 20 and the total_days is -341.
+2020-02-17 00:03:30,838 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,839 charges_calc.py:114 WARNING For RNT104, the total price is -14787. This occurreed because the price_per_day is 31 and the total_days is -477.
+2020-02-17 00:03:30,839 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,840 charges_calc.py:114 WARNING For RNT105, the total price is -21696. This occurreed because the price_per_day is 32 and the total_days is -678.
+2020-02-17 00:03:30,840 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,840 charges_calc.py:114 WARNING For RNT106, the total price is -2520. This occurreed because the price_per_day is 35 and the total_days is -72.
+2020-02-17 00:03:30,841 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,841 charges_calc.py:114 WARNING For RNT107, the total price is -3960. This occurreed because the price_per_day is 11 and the total_days is -360.
+2020-02-17 00:03:30,844 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,845 charges_calc.py:114 WARNING For RNT109, the total price is -15990. This occurreed because the price_per_day is 30 and the total_days is -533.
+2020-02-17 00:03:30,846 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,846 charges_calc.py:114 WARNING For RNT114, the total price is -7196. This occurreed because the price_per_day is 14 and the total_days is -514.
+2020-02-17 00:03:30,847 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,847 charges_calc.py:114 WARNING For RNT115, the total price is -6624. This occurreed because the price_per_day is 8 and the total_days is -828.
+2020-02-17 00:03:30,848 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,849 charges_calc.py:114 WARNING For RNT116, the total price is -2024. This occurreed because the price_per_day is 8 and the total_days is -253.
+2020-02-17 00:03:30,849 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,850 charges_calc.py:114 WARNING For RNT118, the total price is -9522. This occurreed because the price_per_day is 23 and the total_days is -414.
+2020-02-17 00:03:30,850 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,851 charges_calc.py:114 WARNING For RNT119, the total price is -5964. This occurreed because the price_per_day is 28 and the total_days is -213.
+2020-02-17 00:03:30,852 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,852 charges_calc.py:114 WARNING For RNT120, the total price is -930. This occurreed because the price_per_day is 6 and the total_days is -155.
+2020-02-17 00:03:30,855 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,856 charges_calc.py:114 WARNING For RNT121, the total price is -7073. This occurreed because the price_per_day is 11 and the total_days is -643.
+2020-02-17 00:03:30,856 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,857 charges_calc.py:114 WARNING For RNT122, the total price is -9728. This occurreed because the price_per_day is 16 and the total_days is -608.
+2020-02-17 00:03:30,857 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,858 charges_calc.py:114 WARNING For RNT123, the total price is -2860. This occurreed because the price_per_day is 13 and the total_days is -220.
+2020-02-17 00:03:30,859 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,859 charges_calc.py:114 WARNING For RNT125, the total price is -3726. This occurreed because the price_per_day is 27 and the total_days is -138.
+2020-02-17 00:03:30,860 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,861 charges_calc.py:114 WARNING For RNT129, the total price is -1824. This occurreed because the price_per_day is 6 and the total_days is -304.
+2020-02-17 00:03:30,861 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,862 charges_calc.py:114 WARNING For RNT130, the total price is -2720. This occurreed because the price_per_day is 5 and the total_days is -544.
+2020-02-17 00:03:30,863 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,863 charges_calc.py:114 WARNING For RNT135, the total price is -693. This occurreed because the price_per_day is 11 and the total_days is -63.
+2020-02-17 00:03:30,864 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,866 charges_calc.py:114 WARNING For RNT139, the total price is -3105. This occurreed because the price_per_day is 23 and the total_days is -135.
+2020-02-17 00:03:30,868 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,869 charges_calc.py:114 WARNING For RNT141, the total price is -6384. This occurreed because the price_per_day is 21 and the total_days is -304.
+2020-02-17 00:03:30,870 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,870 charges_calc.py:114 WARNING For RNT142, the total price is -3152. This occurreed because the price_per_day is 16 and the total_days is -197.
+2020-02-17 00:03:30,871 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,872 charges_calc.py:114 WARNING For RNT143, the total price is -41028. This occurreed because the price_per_day is 39 and the total_days is -1052.
+2020-02-17 00:03:30,872 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,873 charges_calc.py:114 WARNING For RNT145, the total price is -23033. This occurreed because the price_per_day is 31 and the total_days is -743.
+2020-02-17 00:03:30,873 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,874 charges_calc.py:114 WARNING For RNT148, the total price is -429. This occurreed because the price_per_day is 13 and the total_days is -33.
+2020-02-17 00:03:30,874 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,877 charges_calc.py:114 WARNING For RNT149, the total price is -13900. This occurreed because the price_per_day is 20 and the total_days is -695.
+2020-02-17 00:03:30,878 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,878 charges_calc.py:114 WARNING For RNT151, the total price is -18125. This occurreed because the price_per_day is 25 and the total_days is -725.
+2020-02-17 00:03:30,880 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,880 charges_calc.py:114 WARNING For RNT154, the total price is -6720. This occurreed because the price_per_day is 16 and the total_days is -420.
+2020-02-17 00:03:30,881 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,882 charges_calc.py:114 WARNING For RNT155, the total price is -3784. This occurreed because the price_per_day is 22 and the total_days is -172.
+2020-02-17 00:03:30,883 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,883 charges_calc.py:114 WARNING For RNT157, the total price is -18656. This occurreed because the price_per_day is 32 and the total_days is -583.
+2020-02-17 00:03:30,884 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,884 charges_calc.py:114 WARNING For RNT158, the total price is -10272. This occurreed because the price_per_day is 12 and the total_days is -856.
+2020-02-17 00:03:30,889 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,890 charges_calc.py:114 WARNING For RNT160, the total price is -780. This occurreed because the price_per_day is 12 and the total_days is -65.
+2020-02-17 00:03:30,891 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,892 charges_calc.py:114 WARNING For RNT163, the total price is -2328. This occurreed because the price_per_day is 24 and the total_days is -97.
+2020-02-17 00:03:30,893 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,894 charges_calc.py:114 WARNING For RNT164, the total price is -5460. This occurreed because the price_per_day is 21 and the total_days is -260.
+2020-02-17 00:03:30,894 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,895 charges_calc.py:114 WARNING For RNT166, the total price is -29193. This occurreed because the price_per_day is 37 and the total_days is -789.
+2020-02-17 00:03:30,895 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,896 charges_calc.py:114 WARNING For RNT167, the total price is -1458. This occurreed because the price_per_day is 27 and the total_days is -54.
+2020-02-17 00:03:30,896 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,899 charges_calc.py:114 WARNING For RNT168, the total price is -5577. This occurreed because the price_per_day is 39 and the total_days is -143.
+2020-02-17 00:03:30,899 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,900 charges_calc.py:114 WARNING For RNT169, the total price is -15092. This occurreed because the price_per_day is 28 and the total_days is -539.
+2020-02-17 00:03:30,900 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,901 charges_calc.py:114 WARNING For RNT170, the total price is -9195. This occurreed because the price_per_day is 15 and the total_days is -613.
+2020-02-17 00:03:30,903 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,903 charges_calc.py:114 WARNING For RNT175, the total price is -2418. This occurreed because the price_per_day is 39 and the total_days is -62.
+2020-02-17 00:03:30,905 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,905 charges_calc.py:114 WARNING For RNT178, the total price is -4640. This occurreed because the price_per_day is 40 and the total_days is -116.
+2020-02-17 00:03:30,906 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,906 charges_calc.py:114 WARNING For RNT179, the total price is -60. This occurreed because the price_per_day is 6 and the total_days is -10.
+2020-02-17 00:03:30,907 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,908 charges_calc.py:114 WARNING For RNT180, the total price is -22734. This occurreed because the price_per_day is 27 and the total_days is -842.
+2020-02-17 00:03:30,911 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,911 charges_calc.py:114 WARNING For RNT183, the total price is -1272. This occurreed because the price_per_day is 24 and the total_days is -53.
+2020-02-17 00:03:30,912 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,913 charges_calc.py:114 WARNING For RNT184, the total price is -2650. This occurreed because the price_per_day is 5 and the total_days is -530.
+2020-02-17 00:03:30,914 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,914 charges_calc.py:114 WARNING For RNT187, the total price is -6330. This occurreed because the price_per_day is 10 and the total_days is -633.
+2020-02-17 00:03:30,915 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,915 charges_calc.py:114 WARNING For RNT189, the total price is -1710. This occurreed because the price_per_day is 18 and the total_days is -95.
+2020-02-17 00:03:30,916 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,917 charges_calc.py:114 WARNING For RNT192, the total price is -310. This occurreed because the price_per_day is 31 and the total_days is -10.
+2020-02-17 00:03:30,917 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,918 charges_calc.py:114 WARNING For RNT195, the total price is -14433. This occurreed because the price_per_day is 17 and the total_days is -849.
+2020-02-17 00:03:30,919 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,922 charges_calc.py:114 WARNING For RNT196, the total price is -17233. This occurreed because the price_per_day is 19 and the total_days is -907.
+2020-02-17 00:03:30,923 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,923 charges_calc.py:114 WARNING For RNT197, the total price is -3564. This occurreed because the price_per_day is 33 and the total_days is -108.
+2020-02-17 00:03:30,925 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,925 charges_calc.py:114 WARNING For RNT201, the total price is -6630. This occurreed because the price_per_day is 17 and the total_days is -390.
+2020-02-17 00:03:30,926 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,926 charges_calc.py:114 WARNING For RNT202, the total price is -34034. This occurreed because the price_per_day is 34 and the total_days is -1001.
+2020-02-17 00:03:30,927 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,928 charges_calc.py:114 WARNING For RNT207, the total price is -13650. This occurreed because the price_per_day is 21 and the total_days is -650.
+2020-02-17 00:03:30,929 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,929 charges_calc.py:114 WARNING For RNT208, the total price is -96. This occurreed because the price_per_day is 16 and the total_days is -6.
+2020-02-17 00:03:30,930 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,930 charges_calc.py:114 WARNING For RNT210, the total price is -1104. This occurreed because the price_per_day is 6 and the total_days is -184.
+2020-02-17 00:03:30,933 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,934 charges_calc.py:114 WARNING For RNT214, the total price is -4108. This occurreed because the price_per_day is 26 and the total_days is -158.
+2020-02-17 00:03:30,935 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,935 charges_calc.py:114 WARNING For RNT216, the total price is -1120. This occurreed because the price_per_day is 16 and the total_days is -70.
+2020-02-17 00:03:30,936 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,937 charges_calc.py:114 WARNING For RNT217, the total price is -3720. This occurreed because the price_per_day is 5 and the total_days is -744.
+2020-02-17 00:03:30,937 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,938 charges_calc.py:114 WARNING For RNT218, the total price is -14120. This occurreed because the price_per_day is 40 and the total_days is -353.
+2020-02-17 00:03:30,938 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,939 charges_calc.py:114 WARNING For RNT221, the total price is -32800. This occurreed because the price_per_day is 40 and the total_days is -820.
+2020-02-17 00:03:30,939 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,940 charges_calc.py:114 WARNING For RNT223, the total price is -17442. This occurreed because the price_per_day is 27 and the total_days is -646.
+2020-02-17 00:03:30,940 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,941 charges_calc.py:114 WARNING For RNT224, the total price is -13396. This occurreed because the price_per_day is 34 and the total_days is -394.
+2020-02-17 00:03:30,941 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,944 charges_calc.py:114 WARNING For RNT225, the total price is -3550. This occurreed because the price_per_day is 25 and the total_days is -142.
+2020-02-17 00:03:30,945 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,945 charges_calc.py:114 WARNING For RNT227, the total price is -14059. This occurreed because the price_per_day is 17 and the total_days is -827.
+2020-02-17 00:03:30,946 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,946 charges_calc.py:114 WARNING For RNT229, the total price is -1120. This occurreed because the price_per_day is 10 and the total_days is -112.
+2020-02-17 00:03:30,947 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,948 charges_calc.py:114 WARNING For RNT233, the total price is -5769. This occurreed because the price_per_day is 9 and the total_days is -641.
+2020-02-17 00:03:30,948 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,949 charges_calc.py:114 WARNING For RNT234, the total price is -1235. This occurreed because the price_per_day is 13 and the total_days is -95.
+2020-02-17 00:03:30,950 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,950 charges_calc.py:114 WARNING For RNT236, the total price is -9970. This occurreed because the price_per_day is 10 and the total_days is -997.
+2020-02-17 00:03:30,951 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,952 charges_calc.py:114 WARNING For RNT238, the total price is -735. This occurreed because the price_per_day is 5 and the total_days is -147.
+2020-02-17 00:03:30,953 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,955 charges_calc.py:114 WARNING For RNT241, the total price is -5796. This occurreed because the price_per_day is 28 and the total_days is -207.
+2020-02-17 00:03:30,956 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,956 charges_calc.py:114 WARNING For RNT242, the total price is -3132. This occurreed because the price_per_day is 9 and the total_days is -348.
+2020-02-17 00:03:30,957 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,957 charges_calc.py:114 WARNING For RNT243, the total price is -5473. This occurreed because the price_per_day is 13 and the total_days is -421.
+2020-02-17 00:03:30,958 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,958 charges_calc.py:114 WARNING For RNT244, the total price is -7764. This occurreed because the price_per_day is 12 and the total_days is -647.
+2020-02-17 00:03:30,959 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,959 charges_calc.py:114 WARNING For RNT246, the total price is -3318. This occurreed because the price_per_day is 21 and the total_days is -158.
+2020-02-17 00:03:30,960 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,960 charges_calc.py:114 WARNING For RNT247, the total price is -270. This occurreed because the price_per_day is 9 and the total_days is -30.
+2020-02-17 00:03:30,962 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,962 charges_calc.py:114 WARNING For RNT254, the total price is -1576. This occurreed because the price_per_day is 8 and the total_days is -197.
+2020-02-17 00:03:30,963 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,963 charges_calc.py:114 WARNING For RNT258, the total price is -3492. This occurreed because the price_per_day is 18 and the total_days is -194.
+2020-02-17 00:03:30,967 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,967 charges_calc.py:114 WARNING For RNT259, the total price is -18598. This occurreed because the price_per_day is 34 and the total_days is -547.
+2020-02-17 00:03:30,968 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,969 charges_calc.py:114 WARNING For RNT260, the total price is -5984. This occurreed because the price_per_day is 16 and the total_days is -374.
+2020-02-17 00:03:30,970 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,970 charges_calc.py:114 WARNING For RNT261, the total price is -1860. This occurreed because the price_per_day is 15 and the total_days is -124.
+2020-02-17 00:03:30,971 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,971 charges_calc.py:114 WARNING For RNT264, the total price is -10935. This occurreed because the price_per_day is 15 and the total_days is -729.
+2020-02-17 00:03:30,972 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,972 charges_calc.py:114 WARNING For RNT265, the total price is -16. This occurreed because the price_per_day is 16 and the total_days is -1.
+2020-02-17 00:03:30,973 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,974 charges_calc.py:114 WARNING For RNT270, the total price is -703. This occurreed because the price_per_day is 19 and the total_days is -37.
+2020-02-17 00:03:30,974 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,974 charges_calc.py:114 WARNING For RNT271, the total price is -9262. This occurreed because the price_per_day is 11 and the total_days is -842.
+2020-02-17 00:03:30,977 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,978 charges_calc.py:114 WARNING For RNT272, the total price is -1752. This occurreed because the price_per_day is 24 and the total_days is -73.
+2020-02-17 00:03:30,978 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,979 charges_calc.py:114 WARNING For RNT274, the total price is -25498. This occurreed because the price_per_day is 38 and the total_days is -671.
+2020-02-17 00:03:30,980 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,980 charges_calc.py:114 WARNING For RNT277, the total price is -3275. This occurreed because the price_per_day is 5 and the total_days is -655.
+2020-02-17 00:03:30,981 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,982 charges_calc.py:114 WARNING For RNT282, the total price is -3040. This occurreed because the price_per_day is 20 and the total_days is -152.
+2020-02-17 00:03:30,982 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,983 charges_calc.py:114 WARNING For RNT283, the total price is -216. This occurreed because the price_per_day is 12 and the total_days is -18.
+2020-02-17 00:03:30,984 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,984 charges_calc.py:114 WARNING For RNT288, the total price is -4033. This occurreed because the price_per_day is 37 and the total_days is -109.
+2020-02-17 00:03:30,986 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,988 charges_calc.py:114 WARNING For RNT290, the total price is -130. This occurreed because the price_per_day is 26 and the total_days is -5.
+2020-02-17 00:03:30,990 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,990 charges_calc.py:114 WARNING For RNT295, the total price is -6965. This occurreed because the price_per_day is 35 and the total_days is -199.
+2020-02-17 00:03:30,991 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,991 charges_calc.py:114 WARNING For RNT296, the total price is -13776. This occurreed because the price_per_day is 24 and the total_days is -574.
+2020-02-17 00:03:30,992 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,992 charges_calc.py:114 WARNING For RNT298, the total price is -3120. This occurreed because the price_per_day is 20 and the total_days is -156.
+2020-02-17 00:03:30,993 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,993 charges_calc.py:114 WARNING For RNT299, the total price is -195. This occurreed because the price_per_day is 39 and the total_days is -5.
+2020-02-17 00:03:30,994 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,995 charges_calc.py:114 WARNING For RNT300, the total price is -5697. This occurreed because the price_per_day is 27 and the total_days is -211.
+2020-02-17 00:03:30,995 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,996 charges_calc.py:114 WARNING For RNT301, the total price is -8385. This occurreed because the price_per_day is 15 and the total_days is -559.
+2020-02-17 00:03:30,996 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:30,999 charges_calc.py:114 WARNING For RNT302, the total price is -1704. This occurreed because the price_per_day is 6 and the total_days is -284.
+2020-02-17 00:03:31,000 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,000 charges_calc.py:114 WARNING For RNT303, the total price is -12150. This occurreed because the price_per_day is 30 and the total_days is -405.
+2020-02-17 00:03:31,000 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,001 charges_calc.py:114 WARNING For RNT304, the total price is -3600. This occurreed because the price_per_day is 20 and the total_days is -180.
+2020-02-17 00:03:31,002 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,002 charges_calc.py:114 WARNING For RNT305, the total price is -11970. This occurreed because the price_per_day is 19 and the total_days is -630.
+2020-02-17 00:03:31,003 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,003 charges_calc.py:114 WARNING For RNT306, the total price is -22480. This occurreed because the price_per_day is 40 and the total_days is -562.
+2020-02-17 00:03:31,004 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,005 charges_calc.py:114 WARNING For RNT308, the total price is -440. This occurreed because the price_per_day is 5 and the total_days is -88.
+2020-02-17 00:03:31,006 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,006 charges_calc.py:114 WARNING For RNT309, the total price is -1330. This occurreed because the price_per_day is 35 and the total_days is -38.
+2020-02-17 00:03:31,007 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,007 charges_calc.py:114 WARNING For RNT310, the total price is -11388. This occurreed because the price_per_day is 13 and the total_days is -876.
+2020-02-17 00:03:31,008 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,010 charges_calc.py:114 WARNING For RNT311, the total price is -18104. This occurreed because the price_per_day is 31 and the total_days is -584.
+2020-02-17 00:03:31,011 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,011 charges_calc.py:114 WARNING For RNT312, the total price is -2822. This occurreed because the price_per_day is 34 and the total_days is -83.
+2020-02-17 00:03:31,012 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,012 charges_calc.py:114 WARNING For RNT313, the total price is -4420. This occurreed because the price_per_day is 13 and the total_days is -340.
+2020-02-17 00:03:31,013 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,013 charges_calc.py:114 WARNING For RNT314, the total price is -19734. This occurreed because the price_per_day is 39 and the total_days is -506.
+2020-02-17 00:03:31,014 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,014 charges_calc.py:114 WARNING For RNT315, the total price is -9520. This occurreed because the price_per_day is 35 and the total_days is -272.
+2020-02-17 00:03:31,015 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,015 charges_calc.py:114 WARNING For RNT316, the total price is -4320. This occurreed because the price_per_day is 16 and the total_days is -270.
+2020-02-17 00:03:31,016 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,016 charges_calc.py:114 WARNING For RNT320, the total price is -5838. This occurreed because the price_per_day is 14 and the total_days is -417.
+2020-02-17 00:03:31,017 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,017 charges_calc.py:114 WARNING For RNT321, the total price is -5321. This occurreed because the price_per_day is 17 and the total_days is -313.
+2020-02-17 00:03:31,018 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,021 charges_calc.py:114 WARNING For RNT324, the total price is -19080. This occurreed because the price_per_day is 18 and the total_days is -1060.
+2020-02-17 00:03:31,022 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,022 charges_calc.py:114 WARNING For RNT325, the total price is -24038. This occurreed because the price_per_day is 34 and the total_days is -707.
+2020-02-17 00:03:31,024 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,024 charges_calc.py:114 WARNING For RNT331, the total price is -76. This occurreed because the price_per_day is 38 and the total_days is -2.
+2020-02-17 00:03:31,025 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,025 charges_calc.py:114 WARNING For RNT335, the total price is -150. This occurreed because the price_per_day is 10 and the total_days is -15.
+2020-02-17 00:03:31,026 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,027 charges_calc.py:114 WARNING For RNT336, the total price is -4488. This occurreed because the price_per_day is 17 and the total_days is -264.
+2020-02-17 00:03:31,027 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,028 charges_calc.py:114 WARNING For RNT337, the total price is -6650. This occurreed because the price_per_day is 25 and the total_days is -266.
+2020-02-17 00:03:31,028 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,029 charges_calc.py:114 WARNING For RNT339, the total price is -18924. This occurreed because the price_per_day is 38 and the total_days is -498.
+2020-02-17 00:03:31,030 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,032 charges_calc.py:114 WARNING For RNT343, the total price is -928. This occurreed because the price_per_day is 32 and the total_days is -29.
+2020-02-17 00:03:31,033 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,033 charges_calc.py:114 WARNING For RNT345, the total price is -7790. This occurreed because the price_per_day is 38 and the total_days is -205.
+2020-02-17 00:03:31,034 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,034 charges_calc.py:114 WARNING For RNT346, the total price is -14715. This occurreed because the price_per_day is 27 and the total_days is -545.
+2020-02-17 00:03:31,035 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,035 charges_calc.py:114 WARNING For RNT347, the total price is -3744. This occurreed because the price_per_day is 18 and the total_days is -208.
+2020-02-17 00:03:31,037 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,037 charges_calc.py:114 WARNING For RNT352, the total price is -18051. This occurreed because the price_per_day is 33 and the total_days is -547.
+2020-02-17 00:03:31,038 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,038 charges_calc.py:114 WARNING For RNT353, the total price is -11210. This occurreed because the price_per_day is 38 and the total_days is -295.
+2020-02-17 00:03:31,039 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,039 charges_calc.py:114 WARNING For RNT355, the total price is -540. This occurreed because the price_per_day is 12 and the total_days is -45.
+2020-02-17 00:03:31,040 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,040 charges_calc.py:114 WARNING For RNT356, the total price is -1036. This occurreed because the price_per_day is 7 and the total_days is -148.
+2020-02-17 00:03:31,044 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,044 charges_calc.py:114 WARNING For RNT361, the total price is -14595. This occurreed because the price_per_day is 21 and the total_days is -695.
+2020-02-17 00:03:31,045 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,046 charges_calc.py:114 WARNING For RNT363, the total price is -418. This occurreed because the price_per_day is 19 and the total_days is -22.
+2020-02-17 00:03:31,046 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,047 charges_calc.py:114 WARNING For RNT364, the total price is -1558. This occurreed because the price_per_day is 38 and the total_days is -41.
+2020-02-17 00:03:31,047 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,048 charges_calc.py:114 WARNING For RNT366, the total price is -9826. This occurreed because the price_per_day is 34 and the total_days is -289.
+2020-02-17 00:03:31,049 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,049 charges_calc.py:114 WARNING For RNT371, the total price is -15840. This occurreed because the price_per_day is 30 and the total_days is -528.
+2020-02-17 00:03:31,050 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,050 charges_calc.py:114 WARNING For RNT372, the total price is -9412. This occurreed because the price_per_day is 26 and the total_days is -362.
+2020-02-17 00:03:31,051 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,054 charges_calc.py:114 WARNING For RNT374, the total price is -1476. This occurreed because the price_per_day is 9 and the total_days is -164.
+2020-02-17 00:03:31,055 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,055 charges_calc.py:114 WARNING For RNT376, the total price is -4922. This occurreed because the price_per_day is 23 and the total_days is -214.
+2020-02-17 00:03:31,056 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,057 charges_calc.py:114 WARNING For RNT379, the total price is -11203. This occurreed because the price_per_day is 17 and the total_days is -659.
+2020-02-17 00:03:31,057 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,058 charges_calc.py:114 WARNING For RNT381, the total price is -9842. This occurreed because the price_per_day is 19 and the total_days is -518.
+2020-02-17 00:03:31,058 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,059 charges_calc.py:114 WARNING For RNT383, the total price is -198. This occurreed because the price_per_day is 9 and the total_days is -22.
+2020-02-17 00:03:31,059 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,060 charges_calc.py:114 WARNING For RNT384, the total price is -6222. This occurreed because the price_per_day is 34 and the total_days is -183.
+2020-02-17 00:03:31,061 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,061 charges_calc.py:114 WARNING For RNT386, the total price is -7980. This occurreed because the price_per_day is 38 and the total_days is -210.
+2020-02-17 00:03:31,062 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,062 charges_calc.py:114 WARNING For RNT387, the total price is -35720. This occurreed because the price_per_day is 40 and the total_days is -893.
+2020-02-17 00:03:31,063 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,065 charges_calc.py:114 WARNING For RNT388, the total price is -2935. This occurreed because the price_per_day is 5 and the total_days is -587.
+2020-02-17 00:03:31,066 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,066 charges_calc.py:114 WARNING For RNT391, the total price is -324. This occurreed because the price_per_day is 27 and the total_days is -12.
+2020-02-17 00:03:31,067 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,067 charges_calc.py:114 WARNING For RNT392, the total price is -2184. This occurreed because the price_per_day is 21 and the total_days is -104.
+2020-02-17 00:03:31,068 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,069 charges_calc.py:114 WARNING For RNT394, the total price is -10827. This occurreed because the price_per_day is 27 and the total_days is -401.
+2020-02-17 00:03:31,069 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,070 charges_calc.py:114 WARNING For RNT395, the total price is -552. This occurreed because the price_per_day is 6 and the total_days is -92.
+2020-02-17 00:03:31,072 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,072 charges_calc.py:114 WARNING For RNT397, the total price is -7326. This occurreed because the price_per_day is 18 and the total_days is -407.
+2020-02-17 00:03:31,073 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,073 charges_calc.py:114 WARNING For RNT400, the total price is -15795. This occurreed because the price_per_day is 27 and the total_days is -585.
+2020-02-17 00:03:31,074 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,076 charges_calc.py:114 WARNING For RNT405, the total price is -9720. This occurreed because the price_per_day is 18 and the total_days is -540.
+2020-02-17 00:03:31,077 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,078 charges_calc.py:114 WARNING For RNT408, the total price is -1110. This occurreed because the price_per_day is 37 and the total_days is -30.
+2020-02-17 00:03:31,078 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,079 charges_calc.py:114 WARNING For RNT409, the total price is -6504. This occurreed because the price_per_day is 24 and the total_days is -271.
+2020-02-17 00:03:31,079 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,080 charges_calc.py:114 WARNING For RNT412, the total price is -9471. This occurreed because the price_per_day is 33 and the total_days is -287.
+2020-02-17 00:03:31,080 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,081 charges_calc.py:114 WARNING For RNT413, the total price is -1780. This occurreed because the price_per_day is 5 and the total_days is -356.
+2020-02-17 00:03:31,082 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,082 charges_calc.py:114 WARNING For RNT414, the total price is -10412. This occurreed because the price_per_day is 38 and the total_days is -274.
+2020-02-17 00:03:31,083 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,084 charges_calc.py:114 WARNING For RNT416, the total price is -6750. This occurreed because the price_per_day is 27 and the total_days is -250.
+2020-02-17 00:03:31,086 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,088 charges_calc.py:114 WARNING For RNT421, the total price is -5409. This occurreed because the price_per_day is 9 and the total_days is -601.
+2020-02-17 00:03:31,088 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,089 charges_calc.py:114 WARNING For RNT422, the total price is -3339. This occurreed because the price_per_day is 21 and the total_days is -159.
+2020-02-17 00:03:31,089 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,090 charges_calc.py:114 WARNING For RNT423, the total price is -9310. This occurreed because the price_per_day is 35 and the total_days is -266.
+2020-02-17 00:03:31,090 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,091 charges_calc.py:114 WARNING For RNT424, the total price is -19426. This occurreed because the price_per_day is 22 and the total_days is -883.
+2020-02-17 00:03:31,091 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,092 charges_calc.py:114 WARNING For RNT427, the total price is -5291. This occurreed because the price_per_day is 11 and the total_days is -481.
+2020-02-17 00:03:31,092 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,093 charges_calc.py:114 WARNING For RNT428, the total price is -2295. This occurreed because the price_per_day is 15 and the total_days is -153.
+2020-02-17 00:03:31,093 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,094 charges_calc.py:114 WARNING For RNT430, the total price is -330. This occurreed because the price_per_day is 15 and the total_days is -22.
+2020-02-17 00:03:31,095 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,095 charges_calc.py:114 WARNING For RNT435, the total price is -9696. This occurreed because the price_per_day is 32 and the total_days is -303.
+2020-02-17 00:03:31,096 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,098 charges_calc.py:114 WARNING For RNT436, the total price is -3450. This occurreed because the price_per_day is 10 and the total_days is -345.
+2020-02-17 00:03:31,099 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,099 charges_calc.py:114 WARNING For RNT440, the total price is -25956. This occurreed because the price_per_day is 36 and the total_days is -721.
+2020-02-17 00:03:31,100 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,101 charges_calc.py:114 WARNING For RNT443, the total price is -24327. This occurreed because the price_per_day is 27 and the total_days is -901.
+2020-02-17 00:03:31,101 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,102 charges_calc.py:114 WARNING For RNT445, the total price is -1936. This occurreed because the price_per_day is 16 and the total_days is -121.
+2020-02-17 00:03:31,103 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,103 charges_calc.py:114 WARNING For RNT446, the total price is -13212. This occurreed because the price_per_day is 18 and the total_days is -734.
+2020-02-17 00:03:31,104 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,104 charges_calc.py:114 WARNING For RNT447, the total price is -2730. This occurreed because the price_per_day is 21 and the total_days is -130.
+2020-02-17 00:03:31,105 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,106 charges_calc.py:114 WARNING For RNT449, the total price is -16428. This occurreed because the price_per_day is 37 and the total_days is -444.
+2020-02-17 00:03:31,107 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,109 charges_calc.py:114 WARNING For RNT451, the total price is -948. This occurreed because the price_per_day is 6 and the total_days is -158.
+2020-02-17 00:03:31,110 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,111 charges_calc.py:114 WARNING For RNT453, the total price is -27506. This occurreed because the price_per_day is 34 and the total_days is -809.
+2020-02-17 00:03:31,111 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,112 charges_calc.py:114 WARNING For RNT454, the total price is -170. This occurreed because the price_per_day is 5 and the total_days is -34.
+2020-02-17 00:03:31,113 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,113 charges_calc.py:114 WARNING For RNT457, the total price is -19189. This occurreed because the price_per_day is 31 and the total_days is -619.
+2020-02-17 00:03:31,114 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,115 charges_calc.py:114 WARNING For RNT461, the total price is -8525. This occurreed because the price_per_day is 11 and the total_days is -775.
+2020-02-17 00:03:31,115 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,116 charges_calc.py:114 WARNING For RNT462, the total price is -646. This occurreed because the price_per_day is 17 and the total_days is -38.
+2020-02-17 00:03:31,116 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,117 charges_calc.py:114 WARNING For RNT463, the total price is -9711. This occurreed because the price_per_day is 39 and the total_days is -249.
+2020-02-17 00:03:31,117 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,121 charges_calc.py:114 WARNING For RNT465, the total price is -15429. This occurreed because the price_per_day is 37 and the total_days is -417.
+2020-02-17 00:03:31,122 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,122 charges_calc.py:114 WARNING For RNT467, the total price is -20300. This occurreed because the price_per_day is 28 and the total_days is -725.
+2020-02-17 00:03:31,123 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,124 charges_calc.py:114 WARNING For RNT472, the total price is -1836. This occurreed because the price_per_day is 36 and the total_days is -51.
+2020-02-17 00:03:31,125 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,125 charges_calc.py:114 WARNING For RNT476, the total price is -21924. This occurreed because the price_per_day is 36 and the total_days is -609.
+2020-02-17 00:03:31,126 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,126 charges_calc.py:114 WARNING For RNT480, the total price is -3848. This occurreed because the price_per_day is 8 and the total_days is -481.
+2020-02-17 00:03:31,127 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,128 charges_calc.py:114 WARNING For RNT485, the total price is -15998. This occurreed because the price_per_day is 38 and the total_days is -421.
+2020-02-17 00:03:31,128 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,129 charges_calc.py:114 WARNING For RNT487, the total price is -11448. This occurreed because the price_per_day is 36 and the total_days is -318.
+2020-02-17 00:03:31,130 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,132 charges_calc.py:114 WARNING For RNT489, the total price is -1976. This occurreed because the price_per_day is 19 and the total_days is -104.
+2020-02-17 00:03:31,133 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,133 charges_calc.py:114 WARNING For RNT490, the total price is -703. This occurreed because the price_per_day is 19 and the total_days is -37.
+2020-02-17 00:03:31,134 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,134 charges_calc.py:114 WARNING For RNT491, the total price is -7260. This occurreed because the price_per_day is 15 and the total_days is -484.
+2020-02-17 00:03:31,135 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,136 charges_calc.py:114 WARNING For RNT493, the total price is -8184. This occurreed because the price_per_day is 12 and the total_days is -682.
+2020-02-17 00:03:31,137 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,137 charges_calc.py:114 WARNING For RNT495, the total price is -2282. This occurreed because the price_per_day is 7 and the total_days is -326.
+2020-02-17 00:03:31,138 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,139 charges_calc.py:114 WARNING For RNT496, the total price is -9308. This occurreed because the price_per_day is 26 and the total_days is -358.
+2020-02-17 00:03:31,139 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,140 charges_calc.py:114 WARNING For RNT497, the total price is -7191. This occurreed because the price_per_day is 17 and the total_days is -423.
+2020-02-17 00:03:31,141 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,143 charges_calc.py:114 WARNING For RNT501, the total price is -3186. This occurreed because the price_per_day is 27 and the total_days is -118.
+2020-02-17 00:03:31,144 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,144 charges_calc.py:114 WARNING For RNT503, the total price is -4407. This occurreed because the price_per_day is 39 and the total_days is -113.
+2020-02-17 00:03:31,145 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,145 charges_calc.py:114 WARNING For RNT507, the total price is -2304. This occurreed because the price_per_day is 6 and the total_days is -384.
+2020-02-17 00:03:31,146 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,146 charges_calc.py:114 WARNING For RNT508, the total price is -13516. This occurreed because the price_per_day is 31 and the total_days is -436.
+2020-02-17 00:03:31,147 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,147 charges_calc.py:114 WARNING For RNT509, the total price is -3312. This occurreed because the price_per_day is 12 and the total_days is -276.
+2020-02-17 00:03:31,148 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,149 charges_calc.py:114 WARNING For RNT512, the total price is -96. This occurreed because the price_per_day is 8 and the total_days is -12.
+2020-02-17 00:03:31,149 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,149 charges_calc.py:114 WARNING For RNT513, the total price is -4225. This occurreed because the price_per_day is 25 and the total_days is -169.
+2020-02-17 00:03:31,150 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,150 charges_calc.py:114 WARNING For RNT514, the total price is -11118. This occurreed because the price_per_day is 34 and the total_days is -327.
+2020-02-17 00:03:31,151 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,151 charges_calc.py:114 WARNING For RNT515, the total price is -3888. This occurreed because the price_per_day is 18 and the total_days is -216.
+2020-02-17 00:03:31,156 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,156 charges_calc.py:114 WARNING For RNT516, the total price is -9352. This occurreed because the price_per_day is 28 and the total_days is -334.
+2020-02-17 00:03:31,157 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,157 charges_calc.py:114 WARNING For RNT517, the total price is -8470. This occurreed because the price_per_day is 14 and the total_days is -605.
+2020-02-17 00:03:31,158 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,158 charges_calc.py:114 WARNING For RNT518, the total price is -15475. This occurreed because the price_per_day is 25 and the total_days is -619.
+2020-02-17 00:03:31,159 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,160 charges_calc.py:114 WARNING For RNT520, the total price is -2286. This occurreed because the price_per_day is 18 and the total_days is -127.
+2020-02-17 00:03:31,160 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,161 charges_calc.py:114 WARNING For RNT522, the total price is -2535. This occurreed because the price_per_day is 15 and the total_days is -169.
+2020-02-17 00:03:31,161 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,162 charges_calc.py:114 WARNING For RNT524, the total price is -4773. This occurreed because the price_per_day is 37 and the total_days is -129.
+2020-02-17 00:03:31,162 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,163 charges_calc.py:114 WARNING For RNT525, the total price is -3910. This occurreed because the price_per_day is 34 and the total_days is -115.
+2020-02-17 00:03:31,163 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,166 charges_calc.py:114 WARNING For RNT528, the total price is -23632. This occurreed because the price_per_day is 28 and the total_days is -844.
+2020-02-17 00:03:31,167 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,167 charges_calc.py:114 WARNING For RNT532, the total price is -13702. This occurreed because the price_per_day is 34 and the total_days is -403.
+2020-02-17 00:03:31,168 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,169 charges_calc.py:114 WARNING For RNT533, the total price is -6384. This occurreed because the price_per_day is 14 and the total_days is -456.
+2020-02-17 00:03:31,170 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,170 charges_calc.py:114 WARNING For RNT535, the total price is -14560. This occurreed because the price_per_day is 26 and the total_days is -560.
+2020-02-17 00:03:31,171 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,171 charges_calc.py:114 WARNING For RNT536, the total price is -6981. This occurreed because the price_per_day is 39 and the total_days is -179.
+2020-02-17 00:03:31,172 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,172 charges_calc.py:114 WARNING For RNT537, the total price is -10980. This occurreed because the price_per_day is 36 and the total_days is -305.
+2020-02-17 00:03:31,173 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,173 charges_calc.py:114 WARNING For RNT538, the total price is -9384. This occurreed because the price_per_day is 34 and the total_days is -276.
+2020-02-17 00:03:31,174 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,174 charges_calc.py:114 WARNING For RNT539, the total price is -8970. This occurreed because the price_per_day is 23 and the total_days is -390.
+2020-02-17 00:03:31,177 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,178 charges_calc.py:114 WARNING For RNT541, the total price is -16580. This occurreed because the price_per_day is 20 and the total_days is -829.
+2020-02-17 00:03:31,179 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,179 charges_calc.py:114 WARNING For RNT544, the total price is -2856. This occurreed because the price_per_day is 14 and the total_days is -204.
+2020-02-17 00:03:31,180 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,180 charges_calc.py:114 WARNING For RNT545, the total price is -10989. This occurreed because the price_per_day is 27 and the total_days is -407.
+2020-02-17 00:03:31,181 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,181 charges_calc.py:114 WARNING For RNT546, the total price is -5439. This occurreed because the price_per_day is 37 and the total_days is -147.
+2020-02-17 00:03:31,182 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,182 charges_calc.py:114 WARNING For RNT548, the total price is -14508. This occurreed because the price_per_day is 39 and the total_days is -372.
+2020-02-17 00:03:31,183 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,183 charges_calc.py:114 WARNING For RNT550, the total price is -18057. This occurreed because the price_per_day is 39 and the total_days is -463.
+2020-02-17 00:03:31,184 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,184 charges_calc.py:114 WARNING For RNT551, the total price is -3200. This occurreed because the price_per_day is 10 and the total_days is -320.
+2020-02-17 00:03:31,186 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,189 charges_calc.py:114 WARNING For RNT555, the total price is -2440. This occurreed because the price_per_day is 40 and the total_days is -61.
+2020-02-17 00:03:31,190 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,191 charges_calc.py:114 WARNING For RNT558, the total price is -2968. This occurreed because the price_per_day is 28 and the total_days is -106.
+2020-02-17 00:03:31,192 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,192 charges_calc.py:114 WARNING For RNT561, the total price is -23700. This occurreed because the price_per_day is 30 and the total_days is -790.
+2020-02-17 00:03:31,193 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,193 charges_calc.py:114 WARNING For RNT562, the total price is -3072. This occurreed because the price_per_day is 32 and the total_days is -96.
+2020-02-17 00:03:31,194 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,194 charges_calc.py:114 WARNING For RNT566, the total price is -33066. This occurreed because the price_per_day is 33 and the total_days is -1002.
+2020-02-17 00:03:31,195 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,196 charges_calc.py:114 WARNING For RNT569, the total price is -4588. This occurreed because the price_per_day is 37 and the total_days is -124.
+2020-02-17 00:03:31,196 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,197 charges_calc.py:114 WARNING For RNT570, the total price is -4978. This occurreed because the price_per_day is 38 and the total_days is -131.
+2020-02-17 00:03:31,197 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,200 charges_calc.py:114 WARNING For RNT572, the total price is -7970. This occurreed because the price_per_day is 10 and the total_days is -797.
+2020-02-17 00:03:31,201 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,201 charges_calc.py:114 WARNING For RNT575, the total price is -2292. This occurreed because the price_per_day is 12 and the total_days is -191.
+2020-02-17 00:03:31,203 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,203 charges_calc.py:114 WARNING For RNT580, the total price is -10850. This occurreed because the price_per_day is 25 and the total_days is -434.
+2020-02-17 00:03:31,204 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,205 charges_calc.py:114 WARNING For RNT582, the total price is -140. This occurreed because the price_per_day is 35 and the total_days is -4.
+2020-02-17 00:03:31,206 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,206 charges_calc.py:114 WARNING For RNT585, the total price is -12096. This occurreed because the price_per_day is 16 and the total_days is -756.
+2020-02-17 00:03:31,207 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,207 charges_calc.py:114 WARNING For RNT586, the total price is -5562. This occurreed because the price_per_day is 27 and the total_days is -206.
+2020-02-17 00:03:31,208 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,208 charges_calc.py:114 WARNING For RNT587, the total price is -10989. This occurreed because the price_per_day is 27 and the total_days is -407.
+2020-02-17 00:03:31,209 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,211 charges_calc.py:114 WARNING For RNT590, the total price is -21800. This occurreed because the price_per_day is 40 and the total_days is -545.
+2020-02-17 00:03:31,211 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,212 charges_calc.py:114 WARNING For RNT591, the total price is -1606. This occurreed because the price_per_day is 22 and the total_days is -73.
+2020-02-17 00:03:31,213 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,213 charges_calc.py:114 WARNING For RNT592, the total price is -2394. This occurreed because the price_per_day is 21 and the total_days is -114.
+2020-02-17 00:03:31,214 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,214 charges_calc.py:114 WARNING For RNT593, the total price is -2368. This occurreed because the price_per_day is 37 and the total_days is -64.
+2020-02-17 00:03:31,215 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,215 charges_calc.py:114 WARNING For RNT595, the total price is -13376. This occurreed because the price_per_day is 32 and the total_days is -418.
+2020-02-17 00:03:31,216 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,217 charges_calc.py:114 WARNING For RNT597, the total price is -22755. This occurreed because the price_per_day is 37 and the total_days is -615.
+2020-02-17 00:03:31,217 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,218 charges_calc.py:114 WARNING For RNT598, the total price is -4950. This occurreed because the price_per_day is 9 and the total_days is -550.
+2020-02-17 00:03:31,218 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,219 charges_calc.py:114 WARNING For RNT599, the total price is -17976. This occurreed because the price_per_day is 21 and the total_days is -856.
+2020-02-17 00:03:31,220 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,223 charges_calc.py:114 WARNING For RNT601, the total price is -4832. This occurreed because the price_per_day is 32 and the total_days is -151.
+2020-02-17 00:03:31,224 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,225 charges_calc.py:114 WARNING For RNT602, the total price is -5611. This occurreed because the price_per_day is 31 and the total_days is -181.
+2020-02-17 00:03:31,225 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,225 charges_calc.py:114 WARNING For RNT603, the total price is -5292. This occurreed because the price_per_day is 9 and the total_days is -588.
+2020-02-17 00:03:31,226 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,227 charges_calc.py:114 WARNING For RNT604, the total price is -2238. This occurreed because the price_per_day is 6 and the total_days is -373.
+2020-02-17 00:03:31,227 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,228 charges_calc.py:114 WARNING For RNT605, the total price is -13992. This occurreed because the price_per_day is 33 and the total_days is -424.
+2020-02-17 00:03:31,229 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,229 charges_calc.py:114 WARNING For RNT606, the total price is -34047. This occurreed because the price_per_day is 39 and the total_days is -873.
+2020-02-17 00:03:31,230 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,231 charges_calc.py:114 WARNING For RNT611, the total price is -1122. This occurreed because the price_per_day is 33 and the total_days is -34.
+2020-02-17 00:03:31,231 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,234 charges_calc.py:114 WARNING For RNT613, the total price is -2600. This occurreed because the price_per_day is 10 and the total_days is -260.
+2020-02-17 00:03:31,235 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,236 charges_calc.py:114 WARNING For RNT615, the total price is -3720. This occurreed because the price_per_day is 40 and the total_days is -93.
+2020-02-17 00:03:31,238 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,238 charges_calc.py:114 WARNING For RNT622, the total price is -4032. This occurreed because the price_per_day is 32 and the total_days is -126.
+2020-02-17 00:03:31,239 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,239 charges_calc.py:114 WARNING For RNT626, the total price is -11360. This occurreed because the price_per_day is 32 and the total_days is -355.
+2020-02-17 00:03:31,240 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,241 charges_calc.py:114 WARNING For RNT630, the total price is -2701. This occurreed because the price_per_day is 37 and the total_days is -73.
+2020-02-17 00:03:31,242 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,242 charges_calc.py:114 WARNING For RNT632, the total price is -108. This occurreed because the price_per_day is 18 and the total_days is -6.
+2020-02-17 00:03:31,243 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,245 charges_calc.py:114 WARNING For RNT633, the total price is -948. This occurreed because the price_per_day is 6 and the total_days is -158.
+2020-02-17 00:03:31,245 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,246 charges_calc.py:114 WARNING For RNT634, the total price is -560. This occurreed because the price_per_day is 14 and the total_days is -40.
+2020-02-17 00:03:31,247 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,247 charges_calc.py:114 WARNING For RNT636, the total price is -15694. This occurreed because the price_per_day is 38 and the total_days is -413.
+2020-02-17 00:03:31,248 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,248 charges_calc.py:114 WARNING For RNT638, the total price is -5797. This occurreed because the price_per_day is 17 and the total_days is -341.
+2020-02-17 00:03:31,249 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,249 charges_calc.py:114 WARNING For RNT639, the total price is -10465. This occurreed because the price_per_day is 23 and the total_days is -455.
+2020-02-17 00:03:31,250 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,250 charges_calc.py:114 WARNING For RNT640, the total price is -2490. This occurreed because the price_per_day is 5 and the total_days is -498.
+2020-02-17 00:03:31,251 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,252 charges_calc.py:114 WARNING For RNT642, the total price is -616. This occurreed because the price_per_day is 28 and the total_days is -22.
+2020-02-17 00:03:31,253 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,256 charges_calc.py:114 WARNING For RNT643, the total price is -31360. This occurreed because the price_per_day is 32 and the total_days is -980.
+2020-02-17 00:03:31,257 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,257 charges_calc.py:114 WARNING For RNT647, the total price is -1463. This occurreed because the price_per_day is 7 and the total_days is -209.
+2020-02-17 00:03:31,258 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,259 charges_calc.py:114 WARNING For RNT648, the total price is -4268. This occurreed because the price_per_day is 11 and the total_days is -388.
+2020-02-17 00:03:31,259 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,260 charges_calc.py:114 WARNING For RNT649, the total price is -8991. This occurreed because the price_per_day is 37 and the total_days is -243.
+2020-02-17 00:03:31,260 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,261 charges_calc.py:114 WARNING For RNT651, the total price is -4800. This occurreed because the price_per_day is 5 and the total_days is -960.
+2020-02-17 00:03:31,262 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,262 charges_calc.py:114 WARNING For RNT653, the total price is -1800. This occurreed because the price_per_day is 12 and the total_days is -150.
+2020-02-17 00:03:31,263 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,263 charges_calc.py:114 WARNING For RNT656, the total price is -8230. This occurreed because the price_per_day is 10 and the total_days is -823.
+2020-02-17 00:03:31,264 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,265 charges_calc.py:114 WARNING For RNT659, the total price is -8579. This occurreed because the price_per_day is 23 and the total_days is -373.
+2020-02-17 00:03:31,267 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,268 charges_calc.py:114 WARNING For RNT662, the total price is -2190. This occurreed because the price_per_day is 30 and the total_days is -73.
+2020-02-17 00:03:31,269 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,270 charges_calc.py:114 WARNING For RNT663, the total price is -11832. This occurreed because the price_per_day is 34 and the total_days is -348.
+2020-02-17 00:03:31,271 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,271 charges_calc.py:114 WARNING For RNT664, the total price is -7491. This occurreed because the price_per_day is 11 and the total_days is -681.
+2020-02-17 00:03:31,272 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,272 charges_calc.py:114 WARNING For RNT665, the total price is -4536. This occurreed because the price_per_day is 21 and the total_days is -216.
+2020-02-17 00:03:31,272 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,273 charges_calc.py:114 WARNING For RNT667, the total price is -16100. This occurreed because the price_per_day is 25 and the total_days is -644.
+2020-02-17 00:03:31,273 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,274 charges_calc.py:114 WARNING For RNT668, the total price is -799. This occurreed because the price_per_day is 17 and the total_days is -47.
+2020-02-17 00:03:31,275 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,277 charges_calc.py:114 WARNING For RNT670, the total price is -6040. This occurreed because the price_per_day is 20 and the total_days is -302.
+2020-02-17 00:03:31,277 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,278 charges_calc.py:114 WARNING For RNT671, the total price is -5502. This occurreed because the price_per_day is 21 and the total_days is -262.
+2020-02-17 00:03:31,279 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,279 charges_calc.py:114 WARNING For RNT674, the total price is -11400. This occurreed because the price_per_day is 25 and the total_days is -456.
+2020-02-17 00:03:31,280 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,280 charges_calc.py:114 WARNING For RNT677, the total price is -680. This occurreed because the price_per_day is 40 and the total_days is -17.
+2020-02-17 00:03:31,281 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,281 charges_calc.py:114 WARNING For RNT678, the total price is -350. This occurreed because the price_per_day is 25 and the total_days is -14.
+2020-02-17 00:03:31,282 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,282 charges_calc.py:114 WARNING For RNT679, the total price is -19053. This occurreed because the price_per_day is 29 and the total_days is -657.
+2020-02-17 00:03:31,283 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,283 charges_calc.py:114 WARNING For RNT682, the total price is -2117. This occurreed because the price_per_day is 29 and the total_days is -73.
+2020-02-17 00:03:31,284 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,284 charges_calc.py:114 WARNING For RNT684, the total price is -11225. This occurreed because the price_per_day is 25 and the total_days is -449.
+2020-02-17 00:03:31,286 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,289 charges_calc.py:114 WARNING For RNT688, the total price is -238. This occurreed because the price_per_day is 7 and the total_days is -34.
+2020-02-17 00:03:31,290 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,290 charges_calc.py:114 WARNING For RNT691, the total price is -26604. This occurreed because the price_per_day is 36 and the total_days is -739.
+2020-02-17 00:03:31,291 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,291 charges_calc.py:114 WARNING For RNT692, the total price is -522. This occurreed because the price_per_day is 18 and the total_days is -29.
+2020-02-17 00:03:31,292 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,292 charges_calc.py:114 WARNING For RNT694, the total price is -11700. This occurreed because the price_per_day is 26 and the total_days is -450.
+2020-02-17 00:03:31,293 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,293 charges_calc.py:114 WARNING For RNT695, the total price is -3275. This occurreed because the price_per_day is 25 and the total_days is -131.
+2020-02-17 00:03:31,294 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,294 charges_calc.py:114 WARNING For RNT698, the total price is -18848. This occurreed because the price_per_day is 38 and the total_days is -496.
+2020-02-17 00:03:31,295 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,296 charges_calc.py:114 WARNING For RNT702, the total price is -4380. This occurreed because the price_per_day is 15 and the total_days is -292.
+2020-02-17 00:03:31,296 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,296 charges_calc.py:114 WARNING For RNT703, the total price is -954. This occurreed because the price_per_day is 9 and the total_days is -106.
+2020-02-17 00:03:31,297 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,297 charges_calc.py:114 WARNING For RNT704, the total price is -11970. This occurreed because the price_per_day is 19 and the total_days is -630.
+2020-02-17 00:03:31,301 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,301 charges_calc.py:114 WARNING For RNT706, the total price is -2280. This occurreed because the price_per_day is 20 and the total_days is -114.
+2020-02-17 00:03:31,302 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,303 charges_calc.py:114 WARNING For RNT709, the total price is -1476. This occurreed because the price_per_day is 12 and the total_days is -123.
+2020-02-17 00:03:31,304 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,304 charges_calc.py:114 WARNING For RNT711, the total price is -3285. This occurreed because the price_per_day is 9 and the total_days is -365.
+2020-02-17 00:03:31,305 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,305 charges_calc.py:114 WARNING For RNT712, the total price is -4270. This occurreed because the price_per_day is 10 and the total_days is -427.
+2020-02-17 00:03:31,306 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,306 charges_calc.py:114 WARNING For RNT715, the total price is -11502. This occurreed because the price_per_day is 27 and the total_days is -426.
+2020-02-17 00:03:31,307 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,308 charges_calc.py:114 WARNING For RNT717, the total price is -30597. This occurreed because the price_per_day is 31 and the total_days is -987.
+2020-02-17 00:03:31,308 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,309 charges_calc.py:114 WARNING For RNT719, the total price is -4080. This occurreed because the price_per_day is 24 and the total_days is -170.
+2020-02-17 00:03:31,311 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,312 charges_calc.py:114 WARNING For RNT721, the total price is -5628. This occurreed because the price_per_day is 28 and the total_days is -201.
+2020-02-17 00:03:31,312 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,313 charges_calc.py:114 WARNING For RNT722, the total price is -12694. This occurreed because the price_per_day is 22 and the total_days is -577.
+2020-02-17 00:03:31,313 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,314 charges_calc.py:114 WARNING For RNT725, the total price is -3008. This occurreed because the price_per_day is 32 and the total_days is -94.
+2020-02-17 00:03:31,314 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,315 charges_calc.py:114 WARNING For RNT726, the total price is -22113. This occurreed because the price_per_day is 39 and the total_days is -567.
+2020-02-17 00:03:31,316 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,316 charges_calc.py:114 WARNING For RNT729, the total price is -4563. This occurreed because the price_per_day is 39 and the total_days is -117.
+2020-02-17 00:03:31,317 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,317 charges_calc.py:114 WARNING For RNT731, the total price is -760. This occurreed because the price_per_day is 10 and the total_days is -76.
+2020-02-17 00:03:31,318 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,319 charges_calc.py:114 WARNING For RNT732, the total price is -9345. This occurreed because the price_per_day is 35 and the total_days is -267.
+2020-02-17 00:03:31,320 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,322 charges_calc.py:114 WARNING For RNT733, the total price is -6464. This occurreed because the price_per_day is 32 and the total_days is -202.
+2020-02-17 00:03:31,324 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,324 charges_calc.py:114 WARNING For RNT740, the total price is -4032. This occurreed because the price_per_day is 32 and the total_days is -126.
+2020-02-17 00:03:31,325 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,325 charges_calc.py:114 WARNING For RNT745, the total price is -6699. This occurreed because the price_per_day is 21 and the total_days is -319.
+2020-02-17 00:03:31,326 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,326 charges_calc.py:114 WARNING For RNT746, the total price is -1932. This occurreed because the price_per_day is 28 and the total_days is -69.
+2020-02-17 00:03:31,327 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,328 charges_calc.py:114 WARNING For RNT748, the total price is -1176. This occurreed because the price_per_day is 7 and the total_days is -168.
+2020-02-17 00:03:31,328 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,329 charges_calc.py:114 WARNING For RNT750, the total price is -5480. This occurreed because the price_per_day is 40 and the total_days is -137.
+2020-02-17 00:03:31,329 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,330 charges_calc.py:114 WARNING For RNT751, the total price is -6699. This occurreed because the price_per_day is 33 and the total_days is -203.
+2020-02-17 00:03:31,331 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,333 charges_calc.py:114 WARNING For RNT753, the total price is -1775. This occurreed because the price_per_day is 25 and the total_days is -71.
+2020-02-17 00:03:31,334 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,334 charges_calc.py:114 WARNING For RNT756, the total price is -1988. This occurreed because the price_per_day is 14 and the total_days is -142.
+2020-02-17 00:03:31,336 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,336 charges_calc.py:114 WARNING For RNT757, the total price is -2240. This occurreed because the price_per_day is 14 and the total_days is -160.
+2020-02-17 00:03:31,337 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,338 charges_calc.py:114 WARNING For RNT759, the total price is -8437. This occurreed because the price_per_day is 11 and the total_days is -767.
+2020-02-17 00:03:31,339 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,339 charges_calc.py:114 WARNING For RNT766, the total price is -5750. This occurreed because the price_per_day is 25 and the total_days is -230.
+2020-02-17 00:03:31,340 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,341 charges_calc.py:114 WARNING For RNT770, the total price is -38196. This occurreed because the price_per_day is 36 and the total_days is -1061.
+2020-02-17 00:03:31,341 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,345 charges_calc.py:114 WARNING For RNT772, the total price is -2340. This occurreed because the price_per_day is 20 and the total_days is -117.
+2020-02-17 00:03:31,346 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,346 charges_calc.py:114 WARNING For RNT773, the total price is -240. This occurreed because the price_per_day is 24 and the total_days is -10.
+2020-02-17 00:03:31,347 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,347 charges_calc.py:114 WARNING For RNT774, the total price is -20232. This occurreed because the price_per_day is 36 and the total_days is -562.
+2020-02-17 00:03:31,348 charges_calc.py:97  ERROR Start / end date formatting at RNT776 generates time data '' does not match format '%m/%d/%y'. Must be 'm/d/y' format.
+2020-02-17 00:03:31,348 charges_calc.py:98  WARNING RNT776 date format is not 'm/d/y' format.
+2020-02-17 00:03:31,349 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,350 charges_calc.py:114 WARNING For RNT778, the total price is -14625. This occurreed because the price_per_day is 39 and the total_days is -375.
+2020-02-17 00:03:31,350 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,351 charges_calc.py:114 WARNING For RNT779, the total price is -3749. This occurreed because the price_per_day is 23 and the total_days is -163.
+2020-02-17 00:03:31,352 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,355 charges_calc.py:114 WARNING For RNT782, the total price is -6248. This occurreed because the price_per_day is 22 and the total_days is -284.
+2020-02-17 00:03:31,356 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,357 charges_calc.py:114 WARNING For RNT783, the total price is -7995. This occurreed because the price_per_day is 13 and the total_days is -615.
+2020-02-17 00:03:31,358 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,358 charges_calc.py:114 WARNING For RNT790, the total price is -4400. This occurreed because the price_per_day is 11 and the total_days is -400.
+2020-02-17 00:03:31,359 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,359 charges_calc.py:114 WARNING For RNT791, the total price is -7776. This occurreed because the price_per_day is 27 and the total_days is -288.
+2020-02-17 00:03:31,360 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,361 charges_calc.py:114 WARNING For RNT794, the total price is -37986. This occurreed because the price_per_day is 39 and the total_days is -974.
+2020-02-17 00:03:31,361 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,361 charges_calc.py:114 WARNING For RNT795, the total price is -2508. This occurreed because the price_per_day is 19 and the total_days is -132.
+2020-02-17 00:03:31,362 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,362 charges_calc.py:114 WARNING For RNT796, the total price is -7008. This occurreed because the price_per_day is 32 and the total_days is -219.
+2020-02-17 00:03:31,364 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,366 charges_calc.py:114 WARNING For RNT803, the total price is -1250. This occurreed because the price_per_day is 5 and the total_days is -250.
+2020-02-17 00:03:31,367 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,367 charges_calc.py:114 WARNING For RNT807, the total price is -6708. This occurreed because the price_per_day is 26 and the total_days is -258.
+2020-02-17 00:03:31,368 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,369 charges_calc.py:114 WARNING For RNT808, the total price is -2220. This occurreed because the price_per_day is 10 and the total_days is -222.
+2020-02-17 00:03:31,370 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,370 charges_calc.py:114 WARNING For RNT809, the total price is -4097. This occurreed because the price_per_day is 17 and the total_days is -241.
+2020-02-17 00:03:31,371 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,372 charges_calc.py:114 WARNING For RNT812, the total price is -1768. This occurreed because the price_per_day is 26 and the total_days is -68.
+2020-02-17 00:03:31,372 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,373 charges_calc.py:114 WARNING For RNT814, the total price is -14364. This occurreed because the price_per_day is 38 and the total_days is -378.
+2020-02-17 00:03:31,373 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,374 charges_calc.py:114 WARNING For RNT815, the total price is -9672. This occurreed because the price_per_day is 39 and the total_days is -248.
+2020-02-17 00:03:31,374 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,377 charges_calc.py:114 WARNING For RNT816, the total price is -1336. This occurreed because the price_per_day is 8 and the total_days is -167.
+2020-02-17 00:03:31,377 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,378 charges_calc.py:114 WARNING For RNT817, the total price is -36720. This occurreed because the price_per_day is 36 and the total_days is -1020.
+2020-02-17 00:03:31,378 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,379 charges_calc.py:114 WARNING For RNT818, the total price is -21960. This occurreed because the price_per_day is 40 and the total_days is -549.
+2020-02-17 00:03:31,379 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,380 charges_calc.py:114 WARNING For RNT819, the total price is -1460. This occurreed because the price_per_day is 20 and the total_days is -73.
+2020-02-17 00:03:31,380 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,381 charges_calc.py:114 WARNING For RNT820, the total price is -80. This occurreed because the price_per_day is 10 and the total_days is -8.
+2020-02-17 00:03:31,382 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,382 charges_calc.py:114 WARNING For RNT822, the total price is -2772. This occurreed because the price_per_day is 22 and the total_days is -126.
+2020-02-17 00:03:31,383 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,383 charges_calc.py:114 WARNING For RNT825, the total price is -2147. This occurreed because the price_per_day is 19 and the total_days is -113.
+2020-02-17 00:03:31,385 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,389 charges_calc.py:114 WARNING For RNT831, the total price is -15. This occurreed because the price_per_day is 5 and the total_days is -3.
+2020-02-17 00:03:31,390 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,391 charges_calc.py:114 WARNING For RNT835, the total price is -13068. This occurreed because the price_per_day is 22 and the total_days is -594.
+2020-02-17 00:03:31,391 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,392 charges_calc.py:114 WARNING For RNT836, the total price is -100. This occurreed because the price_per_day is 20 and the total_days is -5.
+2020-02-17 00:03:31,392 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,393 charges_calc.py:114 WARNING For RNT839, the total price is -1611. This occurreed because the price_per_day is 9 and the total_days is -179.
+2020-02-17 00:03:31,394 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,394 charges_calc.py:114 WARNING For RNT840, the total price is -12065. This occurreed because the price_per_day is 19 and the total_days is -635.
+2020-02-17 00:03:31,395 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,395 charges_calc.py:114 WARNING For RNT842, the total price is -9316. This occurreed because the price_per_day is 17 and the total_days is -548.
+2020-02-17 00:03:31,396 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,396 charges_calc.py:114 WARNING For RNT843, the total price is -16966. This occurreed because the price_per_day is 34 and the total_days is -499.
+2020-02-17 00:03:31,397 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,397 charges_calc.py:114 WARNING For RNT844, the total price is -8029. This occurreed because the price_per_day is 37 and the total_days is -217.
+2020-02-17 00:03:31,398 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,400 charges_calc.py:114 WARNING For RNT846, the total price is -11772. This occurreed because the price_per_day is 27 and the total_days is -436.
+2020-02-17 00:03:31,401 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,401 charges_calc.py:114 WARNING For RNT847, the total price is -3164. This occurreed because the price_per_day is 14 and the total_days is -226.
+2020-02-17 00:03:31,402 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,403 charges_calc.py:114 WARNING For RNT849, the total price is -4200. This occurreed because the price_per_day is 6 and the total_days is -700.
+2020-02-17 00:03:31,405 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,405 charges_calc.py:114 WARNING For RNT853, the total price is -12375. This occurreed because the price_per_day is 15 and the total_days is -825.
+2020-02-17 00:03:31,406 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,406 charges_calc.py:114 WARNING For RNT855, the total price is -2576. This occurreed because the price_per_day is 23 and the total_days is -112.
+2020-02-17 00:03:31,407 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,408 charges_calc.py:114 WARNING For RNT858, the total price is -1725. This occurreed because the price_per_day is 25 and the total_days is -69.
+2020-02-17 00:03:31,409 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,411 charges_calc.py:114 WARNING For RNT861, the total price is -12120. This occurreed because the price_per_day is 24 and the total_days is -505.
+2020-02-17 00:03:31,411 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,412 charges_calc.py:114 WARNING For RNT863, the total price is -5256. This occurreed because the price_per_day is 24 and the total_days is -219.
+2020-02-17 00:03:31,412 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,412 charges_calc.py:114 WARNING For RNT864, the total price is -96. This occurreed because the price_per_day is 12 and the total_days is -8.
+2020-02-17 00:03:31,413 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,413 charges_calc.py:114 WARNING For RNT866, the total price is -9082. This occurreed because the price_per_day is 38 and the total_days is -239.
+2020-02-17 00:03:31,414 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,414 charges_calc.py:114 WARNING For RNT867, the total price is -2774. This occurreed because the price_per_day is 19 and the total_days is -146.
+2020-02-17 00:03:31,415 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,416 charges_calc.py:114 WARNING For RNT869, the total price is -7774. This occurreed because the price_per_day is 26 and the total_days is -299.
+2020-02-17 00:03:31,417 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,417 charges_calc.py:114 WARNING For RNT871, the total price is -2001. This occurreed because the price_per_day is 29 and the total_days is -69.
+2020-02-17 00:03:31,418 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,422 charges_calc.py:114 WARNING For RNT873, the total price is -380. This occurreed because the price_per_day is 5 and the total_days is -76.
+2020-02-17 00:03:31,423 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,423 charges_calc.py:114 WARNING For RNT874, the total price is -114. This occurreed because the price_per_day is 38 and the total_days is -3.
+2020-02-17 00:03:31,424 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,425 charges_calc.py:114 WARNING For RNT876, the total price is -5772. This occurreed because the price_per_day is 26 and the total_days is -222.
+2020-02-17 00:03:31,425 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,425 charges_calc.py:114 WARNING For RNT879, the total price is -16632. This occurreed because the price_per_day is 24 and the total_days is -693.
+2020-02-17 00:03:31,426 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,427 charges_calc.py:114 WARNING For RNT882, the total price is -18312. This occurreed because the price_per_day is 28 and the total_days is -654.
+2020-02-17 00:03:31,427 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,429 charges_calc.py:114 WARNING For RNT883, the total price is -3914. This occurreed because the price_per_day is 19 and the total_days is -206.
+2020-02-17 00:03:31,429 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,429 charges_calc.py:114 WARNING For RNT884, the total price is -2376. This occurreed because the price_per_day is 11 and the total_days is -216.
+2020-02-17 00:03:31,430 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,430 charges_calc.py:114 WARNING For RNT886, the total price is -2232. This occurreed because the price_per_day is 24 and the total_days is -93.
+2020-02-17 00:03:31,434 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,435 charges_calc.py:114 WARNING For RNT890, the total price is -6504. This occurreed because the price_per_day is 8 and the total_days is -813.
+2020-02-17 00:03:31,437 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,437 charges_calc.py:114 WARNING For RNT892, the total price is -1032. This occurreed because the price_per_day is 8 and the total_days is -129.
+2020-02-17 00:03:31,438 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,439 charges_calc.py:114 WARNING For RNT893, the total price is -7306. This occurreed because the price_per_day is 26 and the total_days is -281.
+2020-02-17 00:03:31,439 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,440 charges_calc.py:114 WARNING For RNT894, the total price is -1157. This occurreed because the price_per_day is 13 and the total_days is -89.
+2020-02-17 00:03:31,440 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,440 charges_calc.py:114 WARNING For RNT895, the total price is -36560. This occurreed because the price_per_day is 40 and the total_days is -914.
+2020-02-17 00:03:31,441 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,441 charges_calc.py:114 WARNING For RNT896, the total price is -2820. This occurreed because the price_per_day is 30 and the total_days is -94.
+2020-02-17 00:03:31,442 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,444 charges_calc.py:114 WARNING For RNT898, the total price is -8835. This occurreed because the price_per_day is 31 and the total_days is -285.
+2020-02-17 00:03:31,445 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,445 charges_calc.py:114 WARNING For RNT901, the total price is -1960. This occurreed because the price_per_day is 14 and the total_days is -140.
+2020-02-17 00:03:31,446 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,447 charges_calc.py:114 WARNING For RNT903, the total price is -1638. This occurreed because the price_per_day is 14 and the total_days is -117.
+2020-02-17 00:03:31,447 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,448 charges_calc.py:114 WARNING For RNT905, the total price is -432. This occurreed because the price_per_day is 27 and the total_days is -16.
+2020-02-17 00:03:31,448 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,449 charges_calc.py:114 WARNING For RNT909, the total price is -11040. This occurreed because the price_per_day is 15 and the total_days is -736.
+2020-02-17 00:03:31,450 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,450 charges_calc.py:114 WARNING For RNT911, the total price is -5420. This occurreed because the price_per_day is 20 and the total_days is -271.
+2020-02-17 00:03:31,451 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,451 charges_calc.py:114 WARNING For RNT912, the total price is -17732. This occurreed because the price_per_day is 22 and the total_days is -806.
+2020-02-17 00:03:31,452 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,456 charges_calc.py:114 WARNING For RNT914, the total price is -27778. This occurreed because the price_per_day is 38 and the total_days is -731.
+2020-02-17 00:03:31,457 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,457 charges_calc.py:114 WARNING For RNT915, the total price is -3728. This occurreed because the price_per_day is 16 and the total_days is -233.
+2020-02-17 00:03:31,458 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,458 charges_calc.py:114 WARNING For RNT917, the total price is -8679. This occurreed because the price_per_day is 33 and the total_days is -263.
+2020-02-17 00:03:31,459 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,459 charges_calc.py:114 WARNING For RNT918, the total price is -819. This occurreed because the price_per_day is 39 and the total_days is -21.
+2020-02-17 00:03:31,460 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,460 charges_calc.py:114 WARNING For RNT919, the total price is -7072. This occurreed because the price_per_day is 17 and the total_days is -416.
+2020-02-17 00:03:31,461 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,462 charges_calc.py:114 WARNING For RNT922, the total price is -1105. This occurreed because the price_per_day is 5 and the total_days is -221.
+2020-02-17 00:03:31,462 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,463 charges_calc.py:114 WARNING For RNT924, the total price is -23839. This occurreed because the price_per_day is 31 and the total_days is -769.
+2020-02-17 00:03:31,464 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,464 charges_calc.py:114 WARNING For RNT926, the total price is -5513. This occurreed because the price_per_day is 37 and the total_days is -149.
+2020-02-17 00:03:31,465 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,467 charges_calc.py:114 WARNING For RNT927, the total price is -570. This occurreed because the price_per_day is 19 and the total_days is -30.
+2020-02-17 00:03:31,469 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,470 charges_calc.py:114 WARNING For RNT928, the total price is -6127. This occurreed because the price_per_day is 11 and the total_days is -557.
+2020-02-17 00:03:31,471 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,472 charges_calc.py:114 WARNING For RNT930, the total price is -5120. This occurreed because the price_per_day is 32 and the total_days is -160.
+2020-02-17 00:03:31,472 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,473 charges_calc.py:114 WARNING For RNT931, the total price is -18164. This occurreed because the price_per_day is 38 and the total_days is -478.
+2020-02-17 00:03:31,473 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,474 charges_calc.py:114 WARNING For RNT932, the total price is -29800. This occurreed because the price_per_day is 40 and the total_days is -745.
+2020-02-17 00:03:31,475 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,475 charges_calc.py:114 WARNING For RNT935, the total price is -180. This occurreed because the price_per_day is 20 and the total_days is -9.
+2020-02-17 00:03:31,476 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,478 charges_calc.py:114 WARNING For RNT937, the total price is -247. This occurreed because the price_per_day is 19 and the total_days is -13.
+2020-02-17 00:03:31,479 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,479 charges_calc.py:114 WARNING For RNT938, the total price is -11772. This occurreed because the price_per_day is 36 and the total_days is -327.
+2020-02-17 00:03:31,480 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,480 charges_calc.py:114 WARNING For RNT939, the total price is -20691. This occurreed because the price_per_day is 33 and the total_days is -627.
+2020-02-17 00:03:31,481 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,481 charges_calc.py:114 WARNING For RNT940, the total price is -104. This occurreed because the price_per_day is 13 and the total_days is -8.
+2020-02-17 00:03:31,482 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,483 charges_calc.py:114 WARNING For RNT942, the total price is -1575. This occurreed because the price_per_day is 35 and the total_days is -45.
+2020-02-17 00:03:31,483 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,484 charges_calc.py:114 WARNING For RNT943, the total price is -18375. This occurreed because the price_per_day is 35 and the total_days is -525.
+2020-02-17 00:03:31,485 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,485 charges_calc.py:114 WARNING For RNT944, the total price is -6516. This occurreed because the price_per_day is 18 and the total_days is -362.
+2020-02-17 00:03:31,487 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,490 charges_calc.py:114 WARNING For RNT946, the total price is -3315. This occurreed because the price_per_day is 39 and the total_days is -85.
+2020-02-17 00:03:31,491 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,491 charges_calc.py:114 WARNING For RNT947, the total price is -608. This occurreed because the price_per_day is 8 and the total_days is -76.
+2020-02-17 00:03:31,492 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,492 charges_calc.py:114 WARNING For RNT948, the total price is -3990. This occurreed because the price_per_day is 7 and the total_days is -570.
+2020-02-17 00:03:31,493 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,493 charges_calc.py:114 WARNING For RNT949, the total price is -4704. This occurreed because the price_per_day is 21 and the total_days is -224.
+2020-02-17 00:03:31,494 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,494 charges_calc.py:114 WARNING For RNT951, the total price is -3095. This occurreed because the price_per_day is 5 and the total_days is -619.
+2020-02-17 00:03:31,495 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,496 charges_calc.py:114 WARNING For RNT955, the total price is -3430. This occurreed because the price_per_day is 35 and the total_days is -98.
+2020-02-17 00:03:31,496 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,497 charges_calc.py:114 WARNING For RNT956, the total price is -1248. This occurreed because the price_per_day is 16 and the total_days is -78.
+2020-02-17 00:03:31,497 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,498 charges_calc.py:114 WARNING For RNT957, the total price is -6750. This occurreed because the price_per_day is 30 and the total_days is -225.
+2020-02-17 00:03:31,498 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,501 charges_calc.py:114 WARNING For RNT958, the total price is -5280. This occurreed because the price_per_day is 24 and the total_days is -220.
+2020-02-17 00:03:31,502 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,503 charges_calc.py:114 WARNING For RNT959, the total price is -3838. This occurreed because the price_per_day is 19 and the total_days is -202.
+2020-02-17 00:03:31,504 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,505 charges_calc.py:114 WARNING For RNT960, the total price is -10890. This occurreed because the price_per_day is 22 and the total_days is -495.
+2020-02-17 00:03:31,506 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,506 charges_calc.py:114 WARNING For RNT961, the total price is -784. This occurreed because the price_per_day is 14 and the total_days is -56.
+2020-02-17 00:03:31,507 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,507 charges_calc.py:114 WARNING For RNT962, the total price is -1064. This occurreed because the price_per_day is 19 and the total_days is -56.
+2020-02-17 00:03:31,508 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,508 charges_calc.py:114 WARNING For RNT963, the total price is -544. This occurreed because the price_per_day is 16 and the total_days is -34.
+2020-02-17 00:03:31,509 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,509 charges_calc.py:114 WARNING For RNT965, the total price is -1890. This occurreed because the price_per_day is 30 and the total_days is -63.
+2020-02-17 00:03:31,512 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,512 charges_calc.py:114 WARNING For RNT967, the total price is -14560. This occurreed because the price_per_day is 26 and the total_days is -560.
+2020-02-17 00:03:31,512 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,513 charges_calc.py:114 WARNING For RNT969, the total price is -27432. This occurreed because the price_per_day is 36 and the total_days is -762.
+2020-02-17 00:03:31,513 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,514 charges_calc.py:114 WARNING For RNT970, the total price is -14916. This occurreed because the price_per_day is 22 and the total_days is -678.
+2020-02-17 00:03:31,514 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,515 charges_calc.py:114 WARNING For RNT971, the total price is -6220. This occurreed because the price_per_day is 20 and the total_days is -311.
+2020-02-17 00:03:31,516 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,517 charges_calc.py:114 WARNING For RNT974, the total price is -7110. This occurreed because the price_per_day is 30 and the total_days is -237.
+2020-02-17 00:03:31,517 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,518 charges_calc.py:114 WARNING For RNT977, the total price is -6549. This occurreed because the price_per_day is 37 and the total_days is -177.
+2020-02-17 00:03:31,519 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,519 charges_calc.py:114 WARNING For RNT979, the total price is -2625. This occurreed because the price_per_day is 5 and the total_days is -525.
+2020-02-17 00:03:31,523 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,524 charges_calc.py:114 WARNING For RNT982, the total price is -1624. This occurreed because the price_per_day is 7 and the total_days is -232.
+2020-02-17 00:03:31,525 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,525 charges_calc.py:114 WARNING For RNT983, the total price is -8700. This occurreed because the price_per_day is 29 and the total_days is -300.
+2020-02-17 00:03:31,526 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,526 charges_calc.py:114 WARNING For RNT985, the total price is -1834. This occurreed because the price_per_day is 14 and the total_days is -131.
+2020-02-17 00:03:31,527 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,527 charges_calc.py:114 WARNING For RNT986, the total price is -30504. This occurreed because the price_per_day is 31 and the total_days is -984.
+2020-02-17 00:03:31,528 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,528 charges_calc.py:114 WARNING For RNT987, the total price is -19040. This occurreed because the price_per_day is 34 and the total_days is -560.
+2020-02-17 00:03:31,529 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,530 charges_calc.py:114 WARNING For RNT989, the total price is -27930. This occurreed because the price_per_day is 30 and the total_days is -931.
+2020-02-17 00:03:31,530 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,531 charges_calc.py:114 WARNING For RNT994, the total price is -4590. This occurreed because the price_per_day is 30 and the total_days is -153.
+2020-02-17 00:03:31,532 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,534 charges_calc.py:114 WARNING For RNT998, the total price is -26130. This occurreed because the price_per_day is 30 and the total_days is -871.
+2020-02-17 00:03:31,535 charges_calc.py:110 ERROR Cannot take the square root of a negative number.
+2020-02-17 00:03:31,536 charges_calc.py:114 WARNING For RNT999, the total price is -26640. This occurreed because the price_per_day is 36 and the total_days is -740.
+The program finished and will be restarted
+> c:\users\steve\dropbox\pyclass\sp_python220b_2019\students\steve_walker\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+(Pdb)
