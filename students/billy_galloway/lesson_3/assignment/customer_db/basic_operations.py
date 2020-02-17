@@ -48,7 +48,7 @@ def add_customer(customer_id, name, last_name,
 def search_customer(customer_id):
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
-        
+
     except DoesNotExist:
         raise ValueError(f'{customer_id} not found in database')
 
@@ -76,7 +76,7 @@ def update_customer_credit(customer_id, credit_limit):
 
     except DoesNotExist:
         raise ValueError(f'{customer.customer_id} not found in database')
-
+    
 def list_active_customers():
     active_customers = Customer.select().where(Customer.status).count()
     logger.info(f'active customer count is {active_customers}')

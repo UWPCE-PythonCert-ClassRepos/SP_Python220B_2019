@@ -10,7 +10,7 @@ class BaseModel(Model):
 
 
 class Customer(BaseModel):
-    customer_id = CharField(primary_key = True, max_length = 4)
+    customer_id = CharField(primary_key = True, max_length = 4, null = False)
     name = CharField(max_length = 30)
     last_name = CharField(max_length = 30)
     home_address = CharField(max_length = 40, null = False)
