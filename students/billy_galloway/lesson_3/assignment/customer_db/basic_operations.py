@@ -1,10 +1,14 @@
+'''
+basic operations for employees to perform 
+for customer data
+'''
+
 import logging
 from peewee import *
 from customer_model import *
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 logger.info('Working with Customer class')
 
 CUST_ID = 0
@@ -15,19 +19,6 @@ EMAIL_ADDRESS = 4
 PHONE = 5
 STATUS = 6
 CREDIT_LIMIT = 7
-
-customers = [
-    ('A500', 'Andrew', 'Smith',
-     '23 Railroad Street Matthews, NC 28104', 'andrew@hpnorton.com',
-     '202-555-0134', True, 1000),
-    ('A501', 'David', 'Nelson',
-     '7 Blackburn Drive Tualatin, OR 97062', 'david@hpnorton.com',
-     '202-555-0169', True, 0),
-    ('B200', 'Kate', 'Harris',
-     '638 Cactus St. Wilmington, MA 01887', 'kate@hpnorton.com',
-     '202-555-0169', False, 1000)
-    ]
-
 
 def add_customer(customer_id, name, last_name,
                  home_address, email_address,
@@ -51,14 +42,15 @@ def add_customer(customer_id, name, last_name,
             logger.info(f'{name} {last_name} added to database')
     except Exception as e:
         logger.info(f'Error creating customer id {customer_id}')
-        logger.info(e)
+        logger.info(f'Exception: {e}')
+
 
 def search_customer(customer_id):
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
         
     except DoesNotExist:
-        raise ValueError(f'{customer.customer_id} not found in database')
+        raise ValueError(f'{customer_id} not found in database')
 
     return {'name': customer.name, 
             'last_name': customer.last_name,
@@ -90,3 +82,14 @@ def list_active_customers():
     logger.info(f'active customer count is {active_customers}')
 
     return active_customers
+
+## testing search customer
+# database.create_tables([Customer])
+# database.close()
+# customer = ('A500', 'Andrew', 'Smith',
+#             '23 Railroad Street Matthews, NC 28104', 'andrew@hpnorton.com',
+#             '202-555-0134', True, 1000)
+
+# add_customer(customer[0],customer[1],customer[2],customer[3],
+#              customer[4],customer[5],customer[6],customer[7])
+# search_customer('C200')

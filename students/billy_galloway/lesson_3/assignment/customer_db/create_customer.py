@@ -11,8 +11,5 @@ logger = logging.getLogger(__name__)
 
 logger.info(f'Build customer.db database and create customer tables')
 
-database.create_tables([
-        Customer
-    ])
-
+database.create_tables([Customer])
 database.close()
