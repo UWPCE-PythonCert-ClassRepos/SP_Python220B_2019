@@ -131,9 +131,6 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
     """
-    analytics = {}
-    analytics['start_time'] = datetime.datetime.now()
-
     data_directory = Path(directory_name)
     prod_import = ImportData(kwargs={'type': 'products', 'file': data_directory/product_file})
     cust_import = ImportData(kwargs={'type': 'customers', 'file': data_directory/customer_file})
