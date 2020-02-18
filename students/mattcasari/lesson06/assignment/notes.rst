@@ -18,7 +18,9 @@ Using Measure-Command to measure the program "file_name.py"
 
 Results
 -------
-Results of poor_perf.py============================================
+Results of poor_perf.py
+
+============================================
 Notes on improving performance for Lesson 06
 ============================================
 
