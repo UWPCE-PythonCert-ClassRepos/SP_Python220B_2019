@@ -8,6 +8,14 @@ import csv
 
 def analyze(filename):
     start = datetime.datetime.now()
+    year_count = {
+            "2013": 0,
+            "2014": 0,
+            "2015": 0,
+            "2016": 0,
+            "2017": 0,
+            "2018": 0
+    }
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         new_ones = []
@@ -18,14 +26,7 @@ def analyze(filename):
                 new_ones.append((lrow[5], lrow[0]))
             if "ao" in row[6]:
                 found += 1
-        year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-        }
+        
 
         for new in new_ones:
             if new[0][6:] == '2013':

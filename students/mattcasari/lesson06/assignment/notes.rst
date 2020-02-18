@@ -71,8 +71,15 @@ Observations in the poor_perf.py program
 - File was opened twice
     a) can be reduced to single open
 
-- 
+- year_count initialized inside csv call
+    a) probably not a big deal, but try moving it up.
 
+- new_ones is unneccessary. 
+    a) move new[0][6:] into ``for row in reader`` loop
+    b) delete ``new_ones = []```
+
+- remove print functions
+    a) 
 
 Tests and refactoring performed 
 ===============================
@@ -109,3 +116,19 @@ Tests and refactoring performed
         ``Factor of 1.5 improvement``
 
         **CONCLUSION: Removing second csv call speeds up the program by 1.5 times**
+
+- Move year_count initialization outside of csv call
+    a) Not sure that this will do much, but..
+    b) Moved year_count initialization to just below start time call
+    c) reran test
+        ``Average of 2 Runs``
+
+        ``Poor Performance Elapsed Time = 4.72203``
+        
+        ``Good Performance Elapsed Time = 3.09786``
+        
+        ``Time improvement of 1.62416 seconds``
+        
+        ``Factor of 1.5 improvement``
+
+        **CONCLUSION: No noticeable difference**
