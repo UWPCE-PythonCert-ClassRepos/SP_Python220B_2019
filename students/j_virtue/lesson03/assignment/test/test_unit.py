@@ -1,9 +1,10 @@
+'''Unit Test Module'''
 # Advanced Programming in Python -- Lesson 3 Assignment 1
 # Jason Virtue
 # Start Date 2/10/2020
 
 #Supress pylint warnings here
-# pylint: disable=unused-wildcard-import
+# pylint: disable=wildcard-import,unused-wildcard-import
 
 import sys
 sys.path.append('C:\\temp')
@@ -75,10 +76,10 @@ class SetupDB(TestCase):
 
         create_tables()
 
-        database.close()
-        database.connect()
+        DATABASE.close()
+        DATABASE.connect()
         self.assertTrue(Customer.table_exists())
-        database.close()
+        DATABASE.close()
 
     def test_add_customer_to_db(self):
         """ Add first customer records to table and verify"""
@@ -158,7 +159,7 @@ class PopulateTables(TestCase):
         cust_03 = CUSTOMERS["cust_03"]
         delete_customer(cust_03["customer_id"])
 
-        with database.transaction():
+        with DATABASE.transaction():
             try:
                 Customer.get(Customer.customer_id == cust_03["customer_id"])
             except DoesNotExist:
@@ -184,7 +185,7 @@ class PopulateTables(TestCase):
     def test_update_customer_credit_not_in_the_db(self):
         """ Update the credit of a customer not in database"""
 
-        with database.transaction():
+        with DATABASE.transaction():
             try:
                 Customer.get(Customer.customer_id == 4)
             except DoesNotExist:

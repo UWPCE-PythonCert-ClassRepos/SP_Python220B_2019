@@ -1,39 +1,42 @@
+'''Basic Operations Module for customer database'''
+
 # Advanced Programming in Python -- Lesson 3 Assignment 1
 # Jason Virtue
 # Start Date 2/10/2020
 
 #Supress pylint warnings here
-# pylint: disable=unused-wildcard-import
+# pylint: disable=wildcard-import,invalid-name,too-few-public-methods,
 
 import logging
-from peewee import *
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-database = SqliteDatabase('customer.db')
+from peewee import *
+
+DATABASE = SqliteDatabase('customer.db')
 logging.info('Create customer database in sqlite3')
-database.connect()
+DATABASE.connect()
 logging.info('Connect to customer.db')
-database.execute_sql('PRAGMA foreign_keys = ON;')
-database.close()
+DATABASE.execute_sql('PRAGMA foreign_keys = ON;')
+DATABASE.close()
 
 class BaseModel(Model):
     """Class to enable peewee and link it to customer.db"""
     class Meta:
-        database = database
+        """Database meta file for peewee"""
+        database = DATABASE
 
 class Customer(BaseModel):
     """
         This class defines Customer for HP Norton customers. This will be table for SalesManagers
         persons and accountants to search for them
     """
-    customer_id = IntegerField(primary_key = True)
-    name = CharField(max_length = 50)
-    last_name = CharField(max_length= 50)
-    home_address = CharField(max_length= 255)
-    phone_number = CharField(max_length= 30)
-    email_address = CharField(max_length= 50)
+    customer_id = IntegerField(primary_key=True)
+    name = CharField(max_length=50)
+    last_name = CharField(max_length=50)
+    home_address = CharField(max_length=255)
+    phone_number = CharField(max_length=30)
+    email_address = CharField(max_length=50)
     status = BooleanField()
     credit_limit = DecimalField(max_digits=10, decimal_places=2)
     logging.info('Created schema for customer table')
@@ -46,20 +49,20 @@ def create_tables():
     logging.info('Create customer table')
     database.close()
 
-def add_customer(customer_id, name, lastname, home_address, phone_number, 
-                    email_address, status, credit_limit):
+def add_customer(customer_id, name, lastname, home_address, phone_number,
+                 email_address, status, credit_limit):
     """Add a customer to the customer table"""
-    with database.transaction():
+    with DATABASE.transaction():
         try:
             new_customer = Customer.create(
-                customer_id = customer_id,
-                name = name,
-                last_name = lastname,
-                home_address = home_address,
-                phone_number = phone_number,
-                email_address = email_address,
-                status = status,
-                credit_limit = credit_limit)
+                customer_id=customer_id,
+                name=name,
+                last_name=lastname,
+                home_address=home_address,
+                phone_number=phone_number,
+                email_address=email_address,
+                status=status,
+                credit_limit=credit_limit)
             new_customer.save()
             logging.info('Added new customer with id %d to customer.db', customer_id)
         except IntegrityError as error:
@@ -70,20 +73,20 @@ def add_customers(customers):
     """ Add multiple customers to table"""
     for customer in customers.values():
         add_customer(customer["customer_id"],
-                    customer["first_name"],
-                    customer["last_name"],
-                    customer["address"],
-                    customer["phone"],
-                    customer["email_address"],
-                    customer["status"],
-                    customer["credit_limit"])
-    
+                     customer["first_name"],
+                     customer["last_name"],
+                     customer["address"],
+                     customer["phone"],
+                     customer["email_address"],
+                     customer["status"],
+                     customer["credit_limit"])
+
 
 def search_customer(customer_id):
     """ Search for a customer in the db return name, lastname, email address and phone number"""
     customer_data = {}
 
-    with database.transaction():
+    with DATABASE.transaction():
         try:
             xcustomer = Customer.get(Customer.customer_id == customer_id)
         except DoesNotExist:
@@ -100,24 +103,24 @@ def search_customer(customer_id):
 
 def delete_customer_table():
     """ Delete all the rows in the Customer table"""
-    with database.transaction():
+    with DATABASE.transaction():
         query = Customer.delete()
-        query.execute(database)
+        query.execute(DATABASE)
     logging.info('Trunctate customer table')
 
 def delete_customer(customer_id):
     """ Delete the customer with customer_id from the database. """
-    with database.transaction():
+    with DATABASE.transaction():
         try:
             xcustomer = Customer.get(Customer.customer_id == customer_id)
-        except DoesNotExist as err:  
+        except DoesNotExist as err:
             raise ValueError(f'{err}: Customer with customer id %d not found.', customer_id)
 
         return xcustomer.delete_instance()
 
 def update_customer_credit(customer_id, credit_limit):
     """Update credit limit field in customer table"""
-    with database.transaction():
+    with DATABASE.transaction():
         try:
             xcustomer = Customer.get(Customer.customer_id == customer_id)
             xcustomer.credit_limit = credit_limit
@@ -129,12 +132,12 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_customers():
     """Query table to get a list of active customers"""
     num_active_customers = 0
-    with database.transaction():
+    with DATABASE.transaction():
         query = Customer.select().where(Customer.status == True)
         num_active_customers = len(query)
     return num_active_customers
 
-
+'''
 if __name__ == "__main__":
     """Initial debug scripts to test out code"""
     create_tables()
@@ -170,3 +173,4 @@ if __name__ == "__main__":
     print(list_active_customers())
     delete_customer(customer_id = 1)
     print(search_customer(customer_id = 1))
+'''
