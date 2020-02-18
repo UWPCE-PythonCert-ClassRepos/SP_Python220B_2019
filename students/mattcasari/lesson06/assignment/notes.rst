@@ -74,12 +74,13 @@ Observations in the poor_perf.py program
 - year_count initialized inside csv call
     a) probably not a big deal, but try moving it up.
 
+- remove print functions
+
 - new_ones is unneccessary. 
     a) move new[0][6:] into ``for row in reader`` loop
     b) delete ``new_ones = []```
 
-- remove print functions
-    a) 
+
 
 Tests and refactoring performed 
 ===============================
@@ -98,7 +99,7 @@ Tests and refactoring performed
         
         ``Factor of 1.0 deterioration``
 
-        **CONCLUSION: No difference(expected)**
+    **CONCLUSION: No difference(expected)**
 
 - Modify good_perf.py to have single csv open
     a) removed second csv open
@@ -115,7 +116,7 @@ Tests and refactoring performed
         
         ``Factor of 1.5 improvement``
 
-        **CONCLUSION: Removing second csv call speeds up the program by 1.5 times**
+    **CONCLUSION: Removing second csv call speeds up the program by 1.5 times**
 
 - Move year_count initialization outside of csv call
     a) Not sure that this will do much, but..
@@ -131,4 +132,20 @@ Tests and refactoring performed
         
         ``Factor of 1.5 improvement``
 
-        **CONCLUSION: No noticeable difference**
+    **CONCLUSION: No noticeable difference**
+
+- Removing the ``print`` functions
+    a) Data is returned anyway, print from that if needed
+    b) removed the ``print`` statements
+    c) reran test
+        ``Average of 2 Runs``
+
+        ``Poor Performance Elapsed Time = 4.78552``
+
+        ``Good Performance Elapsed Time = 3.06015``
+
+        ``Time improvement of 1.72537 seconds``
+
+        ``Factor of 1.6 improvement``
+
+    **CONCLUSION: More improvement achieved when not having to print**

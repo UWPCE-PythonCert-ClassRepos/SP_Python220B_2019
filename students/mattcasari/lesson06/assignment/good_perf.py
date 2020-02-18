@@ -42,9 +42,9 @@ def analyze(filename):
             if new[0][6:] == '2018':
                 year_count["2017"] += 1
 
-        print(year_count)       
+        # print(year_count)       
 
-        print(f"'ao' was found {found} times")
+        # print(f"'ao' was found {found} times")
         end = datetime.datetime.now()
 
     return (start, end, year_count, found)
