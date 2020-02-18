@@ -1,17 +1,19 @@
-#!/usr/bin/env python
+# pylint: disable=R0903,W0401,W0614
+'''UnitTests for basic operations module.'''
 from unittest import TestCase
 from peewee import *
 from basic_operations import *
-from customer_model import Customer,DB
+from customer_model import Customer, DB
 
 class TestBasicOperations(TestCase):
     '''Unit test class for testing basic_operations.'''
 
-    def SetUp(self):
-        self.db = DB
-        self.db.drop_tables([Customer])
-        self.db.create_tables([Customer])
-        self.db.close()
+    def setUp(self):
+        '''setup tests'''
+        self.database = DB
+        self.database.drop_tables([Customer])
+        self.database.create_tables([Customer])
+        self.database.close()
 
         self.customer1 = {
             'customer_id': "Dexter",
@@ -64,22 +66,54 @@ class TestBasicOperations(TestCase):
             'credit_limit': 83351
         }
 
+
     def test_add_customer(self):
-        basic_operations.add_customer(**self.customer1)
-        check = Customer.get(Customer.customer_id='Dexter')
-        self.assertEqual(Customer.get(Customer.customer_id='Dexter'), True)
+        '''test add_customer function.'''
+        add_customer(**self.customer1)
+        check = Customer.get(Customer.customer_id == 'Dexter')
         self.assertEqual(check.credit_limit, 62649)
-        pass
+        self.customer1['credit_limit'] = 99999
+        add_customer(**self.customer1)
+        #Peewee does not generate error on attempting to duplicate ID.
+        #Simply verify value has not changed.
+        self.assertEqual(check.credit_limit, 62649)
+
 
     def test_search_customer(self):
-        pass
+        '''test search_customer function.'''
+        add_customer(**self.customer2)
+        result = search_customer('Carina')
+        result_false = search_customer('Carina2')
+        self.assertEqual(result, self.customer2)
+        self.assertEqual(result_false, {})
+
 
     def test_delete_customer(self):
-        pass
+        '''test delete_customer function.'''
+        add_customer(**self.customer3)
+        before_delete = search_customer('Vanessa')
+        delete_customer('Vanessa')
+        after_delete = search_customer('Vanessa')
+        self.assertEqual(before_delete, self.customer3)
+        self.assertEqual(after_delete, {})
+        #Delete non-existant ID does not generate error.
+        delete_customer('Vanessa3')
+
 
     def test_update_customer_credit(self):
-        pass
+        '''test updating customer credit limit.'''
+        add_customer(**self.customer4)
+        self.assertEqual(Customer.get(Customer.customer_id == 'John').credit_limit, 155810)
+        update_customer_credit('John', 200000)
+        self.assertEqual(Customer.get(Customer.customer_id == 'John').credit_limit, 200000)
+        with self.assertRaises(ValueError):
+            update_customer_credit('John2', 1000)
+
 
     def test_list_active_customers(self):
-        pass
-
+        '''test list_active_customers function.'''
+        add_customer(**self.customer1)
+        add_customer(**self.customer2)
+        self.assertEqual(list_active_customers(), 2)
+        add_customer(**self.customer3)
+        self.assertEqual(list_active_customers(), 3)
