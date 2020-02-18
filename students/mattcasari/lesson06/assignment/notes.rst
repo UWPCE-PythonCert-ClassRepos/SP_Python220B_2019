@@ -81,11 +81,31 @@ Tests and refactoring performed
     a) File created program_comparison.py
     b) Run tests between both programs to check Timing
         
-        ``Poor Performance Elapsed Time = 0.006908754000000128``
+        ``Average of 2 Runs``
 
-        ``Good Performance Elapsed Time = 0.006858526000000031``
+        ``Poor Performance Elapsed Time = 4.72653``
+        
+        ``Good Performance Elapsed Time = 4.73381``
+        
+        ``Time deterioration of -0.00728 seconds``
+        
+        ``Factor of 1.0 deterioration``
+
+        **CONCLUSION: No difference(expected)**
 
 - Modify good_perf.py to have single csv open
+    a) removed second csv open
+    b) moved ``if "ao"" in row[6]`` to ``for row in reader`` loop
+    c) reran test
+        
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.73817``
+        
+        ``Good Performance Elapsed Time = 3.07490``
+        
+        ``Time improvement of 1.66327 seconds``
+        
+        ``Factor of 1.5 improvement``
 
-
-
+        **CONCLUSION: Removing second csv call speeds up the program by 1.5 times**
