@@ -22,3 +22,8 @@ def single_customer(customer_name, invoice_file):
     them to the master inventory file, invoice_file, as rented to customer_name.
     """
     def import_from(rental_items):
+        """
+        Iterate through rental_items and add the discovered records to nonlocal invoice_file.
+        Append nonlocal customer_name.
+        """
+        
