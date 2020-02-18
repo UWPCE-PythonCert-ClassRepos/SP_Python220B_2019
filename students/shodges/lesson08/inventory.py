@@ -35,6 +35,6 @@ def single_customer(customer_name, invoice_file):
         with open(rental_items, 'r') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
-                import_record(row[0], row[1], row[2])
+                import_record(item_code=row[0], item_description=row[1], item_monthly_price=row[2])
 
     return import_from
