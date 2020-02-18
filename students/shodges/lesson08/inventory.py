@@ -36,6 +36,15 @@ def single_customer(customer_name, invoice_file):
         with open(rental_items, 'r') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
+                # We've got a choice here: we can either keep to the assignment's specified order
+                # (which is how we're going to test add_furniture's discrete functionality) and
+                # use keyword arguments for the arguments that weren't defaulted in our curried
+                # function...
+                # OR
+                # We can reorder add_furniture's invoice_file and customer_name to the end and use
+                # positional arguments here.
+                #
+                # I've opted for door #1.
                 import_record(item_code=row[0], item_description=row[1], item_monthly_price=row[2])
 
     return import_from
