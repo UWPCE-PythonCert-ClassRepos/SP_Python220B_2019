@@ -2,27 +2,7 @@
 Notes on improving performance for Lesson 06
 ============================================
 
-Timing in Windows 10 - PowerShell
-=================================
 
-Commands
---------
-
-
-Using Measure-Command to measure the program "file_name.py"
-
-::
-
-    PS> Measure-Command {start-process py .\file_name.py  -Wait}
-
-
-Results
--------
-Results of poor_perf.py
-
-============================================
-Notes on improving performance for Lesson 06
-============================================
 
 Generating 1 Million Records
 ============================
@@ -86,29 +66,6 @@ Returns response
 
 
 
-
-
-
-
-::
-
-    PS> Measure-Command {start-process py .\poor_perf.py  -Wait}
-
-Returns response
-
-::
-
-    Days              : 0
-    Hours             : 0
-    Minutes           : 0
-    Seconds           : 1
-    Milliseconds      : 15
-    Ticks             : 10158298
-    TotalDays         : 1.17572893518519E-05
-    TotalHours        : 0.000282174944444444
-    TotalMinutes      : 0.0169304966666667
-    TotalSeconds      : 1.0158298
-    TotalMilliseconds : 1015.8298
 
 
 
