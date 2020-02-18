@@ -215,6 +215,47 @@ def show_available_products():
     LOGGER.debug("%s", results)
     return results
 
+def show_rentals(product_id):
+    """ 
+    Show Product Rentals
+    
+    This function takes a product ID and reports back the user
+    ID, name, address, phone number and email of the customers 
+    renting this type of product.
+
+    Args:
+        product_id: ID number or product
+    Returns:
+        dict: customer_id :{name, address, phone_number, email}
+
+    """
+    LOGGER.info("Request to show available products")
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.hp_norton
+        LOGGER.debug("Retrieving customers renting product %s", product_id)
+        rentals = db.rentals
+        rented = [x['customer_id'] for x in rentals.find({'product_id':product_id},{'_id':0, 'customer_id':1})]
+        rented = sorted(set(rented))
+        LOGGER.debug("Renters are %s", rented)
+
+        customers = db.customers
+        rental_customers = customers.find({'customer_id':{"$in":rented}},{'_id':0, 'customer_id':1, 'name':1, 'last_name':1,'address':1, 'phone_number':1,'email_address':1})
+        
+        results = {}
+        for customer in rental_customers:
+            name = customer['last_name'] + ', ' + customer['name']
+            results[customer['customer_id']] ={
+                'name': name,
+                'address': str(customer['address']),
+                'phone_number': str(customer['phone_number']),
+                'email_address': str(customer['email_address'])
+            }
+        
+        LOGGER.debug(results)
+        LOGGER.debug("Returning renter info")
+        return results
+
 def _validate_headers(headers, collection_name):
     """ Validate the file headers in CSV file against expected collection name keys"""
     if collection_name == "products":
@@ -269,3 +310,6 @@ if __name__ == "__main__":
     [records, errors] = import_data(directory_name, product_file, customer_file, rental_file)
 
     show_available_products()
+    show_rentals('T0072-401')
+    show_rentals('V0032-100')
+    _drop_collections()

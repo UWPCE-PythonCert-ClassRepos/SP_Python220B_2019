@@ -391,20 +391,27 @@ class CallsToDatabase(TestCase):
     def test_show_rentals(self):
         """ Test the show_rentals method """
         # Given
-        product_id = "T0072-401"
+        product_id = 'V0032-100'
 
         # When
-        # expected_result = {
-        #     'C3281830': {
-        #         'name':
-        #         'address':,
-        #         'phone_number':,
-        #         'email':
-        #     },
-        #     'F1001-052': {
-        #         'description':,
-        #         'market_price':,
-        #         'rental_price':
-        #     },
+        expected_result = {
+            'C1955810': {
+                'name': 'Atreides, LetoII',
+                'address': 'Arrakis',
+                'phone_number':'899-123-5432',
+                'email_address':'godemperor@dune.net'
+            },
+            'C3281830': {
+                'name': 'Corino, Irulan',
+                'address': 'Kaitain',
+                'phone_number':'001-000-0002',
+                'email_address':'princessofthepadishah@arrakis.com'
+            }
 
-        # }
+        }
+
+        # Then
+        customers = db.show_rentals(product_id)
+        LOGGER.debug(customers)
+        self.assertDictEqual(expected_result, customers)
+        db._drop_collections()
