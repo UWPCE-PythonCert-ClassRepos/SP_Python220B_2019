@@ -117,3 +117,8 @@ class TestBasicOperations(TestCase):
         self.assertEqual(list_active_customers(), 2)
         add_customer(**self.customer3)
         self.assertEqual(list_active_customers(), 3)
+
+
+    def test_failing_test(self):
+        #Instructions say to show some tests failing:
+        self.assertEqual(1,2)
