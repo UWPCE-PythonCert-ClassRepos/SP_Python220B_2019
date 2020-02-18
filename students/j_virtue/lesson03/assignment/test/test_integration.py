@@ -1,9 +1,10 @@
+'''Test Integration Module'''
 # Advanced Programming in Python -- Lesson 3 Assignment 1
 # Jason Virtue
 # Start Date 2/10/2020
 
 #Supress pylint warnings here
-# pylint: disable=unused-wildcard-import
+# pylint: disable=wildcard-import,unused-wildcard-import
 
 import sys
 sys.path.append('C:\\temp')
@@ -49,7 +50,7 @@ class CustomerDBIntegrationTests(TestCase):
     5. Delete customer that doesn't exist
     6. Update credit limit
     7. Count of active customers
-    8. Search for customer 
+    8. Search for customer
     '''
 
     def test_it_all(self):
@@ -62,10 +63,10 @@ class CustomerDBIntegrationTests(TestCase):
 
         add_customers(CUSTOMERS)
 
-        customer_id_deleted = -1  
+        customer_id_deleted = -1
         customer_id_credit_updated = -1
 
-        with database.transaction():
+        with DATABASE.transaction():
             query = Customer.select().where(Customer.status == True)
             self.assertTrue(len(query) == 2)
             customer_id_deleted = query[0].customer_id
@@ -93,8 +94,8 @@ class CustomerDBIntegrationTests(TestCase):
             self.assertEqual(acustomer["phone_number"], original_customer["phone"])
 
             if customer_id is customer_id_credit_updated:
-                with database.transaction():
-                    query = Customer.select().where(Customer.customer_id == customer_id)  
+                with DATABASE.transaction():
+                    query = Customer.select().where(Customer.customer_id == customer_id)
                     self.assertEqual(float(query[0].credit_limit), 1300.01)
 
         with self.assertRaises(ValueError):
