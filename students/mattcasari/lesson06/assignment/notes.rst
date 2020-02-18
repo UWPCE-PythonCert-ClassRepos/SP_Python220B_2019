@@ -65,9 +65,27 @@ Returns response
     TotalMilliseconds : 1015.8298
 
 
+Observations in the poor_perf.py program
+========================================
+
+- File was opened twice
+    a) can be reduced to single open
+
+- 
 
 
+Tests and refactoring performed 
+===============================
 
+- Create file to test both poor and good _perf.py programs
+    a) File created program_comparison.py
+    b) Run tests between both programs to check Timing
+        
+        ``Poor Performance Elapsed Time = 0.006908754000000128``
+
+        ``Good Performance Elapsed Time = 0.006858526000000031``
+
+- Modify good_perf.py to have single csv open
 
 
 
