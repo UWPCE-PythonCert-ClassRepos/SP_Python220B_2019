@@ -1,5 +1,5 @@
-"customer_id", "name", "last_name", "address", "phone_number", "email_address", "status", "credit_limit"
-"C1950991", "Paul", "Atreides", "Arrakis", "888-778-6668", "thewormisspice@dune.net", True, 999999.99
-"C1955810", "Leto II", "Atreides", "Arrakis", "899-123-5432", "godemperor@dune.net", True, 0.99
-"C7871313", "Feyd", "Rautha", "Gedi Prime", "218-4381", "boy@househ.org", False, 88000.00
-"C3281830", "Irulan", "Corino", "Kaitain", "001-000-0002", "princessofthepadishah@arrakis.com", True, 1000000.00
+customer_id,name,last_name,address,phone_number,email_address,status,credit_limit
+C1950991,Paul,Atreides,Arrakis,888-778-6668,thewormisspice@dune.net,True,999999.99
+C1955810,LetoII,Atreides,Arrakis,899-123-5432,godemperor@dune.net,True,0.99
+C7871313,Feyd,Rautha,GediPrime,218-4381,boy@househ.org,False,88000.00
+C3281830,Irulan,Corino,Kaitain,001-000-0002,princessofthepadishah@arrakis.com,True,1000000.00
