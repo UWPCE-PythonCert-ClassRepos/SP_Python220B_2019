@@ -23,40 +23,48 @@ EXPECTED_PRODUCT_DICT = [
         "description": "Spice Harvester",
         "market_price": "50000000.00",
         "rental_price": "3000.00",
+        "product_type": "Electric",
         "brand": "Spice World",
         "voltage": "1kV",
         "material": "",
         "size": "",
+        "quantity_available":"2"
     },
     {
         "product_id": "T0072-401",
         "description": "Thumper",
         "market_price": "2000.00",
         "rental_price": "49.95",
+        "product_type": "Electric",
         "brand": "Sandy Tools",
         "voltage": "12",
         "material": "",
         "size": "",
+        "quantity_available":"100"
     },
     {
         "product_id": "F1001-223",
         "description": "Harkonnen Chair",
         "market_price": "820.00",
         "rental_price": "12.40",
+        "product_type": "Furniture",
         "material": "bone",
         "size": "large",
         "brand": "",
         "voltage": "",
+        "quantity_available":"23"
     },
     {
         "product_id": "F1001-052",
         "description": "Chair dog",
         "market_price": "4000.00",
         "rental_price": "70.00",
+        "product_type": "Furniture",
         "material": "bio",
         "size": "medium",
         "brand": "",
         "voltage": "",
+        "quantity_available":"14"
     },
 ]
 
@@ -75,12 +83,19 @@ EXPECTED_CUSTOMERS_DICT = [
 
 EXPECTED_RENTALS_DICT = [
     {
-        "product_id": "T0072-401",
-        "description": "Thumper",
-        "market_price": "2000.00",
-        "rental_price": "49.95",
+        "product_id":"V0032-100",
+        "customer_id":"C1955810",
+        "rental_quantity":"2"
     }
 ]
+# EXPECTED_RENTALS_DICT = [
+#     {
+#         "product_id": "T0072-401",
+#         "description": "Thumper",
+#         "market_price": "2000.00",
+#         "rental_price": "49.95",
+#     }
+# ]
 
 
 class GeneratorTests(TestCase):
@@ -218,8 +233,8 @@ class ImportFilesTests(TestCase):
         """ Teardown after each test"""
         pass
 
-    def test_import_csv(self):
-        """Test the _import_csv function"""
+    def test_import_product_csv(self):
+        """Test the _import_csv function for products"""
         # Given
         directory_name = "csv_files"
         product_file = "products"
@@ -227,8 +242,8 @@ class ImportFilesTests(TestCase):
         # When
 
         # Then
-        [error_cnt, result_dict] = db.import_csv(directory_name, product_file)
-        LOGGER.debug(f"Test Results: {result_dict}")
+        error_cnt, result_dict = db.import_csv(directory_name, product_file)
+    
         self.assertEqual(len(EXPECTED_PRODUCT_DICT), len(result_dict))
         self.assertDictEqual(EXPECTED_PRODUCT_DICT[0], result_dict[0])
 
@@ -266,7 +281,7 @@ class DatabaseTest(TestCase):
 
     def tearDown(self):
         """ Database teardown """
-        pass
+        db._drop_collections()
 
     def test_populate_database(self):
         """ Test the populate_database method"""
@@ -321,23 +336,75 @@ class DatabaseTest(TestCase):
 
         self.assertEqual(4, records[0])
         self.assertEqual(4, records[1])
-        self.assertEqual(2, records[2])
-# class CallsToDatabase(TestCase):
-#     """ Handles all tests involving calls to DB for data"""
+        self.assertEqual(5, records[2])
+        db._drop_collections()
 
-#     def setUp(self):
-#         """ Database Setup """
-#         pass
+class CallsToDatabase(TestCase):
+    """ Handles all tests involving calls to DB for data"""
 
-#     def tearDown(self):
-#         """ Database teardown """
-#         pass
+    def setUp(self):
+        """ Database Setup """
+        product_file = 'products'
+        directory_name = './csv_files'
+        customer_file = 'customers'
+        rental_file = 'rentals'
+        db.import_data(directory_name, product_file, customer_file, rental_file)
 
-#     def test_show_available_products(self):
-#         """ Test the show_available_product data from database """
+    def tearDown(self):
+        """ Database teardown """
+        db._drop_collections()
 
-#         # Given
+    def test_show_available_products(self):
+        """ Test the show_available_product data from database """
 
-#         # When
+        # Given
+        expected_result = {
+            "V0032-100" : {
+                "description": "Spice Harvester",
+                "product_type": "Electric",
+                "quantity_available":"2"
+            },
+            "T0072-401":{
+                "description": "Thumper",
+                "product_type": "Electric",
+                "quantity_available":"100"
+            },
+            "F1001-223":{
+                "description": "Harkonnen Chair",
+                "product_type": "Furniture",
+                "quantity_available":"23"
+            },
+            "F1001-052":{
+                "description": "Chair dog",
+                "product_type":"Furniture",
+                "quantity_available":"14"
+            }
+        }
+        
+        # When
+        products = db.show_available_products()
 
-#         # Then
+        # Then
+        self.assertDictEqual(expected_result, products)
+
+
+    def test_show_rentals(self):
+        """ Test the show_rentals method """
+        # Given
+        product_id = "T0072-401"
+
+        # When
+        # expected_result = {
+        #     'C3281830': {
+        #         'name':
+        #         'address':,
+        #         'phone_number':,
+        #         'email':
+        #     },
+        #     'F1001-052': {
+        #         'description':,
+        #         'market_price':,
+        #         'rental_price':
+        #     },
+
+        # }

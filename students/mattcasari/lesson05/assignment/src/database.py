@@ -16,10 +16,12 @@ PRODUCT_NAME_KEYS = [
     "description",
     "market_price",
     "rental_price",
-    "material",
-    "size",
+    "product_type",
     "brand",
     "voltage",
+    "material",
+    "size",
+    "quantity_available",
 ]
 CUSTOMER_NAME_KEYS = [
     "customer_id",
@@ -31,7 +33,10 @@ CUSTOMER_NAME_KEYS = [
     "status",
     "credit_limit",
 ]
-RENTAL_NAME_KEYS = ["product_id", "description", "market_price", "rental_price"]
+# RENTAL_NAME_KEYS = ["product_id", "description", "market_price", "rental_price"]
+RENTAL_NAME_KEYS = ["product_id","customer_id","rental_quantity"]
+
+COLLECTIONS = ["products", "customers", "rentals"]
 
 # LOGGER SETUP
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
@@ -82,7 +87,8 @@ def populate_database(db_object, collection_name, data):
     LOGGER.info("Populating database collection %s", collection_name)
 
     record_cnt = 0
-    error_cnt = _counter()
+    error_cnt = 0
+    # error_cnt = _counter()
 
     if collection_name == "products":
         collection_keys = PRODUCT_NAME_KEYS
@@ -98,7 +104,8 @@ def populate_database(db_object, collection_name, data):
         db_object[collection_name].insert_one(data[0])
         record_cnt = 1
     LOGGER.debug(f"Record length is {record_cnt}")
-    return (record_cnt, next(error_cnt))
+    return (record_cnt, error_cnt)
+    # return (record_cnt, next(error_cnt))
 
 
 def import_csv(directory_name, file_name):
@@ -133,15 +140,15 @@ def import_csv(directory_name, file_name):
                     _validate_headers(header, file_name)
                 else:
                     LOGGER.debug(f"ICSV Data: {row}")
-                    # product_dict = {}
                     temp_product = _file_parser(row, header)
                     return_data.append(temp_product)
-    except IndexError:
+    except IndexError as err:
+        LOGGER.error("Index error in import_csv")
+        LOGGER.error(err)
         error_cnt = 1
+    LOGGER.info(return_data)
+    LOGGER.info(f"Error count = {error_cnt}")
     return (error_cnt, return_data)
-
-
-
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -166,17 +173,16 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     error_count = [0, 0, 0]
     mongo = MongoDBConnection()
 
-    collections = ["products", "customers", "rentals"]
+    
     with mongo:
-        db = mongo.connection.media
+        db = mongo.connection.hp_norton
 
-        for idx, collection in enumerate(collections):
+        for idx, collection in enumerate(COLLECTIONS):
             LOGGER.info("Importing rental file name: %s", collection)
-            data = []
             e_cnt = 0
             r_cnt = 0
-            [e_cnt, data] = import_csv(directory_name, product_file)
-            LOGGER.debug(f"Data length is {len(data)}")
+            [e_cnt, data] = import_csv(directory_name, collection)
+            LOGGER.debug(f"Data length is {len(data)}, e_cnt = {e_cnt}")
             error_count[idx] += e_cnt
             [r_cnt, e_cnt] = populate_database(db, collection, data)
             LOGGER.debug(f"rcnt={r_cnt}, ecnt={e_cnt}")
@@ -189,6 +195,25 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     
     return (record_count, error_count)
 
+def show_available_products():
+    LOGGER.info("Request to show available products")
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.hp_norton
+
+        products = [x for x in db.products.find()]
+
+        results = {}
+        LOGGER.debug("%s", products)
+        for product in products:
+            temp = {
+                'description':product['description'],
+                'product_type':product['product_type'],
+                'quantity_available':product['quantity_available']
+            }
+            results[product['product_id']] = temp
+    LOGGER.debug("%s", results)
+    return results
 
 def _validate_headers(headers, collection_name):
     """ Validate the file headers in CSV file against expected collection name keys"""
@@ -221,80 +246,26 @@ def _file_parser(data, headers):
     LOGGER.info("Created file data: %s", d_vals)
     return d_vals
 
-
-def _drop_collections(db_obj):
+def _drop_collections(db_obj=[]):
     """ Drop/remove all collections from database """
-    db_obj.products.drop()
-    # db_obj.customer.drop()
-    db_obj.rentals.drop()
+    if db_obj:
+        db_obj.products.drop()
+        db_obj.customer.drop()
+        db_obj.rentals.drop()
+    else:
+        mongo = MongoDBConnection()
+        with mongo:
+            db = mongo.connection.hp_norton
+            db.products.drop()
+            db.customer.drop()
+            db.rentals.drop()
 
+if __name__ == "__main__":
+    directory_name = './csv_files'
+    product_file = 'products'
+    customer_file = 'customers'
+    rental_file = 'rentals'
 
-# def import_product(directory_name, product_name):
-#     LOGGER.info("Importing product file %s", product_file)
-#     error_cnt = _counter()
-#     try:
-#         data = import_csv(directory_name / product_file)
-#     except IOError:
-#         LOGGER.error("Invalid product file name: %s", product_file)
-#         p_error_cnt()
-#     except IndexError:
-#         p_error_cnt()
-#         LOGGER.error("Mismatched data and header length")
-#         LOGGER.error("Header: %s", csv_header)
-#         LOGGER.error("Data:%s", csv_data)
+    [records, errors] = import_data(directory_name, product_file, customer_file, rental_file)
 
-#     LOGGER.info("Creating Product Database")
-#     # try:
-
-#     # except:
-
-#     LOGGER.info("Populating Product Database")
-
-#     return (data, error_cnt)
-
-# def create_collections(db_object):
-#     LOGGER.info("Creating collection")
-
-#     prod = db_object["products"]
-#     customer = db_object["customers"]
-#     rentals = db_object["rentals"]
-
-#     [print(x) for x in db_object.list_collection_names()]
-
-
-# def import_collection(directory_name, file_name, db_obj, collection_name):
-#     """ Import Collection
-
-#     Imports the selected collection and returns record count and
-#     error count
-
-#     Args:
-#         directory_name: Path where csv files live
-#         file_name: CSV file with collection information (line 1 must be header!)
-#         collectin_name: Name of database collection to create/update
-#     Returns:
-#         record_count: # of entries added in collection
-#         error_count: # of errors occured with collection
-#     Raises:
-#         TBD
-#     """
-#     error_cnt = 0
-#     record_cnt = 0
-
-#     # Create Collection
-#     collection = db_obj[collection_name]
-
-#     # Import
-#     try:
-#         data = import_csv(directory_name, file_name)
-#     except FileNotFoundError:
-#         next(errors())
-
-#     # Update DB
-#     try:
-#         pass
-#     except:
-#         next(error_cnt())
-
-#     # Return
-#     return (record_cnt, error_cnt)
+    show_available_products()

@@ -1,3 +1,6 @@
-product_id,description,market_price,rental_price
-T0072-401,Thumper,2000.00,49.95
-F1001-052,Chair dog,4000.00,70.00
+product_id,customer_id,rental_quantity
+V0032-100,C1955810,2
+F1001-223,C7871313,20
+T0072-401,C1950991,1000
+F1001-052,C1955810,20
+V0032-100,C3281830,100
