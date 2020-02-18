@@ -1,11 +1,8 @@
 """ Unit tests for Lesson 05 MongoDB Operations"""
 
-# pylint: disable=unused-wildcard-import
-# pylint: disable=wildcard-import
-# pylint: disable=broad-except
+# pylint: disable=protected-access
 
 import logging
-import io
 from unittest import TestCase, TestLoader
 
 from src import database as db
@@ -28,7 +25,7 @@ EXPECTED_PRODUCT_DICT = [
         "voltage": "1kV",
         "material": "",
         "size": "",
-        "quantity_available":"2"
+        "quantity_available": "2",
     },
     {
         "product_id": "T0072-401",
@@ -40,7 +37,7 @@ EXPECTED_PRODUCT_DICT = [
         "voltage": "12",
         "material": "",
         "size": "",
-        "quantity_available":"100"
+        "quantity_available": "100",
     },
     {
         "product_id": "F1001-223",
@@ -52,7 +49,7 @@ EXPECTED_PRODUCT_DICT = [
         "size": "large",
         "brand": "",
         "voltage": "",
-        "quantity_available":"23"
+        "quantity_available": "23",
     },
     {
         "product_id": "F1001-052",
@@ -64,7 +61,7 @@ EXPECTED_PRODUCT_DICT = [
         "size": "medium",
         "brand": "",
         "voltage": "",
-        "quantity_available":"14"
+        "quantity_available": "14",
     },
 ]
 
@@ -82,77 +79,17 @@ EXPECTED_CUSTOMERS_DICT = [
 ]
 
 EXPECTED_RENTALS_DICT = [
-    {
-        "product_id":"V0032-100",
-        "customer_id":"C1955810",
-        "rental_quantity":"2"
-    }
+    {"product_id": "V0032-100", "customer_id": "C1955810", "rental_quantity": "2"}
 ]
-# EXPECTED_RENTALS_DICT = [
-#     {
-#         "product_id": "T0072-401",
-#         "description": "Thumper",
-#         "market_price": "2000.00",
-#         "rental_price": "49.95",
-#     }
-# ]
-
-
-class GeneratorTests(TestCase):
-    """ Tests for MongoDB database functions """
-
-    def setUp(self):
-        """ Database Setup """
-        pass
-
-    def tearDown(self):
-        """ Database teardown """
-        pass
-
-    def test_error_counter(self):
-        """ Test the generator _counter """
-        # Given
-        err = db._counter()
-
-        # When
-        next(err)
-        next(err)
-        next(err)
-
-        # Then
-        self.assertEqual(3, next(err))
-
-    def test_error_counter_for_multiple_errors(self):
-        """ Test the generator _counter for multiple errors """
-        # Given
-        err1 = db._counter()
-        err2 = db._counter()
-        err3 = db._counter()
-
-        # When
-        for i in range(0, 50):
-            next(err1)
-        for i in range(0, 300):
-            next(err2)
-        for i in range(0, 7000):
-            next(err3)
-
-        # Then
-        self.assertEqual(50, next(err1))
-        self.assertEqual(300, next(err2))
-        self.assertEqual(7000, next(err3))
-
 
 class ParserTests(TestCase):
     """ Tests for MongoDB database functions """
 
     def setUp(self):
         """ Database Setup """
-        pass
 
     def tearDown(self):
         """ Database teardown """
-        pass
 
     def test_file_parser_with_valid_data(self):
         """ Test product_file_parser with valid data """
@@ -176,23 +113,13 @@ class ParserTests(TestCase):
         """ Test product_file_parser with invalid data """
         # Given
         data_val = [5, 6, 7, 8]
-        headers = [
-            "product_id",
-            "description",
-            "market_price",
-            "rental_price",
-            "material",
-            "size",
-            "brand",
-            "voltage",
-        ]
         # When
 
         # Then
         with self.assertRaises(IndexError):
             db._file_parser(data_val, "products")
 
-    def test_validate_headers(self):
+    def test_validate_headers_should_pass(self):
         """ Test if headers provided are valid with _validate_headers method"""
         # Given
         headers = [
@@ -207,9 +134,10 @@ class ParserTests(TestCase):
         ]
 
         # When
+        result = db._validate_headers(headers, "products")
 
         # Then
-        db._validate_headers(headers, "products")
+        self.assertTrue(result)
 
     def test_validate_headers_has_bad_header_name(self):
         """ Test _validate_headers with a bad header value"""
@@ -227,11 +155,9 @@ class ImportFilesTests(TestCase):
 
     def setUp(self):
         """ Set-up prior to running test"""
-        pass
 
     def tearDown(self):
         """ Teardown after each test"""
-        pass
 
     def test_import_product_csv(self):
         """Test the _import_csv function for products"""
@@ -243,9 +169,10 @@ class ImportFilesTests(TestCase):
 
         # Then
         error_cnt, result_dict = db.import_csv(directory_name, product_file)
-    
+
         self.assertEqual(len(EXPECTED_PRODUCT_DICT), len(result_dict))
         self.assertDictEqual(EXPECTED_PRODUCT_DICT[0], result_dict[0])
+        self.assertEqual(0, error_cnt)
 
     def test_import_customer_csv(self):
         """Test the _import_csv function for customers"""
@@ -258,6 +185,7 @@ class ImportFilesTests(TestCase):
         # Then
         [error_cnt, result_dict] = db.import_csv(directory_name, product_file)
         self.assertDictEqual(EXPECTED_CUSTOMERS_DICT[0], result_dict[0])
+        self.assertEqual(0, error_cnt)
 
     def test_import_rental_csv(self):
         """Test the _import_csv function for rentalss"""
@@ -270,14 +198,13 @@ class ImportFilesTests(TestCase):
         # Then
         [error_cnt, result_dict] = db.import_csv(directory_name, product_file)
         self.assertDictEqual(EXPECTED_RENTALS_DICT[0], result_dict[0])
-
+        self.assertEqual(0, error_cnt)
 
 class DatabaseTest(TestCase):
     """ Tests for MongoDB database functions """
 
     def setUp(self):
         """ Database Setup """
-        pass
 
     def tearDown(self):
         """ Database teardown """
@@ -306,7 +233,7 @@ class DatabaseTest(TestCase):
             (r_cnt, e_cnt) = db.populate_database(test_db, "customers", data)
 
             customers = test_db.customers.find()
-            cid = test_db.customers.customer_id.find()
+            # test_db.customers.customer_id.find()
             LOGGER.debug(customers)
             actual_id = customers[0]["customer_id"]
             LOGGER.debug(actual_id)
@@ -321,14 +248,16 @@ class DatabaseTest(TestCase):
     def test_import_data(self):
         """ Test the import_data method"""
         # Given
-        product_file = 'products'
-        directory_name = './csv_files'
-        customer_file = 'customers'
-        rental_file = 'rentals'
+        product_file = "products"
+        directory_name = "./csv_files"
+        customer_file = "customers"
+        rental_file = "rentals"
 
         # When
-        [records, errors] = db.import_data(directory_name, product_file, customer_file, rental_file)
-        
+        [records, errors] = db.import_data(
+            directory_name, product_file, customer_file, rental_file
+        )
+
         # Then
         self.assertEqual(0, errors[0])
         self.assertEqual(0, errors[1])
@@ -339,15 +268,16 @@ class DatabaseTest(TestCase):
         self.assertEqual(5, records[2])
         db._drop_collections()
 
+
 class CallsToDatabase(TestCase):
     """ Handles all tests involving calls to DB for data"""
 
     def setUp(self):
         """ Database Setup """
-        product_file = 'products'
-        directory_name = './csv_files'
-        customer_file = 'customers'
-        rental_file = 'rentals'
+        product_file = "products"
+        directory_name = "./csv_files"
+        customer_file = "customers"
+        rental_file = "rentals"
         db.import_data(directory_name, product_file, customer_file, rental_file)
 
     def tearDown(self):
@@ -359,55 +289,53 @@ class CallsToDatabase(TestCase):
 
         # Given
         expected_result = {
-            "V0032-100" : {
+            "V0032-100": {
                 "description": "Spice Harvester",
                 "product_type": "Electric",
-                "quantity_available":"2"
+                "quantity_available": "2",
             },
-            "T0072-401":{
+            "T0072-401": {
                 "description": "Thumper",
                 "product_type": "Electric",
-                "quantity_available":"100"
+                "quantity_available": "100",
             },
-            "F1001-223":{
+            "F1001-223": {
                 "description": "Harkonnen Chair",
                 "product_type": "Furniture",
-                "quantity_available":"23"
+                "quantity_available": "23",
             },
-            "F1001-052":{
+            "F1001-052": {
                 "description": "Chair dog",
-                "product_type":"Furniture",
-                "quantity_available":"14"
-            }
+                "product_type": "Furniture",
+                "quantity_available": "14",
+            },
         }
-        
+
         # When
         products = db.show_available_products()
 
         # Then
         self.assertDictEqual(expected_result, products)
 
-
     def test_show_rentals(self):
         """ Test the show_rentals method """
         # Given
-        product_id = 'V0032-100'
+        product_id = "V0032-100"
 
         # When
         expected_result = {
-            'C1955810': {
-                'name': 'Atreides, LetoII',
-                'address': 'Arrakis',
-                'phone_number':'899-123-5432',
-                'email_address':'godemperor@dune.net'
+            "C1955810": {
+                "name": "Atreides, LetoII",
+                "address": "Arrakis",
+                "phone_number": "899-123-5432",
+                "email_address": "godemperor@dune.net",
             },
-            'C3281830': {
-                'name': 'Corino, Irulan',
-                'address': 'Kaitain',
-                'phone_number':'001-000-0002',
-                'email_address':'princessofthepadishah@arrakis.com'
-            }
-
+            "C3281830": {
+                "name": "Corino, Irulan",
+                "address": "Kaitain",
+                "phone_number": "001-000-0002",
+                "email_address": "princessofthepadishah@arrakis.com",
+            },
         }
 
         # Then
