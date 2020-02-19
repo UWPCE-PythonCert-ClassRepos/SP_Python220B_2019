@@ -263,3 +263,31 @@ Tests and refactoring performed
         ``Time deterioration of -1.02787 seconds``
 
         ``Factor of 0.9 deterioration``
+
+- Reverted to previous version using csv.reader
+    a) copied previous commit code (to preserve notes) rather than Reverted
+    b) reran tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 5.13292``
+        
+        ``Good Performance Elapsed Time = 2.74515``
+        
+        ``Time improvement of 2.38777 seconds``
+        
+        ``Factor of 1.9 improvement``
+    **CONCLUSION: Back to good performance**
+
+- Compare against fewer characters
+    a) truncate character compare from 4 to 2 char for year count
+    b) rerun test
+        ``Average of 2 Runs
+        
+        ``Poor Performance Elapsed Time = 4.76997``
+        
+        ``Good Performance Elapsed Time = 2.68535``
+        
+        ``Time improvement of 2.08462 seconds``
+        
+        ``Factor of 1.8 improvement``
+    **CONCLUSION: Decreased performance (or about the same)**
