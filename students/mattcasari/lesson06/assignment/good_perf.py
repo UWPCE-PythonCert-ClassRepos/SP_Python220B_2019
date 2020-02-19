@@ -23,24 +23,25 @@ def analyze(filename):
     found = _counter()
 
     year_count = {}
-
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        
+    field_names = ['uuid','idx1','idx2','idx3','idx4','date','extra']
+    with open(filename,'r') as csvfile:
+        # reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        reader = csv.DictReader(csvfile, fieldnames=field_names)
         for row in reader:
+            print(row)
             if row[5][6:] == '2013':
                 next(year_2013)
-            if row[5][6:] == '2014':
+            if row['date'][6:] == '2014':
                 next(year_2014)
-            if row[5][6:] == '2015':
+            if row['date'][6:] == '2015':
                 next(year_2015)
-            if row[5][6:] == '2016':
+            if row['date'][6:] == '2016':
                 next(year_2016)
-            if row[5][6:] == '2017':
+            if row['date'][6:] == '2017':
                 next(year_2017)
-            if row[5][6:] == '2018':
+            if row['date'][6:] == '2018':
                 next(year_2018)
-            if "ao" in row[6]:
+            if "ao" in row['extra']:
                 next(found)         
 
 

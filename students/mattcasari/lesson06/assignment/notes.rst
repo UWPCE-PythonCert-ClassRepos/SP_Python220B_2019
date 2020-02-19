@@ -89,6 +89,14 @@ Observations in the poor_perf.py program
 - Add generator for increment functions
     a) create generator
     b) complete year_count outside of loop
+
+- Try using csv.DictReader instead of csv.reader
+
+- Try using Pandas
+    a) Use pandas.csv_reader to load Data
+    b) Use pandas functions to work on data to test speed.
+
+
 Tests and refactoring performed 
 ===============================
 
@@ -218,4 +226,23 @@ Tests and refactoring performed
             
             ``Factor of 1.8 improvement``
         
-            **CONCLUSION: Slight improvement in performance**
+        **CONCLUSION: Slight improvement in performance**
+
+    - Replace csv.read with csv.DictReader 
+        a) replace CSV call with csv.DictReader
+        b) replace row[5] with row['date']
+        c) replace row[6] with row['extra']
+        d) add fieldname list to open csv.DictReader
+        e) rerun tests
+
+            ``Average of 2 Runs``
+            
+            ``Poor Performance Elapsed Time = 4.81238``
+            
+            ``Good Performance Elapsed Time = 5.92293``
+
+            ``Time deterioration of -1.11055 seconds``
+
+            ``Factor of 0.8 deterioration``
+        **CONCLUSION: DictReader slowed the program significantly**
+        **NOTE: Might be how I am accessing data that is slow**
