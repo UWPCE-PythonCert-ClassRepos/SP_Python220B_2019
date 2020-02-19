@@ -25,20 +25,19 @@ def analyze(filename):
     year_count = {}
 
     with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        
-        for row in reader[5]:
-            if row[5][8:] == '13':
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')        
+        for row in reader:
+            if int(row[5][6:]) == 2013:
                 next(year_2013)
-            if row[5][8:] == '14':
+            if int(row[5][6:]) == 2014:
                 next(year_2014)
-            if row[5][8:] == '15':
+            if int(row[5][6:]) == 2015:
                 next(year_2015)
-            if row[5][8:] == '16':
+            if int(row[5][6:]) == 2016:
                 next(year_2016)
-            if row[5][8:0] == '17':
+            if int(row[5][6:]) == 2017:
                 next(year_2017)
-            if row[5][6:] == '2018':
+            if int(row[5][6:]) == 2018:
                 next(year_2018)
             if "ao" in row[6]:
                 next(found)         

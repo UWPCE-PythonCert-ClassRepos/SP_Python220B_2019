@@ -96,6 +96,11 @@ Observations in the poor_perf.py program
     a) Use pandas.csv_reader to load Data
     b) Use pandas functions to work on data to test speed.
 
+- Revert to csv.reader
+
+- Reduce number of character comparisons.
+
+- Do integer comparisons rather than character
 
 Tests and refactoring performed 
 ===============================
@@ -291,3 +296,17 @@ Tests and refactoring performed
         
         ``Factor of 1.8 improvement``
     **CONCLUSION: Decreased performance (or about the same)**
+
+- Replacing char compare with int compare
+    a) replace row[5][6:] == '2013' with int(row[5][6:]) == 2013
+    b) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.77812``
+        
+        ``Good Performance Elapsed Time = 3.89074``
+        
+        ``Time improvement of 0.88738 seconds``
+        
+        ``Factor of 1.2 improvement``
+    **CONCLUSION: converting to int takes a long time**
