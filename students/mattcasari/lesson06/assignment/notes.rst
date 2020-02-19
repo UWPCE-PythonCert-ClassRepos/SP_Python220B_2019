@@ -354,4 +354,21 @@ Tests and refactoring performed
         ``Factor of 2.4 improvement``
     **CONCLUSION: No improvement, maybe a bit slwer**
 
-    **REVERTING TO PREVIOUS**
+    **REVERTING TO PREVIOUS **
+
+
+Overall Conclusions
+===================
+
+To create the fastest running code, the following changes had the 
+most significant effects:
+
+1) Remove conditional statements
+    a) if/elif were removed and direct dict writes gave a massive increase
+    in speed
+
+2) Remove additional csv file opens and reads
+    a) We already had the data, no need to reread
+
+3) Remove unnecessary lists
+    b) Especially focus on .appends that are not necessary
