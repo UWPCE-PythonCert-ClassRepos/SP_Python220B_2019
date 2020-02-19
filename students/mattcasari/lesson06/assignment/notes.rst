@@ -181,68 +181,85 @@ Tests and refactoring performed
 
     ** CONCLUSION: Performance improvement removing list**
 
-    - Remove if lrow[5] > '00/00/2012':
-        a) Remove lrow[5] > '00/00/2012' since it is redundant
-        b) rerun test
-            ``Average of 2 Runs``
-            
-            ``Poor Performance Elapsed Time = 5.30039``
-            
-            ``Good Performance Elapsed Time = 3.12264``
-            
-            ``Time improvement of 2.17776 seconds``
-            
-            ``Factor of 1.7 improvement``
-
-        **CONCLUSION: Minor improvement, possibly**
-    - Remove lrow and replace with row, since lrow is redundant
-        a) Replace all instances of lrow with row.
-        b) Delete lrow = list(row)
-        c) rerun test
-            ``Average of 2 Runs``
-
-            ``Poor Performance Elapsed Time = 5.27644``
-            
-            ``Good Performance Elapsed Time = 3.14163``
-            
-            ``Time improvement of 2.13480 seconds``
-            
-            ``Factor of 1.7 improvement``
+- Remove if lrow[5] > '00/00/2012':
+    a) Remove lrow[5] > '00/00/2012' since it is redundant
+    b) rerun test
+        ``Average of 2 Runs``
         
-        **CONCLUSION: Inconclusive improvement**
-
-    - Replace year_count and found increment with generator
-        a) Replace year_count["2013"] += 1 with generator 
-        b) Replace found += 1 with generator
-        b) rerun test
-
-            ``Average of 2 Runs``
-
-            ``Poor Performance Elapsed Time = 5.75993``
-            
-            ``Good Performance Elapsed Time = 3.23316``
-            
-            ``Time improvement of 2.52677 seconds``
-            
-            ``Factor of 1.8 improvement``
+        ``Poor Performance Elapsed Time = 5.30039``
         
-        **CONCLUSION: Slight improvement in performance**
+        ``Good Performance Elapsed Time = 3.12264``
+        
+        ``Time improvement of 2.17776 seconds``
+        
+        ``Factor of 1.7 improvement``
 
-    - Replace csv.read with csv.DictReader 
-        a) replace CSV call with csv.DictReader
-        b) replace row[5] with row['date']
-        c) replace row[6] with row['extra']
-        d) add fieldname list to open csv.DictReader
-        e) rerun tests
+    **CONCLUSION: Minor improvement, possibly**
+- Remove lrow and replace with row, since lrow is redundant
+    a) Replace all instances of lrow with row.
+    b) Delete lrow = list(row)
+    c) rerun test
+        ``Average of 2 Runs``
 
-            ``Average of 2 Runs``
-            
-            ``Poor Performance Elapsed Time = 4.81238``
-            
-            ``Good Performance Elapsed Time = 5.92293``
+        ``Poor Performance Elapsed Time = 5.27644``
+        
+        ``Good Performance Elapsed Time = 3.14163``
+        
+        ``Time improvement of 2.13480 seconds``
+        
+        ``Factor of 1.7 improvement``
+    
+    **CONCLUSION: Inconclusive improvement**
 
-            ``Time deterioration of -1.11055 seconds``
+- Replace year_count and found increment with generator
+    a) Replace year_count["2013"] += 1 with generator 
+    b) Replace found += 1 with generator
+    c) rerun test
 
-            ``Factor of 0.8 deterioration``
-        **CONCLUSION: DictReader slowed the program significantly**
-        **NOTE: Might be how I am accessing data that is slow**
+        ``Average of 2 Runs``
+
+        ``Poor Performance Elapsed Time = 5.75993``
+        
+        ``Good Performance Elapsed Time = 3.23316``
+        
+        ``Time improvement of 2.52677 seconds``
+        
+        ``Factor of 1.8 improvement``
+    
+    **CONCLUSION: Slight improvement in performance**
+
+- Replace csv.read with csv.DictReader 
+    a) replace CSV call with csv.DictReader
+    b) replace row[5] with row['date']
+    c) replace row[6] with row['extra']
+    d) add fieldname list to open csv.DictReader
+    e) rerun tests
+
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.81238``
+        
+        ``Good Performance Elapsed Time = 5.92293``
+
+        ``Time deterioration of -1.11055 seconds``
+
+        ``Factor of 0.8 deterioration``
+
+    **CONCLUSION: DictReader slowed the program significantly**
+
+    **NOTE: Might be how I am accessing data that is slow**
+
+
+- Replace csv.DictReader with Pandas.csv_reader
+    a) Replaced csv.DictReader with Pandas.csv_reader
+    b) used Pandas functions to sum/count years and found
+    c) reran tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 7.02374``
+        
+        ``Good Performance Elapsed Time = 8.05161``
+
+        ``Time deterioration of -1.02787 seconds``
+
+        ``Factor of 0.9 deterioration``
