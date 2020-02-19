@@ -310,3 +310,31 @@ Tests and refactoring performed
         
         ``Factor of 1.2 improvement``
     **CONCLUSION: converting to int takes a long time**
+
+- Stop comparing each row, add elif
+    a) Replace next iteration functions with elif instead of if
+    b) rerun tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.78174``
+        
+        ``Good Performance Elapsed Time = 2.55933``
+        
+        ``Time improvement of 2.22241 seconds``
+        
+        ``Factor of 1.9 improvement``
+    **CONCLUSION: improvement, but slight compared to the revert to csv.reader**
+
+- Replace counters with direct calls to dict object
+    a) Replace if/elif calls with direct dictionary access
+    b) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.86321``
+        
+        ``Good Performance Elapsed Time = 1.97954``
+        
+        ``Time improvement of 2.88367 seconds``
+        
+        ``Factor of 2.5 improvement``
+    **CONCLUSION: Big improvement removing if/elif statements**

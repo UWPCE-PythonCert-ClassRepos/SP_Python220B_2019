@@ -22,33 +22,26 @@ def analyze(filename):
     year_2018 = _counter()
     found = _counter()
 
-    year_count = {}
+    year_count = {
+        '2010':0,
+        '2011':0,
+        '2012':0,
+        '2013':0,
+        '2014':0,
+        '2015':0,
+        '2016':0,
+        '2017':0,
+        '2018':0,
+        '2019':0,
+        '2020':0}
 
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')        
         for row in reader:
-            if int(row[5][6:]) == 2013:
-                next(year_2013)
-            if int(row[5][6:]) == 2014:
-                next(year_2014)
-            if int(row[5][6:]) == 2015:
-                next(year_2015)
-            if int(row[5][6:]) == 2016:
-                next(year_2016)
-            if int(row[5][6:]) == 2017:
-                next(year_2017)
-            if int(row[5][6:]) == 2018:
-                next(year_2018)
+            year_count[row[5][6:]] += 1
             if "ao" in row[6]:
-                next(found)         
-
-
-        year_count["2013"] = next(year_2013)
-        year_count["2014"] = next(year_2014)
-        year_count["2015"] = next(year_2015)
-        year_count["2016"] = next(year_2016)
-        year_count["2017"] = next(year_2017)
-        year_count["2018"] = next(year_2018)
+                next(found)
+                         
         found = next(found)
 
         end = datetime.datetime.now()
