@@ -6,8 +6,21 @@ well performing, well written module
 import datetime
 import csv
 
+def _counter():
+    idx = 0
+    while True:
+        yield idx
+        idx += 1
+
 def analyze(filename):
     start = datetime.datetime.now()
+    year_2013 = _counter()
+    year_2014 = _counter()
+    year_2015 = _counter()
+    year_2016 = _counter()
+    year_2017 = _counter()
+    year_2018 = _counter()
+
     year_count = {
             "2013": 0,
             "2014": 0,
@@ -21,24 +34,38 @@ def analyze(filename):
         new_ones = []
         found = 0
         for row in reader:
-            lrow = list(row)
-            if lrow[5][6:] == '2013':
-                year_count["2013"] += 1
-            if lrow[5][6:] == '2014':
-                year_count["2014"] += 1
-            if lrow[5][6:] == '2015':
-                year_count["2015"] += 1
-            if lrow[5][6:] == '2016':
-                year_count["2016"] += 1
-            if lrow[5][6:] == '2017':
-                year_count["2017"] += 1
-            if lrow[5][6:] == '2018':
-                year_count["2017"] += 1
+            if row[5][6:] == '2013':
+                # year_count["2013"] += 1
+                next(year_2013)
+            if row[5][6:] == '2014':
+                # year_count["2014"] += 1
+                next(year_2014)
+            if row[5][6:] == '2015':
+                # year_count["2015"] += 1
+                next(year_2015)
+            if row[5][6:] == '2016':
+                # year_count["2016"] += 1
+                next(year_2016)
+            if row[5][6:] == '2017':
+                # year_count["2017"] += 1
+                next(year_2017)
+            if row[5][6:] == '2018':
+                # year_count["2017"] += 1
+                next(year_2018)
             if "ao" in row[6]:
                 found += 1          
 
-        end = datetime.datetime.now()
 
+        year_count["2013"] = next(year_2013)
+        year_count["2014"] = next(year_2014)
+        year_count["2015"] = next(year_2015)
+        year_count["2016"] = next(year_2016)
+        year_count["2017"] = next(year_2017)
+        year_count["2018"] = next(year_2018)
+
+
+        end = datetime.datetime.now()
+        
     return (start, end, year_count, found)
 
 def main():

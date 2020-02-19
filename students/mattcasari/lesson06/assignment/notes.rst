@@ -83,6 +83,12 @@ Observations in the poor_perf.py program
 - if lrow[5] > '00/00/2012': is unneccessary
     a) compare year directly instead of doing > check
 
+- lrow is redundant
+    a) replace lrow with row
+
+- Add generator for increment functions
+    a) create generator
+    b) complete year_count outside of loop
 Tests and refactoring performed 
 ===============================
 
@@ -181,3 +187,34 @@ Tests and refactoring performed
             ``Factor of 1.7 improvement``
 
         **CONCLUSION: Minor improvement, possibly**
+    - Remove lrow and replace with row, since lrow is redundant
+        a) Replace all instances of lrow with row.
+        b) Delete lrow = list(row)
+        c) rerun test
+            ``Average of 2 Runs``
+
+            ``Poor Performance Elapsed Time = 5.27644``
+            
+            ``Good Performance Elapsed Time = 3.14163``
+            
+            ``Time improvement of 2.13480 seconds``
+            
+            ``Factor of 1.7 improvement``
+        
+        **CONCLUSION: Inconclusive improvement**
+
+    - Replace year_count increment with generator
+        a) Replace year_count["2013"] += 1 with generator 
+        b) rerun test
+
+            ``Average of 2 Runs``
+
+            ``Poor Performance Elapsed Time = 5.74901``
+            
+            ``Good Performance Elapsed Time = 3.14701``
+            
+            ``Time improvement of 2.60201 seconds``
+            
+            ``Factor of 1.8 improvement``
+        
+            **CONCLUSION: Slight improvement in performance**
