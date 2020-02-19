@@ -167,4 +167,17 @@ Tests and refactoring performed
 
     ** CONCLUSION: Performance improvement removing list**
 
-    - R
+    - Remove if lrow[5] > '00/00/2012':
+        a) Remove lrow[5] > '00/00/2012' since it is redundant
+        b) rerun test
+            ``Average of 2 Runs``
+            
+            ``Poor Performance Elapsed Time = 5.30039``
+            
+            ``Good Performance Elapsed Time = 3.12264``
+            
+            ``Time improvement of 2.17776 seconds``
+            
+            ``Factor of 1.7 improvement``
+
+        **CONCLUSION: Minor improvement, possibly**
