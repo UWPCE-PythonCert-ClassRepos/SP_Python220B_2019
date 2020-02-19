@@ -146,8 +146,17 @@ class DatabaseTests(TestCase):
         try:
             deleted_customer = Customer.get(Customer.customer_id == self.customers[0][CUST_ID])
             self.assertEqual(deleted_customer.customer_id, 'A500')
-
         except DoesNotExist:
+            logger.info(f'Customer not found in database: {customer_id}')
+
+        database.drop_tables([Customer])
+        
+    def test_delete_customer_exception(self):
+        ''' ensure error is thrown for customer '''
+        try:
+            customer_id = 'A5000'
+            delete_customer(customer_id)
+        except ValueError:
             logger.info(f'Customer not found in database: {customer_id}')
             self.assertRaises(ValueError)
 
@@ -156,16 +165,22 @@ class DatabaseTests(TestCase):
     def test_update_customer_credit(self):
         ''' test updating customers credit limit '''
         logger.info(f'update customer credit limit test')
+        new_limit = 888
 
         add_customer(self.new_customer[CUST_ID], self.new_customer[NAME],
-                         self.new_customer[LAST_NAME], self.new_customer[HOME_ADDRESS],
-                         self.new_customer[EMAIL_ADDRESS], self.new_customer[PHONE],
-                         self.new_customer[STATUS], self.new_customer[CREDIT_LIMIT])
+                     self.new_customer[LAST_NAME], self.new_customer[HOME_ADDRESS],
+                     self.new_customer[EMAIL_ADDRESS], self.new_customer[PHONE],
+                     self.new_customer[STATUS], self.new_customer[CREDIT_LIMIT])
 
-        update_customer_credit('A501', 100)
-        updated_value = Customer.get(Customer.credit_limit == self.new_customer[CREDIT_LIMIT])
-
-        # self.assertEqual(update_customer_credit('A501', 100), updated_value)
+        updated_customer = Customer.get(Customer.customer_id == self.new_customer[CUST_ID])
+        logger.info(f'Customers current limit: {updated_customer.credit_limit}')
+        update_customer_credit('A501', 888)
+        self.assertEqual(Customer.get(Customer.customer_id == self.new_customer[CUST_ID]).credit_limit, new_limit)
+        logger.info(f'Customers limit after update: {Customer.get(Customer.customer_id == self.new_customer[CUST_ID]).credit_limit}')
+        try:
+            update_customer_credit('A5011', 888)
+        except ValueError:
+            logger.info(f'Customer not found')
 
         database.drop_tables([Customer])
 
@@ -174,7 +189,7 @@ class DatabaseTests(TestCase):
         logger.info(f'list active customers test')
         with patch('builtins.input', return_value=1):
             list_active_customers()
-        
+
         self.assertEqual(list_active_customers(), 1)
 
         database.drop_tables([Customer])

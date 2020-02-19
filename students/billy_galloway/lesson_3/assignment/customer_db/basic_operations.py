@@ -1,5 +1,5 @@
 '''
-basic operations for employees to perform 
+basic operations for employees to perform
 for customer data
 '''
 
@@ -30,20 +30,19 @@ def add_customer(customer_id, name, last_name,
     try:
         with database.transaction():
             new_customer = Customer.create(
-                customer_id = customer[CUST_ID],
-                name = customer[NAME],
-                last_name = customer[LAST_NAME],
-                home_address = customer[HOME_ADDRESS],
-                email_address = customer[EMAIL_ADDRESS],
-                phone_number = customer[PHONE],
-                status = customer[STATUS],
-                credit_limit = customer[CREDIT_LIMIT])
+                customer_id=customer[CUST_ID],
+                name=customer[NAME],
+                last_name=customer[LAST_NAME],
+                home_address=customer[HOME_ADDRESS],
+                email_address=customer[EMAIL_ADDRESS],
+                phone_number=customer[PHONE],
+                status=customer[STATUS],
+                credit_limit=customer[CREDIT_LIMIT])
             new_customer.save()
             logger.info(f'{name} {last_name} added to database')
     except Exception as e:
         logger.info(f'Error creating customer id {customer_id}')
         logger.info(f'Exception: {e}')
-
 
 def search_customer(customer_id):
     ''' searches for a customer by id '''
@@ -53,9 +52,9 @@ def search_customer(customer_id):
     except DoesNotExist:
         raise ValueError(f'{customer_id} not found in database')
 
-    return {'name': customer.name, 
+    return {'name': customer.name,
             'last_name': customer.last_name,
-            'email_address': customer.email_address, 
+            'email_address': customer.email_address,
             'phone_number': customer.phone_number}
 
 def delete_customer(customer_id):
@@ -70,7 +69,7 @@ def delete_customer(customer_id):
 
 def update_customer_credit(customer_id, credit_limit):
     ''' update customers credit limit '''
-    logger.info(f'updating customers credit limt {credit_limit}')
+    logger.info(f'updating customers credit limit {credit_limit}')
     try:
         customer = Customer.get(Customer.customer_id == customer_id)
         logger.info(f'found customers id: {customer}')
@@ -80,19 +79,12 @@ def update_customer_credit(customer_id, credit_limit):
 
     except DoesNotExist:
         raise ValueError(f'{customer_id} not found in database')
-    
+
+    return credit_limit
+
 def list_active_customers():
     ''' return number of active customers in database '''
     active_customers = Customer.select().where(Customer.status).count()
     logger.info(f'active customer count is {active_customers}')
 
     return active_customers
-
-## testing
-# database.create_tables([Customer])
-# database.close()
-# customer = ['A500', 'Andrew', 'Smith',
-#             '23 Railroad Street Matthews, NC 28104', 'andrew@hpnorton.com',
-#             '202-555-0134', True, 1000]
-
-# update_customer_credit('A600', 100)
