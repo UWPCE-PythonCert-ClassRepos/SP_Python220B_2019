@@ -23,28 +23,26 @@ def analyze(filename):
         for row in reader:
             lrow = list(row)
             if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
+                if lrow[5][6:] == '2013':
+                    year_count["2013"] += 1
+                if lrow[5][6:] == '2014':
+                    year_count["2014"] += 1
+                if lrow[5][6:] == '2015':
+                    year_count["2015"] += 1
+                if lrow[5][6:] == '2016':
+                    year_count["2016"] += 1
+                if lrow[5][6:] == '2017':
+                    year_count["2017"] += 1
+                if lrow[5][6:] == '2018':
+                    year_count["2017"] += 1
+                # new_ones.append((lrow[5], lrow[0]))
             if "ao" in row[6]:
                 found += 1
         
 
-        for new in new_ones:
-            if new[0][6:] == '2013':
-                year_count["2013"] += 1
-            if new[0][6:] == '2014':
-                year_count["2014"] += 1
-            if new[0][6:] == '2015':
-                year_count["2015"] += 1
-            if new[0][6:] == '2016':
-                year_count["2016"] += 1
-            if new[0][6:] == '2017':
-                year_count["2017"] += 1
-            if new[0][6:] == '2018':
-                year_count["2017"] += 1
+        # for new in new_ones:
+            
 
-        # print(year_count)       
-
-        # print(f"'ao' was found {found} times")
         end = datetime.datetime.now()
 
     return (start, end, year_count, found)

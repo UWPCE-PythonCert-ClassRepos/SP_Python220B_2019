@@ -80,7 +80,8 @@ Observations in the poor_perf.py program
     a) move new[0][6:] into ``for row in reader`` loop
     b) delete ``new_ones = []```
 
-
+- if lrow[5] > '00/00/2012': is unneccessary
+    a) compare year directly instead of doing > check
 
 Tests and refactoring performed 
 ===============================
@@ -149,3 +150,21 @@ Tests and refactoring performed
         ``Factor of 1.6 improvement``
 
     **CONCLUSION: More improvement achieved when not having to print**
+
+- Removing new_ones.append and directly update year_count
+    a) Delete new_ones list
+    b) Replace new_ones.append() with direct update year_count check
+    c) rerun test
+        ``Average of 2 Runs``
+    
+        ``Poor Performance Elapsed Time = 5.88415``
+        
+        ``Good Performance Elapsed Time = 3.39963``
+        
+        ``Time improvement of 2.48452 seconds``
+        
+        ``Factor of 1.7 improvement``
+
+    ** CONCLUSION: Performance improvement removing list**
+
+    - R
