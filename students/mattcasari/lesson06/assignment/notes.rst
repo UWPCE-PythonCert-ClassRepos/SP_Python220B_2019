@@ -338,3 +338,20 @@ Tests and refactoring performed
         
         ``Factor of 2.5 improvement``
     **CONCLUSION: Big improvement removing if/elif statements**
+
+- Replace hard-coded increment with counters
+    a) Replace ``year_count[row[5][6:]] += 1`` with ``next(year_count[row[5][6:]])``
+    b) year_count = {'2013':0,...,'2018':0} with counter generators
+    c) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.74828``
+        
+        ``Good Performance Elapsed Time = 1.97312``
+        
+        ``Time improvement of 2.77517 seconds``
+        
+        ``Factor of 2.4 improvement``
+    **CONCLUSION: No improvement, maybe a bit slwer**
+
+    **REVERTING TO PREVIOUS**

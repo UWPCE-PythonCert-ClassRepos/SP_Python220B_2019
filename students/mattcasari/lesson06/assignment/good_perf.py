@@ -1,5 +1,5 @@
 """
-well performing, well written module
+better performing, better written module
 
 """
 
@@ -14,26 +14,8 @@ def _counter():
 
 def analyze(filename):
     start = datetime.datetime.now()
-    year_2013 = _counter()
-    year_2014 = _counter()
-    year_2015 = _counter()
-    year_2016 = _counter()
-    year_2017 = _counter()
-    year_2018 = _counter()
     found = _counter()
-
-    year_count = {
-        '2010':0,
-        '2011':0,
-        '2012':0,
-        '2013':0,
-        '2014':0,
-        '2015':0,
-        '2016':0,
-        '2017':0,
-        '2018':0,
-        '2019':0,
-        '2020':0}
+    year_count = dict.fromkeys([str(x) for x in range(2010,2021)],0)
 
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')        
