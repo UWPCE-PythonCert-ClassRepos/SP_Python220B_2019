@@ -203,17 +203,18 @@ Tests and refactoring performed
         
         **CONCLUSION: Inconclusive improvement**
 
-    - Replace year_count increment with generator
+    - Replace year_count and found increment with generator
         a) Replace year_count["2013"] += 1 with generator 
+        b) Replace found += 1 with generator
         b) rerun test
 
             ``Average of 2 Runs``
 
-            ``Poor Performance Elapsed Time = 5.74901``
+            ``Poor Performance Elapsed Time = 5.75993``
             
-            ``Good Performance Elapsed Time = 3.14701``
+            ``Good Performance Elapsed Time = 3.23316``
             
-            ``Time improvement of 2.60201 seconds``
+            ``Time improvement of 2.52677 seconds``
             
             ``Factor of 1.8 improvement``
         
