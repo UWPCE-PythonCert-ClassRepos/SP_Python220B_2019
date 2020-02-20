@@ -1,55 +1,42 @@
 """
-well performing, well written module
+better performing, better written module
 
 """
 
 import datetime
 import csv
 
+
+def _counter():
+    """ Simple counter generator"""
+    idx = 0
+    while True:
+        yield idx
+        idx += 1
+
+
 def analyze(filename):
+    """ Analyzes the file and returns results """
     start = datetime.datetime.now()
-    year_count = {
-            "2013": 0,
-            "2014": 0,
-            "2015": 0,
-            "2016": 0,
-            "2017": 0,
-            "2018": 0
-    }
+    found = _counter()
+    year_count = dict.fromkeys([str(x) for x in range(2010, 2021)], 0)
+
     with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        new_ones = []
-        found = 0
+        reader = csv.reader(csvfile, delimiter=",", quotechar='"')
         for row in reader:
-            lrow = list(row)
-            if lrow[5] > '00/00/2012':
-                new_ones.append((lrow[5], lrow[0]))
+            year_count[row[5][6:]] += 1
             if "ao" in row[6]:
-                found += 1
-        
+                next(found)
 
-        for new in new_ones:
-            if new[0][6:] == '2013':
-                year_count["2013"] += 1
-            if new[0][6:] == '2014':
-                year_count["2014"] += 1
-            if new[0][6:] == '2015':
-                year_count["2015"] += 1
-            if new[0][6:] == '2016':
-                year_count["2016"] += 1
-            if new[0][6:] == '2017':
-                year_count["2017"] += 1
-            if new[0][6:] == '2018':
-                year_count["2017"] += 1
+        found = next(found)
 
-        # print(year_count)       
-
-        # print(f"'ao' was found {found} times")
         end = datetime.datetime.now()
 
     return (start, end, year_count, found)
 
+
 def main():
+    """ Main program """
     filename = "data/exercise.csv"
     analyze(filename)
 
