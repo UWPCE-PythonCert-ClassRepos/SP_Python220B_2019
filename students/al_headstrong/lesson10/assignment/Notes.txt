@@ -1,0 +1,3 @@
+Started by looking at ways to implement metaclasses, but my original database was functional, and the application was to 'unobtrusively' add functionality, so I chose to use a decorator instead. Here too, I looked at using a class to get records processed out of functions other than import data, but the object instantiation in the decorator was clunky and the 'records processed' not equivalent to import data.
+
+From timings.txt, I can see that import data behaves fairly well with large amounts of data. Multi-threading or multi-processing might help speed it up. The "show rentals" behaves poorly, but predicably, as it is iterating through the whole large database for a single product key. A more efficient search would help.
