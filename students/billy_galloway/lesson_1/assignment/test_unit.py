@@ -98,7 +98,7 @@ class InventoryTests(TestCase):
         item_code_2 = self.FULL_INVENTORY[1]
         self.assertEqual(24, main.get_price(item_code_1))
         self.assertEqual(24, main.get_price(item_code_2))
-    
+
     def test_main_menu(self):
         # test the ability to add new items to the inventory
         main.FULL_INVENTORY = {}
