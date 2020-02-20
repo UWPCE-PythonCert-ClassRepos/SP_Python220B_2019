@@ -6,6 +6,8 @@ import csv
 import logging
 from pathlib import Path
 from pymongo import MongoClient
+import timeit
+import psutil
 
 PRODUCT_NAME_KEYS = [
     "product_id",
@@ -36,7 +38,7 @@ COLLECTIONS = ["products", "customers", "rentals"]
 
 # LOGGER SETUP
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = "db.log"
+LOG_FILE = "linear.log"
 FORMATTER = logging.Formatter(LOG_FORMAT)
 
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
@@ -45,10 +47,10 @@ FILE_HANDLER.setLevel(logging.INFO)
 
 CONSOLE_HANDLER = logging.StreamHandler()
 CONSOLE_HANDLER.setFormatter(FORMATTER)
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setLevel(logging.WARNING)
 
 LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
+LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
@@ -69,7 +71,6 @@ class MongoDBConnection:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
-
 
 def populate_database(db_object, collection_name, data):
     """
@@ -353,20 +354,31 @@ def _drop_collections(db_obj=None):
             hp_db.rentals.drop()
 
 
+def main():
+    # func = """\import_data()
+    time_elapsed = timeit.timeit('import_data("./sample_csv_files","products","customers","rentals")', 
+                    setup="from __main__ import import_data",
+                    number=10)
+    cpu_percent = psutil.cpu_percent()
+
+    print(time_elapsed/10)
+    print(cpu_percent)
+
 if __name__ == "__main__":
-    D_NAME = "./csv_files"
-    P_FILE = "products"
-    C_FILE = "customers"
-    R_FILE = "rentals"
+    # D_NAME = "./csv_files"
+    # P_FILE = "products"
+    # C_FILE = "customers"
+    # R_FILE = "rentals"
 
-    [RECORDS, ERRORS] = import_data(
-        D_NAME, P_FILE, C_FILE, R_FILE
-    )
+    # [RECORDS, ERRORS] = import_data(
+    #     D_NAME, P_FILE, C_FILE, R_FILE
+    # )
 
-    print(f"Records added = {RECORDS}")
-    print(f"Errors added = {ERRORS}")
+    # print(f"Records added = {RECORDS}")
+    # print(f"Errors added = {ERRORS}")
 
-    show_available_products()
-    show_rentals("T0072-401")
-    show_rentals("V0032-100")
+    # show_available_products()
+    # show_rentals("T0072-401")
+    # show_rentals("V0032-100")
+    main()
     _drop_collections()
