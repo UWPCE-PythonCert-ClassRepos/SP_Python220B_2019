@@ -1,0 +1,7 @@
+rental_id,customer_id,product_id,quantity
+ren001,user001,prod001,1
+ren002,user002,prod003,1
+ren003,user003,prod003,2
+ren004,user004,prod001,1
+ren005,user005,prod002,1
+ren006,user001,prod004,2
