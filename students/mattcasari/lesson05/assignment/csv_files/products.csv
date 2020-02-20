@@ -1,0 +1,5 @@
+product_id,description,market_price,rental_price,product_type,brand,voltage,material,size,quantity_available
+V0032-100,Spice Harvester,50000000.00,3000.00,Electric,Spice World,1kV,,,2
+T0072-401,Thumper,2000.00,49.95,Electric,Sandy Tools,12,,,100
+F1001-223,Harkonnen Chair,820.00,12.40,Furniture,,,bone,large,23
+F1001-052,Chair dog,4000.00,70.00,Furniture,,,bio,medium,14
