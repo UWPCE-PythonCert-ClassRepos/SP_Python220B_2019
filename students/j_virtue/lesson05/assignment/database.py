@@ -1,30 +1,10 @@
+'''Module to write csv filese to MongoDB'''
 # Advanced Programming in Python -- Lesson 5 Assignment 1
 # Jason Virtue
 # Start Date 2/20/2020
 
 #Supress pylint warnings here
-# pylint: disable=unused-wildcard-import,wildcard-import,invalid-name,too-few-public-methods,wrong-import-order,singleton-comparison,too-many-arguments,logging-format-interpolation
-'''
-steps
-1. Import modules **
-2. SEtup MongoDB Connection **
-3. Create MongoDB database **
-4. Create collections **
-5. Load csv files as dict **
-6. Insert data into tables **
-7. Query Tables **
-8. Test cases **
-9. Error Handling ***
-10. Logging **
-11. Functionality
-12. pylint
-13. Coverage
-14. Unit test
-
-Database = rental
-collections = person, product, rental
-files = customer_dict, product_dict, rental_dict
-'''
+# pylint: disable=unused-wildcard-import,wildcard-import,invalid-name,too-few-public-methods,wrong-import-order,singleton-comparison,too-many-arguments,logging-format-interpolation,too-many-locals,no-else-return,unused-variable
 
 from pymongo import MongoClient
 from pymongo import errors as pyerror
@@ -100,17 +80,19 @@ def import_data(product_file, customer_file, rental_file):
         error_rentals += 1
 
     total_file_errors = (error_prod, error_cust, error_rentals)
+    sum_file_errors = error_prod + error_cust + error_rentals
 
-    # collection in database
-    cust_error_count = insert_collection_many(rental_db, 'customer', customer_dict)
-    prod_error_count = insert_collection_many(rental_db, 'product', product_dict)
-    rental_error_count = insert_collection_many(rental_db, 'rental', rental_dict)
+    if sum_file_errors > 0:
+        return total_file_errors
+    else:
+        insert_collection_many(rental_db, 'customer', customer_dict)
+        insert_collection_many(rental_db, 'product', product_dict)
+        insert_collection_many(rental_db, 'rental', rental_dict)
 
-    total_insert_errors = (cust_error_count, prod_error_count, rental_error_count)
-
-    return total_file_errors, total_insert_errors
+        return total_file_errors, sum_file_errors
 
 def insert_collection_many(dbname, collection, dataset):
+    '''Function to insert csv files into MongoDB'''
     mongo = MongoDBConnection()
 
     with mongo:
@@ -118,22 +100,21 @@ def insert_collection_many(dbname, collection, dataset):
         rental_db = mongo.connection.rental
         logging.info('Create rental database in MongoDB')
 
-    '''Insert records into MongoDB'''
     error_count = 0
     table = dbname[collection]
     logging.info(f'Create {collection} table in database')
-    
+
     try:
         table.insert_many(dataset)
         logging.info(f'Insert {collection} records into table')
     except pyerror.DuplicateKeyError as error:
         logging.info(error)
         logging.info(f'Failed to insert {collection} due to duplicate keys')
-        error_count +=1
+        error_count += 1
     return error_count
 
 def show_available_products():
-    '''Function to show quantity on hand''' 
+    '''Function to show quantity on hand'''
     # mongodb database; it all starts here
     mongo = MongoDBConnection()
     avail_product = {}
@@ -158,17 +139,11 @@ def show_rentals(product_id):
         for item in rental_info:
             cust_info = db.customer.find_one({'customer_id': item['customer_id']})
             rent_dict[cust_info['customer_id']] = {'name': cust_info['name'],
-                                          'address': cust_info['address'],
-                                          'phone_number': cust_info['phone_number'],
-                                          'email_address': cust_info['email_address']
-                                         }
+                                                   'address': cust_info['address'],
+                                                   'phone_number': cust_info['phone_number'],
+                                                   'email_address': cust_info['email_address']
+                                                  }
     return rent_dict
-
-def print_mdb_collection(collection_name):
-    '''Print database collection documents'''
-    logging.info(f'Print {collection_name} documents')
-    for doc in collection_name.find():
-        print(doc)
 
 def drop_collection():
     '''Drop all collections in database'''
@@ -178,5 +153,5 @@ def drop_collection():
         rental_db = mongo.connection.rental
         logging.info('Drop all collections in database')
         rental_db.rental.drop()
-        rental_db.product.drop()   
+        rental_db.product.drop()
         rental_db.customer.drop()
