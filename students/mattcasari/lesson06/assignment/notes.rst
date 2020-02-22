@@ -80,7 +80,27 @@ Observations in the poor_perf.py program
     a) move new[0][6:] into ``for row in reader`` loop
     b) delete ``new_ones = []```
 
+- if lrow[5] > '00/00/2012': is unneccessary
+    a) compare year directly instead of doing > check
 
+- lrow is redundant
+    a) replace lrow with row
+
+- Add generator for increment functions
+    a) create generator
+    b) complete year_count outside of loop
+
+- Try using csv.DictReader instead of csv.reader
+
+- Try using Pandas
+    a) Use pandas.csv_reader to load Data
+    b) Use pandas functions to work on data to test speed.
+
+- Revert to csv.reader
+
+- Reduce number of character comparisons.
+
+- Do integer comparisons rather than character
 
 Tests and refactoring performed 
 ===============================
@@ -149,3 +169,206 @@ Tests and refactoring performed
         ``Factor of 1.6 improvement``
 
     **CONCLUSION: More improvement achieved when not having to print**
+
+- Removing new_ones.append and directly update year_count
+    a) Delete new_ones list
+    b) Replace new_ones.append() with direct update year_count check
+    c) rerun test
+        ``Average of 2 Runs``
+    
+        ``Poor Performance Elapsed Time = 5.88415``
+        
+        ``Good Performance Elapsed Time = 3.39963``
+        
+        ``Time improvement of 2.48452 seconds``
+        
+        ``Factor of 1.7 improvement``
+
+    ** CONCLUSION: Performance improvement removing list**
+
+- Remove if lrow[5] > '00/00/2012':
+    a) Remove lrow[5] > '00/00/2012' since it is redundant
+    b) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 5.30039``
+        
+        ``Good Performance Elapsed Time = 3.12264``
+        
+        ``Time improvement of 2.17776 seconds``
+        
+        ``Factor of 1.7 improvement``
+
+    **CONCLUSION: Minor improvement, possibly**
+- Remove lrow and replace with row, since lrow is redundant
+    a) Replace all instances of lrow with row.
+    b) Delete lrow = list(row)
+    c) rerun test
+        ``Average of 2 Runs``
+
+        ``Poor Performance Elapsed Time = 5.27644``
+        
+        ``Good Performance Elapsed Time = 3.14163``
+        
+        ``Time improvement of 2.13480 seconds``
+        
+        ``Factor of 1.7 improvement``
+    
+    **CONCLUSION: Inconclusive improvement**
+
+- Replace year_count and found increment with generator
+    a) Replace year_count["2013"] += 1 with generator 
+    b) Replace found += 1 with generator
+    c) rerun test
+
+        ``Average of 2 Runs``
+
+        ``Poor Performance Elapsed Time = 5.75993``
+        
+        ``Good Performance Elapsed Time = 3.23316``
+        
+        ``Time improvement of 2.52677 seconds``
+        
+        ``Factor of 1.8 improvement``
+    
+    **CONCLUSION: Slight improvement in performance**
+
+- Replace csv.read with csv.DictReader 
+    a) replace CSV call with csv.DictReader
+    b) replace row[5] with row['date']
+    c) replace row[6] with row['extra']
+    d) add fieldname list to open csv.DictReader
+    e) rerun tests
+
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.81238``
+        
+        ``Good Performance Elapsed Time = 5.92293``
+
+        ``Time deterioration of -1.11055 seconds``
+
+        ``Factor of 0.8 deterioration``
+
+    **CONCLUSION: DictReader slowed the program significantly**
+
+    **NOTE: Might be how I am accessing data that is slow**
+
+
+- Replace csv.DictReader with Pandas.csv_reader
+    a) Replaced csv.DictReader with Pandas.csv_reader
+    b) used Pandas functions to sum/count years and found
+    c) reran tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 7.02374``
+        
+        ``Good Performance Elapsed Time = 8.05161``
+
+        ``Time deterioration of -1.02787 seconds``
+
+        ``Factor of 0.9 deterioration``
+
+- Reverted to previous version using csv.reader
+    a) copied previous commit code (to preserve notes) rather than Reverted
+    b) reran tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 5.13292``
+        
+        ``Good Performance Elapsed Time = 2.74515``
+        
+        ``Time improvement of 2.38777 seconds``
+        
+        ``Factor of 1.9 improvement``
+    **CONCLUSION: Back to good performance**
+
+- Compare against fewer characters
+    a) truncate character compare from 4 to 2 char for year count
+    b) rerun test
+        ``Average of 2 Runs
+        
+        ``Poor Performance Elapsed Time = 4.76997``
+        
+        ``Good Performance Elapsed Time = 2.68535``
+        
+        ``Time improvement of 2.08462 seconds``
+        
+        ``Factor of 1.8 improvement``
+    **CONCLUSION: Decreased performance (or about the same)**
+
+- Replacing char compare with int compare
+    a) replace row[5][6:] == '2013' with int(row[5][6:]) == 2013
+    b) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.77812``
+        
+        ``Good Performance Elapsed Time = 3.89074``
+        
+        ``Time improvement of 0.88738 seconds``
+        
+        ``Factor of 1.2 improvement``
+    **CONCLUSION: converting to int takes a long time**
+
+- Stop comparing each row, add elif
+    a) Replace next iteration functions with elif instead of if
+    b) rerun tests
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.78174``
+        
+        ``Good Performance Elapsed Time = 2.55933``
+        
+        ``Time improvement of 2.22241 seconds``
+        
+        ``Factor of 1.9 improvement``
+    **CONCLUSION: improvement, but slight compared to the revert to csv.reader**
+
+- Replace counters with direct calls to dict object
+    a) Replace if/elif calls with direct dictionary access
+    b) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.86321``
+        
+        ``Good Performance Elapsed Time = 1.97954``
+        
+        ``Time improvement of 2.88367 seconds``
+        
+        ``Factor of 2.5 improvement``
+    **CONCLUSION: Big improvement removing if/elif statements**
+
+- Replace hard-coded increment with counters
+    a) Replace ``year_count[row[5][6:]] += 1`` with ``next(year_count[row[5][6:]])``
+    b) year_count = {'2013':0,...,'2018':0} with counter generators
+    c) rerun test
+        ``Average of 2 Runs``
+        
+        ``Poor Performance Elapsed Time = 4.74828``
+        
+        ``Good Performance Elapsed Time = 1.97312``
+        
+        ``Time improvement of 2.77517 seconds``
+        
+        ``Factor of 2.4 improvement``
+    **CONCLUSION: No improvement, maybe a bit slwer**
+
+    **REVERTING TO PREVIOUS **
+
+
+Overall Conclusions
+===================
+
+To create the fastest running code, the following changes had the 
+most significant effects:
+
+1) Remove conditional statements
+    a) if/elif were removed and direct dict writes gave a massive increase
+    in speed
+
+2) Remove additional csv file opens and reads
+    a) We already had the data, no need to reread
+
+3) Remove unnecessary lists
+    b) Especially focus on .appends that are not necessary
