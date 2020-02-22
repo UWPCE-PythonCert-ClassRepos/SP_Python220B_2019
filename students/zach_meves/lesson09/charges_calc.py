@@ -62,6 +62,7 @@ def conditional_log(func):
     level used by the function.
     """
 
+    @wraps(func)
     def func_wrapper(level, *args, **kwargs):
         # Set logging level
         if level == 0:
@@ -253,6 +254,7 @@ def save_to_json(filename, data):
 
 @conditional_log
 def log_init(args, level):
+    """Log input parameters."""
     # Log commands
     msg = f"Input file: {args.input}"
     logging.debug(msg)
@@ -269,9 +271,9 @@ if __name__ == "__main__":
     if ARGS.d not in VALID_OPTS:
         raise ValueError("Invalid debug flag")
 
-    level = ARGS.d
-    log_init(level, ARGS, level)
+    LVL = ARGS.d
+    log_init(LVL, ARGS, LVL)
 
-    DATA = load_rentals_file(level, ARGS.input)
-    DATA = calculate_additional_fields(level, DATA)
-    save_to_json(level, ARGS.output, DATA)
+    DATA = load_rentals_file(LVL, ARGS.input)
+    DATA = calculate_additional_fields(LVL, DATA)
+    save_to_json(LVL, ARGS.output, DATA)

@@ -11,8 +11,8 @@ Zach Meves
 
 import csv
 import os
-import pymongo
 import logging
+import pymongo
 
 # CLIENT = pymongo.MongoClient()
 DB_NAME = 'hp_norton'
@@ -35,21 +35,21 @@ class DBConnection:
         self.host = host
         self.port = port
         self.connection = None
-        self.db = None
+        self.database = None
 
     def __enter__(self):
         """Enter context manager"""
 
         self.connection = pymongo.MongoClient(self.host, self.port)
-        self.db = self.connection[DB_NAME]
+        self.database = self.connection[DB_NAME]
         # Modified from Lesson 5 - return the database reference directly for easier access in client code
-        return self.db
+        return self.database
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Exit context manager"""
 
         self.connection.close()
-        self.db = None
+        self.database = None
 
         # Add logging when an error occurs
         if exc_type is not None:
@@ -108,10 +108,10 @@ def import_data(directory, products, customers, rentals):
     customer_data = read_csv(os.path.join(directory, customers))
     rental_data = read_csv(os.path.join(directory, rentals))
 
-    with DBConnection() as db:
-        res_prod = db.products.insert_many(product_data)
-        res_cust = db.customers.insert_many(customer_data)
-        res_rent = db.rentals.insert_many(rental_data)
+    with DBConnection() as database:
+        res_prod = database.products.insert_many(product_data)
+        res_cust = database.customers.insert_many(customer_data)
+        res_rent = database.rentals.insert_many(rental_data)
 
     inserted_prods = len(res_prod.inserted_ids)
     inserted_custs = len(res_cust.inserted_ids)
@@ -131,13 +131,13 @@ def show_available_products():
 
     output = {}
 
-    with DBConnection() as db:
-        for product in db.products.find():
+    with DBConnection() as database:
+        for product in database.products.find():
             pid = product['product_id']
             count = product['quantity']
 
             # Find corresponding rentals
-            for rental in db.rentals.find({'product_id': pid}):
+            for rental in database.rentals.find({'product_id': pid}):
                 count -= rental['quantity_rented']
 
             if count:
@@ -168,11 +168,11 @@ def show_rentals(product_id):
 
     output = {}
 
-    with DBConnection() as db:
-        results = db.rentals.find({"product_id": product_id})
+    with DBConnection() as database:
+        results = database.rentals.find({"product_id": product_id})
         for rental in results:
             uid = rental['user_id']
-            output[uid] = db.customers.find_one({"user_id": uid},
-                                                projection={'_id': False, "user_id": False})
+            output[uid] = database.customers.find_one({"user_id": uid},
+                                                      projection={'_id': False, "user_id": False})
 
     return output
