@@ -1,11 +1,15 @@
-"""Lesson 05: HP Norton MongoDB"""
+"""Lesson 05: HP Norton MongoDB - Normal Case"""
 
-#pylint: disable=import-error
+# pylint: disable=import-error
+# pylint: disable=unused-variable
+# pylint: disable=too-many-locals
 
 import csv
 import logging
+import time
 from pathlib import Path
 from pymongo import MongoClient
+
 
 PRODUCT_NAME_KEYS = [
     "product_id",
@@ -36,7 +40,7 @@ COLLECTIONS = ["products", "customers", "rentals"]
 
 # LOGGER SETUP
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-LOG_FILE = "db.log"
+LOG_FILE = "linear.log"
 FORMATTER = logging.Formatter(LOG_FORMAT)
 
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
@@ -45,10 +49,10 @@ FILE_HANDLER.setLevel(logging.INFO)
 
 CONSOLE_HANDLER = logging.StreamHandler()
 CONSOLE_HANDLER.setFormatter(FORMATTER)
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
+CONSOLE_HANDLER.setLevel(logging.CRITICAL)
 
 LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
+LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 
@@ -90,13 +94,18 @@ def populate_database(db_object, collection_name, data):
     record_cnt = 0
     error_cnt = 0
 
-    if len(data) > 1:
-        db_object[collection_name].insert_many(data)
-        record_cnt = len(data)
-    else:
-        db_object[collection_name].insert_one(data[0])
-        record_cnt = 1
-    LOGGER.debug("Record length is %d", record_cnt)
+    try:
+        if len(data) > 1:
+            db_object[collection_name].insert_many(data)
+            record_cnt = len(data)
+        else:
+            db_object[collection_name].insert_one(data[0])
+            record_cnt = 1
+    except TypeError:
+        error_cnt += 1
+
+
+    LOGGER.debug("Record length is %d, Error count is %d", record_cnt, error_cnt)
     return (record_cnt, error_cnt)
     # return (record_cnt, next(error_cnt))
 
@@ -139,7 +148,7 @@ def import_csv(directory_name, file_name):
         LOGGER.error("Index error in import_csv")
         LOGGER.error(err)
         error_cnt = 1
-    LOGGER.info(return_data)
+    LOGGER.debug(return_data)
     LOGGER.info("Error count = %d", error_cnt)
     return (error_cnt, return_data)
 
@@ -157,7 +166,10 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         rentals_file: CSV file of rental information (line 1 must be header!)
     Returns:
         record_count: # of products, customers and rentals added (in that order)
-        error_count: # of errors occured with product, customer and rental add (in that order)
+        error_count: #errors with product add, customer + rental add (in that order)
+        product_record_count: [#prod processed, total prod finish, total prod start]
+        customer_record_count: [#cust process, total cust finish, total cust start]
+
     Raises:
         IOError: Invalid File provided
         IndexError: Mismatched data and header length in file
@@ -171,29 +183,58 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         hp_db = mongo.connection.hp_norton
 
+        try:
+            prev_product_count = hp_db.products.count_documents({})
+        except TypeError as error:
+            print(error)
+            prev_product_count = 0
+        try:
+            prev_customer_count = hp_db.customers.count_documents({})
+        except TypeError as error:
+            print(error)
+            prev_customer_count = 0
+
+        timer = [None]*3
         for idx, collection in enumerate(collections):
             LOGGER.info("Importing rental file name: %s", collection)
             e_cnt = 0
             r_cnt = 0
+            start_time = time.perf_counter()
             [e_cnt, data] = import_csv(directory_name, collection)
-            LOGGER.debug("Data length is %d, e_cnt = %d", len(data), e_cnt)
             error_count[idx] += e_cnt
             [r_cnt, e_cnt] = populate_database(hp_db, collection, data)
-            LOGGER.debug("rcnt=%d, ecnt=%d", r_cnt, e_cnt)
             error_count[idx] += e_cnt
             record_count[idx] += r_cnt
+            stop_time = time.perf_counter()
+            timer[idx] = stop_time - start_time
 
     LOGGER.info(
-        "Products-> Record Count=%d, Error Count=%d", record_count[0], error_count[0]
+        "Products -> Record Count=%d, Error Count=%d", record_count[0], error_count[0]
     )
     LOGGER.info(
         "Customers-> Record Count=%d, Error Count=%d", record_count[1], error_count[1]
     )
     LOGGER.info(
-        "Rentals-> Record Count=%d, Error Count=%d", record_count[2], error_count[2]
+        "Rentals  -> Record Count=%d, Error Count=%d", record_count[2], error_count[2]
     )
 
-    return (record_count, error_count)
+    try:
+        post_product_count = hp_db.products.count_documents({})
+    except TypeError as error:
+        print(error)
+        post_product_count = 0
+
+    try:
+        post_customer_count = hp_db.customers.count_documents({})
+    except TypeError as error:
+        print(error)
+        post_customer_count = 0
+
+
+    product_record_count = [record_count[0], post_product_count, prev_product_count, timer[0]]
+    customer_record_count = [record_count[1], post_customer_count, prev_customer_count, timer[1]]
+
+    return (record_count, error_count, product_record_count, customer_record_count)
 
 
 def show_available_products():
@@ -233,7 +274,8 @@ def show_available_products():
     with mongo:
         hp_db = mongo.connection.hp_norton
 
-        products = [x for x in hp_db.products.find()]
+        # products = [x for x in hp_db.products.find()]
+        products = hp_db.products.find()
 
         results = {}
         LOGGER.debug("%s", products)
@@ -320,8 +362,11 @@ def _validate_headers(headers, collection_name):
         LOGGER.debug(h_key)
         if h_key not in collection_key:
             LOGGER.error("%s not valid header key", h_key)
-            raise ValueError(f"{h_key} not in collection {collection_name} expected keys")
+            raise ValueError(
+                f"{h_key} not in collection {collection_name} expected keys"
+            )
     return True
+
 
 def _file_parser(data, headers):
     """ Parse a line of the product file """
@@ -334,7 +379,7 @@ def _file_parser(data, headers):
 
     d_vals = dict(zip(headers, data))
 
-    LOGGER.info("Created file data: %s", d_vals)
+    LOGGER.debug("Created file data: %s", d_vals)
     return d_vals
 
 
@@ -349,24 +394,29 @@ def _drop_collections(db_obj=None):
         with mongo:
             hp_db = mongo.connection.hp_norton
             hp_db.products.drop()
-            hp_db.customer.drop()
+            hp_db.customers.drop()
             hp_db.rentals.drop()
 
 
-if __name__ == "__main__":
-    D_NAME = "./csv_files"
-    P_FILE = "products"
-    C_FILE = "customers"
-    R_FILE = "rentals"
-
-    [RECORDS, ERRORS] = import_data(
-        D_NAME, P_FILE, C_FILE, R_FILE
+def main():
+    """ Main Program Call """
+    start_time = time.perf_counter()
+    [records, errors, products, customers] = import_data(
+        "./sample_csv_files",
+        "products",
+        "customers",
+        "rentals"
     )
+    total_time = time.perf_counter() - start_time
+    product_tuple = (products[0], products[1], products[2], products[3])
+    customer_tuple = (customers[0], customers[1], customers[2], customers[3])
 
-    print(f"Records added = {RECORDS}")
-    print(f"Errors added = {ERRORS}")
+    return (product_tuple, customer_tuple, total_time)
 
-    show_available_products()
-    show_rentals("T0072-401")
-    show_rentals("V0032-100")
+
+if __name__ == "__main__":
+    [PRODUCTS, CUSTOMERS, TOTAL_TIME] = main()
+    print(f'Product Tuple = {PRODUCTS}')
+    print(f'Customer Tuple = {CUSTOMERS}')
+    print(f'Time to run = {TOTAL_TIME} seconds')
     _drop_collections()
