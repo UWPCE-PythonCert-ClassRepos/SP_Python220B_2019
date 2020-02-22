@@ -3,6 +3,7 @@
 import csv
 import os
 import time
+import multiprocessing
 from pymongo import MongoClient
 
 class MongoDBConnection():
@@ -31,24 +32,64 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
     occurred, in the same order.
     '''
     START = time.time()
-    client = MongoDBConnection()
 
+    # Prepare function return counts
+    counts = [0, 0, 0]
+    error_counts = [0, 0, 0]
+    manager = multiprocessing.Manager()
+    return_dict = manager.dict()
+
+    p1 = multiprocessing.Process(
+        target=import_product_data,
+        args=(directory_name, product_file, return_dict)
+        )
+    p2 = multiprocessing.Process(
+        target=import_customer_data,
+        args=(directory_name, customer_file, return_dict)
+        )
+    p3 = multiprocessing.Process(
+        target=import_rental_data,
+        args=(directory_name, rentals_file, return_dict)
+        )
+
+    jobs = [p1, p2, p3]
+
+    for job in jobs:
+        job.start()
+
+    for job in jobs:
+        job.join()
+
+    counts = [
+        return_dict[0][0],
+        return_dict[1][0],
+        return_dict[2][0]
+    ]
+    error_counts = [
+        return_dict[0][1],
+        return_dict[1][1],
+        return_dict[2][1]
+    ]
+
+    RUNTIME = time.time() - START
+
+    return tuple(counts), tuple(error_counts), RUNTIME
+
+
+def import_product_data(directory_name, product_file, return_dict):
+    '''Import product data to HP Norton DB.'''
     with client:
         db = client.connection.hp_norton
 
-        # Create/open collections (AKA tables in RDBMS)
+        # Create/open products collection
         products = db['products']
-        customers = db['customers']
-        rentals = db['rentals']
 
-        # Assemble file paths
+        # Assemble product file path
         product_path = os.path.join(directory_name, product_file)
-        customer_path = os.path.join(directory_name, customer_file)
-        rentals_path = os.path.join(directory_name, rentals_file)
 
         # Prepare function return counts
-        counts = [0, 0, 0]
-        error_counts = [0, 0, 0]
+        counts_prod = 0
+        error_counts_prod = 0
 
         # Load product data into db
         with open(product_path) as prod_file:
@@ -68,9 +109,26 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
                             product_headers[3]: row[3]
                         }
                     )
-                    counts[0] += 1
+                    counts_prod += 1
                 except IndexError:
-                    error_counts[0] += 1
+                    error_counts_prod += 1
+        return_dict[0] = [counts_prod, error_counts_prod]
+
+
+def import_customer_data(directory_name, customer_file, return_dict):
+    '''Import customer data to HP Norton DB.'''
+    with client:
+        db = client.connection.hp_norton
+
+        # Create/open customer collection
+        customers = db['customers']
+
+        # Assemble customer file path
+        customer_path = os.path.join(directory_name, customer_file)
+
+        # Prepare function return counts
+        counts_cust = 0
+        error_counts_cust = 0
 
         # Load customer data into db
         with open(customer_path) as cust_file:
@@ -91,9 +149,26 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
                             customer_headers[4]: row[4]
                         }
                     )
-                    counts[1] += 1
+                    counts_cust += 1
                 except IndexError:
-                    error_counts[1] += 1
+                    error_counts_cust += 1
+        return_dict[1] = [counts_cust, error_counts_cust]
+
+
+def import_rental_data(directory_name, rentals_file, return_dict):
+    '''Import rental data to HP Norton DB.'''
+    with client:
+        db = client.connection.hp_norton
+
+        # Create/open rentals collection
+        rentals = db['rentals']
+
+        # Assemble rentals file path
+        rentals_path = os.path.join(directory_name, rentals_file)
+
+        # Prepare function return counts
+        counts_rentals = 0
+        error_counts_rentals = 0
 
         # Load rental data into db
         with open(rentals_path) as rent_file:
@@ -111,12 +186,10 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
                             rentals_headers[1]: row[1]
                         }
                     )
-                    counts[2] += 1
+                    counts_rentals += 1
                 except IndexError:
-                    error_counts[2] += 1
-    RUNTIME = time.time() - START
-
-    return tuple(counts), tuple(error_counts), RUNTIME
+                    error_counts_rentals += 1
+        return_dict[2] = [counts_rentals, error_counts_rentals]
 
 
 def show_available_products():
@@ -179,3 +252,6 @@ def show_rentals(product_id):
             del user['user_id']
             users_dict[rental["user_id"]] = user
     return users_dict
+
+
+client = MongoDBConnection()

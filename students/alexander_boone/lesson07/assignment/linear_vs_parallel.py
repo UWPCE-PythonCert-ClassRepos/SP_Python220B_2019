@@ -31,5 +31,6 @@ def runtime_import_data_parallel():
 
 
 # Run test functions
-runtime_import_data_linear()
-# runtime_import_data_parallel()
+if __name__ == '__main__':
+    runtime_import_data_linear()
+    runtime_import_data_parallel()
