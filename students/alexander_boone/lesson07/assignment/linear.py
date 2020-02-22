@@ -41,6 +41,9 @@ def import_data_linear(directory_name, product_file, customer_file, rentals_file
         customers = db['customers']
         rentals = db['rentals']
 
+        product_records_before = products.count()
+        customer_records_before = customers.count()
+
         # Assemble file paths
         product_path = os.path.join(directory_name, product_file)
         customer_path = os.path.join(directory_name, customer_file)
@@ -114,9 +117,24 @@ def import_data_linear(directory_name, product_file, customer_file, rentals_file
                     counts[2] += 1
                 except IndexError:
                     error_counts[2] += 1
+        product_records_after = products.count()
+        customer_records_after = customers.count()
+    
     RUNTIME = time.time() - START
+    product_tuple = (
+        counts[0],
+        product_records_before,
+        product_records_after,
+        RUNTIME
+        )
+    cust_tuple = (
+        counts[1],
+        customer_records_before,
+        customer_records_after,
+        RUNTIME
+        )
 
-    return tuple(counts), tuple(error_counts), RUNTIME
+    return [product_tuple, cust_tuple]
 
 
 def show_available_products():

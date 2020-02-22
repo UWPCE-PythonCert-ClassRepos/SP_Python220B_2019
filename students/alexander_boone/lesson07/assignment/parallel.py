@@ -31,13 +31,17 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
     rentals added (in that order), the second with a count of any errors that
     occurred, in the same order.
     '''
-    START = time.time()
+    start = time.time()
 
-    # Prepare function return counts
-    counts = [0, 0, 0]
-    error_counts = [0, 0, 0]
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
+
+    # In order to avoid failure due to contention in the database,
+    # I used separation of concerns to containerize access to each
+    # collection in the database. Therefore, each process would call
+    # one function with one dataset that would establish a connection with a unique
+    # collection. This would avoid the sharing of memory between processes,
+    # and since processes don't/shouldn't share memory, this avoids contention.
 
     p1 = multiprocessing.Process(
         target=import_product_data,
@@ -60,20 +64,23 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
     for job in jobs:
         job.join()
 
-    counts = [
+    runtime = time.time() - start
+
+    # Before/after record counts
+    product_tuple = (
         return_dict[0][0],
+        return_dict[0][2],
+        return_dict[0][3],
+        runtime
+        )
+    cust_tuple = (
         return_dict[1][0],
-        return_dict[2][0]
-    ]
-    error_counts = [
-        return_dict[0][1],
-        return_dict[1][1],
-        return_dict[2][1]
-    ]
+        return_dict[1][2],
+        return_dict[1][3],
+        runtime
+        )
 
-    RUNTIME = time.time() - START
-
-    return tuple(counts), tuple(error_counts), RUNTIME
+    return [product_tuple, cust_tuple]
 
 
 def import_product_data(directory_name, product_file, return_dict):
@@ -83,6 +90,7 @@ def import_product_data(directory_name, product_file, return_dict):
 
         # Create/open products collection
         products = db['products']
+        prod_ct_before = products.count()
 
         # Assemble product file path
         product_path = os.path.join(directory_name, product_file)
@@ -112,7 +120,13 @@ def import_product_data(directory_name, product_file, return_dict):
                     counts_prod += 1
                 except IndexError:
                     error_counts_prod += 1
-        return_dict[0] = [counts_prod, error_counts_prod]
+        prod_ct_after = products.count()
+    return_dict[0] = [
+        counts_prod,
+        error_counts_prod,
+        prod_ct_before,
+        prod_ct_after
+        ]
 
 
 def import_customer_data(directory_name, customer_file, return_dict):
@@ -122,6 +136,7 @@ def import_customer_data(directory_name, customer_file, return_dict):
 
         # Create/open customer collection
         customers = db['customers']
+        cust_ct_before = customers.count()
 
         # Assemble customer file path
         customer_path = os.path.join(directory_name, customer_file)
@@ -152,7 +167,13 @@ def import_customer_data(directory_name, customer_file, return_dict):
                     counts_cust += 1
                 except IndexError:
                     error_counts_cust += 1
-        return_dict[1] = [counts_cust, error_counts_cust]
+        cust_ct_after = customers.count()
+    return_dict[1] = [
+        counts_cust,
+        error_counts_cust,
+        cust_ct_before,
+        cust_ct_after
+        ]
 
 
 def import_rental_data(directory_name, rentals_file, return_dict):

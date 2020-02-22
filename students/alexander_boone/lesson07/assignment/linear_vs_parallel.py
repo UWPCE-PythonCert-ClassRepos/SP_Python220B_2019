@@ -15,7 +15,7 @@ def runtime_import_data_linear():
     '''
 
     counts_linear = import_data_linear(DIRECTORY, PROD_FILE, CUST_FILE, RENTAL_FILE)
-    linear_runtime = str(counts_linear[2])
+    linear_runtime = str(counts_linear[0][3])
     print('Linear runtime (s): ' + linear_runtime)
 
 
@@ -26,7 +26,7 @@ def runtime_import_data_parallel():
     '''
 
     counts_parallel = import_data_parallel(DIRECTORY, PROD_FILE, CUST_FILE, RENTAL_FILE)
-    parallel_runtime = str(counts_parallel[2])
+    parallel_runtime = str(counts_parallel[0][3])
     print('parallel runtime (s): ' + parallel_runtime)
 
 
