@@ -5,6 +5,7 @@ import os
 import time
 from pymongo import MongoClient
 
+
 class MongoDBConnection():
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
@@ -21,7 +22,9 @@ class MongoDBConnection():
         self.connection.close()
 
 
-def import_data_linear(directory_name, product_file, customer_file, rentals_file):
+def import_data_linear(
+        directory_name, product_file,
+        customer_file, rentals_file):
     '''
     Takes a directory name and three csv files as input, one with product data,
     one with customer data and the third one with rentals data and creates
@@ -119,7 +122,7 @@ def import_data_linear(directory_name, product_file, customer_file, rentals_file
                     error_counts[2] += 1
         product_records_after = products.count()
         customer_records_after = customers.count()
-    
+
     RUNTIME = time.time() - START
     product_tuple = (
         counts[0],

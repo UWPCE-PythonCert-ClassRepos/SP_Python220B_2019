@@ -6,6 +6,7 @@ import time
 import multiprocessing
 from pymongo import MongoClient
 
+
 class MongoDBConnection():
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
@@ -22,7 +23,9 @@ class MongoDBConnection():
         self.connection.close()
 
 
-def import_data_parallel(directory_name, product_file, customer_file, rentals_file):
+def import_data_parallel(
+        directory_name, product_file,
+        customer_file, rentals_file):
     '''
     Takes a directory name and three csv files as input, one with product data,
     one with customer data and the third one with rentals data and creates
@@ -39,9 +42,10 @@ def import_data_parallel(directory_name, product_file, customer_file, rentals_fi
     # In order to avoid failure due to contention in the database,
     # I used separation of concerns to containerize access to each
     # collection in the database. Therefore, each process would call
-    # one function with one dataset that would establish a connection with a unique
-    # collection. This would avoid the sharing of memory between processes,
-    # and since processes don't/shouldn't share memory, this avoids contention.
+    # one function with one dataset that would establish a
+    # connection with a unique collection. This would avoid the
+    # sharing of memory between processes, and since processes
+    # don't/shouldn't share memory, this avoids contention.
 
     p1 = multiprocessing.Process(
         target=import_product_data,
@@ -223,7 +227,6 @@ def show_available_products():
     - phone number
     - email
     '''
-    client = MongoDBConnection()
 
     with client:
         db = client.connection.hp_norton
@@ -253,7 +256,6 @@ def show_rentals(product_id):
     - phone number
     - email
     '''
-    client = MongoDBConnection()
 
     with client:
         db = client.connection.hp_norton

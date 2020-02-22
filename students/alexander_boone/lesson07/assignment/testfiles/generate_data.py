@@ -6,6 +6,7 @@ import time
 import random
 from faker import Faker
 
+
 def generate_prod_data():
     '''Generate 1000 lines of product data.'''
     headers = ['product_id', 'description',
@@ -24,13 +25,13 @@ def generate_prod_data():
             'mattress'
             ]
         prod_dict = {
-            'chair':'livingroom',
-            'tv':'livingroom',
-            'bed':'bedroom',
-            'table':'diningroom',
-            'coffee table':'livingroom',
-            'dresser':'bedroom',
-            'mattress':'bedroom'
+            'chair': 'livingroom',
+            'tv': 'livingroom',
+            'bed': 'bedroom',
+            'table': 'diningroom',
+            'coffee table': 'livingroom',
+            'dresser': 'bedroom',
+            'mattress': 'bedroom'
         }
         for i in range(1000):
             rand_choice = random.choice(desc_list)
@@ -43,6 +44,7 @@ def generate_prod_data():
             write_string = ','.join(write_list)
             csvfile.write(write_string)
             csvfile.write('\n')
+
 
 def generate_rental_data():
     '''Generate 1000 lines of rental data.'''
@@ -60,6 +62,7 @@ def generate_rental_data():
             write_string = ','.join(write_list)
             csvfile.write(write_string)
             csvfile.write('\n')
+
 
 def generate_cust_data():
     '''Generate 1000 lines of customer data.'''
@@ -81,6 +84,7 @@ def generate_cust_data():
             write_string = ','.join(write_list)
             csvfile.write(write_string)
             csvfile.write('\n')
+
 
 START_TIME = time.time()
 
