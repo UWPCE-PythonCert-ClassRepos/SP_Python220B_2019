@@ -1,0 +1,14 @@
+2020-02-19 20:20:29,322 databse.py:37  INFO Function: clear_database	Time taken: 0.017953872680664062	Records processed: No records loaded.
+2020-02-19 20:20:29,944 databse.py:37  INFO Function: import_csv	Time taken: 0.6193447113037109	Records processed: No records loaded.
+2020-02-19 20:20:32,622 databse.py:37  INFO Function: import_csv	Time taken: 0.9793832302093506	Records processed: No records loaded.
+2020-02-19 20:20:35,137 databse.py:37  INFO Function: import_csv	Time taken: 0.6462678909301758	Records processed: No records loaded.
+2020-02-19 20:20:36,714 databse.py:37  INFO Function: import_data	Time taken: 7.390249967575073	Records processed: (100000, 100000, 100000)
+2020-02-19 20:20:37,250 databse.py:37  INFO Function: show_available_products	Time taken: 0.5365967750549316	Records processed: No records loaded.
+2020-02-19 20:20:41,966 databse.py:37  INFO Function: show_rentals	Time taken: 4.696452856063843	Records processed: No records loaded.
+2020-02-19 20:20:41,971 databse.py:37  INFO Function: import_csv	Time taken: 0.004023075103759766	Records processed: No records loaded.
+2020-02-19 20:20:41,989 databse.py:37  INFO Function: import_csv	Time taken: 0.004957437515258789	Records processed: No records loaded.
+2020-02-19 20:20:41,995 databse.py:37  INFO Function: import_csv	Time taken: 0.002956390380859375	Records processed: No records loaded.
+2020-02-19 20:20:41,999 databse.py:37  INFO Function: import_data	Time taken: 0.03290987014770508	Records processed: (100, 100, 100)
+2020-02-19 20:20:42,544 databse.py:37  INFO Function: show_available_products	Time taken: 0.5455410480499268	Records processed: No records loaded.
+2020-02-19 20:20:46,971 databse.py:37  INFO Function: show_rentals	Time taken: 4.40723443031311	Records processed: No records loaded.
+2020-02-19 20:20:47,021 databse.py:37  INFO Function: clear_database	Time taken: 0.049855709075927734	Records processed: No records loaded.

@@ -1,0 +1,23 @@
+Use Timeit to record run time
+1. poor_perf.py was run as is:
+{'2011': 111342, '2012': 111436, '2013': 111923, '2014': 111131, '2015': 110711, '2016': 110854, '2017': 111018, '2018': 110369, '2019': 0}
+'ao' was found 500211 times
+'ao' was found 500211 times
+6.118433172989171
+
+the slower code, opens the csv file twice: once to count the years and 
+to count the 'ao', and has if else for each year. 
+
+2.To increase the speed I removed the if else statements with a dictionary
+
+{'2011': 111342, '2012': 111436, '2013': 111923, '2014': 111131, '2015': 110711, '2016': 110854, '2017': 111018, '2018': 110369, '2019': 0}
+'ao' was found 500211 times
+5.113386087003164
+
+Improved by about a second
+
+3.Removed the second loop:
+{'2011': 111342, '2012': 111436, '2013': 111923, '2014': 111131, '2015': 110711, '2016': 110854, '2017': 111018, '2018': 110369, '2019': 0}
+"ao" found 500211 times
+2.2608859130414203
+

@@ -1,0 +1,54 @@
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> /Users/mckellip/git/SP_Python220B_2019/students/smckellips/lesson02/assignment/code/charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) pp rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> /Users/mckellip/git/SP_Python220B_2019/students/smckellips/lesson02/assignment/code/charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) pp total_days
+*** NameError: name 'total_days' is not defined
+(Pdb) ll
+ 25  	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	            value['total_days'] = (rental_end - rental_start).days
+ 31  ->	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34  	        except:
+ 35  	            exit(0)
+ 36  	
+ 37  	    return data
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'units_rented': 8}
+(Pdb) rental_end - rental_start
+datetime.timedelta(days=-82)
+(Pdb) (rental_end - rental_start).days
+-82
+(Pdb) (rental_start - rental_end).days
+82
+(Pdb) rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> /Users/mckellip/git/SP_Python220B_2019/students/smckellips/lesson02/assignment/code/charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> /Users/mckellip/git/SP_Python220B_2019/students/smckellips/lesson02/assignment/code/charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) value['total_price']
+-2542
+(Pdb) math.sqrt(value['total_price']
+*** SyntaxError: unexpected EOF while parsing
