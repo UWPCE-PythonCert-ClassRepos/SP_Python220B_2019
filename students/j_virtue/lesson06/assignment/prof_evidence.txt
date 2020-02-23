@@ -1,0 +1,140 @@
+# Advanced Programming in Python -- Lesson 6 Assignment 1
+# Jason Virtue
+# Start Date 2/21/2020
+
+BASELINE PERF TESTS
+
+--@python - m good_perf.py >>print(timeit.timeit(main, number=1))
+{'2013': 98667, '2014': 99012, '2015': 98892, '2016': 98926, '2017': 196348, '2018': 0}
+'ao' was found 300485 times
+10.9578991
+
+
+--@ command line >>python -m timeit main
+5000000 loops, best of 5: 50.2 nsec per loop
+
+
+--@ python -m cProfile -s tottime good_perf.py
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2   19.885    9.943   21.823   10.911 good_perf.py:22(analyze)
+    38168    1.442    0.000    1.442    0.000 {built-in method _codecs.charmap_decode}
+  2000012    0.441    0.000    0.441    0.000 {method 'append' of 'list' objects}     
+        2    0.184    0.092   22.007   11.003 good_perf.py:72(main)
+    38168    0.052    0.000    1.494    0.000 cp1252.py:22(decode)
+       30    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+
+Findings
+-- Majority of time taken in Analyze method 19.885.  Total clock time is 10.95 secs
+-- In Analyze it reads the csv twice and run a for loop twice.  Will consolidate
+--------------------------------------------------------------------------------------
+
+
+REVISION = Open csv file once (year_count & found is in same read csv statement)
+
+--@python -m good_perf.py >>print(timeit.timeit(main, number=1))
+{'2013': 98667, '2014': 99012, '2015': 98892, '2016': 98926, '2017': 196348, '2018': 0}
+'ao' was found 300485 times
+6.8673493
+
+--@python -m timeit main
+5000000 loops, best of 5: 53.9 nsec per loop
+
+--@ python -m cProfile -s tottime good_perf.py
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2   13.382    6.691   14.587    7.294 good_perf.py:22(analyze)
+    19084    0.732    0.000    0.732    0.000 {built-in method _codecs.charmap_decode}
+  2000012    0.443    0.000    0.443    0.000 {method 'append' of 'list' objects}
+        2    0.196    0.098   14.783    7.391 good_perf.py:65(main)
+    19084    0.027    0.000    0.759    0.000 cp1252.py:22(decode)
+       30    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+
+Findings
+-- 4 secs remove from overall time
+-- Built two local variables for new_one & year_count
+-- Two for loops for each varaible.
+-- Consolidate these two variables into one for loop
+--------------------------------------------------------------------------------------
+
+
+
+REVISION = Consolidation of iterators (new_one & year_count into same iterator)
+
+--@python -m good_perf.py >>print(timeit.timeit(main, number=1))
+{'2013': 98667, '2014': 99012, '2015': 98892, '2016': 98926, '2017': 97821, '2018': 98527}
+'ao' was found 300485 times
+6.4710918
+
+--@python -m timeit main
+5000000 loops, best of 5: 61.5 nsec per loop
+
+--@python -m cProfile -s tottime good_perf.py
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2   12.371    6.186   13.123    6.561 good_perf.py:22(analyze)
+    19084    0.722    0.000    0.722    0.000 {built-in method _codecs.charmap_decode}
+    19084    0.026    0.000    0.748    0.000 cp1252.py:22(decode)
+       30    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+
+Findings
+-- less than 1 sec savings from consolidation
+-- Updating code to remove list conversion from for loop
+--------------------------------------------------------------------------------------
+
+
+
+REVISION = Remove list conversion of row lrow = list(row)
+
+--@python -m good_perf.py >>print(timeit.timeit(main, number=1))
+{'2013': 98667, '2014': 99012, '2015': 98892, '2016': 98926, '2017': 97821, '2018': 98527}
+'ao' was found 300485 times
+6.1771336
+
+--@python -m timeit main
+5000000 loops, best of 5: 51.1 nsec per loop
+
+--@python -m cProfile -s tottime good_perf.py
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+	2   10.929    5.465   11.682    5.841 good_perf.py:17(analyze)
+    19084    0.723    0.000    0.723    0.000 {built-in method _codecs.charmap_decode}
+    19084    0.026    0.000    0.750    0.000 cp1252.py:22(decode)
+       30    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+
+Findings
+-- less than 1 secs by removing list conversion
+-- Remove print statements to see if this improves perf
+--------------------------------------------------------------------------------------
+
+
+
+REVISION = Remove print statements from script
+
+--@python -m good_perf.py >>print(timeit.timeit(main, number=1))
+5.8377189
+--I will assume I have the same counts
+
+--@python -m timeit main
+5000000 loops, best of 5: 49.3 nsec per loop
+
+--@python -m cProfile -s tottime good_perf.py
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2   11.037    5.519   11.789    5.895 good_perf.py:17(analyze)
+    19084    0.724    0.000    0.724    0.000 {built-in method _codecs.charmap_decode}
+    19084    0.027    0.000    0.751    0.000 cp1252.py:22(decode)
+       30    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+
+Findings
+--Minimal impact when removing print statements
+---------------------------------------------------------------------------------------
+
+
+Overall Summary
+1. Runtime improvement from 11 secs to 5 secs 55% savings.  This is overall clock time
+2. Biggest gain was open csv file once and iterating thru year_count and found variables.  4 sec gain
+3. Remove multiple iterators and list converstion for savings of 1 sec savings
+4. Removal of print statement had minimal impact with a .34 sec savings
+
+
+
+
+
+
+
