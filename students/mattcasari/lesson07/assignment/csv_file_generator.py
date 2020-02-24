@@ -9,6 +9,10 @@ ENTRY_SIZE = 1000
 PRODUCT_IDS = []
 CUSTOMER_IDS = []
 
+PRODUCT_FILE_NAME = "./sample_csv_files/products.csv"
+CUSTOMER_FILE_NAME = "./sample_csv_files/customers.csv"
+RENTAL_FILE_NAME = "./sample_csv_files/rentals.csv"
+
 RW = RandomWords()
 
 def generate_products():
@@ -32,7 +36,7 @@ def generate_products():
             'quantity_available':[]
         }
     header = list(product.keys())
-    with open(Path('./sample_csv_files/products.csv'), 'w') as f:
+    with open(Path(PRODUCT_FILE_NAME), 'w') as f:
         csv_file = csv.DictWriter(f, header, lineterminator='\n')
         csv_file.writeheader()
         for idx in range(ENTRY_SIZE):
@@ -100,7 +104,7 @@ def generate_customers():
             'credit_limit':[],
             }
     header = list(customer.keys())
-    with open(Path('./sample_csv_files/customers.csv'), 'w') as f:
+    with open(Path(CUSTOMER_FILE_NAME), 'w') as f:
         csv_file = csv.DictWriter(f, header, lineterminator='\n')
         csv_file.writeheader()
         for idx in range(ENTRY_SIZE):
@@ -141,7 +145,7 @@ def generate_rentals():
             'product_id': [],
             }
     header = list(rentals.keys())
-    with open(Path('./sample_csv_files/rentals.csv'), 'w') as f:
+    with open(Path(RENTAL_FILE_NAME), 'w') as f:
         csv_file = csv.DictWriter(f, header, lineterminator='\n')
         csv_file.writeheader()
         for idx in range(ENTRY_SIZE):
