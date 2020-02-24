@@ -1,0 +1,483 @@
+2020-02-23 21:30:10,326 test_database.py:14  INFO START: test_database
+2020-02-23 21:30:10,327 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,329 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,330 database.py:180 INFO Importing rental file name: products
+2020-02-23 21:30:10,330 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,330 database.py:126 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:30:10,334 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:30:10,335 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:30:10,336 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:30:10,336 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:30:10,337 database.py:149 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:30:10,337 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,337 database.py:95  INFO Populating database collection products
+2020-02-23 21:30:10,388 database.py:180 INFO Importing rental file name: customers
+2020-02-23 21:30:10,388 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,389 database.py:126 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:30:10,391 database.py:339 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:30:10,392 database.py:339 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:30:10,392 database.py:339 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:30:10,393 database.py:339 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:30:10,393 database.py:149 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:30:10,393 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,394 database.py:95  INFO Populating database collection customers
+2020-02-23 21:30:10,416 database.py:180 INFO Importing rental file name: rentals
+2020-02-23 21:30:10,417 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,417 database.py:126 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:30:10,419 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:30:10,420 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:30:10,420 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:30:10,421 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:30:10,421 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:30:10,422 database.py:149 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:30:10,422 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,422 database.py:95  INFO Populating database collection rentals
+2020-02-23 21:30:10,447 database.py:192 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,447 database.py:195 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,448 database.py:198 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:30:10,448 database.py:236 INFO Request to show available products
+2020-02-23 21:30:10,448 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,450 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,464 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,466 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,510 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,511 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,511 database.py:180 INFO Importing rental file name: products
+2020-02-23 21:30:10,512 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,512 database.py:126 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:30:10,515 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:30:10,516 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:30:10,516 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:30:10,517 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:30:10,517 database.py:149 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:30:10,517 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,518 database.py:95  INFO Populating database collection products
+2020-02-23 21:30:10,554 database.py:180 INFO Importing rental file name: customers
+2020-02-23 21:30:10,554 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,554 database.py:126 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:30:10,567 database.py:339 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:30:10,567 database.py:339 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:30:10,567 database.py:339 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:30:10,568 database.py:339 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:30:10,568 database.py:149 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:30:10,568 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,569 database.py:95  INFO Populating database collection customers
+2020-02-23 21:30:10,602 database.py:180 INFO Importing rental file name: rentals
+2020-02-23 21:30:10,602 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,602 database.py:126 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:30:10,604 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:30:10,605 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:30:10,605 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:30:10,606 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:30:10,606 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:30:10,607 database.py:149 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:30:10,607 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,607 database.py:95  INFO Populating database collection rentals
+2020-02-23 21:30:10,632 database.py:192 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,632 database.py:195 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,633 database.py:198 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:30:10,633 database.py:268 INFO Request to show available products
+2020-02-23 21:30:10,633 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,634 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,639 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,647 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,696 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,698 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,711 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,721 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,721 database.py:180 INFO Importing rental file name: products
+2020-02-23 21:30:10,721 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,721 database.py:126 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:30:10,725 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:30:10,725 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:30:10,726 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:30:10,726 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:30:10,726 database.py:149 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:30:10,727 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,727 database.py:95  INFO Populating database collection products
+2020-02-23 21:30:10,767 database.py:180 INFO Importing rental file name: customers
+2020-02-23 21:30:10,767 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,767 database.py:126 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:30:10,770 database.py:339 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:30:10,771 database.py:339 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:30:10,771 database.py:339 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:30:10,772 database.py:339 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:30:10,772 database.py:149 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:30:10,772 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,773 database.py:95  INFO Populating database collection customers
+2020-02-23 21:30:10,795 database.py:180 INFO Importing rental file name: rentals
+2020-02-23 21:30:10,795 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,795 database.py:126 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:30:10,797 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:30:10,798 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:30:10,798 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:30:10,799 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:30:10,799 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:30:10,800 database.py:149 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:30:10,800 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,800 database.py:95  INFO Populating database collection rentals
+2020-02-23 21:30:10,824 database.py:192 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,825 database.py:195 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:30:10,825 database.py:198 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:30:10,825 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,827 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,863 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,865 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,891 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,892 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,893 database.py:95  INFO Populating database collection customers
+2020-02-23 21:30:10,918 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,919 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,934 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:30:10,935 database.py:68  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:30:10,939 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,940 database.py:126 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:30:10,943 database.py:339 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:30:10,943 database.py:339 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:30:10,944 database.py:339 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:30:10,944 database.py:339 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:30:10,944 database.py:149 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:30:10,945 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,945 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,945 database.py:126 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:30:10,948 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:30:10,949 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:30:10,949 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:30:10,949 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:30:10,950 database.py:149 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:30:10,950 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,950 database.py:122 INFO Importing CSV
+2020-02-23 21:30:10,950 database.py:126 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:30:10,952 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:30:10,952 database.py:339 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:30:10,953 database.py:339 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:30:10,953 database.py:339 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:30:10,953 database.py:339 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:30:10,954 database.py:149 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:30:10,954 database.py:150 INFO Error count = 0
+2020-02-23 21:30:10,954 database.py:339 INFO Created file data: {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:30:10,954 test_database.py:109 INFO {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:30:10,954 database.py:333 ERROR Header length is 8, but data length is 4
+2020-02-23 21:30:10,955 database.py:324 ERROR description not valid header key
+2020-02-23 21:34:27,305 test_database.py:14  INFO START: test_database
+2020-02-23 21:34:27,307 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,316 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,316 database.py:184 INFO Importing rental file name: products
+2020-02-23 21:34:27,316 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,316 database.py:130 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:34:27,320 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:34:27,321 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:34:27,321 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:34:27,322 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:34:27,322 database.py:153 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:34:27,322 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,322 database.py:99  INFO Populating database collection products
+2020-02-23 21:34:27,377 database.py:184 INFO Importing rental file name: customers
+2020-02-23 21:34:27,377 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,377 database.py:130 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:34:27,380 database.py:343 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:34:27,381 database.py:343 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:34:27,382 database.py:343 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:34:27,382 database.py:343 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:34:27,382 database.py:153 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:34:27,383 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,383 database.py:99  INFO Populating database collection customers
+2020-02-23 21:34:27,408 database.py:184 INFO Importing rental file name: rentals
+2020-02-23 21:34:27,408 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,409 database.py:130 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:34:27,411 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:34:27,411 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:34:27,412 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:34:27,412 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:34:27,413 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:34:27,413 database.py:153 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:34:27,414 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,414 database.py:99  INFO Populating database collection rentals
+2020-02-23 21:34:27,440 database.py:196 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,440 database.py:199 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,441 database.py:202 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:34:27,441 database.py:240 INFO Request to show available products
+2020-02-23 21:34:27,441 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,442 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,455 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,457 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,481 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,483 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,483 database.py:184 INFO Importing rental file name: products
+2020-02-23 21:34:27,483 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,484 database.py:130 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:34:27,487 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:34:27,488 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:34:27,488 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:34:27,489 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:34:27,489 database.py:153 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:34:27,489 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,490 database.py:99  INFO Populating database collection products
+2020-02-23 21:34:27,524 database.py:184 INFO Importing rental file name: customers
+2020-02-23 21:34:27,524 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,525 database.py:130 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:34:27,528 database.py:343 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:34:27,528 database.py:343 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:34:27,529 database.py:343 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:34:27,529 database.py:343 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:34:27,529 database.py:153 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:34:27,530 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,530 database.py:99  INFO Populating database collection customers
+2020-02-23 21:34:27,552 database.py:184 INFO Importing rental file name: rentals
+2020-02-23 21:34:27,553 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,553 database.py:130 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:34:27,555 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:34:27,556 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:34:27,556 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:34:27,557 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:34:27,557 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:34:27,558 database.py:153 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:34:27,558 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,558 database.py:99  INFO Populating database collection rentals
+2020-02-23 21:34:27,584 database.py:196 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,584 database.py:199 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,584 database.py:202 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:34:27,584 database.py:272 INFO Request to show available products
+2020-02-23 21:34:27,584 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,586 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,602 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,603 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,649 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,650 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,664 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,665 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,666 database.py:184 INFO Importing rental file name: products
+2020-02-23 21:34:27,666 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,667 database.py:130 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:34:27,678 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:34:27,678 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:34:27,678 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:34:27,679 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:34:27,679 database.py:153 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:34:27,679 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,679 database.py:99  INFO Populating database collection products
+2020-02-23 21:34:27,705 database.py:184 INFO Importing rental file name: customers
+2020-02-23 21:34:27,705 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,706 database.py:130 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:34:27,709 database.py:343 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:34:27,710 database.py:343 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:34:27,710 database.py:343 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:34:27,711 database.py:343 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:34:27,711 database.py:153 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:34:27,711 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,712 database.py:99  INFO Populating database collection customers
+2020-02-23 21:34:27,737 database.py:184 INFO Importing rental file name: rentals
+2020-02-23 21:34:27,737 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,737 database.py:130 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:34:27,739 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:34:27,740 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:34:27,740 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:34:27,741 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:34:27,741 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:34:27,742 database.py:153 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:34:27,742 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,742 database.py:99  INFO Populating database collection rentals
+2020-02-23 21:34:27,768 database.py:196 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,768 database.py:199 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:34:27,776 database.py:202 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:34:27,777 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,777 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,802 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,804 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,819 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,820 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,821 database.py:99  INFO Populating database collection customers
+2020-02-23 21:34:27,835 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,836 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,851 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:34:27,852 database.py:72  INFO Client Connected on host 127.0.0.1, port=27017
+2020-02-23 21:34:27,876 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,876 database.py:130 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:34:27,887 database.py:343 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:34:27,887 database.py:343 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:34:27,888 database.py:343 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:34:27,888 database.py:343 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:34:27,888 database.py:153 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:34:27,889 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,889 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,889 database.py:130 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:34:27,891 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:34:27,891 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:34:27,892 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:34:27,892 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:34:27,892 database.py:153 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:34:27,893 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,893 database.py:126 INFO Importing CSV
+2020-02-23 21:34:27,893 database.py:130 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:34:27,895 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:34:27,896 database.py:343 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:34:27,896 database.py:343 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:34:27,897 database.py:343 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:34:27,897 database.py:343 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:34:27,897 database.py:153 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:34:27,897 database.py:154 INFO Error count = 0
+2020-02-23 21:34:27,898 database.py:343 INFO Created file data: {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:34:27,898 test_database.py:109 INFO {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:34:27,898 database.py:337 ERROR Header length is 8, but data length is 4
+2020-02-23 21:34:27,899 database.py:328 ERROR description not valid header key
+2020-02-23 21:36:29,874 test_database.py:14  INFO START: test_database
+2020-02-23 21:36:29,875 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:29,878 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:29,878 database.py:183 INFO Importing rental file name: products
+2020-02-23 21:36:29,878 database.py:125 INFO Importing CSV
+2020-02-23 21:36:29,878 database.py:129 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:36:29,882 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:36:29,883 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:36:29,883 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:36:29,884 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:36:29,884 database.py:152 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:36:29,884 database.py:153 INFO Error count = 0
+2020-02-23 21:36:29,885 database.py:98  INFO Populating database collection products
+2020-02-23 21:36:29,916 database.py:183 INFO Importing rental file name: customers
+2020-02-23 21:36:29,916 database.py:125 INFO Importing CSV
+2020-02-23 21:36:29,917 database.py:129 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:36:29,920 database.py:345 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:36:29,921 database.py:345 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:36:29,921 database.py:345 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:36:29,922 database.py:345 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:36:29,922 database.py:152 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:36:29,922 database.py:153 INFO Error count = 0
+2020-02-23 21:36:29,923 database.py:98  INFO Populating database collection customers
+2020-02-23 21:36:29,946 database.py:183 INFO Importing rental file name: rentals
+2020-02-23 21:36:29,946 database.py:125 INFO Importing CSV
+2020-02-23 21:36:29,946 database.py:129 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:36:29,949 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:36:29,949 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:36:29,950 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:36:29,950 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:36:29,951 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:36:29,951 database.py:152 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:36:29,951 database.py:153 INFO Error count = 0
+2020-02-23 21:36:29,952 database.py:98  INFO Populating database collection rentals
+2020-02-23 21:36:29,975 database.py:195 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:36:29,976 database.py:198 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:36:29,976 database.py:201 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:36:29,976 database.py:239 INFO Request to show available products
+2020-02-23 21:36:29,976 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:29,978 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:29,992 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:29,993 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,018 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,019 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,020 database.py:183 INFO Importing rental file name: products
+2020-02-23 21:36:30,020 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,020 database.py:129 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:36:30,024 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:36:30,033 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:36:30,034 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:36:30,035 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:36:30,035 database.py:152 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:36:30,035 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,036 database.py:98  INFO Populating database collection products
+2020-02-23 21:36:30,069 database.py:183 INFO Importing rental file name: customers
+2020-02-23 21:36:30,069 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,069 database.py:129 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:36:30,072 database.py:345 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:36:30,072 database.py:345 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:36:30,073 database.py:345 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:36:30,073 database.py:345 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:36:30,074 database.py:152 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:36:30,074 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,074 database.py:98  INFO Populating database collection customers
+2020-02-23 21:36:30,099 database.py:183 INFO Importing rental file name: rentals
+2020-02-23 21:36:30,099 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,099 database.py:129 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:36:30,101 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:36:30,102 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:36:30,102 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:36:30,103 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:36:30,103 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:36:30,104 database.py:152 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:36:30,104 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,104 database.py:98  INFO Populating database collection rentals
+2020-02-23 21:36:30,129 database.py:195 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:36:30,129 database.py:198 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:36:30,129 database.py:201 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:36:30,129 database.py:271 INFO Request to show available products
+2020-02-23 21:36:30,129 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,131 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,135 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,137 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,163 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,165 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,179 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,188 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,189 database.py:183 INFO Importing rental file name: products
+2020-02-23 21:36:30,189 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,189 database.py:129 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:36:30,192 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:36:30,193 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:36:30,193 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:36:30,194 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:36:30,194 database.py:152 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:36:30,194 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,195 database.py:98  INFO Populating database collection products
+2020-02-23 21:36:30,222 database.py:183 INFO Importing rental file name: customers
+2020-02-23 21:36:30,222 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,222 database.py:129 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:36:30,225 database.py:345 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:36:30,226 database.py:345 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:36:30,227 database.py:345 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:36:30,227 database.py:345 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:36:30,228 database.py:152 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:36:30,228 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,228 database.py:98  INFO Populating database collection customers
+2020-02-23 21:36:30,253 database.py:183 INFO Importing rental file name: rentals
+2020-02-23 21:36:30,254 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,254 database.py:129 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:36:30,256 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:36:30,257 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:36:30,257 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:36:30,258 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:36:30,258 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:36:30,258 database.py:152 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:36:30,259 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,259 database.py:98  INFO Populating database collection rentals
+2020-02-23 21:36:30,289 database.py:195 INFO Products-> Record Count=4, Error Count=0
+2020-02-23 21:36:30,289 database.py:198 INFO Customers-> Record Count=4, Error Count=0
+2020-02-23 21:36:30,289 database.py:201 INFO Rentals-> Record Count=5, Error Count=0
+2020-02-23 21:36:30,290 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,291 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,341 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,344 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,358 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,359 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,359 database.py:98  INFO Populating database collection customers
+2020-02-23 21:36:30,374 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,375 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,390 database.py:61  INFO Creating hpn_db Connection: host=127.0.0.1, port=27017
+2020-02-23 21:36:30,391 database.py:72  INFO Client Connected on host=127.0.0.1, port=27017
+2020-02-23 21:36:30,405 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,405 database.py:129 INFO Importing Product CSV file: csv_files\customers.csv
+2020-02-23 21:36:30,418 database.py:345 INFO Created file data: {'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}
+2020-02-23 21:36:30,418 database.py:345 INFO Created file data: {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}
+2020-02-23 21:36:30,419 database.py:345 INFO Created file data: {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}
+2020-02-23 21:36:30,419 database.py:345 INFO Created file data: {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}
+2020-02-23 21:36:30,419 database.py:152 INFO [{'customer_id': 'C1950991', 'name': 'Paul', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '888-778-6668', 'email_address': 'thewormisspice@dune.net', 'status': 'True', 'credit_limit': '999999.99'}, {'customer_id': 'C1955810', 'name': 'LetoII', 'last_name': 'Atreides', 'address': 'Arrakis', 'phone_number': '899-123-5432', 'email_address': 'godemperor@dune.net', 'status': 'True', 'credit_limit': '0.99'}, {'customer_id': 'C7871313', 'name': 'Feyd', 'last_name': 'Rautha', 'address': 'GediPrime', 'phone_number': '218-4381', 'email_address': 'boy@househ.org', 'status': 'False', 'credit_limit': '88000.00'}, {'customer_id': 'C3281830', 'name': 'Irulan', 'last_name': 'Corino', 'address': 'Kaitain', 'phone_number': '001-000-0002', 'email_address': 'princessofthepadishah@arrakis.com', 'status': 'True', 'credit_limit': '1000000.00'}]
+2020-02-23 21:36:30,420 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,420 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,420 database.py:129 INFO Importing Product CSV file: csv_files\products.csv
+2020-02-23 21:36:30,423 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}
+2020-02-23 21:36:30,423 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}
+2020-02-23 21:36:30,423 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}
+2020-02-23 21:36:30,424 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}
+2020-02-23 21:36:30,424 database.py:152 INFO [{'product_id': 'V0032-100', 'description': 'Spice Harvester', 'market_price': '50000000.00', 'rental_price': '3000.00', 'product_type': 'Electric', 'brand': 'Spice World', 'voltage': '1kV', 'material': '', 'size': '', 'quantity_available': '2'}, {'product_id': 'T0072-401', 'description': 'Thumper', 'market_price': '2000.00', 'rental_price': '49.95', 'product_type': 'Electric', 'brand': 'Sandy Tools', 'voltage': '12', 'material': '', 'size': '', 'quantity_available': '100'}, {'product_id': 'F1001-223', 'description': 'Harkonnen Chair', 'market_price': '820.00', 'rental_price': '12.40', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bone', 'size': 'large', 'quantity_available': '23'}, {'product_id': 'F1001-052', 'description': 'Chair dog', 'market_price': '4000.00', 'rental_price': '70.00', 'product_type': 'Furniture', 'brand': '', 'voltage': '', 'material': 'bio', 'size': 'medium', 'quantity_available': '14'}]
+2020-02-23 21:36:30,424 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,424 database.py:125 INFO Importing CSV
+2020-02-23 21:36:30,425 database.py:129 INFO Importing Product CSV file: csv_files\rentals.csv
+2020-02-23 21:36:30,426 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}
+2020-02-23 21:36:30,426 database.py:345 INFO Created file data: {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}
+2020-02-23 21:36:30,427 database.py:345 INFO Created file data: {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}
+2020-02-23 21:36:30,427 database.py:345 INFO Created file data: {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}
+2020-02-23 21:36:30,427 database.py:345 INFO Created file data: {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}
+2020-02-23 21:36:30,427 database.py:152 INFO [{'product_id': 'V0032-100', 'customer_id': 'C1955810', 'rental_quantity': '2'}, {'product_id': 'F1001-223', 'customer_id': 'C7871313', 'rental_quantity': '20'}, {'product_id': 'T0072-401', 'customer_id': 'C1950991', 'rental_quantity': '1000'}, {'product_id': 'F1001-052', 'customer_id': 'C1955810', 'rental_quantity': '20'}, {'product_id': 'V0032-100', 'customer_id': 'C3281830', 'rental_quantity': '100'}]
+2020-02-23 21:36:30,428 database.py:153 INFO Error count = 0
+2020-02-23 21:36:30,428 database.py:345 INFO Created file data: {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:36:30,428 test_database.py:109 INFO {'product_id': 'ID001', 'description': 'Voice Modulator', 'market_price': '9999.99', 'rental_price': '129.50'}
+2020-02-23 21:36:30,428 database.py:339 ERROR Header length is 8, but data length is 4
+2020-02-23 21:36:30,429 database.py:327 ERROR description not valid header key
