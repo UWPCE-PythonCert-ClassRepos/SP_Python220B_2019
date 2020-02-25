@@ -95,6 +95,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
     """
+    product_list = {}
     data_directory = Path(directory_name)
     with open(data_directory/product_file, mode='r') as csv_input:
         product_list = list(csv.DictReader(csv_input))
@@ -143,7 +144,7 @@ def show_available_products():
     }
     * NOTE: quantity_available will be the value of the total product quantity less current rentals
     """
-
+    product_list = {}
     with InventoryDB() as inv_db:
         for item in inv_db.products.find():
             logging.debug('Found product %s', item['product_id'])
