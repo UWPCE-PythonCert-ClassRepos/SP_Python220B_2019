@@ -59,6 +59,9 @@ class Inventory_DB(object):
         """
         self.mongo = DBConnection()
         self.handle_error = handle_error
+        self.products = None
+        self.customers = None
+        self.rentals = None
 
     def __enter__(self):
         """
