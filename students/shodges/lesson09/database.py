@@ -53,7 +53,7 @@ class Inventory_DB(object):
     Inventory database class to allow common functionality to be centralized and used in a context
     manager.
     """
-    def __init__(self, handle_error):
+    def __init__(self, handle_error=False):
         """
         Initialize the context manager.
         """
@@ -65,7 +65,7 @@ class Inventory_DB(object):
         Process the DB connection and return the DB object to allow CRUD operations.
         """
         with self.mongo:
-            inv_db = mongo.connection.media
+            inv_db = self.mongo.connection.media
             self.products = inv_db['products']
             self.customers = inv_db['customers']
             self.rentals = inv_db['rentals']
