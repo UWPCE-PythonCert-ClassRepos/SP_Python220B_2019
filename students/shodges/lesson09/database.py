@@ -71,7 +71,7 @@ class Inventory_DB(object):
             self.rentals = inv_db['rentals']
             return self
 
-    def __exit__(self):
+    def __exit__(self, exc_type, exc_val, exc_tb):
         """
         Exit out of the context manager.
         """
