@@ -1,3 +1,9 @@
+#pylint: disable=too-many-function-args
+#Pylint throws an error on decorated functions because it can't interpret how many arguments it
+#/should/ get.  Pylint 2.4 will add a function_mutators flag to allow you to override this for
+#specified decorated functions but it's still TBA.
+#https://github.com/PyCQA/pylint/blob/3b1247fbdddeb7a92b23c52ad0bcb1d45ebfa874/doc/whatsnew/2.4.rst
+#https://github.com/PyCQA/pylint/pull/2926
 '''
 Returns total price paid for individual rentals
 '''
