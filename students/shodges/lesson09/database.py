@@ -48,7 +48,7 @@ class DBConnection():
         """
         self.connection.close()
 
-class Inventory_DB(object):
+class InventoryDB(object):
     """
     Inventory database class to allow common functionality to be centralized and used in a context
     manager.
@@ -84,7 +84,7 @@ def drop_data():
     """
     Drop the existing data from the database to allow a fresh start.
     """
-    with Inventory_DB() as inv_db:
+    with InventoryDB() as inv_db:
         inv_db.products.drop()
         inv_db.customers.drop()
         inv_db.rentals.drop()
@@ -109,7 +109,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
 
 
-    with Inventory_DB() as inv_db:
+    with InventoryDB() as inv_db:
         products_res = inv_db.products.insert_many(product_list)
         if products_res.acknowledged is True:
             logging.debug('Wrote %d records to products', len(products_res.inserted_ids))
@@ -144,7 +144,7 @@ def show_available_products():
     * NOTE: quantity_available will be the value of the total product quantity less current rentals
     """
 
-    with Inventory_DB() as inv_db:
+    with InventoryDB() as inv_db:
         for item in inv_db.products.find():
             logging.debug('Found product %s', item['product_id'])
             query = {'product_id': item['product_id']}
@@ -171,7 +171,7 @@ def show_rentals(product_id):
     """
     renter_list = {}
 
-    with Inventory_DB() as inv_db:
+    with InventoryDB() as inv_db:
 
         logging.debug('Finding renters for %s', product_id)
         query_1 = {'product_id': product_id}
