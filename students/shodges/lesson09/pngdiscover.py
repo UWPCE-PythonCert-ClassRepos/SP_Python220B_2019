@@ -18,7 +18,7 @@ def png_discover(directory):
             dir_path = file.absolute().as_posix()
             png_files.append(dir_path)
             png_files.append(png_discover(file.absolute().as_posix()))
-        else:
+        elif file.name.endswith('.png'):
             png_files.append(file.name)
     return png_files
 
