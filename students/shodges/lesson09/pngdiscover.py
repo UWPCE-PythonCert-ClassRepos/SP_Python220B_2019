@@ -16,8 +16,10 @@ def png_discover(directory):
     for file in Path(directory).iterdir():
         if file.is_dir():
             dir_path = file.absolute().as_posix()
-            png_files.append(dir_path)
-            png_files.append(png_discover(file.absolute().as_posix()))
+            child_files = png_discover(file.absolute().as_posix())
+            if len(child_files) > 0:
+                png_files.append(dir_path)
+                png_files.append(child_files)
         elif file.name.endswith('.png'):
             png_files.append(file.name)
     return png_files
