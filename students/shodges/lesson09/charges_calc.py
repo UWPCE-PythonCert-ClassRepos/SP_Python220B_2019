@@ -23,7 +23,8 @@ def init_logging(func):
         '''
         log_level_mapping = {'0': 99, '1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
 
-        # We want to setup the logger regardless of log_level -- if it's disabled, set it to level >50
+        # We want to setup the logger regardless of log_level
+        #If it's disabled, set it to level >50
         logger = logging.getLogger()
         logger.setLevel(log_level_mapping[log_level])
 
