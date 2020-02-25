@@ -20,8 +20,8 @@ def png_discover(directory):
             if len(child_files) > 0:
                 #If anything was found in child directories, add its dirname followed by the list
                 #of files
-                png_files.append(child_files[0])
-                png_files.append(child_files[1])
+                for item in child_files:
+                    png_files.append(item)
         elif file.name.endswith('.png'):
             png_this_dir.append(file.name)
     if len(png_this_dir) > 0:
