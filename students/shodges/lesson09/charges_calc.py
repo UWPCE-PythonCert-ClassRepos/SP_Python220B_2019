@@ -8,37 +8,41 @@ import math
 import logging
 import sys
 
-def setup_logging(log_level):
+def init_logging(func):
     '''
-    Setup standard logging.  Requires log_level variable to be set at this mapping:
-
-    0 = no logging
-    1 = ERROR and above (CRITICAL is not implemented)
-    2 = WARNING and above
-    3 = DEBUG and above
+    Decorator for logging functions.
     '''
-    log_level_mapping = {'0': 99, '1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
+    def setup_logging(log_level, *args):
+        '''
+        Setup standard logging.  Requires log_level variable to be set at this mapping:
 
-    # We want to setup the logger regardless of log_level -- if it's disabled, set it to level >50
-    logger = logging.getLogger()
-    logger.setLevel(log_level_mapping[log_level])
+        0 = no logging
+        1 = ERROR and above (CRITICAL is not implemented)
+        2 = WARNING and above
+        3 = DEBUG and above
+        '''
+        log_level_mapping = {'0': 99, '1': logging.ERROR, '2': logging.WARNING, '3': logging.DEBUG}
 
-    if log_level != '0': # Let's not bother to setup the rest if we're disabling logging
-        log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-        log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+        # We want to setup the logger regardless of log_level -- if it's disabled, set it to level >50
+        logger = logging.getLogger()
+        logger.setLevel(log_level_mapping[log_level])
+
+        if log_level != '0': # Let's not bother to setup the rest if we're disabling logging
+            log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+            log_file = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
 
 
-        formatter = logging.Formatter(log_format)
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(logging.WARNING)
-        file_handler.setFormatter(formatter)
+            formatter = logging.Formatter(log_format)
+            file_handler = logging.FileHandler(log_file)
+            file_handler.setLevel(logging.WARNING)
+            file_handler.setFormatter(formatter)
 
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
-        console_handler.setFormatter(formatter)
+            console_handler = logging.StreamHandler()
+            console_handler.setLevel(logging.DEBUG)
+            console_handler.setFormatter(formatter)
 
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
 
 
 def parse_cmd_arguments():
