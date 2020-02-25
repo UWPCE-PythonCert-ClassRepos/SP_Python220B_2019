@@ -105,24 +105,21 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         rentals_list = list(csv.DictReader(csv_input))
         logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
 
-    mongo = DBConnection()
 
-    with mongo:
-        inv_db = mongo.connection.media
-
-        products_res = inv_db['products'].insert_many(product_list)
+    with Inventory_DB() as inv_db:
+        products_res = inv_db.products.insert_many(product_list)
         if products_res.acknowledged is True:
             logging.debug('Wrote %d records to products', len(products_res.inserted_ids))
         else:
             logging.warning('Failed to write records to products')
 
-        customer_res = inv_db['customers'].insert_many(customer_list)
+        customer_res = inv_db.customers.insert_many(customer_list)
         if customer_res.acknowledged is True:
             logging.debug('Wrote %d records to customers', len(customer_res.inserted_ids))
         else:
             logging.warning('Failed to write records to customers')
 
-        rentals_res = inv_db['rentals'].insert_many(rentals_list)
+        rentals_res = inv_db.rentals.insert_many(rentals_list)
         if rentals_res.acknowledged is True:
             logging.debug('Wrote %d records to rentals', len(rentals_res.inserted_ids))
         else:
@@ -143,22 +140,14 @@ def show_available_products():
     }
     * NOTE: quantity_available will be the value of the total product quantity less current rentals
     """
-    mongo = DBConnection()
 
-    product_list = {}
-
-    with mongo:
-        inv_db = mongo.connection.media
-
-        products = inv_db['products']
-        rentals = inv_db['rentals']
-
-        for item in products.find():
+    with Inventory_DB() as inv_db:
+        for item in inv_db.products.find():
             logging.debug('Found product %s', item['product_id'])
             query = {'product_id': item['product_id']}
-            rented_quantity = rentals.count_documents(query)
+            rented_quantity = inv_db.rentals.count_documents(query)
             quantity_available = int(item['quantity_available']) - rented_quantity
-            for rental in rentals.find(query):
+            for rental in inv_db.rentals.find(query):
                 logging.debug('Rented to %s', rental['user_id'])
             logging.debug('Total rentals: %d', rented_quantity)
             product_list[item['product_id']] = {'description': item['description'],
@@ -177,22 +166,16 @@ def show_rentals(product_id):
                 }
     }
     """
-    mongo = DBConnection()
-
     renter_list = {}
 
-    with mongo:
-        inv_db = mongo.connection.media
-
-        rentals = inv_db['rentals']
-        customers = inv_db['customers']
+    with Inventory_DB() as inv_db:
 
         logging.debug('Finding renters for %s', product_id)
         query_1 = {'product_id': product_id}
-        for rental in rentals.find(query_1):
+        for rental in inv_db.rentals.find(query_1):
             logging.debug('Found renter %s', rental['user_id'])
             query_2 = {'user_id': rental['user_id']}
-            for renter in customers.find(query_2):
+            for renter in inv_db.customers.find(query_2):
                 renter_list[renter['user_id']] = {'name': renter['name'],
                                                   'address': renter['address'],
                                                   'phone_number': renter['phone_number'],
