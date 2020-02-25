@@ -48,7 +48,7 @@ class DBConnection():
         """
         self.connection.close()
 
-class InventoryDB(object):
+class InventoryDB():
     """
     Inventory database class to allow common functionality to be centralized and used in a context
     manager.
