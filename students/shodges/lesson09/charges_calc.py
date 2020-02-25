@@ -43,7 +43,8 @@ def init_logging(func):
 
             logger.addHandler(file_handler)
             logger.addHandler(console_handler)
-
+        return func(*args)
+    return setup_logging
 
 def parse_cmd_arguments():
     '''
