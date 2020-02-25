@@ -48,6 +48,35 @@ class DBConnection():
         """
         self.connection.close()
 
+class Inventory_DB(object):
+    """
+    Inventory database class to allow common functionality to be centralized and used in a context
+    manager.
+    """
+    def __init__(self, handle_error):
+        """
+        Initialize the context manager.
+        """
+        self.mongo = DBConnection()
+        self.handle_error = handle_error
+
+    def __enter__(self):
+        """
+        Process the DB connection and return the DB object to allow CRUD operations.
+        """
+        with mongo:
+            inv_db = mongo.connection.media
+            self.products = inv_db['products']
+            self.customers = inv_db['customers']
+            self.rentals = inv_db['rentals']
+            return self
+
+    def __exit__(self):
+        """
+        Exit out of the context manager.
+        """
+        return self.handle_error
+
 def drop_data():
     """
     Drop the existing data from the database to allow a fresh start.
