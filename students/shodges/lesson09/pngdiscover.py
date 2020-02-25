@@ -7,6 +7,10 @@ from pathlib import Path
 def png_discover(directory):
     '''
     List PNG's in directory, and recurse for child directories.
+
+    Ultimately a list will be returned with this structure:
+    ['/absolute/path', '/absolute/path/subdir', ['image1.png', 'image2.png'],
+     '/absolute/path/subdir2', ['imageA.png'], 'imageZ.png']
     '''
     png_files = []
     for file in Path(directory).iterdir():
