@@ -8,12 +8,15 @@ def png_discover(directory):
     '''
     List PNG's in directory, and recurse for child directories.
     '''
-    print(directory)
+    png_files = []
     for file in Path(directory).iterdir():
         if file.is_dir():
-            png_discover(file.absolute().as_posix())
+            dir_path = file.absolute().as_posix()
+            png_files.append(dir_path)
+            png_files.append(png_discover(file.absolute().as_posix()))
         else:
-            print(file.name)
+            png_files.append(file.name)
+    return png_files
 
 if __name__ == '__main__':
-    png_discover('../../')
+    print(png_discover('/Users/shodges/Repos/SP_Python220B_2019/students/shodges'))
