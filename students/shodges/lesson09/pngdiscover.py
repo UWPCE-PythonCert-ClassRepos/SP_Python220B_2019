@@ -32,4 +32,4 @@ def png_discover(directory):
     return png_files
 
 if __name__ == '__main__':
-    print(png_discover('/Users/shodges/Repos/SP_Python220B_2019/students/shodges'))
+    print(png_discover(Path().cwd().absolute().as_posix()))
