@@ -64,7 +64,7 @@ class Inventory_DB(object):
         """
         Process the DB connection and return the DB object to allow CRUD operations.
         """
-        with mongo:
+        with self.mongo:
             inv_db = mongo.connection.media
             self.products = inv_db['products']
             self.customers = inv_db['customers']
@@ -81,14 +81,10 @@ def drop_data():
     """
     Drop the existing data from the database to allow a fresh start.
     """
-    mongo = DBConnection()
-
-    with mongo:
-        inv_db = mongo.connection.media
-
-        inv_db['products'].drop()
-        inv_db['customers'].drop()
-        inv_db['rentals'].drop()
+    with Inventory_DB() as inv_db:
+        inv_db.products.drop()
+        inv_db.customers.drop()
+        inv_db.rentals.drop()
 
         logging.debug('Dropped all databases')
 
