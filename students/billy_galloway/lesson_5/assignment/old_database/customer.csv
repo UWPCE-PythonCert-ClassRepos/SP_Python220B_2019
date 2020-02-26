@@ -1,0 +1,5 @@
+customer_id,name,home_address,email_address,phone_number,status,credit_limit
+user001,Andrew Smith,23 Railroad Street,andrew@hpnorton.com,202-555-0134,True,1000
+user002,Kate Harris,638 Cactus St,kate@hpnorton.com,202-555-0169,False,1000
+user003,Elisa Miles,4490 Union Street,elisa.miles@yahoo.com,206-922-0882,True,800
+user004,Maya Data,4936 Elliot Avenue,mdata@uw.edu,206-777-1927,True,1500
