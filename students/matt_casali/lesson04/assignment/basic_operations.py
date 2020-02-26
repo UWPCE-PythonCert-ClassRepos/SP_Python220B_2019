@@ -64,9 +64,9 @@ def search_customer(customer_id):
 def delete_customer(customer_id):
     """Deletes a customer"""
     try:
+        delete_cust = Customer.get(Customer.customer_id == customer_id)
+        delete_cust.delete_instance()
         logging.info("Deleting customer with customer_id: %s", customer_id)
-        result = Customer.delete_by_id(customer_id)
-        return result
     except peewee.DoesNotExist:
         logging.debug("Cannot find customer with ID: %s", customer_id)
         raise peewee.DoesNotExist
@@ -80,9 +80,9 @@ def update_customer_credit(customer_id, customer_credit_limit):
             customer_credit.customer_credit_limit = customer_credit_limit
             logging.info('Customer credit limit updated for customer ID: %s', customer_id)
             customer_credit.save()
-        except peewee.DoesNotExist as error:
+        except peewee.DoesNotExist:
             logging.info("Customer %s does not exist", customer_id)
-            raise ValueError(error)
+            raise peewee.DoesNotExist
 
 
 def list_active_customers():
