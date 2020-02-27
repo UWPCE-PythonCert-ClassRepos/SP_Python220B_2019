@@ -65,6 +65,7 @@ def timed_func(func):
         return ret_val
     return run_and_time
 
+@timed_func
 def drop_data():
     """
     Drop the existing data from the database to allow a fresh start.
@@ -80,6 +81,7 @@ def drop_data():
 
         logging.debug('Dropped all databases')
 
+@timed_func
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Import data from specified CSV's into the database.
@@ -125,6 +127,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                                + (0 if customer_res.acknowledged is True else 1) +
                                                (0 if rentals_res.acknowledged is True else 1)),))
 
+@timed_func
 def show_available_products():
     """
     Return a dictionary of all available products of the following format:
@@ -159,6 +162,7 @@ def show_available_products():
 
     return product_list
 
+@timed_func
 def show_rentals(product_id):
     """
     Return a dictionary of all renters of product_id in the following format:
