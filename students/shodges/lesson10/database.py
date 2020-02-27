@@ -60,8 +60,9 @@ def timed_func(func):
         start_time = datetime.datetime.now()
         ret_val = func(*args, **kwargs)
         end_time = datetime.datetime.now()
-        print('Function {} ran in {} seconds'.format(func.__name__,
-              (end_time - start_time).total_seconds()))
+        with open('timings.txt', 'a') as file_io:
+            file_io.write('Function {} ran in {} seconds'.format(func.__name__,
+                          (end_time - start_time).total_seconds()))
         return ret_val
     return run_and_time
 
