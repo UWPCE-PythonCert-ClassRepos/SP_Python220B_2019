@@ -7,6 +7,7 @@ show_available_products() to show available products, accounting for existing re
 show_rentals(product_id) to show all active rentals for product_id
 """
 import csv
+import datetime
 import logging
 from pathlib import Path
 from pymongo import MongoClient
@@ -47,6 +48,22 @@ class DBConnection():
         Close the connection when exiting the context manager.
         """
         self.connection.close()
+
+def timed_func(func):
+    """
+    Decorator to time a function call.
+    """
+    def run_and_time(*args, **kwargs):
+        """
+        Wrapper function to run the function func and log performance data.
+        """
+        start_time = datetime.datetime.now()
+        ret_val = func(*args, **kwargs)
+        end_time = datetime.datetime.now()
+        print('Function {} ran in {} seconds'.format(func.__name__,
+              (end_time - start_time).total_seconds()))
+        return ret_val
+    return run_and_time
 
 def drop_data():
     """
