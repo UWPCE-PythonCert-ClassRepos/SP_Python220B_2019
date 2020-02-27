@@ -83,50 +83,55 @@ def drop_data():
         logging.debug('Dropped all databases')
 
 @timed_func
-def import_data(directory_name, product_file, customer_file, rentals_file):
+def do_import(file, data_type):
     """
-    Import data from specified CSV's into the database.
+    Function to perform actual CSV import and db insert.
+
+    Pass in file, which should be a Path to the correct file, and data_type, which should be:
+    customers, products, or rentals
     """
-    data_directory = Path(directory_name)
-    with open(data_directory/product_file, mode='r') as csv_input:
-        product_list = list(csv.DictReader(csv_input))
-        logging.debug('Read in product data from %s: %s', product_file, product_list)
+    analytics = {}
+    analytics['starttime'] = datetime.datetime.now()
 
-    with open(data_directory/customer_file, mode='r') as csv_input:
-        customer_list = list(csv.DictReader(csv_input))
-        logging.debug('Read in customer data from %s: %s', customer_file, customer_list)
-
-    with open(data_directory/rentals_file, mode='r') as csv_input:
-        rentals_list = list(csv.DictReader(csv_input))
-        logging.debug('Read in rental data from %s: %s', rentals_file, rentals_list)
+    with open(file, mode='r') as csv_input:
+        import_list = list(csv.DictReader(csv_input))
+        logging.debug('Read in %s data from %s: %s', data_type, file.name, import_list)
+        analytics['processed'] = len(import_list)
 
     mongo = DBConnection()
 
     with mongo:
         inv_db = mongo.connection.media
 
-        products_res = inv_db['products'].insert_many(product_list)
-        if products_res.acknowledged is True:
-            logging.debug('Wrote %d records to products', len(products_res.inserted_ids))
+        analytics['startcount'] = inv_db[data_type].count_documents({})
+        import_res = inv_db[data_type].insert_many(import_list)
+        if import_res.acknowledged is True:
+            logging.debug('Wrote %d records to %s', len(import_res.inserted_ids), data_type)
         else:
-            logging.warning('Failed to write records to products')
+            logging.warning('Failed to write records to %s', data_type)
 
-        customer_res = inv_db['customers'].insert_many(customer_list)
-        if customer_res.acknowledged is True:
-            logging.debug('Wrote %d records to customers', len(customer_res.inserted_ids))
-        else:
-            logging.warning('Failed to write records to customers')
+        analytics['endcount'] = inv_db[data_type].count_documents({})
 
-        rentals_res = inv_db['rentals'].insert_many(rentals_list)
-        if rentals_res.acknowledged is True:
-            logging.debug('Wrote %d records to rentals', len(rentals_res.inserted_ids))
-        else:
-            logging.warning('Failed to write records to rentals')
+    analytics['runtime'] = (datetime.datetime.now() - analytics['starttime']).total_seconds()
+    logging.debug('Database import complete in %d seconds', analytics['runtime'])
 
-    return ((len(products_res.inserted_ids), len(customer_res.inserted_ids),
-             len(rentals_res.inserted_ids)), (((0 if products_res.acknowledged is True else 1)
-                                               + (0 if customer_res.acknowledged is True else 1) +
-                                               (0 if rentals_res.acknowledged is True else 1)),))
+    return (analytics['processed'], analytics['startcount'], analytics['endcount'],
+            analytics['runtime'])
+
+@timed_func
+def import_data(directory_name, product_file, customer_file, rentals_file):
+    """
+    Import data from specified CSV's into the database.
+    """
+    analytics = {}
+    analytics['start_time'] = datetime.datetime.now()
+
+    data_directory = Path(directory_name)
+    prod_import = do_import(data_directory/product_file, 'products')
+    cust_import = do_import(data_directory/customer_file, 'customers')
+    do_import(data_directory/rentals_file, 'rentals')
+
+    return (prod_import, cust_import)
 
 @timed_func
 def show_available_products():
