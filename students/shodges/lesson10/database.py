@@ -49,6 +49,8 @@ class DBConnection():
         """
         self.connection.close()
 
+RECORDS_LOC = {'do_import': 0}
+
 def timed_func(func):
     """
     Decorator to time a function call.
@@ -60,9 +62,14 @@ def timed_func(func):
         start_time = datetime.datetime.now()
         ret_val = func(*args, **kwargs)
         end_time = datetime.datetime.now()
+        processed_log = ''
+        if func.__name__ in RECORDS_LOC:
+            processed_log = ', {} records processed'.format(ret_val[RECORDS_LOC[func.__name__]])
         with open('timings.txt', 'a') as file_io:
-            file_io.write('Function {} ran in {} seconds\n'.format(func.__name__,
-                          (end_time - start_time).total_seconds()))
+            file_io.write('Function {} ran in {} seconds{}\n'.format(func.__name__,
+                                                                     (end_time -
+                                                                      start_time).total_seconds(),
+                                                                     processed_log))
         return ret_val
     return run_and_time
 
