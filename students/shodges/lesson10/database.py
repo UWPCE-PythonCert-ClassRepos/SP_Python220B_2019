@@ -49,7 +49,9 @@ class DBConnection():
         """
         self.connection.close()
 
-RECORDS_LOC = {'do_import': 0}
+RECORDS_LOC = {'do_import': ('value', 0),
+               'show_available_products': ('len',),
+               'show_rentals': ('len',)}
 
 def timed_func(func):
     """
@@ -64,7 +66,15 @@ def timed_func(func):
         end_time = datetime.datetime.now()
         processed_log = ''
         if func.__name__ in RECORDS_LOC:
-            processed_log = ', {} records processed'.format(ret_val[RECORDS_LOC[func.__name__]])
+            if RECORDS_LOC[func.__name__][0] == 'value':
+                records = ret_val[RECORDS_LOC[func.__name__][1]]
+            elif RECORDS_LOC[func.__name__][0] == 'len':
+                records = len(ret_val)
+
+            try:
+                processed_log = ', {} records processed'.format(records)
+            except NameError:
+                pass
         with open('timings.txt', 'a') as file_io:
             timestamp = datetime.datetime.now().isoformat()
             run_duration = (end_time - start_time).total_seconds()
