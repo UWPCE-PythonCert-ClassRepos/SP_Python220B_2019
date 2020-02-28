@@ -6,6 +6,7 @@
 
 from unittest import TestCase
 from basic_operations import *
+from peewee import IntegrityError, DoesNotExist
 
 
 test_customer = {'customer_id': 123,
@@ -24,6 +25,7 @@ class BasicOperationsTests(TestCase):
     def setUp(self):
         """ Set up table """
 
+    logger_setup()
     data.drop_tables([Customer])
     data.create_tables([Customer])
 
@@ -63,7 +65,7 @@ class BasicOperationsTests(TestCase):
 
         # Make sure test fails
         with self.assertRaises(DoesNotExist):
-            Customer.get(Customer.customer_id == test_customer['customer_id'])
+            delete_customer('333')
 
     def test_update_customer_credit(self):
         """ Test changing credit limit """
@@ -72,6 +74,10 @@ class BasicOperationsTests(TestCase):
         update_customer_credit(test_customer['customer_id'], 2500.00)
         test = Customer.get(Customer.customer_id == test_customer['customer_id'])
         self.assertEqual(test.customer_credit_limit, 2500.00)
+
+        # Make sure test fails
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit(321, 2500.00)
 
     def test_list_customers(self):
         """ Test listing all active customers """
