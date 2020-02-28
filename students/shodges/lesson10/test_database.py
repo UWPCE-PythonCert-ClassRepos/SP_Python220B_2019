@@ -27,6 +27,7 @@ class RentalDbTest(TestCase):
         self.assertEqual(result[1][0], 3)
         self.assertEqual(result[1][1], 0)
         self.assertEqual(result[1][2], 3)
+        database.show_available_products()
 
         result = database.import_data('data_big', 'products.csv', 'customers.csv', 'rentals.csv')
         self.assertEqual(result[0][0], 1000)
@@ -35,6 +36,7 @@ class RentalDbTest(TestCase):
         self.assertEqual(result[1][0], 1000)
         self.assertEqual(result[1][1], 3)
         self.assertEqual(result[1][2], 1003)
+        database.show_available_products()
 
         result = database.import_data('data_bigger', 'products.csv', 'customers.csv', 'rentals.csv')
         self.assertEqual(result[0][0], 10000)
