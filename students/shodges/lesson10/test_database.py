@@ -21,12 +21,12 @@ class RentalDbTest(TestCase):
         # These tests are hard-coded to the expected values from the incluced CSV's.
         # Your results may vary if the data sets change. :)
         result = database.import_data('data', 'products.csv', 'customers.csv', 'rentals.csv')
-        self.assertEqual(result[0][0], 1000)
+        self.assertEqual(result[0][0], 5)
         self.assertEqual(result[0][1], 0)
-        self.assertEqual(result[0][2], 1000)
-        self.assertEqual(result[1][0], 1000)
+        self.assertEqual(result[0][2], 5)
+        self.assertEqual(result[1][0], 3)
         self.assertEqual(result[1][1], 0)
-        self.assertEqual(result[1][2], 1000)
+        self.assertEqual(result[1][2], 3)
 
     def test_2_show_available(self):
         """
