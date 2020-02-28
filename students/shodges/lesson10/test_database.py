@@ -28,6 +28,14 @@ class RentalDbTest(TestCase):
         self.assertEqual(result[1][1], 0)
         self.assertEqual(result[1][2], 3)
 
+        result = database.import_data('data_big', 'products.csv', 'customers.csv', 'rentals.csv')
+        self.assertEqual(result[0][0], 1000)
+        self.assertEqual(result[0][1], 5)
+        self.assertEqual(result[0][2], 1005)
+        self.assertEqual(result[1][0], 1000)
+        self.assertEqual(result[1][1], 3)
+        self.assertEqual(result[1][2], 1003)
+
     def test_2_show_available(self):
         """
         Test the integrity of the returned dictionary of available products.  We particularly
