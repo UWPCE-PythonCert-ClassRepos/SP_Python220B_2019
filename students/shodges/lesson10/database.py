@@ -49,6 +49,10 @@ class DBConnection():
         """
         self.connection.close()
 
+# If you want to log the number of records processed for functions decorated with @timed_func:
+# Add the function name here as a dictionary key, and a tuple as the value in this format:
+#     ('value', #) to log a value of a returned list, where # is the index
+#     ('len',) to log the length of a returned list
 RECORDS_LOC = {'do_import': ('value', 0),
                'show_available_products': ('len',),
                'show_rentals': ('len',)}
