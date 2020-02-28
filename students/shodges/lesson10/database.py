@@ -66,10 +66,12 @@ def timed_func(func):
         if func.__name__ in RECORDS_LOC:
             processed_log = ', {} records processed'.format(ret_val[RECORDS_LOC[func.__name__]])
         with open('timings.txt', 'a') as file_io:
-            file_io.write('Function {} ran in {} seconds{}\n'.format(func.__name__,
-                                                                     (end_time -
-                                                                      start_time).total_seconds(),
-                                                                     processed_log))
+            timestamp = datetime.datetime.now().isoformat()
+            run_duration = (end_time - start_time).total_seconds()
+            file_io.write('{} Function {} ran in {} seconds{}\n'.format(timestamp,
+                                                                        func.__name__,
+                                                                        run_duration,
+                                                                        processed_log))
         return ret_val
     return run_and_time
 
