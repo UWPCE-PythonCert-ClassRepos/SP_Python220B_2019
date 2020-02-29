@@ -1,18 +1,17 @@
 '''Contains funcitons to manipulate Norton Furniture db.'''
 
-from pymongo import MongoClient
 import csv
 import os
 import time
+from pymongo import MongoClient
 
 
 class MongoDBConnection():
     """MongoDB Connection"""
-    def __init__(self, host='127.0.0.1', port=27017, collections=[]):
+    def __init__(self, host='127.0.0.1', port=27017):
         """Initialize MongoDB Database"""
         self.host = host
         self.port = port
-        self.collections = collections
         self.connection = None
 
     def __enter__(self):
@@ -28,10 +27,12 @@ class MongoDBConnection():
             print(f'Exception type: {exc_type}')
             print(f'Exception value: {exc_val}')
             print(f'Exception traceback: {exc_tb}')
-        print(f'Closing connection with host [{self.host}] on port [{self.port}]...')
+        print(f'Closing connection with host [{self.host}]' +
+              ' on port [{self.port}]...')
         self.connection.close()
         self.runtime = time.time() - self.start
-        print(f'Connection with host {self.host} was open for {self.runtime} seconds.')
+        print(f'Connection with host {self.host}' +
+              ' was open for {self.runtime} seconds.')
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
