@@ -1,0 +1,2 @@
+If you are a student and are struggling/looking at other peoples code for clues check out " https://www.youtube.com/watch?v=6tNS--WetLI "
+The authors channel contains many good and easy to understand tutorials and is a good place to start. Magicmock and mock stuff starts around 29 minutes.
