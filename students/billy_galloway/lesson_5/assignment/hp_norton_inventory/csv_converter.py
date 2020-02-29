@@ -1,21 +1,26 @@
+'''
+CSV Converter
+'''
+
 import csv
 import json
 import logging
 import os
-os.chdir('..')
+os.chdir('../')
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 def csv_reader(csv_file):
+    ''' ingests csv file and returns an ordered dict '''
     with open(csv_file) as csvfile:
         hpnorton_db_reader = csv.DictReader(csvfile, delimiter=',')
-        documents = [documents for documents in hpnorton_db_reader]
-
-        return documents
+        logger.info(f'File {csv_file} Found')
+        return [documents for documents in hpnorton_db_reader]
 
 def customer_format(documents):
+    ''' formats customer data to dictionary '''
     for document in documents:
         customer = {
             'customer_id': document['customer_id'],
@@ -30,6 +35,7 @@ def customer_format(documents):
         yield customer
 
 def product_format(documents):
+    ''' formats product data to dictionary '''
     for document in documents:
         product = {
             'product_id': document['product_id'],
@@ -41,6 +47,7 @@ def product_format(documents):
         yield product
 
 def rentals_format(documents):
+    ''' formats rentals data to dictionary '''
     for document in documents:
         rental = {
             'customer_id': document['customer_id'],
