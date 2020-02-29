@@ -9,60 +9,62 @@ import logging
 import sys
 
 
-def set_logging_settings(level):
+def logging_decorator(func):
     '''Setup logging settings based on level input to command line.'''
 
-    if level not in list(['0', '1', '2', '3']):
-        print('Debug level input must be 0, 1, 2, or 3.')
-        sys.exit()
+    def set_logging(level, *args):
+        if level not in list(['0', '1', '2', '3']):
+            print('Debug level input must be 0, 1, 2, or 3.')
+            sys.exit()
 
-    # 0 (Default) - no debug messages or log file
-    if level == '0':
-        logging.disable()
-        return None
+        # 0 (Default) - no debug messages or log file
+        if level == '0':
+            logging.disable()
+            return None
 
-    log_format = ('%(asctime)s %(filename)s:%(lineno)-3d \
-                   %(levelname)s %(message)s')
-    formatter = logging.Formatter(log_format)
-    log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
+        log_format = ('%(asctime)s %(filename)s:%(lineno)-3d \
+                        %(levelname)s %(message)s')
+        formatter = logging.Formatter(log_format)
+        log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
 
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setFormatter(formatter)
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    logger = logging.getLogger()
-
-    # 1 - only error messages
-    if level == '1':
-        file_handler.setLevel(logging.ERROR)
-        console_handler.setLevel(logging.ERROR)
-
-        logger.setLevel(logging.ERROR)
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
-
-    # 2 - Error messages and warnings
-    if level == '2':
-        file_handler.setLevel(logging.WARNING)
-        console_handler.setLevel(logging.WARNING)
-
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setFormatter(formatter)
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
         logger = logging.getLogger()
-        logger.setLevel(logging.WARNING)
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
 
-    # 3 - Error messages, warnings, and debug messages
-    if level == '3':
-        file_handler.setLevel(logging.WARNING)
-        console_handler.setLevel(logging.DEBUG)
+        # 1 - only error messages
+        if level == '1':
+            file_handler.setLevel(logging.ERROR)
+            console_handler.setLevel(logging.ERROR)
 
-        logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
+            logger.setLevel(logging.ERROR)
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
 
-    logging.debug('Logging settings set.')
-    return None
+        # 2 - Error messages and warnings
+        if level == '2':
+            file_handler.setLevel(logging.WARNING)
+            console_handler.setLevel(logging.WARNING)
+
+            logger = logging.getLogger()
+            logger.setLevel(logging.WARNING)
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
+
+        # 3 - Error messages, warnings, and debug messages
+        if level == '3':
+            file_handler.setLevel(logging.WARNING)
+            console_handler.setLevel(logging.DEBUG)
+
+            logger = logging.getLogger()
+            logger.setLevel(logging.DEBUG)
+            logger.addHandler(file_handler)
+            logger.addHandler(console_handler)
+
+        logging.debug('Logging settings set.')
+        return func(*args)
+    return set_logging
 
 
 def parse_cmd_arguments():
@@ -78,6 +80,7 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 
+@logging_decorator
 def load_rentals_file(filename):
     '''Load data from rentals file as python dicts with json package.'''
     logging.debug('Loading rentals file %s...', ARGS.input)
@@ -146,7 +149,6 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
-    set_logging_settings(ARGS.debug)
-    DATA = load_rentals_file(ARGS.input)
-    DATA = calculate_additional_fields(DATA)
-    save_to_json(ARGS.output, DATA)
+    DATA_IN = load_rentals_file(ARGS.debug, ARGS.input)
+    DATA_OUT = calculate_additional_fields(DATA_IN)
+    save_to_json(ARGS.output, DATA_OUT)
