@@ -1,0 +1,37 @@
+1. First step was to expand the .csv consumers and products files to 1000
+
+2. The import data function in lesson5 was replaced to two seperate import consumer and
+products data functions so that they can be called in parallel when it is compared to 
+parallel.py
+
+3. linear.py run looked a bit like this.
+
+---Product Data and Timing---
+(1000, 1005, 1005, 0.87021803855896, 1000)
+---Customer Data and Timing---
+(1000, 1010, 1010, 1.0141608715057373, 1000)
+Total Time = 1.8854892253875732
+
+4. I coppied the code from linear.py and made parallel.py. In the main part of the code
+I created two threads so that the two function could run on sperate threads. Loops through
+Threads and started each thread. There is contention to when the .get() from the queue is
+called. I was calling it in the initial loop, and was getting the times to look like this
+
+Data Products
+ (1000, 1005, 1005, 0.7777690887451172)
+Data Customers
+ (1000, 1010, 1010, 1.0140130519866943)
+Total time to run 1.7931571006774902
+
+Clearly the threads were being run sequentially
+
+5. Joined the output_queue outside the loop and then looped twice to call .get()
+from the queue since only two threads. I got the following result
+
+Data Products
+ (1000, 1005, 1005, 0.9713821411132812)
+Data Customers
+ (1000, 1010, 1010, 1.0212249755859375)
+Total time to run 1.0232799053192139
+
+So there is an ~85% increase in performance running on two threads 
