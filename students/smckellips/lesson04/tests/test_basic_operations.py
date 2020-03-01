@@ -66,7 +66,6 @@ class TestBasicOperations(TestCase):
             'credit_limit': 83351
         }
 
-
     def test_add_customer(self):
         '''test add_customer function.'''
         add_customer(**self.customer1)
@@ -121,4 +120,43 @@ class TestBasicOperations(TestCase):
 
     def test_failing_test(self):
         #Instructions say to show some tests failing:
-        self.assertEqual(1,2)
+        self.assertEqual(1, 2)
+
+
+    def test_get_customer_list(self):
+        '''Get list of customer id's'''
+        add_customer(**self.customer1)
+        add_customer(**self.customer2)
+        add_customer(**self.customer3)
+        add_customer(**self.customer4)
+        add_customer(**self.customer5)
+        ids = ["Carina", "Dexter", "John", "Valeria", "Vanessa"]
+
+        customers = get_customer_list()
+        self.assertEqual(customers, ids)
+
+    def test_next(self):
+        '''
+        Add a generator/iterator to the app.  Create a next record function.
+        '''
+        add_customer(**self.customer1)
+        add_customer(**self.customer2)
+        add_customer(**self.customer3)
+        add_customer(**self.customer4)
+        add_customer(**self.customer5)
+
+
+        result = id_generator()
+
+        self.assertEqual(next(result), 'Carina')
+        # result = next()
+        self.assertEqual(next(result), 'Dexter')
+        # result = next()
+        self.assertEqual(next(result), 'John')
+        # result = next()
+        self.assertEqual(next(result), 'Valeria')
+        # result = next()
+        self.assertEqual(next(result), 'Vanessa')
+        # PEP 479 -- Change StopIteration handling inside generators
+        with self.assertRaises(StopIteration):
+            next(result)

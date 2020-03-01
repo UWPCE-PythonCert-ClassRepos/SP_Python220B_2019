@@ -56,3 +56,18 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_customers():
     '''list number of active customers.'''
     return Customer.select().where(Customer.status).count()
+
+def get_customer_list():
+    # query = Customer.select(Customer.customer_id).order_by(Customer.customer_id).get()
+    query = Customer.select(Customer.customer_id).order_by(Customer.customer_id)
+    result = [customer.customer_id for customer in query]
+    return result
+
+def id_generator():
+    '''Create generator to iterate through customer list'''
+    customers = get_customer_list()
+    index = 0
+    while index < len(customers):
+        yield customers[index]
+        index += 1
+    return
