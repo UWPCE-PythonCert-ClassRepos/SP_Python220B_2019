@@ -4,6 +4,7 @@ available products will show"""
 #pylint: disable=too-many-statements
 #pylint: disable=invalid-name
 #pylint: disable=too-many-locals
+#pylint: disable=unused-variable
 
 import logging
 import time
@@ -16,6 +17,7 @@ from pymongo import MongoClient
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
+
 
 class MongoDBConnection():
     """MongoDB Connection"""
@@ -33,6 +35,7 @@ class MongoDBConnection():
         self.connection.close()
 
 def import_products(directory_name, product_file):
+    """function to handle product data"""
     prod_start = time.time()
     error_prod = 0
     product_file_path = os.path.join(directory_name, product_file)
@@ -54,26 +57,26 @@ def import_products(directory_name, product_file):
                                 'quantity_available': row['quantity_available']}
                     try:
                         products.insert_one(prod_add)
-                        LOGGER.info('Added product to the database')
+                        #LOGGER.info('Added product to the database')
                     except pyerror.DuplicateKeyError as error:
-                        LOGGER.info(error)
-                        LOGGER.info('Product already in database')
+                        #LOGGER.info(error)
+                        #LOGGER.info('Product already in database')
                         error_prod += 1
 
         except FileNotFoundError:
-            LOGGER.info('Product file not found')
+            #LOGGER.info('Product file not found')
             error_prod += 1
         db_prod_after_count = db.products.count_documents({})
         prod_end = time.time()
-
-        output_queue.put((num_prod_processed, db_prod_init_count, db_prod_after_count, prod_end-prod_start), error_prod)
+        output_queue.put((num_prod_processed, db_prod_init_count, db_prod_after_count,
+                          prod_end-prod_start), error_prod)
 def import_customers(directory_name, customer_file):
+    """function to handle customer data"""
     cust_start = time.time()
     error_cust = 0
     customer_file_path = os.path.join(directory_name, customer_file)
     mongo = MongoDBConnection()
     num_cust_processed = 0
-    print (customer_file_path)
     with mongo:
         db = mongo.connection.hp_nortion
         customers = db['customers']
@@ -90,19 +93,19 @@ def import_customers(directory_name, customer_file):
                                 'email': row['email']}
                     try:
                         customers.insert_one(cust_add)
-                        LOGGER.info('Added customer to the database')
+                        #LOGGER.info('Added customer to the database')
                     except pyerror.DuplicateKeyError as error:
-                        LOGGER.info(error)
-                        LOGGER.info('customer already in database')
+                        #LOGGER.info(error)
+                        #LOGGER.info('customer already in database')
                         error_cust += 1
 
         except FileNotFoundError:
-            LOGGER.info('Customer file not found')
-            error_cust += 1            
+            #LOGGER.info('Customer file not found')
+            error_cust += 1
     db_after_cust_count = db.customers.count_documents({})
     cust_end = time.time()
-    print (cust_end)
-    output_queue.put((num_cust_processed, db_init_cust_count, db_after_cust_count, cust_end-cust_start), error_cust)
+    output_queue.put((num_cust_processed, db_init_cust_count, db_after_cust_count,
+                      cust_end-cust_start), error_cust)
 
 def show_available_products():
     """
@@ -158,15 +161,18 @@ if __name__ == "__main__":
     storage = []
     threads = []
     path = ('/Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/'
-                'students/Nick_Lenssen/lesson07/assignment/data')
-    threads.append(threading.Thread(target = import_products, args = (path, 'products.csv'), daemon=True))
-    threads.append(threading.Thread(target = import_customers, args = (path, 'customers.csv'), daemon=True))
+            'students/Nick_Lenssen/lesson07/assignment/data')
+    threads.append(threading.Thread(target=import_products,
+                                    args=(path, 'products.csv'), daemon=True))
+    threads.append(threading.Thread(target=import_customers,
+                                    args=(path, 'customers.csv'), daemon=True))
     for thread in threads:
-        thread.start() 
+        thread.start()
+    output_queue.join()
+    for i in range(len(threads)):
         storage.append(output_queue.get())
+    print("Data Products\n", storage[0])
+    print("Data Customers\n", storage[1])
     stop_time = time.time()
 
-    print ('Total time to run '+str(stop_time-start_time))
-    #print (storage)
-
-
+    print('Total time to run '+str(stop_time-start_time))

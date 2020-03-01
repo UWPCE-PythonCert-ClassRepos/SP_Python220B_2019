@@ -4,6 +4,7 @@ available products will show"""
 #pylint: disable=too-many-statements
 #pylint: disable=invalid-name
 #pylint: disable=too-many-locals
+#pylint: disable=unused-variable
 
 import logging
 import time
@@ -31,6 +32,7 @@ class MongoDBConnection():
         self.connection.close()
 
 def import_products(directory_name, product_file):
+    """function to handle product data"""
     prod_start = time.time()
     error_prod = 0
     product_file_path = os.path.join(directory_name, product_file)
@@ -52,20 +54,21 @@ def import_products(directory_name, product_file):
                                 'quantity_available': row['quantity_available']}
                     try:
                         products.insert_one(prod_add)
-                        LOGGER.info('Added product to the database')
+                        #LOGGER.info('Added product to the database')
                     except pyerror.DuplicateKeyError as error:
-                        LOGGER.info(error)
-                        LOGGER.info('Product already in database')
+                        #LOGGER.info(error)
+                        #LOGGER.info('Product already in database')
                         error_prod += 1
 
         except FileNotFoundError:
-            LOGGER.info('Product file not found')
+            #LOGGER.info('Product file not found')
             error_prod += 1
         db_prod_after_count = db.products.count_documents({})
         prod_end = time.time()
-
-        return (num_prod_processed, db_prod_init_count, db_prod_after_count, prod_end-prod_start, error_prod)
+        return (num_prod_processed, db_prod_init_count, db_prod_after_count,
+                prod_end-prod_start, error_prod)
 def import_customers(directory_name, customer_file):
+    """product function to handle customer data"""
     cust_start = time.time()
     error_cust = 0
     customer_file_path = os.path.join(directory_name, customer_file)
@@ -87,19 +90,19 @@ def import_customers(directory_name, customer_file):
                                 'email': row['email']}
                     try:
                         customers.insert_one(cust_add)
-                        LOGGER.info('Added customer to the database')
+                        #LOGGER.info('Added customer to the database')
                     except pyerror.DuplicateKeyError as error:
-                        LOGGER.info(error)
-                        LOGGER.info('customer already in database')
+                        #LOGGER.info(error)
+                        #LOGGER.info('customer already in database')
                         error_cust += 1
 
         except FileNotFoundError:
-            LOGGER.info('Customer file not found')
-            error_cust += 1            
+            #LOGGER.info('Customer file not found')
+            error_cust += 1
     db_after_cust_count = db.customers.count_documents({})
     cust_end = time.time()
-    print (cust_end)
-    return (num_cust_processed, db_init_cust_count, db_after_cust_count, cust_end-cust_start, error_cust)
+    return (num_cust_processed, db_init_cust_count, db_after_cust_count,
+            cust_end-cust_start, error_cust)
 
 def show_available_products():
     """
@@ -147,12 +150,12 @@ def clear():
         db.products.drop()
         db.customers.drop()
         db.rentals.drop()
-        LOGGER.info('Database Clear')
+        #LOGGER.info('Database Clear')
 
 if __name__ == "__main__":
     start_time = time.time()
     path = ('/Users/nicholaslenssen/Desktop/Python/Py220/SP_Python220B_2019/'
-                'students/Nick_Lenssen/lesson07/assignment/data')
+            'students/Nick_Lenssen/lesson07/assignment/data')
     records_products = import_products(path, 'products.csv')
     records_customers = import_customers(path, 'customers.csv')
     end_time = time.time()
@@ -161,6 +164,4 @@ if __name__ == "__main__":
     print(records_products)
     print('---Customer Data and Timing---')
     print(records_customers)
-    print('Total Time =', end_time-start_time)    
-
-
+    print('Total Time =', end_time-start_time)
