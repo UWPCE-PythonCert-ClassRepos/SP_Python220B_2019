@@ -1,0 +1,23 @@
+2020-02-28T13:48:02.002136 Function drop_data ran in 0.099427 seconds
+2020-02-28T13:48:02.006008 Function show_available_products ran in 0.003582 seconds, 0 records processed
+2020-02-28T13:48:02.066880 Function do_import ran in 0.060377 seconds, 5 records processed
+2020-02-28T13:48:02.118572 Function do_import ran in 0.051366 seconds, 3 records processed
+2020-02-28T13:48:02.168623 Function do_import ran in 0.049754 seconds, 8 records processed
+2020-02-28T13:48:02.168815 Function import_data ran in 0.162403 seconds
+2020-02-28T13:48:02.181968 Function show_available_products ran in 0.012771 seconds, 5 records processed
+2020-02-28T13:48:02.214789 Function do_import ran in 0.032509 seconds, 1000 records processed
+2020-02-28T13:48:02.246793 Function do_import ran in 0.031762 seconds, 1000 records processed
+2020-02-28T13:48:02.277998 Function do_import ran in 0.030795 seconds, 1000 records processed
+2020-02-28T13:48:02.278242 Function import_data ran in 0.096 seconds
+2020-02-28T13:48:03.941975 Function show_available_products ran in 1.663453 seconds, 1005 records processed
+2020-02-28T13:48:04.140769 Function do_import ran in 0.198326 seconds, 10000 records processed
+2020-02-28T13:48:04.364060 Function do_import ran in 0.223086 seconds, 10000 records processed
+2020-02-28T13:48:04.552892 Function do_import ran in 0.18863 seconds, 10000 records processed
+2020-02-28T13:48:04.553033 Function import_data ran in 0.610674 seconds
+2020-02-28T13:49:29.353229 Function show_available_products ran in 84.79977 seconds, 10005 records processed
+2020-02-28T13:49:29.371867 Function show_rentals ran in 0.016312 seconds, 2 records processed
+2020-02-28T13:49:29.379762 Function show_rentals ran in 0.007544 seconds, 0 records processed
+2020-02-28T13:49:29.401886 Function show_rentals ran in 0.021742 seconds, 3 records processed
+2020-02-28T13:49:29.428488 Function show_rentals ran in 0.026051 seconds, 2 records processed
+2020-02-28T13:49:29.444707 Function show_rentals ran in 0.015841 seconds, 1 records processed
+2020-02-28T13:49:29.453947 Function show_rentals ran in 0.008868 seconds, 0 records processed
