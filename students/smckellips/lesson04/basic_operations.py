@@ -98,4 +98,3 @@ def id_generator():
         # Option to return full customer record for UI display
         # yield search_customer(customers[index])
         index += 1
-    return

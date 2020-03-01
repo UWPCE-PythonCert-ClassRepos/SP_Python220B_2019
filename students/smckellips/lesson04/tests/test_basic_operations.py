@@ -119,6 +119,7 @@ class TestBasicOperations(TestCase):
 
 
     def test_failing_test(self):
+        '''Failing test per instuctions'''
         #Instructions say to show some tests failing:
         self.assertEqual(1, 2)
 
