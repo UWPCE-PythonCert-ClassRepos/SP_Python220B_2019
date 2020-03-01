@@ -31,6 +31,8 @@ class MongoDBConnection():
 
 def import_data(directory_name, customer_file, product_file, rentals_file):
     ''' import data from csv files into database to be used in functions '''
+    mongo = MongoDBConnection()
+
     customer_file = f'{directory_name}/{customer_file}'
     product_file = f'{directory_name}/{product_file}'
     rentals_file = f'{directory_name}/{rentals_file}'
@@ -48,7 +50,6 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
     except FileNotFoundError:
         logger.info(f'File not found')
     
-    mongo = MongoDBConnection()
 
     with mongo:
         # generate hpnorton_db
@@ -63,20 +64,15 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         customers.insert_many(customer)
         products.insert_many(product)
         rentals.insert_many(rental)
-        
-        # customer_dict = {}
-        # for customer_id in customers.find():
-        #     query = {"customer_id": customer_id["customer_id"]}
-        #     # customer_dict.update(query)
-        #     print(query)
-            # for customer in customers.find(query):
-            #     print(f'{name["name"]} has collected {customer}')
 
+        customer_totals = [customer_id for customer_id in customers.find()]
+        product_totals = [product_id for product_id in products.find()]
+        rental_totals = [rental_id for rental_id in rentals.find()]
+      
     # inventory count (products, customers, rentals)
-    inventory_count = (0, 0, 0)
+    inventory_count = (len(customer_totals), len(product_totals), len(rental_totals))
     # error count ()
     error_count = ("A", "B", "C")
-
 
     yorn = input("Drop data?")
     if yorn.upper() == 'Y':
@@ -88,6 +84,8 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
 
 def show_available_products():
     mongo = MongoDBConnection()
+
+    product_totals = [product_id for product_id in products.find() if int(product_id['quantity_available']) > 0]
 
     with mongo:
         avaiable_totals = {
