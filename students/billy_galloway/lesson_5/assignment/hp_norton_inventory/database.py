@@ -63,12 +63,20 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         customers.insert_many(customer)
         products.insert_many(product)
         rentals.insert_many(rental)
+    
+        for customer_id in customers.find():
+            # print(f'printing for loop {customer_id}')
+            query = {"customer_id": customer_id["customer_id"]}
+            print(query)
+            print(len(query))
+            # for customer in customers.find(query):
+            #     print(f'{name["name"]} has collected {customer}')
 
-        for name in customers.find():
-            print(f'List for {name["name"]}')
-            query = {"name": name["name"]}
-            for customer in customers.find(query):
-                print(f'{name["name"]} has collected {customer}')
+    # inventory count (products, customers, rentals)
+    inventory_count = (0, 0, 0)
+    # error count ()
+    error_count = ("A", "B", "C")
+
 
     yorn = input("Drop data?")
     if yorn.upper() == 'Y':
@@ -76,10 +84,40 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         rentals.drop()
         products.drop()
 
+    return [inventory_count, error_count]
+
+def show_available_products():
+    mongo = MongoDBConnection()
+
+    with mongo:
+        avaiable_totals = {
+            'product_id': '',
+            'description': '',
+            'product_type': '',
+            'quanity_available': ''
+        }
+
+    return avaiable_totals
+
+def show_rentals(product_id):
+    mongo = MongoDBConnection()
+
+    with mongo:
+        rental_totals = {
+            'user_id': '',
+            'name': '',
+            'address': '',
+            'phone_number': '',
+            'email': ''
+        }
+
+    return rental_totals
+
+
 def main():
     ''' main method to interact with mongodb '''
-    import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
-     
+    output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
+    print(output)
 if __name__ == "__main__":
     main()    
 
