@@ -34,13 +34,12 @@ class TestIntegration(unittest.TestCase):
                   'marketprice': 24,
                   'rentalprice': '15/hr'}
         }
-        item_info_message = "Enter item code: 2\
-        productcode:2\
-        description:Blender\
-        marketprice:24\
-        rentalprice:3\
-        brand:samsun\
-        voltage:200v"
+        item_info_message = 'productcode:2 \
+                            description:Blender \
+                            marketprice:24 \
+                            rentalprice:3 \
+                            brand:samsung \
+                            voltage:200v'
 
         with patch("builtins.input", side_effect=mega_item):
             with patch("sys.stdout", new_callable=io.StringIO) as value:
@@ -50,6 +49,14 @@ class TestIntegration(unittest.TestCase):
                 main.mainmenu()()
                 main.mainmenu()()
                 self.assertEqual(test_dictionary, main.FULL_INVENTORY)
-                print(value)
-                print("test")
-                self.assertIn(item_info_message, repr(value))
+                split_item_info_message = item_info_message.split()
+                get_value = value.getvalue()
+                split_value = get_value.split()
+                extracted_value = [k for k in split_value if k in split_item_info_message]
+                self.assertEqual(split_item_info_message, extracted_value)
+                # these last few lines, are just putting a string into list form and then
+                # taking all of the items from the bigger list present in the smaller list
+                # and making a new list out of them. If the smaller list was not a proper subset
+                # of the larger list, when I go to compare them we would receive an error, because
+                # extracted_value is guaranteed to always be a subset of split_item_info_message
+                # by design.
