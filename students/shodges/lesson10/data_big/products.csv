@@ -1,0 +1,1001 @@
+product_id,description,product_type,quantity_available
+prod_1,Brown Leather Sofa,Furniture,18
+prod_2,Gray Cloth Recliner,Furniture,0
+prod_3,Wood Dining Table,Furniture,10
+prod_4,Standard Oven,ElectricAppliance,6
+prod_5,50cc Moped,Other,1
+prod_6,Orange Floor Lamp,Other,707
+prod_7,Violet Dining Table,Furniture,792
+prod_8,Cyan Oven,ElectricAppliance,329
+prod_9,Blue Refrigerator,ElectricAppliance,589
+prod_10,Hot Pink Picture Frame,Other,918
+prod_11,Orange Dishwasher,ElectricAppliance,271
+prod_12,Gray Dishwasher,ElectricAppliance,845
+prod_13,Yellow Refrigerator,ElectricAppliance,592
+prod_14,Mint Salad Plate,Other,414
+prod_15,Maroon Recliner,Furniture,392
+prod_16,Gray Barstool,Furniture,929
+prod_17,Yellow Bowl,Other,694
+prod_18,Gray Bowl,Other,821
+prod_19,Blue Armoire,Furniture,664
+prod_20,Burgundy China Cabinet,Furniture,615
+prod_21,Yellow Refrigerator,ElectricAppliance,593
+prod_22,Gray Bed,Furniture,966
+prod_23,Mint Washer,ElectricAppliance,853
+prod_24,Gray Table Lamp,Other,164
+prod_25,Red Fake Flowers,Other,195
+prod_26,Blue Coffee Table,Furniture,906
+prod_27,Green Washer,ElectricAppliance,683
+prod_28,Yellow Barstool,Furniture,586
+prod_29,Orange Serving Dish,Other,868
+prod_30,Yellow Curio Cabinet,Furniture,320
+prod_31,Indigo Dishwasher,ElectricAppliance,739
+prod_32,Yellow Fake Flowers,Other,305
+prod_33,Yellow Refrigerator,ElectricAppliance,245
+prod_34,Blue Oven,ElectricAppliance,565
+prod_35,Indigo Bed,Furniture,732
+prod_36,Purple Dining Table,Furniture,865
+prod_37,Brown Vase,Other,777
+prod_38,Cyan Dryer,ElectricAppliance,165
+prod_39,Green Dryer,ElectricAppliance,175
+prod_40,Green Fake Flowers,Other,453
+prod_41,Violet Dresser,Furniture,170
+prod_42,Burgundy Recliner,Furniture,766
+prod_43,Indigo Picture Frame,Other,321
+prod_44,Violet Dryer,ElectricAppliance,889
+prod_45,Maroon Oven,ElectricAppliance,841
+prod_46,Purple Microwave,ElectricAppliance,212
+prod_47,Hot Pink Coffee Table,Furniture,551
+prod_48,Yellow Bowl,Other,285
+prod_49,Violet Dining Chair,Furniture,292
+prod_50,Gray Fake Flowers,Other,225
+prod_51,Maroon Dryer,ElectricAppliance,632
+prod_52,Cyan Oven,ElectricAppliance,427
+prod_53,Brown Washer,ElectricAppliance,669
+prod_54,Violet Serving Dish,Other,190
+prod_55,Gray Armoire,Furniture,886
+prod_56,Gray Fake Flowers,Other,883
+prod_57,Brown Bed,Furniture,196
+prod_58,Maroon Vase,Other,756
+prod_59,Cyan Fake Flowers,Other,496
+prod_60,Orange Oven,ElectricAppliance,354
+prod_61,Gray Oven,ElectricAppliance,877
+prod_62,Maroon End Table,Furniture,929
+prod_63,Red Serving Dish,Other,982
+prod_64,Hot Pink Bowl,Other,808
+prod_65,Cyan Fake Grass,Other,951
+prod_66,Gray Microwave,ElectricAppliance,634
+prod_67,Hot Pink Recliner,Furniture,787
+prod_68,Mint Table Lamp,Other,721
+prod_69,Mint Microwave,ElectricAppliance,798
+prod_70,Blue Barstool,Furniture,196
+prod_71,Gray Refrigerator,ElectricAppliance,637
+prod_72,Maroon Recliner,Furniture,551
+prod_73,Brown Dryer,ElectricAppliance,169
+prod_74,Red Dinner Plate,Other,479
+prod_75,Yellow Curio Cabinet,Furniture,662
+prod_76,Burgundy Dishwasher,ElectricAppliance,185
+prod_77,Green Dining Chair,Furniture,300
+prod_78,Orange Dryer,ElectricAppliance,347
+prod_79,Green Dryer,ElectricAppliance,684
+prod_80,Green Curio Cabinet,Furniture,928
+prod_81,Orange Bowl,Other,750
+prod_82,Yellow Floor Lamp,Other,985
+prod_83,Hot Pink Refrigerator,ElectricAppliance,893
+prod_84,Burgundy Armoire,Furniture,541
+prod_85,Red Dryer,ElectricAppliance,574
+prod_86,Green Dinner Plate,Other,494
+prod_87,Yellow Dryer,ElectricAppliance,370
+prod_88,Violet Dinner Plate,Other,758
+prod_89,Brown Picture Frame,Other,392
+prod_90,Cyan Fake Grass,Other,956
+prod_91,Burgundy Floor Lamp,Other,844
+prod_92,Purple Dining Table,Furniture,645
+prod_93,Cyan Coffee Table,Furniture,751
+prod_94,Gray Serving Dish,Other,360
+prod_95,Indigo Fake Grass,Other,560
+prod_96,Indigo Salad Plate,Other,375
+prod_97,Burgundy Salad Plate,Other,457
+prod_98,Red Dining Chair,Furniture,589
+prod_99,Green Washer,ElectricAppliance,738
+prod_100,Burgundy Table Lamp,Other,112
+prod_101,Yellow Picture Frame,Other,563
+prod_102,Yellow Dresser,Furniture,715
+prod_103,Maroon Dinner Plate,Other,162
+prod_104,Gray Nightstand,Furniture,629
+prod_105,Burgundy Oven,ElectricAppliance,771
+prod_106,Mint End Table,Furniture,374
+prod_107,Hot Pink Coffee Table,Furniture,535
+prod_108,Burgundy Nightstand,Furniture,559
+prod_109,Orange Curio Cabinet,Furniture,168
+prod_110,Cyan Curio Cabinet,Furniture,929
+prod_111,Green Microwave,ElectricAppliance,901
+prod_112,Hot Pink Vase,Other,882
+prod_113,Orange Recliner,Furniture,766
+prod_114,Indigo Recliner,Furniture,438
+prod_115,Burgundy Serving Dish,Other,610
+prod_116,Cyan Dinner Plate,Other,320
+prod_117,Maroon Nightstand,Furniture,935
+prod_118,Orange Refrigerator,ElectricAppliance,976
+prod_119,Indigo Dishwasher,ElectricAppliance,792
+prod_120,Red Floor Lamp,Other,344
+prod_121,Brown Sofa,Furniture,281
+prod_122,Hot Pink End Table,Furniture,320
+prod_123,Orange Coffee Table,Furniture,701
+prod_124,Hot Pink Bed,Furniture,634
+prod_125,Violet Dining Table,Furniture,444
+prod_126,Maroon China Cabinet,Furniture,760
+prod_127,Indigo China Cabinet,Furniture,264
+prod_128,Yellow Dining Chair,Furniture,568
+prod_129,Yellow Serving Dish,Other,866
+prod_130,Brown Dryer,ElectricAppliance,186
+prod_131,Indigo Dresser,Furniture,917
+prod_132,Brown Floor Lamp,Other,691
+prod_133,Green Refrigerator,ElectricAppliance,825
+prod_134,Maroon Washer,ElectricAppliance,160
+prod_135,Green Microwave,ElectricAppliance,548
+prod_136,Cyan Refrigerator,ElectricAppliance,636
+prod_137,Indigo Bed,Furniture,534
+prod_138,Brown Refrigerator,ElectricAppliance,107
+prod_139,Violet Floor Lamp,Other,947
+prod_140,Gray Serving Dish,Other,194
+prod_141,Cyan Microwave,ElectricAppliance,229
+prod_142,Green Recliner,Furniture,178
+prod_143,Hot Pink Microwave,ElectricAppliance,846
+prod_144,Indigo Refrigerator,ElectricAppliance,896
+prod_145,Hot Pink Microwave,ElectricAppliance,254
+prod_146,Burgundy Refrigerator,ElectricAppliance,612
+prod_147,Indigo Oven,ElectricAppliance,961
+prod_148,Orange Curio Cabinet,Furniture,624
+prod_149,Mint Table Lamp,Other,809
+prod_150,Mint Dining Chair,Furniture,569
+prod_151,Hot Pink Salad Plate,Other,535
+prod_152,Hot Pink Dryer,ElectricAppliance,778
+prod_153,Yellow Refrigerator,ElectricAppliance,458
+prod_154,Cyan Dinner Plate,Other,254
+prod_155,Purple Dishwasher,ElectricAppliance,443
+prod_156,Green Bowl,Other,501
+prod_157,Blue Refrigerator,ElectricAppliance,704
+prod_158,Cyan Bed,Furniture,178
+prod_159,Green Fake Grass,Other,612
+prod_160,Cyan Refrigerator,ElectricAppliance,628
+prod_161,Red Vase,Other,440
+prod_162,Purple Table Lamp,Other,360
+prod_163,Mint Vase,Other,686
+prod_164,Blue Dryer,ElectricAppliance,130
+prod_165,Gray Washer,ElectricAppliance,443
+prod_166,Burgundy Fake Flowers,Other,963
+prod_167,Hot Pink Dryer,ElectricAppliance,956
+prod_168,Indigo Nightstand,Furniture,502
+prod_169,Yellow Serving Dish,Other,331
+prod_170,Red Picture Frame,Other,852
+prod_171,Mint Floor Lamp,Other,847
+prod_172,Cyan End Table,Furniture,571
+prod_173,Purple Fake Flowers,Other,857
+prod_174,Brown Fake Grass,Other,159
+prod_175,Indigo Refrigerator,ElectricAppliance,597
+prod_176,Green Barstool,Furniture,203
+prod_177,Red Refrigerator,ElectricAppliance,175
+prod_178,Green Sofa,Furniture,626
+prod_179,Purple China Cabinet,Furniture,793
+prod_180,Green Recliner,Furniture,865
+prod_181,Hot Pink Salad Plate,Other,366
+prod_182,Orange Curio Cabinet,Furniture,856
+prod_183,Hot Pink Nightstand,Furniture,873
+prod_184,Blue Sofa,Furniture,601
+prod_185,Brown Recliner,Furniture,848
+prod_186,Blue Refrigerator,ElectricAppliance,451
+prod_187,Cyan Coffee Table,Furniture,597
+prod_188,Red Floor Lamp,Other,813
+prod_189,Indigo Dining Chair,Furniture,127
+prod_190,Mint Dryer,ElectricAppliance,906
+prod_191,Indigo Sofa,Furniture,368
+prod_192,Indigo Bowl,Other,778
+prod_193,Gray Microwave,ElectricAppliance,861
+prod_194,Indigo Washer,ElectricAppliance,375
+prod_195,Burgundy Recliner,Furniture,830
+prod_196,Brown Dinner Plate,Other,315
+prod_197,Purple Serving Dish,Other,679
+prod_198,Yellow Dryer,ElectricAppliance,702
+prod_199,Mint Microwave,ElectricAppliance,930
+prod_200,Mint Fake Grass,Other,556
+prod_201,Indigo Fake Flowers,Other,713
+prod_202,Maroon Sofa,Furniture,776
+prod_203,Blue Serving Dish,Other,744
+prod_204,Blue Dinner Plate,Other,143
+prod_205,Yellow China Cabinet,Furniture,299
+prod_206,Mint Curio Cabinet,Furniture,838
+prod_207,Indigo Vase,Other,767
+prod_208,Red Serving Dish,Other,995
+prod_209,Orange Microwave,ElectricAppliance,265
+prod_210,Mint Bowl,Other,130
+prod_211,Burgundy Oven,ElectricAppliance,199
+prod_212,Mint Curio Cabinet,Furniture,730
+prod_213,Indigo Serving Dish,Other,898
+prod_214,Orange End Table,Furniture,940
+prod_215,Brown Barstool,Furniture,872
+prod_216,Burgundy Dresser,Furniture,411
+prod_217,Maroon Armoire,Furniture,566
+prod_218,Orange Nightstand,Furniture,969
+prod_219,Hot Pink Dishwasher,ElectricAppliance,811
+prod_220,Red Curio Cabinet,Furniture,608
+prod_221,Blue Refrigerator,ElectricAppliance,380
+prod_222,Mint Dryer,ElectricAppliance,375
+prod_223,Red Nightstand,Furniture,870
+prod_224,Maroon Dining Table,Furniture,998
+prod_225,Red Dining Chair,Furniture,172
+prod_226,Burgundy Curio Cabinet,Furniture,137
+prod_227,Violet Refrigerator,ElectricAppliance,615
+prod_228,Blue Fake Grass,Other,689
+prod_229,Green Nightstand,Furniture,412
+prod_230,Gray Bed,Furniture,601
+prod_231,Maroon Dresser,Furniture,524
+prod_232,Brown Curio Cabinet,Furniture,888
+prod_233,Violet Picture Frame,Other,397
+prod_234,Mint Oven,ElectricAppliance,502
+prod_235,Maroon Refrigerator,ElectricAppliance,779
+prod_236,Brown China Cabinet,Furniture,878
+prod_237,Green Armoire,Furniture,899
+prod_238,Orange Table Lamp,Other,766
+prod_239,Violet Oven,ElectricAppliance,885
+prod_240,Orange Dinner Plate,Other,525
+prod_241,Gray Table Lamp,Other,868
+prod_242,Blue Floor Lamp,Other,986
+prod_243,Hot Pink Dinner Plate,Other,473
+prod_244,Yellow Barstool,Furniture,916
+prod_245,Mint Serving Dish,Other,155
+prod_246,Indigo Refrigerator,ElectricAppliance,594
+prod_247,Maroon Sofa,Furniture,500
+prod_248,Indigo Dishwasher,ElectricAppliance,236
+prod_249,Yellow Fake Grass,Other,998
+prod_250,Blue Washer,ElectricAppliance,341
+prod_251,Indigo Bowl,Other,300
+prod_252,Gray Dryer,ElectricAppliance,591
+prod_253,Indigo Dining Table,Furniture,251
+prod_254,Violet Dryer,ElectricAppliance,743
+prod_255,Purple Picture Frame,Other,799
+prod_256,Cyan Bowl,Other,586
+prod_257,Yellow Oven,ElectricAppliance,235
+prod_258,Yellow Barstool,Furniture,440
+prod_259,Purple Microwave,ElectricAppliance,216
+prod_260,Blue Floor Lamp,Other,220
+prod_261,Mint China Cabinet,Furniture,138
+prod_262,Mint Fake Grass,Other,453
+prod_263,Gray Dryer,ElectricAppliance,805
+prod_264,Maroon Dryer,ElectricAppliance,823
+prod_265,Blue Refrigerator,ElectricAppliance,393
+prod_266,Burgundy Microwave,ElectricAppliance,852
+prod_267,Brown Serving Dish,Other,293
+prod_268,Maroon Nightstand,Furniture,257
+prod_269,Brown Dishwasher,ElectricAppliance,726
+prod_270,Cyan Fake Grass,Other,600
+prod_271,Indigo Dinner Plate,Other,295
+prod_272,Blue Oven,ElectricAppliance,974
+prod_273,Violet Refrigerator,ElectricAppliance,982
+prod_274,Violet Dresser,Furniture,523
+prod_275,Cyan Nightstand,Furniture,671
+prod_276,Burgundy Oven,ElectricAppliance,678
+prod_277,Green Dryer,ElectricAppliance,978
+prod_278,Yellow Curio Cabinet,Furniture,182
+prod_279,Brown Fake Grass,Other,969
+prod_280,Orange Table Lamp,Other,242
+prod_281,Gray Microwave,ElectricAppliance,547
+prod_282,Brown Dining Chair,Furniture,981
+prod_283,Violet Washer,ElectricAppliance,263
+prod_284,Blue End Table,Furniture,692
+prod_285,Hot Pink Serving Dish,Other,659
+prod_286,Hot Pink Barstool,Furniture,388
+prod_287,Red Bowl,Other,860
+prod_288,Red Dining Chair,Furniture,757
+prod_289,Gray Refrigerator,ElectricAppliance,711
+prod_290,Orange Microwave,ElectricAppliance,120
+prod_291,Maroon Bed,Furniture,336
+prod_292,Maroon Oven,ElectricAppliance,481
+prod_293,Indigo Bowl,Other,300
+prod_294,Yellow Fake Flowers,Other,638
+prod_295,Blue Serving Dish,Other,354
+prod_296,Mint Dinner Plate,Other,694
+prod_297,Brown Barstool,Furniture,416
+prod_298,Violet Fake Flowers,Other,746
+prod_299,Brown Refrigerator,ElectricAppliance,793
+prod_300,Indigo Oven,ElectricAppliance,217
+prod_301,Orange Dishwasher,ElectricAppliance,852
+prod_302,Mint End Table,Furniture,961
+prod_303,Indigo Refrigerator,ElectricAppliance,567
+prod_304,Indigo Oven,ElectricAppliance,312
+prod_305,Burgundy Dishwasher,ElectricAppliance,387
+prod_306,Hot Pink Washer,ElectricAppliance,596
+prod_307,Hot Pink Oven,ElectricAppliance,482
+prod_308,Violet Dining Table,Furniture,235
+prod_309,Brown Picture Frame,Other,589
+prod_310,Blue End Table,Furniture,353
+prod_311,Yellow Dryer,ElectricAppliance,678
+prod_312,Orange Vase,Other,577
+prod_313,Purple Washer,ElectricAppliance,161
+prod_314,Indigo Bed,Furniture,370
+prod_315,Yellow Fake Grass,Other,774
+prod_316,Maroon Table Lamp,Other,922
+prod_317,Cyan Fake Flowers,Other,710
+prod_318,Burgundy Salad Plate,Other,150
+prod_319,Red Bowl,Other,573
+prod_320,Brown Washer,ElectricAppliance,833
+prod_321,Brown Dishwasher,ElectricAppliance,319
+prod_322,Mint Picture Frame,Other,251
+prod_323,Violet Table Lamp,Other,672
+prod_324,Violet Dining Chair,Furniture,793
+prod_325,Green Dresser,Furniture,273
+prod_326,Red Fake Grass,Other,615
+prod_327,Burgundy Bowl,Other,283
+prod_328,Burgundy Fake Flowers,Other,616
+prod_329,Purple Curio Cabinet,Furniture,492
+prod_330,Brown Recliner,Furniture,855
+prod_331,Brown Table Lamp,Other,118
+prod_332,Green Nightstand,Furniture,232
+prod_333,Mint Dishwasher,ElectricAppliance,122
+prod_334,Purple Dryer,ElectricAppliance,646
+prod_335,Cyan Nightstand,Furniture,880
+prod_336,Blue Nightstand,Furniture,766
+prod_337,Burgundy Salad Plate,Other,332
+prod_338,Red Dishwasher,ElectricAppliance,527
+prod_339,Mint Serving Dish,Other,831
+prod_340,Red Bed,Furniture,772
+prod_341,Blue Dryer,ElectricAppliance,362
+prod_342,Mint Refrigerator,ElectricAppliance,351
+prod_343,Blue Dryer,ElectricAppliance,634
+prod_344,Hot Pink Washer,ElectricAppliance,372
+prod_345,Burgundy Coffee Table,Furniture,446
+prod_346,Violet Dryer,ElectricAppliance,411
+prod_347,Gray Dining Table,Furniture,918
+prod_348,Violet Fake Flowers,Other,250
+prod_349,Gray Floor Lamp,Other,516
+prod_350,Hot Pink Dresser,Furniture,637
+prod_351,Yellow Vase,Other,673
+prod_352,Orange Oven,ElectricAppliance,213
+prod_353,Mint China Cabinet,Furniture,135
+prod_354,Violet Dishwasher,ElectricAppliance,277
+prod_355,Maroon Serving Dish,Other,418
+prod_356,Cyan Microwave,ElectricAppliance,781
+prod_357,Cyan Floor Lamp,Other,896
+prod_358,Red Nightstand,Furniture,148
+prod_359,Purple Microwave,ElectricAppliance,229
+prod_360,Blue Floor Lamp,Other,382
+prod_361,Orange Recliner,Furniture,298
+prod_362,Blue Oven,ElectricAppliance,866
+prod_363,Brown Bowl,Other,178
+prod_364,Green Dishwasher,ElectricAppliance,576
+prod_365,Burgundy Curio Cabinet,Furniture,997
+prod_366,Orange Dresser,Furniture,342
+prod_367,Burgundy End Table,Furniture,144
+prod_368,Cyan Armoire,Furniture,161
+prod_369,Burgundy Microwave,ElectricAppliance,289
+prod_370,Burgundy Nightstand,Furniture,771
+prod_371,Yellow Fake Grass,Other,789
+prod_372,Yellow Barstool,Furniture,100
+prod_373,Red Nightstand,Furniture,306
+prod_374,Green Picture Frame,Other,904
+prod_375,Cyan Table Lamp,Other,509
+prod_376,Purple Washer,ElectricAppliance,332
+prod_377,Burgundy Bowl,Other,116
+prod_378,Mint Vase,Other,586
+prod_379,Burgundy Nightstand,Furniture,278
+prod_380,Burgundy Floor Lamp,Other,900
+prod_381,Red Fake Grass,Other,614
+prod_382,Blue Refrigerator,ElectricAppliance,512
+prod_383,Purple Oven,ElectricAppliance,667
+prod_384,Blue Picture Frame,Other,395
+prod_385,Brown China Cabinet,Furniture,674
+prod_386,Green Barstool,Furniture,658
+prod_387,Yellow Dryer,ElectricAppliance,368
+prod_388,Gray Washer,ElectricAppliance,940
+prod_389,Purple Fake Flowers,Other,712
+prod_390,Indigo Coffee Table,Furniture,409
+prod_391,Violet Serving Dish,Other,474
+prod_392,Maroon Barstool,Furniture,102
+prod_393,Brown Dining Chair,Furniture,800
+prod_394,Purple Picture Frame,Other,941
+prod_395,Maroon Floor Lamp,Other,926
+prod_396,Violet Dishwasher,ElectricAppliance,176
+prod_397,Brown China Cabinet,Furniture,644
+prod_398,Mint Floor Lamp,Other,655
+prod_399,Red China Cabinet,Furniture,566
+prod_400,Orange Armoire,Furniture,784
+prod_401,Gray Vase,Other,823
+prod_402,Brown Bowl,Other,984
+prod_403,Gray Fake Flowers,Other,943
+prod_404,Maroon Refrigerator,ElectricAppliance,534
+prod_405,Burgundy Dining Chair,Furniture,354
+prod_406,Cyan Refrigerator,ElectricAppliance,902
+prod_407,Maroon Fake Flowers,Other,353
+prod_408,Mint Bowl,Other,918
+prod_409,Blue Dishwasher,ElectricAppliance,618
+prod_410,Maroon Dryer,ElectricAppliance,974
+prod_411,Brown Bowl,Other,670
+prod_412,Red Refrigerator,ElectricAppliance,234
+prod_413,Maroon Salad Plate,Other,784
+prod_414,Gray Recliner,Furniture,850
+prod_415,Red Vase,Other,306
+prod_416,Red Dryer,ElectricAppliance,326
+prod_417,Maroon Dining Table,Furniture,299
+prod_418,Purple Fake Flowers,Other,493
+prod_419,Cyan Vase,Other,213
+prod_420,Green Dryer,ElectricAppliance,411
+prod_421,Red Floor Lamp,Other,879
+prod_422,Indigo Table Lamp,Other,896
+prod_423,Orange Oven,ElectricAppliance,392
+prod_424,Green Barstool,Furniture,474
+prod_425,Blue Barstool,Furniture,704
+prod_426,Gray Vase,Other,260
+prod_427,Orange Bowl,Other,649
+prod_428,Blue Dining Table,Furniture,735
+prod_429,Burgundy Table Lamp,Other,605
+prod_430,Indigo Bed,Furniture,287
+prod_431,Violet Vase,Other,461
+prod_432,Mint Sofa,Furniture,896
+prod_433,Hot Pink Armoire,Furniture,234
+prod_434,Mint Refrigerator,ElectricAppliance,325
+prod_435,Maroon Microwave,ElectricAppliance,485
+prod_436,Orange Oven,ElectricAppliance,769
+prod_437,Hot Pink Microwave,ElectricAppliance,724
+prod_438,Purple Serving Dish,Other,129
+prod_439,Green Vase,Other,293
+prod_440,Green Dishwasher,ElectricAppliance,966
+prod_441,Indigo Oven,ElectricAppliance,162
+prod_442,Yellow Dinner Plate,Other,599
+prod_443,Blue Dining Table,Furniture,506
+prod_444,Blue Bowl,Other,784
+prod_445,Indigo Vase,Other,383
+prod_446,Red Dryer,ElectricAppliance,339
+prod_447,Orange Dresser,Furniture,735
+prod_448,Blue End Table,Furniture,959
+prod_449,Cyan Curio Cabinet,Furniture,636
+prod_450,Gray Dryer,ElectricAppliance,982
+prod_451,Blue Dining Chair,Furniture,637
+prod_452,Yellow Dishwasher,ElectricAppliance,625
+prod_453,Orange China Cabinet,Furniture,511
+prod_454,Hot Pink Refrigerator,ElectricAppliance,944
+prod_455,Hot Pink Floor Lamp,Other,523
+prod_456,Violet Dining Chair,Furniture,686
+prod_457,Maroon Dishwasher,ElectricAppliance,249
+prod_458,Orange End Table,Furniture,943
+prod_459,Yellow End Table,Furniture,701
+prod_460,Gray Sofa,Furniture,367
+prod_461,Yellow Washer,ElectricAppliance,794
+prod_462,Red Oven,ElectricAppliance,393
+prod_463,Brown Dryer,ElectricAppliance,786
+prod_464,Orange Nightstand,Furniture,538
+prod_465,Blue Recliner,Furniture,733
+prod_466,Brown Picture Frame,Other,858
+prod_467,Purple Salad Plate,Other,556
+prod_468,Red Vase,Other,829
+prod_469,Violet Oven,ElectricAppliance,119
+prod_470,Yellow Picture Frame,Other,815
+prod_471,Mint Washer,ElectricAppliance,442
+prod_472,Orange Dryer,ElectricAppliance,159
+prod_473,Violet Bowl,Other,263
+prod_474,Indigo Picture Frame,Other,392
+prod_475,Orange Bed,Furniture,438
+prod_476,Burgundy Refrigerator,ElectricAppliance,322
+prod_477,Hot Pink End Table,Furniture,175
+prod_478,Cyan Refrigerator,ElectricAppliance,894
+prod_479,Mint Floor Lamp,Other,123
+prod_480,Maroon Bowl,Other,638
+prod_481,Maroon Dishwasher,ElectricAppliance,370
+prod_482,Cyan Microwave,ElectricAppliance,596
+prod_483,Green Vase,Other,840
+prod_484,Brown Dryer,ElectricAppliance,817
+prod_485,Maroon Fake Flowers,Other,297
+prod_486,Brown Armoire,Furniture,522
+prod_487,Red Washer,ElectricAppliance,519
+prod_488,Purple Dining Table,Furniture,854
+prod_489,Brown Curio Cabinet,Furniture,923
+prod_490,Violet Washer,ElectricAppliance,762
+prod_491,Brown Fake Grass,Other,918
+prod_492,Indigo Dining Chair,Furniture,791
+prod_493,Green Dryer,ElectricAppliance,203
+prod_494,Indigo Barstool,Furniture,940
+prod_495,Red End Table,Furniture,912
+prod_496,Brown Bed,Furniture,712
+prod_497,Violet Microwave,ElectricAppliance,190
+prod_498,Hot Pink Serving Dish,Other,900
+prod_499,Brown Bowl,Other,151
+prod_500,Mint Microwave,ElectricAppliance,223
+prod_501,Blue Dryer,ElectricAppliance,510
+prod_502,Mint Floor Lamp,Other,764
+prod_503,Purple Table Lamp,Other,313
+prod_504,Mint Barstool,Furniture,814
+prod_505,Gray China Cabinet,Furniture,469
+prod_506,Green Curio Cabinet,Furniture,617
+prod_507,Violet Bowl,Other,158
+prod_508,Burgundy Dining Chair,Furniture,753
+prod_509,Gray Microwave,ElectricAppliance,622
+prod_510,Cyan Dining Chair,Furniture,237
+prod_511,Green Serving Dish,Other,438
+prod_512,Violet Oven,ElectricAppliance,334
+prod_513,Violet Dryer,ElectricAppliance,935
+prod_514,Cyan Nightstand,Furniture,228
+prod_515,Yellow Salad Plate,Other,609
+prod_516,Orange Armoire,Furniture,120
+prod_517,Indigo Recliner,Furniture,294
+prod_518,Purple Dinner Plate,Other,341
+prod_519,Violet China Cabinet,Furniture,440
+prod_520,Green Oven,ElectricAppliance,256
+prod_521,Indigo Nightstand,Furniture,477
+prod_522,Indigo Dining Table,Furniture,172
+prod_523,Yellow Armoire,Furniture,443
+prod_524,Violet Armoire,Furniture,275
+prod_525,Brown Fake Grass,Other,625
+prod_526,Cyan Salad Plate,Other,980
+prod_527,Maroon Coffee Table,Furniture,204
+prod_528,Yellow End Table,Furniture,512
+prod_529,Orange Refrigerator,ElectricAppliance,449
+prod_530,Burgundy Washer,ElectricAppliance,543
+prod_531,Gray Vase,Other,430
+prod_532,Burgundy Dishwasher,ElectricAppliance,561
+prod_533,Brown Fake Grass,Other,396
+prod_534,Maroon Microwave,ElectricAppliance,794
+prod_535,Cyan Fake Grass,Other,947
+prod_536,Mint Nightstand,Furniture,154
+prod_537,Red Washer,ElectricAppliance,638
+prod_538,Yellow Oven,ElectricAppliance,693
+prod_539,Mint Washer,ElectricAppliance,793
+prod_540,Indigo Serving Dish,Other,740
+prod_541,Hot Pink Salad Plate,Other,745
+prod_542,Blue Armoire,Furniture,911
+prod_543,Cyan Fake Flowers,Other,601
+prod_544,Brown Microwave,ElectricAppliance,856
+prod_545,Cyan Washer,ElectricAppliance,681
+prod_546,Purple Dishwasher,ElectricAppliance,446
+prod_547,Burgundy Refrigerator,ElectricAppliance,460
+prod_548,Orange Refrigerator,ElectricAppliance,258
+prod_549,Blue Picture Frame,Other,178
+prod_550,Orange Recliner,Furniture,288
+prod_551,Indigo Fake Flowers,Other,904
+prod_552,Brown Bed,Furniture,120
+prod_553,Yellow Nightstand,Furniture,425
+prod_554,Yellow Dishwasher,ElectricAppliance,232
+prod_555,Hot Pink Bed,Furniture,945
+prod_556,Orange Dinner Plate,Other,292
+prod_557,Red End Table,Furniture,147
+prod_558,Purple Vase,Other,333
+prod_559,Green Bowl,Other,990
+prod_560,Purple Washer,ElectricAppliance,528
+prod_561,Orange Dinner Plate,Other,310
+prod_562,Gray Microwave,ElectricAppliance,498
+prod_563,Indigo Vase,Other,114
+prod_564,Red Refrigerator,ElectricAppliance,792
+prod_565,Mint Dryer,ElectricAppliance,994
+prod_566,Yellow Coffee Table,Furniture,611
+prod_567,Burgundy Picture Frame,Other,636
+prod_568,Maroon Oven,ElectricAppliance,413
+prod_569,Gray Dishwasher,ElectricAppliance,749
+prod_570,Hot Pink Serving Dish,Other,362
+prod_571,Cyan Dining Chair,Furniture,147
+prod_572,Violet Dishwasher,ElectricAppliance,487
+prod_573,Brown Curio Cabinet,Furniture,575
+prod_574,Violet Picture Frame,Other,755
+prod_575,Orange Floor Lamp,Other,671
+prod_576,Blue Serving Dish,Other,989
+prod_577,Cyan Dining Chair,Furniture,226
+prod_578,Green Nightstand,Furniture,811
+prod_579,Brown Microwave,ElectricAppliance,482
+prod_580,Blue Microwave,ElectricAppliance,850
+prod_581,Green Microwave,ElectricAppliance,119
+prod_582,Green Oven,ElectricAppliance,301
+prod_583,Green Vase,Other,458
+prod_584,Indigo Coffee Table,Furniture,318
+prod_585,Red Washer,ElectricAppliance,179
+prod_586,Brown Dishwasher,ElectricAppliance,623
+prod_587,Cyan Salad Plate,Other,123
+prod_588,Purple Microwave,ElectricAppliance,475
+prod_589,Purple Table Lamp,Other,732
+prod_590,Orange Washer,ElectricAppliance,356
+prod_591,Gray Dinner Plate,Other,476
+prod_592,Purple Picture Frame,Other,356
+prod_593,Hot Pink Fake Flowers,Other,907
+prod_594,Red Dryer,ElectricAppliance,777
+prod_595,Red Nightstand,Furniture,359
+prod_596,Cyan Picture Frame,Other,547
+prod_597,Green Bowl,Other,950
+prod_598,Cyan Salad Plate,Other,947
+prod_599,Blue Dishwasher,ElectricAppliance,928
+prod_600,Violet Dining Chair,Furniture,306
+prod_601,Gray Fake Grass,Other,106
+prod_602,Mint Sofa,Furniture,459
+prod_603,Red Dining Chair,Furniture,308
+prod_604,Gray Fake Grass,Other,698
+prod_605,Violet China Cabinet,Furniture,614
+prod_606,Red Fake Grass,Other,460
+prod_607,Purple Oven,ElectricAppliance,734
+prod_608,Purple Bowl,Other,355
+prod_609,Violet Barstool,Furniture,468
+prod_610,Burgundy Refrigerator,ElectricAppliance,453
+prod_611,Red Vase,Other,313
+prod_612,Brown China Cabinet,Furniture,769
+prod_613,Hot Pink Table Lamp,Other,256
+prod_614,Indigo Refrigerator,ElectricAppliance,992
+prod_615,Maroon Barstool,Furniture,186
+prod_616,Burgundy Dryer,ElectricAppliance,859
+prod_617,Gray Microwave,ElectricAppliance,535
+prod_618,Red Bed,Furniture,847
+prod_619,Orange Floor Lamp,Other,472
+prod_620,Violet Microwave,ElectricAppliance,490
+prod_621,Cyan Salad Plate,Other,271
+prod_622,Indigo Curio Cabinet,Furniture,898
+prod_623,Brown Fake Grass,Other,975
+prod_624,Mint Floor Lamp,Other,932
+prod_625,Gray Bowl,Other,843
+prod_626,Blue Sofa,Furniture,806
+prod_627,Mint China Cabinet,Furniture,351
+prod_628,Indigo Dresser,Furniture,214
+prod_629,Violet Barstool,Furniture,851
+prod_630,Cyan Dining Chair,Furniture,705
+prod_631,Orange Refrigerator,ElectricAppliance,416
+prod_632,Brown Microwave,ElectricAppliance,230
+prod_633,Blue Serving Dish,Other,197
+prod_634,Mint Refrigerator,ElectricAppliance,604
+prod_635,Brown Refrigerator,ElectricAppliance,589
+prod_636,Yellow Nightstand,Furniture,406
+prod_637,Blue Serving Dish,Other,611
+prod_638,Mint Table Lamp,Other,678
+prod_639,Violet Oven,ElectricAppliance,679
+prod_640,Indigo Fake Grass,Other,531
+prod_641,Gray Dishwasher,ElectricAppliance,504
+prod_642,Blue Bed,Furniture,874
+prod_643,Green Armoire,Furniture,137
+prod_644,Maroon Dresser,Furniture,159
+prod_645,Green Refrigerator,ElectricAppliance,635
+prod_646,Maroon Oven,ElectricAppliance,174
+prod_647,Yellow Fake Flowers,Other,869
+prod_648,Gray Dinner Plate,Other,718
+prod_649,Blue Barstool,Furniture,998
+prod_650,Gray Refrigerator,ElectricAppliance,161
+prod_651,Orange Table Lamp,Other,288
+prod_652,Maroon Dishwasher,ElectricAppliance,405
+prod_653,Violet Dishwasher,ElectricAppliance,626
+prod_654,Burgundy Bowl,Other,667
+prod_655,Brown Refrigerator,ElectricAppliance,701
+prod_656,Mint Sofa,Furniture,329
+prod_657,Maroon Nightstand,Furniture,767
+prod_658,Maroon Coffee Table,Furniture,143
+prod_659,Red Recliner,Furniture,909
+prod_660,Purple Oven,ElectricAppliance,736
+prod_661,Purple Fake Flowers,Other,220
+prod_662,Brown Fake Grass,Other,827
+prod_663,Burgundy Refrigerator,ElectricAppliance,430
+prod_664,Indigo China Cabinet,Furniture,305
+prod_665,Brown Barstool,Furniture,578
+prod_666,Maroon Table Lamp,Other,233
+prod_667,Red China Cabinet,Furniture,325
+prod_668,Violet Dresser,Furniture,826
+prod_669,Violet Sofa,Furniture,229
+prod_670,Hot Pink Dinner Plate,Other,807
+prod_671,Brown Picture Frame,Other,761
+prod_672,Cyan Dining Table,Furniture,928
+prod_673,Red Nightstand,Furniture,316
+prod_674,Gray Dishwasher,ElectricAppliance,986
+prod_675,Maroon Salad Plate,Other,205
+prod_676,Green Picture Frame,Other,423
+prod_677,Mint Armoire,Furniture,566
+prod_678,Blue Dining Table,Furniture,177
+prod_679,Orange Washer,ElectricAppliance,551
+prod_680,Orange Microwave,ElectricAppliance,957
+prod_681,Maroon End Table,Furniture,487
+prod_682,Hot Pink Oven,ElectricAppliance,737
+prod_683,Violet Dryer,ElectricAppliance,965
+prod_684,Brown Fake Grass,Other,613
+prod_685,Orange Serving Dish,Other,376
+prod_686,Violet Picture Frame,Other,413
+prod_687,Orange Dryer,ElectricAppliance,320
+prod_688,Gray Sofa,Furniture,815
+prod_689,Burgundy End Table,Furniture,254
+prod_690,Violet Nightstand,Furniture,734
+prod_691,Green Salad Plate,Other,434
+prod_692,Brown Dryer,ElectricAppliance,557
+prod_693,Yellow Oven,ElectricAppliance,584
+prod_694,Maroon Recliner,Furniture,385
+prod_695,Yellow Dining Table,Furniture,384
+prod_696,Hot Pink Salad Plate,Other,556
+prod_697,Brown Refrigerator,ElectricAppliance,723
+prod_698,Blue Microwave,ElectricAppliance,578
+prod_699,Cyan Microwave,ElectricAppliance,396
+prod_700,Burgundy Vase,Other,380
+prod_701,Hot Pink Oven,ElectricAppliance,952
+prod_702,Violet Oven,ElectricAppliance,727
+prod_703,Indigo Picture Frame,Other,592
+prod_704,Maroon Dinner Plate,Other,700
+prod_705,Violet Dinner Plate,Other,860
+prod_706,Violet Table Lamp,Other,731
+prod_707,Mint Armoire,Furniture,807
+prod_708,Indigo Barstool,Furniture,500
+prod_709,Hot Pink Picture Frame,Other,212
+prod_710,Cyan Microwave,ElectricAppliance,876
+prod_711,Red Picture Frame,Other,748
+prod_712,Brown Curio Cabinet,Furniture,278
+prod_713,Mint Picture Frame,Other,981
+prod_714,Maroon Oven,ElectricAppliance,151
+prod_715,Gray Picture Frame,Other,876
+prod_716,Blue Dishwasher,ElectricAppliance,897
+prod_717,Cyan Fake Grass,Other,285
+prod_718,Cyan Bowl,Other,899
+prod_719,Hot Pink Table Lamp,Other,164
+prod_720,Orange Refrigerator,ElectricAppliance,613
+prod_721,Orange Sofa,Furniture,858
+prod_722,Violet Nightstand,Furniture,409
+prod_723,Brown Microwave,ElectricAppliance,921
+prod_724,Cyan Fake Grass,Other,655
+prod_725,Violet Dryer,ElectricAppliance,591
+prod_726,Purple Armoire,Furniture,831
+prod_727,Orange Serving Dish,Other,424
+prod_728,Cyan Microwave,ElectricAppliance,826
+prod_729,Burgundy Sofa,Furniture,369
+prod_730,Blue Dresser,Furniture,624
+prod_731,Red Dresser,Furniture,162
+prod_732,Indigo China Cabinet,Furniture,256
+prod_733,Brown Oven,ElectricAppliance,343
+prod_734,Gray Dishwasher,ElectricAppliance,963
+prod_735,Purple Bed,Furniture,374
+prod_736,Red End Table,Furniture,461
+prod_737,Gray Dinner Plate,Other,305
+prod_738,Yellow Washer,ElectricAppliance,675
+prod_739,Gray Oven,ElectricAppliance,754
+prod_740,Hot Pink Washer,ElectricAppliance,197
+prod_741,Gray Fake Grass,Other,900
+prod_742,Violet Serving Dish,Other,113
+prod_743,Blue Floor Lamp,Other,366
+prod_744,Red Dining Table,Furniture,587
+prod_745,Green Nightstand,Furniture,343
+prod_746,Brown Oven,ElectricAppliance,689
+prod_747,Hot Pink Dining Chair,Furniture,292
+prod_748,Burgundy Oven,ElectricAppliance,455
+prod_749,Indigo Dining Table,Furniture,685
+prod_750,Brown Curio Cabinet,Furniture,397
+prod_751,Mint Dining Table,Furniture,436
+prod_752,Burgundy Microwave,ElectricAppliance,508
+prod_753,Cyan Dining Chair,Furniture,967
+prod_754,Maroon Nightstand,Furniture,414
+prod_755,Purple Washer,ElectricAppliance,968
+prod_756,Gray Salad Plate,Other,813
+prod_757,Mint Oven,ElectricAppliance,337
+prod_758,Red China Cabinet,Furniture,262
+prod_759,Cyan Fake Grass,Other,218
+prod_760,Purple Dryer,ElectricAppliance,497
+prod_761,Orange Coffee Table,Furniture,593
+prod_762,Cyan Dining Chair,Furniture,119
+prod_763,Maroon Table Lamp,Other,162
+prod_764,Burgundy Refrigerator,ElectricAppliance,663
+prod_765,Blue Washer,ElectricAppliance,732
+prod_766,Maroon Floor Lamp,Other,714
+prod_767,Hot Pink Coffee Table,Furniture,474
+prod_768,Brown Serving Dish,Other,712
+prod_769,Red Washer,ElectricAppliance,300
+prod_770,Blue Washer,ElectricAppliance,231
+prod_771,Maroon Dining Table,Furniture,644
+prod_772,Brown Oven,ElectricAppliance,778
+prod_773,Green Bed,Furniture,847
+prod_774,Violet Dining Table,Furniture,663
+prod_775,Brown Dryer,ElectricAppliance,546
+prod_776,Purple Washer,ElectricAppliance,668
+prod_777,Orange Bowl,Other,595
+prod_778,Mint Washer,ElectricAppliance,824
+prod_779,Brown Bowl,Other,569
+prod_780,Orange Coffee Table,Furniture,691
+prod_781,Cyan Microwave,ElectricAppliance,917
+prod_782,Yellow Washer,ElectricAppliance,983
+prod_783,Indigo Floor Lamp,Other,510
+prod_784,Hot Pink Armoire,Furniture,804
+prod_785,Green Fake Grass,Other,706
+prod_786,Hot Pink Dining Chair,Furniture,567
+prod_787,Mint Microwave,ElectricAppliance,103
+prod_788,Green Oven,ElectricAppliance,480
+prod_789,Red Curio Cabinet,Furniture,609
+prod_790,Maroon Picture Frame,Other,610
+prod_791,Violet Serving Dish,Other,550
+prod_792,Mint Serving Dish,Other,801
+prod_793,Blue Table Lamp,Other,729
+prod_794,Gray Dryer,ElectricAppliance,261
+prod_795,Mint Serving Dish,Other,828
+prod_796,Orange Refrigerator,ElectricAppliance,198
+prod_797,Yellow Table Lamp,Other,700
+prod_798,Purple Armoire,Furniture,969
+prod_799,Cyan Floor Lamp,Other,662
+prod_800,Gray Dresser,Furniture,373
+prod_801,Yellow Washer,ElectricAppliance,726
+prod_802,Maroon Oven,ElectricAppliance,509
+prod_803,Hot Pink Curio Cabinet,Furniture,482
+prod_804,Purple Bowl,Other,548
+prod_805,Yellow Dishwasher,ElectricAppliance,721
+prod_806,Green Dishwasher,ElectricAppliance,687
+prod_807,Cyan Bed,Furniture,907
+prod_808,Yellow Washer,ElectricAppliance,513
+prod_809,Gray Curio Cabinet,Furniture,115
+prod_810,Indigo Dryer,ElectricAppliance,569
+prod_811,Indigo Dinner Plate,Other,548
+prod_812,Mint Serving Dish,Other,173
+prod_813,Gray Refrigerator,ElectricAppliance,453
+prod_814,Cyan Microwave,ElectricAppliance,825
+prod_815,Cyan Salad Plate,Other,415
+prod_816,Green Fake Grass,Other,612
+prod_817,Hot Pink Barstool,Furniture,352
+prod_818,Indigo Floor Lamp,Other,792
+prod_819,Orange Curio Cabinet,Furniture,765
+prod_820,Purple Picture Frame,Other,316
+prod_821,Yellow Curio Cabinet,Furniture,110
+prod_822,Violet Vase,Other,821
+prod_823,Blue End Table,Furniture,262
+prod_824,Hot Pink Dishwasher,ElectricAppliance,131
+prod_825,Hot Pink Microwave,ElectricAppliance,931
+prod_826,Indigo Sofa,Furniture,975
+prod_827,Cyan Floor Lamp,Other,524
+prod_828,Maroon Coffee Table,Furniture,210
+prod_829,Maroon Washer,ElectricAppliance,494
+prod_830,Cyan Washer,ElectricAppliance,445
+prod_831,Violet Dresser,Furniture,839
+prod_832,Cyan End Table,Furniture,325
+prod_833,Brown Dinner Plate,Other,644
+prod_834,Blue China Cabinet,Furniture,105
+prod_835,Mint Serving Dish,Other,962
+prod_836,Mint Microwave,ElectricAppliance,845
+prod_837,Purple Fake Grass,Other,817
+prod_838,Mint Fake Grass,Other,794
+prod_839,Gray Salad Plate,Other,362
+prod_840,Violet Picture Frame,Other,400
+prod_841,Mint Curio Cabinet,Furniture,210
+prod_842,Yellow Vase,Other,974
+prod_843,Yellow Table Lamp,Other,412
+prod_844,Mint Sofa,Furniture,678
+prod_845,Red Oven,ElectricAppliance,764
+prod_846,Hot Pink Sofa,Furniture,973
+prod_847,Blue Sofa,Furniture,531
+prod_848,Cyan Floor Lamp,Other,235
+prod_849,Gray Washer,ElectricAppliance,242
+prod_850,Gray Dining Table,Furniture,272
+prod_851,Maroon Microwave,ElectricAppliance,306
+prod_852,Indigo Microwave,ElectricAppliance,501
+prod_853,Mint Barstool,Furniture,755
+prod_854,Green Serving Dish,Other,138
+prod_855,Maroon Dinner Plate,Other,425
+prod_856,Green Dining Chair,Furniture,439
+prod_857,Mint Dryer,ElectricAppliance,751
+prod_858,Purple Vase,Other,768
+prod_859,Cyan Serving Dish,Other,262
+prod_860,Burgundy Fake Grass,Other,272
+prod_861,Red Recliner,Furniture,202
+prod_862,Brown Curio Cabinet,Furniture,715
+prod_863,Hot Pink Vase,Other,778
+prod_864,Violet Bed,Furniture,573
+prod_865,Mint Recliner,Furniture,288
+prod_866,Yellow Sofa,Furniture,204
+prod_867,Indigo End Table,Furniture,745
+prod_868,Indigo Dinner Plate,Other,744
+prod_869,Orange Microwave,ElectricAppliance,352
+prod_870,Purple China Cabinet,Furniture,816
+prod_871,Hot Pink Dishwasher,ElectricAppliance,252
+prod_872,Green Refrigerator,ElectricAppliance,687
+prod_873,Orange Serving Dish,Other,511
+prod_874,Cyan Bed,Furniture,692
+prod_875,Green Oven,ElectricAppliance,567
+prod_876,Cyan Microwave,ElectricAppliance,248
+prod_877,Hot Pink Salad Plate,Other,331
+prod_878,Violet Bowl,Other,891
+prod_879,Red Dryer,ElectricAppliance,686
+prod_880,Violet Dishwasher,ElectricAppliance,140
+prod_881,Red Dining Table,Furniture,254
+prod_882,Cyan Vase,Other,336
+prod_883,Violet Floor Lamp,Other,642
+prod_884,Maroon Dryer,ElectricAppliance,615
+prod_885,Brown Picture Frame,Other,298
+prod_886,Blue Washer,ElectricAppliance,340
+prod_887,Yellow Fake Grass,Other,253
+prod_888,Burgundy Oven,ElectricAppliance,399
+prod_889,Purple Dryer,ElectricAppliance,494
+prod_890,Gray Salad Plate,Other,754
+prod_891,Brown Picture Frame,Other,599
+prod_892,Blue Dishwasher,ElectricAppliance,413
+prod_893,Brown End Table,Furniture,234
+prod_894,Gray Dining Table,Furniture,585
+prod_895,Orange Dining Table,Furniture,806
+prod_896,Blue Floor Lamp,Other,638
+prod_897,Indigo Nightstand,Furniture,765
+prod_898,Yellow Microwave,ElectricAppliance,906
+prod_899,Brown Floor Lamp,Other,191
+prod_900,Green End Table,Furniture,883
+prod_901,Orange Dryer,ElectricAppliance,755
+prod_902,Mint Dishwasher,ElectricAppliance,842
+prod_903,Brown Bed,Furniture,288
+prod_904,Green Dresser,Furniture,558
+prod_905,Purple China Cabinet,Furniture,980
+prod_906,Maroon End Table,Furniture,641
+prod_907,Purple Floor Lamp,Other,842
+prod_908,Orange Armoire,Furniture,823
+prod_909,Gray Coffee Table,Furniture,700
+prod_910,Indigo Washer,ElectricAppliance,805
+prod_911,Red Floor Lamp,Other,459
+prod_912,Yellow Table Lamp,Other,166
+prod_913,Hot Pink Fake Flowers,Other,712
+prod_914,Indigo Vase,Other,208
+prod_915,Gray Dryer,ElectricAppliance,871
+prod_916,Orange Dining Chair,Furniture,764
+prod_917,Red Oven,ElectricAppliance,429
+prod_918,Brown Serving Dish,Other,463
+prod_919,Mint Floor Lamp,Other,100
+prod_920,Green Table Lamp,Other,540
+prod_921,Burgundy End Table,Furniture,654
+prod_922,Red Fake Grass,Other,117
+prod_923,Mint Curio Cabinet,Furniture,991
+prod_924,Maroon Sofa,Furniture,694
+prod_925,Orange Bowl,Other,488
+prod_926,Violet Recliner,Furniture,850
+prod_927,Blue Dryer,ElectricAppliance,241
+prod_928,Burgundy Salad Plate,Other,891
+prod_929,Violet Fake Flowers,Other,340
+prod_930,Mint Nightstand,Furniture,841
+prod_931,Blue Floor Lamp,Other,917
+prod_932,Green Oven,ElectricAppliance,229
+prod_933,Cyan Dining Chair,Furniture,897
+prod_934,Hot Pink Table Lamp,Other,968
+prod_935,Maroon Fake Grass,Other,231
+prod_936,Burgundy Dinner Plate,Other,693
+prod_937,Blue Dryer,ElectricAppliance,355
+prod_938,Yellow End Table,Furniture,677
+prod_939,Brown Serving Dish,Other,376
+prod_940,Cyan Bowl,Other,893
+prod_941,Blue Oven,ElectricAppliance,736
+prod_942,Violet Salad Plate,Other,554
+prod_943,Brown Coffee Table,Furniture,890
+prod_944,Red Salad Plate,Other,355
+prod_945,Yellow Serving Dish,Other,433
+prod_946,Brown China Cabinet,Furniture,742
+prod_947,Yellow Vase,Other,238
+prod_948,Burgundy Curio Cabinet,Furniture,360
+prod_949,Gray Bowl,Other,248
+prod_950,Yellow Dryer,ElectricAppliance,270
+prod_951,Burgundy End Table,Furniture,484
+prod_952,Burgundy Dishwasher,ElectricAppliance,431
+prod_953,Hot Pink Refrigerator,ElectricAppliance,988
+prod_954,Cyan Oven,ElectricAppliance,214
+prod_955,Cyan Dinner Plate,Other,584
+prod_956,Orange Floor Lamp,Other,298
+prod_957,Hot Pink Curio Cabinet,Furniture,982
+prod_958,Yellow Refrigerator,ElectricAppliance,273
+prod_959,Purple Oven,ElectricAppliance,236
+prod_960,Orange Dishwasher,ElectricAppliance,346
+prod_961,Brown Dinner Plate,Other,310
+prod_962,Indigo Picture Frame,Other,662
+prod_963,Maroon Fake Grass,Other,240
+prod_964,Indigo Dinner Plate,Other,843
+prod_965,Green Dinner Plate,Other,601
+prod_966,Mint Fake Flowers,Other,984
+prod_967,Blue Refrigerator,ElectricAppliance,829
+prod_968,Hot Pink End Table,Furniture,595
+prod_969,Green Picture Frame,Other,866
+prod_970,Cyan China Cabinet,Furniture,888
+prod_971,Mint Oven,ElectricAppliance,217
+prod_972,Blue Serving Dish,Other,809
+prod_973,Indigo Recliner,Furniture,677
+prod_974,Green End Table,Furniture,522
+prod_975,Green Recliner,Furniture,906
+prod_976,Burgundy Microwave,ElectricAppliance,244
+prod_977,Blue Washer,ElectricAppliance,744
+prod_978,Brown Recliner,Furniture,886
+prod_979,Red Dishwasher,ElectricAppliance,493
+prod_980,Mint Microwave,ElectricAppliance,576
+prod_981,Mint Oven,ElectricAppliance,344
+prod_982,Indigo Barstool,Furniture,277
+prod_983,Red Picture Frame,Other,604
+prod_984,Maroon Washer,ElectricAppliance,152
+prod_985,Blue Oven,ElectricAppliance,506
+prod_986,Burgundy Nightstand,Furniture,858
+prod_987,Green Salad Plate,Other,697
+prod_988,Blue Dresser,Furniture,612
+prod_989,Green Dinner Plate,Other,787
+prod_990,Purple Dryer,ElectricAppliance,163
+prod_991,Mint Fake Grass,Other,689
+prod_992,Red Nightstand,Furniture,343
+prod_993,Violet Oven,ElectricAppliance,978
+prod_994,Blue Refrigerator,ElectricAppliance,320
+prod_995,Brown Microwave,ElectricAppliance,138
+prod_996,Mint Dining Table,Furniture,941
+prod_997,Burgundy Picture Frame,Other,935
+prod_998,Green Dryer,ElectricAppliance,742
+prod_999,Maroon Dryer,ElectricAppliance,174
+prod_1000,Yellow Serving Dish,Other,928
