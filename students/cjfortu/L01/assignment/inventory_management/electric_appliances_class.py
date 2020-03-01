@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """
-This is the furniture class module.
+Contains only the electric appliances class.
 """
-# Electric appliances class
-from inventory_management.inventory_class import Inventory
+
+from inventory_class import Inventory
+
 
 class ElectricAppliances(Inventory):
     """
@@ -11,20 +12,17 @@ class ElectricAppliances(Inventory):
     ...and a method to create a data structure from the attributes
     """
 
-    def __init__(self, product_code, description, market_price, rental_price, brand, voltage):
-        Inventory.__init__(self, product_code, description, market_price, rental_price)
+    def __init__(self, *args):
+        # args -> product_code, description, market_price, rental_price, brand, voltage
+        Inventory.__init__(self, args[0], args[1], args[2], args[3])
         # Creates common instance variables from the parent class
 
-        self.brand = brand
-        self.voltage = voltage
+        self.brand = args[4]
+        self.voltage = args[5]
 
     def return_as_data_struct(self):
         """Create a data structure from the product attributes."""
-        output_data = {}
-        output_data['productCode'] = self.product_code
-        output_data['description'] = self.description
-        output_data['marketPrice'] = self.market_price
-        output_data['rentalPrice'] = self.rental_price
+        output_data = Inventory.return_as_data_struct(self)
         output_data['brand'] = self.brand
         output_data['voltage'] = self.voltage
 
