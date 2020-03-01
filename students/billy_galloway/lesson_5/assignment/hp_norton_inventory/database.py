@@ -5,29 +5,16 @@ interacts with the database via files formatted from csv files
 
 import json
 import logging
-import csv_converter 
-from pymongo import MongoClient
+import csv_handler
+from mongo_connect import *
+# from pymongo import MongoClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class MongoDBConnection():
-    ''' mongodb connection '''
-
-    def __init__(self, host='127.0.0.1', port=27017):
-        ''' initialize host and port '''
-        self.host = host
-        self.port = port
-        self.connection = None
-
-    def __enter__(self):
-        ''' start connection '''
-        self.connection = MongoClient(self.host, self.port)
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        ''' close connection when finished '''
-        self.connection.close()
+def csv_file_list(customer_file, product_file, rentals_file):
+    ''' returns list of csv files to loop over '''
+    return [customer_file, product_file, rentals_file]
 
 def import_data(directory_name, customer_file, product_file, rentals_file):
     ''' import data from csv files into database to be used in functions '''
@@ -37,15 +24,18 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
     product_file = f'{directory_name}/{product_file}'
     rentals_file = f'{directory_name}/{rentals_file}'
 
-    try:
-        documents = csv_converter.csv_reader(customer_file)
-        customer = [customer for customer in csv_converter.customer_format(documents)]
-   
-        documents = csv_converter.csv_reader(product_file)
-        product = [product for product in csv_converter.product_format(documents)]
+    csv_list = csv_file_list(customer_file, product_file, rentals_file)
 
-        documents = csv_converter.csv_reader(rentals_file)
-        rental = [rental for rental in csv_converter.rentals_format(documents)]
+    try:
+        # for i in csv_list:
+        documents = csv_handler.csv_reader(customer_file)
+        customer = [customer for customer in csv_handler.customer_format(documents)]
+   
+        documents = csv_handler.csv_reader(product_file)
+        product = [product for product in csv_handler.product_format(documents)]
+
+        documents = csv_handler.csv_reader(rentals_file)
+        rental = [rental for rental in csv_handler.rentals_format(documents)]
 
     except FileNotFoundError:
         logger.info(f'File not found')

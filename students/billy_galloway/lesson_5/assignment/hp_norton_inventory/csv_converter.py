@@ -11,7 +11,6 @@ os.chdir('../')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
 def csv_reader(csv_file):
     ''' ingests csv file and returns an ordered dict '''
     with open(csv_file) as csvfile:
