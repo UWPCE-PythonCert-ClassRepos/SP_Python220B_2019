@@ -63,12 +63,12 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         customers.insert_many(customer)
         products.insert_many(product)
         rentals.insert_many(rental)
-    
-        for customer_id in customers.find():
-            # print(f'printing for loop {customer_id}')
-            query = {"customer_id": customer_id["customer_id"]}
-            print(query)
-            print(len(query))
+        
+        # customer_dict = {}
+        # for customer_id in customers.find():
+        #     query = {"customer_id": customer_id["customer_id"]}
+        #     # customer_dict.update(query)
+        #     print(query)
             # for customer in customers.find(query):
             #     print(f'{name["name"]} has collected {customer}')
 
