@@ -1,0 +1,28 @@
+**************************************************
+
+ANALYSIS:
+The first runs use the timeit function averaged over 20 runs running the entire call to main():
+
+It took an average of 0.555572 seconds over 20 runs and 7.4% of the CPU for the linear case
+It took an average of 0.534199 seconds over 20 runs and 6.0% of the CPU for the parallel case
+
+At a ratio of 0.96, both techniques perform approximately equally.
+More tests should be considered under different conditions (more data in csv, etc).
+
+Timing the import times of products and customers for both the linear and parallel case we see:
+
+It took 0.0246 seconds to import the linear product data
+It took 0.0457 seconds to import the parallel product data
+It took 0.0231 seconds to import the linear product data
+It took 0.0515 seconds to import the parallel product data
+
+There was a performance decrease of 0.54 times by using threading to import the product data
+There was a performance decrease of 0.45 times by using threading to import the customer data
+
+Notes:
+Overall, the two programs took equally long to complete all tasks.  However, using
+threading to attempt to speed up the import of csv data and load into the database
+did not work as expected. 
+
+Recommendations:
+At this time, threading does not seem to be the better choice.
