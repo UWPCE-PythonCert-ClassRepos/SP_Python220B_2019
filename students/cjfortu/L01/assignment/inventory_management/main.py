@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 """
 This is the main interface and class handling module.
+
+W0613 disabled in pylintrc.
+Minimum methods set to 1 in pylintrc.
 """
 
 import sys
