@@ -8,7 +8,8 @@ from inventory_management.inventory_class import Inventory
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
 from inventory_management.market_prices import get_latest_price
-from inventory_management.main import main_menu, get_price, add_new_item, item_info, exit_program
+#from inventory_management.main import main_menu, get_price, add_new_item, item_info, exit_program
+import inventory_management.main as main
 
 class InventoryTests(TestCase):
 
@@ -50,9 +51,20 @@ class MainTest(TestCase):
         test_input = {"1": "add_new_item", "2": "item_info", "q": "exit_program"}
         for key, value in test_input.items():
             with patch('builtins.input', side_effect=key): 
-                main_resp = main_menu()
+                main_resp = main.main_menu()
                 self.assertEqual(main_resp.__name__, value)
                 
-    
+    def test_add_new_item(self):
+        furn_inputs = ['123', 'table', '456', 'y', 'wood', 'm']
+        furn_ouput = {'product_code': '123',
+                      'description': 'table',
+                      'market_price': 24,
+                      'rental_price': '456',
+                      'material': 'wood',
+                      'size': 'm'}
+        
+        with patch('builtins.input', side_effect=furn_inputs):
+            main.add_new_item()
+        self.assertEqual(main.FULL_INVENTORY['123'], furn_ouput)
             
     
