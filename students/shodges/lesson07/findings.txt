@@ -1,0 +1,38 @@
+We wrote a simple script to display the timing data for the linear and parallel imports.
+The results are as follows:
+
+--- Running linear import ---
+Products:
+   Records: 1000000 processed, 1000000 imported
+   Runtime: 18.221578 seconds
+
+Customers:
+   Records: 1000000 processed, 1000000 imported
+   Runtime: 19.660784 seconds
+
+Linear import complete in 38.316058 seconds.
+
+--- Running parallel import ---
+Products:
+   Records: 1000000 processed, 1000000 imported
+   Runtime: 31.46781 seconds
+
+Customers:
+   Records: 1000000 processed, 1000000 imported
+   Runtime: 32.609311 seconds
+
+Parallel import complete in 32.848321 seconds.
+
+
+
+While the parallel import does improve things, we've got I/O contention -- while we have two parallel
+processes reading separate files, each is slowed by the maximum disk read speed.
+
+In the linear import, we have a single CSV read using close to 100% of the available disk read operations.
+In the parallel import, we have two concurrent CSV reads using more like 50% of the read operations each.
+
+The parallel import still improves the overall processing time as it's able to immediately perform the database
+import upon completion of each CSV import.  However, given the minimal speed improvement, and the fact that a
+CSV -> DB import is expected to be periodic (so the overall records to be imported are low) and each record is only
+imported once, my recommendation is that the rewriting the import logic in parallel does not provide sufficient
+value.

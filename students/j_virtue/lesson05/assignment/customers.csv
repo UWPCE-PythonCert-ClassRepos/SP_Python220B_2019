@@ -1,0 +1,6 @@
+customer_id,name,address,phone_number,email_address
+user001,Fred Flintstone,123 Bedrock St,305-555-1212,fflint@aol.com
+user002,Barney Rubble,456 Bedrock St,305-555-3434,brubble@aol.com
+user003,Wilma Flintstone,123 Bedrock St,305-555-1212,Wflint@aol.com
+user004,Bamm-Bamm Rubble,456 Bedrock St,305-555-3434,bam@yahoo.com
+user005,Betty Rubble,456 Bedrock St,305-555-3434,brubble@aol.com

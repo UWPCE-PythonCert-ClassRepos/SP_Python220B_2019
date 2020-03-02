@@ -116,3 +116,10 @@ lesson01/assignment/.pylintrc
 lesson01/assignment/.vscode/
 lesson01/assignment/tests/
 .vscode/
+
+
+lesson02/activity/
+lesson02/assignment/source.json
+lesson03/activity/
+lesson04
+*.zip

@@ -2,6 +2,9 @@
 # Jason Virtue
 # Start Date 2/7/2020
 
+#Supress pylint messages
+# pylint: disable=pointless-string-statement,bare-except,consider-using-sys-exit
+
 '''
 Returns total price paid for individual rentals
 '''
@@ -43,9 +46,11 @@ def parse_cmd_arguments():
 
 def init_logger(logger_level):
     '''Function to Initialize logger'''
+    #Updated control flow to exit with debug settings greater than 3
 
     log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
     log_file = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+    logger_level = int(logger_level)
 
     formatter = logging.Formatter(log_format)
 
@@ -62,25 +67,30 @@ def init_logger(logger_level):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-    if logger_level == '0':
+    if logger_level == 0:
         logger.setLevel(logging.CRITICAL)
         console_handler.setLevel(logging.CRITICAL)
         file_handler.setLevel(logging.CRITICAL)
 
-    if logger_level == '1':
+    if logger_level == 1:
         logger.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
 
-    if logger_level == '2':
+    if logger_level == 2:
         logger.setLevel(logging.WARNING)
         console_handler.setLevel(logging.WARNING)
         file_handler.setLevel(logging.WARNING)
 
-    if logger_level == '3':
+    if logger_level == 3:
         logger.setLevel(logging.DEBUG)
         console_handler.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.WARNING)
+
+    if logger_level > 3:
+        logging.error('Input argument for debug are 1 to 3.  Input valid value')
+        print("Debug logger valid values are 1 to 3. Restart program with valid value")
+        exit(0)
 
 def load_rentals_file(filename):
     """Function reads data file as input"""

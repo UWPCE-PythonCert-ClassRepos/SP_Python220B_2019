@@ -1,0 +1,28 @@
+Findings:
+
+I implemented a linear version of the import_data function and a parallel version. On all 5 test runs, the linear version ran slower than the parallel version, which used three processes to import data.
+
+[master *>]
+ALEXANDER-BOONE-LAPTOP:assignment alexa$ python linear_vs_parallel.py
+Linear runtime (s): 1.757171630859375
+parallel runtime (s): 1.4819183349609375
+[master *>]
+ALEXANDER-BOONE-LAPTOP:assignment alexa$ python linear_vs_parallel.py
+Linear runtime (s): 1.3294107913970947
+parallel runtime (s): 0.9661264419555664
+[master *>]
+ALEXANDER-BOONE-LAPTOP:assignment alexa$ python linear_vs_parallel.py
+Linear runtime (s): 1.3988780975341797
+parallel runtime (s): 0.9741969108581543
+[master *>]
+ALEXANDER-BOONE-LAPTOP:assignment alexa$ python linear_vs_parallel.py
+Linear runtime (s): 1.4052855968475342
+parallel runtime (s): 0.9516050815582275
+[master *>]
+ALEXANDER-BOONE-LAPTOP:assignment alexa$ python linear_vs_parallel.py
+Linear runtime (s): 1.4756512641906738
+parallel runtime (s): 0.9689788818359375
+
+In order to avoid failure due to contention in the database, I used separation of concerns to containerize access to each collection in the database. Therefore, each process would call one function with one dataset that would establish a connection with a unique collection. This would avoid the sharing of memory between processes, and since processes don't/shouldn't share memory, this avoids contention.
+
+Based on the data above, parallelizing the importing of data improved the runtime by taking advantage of multiple cores on my CPU. Because of the results, I would recommend running the system in parallel.
