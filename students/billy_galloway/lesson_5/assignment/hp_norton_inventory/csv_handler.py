@@ -1,7 +1,7 @@
 import csv
 import logging
 import os
-os.chdir('../')
+os.chdir('..')
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -10,10 +10,12 @@ class CsvHandler():
     @staticmethod
     def csv_reader(csv_file):
         ''' ingests csv file and returns an ordered dict '''
+        logger.info(f' Running csv reader')
         with open(csv_file) as csvfile:
             hpnorton_db_reader = csv.DictReader(csvfile, delimiter=',')
             logger.info(f'File {csv_file} Found')
-        return [documents for documents in hpnorton_db_reader]
+    
+            return [documents for documents in hpnorton_db_reader]
 
     @staticmethod
     def customer_format(documents):
@@ -57,3 +59,9 @@ class CsvHandler():
             }
 
             yield rental
+
+    @staticmethod
+    def generate_document_list(*args):
+        for i in args:
+            documents = csv_reader(i)
+            [document_type for document_type in customer_format(documents)]
