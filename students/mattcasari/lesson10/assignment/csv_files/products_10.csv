@@ -1,0 +1,11 @@
+product_id,description,market_price,rental_price,product_type,brand,voltage,material,size,quantity_available
+F520915,Dye-works Fixture,658.61,0.47,Furniture,[],[],Maple,large,36
+F994631,Port-duty Chair,546.38,0.69,Furniture,[],[],Granite,small,6
+E079856,Flunkeys Toothbrush,881.37,2.09,Electric,Drop-seed,10kV,[],[],86
+F740900,Flights Stool,1620.14,1.05,Furniture,[],[],Oak,medium,14
+E954193,In-toe Coffee Maker,531.12,1.02,Electric,Dragline,440VAC,[],[],8
+F791894,Minuets Table,668.14,0.46,Furniture,[],[],Tile,extra-large,56
+F944824,Swarm Chair,1235.54,3.18,Furniture,[],[],Oak,medium,18
+E108919,Standard Toothbrush,2235.59,1.01,Electric,Freebird,110VAC,[],[],21
+F735678,Festiveness Mirror,873.17,1.83,Furniture,[],[],Oak,x-small,84
+F293570,Standard Fixture,1372.04,2.52,Furniture,[],[],Tile,lawn orniment,15
