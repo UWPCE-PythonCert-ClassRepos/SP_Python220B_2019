@@ -1,0 +1,115 @@
+
+C:\Program Files (x86)\Microsoft Visual Studio 11.0>cd C:\Users\allen\OneDrive\Allen\School\UW\UW-Python Cert\Python 220\Course Work\Lesson 02\Assignment 02
+
+C:\Users\allen\OneDrive\Allen\School\UW\UW-Python Cert\Python 220\Course Work\Lesson 02\Assignment 02>python -m pdb charges_calc.py -i source.json -o out.json
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(3)<module>()
+-> '''
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44         args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data)
+(Pdb) b 46
+Breakpoint 1 at c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py:46
+(Pdb) c
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) pp rental_end
+*** NameError: name 'rental_end' is not defined
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) pp rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) pp value.get('total_days')
+-82
+(Pdb) n
+> c:\users\allen\onedrive\allen\school\uw\uw-python cert\python 220\course work\lesson 02\assignment 02\charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp value.get('total_price')
+-2542
+(Pdb) ll
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  ->             value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+(Pdb)
+
+1) Problem appear to be some rentals do not have a rental_end value
+2) Other rentals seem to have a rental_end value before the rental_start value
+3) 

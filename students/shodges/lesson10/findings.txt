@@ -1,0 +1,12 @@
+As recorded in timings.txt (and graphed in time-taken.png), we find processing time as it relates to the 
+number of records differs on the function.
+
+In the case of importing, the best trendline shows a more linear relationship between number of records and total
+import time.  This makes some degree of sense when we consider what the code is doing -- there is some overhead in
+setting up the file read operation, and the connector to the database, but following that, we have a straightforward
+"read line from CSV, write line to DB".
+
+In the show_available_products() method, we see a more exponential increase in processing time -- again, considering the
+code, this makes sense -- each time we get a result from the products table, we look in the rentals table to determine
+who's rented the item.  As products increase in number, we expect rentals to increase in number (and in my testing,
+they did), so we more rapidly increase processing time as we increase record counts.

@@ -1,0 +1,30 @@
+# Advanced Programming in Python -- Lesson 7 Assignment 1
+# Jason Virtue
+# Start Date 2/24/2020
+
+Row Count per File:
+Products = 4127
+Customer = 2115
+Rentals = 4776 <<Row Count in Excel>>
+
+This is generated in the console window of the python scripts.
+('customers', 2115, 2115, 'product', 4127, 4127, 0.44499969482421875)  <<Linear.py>>
+('product', 4127, 4127, 0.09297895431518555, 'customer', 2115, 2115, 0.09297895431518555)  <<Parrallel.py>>
+
+The actual run times for linear and parallel python scripts are respectively;
+0.44499969482421875 for linear
+0.09297895431518555 for parallel
+
+We reduced response times by a factor of 4 or 79.1% savings
+
+This savings was achieved by using the multiprocessing library in Python.  See https://docs.python.org/3/library/multiprocessing.html
+This package is able to run the imports in parallel as subprocesses and run each one on a different CPU.  It counts the CPUs as stores 
+them as a pool.  My pool count is 4.
+
+The savings can improve more as we process larger data sizes so the multiprocessing option is the best one for scale.
+
+There is one caution that these subprocesses are in a racing condition.  If we look at the log file we'll see for the second set of logs
+the order the files write into MongoDB isn't the same order they were read from the file.  We will need to manage this is subsequent
+releases of the code set by controlling order they are inserted into MongoDB
+
+
