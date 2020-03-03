@@ -80,3 +80,13 @@ class MainTest(TestCase):
             main.add_new_item()
         self.assertEqual(main.FULL_INVENTORY['321'], elec_output)
 
+    def test_add_new_item(self):
+        new_inputs = ['789', 'stuff', '987', 'n', 'n']
+        new_output = {'product_code': '789',
+                      'description': 'stuff',
+                      'market_price': 24,
+                      'rental_price': '987'}
+        
+        with patch('builtins.input', side_effect=new_inputs):
+            main.add_new_item()
+        self.assertEqual(main.FULL_INVENTORY['789'], new_output)
