@@ -11,17 +11,10 @@ from mongo_connect import *
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def csv_file_list(customer_file, product_file, rentals_file):
-    ''' returns list of csv files to loop over '''
-    return [customer_file, product_file, rentals_file]
-
 def import_data(directory_name, customer_file, product_file, rentals_file):
     ''' import data from csv files into database to be used in functions '''
     mongo = MongoDBConnection()
     csv_handler = csvh.CsvHandler()
-    customer = []
-    product = []
-    rentals = []
 
     ERROR_COUNT = {
         'CUSTOMER_ERROR': 0,
@@ -30,105 +23,114 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
     }
 
     INVENTORY_COUNT = {
-        'customer_totals': [],
-        'product_totals': [],
-        'rental_totals': []
+        'customer_totals': 0,
+        'product_totals': 0,
+        'rental_totals': 0
     }
 
-    try:
-        customer_file = f'{directory_name}/{customer_file}'
-        product_file = f'{directory_name}/{product_file}'
-        rentals_file = f'{directory_name}/{rentals_file}'
+    customer_file = f'{directory_name}/{customer_file}'
+    product_file = f'{directory_name}/{product_file}'
+    rentals_file = f'{directory_name}/{rentals_file}'
 
-        csv_list = csv_file_list(customer_file, product_file, rentals_file)
-        # document_type = [customer, product, rentals] 
-        # for i in document_type:
-        #     i = generate_document_list(csv_file_list)
+    with mongo:
+        # generate hpnorton_db
+        hpnorton_db = mongo.connection.hpnorton_db
 
-        # for filename in csv_list:
-        #     documents = csv_handler.csv_reader(filename)
-        #     csv_format_method = f'csv_handler.{item}_format({documents})'
-        #     output_list = csv_format_method
-        print(output_list)
-        # documents = csv_handler.csv_reader(product_file)
-        # product = [product for product in csv_handler.product_format(documents)]
+        # collections in database
+        customers = hpnorton_db['customers']
+        rentals = hpnorton_db['rentals']
+        products = hpnorton_db['products']
 
-        # documents = csv_handler.csv_reader(rentals_file)
-        # rental = [rental for rental in csv_handler.rentals_format(documents)]
-
-    except FileNotFoundError as error:
-        logger.info(f'File not found {error}')
-        if product_file != 'old_database/product.csv':
-            ERROR_COUNT['PRODUCT_ERROR']+=1
-        if customer_file != 'old_database/customer.csv':
+        try:
+            customer = csv_handler.generate_document_list(customer_file, "customer")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
             ERROR_COUNT['CUSTOMER_ERROR']+=1
-        if rentals_file != 'old_database/rentals.csv':
+
+        try:
+            product = csv_handler.generate_document_list(product_file, "product")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
+            ERROR_COUNT['PRODUCT_ERROR']+=1
+
+        try:
+            rental = csv_handler.generate_document_list(rentals_file, "rentals")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
             ERROR_COUNT['RENTALS_ERROR']+=1
-    # with mongo:
-    #     try:
-    #         # generate hpnorton_db
-    #         hpnorton_db = mongo.connection.hpnorton_db
-
-    #         # collections in database
-    #         customers = hpnorton_db['customers']
-    #         rentals = hpnorton_db['rentals']
-    #         products = hpnorton_db['products']
-
-    #         # write to database
-    #         customers.insert_many(customer)
-    #         products.insert_many(product)
-    #         rentals.insert_many(rental)
-
-    #         customer_totals = [customer_id for customer_id in customers.find()]
-    #         product_totals = [product_id for product_id in products.find()]
-    #         rental_totals = [rental_id for rental_id in rentals.find()]
-
-    #         INVENTORY_COUNT['customer_totals'] = len(customer_totals)
-    #         INVENTORY_COUNT['product_totals'] = len(product_totals)
-    #         INVENTORY_COUNT['rental_totals'] = len(rental_totals)
-
-    #     except UnboundLocalError:
-    #         pass
-    #     return [INVENTORY_COUNT, ERROR_COUNT]
     
+        # write to database
+        try:
+            customers.insert_many(customer)
+            customer_totals = [customer_id for customer_id in customers.find()]
+            INVENTORY_COUNT['customer_totals'] = len(customer_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            logger.info(ERROR_COUNT['CUSTOMER_ERROR'])
+            ERROR_COUNT['CUSTOMER_ERROR']+=1
 
-# def show_available_products():
-#     mongo = MongoDBConnection()
+        try:
+            products.insert_many(product)
+            product_totals = [product_id for product_id in products.find()]
+            INVENTORY_COUNT['product_totals'] = len(product_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            ERROR_COUNT['PRODUCT_ERROR']+=1
 
-#     product_totals = [product_id for product_id in products.find() if int(product_id['quantity_available']) > 0]
+        try:
+            rentals.insert_many(rental)
+            rental_totals = [rental_id for rental_id in rentals.find()]
+            INVENTORY_COUNT['rental_totals'] = len(rental_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            ERROR_COUNT['RENTALS_ERROR']+=1
 
-#     with mongo:
-#         avaiable_totals = {
-#             'product_id': '',
-#             'description': '',
-#             'product_type': '',
-#             'quanity_available': ''
-#         }
+        inventory_count = [INVENTORY_COUNT['customer_totals'],
+                           INVENTORY_COUNT['product_totals'],
+                           INVENTORY_COUNT['rental_totals']]
 
-#     return avaiable_totals
+        error_count = [ERROR_COUNT['CUSTOMER_ERROR'],
+                       ERROR_COUNT['PRODUCT_ERROR'],
+                       ERROR_COUNT['RENTALS_ERROR']]
 
-# def show_rentals(product_id):
-#     mongo = MongoDBConnection()
+        return [tuple(inventory_count), tuple(error_count)]
 
-#     with mongo:
-#         rental_totals = {
-#             'user_id': '',
-#             'name': '',
-#             'address': '',
-#             'phone_number': '',
-#             'email': ''
-#         }
+def show_available_products():
+    mongo = MongoDBConnection()
 
-#     return rental_totals
+    with mongo:
+        hpnorton_db = mongo.connection.hpnorton_db
+        product_totals = [product for product in hpnorton_db.products.find()]
+        available = [product_totals[i]['description'] for i in range(len(product_totals)) if int(product_totals[i]['quantity_available']) > 0]
+        
+        return available
 
+def show_rentals(product_id):
+    mongo = MongoDBConnection()
+
+    with mongo:
+        hpnorton_db = mongo.connection.hpnorton_db
+        product_totals = [product for product in hpnorton_db.products.find()]
+        rented_unit = [product_totals[i] for i in range(len(product_totals)) if product_totals[i]['product_id'] == product_id]
+   
+        return {
+            rented_unit['product_id'],
+            rented_unit['name'],
+            rented_unit['address'],
+            rented_unit['phone_number']
 
 def main():
     ''' main method to interact with mongodb '''
     mongo = MongoDBConnection()
 
     output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
-    print(output)
+    logger.info(f' Total number of invetory and errors {output}')
+    
+    available = show_available_products()
+    logger.info(f' Current list of available items: {available}')
 
+    rentals = show_rentals('prd006')
+    print(rentals)
     with mongo:
         database = mongo.connection.hpnorton_db
         yorn = input("Drop data?")

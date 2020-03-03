@@ -13,8 +13,8 @@ class CsvHandler():
         logger.info(f' Running csv reader')
         with open(csv_file) as csvfile:
             hpnorton_db_reader = csv.DictReader(csvfile, delimiter=',')
-            logger.info(f'File {csv_file} Found')
-    
+            logger.info(f' File {csv_file} Found')
+
             return [documents for documents in hpnorton_db_reader]
 
     @staticmethod
@@ -60,8 +60,19 @@ class CsvHandler():
 
             yield rental
 
-    @staticmethod
-    def generate_document_list(*args):
-        for i in args:
-            documents = csv_reader(i)
-            [document_type for document_type in customer_format(documents)]
+    def generate_document_list(self, document, item_key):
+        ''' 
+            takes a csv file along with the inventory type i.e. customer, product, rentals
+            as an argument and passes it to the csv_reader. That gets passed as an 
+            argument to the formatter to be returned as a list of dictionaries
+        '''
+        item_type = {
+            'customer': self.customer_format,
+            'product': self.product_format,
+            'rentals': self.rentals_format
+        }
+
+        documents = self.csv_reader(document)
+        logger.info(f' Yield documents for formatting')
+
+        return [inventory_type for inventory_type in item_type[item_key](documents)]
