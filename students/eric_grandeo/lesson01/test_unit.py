@@ -54,9 +54,9 @@ class MainTest(TestCase):
                 main_resp = main.main_menu()
                 self.assertEqual(main_resp.__name__, value)
                 
-    def test_add_new_item(self):
+    def test_add_new_item_furn(self):
         furn_inputs = ['123', 'table', '456', 'y', 'wood', 'm']
-        furn_ouput = {'product_code': '123',
+        furn_output = {'product_code': '123',
                       'description': 'table',
                       'market_price': 24,
                       'rental_price': '456',
@@ -65,6 +65,18 @@ class MainTest(TestCase):
         
         with patch('builtins.input', side_effect=furn_inputs):
             main.add_new_item()
-        self.assertEqual(main.FULL_INVENTORY['123'], furn_ouput)
+        self.assertEqual(main.FULL_INVENTORY['123'], furn_output)
             
-    
+    def test_add_new_item_elec(self):
+        elec_inputs = ['321', 'blender', '456', 'n', 'y', 'samsung', '120']
+        elec_output = {'product_code': '321',
+                      'description': 'blender',
+                      'market_price': 24,
+                      'rental_price': '456',
+                      'brand': 'samsung',
+                      'voltage': '120'}
+        
+        with patch('builtins.input', side_effect=elec_inputs):
+            main.add_new_item()
+        self.assertEqual(main.FULL_INVENTORY['321'], elec_output)
+
