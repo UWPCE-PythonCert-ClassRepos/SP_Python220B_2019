@@ -33,28 +33,23 @@ class DatabaseTests(TestCase):
             logger.info(f'{e}')
 
         self.customer = {
-            'customer_id': 'A501',
-            'name': 'David',
-            'last_name': 'Nelson',
-            'home_address': '7 Blackburn Drive Tualatin, OR 97062',
-            'email_address': 'david@hpnorton.com',
-            'phone_number': '202-555-0169',
+            'customer_id': 'user001',
+            'name': 'Andrew Smith',
+            'home_address': '23 Railroad Street',
+            'email_address': 'andrew@hpnorton.com',
+            'phone_number': '202-555-0134',
             'status': True,
-            'credit_limit': 0
+            'credit_limit': 1000
         }
 
         self.product = {
-            'customer_id': 'A501',
-            'name': 'David',
-            'last_name': 'Nelson',
-            'home_address': '7 Blackburn Drive Tualatin, OR 97062',
-            'email_address': 'david@hpnorton.com',
-            'phone_number': '202-555-0169',
-            'status': True,
-            'credit_limit': 0
+            'product_id': 'prd006',
+            'description': 'computer',
+            'product_type': 'office',
+            'quantity_available': 0
         }
 
-        self.rentalS = {
+        self.rentals = {
             'product_id': 'prd006',
             'customer_id': 'user002',
             'name': 'Maya Data',
@@ -74,91 +69,40 @@ class DatabaseTests(TestCase):
     def test_database_created(self):
         '''
         Tests to ensure all the elements of the
-        customer model are present
-
-        Customer model elemenets:
-            customer id
-            name
-            lastname
-            home address
-            email address
-            status
-            credit limit
+        database are present
         '''
         mongo = MongoDBConnection()
         with mongo:
             db = mongo.connection.hpnorton_db
 
-            self.assertEqual(self.customer['customer_id'], 'A500')
-            self.assertEqual(self.customer['name'], 'Andrew Smith')
-            self.assertEqual(self.customer['home_address'], '23 Railroad Street')
-            self.assertEqual(self.customer['email_address'], 'andrew@hpnorton.com')
-            self.assertEqual(self.customer['phone_number'], '202-555-0134')
-            self.assertEqual(self.customer['status'], True)
-            self.assertEqual(self.customer['credit_limit'], 1000)
+            customer_db = [x for x in db.customers.find()]
+            self.assertEqual(self.customer['customer_id'], customer_db['customer_id'])
+            self.assertEqual(self.customer['name'], customer_db['name'])
+            self.assertEqual(self.customer['home_address'], customer_db['home_address'])
+            self.assertEqual(self.customer['email_address'], customer_db['email_address'])
+            self.assertEqual(self.customer['phone_number'], customer_db['phone_number'])
+            self.assertEqual(self.customer['status'], customer_db['status'])
+            self.assertEqual(self.customer['credit_limit'], customer_db['credit_limit'])
 
-            self.assertEqual(self.product['product_id'], 'A500')
-            self.assertEqual(self.product['description'], 'Andrew')
-            self.assertEqual(self.product['product_type'], 'Smith')
-            self.assertEqual(self.product['quantity_available'], '')
- 
-            self.assertEqual(self.rentals['product_id'], 'A500')
-            self.assertEqual(self.rentals['customer_id'], 'Andrew')
-            self.assertEqual(self.rentals['name'], 'Smith')
-            self.assertEqual(self.rentals['home_address'], '23 Railroad Street Matthews, NC 28104')
-            self.assertEqual(self.rentals['email_address'], 'andrew@hpnorton.com')
-            self.assertEqual(self.rentals['phone_number'], '202-555-0134')
+            producst_db = [x for x in db.product.find()]
+            self.assertEqual(self.product['product_id'], product_db['product_id'])
+            self.assertEqual(self.product['description'], product_db['name'])
+            self.assertEqual(self.product['product_type'], product_db['product_type'])
+            self.assertEqual(self.product['quantity_available'], product_db['quantity_available'])
+
+            rentals_db = [x for x in db.rentals.find()]
+            self.assertEqual(self.rentals['product_id'], rentals_db['product_id'])
+            self.assertEqual(self.rentals['customer_id'], nrentalsdb['customer_id'])
+            self.assertEqual(self.rentals['name'], rentals_db['name'])
+            self.assertEqual(self.rentals['home_address'], rentals_db['home_address'])
+            self.assertEqual(self.rentals['email_address'], rentals_db['email_address'])
+            self.assertEqual(self.rentals['phone_number'], rentals_db['phone_number'])
 
     def test_database_return_value(self):
-        pass
+        self.assertEqual(added_customer.name, 'David')
+    #     logger.info(f'Found customer name in database')
 
     def test_available_products(self):
         pass
     def test_show_rentals(self):
         pass
-    #     with database.transaction():
-
-    #         #self.new_customer[CUST_ID] = ['A6000', 'AAAAA']
-
-    #         add_customer(self.new_customer[CUST_ID], self.new_customer[NAME],
-    #                      self.new_customer[LAST_NAME], self.new_customer[HOME_ADDRESS],
-    #                      self.new_customer[EMAIL_ADDRESS], self.new_customer[PHONE],
-    #                      self.new_customer[STATUS], self.new_customer[CREDIT_LIMIT])
-
-    #     database.drop_tables([Customer])
-
-    # def test_add_customer(self):
-    #     ''' test that customers can be added to the existing database '''
-    #     logger.info(f'add customer test')
-    #     with patch('builtins.input', side_effect=[self.new_customer]):
-    #         add_customer(self.new_customer[CUST_ID], self.new_customer[NAME],
-    #                      self.new_customer[LAST_NAME], self.new_customer[HOME_ADDRESS],
-    #                      self.new_customer[EMAIL_ADDRESS], self.new_customer[PHONE],
-    #                      self.new_customer[STATUS], self.new_customer[CREDIT_LIMIT])
-
-    #     added_customer = Customer.get(Customer.name == self.new_customer[NAME])
-    #     self.assertEqual(added_customer.name, 'David')
-    #     logger.info(f'Found customer name in database')
-
-    #     try:
-    #         add_customer(self.new_customer[CUST_ID], 'Davidddddd',
-    #                      self.new_customer[LAST_NAME], self.new_customer[HOME_ADDRESS],
-    #                      self.new_customer[EMAIL_ADDRESS], self.new_customer[PHONE],
-    #                      self.new_customer[STATUS], self.new_customer[CREDIT_LIMIT])
-    #     except Exception:
-    #         self.assertRaises(IntegrityError)
-    #     database.drop_tables([Customer])
-
-    # def test_search_customer(self):
-    #     ''' customer search test '''
-    #     logger.info(f'search customer test')
-    #     customer_id = 'B200'
-    #     search_results = search_customer(customer_id)
-    #     self.assertEqual(search_results['name'], 'Kate')
-
-    #     with self.assertRaises(ValueError):
-    #         customer_id = 'C200'
-    #         search_results = search_customer(customer_id)
-    #     logger.info(f'ValueError raised and customer id was not found')
-
-    #     database.drop_tables([Customer])
