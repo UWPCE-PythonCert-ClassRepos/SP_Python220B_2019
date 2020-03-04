@@ -1,3 +1,6 @@
+'''
+CSV Handler
+'''
 import csv
 import logging
 import os
@@ -51,6 +54,7 @@ class CsvHandler():
         ''' formats rentals data to dictionary '''
         for document in documents:
             rental = {
+                'product_id': document['product_id'],
                 'customer_id': document['customer_id'],
                 'name': document['name'],
                 'home_address': document['home_address'],

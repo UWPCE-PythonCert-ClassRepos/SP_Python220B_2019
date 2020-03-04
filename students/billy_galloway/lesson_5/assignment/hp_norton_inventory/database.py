@@ -2,7 +2,8 @@
 Database 
 interacts with the database via files formatted from csv files
 '''
-
+import sys
+sys.path.append("./hp_norton_inventory")
 import json
 import logging
 import csv_handler as csvh
@@ -110,14 +111,10 @@ def show_rentals(product_id):
 
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
-        product_totals = [product for product in hpnorton_db.products.find()]
-        rented_unit = [product_totals[i] for i in range(len(product_totals)) if product_totals[i]['product_id'] == product_id]
-   
-        return {
-            rented_unit['product_id'],
-            rented_unit['name'],
-            rented_unit['address'],
-            rented_unit['phone_number']
+        rental_totals = [rental for rental in hpnorton_db.rentals.find()]
+        rented_unit = [rental_totals[i] for i in range(len(rental_totals)) if rental_totals[i]['product_id'] == product_id]
+        
+        return rented_unit
 
 def main():
     ''' main method to interact with mongodb '''
@@ -130,7 +127,7 @@ def main():
     logger.info(f' Current list of available items: {available}')
 
     rentals = show_rentals('prd006')
-    print(rentals)
+    logger.info(f'{rentals}')
     with mongo:
         database = mongo.connection.hpnorton_db
         yorn = input("Drop data?")

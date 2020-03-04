@@ -1,7 +1,6 @@
 '''
 Mongo DB connection
 '''
-
 from pymongo import MongoClient
 
 class MongoDBConnection():

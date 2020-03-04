@@ -2,13 +2,15 @@
 Unit testing module
 '''
 import sys
-sys.path.append("..")
+sys.path.append("../hp_norton_inventory")
 import os
 import logging
 from unittest import TestCase
 from unittest.mock import patch
 from pymongo import MongoClient
-from hp_norton_inventory import *
+from database import *
+from mongo_connect import *
+from csv_handler import *
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,74 +22,100 @@ class DatabaseTests(TestCase):
         setup database and handle connections and closure
         '''
         logger.info(f'setting up test cases')
+        try:
+            os.path.exists('customer.csv')
+            os.path.exists('product.csv')
+            os.path.exists('rentals.csv')
 
-        output = database.import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
-        logger.info(f'{output}')
+            output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
+            logger.info(f'{output}')
+        except Exception as e:
+            logger.info(f'{e}')
 
-    #     self.customers = [
-    #         ('A500', 'Andrew', 'Smith',
-    #          '23 Railroad Street Matthews, NC 28104', 'andrew@hpnorton.com',
-    #          '202-555-0134', True, 1000),
-    #         ('B200', 'Kate', 'Harris',
-    #          '638 Cactus St. Wilmington, MA 01887', 'kate@hpnorton.com',
-    #          '202-555-0169', False, 1000)
-    #     ]
+        self.customer = {
+            'customer_id': 'A501',
+            'name': 'David',
+            'last_name': 'Nelson',
+            'home_address': '7 Blackburn Drive Tualatin, OR 97062',
+            'email_address': 'david@hpnorton.com',
+            'phone_number': '202-555-0169',
+            'status': True,
+            'credit_limit': 0
+        }
 
-    #     self.new_customer = ['A501', 'David', 'Nelson',
-    #                          '7 Blackburn Drive Tualatin, OR 97062',
-    #                          'david@hpnorton.com', '202-555-0169', True, 10]
+        self.product = {
+            'customer_id': 'A501',
+            'name': 'David',
+            'last_name': 'Nelson',
+            'home_address': '7 Blackburn Drive Tualatin, OR 97062',
+            'email_address': 'david@hpnorton.com',
+            'phone_number': '202-555-0169',
+            'status': True,
+            'credit_limit': 0
+        }
 
-    #     self.customer = {
-    #         'customer_id': 'A501',
-    #         'name': 'David',
-    #         'last_name': 'Nelson',
-    #         'home_address': '7 Blackburn Drive Tualatin, OR 97062',
-    #         'email_address': 'david@hpnorton.com',
-    #         'phone_number': '202-555-0169',
-    #         'status': True,
-    #         'credit_limit': 0
-    #     }
+        self.rentalS = {
+            'product_id': 'prd006',
+            'customer_id': 'user002',
+            'name': 'Maya Data',
+            'home_address': '4936 Elliot Avenue',
+            'email_address': 'mdata@uw.edu',
+            'phone_number': '206-777-1927',
+        }
 
-    #     try:
-    #         os.path.exists('customers.db')
-    #     except Exception as e:
-    #         logger.info(f'{e}')
-
-    #     try:
-    #         for customer in self.customers:
-    #             with database.transaction():
-    #                 add_customer(customer[CUST_ID], customer[NAME],
-    #                              customer[LAST_NAME], customer[HOME_ADDRESS],
-    #                              customer[EMAIL_ADDRESS], customer[PHONE],
-    #                              customer[STATUS], customer[CREDIT_LIMIT])
-        # except Exception as e:
-        #     logger.info(f'Exception: {e}')
-
+    def tearDown(self):
+        mongo = MongoDBConnection()
+        with mongo:
+            db = mongo.connection.hpnorton_db
+            db['customers'].drop()
+            db['rentals'].drop()
+            db['products'].drop()
 
     def test_database_created(self):
-        
-    #     '''
-    #     Tests to ensure all the elements of the
-    #     customer model are present
+        '''
+        Tests to ensure all the elements of the
+        customer model are present
 
-    #     Customer model elemenets:
-    #         customer id
-    #         name
-    #         lastname
-    #         home address
-    #         email address
-    #         status
-    #         credit limit
-    #     '''
-    #     self.assertEqual(self.customers[0][CUST_ID], 'A500')
-    #     self.assertEqual(self.customers[0][NAME], 'Andrew')
-    #     self.assertEqual(self.customers[0][LAST_NAME], 'Smith')
-    #     self.assertEqual(self.customers[0][HOME_ADDRESS], '23 Railroad Street Matthews, NC 28104')
-    #     self.assertEqual(self.customers[0][EMAIL_ADDRESS], 'andrew@hpnorton.com')
-    #     self.assertEqual(self.customers[0][PHONE], '202-555-0134')
-    #     self.assertEqual(self.customers[0][STATUS], True)
-    #     self.assertEqual(self.customers[0][CREDIT_LIMIT], 1000)
+        Customer model elemenets:
+            customer id
+            name
+            lastname
+            home address
+            email address
+            status
+            credit limit
+        '''
+        mongo = MongoDBConnection()
+        with mongo:
+            db = mongo.connection.hpnorton_db
 
+            self.assertEqual(self.customer['customer_id'], 'A500')
+            self.assertEqual(self.customer['name'], 'Andrew Smith')
+            self.assertEqual(self.customer['home_address'], '23 Railroad Street')
+            self.assertEqual(self.customer['email_address'], 'andrew@hpnorton.com')
+            self.assertEqual(self.customer['phone_number'], '202-555-0134')
+            self.assertEqual(self.customer['status'], True)
+            self.assertEqual(self.customer['credit_limit'], 1000)
+
+            self.assertEqual(self.product['product_id'], 'A500')
+            self.assertEqual(self.product['description'], 'Andrew')
+            self.assertEqual(self.product['product_type'], 'Smith')
+            self.assertEqual(self.product['quantity_available'], '')
+ 
+            self.assertEqual(self.rentals['product_id'], 'A500')
+            self.assertEqual(self.rentals['customer_id'], 'Andrew')
+            self.assertEqual(self.rentals['name'], 'Smith')
+            self.assertEqual(self.rentals['home_address'], '23 Railroad Street Matthews, NC 28104')
+            self.assertEqual(self.rentals['email_address'], 'andrew@hpnorton.com')
+            self.assertEqual(self.rentals['phone_number'], '202-555-0134')
+
+    def test_database_return_value(self):
+        pass
+
+    def test_available_products(self):
+        pass
+    def test_show_rentals(self):
+        pass
     #     with database.transaction():
 
     #         #self.new_customer[CUST_ID] = ['A6000', 'AAAAA']
