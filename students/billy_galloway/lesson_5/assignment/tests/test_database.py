@@ -29,7 +29,7 @@ class DatabaseTests(TestCase):
 
             output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
             logger.info(f'{output}')
-        except Exception as e:
+        except FileNotFoundError as e:
             logger.info(f'{e}')
 
         self.customer = {
@@ -75,34 +75,54 @@ class DatabaseTests(TestCase):
         with mongo:
             db = mongo.connection.hpnorton_db
 
+            ''' confirm customer document is correct '''
             customer_db = [x for x in db.customers.find()]
-            self.assertEqual(self.customer['customer_id'], customer_db['customer_id'])
-            self.assertEqual(self.customer['name'], customer_db['name'])
-            self.assertEqual(self.customer['home_address'], customer_db['home_address'])
-            self.assertEqual(self.customer['email_address'], customer_db['email_address'])
-            self.assertEqual(self.customer['phone_number'], customer_db['phone_number'])
-            self.assertEqual(self.customer['status'], customer_db['status'])
-            self.assertEqual(self.customer['credit_limit'], customer_db['credit_limit'])
+            self.assertEqual(self.customer['customer_id'], customer_db[0]['customer_id'])
+            self.assertEqual(self.customer['name'], customer_db[0]['name'])
+            self.assertEqual(self.customer['home_address'], customer_db[0]['home_address'])
+            self.assertEqual(self.customer['email_address'], customer_db[0]['email_address'])
+            self.assertEqual(self.customer['phone_number'], customer_db[0]['phone_number'])
+            self.assertEqual(self.customer['status'], bool(customer_db[0]['status']))
+            self.assertEqual(self.customer['credit_limit'], int(customer_db[0]['credit_limit']))
 
-            producst_db = [x for x in db.product.find()]
-            self.assertEqual(self.product['product_id'], product_db['product_id'])
-            self.assertEqual(self.product['description'], product_db['name'])
-            self.assertEqual(self.product['product_type'], product_db['product_type'])
-            self.assertEqual(self.product['quantity_available'], product_db['quantity_available'])
+            ''' confirm product document is correct '''
+            product_db = [x for x in db.products.find()]
+            self.assertEqual(self.product['product_id'], product_db[5]['product_id'])
+            self.assertEqual(self.product['description'], product_db[5]['description'])
+            self.assertEqual(self.product['product_type'], product_db[5]['product_type'])
+            self.assertEqual(self.product['quantity_available'], int(product_db[5]['quantity_available']))
 
+            ''' confirm rentals document is corrrect '''
             rentals_db = [x for x in db.rentals.find()]
-            self.assertEqual(self.rentals['product_id'], rentals_db['product_id'])
-            self.assertEqual(self.rentals['customer_id'], nrentalsdb['customer_id'])
-            self.assertEqual(self.rentals['name'], rentals_db['name'])
-            self.assertEqual(self.rentals['home_address'], rentals_db['home_address'])
-            self.assertEqual(self.rentals['email_address'], rentals_db['email_address'])
-            self.assertEqual(self.rentals['phone_number'], rentals_db['phone_number'])
+            self.assertEqual(self.rentals['product_id'], rentals_db[1]['product_id'])
+            self.assertEqual(self.rentals['customer_id'], rentals_db[1]['customer_id'])
+            self.assertEqual(self.rentals['name'], rentals_db[1]['name'])
+            self.assertEqual(self.rentals['home_address'], rentals_db[1]['home_address'])
+            self.assertEqual(self.rentals['email_address'], rentals_db[1]['email_address'])
+            self.assertEqual(self.rentals['phone_number'], rentals_db[1]['phone_number'])
 
     def test_database_return_value(self):
-        self.assertEqual(added_customer.name, 'David')
-    #     logger.info(f'Found customer name in database')
+        ''' ensures that a list of 2 tuples is returned '''
+        output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
+        logger.info(f'{output}')
+        self.assertTupleEqual(output[0], (12, 8, 4))
+        self.assertTupleEqual(output[1], (0, 0, 0))
+
+    def test_database_error_return(self):
+        ''' ensure error count matches '''
+        output = import_data('old_database', 'customer', 'product', 'rentals')
+        logger.info(f'{output}')
+        self.assertTupleEqual(output[0], (0, 0, 0))
+        self.assertTupleEqual(output[1], (2, 2, 2))
 
     def test_available_products(self):
-        pass
+        ''' ensure only available products are returned '''
+        output = show_available_products()
+        logger.info(f'Products available for rent')
+
+        self.assertEqual(output['prd001'], {'3', '60-inch TV stand', 'livingroom'})
+    
     def test_show_rentals(self):
-        pass
+        ''' ensure rentals are displaybed '''
+        output = show_rentals('prd006')
+        self.assertEqual(output[0]['customer_id'], self.rentals['customer_id'])

@@ -1,10 +1,9 @@
 '''
-Database 
+Database
 interacts with the database via files formatted from csv files
 '''
 import sys
 sys.path.append("./hp_norton_inventory")
-import json
 import logging
 import csv_handler as csvh
 from mongo_connect import *
@@ -18,19 +17,19 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
     csv_handler = csvh.CsvHandler()
 
     ERROR_COUNT = {
-        'CUSTOMER_ERROR': 0,
         'PRODUCT_ERROR': 0,
+        'CUSTOMER_ERROR': 0,
         'RENTALS_ERROR': 0
     }
 
     INVENTORY_COUNT = {
-        'customer_totals': 0,
         'product_totals': 0,
+        'customer_totals': 0,
         'rental_totals': 0
     }
 
-    customer_file = f'{directory_name}/{customer_file}'
     product_file = f'{directory_name}/{product_file}'
+    customer_file = f'{directory_name}/{customer_file}'
     rentals_file = f'{directory_name}/{rentals_file}'
 
     with mongo:
@@ -38,15 +37,9 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         hpnorton_db = mongo.connection.hpnorton_db
 
         # collections in database
+        products = hpnorton_db['products']
         customers = hpnorton_db['customers']
         rentals = hpnorton_db['rentals']
-        products = hpnorton_db['products']
-
-        try:
-            customer = csv_handler.generate_document_list(customer_file, "customer")
-        except FileNotFoundError as error:
-            logger.info(f' File not found {error}')
-            ERROR_COUNT['CUSTOMER_ERROR']+=1
 
         try:
             product = csv_handler.generate_document_list(product_file, "product")
@@ -55,12 +48,26 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
             ERROR_COUNT['PRODUCT_ERROR']+=1
 
         try:
+            customer = csv_handler.generate_document_list(customer_file, "customer")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
+            ERROR_COUNT['CUSTOMER_ERROR']+=1
+
+        try:
             rental = csv_handler.generate_document_list(rentals_file, "rentals")
         except FileNotFoundError as error:
             logger.info(f' File not found {error}')
             ERROR_COUNT['RENTALS_ERROR']+=1
-    
+
         # write to database
+        try:
+            products.insert_many(product)
+            product_totals = [product_id for product_id in products.find()]
+            INVENTORY_COUNT['product_totals'] = len(product_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            ERROR_COUNT['PRODUCT_ERROR']+=1
+
         try:
             customers.insert_many(customer)
             customer_totals = [customer_id for customer_id in customers.find()]
@@ -71,14 +78,6 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
             ERROR_COUNT['CUSTOMER_ERROR']+=1
 
         try:
-            products.insert_many(product)
-            product_totals = [product_id for product_id in products.find()]
-            INVENTORY_COUNT['product_totals'] = len(product_totals)
-        except UnboundLocalError as error:
-            logger.info(f' {error}')
-            ERROR_COUNT['PRODUCT_ERROR']+=1
-
-        try:
             rentals.insert_many(rental)
             rental_totals = [rental_id for rental_id in rentals.find()]
             INVENTORY_COUNT['rental_totals'] = len(rental_totals)
@@ -86,34 +85,44 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
             logger.info(f' {error}')
             ERROR_COUNT['RENTALS_ERROR']+=1
 
-        inventory_count = [INVENTORY_COUNT['customer_totals'],
-                           INVENTORY_COUNT['product_totals'],
+        inventory_count = [INVENTORY_COUNT['product_totals'],
+                           INVENTORY_COUNT['customer_totals'],
                            INVENTORY_COUNT['rental_totals']]
 
-        error_count = [ERROR_COUNT['CUSTOMER_ERROR'],
-                       ERROR_COUNT['PRODUCT_ERROR'],
+        error_count = [ERROR_COUNT['PRODUCT_ERROR'],
+                       ERROR_COUNT['CUSTOMER_ERROR'],
                        ERROR_COUNT['RENTALS_ERROR']]
 
         return [tuple(inventory_count), tuple(error_count)]
 
 def show_available_products():
+    ''' returns a list of items available for rent '''
     mongo = MongoDBConnection()
+    available_units = {}
 
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         product_totals = [product for product in hpnorton_db.products.find()]
-        available = [product_totals[i]['description'] for i in range(len(product_totals)) if int(product_totals[i]['quantity_available']) > 0]
-        
-        return available
+        available = [product_totals[i] for i in range(len(product_totals)) if int(product_totals[i]['quantity_available']) > 0]
+
+        for units in range(len(available)):
+            available_units[available[units]['product_id']] = {
+                available[units]['description'],
+                available[units]['product_type'],
+                available[units]['quantity_available']
+            }
+
+        return available_units
 
 def show_rentals(product_id):
+    ''' returns the matching fields information based on product id '''
     mongo = MongoDBConnection()
 
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         rental_totals = [rental for rental in hpnorton_db.rentals.find()]
         rented_unit = [rental_totals[i] for i in range(len(rental_totals)) if rental_totals[i]['product_id'] == product_id]
-        
+
         return rented_unit
 
 def main():
@@ -122,7 +131,7 @@ def main():
 
     output = import_data('old_database', 'customer.csv', 'product.csv', 'rentals.csv')
     logger.info(f' Total number of invetory and errors {output}')
-    
+
     available = show_available_products()
     logger.info(f' Current list of available items: {available}')
 

@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class CsvHandler():
+    ''' csv handler class '''
     @staticmethod
     def csv_reader(csv_file):
         ''' ingests csv file and returns an ordered dict '''
@@ -65,9 +66,9 @@ class CsvHandler():
             yield rental
 
     def generate_document_list(self, document, item_key):
-        ''' 
+        '''
             takes a csv file along with the inventory type i.e. customer, product, rentals
-            as an argument and passes it to the csv_reader. That gets passed as an 
+            as an argument and passes it to the csv_reader. That gets passed as an
             argument to the formatter to be returned as a list of dictionaries
         '''
         item_type = {
