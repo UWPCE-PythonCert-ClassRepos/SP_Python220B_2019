@@ -121,7 +121,7 @@ class DatabaseTests(TestCase):
         logger.info(f'Products available for rent')
 
         self.assertEqual(output['prd001'], {'3', '60-inch TV stand', 'livingroom'})
-    
+
     def test_show_rentals(self):
         ''' ensure rentals are displaybed '''
         output = show_rentals('prd006')
