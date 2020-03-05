@@ -16,28 +16,17 @@ def add_customer(customer_id, name, last_name,
                  phone_number, status, credit_limit):
     ''' add new customers to the database '''
 
-    customer = {
-        'cust_id': customer_id,
-        'name': name,
-        'last': last_name,
-        'home': home_address,
-        'email': email_address,
-        'phone': phone_number,
-        'status': status,
-        'limit': credit_limit
-    }
-
     try:
         with database.transaction():
             new_customer = Customer.create(
-                customer_id=customer['cust_id'],
-                name=customer['name'],
-                last_name=customer['last'],
-                home_address=customer['home'],
-                email_address=customer['email'],
-                phone_number=customer['phone'],
-                status=customer['status'],
-                credit_limit=customer['limit'])
+                customer_id=customer_id,
+                name=name,
+                last_name=last_name,
+                home_address=home_address,
+                email_address=email_address,
+                phone_number=phone_number,
+                status=status,
+                credit_limit=credit_limit)
             new_customer.save()
             logger.info(f'{name} {last_name} added to database')
 
