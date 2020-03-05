@@ -1,0 +1,11 @@
+customer_id,name,last_name,address,phone_number,email_address,status,credit_limit
+C844698,Sherry,Shaw,Tuvalu, 73-277-5417,sherry.shaw@gmail.com,False,91314.52
+C064424,Kevin,Carter,Rarotonga,481-255-6822,kevin.carter@gmail.com,False,80709.67
+C213784,Lorene,Spann,Rarotonga,  4-263-7195,lorene.spann@gmail.io,True,15624.14
+C287422,Terri,Marrufo,Rarotonga,391-961-2714,terri.marrufo@gmail.com,True,68238.57
+C241709,Lois,Saari,Tuvalu,397-190-454,lois.saari@gmail.io,False,88344.19
+C379757,Aaron,Augustine,Samoa, 83- 62-9433,aaron.augustine@gmail.com,True,52243.76
+C275451,Michael,White,Samoa,809-161-5561,michael.white@gmail.org,True,72705.08
+C443086,Michael,Jamesson,Tuvalu,877-682-2881,michael.jamesson@gmail.com,False,96104.38
+C273564,Charlotte,Wallace,Tuvalu,173-369-1444,charlotte.wallace@gmail.com,True,21757.02
+C926477,Wayne,Kowalczyk,Rarotonga,806- 88-9217,wayne.kowalczyk@gmail.io,False,36041.55
