@@ -191,16 +191,19 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     myqueue3 = queue.Queue()
 
     thread_prdt = threading.Thread(target=import_products, args=(prdt_file, myqueue1))
-    thread_cust = threading.Thread(target=import_customers, args=(cust_file, myqueue2))
-    thread_rent = threading.Thread(target=import_rentals, args=(rent_file, myqueue3))
+    thread_cust = threading.Thread(target=import_customers, args=(cust_file, myqueue1))
+    thread_rent = threading.Thread(target=import_rentals, args=(rent_file, myqueue1))
 
     thread_prdt.start()
+    thread_prdt.join()
     thread_cust.start()
+    thread_cust.join()
     thread_rent.start()
+    thread_rent.join()
 
     prod_results = myqueue1.get()
-    cust_results = myqueue2.get()
-    rent_results = myqueue3.get()
+    cust_results = myqueue1.get()
+    rent_results = myqueue1.get()
 
 
 
