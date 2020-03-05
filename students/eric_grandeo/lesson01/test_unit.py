@@ -108,3 +108,23 @@ class MainTest(TestCase):
                 main.item_info()
 
         self.assertEqual(expected, result_string.getvalue().splitlines())
+
+    def test_items_info_not_found(self):
+        main.FULL_INVENTORY = {'Testprod':{'productCode':'Testprod',
+                                      'description':'Wood table',
+                                      'marketPrice':24,
+                                      'rentalPrice':'123',
+                                      'material':'wood',
+                                      'size':'m'}}
+        
+        expected = "Item not found in inventory\n"
+        
+        with patch('builtins.input', side_effect=['Wrong']):
+            with patch('sys.stdout', new=io.StringIO()) as result_string:
+                main.item_info()
+
+        self.assertEqual(expected, result_string.getvalue())    
+        
+    def test_exit_program(self):
+        with self.assertRaises(SystemExit):
+            main.exit_program()
