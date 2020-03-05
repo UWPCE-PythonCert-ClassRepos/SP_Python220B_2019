@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 from unittest.mock import patch
-
+import io
 import sys
 sys.path.append('./inventory_management')
 from inventory_management.inventory_class import Inventory
@@ -90,3 +90,21 @@ class MainTest(TestCase):
         with patch('builtins.input', side_effect=new_inputs):
             main.add_new_item()
         self.assertEqual(main.FULL_INVENTORY['789'], new_output)
+
+    def test_items_info_found(self):
+        main.FULL_INVENTORY = {'Testprod':{'productCode':'Testprod',
+                                      'description':'Wood table',
+                                      'marketPrice':24,
+                                      'rentalPrice':'123',
+                                      'material':'wood',
+                                      'size':'m'}}
+
+        expected = ["productCode:Testprod", "description:Wood table",
+                   "marketPrice:24", "rentalPrice:123", "material:wood",
+                   "size:m"]
+        
+        with patch('builtins.input', side_effect=['Testprod']):
+            with patch('sys.stdout', new=io.StringIO()) as result_string:
+                main.item_info()
+
+        self.assertEqual(expected, result_string.getvalue().splitlines())
