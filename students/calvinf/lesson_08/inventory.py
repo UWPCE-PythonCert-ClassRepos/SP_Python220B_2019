@@ -8,7 +8,7 @@ LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
 
 CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.WARNING)
+CONSOLE_HANDLER.setLevel(logging.INFO)
 CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 LOGGER = logging.getLogger()
@@ -31,7 +31,7 @@ def add_furniture(invoice_file, customer_name, item_code, item_description, item
                          item_description, item_monthly_price])
 
 
-def single_customer(customer_name, invoice_file):
+def single_customer(cust_name, inv_file):
     """
     Input parameters: customer_name, invoice_file.
     Output: Returns a function that takes one parameter, rental_items.
@@ -41,19 +41,20 @@ def single_customer(customer_name, invoice_file):
     """
     def single_customer_update(rental_items):
         filenamepath = os.path.join(os.getcwd(), rental_items)
-        single_customer_add_furniture = partial(add_furniture, invoice_file, customer_name)
+        single_customer_add_furniture = partial(add_furniture, inv_file, cust_name)
         with open(filenamepath) as read_file:
-            reader = csv.DictReader(read_file, delimiter=',')
+            reader = csv.reader(read_file, delimiter=',')
             for row in reader:
+                LOGGER.info(row)
                 single_customer_add_furniture(*row)
     return single_customer_update
 
 
 def main():
     """Main function for testing functions"""
-    add_furniture('invoice_file.csv', 'Elisa Miles', 'LR04', 'Leather Sofa', 25.00)
-    add_furniture('invoice_file.csv', 'Edward Data', 'KT78', 'Kitchen Table', 10.00)
-    add_furniture('invoice_file.csv', 'Alex Gonzales', 'BR02', 'Queen Mattress', 17.00)
+    add_furniture('rented_items.csv', 'Elisa Miles', 'LR04', 'Leather Sofa', 25.00)
+    add_furniture('rented_items.csv', 'Edward Data', 'KT78', 'Kitchen Table', 10.00)
+    add_furniture('rented_items.csv', 'Alex Gonzales', 'BR02', 'Queen Mattress', 17.00)
     add_furniture("rented_items.csv", "Elisa Miles", "LR04", "Leather Sofa", 25)
     add_furniture("rented_items.csv", "Edward Data", "KT78", "Kitchen Table", 10)
     create_invoice = single_customer("Susan Wong", "rented_items.csv")
