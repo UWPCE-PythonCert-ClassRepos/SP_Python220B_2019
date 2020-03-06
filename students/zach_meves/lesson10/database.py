@@ -71,9 +71,6 @@ def time_functions(cls):
             value = getattr(cls, name)
             if hasattr(value, "__call__"):
                 setattr(cls, name, _time_function(value))
-                print("Decorated ", name)
-            else:
-                print("No decoration for ", name)
 
     # Add line to timing file
     with open(TIME_FILE, 'a') as file:
@@ -203,7 +200,7 @@ class DatabaseInterface:
                 for rental in manager.db.rentals.find({'product_id': pid}):
                     count -= rental['quantity_rented']
 
-                if count:
+                if count > 0:
                     output[pid] = {k: product[k] for k in ('description', 'product_type')}
                     output[pid]['quantity_available'] = count
 

@@ -5,6 +5,7 @@ Tests for database.py.
 import unittest
 import pymongo
 import os
+import sys
 import csv
 import database
 from database import DatabaseInterface
@@ -14,10 +15,26 @@ from unittest import mock
 TEST_DIR = os.path.dirname(os.path.realpath(__file__))
 DATA_DIR = os.path.join(TEST_DIR, 'data')
 
+N = 5
+
 # Test CSV files
 CUSTOMERS = 'customers.csv'
 PRODUCTS = 'products.csv'
 RENTALS = 'rentals.csv'
+
+remove_files = False
+
+if N > 1:  # Expand the input files
+    from extend_files import extend
+    CUSTOMERS, PRODUCTS, RENTALS = extend(os.path.join(DATA_DIR, CUSTOMERS),
+                                          os.path.join(DATA_DIR, PRODUCTS),
+                                          os.path.join(DATA_DIR, RENTALS), N)
+    CUSTOMERS = os.path.split(CUSTOMERS)[-1]
+    PRODUCTS = os.path.split(PRODUCTS)[-1]
+    RENTALS = os.path.split(RENTALS)[-1]
+
+    remove_files = False
+    removal_count = 0
 
 # Test CSV field names
 USER_ID, USER_NAME = "user_id", "name"
@@ -78,6 +95,18 @@ class TestCsvIO(unittest.TestCase):
             os.remove(self.filename)
         except FileNotFoundError:
             pass
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        """Remove created files if needed."""
+        global removal_count
+
+        if remove_files:
+            if removal_count == 0:
+                removal_count += 1
+            else:
+                for f in (CUSTOMERS, PRODUCTS, RENTALS):
+                    os.remove(os.path.join(DATA_DIR, f))
 
 
 @mock.patch('database.DB_NAME', 'test_db')
@@ -163,6 +192,7 @@ class TestDatabase(unittest.TestCase):
         success, fail = DatabaseInterface.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         prods_to_show = DatabaseInterface.show_available_products()
+        self.assertEqual(sorted(self.products_remaining.keys()), sorted(prods_to_show.keys()))
         correct = dict(zip(prods_to_show, ({PROD_DESC: self.product_data[prod][PROD_DESC],
                                             PROD_TYPE: self.product_data[prod][PROD_TYPE],
                                             PROD_REMAIN: self.products_remaining[prod]}
@@ -206,3 +236,15 @@ class TestDatabase(unittest.TestCase):
                             'quantity_available': self.products_remaining[key]})
         self.assertEqual(correct,
                          DatabaseInterface.show_products_for_customer())
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        """Remove created files if needed."""
+        global removal_count
+
+        if remove_files:
+            if removal_count == 0:
+                removal_count += 1
+            else:
+                for f in (CUSTOMERS, PRODUCTS, RENTALS):
+                    os.remove(os.path.join(DATA_DIR, f))
