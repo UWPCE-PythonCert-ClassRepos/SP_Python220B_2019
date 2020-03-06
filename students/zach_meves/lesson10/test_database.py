@@ -7,6 +7,7 @@ import pymongo
 import os
 import csv
 import database
+from database import DatabaseInterface
 
 from unittest import mock
 
@@ -57,7 +58,7 @@ class TestCsvIO(unittest.TestCase):
 
         # Read the file and assert that the dictionary output
         # matches self.data_list
-        data = database.read_csv(self.filename)
+        data = DatabaseInterface.read_csv(self.filename)
 
         self.assertEqual(self.data_list, data)
 
@@ -66,7 +67,7 @@ class TestCsvIO(unittest.TestCase):
 
         # Read the file and assert that the dictionary output
         # matches self.data_dict
-        data = database.read_csv(self.filename, keyed=True)
+        data = DatabaseInterface.read_csv(self.filename, keyed=True)
 
         self.assertEqual(self.data_dict, data)
 
@@ -78,10 +79,7 @@ class TestCsvIO(unittest.TestCase):
         except FileNotFoundError:
             pass
 
-# @mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
-# @mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
-# @mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
-# @mock.patch('database.DB', database.CLIENT['test_db'])
+
 @mock.patch('database.DB_NAME', 'test_db')
 class TestDatabase(unittest.TestCase):
     """Test cases for database"""
@@ -95,9 +93,9 @@ class TestDatabase(unittest.TestCase):
         """Set up test case"""
 
         # The read_csv method is tested above
-        self.customer_data = database.read_csv(os.path.join(DATA_DIR, CUSTOMERS), keyed=True)
-        self.product_data = database.read_csv(os.path.join(DATA_DIR, PRODUCTS), keyed=True)
-        self.rental_data = database.read_csv(os.path.join(DATA_DIR, RENTALS), keyed=False)
+        self.customer_data = DatabaseInterface.read_csv(os.path.join(DATA_DIR, CUSTOMERS), keyed=True)
+        self.product_data = DatabaseInterface.read_csv(os.path.join(DATA_DIR, PRODUCTS), keyed=True)
+        self.rental_data = DatabaseInterface.read_csv(os.path.join(DATA_DIR, RENTALS), keyed=False)
 
         self.customer_keys = list(self.customer_data.keys())
         self.product_keys = list(self.product_data.keys())
@@ -116,10 +114,6 @@ class TestDatabase(unittest.TestCase):
                 if self.products_remaining[prod] <= 0:
                     self.products_remaining.pop(prod)
 
-    # @mock.patch('database.PRODUCTS', database.CLIENT['test_db'].products)
-    # @mock.patch('database.CUSTOMERS', database.CLIENT['test_db'].customers)
-    # @mock.patch('database.RENTALS', database.CLIENT['test_db'].rentals)
-    # @mock.patch('database.DB', database.CLIENT['test_db'])
     @mock.patch('database.DB_NAME', 'test_db')
     def tearDown(self) -> None:
         """
@@ -142,7 +136,7 @@ class TestDatabase(unittest.TestCase):
     def test_import_data(self):
         """Test database.import_data"""
 
-        success, fail = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        success, fail = DatabaseInterface.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         # Order = products, customers, rentals
         names = ("Products", "Customers", "Rentals")
@@ -164,11 +158,11 @@ class TestDatabase(unittest.TestCase):
     def test_show_available_products(self):
         """Test database.show_available_products"""
 
-        self.assertEqual({}, database.show_available_products(), "Nothing so far")
+        self.assertEqual({}, DatabaseInterface.show_available_products(), "Nothing so far")
 
-        success, fail = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        success, fail = DatabaseInterface.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
-        prods_to_show = database.show_available_products()
+        prods_to_show = DatabaseInterface.show_available_products()
         correct = dict(zip(prods_to_show, ({PROD_DESC: self.product_data[prod][PROD_DESC],
                                             PROD_TYPE: self.product_data[prod][PROD_TYPE],
                                             PROD_REMAIN: self.products_remaining[prod]}
@@ -179,10 +173,10 @@ class TestDatabase(unittest.TestCase):
     def test_show_rentals(self):
         """Test database.show_rentals"""
 
-        _, _ = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        _, _ = DatabaseInterface.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         if "prodX" not in self.product_data:
-            self.assertEqual({}, database.show_rentals("prodX"))
+            self.assertEqual({}, DatabaseInterface.show_rentals("prodX"))
         else:
             raise NameError("Test case invalid - 'prodX' exists as a product key")
 
@@ -198,12 +192,12 @@ class TestDatabase(unittest.TestCase):
                     except KeyError:
                         pass
 
-            self.assertEqual(correct, database.show_rentals(product))
+            self.assertEqual(correct, DatabaseInterface.show_rentals(product))
 
     def test_show_products_for_customer(self):
         """Tests database.show_products_for_customer"""
 
-        _, _ = database.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
+        _, _ = DatabaseInterface.import_data(DATA_DIR, PRODUCTS, CUSTOMERS, RENTALS)
 
         correct = []
         for key in sorted(self.products_remaining):
@@ -211,4 +205,4 @@ class TestDatabase(unittest.TestCase):
                             PROD_TYPE: self.product_data[key][PROD_TYPE],
                             'quantity_available': self.products_remaining[key]})
         self.assertEqual(correct,
-                         database.show_products_for_customer())
+                         DatabaseInterface.show_products_for_customer())

@@ -11,6 +11,7 @@ import csv
 import os
 import pymongo
 import time
+import datetime
 
 
 # CLIENT = pymongo.MongoClient()
@@ -27,7 +28,7 @@ def _time_function(fun):
     """
     For internal use only.
 
-    Add timing to a function.
+    Add timing to a function, writes results to a .txt file.
 
     :param fun: function
     :return: function
@@ -47,7 +48,9 @@ def _time_function(fun):
             num = "N/A"
 
         with open(TIME_FILE, 'a') as file:
-            file.write(f"{fun.__name__:25s} | {dt:5.3e} s | Records: {num}\n")
+            # f_sig = f"{fun.__name__}({', '.join(args)}, {', '.join(f'{k}={v}' for k, v in kwargs.items())})"
+            f_sig = fun.__name__
+            file.write(f"{f_sig:<30s} | {dt:5.3e} s | Records: {num}\n")
 
         return results
 
@@ -68,13 +71,18 @@ def time_functions(cls):
             value = getattr(cls, name)
             if hasattr(value, "__call__"):
                 setattr(cls, name, _time_function(value))
+                print("Decorated ", name)
             else:
-                setattr(cls, name, time_functions(value))
+                print("No decoration for ", name)
+
+    # Add line to timing file
+    with open(TIME_FILE, 'a') as file:
+        s = f"Execution at {datetime.datetime.now()}"
+        file.write(f"\n{s}\n{'-' * len(s)}\n")
 
     return cls
 
 
-@time_functions
 class MongoManager:
     """Context manager for MongoDB connection."""
 
@@ -104,121 +112,130 @@ class MongoManager:
         self.db = None
 
 
-def read_csv(file, keyed=False):
+@time_functions
+class DatabaseInterface:
     """
-    Read a CSV file and return the data as a list of dictionaries.
-
-    :param file: str, file to read
-    :param keyed: bool, True to return a dictionary keyed on the first-column
-    values, False to return a list of dicts
-    :return: list or dict
+    Class to hold the database interface functions.
     """
 
-    with open(file) as f:
-        reader = csv.reader(f)
-        header = [_.strip() for _ in next(reader)]
+    manager = MongoManager()
 
-        output = []
-        for line in reader:
-            line_values = [_.strip() for _ in line]
-            # Check if need to convert to floats or ints
-            for i, val in enumerate(line_values[:]):
-                try:
-                    line_values[i] = float(val)
-                except ValueError:
-                    pass
+    @classmethod
+    def read_csv(cls, file, keyed=False):
+        """
+        Read a CSV file and return the data as a list of dictionaries.
 
-            output.append(dict(zip(header, line_values)))
+        :param file: str, file to read
+        :param keyed: bool, True to return a dictionary keyed on the first-column
+        values, False to return a list of dicts
+        :return: list or dict
+        """
 
-    if keyed:  # Convert to a single dictionary keyed with the first column
-        key = header[0]
-        return dict(zip((entry[key] for entry in output), output))
+        with open(file) as f:
+            reader = csv.reader(f)
+            header = [_.strip() for _ in next(reader)]
 
-    return output
+            output = []
+            for line in reader:
+                line_values = [_.strip() for _ in line]
+                # Check if need to convert to floats or ints
+                for i, val in enumerate(line_values[:]):
+                    try:
+                        line_values[i] = float(val)
+                    except ValueError:
+                        pass
 
+                output.append(dict(zip(header, line_values)))
 
-def import_data(directory, products, customers, rentals):
-    """
-    Create and populate a new MongoDB instance with data from
-    the provided files.
+        if keyed:  # Convert to a single dictionary keyed with the first column
+            key = header[0]
+            return dict(zip((entry[key] for entry in output), output))
 
-    :param directory: str, directory name of files
-    :param products: str, name of file with product definitions
-    :param customers: str, name of file with customer definitions
-    :param rentals: str, name of file with rental information
-    :returns: tuple, number of products, customers, and rentals added
-    :returns: tuple, errors that occur for adding products, customers, and rentals
-    """
+        return output
 
-    product_data = read_csv(os.path.join(directory, products))
-    customer_data = read_csv(os.path.join(directory, customers))
-    rental_data = read_csv(os.path.join(directory, rentals))
+    @classmethod
+    def import_data(cls, directory, products, customers, rentals):
+        """
+        Create and populate a new MongoDB instance with data from
+        the provided files.
 
-    with MongoManager() as manager:
-        res_prod = manager.db.products.insert_many(product_data)
-        res_cust = manager.db.customers.insert_many(customer_data)
-        res_rent = manager.db.rentals.insert_many(rental_data)
+        :param directory: str, directory name of files
+        :param products: str, name of file with product definitions
+        :param customers: str, name of file with customer definitions
+        :param rentals: str, name of file with rental information
+        :returns: tuple, number of products, customers, and rentals added
+        :returns: tuple, errors that occur for adding products, customers, and rentals
+        """
 
-    inserted_prods = len(res_prod.inserted_ids)
-    inserted_custs = len(res_cust.inserted_ids)
-    inserted_rents = len(res_rent.inserted_ids)
+        product_data = DatabaseInterface.read_csv(os.path.join(directory, products))
+        customer_data = DatabaseInterface.read_csv(os.path.join(directory, customers))
+        rental_data = DatabaseInterface.read_csv(os.path.join(directory, rentals))
 
-    return (inserted_prods, inserted_custs, inserted_rents), \
-           (len(product_data) - inserted_prods, len(customer_data) - inserted_custs,
-            len(rental_data) - inserted_rents)
+        with DatabaseInterface.manager as manager:
+            res_prod = manager.db.products.insert_many(product_data)
+            res_cust = manager.db.customers.insert_many(customer_data)
+            res_rent = manager.db.rentals.insert_many(rental_data)
 
+        inserted_prods = len(res_prod.inserted_ids)
+        inserted_custs = len(res_cust.inserted_ids)
+        inserted_rents = len(res_rent.inserted_ids)
 
-def show_available_products():
-    """
-    Return products that are currently available in dictionary format.
+        return (inserted_prods, inserted_custs, inserted_rents), \
+               (len(product_data) - inserted_prods, len(customer_data) - inserted_custs,
+                len(rental_data) - inserted_rents)
 
-    :return: dict
-    """
+    @classmethod
+    def show_available_products(cls):
+        """
+        Return products that are currently available in dictionary format.
 
-    output = {}
+        :return: dict
+        """
 
-    with MongoManager() as manager:
-        for product in manager.db.products.find():
-            pid = product['product_id']
-            count = product['quantity']
+        output = {}
 
-            # Find corresponding rentals
-            for rental in manager.db.rentals.find({'product_id': pid}):
-                count -= rental['quantity_rented']
+        with DatabaseInterface.manager as manager:
+            for product in manager.db.products.find():
+                pid = product['product_id']
+                count = product['quantity']
 
-            if count:
-                output[pid] = {k: product[k] for k in ('description', 'product_type')}
-                output[pid]['quantity_available'] = count
+                # Find corresponding rentals
+                for rental in manager.db.rentals.find({'product_id': pid}):
+                    count -= rental['quantity_rented']
 
-    return output
+                if count:
+                    output[pid] = {k: product[k] for k in ('description', 'product_type')}
+                    output[pid]['quantity_available'] = count
 
+        return output
 
-def show_products_for_customer():
-    """
-    Return list of all available products.
+    @classmethod
+    def show_products_for_customer(cls):
+        """
+        Return list of all available products.
 
-    :return: list of dict
-    """
+        :return: list of dict
+        """
 
-    output = show_available_products()
-    return [output[k] for k in sorted(output.keys())]
+        output = DatabaseInterface.show_available_products()
+        return [output[k] for k in sorted(output.keys())]
 
+    @classmethod
+    def show_rentals(cls, product_id):
+        """
+        Return user information for customers who have rented the product.
 
-def show_rentals(product_id):
-    """
-    Return user information for customers who have rented the product.
+        :param product_id: str, product ID
+        :return: dict
+        """
 
-    :param product_id: str, product ID
-    :return: dict
-    """
+        output = {}
 
-    output = {}
+        with DatabaseInterface.manager as manager:
+            results = manager.db.rentals.find({"product_id": product_id})
+            for rental in results:
+                uid = rental['user_id']
+                output[uid] = manager.db.customers.find_one({"user_id": uid},
+                                                            projection={'_id': False, "user_id": False})
 
-    with MongoManager() as manager:
-        results = manager.db.rentals.find({"product_id": product_id})
-        for rental in results:
-            uid = rental['user_id']
-            output[uid] = manager.db.customers.find_one({"user_id": uid},
-                                                        projection={'_id': False, "user_id": False})
-
-    return output
+        return output
