@@ -1,0 +1,38 @@
+
+
+Function Name: import_products Elapsed Time: 0.48856520652770996 Records: 1000
+Function Name: import_customers Elapsed Time: 0.41577696800231934 Records: 1000
+Function Name: import_rentals Elapsed Time: 0.40525007247924805 Records: 1000
+
+Function Name: import_products Elapsed Time: 0.451793909072876 Records: 1000
+Function Name: import_customers Elapsed Time: 0.4184119701385498 Records: 1000
+Function Name: import_rentals Elapsed Time: 0.42482614517211914 Records: 1000
+
+Function Name: import_products Elapsed Time: 0.7868349552154541 Records: 2000
+Function Name: import_customers Elapsed Time: 0.7504057884216309 Records: 2000
+Function Name: import_rentals Elapsed Time: 0.7191250324249268 Records: 2000
+
+Function Name: import_products Elapsed Time: 1.9017961025238037 Records: 4000
+Function Name: import_customers Elapsed Time: 1.4145870208740234 Records: 4000
+Function Name: import_rentals Elapsed Time: 1.3878097534179688 Records: 4000
+
+Function Name: import_products Elapsed Time: 2.80751895904541 Records: 8000
+Function Name: import_customers Elapsed Time: 2.7245969772338867 Records: 8000
+Function Name: import_rentals Elapsed Time: 2.720337152481079 Records: 8000
+
+Products took less time than customers once the number of records increased
+Function Name: import_products Elapsed Time: 4.9680798053741455 Records: 16000
+Function Name: import_customers Elapsed Time: 5.264182090759277 Records: 16000
+Function Name: import_rentals Elapsed Time: 5.306380748748779 Records: 16000
+
+Function Name: import_products Elapsed Time: 10.026909828186035 Records: 32000
+Function Name: import_customers Elapsed Time: 10.636466026306152 Records: 32000
+Function Name: import_rentals Elapsed Time: 10.677263975143433 Records: 32000
+
+Function Name: import_products Elapsed Time: 10.211025953292847 Records: 32000
+Function Name: import_customers Elapsed Time: 10.452554941177368 Records: 32000
+Function Name: import_rentals Elapsed Time: 10.43822979927063 Records: 32000
+
+Function Name: import_products Elapsed Time: 9.934972286224365 Records: 32000
+Function Name: import_customers Elapsed Time: 10.842923879623413 Records: 32000
+Function Name: import_rentals Elapsed Time: 10.711345911026001 Records: 32000
