@@ -1,14 +1,17 @@
+# pylint: disable=line-too-long
+# pylint: disable=no-member
 """Module to import data into Mongodb from csv files"""
 import logging
 import datetime
 import os
 import csv
 import time
+from functools import wraps
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 from pymodm import MongoModel, fields, connect
 from pymodm.errors import ValidationError, OperationError
-from functools import wraps
+
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
@@ -73,13 +76,16 @@ class Rental(MongoModel):
 
 
 def performance(func):
+    """Function to add performance metrics to functions"""
     @wraps(func)
     def perfmon(*args, **kwargs):
+        """Function to add performance metrics to functions"""
         starttime = time.time()
         result = func(*args, **kwargs)
         endtime = time.time()
         with open("perf_monitor.log", "a+") as perf:
-            perf.write("Function Name: " + func.__name__ + " Elapsed Time: " + str(endtime - starttime) + " Records: "
+            perf.write("Function Name: " + func.__name__ + " Elapsed Time: "
+                       + str(endtime - starttime) + " Records: "
                        + str(result[0]) + "\n")
         return result
 
@@ -92,9 +98,9 @@ def import_customers(input_data):
     Function to to import data into customer table
     and return success and error count for inserts
     """
-    #start = time.time()
-    mydb = CLIENT.storedata
-    mycustomer = mydb.customer
+    # start = time.time()
+    # mydb = CLIENT.storedata
+    # mycustomer = mydb.customer
     # cust_count_before = mycustomer.count_documents({})
     error_count = 0
     insert_count = 0
@@ -127,8 +133,8 @@ def import_products(input_data):
     and return success and error count for inserts
     """
     #start = time.time()
-    mydb = CLIENT.storedata
-    myproducts = mydb.product
+    # mydb = CLIENT.storedata
+    # myproducts = mydb.product
     # product_count_before = myproducts.count_documents({})
     error_count = 0
     insert_count = 0
@@ -160,8 +166,8 @@ def import_rentals(input_data):
     and return success and error count for inserts
     """
     #start = time.time()
-    mydb = CLIENT.storedata
-    myrental = mydb.rental
+    # mydb = CLIENT.storedata
+    # myrental = mydb.rental
     # rental_count_before = myrental.count_documents({})
     error_count = 0
     insert_count = 0
@@ -256,6 +262,6 @@ def show_rentals(product_id):
 
 if __name__ == '__main__':
     CLIENT.drop_database('storedata')
-    mydir = "/Users/calvin/Documents/python_work/SP_Online_PY220/SP_Python220B_2019/students/calvinf/lesson_10"
-    import_data(mydir, 'products.csv', 'customer.csv', 'rental.csv')
+    MYDIR = "/Users/calvin/Documents/python_work/SP_Online_PY220/SP_Python220B_2019/students/calvinf/lesson_10"
+    import_data(MYDIR, 'products.csv', 'customer.csv', 'rental.csv')
     CLIENT.drop_database('storedata')
