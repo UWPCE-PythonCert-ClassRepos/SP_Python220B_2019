@@ -10,9 +10,14 @@ def analyze(filename):
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+
+        found = 0
         new_ones = []
         for row in reader:
             lrow = list(row)
+            if "ao" in row[6]:
+                found += 1
+
             if lrow[5] > '00/00/2012':
                 new_ones.append((lrow[5], lrow[0]))
 
@@ -40,20 +45,14 @@ def analyze(filename):
                 year_count["2018"] += 1
 
         print(year_count)
+    step1 = datetime.datetime.now()
 
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    print(f"'ao' was found {found} times")
+    end = datetime.datetime.now()
 
-        found = 0
-
-        for line in reader:
-            lrow = list(line)
-            if "ao" in line[6]:
-                found += 1
-
-        print(f"'ao' was found {found} times")
-        end = datetime.datetime.now()
-
+    print(f'delta1 is {step1 - start}')
+    print(f'delta2 is {end - step1}')
+    print(f'total is {end - start}')
     return (start, end, year_count, found)
 
 def main():
