@@ -23,13 +23,13 @@ def make_date():
 
     span = (end - start).days
     ran = randint(0, span)
-    ran_date = (start + timedelta(days=ran)).strftime("%d/%m/%y")
+    ran_date = (start + timedelta(days=ran)).strftime("%m/%d/%Y")
     return ran_date
 
 
 def make_ao():
     '''Make ao or not ao decision.'''
-    # Random from 1-200 compared to % of 3 of 11
+    # Random from 1-100 compared to % of 3 of 11
     if randint(1, 101) < (3/11*100):
         return 'ao'
     else:
@@ -41,7 +41,7 @@ def expand_file():
     filename = 'data/exercise.csv'
     with open(filename, 'a') as out_file:
         lines = 11
-        while lines < 1e6:
+        while lines < (1e6 + 1):
             data_string = f'\n{make_guid()},{lines},{lines + 1},{lines +2},{lines +3},{make_date()},{make_ao()}'
             # print(data_string)
             out_file.write(data_string)
