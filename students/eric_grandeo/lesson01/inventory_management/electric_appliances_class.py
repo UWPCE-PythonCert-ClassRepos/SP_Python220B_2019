@@ -3,7 +3,7 @@ This is a module for Electric applicances.
 Classes:
     electricAppliances: class for electric appliances
 """
-from inventory_class import Inventory
+from .inventory_class import Inventory
 
 # pylint: disable=R0913
 

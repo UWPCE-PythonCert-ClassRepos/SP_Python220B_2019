@@ -3,7 +3,7 @@ This is a module for furniture.
 Classes:
     furniture: class for furniture
 """
-from inventory_class import Inventory
+from .inventory_class import Inventory
 
 # pylint: disable=R0913
 
