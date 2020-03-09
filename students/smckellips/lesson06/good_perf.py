@@ -1,11 +1,12 @@
 """
-poorly performing, poorly written module
+Better performing module.
 """
 
 import datetime
 import csv
 
 def analyze(filename):
+    '''Analyze data function refactored.'''
     start = datetime.datetime.now()
     year_count = {
         "2013": 0,
@@ -22,21 +23,12 @@ def analyze(filename):
         for row in reader:
             if "ao" in row[6]:
                 found += 1
-                
-            if row[5][6:] < '2013':
-                continue
-            elif row[5][6:] == '2013':
-                year_count["2013"] += 1
-            elif row[5][6:] == '2014':
-                year_count["2014"] += 1
-            elif row[5][6:] == '2015':
-                year_count["2015"] += 1
-            elif row[5][6:] == '2016':
-                year_count["2016"] += 1
-            elif row[5][6:] == '2017':
-                year_count["2017"] += 1
-            elif row[5][6:] == '2018':
-                year_count["2018"] += 1
+
+            # if row[5][6:] < '2013':
+            #     continue
+            # if '2012' < row[5][6:]: # < '2019':
+            if row[5][6:] > '2012':
+                year_count[row[5][6:]] += 1
 
     print(year_count)
 
