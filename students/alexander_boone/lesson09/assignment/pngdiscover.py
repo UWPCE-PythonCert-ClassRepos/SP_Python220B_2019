@@ -21,13 +21,21 @@ PATH = "./data/"
 
 def png_discover(path):
     '''Recursively searches for png files in directories in path.'''
+    result = []
     png_list = []
-    for root, d_names, f_names in os.walk(path):
-        if f_names:
-            f_names = [name for name in f_names if '.png' in name]
-            png_list.append(root)
-            png_list.append(f_names)
-    return png_list
+    png_in_dir = 0
+    for filename in os.listdir(path):
+        # If file is a png
+        if '.png' in filename:
+            png_in_dir += 1
+            png_list.append(filename)
+
+        # If file is a directory
+        elif os.path.isdir(os.path.join(path, filename)):
+            result.extend(png_discover(os.path.join(path, filename)))
+    if png_in_dir:
+        result.extend([path, png_list])
+    return result
 
 
 PNG_LIST = png_discover(PATH)

@@ -1,0 +1,1001 @@
+product_id,description,market_price,rental_price,product_type,brand,voltage,material,size,quantity_available
+F858167,Standard Fixture,673.69,0.9,Furniture,[],[],Tile,large,8
+E204878,Standard Kettle,1317.49,2.09,Electric,Acme,220VAC,[],[],52
+E107934,Standard Washing Machine,15.41,0.04,Electric,Suck-n-cut,12VDC,[],[],31
+F806515,Standard Mirror,506.27,0.11,Furniture,[],[],Walnut,medium,3
+F267111,Standard Chair,392.28,0.72,Furniture,[],[],Tile,extra-large,29
+E901942,Standard Fan,226.16,0.03,Electric,ComputerDiluter,110VAC,[],[],0
+F803437,Standard Stool,2040.63,4.67,Furniture,[],[],Oak,medium,69
+E389888,Standard Coffee Maker,2105.67,3.3,Electric,ComputerDiluter,110VAC,[],[],84
+F947063,Standard Mirror,1846.11,2.73,Furniture,[],[],Tile,x-small,37
+E642824,Standard Fan,1404.4,1.82,Electric,ComputerDiluter,440VAC,[],[],34
+F258796,Standard Table,183.1,0.39,Furniture,[],[],Maple,small,32
+F420477,Standard Chair,774.38,0.27,Furniture,[],[],Granite,small,84
+F403598,Standard Chair,244.45,0.57,Furniture,[],[],Oak,lawn orniment,20
+F482235,Standard Mirror,709.08,0.1,Furniture,[],[],Maple,small,35
+E248473,Standard Washing Machine,1045.83,2.61,Electric,Nowayout,12VDC,[],[],40
+E849740,Standard Coffee Maker,2243.57,1.67,Electric,ComputerDiluter,110VAC,[],[],4
+E934080,Standard Microwave,1796.03,2.41,Electric,ComputerDiluter,12VDC,[],[],77
+E576751,Standard Kettle,732.87,1.78,Electric,Freebird,10kV,[],[],72
+E321718,Standard Microwave,647.13,1.16,Electric,Suck-n-cut,440VAC,[],[],1
+E358976,Standard Washing Machine,751.84,0.63,Electric,Suck-n-cut,220VAC,[],[],77
+F456512,Standard Chair,1194.13,0.0,Furniture,[],[],Granite,x-small,1
+F347768,Standard Desk,1803.42,2.37,Furniture,[],[],Granite,small,67
+E288504,Standard Coffee Maker,2102.06,0.38,Electric,Suck-n-cut,10kV,[],[],91
+F970234,Standard Mirror,439.88,0.62,Furniture,[],[],Oak,lawn orniment,55
+F515283,Standard Desk,983.81,2.48,Furniture,[],[],Formica,lawn orniment,22
+F533890,Standard Chair,1401.39,0.38,Furniture,[],[],Maple,small,83
+F903232,Standard Table,767.04,0.23,Furniture,[],[],Granite,x-small,21
+F938090,Standard Mirror,422.08,0.58,Furniture,[],[],Formica,x-small,31
+E228459,Standard Coffee Maker,2332.15,5.56,Electric,Freebird,440VAC,[],[],42
+F411784,Standard Mirror,1879.02,2.66,Furniture,[],[],Oak,x-small,60
+F443750,Standard Desk,2257.24,5.16,Furniture,[],[],Maple,extra-large,68
+E202665,Standard Microwave,25.71,0.02,Electric,Freebird,12VDC,[],[],10
+F147048,Standard Table,299.74,0.67,Furniture,[],[],Oak,small,19
+F078467,Standard Chair,2001.56,3.99,Furniture,[],[],Walnut,extra-large,52
+E468400,Standard Fan,826.1,1.67,Electric,ComputerDiluter,220VAC,[],[],76
+E636383,Standard Fan,1622.28,4.32,Electric,Suck-n-cut,110VAC,[],[],20
+F306970,Standard Chair,1871.61,1.33,Furniture,[],[],Tile,x-small,8
+F001259,Standard Chair,1291.71,3.49,Furniture,[],[],Granite,lawn orniment,14
+F415576,Standard Fixture,1264.19,1.33,Furniture,[],[],Tile,lawn orniment,29
+E373946,Standard Fan,838.27,2.04,Electric,Nowayout,220VAC,[],[],69
+E770465,Standard Washing Machine,247.62,0.38,Electric,Suck-n-cut,110VAC,[],[],34
+E388967,Standard Microwave,454.97,0.89,Electric,Freebird,12VDC,[],[],48
+E491016,Standard Microwave,1368.01,3.55,Electric,Freebird,110VAC,[],[],21
+E607710,Standard Fan,1879.28,4.11,Electric,Nowayout,110VAC,[],[],78
+E651328,Standard Kettle,1769.91,1.52,Electric,Freebird,110VAC,[],[],25
+E697393,Standard Kettle,1575.79,0.63,Electric,ComputerDiluter,220VAC,[],[],80
+E432372,Standard Kettle,2457.27,5.87,Electric,Nowayout,10kV,[],[],36
+F853808,Standard Mirror,945.58,1.77,Furniture,[],[],Granite,small,20
+E412652,Standard Microwave,76.28,0.02,Electric,Acme,440VAC,[],[],87
+E450467,Standard Toothbrush,1283.27,3.41,Electric,Freebird,440VAC,[],[],21
+E175041,Standard Kettle,234.5,0.19,Electric,Suck-n-cut,440VAC,[],[],57
+F132500,Standard Mirror,2408.96,5.02,Furniture,[],[],Granite,extra-large,30
+F926913,Standard Chair,796.07,1.18,Furniture,[],[],Walnut,large,37
+E056688,Standard Microwave,1724.95,3.24,Electric,Freebird,220VAC,[],[],11
+F399059,Standard Mirror,2170.55,2.48,Furniture,[],[],Tile,x-small,14
+E288306,Standard Kettle,2356.77,0.33,Electric,Nowayout,10kV,[],[],19
+E398082,Standard Washing Machine,2491.76,6.41,Electric,Suck-n-cut,10kV,[],[],25
+F469579,Standard Table,1407.94,2.07,Furniture,[],[],Walnut,x-small,32
+E523209,Standard Fan,104.31,0.24,Electric,Freebird,10kV,[],[],43
+F103867,Standard Chair,2457.46,3.44,Furniture,[],[],Walnut,extra-large,23
+F521004,Standard Fixture,865.86,0.93,Furniture,[],[],Formica,extra-large,7
+F014363,Standard Chair,1398.6,3.45,Furniture,[],[],Walnut,small,42
+F789296,Standard Stool,1159.07,2.95,Furniture,[],[],Maple,extra-large,39
+F394116,Standard Fixture,2260.65,5.48,Furniture,[],[],Granite,x-small,49
+E833949,Standard Washing Machine,438.84,1.11,Electric,Suck-n-cut,12VDC,[],[],16
+E443640,Standard Toothbrush,1099.26,0.49,Electric,Nowayout,110VAC,[],[],54
+E997454,Standard Washing Machine,545.62,1.42,Electric,Acme,110VAC,[],[],67
+F634865,Standard Chair,526.89,0.0,Furniture,[],[],Maple,medium,2
+F180284,Standard Stool,1583.17,4.13,Furniture,[],[],Maple,medium,53
+F107919,Standard Mirror,37.82,0.01,Furniture,[],[],Formica,lawn orniment,62
+E475241,Standard Kettle,1490.02,1.06,Electric,Acme,440VAC,[],[],18
+E724503,Standard Microwave,2309.42,5.56,Electric,ComputerDiluter,440VAC,[],[],78
+E796736,Standard Coffee Maker,1711.52,1.28,Electric,Acme,12VDC,[],[],65
+F035726,Standard Fixture,532.57,0.79,Furniture,[],[],Granite,extra-large,92
+E816227,Standard Fan,272.94,0.09,Electric,Freebird,110VAC,[],[],80
+F142475,Standard Fixture,2212.7,2.56,Furniture,[],[],Oak,x-small,5
+F455117,Standard Desk,2092.86,2.28,Furniture,[],[],Walnut,medium,0
+E961366,Standard Toothbrush,1344.71,2.42,Electric,Acme,10kV,[],[],34
+E994930,Standard Washing Machine,256.03,0.53,Electric,Nowayout,220VAC,[],[],81
+F668655,Standard Desk,729.2,0.26,Furniture,[],[],Oak,small,55
+F032451,Standard Table,374.24,0.46,Furniture,[],[],Granite,lawn orniment,0
+F568738,Standard Mirror,95.55,0.09,Furniture,[],[],Formica,medium,69
+E379078,Standard Coffee Maker,338.26,0.08,Electric,Nowayout,220VAC,[],[],15
+E979725,Standard Toothbrush,1359.85,3.31,Electric,ComputerDiluter,440VAC,[],[],4
+F946994,Standard Fixture,403.26,1.01,Furniture,[],[],Walnut,medium,62
+F513916,Standard Table,1601.07,1.82,Furniture,[],[],Oak,lawn orniment,98
+E493822,Standard Microwave,88.58,0.14,Electric,ComputerDiluter,440VAC,[],[],91
+E398185,Standard Toothbrush,503.02,1.19,Electric,ComputerDiluter,220VAC,[],[],33
+E451556,Standard Coffee Maker,4.98,0.0,Electric,Freebird,10kV,[],[],3
+F148080,Standard Mirror,976.84,1.83,Furniture,[],[],Maple,large,21
+E783055,Standard Microwave,1903.96,0.65,Electric,Freebird,110VAC,[],[],14
+E070620,Standard Kettle,1869.22,4.93,Electric,ComputerDiluter,12VDC,[],[],42
+F619154,Standard Table,1031.55,0.19,Furniture,[],[],Tile,x-small,21
+E270853,Standard Kettle,865.95,1.45,Electric,Freebird,110VAC,[],[],94
+F074545,Standard Chair,1530.9,3.12,Furniture,[],[],Formica,small,82
+F741508,Standard Desk,1579.0,3.3,Furniture,[],[],Formica,small,78
+E785701,Standard Microwave,2021.6,0.13,Electric,Suck-n-cut,12VDC,[],[],25
+E536294,Standard Washing Machine,648.92,1.32,Electric,Nowayout,10kV,[],[],28
+F935302,Standard Stool,1475.39,1.61,Furniture,[],[],Granite,small,6
+E595201,Standard Toothbrush,2324.21,1.56,Electric,Acme,440VAC,[],[],49
+F882279,Standard Stool,163.87,0.16,Furniture,[],[],Maple,small,59
+F805900,Standard Chair,73.61,0.08,Furniture,[],[],Tile,small,81
+F275408,Standard Table,469.7,1.06,Furniture,[],[],Walnut,small,61
+E966869,Standard Toothbrush,2453.64,4.3,Electric,Nowayout,10kV,[],[],80
+F925279,Standard Desk,2244.33,3.54,Furniture,[],[],Walnut,x-small,44
+E047340,Standard Fan,1628.3,3.76,Electric,Suck-n-cut,10kV,[],[],31
+F411845,Standard Stool,670.78,0.95,Furniture,[],[],Tile,medium,65
+F051288,Standard Table,523.56,0.96,Furniture,[],[],Maple,large,61
+F325914,Standard Mirror,623.37,1.42,Furniture,[],[],Formica,medium,60
+F202869,Standard Table,2164.04,5.23,Furniture,[],[],Formica,medium,3
+F488745,Godlikeness Table,916.15,1.09,Furniture,[],[],Tile,x-small,77
+E208918,Ceremony Toothbrush,439.29,1.1,Electric,Blasphemers,220VAC,[],[],39
+E831419,Shadowboxer Microwave,376.69,0.22,Electric,Delirifacient,220VAC,[],[],58
+E096808,Hibernia Washing Machine,2429.18,5.45,Electric,Sheath-piling,220VAC,[],[],87
+F164895,Quercitin Desk,28.82,0.07,Furniture,[],[],Maple,x-small,55
+E211585,Amender Kettle,52.64,0.03,Electric,Ski-plane,110VAC,[],[],74
+E593688,Standard Fan,1357.35,3.05,Electric,Freebird,220VAC,[],[],2
+F291238,Standard Table,1041.38,0.06,Furniture,[],[],Walnut,x-small,72
+E547817,Standard Coffee Maker,1691.43,1.4,Electric,Freebird,110VAC,[],[],97
+E014718,Standard Microwave,789.45,0.32,Electric,Acme,440VAC,[],[],87
+F071802,Standard Fixture,2082.2,0.06,Furniture,[],[],Formica,extra-large,64
+F258075,Standard Chair,1795.67,4.61,Furniture,[],[],Formica,x-small,85
+E597758,Standard Fan,2495.73,4.66,Electric,Nowayout,440VAC,[],[],2
+F286443,Standard Desk,2495.73,1.37,Furniture,[],[],Formica,medium,54
+E583109,Standard Washing Machine,2460.17,3.29,Electric,Acme,220VAC,[],[],93
+F344289,Standard Chair,248.1,0.16,Furniture,[],[],Granite,large,10
+F688836,Standard Stool,2119.38,4.27,Furniture,[],[],Oak,extra-large,29
+E236362,Standard Toothbrush,2218.51,3.33,Electric,Freebird,220VAC,[],[],0
+E765559,Standard Washing Machine,171.22,0.27,Electric,ComputerDiluter,110VAC,[],[],53
+F225596,Standard Chair,298.16,0.7,Furniture,[],[],Tile,x-small,12
+F170604,Standard Stool,2109.88,3.8,Furniture,[],[],Walnut,extra-large,87
+E168105,Standard Kettle,2069.9,0.02,Electric,Acme,12VDC,[],[],80
+E346582,Standard Washing Machine,198.6,0.21,Electric,Acme,10kV,[],[],25
+E357501,Standard Kettle,357.9,0.53,Electric,Nowayout,10kV,[],[],66
+F320156,Standard Fixture,2243.81,0.11,Furniture,[],[],Tile,large,43
+F305683,Standard Table,2280.87,3.44,Furniture,[],[],Oak,x-small,26
+E646410,Standard Microwave,387.11,0.3,Electric,ComputerDiluter,440VAC,[],[],23
+F349548,Standard Stool,1197.38,2.41,Furniture,[],[],Walnut,lawn orniment,69
+E969717,Standard Washing Machine,2499.16,2.41,Electric,Nowayout,440VAC,[],[],7
+F181316,Standard Table,1579.61,4.24,Furniture,[],[],Walnut,x-small,18
+E797069,Standard Microwave,131.37,0.23,Electric,Freebird,440VAC,[],[],92
+F745521,Standard Fixture,1973.93,0.86,Furniture,[],[],Granite,large,15
+E707100,Standard Toothbrush,2042.55,3.43,Electric,Freebird,440VAC,[],[],62
+F465854,Standard Chair,1016.36,1.27,Furniture,[],[],Oak,lawn orniment,8
+F669554,Standard Fixture,899.63,1.17,Furniture,[],[],Tile,extra-large,13
+E921683,Standard Microwave,1199.61,1.42,Electric,Acme,220VAC,[],[],93
+F657686,Standard Stool,1069.49,0.89,Furniture,[],[],Formica,medium,15
+E626224,Standard Fan,1751.31,0.71,Electric,Acme,110VAC,[],[],70
+E090061,Standard Coffee Maker,1644.1,4.26,Electric,Freebird,110VAC,[],[],55
+E827447,Standard Toothbrush,2258.91,2.98,Electric,Freebird,220VAC,[],[],47
+F073973,Standard Mirror,1378.45,3.48,Furniture,[],[],Granite,small,14
+E513082,Standard Microwave,879.32,0.52,Electric,Acme,440VAC,[],[],93
+E426329,Standard Fan,2357.69,1.75,Electric,ComputerDiluter,110VAC,[],[],79
+E231975,Standard Washing Machine,2003.06,0.33,Electric,ComputerDiluter,110VAC,[],[],71
+E679255,Standard Microwave,2128.82,0.56,Electric,ComputerDiluter,10kV,[],[],46
+F418969,Standard Mirror,264.3,0.12,Furniture,[],[],Walnut,extra-large,75
+F348985,Standard Fixture,1772.67,3.04,Furniture,[],[],Maple,extra-large,34
+F545861,Standard Desk,1230.88,2.75,Furniture,[],[],Granite,lawn orniment,35
+E591553,Standard Coffee Maker,1733.49,1.01,Electric,Suck-n-cut,220VAC,[],[],91
+F478570,Standard Stool,1352.66,2.77,Furniture,[],[],Formica,large,68
+E377586,Standard Coffee Maker,36.77,0.09,Electric,Nowayout,220VAC,[],[],17
+E358257,Standard Washing Machine,2052.46,2.68,Electric,Acme,10kV,[],[],94
+E381416,Standard Toothbrush,533.97,0.6,Electric,Freebird,12VDC,[],[],62
+F570900,Standard Mirror,1256.94,1.25,Furniture,[],[],Tile,extra-large,93
+F420039,Standard Table,1386.38,3.14,Furniture,[],[],Formica,small,4
+F754790,Standard Chair,1747.92,2.75,Furniture,[],[],Formica,medium,77
+F539602,Standard Mirror,1635.42,1.16,Furniture,[],[],Granite,large,66
+F518024,Standard Desk,518.21,1.38,Furniture,[],[],Maple,extra-large,61
+F741783,Standard Fixture,1523.79,2.53,Furniture,[],[],Granite,lawn orniment,73
+E614485,Standard Fan,945.88,1.91,Electric,ComputerDiluter,220VAC,[],[],35
+E512529,Standard Fan,2262.23,1.57,Electric,Nowayout,220VAC,[],[],7
+E796826,Standard Washing Machine,1932.25,1.86,Electric,ComputerDiluter,220VAC,[],[],39
+E550246,Standard Kettle,1548.17,3.38,Electric,Acme,110VAC,[],[],29
+F222648,Standard Desk,334.17,0.53,Furniture,[],[],Walnut,x-small,70
+F317781,Standard Fixture,2098.29,3.03,Furniture,[],[],Oak,small,9
+E307644,Standard Washing Machine,238.56,0.07,Electric,Nowayout,220VAC,[],[],82
+E603925,Standard Coffee Maker,2128.51,1.86,Electric,Acme,10kV,[],[],28
+E319752,Standard Washing Machine,257.78,0.3,Electric,Freebird,110VAC,[],[],85
+F878776,Standard Mirror,1252.71,0.28,Furniture,[],[],Granite,extra-large,77
+F930086,Standard Mirror,667.44,1.64,Furniture,[],[],Maple,extra-large,8
+E570686,Standard Washing Machine,1981.81,3.79,Electric,Acme,10kV,[],[],76
+E800758,Standard Fan,693.97,0.27,Electric,Acme,10kV,[],[],85
+F255374,Standard Stool,1244.81,1.91,Furniture,[],[],Tile,lawn orniment,69
+F208644,Standard Fixture,838.65,0.55,Furniture,[],[],Formica,large,37
+F526897,Standard Chair,1689.04,3.29,Furniture,[],[],Tile,extra-large,95
+F098786,Standard Table,2290.29,5.25,Furniture,[],[],Oak,large,53
+F344490,Standard Chair,1327.48,1.45,Furniture,[],[],Formica,medium,88
+F673204,Standard Table,2129.16,1.01,Furniture,[],[],Walnut,x-small,1
+E725247,Standard Toothbrush,26.1,0.0,Electric,Acme,10kV,[],[],8
+E499711,Standard Coffee Maker,532.48,0.5,Electric,Freebird,12VDC,[],[],75
+E315356,Standard Fan,1113.22,0.42,Electric,Nowayout,220VAC,[],[],10
+E689168,Standard Coffee Maker,1443.88,0.15,Electric,Nowayout,10kV,[],[],5
+E902364,Standard Toothbrush,1007.6,1.24,Electric,Suck-n-cut,440VAC,[],[],91
+F055914,Standard Fixture,2326.6,5.97,Furniture,[],[],Walnut,lawn orniment,73
+E508960,Standard Microwave,2001.8,5.03,Electric,Suck-n-cut,220VAC,[],[],28
+E694345,Standard Microwave,2101.26,0.17,Electric,Freebird,10kV,[],[],76
+E472891,Standard Fan,331.41,0.24,Electric,Nowayout,10kV,[],[],48
+E707822,Standard Kettle,1166.24,0.51,Electric,Suck-n-cut,220VAC,[],[],43
+E962765,Standard Toothbrush,6.3,0.01,Electric,ComputerDiluter,12VDC,[],[],15
+F435012,Standard Mirror,2200.24,3.8,Furniture,[],[],Granite,lawn orniment,30
+F434764,Standard Mirror,2146.29,2.24,Furniture,[],[],Tile,medium,92
+E689148,Standard Coffee Maker,967.68,1.43,Electric,Acme,440VAC,[],[],76
+F499926,Standard Desk,1087.46,0.42,Furniture,[],[],Oak,large,6
+E181488,Standard Fan,605.5,0.63,Electric,Suck-n-cut,12VDC,[],[],8
+F782916,Standard Mirror,340.65,0.65,Furniture,[],[],Oak,small,16
+F074451,Standard Fixture,2029.75,0.04,Furniture,[],[],Granite,small,94
+F860895,Standard Fixture,919.31,1.8,Furniture,[],[],Tile,small,16
+F825976,Standard Desk,2446.92,4.48,Furniture,[],[],Maple,small,12
+F643416,Standard Mirror,1471.21,3.4,Furniture,[],[],Tile,medium,66
+E975016,Standard Toothbrush,432.0,0.29,Electric,Nowayout,10kV,[],[],31
+E888761,Standard Coffee Maker,99.78,0.05,Electric,ComputerDiluter,10kV,[],[],2
+E663754,Standard Coffee Maker,421.71,0.67,Electric,Nowayout,110VAC,[],[],82
+F283180,Standard Desk,1176.52,1.8,Furniture,[],[],Oak,medium,5
+F635592,Standard Desk,1664.69,1.42,Furniture,[],[],Walnut,small,66
+F344576,Standard Stool,1307.54,1.0,Furniture,[],[],Formica,medium,37
+E765136,Standard Washing Machine,2016.99,3.72,Electric,Suck-n-cut,110VAC,[],[],57
+E829846,Standard Coffee Maker,801.79,0.02,Electric,Freebird,440VAC,[],[],13
+E916477,Standard Kettle,585.44,0.95,Electric,Suck-n-cut,220VAC,[],[],84
+E849748,Standard Toothbrush,2155.99,4.8,Electric,Suck-n-cut,12VDC,[],[],16
+F419804,Standard Stool,1930.4,3.12,Furniture,[],[],Granite,small,97
+F755232,Standard Chair,406.49,1.09,Furniture,[],[],Formica,x-small,65
+F581500,Standard Fixture,1805.66,2.51,Furniture,[],[],Granite,medium,53
+E671596,Standard Microwave,2153.25,3.48,Electric,Freebird,220VAC,[],[],49
+F530456,Standard Fixture,1217.72,2.69,Furniture,[],[],Tile,extra-large,96
+F790783,Standard Stool,2092.7,3.64,Furniture,[],[],Walnut,small,85
+F498316,Standard Stool,321.68,0.81,Furniture,[],[],Tile,lawn orniment,68
+E436080,Standard Washing Machine,649.95,1.76,Electric,Nowayout,10kV,[],[],28
+F105128,Standard Table,2257.86,2.41,Furniture,[],[],Walnut,large,76
+E821460,Standard Fan,1777.81,2.91,Electric,Acme,220VAC,[],[],94
+F981882,Standard Fixture,1113.4,1.85,Furniture,[],[],Tile,extra-large,65
+E349473,Standard Coffee Maker,2129.33,2.81,Electric,Acme,220VAC,[],[],36
+F592694,Standard Chair,2130.88,1.19,Furniture,[],[],Tile,extra-large,50
+E805209,Standard Toothbrush,180.03,0.23,Electric,Suck-n-cut,110VAC,[],[],9
+E155287,Standard Washing Machine,1898.87,4.84,Electric,ComputerDiluter,440VAC,[],[],82
+F533920,Standard Stool,1293.53,1.23,Furniture,[],[],Granite,large,58
+F282970,Standard Fixture,1187.06,1.94,Furniture,[],[],Walnut,lawn orniment,25
+E607123,Standard Washing Machine,582.07,0.26,Electric,Suck-n-cut,440VAC,[],[],52
+F783570,Standard Stool,1499.63,0.38,Furniture,[],[],Oak,small,62
+F920911,Standard Fixture,1011.23,2.52,Furniture,[],[],Walnut,lawn orniment,98
+E432114,Standard Washing Machine,1346.34,1.46,Electric,Nowayout,10kV,[],[],56
+F092476,Standard Mirror,1237.01,0.29,Furniture,[],[],Tile,medium,70
+F975930,Standard Chair,193.3,0.48,Furniture,[],[],Formica,lawn orniment,77
+F408570,Standard Fixture,2392.79,5.56,Furniture,[],[],Walnut,x-small,39
+F737846,Standard Chair,720.5,0.63,Furniture,[],[],Oak,medium,39
+F118584,Standard Table,1043.32,1.46,Furniture,[],[],Granite,lawn orniment,23
+E267933,Standard Washing Machine,656.6,0.84,Electric,Acme,12VDC,[],[],66
+F006573,Standard Mirror,895.82,0.0,Furniture,[],[],Maple,large,44
+E194297,Standard Coffee Maker,760.69,0.86,Electric,Acme,110VAC,[],[],37
+E359349,Standard Toothbrush,56.21,0.03,Electric,ComputerDiluter,220VAC,[],[],78
+F670683,Standard Chair,2478.11,6.19,Furniture,[],[],Walnut,small,70
+E196831,Standard Fan,1476.69,2.62,Electric,Nowayout,12VDC,[],[],75
+E173110,Standard Kettle,71.55,0.09,Electric,Freebird,440VAC,[],[],58
+F148609,Standard Desk,1230.63,2.97,Furniture,[],[],Granite,small,89
+F837664,Standard Chair,1545.3,2.44,Furniture,[],[],Walnut,large,98
+F399661,Standard Chair,2148.28,3.78,Furniture,[],[],Walnut,x-small,41
+F221374,Standard Desk,785.09,0.64,Furniture,[],[],Tile,lawn orniment,40
+F851371,Standard Table,2027.79,2.96,Furniture,[],[],Maple,large,80
+E075778,Standard Fan,376.95,0.4,Electric,Suck-n-cut,12VDC,[],[],64
+E622533,Standard Kettle,1288.11,1.6,Electric,Nowayout,220VAC,[],[],72
+F829568,Standard Mirror,1479.37,1.67,Furniture,[],[],Walnut,extra-large,1
+F579107,Standard Desk,2006.97,0.69,Furniture,[],[],Granite,medium,2
+F183896,Standard Desk,2082.89,4.74,Furniture,[],[],Formica,large,22
+F770145,Standard Desk,175.81,0.24,Furniture,[],[],Oak,x-small,95
+F857073,Standard Chair,1509.27,1.63,Furniture,[],[],Walnut,small,51
+E302875,Standard Fan,2187.52,2.02,Electric,Freebird,440VAC,[],[],8
+F531820,Standard Chair,1193.01,1.58,Furniture,[],[],Granite,medium,74
+F417139,Standard Table,328.02,0.11,Furniture,[],[],Walnut,x-small,12
+E470287,Standard Kettle,1339.49,0.39,Electric,Acme,440VAC,[],[],64
+F089964,Standard Stool,2385.33,2.5,Furniture,[],[],Formica,lawn orniment,3
+E404514,Standard Microwave,859.04,0.64,Electric,ComputerDiluter,12VDC,[],[],0
+E466942,Standard Kettle,1563.92,0.16,Electric,ComputerDiluter,10kV,[],[],79
+F717467,Standard Mirror,398.92,0.9,Furniture,[],[],Maple,medium,18
+E693347,Standard Fan,1687.8,2.46,Electric,Suck-n-cut,12VDC,[],[],22
+E833009,Standard Washing Machine,858.43,1.87,Electric,Freebird,110VAC,[],[],45
+E461697,Standard Kettle,1203.58,1.45,Electric,Acme,12VDC,[],[],18
+E438647,Standard Washing Machine,652.69,1.14,Electric,Suck-n-cut,220VAC,[],[],64
+F870810,Standard Stool,1669.52,0.66,Furniture,[],[],Maple,extra-large,72
+F498402,Standard Desk,2177.57,5.49,Furniture,[],[],Granite,large,90
+E280148,Standard Fan,1021.29,0.83,Electric,ComputerDiluter,220VAC,[],[],72
+E594492,Standard Kettle,916.65,0.67,Electric,Acme,110VAC,[],[],28
+E054393,Standard Kettle,2134.4,0.38,Electric,Suck-n-cut,10kV,[],[],11
+E709202,Standard Toothbrush,1612.36,3.05,Electric,Nowayout,220VAC,[],[],6
+E104358,Standard Kettle,1979.72,3.5,Electric,ComputerDiluter,10kV,[],[],70
+F015066,Standard Fixture,1977.85,4.38,Furniture,[],[],Maple,small,50
+E197974,Standard Coffee Maker,2149.62,0.21,Electric,Acme,10kV,[],[],70
+E823144,Standard Coffee Maker,971.5,1.34,Electric,Nowayout,440VAC,[],[],30
+E307586,Standard Microwave,512.73,0.7,Electric,Suck-n-cut,220VAC,[],[],83
+F170553,Standard Desk,1168.07,1.83,Furniture,[],[],Maple,large,83
+E766610,Standard Coffee Maker,338.13,0.64,Electric,Suck-n-cut,10kV,[],[],60
+E898231,Standard Toothbrush,1245.39,0.54,Electric,Suck-n-cut,12VDC,[],[],97
+F059593,Standard Table,2103.23,0.83,Furniture,[],[],Maple,x-small,25
+E709341,Standard Coffee Maker,9.37,0.03,Electric,ComputerDiluter,440VAC,[],[],51
+E538677,Standard Washing Machine,1040.01,0.96,Electric,ComputerDiluter,10kV,[],[],8
+E314908,Standard Kettle,1364.99,2.61,Electric,Nowayout,110VAC,[],[],94
+E500661,Standard Microwave,2050.91,0.84,Electric,ComputerDiluter,110VAC,[],[],47
+F827272,Standard Fixture,1106.48,2.62,Furniture,[],[],Maple,small,55
+F495722,Standard Desk,1777.3,0.03,Furniture,[],[],Oak,lawn orniment,14
+F872620,Standard Fixture,1740.8,2.87,Furniture,[],[],Tile,x-small,89
+E407966,Standard Washing Machine,2210.11,5.88,Electric,ComputerDiluter,220VAC,[],[],50
+F932941,Standard Chair,1254.15,3.34,Furniture,[],[],Tile,x-small,34
+E188503,Standard Washing Machine,1335.31,2.91,Electric,Freebird,12VDC,[],[],12
+E095453,Standard Toothbrush,2176.5,2.36,Electric,ComputerDiluter,12VDC,[],[],42
+E553517,Standard Fan,1069.9,1.78,Electric,ComputerDiluter,440VAC,[],[],76
+E577225,Standard Washing Machine,9.41,0.0,Electric,ComputerDiluter,12VDC,[],[],57
+F243257,Standard Desk,919.16,1.49,Furniture,[],[],Walnut,extra-large,17
+F955640,Standard Stool,2088.23,1.04,Furniture,[],[],Maple,medium,81
+F903879,Standard Table,311.44,0.15,Furniture,[],[],Granite,extra-large,23
+E283946,Standard Toothbrush,1398.94,1.12,Electric,Nowayout,12VDC,[],[],44
+E507510,Standard Washing Machine,5.42,0.01,Electric,Nowayout,12VDC,[],[],21
+E532232,Standard Coffee Maker,2012.71,2.83,Electric,Suck-n-cut,12VDC,[],[],83
+E833499,Standard Coffee Maker,822.01,1.46,Electric,Freebird,440VAC,[],[],26
+F295524,Standard Stool,1315.99,1.79,Furniture,[],[],Formica,extra-large,72
+F524195,Standard Chair,771.7,2.08,Furniture,[],[],Tile,medium,97
+E038207,Standard Fan,985.23,1.47,Electric,Suck-n-cut,220VAC,[],[],44
+E077346,Standard Microwave,1330.96,2.68,Electric,Acme,12VDC,[],[],27
+F666703,Standard Chair,2337.06,6.19,Furniture,[],[],Tile,x-small,53
+E936414,Standard Microwave,2154.61,5.11,Electric,ComputerDiluter,12VDC,[],[],79
+E380306,Standard Microwave,1064.41,2.32,Electric,Nowayout,110VAC,[],[],19
+F551578,Standard Table,1806.6,0.83,Furniture,[],[],Tile,lawn orniment,22
+E596649,Standard Washing Machine,1884.84,3.2,Electric,Nowayout,220VAC,[],[],86
+E572241,Standard Fan,1134.6,1.72,Electric,Suck-n-cut,220VAC,[],[],49
+F636791,Standard Desk,1110.4,0.79,Furniture,[],[],Granite,extra-large,18
+F843914,Standard Table,105.56,0.29,Furniture,[],[],Formica,small,93
+F088487,Standard Chair,666.22,1.8,Furniture,[],[],Maple,extra-large,91
+E005412,Key-pattern Fan,2366.37,3.52,Electric,Recarriage,12VDC,[],[],46
+F997949,Hoisting-engine Table,1593.01,3.52,Furniture,[],[],Maple,small,85
+E733159,Canzonas Coffee Maker,1173.67,1.08,Electric,Thorinum,10kV,[],[],35
+F896343,Unequity Table,929.94,0.59,Furniture,[],[],Maple,small,1
+E366622,Fluorography Toothbrush,66.86,0.03,Electric,Hotbox,10kV,[],[],19
+F720312,Pikerel Desk,162.31,0.4,Furniture,[],[],Maple,medium,58
+E488606,Cleats Fan,1699.62,1.32,Electric,Acme,110VAC,[],[],8
+E396761,Standard Coffee Maker,1962.13,0.52,Electric,Nowayout,12VDC,[],[],98
+F169826,Standard Stool,1356.48,1.16,Furniture,[],[],Formica,lawn orniment,46
+F527174,Standard Chair,1792.5,3.21,Furniture,[],[],Oak,x-small,31
+F381554,Standard Desk,2227.95,2.83,Furniture,[],[],Tile,medium,1
+E902706,Standard Coffee Maker,2034.27,3.97,Electric,Acme,10kV,[],[],19
+F485831,Standard Chair,233.11,0.07,Furniture,[],[],Oak,x-small,71
+E406565,Standard Kettle,2247.88,0.32,Electric,Nowayout,220VAC,[],[],48
+F842942,Standard Chair,498.55,0.09,Furniture,[],[],Walnut,medium,64
+E303029,Standard Washing Machine,297.2,0.06,Electric,ComputerDiluter,220VAC,[],[],13
+F535074,Standard Stool,2235.85,0.39,Furniture,[],[],Granite,extra-large,60
+E531494,Standard Kettle,1534.6,2.57,Electric,ComputerDiluter,110VAC,[],[],42
+E842934,Standard Coffee Maker,557.37,1.18,Electric,Freebird,440VAC,[],[],32
+E579985,Standard Fan,1048.99,0.32,Electric,Acme,110VAC,[],[],64
+F560681,Standard Mirror,1201.35,0.01,Furniture,[],[],Walnut,extra-large,97
+E760022,Standard Microwave,553.06,0.42,Electric,Acme,220VAC,[],[],62
+E025438,Standard Fan,2075.83,4.38,Electric,ComputerDiluter,110VAC,[],[],91
+E183461,Standard Microwave,1711.62,3.95,Electric,Acme,110VAC,[],[],86
+E868641,Standard Washing Machine,771.98,1.42,Electric,Freebird,10kV,[],[],5
+F223020,Standard Table,1186.74,1.1,Furniture,[],[],Oak,large,84
+E435330,Standard Microwave,171.95,0.03,Electric,Suck-n-cut,10kV,[],[],28
+E207026,Standard Kettle,2202.25,5.49,Electric,Acme,440VAC,[],[],88
+E978485,Standard Microwave,834.62,1.04,Electric,Acme,440VAC,[],[],34
+F225287,Standard Desk,2218.54,4.13,Furniture,[],[],Maple,small,19
+F498468,Standard Mirror,1816.94,3.75,Furniture,[],[],Tile,x-small,33
+F298549,Standard Desk,156.07,0.12,Furniture,[],[],Oak,small,30
+E667284,Standard Kettle,1639.25,4.3,Electric,ComputerDiluter,220VAC,[],[],56
+E053878,Standard Coffee Maker,1941.64,2.86,Electric,Acme,440VAC,[],[],76
+E822121,Standard Toothbrush,2458.2,2.21,Electric,ComputerDiluter,12VDC,[],[],25
+E191324,Standard Coffee Maker,2101.75,0.55,Electric,Freebird,10kV,[],[],56
+E456914,Standard Microwave,2188.88,4.72,Electric,Suck-n-cut,10kV,[],[],13
+F232873,Standard Mirror,1914.01,2.85,Furniture,[],[],Maple,lawn orniment,99
+E716109,Standard Toothbrush,601.48,1.36,Electric,Acme,220VAC,[],[],14
+F141151,Standard Stool,1506.63,3.32,Furniture,[],[],Formica,large,66
+E351596,Standard Fan,838.09,0.68,Electric,Nowayout,110VAC,[],[],11
+E674277,Standard Washing Machine,2345.53,2.05,Electric,Suck-n-cut,10kV,[],[],81
+F402160,Standard Stool,900.57,1.66,Furniture,[],[],Tile,large,47
+E723202,Standard Fan,2216.78,2.22,Electric,Suck-n-cut,220VAC,[],[],77
+F919652,Standard Table,40.04,0.04,Furniture,[],[],Maple,medium,47
+E203343,Standard Toothbrush,65.73,0.03,Electric,Nowayout,440VAC,[],[],15
+F556057,Standard Table,430.33,0.7,Furniture,[],[],Formica,lawn orniment,51
+F038217,Standard Fixture,1049.4,2.86,Furniture,[],[],Walnut,extra-large,72
+E518599,Standard Toothbrush,896.58,2.31,Electric,ComputerDiluter,110VAC,[],[],59
+F336817,Standard Mirror,1865.7,4.65,Furniture,[],[],Walnut,x-small,51
+E507796,Standard Fan,1413.98,1.35,Electric,Acme,440VAC,[],[],98
+F801937,Standard Chair,1253.29,0.01,Furniture,[],[],Maple,extra-large,98
+F456827,Standard Fixture,1394.51,0.03,Furniture,[],[],Tile,medium,5
+F268606,Standard Mirror,2286.26,2.97,Furniture,[],[],Oak,large,38
+E949943,Standard Microwave,457.83,0.88,Electric,Suck-n-cut,110VAC,[],[],60
+F068718,Standard Desk,2278.41,1.24,Furniture,[],[],Tile,x-small,76
+F081144,Standard Chair,407.05,1.05,Furniture,[],[],Formica,medium,49
+E353301,Standard Washing Machine,2333.03,5.42,Electric,Nowayout,220VAC,[],[],59
+E558718,Standard Toothbrush,1668.87,3.26,Electric,Acme,220VAC,[],[],3
+E167267,Standard Microwave,557.92,1.27,Electric,Acme,440VAC,[],[],94
+F207723,Standard Table,1523.22,2.52,Furniture,[],[],Walnut,medium,41
+F190098,Standard Stool,741.95,1.67,Furniture,[],[],Formica,x-small,63
+E664889,Standard Washing Machine,1384.95,3.09,Electric,Acme,10kV,[],[],18
+E664857,Standard Fan,1285.11,0.88,Electric,Acme,440VAC,[],[],4
+F925642,Standard Mirror,581.43,1.49,Furniture,[],[],Walnut,lawn orniment,14
+F152913,Standard Chair,1385.5,1.13,Furniture,[],[],Formica,extra-large,70
+F833751,Standard Stool,2365.52,2.16,Furniture,[],[],Maple,medium,21
+F821576,Standard Mirror,2295.59,6.15,Furniture,[],[],Tile,medium,88
+F863978,Standard Mirror,1199.41,2.63,Furniture,[],[],Oak,lawn orniment,23
+F618420,Standard Chair,256.19,0.09,Furniture,[],[],Granite,lawn orniment,46
+E268848,Standard Fan,1060.88,0.61,Electric,ComputerDiluter,10kV,[],[],25
+F978273,Standard Mirror,66.13,0.15,Furniture,[],[],Granite,small,86
+E893692,Standard Microwave,117.04,0.13,Electric,Nowayout,440VAC,[],[],77
+E585404,Standard Toothbrush,952.26,1.23,Electric,Freebird,110VAC,[],[],88
+F548209,Standard Mirror,240.87,0.15,Furniture,[],[],Granite,small,98
+F263018,Standard Fixture,695.99,1.52,Furniture,[],[],Maple,x-small,2
+F640468,Standard Chair,2211.94,5.49,Furniture,[],[],Walnut,lawn orniment,59
+F077059,Standard Table,1862.81,4.72,Furniture,[],[],Tile,extra-large,89
+E691970,Standard Washing Machine,954.75,1.42,Electric,ComputerDiluter,12VDC,[],[],77
+E041205,Standard Coffee Maker,58.72,0.07,Electric,Acme,110VAC,[],[],50
+E535513,Standard Kettle,868.0,1.55,Electric,Suck-n-cut,10kV,[],[],66
+E742579,Standard Fan,1654.29,1.78,Electric,Nowayout,220VAC,[],[],3
+F827598,Standard Mirror,1941.46,3.27,Furniture,[],[],Tile,medium,40
+E243151,Standard Coffee Maker,1265.08,2.28,Electric,Freebird,220VAC,[],[],45
+E979901,Standard Fan,1194.4,2.79,Electric,Nowayout,110VAC,[],[],43
+F166030,Standard Table,447.13,0.15,Furniture,[],[],Oak,extra-large,81
+E260424,Standard Toothbrush,1172.52,1.21,Electric,Acme,10kV,[],[],12
+F470662,Standard Stool,2434.86,1.21,Furniture,[],[],Oak,medium,78
+F160118,Standard Stool,2204.01,5.54,Furniture,[],[],Maple,lawn orniment,75
+F014680,Standard Table,2096.34,4.34,Furniture,[],[],Oak,medium,93
+E616014,Standard Kettle,1594.58,0.86,Electric,ComputerDiluter,440VAC,[],[],22
+E258965,Standard Kettle,1764.11,4.14,Electric,Suck-n-cut,110VAC,[],[],15
+F649108,Standard Table,1930.44,0.34,Furniture,[],[],Tile,x-small,73
+F261903,Standard Desk,1638.86,1.4,Furniture,[],[],Tile,small,87
+E498720,Standard Coffee Maker,1480.73,0.72,Electric,Acme,440VAC,[],[],7
+E448419,Standard Toothbrush,1898.45,1.01,Electric,Acme,110VAC,[],[],78
+F359963,Standard Mirror,1816.45,0.7,Furniture,[],[],Maple,large,15
+F080849,Standard Chair,1684.74,2.61,Furniture,[],[],Oak,x-small,88
+F788667,Standard Desk,947.34,1.66,Furniture,[],[],Tile,small,93
+E323501,Standard Washing Machine,181.56,0.0,Electric,Nowayout,10kV,[],[],18
+E641421,Standard Washing Machine,520.25,1.29,Electric,ComputerDiluter,12VDC,[],[],64
+F825974,Standard Table,2073.76,4.04,Furniture,[],[],Oak,large,62
+E131498,Standard Coffee Maker,2260.01,4.98,Electric,Acme,10kV,[],[],27
+F637506,Standard Stool,1383.94,0.76,Furniture,[],[],Formica,extra-large,13
+E930834,Standard Kettle,710.13,1.66,Electric,Acme,10kV,[],[],46
+E842812,Standard Microwave,614.06,0.35,Electric,Freebird,220VAC,[],[],97
+F206259,Standard Fixture,2470.8,3.59,Furniture,[],[],Granite,medium,17
+E041697,Standard Kettle,1356.44,2.39,Electric,Nowayout,10kV,[],[],31
+E631492,Standard Coffee Maker,1090.93,2.34,Electric,Freebird,220VAC,[],[],50
+F025140,Standard Chair,575.42,1.27,Furniture,[],[],Oak,extra-large,3
+F278537,Standard Table,1161.55,1.18,Furniture,[],[],Walnut,medium,24
+E722867,Standard Washing Machine,2072.97,0.53,Electric,Freebird,12VDC,[],[],68
+F901068,Standard Stool,103.44,0.11,Furniture,[],[],Formica,large,26
+E353697,Standard Kettle,688.56,1.75,Electric,ComputerDiluter,220VAC,[],[],83
+E492435,Standard Coffee Maker,405.95,0.32,Electric,Nowayout,12VDC,[],[],30
+E133555,Standard Fan,74.43,0.08,Electric,Suck-n-cut,440VAC,[],[],32
+F893772,Standard Desk,2036.59,3.67,Furniture,[],[],Granite,extra-large,15
+E141949,Standard Kettle,2193.05,2.26,Electric,Freebird,10kV,[],[],66
+E265310,Standard Coffee Maker,2387.47,0.82,Electric,ComputerDiluter,10kV,[],[],75
+E531324,Standard Fan,389.66,0.25,Electric,Nowayout,12VDC,[],[],81
+F976845,Standard Table,965.23,1.9,Furniture,[],[],Tile,medium,32
+F806275,Standard Table,556.61,0.23,Furniture,[],[],Oak,large,14
+E890708,Standard Washing Machine,1399.42,3.01,Electric,ComputerDiluter,220VAC,[],[],81
+E538132,Standard Kettle,2396.59,4.76,Electric,Nowayout,12VDC,[],[],70
+E229290,Standard Coffee Maker,357.25,0.96,Electric,ComputerDiluter,10kV,[],[],2
+E905881,Standard Coffee Maker,544.85,1.15,Electric,Freebird,10kV,[],[],63
+E243803,Standard Washing Machine,1678.97,2.07,Electric,ComputerDiluter,110VAC,[],[],15
+E267462,Standard Washing Machine,1459.35,2.49,Electric,Freebird,12VDC,[],[],69
+E061158,Standard Fan,2399.09,5.02,Electric,Freebird,12VDC,[],[],80
+F711083,Standard Chair,2242.51,3.02,Furniture,[],[],Walnut,extra-large,73
+E956990,Standard Kettle,1565.13,3.94,Electric,Suck-n-cut,12VDC,[],[],79
+F767209,Standard Fixture,825.61,1.82,Furniture,[],[],Formica,extra-large,54
+F213241,Standard Desk,1491.54,2.14,Furniture,[],[],Oak,extra-large,90
+F772053,Standard Desk,160.68,0.05,Furniture,[],[],Walnut,x-small,83
+F862119,Standard Stool,647.3,0.7,Furniture,[],[],Maple,extra-large,23
+E228842,Standard Kettle,582.84,0.69,Electric,Nowayout,110VAC,[],[],73
+F159330,Standard Fixture,1025.95,1.87,Furniture,[],[],Oak,lawn orniment,89
+E157415,Standard Fan,345.52,0.26,Electric,Nowayout,12VDC,[],[],40
+F602820,Standard Stool,1009.39,2.29,Furniture,[],[],Tile,large,64
+E174663,Standard Microwave,1360.86,1.15,Electric,Freebird,220VAC,[],[],15
+F304600,Standard Table,597.46,0.71,Furniture,[],[],Walnut,large,80
+E713857,Standard Microwave,1810.64,1.36,Electric,ComputerDiluter,110VAC,[],[],16
+E740922,Standard Washing Machine,2293.37,1.41,Electric,Suck-n-cut,220VAC,[],[],55
+F844732,Standard Chair,418.98,1.12,Furniture,[],[],Maple,large,8
+F937674,Standard Fixture,636.22,0.84,Furniture,[],[],Walnut,medium,86
+E050239,Standard Toothbrush,124.29,0.22,Electric,Freebird,440VAC,[],[],56
+F189298,Standard Mirror,1243.6,0.76,Furniture,[],[],Tile,small,73
+E839371,Standard Microwave,426.95,0.58,Electric,Acme,10kV,[],[],28
+F125250,Standard Chair,1416.71,3.81,Furniture,[],[],Tile,small,55
+F781277,Standard Mirror,103.41,0.04,Furniture,[],[],Walnut,large,23
+E066243,Standard Microwave,34.85,0.05,Electric,ComputerDiluter,440VAC,[],[],15
+E177654,Standard Microwave,583.75,1.22,Electric,Acme,440VAC,[],[],42
+E355531,Standard Washing Machine,814.61,2.01,Electric,Acme,12VDC,[],[],87
+F958665,Standard Mirror,521.65,0.46,Furniture,[],[],Walnut,small,77
+E668718,Standard Washing Machine,2263.04,1.73,Electric,Freebird,440VAC,[],[],49
+F735121,Standard Stool,1185.57,0.65,Furniture,[],[],Oak,medium,21
+E908883,Standard Toothbrush,875.81,1.28,Electric,Suck-n-cut,220VAC,[],[],25
+E448106,Standard Coffee Maker,1644.58,4.42,Electric,Suck-n-cut,220VAC,[],[],53
+F658728,Standard Table,1906.93,3.85,Furniture,[],[],Granite,lawn orniment,56
+E673675,Standard Coffee Maker,2306.43,1.97,Electric,Freebird,12VDC,[],[],83
+E263411,Standard Microwave,343.81,0.41,Electric,Freebird,110VAC,[],[],36
+F287252,Standard Fixture,126.64,0.1,Furniture,[],[],Tile,large,91
+F679672,Standard Chair,908.35,2.2,Furniture,[],[],Formica,lawn orniment,97
+E601413,Standard Coffee Maker,1822.49,3.31,Electric,ComputerDiluter,110VAC,[],[],95
+E654779,Standard Toothbrush,532.44,0.03,Electric,Nowayout,220VAC,[],[],17
+F800179,Standard Chair,413.8,0.66,Furniture,[],[],Granite,small,22
+E846582,Standard Washing Machine,1740.41,2.88,Electric,Freebird,12VDC,[],[],7
+F223079,Standard Desk,989.21,0.71,Furniture,[],[],Walnut,lawn orniment,2
+E665674,Standard Microwave,955.69,1.74,Electric,Acme,220VAC,[],[],56
+E827762,Standard Kettle,1526.66,1.55,Electric,Suck-n-cut,440VAC,[],[],82
+F229205,Standard Desk,3.86,0.01,Furniture,[],[],Walnut,small,63
+E951150,Standard Toothbrush,1240.35,3.36,Electric,ComputerDiluter,12VDC,[],[],33
+F212684,Standard Desk,545.64,0.22,Furniture,[],[],Walnut,x-small,34
+F239328,Standard Desk,2249.79,5.05,Furniture,[],[],Granite,medium,68
+E505585,Standard Fan,1632.37,2.49,Electric,Nowayout,220VAC,[],[],21
+E200475,Standard Microwave,451.4,1.22,Electric,Suck-n-cut,440VAC,[],[],91
+F432866,Standard Desk,1448.33,3.12,Furniture,[],[],Tile,extra-large,31
+F256665,Standard Mirror,1137.02,2.16,Furniture,[],[],Tile,extra-large,68
+E129370,Standard Toothbrush,1654.08,2.24,Electric,Suck-n-cut,440VAC,[],[],95
+F596571,Standard Stool,1503.52,0.88,Furniture,[],[],Maple,medium,49
+E745740,Standard Toothbrush,1467.79,0.84,Electric,Acme,10kV,[],[],23
+F496941,Standard Table,705.97,0.34,Furniture,[],[],Maple,extra-large,44
+F428983,Standard Fixture,590.33,0.98,Furniture,[],[],Maple,x-small,85
+F080001,Standard Stool,193.68,0.48,Furniture,[],[],Oak,extra-large,42
+F555911,Standard Chair,1790.37,2.32,Furniture,[],[],Tile,lawn orniment,29
+F209268,Standard Table,1893.93,0.92,Furniture,[],[],Walnut,x-small,75
+F733064,Standard Desk,162.14,0.29,Furniture,[],[],Granite,extra-large,14
+E319009,Standard Toothbrush,1243.83,0.03,Electric,Suck-n-cut,12VDC,[],[],14
+E652246,Standard Toothbrush,173.46,0.21,Electric,Freebird,440VAC,[],[],69
+F980756,Standard Chair,263.43,0.65,Furniture,[],[],Oak,small,28
+F364775,Standard Chair,2055.59,0.06,Furniture,[],[],Tile,extra-large,5
+E464475,Standard Washing Machine,293.11,0.76,Electric,Freebird,220VAC,[],[],11
+F372926,Standard Chair,1995.97,2.41,Furniture,[],[],Maple,large,47
+F567112,Standard Chair,2099.27,2.32,Furniture,[],[],Oak,medium,53
+E310278,Standard Fan,1408.68,0.49,Electric,Nowayout,220VAC,[],[],65
+F970359,Standard Desk,2.45,0.01,Furniture,[],[],Walnut,large,18
+F798652,Standard Stool,1048.18,1.55,Furniture,[],[],Tile,large,11
+F786879,Standard Table,1989.67,0.19,Furniture,[],[],Oak,lawn orniment,13
+F531663,Standard Table,2106.92,3.61,Furniture,[],[],Granite,medium,79
+F480695,Standard Table,493.9,1.32,Furniture,[],[],Formica,lawn orniment,36
+F826961,Standard Table,166.54,0.17,Furniture,[],[],Tile,x-small,16
+F152753,Standard Stool,800.89,2.11,Furniture,[],[],Walnut,small,97
+F273149,Standard Chair,1636.04,1.17,Furniture,[],[],Oak,large,93
+F840384,Standard Chair,128.17,0.2,Furniture,[],[],Maple,x-small,8
+E832295,Standard Kettle,1528.82,2.44,Electric,ComputerDiluter,220VAC,[],[],10
+E431985,Standard Washing Machine,2222.37,0.11,Electric,ComputerDiluter,110VAC,[],[],62
+E180411,Standard Fan,1945.84,2.13,Electric,Suck-n-cut,220VAC,[],[],24
+E606186,Standard Toothbrush,1727.61,3.35,Electric,Freebird,110VAC,[],[],2
+F852368,Standard Chair,2047.09,1.9,Furniture,[],[],Formica,lawn orniment,33
+F364949,Standard Fixture,221.78,0.58,Furniture,[],[],Formica,small,46
+E426845,Standard Washing Machine,438.01,0.65,Electric,Suck-n-cut,110VAC,[],[],8
+F655321,Standard Chair,864.61,2.21,Furniture,[],[],Walnut,lawn orniment,97
+E035484,Standard Coffee Maker,2450.63,3.96,Electric,Suck-n-cut,12VDC,[],[],24
+F289820,Standard Table,2380.51,6.49,Furniture,[],[],Maple,small,38
+E517545,Standard Kettle,814.06,2.14,Electric,ComputerDiluter,10kV,[],[],47
+E117368,Standard Toothbrush,1993.15,4.65,Electric,ComputerDiluter,220VAC,[],[],34
+E645241,Standard Microwave,2067.9,1.45,Electric,Acme,110VAC,[],[],20
+F576798,Standard Fixture,380.83,0.7,Furniture,[],[],Oak,extra-large,15
+F660710,Standard Desk,419.21,0.22,Furniture,[],[],Oak,large,88
+F777285,Suricata Stool,1534.75,2.8,Furniture,[],[],Tile,medium,62
+F812897,Precepts Desk,2249.68,1.33,Furniture,[],[],Granite,small,34
+E530517,Jeepneys Toothbrush,1451.32,2.14,Electric,Paril,110VAC,[],[],15
+E703204,Rhubarb Kettle,1186.27,1.06,Electric,Icebreaker,220VAC,[],[],82
+E934136,Liflode Toothbrush,489.23,0.39,Electric,Wardour,440VAC,[],[],40
+E660106,Malure Toothbrush,705.85,0.52,Electric,Suck-n-cut,220VAC,[],[],80
+F439674,Standard Mirror,2447.93,1.87,Furniture,[],[],Tile,small,74
+E002660,Standard Fan,1050.98,1.03,Electric,Overzealousness,440VAC,[],[],50
+E321850,Standard Coffee Maker,2241.7,0.63,Electric,Nowayout,12VDC,[],[],98
+E901337,Standard Fan,2377.15,3.22,Electric,Nowayout,10kV,[],[],93
+E520205,Standard Coffee Maker,1458.45,2.87,Electric,Acme,110VAC,[],[],25
+F243620,Standard Table,1746.73,2.25,Furniture,[],[],Formica,x-small,36
+F780049,Standard Table,511.81,0.66,Furniture,[],[],Tile,lawn orniment,84
+E259172,Standard Toothbrush,2223.96,4.31,Electric,Nowayout,10kV,[],[],37
+E924904,Standard Coffee Maker,1361.59,3.36,Electric,Nowayout,440VAC,[],[],51
+F800040,Standard Desk,1562.72,2.7,Furniture,[],[],Oak,lawn orniment,38
+E879316,Standard Coffee Maker,1565.93,0.11,Electric,Nowayout,220VAC,[],[],27
+F297916,Standard Fixture,675.26,1.82,Furniture,[],[],Tile,lawn orniment,42
+E381842,Standard Washing Machine,1305.86,2.91,Electric,Suck-n-cut,440VAC,[],[],86
+F636370,Standard Table,731.57,0.45,Furniture,[],[],Granite,extra-large,30
+E252508,Standard Fan,2496.18,0.15,Electric,Nowayout,220VAC,[],[],24
+F204880,Standard Chair,486.14,0.26,Furniture,[],[],Tile,x-small,34
+E642938,Standard Washing Machine,2090.03,4.24,Electric,Acme,220VAC,[],[],45
+E725420,Standard Microwave,1089.08,2.72,Electric,ComputerDiluter,10kV,[],[],13
+E084621,Standard Microwave,1549.6,3.28,Electric,Acme,440VAC,[],[],34
+E749217,Standard Toothbrush,1537.27,2.37,Electric,Acme,110VAC,[],[],5
+F006531,Standard Stool,1248.67,2.85,Furniture,[],[],Formica,small,51
+F879108,Standard Stool,530.84,0.88,Furniture,[],[],Walnut,extra-large,90
+F264613,Standard Mirror,987.76,1.33,Furniture,[],[],Oak,large,41
+F766638,Standard Chair,2469.81,3.48,Furniture,[],[],Tile,x-small,74
+E058850,Standard Kettle,2291.01,4.67,Electric,Nowayout,220VAC,[],[],18
+F417610,Standard Chair,1682.91,2.57,Furniture,[],[],Maple,x-small,52
+F638352,Standard Mirror,222.56,0.27,Furniture,[],[],Walnut,medium,16
+F897834,Standard Mirror,152.51,0.32,Furniture,[],[],Tile,medium,75
+F202884,Standard Table,154.16,0.12,Furniture,[],[],Oak,lawn orniment,11
+F084381,Standard Stool,325.94,0.81,Furniture,[],[],Walnut,small,57
+F894815,Standard Chair,2193.91,5.88,Furniture,[],[],Tile,small,99
+F519504,Standard Fixture,2102.99,0.14,Furniture,[],[],Tile,extra-large,55
+E506344,Standard Kettle,804.42,0.81,Electric,Acme,440VAC,[],[],75
+F278701,Standard Fixture,1054.27,1.3,Furniture,[],[],Granite,large,37
+E567426,Standard Washing Machine,2445.49,3.81,Electric,Freebird,440VAC,[],[],33
+E389383,Standard Microwave,1232.99,1.82,Electric,Suck-n-cut,110VAC,[],[],67
+F941539,Standard Table,1351.36,3.0,Furniture,[],[],Tile,lawn orniment,60
+E442735,Standard Toothbrush,2331.93,2.49,Electric,Acme,220VAC,[],[],66
+F301484,Standard Desk,1562.95,0.33,Furniture,[],[],Walnut,x-small,55
+E573086,Standard Fan,360.76,0.24,Electric,Freebird,10kV,[],[],42
+E507044,Standard Washing Machine,1822.36,0.99,Electric,ComputerDiluter,12VDC,[],[],17
+E629949,Standard Fan,551.6,1.3,Electric,Acme,12VDC,[],[],30
+F741783,Standard Desk,209.87,0.27,Furniture,[],[],Tile,extra-large,20
+F193157,Standard Table,869.74,1.44,Furniture,[],[],Tile,lawn orniment,51
+E544724,Standard Fan,37.49,0.04,Electric,Nowayout,220VAC,[],[],36
+E277851,Standard Toothbrush,267.75,0.07,Electric,Suck-n-cut,440VAC,[],[],81
+F468149,Standard Chair,1000.83,0.61,Furniture,[],[],Formica,extra-large,45
+F675490,Standard Fixture,1427.71,1.98,Furniture,[],[],Granite,medium,41
+E869504,Standard Washing Machine,2075.66,2.39,Electric,Suck-n-cut,10kV,[],[],11
+E749779,Standard Fan,191.44,0.52,Electric,Suck-n-cut,12VDC,[],[],57
+F576747,Standard Chair,899.18,2.41,Furniture,[],[],Maple,x-small,54
+E200724,Standard Coffee Maker,599.13,0.67,Electric,Suck-n-cut,110VAC,[],[],43
+E916142,Standard Coffee Maker,2048.77,3.73,Electric,Freebird,440VAC,[],[],22
+E701006,Standard Kettle,1583.66,0.43,Electric,Nowayout,440VAC,[],[],58
+F655559,Standard Chair,2429.37,5.1,Furniture,[],[],Walnut,x-small,13
+F166025,Standard Stool,305.49,0.23,Furniture,[],[],Maple,large,45
+F021195,Standard Chair,1684.4,4.58,Furniture,[],[],Maple,lawn orniment,69
+F679654,Standard Fixture,1133.57,2.5,Furniture,[],[],Maple,medium,39
+E396778,Standard Toothbrush,2141.2,2.69,Electric,Freebird,440VAC,[],[],10
+E014493,Standard Toothbrush,1604.58,2.4,Electric,Suck-n-cut,12VDC,[],[],4
+E373728,Standard Coffee Maker,473.56,1.24,Electric,Freebird,220VAC,[],[],35
+F909940,Standard Chair,2057.46,0.64,Furniture,[],[],Maple,small,3
+F302935,Standard Fixture,474.48,0.2,Furniture,[],[],Granite,lawn orniment,4
+F121973,Standard Mirror,2279.85,6.15,Furniture,[],[],Granite,lawn orniment,95
+E964736,Standard Fan,481.85,0.18,Electric,Suck-n-cut,440VAC,[],[],6
+F289578,Standard Table,196.21,0.47,Furniture,[],[],Oak,large,29
+E899698,Standard Microwave,822.75,1.76,Electric,Freebird,10kV,[],[],61
+F559812,Standard Fixture,2297.34,1.99,Furniture,[],[],Maple,lawn orniment,39
+F742288,Standard Table,1828.71,2.5,Furniture,[],[],Maple,extra-large,93
+E236326,Standard Microwave,1740.05,2.83,Electric,Nowayout,10kV,[],[],55
+E337345,Standard Toothbrush,1183.91,2.46,Electric,ComputerDiluter,440VAC,[],[],70
+F893735,Standard Table,2166.58,1.23,Furniture,[],[],Maple,lawn orniment,72
+F619825,Standard Mirror,332.09,0.4,Furniture,[],[],Walnut,extra-large,21
+E775256,Standard Washing Machine,1584.05,3.3,Electric,Freebird,220VAC,[],[],60
+F407062,Standard Chair,515.42,0.96,Furniture,[],[],Formica,extra-large,57
+F078081,Standard Chair,442.19,0.33,Furniture,[],[],Tile,small,92
+F298464,Standard Stool,1615.37,0.47,Furniture,[],[],Formica,medium,44
+E857475,Standard Coffee Maker,868.2,0.61,Electric,Acme,220VAC,[],[],30
+E025806,Standard Microwave,1830.46,3.77,Electric,Freebird,10kV,[],[],91
+E556536,Standard Kettle,528.73,1.06,Electric,Suck-n-cut,220VAC,[],[],29
+E597583,Standard Kettle,230.55,0.0,Electric,Nowayout,440VAC,[],[],50
+F098836,Standard Desk,1833.67,0.76,Furniture,[],[],Formica,lawn orniment,41
+F628639,Standard Mirror,1246.55,1.32,Furniture,[],[],Walnut,lawn orniment,82
+F557768,Standard Desk,1446.57,1.26,Furniture,[],[],Walnut,large,75
+E063199,Standard Coffee Maker,669.97,0.25,Electric,Nowayout,440VAC,[],[],29
+E394415,Standard Microwave,2438.71,0.22,Electric,Suck-n-cut,440VAC,[],[],85
+E377674,Standard Kettle,2087.19,1.28,Electric,ComputerDiluter,12VDC,[],[],64
+F325176,Standard Chair,1996.77,0.97,Furniture,[],[],Tile,x-small,18
+E125838,Standard Toothbrush,512.18,1.15,Electric,ComputerDiluter,12VDC,[],[],76
+E427693,Standard Microwave,556.8,0.94,Electric,Freebird,10kV,[],[],34
+F485354,Standard Fixture,560.59,0.95,Furniture,[],[],Maple,medium,47
+F161006,Standard Fixture,1463.13,2.45,Furniture,[],[],Oak,small,18
+E946864,Standard Fan,1016.7,1.37,Electric,Acme,440VAC,[],[],68
+F784602,Standard Mirror,1881.94,2.61,Furniture,[],[],Walnut,extra-large,36
+F584394,Standard Stool,1973.53,0.07,Furniture,[],[],Formica,large,92
+E177206,Standard Microwave,1606.82,3.25,Electric,Acme,10kV,[],[],34
+F377398,Standard Stool,1779.4,3.03,Furniture,[],[],Tile,lawn orniment,1
+E686975,Standard Toothbrush,616.29,0.05,Electric,Nowayout,12VDC,[],[],52
+E773766,Standard Coffee Maker,2306.81,0.4,Electric,Freebird,12VDC,[],[],99
+E292064,Standard Microwave,1213.29,2.63,Electric,Nowayout,12VDC,[],[],83
+E785837,Standard Fan,2437.56,6.52,Electric,Nowayout,440VAC,[],[],7
+F226769,Standard Table,2480.11,0.53,Furniture,[],[],Maple,x-small,18
+E842123,Standard Kettle,1586.51,3.47,Electric,Nowayout,10kV,[],[],28
+F221481,Standard Chair,1427.16,1.13,Furniture,[],[],Granite,x-small,21
+E074500,Standard Coffee Maker,82.41,0.0,Electric,Acme,220VAC,[],[],87
+F676526,Standard Desk,1040.33,2.82,Furniture,[],[],Tile,lawn orniment,38
+F552530,Standard Fixture,789.2,0.94,Furniture,[],[],Oak,extra-large,42
+E376507,Standard Coffee Maker,1651.39,0.97,Electric,ComputerDiluter,440VAC,[],[],6
+E961026,Standard Kettle,1640.66,3.93,Electric,Freebird,440VAC,[],[],12
+E404720,Standard Washing Machine,1104.62,2.43,Electric,Freebird,110VAC,[],[],1
+E370337,Standard Toothbrush,811.35,0.19,Electric,Freebird,12VDC,[],[],18
+E169632,Standard Washing Machine,411.15,0.88,Electric,Freebird,110VAC,[],[],29
+E029597,Standard Microwave,2150.2,2.39,Electric,Suck-n-cut,220VAC,[],[],95
+F778711,Standard Mirror,2244.6,2.14,Furniture,[],[],Walnut,small,15
+E997255,Standard Microwave,1089.34,2.61,Electric,ComputerDiluter,440VAC,[],[],55
+F083113,Standard Table,1912.63,2.86,Furniture,[],[],Maple,large,97
+E599650,Standard Fan,713.93,0.94,Electric,Nowayout,12VDC,[],[],37
+E139511,Standard Microwave,805.06,0.7,Electric,Suck-n-cut,440VAC,[],[],43
+E103356,Standard Coffee Maker,2029.26,3.36,Electric,Nowayout,12VDC,[],[],67
+F604440,Standard Mirror,2083.54,4.27,Furniture,[],[],Oak,small,79
+E217961,Standard Washing Machine,288.24,0.65,Electric,Suck-n-cut,12VDC,[],[],71
+E409912,Standard Microwave,1712.59,2.37,Electric,ComputerDiluter,12VDC,[],[],45
+E805201,Standard Microwave,2491.87,6.72,Electric,Nowayout,12VDC,[],[],74
+F919089,Standard Mirror,1994.29,0.02,Furniture,[],[],Formica,lawn orniment,64
+F908993,Standard Chair,2365.44,1.41,Furniture,[],[],Granite,small,63
+F452004,Standard Table,1789.97,2.17,Furniture,[],[],Maple,extra-large,40
+E029879,Standard Fan,1054.65,2.54,Electric,Freebird,12VDC,[],[],69
+E644464,Standard Fan,1471.31,2.79,Electric,Nowayout,110VAC,[],[],93
+E660696,Standard Microwave,476.71,1.04,Electric,Freebird,12VDC,[],[],4
+F621320,Standard Desk,100.84,0.08,Furniture,[],[],Tile,lawn orniment,27
+F204199,Standard Fixture,1055.04,2.46,Furniture,[],[],Formica,small,25
+F611820,Standard Desk,581.9,0.25,Furniture,[],[],Maple,large,13
+F320946,Standard Stool,2483.04,4.16,Furniture,[],[],Maple,lawn orniment,10
+E965803,Standard Kettle,440.85,0.61,Electric,Freebird,110VAC,[],[],37
+F372138,Standard Stool,1074.42,0.1,Furniture,[],[],Oak,extra-large,46
+E359819,Standard Toothbrush,2064.39,4.48,Electric,ComputerDiluter,10kV,[],[],65
+E655742,Standard Toothbrush,425.9,0.44,Electric,Acme,220VAC,[],[],89
+F573606,Standard Desk,1583.34,0.25,Furniture,[],[],Walnut,small,0
+F510408,Standard Stool,2053.12,1.76,Furniture,[],[],Granite,x-small,94
+F312431,Standard Fixture,1755.22,4.43,Furniture,[],[],Maple,extra-large,28
+E023803,Standard Toothbrush,2018.82,0.76,Electric,ComputerDiluter,10kV,[],[],5
+F653354,Standard Table,108.36,0.17,Furniture,[],[],Maple,lawn orniment,13
+E517781,Standard Fan,1596.67,1.29,Electric,Freebird,110VAC,[],[],21
+F124470,Standard Fixture,210.1,0.15,Furniture,[],[],Walnut,medium,32
+F238191,Standard Stool,1659.37,3.94,Furniture,[],[],Formica,x-small,70
+E093974,Standard Kettle,1804.3,3.23,Electric,Acme,12VDC,[],[],99
+F729046,Standard Chair,89.4,0.15,Furniture,[],[],Formica,large,29
+F479603,Standard Stool,651.19,0.41,Furniture,[],[],Oak,lawn orniment,32
+F424277,Standard Fixture,1518.49,0.18,Furniture,[],[],Oak,extra-large,44
+F606253,Standard Desk,1549.41,3.36,Furniture,[],[],Formica,extra-large,42
+F637510,Standard Desk,391.93,0.38,Furniture,[],[],Tile,large,50
+F692205,Standard Desk,995.78,1.21,Furniture,[],[],Oak,medium,93
+F530391,Standard Fixture,47.77,0.0,Furniture,[],[],Walnut,small,99
+E469239,Standard Fan,573.94,1.55,Electric,ComputerDiluter,10kV,[],[],49
+E647678,Standard Microwave,818.39,0.05,Electric,ComputerDiluter,220VAC,[],[],63
+E862315,Standard Kettle,198.99,0.06,Electric,Acme,220VAC,[],[],31
+F610924,Standard Desk,2090.55,2.41,Furniture,[],[],Formica,lawn orniment,89
+F079585,Standard Desk,665.27,1.06,Furniture,[],[],Tile,extra-large,67
+E759381,Standard Microwave,1534.52,3.56,Electric,Suck-n-cut,12VDC,[],[],26
+E398039,Standard Microwave,2195.71,0.3,Electric,Suck-n-cut,110VAC,[],[],83
+F361651,Standard Fixture,1634.19,2.55,Furniture,[],[],Maple,extra-large,42
+F549813,Standard Table,2234.54,1.54,Furniture,[],[],Tile,x-small,28
+F571528,Standard Table,1601.41,2.56,Furniture,[],[],Oak,small,5
+F584684,Standard Chair,241.34,0.44,Furniture,[],[],Granite,extra-large,35
+F046693,Standard Mirror,2326.3,0.15,Furniture,[],[],Tile,small,13
+E839019,Standard Coffee Maker,2367.45,5.06,Electric,ComputerDiluter,440VAC,[],[],3
+E600463,Standard Kettle,799.63,1.63,Electric,Nowayout,220VAC,[],[],26
+E235584,Standard Kettle,1097.86,2.6,Electric,Freebird,440VAC,[],[],0
+E012552,Standard Coffee Maker,1597.7,1.81,Electric,ComputerDiluter,12VDC,[],[],54
+F181430,Standard Stool,1841.79,4.76,Furniture,[],[],Maple,x-small,41
+F350004,Standard Fixture,158.87,0.35,Furniture,[],[],Granite,lawn orniment,3
+F702350,Standard Stool,428.81,0.5,Furniture,[],[],Maple,small,59
+F902911,Standard Desk,272.96,0.24,Furniture,[],[],Granite,extra-large,53
+E247652,Standard Microwave,169.64,0.01,Electric,Acme,220VAC,[],[],32
+F520869,Standard Chair,561.24,0.01,Furniture,[],[],Oak,large,46
+F211619,Standard Table,308.4,0.6,Furniture,[],[],Formica,lawn orniment,95
+E184735,Standard Microwave,1621.16,2.12,Electric,Acme,110VAC,[],[],77
+E442059,Standard Toothbrush,2376.42,6.26,Electric,Nowayout,10kV,[],[],23
+F491531,Standard Mirror,2224.5,1.76,Furniture,[],[],Maple,small,22
+F728858,Standard Chair,871.79,0.92,Furniture,[],[],Tile,extra-large,35
+E028117,Standard Microwave,1073.38,2.6,Electric,ComputerDiluter,12VDC,[],[],47
+F255190,Standard Stool,935.27,0.87,Furniture,[],[],Walnut,small,4
+F710919,Standard Desk,343.9,0.34,Furniture,[],[],Granite,large,62
+F162593,Standard Table,431.82,0.27,Furniture,[],[],Walnut,x-small,14
+F416588,Standard Mirror,392.21,0.52,Furniture,[],[],Tile,small,71
+E080009,Standard Microwave,2428.09,1.17,Electric,Freebird,440VAC,[],[],50
+E586916,Standard Washing Machine,294.68,0.47,Electric,Nowayout,12VDC,[],[],15
+F386883,Standard Stool,397.83,0.77,Furniture,[],[],Oak,large,20
+E116930,Standard Microwave,1852.44,0.65,Electric,Acme,110VAC,[],[],42
+F075636,Standard Fixture,1867.23,0.26,Furniture,[],[],Maple,small,7
+E289839,Standard Fan,1486.48,4.02,Electric,Nowayout,110VAC,[],[],75
+F563905,Standard Desk,584.49,0.08,Furniture,[],[],Oak,large,64
+F177270,Standard Chair,1219.34,1.16,Furniture,[],[],Maple,lawn orniment,9
+E208519,Standard Kettle,1497.91,2.07,Electric,Freebird,12VDC,[],[],14
+F239510,Standard Mirror,1732.49,3.37,Furniture,[],[],Granite,lawn orniment,25
+E510170,Standard Washing Machine,1634.41,2.28,Electric,Nowayout,440VAC,[],[],10
+F278760,Standard Table,556.69,0.44,Furniture,[],[],Granite,lawn orniment,80
+F746076,Standard Fixture,1394.25,3.41,Furniture,[],[],Formica,large,74
+E012215,Standard Microwave,278.86,0.38,Electric,Acme,440VAC,[],[],1
+F735564,Standard Desk,1652.65,0.47,Furniture,[],[],Formica,large,14
+E004239,Standard Washing Machine,2319.18,0.82,Electric,Freebird,110VAC,[],[],43
+F679325,Standard Desk,2185.58,4.79,Furniture,[],[],Oak,x-small,68
+F575786,Standard Chair,1481.65,2.31,Furniture,[],[],Formica,large,83
+F684032,Standard Fixture,496.84,0.28,Furniture,[],[],Oak,medium,91
+E908344,Standard Toothbrush,2339.93,2.14,Electric,Suck-n-cut,12VDC,[],[],8
+E825571,Standard Washing Machine,478.6,0.89,Electric,Suck-n-cut,12VDC,[],[],59
+F054082,Standard Stool,2455.14,1.61,Furniture,[],[],Tile,lawn orniment,20
+E005239,Standard Washing Machine,2122.41,0.43,Electric,Acme,440VAC,[],[],66
+F609132,Standard Fixture,2339.69,3.05,Furniture,[],[],Formica,x-small,68
+F904436,Standard Stool,1944.99,1.66,Furniture,[],[],Maple,x-small,74
+F765506,Standard Fixture,2445.18,6.0,Furniture,[],[],Tile,extra-large,49
+E561743,Standard Kettle,1484.6,2.45,Electric,Nowayout,12VDC,[],[],4
+E319635,Standard Kettle,1056.13,0.87,Electric,Acme,440VAC,[],[],62
+F110242,Standard Table,671.89,0.65,Furniture,[],[],Oak,medium,60
+E475367,Standard Fan,2391.27,0.18,Electric,Freebird,110VAC,[],[],13
+E288414,Standard Washing Machine,2017.82,1.08,Electric,Nowayout,12VDC,[],[],98
+E564689,Puller-outer Toothbrush,105.97,0.09,Electric,Detail,440VAC,[],[],5
+F938687,Wheatear Stool,1921.28,4.95,Furniture,[],[],Formica,lawn orniment,16
+E417488,Horsewhipping Kettle,1176.18,0.86,Electric,Baa-lamb,12VDC,[],[],67
+E368579,Standard Kettle,1529.51,0.4,Electric,Classmate,220VAC,[],[],24
+E537330,Tepidaria Coffee Maker,1200.89,1.55,Electric,ComputerDiluter,10kV,[],[],95
+F764514,Hyponatraemia Stool,2081.54,4.84,Furniture,[],[],Maple,medium,86
+E817765,Standard Toothbrush,2310.93,5.23,Electric,Knightliness,110VAC,[],[],17
+F709962,Uberty Table,1974.14,3.81,Furniture,[],[],Granite,large,24
+F442052,Standard Fixture,1502.64,4.09,Furniture,[],[],Granite,x-small,85
+E238867,Standard Microwave,2467.42,4.82,Electric,ComputerDiluter,220VAC,[],[],48
+E500355,Standard Fan,2438.54,0.75,Electric,Suck-n-cut,110VAC,[],[],31
+E132701,Standard Coffee Maker,1987.48,1.82,Electric,Acme,12VDC,[],[],25
+F774388,Standard Stool,2102.4,5.76,Furniture,[],[],Maple,small,63
+F818718,Standard Fixture,1354.2,3.28,Furniture,[],[],Granite,lawn orniment,73
+F139612,Standard Fixture,474.42,0.75,Furniture,[],[],Oak,small,41
+E074215,Standard Kettle,2240.17,1.07,Electric,Nowayout,110VAC,[],[],51
+F190150,Standard Mirror,891.49,2.17,Furniture,[],[],Formica,lawn orniment,47
+F725987,Standard Table,2247.16,0.84,Furniture,[],[],Formica,extra-large,38
+F245975,Standard Table,2403.48,2.28,Furniture,[],[],Oak,medium,85
+F881358,Standard Mirror,677.73,1.16,Furniture,[],[],Formica,small,13
+F821621,Standard Mirror,2326.31,6.06,Furniture,[],[],Granite,x-small,78
+E414938,Standard Fan,113.72,0.08,Electric,Acme,220VAC,[],[],12
+F393007,Standard Mirror,8.72,0.02,Furniture,[],[],Maple,large,87
+E063331,Standard Toothbrush,285.58,0.19,Electric,Acme,12VDC,[],[],38
+E621030,Standard Microwave,1762.14,4.39,Electric,Nowayout,440VAC,[],[],88
+F116801,Standard Mirror,237.89,0.55,Furniture,[],[],Oak,lawn orniment,0
+F461916,Standard Fixture,1902.48,0.5,Furniture,[],[],Walnut,extra-large,50
+E289268,Standard Microwave,836.65,0.52,Electric,Acme,110VAC,[],[],4
+E067333,Standard Washing Machine,1988.0,1.51,Electric,Acme,220VAC,[],[],89
+E152209,Standard Toothbrush,2332.79,4.56,Electric,Suck-n-cut,10kV,[],[],66
+F599064,Standard Table,2484.02,3.36,Furniture,[],[],Walnut,medium,23
+E027771,Standard Kettle,1069.0,2.77,Electric,Freebird,10kV,[],[],77
+E663929,Standard Coffee Maker,28.9,0.08,Electric,ComputerDiluter,220VAC,[],[],36
+E009323,Standard Coffee Maker,769.53,1.91,Electric,Acme,220VAC,[],[],22
+F886024,Standard Chair,1067.38,2.89,Furniture,[],[],Granite,extra-large,26
+E400599,Standard Microwave,2472.86,5.78,Electric,Nowayout,12VDC,[],[],25
+E154968,Standard Washing Machine,1348.88,2.76,Electric,Nowayout,110VAC,[],[],52
+E102239,Standard Toothbrush,1717.53,1.87,Electric,Nowayout,440VAC,[],[],44
+F904086,Standard Table,2301.4,1.02,Furniture,[],[],Maple,lawn orniment,29
+F876354,Standard Mirror,714.78,0.79,Furniture,[],[],Formica,extra-large,23
+F130158,Standard Desk,167.76,0.16,Furniture,[],[],Formica,small,95
+E135130,Standard Microwave,974.62,2.07,Electric,Suck-n-cut,12VDC,[],[],12
+F237122,Standard Mirror,506.76,1.02,Furniture,[],[],Oak,lawn orniment,19
+E434314,Standard Coffee Maker,2473.48,1.57,Electric,Suck-n-cut,440VAC,[],[],98
+E286497,Standard Washing Machine,410.46,0.25,Electric,Suck-n-cut,220VAC,[],[],79
+E706668,Standard Kettle,1825.77,2.25,Electric,Suck-n-cut,10kV,[],[],44
+F309655,Standard Desk,1891.63,2.63,Furniture,[],[],Walnut,medium,43
+E497852,Standard Microwave,1563.92,4.19,Electric,Suck-n-cut,12VDC,[],[],8
+E037636,Standard Microwave,2488.05,4.77,Electric,Nowayout,220VAC,[],[],83
+E894297,Standard Microwave,952.94,0.7,Electric,Suck-n-cut,440VAC,[],[],17
+E275539,Standard Microwave,1835.77,1.1,Electric,Acme,10kV,[],[],61
+F139488,Standard Chair,90.36,0.11,Furniture,[],[],Oak,medium,43
+F114571,Standard Desk,311.17,0.74,Furniture,[],[],Oak,extra-large,83
+F162718,Standard Mirror,2080.65,5.21,Furniture,[],[],Oak,large,51
+E617604,Standard Fan,1259.15,2.39,Electric,ComputerDiluter,10kV,[],[],92
+F223324,Standard Table,2474.14,6.18,Furniture,[],[],Formica,small,8
+E008031,Standard Fan,1327.81,1.58,Electric,Nowayout,10kV,[],[],33
+F869092,Standard Table,2276.66,3.6,Furniture,[],[],Formica,x-small,32
+F778649,Standard Chair,1918.03,2.23,Furniture,[],[],Oak,large,93
+F751569,Standard Stool,2350.87,3.21,Furniture,[],[],Formica,lawn orniment,21
+E720726,Standard Microwave,2038.9,1.73,Electric,Acme,12VDC,[],[],87
+E938921,Standard Washing Machine,965.14,1.31,Electric,Nowayout,110VAC,[],[],31
+E935092,Standard Coffee Maker,883.74,0.95,Electric,Nowayout,440VAC,[],[],96
+F504175,Standard Stool,636.14,1.67,Furniture,[],[],Granite,x-small,82
+E878303,Standard Fan,778.24,0.12,Electric,Suck-n-cut,10kV,[],[],64
+F059979,Standard Fixture,1622.0,1.51,Furniture,[],[],Walnut,extra-large,2
+E030781,Standard Coffee Maker,2104.7,1.58,Electric,Nowayout,220VAC,[],[],95
+E535164,Standard Fan,1760.71,1.2,Electric,ComputerDiluter,110VAC,[],[],27
+F554608,Standard Chair,1054.27,0.49,Furniture,[],[],Maple,extra-large,43
+F173706,Standard Stool,1767.97,3.66,Furniture,[],[],Oak,extra-large,34
+E071548,Standard Washing Machine,446.42,0.66,Electric,ComputerDiluter,10kV,[],[],35
+F198356,Standard Stool,153.77,0.0,Furniture,[],[],Oak,medium,33
+F773969,Standard Table,2482.0,1.62,Furniture,[],[],Oak,lawn orniment,87
+F390777,Standard Fixture,1023.15,2.76,Furniture,[],[],Granite,x-small,54
+F329183,Standard Table,1003.61,0.67,Furniture,[],[],Oak,lawn orniment,90
+E941431,Standard Fan,2030.38,4.13,Electric,Suck-n-cut,440VAC,[],[],26
+F348262,Standard Fixture,366.51,0.03,Furniture,[],[],Granite,x-small,45
+E901708,Standard Toothbrush,1831.68,0.34,Electric,ComputerDiluter,10kV,[],[],96
+F085978,Standard Desk,2021.48,0.26,Furniture,[],[],Formica,large,82
+F984967,Standard Fixture,2462.27,5.82,Furniture,[],[],Walnut,small,57
+E776455,Standard Fan,1947.97,0.35,Electric,Suck-n-cut,110VAC,[],[],97
+F606286,Standard Chair,2464.61,5.73,Furniture,[],[],Formica,medium,61
+E270770,Standard Toothbrush,2317.55,2.37,Electric,Nowayout,220VAC,[],[],60
+E042503,Standard Microwave,1485.47,0.62,Electric,Nowayout,12VDC,[],[],20
+E305511,Standard Microwave,818.63,0.44,Electric,Acme,220VAC,[],[],17
+F949041,Standard Fixture,16.56,0.03,Furniture,[],[],Tile,medium,21
+E204619,Standard Kettle,467.81,0.02,Electric,Suck-n-cut,110VAC,[],[],20
+F105598,Standard Mirror,1861.13,3.25,Furniture,[],[],Maple,medium,20
+F057388,Standard Desk,89.19,0.19,Furniture,[],[],Oak,x-small,83
+F721427,Standard Fixture,713.78,1.46,Furniture,[],[],Oak,large,17
+F109719,Standard Desk,1046.83,1.47,Furniture,[],[],Walnut,lawn orniment,22
+F065661,Standard Stool,685.36,1.8,Furniture,[],[],Tile,x-small,56
+F748079,Standard Chair,76.23,0.07,Furniture,[],[],Tile,lawn orniment,41
+E619841,Standard Fan,1354.79,0.57,Electric,ComputerDiluter,440VAC,[],[],97
+E416563,Standard Toothbrush,177.32,0.21,Electric,Freebird,440VAC,[],[],25
+E798500,Standard Toothbrush,2405.12,4.49,Electric,Freebird,220VAC,[],[],28
+E242399,Standard Washing Machine,1680.09,4.06,Electric,Acme,10kV,[],[],99
+E769399,Standard Coffee Maker,1552.38,2.68,Electric,Acme,10kV,[],[],77
+E283305,Standard Kettle,1668.47,1.12,Electric,ComputerDiluter,10kV,[],[],38
+E699523,Standard Washing Machine,956.82,1.15,Electric,Acme,220VAC,[],[],95
+E227314,Standard Microwave,1245.71,3.3,Electric,Acme,110VAC,[],[],43
+F770326,Standard Table,1841.22,1.22,Furniture,[],[],Formica,extra-large,39
+F910352,Standard Table,1677.76,0.57,Furniture,[],[],Granite,extra-large,44
+E235658,Standard Coffee Maker,2236.79,4.69,Electric,ComputerDiluter,220VAC,[],[],62
+F575952,Standard Chair,931.13,1.42,Furniture,[],[],Tile,medium,10
+E782703,Standard Toothbrush,80.38,0.04,Electric,Freebird,10kV,[],[],46
+E789720,Standard Microwave,2353.38,1.49,Electric,Freebird,10kV,[],[],19
+F533048,Standard Table,1947.37,0.76,Furniture,[],[],Tile,large,77
+E988189,Standard Washing Machine,2110.27,4.0,Electric,Nowayout,12VDC,[],[],88
+E743721,Standard Toothbrush,378.78,0.82,Electric,Acme,220VAC,[],[],26
+F186731,Standard Chair,147.25,0.14,Furniture,[],[],Maple,medium,78
+F925347,Standard Stool,1076.28,1.56,Furniture,[],[],Oak,x-small,73
+E869308,Standard Toothbrush,821.76,1.32,Electric,Freebird,110VAC,[],[],90
+F162326,Standard Desk,1156.68,2.69,Furniture,[],[],Formica,medium,38
+E210081,Standard Toothbrush,2062.56,1.0,Electric,ComputerDiluter,110VAC,[],[],28
+F666759,Standard Fixture,1916.84,3.81,Furniture,[],[],Walnut,extra-large,47
+F415684,Standard Stool,1782.86,1.75,Furniture,[],[],Granite,lawn orniment,28
+F090420,Standard Stool,733.29,0.71,Furniture,[],[],Formica,x-small,39
+E269004,Standard Toothbrush,416.16,0.68,Electric,Freebird,440VAC,[],[],70
+F452697,Standard Table,2230.96,5.35,Furniture,[],[],Maple,lawn orniment,46
+F686146,Standard Stool,1787.99,0.63,Furniture,[],[],Oak,lawn orniment,44
+E851105,Standard Microwave,1934.18,0.16,Electric,Freebird,440VAC,[],[],57
+F604612,Standard Desk,895.71,1.72,Furniture,[],[],Maple,x-small,20
+F196755,Standard Fixture,1085.36,0.87,Furniture,[],[],Tile,x-small,38
+E764197,Standard Fan,271.27,0.68,Electric,Freebird,220VAC,[],[],74
+E276033,Standard Kettle,2330.75,0.61,Electric,Nowayout,440VAC,[],[],65
+F416477,Standard Fixture,1519.0,0.41,Furniture,[],[],Granite,medium,52
+E155111,Standard Coffee Maker,458.11,0.51,Electric,Suck-n-cut,10kV,[],[],23
+F101578,Standard Chair,1905.56,2.49,Furniture,[],[],Walnut,medium,36
+F371814,Standard Mirror,2441.97,1.05,Furniture,[],[],Walnut,medium,61
+E313987,Standard Kettle,1999.0,4.92,Electric,Suck-n-cut,220VAC,[],[],30
+E806002,Standard Kettle,39.71,0.09,Electric,Acme,110VAC,[],[],30
+E130079,Standard Washing Machine,1118.45,1.65,Electric,Nowayout,12VDC,[],[],14
+E741656,Standard Coffee Maker,2395.09,4.37,Electric,Freebird,12VDC,[],[],72
+F746736,Standard Chair,1528.73,2.97,Furniture,[],[],Oak,small,66
+F580152,Standard Desk,2346.92,0.28,Furniture,[],[],Formica,lawn orniment,6
+F132044,Standard Desk,697.51,0.38,Furniture,[],[],Maple,x-small,95
+E972651,Standard Microwave,828.27,0.27,Electric,Suck-n-cut,440VAC,[],[],28
+E718943,Standard Coffee Maker,2058.33,3.04,Electric,ComputerDiluter,12VDC,[],[],23
+E926641,Standard Kettle,1384.33,2.73,Electric,Acme,12VDC,[],[],88
+E613171,Standard Coffee Maker,748.7,0.96,Electric,Nowayout,440VAC,[],[],6
+E465326,Standard Coffee Maker,745.81,1.21,Electric,Nowayout,12VDC,[],[],26
+E084325,Standard Fan,1518.11,0.15,Electric,Acme,440VAC,[],[],33
+F278405,Standard Chair,2165.65,4.45,Furniture,[],[],Granite,large,95
+F376003,Standard Chair,913.4,0.47,Furniture,[],[],Formica,lawn orniment,54
+E087763,Standard Kettle,2184.71,3.09,Electric,ComputerDiluter,440VAC,[],[],22
+F381933,Standard Fixture,293.37,0.34,Furniture,[],[],Granite,extra-large,32
+E074067,Standard Fan,1943.61,4.3,Electric,Nowayout,110VAC,[],[],45
+F247132,Standard Stool,101.37,0.11,Furniture,[],[],Granite,x-small,14
+F398382,Standard Table,2118.38,3.51,Furniture,[],[],Walnut,medium,88
+F172246,Standard Desk,1411.46,3.09,Furniture,[],[],Granite,lawn orniment,12
+E891760,Standard Kettle,919.92,1.99,Electric,ComputerDiluter,440VAC,[],[],42
+E046917,Standard Kettle,1716.46,1.76,Electric,Acme,440VAC,[],[],82
+F353757,Standard Desk,2293.08,1.88,Furniture,[],[],Formica,medium,84
+E094541,Standard Coffee Maker,1860.01,3.23,Electric,Suck-n-cut,10kV,[],[],55
+E447720,Standard Microwave,492.83,0.55,Electric,ComputerDiluter,10kV,[],[],3
+F443404,Standard Desk,869.23,1.96,Furniture,[],[],Granite,extra-large,90
+F894152,Standard Table,1532.01,2.0,Furniture,[],[],Oak,extra-large,51
+E702108,Standard Fan,710.94,0.5,Electric,Freebird,440VAC,[],[],50
+E058414,Standard Kettle,1752.09,0.4,Electric,ComputerDiluter,110VAC,[],[],6
+E465885,Standard Coffee Maker,779.9,1.6,Electric,Freebird,110VAC,[],[],8
+F266252,Standard Desk,2402.97,2.65,Furniture,[],[],Oak,small,17
+E640504,Standard Kettle,547.1,0.29,Electric,Suck-n-cut,12VDC,[],[],31
+F959568,Standard Table,1486.97,0.12,Furniture,[],[],Oak,x-small,61
+F534536,Standard Chair,506.11,0.22,Furniture,[],[],Tile,medium,45
+E588072,Standard Kettle,78.36,0.05,Electric,Suck-n-cut,440VAC,[],[],42
+E968467,Standard Toothbrush,2414.99,4.14,Electric,Freebird,10kV,[],[],80
+F989902,Standard Chair,1133.28,2.86,Furniture,[],[],Granite,x-small,58
+F269151,Standard Stool,2443.69,1.57,Furniture,[],[],Walnut,medium,37
+F864065,Standard Desk,622.6,1.22,Furniture,[],[],Granite,small,73
+E289490,Standard Microwave,805.66,0.97,Electric,Acme,110VAC,[],[],98
+F937549,Standard Mirror,1841.03,2.6,Furniture,[],[],Maple,extra-large,35
+E283042,Standard Microwave,2406.17,6.22,Electric,Nowayout,220VAC,[],[],47
+F703847,Standard Chair,1272.61,1.3,Furniture,[],[],Formica,lawn orniment,67
+F759866,Standard Fixture,2438.22,2.87,Furniture,[],[],Tile,large,97
+F131167,Standard Table,1212.98,1.84,Furniture,[],[],Formica,extra-large,75
+E661611,Standard Kettle,875.7,0.15,Electric,Suck-n-cut,10kV,[],[],40
+E804927,Standard Fan,1758.15,2.0,Electric,Freebird,10kV,[],[],4
+E393432,Standard Microwave,1150.42,2.54,Electric,Nowayout,440VAC,[],[],3
+F113408,Standard Stool,1528.6,0.67,Furniture,[],[],Walnut,lawn orniment,98
+E342214,Standard Fan,797.02,0.94,Electric,Suck-n-cut,220VAC,[],[],44
+F466258,Standard Fixture,1692.16,1.81,Furniture,[],[],Maple,x-small,18
+E247104,Standard Kettle,74.96,0.07,Electric,ComputerDiluter,440VAC,[],[],81
+F321567,Standard Chair,272.41,0.58,Furniture,[],[],Granite,small,23
+F737311,Standard Desk,2162.0,0.27,Furniture,[],[],Walnut,extra-large,63
+F523811,Standard Table,413.63,1.07,Furniture,[],[],Granite,lawn orniment,22
+F767135,Standard Desk,1580.63,0.06,Furniture,[],[],Tile,extra-large,13
+E309461,Standard Microwave,1256.29,0.92,Electric,Nowayout,12VDC,[],[],3
+F595158,Standard Table,1394.81,1.94,Furniture,[],[],Granite,large,33
+F220383,Standard Desk,1758.26,2.13,Furniture,[],[],Oak,large,41
+F198756,Standard Stool,1549.26,0.08,Furniture,[],[],Maple,large,60
+E478357,Standard Kettle,2484.04,5.54,Electric,Freebird,10kV,[],[],75
+F509355,Standard Table,290.46,0.45,Furniture,[],[],Tile,lawn orniment,72
+E205644,Standard Kettle,2073.87,2.12,Electric,Nowayout,10kV,[],[],26
+F631857,Standard Table,2157.23,3.69,Furniture,[],[],Walnut,large,29
+E660461,Standard Coffee Maker,1689.61,3.3,Electric,Nowayout,220VAC,[],[],6
+E335276,Standard Coffee Maker,178.01,0.27,Electric,ComputerDiluter,12VDC,[],[],53
+E168681,Standard Kettle,1415.92,2.72,Electric,Suck-n-cut,12VDC,[],[],62
+F490620,Standard Desk,446.06,0.72,Furniture,[],[],Tile,x-small,10
+F511979,Standard Desk,2227.53,2.23,Furniture,[],[],Tile,lawn orniment,22
+E228311,Standard Fan,1746.46,2.92,Electric,Freebird,220VAC,[],[],10
+F095047,Standard Desk,513.47,0.62,Furniture,[],[],Tile,small,96
+F620862,Standard Stool,1596.94,3.96,Furniture,[],[],Granite,extra-large,57
+E401666,Standard Coffee Maker,1718.91,2.02,Electric,Acme,220VAC,[],[],84
+E696583,Standard Fan,2317.77,3.68,Electric,ComputerDiluter,110VAC,[],[],22
+F929087,Standard Chair,1013.95,2.71,Furniture,[],[],Tile,x-small,41
+F999537,Standard Stool,1497.48,1.13,Furniture,[],[],Maple,large,54
+F270004,Standard Mirror,1514.92,3.34,Furniture,[],[],Maple,extra-large,51
+F736287,Standard Mirror,1515.74,3.31,Furniture,[],[],Granite,small,44
+F774240,Standard Stool,2483.78,6.2,Furniture,[],[],Maple,small,23
+F751110,Standard Chair,2453.09,4.92,Furniture,[],[],Tile,medium,45
+E498757,Standard Coffee Maker,2122.3,2.23,Electric,Freebird,10kV,[],[],55
+F610439,Standard Chair,1261.07,1.21,Furniture,[],[],Maple,large,27
+F468129,Standard Chair,1617.0,1.9,Furniture,[],[],Walnut,small,56
+F799639,Standard Stool,2115.25,0.1,Furniture,[],[],Maple,large,28
+E789108,Standard Fan,2397.34,2.45,Electric,Freebird,10kV,[],[],83
+F939960,Standard Fixture,350.15,0.31,Furniture,[],[],Walnut,x-small,35
+F080362,Standard Mirror,1624.19,1.78,Furniture,[],[],Granite,x-small,42
+F056104,Standard Fixture,2041.84,5.39,Furniture,[],[],Tile,extra-large,63
+F937787,Standard Mirror,2045.39,3.95,Furniture,[],[],Walnut,extra-large,14
+E619374,Dialogist Toothbrush,858.93,0.54,Electric,Nowayout,440VAC,[],[],23
+F017156,Parimutuel Chair,1503.64,0.22,Furniture,[],[],Oak,lawn orniment,71
+F795044,Lytta Chair,69.32,0.17,Furniture,[],[],Granite,large,4
+E863528,Sibyl Kettle,688.29,0.7,Electric,Time-stamp,12VDC,[],[],83
+E688304,Cable-carrier Kettle,852.32,0.38,Electric,Purple,12VDC,[],[],52
+E648489,Sand-table Coffee Maker,1060.5,0.02,Electric,Infighters,10kV,[],[],64
+E135624,Hurdler Microwave,1103.97,1.59,Electric,Acme,10kV,[],[],38
+E550160,Standard Toothbrush,1805.02,3.08,Electric,Acme,12VDC,[],[],91
+E584837,Standard Microwave,871.97,0.13,Electric,Acme,220VAC,[],[],9
+F988060,Standard Desk,2486.48,2.55,Furniture,[],[],Granite,extra-large,40
+F865587,Standard Chair,1752.38,0.6,Furniture,[],[],Formica,small,51
+F290990,Standard Fixture,1532.05,3.06,Furniture,[],[],Walnut,extra-large,12
+F514190,Standard Table,2415.74,2.58,Furniture,[],[],Formica,x-small,52
+F739235,Standard Fixture,1137.87,0.89,Furniture,[],[],Granite,extra-large,32
+E077721,Standard Coffee Maker,1201.58,3.28,Electric,Acme,12VDC,[],[],0
