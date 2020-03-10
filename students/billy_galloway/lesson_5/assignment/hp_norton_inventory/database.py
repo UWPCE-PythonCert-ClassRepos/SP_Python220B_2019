@@ -95,15 +95,7 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
 
         return [tuple(inventory_count), tuple(error_count)]
 
-def new_dict(units):
-    for units in range(len(available)):
-        available_units[available[units]['product_id']] = {
-            available[units]['description'],
-            available[units]['product_type'],
-            available[units]['quantity_available']
-        }
-    return units
-    
+  
 def show_available_products():
     ''' returns a list of items available for rent '''
     mongo = MongoDBConnection()
@@ -112,9 +104,9 @@ def show_available_products():
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         product_totals = [product for product in hpnorton_db.products.find()]
-        available = list(map(new_dict, filter(lambda units: int(units['quantity_available']) > 0, product_totals)))
-    
-        return available_units
+        available = list(filter(lambda units: int(units['quantity_available']) > 0, product_totals))
+
+        return available
 
 def show_rentals(product_id):
     ''' returns the matching fields information based on product id '''
