@@ -95,6 +95,15 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
 
         return [tuple(inventory_count), tuple(error_count)]
 
+def new_dict(units):
+    for units in range(len(available)):
+        available_units[available[units]['product_id']] = {
+            available[units]['description'],
+            available[units]['product_type'],
+            available[units]['quantity_available']
+        }
+    return units
+    
 def show_available_products():
     ''' returns a list of items available for rent '''
     mongo = MongoDBConnection()
@@ -103,15 +112,8 @@ def show_available_products():
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         product_totals = [product for product in hpnorton_db.products.find()]
-        available = [product_totals[i] for i in range(len(product_totals)) if int(product_totals[i]['quantity_available']) > 0]
-
-        for units in range(len(available)):
-            available_units[available[units]['product_id']] = {
-                available[units]['description'],
-                available[units]['product_type'],
-                available[units]['quantity_available']
-            }
-
+        available = list(map(new_dict, filter(lambda units: int(units['quantity_available']) > 0, product_totals)))
+    
         return available_units
 
 def show_rentals(product_id):
@@ -121,7 +123,7 @@ def show_rentals(product_id):
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         rental_totals = [rental for rental in hpnorton_db.rentals.find()]
-        rented_unit = [rental_totals[i] for i in range(len(rental_totals)) if rental_totals[i]['product_id'] == product_id]
+        rented_unit = list(filter(lambda units: units['product_id'] == product_id, rental_totals))
 
         return rented_unit
 
