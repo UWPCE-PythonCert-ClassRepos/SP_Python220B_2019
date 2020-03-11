@@ -1,0 +1,143 @@
+Initial state:
+(pce) seans-mbp:lesson06 mckellip$ gtime python poor_perf.py {'2013': 110708, '2014': 111542, '2015': 111164, '2016': 111444, '2017': 222008, '2018': 0}'ao' was found 266905 times
+4.17user 0.14system 0:04.34elapsed 99%CPU (0avgtext+0avgdata 244592maxresident)k
+0inputs+0outputs (1major+61718minor)pagefaults 0swaps
+
+#Top 10 entries by tottime
+(pce) seans-mbp:lesson06 mckellip$ python -m cProfile -s tottime poor_perf.py 
+{'2013': 110708, '2014': 111542, '2015': 111164, '2016': 111444, '2017': 222008, '2018': 0}
+'ao' was found 266905 times
+         1039529 function calls (1039511 primitive calls) in 4.544 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    4.343    4.343    4.450    4.450 poor_perf.py:9(analyze)
+        1    0.090    0.090    4.540    4.540 poor_perf.py:59(main)
+  1000012    0.075    0.000    0.075    0.000 {method 'append' of 'list' objects}
+    18826    0.018    0.000    0.018    0.000 {built-in method _codecs.utf_8_decode}
+    18826    0.014    0.000    0.032    0.000 codecs.py:319(decode)
+        3    0.001    0.000    0.001    0.000 {built-in method _imp.create_dynamic}
+        3    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+       13    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+        6    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+       30    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+
+Initial State Summary:
+Runs in ~4.17s, 
+list.append once for every record in dataset + 12.
+cProfile tells us 4.343s in analyze, but entries don't add up to 4 secs.. 
+Largest block of time recorded is list.append.  Number of appends indicates if lrow[5] > '00/00/2012' filter is not working.
+missing block of time must be predominantly file reads
+
+Instrumentation #1:
+Adding some time capture lines to check execution times of sections.
+    delta1 is 0:00:02.638573 (First read of file for year_count)
+    delta2 is 0:00:01.528305 (Second read of file for ao count)
+    total is 0:00:04.166878 (Total time)
+
+Improvement #1: (Reduction of 1.46s)
+Read the file once. 
+Move `if "ao" in line[6]:` block to `if "ao" in row[6]` alongside new_ones filter.
+
+    delta1 is 0:00:02.701166
+    delta2 is 0:00:00.000010
+    total is 0:00:02.701176
+Individual deltas are off because the two functions were combined, but removing the second read saved us 36%.
+
+Instrumentation #2:
+Move time captures to measure the single file read loop.
+    total is 0:00:02.681416
+
+Improvement #2: (Reduction of 0.32s)
+Fix broken start filter.
+
+#Regenerated datafile to correct datetime format.
+Cast value to datetime is expensive!  REVERT!
+    total is 0:00:09.944386
+Changed to same format as new_count loop:
+    total is 0:00:02.359963
+
+Profiler shows:
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.332    2.332    2.403    2.403 good_perf.py:8(analyze)
+        1    0.059    0.059    2.462    2.462 good_perf.py:54(main)
+   666877    0.052    0.000    0.052    0.000 {method 'append' of 'list' objects}
+     9413    0.011    0.000    0.011    0.000 {built-in method _codecs.utf_8_decode}
+     9413    0.008    0.000    0.019    0.000 codecs.py:319(decode)
+Reduction in list.append and reduction in decode calls.
+
+Instrumentation #3:
+Mulitple if statements in year_count block.
+replacing subsequent if with elif should reduce subsequent calls.
+    Span total is 0:00:00.262056
+    Span total is 0:00:00.278597
+However, it increased the time taken.  I suspect that such a small execution time is highly variable.
+So I've created time_good_perf.py to execute multiple times.
+    Average time = 2.78s @ 25 REPS
+    Average time = 2.51s @ 25 REPS with elif
+
+We now see a ~10% Improvement with elif.  This also shows the effect of 
+using datetime.now() plus math inside the program.
+After removing the extra timestamps and datetime math:
+    Average time = 2.54s   # ??!  Did I not save something at some point?
+
+Improvement 4:
+Most of the processing of the data was done with the file handle still open. 
+I've moved everything after the reader loop outside the with open block.
+    Average time = 2.52s
+Showed very little change in performance, but its still best practice.
+
+Improvement 5:
+Removed unnecessary cast to list `lrow = list(row)` and saw significant improvment.
+    Average time = 2.34s
+
+Improvement 6:
+This is where I saw what was staring me in the face the whole time. Remove the new_ones list
+completely and throw if/else block up into the reader block:
+    Average time = 2.23s
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.303    2.303    2.323    2.323 good_perf.py:8(analyze)
+     9413    0.011    0.000    0.011    0.000 {built-in method _codecs.utf_8_decode}
+     9413    0.009    0.000    0.020    0.000 codecs.py:319(decode)
+        3    0.001    0.000    0.001    0.000 {built-in method _imp.create_dynamic}
+
+Improvement 7:
+No need for __main__ and main(), or is there?
+    Average time = 2.26s
+    Average time = 2.23s
+
+First number is from time_good_perf calling analzye(FILE) second is from calling main().
+So the extra helper function somehow is cheaper.
+
+Improvement 8:
+When I moved the year_count if/elif block into the reader block, I removed the condition 
+where year was less than 2013. I added this back to the if block so remove 1/3 of the entries.
+    Average time = 2.20s
+
+Improvement 9:
+After being so proud of the improvment from the elif statements, I replaced the entire block with 
+one statement. year_count[row[5][6:]] += 1
+    Average time = 1.96s
+
+Improvement 10:
+Same place, combined the < 2013 check and year_count assignment yields significant improvement.  Seems `continue` is expensive.
+    Average time = 1.82s
+
+
+Final results: (One commit to poor_perf to correct 2018 year_count typo. 
+I decided to correct it as it was not a performance issue, but a logic issue.)
+(pce) seans-mbp:lesson06 mckellip$ python good_perf.py 
+{'2013': 111303, '2014': 110621, '2015': 110945, '2016': 111451, '2017': 111128, '2018': 111417}
+'ao' was found 267177 times
+(pce) seans-mbp:lesson06 mckellip$ python poor_perf.py 
+{'2013': 111303, '2014': 110621, '2015': 110945, '2016': 111451, '2017': 111128, '2018': 111417}
+'ao' was found 267177 times
+
+(pce) seans-mbp:lesson06 mckellip$ /Users/mckellip/.venv/pce/bin/python /Users/mckellip/git/SP_Python220B_2019/students/smckellips/lesson06/time_good_perf.py
+good_perf:
+Average time = 1.91s
+
+poor_perf:
+Average time = 4.95s
