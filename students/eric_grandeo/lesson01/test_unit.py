@@ -106,7 +106,7 @@ class MainTest(TestCase):
             with patch('sys.stdout', new=io.StringIO()) as result_string:
                 main.item_info()
 
-        self.assertEqual(expected, result_string.getvalue().splitlines())
+        self.assertCountEqual(expected, result_string.getvalue().splitlines())
 
     def test_items_info_not_found(self):
         main.FULL_INVENTORY = {'Testprod':{'productCode':'Testprod',
