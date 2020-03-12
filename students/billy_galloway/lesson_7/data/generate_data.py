@@ -35,18 +35,21 @@ def write_customer(filename):
     last_name_list = ['Smith', 'Jones', 'Adams', 'Harris', 'Miles', 'Data', 'Cruz']
     street_name_list = ['Railroad', 'Union', 'Broadway', 'Cactus', 'Elliot', 'Thomas']
     street_type_list = ['Avenue', 'Road', 'Drive', 'Street']
-    
+    true_false = [True, False]
     with open(filename, 'a') as file:
         for i in range(1, 997):
             first = random.choice(first_name_list)
             last = random.choice(last_name_list)
             home_address = random.choice(street_name_list)
             street_type = random.choice(street_type_list)
-
-            file.write(f'user{i + 4:03d},{first} {last},{i:03d} {home_address} {street_type},{first.lower()}.{last.lower()}@hpnorton.com,555-555-{i:04d},{i + 10000:05d}\n')
+            true_false = random.choice(true_false)
+            file.write(f'user{i + 4:03d},{first} {last},{i + 300:03d} {home_address} {street_type},{first.lower()}.{last.lower()}@hpnorton.com,555-555-{i:04d},{true_false},{i + 10000:05d}\n')
 
 def write_product(filename):
-    pass
+    with open(filename, 'a') as file:
+        for i in range(1, 997):
+            product =
+            
 
 def write_rentals(filename):
     pass
