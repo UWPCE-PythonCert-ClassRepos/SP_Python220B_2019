@@ -111,6 +111,14 @@ class BasicOperationsTests(TestCase): # Question: Does unittest test in the live
                          Decimal('1000.00'))
 
 
+    def test_update_customer_credit_no_match(self):
+        """Test raising exception if no record to delete."""
+
+        reset_db()
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit("bad_id", 500)
+
+
     def test_list_active_customers(self):
         """Test counting the number of customers with active status."""
 

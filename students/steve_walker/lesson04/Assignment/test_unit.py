@@ -111,6 +111,14 @@ class BasicOperationsTests(TestCase): # Question: Does unittest test in the live
                          Decimal('1000.00'))
 
 
+    def test_update_customer_credit_no_match(self):
+        """Test raising exception if no record to delete."""
+
+        reset_db()
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit("bad_id", 500)
+
+
     def test_list_active_customers(self):
         """Test counting the number of customers with active status."""
 
@@ -128,5 +136,21 @@ class BasicOperationsTests(TestCase): # Question: Does unittest test in the live
                      "543 Sample Address, Winnebago, AK 99302",
                      "3241232455", "bey@skycloud.com", True, 333.33)
         self.assertEqual(list_active_customers(), 2)
+
+
+    def test_list_credit_limits(self):
+        """Test listing customers and their credit limits."""
+
+        reset_db()
+        add_customer("test_id1", "Rhianna", "doesntneedalastname",
+                     "543 Sample Address, Winnebago, AK 99302",
+                     "3241232455", "star@skycloud.com", True, 333.33)
+
+        # Make sure the current credit limit is 333.33
+        self.assertEqual(Customer.get_by_id("test_id1").credit_limit,
+                         Decimal('333.33'))
+
+        expected_result = "doesntneedalastname, Rhianna: 333.33"
+        self.assertEqual(list_credit_limits()[0], expected_result)
 
 reset_db()
