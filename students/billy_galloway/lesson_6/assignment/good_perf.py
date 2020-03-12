@@ -3,11 +3,11 @@ poorly performing, poorly written module
 
 """
 import csv
-import generate_data
 import time
+import generate_data
 
 def analyze(filename):
-    ''' 
+    '''
         ingests csv file and returns a tuple with
         a start time, end time, all the years found
         between 2013 and 2018
@@ -39,6 +39,7 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    ''' main method '''
     filename = "data/exercise-00.csv"
     # generate_data.write_csv(filename)
     output = analyze(filename)
