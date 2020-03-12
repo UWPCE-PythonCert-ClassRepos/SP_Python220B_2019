@@ -3,10 +3,9 @@ Module for locating all *.png files starting in a parent directory to
 the final root directory.
 """
 #pylint: disable=len-as-condition
-#pylint: disable=W0102
+#pylint: disable=W0102, E0602
 
 import os
-# pylint: disable=W1203,C0103
 
 def png_locator(directory, png_name=None):
     """A recursive function to find jpg files within folders"""
