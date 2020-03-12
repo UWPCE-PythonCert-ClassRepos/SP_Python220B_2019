@@ -1,20 +1,18 @@
-'''
-Returns total price paid for individual rentals 
-'''
+"""Returns total price paid for individual rentals"""
 import argparse
 import json
 import datetime
 import math
-import sys
 import logging
 
-logging_dict = {"3": logging.DEBUG,
+LOGGING_DICT = {"3": logging.DEBUG,
                 "2": logging.WARNING,
                 "1": logging.ERROR,
                 "0": logging.CRITICAL}
 
 
-def logging_file_setup():
+def logging_setup(level):
+    """Sets up the logging properties for the log file"""
     log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
     formatter = logging.Formatter(log_format)
 
@@ -24,26 +22,21 @@ def logging_file_setup():
     file_handler.setFormatter(formatter)
     file_handler.setLevel(logging.WARNING)
 
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(formatter)
+
     logger = logging.getLogger()
-    logger.addHandler(file_handler)
+    logger.setLevel(level)
+    if not logger.hasHandlers():
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
 
     return logger
 
 
-def logging_console_setup():
-    log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-    formatter = logging.Formatter(log_format)
-    console_handler = logging.StreamHandler()
-
-    console_handler.setLevel(logging.DEBUG)
-    console_handler.setFormatter(formatter)
-
-    loggers = logging.getLogger()
-    loggers.addHandler(console_handler)
-
-    return loggers
-
 def parse_cmd_arguments():
+    """grabs the arguments to be used later"""
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -52,50 +45,50 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    """loads the data file"""
     with open(filename) as file:
-        log_console.debug("Loading data file")
+        LOG.debug("Loading data file")
         try:
             data = json.load(file)
         except FileNotFoundError:
-            log.error("error loading data")
+            LOG.error("error loading data")
     return data
 
 
 def calculate_additional_fields(data):
-    log_console.debug("Beginning data calculations")
+    """calculate various derivative fields based on data"""
+    LOG.debug("Beginning data calculations")
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
             if value['total_days'] < 1:
-                log.warning("Start date after end date.")
+                LOG.warning("Start date after end date.")
                 continue
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             try:
                 value['unit_cost'] = value['total_price'] / value['units_rented']
             except ZeroDivisionError:
-                log.warning("Zero united rented")
+                LOG.warning("Zero united rented")
 
         except ValueError:
-            log.error("Missing data")
+            LOG.error("Missing data")
 
     return data
 
 
 def save_to_json(filename, data):
+    """saves the file"""
     with open(filename, 'w') as file:
-        log_console.debug("saving data")
+        LOG.debug("saving data")
         json.dump(data, file)
 
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    log = logging_file_setup()
-    log.setLevel(logging_dict[args.debug])
-    log_console = logging_console_setup()
-    log_console.setLevel(logging_dict[args.debug])
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    ARGS = parse_cmd_arguments()
+    LOG = logging_setup(LOGGING_DICT[ARGS.debug])
+    DATA = load_rentals_file(ARGS.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(ARGS.output, DATA)
