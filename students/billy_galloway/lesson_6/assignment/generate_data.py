@@ -22,7 +22,7 @@ def write_csv(filename):
     ''' writes a csv file with a million lines of data '''
     num_list = [11, 7]
     with open(filename, 'w') as file:
-        file.write(f'guid,count_0,count_1,count_2,count_3,date,ao\n')
+        # file.write(f'guid,count_0,count_1,count_2,count_3,date,ao\n')
         for i in range(1000000):
             number = random.choice(num_list)
             if i % number == 0:
