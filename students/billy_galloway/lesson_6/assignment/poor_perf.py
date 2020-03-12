@@ -2,9 +2,9 @@
 poorly performing, poorly written module
 
 """
-
 import datetime
 import csv
+import time
 
 def analyze(filename):
     start = datetime.datetime.now()
@@ -59,9 +59,12 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    t1 = time.perf_counter()
     filename = "data/exercise-00.csv"
     output = analyze(filename)
     print(output)
+    t2 = time.perf_counter()
+    print(f'Finished in {t2-t1} seconds')
 
 if __name__ == "__main__":
     main()

@@ -8,6 +8,7 @@ import random
 import csv
 import uuid
 
+
 def random_date():
     ''' generates a random date '''
     start = datetime.datetime.strptime("1/01/2013", '%m/%d/%Y')
