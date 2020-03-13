@@ -1,21 +1,28 @@
-# Furniture class
-from inventoryClass import inventory
+"""
+Moduel for the Furniture class.
+"""
+# pylint: disable=too-few-public-methods
+# pylint: disable=too-many-arguments
 
-class furniture(inventory):
+from inventory_class import Inventory
 
-    def __init__(self, productCode, description, marketPrice, rentalPrice, material, size):
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
+class Furniture(Inventory):
+    """Creates instance for furniture class."""
 
+    def __init__(self, product_code, description, market_price,
+                 rental_price, material, size):
+        Inventory.__init__(self, product_code, description,
+                           market_price, rental_price)
+        # Creates common instance variables from the parent class
         self.material = material
         self.size = size
 
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
-        outputDict['material'] = self.material
-        outputDict['size'] = self.size
+    def return_as_dictionary(self):
+        """Returns product information as dictionary."""
 
-        return outputDict
+        output_dict = {}
+        output_dict = Inventory.return_as_dictionary(self)
+        output_dict['material'] = self.material
+        output_dict['size'] = self.size
+
+        return output_dict

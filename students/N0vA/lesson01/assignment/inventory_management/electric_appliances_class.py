@@ -1,22 +1,29 @@
-# Electric appliances class
-from inventoryClass import inventory
+"""
+Module for Electric Appliance Class
+"""
+# pylint: disable=too-few-public-methods
+# pylint: disable=too-many-arguments
 
-class electricAppliances(inventory):
+from inventory_class import Inventory
 
-    def __init__(self, productCode, description, marketPrice, rentalPrice, brand, voltage):
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
+class ElectricAppliances(Inventory):
+    """Creates Electric Appliance instance"""
 
+    def __init__(self, product_code, description, market_price, rental_price,
+                 brand, voltage):
+        """Creates common instance variables from the parent class"""
+        Inventory.__init__(self, product_code, description,
+                           market_price, rental_price)
 
         self.brand = brand
         self.voltage = voltage
 
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
-        outputDict['brand'] = self.brand
-        outputDict['voltage'] = self.voltage
+    def return_as_dictionary(self):
+        """Returns output dictionary with product info."""
 
-        return outputDict
+        output_dict = {}
+        output_dict = Inventory.return_as_dictionary(self)
+        output_dict['brand'] = self.brand
+        output_dict['voltage'] = self.voltage
+
+        return output_dict
