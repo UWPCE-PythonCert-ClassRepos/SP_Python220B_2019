@@ -3,29 +3,28 @@ Module for locating all *.png files starting in a parent directory to
 the final root directory.
 """
 #pylint: disable=len-as-condition
+#pylint: disable=W0102, E0602
 
-import argparse
 import os
 
-def png_locator(path):
-    """Locate all of the *.png files in a given directory"""
+def png_locator(directory, png_name=None):
+    """A recursive function to find jpg files within folders"""
+    out = [directory, []]
 
-    list_output = []
+    if png_name is None:
+        png_name = []
 
-    for dir_path, dir_names, file_names in os.walk(path):
-        if dir_names:
-            for directory in dir_names:
-                png_locator(directory)
-        for file in file_names:
-            png_files = []
-            png_files = [file for file in file_names if '.png' in file]
+    for file in os.listdir(directory):
+        if os.path.isdir(os.path.join(directory, file)):
+            png_locator(os.path.join(directory, file), png_name)
 
-            # Checks for *.png files in the directory before adding to output.
-            if len(png_files) > 0:
-                list_output.append(dir_path)
-                list_output.append(png_files)
+        elif file.endswith('.png'):
+            out[1].append(file)
 
-    return list_output
+    if out[1]:
+        png_name.extend(out)
+
+    return png_name
 
 def parse_cmd_arguments():
     """separate argument line commands and their uses in the program"""
@@ -34,7 +33,7 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     #DIRECTORY_PATH = parse_cmd_arguments()
     DIRECTORY_PATH = os.getcwd()
     LIST_PNG_FILES = png_locator(DIRECTORY_PATH)
