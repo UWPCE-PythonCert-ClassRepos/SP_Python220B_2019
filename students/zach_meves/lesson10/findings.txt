@@ -1,0 +1,31 @@
+Lesson 10 Findings:
+
+Varying the `N` constant in test_database.py changes the size of
+randomly-generated input data files. This allows for many database
+sizes to be tested. 
+
+In `timing.txt`, the tests are logged according to timestamp.
+In order, the `N` values were:
+    * 1
+    * 5
+    * 10
+    * 50
+    * 100
+    * 500
+
+This results in input .csv files of approximate lengths of:
+    * 5
+    * 25
+    * 50
+    * 250
+    * 500
+    * 2500
+    
+As the records involved increases, the time required for
+the functions increases as well. The `show_available_products`
+and the related `show_products_for_customer`
+functions have the highest run times, and their times are 
+nearly identical. Each of these functions involve two database 
+queries. Importing the data from .csv files is the next longest
+function call, but it is substantially quicker than the database
+functions. 

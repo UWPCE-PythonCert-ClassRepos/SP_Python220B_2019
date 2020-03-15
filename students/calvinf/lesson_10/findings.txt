@@ -1,0 +1,5 @@
+Ran the timing for the three import functions with a range of 1,000
+to 32000 items to import for product, customer, and rental.
+On the smaller imports it was taking products longer to run than
+the other two up until the number of imports reached 16000 records then
+it took less time to import products than the other two imports.

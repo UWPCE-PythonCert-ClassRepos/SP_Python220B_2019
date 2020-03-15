@@ -1,0 +1,4 @@
+customer_id,first_name,last_name,home_address,phone_number,email_address,active_customer,credit_limit
+cust_1,Rhianna,Flygirl,The Stage,3241232455,star@skycloud.com,TRUE,1000
+cust_2,John,Muir,Yosemite,3241232455,muir@skycloud.com,FALSE,850
+cust_3,Beyonce,Knowles-Carter,Top of the World,3241232455,bey@skycloud.com,TRUE,900

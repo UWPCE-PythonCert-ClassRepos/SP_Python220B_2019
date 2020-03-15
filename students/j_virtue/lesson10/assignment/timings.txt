@@ -1,0 +1,53 @@
+03/13/2020 06:18 PM:INFO:Small Data set files
+03/13/2020 06:18 PM:INFO:Finished reading products.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.0010006427764892578	Records processed: 4
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.04799985885620117	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading customers.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.0009989738464355469	Records processed: 5
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.051000118255615234	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading rentals.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.0069997310638427734	Records processed: 6
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.03800034523010254	Records processed: No records loaded.
+
+
+
+03/13/2020 06:18 PM:INFO:Medium Data set files
+03/13/2020 06:18 PM:INFO:Finished reading products_medium.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.019999265670776367	Records processed: 84
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.007001161575317383	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading customers_medium.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.030999183654785156	Records processed: 100
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.008001089096069336	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading rentals_medium.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.011998891830444336	Records processed: 126
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 0.008000612258911133	Records processed: No records loaded.
+
+
+
+03/13/2020 06:18 PM:INFO:Large Data set files
+03/13/2020 06:18 PM:INFO:Finished reading products_large.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.3660011291503906	Records processed: 54684
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 2.225999593734741	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading customers_large.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.5349996089935303	Records processed: 65100
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 3.2460005283355713	Records processed: No records loaded.
+
+03/13/2020 06:18 PM:INFO:Finished reading rentals_large.csv file into dictionary
+03/13/2020 06:18 PM:INFO:Function: import_data	Time taken: 0.5309994220733643	Records processed: 82026
+03/13/2020 06:18 PM:INFO:Function: insert_collection_many	Time taken: 3.2910008430480957	Records processed: No records loaded.
+
+
+03/13/2020 06:18 PM:INFO:Function: show_available_products	Time taken: 0.6289987564086914	Records processed: No records loaded.
+03/13/2020 06:18 PM:INFO:Function: show_rentals	Time taken: 0.1080007553100586	Records processed: No records loaded.
+
+Findings
+-- Table inserts were longer running than read of csv files.  Largest data sets were ~60,000 and reads of csv were fraction of a sec.  The inserts into the MongoDB tables took approx ~2 seconds.
+-- Larger data volumes have a bigger impact on inserts into these collections than reading them into memory.
+-- This is due to ACID properties of databases and overhead of software.  Always quicker to read into memory.
+
+
