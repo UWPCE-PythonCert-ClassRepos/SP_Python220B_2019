@@ -1,0 +1,9 @@
+rental_id,customer_id,product_id
+rental_1,cust_1,prod_1
+rental_2,cust_1,prod_4
+rental_3,cust_3,prod_3
+rental_4,cust_3,prod_1
+rental_5,cust_3,prod_5
+rental_6,cust_3,prod_4
+rental_7,cust_2,prod_1
+rental_8,cust_3,prod_4

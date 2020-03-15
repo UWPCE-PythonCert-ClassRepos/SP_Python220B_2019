@@ -1,0 +1,62 @@
+Using threads to do the work in parrallel it decreased the time to import the data by 31.49%. There looks to be some overhead in
+creating the threads but the total time is less due to processing the files at the same time. Would reccomend to management to implement
+the change for the 32% increase in speed. There is no contiention with using threads in this instance since there are three seperate
+threads accessing three different files and writing to its own queue to output results.
+
+After joining the threads it ran slower or about the same time, only abut 2 percent gain in performance
+
+calvin@Calvins-iMac database % python linear.py
+2020-03-04 15:12:20,833 linear.py:117  INFO Starting product import
+2020-03-04 15:12:21,319 linear.py:132  INFO Time taken to execute import_products 0.48725128173828125
+2020-03-04 15:12:21,320 linear.py:85   INFO Starting Customer import
+2020-03-04 15:12:21,723 linear.py:102  INFO Time taken to execute import_customers 0.40428590774536133
+2020-03-04 15:12:21,724 linear.py:147  INFO Starting rental import
+2020-03-04 15:12:22,113 linear.py:162  INFO Time taken to execute import_rental 0.38932299613952637
+2020-03-04 15:12:22,113 linear.py:191  INFO Product import results: [(1000, 0, 1000, 0.48725128173828125)]
+2020-03-04 15:12:22,113 linear.py:192  INFO Customers import results: [(1000, 0, 1000, 0.40428590774536133)]
+2020-03-04 15:12:22,113 linear.py:193  INFO Rentals import results: [(1000, 0, 1000, 0.38932299613952637)]
+2020-03-04 15:12:22,113 linear.py:195  INFO ((1000, 0, 1000, 0.48725128173828125), (1000, 0, 1000, 0.40428590774536133), (1000, 0, 1000, 0.38932299613952637))
+1.2909049987792969
+
+calvin@Calvins-iMac database % python parrallel.py
+2020-03-04 15:12:36,961 parrallel.py:121  INFO Starting product import
+2020-03-04 15:12:36,962 parrallel.py:87   INFO Starting Customer import
+2020-03-04 15:12:36,962 parrallel.py:153  INFO Starting rental import
+2020-03-04 15:12:37,742 parrallel.py:138  INFO Time taken to execute import_products 0.7818179130554199
+2020-03-04 15:12:37,838 parrallel.py:170  INFO Time taken to execute import_rental 0.8775160312652588
+2020-03-04 15:12:37,844 parrallel.py:105  INFO Time taken to execute import_customers 0.8835768699645996
+2020-03-04 15:12:37,844 parrallel.py:210  INFO Product import results: [(1000, 0, 1000, 0.7818179130554199)]
+2020-03-04 15:12:37,844 parrallel.py:211  INFO Customers import results: [(1000, 0, 1000, 0.8835768699645996)]
+2020-03-04 15:12:37,844 parrallel.py:212  INFO Rentals import results: [(1000, 0, 1000, 0.8775160312652588)]
+2020-03-04 15:12:37,845 parrallel.py:214  INFO ((1000, 0, 1000, 0.7818179130554199), (1000, 0, 1000, 0.8835768699645996), (1000, 0, 1000, 0.8775160312652588))
+0.8844399452209473
+
+----------------After join threads-----------------------
+
+Calvin@Calvins-iMac database % python  linear.py
+2020-03-04 20:22:40,153 linear.py:119  INFO Starting product import
+2020-03-04 20:22:40,618 linear.py:134  INFO Time taken to execute import_products 0.46586084365844727
+2020-03-04 20:22:40,618 linear.py:87   INFO Starting Customer import
+2020-03-04 20:22:41,009 linear.py:104  INFO Time taken to execute import_customers 0.39133191108703613
+2020-03-04 20:22:41,010 linear.py:149  INFO Starting rental import
+2020-03-04 20:22:41,408 linear.py:164  INFO Time taken to execute import_rental 0.39801597595214844
+2020-03-04 20:22:41,408 linear.py:193  INFO Product import results: [(1000, 0, 1000, 0.46586084365844727)]
+2020-03-04 20:22:41,408 linear.py:194  INFO Customers import results: [(1000, 0, 1000, 0.39133191108703613)]
+2020-03-04 20:22:41,408 linear.py:195  INFO Rentals import results: [(1000, 0, 1000, 0.39801597595214844)]
+2020-03-04 20:22:41,408 linear.py:197  INFO ((1000, 0, 1000, 0.46586084365844727), (1000, 0, 1000, 0.39133191108703613), (1000, 0, 1000, 0.39801597595214844))
+1.265354871749878
+
+
+calvin@Calvins-iMac database % python  parrallel.py
+2020-03-04 20:23:17,339 parrallel.py:123  INFO Starting product import
+2020-03-04 20:23:17,740 parrallel.py:140  INFO Time taken to execute import_products 0.4011099338531494
+2020-03-04 20:23:17,740 parrallel.py:90   INFO Starting Customer import
+2020-03-04 20:23:18,196 parrallel.py:108  INFO Time taken to execute import_customers 0.4559669494628906
+2020-03-04 20:23:18,197 parrallel.py:155  INFO Starting rental import
+2020-03-04 20:23:18,580 parrallel.py:172  INFO Time taken to execute import_rental 0.38364481925964355
+2020-03-04 20:23:18,580 parrallel.py:215  INFO Product import results: [(1000, 0, 1000, 0.4011099338531494)]
+2020-03-04 20:23:18,580 parrallel.py:216  INFO Customers import results: [(1000, 0, 1000, 0.4559669494628906)]
+2020-03-04 20:23:18,580 parrallel.py:217  INFO Rentals import results: [(1000, 0, 1000, 0.38364481925964355)]
+2020-03-04 20:23:18,580 parrallel.py:219  INFO ((1000, 0, 1000, 0.4011099338531494), (1000, 0, 1000, 0.4559669494628906), (1000, 0, 1000, 0.38364481925964355))
+1.241814136505127
+
