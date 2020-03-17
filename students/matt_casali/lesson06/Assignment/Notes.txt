@@ -1,0 +1,37 @@
+Notes for assignment 6
+
+Overview:
+1. I began by timing the poor_perf.py script. The script time ranged from roughly 4.5 to 5 seconds to complete.
+2. After looking at the resulting dictionary, I noticed the 2018 key was printing 0 due to an error in the code.
+3. Some initial issues that stand out at first glance are the file opening twice, and the way the dates are 
+counted by iterating over the dates and appending the dates to a list, only to iterate again over that list. 
+
+Changes:
+Original time - ~4.75 seconds
+
+1. The first change is to only open the CSV file once. Having the file opened twice is 
+redundant and unnecessary. 
+
+After this improvement, the new time runs between 2.9 and 3.1 seconds, an overall 
+improvement of ~1.75 seconds. 
+
+New time - ~3 seconds
+
+
+2. The next change is to modify how the years are counted. I removed the new_ones list as well as the for 
+loop that iterates over the new_ones list. I moved the year_count dictionary above the for loop looking
+at each row in the CSV, and modified the for loop to simply add to the dictionary for each year it 
+iterates over.
+
+Additionally, the count of 'ao' needed to be modified to work  properly. The 'found' count was also
+moved above the for loop that iterates over the rows. If 'ao' is found in row 6, found is increased by
+1. 
+
+After this improvement, the new time runs between 1.85 and 1.95 seconds, and improvement of ~1.1 seconds 
+compared to the last script, and an overall improvement of 2.85 seconds compared to the original script. 
+
+New time - ~1.9 seconds
+
+Conclusions:
+Minimizing iterations seems to be key. Try to maximize what is done with the least amount of iterations. 
+The same goes for opening files. Do it once, if possible. 
