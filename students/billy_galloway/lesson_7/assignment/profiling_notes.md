@@ -14,11 +14,14 @@ the application may become slower while reading and writing to the database.
 60 secs
 ```
 ## Linear 200 cycles
+```
 227 secs
-
+```
 ## Linear 300 cycles
+```
 499 secs
-
+```
+The code was slightly refactored to accommodate using threads for the read operations. Threads were assigned to the write operations, but hit a race condition where the write threads were finishing before the read threads.  
 ## Threaded 10 cycles
 ```
 0.8 secs
@@ -31,9 +34,11 @@ the application may become slower while reading and writing to the database.
 56 secs
 ```
 ## Threaded 200 cycles
+```
 218 secs
-
+```
 ## Threaded 300 cycles
+```
 483 secs
-
+```
 So far the improvements are faster, but not fast enough to warrant refactoring and threading the read and write operations. 
