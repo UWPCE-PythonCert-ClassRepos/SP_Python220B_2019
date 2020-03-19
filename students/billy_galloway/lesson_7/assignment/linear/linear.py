@@ -2,13 +2,14 @@
 Database
 interacts with the database via files formatted from csv files
 '''
-import sys
-sys.path.append("./hp_norton_inventory")
+# import sys
+# sys.path.append("./hp_norton_inventory")
 import logging
 import time
 import cProfile, pstats
-import csv_handler as csvh
+import linear_csv_handler as csvh
 from mongo_connect import *
+from timeit import timeit as timer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -37,48 +38,44 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
     with mongo:
         # generate hpnorton_db
         hpnorton_db = mongo.connection.hpnorton_db
-        profiler = cProfile.Profile()
 
         # collections in database
-        products = hpnorton_db['products']
-        customers = hpnorton_db['customers']
-        rentals = hpnorton_db['rentals']
+        product_db = hpnorton_db['product']
+        customer_db = hpnorton_db['customer']
+        rentals_db = hpnorton_db['rental']
 
-        profiler.enable()
+
         try:
-            product = csv_handler.generate_document_list(product_file, "product")
+            products = csv_handler.generate_document_list(product_file, "product")
         except FileNotFoundError as error:
             logger.info(f' File not found {error}')
             ERROR_COUNT['PRODUCT_ERROR']+=1
         
 
         try:
-            customer = csv_handler.generate_document_list(customer_file, "customer")
+            customers = csv_handler.generate_document_list(customer_file, "customer")
         except FileNotFoundError as error:
             logger.info(f' File not found {error}')
             ERROR_COUNT['CUSTOMER_ERROR']+=1
 
         try:
-            rental = csv_handler.generate_document_list(rentals_file, "rentals")
+            rentals = csv_handler.generate_document_list(rentals_file, "rental")
         except FileNotFoundError as error:
             logger.info(f' File not found {error}')
             ERROR_COUNT['RENTALS_ERROR']+=1
 
         # write to database
-     
         try:
-            products.insert_many(product)
-            product_totals = [product_id for product_id in products.find()]
+            product_db.insert_many(products)
+            product_totals = [product_id for product_id in product_db.find()]
             INVENTORY_COUNT['product_totals'] = len(product_totals)
         except UnboundLocalError as error:
             logger.info(f' {error}')
             ERROR_COUNT['PRODUCT_ERROR']+=1
-        profiler.disable()
-        pstats.Stats(profiler).sort_stats('time').print_stats()
 
         try:
-            customers.insert_many(customer)
-            customer_totals = [customer_id for customer_id in customers.find()]
+            customer_db.insert_many(customers)
+            customer_totals = [customer_id for customer_id in customer_db.find()]
             INVENTORY_COUNT['customer_totals'] = len(customer_totals)
         except UnboundLocalError as error:
             logger.info(f' {error}')
@@ -86,8 +83,8 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
             ERROR_COUNT['CUSTOMER_ERROR']+=1
 
         try:
-            rentals.insert_many(rental)
-            rental_totals = [rental_id for rental_id in rentals.find()]
+            rentals_db.insert_many(rentals)
+            rental_totals = [rental_id for rental_id in rentals_db.find()]
             INVENTORY_COUNT['rental_totals'] = len(rental_totals)
         except UnboundLocalError as error:
             logger.info(f' {error}')
@@ -100,8 +97,7 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         error_count = [ERROR_COUNT['PRODUCT_ERROR'],
                        ERROR_COUNT['CUSTOMER_ERROR'],
                        ERROR_COUNT['RENTALS_ERROR']]
-        profiler.disable()
-        pstats.Stats(profiler).sort_stats('time').print_stats()               
+                      
         return [tuple(inventory_count), tuple(error_count)]
 
   
@@ -131,7 +127,7 @@ def show_rentals(product_id):
 def main():
     ''' main method to interact with mongodb '''
     mongo = MongoDBConnection()          
-    output = import_data('data', 'customer.csv', 'product.csv', 'rentals.csv')
+    output = import_data('data', 'customer.csv', 'product.csv', 'rental.csv')
  
     logger.info(f' Total number of invetory and errors {output}')
 
@@ -144,8 +140,13 @@ def main():
             database['products'].drop()
 
 if __name__ == "__main__":
-    profiler = cProfile.Profile()
-
-    profiler.run('main()')
-    profiler.print_stats()
+    output_code = '''
+output = import_data('data', 'customer.csv','product.csv','rental.csv')
+    '''
+    print(timer(output_code,globals=globals(),number=1))
+    main()
+    # profiler = cProfile.Profile()
+    # profiler.run('main()')
+    # profiler.print_stats()
+    # pstats.Stats(profiler).sort_stats('time').print_stats() 
                           

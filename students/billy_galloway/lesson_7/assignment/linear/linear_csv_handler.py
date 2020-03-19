@@ -70,7 +70,7 @@ class CsvHandler():
 
             yield rental
 
-    def generate_document_list(self, document, item_key, document_queue):
+    def generate_document_list(self, document, item_key):
         '''
             takes a csv file along with the inventory type i.e. customer, product, rentals
             as an argument and passes it to the csv_reader. That gets passed as an
@@ -85,4 +85,4 @@ class CsvHandler():
         documents = self.csv_reader(document)
         logger.info(f' Yield documents for formatting')
 
-        document_queue.put(item_type[item_key](documents))
+        return item_type[item_key](documents)
