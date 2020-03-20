@@ -3,9 +3,9 @@
 # pylint: disable=logging-format-interpolation, pointless-string-statement
 import sys
 import unittest
-sys.path.append("..")
-from src import basic_operations as b_o
-from src import customers
+sys.path.append("../src/")
+import basic_operations as b_o
+import customers
 
 
 class TestFunctions(unittest.TestCase):
