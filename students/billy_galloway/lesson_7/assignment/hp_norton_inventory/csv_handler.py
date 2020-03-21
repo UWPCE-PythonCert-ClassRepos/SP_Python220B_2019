@@ -57,6 +57,7 @@ class CsvHandler():
     @staticmethod
     def rentals_format(documents):
         ''' formats rentals data to dictionary '''
+        logger.info(f'Received {documents} starting format')
         for document in documents:
             ldocument = list(document)
             rentals = {

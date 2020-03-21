@@ -50,6 +50,7 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
             try:
                 # verify that the file exists first
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
+                    logger.info(f"COLLECTION: {name} from file {directory_name}/{file_names[i]}")
                     generate_thread = threading.Thread(target=csv_handler.generate_document_list,
                                                     args=[f'{directory_name}/{file_names[i]}', name, db_queue])
                     # start thread and append 
@@ -75,7 +76,7 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
                 # create the collections
                 db_collection = hpnorton_db[name]
                 # write to collection to database
-                print("DATABASE CREATED: ",name)
+                logger.info(f"DATABASE CREATED: {name}")
                 db_collection.insert_many(documents)
                 document_totals = [document_id for document_id in db_collection.find()]
                 INVENTORY_COUNT[name] = len(document_totals)
@@ -154,5 +155,5 @@ if __name__ == "__main__":
 db_queue = Queue()
 output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
     '''
-    print(timer(output_code,globals=globals(),number=10))
+    print(timer(output_code,globals=globals(),number=5))
     main()
