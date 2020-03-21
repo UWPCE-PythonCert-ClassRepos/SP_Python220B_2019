@@ -42,3 +42,6 @@ The code was slightly refactored to accommodate using threads for the read opera
 483 secs
 ```
 So far the improvements are faster, but not fast enough to warrant refactoring and threading the read and write operations. 
+
+
+

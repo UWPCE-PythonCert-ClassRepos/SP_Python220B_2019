@@ -43,7 +43,6 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
         hpnorton_db = mongo.connection.hpnorton_db
         collection_names = ['product', 'customer', 'rental']
         thread_list = []
-        lock = threading.Lock()
 
         i = 0
         for name in collection_names:
@@ -51,13 +50,11 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
             try:
                 # verify that the file exists first
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
-                    lock.acquire()
                     generate_thread = threading.Thread(target=csv_handler.generate_document_list,
-                                                       args=[f'{directory_name}/{file_names[i]}', name, db_queue])
+                                                    args=[f'{directory_name}/{file_names[i]}', name, db_queue])
                     # start thread and append 
                     # threads to the list
                     generate_thread.start()
-                    lock.release()
                     thread_list.append(generate_thread)
             except FileNotFoundError as error:
                 logger.info(f' File not found {error}!')
@@ -131,7 +128,7 @@ def main():
     start = time.perf_counter()
     mongo = MongoDBConnection()
     db_queue = Queue()
-    
+
     output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
     logger.info(f' Total number of invetory and errors {output}')
 
