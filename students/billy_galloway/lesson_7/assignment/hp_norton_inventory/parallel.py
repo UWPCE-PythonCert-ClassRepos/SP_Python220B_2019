@@ -17,7 +17,7 @@ from timeit import timeit as timer
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def import_data(directory_name, customer_file, product_file, rental_file, db_queue):
+def import_data(directory_name, product_file, customer_file, rental_file, db_queue):
     ''' import data from csv files into database to be used in functions '''
     mongo = MongoDBConnection()
     csv_handler = csvh.CsvHandler()
@@ -42,30 +42,45 @@ def import_data(directory_name, customer_file, product_file, rental_file, db_que
         # generate hpnorton_db
         hpnorton_db = mongo.connection.hpnorton_db
         collection_names = ['product', 'customer', 'rental']
-        i = 0
+        thread_list = []
+        lock = threading.Lock()
 
+        i = 0
         for name in collection_names:
             # create collections in database
-            db_collections = hpnorton_db[name]
             try:
                 # verify that the file exists first
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
+                    lock.acquire()
                     generate_thread = threading.Thread(target=csv_handler.generate_document_list,
                                                        args=[f'{directory_name}/{file_names[i]}', name, db_queue])
-                    # start thread and send the
-                    # return value to the queue
+                    # start thread and append 
+                    # threads to the list
                     generate_thread.start()
-                    # generate_thread.join()
-                    # get data from the queue
-                    documents = db_queue.get()
+                    lock.release()
+                    thread_list.append(generate_thread)
             except FileNotFoundError as error:
                 logger.info(f' File not found {error}!')
                 ERROR_COUNT[name]+=1
                 pass
-            # write to the database with data returned from the queue
+            finally:
+                i+=1
+
+        # join threads
+        for thread in thread_list:
+            thread.join()
+
+        i = 0
+        for name in collection_names:
             try:
-                db_collections.insert_many(documents)
-                document_totals = [document_id for document_id in db_collections.find()]
+                # get data from the queue
+                documents = db_queue.get()
+                # create the collections
+                db_collection = hpnorton_db[name]
+                # write to collection to database
+                print("DATABASE CREATED: ",name)
+                db_collection.insert_many(documents)
+                document_totals = [document_id for document_id in db_collection.find()]
                 INVENTORY_COUNT[name] = len(document_totals)
             except pymongo.errors.InvalidOperation as error:
                 logger.info(f' {error} {file_names[i]}')
@@ -94,19 +109,21 @@ def show_available_products():
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         product_totals = [product for product in hpnorton_db.product.find()]
-        available = list(filter(lambda units: int(units['quantity_available']) > 0, product_totals))
+        logger.info(f" Quantity available for first element: {product_totals[0]['quantity_available']}")
+        available = str(filter(lambda units: int(units['quantity_available']) > 0, product_totals))
 
         return available
 
-def show_rentals(product_id):
+def show_rentals(products_id):
     ''' returns the matching fields information based on product id '''
     mongo = MongoDBConnection()
 
     with mongo:
         hpnorton_db = mongo.connection.hpnorton_db
         rental_totals = [rental for rental in hpnorton_db.rental.find()]
-        rented_unit = list(filter(lambda units: units['product_id'] == product_id, rental_totals))
-        
+        logger.info(f" First element in rental_totals: {rental_totals[0]}")
+        rented_unit = list(filter(lambda units: units['product_id'] == products_id, rental_totals))
+
         return rented_unit
 
 def main():
@@ -115,13 +132,15 @@ def main():
     mongo = MongoDBConnection()
     db_queue = Queue()
     
-    output = import_data('data', 'customer.csv','product.csv','rental.csv', db_queue)
+    output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
     logger.info(f' Total number of invetory and errors {output}')
+
     available = show_available_products()
     logger.info(f' Current list of available items: {len(available)}')
 
     rentals = show_rentals('prd006')
     logger.info(f" Returning item: {rentals}")
+
     end = time.perf_counter()
     print(end-start)
 
@@ -129,14 +148,14 @@ def main():
         database = mongo.connection.hpnorton_db
         yorn = input("Drop data?")
         if yorn.upper() == 'Y':
+            database['product'].drop()
             database['customer'].drop()
             database['rental'].drop()
-            database['product'].drop()
 
 if __name__ == "__main__":
-#     output_code = '''
-# db_queue = Queue()
-# output = import_data('data', 'customer.csv','product.csv','rental.csv', db_queue)
-#     '''
-#     print(timer(output_code,globals=globals(),number=100))
+    output_code = '''
+db_queue = Queue()
+output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
+    '''
+    print(timer(output_code,globals=globals(),number=10))
     main()

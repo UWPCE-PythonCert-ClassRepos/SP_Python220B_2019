@@ -27,7 +27,7 @@ class CsvHandler():
         logger.info(f'Received {documents} starting format')
         for document in documents:
             ldocument = list(document)
-            customer = {
+            customers = {
                 'customer_id': ldocument[0],
                 'name': ldocument[1],
                 'home_address': ldocument[2],
@@ -37,7 +37,7 @@ class CsvHandler():
                 'credit_limit': ldocument[6]
             }
 
-            yield customer
+            yield customers
 
     @staticmethod
     def product_format(documents):
@@ -45,21 +45,21 @@ class CsvHandler():
         logger.info(f'Received {documents} starting format')
         for document in documents:
             ldocument = list(document)
-            product = {
+            products = {
                 'product_id': ldocument[0],
                 'description': ldocument[1],
                 'product_type': ldocument[2],
                 'quantity_available': ldocument[3]
             }
 
-            yield product
+            yield products
 
     @staticmethod
     def rentals_format(documents):
         ''' formats rentals data to dictionary '''
         for document in documents:
             ldocument = list(document)
-            rental = {
+            rentals = {
                 'product_id': ldocument[0],
                 'customer_id': ldocument[1],
                 'name': ldocument[2],
@@ -68,7 +68,7 @@ class CsvHandler():
                 'email_address': ldocument[4]
             }
 
-            yield rental
+            yield rentals
 
     def generate_document_list(self, document, item_key, document_queue):
         '''
@@ -77,8 +77,8 @@ class CsvHandler():
             argument to the formatter to be returned as a list of dictionaries
         '''
         item_type = {
-            'customer': self.customer_format,
             'product': self.product_format,
+            'customer': self.customer_format,
             'rental': self.rentals_format
         }
 
