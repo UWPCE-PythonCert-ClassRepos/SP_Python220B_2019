@@ -1,0 +1,17 @@
+Initial timing of linear.py copied from lesson05.
+(pce) PS C:\Users\Sean\pce\SP_Python220B_2019\students\smckellips\lesson07> python -m cProfile -s tottime linear.py | head -n30
+         3282997 function calls (3211254 primitive calls) in 17.524 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     2010    7.944    0.004    7.944    0.004 {method 'connect' of '_socket.socket' objects}
+    52262    3.301    0.000    3.301    0.000 {method 'acquire' of '_thread.lock' objects}
+    12060    1.272    0.000    1.272    0.000 {method 'recv_into' of '_socket.socket' objects}
+     4020    0.187    0.000    0.187    0.000 {built-in method _thread.start_new_thread}
+     6030    0.170    0.000    0.170    0.000 {method 'sendall' of '_socket.socket' objects}
+     4020    0.122    0.000    0.122    0.000 {function socket.close at 0x0000022B4FDF8430}
+     4020    0.121    0.000    0.144    0.000 {built-in method pymongo._cmessage._op_msg}
+     2010    0.109    0.000    2.474    0.001 mongo_client.py:96(__init__)
+12060/4020    0.099    0.000    0.397    0.000 son.py:190(__deepcopy__)
+40200/4020    0.095    0.000    0.424    0.000 copy.py:128(deepcopy)
