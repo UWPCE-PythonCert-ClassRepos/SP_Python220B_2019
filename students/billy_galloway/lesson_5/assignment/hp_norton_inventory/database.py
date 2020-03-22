@@ -41,49 +41,49 @@ def import_data(directory_name, customer_file, product_file, rentals_file):
         customers = hpnorton_db['customers']
         rentals = hpnorton_db['rentals']
 
-        # try:
-        #     product = csv_handler.generate_document_list(product_file, "product")
-        # except FileNotFoundError as error:
-        #     logger.info(f' File not found {error}')
-        #     ERROR_COUNT['PRODUCT_ERROR']+=1
+        try:
+            product = csv_handler.generate_document_list(product_file, "product")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
+            ERROR_COUNT['PRODUCT_ERROR']+=1
 
-        # try:
-        #     customer = csv_handler.generate_document_list(customer_file, "customer")
-        # except FileNotFoundError as error:
-        #     logger.info(f' File not found {error}')
-        #     ERROR_COUNT['CUSTOMER_ERROR']+=1
+        try:
+            customer = csv_handler.generate_document_list(customer_file, "customer")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
+            ERROR_COUNT['CUSTOMER_ERROR']+=1
 
-        # try:
-        #     rental = csv_handler.generate_document_list(rentals_file, "rentals")
-        # except FileNotFoundError as error:
-        #     logger.info(f' File not found {error}')
-        #     ERROR_COUNT['RENTALS_ERROR']+=1
+        try:
+            rental = csv_handler.generate_document_list(rentals_file, "rentals")
+        except FileNotFoundError as error:
+            logger.info(f' File not found {error}')
+            ERROR_COUNT['RENTALS_ERROR']+=1
 
-        # # write to database
-        # try:
-        #     products.insert_many(product)
-        #     product_totals = [product_id for product_id in products.find()]
-        #     INVENTORY_COUNT['product_totals'] = len(product_totals)
-        # except UnboundLocalError as error:
-        #     logger.info(f' {error}')
-        #     ERROR_COUNT['PRODUCT_ERROR']+=1
+        # write to database
+        try:
+            products.insert_many(product)
+            product_totals = [product_id for product_id in products.find()]
+            INVENTORY_COUNT['product_totals'] = len(product_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            ERROR_COUNT['PRODUCT_ERROR']+=1
 
-        # try:
-        #     customers.insert_many(customer)
-        #     customer_totals = [customer_id for customer_id in customers.find()]
-        #     INVENTORY_COUNT['customer_totals'] = len(customer_totals)
-        # except UnboundLocalError as error:
-        #     logger.info(f' {error}')
-        #     logger.info(ERROR_COUNT['CUSTOMER_ERROR'])
-        #     ERROR_COUNT['CUSTOMER_ERROR']+=1
+        try:
+            customers.insert_many(customer)
+            customer_totals = [customer_id for customer_id in customers.find()]
+            INVENTORY_COUNT['customer_totals'] = len(customer_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            logger.info(ERROR_COUNT['CUSTOMER_ERROR'])
+            ERROR_COUNT['CUSTOMER_ERROR']+=1
 
-        # try:
-        #     rentals.insert_many(rental)
-        #     rental_totals = [rental_id for rental_id in rentals.find()]
-        #     INVENTORY_COUNT['rental_totals'] = len(rental_totals)
-        # except UnboundLocalError as error:
-        #     logger.info(f' {error}')
-        #     ERROR_COUNT['RENTALS_ERROR']+=1
+        try:
+            rentals.insert_many(rental)
+            rental_totals = [rental_id for rental_id in rentals.find()]
+            INVENTORY_COUNT['rental_totals'] = len(rental_totals)
+        except UnboundLocalError as error:
+            logger.info(f' {error}')
+            ERROR_COUNT['RENTALS_ERROR']+=1
 
         inventory_count = [INVENTORY_COUNT['product_totals'],
                            INVENTORY_COUNT['customer_totals'],
