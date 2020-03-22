@@ -40,7 +40,11 @@ def create_reader(csv_file):
     ''' creates csv reader object '''
     print(f"trying to find {csv_file}")
     if os.path.isfile(csv_file):
-        return csv.reader(open(csv_file), delimiter=',')
+        try:
+            return csv.reader(open(csv_file), delimiter=',')
+        except FileNotFoundError as e:
+            print(f'{e}')
+
 
 def single_customer(customer_name, invoice_file):
     ''' outter function that takes a customer and csv file '''
@@ -48,15 +52,13 @@ def single_customer(customer_name, invoice_file):
 
     def invoice(rental_file):
         rental_reader = create_reader(rental_file)
-        print("rental reader")
         with open(invoice_file, 'a') as file:
             for row in rental_reader:
-                file.write(f'{customer_name},{row}\n')
-                # print(f'{customer_name}, {list(row)}')
+                file.write(f'{customer_name},{row[0]},{row[1]},{row[2]}\n')
 
     return invoice
 
 create_invoice = single_customer("susan wong", "./lesson_8/data/invoice_file.csv")
-create_invoice("./lesson_8/data/test_items.csv")
+create_invoice("./lesson_8/data/test_csv")
 # add_furniture('./lesson_8/data/invoice_file.csv', "Dan Wong", "prd001", "seat", 10.00)
 
