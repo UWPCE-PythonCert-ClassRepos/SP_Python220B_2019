@@ -48,17 +48,14 @@ def create_reader(csv_file):
 
 def single_customer(customer_name, invoice_file):
     ''' outter function that takes a customer and csv file '''
-    invoice_reader = csv.reader(invoice_file, delimiter=',')
-
     def invoice(rental_file):
         rental_reader = create_reader(rental_file)
-        with open(invoice_file, 'a') as file:
-            for row in rental_reader:
-                file.write(f'{customer_name},{row[0]},{row[1]},{row[2]}\n')
+        for row in rental_reader:
+            add_furniture(invoice_file,customer_name,row[0],row[1],row[2])
 
     return invoice
 
 create_invoice = single_customer("susan wong", "./lesson_8/data/invoice_file.csv")
-create_invoice("./lesson_8/data/test_csv")
-# add_furniture('./lesson_8/data/invoice_file.csv', "Dan Wong", "prd001", "seat", 10.00)
+create_invoice("./lesson_8/data/test_items.csv")
+add_furniture('./lesson_8/data/invoice_file.csv', "Dan Wong", "prd001", "seat", 10.00)
 
