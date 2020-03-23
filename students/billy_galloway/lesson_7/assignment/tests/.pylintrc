@@ -60,7 +60,12 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
-disable=unused-import,pointless-string-statement,unnecessary-comprehension,too-many-locals,too-many-statements,bad-whitespace,
+disable=pointless-string-statement,
+        unnecessary-comprehension,
+        too-many-locals,too-many-statements,
+        bad-whitespace,
+        unnecessary-pass,
+        wrong-import-order,
         import-error,
         wrong-import-position,
         undefined-variable,
