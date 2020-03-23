@@ -18,11 +18,11 @@ class BaseModel(Model):
 
 class Customer(BaseModel):
     """various database fields"""
-    customer_id = CharField()
+    customer_id = CharField(unique=True)
     name = CharField()
     last_name = CharField()
     home_address = CharField()
-    phone_number = IntegerField()
+    phone_number = IntegerField(max)
     email_address = CharField()
     status = BooleanField()
     credit_limit = IntegerField()

@@ -48,6 +48,17 @@ class TestFailures(unittest.TestCase):
         with self.assertRaises(TypeError):
             b_o.add_customer("Customer_id")
 
+    def test_fail_search_customer(self):
+        test_dict=b_o.search_customer("WillyWonka")
+        self.assert(test_dict, {})
+
+    def test_fail_update_customer_credit(self):
+        with self.assertRaises(ValueError):
+            b_o.update_customer_credit("Santa")
+
+    def test_fail_delete_customer(self):
+        with self.assertRaises(NameError):
+            b_o.delete_customer("BrotherBear")
 
 
 

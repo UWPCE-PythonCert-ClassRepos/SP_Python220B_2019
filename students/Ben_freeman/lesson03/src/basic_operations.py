@@ -29,6 +29,7 @@ if not LOG.hasHandlers():
 with DATABASE:
     DATABASE.create_tables([Customer])
 
+
 def add_customer(customer_id,
                  name,
                  last_name,
@@ -77,6 +78,7 @@ def delete_customer(customer_id):
         LOG.debug(f"deleted {customer_id} from database")
     except DoesNotExist:
         LOG.debug(f"customer deletion failed, no data for {customer_id} exists")
+        raise NameError
 
 
 def update_customer_credit(customer_id, credit_limit):
