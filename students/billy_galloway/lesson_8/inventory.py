@@ -4,10 +4,10 @@ inventory.py
 import csv
 import os.path
 import logging
-import csv_handler as csvh
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 def add_furniture(invoice_file, customer_name,
                   item_code, item_description,
@@ -36,26 +36,28 @@ def add_furniture(invoice_file, customer_name,
             logger.info(f'Creating invoice file {invoice_file}')
             add_furniture(invoice_file, customer_name, item_code, item_description, item_monthly_cost)
 
+
 def create_reader(csv_file):
     ''' creates csv reader object '''
     logger.info(f"trying to find {csv_file}")
-    if os.path.isfile(csv_file):
-        logger.info(f'found file {csv_file}')
-        return csv.reader(open(csv_file), delimiter=',')
+    try:
+        if os.path.isfile(csv_file):
+            logger.info(f'found file {csv_file}')
+            return csv.reader(open(csv_file), delimiter=',')
+    except FileNotFoundError:
+        logger.info(f'provided file {csv_file} does not exist')
 
 
 def single_customer(customer_name, invoice_file):
     ''' outter function that takes a customer and csv file '''
     def invoice(rental_file):
         rental_reader = create_reader(rental_file)
-        try:
-            for row in rental_reader:
-                add_furniture(invoice_file,customer_name,row[0],row[1],row[2])
-        except TypeError:
-            logger.info(f'provided items file does not exist')
+        for row in rental_reader:
+            add_furniture(invoice_file, customer_name, row[0], row[1], row[2])
+            
     return invoice
 
-
-create_invoice = single_customer("susan wong", "./lesson_8/data/invoice_file.csv")
-create_invoice("./lesson_8/data/test_items.csv")
-add_furniture('./lesson_8/data/invoice_file.csv', "Dan Wong", "prd001", "seat", 10.00)
+if __name__ == "__main__":
+    create_invoice = single_customer("susan wong", "data/invoice_file.csv")
+    create_invoice("data/test_items.csv")
+    add_furniture('data/invoice_file.csv', "Dan Wong", "prd001", "seat", 10.00)
