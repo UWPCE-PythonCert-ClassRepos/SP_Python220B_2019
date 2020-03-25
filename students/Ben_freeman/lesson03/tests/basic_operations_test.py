@@ -19,7 +19,7 @@ class TestFunctions(unittest.TestCase):
                          "Test_email_address",
                          True,
                          9001)
-        self.assertEqual(Customer.get(Customer.customer_id == "Test_id").name, "Test_name")
+        self.assertEqual(customers.Customer.get(customers.Customer.customer_id == "Test_id").name, "Test_name")
 
     def test_search_customer(self):
         test = b_o.search_customer("Test_id")
@@ -30,13 +30,13 @@ class TestFunctions(unittest.TestCase):
 
     def test_update_customer_credit(self):
         b_o.update_customer_credit("Test_id", 9002)
-        self.assertEqual(Customer.get(Customer.customer_id == "Test_id").credit_limit, 9002)
+        self.assertEqual(customers.Customer.get(customers.Customer.customer_id == "Test_id").credit_limit, 9002)
 
     def test_list_active_customers(self):
-        number = b_o.list_active.customers()
+        number = b_o.list_active_customers()
         self.assertEqual(number, 1)
 
-    def test_delete_customer(self):
+    def test_zdelete_customer(self):
         b_o.delete_customer("Test_id")
         number = b_o.list_active_customers()
         self.assertEqual(number, 0)
@@ -49,12 +49,12 @@ class TestFailures(unittest.TestCase):
             b_o.add_customer("Customer_id")
 
     def test_fail_search_customer(self):
-        test_dict=b_o.search_customer("WillyWonka")
-        self.assert(test_dict, {})
+        test_dict = b_o.search_customer("WillyWonka")
+        self.assertEqual(test_dict, {})
 
     def test_fail_update_customer_credit(self):
         with self.assertRaises(ValueError):
-            b_o.update_customer_credit("Santa")
+            b_o.update_customer_credit("Santa", 123)
 
     def test_fail_delete_customer(self):
         with self.assertRaises(NameError):

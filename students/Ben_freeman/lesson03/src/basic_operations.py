@@ -81,15 +81,15 @@ def delete_customer(customer_id):
         raise NameError
 
 
-def update_customer_credit(customer_id, credit_limit):
+def update_customer_credit(customer_ids, credit_limit):
     """Updates a customers credit limit"""
     try:
-        updated_customer = Customer.get(Customer.customer_id == customer_id)
+        updated_customer = Customer.get(Customer.customer_id == customer_ids)
         updated_customer.credit_limit = credit_limit
         updated_customer.save()
-        LOG.debug(f"updated customer: {customer_id} credit limit to {credit_limit}")
+        LOG.debug(f"updated customer: {customer_ids} credit limit to {credit_limit}")
     except DoesNotExist:
-        LOG.debug(f"customer credit update failed, no data for {customer_id} exists")
+        LOG.debug(f"customer credit update failed, no data for {customer_ids} exists")
         raise ValueError
 
 
