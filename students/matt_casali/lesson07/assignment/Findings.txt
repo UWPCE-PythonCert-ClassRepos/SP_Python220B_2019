@@ -1,0 +1,47 @@
+Findings for lesson 07:
+
+Linear 1000 records:
+Products: 0.468869 seconds
+Customers: 0.439747 seconds
+Total run time: 1.36869 seconds
+
+Parallel 1000 records:
+Products: 0.6999258 seconds
+Customers: 0.7059814 seconds
+Total run time: 0.747918 seconds
+
+The results for 1,000 records show that the parallel script ran considerably faster than the
+linear script. Since both scripts finished so quickly, I wanted to try the test again with 
+more records. I ran the scripts again using 10,000 records. 
+
+Linear 10000 records:
+Products: 4.219468 seconds
+Customers: 4.220541 seconds
+Total run time: 12.57477 seconds
+
+Parallel 10000 records:
+Products: 7.111064 seconds
+Customers: 7.158852 seconds
+Total run time: 7.2007017 seconds
+
+Using 10,000 records, the results were even more apparent. The linear method takes slightly 
+over 4 seconds per table to process. This method is adding the product, customer, and rental
+table, although the rental table is not getting used. The rental table could be a source of
+contention, being that the product and customer tables supply the rental table with customer
+and product IDs. There are currently no problems with the test data, but I wanted to try 
+this test one more time without the rental table included. 
+
+Linear 10000 records, no rentals:
+Products: 4.2900264 seconds
+Customers: 4.144063 seconds
+Total run time: 8.471657 seconds
+
+Parallel 10000 records, no rentals:
+Products: 5.340639 seconds
+Customers: 5.351801 seconds
+Total run time: 5.386255 seconds
+
+Still, the parallel method is significantly quicker. I believe that the parallel method 
+is appropriate in this situation, given only the products and customers tables. However,
+I am not sure this will be the best approach when another table that relies on these
+two tables, such as the rentals table, is added. 
