@@ -1,0 +1,5 @@
+2020-03-26 17:19:15,781 customer_model.py:28  INFO Logger initialized
+2020-03-26 17:19:15,782 customer_model.py:34  INFO Database initialized
+2020-03-26 17:19:15,785 basic_operations.py:24  INFO Function '6' now available.
+2020-03-26 17:19:17,272 basic_operations.py:212 INFO Listing all customers and their information using a GENERATOR COMPREHENSION.
+2020-03-26 17:19:18,528 basic_operations.py:24  INFO Function '6' now available.

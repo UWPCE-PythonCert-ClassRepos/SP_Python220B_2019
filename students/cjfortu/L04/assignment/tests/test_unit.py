@@ -39,6 +39,7 @@ class FunctionTests(TestCase):
         self.conn.execute('PRAGMA foreign_keys = ON;')
 
     def tearDown(self):
+        database.drop_tables([Customer])
         database.close()
 
     def test_add_customer_pass(self):
@@ -155,3 +156,19 @@ class FunctionTests(TestCase):
         """
         load_database.add_customers()
         self.assertEqual(list_active_customers(), (3, 1))
+
+    def test_display_all_customers_pass(self):
+        """
+        Confirm that the generator output is correct.
+        """
+        load_database.add_customers()
+        results = display_all_customers()
+        for i, result in results:
+            if i == 0:
+                self.assertEqual(result, ' JF0001 |  Jarron  |  Fondue  |1234 A St NW, Nowhere, HH 12345         | 1234567890 |         jafo@who.xx|  active  | 20000 ')
+            if i == 1:
+                self.assertEqual(result, ' SC0198 |  Stormy  |  Calmy   |1234 Z St SE, Somewhere, HH 23456       | 1112223333 |        acts@what.xx|  active  | 15000 ')
+            if i == 2:
+                self.assertEqual(result, ' DK7621 |   Dana   |  Kabar   |1234 BB Dr SE, Here, HH 23456           | 1112225555 |      AK_AD@where.xx| inactive | 12000 ')
+            if i == 3:
+                self.assertEqual(result, ' JT0198 |   John   |  Tigger  |1234 K St SW, Somewhere, HH 23456       | 1112224444 |      actsup@what.xx|  active  | 7000  ')
