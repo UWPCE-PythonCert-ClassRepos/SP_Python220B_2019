@@ -94,12 +94,12 @@ def calculate_additional_fields(data):
             value['total_price'] = value['total_days'] * value['price_per_day']
             if value['total_price'] < 0:
                 logging.warning("Warning: Total price is less than 0.")
-        try:    
             value['unit_cost'] = value['total_price'] / value['units_rented']
             if value['unit_cost'] < 0:
                 logging.warning("Warning: Unit cost is less than 0.")
         except ZeroDivisionError:
             logging.warning("Warning: Cannot divide by zero.  Check number of units rented.")
+        
         try:        
             value['sqrt_total_price'] = math.sqrt(value['total_price']) 
         except ValueError:
@@ -114,6 +114,7 @@ def save_to_json(filename, data):
     print('Saving data...')
     with open(filename, 'w') as file:
         json.dump(data, file)
+    print('Data saved to file.')
 
 if __name__ == "__main__":
     '''Run program.'''
