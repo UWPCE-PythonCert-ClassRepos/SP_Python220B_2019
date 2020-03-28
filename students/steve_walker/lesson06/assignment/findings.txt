@@ -1,0 +1,27 @@
+time_trial_0: poor_perf.py baseline, with no changes except adding a timer.
+ >>> Result: 8.2876 seconds (22.6245 seconds with pypy)
+
+time_trial_1: Eliminated unnecessary collection of UUID.
+ >>> Result: 7.0553 seconds (22.2398 seconds with pypy)
+
+time_trial_2: Combined year and 'ao' checks into a single for loop.
+ >>> Result: 4.2849 seconds (11.5187 seconds with pypy)
+
+time_trial_3: Eliminated generation of new_ones list.
+ >>> Result: 4.0116 seconds (11.4744 seconds with pypy)
+
+time_trial_4: Eliminated if statements for the year_count.
+ >>> Result: 2.6444 seconds (11.2156 seconds with pypy)
+
+time_trial_5: Introduced panda reader to limit the data we need to read in the csv to the data and 'ao' columns.
+ >>> Result: 2.7227 seconds (pypy does not recognize pandas)
+
+time_trial_6: Replaced ao_count if statement with a count function.
+ >>> Result: 2.2910 seconds
+
+time_trial_7: Replaced year_count loop over every row with a loop over each year coupled with a total count() function.
+ >>> Result: 2.4191 seconds
+
+
+Findings: time_trial_6 was the most effective. I wonder whether I can speed the processing of the year_count by eliminating the line-by-line for loop, but don't yet have a solution.
+ >>> Overall performance gains: 72% reduction in runtime.
