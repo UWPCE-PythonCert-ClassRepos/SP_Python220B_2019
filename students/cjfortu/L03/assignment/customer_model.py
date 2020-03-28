@@ -10,14 +10,14 @@ from peewee import SqliteDatabase, CharField, Model
 from customized_fields import ActiveField, CustIDField, PhoneField, CreditField
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-logger.info('Logger initialized')
+LOGGER = logging.getLogger(__name__)
+LOGGER.info('Logger initialized')
 
 database = SqliteDatabase('customers.db')
 database.connect()
 database.execute_sql('PRAGMA foreign_keys = ON;')
 
-logger.info('Database initialized')
+LOGGER.info('Database initialized')
 
 
 class BaseModel(Model):

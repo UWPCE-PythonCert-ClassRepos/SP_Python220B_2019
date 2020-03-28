@@ -156,7 +156,7 @@ def delete_customer(customer_id):
 
 def update_customer_credit(customer_id, credit_limit):
     """
-    Delete a customer based on customer ID.
+    Update customer credit limit based on customer ID.
     """
     LOGGER.info('Updating customer credit')
 
@@ -164,10 +164,8 @@ def update_customer_credit(customer_id, credit_limit):
         updated_customer = Customer.get(Customer.customer_id == customer_id)
 
     except Exception as exc:
-        LOGGER.info(f'{customer_id} not found')
         LOGGER.info(exc)
-        LOGGER.info('database unchanged')
-        raise ValueError(f'{customer_id} not found')
+        raise ValueError(f'{customer_id} not found, database unchanged')
 
     else:
         try:
@@ -181,22 +179,16 @@ def update_customer_credit(customer_id, credit_limit):
 
 def list_active_customers():
     """
-    Delete a customer based on customer ID.
+    List number of active and inactive customers based on customer ID.
     """
     LOGGER.info('Listing number of active and inactive customers')
 
-    try:
-        active_customers = Customer.select().where(Customer.status == 'active').count()
-        inactive_customers = Customer.select().where(Customer.status == 'inactive').count()
-        LOGGER.info(f' active customers = {active_customers}')
-        LOGGER.info(f' inactive customers = {inactive_customers}')
-
-    except Exception as exc:
-        LOGGER.info(exc)
-
-    finally:
-        active_inactive_count = (active_customers, inactive_customers)
-        print('(active_customers, inactive_customers) = {}'.format(active_inactive_count))
+    active_customers = Customer.select().where(Customer.status == 'active').count()
+    inactive_customers = Customer.select().where(Customer.status == 'inactive').count()
+    LOGGER.info(f' active customers = {active_customers}')
+    LOGGER.info(f' inactive customers = {inactive_customers}')
+    active_inactive_count = (active_customers, inactive_customers)
+    print('(active_customers, inactive_customers) = {}'.format(active_inactive_count))
 
     return active_inactive_count
 
@@ -231,9 +223,6 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    database = SqliteDatabase('customers.db')
-    database.connect()
-    database.execute_sql('PRAGMA foreign_keys = ON;')
 
     while True:
         main_menu()

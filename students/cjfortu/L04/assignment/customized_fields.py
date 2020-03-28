@@ -17,12 +17,6 @@ class ActiveField(CharField):
         else:
             raise ValueError("Entry must be 'active' or 'inactive'.")
 
-    def python_value(self, value):
-        if value in ['active', 'inactive']:
-            return value
-        else:
-            raise ValueError("Entry must be 'active' or 'inactive'.")
-
 
 class CustIDField(CharField):
     """
@@ -30,13 +24,6 @@ class CustIDField(CharField):
     """
 
     def db_value(self, value):
-        if value[0:2].isupper() and value[2:6].isdigit() and len(value) == 6:
-            return value
-        else:
-            raise ValueError("Entry format is 'xxyyyy' where 'x' is an uppercase letter, and 'y' "
-                             "is a digit.")
-
-    def python_value(self, value):
         if value[0:2].isupper() and value[2:6].isdigit() and len(value) == 6:
             return value
         else:
@@ -55,12 +42,6 @@ class PhoneField(CharField):
         else:
             raise ValueError("Phone number must be 10 digits, with no other characters.")
 
-    def python_value(self, value):
-        if len(value) == 10 and value[:].isdigit():
-            return value
-        else:
-            raise ValueError("Phone number must be 10 digits, with no other characters.")
-
 
 class CreditField(CharField):
     """
@@ -68,12 +49,6 @@ class CreditField(CharField):
     """
 
     def db_value(self, value):
-        if value[:].isdigit():
-            return value
-        else:
-            raise ValueError("Credit characters must be digits only.")
-
-    def python_value(self, value):
         if value[:].isdigit():
             return value
         else:
