@@ -8,6 +8,8 @@ import sys
 def my_fun(n):
     if n == 2:
         return True
+    if n < 2:
+        return False
     return my_fun(n / 2)
 
 
