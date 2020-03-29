@@ -1,6 +1,7 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
+
 import argparse
 import json
 import datetime
@@ -9,11 +10,13 @@ import logging
 import sys
 
 def parse_cmd_arguments():
+    '''Set up command line arguments for input, output, and debug level.'''
+
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-d', '--debug', help='debugging level', required=False, default='0')
-    
+
     return parser.parse_args()
 
 def setup_logger(level):
@@ -28,7 +31,7 @@ def setup_logger(level):
     try:
         debug_level = log_levels.get(int(level))
     except KeyError:
-        logging.critical("Debug level must be set to 0, 1, 2, or 3")
+        logging.critical("Error: Debug level must be set to 0, 1, 2, or 3")
         sys.exit()
 
     # Set up format for logger and set up log file
@@ -38,12 +41,12 @@ def setup_logger(level):
 
     # Set up a log message handler
     file_handler = logging.FileHandler(log_file)
-    file_handler.setLevel(debug_level)
+    file_handler.setLevel(logging.WARNING)
     file_handler.setFormatter(formatter)
 
     # Set up console for log messages
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(debug_level)
+    console_handler.setLevel(logging.DEBUG)
     console_handler.setFormatter(formatter)
 
     # Set up root handler for logging
@@ -52,17 +55,18 @@ def setup_logger(level):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
+    print("Logging setup complete.")
 
 def load_rentals_file(filename):
     '''Load data for database.'''
 
-    print('Loading data...')
+    logging.debug('Loading data from %s...', ARGS.input)
     with open(filename) as file:
         try:
             data = json.load(file)
         except FileNotFoundError:
-            logging.error('System unable to locate file: %s.', filename)
-            exit(0)
+            logging.error('Input file %s not found', filename)
+            sys.exit()
     return data
 
 def calculate_additional_fields(data):
@@ -74,11 +78,11 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Warning: rental_start entry, %s, is invalid.', rental_start)    
-        
+            logging.warning('Warning: rental_start entry, %s, is invalid.', rental_start)
+
         # Check rental end date
         try:
-            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')    
+            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             if value['rental_end'] == '':
                 logging.warning("Warning: Return date missing.  Item has not been returned.")
         except ValueError:
@@ -99,28 +103,31 @@ def calculate_additional_fields(data):
                 logging.warning("Warning: Unit cost is less than 0.")
         except ZeroDivisionError:
             logging.warning("Warning: Cannot divide by zero.  Check number of units rented.")
-        
-        try:        
-            value['sqrt_total_price'] = math.sqrt(value['total_price']) 
+
+        try:
+            value['sqrt_total_price'] = math.sqrt(value['total_price'])
         except ValueError:
             logging.warning("Warning: Issue with input values.  sqrt_total_price not calculated.")
-    
-    print("Data processing complete...")
+
+    logging.debug("Data processing complete...")
     return data
 
 def save_to_json(filename, data):
     '''Save output data.'''
 
     print('Saving data...')
-    with open(filename, 'w') as file:
-        json.dump(data, file)
-    print('Data saved to file.')
+    try:
+        with open(filename, 'w') as file:
+            json.dump(data, file)
+    except IOError:
+        logging.error('Error: Problem with writing out.  File not saved.')
+
+    logging.debug('Data saved to file: %s.', ARGS.output)
 
 if __name__ == "__main__":
-    '''Run program.'''
 
-    args = parse_cmd_arguments() # Sort command line args
-    setup_logger(args.debug) # Turn on debugger at desired level
-    data = load_rentals_file(args.input) # Input data
-    data = calculate_additional_fields(data) # Data analysis
-    save_to_json(args.output, data) # Output data
+    ARGS = parse_cmd_arguments() # Sort command line args
+    setup_logger(ARGS.debug) # Turn on debugger at desired level
+    DATA = load_rentals_file(ARGS.input) # Input data
+    DATA = calculate_additional_fields(DATA) # Data analysis
+    save_to_json(ARGS.output, DATA) # Output data
