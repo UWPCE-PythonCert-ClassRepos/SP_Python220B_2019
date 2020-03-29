@@ -82,7 +82,7 @@ def add_customer(*args):
     args[6] = status
     args[7] = credit_limit
     """
-    logger.info('Adding customers')
+    LOGGER.info('Adding customers')
 
     try:
         new_customer = Customer.create(
@@ -95,11 +95,11 @@ def add_customer(*args):
             status=args[6],
             credit_limit=args[7])
         new_customer.save()
-        logger.info(f'Database add successful {args[0]}')
+        LOGGER.info(f'Database add successful {args[0]}')
 
     except Exception as exc:
-        logger.info(f'Error creating = {args[0]}')
-        logger.info(exc)
+        LOGGER.info(f'Error creating = {args[0]}')
+        LOGGER.info(exc)
 
 
 def search_customer(customer_id):
@@ -111,7 +111,7 @@ def search_customer(customer_id):
 
     If no customer is found, then return an empty dictionary object.
     """
-    logger.info('Searching customers')
+    LOGGER.info('Searching customers')
 
     try:
         searched_customer = Customer.get(Customer.customer_id == customer_id)
@@ -120,12 +120,12 @@ def search_customer(customer_id):
                              'email_address': searched_customer.email_address,
                              'phone_number': searched_customer.phone_number,
                              'credit_limit': searched_customer.credit_limit}
-        logger.info(f'dict object created for {customer_id}')
+        LOGGER.info(f'dict object created for {customer_id}')
 
     except Exception as exc:
-        logger.info(f'{customer_id} not found')
-        logger.info(exc)
-        logger.info('Creating empty dict')
+        LOGGER.info(f'{customer_id} not found')
+        LOGGER.info(exc)
+        LOGGER.info('Creating empty dict')
         returned_customer = {}
 
     finally:
@@ -138,62 +138,53 @@ def delete_customer(customer_id):
     """
     Delete a customer based on customer ID.
     """
-    logger.info('Deleting customers')
+    LOGGER.info('Deleting customers')
 
     try:
         Customer.get(Customer.customer_id == customer_id).delete_instance()
-        logger.info(f'{customer_id} deleted.')
+        LOGGER.info(f'{customer_id} deleted.')
 
     except Exception as exc:
-        logger.info(f'{customer_id} not found')
-        logger.info(exc)
-        logger.info('database unchanged')
+        LOGGER.info(f'{customer_id} not found')
+        LOGGER.info(exc)
+        LOGGER.info('database unchanged')
 
 
 def update_customer_credit(customer_id, credit_limit):
     """
-    Delete a customer based on customer ID.
+    Update customer credit limit based on customer ID.
     """
-    logger.info('Updating customer credit')
+    LOGGER.info('Updating customer credit')
 
     try:
-        Customer.get(Customer.customer_id == customer_id)
+        updated_customer = Customer.get(Customer.customer_id == customer_id)
 
     except Exception as exc:
-        logger.info(f'{customer_id} not found')
-        logger.info(exc)
-        logger.info('database unchanged')
-        raise ValueError(f'{customer_id} not found')
+        LOGGER.info(exc)
+        raise ValueError(f'{customer_id} not found, database unchanged')
 
     else:
         try:
-            for updated_customer in Customer.select().where(Customer.customer_id == customer_id):
-                updated_customer.credit_limit = credit_limit
-                updated_customer.save()
-            logger.info(f'{customer_id} credit limit updated.')
+            updated_customer.credit_limit = credit_limit
+            updated_customer.save()
+            LOGGER.info(f'{customer_id} credit limit updated.')
         except Exception:
-            logger.info(f'credit limit entry must be digits only')
-            logger.info('database unchanged')
+            LOGGER.info(f'credit limit entry must be digits only')
+            LOGGER.info('database unchanged')
 
 
 def list_active_customers():
     """
-    Delete a customer based on customer ID.
+    List number of active and inactive customers based on customer ID.
     """
-    logger.info('Listing number of active and inactive customers')
+    LOGGER.info('Listing number of active and inactive customers')
 
-    try:
-        active_customers = Customer.select().where(Customer.status == 'active').count()
-        inactive_customers = Customer.select().where(Customer.status == 'inactive').count()
-        logger.info(f' active customers = {active_customers}')
-        logger.info(f' inactive customers = {inactive_customers}')
-
-    except Exception as exc:
-        logger.info(exc)
-
-    finally:
-        active_inactive_count = (active_customers, inactive_customers)
-        print('(active_customers, inactive_customers) = {}'.format(active_inactive_count))
+    active_customers = Customer.select().where(Customer.status == 'active').count()
+    inactive_customers = Customer.select().where(Customer.status == 'inactive').count()
+    LOGGER.info(f' active customers = {active_customers}')
+    LOGGER.info(f' inactive customers = {inactive_customers}')
+    active_inactive_count = (active_customers, inactive_customers)
+    print('(active_customers, inactive_customers) = {}'.format(active_inactive_count))
 
     return active_inactive_count
 
@@ -207,11 +198,7 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
-    database = SqliteDatabase('customers.db')
-    database.connect()
-    database.execute_sql('PRAGMA foreign_keys = ON;')
+
     while True:
         main_menu()
         input("Press Enter to continue.....")

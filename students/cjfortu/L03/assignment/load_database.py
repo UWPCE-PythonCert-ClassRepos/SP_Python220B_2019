@@ -4,21 +4,17 @@ Load the customer database.
 """
 
 from customer_model import *
-from customer_data_raw import customers
+from customer_data_raw import customers_correct, customers_incorrect
 
 
-def add_customers():
+def add_customers(customer_data):
     """
     Build the database from the raw data.
     """
-    logger.info('Establishing database')
+    LOGGER.info('Establishing database')
 
     try:
-        # database.connect()
-        # database.execute_sql('PRAGMA foreign_keys = ON;')
-        # database.drop_tables([Customer])
-        # database.create_tables([Customer])
-        for customer in customers:
+        for customer in customer_data:
             with database.transaction():
                 new_customer = Customer.create(
                     customer_id=customer[0],
@@ -30,20 +26,16 @@ def add_customers():
                     status=customer[6],
                     credit_limit=customer[7])
                 new_customer.save()
-                logger.info(f'Database add successful {customer[0]}')
+                LOGGER.info(f'Database add successful {customer[0]}')
 
     except Exception as exc:
-        logger.info(f'Error creating = {customer[0]}')
-        logger.info(exc)
+        LOGGER.info(f'Error creating = {customer[0]}')
+        LOGGER.info(exc)
 
     finally:
-        logger.info('database closes')
+        LOGGER.info('database closes')
         database.close()
 
 
 if __name__ == '__main__':
-    database.connect()
-    database.execute_sql('PRAGMA foreign_keys = ON;')
-    database.drop_tables([Customer])
-    database.create_tables([Customer])
-    add_customers()
+    add_customers(customers_correct)
