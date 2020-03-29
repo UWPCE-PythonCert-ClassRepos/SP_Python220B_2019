@@ -1,0 +1,16 @@
+linear.py results:
+ > When adding 5 products, 3 customers and 8 rentals, runtime was 0.014995 seconds.
+ > When adding 10000 of each record, runtime was 0.81104.
+
+parallel.py results:
+ > When adding 5 products, 3, customers and 8 rentals, runtime was 0.014992 seconds.
+ > When adding 10000 of each record, runtime was 0.57524 seconds.
+
+
+Recommendation: Though there was virtually no performance difference when importing a small number of records, parallel.py ran 29% faster when importing a high volume of records. If we regularly expect to import large quantities of records, I would recommend transitioning to parallel processing.
+
+
+Contention:
+parallel.py avoids contention by managing completely independent data sets on different threads. Had any thread included a call requiring access to other data sets (e.g. running show_rentals from lesson05 as part of each thread), then we might have run into contention.
+
+Note: I did not ensure all customers and products in the rentals.csv exist in customers.csv and products.csv. If we used this sample data in production, it would find bad keys in the rental file.
