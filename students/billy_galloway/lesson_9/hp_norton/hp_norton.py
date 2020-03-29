@@ -3,16 +3,12 @@ Database
 interacts with the database via files formatted from csv files
 '''
 import sys
-sys.path.append("./hp_norton_inventory")
+sys.path.append("./hp_norton")
 import logging
 import csv_handler as csvh
 from mongo_connect import *
-import threading
-from queue import Queue
 import os.path
 import pymongo
-import time
-from timeit import timeit as timer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -51,28 +47,12 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
                 # verify that the file exists first
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
                     logger.info(f"COLLECTION: {name} from file {directory_name}/{file_names[i]}")
-                    generate_thread = threading.Thread(target=csv_handler.generate_document_list,
-                                                       args=[f'{directory_name}/{file_names[i]}', name, db_queue])
-                    # start thread and append 
-                    # threads to the list
-                    generate_thread.start()
-                    thread_list.append(generate_thread)
+                    documents = csv_handler.generate_document_list(f'{directory_name}/{file_names[i]}', name)
             except FileNotFoundError as error:
                 logger.info(f' File not found {error}!')
                 ERROR_COUNT[name]+=1
                 pass
-            finally:
-                i+=1
-
-        # join threads
-        for thread in thread_list:
-            thread.join()
-
-        i = 0
-        for name in collection_names:
             try:
-                # get data from the queue
-                documents = db_queue.get()
                 # create the collections
                 db_collection = hpnorton_db[name]
                 # write to collection to database
@@ -126,11 +106,9 @@ def show_rentals(products_id):
 
 def main():
     ''' main method to interact with mongodb '''
-    start = time.perf_counter()
     mongo = MongoDBConnection()
-    db_queue = Queue()
 
-    output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
+    output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv')
     logger.info(f' Total number of invetory and errors {output}')
 
     available = show_available_products()
@@ -138,9 +116,6 @@ def main():
 
     rentals = show_rentals('prd006')
     logger.info(f" Returning item: {rentals}")
-
-    end = time.perf_counter()
-    print(end-start)
 
     with mongo:
         database = mongo.connection.hpnorton_db
@@ -151,9 +126,4 @@ def main():
             database['rental'].drop()
 
 if __name__ == "__main__":
-    output_code = '''
-db_queue = Queue()
-output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv', db_queue)
-    '''
-    print(timer(output_code,globals=globals(),number=5))
     main()
