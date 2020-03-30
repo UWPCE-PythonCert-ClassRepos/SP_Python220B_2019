@@ -8,16 +8,15 @@ import math
 import logging
 import sys
 
-# setup logger and log formats
 logger = logging.getLogger(__name__)
+
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 formatter = logging.Formatter(LOG_FORMAT)
 log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
 file_handler = logging.FileHandler(log_file)
 file_handler.setFormatter(formatter)
 
-def logging_level(log_level):
-    ''' log level function '''
+def logging_level(original_function):
     """
     sets log levels by taking a single argument
     and matching it to key in the dictionary
@@ -29,7 +28,37 @@ def logging_level(log_level):
         3: logging.DEBUG
     }
 
-    return levels[log_level]
+    def logger_func(*args, **kwargs):
+        """
+        inner function to handle logging levels
+        """
+        if cli_args.debug:
+            try:
+                # debug arg found and passing the
+                # integer to the logging_level method
+                level = levels[cli_args.debug]
+                if level == 10:
+                    logger.setLevel(level)
+                    console_handler = logging.StreamHandler(sys.stdout)
+                    console_handler.setFormatter(formatter)
+                    logger.addHandler(console_handler)
+                else:
+                    logger.setLevel(level)
+                    logger.addHandler(file_handler)
+            except KeyError:
+                # If the debug value does not match
+                # a key in the log level dict then exit
+                # and log the reason for exiting
+                logger.setLevel(logging.ERROR)
+                logger.addHandler(file_handler)
+                logger.error(f"Invalid debug option")
+                sys.exit()
+        else:
+            logger.disabled = True
+
+        return original_function(*args, **kwargs)
+
+    return logger_func
 
 def parse_cmd_arguments():
     """ Setups parser and returns arguments from the command line """
@@ -40,6 +69,7 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
+@logging_level   
 def load_rentals_file(filename=None):
     """ loads the file in json format from a file and returns it as a json object """
     try:
@@ -52,6 +82,7 @@ def load_rentals_file(filename=None):
 
     return data
 
+@logging_level
 def calculate_additional_fields(data):
     """ runs calculations based on data input from source file """
     for value in data.values():
@@ -95,69 +126,17 @@ def calculate_additional_fields(data):
 
     return data
 
-def save_to_json(filename, data):#, debug=None):
+@logging_level
+def save_to_json(filename, data):
     """ writes output to a file in json format """
     with open(filename, 'w') as file:
-        logger.debug(f"writing {data} to file")
+        logger.debug(f"writing to file")
         json.dump(data, file)
         logger.info(f"file successfully written to {filename}")
 
-# def logging_decorator(original_function):
-#     import logging
-#     # setup logger and log formats
-#     logger = logging.getLogger(__name__)
-#     LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
-#     formatter = logging.Formatter(LOG_FORMAT)
-#     log_file = datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
-#     file_handler = logging.FileHandler(log_file)
-#     file_handler.setFormatter(formatter)
-
-#     levels = {
-#         0: logging.NOTSET,
-#         1: logging.ERROR,
-#         2: logging.WARNING,
-#         3: logging.DEBUG
-#     }
-
-#     def wrapper_function(*args, **kwargs):
-#         return original_function(*args, **kwargs)
-    
-#     return wrapper_function
 
 if __name__ == "__main__":
-
-    args = parse_cmd_arguments()
-
-    if args.debug:
-        try:  
-            # debug arg found and passing the
-            # integer to the logging_level method
-            levels = logging_level(args.debug)
-            print(levels)
-    #         if levels == 10:
-    #             logger.setLevel(levels)
-    #             console_handler = logging.StreamHandler(sys.stdout)
-    #             console_handler.setFormatter(formatter)
-    #             logger.addHandler(console_handler)
-    #         else:
-    #             logger.setLevel(levels)
-    #             logger.addHandler(file_handler)
-
-        except KeyError:
-            # If the debug value does not match
-            # a key in the log level dict then exit
-            # and log the reason for exiting
-            logger.setLevel(logging.ERROR)
-            logger.addHandler(file_handler)
-            logger.error(f"Invalid debug option")
-            sys.exit()
-
-    #     else:
-    #         data = load_rentals_file(args.input)
-    #         data = calculate_additional_fields(data)
-
-    # else:
-    #     logger.disabled = True
-    #     data = load_rentals_file(args.input)
-    #     data = calculate_additional_fields(data)
-    #     save_to_json(args.output, data)
+    cli_args = parse_cmd_arguments()
+    data = load_rentals_file(cli_args.input)
+    data = calculate_additional_fields(data)
+    save_to_json(cli_args.output, data)
