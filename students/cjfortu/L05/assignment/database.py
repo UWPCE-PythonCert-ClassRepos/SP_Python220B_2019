@@ -190,7 +190,9 @@ def clear_data():
     """
     mongo_client = MongoClient('mongodb://localhost:27017')
     mongo_client.drop_database('products_database')
-    print(mongo_client.list_database_names())
+    remaining_databases = mongo_client.list_database_names()
+    print('products_database dropped')
+    return remaining_databases
 
 
 def show_available_products():

@@ -91,17 +91,12 @@ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, t
         """
         self.assertEqual(import_data(src_dir, 'product_file.csv', 'customer_file.csv', 'rental_file.csv'), ((8, 5, 15), (1, 0, 1)))
 
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_clear_data(self, mock_stdout):
+    def test_clear_data(self):
         """
         Confirm the products database clears.
         """
         import_data(src_dir, 'product_file.csv', 'customer_file.csv', 'rental_file.csv')
-        with patch('builtins.input'):
-            clear_data()
-            self.assertEqual(mock_stdout.getvalue(), """valid rows/documents = (8, 5, 15)   invalid rows/documents(blank entries aside from end_date) = (1, 0, 1)
-['admin', 'config', 'local']
-""")
+        self.assertNotIn('products_database', clear_data())
 
     def test_show_available_products(self):
         """
@@ -175,7 +170,7 @@ valid rows/documents = (8, 5, 15)   invalid rows/documents(blank entries aside f
               '4' - Show available products
               '5' - Show rentals
               'q' - Quit
-['admin', 'config', 'local']
+products_database dropped
 """)
 
     @patch('sys.stdout', new_callable=StringIO)
@@ -227,4 +222,3 @@ Please choose from the following:
   FB901 |     Farstriker, Gopollo      |       889 Hat Ave NE, Somewhere, HH 12345        | 5554446666 |    gof@blablabla.xx     
   GH040 |      Greenwich, Heather      |        927 Watch Ave W, Nowhere, HH 12367        | 5557778888 |     thetime@bla.xx      
 """)
-
