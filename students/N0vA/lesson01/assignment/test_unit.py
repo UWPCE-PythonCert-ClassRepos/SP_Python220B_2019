@@ -191,4 +191,5 @@ class MainTests(TestCase):
     def test_exit_program(self):
         """Tests functionality program will close."""
         with self.assertRaises(SystemExit):
-            main.exit_program()    
+            main.exit_program()
+            
