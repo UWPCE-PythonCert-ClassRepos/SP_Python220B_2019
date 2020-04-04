@@ -1,0 +1,38 @@
+Time with 5 product, 5 customer records and 8 rental records.
+   > import_data runtime: 1.9237303733825684 seconds
+      > products csv_to_dict runtime: 0.0009989738464355469 seconds
+      > customers csv_to_dict runtime: 0.3900330066680908 seconds
+      > rentals csv_to_dict runtime: 0.0010020732879638672 seconds
+
+   > show_available_products runtime: 0.012991666793823242 seconds
+
+   > show_rentals runtime: 0.052970170974731445 seconds
+
+
+Time with 50,000 product records, 50,000 customer records and 8 rental records.
+   > import_data runtime: 3.005124568939209 seconds
+      > products csv_to_dict runtime: 0.23915457725524902 seconds
+      > customers csv_to_dict runtime: 0.3703312873840332 seconds
+      > rentals csv_to_dict runtime: 0.0 seconds
+
+   > show_available_products runtime: 0.39484190940856934 seconds
+
+   > show_rentals runtime: 0.04597640037536621 seconds
+
+
+Time with 1,000,000 product records, 1,000,000 customer records and 8 rental records.
+   > import_data runtime: 65.46828126907349 seconds
+      > products csv_to_dict runtime: 5.292496204376221 seconds
+      > customers csv_to_dict runtime: 7.489094018936157 seconds
+      > rentals csv_to_dict runtime: 0.0009975433349609375 seconds
+
+   > show_available_products runtime: 7.694507598876953 seconds
+
+   > show_rentals runtime: 0.653099775314331 seconds
+
+
+Conclusion: The system takes the longest to run when it requires a high volume of iterative interaction with MongoDB.
+
+> Writing data to MongoDB is the most time consuming operation. Within import_data, this takes about 4x longer than reading the data from csvs (csv_to_dict).
+
+> Calling many individual records from MongoDB is the second most time consuming operation. show_available_products (which interacts with all product records) takes about 10x longer to run than show_rentals (which filters before interacting with customer records).
