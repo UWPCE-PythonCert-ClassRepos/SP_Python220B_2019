@@ -32,7 +32,7 @@ def main():
         f_writer = writer(f)
         f_writer.writerow('\n')
 
-        for row in range(11, 101):
+        for row in range(11, 1000001):
             row_id, row_date = get_random_data()
             f_writer.writerow([row_id, row, row+1, row+2, row+3, row_date, random.choice(('ao', None, None))])
 
