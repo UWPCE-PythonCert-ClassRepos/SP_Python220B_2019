@@ -38,9 +38,19 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.hp_norton
-        prod_count, prod_errors = import_csv(directory_name, product_file, database)
-        cust_count, cust_errors = import_csv(directory_name, customer_file, database)
-        rent_count, rent_errors = import_csv(directory_name, rentals_file, database)
+
+         # Create collections
+        products = database[product_file]
+        customers = database[customer_file]
+        rentals = database[rentals_file]
+
+        products.drop
+        customers.drop
+        rentals.drop
+
+        prod_count, prod_errors = import_csv(directory_name, product_file, products)
+        cust_count, cust_errors = import_csv(directory_name, customer_file, customers)
+        rent_count, rent_errors = import_csv(directory_name, rentals_file, rentals)
     return((prod_count, cust_count, rent_count), (prod_errors, cust_errors, rent_errors))
 
 def import_csv(directory_name, file_name, database):
@@ -53,9 +63,8 @@ def import_csv(directory_name, file_name, database):
     count = 0
     try:
         file_csv = f'{file_name}.csv'
-        collection = database[file_name]
         with open(os.path.join(directory_name, file_csv)) as file:
-            count = len(collection.insert_many(csv.DictReader(file)).inserted_ids)
+            count = len(database.insert_many(csv.DictReader(file)).inserted_ids)
     except (pyerror.InvalidOperation, FileNotFoundError) as error:
         LOGGER.warning('Oops! something went wrong while reading %s: %s', file_csv, error)
         errors += 1

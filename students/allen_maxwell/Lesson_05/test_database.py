@@ -8,21 +8,21 @@ class TestDatabase(TestCase):
 
     def setUp(self):
         # create test files
-        with open('./tests/test_products.csv', 'w') as file:
+        with open('tests/test_products.csv', 'w') as file:
             file.writelines(
                 'product_id,description,product_type,quantity_available\n'
                 'prd001,60-inch TV stand,livingroom,3\n'
                 'prd002,L-shaped sofa,livingroom,1\n'
                 'prd003,Queen Bed,bedroom,0\n')
-        with open('./tests/test_customers.csv', 'w') as file:
+        with open('tests/test_customers.csv', 'w') as file:
             file.writelines(
                 'user_id,name,address,phone_number,email\n'
                 'user001,Elisa Miles,4490 Union Street,206-922-0882,elisa.miles@yahoo.com\n'
                 'user002,Maya Data,4936 Elliot Avenue,206-777-1927,mdata@uw.edu\n')
-        with open('./tests/test_customers_fail.csv', 'w') as file:
+        with open('tests/test_customers_fail.csv', 'w') as file:
             file.writelines(
                 'user_id,name,address,phone_number,email\n')
-        with open('./tests/test_rentals.csv', 'w') as file:
+        with open('tests/test_rentals.csv', 'w') as file:
             file.writelines(
                 'user_id,name,product_id\n'
                 'user001,Elisa Miles,prd002\n'
@@ -30,21 +30,21 @@ class TestDatabase(TestCase):
 
     def test_import_data(self):
         '''Test importing data'''
-        counts, errors = db.import_data('.\\tests', 'test_products', 'test_customers',
+        counts, errors = db.import_data('tests', 'test_products', 'test_customers',
                                         'test_rentals')
         self.assertEqual(counts, (3, 2, 2))
         self.assertEqual(errors, (0, 0, 0))
 
     def test_import_data_fail(self):
         '''Tests importing invalid file_name and empty data file errors'''
-        counts, errors = db.import_data('.\\tests', 'test_products_fail', 'test_customers_fail',
+        counts, errors = db.import_data('tests', 'test_products_fail', 'test_customers_fail',
                                         'test_rentals')
         self.assertEqual(counts, (0, 0, 2))
         self.assertEqual(errors, (1, 1, 0))
 
     def test_show_available_products(self):
         '''Tests shows available products'''
-        db.import_data('./tests', 'test_products', 'test_customers', 'test_rentals')
+        db.import_data('tests', 'test_products', 'test_customers', 'test_rentals')
         result = db.show_available_products()
         expected = {'prd001': {'description': '60-inch TV stand',
                                'product_type': 'livingroom',
@@ -56,7 +56,7 @@ class TestDatabase(TestCase):
 
     def test_show_rentals(self):
         '''Test show rentals'''
-        db.import_data('.\\tests', 'test_products', 'test_customers', 'test_rentals')
+        db.import_data('tests', 'test_products', 'test_customers', 'test_rentals')
         result = db.show_rentals('prd001')
         expected = {'user002': {'name': 'Maya Data', 'address': '4936 Elliot Avenue',
                                 'phone_number': '206-777-1927', 'email': 'mdata@uw.edu'}}
