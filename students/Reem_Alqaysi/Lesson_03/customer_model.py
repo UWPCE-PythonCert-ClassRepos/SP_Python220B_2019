@@ -1,7 +1,7 @@
 """
     Here we define thedatabase and customers schema
 """
-
+# pylint: disable=too-few-public-methods
 import peewee as pw
 
 DATABASE = pw.SqliteDatabase('customers.db')

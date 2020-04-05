@@ -1,5 +1,5 @@
 """Basic operations for the customer_model"""
-
+# pylint: disable=pointless-string-statement,too-many-arguments
 import logging
 import peewee as pw
 from customer_model import Customer, DATABASE
@@ -10,7 +10,7 @@ LOGGER = logging.getLogger(__name__)
 
 DATABASE.drop_tables([Customer])
 DATABASE.create_tables([Customer])
-""""
+'''
 #for testing
 name = 'Reem'
 lastname = 'alqaysi'
@@ -19,7 +19,7 @@ phone_number =1234567890
 email_address = 'abc123@uw.edu'
 status = 1
 credit_limit =222
-"""
+'''
 
 def add_customer(name, lastname, home_address, phone_number, email_address,
                  status, credit_limit):
@@ -81,16 +81,17 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_customers():
     """list all active customer: status = 1 (Active), status = 0 (Inactive)"""
     active_count = 0
-    for _ in Customer.select().where(Customer.status == True):
-        active_count += 1
+    #for _ in Customer.select().where(Customer.status == True):
+    for _ in Customer.select():
+        if Customer.status:
+            active_count += 1
 
     LOGGER.info("Total active customers: %d", active_count)
     return active_count
-""""
+'''
 #for Testing
 if __name__ == '__main__':
     add_customer(name, lastname, home_address, phone_number, email_address,
                  status, credit_limit)
     list_active_customers()
-"""
-
+'''
