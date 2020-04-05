@@ -1,0 +1,6 @@
+product_id,description,product_type,quantity_available
+prod_1,big stack of paper,paper,5000
+prod_2,medium stack of paper,paper,10000
+prod_3,pre-folded paper airplanes,airplane,747
+prod_4,magazine cover,media,50
+prod_5,internet takeover,media,7
