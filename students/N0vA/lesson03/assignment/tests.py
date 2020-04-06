@@ -63,7 +63,7 @@ class TestBasicOperations(TestCase):
         """Tests customer will not be added without function parameters being met."""
 
         with self.assertRaises(TypeError):
-            add_customer(12345, 'Paul', 'Allen')
+            add_customer(12345, 'Elon', 'Musk')
 
     def test_search_customer(self):
         """Tests a customer's info can be found by searching their ID."""
@@ -90,12 +90,19 @@ class TestBasicOperations(TestCase):
         expected = search_customer(37431)
         self.assertEqual(expected, {})
 
+        with self.assertRaises(DoesNotExist):
+            delete_customer(12345)
+
     def test_update_credit(self):
         """Tests functionality of updating a customer's credit limit."""
 
         update_customer_credit(700459, 5500)
         c_1 = Customer.get(Customer.customer_id == 700459).credit_limit
         self.assertEqual(c_1, 5500)
+
+        # Test breaks with invalid customer ID
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit(12345, 1000)
 
     def test_list_active_customers(self):
         """Tests if function works with listing numbe of active customers."""
