@@ -1,0 +1,31 @@
+The source data files were expanded to 9999 entries each.  The older, smaller source data files
+were included for some testing (in order to not copy/paste large amounts of stdout).
+
+
+
+Runtime data in seconds, per non-stalling method:
+
+                                    run_1       run_2       run_3       mean
+
+linear.py                       | 1.410834  |  1.406164 |  1.43222  |  1.416406 
+--------------------------------------------------------------------------------
+parallel.py (multiprocessing)   | 0.004012  |  0.003782 |  0.003811 |  0.003868 
+--------------------------------------------------------------------------------
+database_multithread_join.py    | 1.350672  |  1.37170  |  1.365396 |  1.362589 
+--------------------------------------------------------------------------------
+database_multithread_queue.py   | 1.543998  |  1.39756  |  1.459444 |  1.457001 
+
+I recommend the multiprocessing method.  I do not recommend queues or pools, as these can create
+contentions which require additional structure to circumvent.
+
+
+
+Contentions in database_multiprocess_contention.py were created by implementing a queue, which 
+can be circumvented by using:
+
+- Pooling
+- multiprocessing.Manager.Queue
+- get(False) or get_nowait() in a while not empty loop
+
+Sticking with a simple join(), and none of the above keeps the implementation running without
+additional structure.
