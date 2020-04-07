@@ -40,8 +40,7 @@ def add_customer(customer_id, first_name, last_name,
 
             logger.info('Customer: %s %s added to Customers database.', last_name, first_name)
 
-    except Exception as e:
-        logger.info(e)
+    except TypeError:
         logger.info('Unable to add customer: %s, %s to the database.  Check input data. ', last_name, first_name)
 
 def search_customer(customer_id):
@@ -57,7 +56,7 @@ def search_customer(customer_id):
                   'phone_number': query.phone_number}
         return result
 
-    except Exception as e:
+    except DoesNotExist as e:
         logger.info(e)
         logger.info('Customer ID %s does not exist.', customer_id)
 
@@ -72,9 +71,9 @@ def delete_customer(customer_id):
             query = Customer.get(Customer.customer_id == customer_id)
             query.delete_instance()
             logger.info('Customer ID %s has been delted.', customer_id)
-    except Exception as e:
-        logger.info(e)
+    except IndexError:
         logger.info('Customer ID %s does not exist.  Please try again.', customer_id)
+        raise ValueError
 
 def update_customer_credit(customer_id, credit_limit):
     """Updates the credit limit of a customer found by their customer id."""
@@ -86,9 +85,8 @@ def update_customer_credit(customer_id, credit_limit):
             query.credit_limit = credit_limit
             query.save()
             logger.info('Credit limit has been updated for customer ID %s.', customer_id)
-    except DoesNotExist:
+    except IndexError:
         logger.info('Customer ID %s does not exist. Please enter valid customer ID.', customer_id)
-        raise ValueError
 
 def list_active_customers():
     """Function that returns an integer of the number of active customers."""
