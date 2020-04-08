@@ -30,6 +30,17 @@ loop (parallel.py) was faster than putting it in its own loop (multiprocess_join
 For my machine, this data, and this algorithm, using a queue (multiprocess_queue.py) was the 
 slowest multiprocessing method.
 
+  Model Name:   MacBook Pro
+  Model Identifier: MacBookPro8,1
+  Processor Name:   Intel Core i7
+  Processor Speed:  2.8 GHz
+  Number of Processors: 1
+  Total Number of Cores:    2
+  L2 Cache (per Core):  256 KB
+  L3 Cache: 4 MB
+  Memory:   8 GB
+
+
 
 
 Contentions in multiprocess_contention.py were created by improperly implementing
