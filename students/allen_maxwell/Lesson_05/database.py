@@ -44,10 +44,6 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         customers = database[customer_file]
         rentals = database[rentals_file]
 
-        products.drop
-        customers.drop
-        rentals.drop
-
         prod_count, prod_errors = import_csv(directory_name, product_file, products)
         cust_count, cust_errors = import_csv(directory_name, customer_file, customers)
         rent_count, rent_errors = import_csv(directory_name, rentals_file, rentals)
@@ -77,7 +73,7 @@ def show_available_products():
     with mongo:
         database = mongo.connection.hp_norton
         LOGGER.info('Searching for available products')
-        for product in database.products.find({'quantity_available': {'$gt': '0'}}):
+        for product in database['products'].find({'quantity_available': {'$gt': '0'}}):
             results[product['product_id']] = {
                 'description': product['description'],
                 'product_type': product['product_type'],
@@ -93,9 +89,9 @@ def show_rentals(product_id):
     mongo = MongoDBConnection()
     with mongo:
         database = mongo.connection.hp_norton
-        LOGGER.info('Searching for product_id: %s', product_id)
-        for rental in database.rentals.find({'product_id': product_id}):
-            for customer in database.customers.find({'user_id': rental['user_id']}):
+        LOGGER.info('Searching for rental product_id: %s', product_id)
+        for rental in database['rentals'].find({'product_id': product_id}):
+            for customer in database['customers'].find({'user_id': rental['user_id']}):
                 results[customer['user_id']] = {
                     'name': customer['name'],
                     'address': customer['address'],
