@@ -2,9 +2,13 @@
 """
 Lesson 07 with UI.
 
-Multiprocessing implementation.
+Multitprocessing implementation.
 
-This demonstrates contention over queue objects.
+This is a simple implementation.  There is no queue or pool, only a join.
+
+The join is in its own loop, outside the process initialization loop.
+
+This circumvents empty queues, and contention over queue objects.
 
 source directory during development =
 '''/Users/fortucj/Documents/skoo/Python/220/SP_Python220B_2019/students/cjfortu/L07/assignment/
@@ -18,8 +22,6 @@ import os
 import csv
 import logging
 import multiprocessing
-# from multiprocessing import Queue
-# from queue import Empty
 import time
 from pymongo import MongoClient
 
@@ -131,6 +133,51 @@ def print_database():
             print(document)
 
 
+def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_path, i):
+    """
+    Helper function to provide a target for multiprocessed writing.
+    """
+    error_counts = 0
+
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection['products_database']
+        if i == 0:
+            collection = db["products"]
+        if i == 1:
+            collection = db["customers"]
+        if i == 2:
+            collection = db["rentals"]
+
+    try:
+        with open(file_path, 'r', encoding='utf-8-sig') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            fields = next(csv_reader)
+            extracted_data = []
+            for row in csv_reader:
+                row_dict = {}
+                for j, field in enumerate(fields):
+                    error = False
+                    if row[j].strip() == '' and field != 'end_date':
+                        error = True
+                        break
+                    row_dict[field] = row[j]
+                if error is False:
+                    extracted_data.append(row_dict)
+                else:
+                    error_counts += 1
+    except FileNotFoundError as err:
+        bad_file_path.append(True)
+        print(err)
+        LOGGER.info(f'{collection} not added due to FileNotFoundError.')
+    else:
+        bad_file_path.append(False)
+        collection.insert_many(extracted_data)
+        LOGGER.info(f'{collection} successfully added.')
+        shared_document_counts.append(collection.count_documents({}))
+        shared_error_counts.append(error_counts)
+
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     Populate the new MongoDB database with source data, and return two tuples:
@@ -144,78 +191,27 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     manager = multiprocessing.Manager()
     shared_error_counts = manager.list()
     shared_document_counts = manager.list()
+    bad_file_path = manager.list()
 
     init = time.process_time()
-    results = multiprocessing.Queue()  # This queue object creates contention, which manifests
-                                       # when using get()
 
-    def write_data(file_path, shared_error_count, shared_document_count, i):
-        """
-        Helper function to provide a target for multithreaded writing.
-        """
-        mongo = MongoDBConnection()
-        with mongo:
-            db = mongo.connection['products_database']
-            if i == 0:
-                collection = db["products"]
-            if i == 1:
-                collection = db["customers"]
-            if i == 2:
-                collection = db["rentals"]
-        try:
-            with open(file_path, 'r', encoding='utf-8-sig') as csv_file:
-                csv_reader = csv.reader(csv_file)
-                fields = next(csv_reader)
-                extracted_data = []
-                for row in csv_reader:
-                    row_dict = {}
-                    for j, field in enumerate(fields):
-                        error = False
-                        if row[j].strip() == '' and field != 'end_date':
-                            error = True
-                            break
-                        row_dict[field] = row[j]
-                    if error is False:
-                        extracted_data.append(row_dict)
-                    else:
-                        shared_error_count += 1
-        except FileNotFoundError as err:
-            bad_file_path = True
-            print(err)
-            LOGGER.info(f'{collection} not added due to FileNotFoundError.')
-        else:
-            collection.insert_many(extracted_data)
-            LOGGER.info(f'{collection} successfully added.')
-            shared_document_count = collection.count_documents({})
-        results.put(collection, shared_document_count, shared_error_count)
-        LOGGER.info('put succeeded')
-
-    bad_file_path = False
     processes = []
     for i in range(len(file_paths)):
-        shared_error_counts.append(0)
-        shared_document_counts.append(None)
-        proc = multiprocessing.Process(target=write_data, args=(file_paths[i],
-                                                                shared_error_counts[i],
-                                                                shared_document_counts[i], i))
+        proc = multiprocessing.Process(target=write_data, args=(file_paths[i], shared_error_counts,
+                                                                shared_document_counts,
+                                                                bad_file_path, i))
         proc.start()
         processes.append(proc)
 
+    if True in bad_file_path:
+        LOGGER.info("\n\nRecommend clearing and reloading database due to unsuccessful insertion of"
+                    " collection\n\n")
+
     for process in processes:
-        process.join()
+        process.join()  # put in its own loop
 
-    for i in range(len(file_paths)):
-        results.get()  # The code stalls here.  This could be circumvented by using:
-                       # Pooling
-                       # multiprocessing.Manager.Queue
-                       # get(False) or get_nowait() in a while not empty loop
-                       # sticking with a simple join(), and none of the above at all
-
-    if bad_file_path:
-        LOGGER.info("Recommend clearing and reloading database due to unsuccessful insertion of"
-                    " collection")
-
-    print('multiprocess time = ', time.process_time() - init)
+    run_time = time.process_time() - init
+    LOGGER.info(f'multiprocess time = {run_time}')
 
     print('total rows/documents =', (shared_document_counts[0], shared_document_counts[1],
                                      shared_document_counts[2]), ' ',

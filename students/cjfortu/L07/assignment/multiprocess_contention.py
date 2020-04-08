@@ -2,13 +2,12 @@
 """
 Lesson 07 with UI.
 
-Multitprocessing implementation.
+Multitprocessing contention implementation.
 
-This is a simple implementation.  There is no queue or pool, only a join.
+This improperly implements multiprocessing.Queue, in which put() has multiple objects.
+get() will stall, as it is searching a faulty queue.
 
-The join is executed immediately after starting each process.
-
-This circumvents empty queues, and contention over queue objects.
+This also improperly implements locks, in which each processor is never free.
 
 source directory during development =
 '''/Users/fortucj/Documents/skoo/Python/220/SP_Python220B_2019/students/cjfortu/L07/assignment/
@@ -133,7 +132,7 @@ def print_database():
             print(document)
 
 
-def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_path, i):
+def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_path, results, i):
     """
     Helper function to provide a target for multiprocessed writing.
     """
@@ -176,6 +175,10 @@ def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_
         LOGGER.info(f'{collection} successfully added.')
         shared_document_counts.append(collection.count_documents({}))
         shared_error_counts.append(error_counts)
+    results.put(shared_document_counts, shared_error_counts)
+    # sending more than one argument will cause get() to stall later on
+    LOGGER.info('put successful: shared_document_counts & shared_error_counts')
+    results.put(collection)  # placed here to avoid TypeError: can't pickle _thread.lock objects
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -194,17 +197,31 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     bad_file_path = manager.list()
 
     init = time.process_time()
+    results = multiprocessing.Queue()  # new
 
+    processes = []
     for i in range(len(file_paths)):
+        LOCK.acquire()  # acquire() implemented in the correct place.
         proc = multiprocessing.Process(target=write_data, args=(file_paths[i], shared_error_counts,
                                                                 shared_document_counts,
-                                                                bad_file_path, i))
+                                                                bad_file_path, results, i))
         proc.start()
-        proc.join()
+        processes.append(proc)
+    LOCK.release()
+    # release() not implemented after each process initiation,
+    # this will prevent the core from ever being free.
+
+    for i in range(len(file_paths)):
+        LOGGER.info('attempting get')
+        results.get()  # code will also stall here, even with release() properly implemented.
 
     if True in bad_file_path:
-        LOGGER.info("\n\nRecommend clearing and reloading database due to unsuccessful insertion of"
-                    " collection\n\n")
+        LOGGER.info("\nRecommend clearing and reloading database due to unsuccessful insertion of"
+                    " collection\n")
+
+    for process in processes:
+        LOGGER.info('attempting join')
+        process.join()
 
     run_time = time.process_time() - init
     LOGGER.info(f'multiprocess time = {run_time}')
@@ -319,6 +336,7 @@ def exit_program():
 
 
 if __name__ == "__main__":
+    LOCK = multiprocessing.Lock()
     while True:
         main_menu()
         print(" \n")

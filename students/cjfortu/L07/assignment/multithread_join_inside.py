@@ -4,6 +4,8 @@ Lesson 07 with UI.
 
 Multithreading implementation.
 
+The join is executed immediately after starting each thread.
+
 source directory during development =
 '''/Users/fortucj/Documents/skoo/Python/220/SP_Python220B_2019/students/cjfortu/L07/assignment/
 src_data/'''
@@ -135,21 +137,22 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     1: A record count of the number of products, customers, and rentals added (in this order)
     2: A count of any errors that occured, in the same order.
     """
+    file_paths = [directory_name + product_file,
+                  directory_name + customer_file,
+                  directory_name + rentals_file]
+    error_counts = [0, 0, 0]
+    document_counts = [0, 0, 0]
+
+    init = time.process_time()
+
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection['products_database']
         products_collection = db["products"]
         customers_collection = db["customers"]
         rentals_collection = db["rentals"]
-    file_paths = [directory_name + product_file,
-                  directory_name + customer_file,
-                  directory_name + rentals_file]
-    error_counts = [0, 0, 0]
-    document_counts = [0, 0, 0]
-    collections = [products_collection, customers_collection, rentals_collection]
 
-    init = time.process_time()
-    results = queue.Queue()
+    collections = [products_collection, customers_collection, rentals_collection]
 
     def write_data(file_path, collection, i):
         """
@@ -180,13 +183,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             collection.insert_many(extracted_data)
             LOGGER.info(f'{collection} successfully added.')
             document_counts[i] = collection.count_documents({})
-        results.put(collection, document_counts[i])
 
     bad_file_path = False
+    threads = []
     for i in range(len(file_paths)):
         thread = threading.Thread(target=write_data, args=(file_paths[i], collections[i], i))
         thread.start()
-        results.get()
+        thread.join()
 
     if bad_file_path:
         LOGGER.info("Recommend clearing and reloading database due to unsuccessful insertion of"
@@ -200,8 +203,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                                                                           error_counts[1],
                                                                           error_counts[2]))
     return (document_counts[0], document_counts[1], document_counts[2]), (error_counts[0],
-                                                                          error_counts[1],
-                                                                          error_counts[2])
+                                                              error_counts[1],
+                                                              error_counts[2])
 
 
 def clear_data():

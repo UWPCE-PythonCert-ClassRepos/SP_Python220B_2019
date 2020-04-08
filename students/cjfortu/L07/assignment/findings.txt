@@ -7,25 +7,37 @@ Runtime data in seconds, per non-stalling method:
 
                                     run_1       run_2       run_3       mean
 
-linear.py                       | 1.410834  |  1.406164 |  1.43222  |  1.416406 
+linear.py                       | 1.490449  |  1.483512 |  1.422722 |  1.465561 
 --------------------------------------------------------------------------------
-parallel.py (multiprocessing)   | 0.004012  |  0.003782 |  0.003811 |  0.003868 
+parallel.py (multiprocessing)   | 0.003904  |  0.00386  |  0.003812 |  0.003813 
 --------------------------------------------------------------------------------
-database_multithread_join.py    | 1.350672  |  1.37170  |  1.365396 |  1.362589 
+multiprocess_join_outside.py    | 0.004142  |  0.004039 |  0.004532 |  0.004238 
 --------------------------------------------------------------------------------
-database_multithread_queue.py   | 1.543998  |  1.39756  |  1.459444 |  1.457001 
+multiprocess_queue.py           | 0.010122  |  0.01009  |  0.009664 |  0.009959 
+--------------------------------------------------------------------------------
+multithread_join_inside.        | 1.431406  |  1.335844 |  1.404846 |  1.390699 
+--------------------------------------------------------------------------------
+multithread_join_outside.py     | 1.624797  |  1.662292 |  1.661792 |  1.649627 
+--------------------------------------------------------------------------------
+multithread_queue.py            | 1.402816  |  1.357832 |  1.378198 |  1.379615 
 
 I recommend the multiprocessing method.  I do not recommend queues or pools, as these can create
 contentions which require additional structure to circumvent.
 
+Interestingly, for the multiprocessing methods, keeping join() within the process initialization
+loop (parallel.py) was faster than putting it in its own loop (multiprocess_join_outside.py).
+
+For my machine, this data, and this algorithm, using a queue (multiprocess_queue.py) was the 
+slowest multiprocessing method.
 
 
-Contentions in database_multiprocess_contention.py were created by implementing a queue, which 
-can be circumvented by using:
 
-- Pooling
-- multiprocessing.Manager.Queue
-- get(False) or get_nowait() in a while not empty loop
+Contentions in multiprocess_contention.py were created by improperly implementing
+multiprocessing.Queue() and multiprocessing.Lock()
+
+- put() must send a single object argument. Otherwise, get() will stall on a faulty queue.
+- acquire() and release() should immediately encase a single process. Otherwise, the processors
+may never be free.
 
 Sticking with a simple join(), and none of the above keeps the implementation running without
 additional structure.

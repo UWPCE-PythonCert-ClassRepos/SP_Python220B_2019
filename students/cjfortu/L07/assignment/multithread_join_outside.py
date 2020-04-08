@@ -4,6 +4,8 @@ Lesson 07 with UI.
 
 Multithreading implementation.
 
+The join is kept in its own loop, outside the thread initialization loop.
+
 source directory during development =
 '''/Users/fortucj/Documents/skoo/Python/220/SP_Python220B_2019/students/cjfortu/L07/assignment/
 src_data/'''
@@ -16,7 +18,6 @@ import os
 import csv
 import logging
 import threading
-import queue
 import time
 from pymongo import MongoClient
 
@@ -183,14 +184,18 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             document_counts[i] = collection.count_documents({})
 
     bad_file_path = False
+    threads = []
     for i in range(len(file_paths)):
         thread = threading.Thread(target=write_data, args=(file_paths[i], collections[i], i))
         thread.start()
-        thread.join()
+        threads.append(thread)
 
     if bad_file_path:
         LOGGER.info("Recommend clearing and reloading database due to unsuccessful insertion of"
                     " collection")
+
+    for thread in threads:
+        thread.join()
 
     print('multithread time = ', time.process_time() - init)
 

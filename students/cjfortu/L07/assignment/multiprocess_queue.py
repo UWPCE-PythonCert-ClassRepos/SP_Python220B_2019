@@ -4,9 +4,7 @@ Lesson 07 with UI.
 
 Multitprocessing implementation.
 
-This is a simple implementation.  There is no queue or pool, only a join.
-
-The join is executed immediately after starting each process.
+This uses a queue, with get() implemented before join().
 
 This circumvents empty queues, and contention over queue objects.
 
@@ -133,7 +131,7 @@ def print_database():
             print(document)
 
 
-def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_path, i):
+def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_path, results, i):
     """
     Helper function to provide a target for multiprocessed writing.
     """
@@ -176,6 +174,11 @@ def write_data(file_path, shared_error_counts, shared_document_counts, bad_file_
         LOGGER.info(f'{collection} successfully added.')
         shared_document_counts.append(collection.count_documents({}))
         shared_error_counts.append(error_counts)
+    results.put(shared_document_counts)  # new
+    LOGGER.info(f'document counts in queue for {collection}.')  # new
+    results.put(shared_error_counts)  # new
+    LOGGER.info(f'error counts in queue for {collection}.')  # new
+    results.put(collection)
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -194,17 +197,25 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     bad_file_path = manager.list()
 
     init = time.process_time()
+    results = multiprocessing.Queue()  # new
 
+    processes = []
     for i in range(len(file_paths)):
         proc = multiprocessing.Process(target=write_data, args=(file_paths[i], shared_error_counts,
                                                                 shared_document_counts,
-                                                                bad_file_path, i))
+                                                                bad_file_path, results, i))
         proc.start()
-        proc.join()
+        processes.append(proc)
+
+    for i in range(len(file_paths)):
+        results.get()  # new
 
     if True in bad_file_path:
-        LOGGER.info("\n\nRecommend clearing and reloading database due to unsuccessful insertion of"
-                    " collection\n\n")
+        LOGGER.info("\nRecommend clearing and reloading database due to unsuccessful insertion of"
+                    " collection\n")
+
+    for process in processes:
+        process.join()  # put in its own loop
 
     run_time = time.process_time() - init
     LOGGER.info(f'multiprocess time = {run_time}')
