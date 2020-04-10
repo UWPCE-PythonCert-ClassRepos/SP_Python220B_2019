@@ -61,6 +61,22 @@ class TestDatabase(TestCase):
         self.assertEqual(count, (999, 999, 12))
         self.assertEqual(errors, (0, 0, 0))
 
+    def test_new_import_data(self):
+        '''test import data function.'''
+        # First reset the db
+        with self.context_mgr:
+            self.context_mgr.connection.drop_database(DB_NAME)
+
+        product_tuple, customer_tuple = import_data(
+            'data', 'products.csv', 'customers.csv', 'rentals.csv')
+        self.assertEqual(product_tuple[0], 999)
+        self.assertEqual(product_tuple[1], 0)
+        self.assertEqual(product_tuple[2], 999)
+        self.assertEqual(customer_tuple[0], 999)
+        self.assertEqual(customer_tuple[1], 0)
+        self.assertEqual(customer_tuple[2], 999)
+
+
     def test_list_products(self):
         '''test list all products.'''
         all_products = list_products()
