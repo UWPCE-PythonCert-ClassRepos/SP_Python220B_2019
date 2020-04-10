@@ -1,5 +1,6 @@
 import threading
 import time
+import datetime
 
 lock = threading.Lock()
 
@@ -9,6 +10,12 @@ def f():
     time.sleep(1)
     lock.release()
 
+start = datetime.datetime.now()
+
 threading.Thread(target=f).start()
 threading.Thread(target=f).start()
 threading.Thread(target=f).start()
+
+end = datetime.datetime.now()
+
+print(end - start)

@@ -1,17 +1,42 @@
 Initial timing of linear.py copied from lesson05.
 (pce) PS C:\Users\Sean\pce\SP_Python220B_2019\students\smckellips\lesson07> python -m cProfile -s tottime linear.py | head -n30
-         3282997 function calls (3211254 primitive calls) in 17.524 seconds
+         3568370 function calls (3496504 primitive calls) in 7.557 seconds
 
    Ordered by: internal time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-     2010    7.944    0.004    7.944    0.004 {method 'connect' of '_socket.socket' objects}
-    52262    3.301    0.000    3.301    0.000 {method 'acquire' of '_thread.lock' objects}
-    12060    1.272    0.000    1.272    0.000 {method 'recv_into' of '_socket.socket' objects}
-     4020    0.187    0.000    0.187    0.000 {built-in method _thread.start_new_thread}
-     6030    0.170    0.000    0.170    0.000 {method 'sendall' of '_socket.socket' objects}
-     4020    0.122    0.000    0.122    0.000 {function socket.close at 0x0000022B4FDF8430}
-     4020    0.121    0.000    0.144    0.000 {built-in method pymongo._cmessage._op_msg}
-     2010    0.109    0.000    2.474    0.001 mongo_client.py:96(__init__)
-12060/4020    0.099    0.000    0.397    0.000 son.py:190(__deepcopy__)
-40200/4020    0.095    0.000    0.424    0.000 copy.py:128(deepcopy)
+    52262    1.849    0.000    1.849    0.000 {method 'acquire' of '_thread.lock' objects}
+    12060    0.852    0.000    0.852    0.000 {method 'recv_into' of '_socket.socket' objects}
+     2010    0.359    0.000    0.359    0.000 {method 'connect' of '_socket.socket' objects}
+     2010    0.255    0.000    0.255    0.000 socket.py:219(__init__)
+     4020    0.166    0.000    0.166    0.000 {built-in method _thread.start_new_thread}
+
+Reading customers.csv with line reader takes .074017s while reading the file in one read takes .005018 (15x longer)
+
+Testing threading.Lock on mongo db write, marginal performance increase without the lock which is already handled by pymongo:
+With lock:
+  2020-04-09 22:38:36,822 parallel.py:109 INFO results: rentals.csv, 12, 0:00:00.064143.
+  2020-04-09 22:38:36,822 parallel.py:109 INFO results: products.csv, 999, 0:00:04.887780.
+  2020-04-09 22:38:36,822 parallel.py:109 INFO results: customers.csv, 999, 0:00:04.891642.
+  2020-04-09 22:38:36,823 parallel.py:113 INFO Total run time: 0:00:04.892586
+Without lock:
+  2020-04-09 22:37:29,854 parallel.py:109 INFO results: rentals.csv, 12, 0:00:00.075698.
+  2020-04-09 22:37:29,854 parallel.py:109 INFO results: customers.csv, 999, 0:00:04.759247.
+  2020-04-09 22:37:29,854 parallel.py:109 INFO results: products.csv, 999, 0:00:04.760352.
+  2020-04-09 22:37:29,854 parallel.py:113 INFO Total run time: 0:00:04.761373
+
+Notice the time to read all three files and write the data to the db is roughly .001s longer than the longest individual file.
+
+(pce) Seans-MacBook-Pro:lesson07 mckellip$ python -m cProfile -s tottime parallel.py | head 
+         72137 function calls (70435 primitive calls) in 4.813 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      132    4.696    0.036    4.696    0.036 {method 'acquire' of '_thread.lock' objects}
+      106    0.011    0.000    0.011    0.000 {built-in method marshal.loads}
+       24    0.009    0.000    0.010    0.000 {built-in method _imp.create_dynamic}
+       24    0.007    0.000    0.007    0.000 {method 'recv_into' of '_socket.socket' objects}
+      106    0.006    0.000    0.006    0.000 {built-in method io.open_code}
+
+Incorporating threading has reduced total function time from 7.557s to 4.813, a 37% improvement.  Definitely a desired upgrade.

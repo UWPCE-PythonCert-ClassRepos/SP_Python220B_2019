@@ -1,7 +1,10 @@
 # pylint: disable=W0401,W0614
-'''UnitTest Module for database.py'''
+'''
+UnitTest Module for database.py
+Copied from lesson05.  Data is no longer accurate.
+'''
 from unittest import TestCase
-from linear import *
+from parallel import *
 
 
 class TestDatabase(TestCase):
@@ -36,13 +39,24 @@ class TestDatabase(TestCase):
              'name': 'Greta Gershwin', 'phone_number': '206-725-1222'}
         ]
 
-    def test_import_data(self):
+    def test_purge_data(self):
+        '''tet new concurrent import.'''
+        # First reset the db
+        with self.context_mgr:
+            self.context_mgr.connection.drop_database(DB_NAME)
+        prod_count = document_count('Product')
+        cust_count = document_count('Customer')
+        self.assertEqual(prod_count, 0)
+        self.assertEqual(cust_count, 0)
+
+
+    def test_orig_import_data(self):
         '''test import data function.'''
         # First reset the db
         with self.context_mgr:
             self.context_mgr.connection.drop_database(DB_NAME)
 
-        count, errors = import_data(
+        count, errors = orig_import_data(
             'data', 'products.csv', 'customers.csv', 'rentals.csv')
         self.assertEqual(count, (999, 999, 12))
         self.assertEqual(errors, (0, 0, 0))

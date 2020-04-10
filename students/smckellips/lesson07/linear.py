@@ -15,7 +15,7 @@ CH = logging.StreamHandler()
 FH.setFormatter(FORMATTER)
 CH.setFormatter(FORMATTER)
 
-logging.basicConfig(level=logging.ERROR)
+logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger()
 LOGGER.addHandler(FH)
 LOGGER.addHandler(CH)
@@ -40,15 +40,23 @@ class MongoDBConnection():
         self.connection.close()
 
 
+# def print_mdb_collection(collection_name):
+#     # mongo = MongoDBConnection()
+#     # with mongo:
+#     #     db
+#     for doc in collection_name.find():
+#         print(doc)
+
+
 def import_data(directory_name, product_file, customer_file, rentals_file):
     '''Bulk data import for all three data source.'''
     mongo = MongoDBConnection()
 
     inv_map = {}
-    inv_map[customer_file] = {'Name': 'Customer',
-                              'key': 'customer_id', 'count': 0, 'errors': 0}
     inv_map[product_file] = {'Name': 'Product',
                              'key': 'product_id', 'count': 0, 'errors': 0}
+    inv_map[customer_file] = {'Name': 'Customer',
+                              'key': 'customer_id', 'count': 0, 'errors': 0}
     inv_map[rentals_file] = {'Name': 'Rental',
                              'key': 'rental_id', 'count': 0, 'errors': 0}
 
@@ -137,12 +145,6 @@ def show_rentals(product_id):
 
     return san_customers
 
-def reset_db():
-    '''Drop the database.'''
-    mongo = MongoDBConnection()
-
-    with mongo:
-        mongo.connection.drop_database(DB_NAME)
 
 if __name__ == "__main__":
     count, errors = import_data(
