@@ -5,6 +5,9 @@ import argparse
 import json
 import datetime
 import math
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -25,9 +28,14 @@ def load_rentals_file(filename):
 def calculate_additional_fields(data):
     for value in data.values():
         try:
+            logging.info("Called with value: {}".format(value))
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+            logging.debug('Rental start: {}'.format(value['rental_start']))
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+            logging.debug('Rental ends: {}'.format(value['rental_end']))
             value['total_days'] = (rental_end - rental_start).days
+            logging.debug('Total days: {:d}'.format(value['total_days']))
+            #program exits if total days is negative; end date is before start date
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
