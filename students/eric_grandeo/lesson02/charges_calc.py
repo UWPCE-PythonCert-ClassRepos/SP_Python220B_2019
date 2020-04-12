@@ -17,12 +17,14 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 
-def load_rentals_file(filename):
-    with open(filename) as file:
-        try:
+def load_rentals_file(filename):    
+    try:
+        with open(filename) as file:
+            logging.debug('JSON file: {}'.format(filename))
             data = json.load(file)
-        except:
-            exit(0)
+    except FileNotFoundError:
+        logging.error("File not found")
+        exit(0)
     return data
 
 def calculate_additional_fields(data):
@@ -35,12 +37,18 @@ def calculate_additional_fields(data):
             logging.debug('Rental ends: {}'.format(value['rental_end']))
             value['total_days'] = (rental_end - rental_start).days
             logging.debug('Total days: {:d}'.format(value['total_days']))
+            if value['total_days'] < 0:
+                logging.warning("Total days must not be negative")
             #program exits if total days is negative; end date is before start date
             value['total_price'] = value['total_days'] * value['price_per_day']
+            logging.debug('Total price: ${:,.2f}'.format(value['total_price']))
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            logging.debug('Square root of total price: {:06.2f}'.format(value['sqrt_total_price']))
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        except:
-            exit(0)
+            logging.debug('Unit cost: ${:,.2f}'.format(value['unit_cost']))
+        except ValueError:
+            #exit(0)
+            logging.error("Total days must not be negative")
 
     return data
 
