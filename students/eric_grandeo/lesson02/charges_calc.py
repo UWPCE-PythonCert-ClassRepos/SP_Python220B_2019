@@ -7,7 +7,27 @@ import datetime
 import math
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
+
+log_format = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
+formatter = logging.Formatter(log_format)
+
+log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.WARNING)
+file_handler.setFormatter(formatter)
+
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_handler.setFormatter(formatter)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+
+
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -38,7 +58,7 @@ def calculate_additional_fields(data):
             value['total_days'] = (rental_end - rental_start).days
             logging.debug('Total days: {:d}'.format(value['total_days']))
             if value['total_days'] < 0:
-                logging.warning("Total days must not be negative")
+                logging.warning("Total days are negative")
             #program exits if total days is negative; end date is before start date
             value['total_price'] = value['total_days'] * value['price_per_day']
             logging.debug('Total price: ${:,.2f}'.format(value['total_price']))
@@ -61,3 +81,4 @@ if __name__ == "__main__":
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
+
