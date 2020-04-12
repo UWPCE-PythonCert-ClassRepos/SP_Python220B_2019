@@ -69,7 +69,7 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
-@logging_level   
+@logging_level
 def load_rentals_file(filename=None):
     """ loads the file in json format from a file and returns it as a json object """
     try:

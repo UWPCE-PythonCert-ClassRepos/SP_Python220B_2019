@@ -2,8 +2,6 @@
 Database
 interacts with the database via files formatted from csv files
 '''
-import sys
-sys.path.append("./hp_norton")
 import logging
 import csv_handler as csvh
 from mongo_connect import *
@@ -13,7 +11,7 @@ import pymongo
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def import_data(directory_name, product_file, customer_file, rental_file, db_queue):
+def import_data(directory_name, product_file, customer_file, rental_file):
     ''' import data from csv files into database to be used in functions '''
     mongo = MongoDBConnection()
     csv_handler = csvh.CsvHandler()
@@ -38,7 +36,6 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
         # generate hpnorton_db
         hpnorton_db = mongo.connection.hpnorton_db
         collection_names = ['product', 'customer', 'rental']
-        thread_list = []
 
         i = 0
         for name in collection_names:
@@ -46,7 +43,7 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
             try:
                 # verify that the file exists first
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
-                    logger.info(f"COLLECTION: {name} from file {directory_name}/{file_names[i]}")
+                    logger.info(f'COLLECTION: {name} from file {directory_name}/{file_names[i]}')
                     documents = csv_handler.generate_document_list(f'{directory_name}/{file_names[i]}', name)
             except FileNotFoundError as error:
                 logger.info(f' File not found {error}!')
