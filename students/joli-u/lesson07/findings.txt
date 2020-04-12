@@ -1,0 +1,152 @@
+***** FINDINGS *****
+
+======================================================
+                     linear.py
+======================================================
+---------------- 1000 records / 1 run ----------------
+cProfile
+customers: (1000, 0, 1000, 0.0780029296875)
+products: (1000, 0, 1000, 0.07498693466186523)
+0.1876185 seconds (1 run)
+         118999 function calls (117458 primitive calls) in 0.319 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       28    0.055    0.002    0.055    0.002 {method 'recv_into' of '_socket.socket' objects}
+      113    0.034    0.000    0.034    0.000 {method 'acquire' of '_thread.lock' objects}
+      101    0.026    0.000    0.026    0.000 {built-in method io.open_code}
+      545    0.025    0.000    0.025    0.000 {built-in method nt.stat}
+        3    0.020    0.007    0.020    0.007 {method 'connect' of '_socket.socket' objects}
+        2    0.011    0.006    0.013    0.007 {built-in method pymongo._cmessage._batched_op_msg}
+     2003    0.009    0.000    0.014    0.000 objectid.py:175(__generate)
+      101    0.009    0.000    0.009    0.000 {built-in method marshal.loads}
+        9    0.009    0.001    0.010    0.001 {built-in method _imp.create_dynamic}
+        2    0.008    0.004    0.011    0.005 linear.py:43(get_data)
+    ...................................... showing top 10 .......................................
+
+==================== Observation =====================
+Honestly not really sure what 90% of these functions 
+really translate to; the only one resulting from my 
+code is from my get_data function which is reading the 
+csv data.
+
+--------------- 1000 records / 5 runs ----------------
+customers: (1000, 0, 1000, 0.07810544967651367)
+products: (1000, 0, 1000, 0.027112483978271484)
+customers: (1000, 0, 1000, 0.06841325759887695)
+products: (1000, 0, 1000, 0.042090654373168945)
+customers: (1000, 0, 1000, 0.042412757873535156)
+products: (1000, 0, 1000, 0.04111671447753906)
+customers: (1000, 0, 1000, 0.04185080528259277)
+products: (1000, 0, 1000, 0.03292536735534668)
+customers: (1000, 0, 1000, 0.04590964317321777)
+products: (1000, 0, 1000, 0.050893306732177734)
+0.6108563 seconds (5 runs)
+
+
+======================================================
+                     parallel.py
+======================================================
+I chose to amend my code for parallel.py using multi-
+threading, using ThreadPoolExecutor. Contention is 
+avoided here through the use of the ThreadPoolexecutor 
+as a context manager which applies a .join() on the 
+threads, ensuring that one thread waits for the other 
+to finish.
+
+---------------- 1000 records / 1 run ----------------
+customers: (1000, 0, 1000, 0.07086062431335449)
+products: (1000, 0, 1000, 0.06398200988769531)
+0.1016021 seconds (1 run)
+
+--------------- 1000 records / 5 runs ----------------
+customers: (1000, 0, 1000, 0.09375)
+products: (1000, 0, 1000, 0.09873580932617188)
+customers: (1000, 0, 1000, 0.04389357566833496)
+products: (1000, 0, 1000, 0.02769327163696289)
+customers: (1000, 0, 1000, 0.03291201591491699)
+products: (1000, 0, 1000, 0.03988146781921387)
+customers: (1000, 0, 1000, 0.056821346282958984)
+products: (1000, 0, 1000, 0.07366156578063965)
+customers: (1000, 0, 1000, 0.05461907386779785)
+products: (1000, 0, 1000, 0.05764460563659668)
+0.5361013 seconds (5 runs)
+
+> This shows a ~12% improvement in performance
+
+
+______________________________________________________
+
+Then I looked at increasing the # of records to import
+
+======================================================
+                25000 records (5 runs)
+======================================================
+
+--------------------- linear.py ----------------------
+customers: (25000, 0, 25000, 0.597191333770752)
+products: (25000, 0, 25000, 0.5496749877929688)
+customers: (25000, 0, 25000, 0.5810272693634033)
+products: (25000, 0, 25000, 0.5351803302764893)
+customers: (25000, 0, 25000, 0.5835328102111816)
+products: (25000, 0, 25000, 0.5200867652893066)
+customers: (25000, 0, 25000, 0.6152439117431641)
+products: (25000, 0, 25000, 0.5854918956756592)
+customers: (25000, 0, 25000, 0.6005122661590576)
+products: (25000, 0, 25000, 0.5521624088287354)
+5.8767323 seconds (5 runs)
+
+-------------------- parallel.py ---------------------
+customers: (25000, 0, 25000, 1.1929025650024414)
+products: (25000, 0, 25000, 1.1729562282562256)
+customers: (25000, 0, 25000, 1.2098917961120605)
+products: (25000, 0, 25000, 1.177976131439209)
+customers: (25000, 0, 25000, 1.0668606758117676)
+products: (25000, 0, 25000, 1.1107220649719238)
+customers: (25000, 0, 25000, 1.2318894863128662)
+products: (25000, 0, 25000, 1.2254679203033447)
+customers: (25000, 0, 25000, 1.0469167232513428)
+products: (25000, 0, 25000, 1.0489113330841064)
+6.009025299999999 seconds (5 runs)
+
+> This shows a slight (-2%) degredation in performance
+
+
+======================================================
+                50000 records (5 runs)
+======================================================
+
+--------------------- linear.py ----------------------
+customers: (50000, 0, 50000, 1.257918357849121)
+products: (50000, 0, 50000, 1.0839333534240723)
+customers: (50000, 0, 50000, 1.2071051597595215)
+products: (50000, 0, 50000, 1.1649549007415771)
+customers: (50000, 0, 50000, 1.2445733547210693)
+products: (50000, 0, 50000, 1.1416306495666504)
+customers: (50000, 0, 50000, 1.1968588829040527)
+products: (50000, 0, 50000, 1.1531414985656738)
+customers: (50000, 0, 50000, 1.2736012935638428)
+products: (50000, 0, 50000, 1.1314334869384766)
+12.0752877 seconds (5 runs)
+
+-------------------- parallel.py ---------------------
+customers: (50000, 0, 50000, 2.0291924476623535)
+products: (50000, 0, 50000, 1.3563768863677979)
+customers: (50000, 0, 50000, 2.6029343605041504)
+products: (50000, 0, 50000, 2.554065227508545)
+customers: (50000, 0, 50000, 2.7701258659362793)
+products: (50000, 0, 50000, 2.6075663566589355)
+customers: (50000, 0, 50000, 1.724421739578247)
+products: (50000, 0, 50000, 2.2791316509246826)
+customers: (50000, 0, 50000, 2.7327797412872314)
+products: (50000, 0, 50000, 2.6290905475616455)
+12.5794788 seconds (5 runs)
+
+> This shows a slight (-4%) degredation in performance
+
+
+==================== Conclusion ======================
+Based on these findings, I would not recommend
+changing to parallel performance due to the little
+to no benefit in performance achieved by doing so. 
