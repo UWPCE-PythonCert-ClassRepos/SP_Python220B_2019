@@ -6,10 +6,10 @@ PY220
 """
 import logging
 import csv
-from pymongo import MongoClient
 import time
 from timeit import timeit
 from concurrent.futures import ThreadPoolExecutor
+from pymongo import MongoClient
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 FORMATTER = logging.Formatter(LOG_FORMAT)
@@ -51,10 +51,13 @@ def get_data(file):
     with open(file, 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for i, row in enumerate(reader):
-            if i==0:
+            if i == 0:
                 header = row
             else:
-                data.append({k: v for k, v in zip(header, row)})
+                # data.append({k: v for k, v in zip(header, row)})
+                for key, val in zip(header, row):
+                    data.append({key: val})
+
     LOGGER.debug("%s: Returning data from file", file[6:])
     return data
 
@@ -115,6 +118,9 @@ def clear_collections():
 
 
 def main():
+    """
+    Main program
+    """
     clear_collections()
     database_list = [("customers", "files/customers.csv"),
                      ("products", "files/products.csv")]

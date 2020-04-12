@@ -15,12 +15,12 @@ def get_data(filename):
     Gets data from csv file
     Returns: List
     """
-    with open(filename, newline='') as f:
-        data = reader(f, delimiter=',')
-        return [[l.strip().title() for l in r] for r in data]
+    with open(filename, newline='') as file:
+        data = reader(file, delimiter=',')
+        return [[line.strip().title() for line in row] for row in data]
 
 
-def create_cust_data(n, firstnames, lastnames, streetnames):
+def create_cust_data(entries, firstnames, lastnames, streets):
     """
     Generates random customer data
     Returns: List
@@ -31,36 +31,43 @@ def create_cust_data(n, firstnames, lastnames, streetnames):
     area_code = (206, 253, 360, 425, 509, 564, 503, 541)
     email_provider = ('gmail', 'hotmail', 'yahoo', 'aol', 'outlook', 'icloud')
 
-    for i in range(1,n+1):
+    for i in range(1, entries+1):
         user_id = "user" + "{:04d}".format(i)
         first_name = random.choice(firstnames)
         last_name = random.choice(lastnames)
         name = first_name + " " + last_name
-        street_number = str(random.randrange(1, 9, 1)) + "".join(["{}".format(random.randint(0,9)) for num in range(0,3)])
-        street_name = random.choice(streetnames) + " " + random.choice(street_type) + " " + random.choice(street_ext)
+        street_number = str(random.randrange(1, 9, 1)) + \
+                        "".join(["{}".format(random.randint(0, 9)) for num in range(0, 3)])
+        street_name = random.choice(streets) + " " + random.choice(street_type) + \
+                      " " + random.choice(street_ext)
         address = street_number + " " + street_name
-        phone_number = str(random.choice(area_code)) + "".join(["{}".format(random.randint(0,9)) for num in range(0,7)])
+        phone_number = str(random.choice(area_code)) + \
+                       "".join(["{}".format(random.randint(0, 9)) for num in range(0, 7)])
         email = first_name + last_name + "@" + random.choice(email_provider) + ".com"
         customer_info.append([user_id, name, address, phone_number, email])
 
     return customer_info
 
 
-def create_prod_data(n):
+def create_prod_data(entries):
     """
     Generates random product data
     Returns: List
     """
     product_info = []
     prod_types = ('livingroom', 'kitchen', 'bedroom')
-    items = ('TV stand', 'L-shaped sofa', 'Sofa', 'Bar stool', 'Stool', 'Bed frame', 'Desk', 'End table', 'Coffee table', 'Book shelf', 'Dresser', 'Dining table', 'Stand')
+    items = ('TV stand', 'L-shaped sofa', 'Sofa', 'Bar stool', 'Stool', 'Bed frame', 'Desk',
+             'End table', 'Coffee table', 'Book shelf', 'Dresser', 'Dining table', 'Stand')
     sizes = ('S', 'M', 'L', 'XL')
-    colors = ('black', 'white', 'silver', 'gold', 'brown', 'blue', 'green', 'red', 'purple', 'bronze')
-    finishes = ('gold', 'platinum', 'lacquer', 'chrome', 'varnish', 'resin', 'oil', 'paint', 'wood', 'bare', 'silver', 'diamonds')
+    colors = ('black', 'white', 'silver', 'gold', 'brown', 'blue', 'green', 'red', 'purple',
+              'bronze')
+    finishes = ('gold', 'platinum', 'lacquer', 'chrome', 'varnish', 'resin', 'oil', 'paint',
+                'wood', 'bare', 'silver', 'diamonds')
 
-    for i in range(1,n+1):
+    for i in range(1, entries+1):
         prod_id = "prod" + "{:04d}".format(i)
-        description = random.choice(items) + "; size: " + random.choice(sizes) + ", color: " + random.choice(colors) + ", finish: " + random.choice(finishes)
+        description = random.choice(items) + "; size: " + random.choice(sizes) + ", color: " \
+                      + random.choice(colors) + ", finish: " + random.choice(finishes)
         prod_type = random.choice(prod_types)
         available = random.randrange(0, 30, 1)
         product_info.append([prod_id, description, prod_type, available])
@@ -91,14 +98,17 @@ def write_data(filename, data):
     header = {'customers': ['user_id', 'name', 'address', 'phone', 'email'],
               'products': ['prod_id', 'description', 'prod_type', 'qty_avail']}
 
-    with open(filename, 'w', newline='') as f:
-        f_writer = writer(f)
+    with open(filename, 'w', newline='') as file:
+        f_writer = writer(file)
         f_writer.writerow(header[filename[6:-4]])
         for line in data:
             f_writer.writerow(line)
 
 
 def main():
+    """
+    Main program
+    """
     n_entries = 1000
 
     # get data from files
