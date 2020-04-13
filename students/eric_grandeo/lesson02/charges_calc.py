@@ -9,7 +9,7 @@ import logging
 
 #logging.basicConfig(level=logging.DEBUG)
 
-log_format = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 formatter = logging.Formatter(log_format)
 
 log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
