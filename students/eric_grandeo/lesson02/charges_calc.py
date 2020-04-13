@@ -17,14 +17,14 @@ file_handler = logging.FileHandler(log_file)
 file_handler.setLevel(logging.WARNING)
 file_handler.setFormatter(formatter)
 
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-console_handler.setFormatter(formatter)
+#console_handler = logging.StreamHandler()
+#console_handler.setLevel(logging.DEBUG)
+#console_handler.setFormatter(formatter)
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
-logger.addHandler(console_handler)
+#logger.addHandler(console_handler)
 
 
 def parse_cmd_arguments():
@@ -51,6 +51,9 @@ def calculate_additional_fields(data):
             logging.info("Called with value: {}".format(value))
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             logging.debug('Rental start: {}'.format(value['rental_start']))
+            #logs a warning if no rental end date is available
+            if value['rental_end'] == '':
+                logging.warning("Missing rental end date")
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             logging.debug('Rental ends: {}'.format(value['rental_end']))
             value['total_days'] = (rental_end - rental_start).days
