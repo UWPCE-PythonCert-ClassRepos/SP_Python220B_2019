@@ -14,23 +14,25 @@ formatter = logging.Formatter(log_format)
 
 log_file = datetime.datetime.now().strftime('%Y-%m-%d') + '.log'
 file_handler = logging.FileHandler(log_file)
-file_handler.setLevel(logging.WARNING)
+#file_handler.setLevel(logging.WARNING)
 file_handler.setFormatter(formatter)
 
-#console_handler = logging.StreamHandler()
+console_handler = logging.StreamHandler()
 #console_handler.setLevel(logging.DEBUG)
-#console_handler.setFormatter(formatter)
+console_handler.setFormatter(formatter)
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+#logger.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
-#logger.addHandler(console_handler)
+logger.addHandler(console_handler)
 
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+    parser.add_argument('-d', '--debug', help="enter desired debug level", required=False, default=0)
+    
 
     return parser.parse_args()
 
@@ -79,6 +81,22 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
+    if args.debug == '0':
+        logger.disabled = True
+    elif args.debug == '1':
+        file_handler.setLevel(logging.ERROR)
+        console_handler.setLevel(logging.ERROR)
+        logger.setLevel(logging.ERROR)
+    elif args.debug == '2': 
+        file_handler.setLevel(logging.WARNING)
+        console_handler.setLevel(logging.WARNING)
+        logger.setLevel(logging.WARNING)
+    elif args.debug == '3':
+        file_handler.setLevel(logging.DEBUG)
+        console_handler.setLevel(logging.DEBUG)
+        logger.setLevel(logging.DEBUG)
+    
+            
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
