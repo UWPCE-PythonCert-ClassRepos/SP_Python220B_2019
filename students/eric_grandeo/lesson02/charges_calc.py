@@ -7,7 +7,6 @@ import datetime
 import math
 import logging
 
-#logging.basicConfig(level=logging.DEBUG)
 
 log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 formatter = logging.Formatter(log_format)
@@ -43,6 +42,7 @@ def load_rentals_file(filename):
             logging.debug('JSON file: {}'.format(filename))
             data = json.load(file)
     except FileNotFoundError:
+        #log an error if file is not found
         logging.error("File not found")
         exit(0)
     return data
@@ -52,25 +52,30 @@ def calculate_additional_fields(data):
         try:
             logging.info("Called with value: {}".format(value))
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+            #logs the rental start date
             logging.debug('Rental start: {}'.format(value['rental_start']))
             #logs a warning if no rental end date is available
             if value['rental_end'] == '':
                 logging.warning("Missing rental end date")
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+            #logs the rental end date
             logging.debug('Rental ends: {}'.format(value['rental_end']))
             value['total_days'] = (rental_end - rental_start).days
             logging.debug('Total days: {:d}'.format(value['total_days']))
             if value['total_days'] < 0:
                 logging.warning("Total days are negative")
-            #program exits if total days is negative; end date is before start date
+            #logs a warning if total days is negative; end date is before start date
             value['total_price'] = value['total_days'] * value['price_per_day']
+            #logs the toal price
             logging.debug('Total price: ${:,.2f}'.format(value['total_price']))
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            #logs square root of total price
             logging.debug('Square root of total price: {:06.2f}'.format(value['sqrt_total_price']))
             value['unit_cost'] = value['total_price'] / value['units_rented']
             logging.debug('Unit cost: ${:,.2f}'.format(value['unit_cost']))
         except ValueError:
-            #exit(0)
+            #logs an error if total days are negative, resulting in attempting to find square
+            #root of a negative number
             logging.error("Total days must not be negative")
 
     return data
@@ -92,7 +97,9 @@ if __name__ == "__main__":
         console_handler.setLevel(logging.WARNING)
         logger.setLevel(logging.WARNING)
     elif args.debug == '3':
-        file_handler.setLevel(logging.DEBUG)
+        #From assignment: Debug: General comments, indicating where in the script flow we are.
+        #Should be shown on screen only (i.e., never saved to logfile).
+        file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.DEBUG)
         logger.setLevel(logging.DEBUG)
     
