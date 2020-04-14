@@ -27,6 +27,8 @@ LOGGER.addHandler(CONSOLE_HANDLER)
 
 
 def parse_cmd_arguments():
+    """Pass in JSON file, name the output file, select level of debug in command line"""
+
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -37,6 +39,8 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 def load_rentals_file(filename):
+    """Open JSON file, log error if not found"""
+
     try:
         with open(filename) as file:
             logging.debug('JSON file: {}'.format(filename))
@@ -48,6 +52,9 @@ def load_rentals_file(filename):
     return data
 
 def calculate_additional_fields(data):
+    """Checking values in JSON, calculating total days,
+       total price, sqrt total price, & unit cost"""
+
     for value in data.values():
         try:
             logging.info("Called with value: {}".format(value))
@@ -88,22 +95,24 @@ def calculate_additional_fields(data):
     return data
 
 def save_to_json(filename, data):
+    """Save new Values to JSON file"""
+
     with open(filename, 'w') as file:
         json.dump(data, file)
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    if args.debug == '0':
+    ARGS = parse_cmd_arguments()
+    if ARGS.debug == '0':
         LOGGER.disabled = True
-    elif args.debug == '1':
+    elif ARGS.debug == '1':
         FILE_HANDLER.setLevel(logging.ERROR)
         CONSOLE_HANDLER.setLevel(logging.ERROR)
         LOGGER.setLevel(logging.ERROR)
-    elif args.debug == '2':
+    elif ARGS.debug == '2':
         FILE_HANDLER.setLevel(logging.WARNING)
         CONSOLE_HANDLER.setLevel(logging.WARNING)
         LOGGER.setLevel(logging.WARNING)
-    elif args.debug == '3':
+    elif ARGS.debug == '3':
         #From assignment: Debug: General comments, indicating where in the script flow we are.
         #Should be shown on screen only (i.e., never saved to logfile).
         FILE_HANDLER.setLevel(logging.WARNING)
@@ -111,7 +120,7 @@ if __name__ == "__main__":
         LOGGER.setLevel(logging.DEBUG)
 
 
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    DATA_1 = load_rentals_file(ARGS.input)
+    DATA_1 = calculate_additional_fields(DATA_1)
+    save_to_json(ARGS.output, DATA_1)
     
