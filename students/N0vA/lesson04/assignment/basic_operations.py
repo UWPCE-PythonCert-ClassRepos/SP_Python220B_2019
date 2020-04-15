@@ -15,8 +15,21 @@ from peewee import *
 from customer_model import *
 
 # Set up logger for program.
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+formatter = logging.Formatter(log_format)
+
+file_handler = logging.FileHandler('db.log')
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(formatter)
+
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_handler.setFormatter(formatter)
+
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+logger.setLevel(logging.INFO)
 
 logger.info('Logger is active.')
 
@@ -43,6 +56,14 @@ def add_customer(customer_id, first_name, last_name,
     except TypeError:
         logger.info('Unable to add customer: %s, %s to the database.  Check input data. ', last_name, first_name)
 
+def add_customers(customers):
+    """Adds a list of customers to the database."""
+
+    logger.info('Adding new customers to database...')
+    new_customers = [add_customer(*customer) for customer in customers]
+    logger.info('New customers upload complete.')
+    return new_customers
+
 def search_customer(customer_id):
     """Search for a customer in the database by customer_id and return their information."""
 
@@ -62,6 +83,13 @@ def search_customer(customer_id):
 
         return {}
 
+def search_customers(customer_ids):
+    """Searchers for a list of customers in the database and returns that list."""
+    logger.info('Searching for customer ids %s', customer_ids)
+    query = [search_customer(customer_id) for customer_id in customer_ids]
+    logger.info('Customer ids found with query.')
+    return query
+
 def delete_customer(customer_id):
     """Deletes a customer from a given customer id."""
 
@@ -74,6 +102,12 @@ def delete_customer(customer_id):
     except IndexError:
         logger.info('Customer ID %s does not exist.  Please try again.', customer_id)
         raise ValueError
+
+def delete_customers(customer_ids):
+    """Deletes customers from database from a list of ids."""
+
+    logger.info('Dewleting customer_ids %s', customer_ids)
+    return [delete_customer(customer_id) for customer_id in customer_ids]
 
 def update_customer_credit(customer_id, credit_limit):
     """Updates the credit limit of a customer found by their customer id."""
