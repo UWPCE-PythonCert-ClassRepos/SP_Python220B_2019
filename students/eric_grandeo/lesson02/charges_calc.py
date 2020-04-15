@@ -118,6 +118,10 @@ if __name__ == "__main__":
         FILE_HANDLER.setLevel(logging.WARNING)
         CONSOLE_HANDLER.setLevel(logging.DEBUG)
         LOGGER.setLevel(logging.DEBUG)
+    else:
+        logging.debug("User entered {}".format(ARGS.debug))
+        logging.error("User must select 0, 1, 2, or 3")
+        raise ValueError
 
 
     DATA_1 = load_rentals_file(ARGS.input)
