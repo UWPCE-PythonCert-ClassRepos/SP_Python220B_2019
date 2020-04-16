@@ -13,14 +13,11 @@ FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setFormatter(FORMATTER)
 FILE_HANDLER.setLevel(logging.INFO)
 
-CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.INFO)
-CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 LOG = logging.getLogger()
+LOG.setLevel(logging.INFO)
 if not LOG.hasHandlers():
     LOG.addHandler(FILE_HANDLER)
-    LOG.addHandler(CONSOLE_HANDLER)
 
 
 class MongoDBConnection():
@@ -66,8 +63,12 @@ def show_rentals(product_id):
                 if people["customer_id"] in rental_people:
                     displayed_items[f"user{len(displayed_items) + 1}"] = people
                     no_doubles_counter = False
+                    LOG.info(f"showing {people}")
                 elif rental_people in people["customer_id"] and no_doubles_counter:
                     displayed_items[f"user{len(displayed_items) + 1}"] = people
+                    LOG.info(f"showing {people}")
+                else:
+                    LOG.info("no customer found")
         return displayed_items
 
 
