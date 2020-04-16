@@ -63,14 +63,14 @@ class TestBasicOperations(TestCase):
         """Tests adding multiple customers to database iteration through list."""
 
         c_1 = [20015, 'Baby', 'Driver', '823 Main St, Atlanta, GA', '678-110-5552',
-              'baby@me.com', 2000, False]
+               'baby@me.com', 2000, False]
         c_2 = [6007, 'James', 'Bond', '1 MI6 Way, London, UK', '100-007-1111', 'bond@agent.com',
                100000, False]
         c_3 = [41675, 'Tom', 'Petty', '13 Venice Blvd, Los Angeles, CA', '714-630-5528',
                'tomp@hotmail.com', 13000, True]
 
-        new_customers = add_customers([c_1, c_2, c_3])
-        
+        add_customers([c_1, c_2, c_3])
+
         customer_1 = Customer.get(Customer.customer_id == 20015)
         customer_2 = Customer.get(Customer.customer_id == 6007)
         customer_3 = Customer.get(Customer.customer_id == 41675)
@@ -131,7 +131,7 @@ class TestBasicOperations(TestCase):
         """Tests a list of customers will be deleted from the database."""
 
         ids = [37431, 18720, 700459]
-        query = delete_customers(ids)
+        delete_customers(ids)
 
         e_1 = search_customer(37431)
         self.assertEqual(e_1, {})
@@ -150,6 +150,13 @@ class TestBasicOperations(TestCase):
         # Test breaks with invalid customer ID
         with self.assertRaises(DoesNotExist):
             update_customer_credit(12345, 1000)
+
+    def test_list_customers(self):
+        """Tests if a list is created of customers in the database."""
+
+        customer_list = list_customers()
+        expected = [('Ballmer, Steve'), ('Gates, Bill'), ('Alderson, Elliot')]
+        self.assertEqual(expected, customer_list)
 
     def test_list_active_customers(self):
         """Tests if function works with listing numbe of active customers."""

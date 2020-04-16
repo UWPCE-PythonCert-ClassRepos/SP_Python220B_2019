@@ -122,6 +122,15 @@ def update_customer_credit(customer_id, credit_limit):
     except IndexError:
         logger.info('Customer ID %s does not exist. Please enter valid customer ID.', customer_id)
 
+def list_customers():
+    """Returns a list of customers in the database."""
+
+    logger.info('Printing out a list of customers...')
+    query = Customer.select()
+    customer_names = [f'{customer.last_name}, {customer.first_name}' for customer in query]
+
+    return customer_names
+
 def list_active_customers():
     """Function that returns an integer of the number of active customers."""
 
