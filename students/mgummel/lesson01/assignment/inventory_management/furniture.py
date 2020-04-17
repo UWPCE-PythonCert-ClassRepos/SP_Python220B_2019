@@ -2,7 +2,7 @@
 Creates a furniture object to be added to the inventory.
 """
 
-from inventory import Inventory
+from .inventory import Inventory
 
 
 class Furniture(Inventory):
