@@ -1,0 +1,113 @@
+# Function for calculate_additional_fields(data) is throwing exception
+# Exception occurs at sqrt_total_price since total days is negative.
+# Goes to except of error handling routine due to negative and exits with system code of 0
+# Open JSON File and first row has a start date greater than the end date.
+# Assume this is due to rental items that are not returned
+# Handle rentals that are not returned (If Start > End read value and log it)
+
+#Stepped into calculate_additional_fields function from the if __name__ == "__main__":
+
+ 30     def calculate_additional_fields(data):
+ 31         for value in data.values():
+ 32             try:
+ 33                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 34                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 35                 value['total_days'] = (rental_end - rental_start).days
+ 36                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 37                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 38                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 39  ->         except:
+ 40                 exit(0)
+ 41
+ 42         return data
+#Negative Number for total_days and total_price
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'total_days': -82,
+ 'total_price': -2542,
+ 'units_rented': 8}
+
+#Exit 0 due to square root of a negative number and goes to except routine
+(Pdb) n
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
+-> exit(0)
+
+#Except routine return error code of 0
+(Pdb) n
+SystemExit: 0
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()
+-> exit(0)
+
+(Pdb) n
+--Return--
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(40)calculate_additional_fields()->None
+-> exit(0)
+
+(Pdb) n
+SystemExit: 0
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()
+-> data = calculate_additional_fields(data)
+
+(Pdb) n
+--Return--
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(51)<module>()->None
+-> data = calculate_additional_fields(data)
+
+(Pdb) n
+SystemExit: 0
+> <string>(1)<module>()->None
+
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+
+(Pdb) n
+The program exited via sys.exit(). Exit status: 0
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(7)<module>()
+-> '''
+
+#Here is an example of the record with a rental_start > rental_end
+{
+  "RNT001": {
+    "product_code": "PRD80",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "6/12/17",
+    "rental_end": "3/22/17"
+  },
+
+#The second exception thrown is for null values for rental_start or rental_end
+#Added a condition since the next value error wasn't related to a negative total days
+#Added break point at exception and total days greater than zero
+#PP Showed me value and searched source.json
+#Value error due to blank rental_end
+
+(Pdb) b 39
+Breakpoint 1 at c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py:39
+(Pdb) condition value['total_days'] > 0
+*** Non-numeric breakpoint number value['total_days']
+(Pdb) condition 1 value['total_days'] >= 1
+New condition set for breakpoint 1.
+(Pdb) c
+> c:\....\github\sp_python220b_2019\students\j_virtue\lesson02\assignment\code\charges_calc.py(39)calculate_additional_fields()
+-> except ValueError:
+(Pdb) pp value
+{'price_per_day': 14,      
+ 'product_code': 'PRD70',  
+ 'rental_end': '',
+ 'rental_start': '6/19/16',
+ 'units_rented': 1}
+(Pdb)                
+
+#Here is the record throwing the exception
+ "RNT776": {
+    "product_code": "PRD70",
+    "units_rented": 1,
+    "price_per_day": 14,
+    "rental_start": "6/19/16",
+    "rental_end": ""
+  },
+

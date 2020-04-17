@@ -3,10 +3,11 @@
 # pylint: disable=unused-wildcard-import
 # pylint: disable=wildcard-import
 # pylint: disable=too-many-arguments
-# pylint: disable=broad-except
 
 import logging
+from peewee import *
 from src.customer_model import Customers
+
 
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 LOG_FILE = "db.log"
@@ -52,7 +53,7 @@ def add_customer(
             credit_limit=credit_limit,
         )
         LOGGER.info("Added new customer %s %s to database", name, last_name)
-    except Exception as e_val:
+    except IntegrityError as e_val:
         LOGGER.warning("Customer %s already exists", customer_id)
         LOGGER.warning(e_val)
 
@@ -73,7 +74,7 @@ def search_customer(customer_id):
         }
         LOGGER.info("Returning: {data}")
         return data
-    except Exception as e_val:
+    except (IntegrityError, DoesNotExist) as e_val:
         LOGGER.warning("No customer: %s", customer_id)
         LOGGER.warning(e_val)
         return {}
@@ -88,7 +89,7 @@ def delete_customer(customer_id):
         db_customer = Customers.get(Customers.customer_id == customer_id)
         db_customer.delete_instance()
         LOGGER.info("Customer %s deleted", customer_id)
-    except Exception as e_val:
+    except DoesNotExist as e_val:
         LOGGER.warning(
             "Customer %s does not exist: Delete operation ignored", customer_id
         )
@@ -108,7 +109,7 @@ def update_customer_credit(customer_id, credit_limit):
         LOGGER.info(
             "Successfully changed %s credit limit to %.2f", customer_id, credit_limit
         )
-    except Exception as e_val:
+    except DoesNotExist as e_val:
         LOGGER.warning("Error updating %s credit limit", customer_id)
         LOGGER.warning(e_val)
 
