@@ -1,0 +1,25 @@
+Results
+
+1,000 records:
+import_data: 1.302901
+show_available_products: 0.020768
+show_rentals: 0.015923
+
+10,000 records:
+import_data: 16.417480
+show_available_products: 0.204350
+show_rentals: 0.352655
+
+100,000 records:
+import_data: 96.704482
+show_available_products: 0.506888
+show_rentals: 5.588447
+
+
+The bottleneck seems to be with importing the data, as shown by the results above. Each time
+the number of records goes up an order of magnitude, so does the time it takes to import
+them. The functions to show the available products and rentals also increase the time it
+takes to process them as the number of records increase, but they still run relatively
+quick, particularly the show available products function. If the number of records continues
+to increase, the show rentals function could potentially turn into a bottleneck, but not 
+nearly as significant as the import data bottleneck. 
