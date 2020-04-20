@@ -26,7 +26,7 @@ class TestDatabase(TestCase):
     def test_show_available_products(self):
         """ Tests function to show available product data """
         expected = {"prd001": {"desc": "60-inch TV stand", "prod_type": "livingroom", \
-                    "qty_avail": "3"}, "prd002": {"desc": "L-shaped sofa",  "prod_type": \
+                    "qty_avail": "3"}, "prd002": {"desc": "L-shaped sofa", "prod_type": \
                     "livingroom", "qty_avail": "1"}, "prd003": {"desc": "Bar stool", \
                     "prod_type": "kitchen", "qty_avail": "10"}, "prd004": {"desc": \
                     "Bed frame", "prod_type": "bedroom", "qty_avail": "3"}, "prd005": \
