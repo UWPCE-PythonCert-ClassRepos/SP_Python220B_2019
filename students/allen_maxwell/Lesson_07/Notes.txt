@@ -1,0 +1,59 @@
+Assignment 7 notes:
+
+Summary:
+The linear and parallel runtimes below are using files with 1000 records each. The second parallelization approach, having the best of the two 
+approaches, is a little slower than the linear approach. Contention is possible with either approach but it should be minimized since the collections 
+do not depend on each other.
+
+Conclusion:
+Based on the reported performance reports, the recommendation would be to retain the linear approach until higher traffic or larger data loads are anticipated.
+
+
+Data Results:
+
+Initial Linear test:
+-updated lesson 5 database.py for data_import() to return new data requirements (records processed, 
+ initial record count, final record count, elapse time)
+-added 1000 records to customer.csv and product.csv to run  testing.
+
+Results:
+Database   Proc  Int Ct  End Ct  Elapse Time
+.............................................
+.............................................
+Products : 1000,    0,    1000,  35.8998775ms
+Customers: 1000,    0,    1000,  28.8410187ms
+.............................................
+Total Time  :  64.7408962ms
+Average Time:  32.3704481ms
+*The result was not too bad, but let's compare it to parallelization
+
+
+First approach for parallelization:
+-updated import_data() 
+-using threading in a for loop 
+-added a queue to import_csv() to pass the data
+
+Results:
+Database   Proc  Int Ct  End Ct  Elapse Time
+..............................................
+Products : 1000,    0,    1000,  52.6511669ms
+Customers: 1000,    0,    1000,  65.2589798ms
+.............................................
+Total Time  : 117.9101467ms
+Average Time:  58.9550734ms
+*The performance is terrible and the singular queue (with FIFO) makes it difficult to control which database is represented. 
+
+
+Second approach for parallelization:
+-updated the import_data()  
+-Removed the for loop and processed the threading sequentially 
+
+Results:
+Database   Proc  Int Ct  End Ct  Elapse Time
+.............................................
+Products : 1000,    0,    1000,  46.2288857ms
+Customers: 1000,    0,    1000,  30.9488773ms
+.............................................
+Total Time  :  77.1777630ms
+Average Time:  38.5888815ms
+* The performance was not an improvement from the linear approach.
