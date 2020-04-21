@@ -1,0 +1,62 @@
+Report on Assignment 6 run time performance:
+
+1) As a baseline the initial poor_perf.py run was:
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 105062, '2018': 0}
+	R- 'ao' was found 333391 times
+	R- Average time : 3.530718 seconds (an average of 10 runs)
+	R- 1039475 function calls (1039458 primitive calls)
+
+	C- Pretty slow looking into improvements for function calls and run time.
+
+2) Changed the for loop (ln 28-40) to utilized elif instead of if staements and corrected '2018' result placement:
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 333391 times
+	R- Average time : 3.501837 seconds (an average of 10 runs)
+	R- 1039475 function calls (1039458 primitive calls)
+
+	C- Extremely minimal inprovement in run time but the 2017 and 2018 counts are corrected.
+
+3) After removing the second redundant open csvfile for loop (ln 44-45):
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 0 times
+	R- Average time : 2.126102 seconds (an average of 10 runs)	
+	R- 1020372 function calls (1020355 primitive calls)
+
+	C- Significant improved in run time performance but lost the 'ao' count.	
+
+4) Removed second reader loop (ln 49-52):
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 0 times
+	R- Average time : 2.216834 seconds (an average of 10 runs)
+	R- 1020370 function calls (1020353 primitive calls)
+
+	C- Slight loss in run time perfomance and still don't have any 'ao' count.
+
+5) removed first reader loop (ln 14-17), updated for loop (ln 28-40) and added if statment for 'ao':
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 333391 times
+	R- Average time : 1.725936 seconds (an average of 10 runs)
+	R- 20370 function calls (20353 primitive calls)
+
+	C- Significant improvement in run time performance, reduction in function calls and 'ao' count has returned.
+
+6) Streamlined the remaining for loop:
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 333391 times
+	R- Average time : 1.498911 seconds (an average of 10 runs)
+	R- 20370 function calls (20353 primitive calls)
+
+	C- Yet a little better performance.
+
+7) Removed Main():
+	R- {'2013': 52377, '2014': 52509, '2015': 52463, '2016': 52480, '2017': 52564, '2018': 52498}
+	R- 'ao' was found 333391 times
+	R- Average time : 1.464704 seconds (an average of 10 runs)
+	R- 20369 function calls (20352 primitive calls)
+
+	C- Minimal run time performance improvement and a single function call improvement.
+
+fINAL Conclusion:
+From the initial timing of 3.530718 seconds and 1,039,475 function calls to the final timing of 1.510215 seconds and 20,369 function calls. 
+The reduction in run time was 58% and the function calls was 98%. Minimizing and streamlining the loops were the greatest leaps to reducing 
+the run time and number of function calls.

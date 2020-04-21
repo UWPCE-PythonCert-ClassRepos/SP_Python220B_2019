@@ -47,14 +47,13 @@ def create_reader(csv_file):
     except FileNotFoundError:
         logger.info(f'provided file {csv_file} does not exist')
 
-
 def single_customer(customer_name, invoice_file):
     ''' outter function that takes a customer and csv file '''
     def invoice(rental_file):
         rental_reader = create_reader(rental_file)
         for row in rental_reader:
             add_furniture(invoice_file, customer_name, row[0], row[1], row[2])
-            
+  
     return invoice
 
 if __name__ == "__main__":

@@ -1,0 +1,175 @@
+# charges_calc_debugging.log
+
+# logging all the information of debugging the 'charges_calc.py'.
+
+####################
+1. run the code
+####################
+py charges_calc.py -i source.json -o out.json
+
+Doesn't get the output file 'out.json'
+
+################################
+2. start to debugging the code.
+################################
+2.1 py -m pdb charges_calc.py -i source.json -o out.json
+
+2.2 set breakpoint at each function called in main()
+(Pdb)  break 46
+(Pdb)  break 47
+(Pdb)  break 48
+(Pdb)  break 49
+
+2.3 using 'c' command to go to first breakpoint.
+(Pdb) c
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02
+\assignment\code\charges_calc.py(46)<module>()
+-> args = parse_cmd_arguments()
+
+2.4 step into the function 'parse_cmd_arguments()'
+(Pdb) s
+--Call--
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+
+2.5 using command 'n' to go to the end of the function.
+-> return parser.parse_args()
+
+2.6 using command 'display' to show the return value of 'parser.parse_args()'
+(Pdb) display parser.parse_args()
+display parser.parse_args(): Namespace(input='source.json', output='out.json')
+Everything looks fine.
+
+2.7 using command 'c' to go to the second breakpoint
+-> data = load_rentals_file(args.input)
+
+2.8 step in the function 'load_rentals_file()'
+(Pdb) s
+--Call--
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(17)load_rentals_file()
+-> def load_rentals_file(filename):
+
+2.9 check the filename.
+(Pdb) filename
+'source.json'
+
+2.10 using command 'n' to go to the following line and check the variable 'data'
+-> return data
+(Pdb) data
+data looks good.
+
+2.11 using command 'n' go to next function 'calculate_additional_fields'
+(Pdb) n
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(48)<module>()
+-> data = calculate_additional_fields(data)
+
+2.12 step in the function
+(Pdb) s
+--Call--
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+
+2.13 list a few code and set breakpoint at line 27
+(Pdb) l
+(Pdb) break 27
+
+2.14 using command 'n' to pass next two lines.
+(Pdb) n
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'],
+(Pdb) n
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(29)calculate_additional_fields()
+-> '%m/%d/%y')
+
+2.15 check 'rental_start' variable
+(Pdb) rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+
+2.16 using command 'n' to pass next two lines and then check
+'rental_end' variable
+(Pdb) rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+
+-- NOTE: SOMETING WRONG!, the end date is earlier than the start date --
+2.17 check the value['total_days'] and value['total_price']
+(Pdb) value['total_days']
+-82
+(Pdb) value['total_price']
+-2542
+
+2.18 if we using 'n' to execute the next line:
+'value['sqrt_total_price'] = math.sqrt(value['total_price'])'
+You will see there is a 'ValueError: math domain error'.
+Because sqrt() can not has negative number as argument.
+So the code goes to the 'except' part.
+In the 'except' part, we see the 'exit(0)', which means
+a clean exit without any errors / problems.
+So the code just exit the execution normally without even
+calling the next output function 'save_to_json()'.
+Therefore, we can't find the output file 'out.json'.
+
+-- FIX THE BUG by replace the original code:
+value['total_days'] = (rental_end - rental_start).days
+-- with
+value['total_days'] = abs((rental_end - rental_start).days)
+
+3.0 Continue the code execute by command 'c'
+(Pdb) c
+The program exited via sys.exit(). Exit status: 0
+The code exit execution again.
+
+3.1 set the breakpoint at "except" line in function
+'calculate_additional_fields()'
+(Pdb) break 38
+Then disable the previous breakpoint 1, 2, 3,
+(Pdb) disable 1 2 3
+Continue to the breakpoint 5 which is before 'exit(0)' inside except.
+(Pdb) c
+> c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\lesson02\
+assignment\code\charges_calc.py(38)calculate_additional_fields()
+-> exit(0)
+
+3.2 Now check the content of variable 'value'
+(Pdb) value
+{'product_code': 'PRD70', 'units_rented': 1, 'price_per_day': 14,
+'rental_start': '6/19/16', 'rental_end': ''}
+
+-- NOTE:SOMETING WRONG!, the value of key 'end date' is empty. --
+if we try to see the result of 'datetime.datetime.strptime(value['rental_end'],
+'%m/%d/%y')', it will show the following error message.
+ '*** SyntaxError: EOL while scanning string literal'
+
+-- FIX THE BUG by the following code:
+if (value['rental_start'] == '' or value['rental_end'] == ''):
+     rental_start = datetime.datetime(2016, 6, 9, 0, 0)
+     rental_end = datetime.datetime(2016, 6, 9, 0, 0)
+else:
+     rental_start = datetime.datetime.strptime(value['rental_start'],
+                                                  '%m/%d/%y')
+     rental_end = datetime.datetime.strptime(value['rental_end'],
+                                                '%m/%d/%y')
+value['total_days'] = abs((rental_end - rental_start).days)
+value['total_price'] = value['total_days'] * value['price_per_day']
+value['sqrt_total_price'] = math.sqrt(value['total_price'])
+value['unit_cost'] = value['total_price'] / value['units_rented']
+
+4.0 Continue the code by 'c'
+File "c:\users\owner\pythonuw_dr\sp_python220b_2019\students\zhen_yang\
+lesson02\assignment\code\charges_calc.py", line 48, in calculate_additional_fields
+   value['unit_cost'] = value['total_price'] / value['units_rented']
+ZeroDivisionError: division by zero
+
+display the value of 'value['units_rented']'
+(Pdb) value['units_rented']
+0
+-- NOTE: SOMETING WRONG!, the value of key 'units_rented' is 0. --
+
+-- FIX THE BUG by the following code:
+if value['units_rented'] == 0:
+          value['units_rented'] = 1

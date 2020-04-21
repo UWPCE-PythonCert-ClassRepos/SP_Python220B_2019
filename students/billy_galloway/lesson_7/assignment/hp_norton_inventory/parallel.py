@@ -52,7 +52,7 @@ def import_data(directory_name, product_file, customer_file, rental_file, db_que
                 if os.path.isfile(f'{directory_name}/{file_names[i]}'):
                     logger.info(f"COLLECTION: {name} from file {directory_name}/{file_names[i]}")
                     generate_thread = threading.Thread(target=csv_handler.generate_document_list,
-                                                    args=[f'{directory_name}/{file_names[i]}', name, db_queue])
+                                                       args=[f'{directory_name}/{file_names[i]}', name, db_queue])
                     # start thread and append 
                     # threads to the list
                     generate_thread.start()

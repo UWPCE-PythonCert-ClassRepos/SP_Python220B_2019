@@ -1,0 +1,251 @@
+***** NOTES *****
+
+INITIAL RUN (BASE)
+--------------------
+
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+24.1288211 seconds (3 runs)
+
+         3116522 function calls (3116497 primitive calls) in 24.134 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+     12/4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+       88    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(_requires_builtin_wrapper)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:406(spec_from_loader)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+      8/4    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:650(_load_unlocked)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:746(create_module)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:754(exec_module)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:771(is_package)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+        8    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+      8/4    0.000    0.000    0.005    0.001 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+      8/4    0.000    0.000    0.005    0.001 <frozen importlib._bootstrap>:986(_find_and_load)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1010(path_stats)
+       20    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1265(_path_importer_cache)
+        4    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1302(_get_spec)
+        4    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1334(find_spec)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1426(_get_spec)
+       16    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:294(cache_from_source)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:424(_get_cached)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:456(_check_name_wrapper)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:493(_classify_pyc)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_unpack_uint32)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:526(_validate_timestamp_pyc)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:578(_compile_bytecode)
+       80    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_join)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:629(spec_from_file_location)
+       80    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:64(<listcomp>)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_path_split)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:774(create_module)
+        4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap_external>:777(exec_module)
+       24    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:80(_path_stat)
+        4    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:849(get_code)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:90(_path_is_mode_type)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:939(__init__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:964(get_filename)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:969(get_data)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:99(_path_isfile)
+        1    0.000    0.000    0.000    0.000 <timeit-src>:2(<module>)
+        1    0.214    0.214   24.129   24.129 <timeit-src>:2(inner)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:1(<module>)
+        6    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
+        6    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+       16    0.000    0.000    0.000    0.000 cp1252.py:18(encode)
+    57300    0.040    0.000    1.221    0.000 cp1252.py:22(decode)
+        1    0.000    0.000    0.000    0.000 csv.py:130(DictWriter)
+        1    0.000    0.000    0.000    0.000 csv.py:165(Sniffer)
+        1    0.000    0.000    0.000    0.000 csv.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 csv.py:23(Dialect)
+        1    0.000    0.000    0.000    0.000 csv.py:54(excel)
+        1    0.000    0.000    0.000    0.000 csv.py:64(excel_tab)
+        1    0.000    0.000    0.000    0.000 csv.py:69(unix_dialect)
+        1    0.000    0.000    0.000    0.000 csv.py:80(DictReader)
+        1    0.000    0.000    0.001    0.001 datetime.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 datetime.py:1141(tzinfo)
+        1    0.000    0.000    0.000    0.000 datetime.py:1211(time)
+        2    0.000    0.000    0.000    0.000 datetime.py:1236(__new__)
+        1    0.000    0.000    0.000    0.000 datetime.py:1558(datetime)
+        3    0.000    0.000    0.000    0.000 datetime.py:1566(__new__)
+        1    0.000    0.000    0.000    0.000 datetime.py:2179(timezone)
+        3    0.000    0.000    0.000    0.000 datetime.py:2199(_create)
+       35    0.000    0.000    0.000    0.000 datetime.py:379(_check_int_field)
+        3    0.000    0.000    0.000    0.000 datetime.py:41(_days_before_year)
+        5    0.000    0.000    0.000    0.000 datetime.py:411(_check_date_fields)
+        5    0.000    0.000    0.000    0.000 datetime.py:424(_check_time_fields)
+        5    0.000    0.000    0.000    0.000 datetime.py:441(_check_tzinfo_arg)
+        5    0.000    0.000    0.000    0.000 datetime.py:46(_days_in_month)
+        1    0.000    0.000    0.000    0.000 datetime.py:469(timedelta)
+       12    0.000    0.000    0.000    0.000 datetime.py:488(__new__)
+        2    0.000    0.000    0.000    0.000 datetime.py:661(__neg__)
+        1    0.000    0.000    0.000    0.000 datetime.py:789(date)
+        2    0.000    0.000    0.000    0.000 datetime.py:819(__new__)
+        1    0.000    0.000   24.134   24.134 poor_perf.py:1(<module>)
+        3   22.265    7.422   23.915    7.972 poor_perf.py:10(analyze)
+        1    0.000    0.000   24.129   24.129 poor_perf.py:60(main)
+        1    0.000    0.000    0.000    0.000 timeit.py:100(__init__)
+        1    0.000    0.000   24.129   24.129 timeit.py:162(timeit)
+        1    0.000    0.000   24.129   24.129 timeit.py:229(timeit)
+        1    0.000    0.000    0.000    0.000 timeit.py:3(<module>)
+        2    0.000    0.000    0.000    0.000 timeit.py:78(reindent)
+        1    0.000    0.000    0.000    0.000 timeit.py:82(Timer)
+       22    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x6CB8A7D0}
+    57300    1.181    0.000    1.181    0.000 {built-in method _codecs.charmap_decode}
+       16    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_encode}
+        6    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        3    0.000    0.000    0.000    0.000 {built-in method _csv.register_dialect}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+       32    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.create_builtin}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
+        8    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+       32    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        6    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+       16    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       16    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+       96    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.compile}
+       60    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
+      6/1    0.000    0.000   24.134   24.134 {built-in method builtins.exec}
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      227    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+       12    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 {built-in method gc.disable}
+        1    0.000    0.000    0.000    0.000 {built-in method gc.enable}
+        1    0.000    0.000    0.000    0.000 {built-in method gc.isenabled}
+        4    0.001    0.000    0.001    0.000 {built-in method io.open_code}
+        6    0.001    0.000    0.002    0.000 {built-in method io.open}
+        4    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        6    0.000    0.000    0.000    0.000 {built-in method now}
+       12    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+        4    0.000    0.000    0.000    0.000 {built-in method nt.getcwd}
+       24    0.001    0.000    0.001    0.000 {built-in method nt.stat}
+        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+  3000012    0.427    0.000    0.427    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        4    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       16    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       88    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       40    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {method 'rsplit' of 'str' objects}
+      168    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        1    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+
+
+INITIAL OBSERVATIONS
+--------------------
+Ignoring the use of timeit, there seems to be alot of time spent on char decoding and append list objects. 
+Not sure the former can be helped, but the latter can. Also not sure why, but there are an extra 4 calls 
+to list objects from number of rows in data. Either way, even though I generated data starting from 2010,
+there *should* be entries containing dates prior to 2012 which means the if statement isn't being
+correctly evaluated since it's appending every row.
+
+
+CODE IMPROVEMENTS
+--------------------
+=== #1 ===
+Changing the if statment from: "lrow[5] > '00/00/2012'" to "lrow[5][6:] >= '2012'"
+Also not sure if this is right or wrong, but it looks like the datetime module isn't being used for 
+anything so I'm taking this out too:
+
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+21.194822900000002 seconds (3 runs)
+
+Not much improvement..
+
+
+=== #2 ===
+There's no need for a list to be created for each row read from the file. Deleting just the following lines:
+    "lrow = list(row)" and "lrow = list(line)"
+
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+19.433586599999998 seconds (3 runs)
+
+Not really much improvement here either.
+
+
+=== #3 ===
+There's no reason for the file to be opened twice. Leaving code as is, but combining under one file open:
+    Moving "if 'ao'" statement before "if row[5][6:]":
+
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+12.1764573 seconds (3 runs)
+
+Pretty significant improvement.
+
+
+=== #4 ===
+No need for appending the id and date for each row to then be evaluated with a bunch of if statements to
+add to the dict. Realized that the if > 2012 is useless too, so updating this and the year dict count 
+directly:
+    Replacing "if row[5][6:] > '2012':" with "if row[5][6:] in year_count"
+    Replacing "new_ones.append((row[5], row[0]))" with "year_count[row[5][6:]]+=1"
+    (And deleting the series of if statements to update year count)
+    
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+{'2013': 99979, '2014': 99637, '2015': 99921, '2016': 100658, '2017': 99708, '2018': 99957}
+'ao' was found 332843 times
+8.705429 seconds (3 runs)
+
+
+CONCLUSION
+--------------------
+The changes implemented into 'good_perf.py' as noted above resulted in a ~64% reduction in run time 
+(and significantly less lines of code)

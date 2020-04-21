@@ -1,0 +1,996 @@
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT001 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT006 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT007 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT008 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT009 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT010 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT011 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT012 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT014 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT016 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT017 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT018 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT019 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT020 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT021 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT025 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT026 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT028 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT030 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT031 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT034 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT040 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT041 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT044 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT045 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT046 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT047 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT048 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT050 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT056 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT058 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT060 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT061 rental_start date > end date
+04/20/2020 10:44:50 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:50 AM charges_calc.py:111 ERROR Item:RNT062 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT065 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT067 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT071 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT074 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT076 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT077 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT079 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT084 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT086 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT087 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT089 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT092 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT095 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT097 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT099 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT100 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT101 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT102 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT103 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT104 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT105 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT106 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT107 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT109 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT114 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT115 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT116 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT118 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT119 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT120 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT121 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT122 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT123 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT125 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT129 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT130 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT135 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT139 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT141 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT142 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT143 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT145 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT148 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT149 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT151 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT154 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT155 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT157 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT158 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT160 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT163 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT164 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT166 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT167 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT168 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT169 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT170 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT175 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT178 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT179 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT180 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT183 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT184 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT187 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT189 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT192 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT195 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT196 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT197 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT201 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT202 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT207 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT208 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT210 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT214 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT216 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT217 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT218 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT221 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT223 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT224 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT225 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT227 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT229 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT233 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT234 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT236 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT238 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT241 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT242 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT243 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT244 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT246 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT247 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT254 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT258 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT259 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT260 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT261 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT264 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT265 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT270 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT271 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT272 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT274 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT277 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT282 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT283 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT288 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT290 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT295 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT296 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT298 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT299 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT300 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT301 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT302 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT303 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT304 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT305 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT306 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT308 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT309 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT310 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT311 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT312 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT313 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT314 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT315 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT316 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT320 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT321 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT324 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT325 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT331 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT335 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT336 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT337 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT339 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT343 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT345 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT346 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT347 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT352 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT353 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT355 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT356 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT361 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT363 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT364 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT366 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT371 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT372 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT374 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT376 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT379 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT381 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT383 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT384 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT386 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT387 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT388 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT391 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT392 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT394 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT395 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT397 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT400 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT405 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT408 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT409 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT412 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT413 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT414 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT416 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT421 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT422 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT423 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT424 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT427 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT428 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT430 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT435 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT436 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT440 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT443 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT445 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT446 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT447 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT449 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT451 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT453 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT454 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT457 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT461 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT462 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT463 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT465 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT467 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT472 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT476 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT480 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT485 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT487 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT489 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT490 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT491 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT493 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT495 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT496 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT497 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT501 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT503 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT507 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT508 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT509 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT512 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT513 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT514 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT515 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT516 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT517 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT518 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT520 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT522 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT524 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT525 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT528 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT532 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT533 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT535 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT536 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT537 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT538 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT539 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT541 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT544 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT545 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT546 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT548 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT550 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT551 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT555 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT558 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT561 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT562 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT566 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT569 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT570 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT572 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT575 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT580 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT582 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT585 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT586 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT587 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT590 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT591 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT592 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT593 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT595 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT597 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT598 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT599 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT601 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT602 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT603 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT604 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT605 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT606 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT611 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT613 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT615 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT622 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT626 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT630 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT632 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT633 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT634 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT636 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT638 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT639 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT640 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT642 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT643 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT647 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT648 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT649 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT651 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT653 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT656 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT659 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT662 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT663 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT664 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT665 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT667 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT668 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT670 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT671 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT674 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT677 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT678 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT679 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT682 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT684 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT688 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT691 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT692 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT694 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT695 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT698 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT702 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT703 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT704 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT706 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT709 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT711 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT712 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT715 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT717 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT719 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT721 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT722 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT725 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT726 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT729 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT731 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT732 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT733 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT740 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT745 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT746 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT748 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT750 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT751 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT753 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT756 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT757 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT759 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT766 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT770 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT772 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT773 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT774 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:88  WARNING Missing element in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:89  WARNING Item:RNT776 rental_end date is empty!
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT778 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT779 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT782 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT783 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT790 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT791 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT794 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT795 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT796 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT803 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT807 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT808 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT809 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT812 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT814 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT815 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT816 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT817 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT818 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT819 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT820 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT822 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT825 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT831 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT835 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT836 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT839 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT840 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT842 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:104 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:105 ERROR Item:RNT843 'units_rented' is zero!
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT843 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT844 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT846 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT847 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT849 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT853 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT855 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT858 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT861 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT863 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT864 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT866 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT867 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT869 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT871 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT873 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT874 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT876 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT879 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT882 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT883 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT884 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT886 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT890 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT892 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT893 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT894 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT895 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT896 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT898 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT901 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT903 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT905 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT909 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT911 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT912 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT914 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT915 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT917 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT918 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT919 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT922 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT924 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT926 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT927 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT928 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT930 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT931 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT932 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT935 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT937 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT938 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT939 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT940 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT942 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT943 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT944 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT946 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT947 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT948 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT949 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT951 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT955 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT956 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT957 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT958 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT959 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT960 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT961 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT962 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT963 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT965 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT967 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT969 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT970 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT971 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT974 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT977 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT979 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT982 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT983 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT985 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT986 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT987 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT989 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT994 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT998 rental_start date > end date
+04/20/2020 10:44:51 AM charges_calc.py:110 ERROR Inconsistency in the source data!
+04/20/2020 10:44:51 AM charges_calc.py:111 ERROR Item:RNT999 rental_start date > end date
