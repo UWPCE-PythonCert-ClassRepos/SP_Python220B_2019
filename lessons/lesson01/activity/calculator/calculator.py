@@ -1,3 +1,6 @@
+""" This module provides a calculator. """
+
+
 from .exceptions import InsufficientOperands
 
 class Calculator(object):
@@ -11,7 +14,8 @@ class Calculator(object):
         self.stack = []
 
     def enter_number(self, number):
-        self.stack.insert(0, number)
+        # self.stack.insert(0, number)
+        self.stack.append(0, number)
 
     def _do_calc(self, operator):
         try:
