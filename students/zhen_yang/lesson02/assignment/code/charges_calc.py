@@ -31,6 +31,7 @@ logger.addHandler(console_handler)
 
 
 def parse_cmd_arguments():
+    """ This function defines the command line arguments """
     logging.debug('-- In parse_cmd_argements():--')
     parser = argparse.ArgumentParser(description='Process some integers.')
     logging.debug('-- Add three options for the program --')
@@ -40,20 +41,21 @@ def parse_cmd_arguments():
     parser.add_argument('-d', '--debug', help='increate debug levels',
                         default=0, type=int, choices=[0, 1, 2, 3])
 
-    args = parser.parse_args()
-    if args.debug == 0:
+    my_args = parser.parse_args()
+    if my_args.debug == 0:
         logger.disabled = True
-    elif args.debug == 1:
+    elif my_args.debug == 1:
         logger.setLevel(logging.ERROR)
-    elif args.debug == 2:
+    elif my_args.debug == 2:
         logger.setLevel(logging.WARNING)
-    else: # args.debug = 3
+    else: # my_args.debug = 3
         logger.setLevel(logging.DEBUG)
     logging.debug('-- return from parse_cmd_argements():--')
     return parser.parse_args()
 
 
 def load_rentals_file(filename):
+    """ This function loads in the input json file. """
     logging.debug('-- In load_rentals_file() --')
     with open(filename) as file:
         try:
@@ -69,15 +71,16 @@ def load_rentals_file(filename):
     return data
 
 def calculate_additional_fields(data):
+    """ This function calculates additional fields for the database. """
     logging.debug('-- In calculate_additional_fields() --')
     for key, value in data.items():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'],
                                                       '%m/%d/%y')
         except ValueError:
-            logging.warning(f"Missing element in the source data!")
+            logging.warning("Missing element in the source data!")
             logging.warning(f"Item:{key} missing rental_start date!")
-            logging.debug(f"Set the dates to default dates.")
+            logging.debug("Set the dates to default dates.")
             rental_start = datetime.datetime(2016, 6, 9, 0, 0)
             rental_end = datetime.datetime(2016, 6, 9, 0, 0)
             continue
@@ -85,9 +88,9 @@ def calculate_additional_fields(data):
             rental_end = datetime.datetime.strptime(value['rental_end'],
                                                     '%m/%d/%y')
         except ValueError:
-            logging.warning(f"Missing element in the source data!")
+            logging.warning("Missing element in the source data!")
             logging.warning(f"Item:{key} rental_end date is empty!")
-            logging.debug(f"Set the dates to default dates.")
+            logging.debug("Set the dates to default dates.")
             rental_start = datetime.datetime(2016, 6, 9, 0, 0)
             rental_end = datetime.datetime(2016, 6, 9, 0, 0)
             continue
@@ -101,15 +104,15 @@ def calculate_additional_fields(data):
                                        value['units_rented'], 2)
         except (ZeroDivisionError, ValueError):
             if value['units_rented'] == 0:
-                logging.error(f"Inconsistency in the source data!")
+                logging.error("Inconsistency in the source data!")
                 logging.error(f"Item:{key} 'units_rented' is zero!")
-                logging.debug(f"Set 'units_rented' to 1.")
+                logging.debug("Set 'units_rented' to 1.")
                 value['units_rented'] = 1
 
             if (rental_end - rental_start).days < 0:
-                logging.error(f"Inconsistency in the source data!")
+                logging.error("Inconsistency in the source data!")
                 logging.error(f"Item:{key} rental_start date > end date")
-                logging.debug(f"using abs() for total_days")
+                logging.debug("using abs() for total_days")
 
             value['total_days'] = abs((rental_end - rental_start).days)
             value['total_price'] = value['total_days'] * value['price_per_day']
@@ -122,6 +125,7 @@ def calculate_additional_fields(data):
     return data
 
 def save_to_json(filename, data):
+    """ This function save the database in .json file."""
     logging.debug('-- In save_to_json() --')
     with open(filename, 'w') as file:
         json.dump(data, file)
@@ -129,6 +133,6 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    old_data = load_rentals_file(args.input)
+    new_data = calculate_additional_fields(old_data)
+    save_to_json(args.output, new_data)
