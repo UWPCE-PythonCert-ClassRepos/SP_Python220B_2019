@@ -3,7 +3,7 @@
 """
 import logging
 from peewee import SqliteDatabase
-from code_dr.customer_model import Customer, database
+from code_dr.customer_model import Customer
 
 
 #set logging configuration
