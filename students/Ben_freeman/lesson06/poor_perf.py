@@ -91,3 +91,4 @@ if __name__ == "__main__":
     init = time.process_time()
     main()
     LOG.info(f'\ntime to run 1 full loop:{time.process_time() - init}')
+    FILE_HANDLER.close()
