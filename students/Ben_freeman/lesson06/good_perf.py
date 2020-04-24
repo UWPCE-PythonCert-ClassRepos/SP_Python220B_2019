@@ -1,14 +1,12 @@
 """
-poorly performing, poorly written module
+goodlyer performing, still poorly written module
 
 """
 
-import datetime
 import csv
 import time
 import logging
 import datetime
-import timeit
 
 
 """logging setup"""
@@ -28,25 +26,32 @@ if not LOGS.hasHandlers():
     LOGS.addHandler(FILE_HANDLER)
 
 
-def year_filter_function(input):
-    return "2019" > input[5][-4:] > "2012"
+def filter_function(input1):
+    """filters"""
+    input2, list_ao, list_year = input1
+    if "2019" > input2[5][-4:] > "2012" and input2[6] == "ao":
+        list_ao.append(input2)
+        list_year.append(input2)
+    elif "2019" > input2[5][-4:] > "2012":
+        list_year.append(input2)
+    elif input2[6] == "ao":
+        list_ao.append(input2)
 
 
-def ao_filter_function(input):
-    return input == "ao"
-
-
-def year_count_function(input):
-    dict, row = input
-    dict[row[5][-4:]] += 1
+def year_count_function(input1):
+    """counts"""
+    dict1, row = input1
+    dict1[row[5][-4:]] += 1
 
 
 def analyze(filename):
-    start = datetime.datetime.now()
+    """does all of the work"""
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         init1 = time.process_time()
-        new_ones = list(filter(year_filter_function, reader))
+        ao_list = []
+        new_ones = []
+        list(map(filter_function, [(x, ao_list, new_ones) for x in reader]))
         LOGS.info(f"\n time for the for filtering block: {time.process_time() - init1} and found {len(new_ones)} items")
         year_count = {
             "2013": 0,
@@ -61,20 +66,13 @@ def analyze(filename):
         print(year_count)
         LOGS.info(f"\n time for the for block counting years: {time.process_time() - init2}")
 
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-
-        found = 0
-        init3 = time.process_time()
-        ao_list = list(filter(ao_filter_function, [x[6] for x in reader]))
         print(f"'ao' was found {len(ao_list)} times")
-        LOGS.info(f"\n time for the for block counting ao: {time.process_time() - init3}")
-        end = datetime.datetime.now()
 
-    return (start, end, year_count, found)
+
 
 
 def main():
+    """feels redundant"""
     filename = "data/exercise.csv"
     analyze(filename)
 
@@ -84,5 +82,4 @@ if __name__ == "__main__":
     init = time.process_time()
     main()
     LOGS.info(f'\ntime to run 1 full loop:{time.process_time() - init}')
-
-
+    FILE_HANDLER.close()
