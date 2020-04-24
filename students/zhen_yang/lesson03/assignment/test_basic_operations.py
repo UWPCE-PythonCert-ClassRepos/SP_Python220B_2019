@@ -87,7 +87,7 @@ class basic_operationsTests(TestCase):
         logger.info('-- Testing update non-existing customer credit limit.--')
         bo.update_customer_credit(800, 300)
 
-    def test_active_customers(self):
+    def test_list_active_customers(self):
         """
             This function defines unit test fuction for list_active_customers()
         """
