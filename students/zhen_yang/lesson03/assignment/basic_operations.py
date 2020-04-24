@@ -96,5 +96,5 @@ def list_active_customers():
          whose status is currently active.
     """
     num = (Customer.select(fn.COUNT(Customer.status))
-                   .where(Customer.status))
+           .where(Customer.status))
     return num.scalar()
