@@ -1,0 +1,11 @@
+prod_id,qty,user_id
+prod0010,1,user0003
+prod0006,3,user0008
+prod0002,1,user0006
+prod0008,3,user0008
+prod0001,3,user0008
+prod0007,1,user0002
+prod0004,1,user0008
+prod0003,1,user0002
+prod0003,3,user0006
+prod0007,3,user0005

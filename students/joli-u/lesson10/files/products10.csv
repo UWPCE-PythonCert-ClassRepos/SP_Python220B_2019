@@ -1,0 +1,11 @@
+prod_id,description,prod_type,qty_avail
+prod0001,"Sofa; size: S, color: white, finish: resin",bedroom,25
+prod0002,"Stand; size: S, color: bronze, finish: diamonds",bedroom,19
+prod0003,"Stool; size: M, color: brown, finish: paint",livingroom,27
+prod0004,"Desk; size: S, color: red, finish: varnish",livingroom,14
+prod0005,"Bar stool; size: XL, color: silver, finish: gold",kitchen,23
+prod0006,"Stool; size: XL, color: bronze, finish: platinum",bedroom,17
+prod0007,"Desk; size: L, color: green, finish: platinum",kitchen,28
+prod0008,"End table; size: M, color: white, finish: paint",livingroom,12
+prod0009,"L-shaped sofa; size: M, color: black, finish: varnish",livingroom,3
+prod0010,"Bed frame; size: L, color: brown, finish: paint",livingroom,16
