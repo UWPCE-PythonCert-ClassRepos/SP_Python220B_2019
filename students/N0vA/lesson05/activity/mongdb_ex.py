@@ -32,6 +32,11 @@ def print_mdb_collection(collection_name):
     for doc in collection_name.find():
         print(doc)
 
+def search_pair(key, value):
+    query = collection_name.find(key, value)
+
+    return query
+
 
 def main():
     mongo = MongoDBConnection()
