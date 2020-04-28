@@ -14,8 +14,9 @@ class BaseModel(Model):
 
 
 class Customers(BaseModel):
-    customer_name = CharField(max_length = 30)
-    last_name = CharField(max_length = 30)
+    customer_id = CharField(primary_key = True, max_length = 5)
+    name = CharField(max_length = 30)
+    lastname = CharField(max_length = 30)
     home_address = CharField(max_length = 50)
     phone_number = CharField(max_length = 10)
     email_address = CharField(max_length = 30)
