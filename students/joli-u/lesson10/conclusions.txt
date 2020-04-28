@@ -1,0 +1,33 @@
+                  Lesson 10 Notes
+====================================================
+
+Timing data was collected for 6 iterations with the
+following number of records per database:
+    - 10 (30 total)
+    - 100 (300 total)
+    - 500 (1500 total)
+    - 1000 (3000 total)
+    - 2500 (7500 total)
+    - 5000 (15000 total)
+This data is documented in 'timings.txt'. note that 
+import_data time includes get_data time.
+
+----------------------------------------------------
+
+The data shows the import_data method/function took 
+significantly more time to run than the other 
+methods/functions. The query functions show_rentals
+and show_available_products seemed to maintain a
+relatively consistent run time, regardless of the 
+number of records in the database. The get_data
+function, which extracted data from csv files took
+the least amount of time for the smaller amount of 
+records and seemed to ramp up in run time as the 
+number of records increased. From these observations,
+it can be concluded that the database could be the 
+root cause of a slow system as the database-related
+functions (inserting/querying) took the most time
+to run. However, if the record count increased 
+significantly from what was tested in this exercise,
+it is possible that the csv data extraction could
+become the main source of time consumption.
