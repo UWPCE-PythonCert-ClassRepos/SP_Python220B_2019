@@ -1,0 +1,162 @@
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0950312614 seconds
+
+Name: get_data (products10.csv)
+Time: 0.0019953251 seconds
+
+Name: get_data (customers10.csv)
+Time: 0.0010356903 seconds
+
+Name: get_data (rentals10.csv)
+Time: 0.0010249615 seconds
+	/ 0.0040559769 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.1313252449 seconds
+Proc: 30 records
+	 (10 products)
+	 (10 customers)
+	 (10 rentals)
+     
+Name: show_available_products
+Time: 0.0289218426 seconds
+
+Name: show_rentals
+Time: 0.0301117897 seconds
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0288743973 seconds
+
+Name: get_data (products100.csv)
+Time: 0.0009951591 seconds
+
+Name: get_data (customers100.csv)
+Time: 0.0010461807 seconds
+
+Name: get_data (rentals100.csv)
+Time: 0.0009973049 seconds
+	/ 0.0030386448 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.1037051678 seconds
+Proc: 300 records
+	 (100 products)
+	 (100 customers)
+	 (100 rentals)
+     
+Name: show_available_products
+Time: 0.0166146755 seconds
+
+Name: show_rentals
+Time: 0.0149676800 seconds
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0389816761 seconds
+
+Name: get_data (products500.csv)
+Time: 0.0029573441 seconds
+
+Name: get_data (customers500.csv)
+Time: 0.0030291080 seconds
+
+Name: get_data (rentals500.csv)
+Time: 0.0010001659 seconds
+	/ 0.0069866180 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.0869410038 seconds
+Proc: 1500 records
+	 (500 products)
+	 (500 customers)
+	 (500 rentals)
+     
+Name: show_available_products
+Time: 0.0264532566 seconds
+
+Name: show_rentals
+Time: 0.0039544106 seconds
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0239629745 seconds
+
+Name: get_data (products1000.csv)
+Time: 0.0030086040 seconds
+
+Name: get_data (customers1000.csv)
+Time: 0.0040230751 seconds
+
+Name: get_data (rentals1000.csv)
+Time: 0.0019934177 seconds
+	/ 0.0090250969 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.0909769535 seconds
+Proc: 3000 records
+	 (1000 products)
+	 (1000 customers)
+	 (1000 rentals)
+     
+Name: show_available_products
+Time: 0.0243983269 seconds
+
+Name: show_rentals
+Time: 0.0142581463 seconds
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0372703075 seconds
+
+Name: get_data (products2500.csv)
+Time: 0.0060172081 seconds
+
+Name: get_data (customers2500.csv)
+Time: 0.0080087185 seconds
+
+Name: get_data (rentals2500.csv)
+Time: 0.0039873123 seconds
+	/ 0.0180132389 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.1986432076 seconds
+Proc: 7500 records
+	 (2500 products)
+	 (2500 customers)
+	 (2500 rentals)
+     
+Name: show_available_products
+Time: 0.0189507008 seconds
+
+Name: show_rentals
+Time: 0.0272207260 seconds
+
+-----------------------------------------------
+Name: clear_collections
+Time: 0.0622313023 seconds
+
+Name: get_data (products5000.csv)
+Time: 0.0359537601 seconds
+
+Name: get_data (customers5000.csv)
+Time: 0.0179543495 seconds
+
+Name: get_data (rentals5000.csv)
+Time: 0.0079808235 seconds
+	/ 0.0618889332 seconds [Total: get_data]
+
+Name: import_data
+Time: 0.3640124798 seconds
+Proc: 15000 records
+	 (5000 products)
+	 (5000 customers)
+	 (5000 rentals)
+     
+Name: show_available_products
+Time: 0.0400171280 seconds
+
+Name: show_rentals
+Time: 0.0261759758 seconds
