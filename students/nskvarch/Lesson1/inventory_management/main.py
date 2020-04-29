@@ -1,9 +1,10 @@
 """Launches the user interface for the inventory management system"""
 import sys
-import market_prices
-import inventory_class
-import furniture_class
-import electric_appliances_class
+import inventory_management.market_prices as market_prices
+import inventory_management.inventory_class as inventory_class
+import inventory_management.furniture_class as furniture_class
+import inventory_management.electric_appliances_class as electric_appliances_class
+# Import lines changed to allow for import of modules in a nested folder
 
 FULL_INVENTORY = {}
 
@@ -69,6 +70,8 @@ def item_info():
             print("{}:{}".format(i, j))
     else:
         print("Item not found in inventory")
+    return FULL_INVENTORY.get(item_code)
+    # Return line added to get variable output back to test scripts
 
 
 def exit_program():

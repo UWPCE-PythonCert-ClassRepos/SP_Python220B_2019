@@ -1,5 +1,6 @@
 """Electric appliances class"""
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
+# import line changed to allow import of module in a nested folder
 
 
 class ElectricAppliances(Inventory):
