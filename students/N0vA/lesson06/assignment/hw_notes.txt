@@ -1,0 +1,4 @@
+### Working Notes for Lesson06 Assignmentc ###
+
+1. First I created a program to generate a larger dataset for the assignment.
+
