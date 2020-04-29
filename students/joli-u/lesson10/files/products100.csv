@@ -1,0 +1,101 @@
+prod_id,description,prod_type,qty_avail
+prod0001,"Bed frame; size: L, color: black, finish: chrome",bedroom,27
+prod0002,"End table; size: M, color: red, finish: wood",livingroom,0
+prod0003,"Coffee table; size: S, color: purple, finish: paint",kitchen,15
+prod0004,"Desk; size: XL, color: blue, finish: wood",bedroom,27
+prod0005,"TV stand; size: L, color: silver, finish: gold",livingroom,18
+prod0006,"Bed frame; size: M, color: green, finish: resin",livingroom,10
+prod0007,"Stand; size: S, color: green, finish: chrome",kitchen,14
+prod0008,"Dresser; size: XL, color: white, finish: wood",kitchen,0
+prod0009,"Dining table; size: L, color: blue, finish: lacquer",kitchen,13
+prod0010,"Sofa; size: L, color: blue, finish: chrome",kitchen,29
+prod0011,"Bar stool; size: XL, color: blue, finish: chrome",kitchen,22
+prod0012,"Sofa; size: XL, color: bronze, finish: diamonds",bedroom,4
+prod0013,"Bar stool; size: M, color: red, finish: platinum",bedroom,20
+prod0014,"L-shaped sofa; size: M, color: black, finish: silver",bedroom,12
+prod0015,"Dining table; size: L, color: blue, finish: oil",bedroom,19
+prod0016,"Stand; size: M, color: brown, finish: bare",livingroom,29
+prod0017,"TV stand; size: S, color: blue, finish: lacquer",bedroom,20
+prod0018,"Bed frame; size: L, color: purple, finish: diamonds",bedroom,4
+prod0019,"Stool; size: XL, color: red, finish: oil",bedroom,18
+prod0020,"Dining table; size: XL, color: white, finish: paint",livingroom,26
+prod0021,"Stand; size: L, color: brown, finish: gold",bedroom,13
+prod0022,"Desk; size: M, color: black, finish: gold",livingroom,8
+prod0023,"TV stand; size: S, color: bronze, finish: gold",kitchen,6
+prod0024,"Book shelf; size: L, color: red, finish: diamonds",bedroom,0
+prod0025,"Coffee table; size: S, color: white, finish: platinum",bedroom,26
+prod0026,"Desk; size: XL, color: brown, finish: diamonds",bedroom,6
+prod0027,"Book shelf; size: S, color: black, finish: diamonds",livingroom,9
+prod0028,"Dresser; size: S, color: white, finish: silver",livingroom,7
+prod0029,"Desk; size: S, color: purple, finish: silver",bedroom,1
+prod0030,"Book shelf; size: M, color: brown, finish: silver",livingroom,18
+prod0031,"TV stand; size: S, color: white, finish: platinum",bedroom,22
+prod0032,"TV stand; size: XL, color: black, finish: lacquer",livingroom,5
+prod0033,"Dresser; size: S, color: black, finish: gold",livingroom,1
+prod0034,"Bar stool; size: M, color: white, finish: bare",livingroom,12
+prod0035,"Stool; size: S, color: bronze, finish: resin",kitchen,6
+prod0036,"Book shelf; size: S, color: gold, finish: oil",kitchen,0
+prod0037,"TV stand; size: XL, color: silver, finish: varnish",livingroom,7
+prod0038,"TV stand; size: L, color: blue, finish: paint",kitchen,28
+prod0039,"Sofa; size: S, color: brown, finish: wood",livingroom,22
+prod0040,"Coffee table; size: XL, color: bronze, finish: chrome",bedroom,21
+prod0041,"Bed frame; size: M, color: silver, finish: bare",bedroom,4
+prod0042,"Bed frame; size: XL, color: brown, finish: platinum",livingroom,26
+prod0043,"Desk; size: XL, color: silver, finish: chrome",livingroom,20
+prod0044,"Desk; size: S, color: green, finish: resin",bedroom,15
+prod0045,"Bed frame; size: S, color: red, finish: varnish",livingroom,0
+prod0046,"Desk; size: L, color: black, finish: diamonds",bedroom,18
+prod0047,"Dining table; size: L, color: blue, finish: oil",livingroom,25
+prod0048,"Dresser; size: L, color: red, finish: resin",kitchen,20
+prod0049,"Stool; size: L, color: white, finish: paint",livingroom,8
+prod0050,"L-shaped sofa; size: XL, color: brown, finish: diamonds",kitchen,18
+prod0051,"Dresser; size: XL, color: white, finish: varnish",bedroom,5
+prod0052,"TV stand; size: M, color: blue, finish: diamonds",bedroom,10
+prod0053,"Book shelf; size: M, color: purple, finish: silver",bedroom,7
+prod0054,"Sofa; size: M, color: brown, finish: silver",livingroom,0
+prod0055,"L-shaped sofa; size: L, color: blue, finish: platinum",kitchen,6
+prod0056,"End table; size: L, color: purple, finish: lacquer",kitchen,14
+prod0057,"Sofa; size: L, color: red, finish: bare",livingroom,5
+prod0058,"Desk; size: L, color: silver, finish: oil",livingroom,17
+prod0059,"TV stand; size: M, color: bronze, finish: wood",kitchen,16
+prod0060,"Stool; size: L, color: silver, finish: oil",kitchen,10
+prod0061,"End table; size: S, color: red, finish: gold",bedroom,27
+prod0062,"L-shaped sofa; size: M, color: red, finish: wood",livingroom,20
+prod0063,"Desk; size: M, color: red, finish: resin",bedroom,11
+prod0064,"Desk; size: S, color: black, finish: resin",kitchen,6
+prod0065,"Coffee table; size: L, color: purple, finish: diamonds",kitchen,12
+prod0066,"Stool; size: M, color: white, finish: lacquer",kitchen,17
+prod0067,"L-shaped sofa; size: XL, color: black, finish: platinum",kitchen,11
+prod0068,"Dining table; size: L, color: brown, finish: chrome",kitchen,24
+prod0069,"Dining table; size: XL, color: purple, finish: silver",kitchen,28
+prod0070,"Bar stool; size: M, color: blue, finish: paint",livingroom,27
+prod0071,"Sofa; size: XL, color: green, finish: gold",bedroom,5
+prod0072,"Dresser; size: S, color: black, finish: paint",bedroom,16
+prod0073,"Dresser; size: L, color: purple, finish: bare",livingroom,26
+prod0074,"Bed frame; size: M, color: purple, finish: lacquer",livingroom,23
+prod0075,"L-shaped sofa; size: M, color: silver, finish: varnish",kitchen,28
+prod0076,"L-shaped sofa; size: S, color: purple, finish: paint",bedroom,5
+prod0077,"L-shaped sofa; size: L, color: gold, finish: resin",bedroom,26
+prod0078,"Desk; size: S, color: silver, finish: chrome",livingroom,22
+prod0079,"Book shelf; size: XL, color: green, finish: paint",kitchen,23
+prod0080,"Book shelf; size: L, color: white, finish: chrome",kitchen,12
+prod0081,"Dresser; size: XL, color: silver, finish: diamonds",kitchen,21
+prod0082,"Dresser; size: XL, color: green, finish: gold",bedroom,27
+prod0083,"L-shaped sofa; size: M, color: green, finish: oil",kitchen,6
+prod0084,"Bed frame; size: L, color: white, finish: silver",bedroom,24
+prod0085,"Book shelf; size: M, color: red, finish: lacquer",bedroom,29
+prod0086,"Sofa; size: XL, color: bronze, finish: bare",bedroom,20
+prod0087,"Bar stool; size: XL, color: black, finish: platinum",livingroom,11
+prod0088,"Stool; size: S, color: brown, finish: platinum",bedroom,9
+prod0089,"L-shaped sofa; size: XL, color: white, finish: paint",livingroom,22
+prod0090,"Stool; size: XL, color: black, finish: varnish",livingroom,26
+prod0091,"Book shelf; size: L, color: silver, finish: varnish",livingroom,26
+prod0092,"Dresser; size: XL, color: brown, finish: resin",livingroom,12
+prod0093,"Dining table; size: XL, color: gold, finish: gold",kitchen,9
+prod0094,"Desk; size: S, color: bronze, finish: varnish",kitchen,9
+prod0095,"Stand; size: S, color: silver, finish: paint",kitchen,21
+prod0096,"L-shaped sofa; size: M, color: white, finish: bare",kitchen,22
+prod0097,"Sofa; size: L, color: blue, finish: paint",livingroom,16
+prod0098,"TV stand; size: L, color: blue, finish: oil",livingroom,29
+prod0099,"Book shelf; size: XL, color: purple, finish: lacquer",bedroom,4
+prod0100,"Bar stool; size: XL, color: red, finish: diamonds",kitchen,1
