@@ -22,7 +22,7 @@ class Customers(BaseModel):
     email_address = CharField(max_length = 30)
     status = BooleanField()
     credit_limit = DecimalField(max_digits = 7, decimal_places = 2)
-    
+
 '''
 remove this when added to basic_operations
 database.create_tables([Customers])
