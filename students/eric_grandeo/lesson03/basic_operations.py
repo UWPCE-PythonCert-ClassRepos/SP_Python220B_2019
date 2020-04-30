@@ -36,10 +36,22 @@ def add_customer(customer_id, name, lastname, home_address,
         logger.info(e)
     finally:
         database.close()
+        logger.info('Database closed')
         
 
 def search_customer(customer_id):
-    pass
+    '''Insert docstring'''
+    try:
+        customer = Customers.get(Customers.customer_id == customer_id)
+        #name, lastname, email address and phone number
+        logger.info('Customer found')
+        return {'name':customer.name, 'lastname':customer.lastname,
+                'email_address':customer.email_address, 'phone_number':customer.phone_number}
+    except DoesNotExist as e:
+        logger.info(e)
+        return {}   
+
+
 
 def delete_customer(customer_id):
     pass
