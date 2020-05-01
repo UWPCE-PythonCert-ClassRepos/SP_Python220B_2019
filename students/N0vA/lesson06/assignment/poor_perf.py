@@ -1,10 +1,11 @@
 """
-poorly performing, poorly written module
+poorly performing module
 
 """
-
-import datetime
 import csv
+import datetime
+from statistics import mean
+from timeit import repeat
 
 def analyze(filename):
     start = datetime.datetime.now()
@@ -57,8 +58,17 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
-    filename = "data/exercise.csv"
-    analyze(filename)
+    
+    test = '''filename = "data/exercise.csv"
+analyze(filename)'''
+
+    reps = 10
+
+    timer = repeat(stmt=test, globals=globals(),
+                  repeat=reps,number=1)
+
+    print('The average of ' + str(reps) + ' runs of the poor_perf module timeit runs:')
+    print(mean(timer))
 
 
 if __name__ == "__main__":
