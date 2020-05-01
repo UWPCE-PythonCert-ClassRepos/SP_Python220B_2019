@@ -51,10 +51,16 @@ def search_customer(customer_id):
         logger.info(e)
         return {}   
 
-
-
 def delete_customer(customer_id):
-    pass
+    '''Insert docstring'''
+    try:
+        customer = Customers.get(Customers.customer_id == customer_id)
+        customer.delete_instance()
+        logger.info('Customer deleted')
+    except:
+        logger.info("Customer not found for delete")
+        raise ValueError('Customer not found')
+    
 
 def update_customer_credit(customer_id, credit_limit):
     pass
