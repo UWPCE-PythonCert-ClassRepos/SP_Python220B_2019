@@ -50,6 +50,7 @@ class TestBasicOperations(TestCase):
         }
         add_customer(**test_customer)
         record = Customers.get(Customers.customer_id == test_customer['customer_id'])
+        logger.info("New customer: {}".format(record.name))
         self.assertEqual(record.customer_id, test_customer['customer_id'])
         
     def test_search_customer(self):
@@ -110,7 +111,26 @@ class TestBasicOperations(TestCase):
         '''insert docstring''' 
         with self.assertRaises(ValueError):
             delete_customer('2468')
-            
+     
+             
+    def test_update_customer_credit(self):
+        '''insert docstring'''
+        test_customer = {
+            'customer_id': '12345',
+            'name': 'Eric Grandeo',
+            'lastname': 'Grandeo',
+            'home_address': '123 Fake Street',
+            'phone_number': '1-212-555-1234',
+            'email_address': 'email@email.com',
+            'status': True,
+            'credit_limit': 25000
+        }
+        add_customer(**test_customer)
+        result = update_customer_credit(test_customer['customer_id'], 100000)
+        get_customer = Customers.get(Customers.customer_id == test_customer['customer_id'])
+        logger.info("New credit limit: {}".format(get_customer.credit_limit))
+        self.assertEqual(get_customer.credit_limit, 100000)
+
     
        
     

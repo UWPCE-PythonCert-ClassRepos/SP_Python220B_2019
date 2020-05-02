@@ -63,11 +63,18 @@ def delete_customer(customer_id):
     
 
 def update_customer_credit(customer_id, credit_limit):
-    pass
+    try:
+        customer = Customers.get(Customers.customer_id == customer_id)
+        customer.credit_limit = credit_limit
+        customer.save()
+        logger.info('Customer credit limit updated')
+    except:
+        raise ValueError('Customer not found')
 
+'''
 def list_active_customers():
     pass
-
+'''
 
 if __name__ == "__main__":
     database.create_tables([Customers])
