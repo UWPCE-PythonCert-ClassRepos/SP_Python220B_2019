@@ -10,15 +10,10 @@ sys.path.append('/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grand
 
 
 from unittest import TestCase
-#from customers_model import database, Customers
-#from basic_operations import add_customer
 from customers_model import *
 from basic_operations import *
 import peewee
 import logging
-
-#database = SqliteDatabase('customer.db')
-#database.connect()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -71,6 +66,7 @@ class TestBasicOperations(TestCase):
             'email_address':'email@email.com', 'phone_number':'1-212-555-1234'}
         result = search_customer('12345')
         self.assertEqual(result, customer_record)
+     
         
     def test_search_customer_fail(self):
         '''insert docstring''' 
@@ -89,6 +85,7 @@ class TestBasicOperations(TestCase):
         fail_customer = {}
         result = search_customer('12346')
         self.assertEqual(result, fail_customer) 
+        
         
     def test_delete_customer(self):
         '''insert docstring''' 
@@ -131,4 +128,60 @@ class TestBasicOperations(TestCase):
         logger.info("New credit limit: {}".format(get_customer.credit_limit))
         self.assertEqual(get_customer.credit_limit, 100000)
 
-                
+
+    def test_update_customer_credit_fail(self):
+        '''insert docstring'''
+        test_customer = {
+            'customer_id': '12345',
+            'name': 'Eric Grandeo',
+            'lastname': 'Grandeo',
+            'home_address': '123 Fake Street',
+            'phone_number': '1-212-555-1234',
+            'email_address': 'email@email.com',
+            'status': True,
+            'credit_limit': 25000
+        }
+        add_customer(**test_customer)
+        with self.assertRaises(ValueError):
+            update_customer_credit('2468', 100000)
+        
+        
+    def test_list_active_customers(self):
+        '''insert docstring'''
+        test_customer_1 = {
+            'customer_id': '12345',
+            'name': 'Eric Grandeo',
+            'lastname': 'Grandeo',
+            'home_address': '123 Fake Street',
+            'phone_number': '1-212-555-1234',
+            'email_address': 'email@email.com',
+            'status': True,
+            'credit_limit': 25000
+        }
+        test_customer_2 = {
+            'customer_id': '45678',
+            'name': 'Jack Grandeo',
+            'lastname': 'Grandeo',
+            'home_address': '123 Fake Street',
+            'phone_number': '1-212-555-1234',
+            'email_address': 'email@email.com',
+            'status': False,
+            'credit_limit': 25000
+        }
+        test_customer_3 = {
+            'customer_id': '54321',
+            'name': 'Vivie Grandeo',
+            'lastname': 'Grandeo',
+            'home_address': '123 Fake Street',
+            'phone_number': '1-212-555-1234',
+            'email_address': 'email@email.com',
+            'status': True,
+            'credit_limit': 25000
+        }
+        add_customer(**test_customer_1)
+        add_customer(**test_customer_2)
+        add_customer(**test_customer_3)
+        self.assertEqual(list_active_customers(), 2)
+        
+#This function will return an integer with the number
+#  of customers whose status is currently active        

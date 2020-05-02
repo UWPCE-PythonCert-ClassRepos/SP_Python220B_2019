@@ -69,12 +69,14 @@ def update_customer_credit(customer_id, credit_limit):
         customer.save()
         logger.info('Customer credit limit updated')
     except:
+        logger.info("Customer not found to update credit limit")
         raise ValueError('Customer not found')
+    
 
-'''
 def list_active_customers():
-    pass
-'''
+    query = Customers.select().where(Customers.status == True).count()
+    logger.info("Number of active users: {}".format(query))
+    return query
 
 if __name__ == "__main__":
     database.create_tables([Customers])
