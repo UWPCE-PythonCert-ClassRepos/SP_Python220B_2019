@@ -126,17 +126,9 @@ class TestBasicOperations(TestCase):
             'credit_limit': 25000
         }
         add_customer(**test_customer)
-        result = update_customer_credit(test_customer['customer_id'], 100000)
+        update_customer_credit(test_customer['customer_id'], 100000)
         get_customer = Customers.get(Customers.customer_id == test_customer['customer_id'])
         logger.info("New credit limit: {}".format(get_customer.credit_limit))
         self.assertEqual(get_customer.credit_limit, 100000)
 
-    
-       
-    
-    
-   
-       
-        
-        
-        
+                
