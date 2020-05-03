@@ -26,3 +26,5 @@ Previous performance tests have shown that this method of storing one record at 
 yet it does get better at higher load, not worse.
 
 
+Also added a second version that simulates working with legacy code that can't be touched.  I did have 
+to convert the module into a class to take advantage of meta tools.
