@@ -2,10 +2,10 @@
 '''HP Norton Inventory System based on MongoDB.'''
 import csv
 import logging
-
-from pymongo import MongoClient
 from functools import wraps
 from time import time
+
+from pymongo import MongoClient
 
 DB_NAME = 'Inventory'
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
