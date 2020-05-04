@@ -1,0 +1,994 @@
+2020-05-04 09:40:25,799 charges_calc.py:73  WARNING Invalid end date of 2017-03-22 00:00:00 found in record RNT001
+2020-05-04 09:40:25,800 charges_calc.py:82  WARNING Value Error on record RNT001, value {'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542} square of the total price
+2020-05-04 09:40:25,801 charges_calc.py:73  WARNING Invalid end date of 2018-07-29 00:00:00 found in record RNT006
+2020-05-04 09:40:25,802 charges_calc.py:82  WARNING Value Error on record RNT006, value {'product_code': 'PRD51', 'units_rented': 8, 'price_per_day': 20, 'rental_start': '8/26/18', 'rental_end': '7/29/18', 'total_days': -28, 'total_price': -560} square of the total price
+2020-05-04 09:40:25,809 charges_calc.py:73  WARNING Invalid end date of 2017-05-31 00:00:00 found in record RNT007
+2020-05-04 09:40:25,809 charges_calc.py:82  WARNING Value Error on record RNT007, value {'product_code': 'PRD42', 'units_rented': 1, 'price_per_day': 16, 'rental_start': '7/10/17', 'rental_end': '5/31/17', 'total_days': -40, 'total_price': -640} square of the total price
+2020-05-04 09:40:25,810 charges_calc.py:73  WARNING Invalid end date of 2018-07-04 00:00:00 found in record RNT008
+2020-05-04 09:40:25,810 charges_calc.py:82  WARNING Value Error on record RNT008, value {'product_code': 'PRD32', 'units_rented': 3, 'price_per_day': 12, 'rental_start': '10/25/18', 'rental_end': '7/4/18', 'total_days': -113, 'total_price': -1356} square of the total price
+2020-05-04 09:40:25,811 charges_calc.py:73  WARNING Invalid end date of 2016-07-28 00:00:00 found in record RNT009
+2020-05-04 09:40:25,811 charges_calc.py:82  WARNING Value Error on record RNT009, value {'product_code': 'PRD13', 'units_rented': 9, 'price_per_day': 6, 'rental_start': '11/3/18', 'rental_end': '7/28/16', 'total_days': -828, 'total_price': -4968} square of the total price
+2020-05-04 09:40:25,812 charges_calc.py:73  WARNING Invalid end date of 2017-08-27 00:00:00 found in record RNT010
+2020-05-04 09:40:25,812 charges_calc.py:82  WARNING Value Error on record RNT010, value {'product_code': 'PRD22', 'units_rented': 6, 'price_per_day': 27, 'rental_start': '3/15/18', 'rental_end': '8/27/17', 'total_days': -200, 'total_price': -5400} square of the total price
+2020-05-04 09:40:25,813 charges_calc.py:73  WARNING Invalid end date of 2016-04-29 00:00:00 found in record RNT011
+2020-05-04 09:40:25,813 charges_calc.py:82  WARNING Value Error on record RNT011, value {'product_code': 'PRD17', 'units_rented': 7, 'price_per_day': 26, 'rental_start': '9/29/17', 'rental_end': '4/29/16', 'total_days': -518, 'total_price': -13468} square of the total price
+2020-05-04 09:40:25,813 charges_calc.py:73  WARNING Invalid end date of 2016-01-15 00:00:00 found in record RNT012
+2020-05-04 09:40:25,814 charges_calc.py:82  WARNING Value Error on record RNT012, value {'product_code': 'PRD55', 'units_rented': 4, 'price_per_day': 18, 'rental_start': '10/24/17', 'rental_end': '1/15/16', 'total_days': -648, 'total_price': -11664} square of the total price
+2020-05-04 09:40:25,814 charges_calc.py:73  WARNING Invalid end date of 2016-07-30 00:00:00 found in record RNT014
+2020-05-04 09:40:25,815 charges_calc.py:82  WARNING Value Error on record RNT014, value {'product_code': 'PRD0', 'units_rented': 7, 'price_per_day': 37, 'rental_start': '1/30/17', 'rental_end': '7/30/16', 'total_days': -184, 'total_price': -6808} square of the total price
+2020-05-04 09:40:25,815 charges_calc.py:73  WARNING Invalid end date of 2016-02-05 00:00:00 found in record RNT016
+2020-05-04 09:40:25,816 charges_calc.py:82  WARNING Value Error on record RNT016, value {'product_code': 'PRD52', 'units_rented': 10, 'price_per_day': 11, 'rental_start': '6/18/18', 'rental_end': '2/5/16', 'total_days': -864, 'total_price': -9504} square of the total price
+2020-05-04 09:40:25,819 charges_calc.py:73  WARNING Invalid end date of 2018-04-11 00:00:00 found in record RNT017
+2020-05-04 09:40:25,819 charges_calc.py:82  WARNING Value Error on record RNT017, value {'product_code': 'PRD5', 'units_rented': 10, 'price_per_day': 36, 'rental_start': '4/28/18', 'rental_end': '4/11/18', 'total_days': -17, 'total_price': -612} square of the total price
+2020-05-04 09:40:25,820 charges_calc.py:73  WARNING Invalid end date of 2016-01-13 00:00:00 found in record RNT018
+2020-05-04 09:40:25,820 charges_calc.py:82  WARNING Value Error on record RNT018, value {'product_code': 'PRD59', 'units_rented': 9, 'price_per_day': 40, 'rental_start': '8/16/16', 'rental_end': '1/13/16', 'total_days': -216, 'total_price': -8640} square of the total price
+2020-05-04 09:40:25,821 charges_calc.py:73  WARNING Invalid end date of 2016-05-10 00:00:00 found in record RNT019
+2020-05-04 09:40:25,821 charges_calc.py:82  WARNING Value Error on record RNT019, value {'product_code': 'PRD6', 'units_rented': 8, 'price_per_day': 39, 'rental_start': '12/16/17', 'rental_end': '5/10/16', 'total_days': -585, 'total_price': -22815} square of the total price
+2020-05-04 09:40:25,823 charges_calc.py:73  WARNING Invalid end date of 2016-01-12 00:00:00 found in record RNT020
+2020-05-04 09:40:25,823 charges_calc.py:82  WARNING Value Error on record RNT020, value {'product_code': 'PRD2', 'units_rented': 9, 'price_per_day': 33, 'rental_start': '6/20/18', 'rental_end': '1/12/16', 'total_days': -890, 'total_price': -29370} square of the total price
+2020-05-04 09:40:25,824 charges_calc.py:73  WARNING Invalid end date of 2016-02-09 00:00:00 found in record RNT021
+2020-05-04 09:40:25,825 charges_calc.py:82  WARNING Value Error on record RNT021, value {'product_code': 'PRD97', 'units_rented': 3, 'price_per_day': 33, 'rental_start': '8/31/17', 'rental_end': '2/9/16', 'total_days': -569, 'total_price': -18777} square of the total price
+2020-05-04 09:40:25,825 charges_calc.py:73  WARNING Invalid end date of 2016-05-28 00:00:00 found in record RNT025
+2020-05-04 09:40:25,826 charges_calc.py:82  WARNING Value Error on record RNT025, value {'product_code': 'PRD28', 'units_rented': 5, 'price_per_day': 26, 'rental_start': '3/2/18', 'rental_end': '5/28/16', 'total_days': -643, 'total_price': -16718} square of the total price
+2020-05-04 09:40:25,826 charges_calc.py:73  WARNING Invalid end date of 2016-04-21 00:00:00 found in record RNT026
+2020-05-04 09:40:25,827 charges_calc.py:82  WARNING Value Error on record RNT026, value {'product_code': 'PRD40', 'units_rented': 6, 'price_per_day': 24, 'rental_start': '3/27/18', 'rental_end': '4/21/16', 'total_days': -705, 'total_price': -16920} square of the total price
+2020-05-04 09:40:25,827 charges_calc.py:73  WARNING Invalid end date of 2017-05-06 00:00:00 found in record RNT028
+2020-05-04 09:40:25,829 charges_calc.py:82  WARNING Value Error on record RNT028, value {'product_code': 'PRD63', 'units_rented': 10, 'price_per_day': 17, 'rental_start': '7/6/18', 'rental_end': '5/6/17', 'total_days': -426, 'total_price': -7242} square of the total price
+2020-05-04 09:40:25,829 charges_calc.py:73  WARNING Invalid end date of 2017-04-18 00:00:00 found in record RNT030
+2020-05-04 09:40:25,830 charges_calc.py:82  WARNING Value Error on record RNT030, value {'product_code': 'PRD43', 'units_rented': 4, 'price_per_day': 31, 'rental_start': '7/1/17', 'rental_end': '4/18/17', 'total_days': -74, 'total_price': -2294} square of the total price
+2020-05-04 09:40:25,830 charges_calc.py:73  WARNING Invalid end date of 2017-04-13 00:00:00 found in record RNT031
+2020-05-04 09:40:25,831 charges_calc.py:82  WARNING Value Error on record RNT031, value {'product_code': 'PRD51', 'units_rented': 10, 'price_per_day': 27, 'rental_start': '4/18/18', 'rental_end': '4/13/17', 'total_days': -370, 'total_price': -9990} square of the total price
+2020-05-04 09:40:25,831 charges_calc.py:73  WARNING Invalid end date of 2016-04-03 00:00:00 found in record RNT034
+2020-05-04 09:40:25,832 charges_calc.py:82  WARNING Value Error on record RNT034, value {'product_code': 'PRD72', 'units_rented': 9, 'price_per_day': 36, 'rental_start': '10/11/17', 'rental_end': '4/3/16', 'total_days': -556, 'total_price': -20016} square of the total price
+2020-05-04 09:40:25,832 charges_calc.py:73  WARNING Invalid end date of 2016-12-30 00:00:00 found in record RNT040
+2020-05-04 09:40:25,833 charges_calc.py:82  WARNING Value Error on record RNT040, value {'product_code': 'PRD51', 'units_rented': 1, 'price_per_day': 23, 'rental_start': '12/1/17', 'rental_end': '12/30/16', 'total_days': -336, 'total_price': -7728} square of the total price
+2020-05-04 09:40:25,834 charges_calc.py:73  WARNING Invalid end date of 2017-03-30 00:00:00 found in record RNT041
+2020-05-04 09:40:25,834 charges_calc.py:82  WARNING Value Error on record RNT041, value {'product_code': 'PRD59', 'units_rented': 4, 'price_per_day': 14, 'rental_start': '2/19/18', 'rental_end': '3/30/17', 'total_days': -326, 'total_price': -4564} square of the total price
+2020-05-04 09:40:25,835 charges_calc.py:73  WARNING Invalid end date of 2016-12-19 00:00:00 found in record RNT044
+2020-05-04 09:40:25,835 charges_calc.py:82  WARNING Value Error on record RNT044, value {'product_code': 'PRD43', 'units_rented': 1, 'price_per_day': 15, 'rental_start': '9/4/18', 'rental_end': '12/19/16', 'total_days': -624, 'total_price': -9360} square of the total price
+2020-05-04 09:40:25,835 charges_calc.py:73  WARNING Invalid end date of 2018-11-12 00:00:00 found in record RNT045
+2020-05-04 09:40:25,836 charges_calc.py:82  WARNING Value Error on record RNT045, value {'product_code': 'PRD62', 'units_rented': 3, 'price_per_day': 33, 'rental_start': '12/19/18', 'rental_end': '11/12/18', 'total_days': -37, 'total_price': -1221} square of the total price
+2020-05-04 09:40:25,836 charges_calc.py:73  WARNING Invalid end date of 2018-01-08 00:00:00 found in record RNT046
+2020-05-04 09:40:25,838 charges_calc.py:82  WARNING Value Error on record RNT046, value {'product_code': 'PRD46', 'units_rented': 5, 'price_per_day': 34, 'rental_start': '10/15/18', 'rental_end': '1/8/18', 'total_days': -280, 'total_price': -9520} square of the total price
+2020-05-04 09:40:25,840 charges_calc.py:73  WARNING Invalid end date of 2016-06-24 00:00:00 found in record RNT047
+2020-05-04 09:40:25,841 charges_calc.py:82  WARNING Value Error on record RNT047, value {'product_code': 'PRD52', 'units_rented': 2, 'price_per_day': 12, 'rental_start': '8/3/18', 'rental_end': '6/24/16', 'total_days': -770, 'total_price': -9240} square of the total price
+2020-05-04 09:40:25,841 charges_calc.py:73  WARNING Invalid end date of 2016-10-28 00:00:00 found in record RNT048
+2020-05-04 09:40:25,842 charges_calc.py:82  WARNING Value Error on record RNT048, value {'product_code': 'PRD32', 'units_rented': 5, 'price_per_day': 36, 'rental_start': '9/5/17', 'rental_end': '10/28/16', 'total_days': -312, 'total_price': -11232} square of the total price
+2020-05-04 09:40:25,842 charges_calc.py:73  WARNING Invalid end date of 2017-06-30 00:00:00 found in record RNT050
+2020-05-04 09:40:25,843 charges_calc.py:82  WARNING Value Error on record RNT050, value {'product_code': 'PRD6', 'units_rented': 8, 'price_per_day': 34, 'rental_start': '12/6/18', 'rental_end': '6/30/17', 'total_days': -524, 'total_price': -17816} square of the total price
+2020-05-04 09:40:25,843 charges_calc.py:73  WARNING Invalid end date of 2016-02-27 00:00:00 found in record RNT056
+2020-05-04 09:40:25,844 charges_calc.py:82  WARNING Value Error on record RNT056, value {'product_code': 'PRD43', 'units_rented': 9, 'price_per_day': 40, 'rental_start': '4/12/18', 'rental_end': '2/27/16', 'total_days': -775, 'total_price': -31000} square of the total price
+2020-05-04 09:40:25,844 charges_calc.py:73  WARNING Invalid end date of 2017-01-25 00:00:00 found in record RNT058
+2020-05-04 09:40:25,845 charges_calc.py:82  WARNING Value Error on record RNT058, value {'product_code': 'PRD35', 'units_rented': 8, 'price_per_day': 28, 'rental_start': '7/14/17', 'rental_end': '1/25/17', 'total_days': -170, 'total_price': -4760} square of the total price
+2020-05-04 09:40:25,845 charges_calc.py:73  WARNING Invalid end date of 2016-01-18 00:00:00 found in record RNT060
+2020-05-04 09:40:25,846 charges_calc.py:82  WARNING Value Error on record RNT060, value {'product_code': 'PRD84', 'units_rented': 8, 'price_per_day': 29, 'rental_start': '2/15/16', 'rental_end': '1/18/16', 'total_days': -28, 'total_price': -812} square of the total price
+2020-05-04 09:40:25,846 charges_calc.py:73  WARNING Invalid end date of 2017-02-28 00:00:00 found in record RNT061
+2020-05-04 09:40:25,847 charges_calc.py:82  WARNING Value Error on record RNT061, value {'product_code': 'PRD35', 'units_rented': 8, 'price_per_day': 24, 'rental_start': '2/12/18', 'rental_end': '2/28/17', 'total_days': -349, 'total_price': -8376} square of the total price
+2020-05-04 09:40:25,849 charges_calc.py:73  WARNING Invalid end date of 2018-06-03 00:00:00 found in record RNT062
+2020-05-04 09:40:25,849 charges_calc.py:82  WARNING Value Error on record RNT062, value {'product_code': 'PRD29', 'units_rented': 3, 'price_per_day': 12, 'rental_start': '8/25/18', 'rental_end': '6/3/18', 'total_days': -83, 'total_price': -996} square of the total price
+2020-05-04 09:40:25,850 charges_calc.py:73  WARNING Invalid end date of 2016-12-12 00:00:00 found in record RNT065
+2020-05-04 09:40:25,850 charges_calc.py:82  WARNING Value Error on record RNT065, value {'product_code': 'PRD61', 'units_rented': 1, 'price_per_day': 11, 'rental_start': '10/11/18', 'rental_end': '12/12/16', 'total_days': -668, 'total_price': -7348} square of the total price
+2020-05-04 09:40:25,851 charges_calc.py:73  WARNING Invalid end date of 2017-10-18 00:00:00 found in record RNT067
+2020-05-04 09:40:25,851 charges_calc.py:82  WARNING Value Error on record RNT067, value {'product_code': 'PRD29', 'units_rented': 5, 'price_per_day': 31, 'rental_start': '1/18/18', 'rental_end': '10/18/17', 'total_days': -92, 'total_price': -2852} square of the total price
+2020-05-04 09:40:25,852 charges_calc.py:73  WARNING Invalid end date of 2016-05-25 00:00:00 found in record RNT071
+2020-05-04 09:40:25,852 charges_calc.py:82  WARNING Value Error on record RNT071, value {'product_code': 'PRD38', 'units_rented': 9, 'price_per_day': 6, 'rental_start': '10/5/16', 'rental_end': '5/25/16', 'total_days': -133, 'total_price': -798} square of the total price
+2020-05-04 09:40:25,853 charges_calc.py:73  WARNING Invalid end date of 2017-07-14 00:00:00 found in record RNT074
+2020-05-04 09:40:25,853 charges_calc.py:82  WARNING Value Error on record RNT074, value {'product_code': 'PRD33', 'units_rented': 9, 'price_per_day': 22, 'rental_start': '9/9/17', 'rental_end': '7/14/17', 'total_days': -57, 'total_price': -1254} square of the total price
+2020-05-04 09:40:25,854 charges_calc.py:73  WARNING Invalid end date of 2016-05-12 00:00:00 found in record RNT076
+2020-05-04 09:40:25,854 charges_calc.py:82  WARNING Value Error on record RNT076, value {'product_code': 'PRD64', 'units_rented': 4, 'price_per_day': 20, 'rental_start': '6/6/18', 'rental_end': '5/12/16', 'total_days': -755, 'total_price': -15100} square of the total price
+2020-05-04 09:40:25,855 charges_calc.py:73  WARNING Invalid end date of 2016-11-19 00:00:00 found in record RNT077
+2020-05-04 09:40:25,856 charges_calc.py:82  WARNING Value Error on record RNT077, value {'product_code': 'PRD6', 'units_rented': 8, 'price_per_day': 14, 'rental_start': '8/15/18', 'rental_end': '11/19/16', 'total_days': -634, 'total_price': -8876} square of the total price
+2020-05-04 09:40:25,856 charges_calc.py:73  WARNING Invalid end date of 2018-01-27 00:00:00 found in record RNT079
+2020-05-04 09:40:25,858 charges_calc.py:82  WARNING Value Error on record RNT079, value {'product_code': 'PRD85', 'units_rented': 1, 'price_per_day': 21, 'rental_start': '11/27/18', 'rental_end': '1/27/18', 'total_days': -304, 'total_price': -6384} square of the total price
+2020-05-04 09:40:25,858 charges_calc.py:73  WARNING Invalid end date of 2016-04-29 00:00:00 found in record RNT084
+2020-05-04 09:40:25,859 charges_calc.py:82  WARNING Value Error on record RNT084, value {'product_code': 'PRD75', 'units_rented': 6, 'price_per_day': 16, 'rental_start': '5/13/17', 'rental_end': '4/29/16', 'total_days': -379, 'total_price': -6064} square of the total price
+2020-05-04 09:40:25,859 charges_calc.py:73  WARNING Invalid end date of 2018-03-20 00:00:00 found in record RNT086
+2020-05-04 09:40:25,860 charges_calc.py:82  WARNING Value Error on record RNT086, value {'product_code': 'PRD87', 'units_rented': 6, 'price_per_day': 40, 'rental_start': '12/3/18', 'rental_end': '3/20/18', 'total_days': -258, 'total_price': -10320} square of the total price
+2020-05-04 09:40:25,860 charges_calc.py:73  WARNING Invalid end date of 2016-06-18 00:00:00 found in record RNT087
+2020-05-04 09:40:25,861 charges_calc.py:82  WARNING Value Error on record RNT087, value {'product_code': 'PRD0', 'units_rented': 2, 'price_per_day': 37, 'rental_start': '8/10/16', 'rental_end': '6/18/16', 'total_days': -53, 'total_price': -1961} square of the total price
+2020-05-04 09:40:25,861 charges_calc.py:73  WARNING Invalid end date of 2018-08-15 00:00:00 found in record RNT089
+2020-05-04 09:40:25,862 charges_calc.py:82  WARNING Value Error on record RNT089, value {'product_code': 'PRD58', 'units_rented': 5, 'price_per_day': 20, 'rental_start': '11/5/18', 'rental_end': '8/15/18', 'total_days': -82, 'total_price': -1640} square of the total price
+2020-05-04 09:40:25,862 charges_calc.py:73  WARNING Invalid end date of 2016-05-23 00:00:00 found in record RNT092
+2020-05-04 09:40:25,862 charges_calc.py:82  WARNING Value Error on record RNT092, value {'product_code': 'PRD6', 'units_rented': 10, 'price_per_day': 18, 'rental_start': '3/10/17', 'rental_end': '5/23/16', 'total_days': -291, 'total_price': -5238} square of the total price
+2020-05-04 09:40:25,863 charges_calc.py:73  WARNING Invalid end date of 2017-07-23 00:00:00 found in record RNT095
+2020-05-04 09:40:25,863 charges_calc.py:82  WARNING Value Error on record RNT095, value {'product_code': 'PRD83', 'units_rented': 6, 'price_per_day': 6, 'rental_start': '8/5/18', 'rental_end': '7/23/17', 'total_days': -378, 'total_price': -2268} square of the total price
+2020-05-04 09:40:25,864 charges_calc.py:73  WARNING Invalid end date of 2016-08-29 00:00:00 found in record RNT097
+2020-05-04 09:40:25,864 charges_calc.py:82  WARNING Value Error on record RNT097, value {'product_code': 'PRD36', 'units_rented': 7, 'price_per_day': 29, 'rental_start': '1/11/17', 'rental_end': '8/29/16', 'total_days': -135, 'total_price': -3915} square of the total price
+2020-05-04 09:40:25,865 charges_calc.py:73  WARNING Invalid end date of 2016-10-21 00:00:00 found in record RNT099
+2020-05-04 09:40:25,866 charges_calc.py:82  WARNING Value Error on record RNT099, value {'product_code': 'PRD42', 'units_rented': 1, 'price_per_day': 18, 'rental_start': '11/23/18', 'rental_end': '10/21/16', 'total_days': -763, 'total_price': -13734} square of the total price
+2020-05-04 09:40:25,868 charges_calc.py:73  WARNING Invalid end date of 2016-05-21 00:00:00 found in record RNT100
+2020-05-04 09:40:25,869 charges_calc.py:82  WARNING Value Error on record RNT100, value {'product_code': 'PRD66', 'units_rented': 6, 'price_per_day': 10, 'rental_start': '6/16/18', 'rental_end': '5/21/16', 'total_days': -756, 'total_price': -7560} square of the total price
+2020-05-04 09:40:25,869 charges_calc.py:73  WARNING Invalid end date of 2017-09-20 00:00:00 found in record RNT101
+2020-05-04 09:40:25,870 charges_calc.py:82  WARNING Value Error on record RNT101, value {'product_code': 'PRD42', 'units_rented': 9, 'price_per_day': 9, 'rental_start': '12/3/18', 'rental_end': '9/20/17', 'total_days': -439, 'total_price': -3951} square of the total price
+2020-05-04 09:40:25,870 charges_calc.py:73  WARNING Invalid end date of 2016-12-08 00:00:00 found in record RNT102
+2020-05-04 09:40:25,871 charges_calc.py:82  WARNING Value Error on record RNT102, value {'product_code': 'PRD68', 'units_rented': 7, 'price_per_day': 34, 'rental_start': '7/17/17', 'rental_end': '12/8/16', 'total_days': -221, 'total_price': -7514} square of the total price
+2020-05-04 09:40:25,871 charges_calc.py:73  WARNING Invalid end date of 2016-02-18 00:00:00 found in record RNT103
+2020-05-04 09:40:25,872 charges_calc.py:82  WARNING Value Error on record RNT103, value {'product_code': 'PRD76', 'units_rented': 6, 'price_per_day': 20, 'rental_start': '1/24/17', 'rental_end': '2/18/16', 'total_days': -341, 'total_price': -6820} square of the total price
+2020-05-04 09:40:25,872 charges_calc.py:73  WARNING Invalid end date of 2016-08-30 00:00:00 found in record RNT104
+2020-05-04 09:40:25,873 charges_calc.py:82  WARNING Value Error on record RNT104, value {'product_code': 'PRD98', 'units_rented': 1, 'price_per_day': 31, 'rental_start': '12/20/17', 'rental_end': '8/30/16', 'total_days': -477, 'total_price': -14787} square of the total price
+2020-05-04 09:40:25,874 charges_calc.py:73  WARNING Invalid end date of 2016-02-20 00:00:00 found in record RNT105
+2020-05-04 09:40:25,874 charges_calc.py:82  WARNING Value Error on record RNT105, value {'product_code': 'PRD3', 'units_rented': 4, 'price_per_day': 32, 'rental_start': '12/29/17', 'rental_end': '2/20/16', 'total_days': -678, 'total_price': -21696} square of the total price
+2020-05-04 09:40:25,875 charges_calc.py:73  WARNING Invalid end date of 2018-01-01 00:00:00 found in record RNT106
+2020-05-04 09:40:25,875 charges_calc.py:82  WARNING Value Error on record RNT106, value {'product_code': 'PRD80', 'units_rented': 7, 'price_per_day': 35, 'rental_start': '3/14/18', 'rental_end': '1/1/18', 'total_days': -72, 'total_price': -2520} square of the total price
+2020-05-04 09:40:25,876 charges_calc.py:73  WARNING Invalid end date of 2016-06-04 00:00:00 found in record RNT107
+2020-05-04 09:40:25,876 charges_calc.py:82  WARNING Value Error on record RNT107, value {'product_code': 'PRD84', 'units_rented': 3, 'price_per_day': 11, 'rental_start': '5/30/17', 'rental_end': '6/4/16', 'total_days': -360, 'total_price': -3960} square of the total price
+2020-05-04 09:40:25,878 charges_calc.py:73  WARNING Invalid end date of 2017-01-09 00:00:00 found in record RNT109
+2020-05-04 09:40:25,878 charges_calc.py:82  WARNING Value Error on record RNT109, value {'product_code': 'PRD88', 'units_rented': 2, 'price_per_day': 30, 'rental_start': '6/26/18', 'rental_end': '1/9/17', 'total_days': -533, 'total_price': -15990} square of the total price
+2020-05-04 09:40:25,879 charges_calc.py:73  WARNING Invalid end date of 2016-01-09 00:00:00 found in record RNT114
+2020-05-04 09:40:25,880 charges_calc.py:82  WARNING Value Error on record RNT114, value {'product_code': 'PRD89', 'units_rented': 10, 'price_per_day': 14, 'rental_start': '6/6/17', 'rental_end': '1/9/16', 'total_days': -514, 'total_price': -7196} square of the total price
+2020-05-04 09:40:25,880 charges_calc.py:73  WARNING Invalid end date of 2016-02-03 00:00:00 found in record RNT115
+2020-05-04 09:40:25,881 charges_calc.py:82  WARNING Value Error on record RNT115, value {'product_code': 'PRD22', 'units_rented': 2, 'price_per_day': 8, 'rental_start': '5/11/18', 'rental_end': '2/3/16', 'total_days': -828, 'total_price': -6624} square of the total price
+2020-05-04 09:40:25,881 charges_calc.py:73  WARNING Invalid end date of 2016-08-04 00:00:00 found in record RNT116
+2020-05-04 09:40:25,882 charges_calc.py:82  WARNING Value Error on record RNT116, value {'product_code': 'PRD74', 'units_rented': 1, 'price_per_day': 8, 'rental_start': '4/14/17', 'rental_end': '8/4/16', 'total_days': -253, 'total_price': -2024} square of the total price
+2020-05-04 09:40:25,883 charges_calc.py:73  WARNING Invalid end date of 2017-06-04 00:00:00 found in record RNT118
+2020-05-04 09:40:25,883 charges_calc.py:82  WARNING Value Error on record RNT118, value {'product_code': 'PRD11', 'units_rented': 10, 'price_per_day': 23, 'rental_start': '7/23/18', 'rental_end': '6/4/17', 'total_days': -414, 'total_price': -9522} square of the total price
+2020-05-04 09:40:25,884 charges_calc.py:73  WARNING Invalid end date of 2017-12-18 00:00:00 found in record RNT119
+2020-05-04 09:40:25,884 charges_calc.py:82  WARNING Value Error on record RNT119, value {'product_code': 'PRD58', 'units_rented': 10, 'price_per_day': 28, 'rental_start': '7/19/18', 'rental_end': '12/18/17', 'total_days': -213, 'total_price': -5964} square of the total price
+2020-05-04 09:40:25,885 charges_calc.py:73  WARNING Invalid end date of 2016-08-01 00:00:00 found in record RNT120
+2020-05-04 09:40:25,885 charges_calc.py:82  WARNING Value Error on record RNT120, value {'product_code': 'PRD83', 'units_rented': 8, 'price_per_day': 6, 'rental_start': '1/3/17', 'rental_end': '8/1/16', 'total_days': -155, 'total_price': -930} square of the total price
+2020-05-04 09:40:25,886 charges_calc.py:73  WARNING Invalid end date of 2017-02-25 00:00:00 found in record RNT121
+2020-05-04 09:40:25,886 charges_calc.py:82  WARNING Value Error on record RNT121, value {'product_code': 'PRD39', 'units_rented': 2, 'price_per_day': 11, 'rental_start': '11/30/18', 'rental_end': '2/25/17', 'total_days': -643, 'total_price': -7073} square of the total price
+2020-05-04 09:40:25,888 charges_calc.py:73  WARNING Invalid end date of 2017-04-05 00:00:00 found in record RNT122
+2020-05-04 09:40:25,889 charges_calc.py:82  WARNING Value Error on record RNT122, value {'product_code': 'PRD9', 'units_rented': 5, 'price_per_day': 16, 'rental_start': '12/4/18', 'rental_end': '4/5/17', 'total_days': -608, 'total_price': -9728} square of the total price
+2020-05-04 09:40:25,889 charges_calc.py:73  WARNING Invalid end date of 2017-07-25 00:00:00 found in record RNT123
+2020-05-04 09:40:25,890 charges_calc.py:82  WARNING Value Error on record RNT123, value {'product_code': 'PRD83', 'units_rented': 7, 'price_per_day': 13, 'rental_start': '3/2/18', 'rental_end': '7/25/17', 'total_days': -220, 'total_price': -2860} square of the total price
+2020-05-04 09:40:25,890 charges_calc.py:73  WARNING Invalid end date of 2018-07-30 00:00:00 found in record RNT125
+2020-05-04 09:40:25,891 charges_calc.py:82  WARNING Value Error on record RNT125, value {'product_code': 'PRD76', 'units_rented': 10, 'price_per_day': 27, 'rental_start': '12/15/18', 'rental_end': '7/30/18', 'total_days': -138, 'total_price': -3726} square of the total price
+2020-05-04 09:40:25,891 charges_calc.py:73  WARNING Invalid end date of 2017-05-23 00:00:00 found in record RNT129
+2020-05-04 09:40:25,892 charges_calc.py:82  WARNING Value Error on record RNT129, value {'product_code': 'PRD75', 'units_rented': 10, 'price_per_day': 6, 'rental_start': '3/23/18', 'rental_end': '5/23/17', 'total_days': -304, 'total_price': -1824} square of the total price
+2020-05-04 09:40:25,892 charges_calc.py:73  WARNING Invalid end date of 2017-06-21 00:00:00 found in record RNT130
+2020-05-04 09:40:25,893 charges_calc.py:82  WARNING Value Error on record RNT130, value {'product_code': 'PRD23', 'units_rented': 8, 'price_per_day': 5, 'rental_start': '12/17/18', 'rental_end': '6/21/17', 'total_days': -544, 'total_price': -2720} square of the total price
+2020-05-04 09:40:25,893 charges_calc.py:73  WARNING Invalid end date of 2016-08-11 00:00:00 found in record RNT135
+2020-05-04 09:40:25,894 charges_calc.py:82  WARNING Value Error on record RNT135, value {'product_code': 'PRD79', 'units_rented': 3, 'price_per_day': 11, 'rental_start': '10/13/16', 'rental_end': '8/11/16', 'total_days': -63, 'total_price': -693} square of the total price
+2020-05-04 09:40:25,894 charges_calc.py:73  WARNING Invalid end date of 2017-05-01 00:00:00 found in record RNT139
+2020-05-04 09:40:25,895 charges_calc.py:82  WARNING Value Error on record RNT139, value {'product_code': 'PRD13', 'units_rented': 2, 'price_per_day': 23, 'rental_start': '9/13/17', 'rental_end': '5/1/17', 'total_days': -135, 'total_price': -3105} square of the total price
+2020-05-04 09:40:25,895 charges_calc.py:73  WARNING Invalid end date of 2017-03-22 00:00:00 found in record RNT141
+2020-05-04 09:40:25,896 charges_calc.py:82  WARNING Value Error on record RNT141, value {'product_code': 'PRD63', 'units_rented': 3, 'price_per_day': 21, 'rental_start': '1/20/18', 'rental_end': '3/22/17', 'total_days': -304, 'total_price': -6384} square of the total price
+2020-05-04 09:40:25,896 charges_calc.py:73  WARNING Invalid end date of 2016-05-02 00:00:00 found in record RNT142
+2020-05-04 09:40:25,898 charges_calc.py:82  WARNING Value Error on record RNT142, value {'product_code': 'PRD66', 'units_rented': 9, 'price_per_day': 16, 'rental_start': '11/15/16', 'rental_end': '5/2/16', 'total_days': -197, 'total_price': -3152} square of the total price
+2020-05-04 09:40:25,898 charges_calc.py:73  WARNING Invalid end date of 2016-01-03 00:00:00 found in record RNT143
+2020-05-04 09:40:25,899 charges_calc.py:82  WARNING Value Error on record RNT143, value {'product_code': 'PRD38', 'units_rented': 8, 'price_per_day': 39, 'rental_start': '11/20/18', 'rental_end': '1/3/16', 'total_days': -1052, 'total_price': -41028} square of the total price
+2020-05-04 09:40:25,900 charges_calc.py:73  WARNING Invalid end date of 2016-07-15 00:00:00 found in record RNT145
+2020-05-04 09:40:25,900 charges_calc.py:82  WARNING Value Error on record RNT145, value {'product_code': 'PRD31', 'units_rented': 7, 'price_per_day': 31, 'rental_start': '7/28/18', 'rental_end': '7/15/16', 'total_days': -743, 'total_price': -23033} square of the total price
+2020-05-04 09:40:25,901 charges_calc.py:73  WARNING Invalid end date of 2018-09-17 00:00:00 found in record RNT148
+2020-05-04 09:40:25,901 charges_calc.py:82  WARNING Value Error on record RNT148, value {'product_code': 'PRD33', 'units_rented': 6, 'price_per_day': 13, 'rental_start': '10/20/18', 'rental_end': '9/17/18', 'total_days': -33, 'total_price': -429} square of the total price
+2020-05-04 09:40:25,902 charges_calc.py:73  WARNING Invalid end date of 2016-11-03 00:00:00 found in record RNT149
+2020-05-04 09:40:25,902 charges_calc.py:82  WARNING Value Error on record RNT149, value {'product_code': 'PRD34', 'units_rented': 8, 'price_per_day': 20, 'rental_start': '9/29/18', 'rental_end': '11/3/16', 'total_days': -695, 'total_price': -13900} square of the total price
+2020-05-04 09:40:25,903 charges_calc.py:73  WARNING Invalid end date of 2016-08-16 00:00:00 found in record RNT151
+2020-05-04 09:40:25,903 charges_calc.py:82  WARNING Value Error on record RNT151, value {'product_code': 'PRD93', 'units_rented': 7, 'price_per_day': 25, 'rental_start': '8/11/18', 'rental_end': '8/16/16', 'total_days': -725, 'total_price': -18125} square of the total price
+2020-05-04 09:40:25,904 charges_calc.py:73  WARNING Invalid end date of 2016-03-30 00:00:00 found in record RNT154
+2020-05-04 09:40:25,905 charges_calc.py:82  WARNING Value Error on record RNT154, value {'product_code': 'PRD35', 'units_rented': 3, 'price_per_day': 16, 'rental_start': '5/24/17', 'rental_end': '3/30/16', 'total_days': -420, 'total_price': -6720} square of the total price
+2020-05-04 09:40:25,905 charges_calc.py:73  WARNING Invalid end date of 2017-07-19 00:00:00 found in record RNT155
+2020-05-04 09:40:25,906 charges_calc.py:82  WARNING Value Error on record RNT155, value {'product_code': 'PRD30', 'units_rented': 9, 'price_per_day': 22, 'rental_start': '1/7/18', 'rental_end': '7/19/17', 'total_days': -172, 'total_price': -3784} square of the total price
+2020-05-04 09:40:25,908 charges_calc.py:73  WARNING Invalid end date of 2017-05-19 00:00:00 found in record RNT157
+2020-05-04 09:40:25,908 charges_calc.py:82  WARNING Value Error on record RNT157, value {'product_code': 'PRD72', 'units_rented': 7, 'price_per_day': 32, 'rental_start': '12/23/18', 'rental_end': '5/19/17', 'total_days': -583, 'total_price': -18656} square of the total price
+2020-05-04 09:40:25,909 charges_calc.py:73  WARNING Invalid end date of 2016-03-06 00:00:00 found in record RNT158
+2020-05-04 09:40:25,909 charges_calc.py:82  WARNING Value Error on record RNT158, value {'product_code': 'PRD3', 'units_rented': 4, 'price_per_day': 12, 'rental_start': '7/10/18', 'rental_end': '3/6/16', 'total_days': -856, 'total_price': -10272} square of the total price
+2020-05-04 09:40:25,910 charges_calc.py:73  WARNING Invalid end date of 2018-03-14 00:00:00 found in record RNT160
+2020-05-04 09:40:25,910 charges_calc.py:82  WARNING Value Error on record RNT160, value {'product_code': 'PRD61', 'units_rented': 6, 'price_per_day': 12, 'rental_start': '5/18/18', 'rental_end': '3/14/18', 'total_days': -65, 'total_price': -780} square of the total price
+2020-05-04 09:40:25,911 charges_calc.py:73  WARNING Invalid end date of 2016-09-10 00:00:00 found in record RNT163
+2020-05-04 09:40:25,911 charges_calc.py:82  WARNING Value Error on record RNT163, value {'product_code': 'PRD43', 'units_rented': 8, 'price_per_day': 24, 'rental_start': '12/16/16', 'rental_end': '9/10/16', 'total_days': -97, 'total_price': -2328} square of the total price
+2020-05-04 09:40:25,912 charges_calc.py:73  WARNING Invalid end date of 2017-08-07 00:00:00 found in record RNT164
+2020-05-04 09:40:25,912 charges_calc.py:82  WARNING Value Error on record RNT164, value {'product_code': 'PRD71', 'units_rented': 4, 'price_per_day': 21, 'rental_start': '4/24/18', 'rental_end': '8/7/17', 'total_days': -260, 'total_price': -5460} square of the total price
+2020-05-04 09:40:25,913 charges_calc.py:73  WARNING Invalid end date of 2016-02-15 00:00:00 found in record RNT166
+2020-05-04 09:40:25,913 charges_calc.py:82  WARNING Value Error on record RNT166, value {'product_code': 'PRD60', 'units_rented': 3, 'price_per_day': 37, 'rental_start': '4/14/18', 'rental_end': '2/15/16', 'total_days': -789, 'total_price': -29193} square of the total price
+2020-05-04 09:40:25,914 charges_calc.py:73  WARNING Invalid end date of 2016-12-11 00:00:00 found in record RNT167
+2020-05-04 09:40:25,914 charges_calc.py:82  WARNING Value Error on record RNT167, value {'product_code': 'PRD34', 'units_rented': 4, 'price_per_day': 27, 'rental_start': '2/3/17', 'rental_end': '12/11/16', 'total_days': -54, 'total_price': -1458} square of the total price
+2020-05-04 09:40:25,915 charges_calc.py:73  WARNING Invalid end date of 2016-05-25 00:00:00 found in record RNT168
+2020-05-04 09:40:25,915 charges_calc.py:82  WARNING Value Error on record RNT168, value {'product_code': 'PRD44', 'units_rented': 4, 'price_per_day': 39, 'rental_start': '10/15/16', 'rental_end': '5/25/16', 'total_days': -143, 'total_price': -5577} square of the total price
+2020-05-04 09:40:25,916 charges_calc.py:73  WARNING Invalid end date of 2016-09-25 00:00:00 found in record RNT169
+2020-05-04 09:40:25,916 charges_calc.py:82  WARNING Value Error on record RNT169, value {'product_code': 'PRD0', 'units_rented': 4, 'price_per_day': 28, 'rental_start': '3/18/18', 'rental_end': '9/25/16', 'total_days': -539, 'total_price': -15092} square of the total price
+2020-05-04 09:40:25,918 charges_calc.py:73  WARNING Invalid end date of 2017-01-11 00:00:00 found in record RNT170
+2020-05-04 09:40:25,919 charges_calc.py:82  WARNING Value Error on record RNT170, value {'product_code': 'PRD54', 'units_rented': 9, 'price_per_day': 15, 'rental_start': '9/16/18', 'rental_end': '1/11/17', 'total_days': -613, 'total_price': -9195} square of the total price
+2020-05-04 09:40:25,920 charges_calc.py:73  WARNING Invalid end date of 2018-03-15 00:00:00 found in record RNT175
+2020-05-04 09:40:25,921 charges_calc.py:82  WARNING Value Error on record RNT175, value {'product_code': 'PRD48', 'units_rented': 9, 'price_per_day': 39, 'rental_start': '5/16/18', 'rental_end': '3/15/18', 'total_days': -62, 'total_price': -2418} square of the total price
+2020-05-04 09:40:25,921 charges_calc.py:73  WARNING Invalid end date of 2018-04-07 00:00:00 found in record RNT178
+2020-05-04 09:40:25,922 charges_calc.py:82  WARNING Value Error on record RNT178, value {'product_code': 'PRD35', 'units_rented': 5, 'price_per_day': 40, 'rental_start': '8/1/18', 'rental_end': '4/7/18', 'total_days': -116, 'total_price': -4640} square of the total price
+2020-05-04 09:40:25,922 charges_calc.py:73  WARNING Invalid end date of 2018-08-14 00:00:00 found in record RNT179
+2020-05-04 09:40:25,923 charges_calc.py:82  WARNING Value Error on record RNT179, value {'product_code': 'PRD16', 'units_rented': 8, 'price_per_day': 6, 'rental_start': '8/24/18', 'rental_end': '8/14/18', 'total_days': -10, 'total_price': -60} square of the total price
+2020-05-04 09:40:25,923 charges_calc.py:73  WARNING Invalid end date of 2016-09-08 00:00:00 found in record RNT180
+2020-05-04 09:40:25,924 charges_calc.py:82  WARNING Value Error on record RNT180, value {'product_code': 'PRD12', 'units_rented': 3, 'price_per_day': 27, 'rental_start': '12/29/18', 'rental_end': '9/8/16', 'total_days': -842, 'total_price': -22734} square of the total price
+2020-05-04 09:40:25,924 charges_calc.py:73  WARNING Invalid end date of 2018-04-08 00:00:00 found in record RNT183
+2020-05-04 09:40:25,925 charges_calc.py:82  WARNING Value Error on record RNT183, value {'product_code': 'PRD10', 'units_rented': 5, 'price_per_day': 24, 'rental_start': '5/31/18', 'rental_end': '4/8/18', 'total_days': -53, 'total_price': -1272} square of the total price
+2020-05-04 09:40:25,925 charges_calc.py:73  WARNING Invalid end date of 2016-09-28 00:00:00 found in record RNT184
+2020-05-04 09:40:25,925 charges_calc.py:82  WARNING Value Error on record RNT184, value {'product_code': 'PRD66', 'units_rented': 3, 'price_per_day': 5, 'rental_start': '3/12/18', 'rental_end': '9/28/16', 'total_days': -530, 'total_price': -2650} square of the total price
+2020-05-04 09:40:25,926 charges_calc.py:73  WARNING Invalid end date of 2016-01-11 00:00:00 found in record RNT187
+2020-05-04 09:40:25,926 charges_calc.py:82  WARNING Value Error on record RNT187, value {'product_code': 'PRD12', 'units_rented': 10, 'price_per_day': 10, 'rental_start': '10/5/17', 'rental_end': '1/11/16', 'total_days': -633, 'total_price': -6330} square of the total price
+2020-05-04 09:40:25,927 charges_calc.py:73  WARNING Invalid end date of 2016-08-17 00:00:00 found in record RNT189
+2020-05-04 09:40:25,928 charges_calc.py:82  WARNING Value Error on record RNT189, value {'product_code': 'PRD54', 'units_rented': 8, 'price_per_day': 18, 'rental_start': '11/20/16', 'rental_end': '8/17/16', 'total_days': -95, 'total_price': -1710} square of the total price
+2020-05-04 09:40:25,929 charges_calc.py:73  WARNING Invalid end date of 2017-04-30 00:00:00 found in record RNT192
+2020-05-04 09:40:25,930 charges_calc.py:82  WARNING Value Error on record RNT192, value {'product_code': 'PRD59', 'units_rented': 10, 'price_per_day': 31, 'rental_start': '5/10/17', 'rental_end': '4/30/17', 'total_days': -10, 'total_price': -310} square of the total price
+2020-05-04 09:40:25,930 charges_calc.py:73  WARNING Invalid end date of 2016-01-06 00:00:00 found in record RNT195
+2020-05-04 09:40:25,931 charges_calc.py:82  WARNING Value Error on record RNT195, value {'product_code': 'PRD93', 'units_rented': 2, 'price_per_day': 17, 'rental_start': '5/4/18', 'rental_end': '1/6/16', 'total_days': -849, 'total_price': -14433} square of the total price
+2020-05-04 09:40:25,931 charges_calc.py:73  WARNING Invalid end date of 2016-05-04 00:00:00 found in record RNT196
+2020-05-04 09:40:25,932 charges_calc.py:82  WARNING Value Error on record RNT196, value {'product_code': 'PRD92', 'units_rented': 8, 'price_per_day': 19, 'rental_start': '10/28/18', 'rental_end': '5/4/16', 'total_days': -907, 'total_price': -17233} square of the total price
+2020-05-04 09:40:25,932 charges_calc.py:73  WARNING Invalid end date of 2017-11-14 00:00:00 found in record RNT197
+2020-05-04 09:40:25,933 charges_calc.py:82  WARNING Value Error on record RNT197, value {'product_code': 'PRD69', 'units_rented': 4, 'price_per_day': 33, 'rental_start': '3/2/18', 'rental_end': '11/14/17', 'total_days': -108, 'total_price': -3564} square of the total price
+2020-05-04 09:40:25,933 charges_calc.py:73  WARNING Invalid end date of 2016-09-17 00:00:00 found in record RNT201
+2020-05-04 09:40:25,934 charges_calc.py:82  WARNING Value Error on record RNT201, value {'product_code': 'PRD14', 'units_rented': 1, 'price_per_day': 17, 'rental_start': '10/12/17', 'rental_end': '9/17/16', 'total_days': -390, 'total_price': -6630} square of the total price
+2020-05-04 09:40:25,934 charges_calc.py:73  WARNING Invalid end date of 2016-02-07 00:00:00 found in record RNT202
+2020-05-04 09:40:25,935 charges_calc.py:82  WARNING Value Error on record RNT202, value {'product_code': 'PRD93', 'units_rented': 2, 'price_per_day': 34, 'rental_start': '11/4/18', 'rental_end': '2/7/16', 'total_days': -1001, 'total_price': -34034} square of the total price
+2020-05-04 09:40:25,935 charges_calc.py:73  WARNING Invalid end date of 2016-06-03 00:00:00 found in record RNT207
+2020-05-04 09:40:25,936 charges_calc.py:82  WARNING Value Error on record RNT207, value {'product_code': 'PRD21', 'units_rented': 7, 'price_per_day': 21, 'rental_start': '3/15/18', 'rental_end': '6/3/16', 'total_days': -650, 'total_price': -13650} square of the total price
+2020-05-04 09:40:25,936 charges_calc.py:73  WARNING Invalid end date of 2016-02-18 00:00:00 found in record RNT208
+2020-05-04 09:40:25,936 charges_calc.py:82  WARNING Value Error on record RNT208, value {'product_code': 'PRD86', 'units_rented': 1, 'price_per_day': 16, 'rental_start': '2/24/16', 'rental_end': '2/18/16', 'total_days': -6, 'total_price': -96} square of the total price
+2020-05-04 09:40:25,938 charges_calc.py:73  WARNING Invalid end date of 2017-01-02 00:00:00 found in record RNT210
+2020-05-04 09:40:25,939 charges_calc.py:82  WARNING Value Error on record RNT210, value {'product_code': 'PRD2', 'units_rented': 2, 'price_per_day': 6, 'rental_start': '7/5/17', 'rental_end': '1/2/17', 'total_days': -184, 'total_price': -1104} square of the total price
+2020-05-04 09:40:25,940 charges_calc.py:73  WARNING Invalid end date of 2016-06-29 00:00:00 found in record RNT214
+2020-05-04 09:40:25,940 charges_calc.py:82  WARNING Value Error on record RNT214, value {'product_code': 'PRD6', 'units_rented': 6, 'price_per_day': 26, 'rental_start': '12/4/16', 'rental_end': '6/29/16', 'total_days': -158, 'total_price': -4108} square of the total price
+2020-05-04 09:40:25,941 charges_calc.py:73  WARNING Invalid end date of 2016-02-10 00:00:00 found in record RNT216
+2020-05-04 09:40:25,941 charges_calc.py:82  WARNING Value Error on record RNT216, value {'product_code': 'PRD6', 'units_rented': 2, 'price_per_day': 16, 'rental_start': '4/20/16', 'rental_end': '2/10/16', 'total_days': -70, 'total_price': -1120} square of the total price
+2020-05-04 09:40:25,941 charges_calc.py:73  WARNING Invalid end date of 2016-08-04 00:00:00 found in record RNT217
+2020-05-04 09:40:25,942 charges_calc.py:82  WARNING Value Error on record RNT217, value {'product_code': 'PRD11', 'units_rented': 3, 'price_per_day': 5, 'rental_start': '8/18/18', 'rental_end': '8/4/16', 'total_days': -744, 'total_price': -3720} square of the total price
+2020-05-04 09:40:25,942 charges_calc.py:73  WARNING Invalid end date of 2016-12-23 00:00:00 found in record RNT218
+2020-05-04 09:40:25,943 charges_calc.py:82  WARNING Value Error on record RNT218, value {'product_code': 'PRD20', 'units_rented': 8, 'price_per_day': 40, 'rental_start': '12/11/17', 'rental_end': '12/23/16', 'total_days': -353, 'total_price': -14120} square of the total price
+2020-05-04 09:40:25,943 charges_calc.py:73  WARNING Invalid end date of 2016-07-28 00:00:00 found in record RNT221
+2020-05-04 09:40:25,943 charges_calc.py:82  WARNING Value Error on record RNT221, value {'product_code': 'PRD12', 'units_rented': 6, 'price_per_day': 40, 'rental_start': '10/26/18', 'rental_end': '7/28/16', 'total_days': -820, 'total_price': -32800} square of the total price
+2020-05-04 09:40:25,944 charges_calc.py:73  WARNING Invalid end date of 2016-04-28 00:00:00 found in record RNT223
+2020-05-04 09:40:25,944 charges_calc.py:82  WARNING Value Error on record RNT223, value {'product_code': 'PRD51', 'units_rented': 7, 'price_per_day': 27, 'rental_start': '2/3/18', 'rental_end': '4/28/16', 'total_days': -646, 'total_price': -17442} square of the total price
+2020-05-04 09:40:25,945 charges_calc.py:73  WARNING Invalid end date of 2016-10-07 00:00:00 found in record RNT224
+2020-05-04 09:40:25,945 charges_calc.py:82  WARNING Value Error on record RNT224, value {'product_code': 'PRD10', 'units_rented': 10, 'price_per_day': 34, 'rental_start': '11/5/17', 'rental_end': '10/7/16', 'total_days': -394, 'total_price': -13396} square of the total price
+2020-05-04 09:40:25,946 charges_calc.py:73  WARNING Invalid end date of 2016-12-24 00:00:00 found in record RNT225
+2020-05-04 09:40:25,946 charges_calc.py:82  WARNING Value Error on record RNT225, value {'product_code': 'PRD51', 'units_rented': 7, 'price_per_day': 25, 'rental_start': '5/15/17', 'rental_end': '12/24/16', 'total_days': -142, 'total_price': -3550} square of the total price
+2020-05-04 09:40:25,946 charges_calc.py:73  WARNING Invalid end date of 2016-02-04 00:00:00 found in record RNT227
+2020-05-04 09:40:25,948 charges_calc.py:82  WARNING Value Error on record RNT227, value {'product_code': 'PRD32', 'units_rented': 9, 'price_per_day': 17, 'rental_start': '5/11/18', 'rental_end': '2/4/16', 'total_days': -827, 'total_price': -14059} square of the total price
+2020-05-04 09:40:25,949 charges_calc.py:73  WARNING Invalid end date of 2016-11-03 00:00:00 found in record RNT229
+2020-05-04 09:40:25,949 charges_calc.py:82  WARNING Value Error on record RNT229, value {'product_code': 'PRD75', 'units_rented': 3, 'price_per_day': 10, 'rental_start': '2/23/17', 'rental_end': '11/3/16', 'total_days': -112, 'total_price': -1120} square of the total price
+2020-05-04 09:40:25,950 charges_calc.py:73  WARNING Invalid end date of 2016-07-25 00:00:00 found in record RNT233
+2020-05-04 09:40:25,950 charges_calc.py:82  WARNING Value Error on record RNT233, value {'product_code': 'PRD35', 'units_rented': 7, 'price_per_day': 9, 'rental_start': '4/27/18', 'rental_end': '7/25/16', 'total_days': -641, 'total_price': -5769} square of the total price
+2020-05-04 09:40:25,951 charges_calc.py:73  WARNING Invalid end date of 2018-01-20 00:00:00 found in record RNT234
+2020-05-04 09:40:25,951 charges_calc.py:82  WARNING Value Error on record RNT234, value {'product_code': 'PRD2', 'units_rented': 10, 'price_per_day': 13, 'rental_start': '4/25/18', 'rental_end': '1/20/18', 'total_days': -95, 'total_price': -1235} square of the total price
+2020-05-04 09:40:25,952 charges_calc.py:73  WARNING Invalid end date of 2016-03-25 00:00:00 found in record RNT236
+2020-05-04 09:40:25,952 charges_calc.py:82  WARNING Value Error on record RNT236, value {'product_code': 'PRD16', 'units_rented': 10, 'price_per_day': 10, 'rental_start': '12/17/18', 'rental_end': '3/25/16', 'total_days': -997, 'total_price': -9970} square of the total price
+2020-05-04 09:40:25,952 charges_calc.py:73  WARNING Invalid end date of 2017-08-07 00:00:00 found in record RNT238
+2020-05-04 09:40:25,953 charges_calc.py:82  WARNING Value Error on record RNT238, value {'product_code': 'PRD43', 'units_rented': 7, 'price_per_day': 5, 'rental_start': '1/1/18', 'rental_end': '8/7/17', 'total_days': -147, 'total_price': -735} square of the total price
+2020-05-04 09:40:25,953 charges_calc.py:73  WARNING Invalid end date of 2017-12-07 00:00:00 found in record RNT241
+2020-05-04 09:40:25,954 charges_calc.py:82  WARNING Value Error on record RNT241, value {'product_code': 'PRD97', 'units_rented': 9, 'price_per_day': 28, 'rental_start': '7/2/18', 'rental_end': '12/7/17', 'total_days': -207, 'total_price': -5796} square of the total price
+2020-05-04 09:40:25,954 charges_calc.py:73  WARNING Invalid end date of 2016-02-18 00:00:00 found in record RNT242
+2020-05-04 09:40:25,955 charges_calc.py:82  WARNING Value Error on record RNT242, value {'product_code': 'PRD14', 'units_rented': 7, 'price_per_day': 9, 'rental_start': '1/31/17', 'rental_end': '2/18/16', 'total_days': -348, 'total_price': -3132} square of the total price
+2020-05-04 09:40:25,955 charges_calc.py:73  WARNING Invalid end date of 2016-10-13 00:00:00 found in record RNT243
+2020-05-04 09:40:25,956 charges_calc.py:82  WARNING Value Error on record RNT243, value {'product_code': 'PRD0', 'units_rented': 4, 'price_per_day': 13, 'rental_start': '12/8/17', 'rental_end': '10/13/16', 'total_days': -421, 'total_price': -5473} square of the total price
+2020-05-04 09:40:25,956 charges_calc.py:73  WARNING Invalid end date of 2016-09-16 00:00:00 found in record RNT244
+2020-05-04 09:40:25,958 charges_calc.py:82  WARNING Value Error on record RNT244, value {'product_code': 'PRD23', 'units_rented': 2, 'price_per_day': 12, 'rental_start': '6/25/18', 'rental_end': '9/16/16', 'total_days': -647, 'total_price': -7764} square of the total price
+2020-05-04 09:40:25,959 charges_calc.py:73  WARNING Invalid end date of 2017-08-28 00:00:00 found in record RNT246
+2020-05-04 09:40:25,960 charges_calc.py:82  WARNING Value Error on record RNT246, value {'product_code': 'PRD85', 'units_rented': 3, 'price_per_day': 21, 'rental_start': '2/2/18', 'rental_end': '8/28/17', 'total_days': -158, 'total_price': -3318} square of the total price
+2020-05-04 09:40:25,960 charges_calc.py:73  WARNING Invalid end date of 2017-06-10 00:00:00 found in record RNT247
+2020-05-04 09:40:25,960 charges_calc.py:82  WARNING Value Error on record RNT247, value {'product_code': 'PRD33', 'units_rented': 6, 'price_per_day': 9, 'rental_start': '7/10/17', 'rental_end': '6/10/17', 'total_days': -30, 'total_price': -270} square of the total price
+2020-05-04 09:40:25,961 charges_calc.py:73  WARNING Invalid end date of 2016-04-17 00:00:00 found in record RNT254
+2020-05-04 09:40:25,961 charges_calc.py:82  WARNING Value Error on record RNT254, value {'product_code': 'PRD13', 'units_rented': 7, 'price_per_day': 8, 'rental_start': '10/31/16', 'rental_end': '4/17/16', 'total_days': -197, 'total_price': -1576} square of the total price
+2020-05-04 09:40:25,962 charges_calc.py:73  WARNING Invalid end date of 2017-04-10 00:00:00 found in record RNT258
+2020-05-04 09:40:25,962 charges_calc.py:82  WARNING Value Error on record RNT258, value {'product_code': 'PRD70', 'units_rented': 2, 'price_per_day': 18, 'rental_start': '10/21/17', 'rental_end': '4/10/17', 'total_days': -194, 'total_price': -3492} square of the total price
+2020-05-04 09:40:25,963 charges_calc.py:73  WARNING Invalid end date of 2016-08-16 00:00:00 found in record RNT259
+2020-05-04 09:40:25,963 charges_calc.py:82  WARNING Value Error on record RNT259, value {'product_code': 'PRD86', 'units_rented': 4, 'price_per_day': 34, 'rental_start': '2/14/18', 'rental_end': '8/16/16', 'total_days': -547, 'total_price': -18598} square of the total price
+2020-05-04 09:40:25,964 charges_calc.py:73  WARNING Invalid end date of 2017-01-19 00:00:00 found in record RNT260
+2020-05-04 09:40:25,964 charges_calc.py:82  WARNING Value Error on record RNT260, value {'product_code': 'PRD17', 'units_rented': 10, 'price_per_day': 16, 'rental_start': '1/28/18', 'rental_end': '1/19/17', 'total_days': -374, 'total_price': -5984} square of the total price
+2020-05-04 09:40:25,964 charges_calc.py:73  WARNING Invalid end date of 2017-11-10 00:00:00 found in record RNT261
+2020-05-04 09:40:25,965 charges_calc.py:82  WARNING Value Error on record RNT261, value {'product_code': 'PRD82', 'units_rented': 4, 'price_per_day': 15, 'rental_start': '3/14/18', 'rental_end': '11/10/17', 'total_days': -124, 'total_price': -1860} square of the total price
+2020-05-04 09:40:25,965 charges_calc.py:73  WARNING Invalid end date of 2016-09-26 00:00:00 found in record RNT264
+2020-05-04 09:40:25,966 charges_calc.py:82  WARNING Value Error on record RNT264, value {'product_code': 'PRD50', 'units_rented': 1, 'price_per_day': 15, 'rental_start': '9/25/18', 'rental_end': '9/26/16', 'total_days': -729, 'total_price': -10935} square of the total price
+2020-05-04 09:40:25,966 charges_calc.py:73  WARNING Invalid end date of 2017-10-07 00:00:00 found in record RNT265
+2020-05-04 09:40:25,968 charges_calc.py:82  WARNING Value Error on record RNT265, value {'product_code': 'PRD15', 'units_rented': 5, 'price_per_day': 16, 'rental_start': '10/8/17', 'rental_end': '10/7/17', 'total_days': -1, 'total_price': -16} square of the total price
+2020-05-04 09:40:25,969 charges_calc.py:73  WARNING Invalid end date of 2016-07-24 00:00:00 found in record RNT270
+2020-05-04 09:40:25,969 charges_calc.py:82  WARNING Value Error on record RNT270, value {'product_code': 'PRD19', 'units_rented': 4, 'price_per_day': 19, 'rental_start': '8/30/16', 'rental_end': '7/24/16', 'total_days': -37, 'total_price': -703} square of the total price
+2020-05-04 09:40:25,970 charges_calc.py:73  WARNING Invalid end date of 2016-08-07 00:00:00 found in record RNT271
+2020-05-04 09:40:25,970 charges_calc.py:82  WARNING Value Error on record RNT271, value {'product_code': 'PRD33', 'units_rented': 1, 'price_per_day': 11, 'rental_start': '11/27/18', 'rental_end': '8/7/16', 'total_days': -842, 'total_price': -9262} square of the total price
+2020-05-04 09:40:25,970 charges_calc.py:73  WARNING Invalid end date of 2017-05-19 00:00:00 found in record RNT272
+2020-05-04 09:40:25,971 charges_calc.py:82  WARNING Value Error on record RNT272, value {'product_code': 'PRD57', 'units_rented': 2, 'price_per_day': 24, 'rental_start': '7/31/17', 'rental_end': '5/19/17', 'total_days': -73, 'total_price': -1752} square of the total price
+2020-05-04 09:40:25,971 charges_calc.py:73  WARNING Invalid end date of 2017-02-12 00:00:00 found in record RNT274
+2020-05-04 09:40:25,972 charges_calc.py:82  WARNING Value Error on record RNT274, value {'product_code': 'PRD3', 'units_rented': 2, 'price_per_day': 38, 'rental_start': '12/15/18', 'rental_end': '2/12/17', 'total_days': -671, 'total_price': -25498} square of the total price
+2020-05-04 09:40:25,973 charges_calc.py:73  WARNING Invalid end date of 2016-10-21 00:00:00 found in record RNT277
+2020-05-04 09:40:25,973 charges_calc.py:82  WARNING Value Error on record RNT277, value {'product_code': 'PRD28', 'units_rented': 2, 'price_per_day': 5, 'rental_start': '8/7/18', 'rental_end': '10/21/16', 'total_days': -655, 'total_price': -3275} square of the total price
+2020-05-04 09:40:25,974 charges_calc.py:73  WARNING Invalid end date of 2017-09-04 00:00:00 found in record RNT282
+2020-05-04 09:40:25,974 charges_calc.py:82  WARNING Value Error on record RNT282, value {'product_code': 'PRD28', 'units_rented': 8, 'price_per_day': 20, 'rental_start': '2/3/18', 'rental_end': '9/4/17', 'total_days': -152, 'total_price': -3040} square of the total price
+2020-05-04 09:40:25,974 charges_calc.py:73  WARNING Invalid end date of 2018-06-30 00:00:00 found in record RNT283
+2020-05-04 09:40:25,975 charges_calc.py:82  WARNING Value Error on record RNT283, value {'product_code': 'PRD85', 'units_rented': 7, 'price_per_day': 12, 'rental_start': '7/18/18', 'rental_end': '6/30/18', 'total_days': -18, 'total_price': -216} square of the total price
+2020-05-04 09:40:25,975 charges_calc.py:73  WARNING Invalid end date of 2018-09-13 00:00:00 found in record RNT288
+2020-05-04 09:40:25,975 charges_calc.py:82  WARNING Value Error on record RNT288, value {'product_code': 'PRD74', 'units_rented': 8, 'price_per_day': 37, 'rental_start': '12/31/18', 'rental_end': '9/13/18', 'total_days': -109, 'total_price': -4033} square of the total price
+2020-05-04 09:40:25,976 charges_calc.py:73  WARNING Invalid end date of 2016-05-12 00:00:00 found in record RNT290
+2020-05-04 09:40:25,976 charges_calc.py:82  WARNING Value Error on record RNT290, value {'product_code': 'PRD90', 'units_rented': 2, 'price_per_day': 26, 'rental_start': '5/17/16', 'rental_end': '5/12/16', 'total_days': -5, 'total_price': -130} square of the total price
+2020-05-04 09:40:25,978 charges_calc.py:73  WARNING Invalid end date of 2016-04-25 00:00:00 found in record RNT295
+2020-05-04 09:40:25,978 charges_calc.py:82  WARNING Value Error on record RNT295, value {'product_code': 'PRD71', 'units_rented': 3, 'price_per_day': 35, 'rental_start': '11/10/16', 'rental_end': '4/25/16', 'total_days': -199, 'total_price': -6965} square of the total price
+2020-05-04 09:40:25,979 charges_calc.py:73  WARNING Invalid end date of 2016-05-13 00:00:00 found in record RNT296
+2020-05-04 09:40:25,979 charges_calc.py:82  WARNING Value Error on record RNT296, value {'product_code': 'PRD84', 'units_rented': 5, 'price_per_day': 24, 'rental_start': '12/8/17', 'rental_end': '5/13/16', 'total_days': -574, 'total_price': -13776} square of the total price
+2020-05-04 09:40:25,980 charges_calc.py:73  WARNING Invalid end date of 2018-07-08 00:00:00 found in record RNT298
+2020-05-04 09:40:25,980 charges_calc.py:82  WARNING Value Error on record RNT298, value {'product_code': 'PRD29', 'units_rented': 3, 'price_per_day': 20, 'rental_start': '12/11/18', 'rental_end': '7/8/18', 'total_days': -156, 'total_price': -3120} square of the total price
+2020-05-04 09:40:25,981 charges_calc.py:73  WARNING Invalid end date of 2016-10-08 00:00:00 found in record RNT299
+2020-05-04 09:40:25,981 charges_calc.py:82  WARNING Value Error on record RNT299, value {'product_code': 'PRD69', 'units_rented': 6, 'price_per_day': 39, 'rental_start': '10/13/16', 'rental_end': '10/8/16', 'total_days': -5, 'total_price': -195} square of the total price
+2020-05-04 09:40:25,981 charges_calc.py:73  WARNING Invalid end date of 2016-06-30 00:00:00 found in record RNT300
+2020-05-04 09:40:25,982 charges_calc.py:82  WARNING Value Error on record RNT300, value {'product_code': 'PRD18', 'units_rented': 1, 'price_per_day': 27, 'rental_start': '1/27/17', 'rental_end': '6/30/16', 'total_days': -211, 'total_price': -5697} square of the total price
+2020-05-04 09:40:25,982 charges_calc.py:73  WARNING Invalid end date of 2016-01-29 00:00:00 found in record RNT301
+2020-05-04 09:40:25,983 charges_calc.py:82  WARNING Value Error on record RNT301, value {'product_code': 'PRD89', 'units_rented': 8, 'price_per_day': 15, 'rental_start': '8/10/17', 'rental_end': '1/29/16', 'total_days': -559, 'total_price': -8385} square of the total price
+2020-05-04 09:40:25,983 charges_calc.py:73  WARNING Invalid end date of 2016-02-22 00:00:00 found in record RNT302
+2020-05-04 09:40:25,984 charges_calc.py:82  WARNING Value Error on record RNT302, value {'product_code': 'PRD37', 'units_rented': 3, 'price_per_day': 6, 'rental_start': '12/2/16', 'rental_end': '2/22/16', 'total_days': -284, 'total_price': -1704} square of the total price
+2020-05-04 09:40:25,984 charges_calc.py:73  WARNING Invalid end date of 2017-05-23 00:00:00 found in record RNT303
+2020-05-04 09:40:25,985 charges_calc.py:82  WARNING Value Error on record RNT303, value {'product_code': 'PRD13', 'units_rented': 8, 'price_per_day': 30, 'rental_start': '7/2/18', 'rental_end': '5/23/17', 'total_days': -405, 'total_price': -12150} square of the total price
+2020-05-04 09:40:25,985 charges_calc.py:73  WARNING Invalid end date of 2017-12-31 00:00:00 found in record RNT304
+2020-05-04 09:40:25,986 charges_calc.py:82  WARNING Value Error on record RNT304, value {'product_code': 'PRD11', 'units_rented': 8, 'price_per_day': 20, 'rental_start': '6/29/18', 'rental_end': '12/31/17', 'total_days': -180, 'total_price': -3600} square of the total price
+2020-05-04 09:40:25,986 charges_calc.py:73  WARNING Invalid end date of 2016-04-20 00:00:00 found in record RNT305
+2020-05-04 09:40:25,986 charges_calc.py:82  WARNING Value Error on record RNT305, value {'product_code': 'PRD12', 'units_rented': 7, 'price_per_day': 19, 'rental_start': '1/10/18', 'rental_end': '4/20/16', 'total_days': -630, 'total_price': -11970} square of the total price
+2020-05-04 09:40:25,988 charges_calc.py:73  WARNING Invalid end date of 2017-01-21 00:00:00 found in record RNT306
+2020-05-04 09:40:25,989 charges_calc.py:82  WARNING Value Error on record RNT306, value {'product_code': 'PRD18', 'units_rented': 1, 'price_per_day': 40, 'rental_start': '8/6/18', 'rental_end': '1/21/17', 'total_days': -562, 'total_price': -22480} square of the total price
+2020-05-04 09:40:25,990 charges_calc.py:73  WARNING Invalid end date of 2016-04-28 00:00:00 found in record RNT308
+2020-05-04 09:40:25,990 charges_calc.py:82  WARNING Value Error on record RNT308, value {'product_code': 'PRD23', 'units_rented': 6, 'price_per_day': 5, 'rental_start': '7/25/16', 'rental_end': '4/28/16', 'total_days': -88, 'total_price': -440} square of the total price
+2020-05-04 09:40:25,991 charges_calc.py:73  WARNING Invalid end date of 2017-10-26 00:00:00 found in record RNT309
+2020-05-04 09:40:25,991 charges_calc.py:82  WARNING Value Error on record RNT309, value {'product_code': 'PRD14', 'units_rented': 5, 'price_per_day': 35, 'rental_start': '12/3/17', 'rental_end': '10/26/17', 'total_days': -38, 'total_price': -1330} square of the total price
+2020-05-04 09:40:25,992 charges_calc.py:73  WARNING Invalid end date of 2016-07-05 00:00:00 found in record RNT310
+2020-05-04 09:40:25,992 charges_calc.py:82  WARNING Value Error on record RNT310, value {'product_code': 'PRD29', 'units_rented': 10, 'price_per_day': 13, 'rental_start': '11/28/18', 'rental_end': '7/5/16', 'total_days': -876, 'total_price': -11388} square of the total price
+2020-05-04 09:40:25,993 charges_calc.py:73  WARNING Invalid end date of 2017-05-19 00:00:00 found in record RNT311
+2020-05-04 09:40:25,993 charges_calc.py:82  WARNING Value Error on record RNT311, value {'product_code': 'PRD45', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '12/24/18', 'rental_end': '5/19/17', 'total_days': -584, 'total_price': -18104} square of the total price
+2020-05-04 09:40:25,994 charges_calc.py:73  WARNING Invalid end date of 2017-03-26 00:00:00 found in record RNT312
+2020-05-04 09:40:25,994 charges_calc.py:82  WARNING Value Error on record RNT312, value {'product_code': 'PRD98', 'units_rented': 1, 'price_per_day': 34, 'rental_start': '6/17/17', 'rental_end': '3/26/17', 'total_days': -83, 'total_price': -2822} square of the total price
+2020-05-04 09:40:25,994 charges_calc.py:73  WARNING Invalid end date of 2017-02-17 00:00:00 found in record RNT313
+2020-05-04 09:40:25,995 charges_calc.py:82  WARNING Value Error on record RNT313, value {'product_code': 'PRD75', 'units_rented': 8, 'price_per_day': 13, 'rental_start': '1/23/18', 'rental_end': '2/17/17', 'total_days': -340, 'total_price': -4420} square of the total price
+2020-05-04 09:40:25,995 charges_calc.py:73  WARNING Invalid end date of 2017-03-06 00:00:00 found in record RNT314
+2020-05-04 09:40:25,996 charges_calc.py:82  WARNING Value Error on record RNT314, value {'product_code': 'PRD71', 'units_rented': 8, 'price_per_day': 39, 'rental_start': '7/25/18', 'rental_end': '3/6/17', 'total_days': -506, 'total_price': -19734} square of the total price
+2020-05-04 09:40:25,996 charges_calc.py:73  WARNING Invalid end date of 2016-12-21 00:00:00 found in record RNT315
+2020-05-04 09:40:25,997 charges_calc.py:82  WARNING Value Error on record RNT315, value {'product_code': 'PRD86', 'units_rented': 3, 'price_per_day': 35, 'rental_start': '9/19/17', 'rental_end': '12/21/16', 'total_days': -272, 'total_price': -9520} square of the total price
+2020-05-04 09:40:25,998 charges_calc.py:73  WARNING Invalid end date of 2016-04-14 00:00:00 found in record RNT316
+2020-05-04 09:40:25,999 charges_calc.py:82  WARNING Value Error on record RNT316, value {'product_code': 'PRD92', 'units_rented': 6, 'price_per_day': 16, 'rental_start': '1/9/17', 'rental_end': '4/14/16', 'total_days': -270, 'total_price': -4320} square of the total price
+2020-05-04 09:40:26,000 charges_calc.py:73  WARNING Invalid end date of 2017-08-25 00:00:00 found in record RNT320
+2020-05-04 09:40:26,000 charges_calc.py:82  WARNING Value Error on record RNT320, value {'product_code': 'PRD90', 'units_rented': 5, 'price_per_day': 14, 'rental_start': '10/16/18', 'rental_end': '8/25/17', 'total_days': -417, 'total_price': -5838} square of the total price
+2020-05-04 09:40:26,001 charges_calc.py:73  WARNING Invalid end date of 2017-06-09 00:00:00 found in record RNT321
+2020-05-04 09:40:26,002 charges_calc.py:82  WARNING Value Error on record RNT321, value {'product_code': 'PRD65', 'units_rented': 9, 'price_per_day': 17, 'rental_start': '4/18/18', 'rental_end': '6/9/17', 'total_days': -313, 'total_price': -5321} square of the total price
+2020-05-04 09:40:26,002 charges_calc.py:73  WARNING Invalid end date of 2016-02-03 00:00:00 found in record RNT324
+2020-05-04 09:40:26,002 charges_calc.py:82  WARNING Value Error on record RNT324, value {'product_code': 'PRD18', 'units_rented': 5, 'price_per_day': 18, 'rental_start': '12/29/18', 'rental_end': '2/3/16', 'total_days': -1060, 'total_price': -19080} square of the total price
+2020-05-04 09:40:26,003 charges_calc.py:73  WARNING Invalid end date of 2016-06-10 00:00:00 found in record RNT325
+2020-05-04 09:40:26,003 charges_calc.py:82  WARNING Value Error on record RNT325, value {'product_code': 'PRD42', 'units_rented': 1, 'price_per_day': 34, 'rental_start': '5/18/18', 'rental_end': '6/10/16', 'total_days': -707, 'total_price': -24038} square of the total price
+2020-05-04 09:40:26,004 charges_calc.py:73  WARNING Invalid end date of 2017-07-06 00:00:00 found in record RNT331
+2020-05-04 09:40:26,004 charges_calc.py:82  WARNING Value Error on record RNT331, value {'product_code': 'PRD68', 'units_rented': 2, 'price_per_day': 38, 'rental_start': '7/8/17', 'rental_end': '7/6/17', 'total_days': -2, 'total_price': -76} square of the total price
+2020-05-04 09:40:26,005 charges_calc.py:73  WARNING Invalid end date of 2017-12-04 00:00:00 found in record RNT335
+2020-05-04 09:40:26,005 charges_calc.py:82  WARNING Value Error on record RNT335, value {'product_code': 'PRD37', 'units_rented': 3, 'price_per_day': 10, 'rental_start': '12/19/17', 'rental_end': '12/4/17', 'total_days': -15, 'total_price': -150} square of the total price
+2020-05-04 09:40:26,006 charges_calc.py:73  WARNING Invalid end date of 2016-12-13 00:00:00 found in record RNT336
+2020-05-04 09:40:26,006 charges_calc.py:82  WARNING Value Error on record RNT336, value {'product_code': 'PRD95', 'units_rented': 7, 'price_per_day': 17, 'rental_start': '9/3/17', 'rental_end': '12/13/16', 'total_days': -264, 'total_price': -4488} square of the total price
+2020-05-04 09:40:26,008 charges_calc.py:73  WARNING Invalid end date of 2017-03-25 00:00:00 found in record RNT337
+2020-05-04 09:40:26,008 charges_calc.py:82  WARNING Value Error on record RNT337, value {'product_code': 'PRD31', 'units_rented': 9, 'price_per_day': 25, 'rental_start': '12/16/17', 'rental_end': '3/25/17', 'total_days': -266, 'total_price': -6650} square of the total price
+2020-05-04 09:40:26,009 charges_calc.py:73  WARNING Invalid end date of 2016-03-01 00:00:00 found in record RNT339
+2020-05-04 09:40:26,009 charges_calc.py:82  WARNING Value Error on record RNT339, value {'product_code': 'PRD43', 'units_rented': 5, 'price_per_day': 38, 'rental_start': '7/12/17', 'rental_end': '3/1/16', 'total_days': -498, 'total_price': -18924} square of the total price
+2020-05-04 09:40:26,010 charges_calc.py:73  WARNING Invalid end date of 2017-01-17 00:00:00 found in record RNT343
+2020-05-04 09:40:26,010 charges_calc.py:82  WARNING Value Error on record RNT343, value {'product_code': 'PRD73', 'units_rented': 3, 'price_per_day': 32, 'rental_start': '2/15/17', 'rental_end': '1/17/17', 'total_days': -29, 'total_price': -928} square of the total price
+2020-05-04 09:40:26,011 charges_calc.py:73  WARNING Invalid end date of 2016-10-22 00:00:00 found in record RNT345
+2020-05-04 09:40:26,011 charges_calc.py:82  WARNING Value Error on record RNT345, value {'product_code': 'PRD44', 'units_rented': 5, 'price_per_day': 38, 'rental_start': '5/15/17', 'rental_end': '10/22/16', 'total_days': -205, 'total_price': -7790} square of the total price
+2020-05-04 09:40:26,011 charges_calc.py:73  WARNING Invalid end date of 2017-03-21 00:00:00 found in record RNT346
+2020-05-04 09:40:26,012 charges_calc.py:82  WARNING Value Error on record RNT346, value {'product_code': 'PRD59', 'units_rented': 7, 'price_per_day': 27, 'rental_start': '9/17/18', 'rental_end': '3/21/17', 'total_days': -545, 'total_price': -14715} square of the total price
+2020-05-04 09:40:26,012 charges_calc.py:73  WARNING Invalid end date of 2017-09-21 00:00:00 found in record RNT347
+2020-05-04 09:40:26,013 charges_calc.py:82  WARNING Value Error on record RNT347, value {'product_code': 'PRD32', 'units_rented': 6, 'price_per_day': 18, 'rental_start': '4/17/18', 'rental_end': '9/21/17', 'total_days': -208, 'total_price': -3744} square of the total price
+2020-05-04 09:40:26,013 charges_calc.py:73  WARNING Invalid end date of 2017-01-15 00:00:00 found in record RNT352
+2020-05-04 09:40:26,013 charges_calc.py:82  WARNING Value Error on record RNT352, value {'product_code': 'PRD92', 'units_rented': 8, 'price_per_day': 33, 'rental_start': '7/16/18', 'rental_end': '1/15/17', 'total_days': -547, 'total_price': -18051} square of the total price
+2020-05-04 09:40:26,014 charges_calc.py:73  WARNING Invalid end date of 2016-12-13 00:00:00 found in record RNT353
+2020-05-04 09:40:26,014 charges_calc.py:82  WARNING Value Error on record RNT353, value {'product_code': 'PRD38', 'units_rented': 4, 'price_per_day': 38, 'rental_start': '10/4/17', 'rental_end': '12/13/16', 'total_days': -295, 'total_price': -11210} square of the total price
+2020-05-04 09:40:26,015 charges_calc.py:73  WARNING Invalid end date of 2018-07-30 00:00:00 found in record RNT355
+2020-05-04 09:40:26,015 charges_calc.py:82  WARNING Value Error on record RNT355, value {'product_code': 'PRD29', 'units_rented': 3, 'price_per_day': 12, 'rental_start': '9/13/18', 'rental_end': '7/30/18', 'total_days': -45, 'total_price': -540} square of the total price
+2020-05-04 09:40:26,016 charges_calc.py:73  WARNING Invalid end date of 2017-08-21 00:00:00 found in record RNT356
+2020-05-04 09:40:26,016 charges_calc.py:82  WARNING Value Error on record RNT356, value {'product_code': 'PRD59', 'units_rented': 9, 'price_per_day': 7, 'rental_start': '1/16/18', 'rental_end': '8/21/17', 'total_days': -148, 'total_price': -1036} square of the total price
+2020-05-04 09:40:26,018 charges_calc.py:73  WARNING Invalid end date of 2016-03-05 00:00:00 found in record RNT361
+2020-05-04 09:40:26,019 charges_calc.py:82  WARNING Value Error on record RNT361, value {'product_code': 'PRD31', 'units_rented': 3, 'price_per_day': 21, 'rental_start': '1/29/18', 'rental_end': '3/5/16', 'total_days': -695, 'total_price': -14595} square of the total price
+2020-05-04 09:40:26,019 charges_calc.py:73  WARNING Invalid end date of 2018-05-21 00:00:00 found in record RNT363
+2020-05-04 09:40:26,020 charges_calc.py:82  WARNING Value Error on record RNT363, value {'product_code': 'PRD40', 'units_rented': 3, 'price_per_day': 19, 'rental_start': '6/12/18', 'rental_end': '5/21/18', 'total_days': -22, 'total_price': -418} square of the total price
+2020-05-04 09:40:26,020 charges_calc.py:73  WARNING Invalid end date of 2018-05-14 00:00:00 found in record RNT364
+2020-05-04 09:40:26,020 charges_calc.py:82  WARNING Value Error on record RNT364, value {'product_code': 'PRD51', 'units_rented': 5, 'price_per_day': 38, 'rental_start': '6/24/18', 'rental_end': '5/14/18', 'total_days': -41, 'total_price': -1558} square of the total price
+2020-05-04 09:40:26,021 charges_calc.py:73  WARNING Invalid end date of 2017-10-08 00:00:00 found in record RNT366
+2020-05-04 09:40:26,021 charges_calc.py:82  WARNING Value Error on record RNT366, value {'product_code': 'PRD73', 'units_rented': 1, 'price_per_day': 34, 'rental_start': '7/24/18', 'rental_end': '10/8/17', 'total_days': -289, 'total_price': -9826} square of the total price
+2020-05-04 09:40:26,022 charges_calc.py:73  WARNING Invalid end date of 2017-06-10 00:00:00 found in record RNT371
+2020-05-04 09:40:26,022 charges_calc.py:82  WARNING Value Error on record RNT371, value {'product_code': 'PRD2', 'units_rented': 2, 'price_per_day': 30, 'rental_start': '11/20/18', 'rental_end': '6/10/17', 'total_days': -528, 'total_price': -15840} square of the total price
+2020-05-04 09:40:26,023 charges_calc.py:73  WARNING Invalid end date of 2016-09-17 00:00:00 found in record RNT372
+2020-05-04 09:40:26,023 charges_calc.py:82  WARNING Value Error on record RNT372, value {'product_code': 'PRD40', 'units_rented': 6, 'price_per_day': 26, 'rental_start': '9/14/17', 'rental_end': '9/17/16', 'total_days': -362, 'total_price': -9412} square of the total price
+2020-05-04 09:40:26,024 charges_calc.py:73  WARNING Invalid end date of 2018-01-15 00:00:00 found in record RNT374
+2020-05-04 09:40:26,024 charges_calc.py:82  WARNING Value Error on record RNT374, value {'product_code': 'PRD85', 'units_rented': 6, 'price_per_day': 9, 'rental_start': '6/28/18', 'rental_end': '1/15/18', 'total_days': -164, 'total_price': -1476} square of the total price
+2020-05-04 09:40:26,025 charges_calc.py:73  WARNING Invalid end date of 2017-04-20 00:00:00 found in record RNT376
+2020-05-04 09:40:26,025 charges_calc.py:82  WARNING Value Error on record RNT376, value {'product_code': 'PRD75', 'units_rented': 10, 'price_per_day': 23, 'rental_start': '11/20/17', 'rental_end': '4/20/17', 'total_days': -214, 'total_price': -4922} square of the total price
+2020-05-04 09:40:26,026 charges_calc.py:73  WARNING Invalid end date of 2016-11-21 00:00:00 found in record RNT379
+2020-05-04 09:40:26,026 charges_calc.py:82  WARNING Value Error on record RNT379, value {'product_code': 'PRD44', 'units_rented': 10, 'price_per_day': 17, 'rental_start': '9/11/18', 'rental_end': '11/21/16', 'total_days': -659, 'total_price': -11203} square of the total price
+2020-05-04 09:40:26,027 charges_calc.py:73  WARNING Invalid end date of 2016-12-26 00:00:00 found in record RNT381
+2020-05-04 09:40:26,028 charges_calc.py:82  WARNING Value Error on record RNT381, value {'product_code': 'PRD30', 'units_rented': 3, 'price_per_day': 19, 'rental_start': '5/28/18', 'rental_end': '12/26/16', 'total_days': -518, 'total_price': -9842} square of the total price
+2020-05-04 09:40:26,029 charges_calc.py:73  WARNING Invalid end date of 2017-05-06 00:00:00 found in record RNT383
+2020-05-04 09:40:26,029 charges_calc.py:82  WARNING Value Error on record RNT383, value {'product_code': 'PRD58', 'units_rented': 9, 'price_per_day': 9, 'rental_start': '5/28/17', 'rental_end': '5/6/17', 'total_days': -22, 'total_price': -198} square of the total price
+2020-05-04 09:40:26,029 charges_calc.py:73  WARNING Invalid end date of 2017-05-29 00:00:00 found in record RNT384
+2020-05-04 09:40:26,030 charges_calc.py:82  WARNING Value Error on record RNT384, value {'product_code': 'PRD73', 'units_rented': 1, 'price_per_day': 34, 'rental_start': '11/28/17', 'rental_end': '5/29/17', 'total_days': -183, 'total_price': -6222} square of the total price
+2020-05-04 09:40:26,030 charges_calc.py:73  WARNING Invalid end date of 2016-06-09 00:00:00 found in record RNT386
+2020-05-04 09:40:26,031 charges_calc.py:82  WARNING Value Error on record RNT386, value {'product_code': 'PRD99', 'units_rented': 4, 'price_per_day': 38, 'rental_start': '1/5/17', 'rental_end': '6/9/16', 'total_days': -210, 'total_price': -7980} square of the total price
+2020-05-04 09:40:26,031 charges_calc.py:73  WARNING Invalid end date of 2016-07-18 00:00:00 found in record RNT387
+2020-05-04 09:40:26,032 charges_calc.py:82  WARNING Value Error on record RNT387, value {'product_code': 'PRD38', 'units_rented': 3, 'price_per_day': 40, 'rental_start': '12/28/18', 'rental_end': '7/18/16', 'total_days': -893, 'total_price': -35720} square of the total price
+2020-05-04 09:40:26,032 charges_calc.py:73  WARNING Invalid end date of 2016-12-11 00:00:00 found in record RNT388
+2020-05-04 09:40:26,033 charges_calc.py:82  WARNING Value Error on record RNT388, value {'product_code': 'PRD38', 'units_rented': 9, 'price_per_day': 5, 'rental_start': '7/21/18', 'rental_end': '12/11/16', 'total_days': -587, 'total_price': -2935} square of the total price
+2020-05-04 09:40:26,033 charges_calc.py:73  WARNING Invalid end date of 2017-08-06 00:00:00 found in record RNT391
+2020-05-04 09:40:26,034 charges_calc.py:82  WARNING Value Error on record RNT391, value {'product_code': 'PRD2', 'units_rented': 1, 'price_per_day': 27, 'rental_start': '8/18/17', 'rental_end': '8/6/17', 'total_days': -12, 'total_price': -324} square of the total price
+2020-05-04 09:40:26,034 charges_calc.py:73  WARNING Invalid end date of 2018-04-04 00:00:00 found in record RNT392
+2020-05-04 09:40:26,035 charges_calc.py:82  WARNING Value Error on record RNT392, value {'product_code': 'PRD64', 'units_rented': 9, 'price_per_day': 21, 'rental_start': '7/17/18', 'rental_end': '4/4/18', 'total_days': -104, 'total_price': -2184} square of the total price
+2020-05-04 09:40:26,035 charges_calc.py:73  WARNING Invalid end date of 2017-01-10 00:00:00 found in record RNT394
+2020-05-04 09:40:26,035 charges_calc.py:82  WARNING Value Error on record RNT394, value {'product_code': 'PRD11', 'units_rented': 3, 'price_per_day': 27, 'rental_start': '2/15/18', 'rental_end': '1/10/17', 'total_days': -401, 'total_price': -10827} square of the total price
+2020-05-04 09:40:26,036 charges_calc.py:73  WARNING Invalid end date of 2017-12-29 00:00:00 found in record RNT395
+2020-05-04 09:40:26,036 charges_calc.py:82  WARNING Value Error on record RNT395, value {'product_code': 'PRD22', 'units_rented': 5, 'price_per_day': 6, 'rental_start': '3/31/18', 'rental_end': '12/29/17', 'total_days': -92, 'total_price': -552} square of the total price
+2020-05-04 09:40:26,037 charges_calc.py:73  WARNING Invalid end date of 2016-05-11 00:00:00 found in record RNT397
+2020-05-04 09:40:26,041 charges_calc.py:82  WARNING Value Error on record RNT397, value {'product_code': 'PRD81', 'units_rented': 4, 'price_per_day': 18, 'rental_start': '6/22/17', 'rental_end': '5/11/16', 'total_days': -407, 'total_price': -7326} square of the total price
+2020-05-04 09:40:26,041 charges_calc.py:73  WARNING Invalid end date of 2017-03-06 00:00:00 found in record RNT400
+2020-05-04 09:40:26,041 charges_calc.py:82  WARNING Value Error on record RNT400, value {'product_code': 'PRD59', 'units_rented': 5, 'price_per_day': 27, 'rental_start': '10/12/18', 'rental_end': '3/6/17', 'total_days': -585, 'total_price': -15795} square of the total price
+2020-05-04 09:40:26,042 charges_calc.py:73  WARNING Invalid end date of 2017-04-17 00:00:00 found in record RNT405
+2020-05-04 09:40:26,042 charges_calc.py:82  WARNING Value Error on record RNT405, value {'product_code': 'PRD48', 'units_rented': 3, 'price_per_day': 18, 'rental_start': '10/9/18', 'rental_end': '4/17/17', 'total_days': -540, 'total_price': -9720} square of the total price
+2020-05-04 09:40:26,043 charges_calc.py:73  WARNING Invalid end date of 2017-01-02 00:00:00 found in record RNT408
+2020-05-04 09:40:26,043 charges_calc.py:82  WARNING Value Error on record RNT408, value {'product_code': 'PRD42', 'units_rented': 2, 'price_per_day': 37, 'rental_start': '2/1/17', 'rental_end': '1/2/17', 'total_days': -30, 'total_price': -1110} square of the total price
+2020-05-04 09:40:26,044 charges_calc.py:73  WARNING Invalid end date of 2016-11-18 00:00:00 found in record RNT409
+2020-05-04 09:40:26,044 charges_calc.py:82  WARNING Value Error on record RNT409, value {'product_code': 'PRD12', 'units_rented': 10, 'price_per_day': 24, 'rental_start': '8/16/17', 'rental_end': '11/18/16', 'total_days': -271, 'total_price': -6504} square of the total price
+2020-05-04 09:40:26,044 charges_calc.py:73  WARNING Invalid end date of 2017-09-16 00:00:00 found in record RNT412
+2020-05-04 09:40:26,045 charges_calc.py:82  WARNING Value Error on record RNT412, value {'product_code': 'PRD58', 'units_rented': 3, 'price_per_day': 33, 'rental_start': '6/30/18', 'rental_end': '9/16/17', 'total_days': -287, 'total_price': -9471} square of the total price
+2020-05-04 09:40:26,045 charges_calc.py:73  WARNING Invalid end date of 2017-10-01 00:00:00 found in record RNT413
+2020-05-04 09:40:26,046 charges_calc.py:82  WARNING Value Error on record RNT413, value {'product_code': 'PRD6', 'units_rented': 2, 'price_per_day': 5, 'rental_start': '9/22/18', 'rental_end': '10/1/17', 'total_days': -356, 'total_price': -1780} square of the total price
+2020-05-04 09:40:26,046 charges_calc.py:73  WARNING Invalid end date of 2016-11-04 00:00:00 found in record RNT414
+2020-05-04 09:40:26,048 charges_calc.py:82  WARNING Value Error on record RNT414, value {'product_code': 'PRD65', 'units_rented': 8, 'price_per_day': 38, 'rental_start': '8/5/17', 'rental_end': '11/4/16', 'total_days': -274, 'total_price': -10412} square of the total price
+2020-05-04 09:40:26,048 charges_calc.py:73  WARNING Invalid end date of 2017-02-18 00:00:00 found in record RNT416
+2020-05-04 09:40:26,049 charges_calc.py:82  WARNING Value Error on record RNT416, value {'product_code': 'PRD71', 'units_rented': 4, 'price_per_day': 27, 'rental_start': '10/26/17', 'rental_end': '2/18/17', 'total_days': -250, 'total_price': -6750} square of the total price
+2020-05-04 09:40:26,050 charges_calc.py:73  WARNING Invalid end date of 2016-04-14 00:00:00 found in record RNT421
+2020-05-04 09:40:26,050 charges_calc.py:82  WARNING Value Error on record RNT421, value {'product_code': 'PRD92', 'units_rented': 9, 'price_per_day': 9, 'rental_start': '12/6/17', 'rental_end': '4/14/16', 'total_days': -601, 'total_price': -5409} square of the total price
+2020-05-04 09:40:26,051 charges_calc.py:73  WARNING Invalid end date of 2016-07-18 00:00:00 found in record RNT422
+2020-05-04 09:40:26,051 charges_calc.py:82  WARNING Value Error on record RNT422, value {'product_code': 'PRD14', 'units_rented': 4, 'price_per_day': 21, 'rental_start': '12/24/16', 'rental_end': '7/18/16', 'total_days': -159, 'total_price': -3339} square of the total price
+2020-05-04 09:40:26,051 charges_calc.py:73  WARNING Invalid end date of 2016-01-25 00:00:00 found in record RNT423
+2020-05-04 09:40:26,052 charges_calc.py:82  WARNING Value Error on record RNT423, value {'product_code': 'PRD45', 'units_rented': 6, 'price_per_day': 35, 'rental_start': '10/17/16', 'rental_end': '1/25/16', 'total_days': -266, 'total_price': -9310} square of the total price
+2020-05-04 09:40:26,052 charges_calc.py:73  WARNING Invalid end date of 2016-04-27 00:00:00 found in record RNT424
+2020-05-04 09:40:26,053 charges_calc.py:82  WARNING Value Error on record RNT424, value {'product_code': 'PRD5', 'units_rented': 8, 'price_per_day': 22, 'rental_start': '9/27/18', 'rental_end': '4/27/16', 'total_days': -883, 'total_price': -19426} square of the total price
+2020-05-04 09:40:26,053 charges_calc.py:73  WARNING Invalid end date of 2017-01-09 00:00:00 found in record RNT427
+2020-05-04 09:40:26,054 charges_calc.py:82  WARNING Value Error on record RNT427, value {'product_code': 'PRD59', 'units_rented': 9, 'price_per_day': 11, 'rental_start': '5/5/18', 'rental_end': '1/9/17', 'total_days': -481, 'total_price': -5291} square of the total price
+2020-05-04 09:40:26,054 charges_calc.py:73  WARNING Invalid end date of 2016-06-11 00:00:00 found in record RNT428
+2020-05-04 09:40:26,055 charges_calc.py:82  WARNING Value Error on record RNT428, value {'product_code': 'PRD86', 'units_rented': 7, 'price_per_day': 15, 'rental_start': '11/11/16', 'rental_end': '6/11/16', 'total_days': -153, 'total_price': -2295} square of the total price
+2020-05-04 09:40:26,056 charges_calc.py:73  WARNING Invalid end date of 2018-04-11 00:00:00 found in record RNT430
+2020-05-04 09:40:26,056 charges_calc.py:82  WARNING Value Error on record RNT430, value {'product_code': 'PRD57', 'units_rented': 2, 'price_per_day': 15, 'rental_start': '5/3/18', 'rental_end': '4/11/18', 'total_days': -22, 'total_price': -330} square of the total price
+2020-05-04 09:40:26,058 charges_calc.py:73  WARNING Invalid end date of 2016-01-24 00:00:00 found in record RNT435
+2020-05-04 09:40:26,059 charges_calc.py:82  WARNING Value Error on record RNT435, value {'product_code': 'PRD70', 'units_rented': 1, 'price_per_day': 32, 'rental_start': '11/22/16', 'rental_end': '1/24/16', 'total_days': -303, 'total_price': -9696} square of the total price
+2020-05-04 09:40:26,059 charges_calc.py:73  WARNING Invalid end date of 2017-05-07 00:00:00 found in record RNT436
+2020-05-04 09:40:26,059 charges_calc.py:82  WARNING Value Error on record RNT436, value {'product_code': 'PRD37', 'units_rented': 4, 'price_per_day': 10, 'rental_start': '4/17/18', 'rental_end': '5/7/17', 'total_days': -345, 'total_price': -3450} square of the total price
+2020-05-04 09:40:26,060 charges_calc.py:73  WARNING Invalid end date of 2016-12-03 00:00:00 found in record RNT440
+2020-05-04 09:40:26,060 charges_calc.py:82  WARNING Value Error on record RNT440, value {'product_code': 'PRD43', 'units_rented': 1, 'price_per_day': 36, 'rental_start': '11/24/18', 'rental_end': '12/3/16', 'total_days': -721, 'total_price': -25956} square of the total price
+2020-05-04 09:40:26,061 charges_calc.py:73  WARNING Invalid end date of 2016-02-18 00:00:00 found in record RNT443
+2020-05-04 09:40:26,061 charges_calc.py:82  WARNING Value Error on record RNT443, value {'product_code': 'PRD82', 'units_rented': 9, 'price_per_day': 27, 'rental_start': '8/7/18', 'rental_end': '2/18/16', 'total_days': -901, 'total_price': -24327} square of the total price
+2020-05-04 09:40:26,062 charges_calc.py:73  WARNING Invalid end date of 2017-10-24 00:00:00 found in record RNT445
+2020-05-04 09:40:26,062 charges_calc.py:82  WARNING Value Error on record RNT445, value {'product_code': 'PRD87', 'units_rented': 6, 'price_per_day': 16, 'rental_start': '2/22/18', 'rental_end': '10/24/17', 'total_days': -121, 'total_price': -1936} square of the total price
+2020-05-04 09:40:26,062 charges_calc.py:73  WARNING Invalid end date of 2016-06-26 00:00:00 found in record RNT446
+2020-05-04 09:40:26,063 charges_calc.py:82  WARNING Value Error on record RNT446, value {'product_code': 'PRD55', 'units_rented': 4, 'price_per_day': 18, 'rental_start': '6/30/18', 'rental_end': '6/26/16', 'total_days': -734, 'total_price': -13212} square of the total price
+2020-05-04 09:40:26,063 charges_calc.py:73  WARNING Invalid end date of 2017-07-07 00:00:00 found in record RNT447
+2020-05-04 09:40:26,064 charges_calc.py:82  WARNING Value Error on record RNT447, value {'product_code': 'PRD67', 'units_rented': 3, 'price_per_day': 21, 'rental_start': '11/14/17', 'rental_end': '7/7/17', 'total_days': -130, 'total_price': -2730} square of the total price
+2020-05-04 09:40:26,064 charges_calc.py:73  WARNING Invalid end date of 2017-07-30 00:00:00 found in record RNT449
+2020-05-04 09:40:26,065 charges_calc.py:82  WARNING Value Error on record RNT449, value {'product_code': 'PRD89', 'units_rented': 6, 'price_per_day': 37, 'rental_start': '10/17/18', 'rental_end': '7/30/17', 'total_days': -444, 'total_price': -16428} square of the total price
+2020-05-04 09:40:26,065 charges_calc.py:73  WARNING Invalid end date of 2016-10-16 00:00:00 found in record RNT451
+2020-05-04 09:40:26,065 charges_calc.py:82  WARNING Value Error on record RNT451, value {'product_code': 'PRD3', 'units_rented': 2, 'price_per_day': 6, 'rental_start': '3/23/17', 'rental_end': '10/16/16', 'total_days': -158, 'total_price': -948} square of the total price
+2020-05-04 09:40:26,066 charges_calc.py:73  WARNING Invalid end date of 2016-07-23 00:00:00 found in record RNT453
+2020-05-04 09:40:26,068 charges_calc.py:82  WARNING Value Error on record RNT453, value {'product_code': 'PRD52', 'units_rented': 1, 'price_per_day': 34, 'rental_start': '10/10/18', 'rental_end': '7/23/16', 'total_days': -809, 'total_price': -27506} square of the total price
+2020-05-04 09:40:26,069 charges_calc.py:73  WARNING Invalid end date of 2018-08-25 00:00:00 found in record RNT454
+2020-05-04 09:40:26,069 charges_calc.py:82  WARNING Value Error on record RNT454, value {'product_code': 'PRD46', 'units_rented': 2, 'price_per_day': 5, 'rental_start': '9/28/18', 'rental_end': '8/25/18', 'total_days': -34, 'total_price': -170} square of the total price
+2020-05-04 09:40:26,070 charges_calc.py:73  WARNING Invalid end date of 2016-11-25 00:00:00 found in record RNT457
+2020-05-04 09:40:26,070 charges_calc.py:82  WARNING Value Error on record RNT457, value {'product_code': 'PRD56', 'units_rented': 5, 'price_per_day': 31, 'rental_start': '8/6/18', 'rental_end': '11/25/16', 'total_days': -619, 'total_price': -19189} square of the total price
+2020-05-04 09:40:26,070 charges_calc.py:73  WARNING Invalid end date of 2016-06-06 00:00:00 found in record RNT461
+2020-05-04 09:40:26,071 charges_calc.py:82  WARNING Value Error on record RNT461, value {'product_code': 'PRD80', 'units_rented': 2, 'price_per_day': 11, 'rental_start': '7/21/18', 'rental_end': '6/6/16', 'total_days': -775, 'total_price': -8525} square of the total price
+2020-05-04 09:40:26,072 charges_calc.py:73  WARNING Invalid end date of 2018-05-02 00:00:00 found in record RNT462
+2020-05-04 09:40:26,072 charges_calc.py:82  WARNING Value Error on record RNT462, value {'product_code': 'PRD82', 'units_rented': 7, 'price_per_day': 17, 'rental_start': '6/9/18', 'rental_end': '5/2/18', 'total_days': -38, 'total_price': -646} square of the total price
+2020-05-04 09:40:26,073 charges_calc.py:73  WARNING Invalid end date of 2018-03-14 00:00:00 found in record RNT463
+2020-05-04 09:40:26,073 charges_calc.py:82  WARNING Value Error on record RNT463, value {'product_code': 'PRD6', 'units_rented': 5, 'price_per_day': 39, 'rental_start': '11/18/18', 'rental_end': '3/14/18', 'total_days': -249, 'total_price': -9711} square of the total price
+2020-05-04 09:40:26,074 charges_calc.py:73  WARNING Invalid end date of 2017-03-07 00:00:00 found in record RNT465
+2020-05-04 09:40:26,074 charges_calc.py:82  WARNING Value Error on record RNT465, value {'product_code': 'PRD81', 'units_rented': 3, 'price_per_day': 37, 'rental_start': '4/28/18', 'rental_end': '3/7/17', 'total_days': -417, 'total_price': -15429} square of the total price
+2020-05-04 09:40:26,075 charges_calc.py:73  WARNING Invalid end date of 2016-05-23 00:00:00 found in record RNT467
+2020-05-04 09:40:26,075 charges_calc.py:82  WARNING Value Error on record RNT467, value {'product_code': 'PRD65', 'units_rented': 8, 'price_per_day': 28, 'rental_start': '5/18/18', 'rental_end': '5/23/16', 'total_days': -725, 'total_price': -20300} square of the total price
+2020-05-04 09:40:26,075 charges_calc.py:73  WARNING Invalid end date of 2017-03-05 00:00:00 found in record RNT472
+2020-05-04 09:40:26,076 charges_calc.py:82  WARNING Value Error on record RNT472, value {'product_code': 'PRD44', 'units_rented': 9, 'price_per_day': 36, 'rental_start': '4/25/17', 'rental_end': '3/5/17', 'total_days': -51, 'total_price': -1836} square of the total price
+2020-05-04 09:40:26,076 charges_calc.py:73  WARNING Invalid end date of 2016-11-26 00:00:00 found in record RNT476
+2020-05-04 09:40:26,078 charges_calc.py:82  WARNING Value Error on record RNT476, value {'product_code': 'PRD40', 'units_rented': 4, 'price_per_day': 36, 'rental_start': '7/28/18', 'rental_end': '11/26/16', 'total_days': -609, 'total_price': -21924} square of the total price
+2020-05-04 09:40:26,079 charges_calc.py:73  WARNING Invalid end date of 2017-04-08 00:00:00 found in record RNT480
+2020-05-04 09:40:26,080 charges_calc.py:82  WARNING Value Error on record RNT480, value {'product_code': 'PRD42', 'units_rented': 3, 'price_per_day': 8, 'rental_start': '8/2/18', 'rental_end': '4/8/17', 'total_days': -481, 'total_price': -3848} square of the total price
+2020-05-04 09:40:26,080 charges_calc.py:73  WARNING Invalid end date of 2017-01-29 00:00:00 found in record RNT485
+2020-05-04 09:40:26,081 charges_calc.py:82  WARNING Value Error on record RNT485, value {'product_code': 'PRD56', 'units_rented': 7, 'price_per_day': 38, 'rental_start': '3/26/18', 'rental_end': '1/29/17', 'total_days': -421, 'total_price': -15998} square of the total price
+2020-05-04 09:40:26,081 charges_calc.py:73  WARNING Invalid end date of 2016-04-28 00:00:00 found in record RNT487
+2020-05-04 09:40:26,082 charges_calc.py:82  WARNING Value Error on record RNT487, value {'product_code': 'PRD93', 'units_rented': 5, 'price_per_day': 36, 'rental_start': '3/12/17', 'rental_end': '4/28/16', 'total_days': -318, 'total_price': -11448} square of the total price
+2020-05-04 09:40:26,082 charges_calc.py:73  WARNING Invalid end date of 2018-05-09 00:00:00 found in record RNT489
+2020-05-04 09:40:26,083 charges_calc.py:82  WARNING Value Error on record RNT489, value {'product_code': 'PRD69', 'units_rented': 6, 'price_per_day': 19, 'rental_start': '8/21/18', 'rental_end': '5/9/18', 'total_days': -104, 'total_price': -1976} square of the total price
+2020-05-04 09:40:26,084 charges_calc.py:73  WARNING Invalid end date of 2017-08-17 00:00:00 found in record RNT490
+2020-05-04 09:40:26,084 charges_calc.py:82  WARNING Value Error on record RNT490, value {'product_code': 'PRD58', 'units_rented': 5, 'price_per_day': 19, 'rental_start': '9/23/17', 'rental_end': '8/17/17', 'total_days': -37, 'total_price': -703} square of the total price
+2020-05-04 09:40:26,084 charges_calc.py:73  WARNING Invalid end date of 2017-02-03 00:00:00 found in record RNT491
+2020-05-04 09:40:26,085 charges_calc.py:82  WARNING Value Error on record RNT491, value {'product_code': 'PRD14', 'units_rented': 10, 'price_per_day': 15, 'rental_start': '6/2/18', 'rental_end': '2/3/17', 'total_days': -484, 'total_price': -7260} square of the total price
+2020-05-04 09:40:26,085 charges_calc.py:73  WARNING Invalid end date of 2016-10-10 00:00:00 found in record RNT493
+2020-05-04 09:40:26,086 charges_calc.py:82  WARNING Value Error on record RNT493, value {'product_code': 'PRD95', 'units_rented': 6, 'price_per_day': 12, 'rental_start': '8/23/18', 'rental_end': '10/10/16', 'total_days': -682, 'total_price': -8184} square of the total price
+2020-05-04 09:40:26,086 charges_calc.py:73  WARNING Invalid end date of 2016-07-31 00:00:00 found in record RNT495
+2020-05-04 09:40:26,086 charges_calc.py:82  WARNING Value Error on record RNT495, value {'product_code': 'PRD23', 'units_rented': 10, 'price_per_day': 7, 'rental_start': '6/22/17', 'rental_end': '7/31/16', 'total_days': -326, 'total_price': -2282} square of the total price
+2020-05-04 09:40:26,088 charges_calc.py:73  WARNING Invalid end date of 2016-12-05 00:00:00 found in record RNT496
+2020-05-04 09:40:26,089 charges_calc.py:82  WARNING Value Error on record RNT496, value {'product_code': 'PRD8', 'units_rented': 7, 'price_per_day': 26, 'rental_start': '11/28/17', 'rental_end': '12/5/16', 'total_days': -358, 'total_price': -9308} square of the total price
+2020-05-04 09:40:26,089 charges_calc.py:73  WARNING Invalid end date of 2017-04-20 00:00:00 found in record RNT497
+2020-05-04 09:40:26,090 charges_calc.py:82  WARNING Value Error on record RNT497, value {'product_code': 'PRD12', 'units_rented': 4, 'price_per_day': 17, 'rental_start': '6/17/18', 'rental_end': '4/20/17', 'total_days': -423, 'total_price': -7191} square of the total price
+2020-05-04 09:40:26,090 charges_calc.py:73  WARNING Invalid end date of 2016-07-04 00:00:00 found in record RNT501
+2020-05-04 09:40:26,091 charges_calc.py:82  WARNING Value Error on record RNT501, value {'product_code': 'PRD51', 'units_rented': 2, 'price_per_day': 27, 'rental_start': '10/30/16', 'rental_end': '7/4/16', 'total_days': -118, 'total_price': -3186} square of the total price
+2020-05-04 09:40:26,091 charges_calc.py:73  WARNING Invalid end date of 2016-11-22 00:00:00 found in record RNT503
+2020-05-04 09:40:26,091 charges_calc.py:82  WARNING Value Error on record RNT503, value {'product_code': 'PRD37', 'units_rented': 3, 'price_per_day': 39, 'rental_start': '3/15/17', 'rental_end': '11/22/16', 'total_days': -113, 'total_price': -4407} square of the total price
+2020-05-04 09:40:26,092 charges_calc.py:73  WARNING Invalid end date of 2017-06-01 00:00:00 found in record RNT507
+2020-05-04 09:40:26,092 charges_calc.py:82  WARNING Value Error on record RNT507, value {'product_code': 'PRD1', 'units_rented': 4, 'price_per_day': 6, 'rental_start': '6/20/18', 'rental_end': '6/1/17', 'total_days': -384, 'total_price': -2304} square of the total price
+2020-05-04 09:40:26,093 charges_calc.py:73  WARNING Invalid end date of 2016-03-21 00:00:00 found in record RNT508
+2020-05-04 09:40:26,093 charges_calc.py:82  WARNING Value Error on record RNT508, value {'product_code': 'PRD53', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '5/31/17', 'rental_end': '3/21/16', 'total_days': -436, 'total_price': -13516} square of the total price
+2020-05-04 09:40:26,094 charges_calc.py:73  WARNING Invalid end date of 2018-03-17 00:00:00 found in record RNT509
+2020-05-04 09:40:26,094 charges_calc.py:82  WARNING Value Error on record RNT509, value {'product_code': 'PRD78', 'units_rented': 6, 'price_per_day': 12, 'rental_start': '12/18/18', 'rental_end': '3/17/18', 'total_days': -276, 'total_price': -3312} square of the total price
+2020-05-04 09:40:26,095 charges_calc.py:73  WARNING Invalid end date of 2017-11-03 00:00:00 found in record RNT512
+2020-05-04 09:40:26,095 charges_calc.py:82  WARNING Value Error on record RNT512, value {'product_code': 'PRD29', 'units_rented': 4, 'price_per_day': 8, 'rental_start': '11/15/17', 'rental_end': '11/3/17', 'total_days': -12, 'total_price': -96} square of the total price
+2020-05-04 09:40:26,095 charges_calc.py:73  WARNING Invalid end date of 2018-07-06 00:00:00 found in record RNT513
+2020-05-04 09:40:26,096 charges_calc.py:82  WARNING Value Error on record RNT513, value {'product_code': 'PRD2', 'units_rented': 6, 'price_per_day': 25, 'rental_start': '12/22/18', 'rental_end': '7/6/18', 'total_days': -169, 'total_price': -4225} square of the total price
+2020-05-04 09:40:26,096 charges_calc.py:73  WARNING Invalid end date of 2017-09-25 00:00:00 found in record RNT514
+2020-05-04 09:40:26,097 charges_calc.py:82  WARNING Value Error on record RNT514, value {'product_code': 'PRD23', 'units_rented': 9, 'price_per_day': 34, 'rental_start': '8/18/18', 'rental_end': '9/25/17', 'total_days': -327, 'total_price': -11118} square of the total price
+2020-05-04 09:40:26,098 charges_calc.py:73  WARNING Invalid end date of 2017-09-18 00:00:00 found in record RNT515
+2020-05-04 09:40:26,099 charges_calc.py:82  WARNING Value Error on record RNT515, value {'product_code': 'PRD24', 'units_rented': 8, 'price_per_day': 18, 'rental_start': '4/22/18', 'rental_end': '9/18/17', 'total_days': -216, 'total_price': -3888} square of the total price
+2020-05-04 09:40:26,099 charges_calc.py:73  WARNING Invalid end date of 2017-04-15 00:00:00 found in record RNT516
+2020-05-04 09:40:26,100 charges_calc.py:82  WARNING Value Error on record RNT516, value {'product_code': 'PRD91', 'units_rented': 3, 'price_per_day': 28, 'rental_start': '3/15/18', 'rental_end': '4/15/17', 'total_days': -334, 'total_price': -9352} square of the total price
+2020-05-04 09:40:26,100 charges_calc.py:73  WARNING Invalid end date of 2016-12-20 00:00:00 found in record RNT517
+2020-05-04 09:40:26,101 charges_calc.py:82  WARNING Value Error on record RNT517, value {'product_code': 'PRD74', 'units_rented': 5, 'price_per_day': 14, 'rental_start': '8/17/18', 'rental_end': '12/20/16', 'total_days': -605, 'total_price': -8470} square of the total price
+2020-05-04 09:40:26,101 charges_calc.py:73  WARNING Invalid end date of 2016-09-29 00:00:00 found in record RNT518
+2020-05-04 09:40:26,102 charges_calc.py:82  WARNING Value Error on record RNT518, value {'product_code': 'PRD41', 'units_rented': 2, 'price_per_day': 25, 'rental_start': '6/10/18', 'rental_end': '9/29/16', 'total_days': -619, 'total_price': -15475} square of the total price
+2020-05-04 09:40:26,102 charges_calc.py:73  WARNING Invalid end date of 2017-04-10 00:00:00 found in record RNT520
+2020-05-04 09:40:26,102 charges_calc.py:82  WARNING Value Error on record RNT520, value {'product_code': 'PRD96', 'units_rented': 6, 'price_per_day': 18, 'rental_start': '8/15/17', 'rental_end': '4/10/17', 'total_days': -127, 'total_price': -2286} square of the total price
+2020-05-04 09:40:26,103 charges_calc.py:73  WARNING Invalid end date of 2017-11-22 00:00:00 found in record RNT522
+2020-05-04 09:40:26,103 charges_calc.py:82  WARNING Value Error on record RNT522, value {'product_code': 'PRD85', 'units_rented': 8, 'price_per_day': 15, 'rental_start': '5/10/18', 'rental_end': '11/22/17', 'total_days': -169, 'total_price': -2535} square of the total price
+2020-05-04 09:40:26,104 charges_calc.py:73  WARNING Invalid end date of 2018-03-22 00:00:00 found in record RNT524
+2020-05-04 09:40:26,104 charges_calc.py:82  WARNING Value Error on record RNT524, value {'product_code': 'PRD63', 'units_rented': 1, 'price_per_day': 37, 'rental_start': '7/29/18', 'rental_end': '3/22/18', 'total_days': -129, 'total_price': -4773} square of the total price
+2020-05-04 09:40:26,105 charges_calc.py:73  WARNING Invalid end date of 2017-10-26 00:00:00 found in record RNT525
+2020-05-04 09:40:26,105 charges_calc.py:82  WARNING Value Error on record RNT525, value {'product_code': 'PRD86', 'units_rented': 7, 'price_per_day': 34, 'rental_start': '2/18/18', 'rental_end': '10/26/17', 'total_days': -115, 'total_price': -3910} square of the total price
+2020-05-04 09:40:26,106 charges_calc.py:73  WARNING Invalid end date of 2016-02-06 00:00:00 found in record RNT528
+2020-05-04 09:40:26,107 charges_calc.py:82  WARNING Value Error on record RNT528, value {'product_code': 'PRD59', 'units_rented': 4, 'price_per_day': 28, 'rental_start': '5/30/18', 'rental_end': '2/6/16', 'total_days': -844, 'total_price': -23632} square of the total price
+2020-05-04 09:40:26,108 charges_calc.py:73  WARNING Invalid end date of 2017-10-30 00:00:00 found in record RNT532
+2020-05-04 09:40:26,109 charges_calc.py:82  WARNING Value Error on record RNT532, value {'product_code': 'PRD81', 'units_rented': 10, 'price_per_day': 34, 'rental_start': '12/7/18', 'rental_end': '10/30/17', 'total_days': -403, 'total_price': -13702} square of the total price
+2020-05-04 09:40:26,109 charges_calc.py:73  WARNING Invalid end date of 2016-12-28 00:00:00 found in record RNT533
+2020-05-04 09:40:26,109 charges_calc.py:82  WARNING Value Error on record RNT533, value {'product_code': 'PRD66', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '3/29/18', 'rental_end': '12/28/16', 'total_days': -456, 'total_price': -6384} square of the total price
+2020-05-04 09:40:26,110 charges_calc.py:73  WARNING Invalid end date of 2016-11-22 00:00:00 found in record RNT535
+2020-05-04 09:40:26,110 charges_calc.py:82  WARNING Value Error on record RNT535, value {'product_code': 'PRD79', 'units_rented': 7, 'price_per_day': 26, 'rental_start': '6/5/18', 'rental_end': '11/22/16', 'total_days': -560, 'total_price': -14560} square of the total price
+2020-05-04 09:40:26,111 charges_calc.py:73  WARNING Invalid end date of 2018-07-03 00:00:00 found in record RNT536
+2020-05-04 09:40:26,111 charges_calc.py:82  WARNING Value Error on record RNT536, value {'product_code': 'PRD94', 'units_rented': 6, 'price_per_day': 39, 'rental_start': '12/29/18', 'rental_end': '7/3/18', 'total_days': -179, 'total_price': -6981} square of the total price
+2020-05-04 09:40:26,111 charges_calc.py:73  WARNING Invalid end date of 2016-08-29 00:00:00 found in record RNT537
+2020-05-04 09:40:26,112 charges_calc.py:82  WARNING Value Error on record RNT537, value {'product_code': 'PRD71', 'units_rented': 1, 'price_per_day': 36, 'rental_start': '6/30/17', 'rental_end': '8/29/16', 'total_days': -305, 'total_price': -10980} square of the total price
+2020-05-04 09:40:26,112 charges_calc.py:73  WARNING Invalid end date of 2016-02-22 00:00:00 found in record RNT538
+2020-05-04 09:40:26,113 charges_calc.py:82  WARNING Value Error on record RNT538, value {'product_code': 'PRD5', 'units_rented': 10, 'price_per_day': 34, 'rental_start': '11/24/16', 'rental_end': '2/22/16', 'total_days': -276, 'total_price': -9384} square of the total price
+2020-05-04 09:40:26,113 charges_calc.py:73  WARNING Invalid end date of 2016-07-03 00:00:00 found in record RNT539
+2020-05-04 09:40:26,114 charges_calc.py:82  WARNING Value Error on record RNT539, value {'product_code': 'PRD74', 'units_rented': 8, 'price_per_day': 23, 'rental_start': '7/28/17', 'rental_end': '7/3/16', 'total_days': -390, 'total_price': -8970} square of the total price
+2020-05-04 09:40:26,114 charges_calc.py:73  WARNING Invalid end date of 2016-05-05 00:00:00 found in record RNT541
+2020-05-04 09:40:26,114 charges_calc.py:82  WARNING Value Error on record RNT541, value {'product_code': 'PRD54', 'units_rented': 7, 'price_per_day': 20, 'rental_start': '8/12/18', 'rental_end': '5/5/16', 'total_days': -829, 'total_price': -16580} square of the total price
+2020-05-04 09:40:26,115 charges_calc.py:73  WARNING Invalid end date of 2017-06-19 00:00:00 found in record RNT544
+2020-05-04 09:40:26,115 charges_calc.py:82  WARNING Value Error on record RNT544, value {'product_code': 'PRD53', 'units_rented': 2, 'price_per_day': 14, 'rental_start': '1/9/18', 'rental_end': '6/19/17', 'total_days': -204, 'total_price': -2856} square of the total price
+2020-05-04 09:40:26,116 charges_calc.py:73  WARNING Invalid end date of 2017-09-27 00:00:00 found in record RNT545
+2020-05-04 09:40:26,119 charges_calc.py:82  WARNING Value Error on record RNT545, value {'product_code': 'PRD66', 'units_rented': 4, 'price_per_day': 27, 'rental_start': '11/8/18', 'rental_end': '9/27/17', 'total_days': -407, 'total_price': -10989} square of the total price
+2020-05-04 09:40:26,119 charges_calc.py:73  WARNING Invalid end date of 2016-06-16 00:00:00 found in record RNT546
+2020-05-04 09:40:26,120 charges_calc.py:82  WARNING Value Error on record RNT546, value {'product_code': 'PRD81', 'units_rented': 9, 'price_per_day': 37, 'rental_start': '11/10/16', 'rental_end': '6/16/16', 'total_days': -147, 'total_price': -5439} square of the total price
+2020-05-04 09:40:26,120 charges_calc.py:73  WARNING Invalid end date of 2017-10-20 00:00:00 found in record RNT548
+2020-05-04 09:40:26,121 charges_calc.py:82  WARNING Value Error on record RNT548, value {'product_code': 'PRD58', 'units_rented': 2, 'price_per_day': 39, 'rental_start': '10/27/18', 'rental_end': '10/20/17', 'total_days': -372, 'total_price': -14508} square of the total price
+2020-05-04 09:40:26,122 charges_calc.py:73  WARNING Invalid end date of 2016-05-30 00:00:00 found in record RNT550
+2020-05-04 09:40:26,122 charges_calc.py:82  WARNING Value Error on record RNT550, value {'product_code': 'PRD40', 'units_rented': 7, 'price_per_day': 39, 'rental_start': '9/5/17', 'rental_end': '5/30/16', 'total_days': -463, 'total_price': -18057} square of the total price
+2020-05-04 09:40:26,123 charges_calc.py:73  WARNING Invalid end date of 2017-08-08 00:00:00 found in record RNT551
+2020-05-04 09:40:26,123 charges_calc.py:82  WARNING Value Error on record RNT551, value {'product_code': 'PRD34', 'units_rented': 9, 'price_per_day': 10, 'rental_start': '6/24/18', 'rental_end': '8/8/17', 'total_days': -320, 'total_price': -3200} square of the total price
+2020-05-04 09:40:26,123 charges_calc.py:73  WARNING Invalid end date of 2017-04-15 00:00:00 found in record RNT555
+2020-05-04 09:40:26,124 charges_calc.py:82  WARNING Value Error on record RNT555, value {'product_code': 'PRD42', 'units_rented': 10, 'price_per_day': 40, 'rental_start': '6/15/17', 'rental_end': '4/15/17', 'total_days': -61, 'total_price': -2440} square of the total price
+2020-05-04 09:40:26,124 charges_calc.py:73  WARNING Invalid end date of 2018-06-10 00:00:00 found in record RNT558
+2020-05-04 09:40:26,125 charges_calc.py:82  WARNING Value Error on record RNT558, value {'product_code': 'PRD45', 'units_rented': 8, 'price_per_day': 28, 'rental_start': '9/24/18', 'rental_end': '6/10/18', 'total_days': -106, 'total_price': -2968} square of the total price
+2020-05-04 09:40:26,125 charges_calc.py:73  WARNING Invalid end date of 2016-05-15 00:00:00 found in record RNT561
+2020-05-04 09:40:26,126 charges_calc.py:82  WARNING Value Error on record RNT561, value {'product_code': 'PRD35', 'units_rented': 1, 'price_per_day': 30, 'rental_start': '7/14/18', 'rental_end': '5/15/16', 'total_days': -790, 'total_price': -23700} square of the total price
+2020-05-04 09:40:26,126 charges_calc.py:73  WARNING Invalid end date of 2018-08-14 00:00:00 found in record RNT562
+2020-05-04 09:40:26,126 charges_calc.py:82  WARNING Value Error on record RNT562, value {'product_code': 'PRD9', 'units_rented': 7, 'price_per_day': 32, 'rental_start': '11/18/18', 'rental_end': '8/14/18', 'total_days': -96, 'total_price': -3072} square of the total price
+2020-05-04 09:40:26,128 charges_calc.py:73  WARNING Invalid end date of 2016-02-27 00:00:00 found in record RNT566
+2020-05-04 09:40:26,129 charges_calc.py:82  WARNING Value Error on record RNT566, value {'product_code': 'PRD3', 'units_rented': 3, 'price_per_day': 33, 'rental_start': '11/25/18', 'rental_end': '2/27/16', 'total_days': -1002, 'total_price': -33066} square of the total price
+2020-05-04 09:40:26,129 charges_calc.py:73  WARNING Invalid end date of 2018-05-30 00:00:00 found in record RNT569
+2020-05-04 09:40:26,129 charges_calc.py:82  WARNING Value Error on record RNT569, value {'product_code': 'PRD43', 'units_rented': 8, 'price_per_day': 37, 'rental_start': '10/1/18', 'rental_end': '5/30/18', 'total_days': -124, 'total_price': -4588} square of the total price
+2020-05-04 09:40:26,130 charges_calc.py:73  WARNING Invalid end date of 2017-07-13 00:00:00 found in record RNT570
+2020-05-04 09:40:26,130 charges_calc.py:82  WARNING Value Error on record RNT570, value {'product_code': 'PRD7', 'units_rented': 4, 'price_per_day': 38, 'rental_start': '11/21/17', 'rental_end': '7/13/17', 'total_days': -131, 'total_price': -4978} square of the total price
+2020-05-04 09:40:26,131 charges_calc.py:73  WARNING Invalid end date of 2016-08-07 00:00:00 found in record RNT572
+2020-05-04 09:40:26,131 charges_calc.py:82  WARNING Value Error on record RNT572, value {'product_code': 'PRD38', 'units_rented': 9, 'price_per_day': 10, 'rental_start': '10/13/18', 'rental_end': '8/7/16', 'total_days': -797, 'total_price': -7970} square of the total price
+2020-05-04 09:40:26,132 charges_calc.py:73  WARNING Invalid end date of 2017-01-22 00:00:00 found in record RNT575
+2020-05-04 09:40:26,132 charges_calc.py:82  WARNING Value Error on record RNT575, value {'product_code': 'PRD91', 'units_rented': 9, 'price_per_day': 12, 'rental_start': '8/1/17', 'rental_end': '1/22/17', 'total_days': -191, 'total_price': -2292} square of the total price
+2020-05-04 09:40:26,133 charges_calc.py:73  WARNING Invalid end date of 2017-04-24 00:00:00 found in record RNT580
+2020-05-04 09:40:26,133 charges_calc.py:82  WARNING Value Error on record RNT580, value {'product_code': 'PRD81', 'units_rented': 9, 'price_per_day': 25, 'rental_start': '7/2/18', 'rental_end': '4/24/17', 'total_days': -434, 'total_price': -10850} square of the total price
+2020-05-04 09:40:26,134 charges_calc.py:73  WARNING Invalid end date of 2017-04-28 00:00:00 found in record RNT582
+2020-05-04 09:40:26,134 charges_calc.py:82  WARNING Value Error on record RNT582, value {'product_code': 'PRD10', 'units_rented': 4, 'price_per_day': 35, 'rental_start': '5/2/17', 'rental_end': '4/28/17', 'total_days': -4, 'total_price': -140} square of the total price
+2020-05-04 09:40:26,135 charges_calc.py:73  WARNING Invalid end date of 2016-01-15 00:00:00 found in record RNT585
+2020-05-04 09:40:26,135 charges_calc.py:82  WARNING Value Error on record RNT585, value {'product_code': 'PRD75', 'units_rented': 1, 'price_per_day': 16, 'rental_start': '2/9/18', 'rental_end': '1/15/16', 'total_days': -756, 'total_price': -12096} square of the total price
+2020-05-04 09:40:26,136 charges_calc.py:73  WARNING Invalid end date of 2016-07-05 00:00:00 found in record RNT586
+2020-05-04 09:40:26,136 charges_calc.py:82  WARNING Value Error on record RNT586, value {'product_code': 'PRD73', 'units_rented': 4, 'price_per_day': 27, 'rental_start': '1/27/17', 'rental_end': '7/5/16', 'total_days': -206, 'total_price': -5562} square of the total price
+2020-05-04 09:40:26,136 charges_calc.py:73  WARNING Invalid end date of 2017-03-20 00:00:00 found in record RNT587
+2020-05-04 09:40:26,138 charges_calc.py:82  WARNING Value Error on record RNT587, value {'product_code': 'PRD63', 'units_rented': 3, 'price_per_day': 27, 'rental_start': '5/1/18', 'rental_end': '3/20/17', 'total_days': -407, 'total_price': -10989} square of the total price
+2020-05-04 09:40:26,139 charges_calc.py:73  WARNING Invalid end date of 2017-06-26 00:00:00 found in record RNT590
+2020-05-04 09:40:26,140 charges_calc.py:82  WARNING Value Error on record RNT590, value {'product_code': 'PRD67', 'units_rented': 7, 'price_per_day': 40, 'rental_start': '12/23/18', 'rental_end': '6/26/17', 'total_days': -545, 'total_price': -21800} square of the total price
+2020-05-04 09:40:26,140 charges_calc.py:73  WARNING Invalid end date of 2018-03-21 00:00:00 found in record RNT591
+2020-05-04 09:40:26,140 charges_calc.py:82  WARNING Value Error on record RNT591, value {'product_code': 'PRD73', 'units_rented': 4, 'price_per_day': 22, 'rental_start': '6/2/18', 'rental_end': '3/21/18', 'total_days': -73, 'total_price': -1606} square of the total price
+2020-05-04 09:40:26,141 charges_calc.py:73  WARNING Invalid end date of 2016-05-04 00:00:00 found in record RNT592
+2020-05-04 09:40:26,141 charges_calc.py:82  WARNING Value Error on record RNT592, value {'product_code': 'PRD1', 'units_rented': 4, 'price_per_day': 21, 'rental_start': '8/26/16', 'rental_end': '5/4/16', 'total_days': -114, 'total_price': -2394} square of the total price
+2020-05-04 09:40:26,142 charges_calc.py:73  WARNING Invalid end date of 2016-09-23 00:00:00 found in record RNT593
+2020-05-04 09:40:26,143 charges_calc.py:82  WARNING Value Error on record RNT593, value {'product_code': 'PRD69', 'units_rented': 1, 'price_per_day': 37, 'rental_start': '11/26/16', 'rental_end': '9/23/16', 'total_days': -64, 'total_price': -2368} square of the total price
+2020-05-04 09:40:26,143 charges_calc.py:73  WARNING Invalid end date of 2016-01-02 00:00:00 found in record RNT595
+2020-05-04 09:40:26,144 charges_calc.py:82  WARNING Value Error on record RNT595, value {'product_code': 'PRD24', 'units_rented': 5, 'price_per_day': 32, 'rental_start': '2/23/17', 'rental_end': '1/2/16', 'total_days': -418, 'total_price': -13376} square of the total price
+2020-05-04 09:40:26,144 charges_calc.py:73  WARNING Invalid end date of 2017-02-21 00:00:00 found in record RNT597
+2020-05-04 09:40:26,144 charges_calc.py:82  WARNING Value Error on record RNT597, value {'product_code': 'PRD45', 'units_rented': 7, 'price_per_day': 37, 'rental_start': '10/29/18', 'rental_end': '2/21/17', 'total_days': -615, 'total_price': -22755} square of the total price
+2020-05-04 09:40:26,145 charges_calc.py:73  WARNING Invalid end date of 2016-08-29 00:00:00 found in record RNT598
+2020-05-04 09:40:26,145 charges_calc.py:82  WARNING Value Error on record RNT598, value {'product_code': 'PRD48', 'units_rented': 7, 'price_per_day': 9, 'rental_start': '3/2/18', 'rental_end': '8/29/16', 'total_days': -550, 'total_price': -4950} square of the total price
+2020-05-04 09:40:26,146 charges_calc.py:73  WARNING Invalid end date of 2016-02-12 00:00:00 found in record RNT599
+2020-05-04 09:40:26,146 charges_calc.py:82  WARNING Value Error on record RNT599, value {'product_code': 'PRD87', 'units_rented': 8, 'price_per_day': 21, 'rental_start': '6/17/18', 'rental_end': '2/12/16', 'total_days': -856, 'total_price': -17976} square of the total price
+2020-05-04 09:40:26,148 charges_calc.py:73  WARNING Invalid end date of 2017-01-12 00:00:00 found in record RNT601
+2020-05-04 09:40:26,148 charges_calc.py:82  WARNING Value Error on record RNT601, value {'product_code': 'PRD71', 'units_rented': 5, 'price_per_day': 32, 'rental_start': '6/12/17', 'rental_end': '1/12/17', 'total_days': -151, 'total_price': -4832} square of the total price
+2020-05-04 09:40:26,149 charges_calc.py:73  WARNING Invalid end date of 2016-04-12 00:00:00 found in record RNT602
+2020-05-04 09:40:26,149 charges_calc.py:82  WARNING Value Error on record RNT602, value {'product_code': 'PRD24', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '10/10/16', 'rental_end': '4/12/16', 'total_days': -181, 'total_price': -5611} square of the total price
+2020-05-04 09:40:26,150 charges_calc.py:73  WARNING Invalid end date of 2016-02-07 00:00:00 found in record RNT603
+2020-05-04 09:40:26,150 charges_calc.py:82  WARNING Value Error on record RNT603, value {'product_code': 'PRD65', 'units_rented': 1, 'price_per_day': 9, 'rental_start': '9/17/17', 'rental_end': '2/7/16', 'total_days': -588, 'total_price': -5292} square of the total price
+2020-05-04 09:40:26,151 charges_calc.py:73  WARNING Invalid end date of 2016-07-06 00:00:00 found in record RNT604
+2020-05-04 09:40:26,151 charges_calc.py:82  WARNING Value Error on record RNT604, value {'product_code': 'PRD72', 'units_rented': 6, 'price_per_day': 6, 'rental_start': '7/14/17', 'rental_end': '7/6/16', 'total_days': -373, 'total_price': -2238} square of the total price
+2020-05-04 09:40:26,152 charges_calc.py:73  WARNING Invalid end date of 2016-09-06 00:00:00 found in record RNT605
+2020-05-04 09:40:26,152 charges_calc.py:82  WARNING Value Error on record RNT605, value {'product_code': 'PRD48', 'units_rented': 7, 'price_per_day': 33, 'rental_start': '11/4/17', 'rental_end': '9/6/16', 'total_days': -424, 'total_price': -13992} square of the total price
+2020-05-04 09:40:26,153 charges_calc.py:73  WARNING Invalid end date of 2016-05-31 00:00:00 found in record RNT606
+2020-05-04 09:40:26,153 charges_calc.py:82  WARNING Value Error on record RNT606, value {'product_code': 'PRD61', 'units_rented': 10, 'price_per_day': 39, 'rental_start': '10/21/18', 'rental_end': '5/31/16', 'total_days': -873, 'total_price': -34047} square of the total price
+2020-05-04 09:40:26,153 charges_calc.py:73  WARNING Invalid end date of 2018-01-30 00:00:00 found in record RNT611
+2020-05-04 09:40:26,154 charges_calc.py:82  WARNING Value Error on record RNT611, value {'product_code': 'PRD97', 'units_rented': 4, 'price_per_day': 33, 'rental_start': '3/5/18', 'rental_end': '1/30/18', 'total_days': -34, 'total_price': -1122} square of the total price
+2020-05-04 09:40:26,154 charges_calc.py:73  WARNING Invalid end date of 2018-01-17 00:00:00 found in record RNT613
+2020-05-04 09:40:26,155 charges_calc.py:82  WARNING Value Error on record RNT613, value {'product_code': 'PRD99', 'units_rented': 10, 'price_per_day': 10, 'rental_start': '10/4/18', 'rental_end': '1/17/18', 'total_days': -260, 'total_price': -2600} square of the total price
+2020-05-04 09:40:26,155 charges_calc.py:73  WARNING Invalid end date of 2017-06-29 00:00:00 found in record RNT615
+2020-05-04 09:40:26,156 charges_calc.py:82  WARNING Value Error on record RNT615, value {'product_code': 'PRD29', 'units_rented': 4, 'price_per_day': 40, 'rental_start': '9/30/17', 'rental_end': '6/29/17', 'total_days': -93, 'total_price': -3720} square of the total price
+2020-05-04 09:40:26,158 charges_calc.py:73  WARNING Invalid end date of 2016-04-18 00:00:00 found in record RNT622
+2020-05-04 09:40:26,159 charges_calc.py:82  WARNING Value Error on record RNT622, value {'product_code': 'PRD40', 'units_rented': 3, 'price_per_day': 32, 'rental_start': '8/22/16', 'rental_end': '4/18/16', 'total_days': -126, 'total_price': -4032} square of the total price
+2020-05-04 09:40:26,159 charges_calc.py:73  WARNING Invalid end date of 2017-08-01 00:00:00 found in record RNT626
+2020-05-04 09:40:26,160 charges_calc.py:82  WARNING Value Error on record RNT626, value {'product_code': 'PRD11', 'units_rented': 9, 'price_per_day': 32, 'rental_start': '7/22/18', 'rental_end': '8/1/17', 'total_days': -355, 'total_price': -11360} square of the total price
+2020-05-04 09:40:26,160 charges_calc.py:73  WARNING Invalid end date of 2016-09-15 00:00:00 found in record RNT630
+2020-05-04 09:40:26,161 charges_calc.py:82  WARNING Value Error on record RNT630, value {'product_code': 'PRD68', 'units_rented': 6, 'price_per_day': 37, 'rental_start': '11/27/16', 'rental_end': '9/15/16', 'total_days': -73, 'total_price': -2701} square of the total price
+2020-05-04 09:40:26,161 charges_calc.py:73  WARNING Invalid end date of 2016-01-07 00:00:00 found in record RNT632
+2020-05-04 09:40:26,162 charges_calc.py:82  WARNING Value Error on record RNT632, value {'product_code': 'PRD45', 'units_rented': 7, 'price_per_day': 18, 'rental_start': '1/13/16', 'rental_end': '1/7/16', 'total_days': -6, 'total_price': -108} square of the total price
+2020-05-04 09:40:26,162 charges_calc.py:73  WARNING Invalid end date of 2018-02-01 00:00:00 found in record RNT633
+2020-05-04 09:40:26,162 charges_calc.py:82  WARNING Value Error on record RNT633, value {'product_code': 'PRD54', 'units_rented': 9, 'price_per_day': 6, 'rental_start': '7/9/18', 'rental_end': '2/1/18', 'total_days': -158, 'total_price': -948} square of the total price
+2020-05-04 09:40:26,163 charges_calc.py:73  WARNING Invalid end date of 2018-08-07 00:00:00 found in record RNT634
+2020-05-04 09:40:26,163 charges_calc.py:82  WARNING Value Error on record RNT634, value {'product_code': 'PRD99', 'units_rented': 9, 'price_per_day': 14, 'rental_start': '9/16/18', 'rental_end': '8/7/18', 'total_days': -40, 'total_price': -560} square of the total price
+2020-05-04 09:40:26,164 charges_calc.py:73  WARNING Invalid end date of 2017-09-15 00:00:00 found in record RNT636
+2020-05-04 09:40:26,164 charges_calc.py:82  WARNING Value Error on record RNT636, value {'product_code': 'PRD81', 'units_rented': 7, 'price_per_day': 38, 'rental_start': '11/2/18', 'rental_end': '9/15/17', 'total_days': -413, 'total_price': -15694} square of the total price
+2020-05-04 09:40:26,165 charges_calc.py:73  WARNING Invalid end date of 2016-03-20 00:00:00 found in record RNT638
+2020-05-04 09:40:26,165 charges_calc.py:82  WARNING Value Error on record RNT638, value {'product_code': 'PRD15', 'units_rented': 9, 'price_per_day': 17, 'rental_start': '2/24/17', 'rental_end': '3/20/16', 'total_days': -341, 'total_price': -5797} square of the total price
+2020-05-04 09:40:26,165 charges_calc.py:73  WARNING Invalid end date of 2017-09-10 00:00:00 found in record RNT639
+2020-05-04 09:40:26,166 charges_calc.py:82  WARNING Value Error on record RNT639, value {'product_code': 'PRD47', 'units_rented': 5, 'price_per_day': 23, 'rental_start': '12/9/18', 'rental_end': '9/10/17', 'total_days': -455, 'total_price': -10465} square of the total price
+2020-05-04 09:40:26,166 charges_calc.py:73  WARNING Invalid end date of 2016-04-29 00:00:00 found in record RNT640
+2020-05-04 09:40:26,168 charges_calc.py:82  WARNING Value Error on record RNT640, value {'product_code': 'PRD35', 'units_rented': 6, 'price_per_day': 5, 'rental_start': '9/9/17', 'rental_end': '4/29/16', 'total_days': -498, 'total_price': -2490} square of the total price
+2020-05-04 09:40:26,169 charges_calc.py:73  WARNING Invalid end date of 2016-07-03 00:00:00 found in record RNT642
+2020-05-04 09:40:26,169 charges_calc.py:82  WARNING Value Error on record RNT642, value {'product_code': 'PRD14', 'units_rented': 8, 'price_per_day': 28, 'rental_start': '7/25/16', 'rental_end': '7/3/16', 'total_days': -22, 'total_price': -616} square of the total price
+2020-05-04 09:40:26,170 charges_calc.py:73  WARNING Invalid end date of 2016-02-13 00:00:00 found in record RNT643
+2020-05-04 09:40:26,170 charges_calc.py:82  WARNING Value Error on record RNT643, value {'product_code': 'PRD59', 'units_rented': 7, 'price_per_day': 32, 'rental_start': '10/20/18', 'rental_end': '2/13/16', 'total_days': -980, 'total_price': -31360} square of the total price
+2020-05-04 09:40:26,171 charges_calc.py:73  WARNING Invalid end date of 2016-09-08 00:00:00 found in record RNT647
+2020-05-04 09:40:26,171 charges_calc.py:82  WARNING Value Error on record RNT647, value {'product_code': 'PRD8', 'units_rented': 2, 'price_per_day': 7, 'rental_start': '4/5/17', 'rental_end': '9/8/16', 'total_days': -209, 'total_price': -1463} square of the total price
+2020-05-04 09:40:26,172 charges_calc.py:73  WARNING Invalid end date of 2017-06-26 00:00:00 found in record RNT648
+2020-05-04 09:40:26,172 charges_calc.py:82  WARNING Value Error on record RNT648, value {'product_code': 'PRD53', 'units_rented': 4, 'price_per_day': 11, 'rental_start': '7/19/18', 'rental_end': '6/26/17', 'total_days': -388, 'total_price': -4268} square of the total price
+2020-05-04 09:40:26,173 charges_calc.py:73  WARNING Invalid end date of 2017-11-16 00:00:00 found in record RNT649
+2020-05-04 09:40:26,173 charges_calc.py:82  WARNING Value Error on record RNT649, value {'product_code': 'PRD64', 'units_rented': 9, 'price_per_day': 37, 'rental_start': '7/17/18', 'rental_end': '11/16/17', 'total_days': -243, 'total_price': -8991} square of the total price
+2020-05-04 09:40:26,174 charges_calc.py:73  WARNING Invalid end date of 2016-01-27 00:00:00 found in record RNT651
+2020-05-04 09:40:26,174 charges_calc.py:82  WARNING Value Error on record RNT651, value {'product_code': 'PRD94', 'units_rented': 6, 'price_per_day': 5, 'rental_start': '9/13/18', 'rental_end': '1/27/16', 'total_days': -960, 'total_price': -4800} square of the total price
+2020-05-04 09:40:26,175 charges_calc.py:73  WARNING Invalid end date of 2017-03-25 00:00:00 found in record RNT653
+2020-05-04 09:40:26,175 charges_calc.py:82  WARNING Value Error on record RNT653, value {'product_code': 'PRD54', 'units_rented': 10, 'price_per_day': 12, 'rental_start': '8/22/17', 'rental_end': '3/25/17', 'total_days': -150, 'total_price': -1800} square of the total price
+2020-05-04 09:40:26,175 charges_calc.py:73  WARNING Invalid end date of 2016-07-04 00:00:00 found in record RNT656
+2020-05-04 09:40:26,176 charges_calc.py:82  WARNING Value Error on record RNT656, value {'product_code': 'PRD34', 'units_rented': 7, 'price_per_day': 10, 'rental_start': '10/5/18', 'rental_end': '7/4/16', 'total_days': -823, 'total_price': -8230} square of the total price
+2020-05-04 09:40:26,176 charges_calc.py:73  WARNING Invalid end date of 2017-09-06 00:00:00 found in record RNT659
+2020-05-04 09:40:26,178 charges_calc.py:82  WARNING Value Error on record RNT659, value {'product_code': 'PRD9', 'units_rented': 10, 'price_per_day': 23, 'rental_start': '9/14/18', 'rental_end': '9/6/17', 'total_days': -373, 'total_price': -8579} square of the total price
+2020-05-04 09:40:26,178 charges_calc.py:73  WARNING Invalid end date of 2018-02-13 00:00:00 found in record RNT662
+2020-05-04 09:40:26,179 charges_calc.py:82  WARNING Value Error on record RNT662, value {'product_code': 'PRD12', 'units_rented': 5, 'price_per_day': 30, 'rental_start': '4/27/18', 'rental_end': '2/13/18', 'total_days': -73, 'total_price': -2190} square of the total price
+2020-05-04 09:40:26,179 charges_calc.py:73  WARNING Invalid end date of 2017-01-20 00:00:00 found in record RNT663
+2020-05-04 09:40:26,180 charges_calc.py:82  WARNING Value Error on record RNT663, value {'product_code': 'PRD85', 'units_rented': 8, 'price_per_day': 34, 'rental_start': '1/3/18', 'rental_end': '1/20/17', 'total_days': -348, 'total_price': -11832} square of the total price
+2020-05-04 09:40:26,180 charges_calc.py:73  WARNING Invalid end date of 2016-08-20 00:00:00 found in record RNT664
+2020-05-04 09:40:26,181 charges_calc.py:82  WARNING Value Error on record RNT664, value {'product_code': 'PRD4', 'units_rented': 3, 'price_per_day': 11, 'rental_start': '7/2/18', 'rental_end': '8/20/16', 'total_days': -681, 'total_price': -7491} square of the total price
+2020-05-04 09:40:26,181 charges_calc.py:73  WARNING Invalid end date of 2017-02-04 00:00:00 found in record RNT665
+2020-05-04 09:40:26,182 charges_calc.py:82  WARNING Value Error on record RNT665, value {'product_code': 'PRD78', 'units_rented': 5, 'price_per_day': 21, 'rental_start': '9/8/17', 'rental_end': '2/4/17', 'total_days': -216, 'total_price': -4536} square of the total price
+2020-05-04 09:40:26,182 charges_calc.py:73  WARNING Invalid end date of 2016-03-31 00:00:00 found in record RNT667
+2020-05-04 09:40:26,183 charges_calc.py:82  WARNING Value Error on record RNT667, value {'product_code': 'PRD30', 'units_rented': 2, 'price_per_day': 25, 'rental_start': '1/4/18', 'rental_end': '3/31/16', 'total_days': -644, 'total_price': -16100} square of the total price
+2020-05-04 09:40:26,183 charges_calc.py:73  WARNING Invalid end date of 2016-01-01 00:00:00 found in record RNT668
+2020-05-04 09:40:26,184 charges_calc.py:82  WARNING Value Error on record RNT668, value {'product_code': 'PRD85', 'units_rented': 6, 'price_per_day': 17, 'rental_start': '2/17/16', 'rental_end': '1/1/16', 'total_days': -47, 'total_price': -799} square of the total price
+2020-05-04 09:40:26,184 charges_calc.py:73  WARNING Invalid end date of 2016-01-30 00:00:00 found in record RNT670
+2020-05-04 09:40:26,185 charges_calc.py:82  WARNING Value Error on record RNT670, value {'product_code': 'PRD65', 'units_rented': 5, 'price_per_day': 20, 'rental_start': '11/27/16', 'rental_end': '1/30/16', 'total_days': -302, 'total_price': -6040} square of the total price
+2020-05-04 09:40:26,185 charges_calc.py:73  WARNING Invalid end date of 2017-06-16 00:00:00 found in record RNT671
+2020-05-04 09:40:26,186 charges_calc.py:82  WARNING Value Error on record RNT671, value {'product_code': 'PRD51', 'units_rented': 6, 'price_per_day': 21, 'rental_start': '3/5/18', 'rental_end': '6/16/17', 'total_days': -262, 'total_price': -5502} square of the total price
+2020-05-04 09:40:26,186 charges_calc.py:73  WARNING Invalid end date of 2017-04-24 00:00:00 found in record RNT674
+2020-05-04 09:40:26,186 charges_calc.py:82  WARNING Value Error on record RNT674, value {'product_code': 'PRD56', 'units_rented': 8, 'price_per_day': 25, 'rental_start': '7/24/18', 'rental_end': '4/24/17', 'total_days': -456, 'total_price': -11400} square of the total price
+2020-05-04 09:40:26,188 charges_calc.py:73  WARNING Invalid end date of 2017-08-17 00:00:00 found in record RNT677
+2020-05-04 09:40:26,189 charges_calc.py:82  WARNING Value Error on record RNT677, value {'product_code': 'PRD69', 'units_rented': 10, 'price_per_day': 40, 'rental_start': '9/3/17', 'rental_end': '8/17/17', 'total_days': -17, 'total_price': -680} square of the total price
+2020-05-04 09:40:26,190 charges_calc.py:73  WARNING Invalid end date of 2016-11-13 00:00:00 found in record RNT678
+2020-05-04 09:40:26,190 charges_calc.py:82  WARNING Value Error on record RNT678, value {'product_code': 'PRD44', 'units_rented': 8, 'price_per_day': 25, 'rental_start': '11/27/16', 'rental_end': '11/13/16', 'total_days': -14, 'total_price': -350} square of the total price
+2020-05-04 09:40:26,191 charges_calc.py:73  WARNING Invalid end date of 2016-02-03 00:00:00 found in record RNT679
+2020-05-04 09:40:26,191 charges_calc.py:82  WARNING Value Error on record RNT679, value {'product_code': 'PRD26', 'units_rented': 5, 'price_per_day': 29, 'rental_start': '11/21/17', 'rental_end': '2/3/16', 'total_days': -657, 'total_price': -19053} square of the total price
+2020-05-04 09:40:26,191 charges_calc.py:73  WARNING Invalid end date of 2018-10-19 00:00:00 found in record RNT682
+2020-05-04 09:40:26,192 charges_calc.py:82  WARNING Value Error on record RNT682, value {'product_code': 'PRD68', 'units_rented': 10, 'price_per_day': 29, 'rental_start': '12/31/18', 'rental_end': '10/19/18', 'total_days': -73, 'total_price': -2117} square of the total price
+2020-05-04 09:40:26,192 charges_calc.py:73  WARNING Invalid end date of 2016-04-03 00:00:00 found in record RNT684
+2020-05-04 09:40:26,193 charges_calc.py:82  WARNING Value Error on record RNT684, value {'product_code': 'PRD74', 'units_rented': 3, 'price_per_day': 25, 'rental_start': '6/26/17', 'rental_end': '4/3/16', 'total_days': -449, 'total_price': -11225} square of the total price
+2020-05-04 09:40:26,193 charges_calc.py:73  WARNING Invalid end date of 2018-06-02 00:00:00 found in record RNT688
+2020-05-04 09:40:26,194 charges_calc.py:82  WARNING Value Error on record RNT688, value {'product_code': 'PRD74', 'units_rented': 6, 'price_per_day': 7, 'rental_start': '7/6/18', 'rental_end': '6/2/18', 'total_days': -34, 'total_price': -238} square of the total price
+2020-05-04 09:40:26,194 charges_calc.py:73  WARNING Invalid end date of 2016-09-10 00:00:00 found in record RNT691
+2020-05-04 09:40:26,194 charges_calc.py:82  WARNING Value Error on record RNT691, value {'product_code': 'PRD84', 'units_rented': 5, 'price_per_day': 36, 'rental_start': '9/19/18', 'rental_end': '9/10/16', 'total_days': -739, 'total_price': -26604} square of the total price
+2020-05-04 09:40:26,195 charges_calc.py:73  WARNING Invalid end date of 2017-07-29 00:00:00 found in record RNT692
+2020-05-04 09:40:26,195 charges_calc.py:82  WARNING Value Error on record RNT692, value {'product_code': 'PRD50', 'units_rented': 10, 'price_per_day': 18, 'rental_start': '8/27/17', 'rental_end': '7/29/17', 'total_days': -29, 'total_price': -522} square of the total price
+2020-05-04 09:40:26,196 charges_calc.py:73  WARNING Invalid end date of 2017-09-15 00:00:00 found in record RNT694
+2020-05-04 09:40:26,196 charges_calc.py:82  WARNING Value Error on record RNT694, value {'product_code': 'PRD12', 'units_rented': 9, 'price_per_day': 26, 'rental_start': '12/9/18', 'rental_end': '9/15/17', 'total_days': -450, 'total_price': -11700} square of the total price
+2020-05-04 09:40:26,198 charges_calc.py:73  WARNING Invalid end date of 2016-03-05 00:00:00 found in record RNT695
+2020-05-04 09:40:26,199 charges_calc.py:82  WARNING Value Error on record RNT695, value {'product_code': 'PRD47', 'units_rented': 5, 'price_per_day': 25, 'rental_start': '7/14/16', 'rental_end': '3/5/16', 'total_days': -131, 'total_price': -3275} square of the total price
+2020-05-04 09:40:26,199 charges_calc.py:73  WARNING Invalid end date of 2016-11-22 00:00:00 found in record RNT698
+2020-05-04 09:40:26,200 charges_calc.py:82  WARNING Value Error on record RNT698, value {'product_code': 'PRD69', 'units_rented': 1, 'price_per_day': 38, 'rental_start': '4/2/18', 'rental_end': '11/22/16', 'total_days': -496, 'total_price': -18848} square of the total price
+2020-05-04 09:40:26,201 charges_calc.py:73  WARNING Invalid end date of 2016-12-08 00:00:00 found in record RNT702
+2020-05-04 09:40:26,202 charges_calc.py:82  WARNING Value Error on record RNT702, value {'product_code': 'PRD88', 'units_rented': 6, 'price_per_day': 15, 'rental_start': '9/26/17', 'rental_end': '12/8/16', 'total_days': -292, 'total_price': -4380} square of the total price
+2020-05-04 09:40:26,202 charges_calc.py:73  WARNING Invalid end date of 2018-03-01 00:00:00 found in record RNT703
+2020-05-04 09:40:26,203 charges_calc.py:82  WARNING Value Error on record RNT703, value {'product_code': 'PRD41', 'units_rented': 6, 'price_per_day': 9, 'rental_start': '6/15/18', 'rental_end': '3/1/18', 'total_days': -106, 'total_price': -954} square of the total price
+2020-05-04 09:40:26,203 charges_calc.py:73  WARNING Invalid end date of 2016-04-02 00:00:00 found in record RNT704
+2020-05-04 09:40:26,204 charges_calc.py:82  WARNING Value Error on record RNT704, value {'product_code': 'PRD6', 'units_rented': 4, 'price_per_day': 19, 'rental_start': '12/23/17', 'rental_end': '4/2/16', 'total_days': -630, 'total_price': -11970} square of the total price
+2020-05-04 09:40:26,204 charges_calc.py:73  WARNING Invalid end date of 2017-05-17 00:00:00 found in record RNT706
+2020-05-04 09:40:26,205 charges_calc.py:82  WARNING Value Error on record RNT706, value {'product_code': 'PRD59', 'units_rented': 5, 'price_per_day': 20, 'rental_start': '9/8/17', 'rental_end': '5/17/17', 'total_days': -114, 'total_price': -2280} square of the total price
+2020-05-04 09:40:26,205 charges_calc.py:73  WARNING Invalid end date of 2017-01-15 00:00:00 found in record RNT709
+2020-05-04 09:40:26,206 charges_calc.py:82  WARNING Value Error on record RNT709, value {'product_code': 'PRD26', 'units_rented': 9, 'price_per_day': 12, 'rental_start': '5/18/17', 'rental_end': '1/15/17', 'total_days': -123, 'total_price': -1476} square of the total price
+2020-05-04 09:40:26,206 charges_calc.py:73  WARNING Invalid end date of 2017-04-25 00:00:00 found in record RNT711
+2020-05-04 09:40:26,206 charges_calc.py:82  WARNING Value Error on record RNT711, value {'product_code': 'PRD41', 'units_rented': 1, 'price_per_day': 9, 'rental_start': '4/25/18', 'rental_end': '4/25/17', 'total_days': -365, 'total_price': -3285} square of the total price
+2020-05-04 09:40:26,208 charges_calc.py:73  WARNING Invalid end date of 2016-08-08 00:00:00 found in record RNT712
+2020-05-04 09:40:26,209 charges_calc.py:82  WARNING Value Error on record RNT712, value {'product_code': 'PRD74', 'units_rented': 3, 'price_per_day': 10, 'rental_start': '10/9/17', 'rental_end': '8/8/16', 'total_days': -427, 'total_price': -4270} square of the total price
+2020-05-04 09:40:26,209 charges_calc.py:73  WARNING Invalid end date of 2016-06-23 00:00:00 found in record RNT715
+2020-05-04 09:40:26,209 charges_calc.py:82  WARNING Value Error on record RNT715, value {'product_code': 'PRD78', 'units_rented': 3, 'price_per_day': 27, 'rental_start': '8/23/17', 'rental_end': '6/23/16', 'total_days': -426, 'total_price': -11502} square of the total price
+2020-05-04 09:40:26,210 charges_calc.py:73  WARNING Invalid end date of 2016-01-12 00:00:00 found in record RNT717
+2020-05-04 09:40:26,210 charges_calc.py:82  WARNING Value Error on record RNT717, value {'product_code': 'PRD90', 'units_rented': 3, 'price_per_day': 31, 'rental_start': '9/25/18', 'rental_end': '1/12/16', 'total_days': -987, 'total_price': -30597} square of the total price
+2020-05-04 09:40:26,211 charges_calc.py:73  WARNING Invalid end date of 2016-04-05 00:00:00 found in record RNT719
+2020-05-04 09:40:26,211 charges_calc.py:82  WARNING Value Error on record RNT719, value {'product_code': 'PRD18', 'units_rented': 6, 'price_per_day': 24, 'rental_start': '9/22/16', 'rental_end': '4/5/16', 'total_days': -170, 'total_price': -4080} square of the total price
+2020-05-04 09:40:26,211 charges_calc.py:73  WARNING Invalid end date of 2018-02-13 00:00:00 found in record RNT721
+2020-05-04 09:40:26,212 charges_calc.py:82  WARNING Value Error on record RNT721, value {'product_code': 'PRD58', 'units_rented': 2, 'price_per_day': 28, 'rental_start': '9/2/18', 'rental_end': '2/13/18', 'total_days': -201, 'total_price': -5628} square of the total price
+2020-05-04 09:40:26,212 charges_calc.py:73  WARNING Invalid end date of 2016-03-08 00:00:00 found in record RNT722
+2020-05-04 09:40:26,213 charges_calc.py:82  WARNING Value Error on record RNT722, value {'product_code': 'PRD24', 'units_rented': 8, 'price_per_day': 22, 'rental_start': '10/6/17', 'rental_end': '3/8/16', 'total_days': -577, 'total_price': -12694} square of the total price
+2020-05-04 09:40:26,213 charges_calc.py:73  WARNING Invalid end date of 2016-11-17 00:00:00 found in record RNT725
+2020-05-04 09:40:26,214 charges_calc.py:82  WARNING Value Error on record RNT725, value {'product_code': 'PRD71', 'units_rented': 7, 'price_per_day': 32, 'rental_start': '2/19/17', 'rental_end': '11/17/16', 'total_days': -94, 'total_price': -3008} square of the total price
+2020-05-04 09:40:26,214 charges_calc.py:73  WARNING Invalid end date of 2016-05-06 00:00:00 found in record RNT726
+2020-05-04 09:40:26,214 charges_calc.py:82  WARNING Value Error on record RNT726, value {'product_code': 'PRD22', 'units_rented': 2, 'price_per_day': 39, 'rental_start': '11/24/17', 'rental_end': '5/6/16', 'total_days': -567, 'total_price': -22113} square of the total price
+2020-05-04 09:40:26,215 charges_calc.py:73  WARNING Invalid end date of 2017-04-23 00:00:00 found in record RNT729
+2020-05-04 09:40:26,215 charges_calc.py:82  WARNING Value Error on record RNT729, value {'product_code': 'PRD16', 'units_rented': 3, 'price_per_day': 39, 'rental_start': '8/18/17', 'rental_end': '4/23/17', 'total_days': -117, 'total_price': -4563} square of the total price
+2020-05-04 09:40:26,216 charges_calc.py:73  WARNING Invalid end date of 2017-09-02 00:00:00 found in record RNT731
+2020-05-04 09:40:26,216 charges_calc.py:82  WARNING Value Error on record RNT731, value {'product_code': 'PRD30', 'units_rented': 1, 'price_per_day': 10, 'rental_start': '11/17/17', 'rental_end': '9/2/17', 'total_days': -76, 'total_price': -760} square of the total price
+2020-05-04 09:40:26,217 charges_calc.py:73  WARNING Invalid end date of 2016-11-24 00:00:00 found in record RNT732
+2020-05-04 09:40:26,219 charges_calc.py:82  WARNING Value Error on record RNT732, value {'product_code': 'PRD96', 'units_rented': 5, 'price_per_day': 35, 'rental_start': '8/18/17', 'rental_end': '11/24/16', 'total_days': -267, 'total_price': -9345} square of the total price
+2020-05-04 09:40:26,219 charges_calc.py:73  WARNING Invalid end date of 2016-11-05 00:00:00 found in record RNT733
+2020-05-04 09:40:26,220 charges_calc.py:82  WARNING Value Error on record RNT733, value {'product_code': 'PRD40', 'units_rented': 1, 'price_per_day': 32, 'rental_start': '5/26/17', 'rental_end': '11/5/16', 'total_days': -202, 'total_price': -6464} square of the total price
+2020-05-04 09:40:26,220 charges_calc.py:73  WARNING Invalid end date of 2017-10-13 00:00:00 found in record RNT740
+2020-05-04 09:40:26,221 charges_calc.py:82  WARNING Value Error on record RNT740, value {'product_code': 'PRD81', 'units_rented': 7, 'price_per_day': 32, 'rental_start': '2/16/18', 'rental_end': '10/13/17', 'total_days': -126, 'total_price': -4032} square of the total price
+2020-05-04 09:40:26,221 charges_calc.py:73  WARNING Invalid end date of 2017-10-18 00:00:00 found in record RNT745
+2020-05-04 09:40:26,222 charges_calc.py:82  WARNING Value Error on record RNT745, value {'product_code': 'PRD36', 'units_rented': 6, 'price_per_day': 21, 'rental_start': '9/2/18', 'rental_end': '10/18/17', 'total_days': -319, 'total_price': -6699} square of the total price
+2020-05-04 09:40:26,222 charges_calc.py:73  WARNING Invalid end date of 2017-08-08 00:00:00 found in record RNT746
+2020-05-04 09:40:26,223 charges_calc.py:82  WARNING Value Error on record RNT746, value {'product_code': 'PRD40', 'units_rented': 5, 'price_per_day': 28, 'rental_start': '10/16/17', 'rental_end': '8/8/17', 'total_days': -69, 'total_price': -1932} square of the total price
+2020-05-04 09:40:26,223 charges_calc.py:73  WARNING Invalid end date of 2017-03-30 00:00:00 found in record RNT748
+2020-05-04 09:40:26,224 charges_calc.py:82  WARNING Value Error on record RNT748, value {'product_code': 'PRD91', 'units_rented': 3, 'price_per_day': 7, 'rental_start': '9/14/17', 'rental_end': '3/30/17', 'total_days': -168, 'total_price': -1176} square of the total price
+2020-05-04 09:40:26,224 charges_calc.py:73  WARNING Invalid end date of 2016-08-22 00:00:00 found in record RNT750
+2020-05-04 09:40:26,225 charges_calc.py:82  WARNING Value Error on record RNT750, value {'product_code': 'PRD67', 'units_rented': 1, 'price_per_day': 40, 'rental_start': '1/6/17', 'rental_end': '8/22/16', 'total_days': -137, 'total_price': -5480} square of the total price
+2020-05-04 09:40:26,225 charges_calc.py:73  WARNING Invalid end date of 2017-05-20 00:00:00 found in record RNT751
+2020-05-04 09:40:26,226 charges_calc.py:82  WARNING Value Error on record RNT751, value {'product_code': 'PRD2', 'units_rented': 4, 'price_per_day': 33, 'rental_start': '12/9/17', 'rental_end': '5/20/17', 'total_days': -203, 'total_price': -6699} square of the total price
+2020-05-04 09:40:26,226 charges_calc.py:73  WARNING Invalid end date of 2018-07-10 00:00:00 found in record RNT753
+2020-05-04 09:40:26,226 charges_calc.py:82  WARNING Value Error on record RNT753, value {'product_code': 'PRD81', 'units_rented': 10, 'price_per_day': 25, 'rental_start': '9/19/18', 'rental_end': '7/10/18', 'total_days': -71, 'total_price': -1775} square of the total price
+2020-05-04 09:40:26,228 charges_calc.py:73  WARNING Invalid end date of 2017-07-14 00:00:00 found in record RNT756
+2020-05-04 09:40:26,229 charges_calc.py:82  WARNING Value Error on record RNT756, value {'product_code': 'PRD44', 'units_rented': 6, 'price_per_day': 14, 'rental_start': '12/3/17', 'rental_end': '7/14/17', 'total_days': -142, 'total_price': -1988} square of the total price
+2020-05-04 09:40:26,229 charges_calc.py:73  WARNING Invalid end date of 2018-07-06 00:00:00 found in record RNT757
+2020-05-04 09:40:26,229 charges_calc.py:82  WARNING Value Error on record RNT757, value {'product_code': 'PRD52', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '12/13/18', 'rental_end': '7/6/18', 'total_days': -160, 'total_price': -2240} square of the total price
+2020-05-04 09:40:26,230 charges_calc.py:73  WARNING Invalid end date of 2016-01-05 00:00:00 found in record RNT759
+2020-05-04 09:40:26,230 charges_calc.py:82  WARNING Value Error on record RNT759, value {'product_code': 'PRD53', 'units_rented': 5, 'price_per_day': 11, 'rental_start': '2/10/18', 'rental_end': '1/5/16', 'total_days': -767, 'total_price': -8437} square of the total price
+2020-05-04 09:40:26,231 charges_calc.py:73  WARNING Invalid end date of 2017-07-28 00:00:00 found in record RNT766
+2020-05-04 09:40:26,231 charges_calc.py:82  WARNING Value Error on record RNT766, value {'product_code': 'PRD86', 'units_rented': 4, 'price_per_day': 25, 'rental_start': '3/15/18', 'rental_end': '7/28/17', 'total_days': -230, 'total_price': -5750} square of the total price
+2020-05-04 09:40:26,232 charges_calc.py:73  WARNING Invalid end date of 2016-01-06 00:00:00 found in record RNT770
+2020-05-04 09:40:26,232 charges_calc.py:82  WARNING Value Error on record RNT770, value {'product_code': 'PRD83', 'units_rented': 7, 'price_per_day': 36, 'rental_start': '12/2/18', 'rental_end': '1/6/16', 'total_days': -1061, 'total_price': -38196} square of the total price
+2020-05-04 09:40:26,232 charges_calc.py:73  WARNING Invalid end date of 2018-02-21 00:00:00 found in record RNT772
+2020-05-04 09:40:26,233 charges_calc.py:82  WARNING Value Error on record RNT772, value {'product_code': 'PRD71', 'units_rented': 7, 'price_per_day': 20, 'rental_start': '6/18/18', 'rental_end': '2/21/18', 'total_days': -117, 'total_price': -2340} square of the total price
+2020-05-04 09:40:26,233 charges_calc.py:73  WARNING Invalid end date of 2016-10-13 00:00:00 found in record RNT773
+2020-05-04 09:40:26,234 charges_calc.py:82  WARNING Value Error on record RNT773, value {'product_code': 'PRD14', 'units_rented': 4, 'price_per_day': 24, 'rental_start': '10/23/16', 'rental_end': '10/13/16', 'total_days': -10, 'total_price': -240} square of the total price
+2020-05-04 09:40:26,235 charges_calc.py:73  WARNING Invalid end date of 2016-12-28 00:00:00 found in record RNT774
+2020-05-04 09:40:26,235 charges_calc.py:82  WARNING Value Error on record RNT774, value {'product_code': 'PRD30', 'units_rented': 1, 'price_per_day': 36, 'rental_start': '7/13/18', 'rental_end': '12/28/16', 'total_days': -562, 'total_price': -20232} square of the total price
+2020-05-04 09:40:26,235 charges_calc.py:68  WARNING RNT776 has incorrect date or date format in record {'product_code': 'PRD70', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '6/19/16', 'rental_end': ''}
+2020-05-04 09:40:26,236 charges_calc.py:73  WARNING Invalid end date of 2017-01-03 00:00:00 found in record RNT778
+2020-05-04 09:40:26,236 charges_calc.py:82  WARNING Value Error on record RNT778, value {'product_code': 'PRD65', 'units_rented': 5, 'price_per_day': 39, 'rental_start': '1/13/18', 'rental_end': '1/3/17', 'total_days': -375, 'total_price': -14625} square of the total price
+2020-05-04 09:40:26,238 charges_calc.py:73  WARNING Invalid end date of 2016-08-21 00:00:00 found in record RNT779
+2020-05-04 09:40:26,241 charges_calc.py:82  WARNING Value Error on record RNT779, value {'product_code': 'PRD37', 'units_rented': 5, 'price_per_day': 23, 'rental_start': '1/31/17', 'rental_end': '8/21/16', 'total_days': -163, 'total_price': -3749} square of the total price
+2020-05-04 09:40:26,242 charges_calc.py:73  WARNING Invalid end date of 2017-04-16 00:00:00 found in record RNT782
+2020-05-04 09:40:26,242 charges_calc.py:82  WARNING Value Error on record RNT782, value {'product_code': 'PRD14', 'units_rented': 10, 'price_per_day': 22, 'rental_start': '1/25/18', 'rental_end': '4/16/17', 'total_days': -284, 'total_price': -6248} square of the total price
+2020-05-04 09:40:26,243 charges_calc.py:73  WARNING Invalid end date of 2017-03-22 00:00:00 found in record RNT783
+2020-05-04 09:40:26,243 charges_calc.py:82  WARNING Value Error on record RNT783, value {'product_code': 'PRD98', 'units_rented': 10, 'price_per_day': 13, 'rental_start': '11/27/18', 'rental_end': '3/22/17', 'total_days': -615, 'total_price': -7995} square of the total price
+2020-05-04 09:40:26,244 charges_calc.py:73  WARNING Invalid end date of 2016-02-24 00:00:00 found in record RNT790
+2020-05-04 09:40:26,244 charges_calc.py:82  WARNING Value Error on record RNT790, value {'product_code': 'PRD55', 'units_rented': 7, 'price_per_day': 11, 'rental_start': '3/30/17', 'rental_end': '2/24/16', 'total_days': -400, 'total_price': -4400} square of the total price
+2020-05-04 09:40:26,245 charges_calc.py:73  WARNING Invalid end date of 2017-06-03 00:00:00 found in record RNT791
+2020-05-04 09:40:26,245 charges_calc.py:82  WARNING Value Error on record RNT791, value {'product_code': 'PRD92', 'units_rented': 9, 'price_per_day': 27, 'rental_start': '3/18/18', 'rental_end': '6/3/17', 'total_days': -288, 'total_price': -7776} square of the total price
+2020-05-04 09:40:26,245 charges_calc.py:73  WARNING Invalid end date of 2016-04-30 00:00:00 found in record RNT794
+2020-05-04 09:40:26,246 charges_calc.py:82  WARNING Value Error on record RNT794, value {'product_code': 'PRD54', 'units_rented': 5, 'price_per_day': 39, 'rental_start': '12/30/18', 'rental_end': '4/30/16', 'total_days': -974, 'total_price': -37986} square of the total price
+2020-05-04 09:40:26,246 charges_calc.py:73  WARNING Invalid end date of 2017-09-15 00:00:00 found in record RNT795
+2020-05-04 09:40:26,247 charges_calc.py:82  WARNING Value Error on record RNT795, value {'product_code': 'PRD83', 'units_rented': 8, 'price_per_day': 19, 'rental_start': '1/25/18', 'rental_end': '9/15/17', 'total_days': -132, 'total_price': -2508} square of the total price
+2020-05-04 09:40:26,247 charges_calc.py:73  WARNING Invalid end date of 2017-06-08 00:00:00 found in record RNT796
+2020-05-04 09:40:26,248 charges_calc.py:82  WARNING Value Error on record RNT796, value {'product_code': 'PRD90', 'units_rented': 10, 'price_per_day': 32, 'rental_start': '1/13/18', 'rental_end': '6/8/17', 'total_days': -219, 'total_price': -7008} square of the total price
+2020-05-04 09:40:26,248 charges_calc.py:73  WARNING Invalid end date of 2016-02-10 00:00:00 found in record RNT803
+2020-05-04 09:40:26,249 charges_calc.py:82  WARNING Value Error on record RNT803, value {'product_code': 'PRD32', 'units_rented': 10, 'price_per_day': 5, 'rental_start': '10/17/16', 'rental_end': '2/10/16', 'total_days': -250, 'total_price': -1250} square of the total price
+2020-05-04 09:40:26,249 charges_calc.py:73  WARNING Invalid end date of 2017-07-19 00:00:00 found in record RNT807
+2020-05-04 09:40:26,250 charges_calc.py:82  WARNING Value Error on record RNT807, value {'product_code': 'PRD12', 'units_rented': 7, 'price_per_day': 26, 'rental_start': '4/3/18', 'rental_end': '7/19/17', 'total_days': -258, 'total_price': -6708} square of the total price
+2020-05-04 09:40:26,250 charges_calc.py:73  WARNING Invalid end date of 2016-12-15 00:00:00 found in record RNT808
+2020-05-04 09:40:26,251 charges_calc.py:82  WARNING Value Error on record RNT808, value {'product_code': 'PRD67', 'units_rented': 9, 'price_per_day': 10, 'rental_start': '7/25/17', 'rental_end': '12/15/16', 'total_days': -222, 'total_price': -2220} square of the total price
+2020-05-04 09:40:26,251 charges_calc.py:73  WARNING Invalid end date of 2017-04-07 00:00:00 found in record RNT809
+2020-05-04 09:40:26,252 charges_calc.py:82  WARNING Value Error on record RNT809, value {'product_code': 'PRD18', 'units_rented': 3, 'price_per_day': 17, 'rental_start': '12/4/17', 'rental_end': '4/7/17', 'total_days': -241, 'total_price': -4097} square of the total price
+2020-05-04 09:40:26,252 charges_calc.py:73  WARNING Invalid end date of 2016-08-18 00:00:00 found in record RNT812
+2020-05-04 09:40:26,252 charges_calc.py:82  WARNING Value Error on record RNT812, value {'product_code': 'PRD23', 'units_rented': 8, 'price_per_day': 26, 'rental_start': '10/25/16', 'rental_end': '8/18/16', 'total_days': -68, 'total_price': -1768} square of the total price
+2020-05-04 09:40:26,253 charges_calc.py:73  WARNING Invalid end date of 2017-05-03 00:00:00 found in record RNT814
+2020-05-04 09:40:26,253 charges_calc.py:82  WARNING Value Error on record RNT814, value {'product_code': 'PRD32', 'units_rented': 5, 'price_per_day': 38, 'rental_start': '5/16/18', 'rental_end': '5/3/17', 'total_days': -378, 'total_price': -14364} square of the total price
+2020-05-04 09:40:26,254 charges_calc.py:73  WARNING Invalid end date of 2017-03-26 00:00:00 found in record RNT815
+2020-05-04 09:40:26,255 charges_calc.py:82  WARNING Value Error on record RNT815, value {'product_code': 'PRD58', 'units_rented': 7, 'price_per_day': 39, 'rental_start': '11/29/17', 'rental_end': '3/26/17', 'total_days': -248, 'total_price': -9672} square of the total price
+2020-05-04 09:40:26,255 charges_calc.py:73  WARNING Invalid end date of 2017-07-06 00:00:00 found in record RNT816
+2020-05-04 09:40:26,258 charges_calc.py:82  WARNING Value Error on record RNT816, value {'product_code': 'PRD72', 'units_rented': 8, 'price_per_day': 8, 'rental_start': '12/20/17', 'rental_end': '7/6/17', 'total_days': -167, 'total_price': -1336} square of the total price
+2020-05-04 09:40:26,258 charges_calc.py:73  WARNING Invalid end date of 2016-02-11 00:00:00 found in record RNT817
+2020-05-04 09:40:26,259 charges_calc.py:82  WARNING Value Error on record RNT817, value {'product_code': 'PRD66', 'units_rented': 7, 'price_per_day': 36, 'rental_start': '11/27/18', 'rental_end': '2/11/16', 'total_days': -1020, 'total_price': -36720} square of the total price
+2020-05-04 09:40:26,259 charges_calc.py:73  WARNING Invalid end date of 2016-05-13 00:00:00 found in record RNT818
+2020-05-04 09:40:26,260 charges_calc.py:82  WARNING Value Error on record RNT818, value {'product_code': 'PRD36', 'units_rented': 10, 'price_per_day': 40, 'rental_start': '11/13/17', 'rental_end': '5/13/16', 'total_days': -549, 'total_price': -21960} square of the total price
+2020-05-04 09:40:26,260 charges_calc.py:73  WARNING Invalid end date of 2017-09-25 00:00:00 found in record RNT819
+2020-05-04 09:40:26,261 charges_calc.py:82  WARNING Value Error on record RNT819, value {'product_code': 'PRD84', 'units_rented': 7, 'price_per_day': 20, 'rental_start': '12/7/17', 'rental_end': '9/25/17', 'total_days': -73, 'total_price': -1460} square of the total price
+2020-05-04 09:40:26,261 charges_calc.py:73  WARNING Invalid end date of 2016-04-25 00:00:00 found in record RNT820
+2020-05-04 09:40:26,261 charges_calc.py:82  WARNING Value Error on record RNT820, value {'product_code': 'PRD97', 'units_rented': 2, 'price_per_day': 10, 'rental_start': '5/3/16', 'rental_end': '4/25/16', 'total_days': -8, 'total_price': -80} square of the total price
+2020-05-04 09:40:26,262 charges_calc.py:73  WARNING Invalid end date of 2017-08-11 00:00:00 found in record RNT822
+2020-05-04 09:40:26,262 charges_calc.py:82  WARNING Value Error on record RNT822, value {'product_code': 'PRD26', 'units_rented': 9, 'price_per_day': 22, 'rental_start': '12/15/17', 'rental_end': '8/11/17', 'total_days': -126, 'total_price': -2772} square of the total price
+2020-05-04 09:40:26,263 charges_calc.py:73  WARNING Invalid end date of 2017-11-25 00:00:00 found in record RNT825
+2020-05-04 09:40:26,263 charges_calc.py:82  WARNING Value Error on record RNT825, value {'product_code': 'PRD67', 'units_rented': 7, 'price_per_day': 19, 'rental_start': '3/18/18', 'rental_end': '11/25/17', 'total_days': -113, 'total_price': -2147} square of the total price
+2020-05-04 09:40:26,264 charges_calc.py:73  WARNING Invalid end date of 2017-02-25 00:00:00 found in record RNT831
+2020-05-04 09:40:26,265 charges_calc.py:82  WARNING Value Error on record RNT831, value {'product_code': 'PRD10', 'units_rented': 3, 'price_per_day': 5, 'rental_start': '2/28/17', 'rental_end': '2/25/17', 'total_days': -3, 'total_price': -15} square of the total price
+2020-05-04 09:40:26,269 charges_calc.py:73  WARNING Invalid end date of 2016-01-08 00:00:00 found in record RNT835
+2020-05-04 09:40:26,270 charges_calc.py:82  WARNING Value Error on record RNT835, value {'product_code': 'PRD2', 'units_rented': 6, 'price_per_day': 22, 'rental_start': '8/24/17', 'rental_end': '1/8/16', 'total_days': -594, 'total_price': -13068} square of the total price
+2020-05-04 09:40:26,270 charges_calc.py:73  WARNING Invalid end date of 2016-07-09 00:00:00 found in record RNT836
+2020-05-04 09:40:26,271 charges_calc.py:82  WARNING Value Error on record RNT836, value {'product_code': 'PRD32', 'units_rented': 4, 'price_per_day': 20, 'rental_start': '7/14/16', 'rental_end': '7/9/16', 'total_days': -5, 'total_price': -100} square of the total price
+2020-05-04 09:40:26,272 charges_calc.py:73  WARNING Invalid end date of 2018-06-25 00:00:00 found in record RNT839
+2020-05-04 09:40:26,273 charges_calc.py:82  WARNING Value Error on record RNT839, value {'product_code': 'PRD67', 'units_rented': 1, 'price_per_day': 9, 'rental_start': '12/21/18', 'rental_end': '6/25/18', 'total_days': -179, 'total_price': -1611} square of the total price
+2020-05-04 09:40:26,273 charges_calc.py:73  WARNING Invalid end date of 2017-02-04 00:00:00 found in record RNT840
+2020-05-04 09:40:26,274 charges_calc.py:82  WARNING Value Error on record RNT840, value {'product_code': 'PRD63', 'units_rented': 10, 'price_per_day': 19, 'rental_start': '11/1/18', 'rental_end': '2/4/17', 'total_days': -635, 'total_price': -12065} square of the total price
+2020-05-04 09:40:26,274 charges_calc.py:73  WARNING Invalid end date of 2016-04-16 00:00:00 found in record RNT842
+2020-05-04 09:40:26,275 charges_calc.py:82  WARNING Value Error on record RNT842, value {'product_code': 'PRD91', 'units_rented': 7, 'price_per_day': 17, 'rental_start': '10/16/17', 'rental_end': '4/16/16', 'total_days': -548, 'total_price': -9316} square of the total price
+2020-05-04 09:40:26,276 charges_calc.py:73  WARNING Invalid end date of 2016-06-26 00:00:00 found in record RNT843
+2020-05-04 09:40:26,278 charges_calc.py:82  WARNING Value Error on record RNT843, value {'product_code': 'PRD79', 'units_rented': 0, 'price_per_day': 34, 'rental_start': '11/7/17', 'rental_end': '6/26/16', 'total_days': -499, 'total_price': -16966} square of the total price
+2020-05-04 09:40:26,279 charges_calc.py:88  WARNING Tried to divide by Zero, record RNT843, value {'product_code': 'PRD79', 'units_rented': 0, 'price_per_day': 34, 'rental_start': '11/7/17', 'rental_end': '6/26/16', 'total_days': -499, 'total_price': -16966}
+2020-05-04 09:40:26,280 charges_calc.py:73  WARNING Invalid end date of 2017-09-09 00:00:00 found in record RNT844
+2020-05-04 09:40:26,281 charges_calc.py:82  WARNING Value Error on record RNT844, value {'product_code': 'PRD26', 'units_rented': 8, 'price_per_day': 37, 'rental_start': '4/14/18', 'rental_end': '9/9/17', 'total_days': -217, 'total_price': -8029} square of the total price
+2020-05-04 09:40:26,281 charges_calc.py:73  WARNING Invalid end date of 2016-06-29 00:00:00 found in record RNT846
+2020-05-04 09:40:26,282 charges_calc.py:82  WARNING Value Error on record RNT846, value {'product_code': 'PRD89', 'units_rented': 2, 'price_per_day': 27, 'rental_start': '9/8/17', 'rental_end': '6/29/16', 'total_days': -436, 'total_price': -11772} square of the total price
+2020-05-04 09:40:26,285 charges_calc.py:73  WARNING Invalid end date of 2018-03-07 00:00:00 found in record RNT847
+2020-05-04 09:40:26,286 charges_calc.py:82  WARNING Value Error on record RNT847, value {'product_code': 'PRD88', 'units_rented': 9, 'price_per_day': 14, 'rental_start': '10/19/18', 'rental_end': '3/7/18', 'total_days': -226, 'total_price': -3164} square of the total price
+2020-05-04 09:40:26,290 charges_calc.py:73  WARNING Invalid end date of 2016-08-18 00:00:00 found in record RNT849
+2020-05-04 09:40:26,292 charges_calc.py:82  WARNING Value Error on record RNT849, value {'product_code': 'PRD58', 'units_rented': 7, 'price_per_day': 6, 'rental_start': '7/19/18', 'rental_end': '8/18/16', 'total_days': -700, 'total_price': -4200} square of the total price
+2020-05-04 09:40:26,293 charges_calc.py:73  WARNING Invalid end date of 2016-02-09 00:00:00 found in record RNT853
+2020-05-04 09:40:26,295 charges_calc.py:82  WARNING Value Error on record RNT853, value {'product_code': 'PRD88', 'units_rented': 4, 'price_per_day': 15, 'rental_start': '5/14/18', 'rental_end': '2/9/16', 'total_days': -825, 'total_price': -12375} square of the total price
+2020-05-04 09:40:26,297 charges_calc.py:73  WARNING Invalid end date of 2018-06-16 00:00:00 found in record RNT855
+2020-05-04 09:40:26,300 charges_calc.py:82  WARNING Value Error on record RNT855, value {'product_code': 'PRD28', 'units_rented': 2, 'price_per_day': 23, 'rental_start': '10/6/18', 'rental_end': '6/16/18', 'total_days': -112, 'total_price': -2576} square of the total price
+2020-05-04 09:40:26,302 charges_calc.py:73  WARNING Invalid end date of 2018-06-07 00:00:00 found in record RNT858
+2020-05-04 09:40:26,304 charges_calc.py:82  WARNING Value Error on record RNT858, value {'product_code': 'PRD61', 'units_rented': 6, 'price_per_day': 25, 'rental_start': '8/15/18', 'rental_end': '6/7/18', 'total_days': -69, 'total_price': -1725} square of the total price
+2020-05-04 09:40:26,305 charges_calc.py:73  WARNING Invalid end date of 2016-09-12 00:00:00 found in record RNT861
+2020-05-04 09:40:26,306 charges_calc.py:82  WARNING Value Error on record RNT861, value {'product_code': 'PRD52', 'units_rented': 5, 'price_per_day': 24, 'rental_start': '1/30/18', 'rental_end': '9/12/16', 'total_days': -505, 'total_price': -12120} square of the total price
+2020-05-04 09:40:26,306 charges_calc.py:73  WARNING Invalid end date of 2016-03-31 00:00:00 found in record RNT863
+2020-05-04 09:40:26,307 charges_calc.py:82  WARNING Value Error on record RNT863, value {'product_code': 'PRD42', 'units_rented': 2, 'price_per_day': 24, 'rental_start': '11/5/16', 'rental_end': '3/31/16', 'total_days': -219, 'total_price': -5256} square of the total price
+2020-05-04 09:40:26,308 charges_calc.py:73  WARNING Invalid end date of 2018-01-12 00:00:00 found in record RNT864
+2020-05-04 09:40:26,310 charges_calc.py:82  WARNING Value Error on record RNT864, value {'product_code': 'PRD53', 'units_rented': 6, 'price_per_day': 12, 'rental_start': '1/20/18', 'rental_end': '1/12/18', 'total_days': -8, 'total_price': -96} square of the total price
+2020-05-04 09:40:26,311 charges_calc.py:73  WARNING Invalid end date of 2017-05-07 00:00:00 found in record RNT866
+2020-05-04 09:40:26,311 charges_calc.py:82  WARNING Value Error on record RNT866, value {'product_code': 'PRD57', 'units_rented': 9, 'price_per_day': 38, 'rental_start': '1/1/18', 'rental_end': '5/7/17', 'total_days': -239, 'total_price': -9082} square of the total price
+2020-05-04 09:40:26,311 charges_calc.py:73  WARNING Invalid end date of 2017-01-19 00:00:00 found in record RNT867
+2020-05-04 09:40:26,312 charges_calc.py:82  WARNING Value Error on record RNT867, value {'product_code': 'PRD60', 'units_rented': 7, 'price_per_day': 19, 'rental_start': '6/14/17', 'rental_end': '1/19/17', 'total_days': -146, 'total_price': -2774} square of the total price
+2020-05-04 09:40:26,312 charges_calc.py:73  WARNING Invalid end date of 2016-12-02 00:00:00 found in record RNT869
+2020-05-04 09:40:26,313 charges_calc.py:82  WARNING Value Error on record RNT869, value {'product_code': 'PRD74', 'units_rented': 10, 'price_per_day': 26, 'rental_start': '9/27/17', 'rental_end': '12/2/16', 'total_days': -299, 'total_price': -7774} square of the total price
+2020-05-04 09:40:26,313 charges_calc.py:73  WARNING Invalid end date of 2017-02-20 00:00:00 found in record RNT871
+2020-05-04 09:40:26,314 charges_calc.py:82  WARNING Value Error on record RNT871, value {'product_code': 'PRD25', 'units_rented': 7, 'price_per_day': 29, 'rental_start': '4/30/17', 'rental_end': '2/20/17', 'total_days': -69, 'total_price': -2001} square of the total price
+2020-05-04 09:40:26,314 charges_calc.py:73  WARNING Invalid end date of 2017-11-24 00:00:00 found in record RNT873
+2020-05-04 09:40:26,315 charges_calc.py:82  WARNING Value Error on record RNT873, value {'product_code': 'PRD16', 'units_rented': 3, 'price_per_day': 5, 'rental_start': '2/8/18', 'rental_end': '11/24/17', 'total_days': -76, 'total_price': -380} square of the total price
+2020-05-04 09:40:26,315 charges_calc.py:73  WARNING Invalid end date of 2018-08-08 00:00:00 found in record RNT874
+2020-05-04 09:40:26,316 charges_calc.py:82  WARNING Value Error on record RNT874, value {'product_code': 'PRD83', 'units_rented': 9, 'price_per_day': 38, 'rental_start': '8/11/18', 'rental_end': '8/8/18', 'total_days': -3, 'total_price': -114} square of the total price
+2020-05-04 09:40:26,317 charges_calc.py:73  WARNING Invalid end date of 2016-09-20 00:00:00 found in record RNT876
+2020-05-04 09:40:26,317 charges_calc.py:82  WARNING Value Error on record RNT876, value {'product_code': 'PRD60', 'units_rented': 4, 'price_per_day': 26, 'rental_start': '4/30/17', 'rental_end': '9/20/16', 'total_days': -222, 'total_price': -5772} square of the total price
+2020-05-04 09:40:26,318 charges_calc.py:73  WARNING Invalid end date of 2016-06-11 00:00:00 found in record RNT879
+2020-05-04 09:40:26,318 charges_calc.py:82  WARNING Value Error on record RNT879, value {'product_code': 'PRD44', 'units_rented': 5, 'price_per_day': 24, 'rental_start': '5/5/18', 'rental_end': '6/11/16', 'total_days': -693, 'total_price': -16632} square of the total price
+2020-05-04 09:40:26,320 charges_calc.py:73  WARNING Invalid end date of 2016-04-13 00:00:00 found in record RNT882
+2020-05-04 09:40:26,321 charges_calc.py:82  WARNING Value Error on record RNT882, value {'product_code': 'PRD3', 'units_rented': 6, 'price_per_day': 28, 'rental_start': '1/27/18', 'rental_end': '4/13/16', 'total_days': -654, 'total_price': -18312} square of the total price
+2020-05-04 09:40:26,322 charges_calc.py:73  WARNING Invalid end date of 2017-11-20 00:00:00 found in record RNT883
+2020-05-04 09:40:26,322 charges_calc.py:82  WARNING Value Error on record RNT883, value {'product_code': 'PRD28', 'units_rented': 6, 'price_per_day': 19, 'rental_start': '6/14/18', 'rental_end': '11/20/17', 'total_days': -206, 'total_price': -3914} square of the total price
+2020-05-04 09:40:26,323 charges_calc.py:73  WARNING Invalid end date of 2016-05-01 00:00:00 found in record RNT884
+2020-05-04 09:40:26,323 charges_calc.py:82  WARNING Value Error on record RNT884, value {'product_code': 'PRD1', 'units_rented': 4, 'price_per_day': 11, 'rental_start': '12/3/16', 'rental_end': '5/1/16', 'total_days': -216, 'total_price': -2376} square of the total price
+2020-05-04 09:40:26,324 charges_calc.py:73  WARNING Invalid end date of 2016-10-23 00:00:00 found in record RNT886
+2020-05-04 09:40:26,324 charges_calc.py:82  WARNING Value Error on record RNT886, value {'product_code': 'PRD33', 'units_rented': 2, 'price_per_day': 24, 'rental_start': '1/24/17', 'rental_end': '10/23/16', 'total_days': -93, 'total_price': -2232} square of the total price
+2020-05-04 09:40:26,325 charges_calc.py:73  WARNING Invalid end date of 2016-03-21 00:00:00 found in record RNT890
+2020-05-04 09:40:26,325 charges_calc.py:82  WARNING Value Error on record RNT890, value {'product_code': 'PRD91', 'units_rented': 6, 'price_per_day': 8, 'rental_start': '6/12/18', 'rental_end': '3/21/16', 'total_days': -813, 'total_price': -6504} square of the total price
+2020-05-04 09:40:26,326 charges_calc.py:73  WARNING Invalid end date of 2016-11-20 00:00:00 found in record RNT892
+2020-05-04 09:40:26,326 charges_calc.py:82  WARNING Value Error on record RNT892, value {'product_code': 'PRD6', 'units_rented': 3, 'price_per_day': 8, 'rental_start': '3/29/17', 'rental_end': '11/20/16', 'total_days': -129, 'total_price': -1032} square of the total price
+2020-05-04 09:40:26,327 charges_calc.py:73  WARNING Invalid end date of 2016-10-27 00:00:00 found in record RNT893
+2020-05-04 09:40:26,327 charges_calc.py:82  WARNING Value Error on record RNT893, value {'product_code': 'PRD20', 'units_rented': 2, 'price_per_day': 26, 'rental_start': '8/4/17', 'rental_end': '10/27/16', 'total_days': -281, 'total_price': -7306} square of the total price
+2020-05-04 09:40:26,327 charges_calc.py:73  WARNING Invalid end date of 2016-12-07 00:00:00 found in record RNT894
+2020-05-04 09:40:26,328 charges_calc.py:82  WARNING Value Error on record RNT894, value {'product_code': 'PRD29', 'units_rented': 5, 'price_per_day': 13, 'rental_start': '3/6/17', 'rental_end': '12/7/16', 'total_days': -89, 'total_price': -1157} square of the total price
+2020-05-04 09:40:26,328 charges_calc.py:73  WARNING Invalid end date of 2016-01-04 00:00:00 found in record RNT895
+2020-05-04 09:40:26,331 charges_calc.py:82  WARNING Value Error on record RNT895, value {'product_code': 'PRD9', 'units_rented': 6, 'price_per_day': 40, 'rental_start': '7/6/18', 'rental_end': '1/4/16', 'total_days': -914, 'total_price': -36560} square of the total price
+2020-05-04 09:40:26,332 charges_calc.py:73  WARNING Invalid end date of 2017-07-07 00:00:00 found in record RNT896
+2020-05-04 09:40:26,332 charges_calc.py:82  WARNING Value Error on record RNT896, value {'product_code': 'PRD74', 'units_rented': 4, 'price_per_day': 30, 'rental_start': '10/9/17', 'rental_end': '7/7/17', 'total_days': -94, 'total_price': -2820} square of the total price
+2020-05-04 09:40:26,333 charges_calc.py:73  WARNING Invalid end date of 2016-11-18 00:00:00 found in record RNT898
+2020-05-04 09:40:26,334 charges_calc.py:82  WARNING Value Error on record RNT898, value {'product_code': 'PRD7', 'units_rented': 2, 'price_per_day': 31, 'rental_start': '8/30/17', 'rental_end': '11/18/16', 'total_days': -285, 'total_price': -8835} square of the total price
+2020-05-04 09:40:26,334 charges_calc.py:73  WARNING Invalid end date of 2016-11-19 00:00:00 found in record RNT901
+2020-05-04 09:40:26,335 charges_calc.py:82  WARNING Value Error on record RNT901, value {'product_code': 'PRD69', 'units_rented': 9, 'price_per_day': 14, 'rental_start': '4/8/17', 'rental_end': '11/19/16', 'total_days': -140, 'total_price': -1960} square of the total price
+2020-05-04 09:40:26,335 charges_calc.py:73  WARNING Invalid end date of 2017-12-26 00:00:00 found in record RNT903
+2020-05-04 09:40:26,336 charges_calc.py:82  WARNING Value Error on record RNT903, value {'product_code': 'PRD55', 'units_rented': 8, 'price_per_day': 14, 'rental_start': '4/22/18', 'rental_end': '12/26/17', 'total_days': -117, 'total_price': -1638} square of the total price
+2020-05-04 09:40:26,336 charges_calc.py:73  WARNING Invalid end date of 2017-08-21 00:00:00 found in record RNT905
+2020-05-04 09:40:26,337 charges_calc.py:82  WARNING Value Error on record RNT905, value {'product_code': 'PRD77', 'units_rented': 7, 'price_per_day': 27, 'rental_start': '9/6/17', 'rental_end': '8/21/17', 'total_days': -16, 'total_price': -432} square of the total price
+2020-05-04 09:40:26,337 charges_calc.py:73  WARNING Invalid end date of 2016-05-17 00:00:00 found in record RNT909
+2020-05-04 09:40:26,338 charges_calc.py:82  WARNING Value Error on record RNT909, value {'product_code': 'PRD52', 'units_rented': 3, 'price_per_day': 15, 'rental_start': '5/23/18', 'rental_end': '5/17/16', 'total_days': -736, 'total_price': -11040} square of the total price
+2020-05-04 09:40:26,339 charges_calc.py:73  WARNING Invalid end date of 2016-01-17 00:00:00 found in record RNT911
+2020-05-04 09:40:26,341 charges_calc.py:82  WARNING Value Error on record RNT911, value {'product_code': 'PRD55', 'units_rented': 6, 'price_per_day': 20, 'rental_start': '10/14/16', 'rental_end': '1/17/16', 'total_days': -271, 'total_price': -5420} square of the total price
+2020-05-04 09:40:26,341 charges_calc.py:73  WARNING Invalid end date of 2016-09-05 00:00:00 found in record RNT912
+2020-05-04 09:40:26,342 charges_calc.py:82  WARNING Value Error on record RNT912, value {'product_code': 'PRD54', 'units_rented': 6, 'price_per_day': 22, 'rental_start': '11/20/18', 'rental_end': '9/5/16', 'total_days': -806, 'total_price': -17732} square of the total price
+2020-05-04 09:40:26,342 charges_calc.py:73  WARNING Invalid end date of 2016-07-03 00:00:00 found in record RNT914
+2020-05-04 09:40:26,343 charges_calc.py:82  WARNING Value Error on record RNT914, value {'product_code': 'PRD56', 'units_rented': 3, 'price_per_day': 38, 'rental_start': '7/4/18', 'rental_end': '7/3/16', 'total_days': -731, 'total_price': -27778} square of the total price
+2020-05-04 09:40:26,343 charges_calc.py:73  WARNING Invalid end date of 2017-12-19 00:00:00 found in record RNT915
+2020-05-04 09:40:26,343 charges_calc.py:82  WARNING Value Error on record RNT915, value {'product_code': 'PRD35', 'units_rented': 1, 'price_per_day': 16, 'rental_start': '8/9/18', 'rental_end': '12/19/17', 'total_days': -233, 'total_price': -3728} square of the total price
+2020-05-04 09:40:26,344 charges_calc.py:73  WARNING Invalid end date of 2016-05-30 00:00:00 found in record RNT917
+2020-05-04 09:40:26,344 charges_calc.py:82  WARNING Value Error on record RNT917, value {'product_code': 'PRD75', 'units_rented': 5, 'price_per_day': 33, 'rental_start': '2/17/17', 'rental_end': '5/30/16', 'total_days': -263, 'total_price': -8679} square of the total price
+2020-05-04 09:40:26,345 charges_calc.py:73  WARNING Invalid end date of 2018-07-20 00:00:00 found in record RNT918
+2020-05-04 09:40:26,345 charges_calc.py:82  WARNING Value Error on record RNT918, value {'product_code': 'PRD0', 'units_rented': 2, 'price_per_day': 39, 'rental_start': '8/10/18', 'rental_end': '7/20/18', 'total_days': -21, 'total_price': -819} square of the total price
+2020-05-04 09:40:26,346 charges_calc.py:73  WARNING Invalid end date of 2017-02-25 00:00:00 found in record RNT919
+2020-05-04 09:40:26,346 charges_calc.py:82  WARNING Value Error on record RNT919, value {'product_code': 'PRD2', 'units_rented': 7, 'price_per_day': 17, 'rental_start': '4/17/18', 'rental_end': '2/25/17', 'total_days': -416, 'total_price': -7072} square of the total price
+2020-05-04 09:40:26,347 charges_calc.py:73  WARNING Invalid end date of 2017-06-13 00:00:00 found in record RNT922
+2020-05-04 09:40:26,347 charges_calc.py:82  WARNING Value Error on record RNT922, value {'product_code': 'PRD3', 'units_rented': 6, 'price_per_day': 5, 'rental_start': '1/20/18', 'rental_end': '6/13/17', 'total_days': -221, 'total_price': -1105} square of the total price
+2020-05-04 09:40:26,348 charges_calc.py:73  WARNING Invalid end date of 2016-04-03 00:00:00 found in record RNT924
+2020-05-04 09:40:26,348 charges_calc.py:82  WARNING Value Error on record RNT924, value {'product_code': 'PRD79', 'units_rented': 9, 'price_per_day': 31, 'rental_start': '5/12/18', 'rental_end': '4/3/16', 'total_days': -769, 'total_price': -23839} square of the total price
+2020-05-04 09:40:26,349 charges_calc.py:73  WARNING Invalid end date of 2017-04-12 00:00:00 found in record RNT926
+2020-05-04 09:40:26,349 charges_calc.py:82  WARNING Value Error on record RNT926, value {'product_code': 'PRD44', 'units_rented': 8, 'price_per_day': 37, 'rental_start': '9/8/17', 'rental_end': '4/12/17', 'total_days': -149, 'total_price': -5513} square of the total price
+2020-05-04 09:40:26,351 charges_calc.py:73  WARNING Invalid end date of 2017-07-18 00:00:00 found in record RNT927
+2020-05-04 09:40:26,352 charges_calc.py:82  WARNING Value Error on record RNT927, value {'product_code': 'PRD61', 'units_rented': 3, 'price_per_day': 19, 'rental_start': '8/17/17', 'rental_end': '7/18/17', 'total_days': -30, 'total_price': -570} square of the total price
+2020-05-04 09:40:26,352 charges_calc.py:73  WARNING Invalid end date of 2016-04-01 00:00:00 found in record RNT928
+2020-05-04 09:40:26,353 charges_calc.py:82  WARNING Value Error on record RNT928, value {'product_code': 'PRD66', 'units_rented': 3, 'price_per_day': 11, 'rental_start': '10/10/17', 'rental_end': '4/1/16', 'total_days': -557, 'total_price': -6127} square of the total price
+2020-05-04 09:40:26,353 charges_calc.py:73  WARNING Invalid end date of 2016-08-04 00:00:00 found in record RNT930
+2020-05-04 09:40:26,354 charges_calc.py:82  WARNING Value Error on record RNT930, value {'product_code': 'PRD50', 'units_rented': 4, 'price_per_day': 32, 'rental_start': '1/11/17', 'rental_end': '8/4/16', 'total_days': -160, 'total_price': -5120} square of the total price
+2020-05-04 09:40:26,355 charges_calc.py:73  WARNING Invalid end date of 2016-11-24 00:00:00 found in record RNT931
+2020-05-04 09:40:26,356 charges_calc.py:82  WARNING Value Error on record RNT931, value {'product_code': 'PRD94', 'units_rented': 5, 'price_per_day': 38, 'rental_start': '3/17/18', 'rental_end': '11/24/16', 'total_days': -478, 'total_price': -18164} square of the total price
+2020-05-04 09:40:26,356 charges_calc.py:73  WARNING Invalid end date of 2016-04-30 00:00:00 found in record RNT932
+2020-05-04 09:40:26,357 charges_calc.py:82  WARNING Value Error on record RNT932, value {'product_code': 'PRD63', 'units_rented': 3, 'price_per_day': 40, 'rental_start': '5/15/18', 'rental_end': '4/30/16', 'total_days': -745, 'total_price': -29800} square of the total price
+2020-05-04 09:40:26,357 charges_calc.py:73  WARNING Invalid end date of 2018-02-21 00:00:00 found in record RNT935
+2020-05-04 09:40:26,358 charges_calc.py:82  WARNING Value Error on record RNT935, value {'product_code': 'PRD97', 'units_rented': 5, 'price_per_day': 20, 'rental_start': '3/2/18', 'rental_end': '2/21/18', 'total_days': -9, 'total_price': -180} square of the total price
+2020-05-04 09:40:26,358 charges_calc.py:73  WARNING Invalid end date of 2017-03-14 00:00:00 found in record RNT937
+2020-05-04 09:40:26,359 charges_calc.py:82  WARNING Value Error on record RNT937, value {'product_code': 'PRD57', 'units_rented': 10, 'price_per_day': 19, 'rental_start': '3/27/17', 'rental_end': '3/14/17', 'total_days': -13, 'total_price': -247} square of the total price
+2020-05-04 09:40:26,359 charges_calc.py:73  WARNING Invalid end date of 2016-08-07 00:00:00 found in record RNT938
+2020-05-04 09:40:26,360 charges_calc.py:82  WARNING Value Error on record RNT938, value {'product_code': 'PRD6', 'units_rented': 5, 'price_per_day': 36, 'rental_start': '6/30/17', 'rental_end': '8/7/16', 'total_days': -327, 'total_price': -11772} square of the total price
+2020-05-04 09:40:26,362 charges_calc.py:73  WARNING Invalid end date of 2016-03-23 00:00:00 found in record RNT939
+2020-05-04 09:40:26,363 charges_calc.py:82  WARNING Value Error on record RNT939, value {'product_code': 'PRD94', 'units_rented': 1, 'price_per_day': 33, 'rental_start': '12/10/17', 'rental_end': '3/23/16', 'total_days': -627, 'total_price': -20691} square of the total price
+2020-05-04 09:40:26,363 charges_calc.py:73  WARNING Invalid end date of 2016-10-15 00:00:00 found in record RNT940
+2020-05-04 09:40:26,364 charges_calc.py:82  WARNING Value Error on record RNT940, value {'product_code': 'PRD2', 'units_rented': 6, 'price_per_day': 13, 'rental_start': '10/23/16', 'rental_end': '10/15/16', 'total_days': -8, 'total_price': -104} square of the total price
+2020-05-04 09:40:26,364 charges_calc.py:73  WARNING Invalid end date of 2017-02-21 00:00:00 found in record RNT942
+2020-05-04 09:40:26,365 charges_calc.py:82  WARNING Value Error on record RNT942, value {'product_code': 'PRD29', 'units_rented': 3, 'price_per_day': 35, 'rental_start': '4/7/17', 'rental_end': '2/21/17', 'total_days': -45, 'total_price': -1575} square of the total price
+2020-05-04 09:40:26,367 charges_calc.py:73  WARNING Invalid end date of 2016-02-10 00:00:00 found in record RNT943
+2020-05-04 09:40:26,367 charges_calc.py:82  WARNING Value Error on record RNT943, value {'product_code': 'PRD78', 'units_rented': 1, 'price_per_day': 35, 'rental_start': '7/19/17', 'rental_end': '2/10/16', 'total_days': -525, 'total_price': -18375} square of the total price
+2020-05-04 09:40:26,368 charges_calc.py:73  WARNING Invalid end date of 2017-07-22 00:00:00 found in record RNT944
+2020-05-04 09:40:26,368 charges_calc.py:82  WARNING Value Error on record RNT944, value {'product_code': 'PRD26', 'units_rented': 9, 'price_per_day': 18, 'rental_start': '7/19/18', 'rental_end': '7/22/17', 'total_days': -362, 'total_price': -6516} square of the total price
+2020-05-04 09:40:26,369 charges_calc.py:73  WARNING Invalid end date of 2017-08-19 00:00:00 found in record RNT946
+2020-05-04 09:40:26,369 charges_calc.py:82  WARNING Value Error on record RNT946, value {'product_code': 'PRD81', 'units_rented': 4, 'price_per_day': 39, 'rental_start': '11/12/17', 'rental_end': '8/19/17', 'total_days': -85, 'total_price': -3315} square of the total price
+2020-05-04 09:40:26,370 charges_calc.py:73  WARNING Invalid end date of 2016-09-11 00:00:00 found in record RNT947
+2020-05-04 09:40:26,370 charges_calc.py:82  WARNING Value Error on record RNT947, value {'product_code': 'PRD72', 'units_rented': 4, 'price_per_day': 8, 'rental_start': '11/26/16', 'rental_end': '9/11/16', 'total_days': -76, 'total_price': -608} square of the total price
+2020-05-04 09:40:26,371 charges_calc.py:73  WARNING Invalid end date of 2017-05-09 00:00:00 found in record RNT948
+2020-05-04 09:40:26,373 charges_calc.py:82  WARNING Value Error on record RNT948, value {'product_code': 'PRD90', 'units_rented': 8, 'price_per_day': 7, 'rental_start': '11/30/18', 'rental_end': '5/9/17', 'total_days': -570, 'total_price': -3990} square of the total price
+2020-05-04 09:40:26,373 charges_calc.py:73  WARNING Invalid end date of 2016-01-19 00:00:00 found in record RNT949
+2020-05-04 09:40:26,374 charges_calc.py:82  WARNING Value Error on record RNT949, value {'product_code': 'PRD50', 'units_rented': 4, 'price_per_day': 21, 'rental_start': '8/30/16', 'rental_end': '1/19/16', 'total_days': -224, 'total_price': -4704} square of the total price
+2020-05-04 09:40:26,374 charges_calc.py:73  WARNING Invalid end date of 2016-12-16 00:00:00 found in record RNT951
+2020-05-04 09:40:26,375 charges_calc.py:82  WARNING Value Error on record RNT951, value {'product_code': 'PRD99', 'units_rented': 2, 'price_per_day': 5, 'rental_start': '8/27/18', 'rental_end': '12/16/16', 'total_days': -619, 'total_price': -3095} square of the total price
+2020-05-04 09:40:26,375 charges_calc.py:73  WARNING Invalid end date of 2017-07-09 00:00:00 found in record RNT955
+2020-05-04 09:40:26,376 charges_calc.py:82  WARNING Value Error on record RNT955, value {'product_code': 'PRD74', 'units_rented': 7, 'price_per_day': 35, 'rental_start': '10/15/17', 'rental_end': '7/9/17', 'total_days': -98, 'total_price': -3430} square of the total price
+2020-05-04 09:40:26,376 charges_calc.py:73  WARNING Invalid end date of 2016-02-29 00:00:00 found in record RNT956
+2020-05-04 09:40:26,377 charges_calc.py:82  WARNING Value Error on record RNT956, value {'product_code': 'PRD43', 'units_rented': 6, 'price_per_day': 16, 'rental_start': '5/17/16', 'rental_end': '2/29/16', 'total_days': -78, 'total_price': -1248} square of the total price
+2020-05-04 09:40:26,377 charges_calc.py:73  WARNING Invalid end date of 2017-11-01 00:00:00 found in record RNT957
+2020-05-04 09:40:26,378 charges_calc.py:82  WARNING Value Error on record RNT957, value {'product_code': 'PRD28', 'units_rented': 9, 'price_per_day': 30, 'rental_start': '6/14/18', 'rental_end': '11/1/17', 'total_days': -225, 'total_price': -6750} square of the total price
+2020-05-04 09:40:26,378 charges_calc.py:73  WARNING Invalid end date of 2016-11-13 00:00:00 found in record RNT958
+2020-05-04 09:40:26,379 charges_calc.py:82  WARNING Value Error on record RNT958, value {'product_code': 'PRD82', 'units_rented': 10, 'price_per_day': 24, 'rental_start': '6/21/17', 'rental_end': '11/13/16', 'total_days': -220, 'total_price': -5280} square of the total price
+2020-05-04 09:40:26,379 charges_calc.py:73  WARNING Invalid end date of 2016-07-21 00:00:00 found in record RNT959
+2020-05-04 09:40:26,380 charges_calc.py:82  WARNING Value Error on record RNT959, value {'product_code': 'PRD92', 'units_rented': 1, 'price_per_day': 19, 'rental_start': '2/8/17', 'rental_end': '7/21/16', 'total_days': -202, 'total_price': -3838} square of the total price
+2020-05-04 09:40:26,380 charges_calc.py:73  WARNING Invalid end date of 2016-10-22 00:00:00 found in record RNT960
+2020-05-04 09:40:26,380 charges_calc.py:82  WARNING Value Error on record RNT960, value {'product_code': 'PRD30', 'units_rented': 6, 'price_per_day': 22, 'rental_start': '3/1/18', 'rental_end': '10/22/16', 'total_days': -495, 'total_price': -10890} square of the total price
+2020-05-04 09:40:26,383 charges_calc.py:73  WARNING Invalid end date of 2018-03-19 00:00:00 found in record RNT961
+2020-05-04 09:40:26,384 charges_calc.py:82  WARNING Value Error on record RNT961, value {'product_code': 'PRD67', 'units_rented': 2, 'price_per_day': 14, 'rental_start': '5/14/18', 'rental_end': '3/19/18', 'total_days': -56, 'total_price': -784} square of the total price
+2020-05-04 09:40:26,384 charges_calc.py:73  WARNING Invalid end date of 2017-06-25 00:00:00 found in record RNT962
+2020-05-04 09:40:26,385 charges_calc.py:82  WARNING Value Error on record RNT962, value {'product_code': 'PRD27', 'units_rented': 7, 'price_per_day': 19, 'rental_start': '8/20/17', 'rental_end': '6/25/17', 'total_days': -56, 'total_price': -1064} square of the total price
+2020-05-04 09:40:26,385 charges_calc.py:73  WARNING Invalid end date of 2016-12-13 00:00:00 found in record RNT963
+2020-05-04 09:40:26,386 charges_calc.py:82  WARNING Value Error on record RNT963, value {'product_code': 'PRD20', 'units_rented': 7, 'price_per_day': 16, 'rental_start': '1/16/17', 'rental_end': '12/13/16', 'total_days': -34, 'total_price': -544} square of the total price
+2020-05-04 09:40:26,386 charges_calc.py:73  WARNING Invalid end date of 2017-10-13 00:00:00 found in record RNT965
+2020-05-04 09:40:26,387 charges_calc.py:82  WARNING Value Error on record RNT965, value {'product_code': 'PRD19', 'units_rented': 10, 'price_per_day': 30, 'rental_start': '12/15/17', 'rental_end': '10/13/17', 'total_days': -63, 'total_price': -1890} square of the total price
+2020-05-04 09:40:26,387 charges_calc.py:73  WARNING Invalid end date of 2017-04-06 00:00:00 found in record RNT967
+2020-05-04 09:40:26,388 charges_calc.py:82  WARNING Value Error on record RNT967, value {'product_code': 'PRD14', 'units_rented': 5, 'price_per_day': 26, 'rental_start': '10/18/18', 'rental_end': '4/6/17', 'total_days': -560, 'total_price': -14560} square of the total price
+2020-05-04 09:40:26,388 charges_calc.py:73  WARNING Invalid end date of 2016-05-27 00:00:00 found in record RNT969
+2020-05-04 09:40:26,389 charges_calc.py:82  WARNING Value Error on record RNT969, value {'product_code': 'PRD77', 'units_rented': 1, 'price_per_day': 36, 'rental_start': '6/28/18', 'rental_end': '5/27/16', 'total_days': -762, 'total_price': -27432} square of the total price
+2020-05-04 09:40:26,390 charges_calc.py:73  WARNING Invalid end date of 2016-04-19 00:00:00 found in record RNT970
+2020-05-04 09:40:26,390 charges_calc.py:82  WARNING Value Error on record RNT970, value {'product_code': 'PRD61', 'units_rented': 1, 'price_per_day': 22, 'rental_start': '2/26/18', 'rental_end': '4/19/16', 'total_days': -678, 'total_price': -14916} square of the total price
+2020-05-04 09:40:26,391 charges_calc.py:73  WARNING Invalid end date of 2017-01-13 00:00:00 found in record RNT971
+2020-05-04 09:40:26,391 charges_calc.py:82  WARNING Value Error on record RNT971, value {'product_code': 'PRD78', 'units_rented': 5, 'price_per_day': 20, 'rental_start': '11/20/17', 'rental_end': '1/13/17', 'total_days': -311, 'total_price': -6220} square of the total price
+2020-05-04 09:40:26,391 charges_calc.py:73  WARNING Invalid end date of 2018-02-28 00:00:00 found in record RNT974
+2020-05-04 09:40:26,394 charges_calc.py:82  WARNING Value Error on record RNT974, value {'product_code': 'PRD66', 'units_rented': 6, 'price_per_day': 30, 'rental_start': '10/23/18', 'rental_end': '2/28/18', 'total_days': -237, 'total_price': -7110} square of the total price
+2020-05-04 09:40:26,394 charges_calc.py:73  WARNING Invalid end date of 2016-10-10 00:00:00 found in record RNT977
+2020-05-04 09:40:26,395 charges_calc.py:82  WARNING Value Error on record RNT977, value {'product_code': 'PRD23', 'units_rented': 8, 'price_per_day': 37, 'rental_start': '4/5/17', 'rental_end': '10/10/16', 'total_days': -177, 'total_price': -6549} square of the total price
+2020-05-04 09:40:26,395 charges_calc.py:73  WARNING Invalid end date of 2016-04-16 00:00:00 found in record RNT979
+2020-05-04 09:40:26,396 charges_calc.py:82  WARNING Value Error on record RNT979, value {'product_code': 'PRD48', 'units_rented': 4, 'price_per_day': 5, 'rental_start': '9/23/17', 'rental_end': '4/16/16', 'total_days': -525, 'total_price': -2625} square of the total price
+2020-05-04 09:40:26,396 charges_calc.py:73  WARNING Invalid end date of 2016-03-16 00:00:00 found in record RNT982
+2020-05-04 09:40:26,397 charges_calc.py:82  WARNING Value Error on record RNT982, value {'product_code': 'PRD39', 'units_rented': 10, 'price_per_day': 7, 'rental_start': '11/3/16', 'rental_end': '3/16/16', 'total_days': -232, 'total_price': -1624} square of the total price
+2020-05-04 09:40:26,397 charges_calc.py:73  WARNING Invalid end date of 2016-01-16 00:00:00 found in record RNT983
+2020-05-04 09:40:26,398 charges_calc.py:82  WARNING Value Error on record RNT983, value {'product_code': 'PRD46', 'units_rented': 2, 'price_per_day': 29, 'rental_start': '11/11/16', 'rental_end': '1/16/16', 'total_days': -300, 'total_price': -8700} square of the total price
+2020-05-04 09:40:26,398 charges_calc.py:73  WARNING Invalid end date of 2016-06-30 00:00:00 found in record RNT985
+2020-05-04 09:40:26,399 charges_calc.py:82  WARNING Value Error on record RNT985, value {'product_code': 'PRD63', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '11/8/16', 'rental_end': '6/30/16', 'total_days': -131, 'total_price': -1834} square of the total price
+2020-05-04 09:40:26,399 charges_calc.py:73  WARNING Invalid end date of 2016-03-11 00:00:00 found in record RNT986
+2020-05-04 09:40:26,400 charges_calc.py:82  WARNING Value Error on record RNT986, value {'product_code': 'PRD40', 'units_rented': 2, 'price_per_day': 31, 'rental_start': '11/20/18', 'rental_end': '3/11/16', 'total_days': -984, 'total_price': -30504} square of the total price
+2020-05-04 09:40:26,400 charges_calc.py:73  WARNING Invalid end date of 2016-02-28 00:00:00 found in record RNT987
+2020-05-04 09:40:26,401 charges_calc.py:82  WARNING Value Error on record RNT987, value {'product_code': 'PRD23', 'units_rented': 7, 'price_per_day': 34, 'rental_start': '9/10/17', 'rental_end': '2/28/16', 'total_days': -560, 'total_price': -19040} square of the total price
+2020-05-04 09:40:26,401 charges_calc.py:73  WARNING Invalid end date of 2016-04-07 00:00:00 found in record RNT989
+2020-05-04 09:40:26,402 charges_calc.py:82  WARNING Value Error on record RNT989, value {'product_code': 'PRD19', 'units_rented': 10, 'price_per_day': 30, 'rental_start': '10/25/18', 'rental_end': '4/7/16', 'total_days': -931, 'total_price': -27930} square of the total price
+2020-05-04 09:40:26,402 charges_calc.py:73  WARNING Invalid end date of 2017-01-02 00:00:00 found in record RNT994
+2020-05-04 09:40:26,407 charges_calc.py:82  WARNING Value Error on record RNT994, value {'product_code': 'PRD42', 'units_rented': 5, 'price_per_day': 30, 'rental_start': '6/4/17', 'rental_end': '1/2/17', 'total_days': -153, 'total_price': -4590} square of the total price
+2020-05-04 09:40:26,407 charges_calc.py:73  WARNING Invalid end date of 2016-04-14 00:00:00 found in record RNT998
+2020-05-04 09:40:26,408 charges_calc.py:82  WARNING Value Error on record RNT998, value {'product_code': 'PRD73', 'units_rented': 7, 'price_per_day': 30, 'rental_start': '9/2/18', 'rental_end': '4/14/16', 'total_days': -871, 'total_price': -26130} square of the total price
+2020-05-04 09:40:26,408 charges_calc.py:73  WARNING Invalid end date of 2016-10-02 00:00:00 found in record RNT999
+2020-05-04 09:40:26,408 charges_calc.py:82  WARNING Value Error on record RNT999, value {'product_code': 'PRD69', 'units_rented': 8, 'price_per_day': 36, 'rental_start': '10/12/18', 'rental_end': '10/2/16', 'total_days': -740, 'total_price': -26640} square of the total price
