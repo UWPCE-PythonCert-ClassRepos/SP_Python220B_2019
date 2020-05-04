@@ -1,21 +1,27 @@
-# Furniture class
-from inventoryClass import inventory
+'''furniture class'''
+from inventory_class import Inventory
 
-class furniture(inventory):
 
-    def __init__(self, productCode, description, marketPrice, rentalPrice, material, size):
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
+class Furniture(Inventory):
+    '''some stuff5'''
+
+    def __init__(self, product_code, description, market_price, rental_price,
+                 material, size):
+        '''some stuff6'''
+        Inventory.__init__(self, product_code, description, market_price,
+                           rental_price)  # common instnc variables from parent
 
         self.material = material
         self.size = size
 
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
-        outputDict['material'] = self.material
-        outputDict['size'] = self.size
+    def returnasdictionary(self):
+        '''some stuff7'''
+        outputdict = {}
+        outputdict['product_code'] = self.product_code
+        outputdict['description'] = self.description
+        outputdict['market_price'] = self.market_price
+        outputdict['rental_price'] = self.rental_price
+        outputdict['material'] = self.material
+        outputdict['size'] = self.size
 
-        return outputDict
+        return outputdict

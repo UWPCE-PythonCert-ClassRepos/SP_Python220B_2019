@@ -1,22 +1,27 @@
-# Electric appliances class
-from inventoryClass import inventory
-
-class electricAppliances(inventory):
-
-    def __init__(self, productCode, description, marketPrice, rentalPrice, brand, voltage):
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
+'''some stuff1'''
+# electric appliances class
+from inventory_class import Inventory
 
 
+class ElectricAppliances(Inventory):
+    '''some stuff2'''
+
+    def __init__(self, product_code, description, market_price, rental_price,
+                 brand, voltage):
+        '''some stuff3'''
+        Inventory.__init__(self, product_code, description, market_price,
+                           rental_price)  # creates common instance variables
         self.brand = brand
         self.voltage = voltage
 
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice
-        outputDict['brand'] = self.brand
-        outputDict['voltage'] = self.voltage
+    def returnasdictionary(self):
+        '''some stuff4'''
+        outputdict = {}
+        outputdict['product_code'] = self.product_code
+        outputdict['description'] = self.description
+        outputdict['market_price'] = self.market_price
+        outputdict['rental_price'] = self.rental_price
+        outputdict['brand'] = self.brand
+        outputdict['voltage'] = self.voltage
 
-        return outputDict
+        return outputdict
