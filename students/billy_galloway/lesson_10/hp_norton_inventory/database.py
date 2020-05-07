@@ -104,7 +104,7 @@ def main():
     ''' main method to interact with mongodb '''
     mongo = MongoDBConnection()
     print()
-    output = import_data('data', 'product.csv', 'customer.csv', 'rental.csv')
+    output = import_data('data', 'product_large.csv', 'customer_large.csv', 'rentals_large.csv')
     available = show_available_products()
     rentals = show_rentals('prd006')
 
