@@ -1,4 +1,5 @@
 '''furniture class'''
+# pylint: disable=R0913,R0903,W0603
 from inventory_class import Inventory
 
 

@@ -1,4 +1,5 @@
 '''launches the user interface for the inventory management system'''
+# pylint: disable=R0913,R0903,W0603
 import sys
 import market_prices
 import inventory_class
@@ -25,7 +26,7 @@ def mainmenu(user_prompt=None):
 
 def getprice(item_code):
     '''some stuff13'''
-    print("get price")
+    print(f"get price for {item_code}")
 
 
 def addnewitem():

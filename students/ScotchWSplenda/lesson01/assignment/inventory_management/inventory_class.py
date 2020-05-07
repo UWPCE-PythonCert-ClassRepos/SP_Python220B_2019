@@ -1,5 +1,5 @@
 '''Inventory class'''
-
+# pylint: disable=R0913,R0903,W0603
 
 class Inventory:
     '''some stuff8'''
