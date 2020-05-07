@@ -134,7 +134,7 @@ def analyze(filename):
 def main():
     """ This is the main() function """
     # generate one million of records.
-    #generate_data_file("data/exercise_new.csv")',
+    #generate_data_file("data/exercise_new.csv")
     #filename = "data/exercise_new.csv"
 
     # set up profiling
