@@ -37,7 +37,7 @@ def write_customer(filename):
     street_type_list = ['Avenue', 'Road', 'Drive', 'Street']
 
     with open(filename, 'w') as file:
-        for i in range(1, 500):
+        for i in range(1, 10000):
             first = random.choice(first_name_list)
             last = random.choice(last_name_list)
             name = f'{first} {last}'
@@ -55,7 +55,7 @@ def write_product(filename):
     products = [living_room, office, kitchen, laundry_room]
     
     with open(filename, 'w') as file:
-        for i in range(1, 500):
+        for i in range(1, 10000):
             description = random.choice(products)
             quantity = randrange(0,10)
             if description is living_room:
@@ -92,6 +92,6 @@ def write_rentals(rentals, customer, product):
         
     
 
-write_customer('customer.csv')
-write_product('product.csv')
-write_rentals('rentals.csv', 'customer.csv', 'product.csv')
+write_customer('customer_large.csv')
+write_product('product_large.csv')
+write_rentals('rentals_large.csv', 'customer_large.csv', 'product_large.csv')
