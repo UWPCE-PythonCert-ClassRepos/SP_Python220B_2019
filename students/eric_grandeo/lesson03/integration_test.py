@@ -2,30 +2,32 @@
 Integration tests for basic operations
 '''
 
-
+# pylint: disable=W
 
 from unittest import TestCase
+import logging
+import peewee
 from customers_model import *
 from basic_operations import *
-import peewee
-import logging
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 
 class TestIntegration(TestCase):
+    '''Integration test'''
     def setUp(self):
-        '''insert docstring''' 
+        '''Create tables'''
         database.create_tables([Customers])
-        logger.info('Create table successful')
-        
+        LOGGER.info('Create table successful')
+
     def tearDown(self):
-        '''insert docstring''' 
+        '''Destroy tables'''
         database.drop_tables([Customers])
-        logger.info('Database tables dropped')
-    
+        LOGGER.info('Database tables dropped')
+
     def test_integration(self):
+        '''add a customer, delete customer, count number of active'''
         test_customer_1 = {
             'customer_id': '12345',
             'name': 'Eric Grandeo',
@@ -60,6 +62,5 @@ class TestIntegration(TestCase):
         add_customer(**test_customer_2)
         add_customer(**test_customer_3)
         delete_customer(test_customer_1['customer_id'])
-        self.assertEqual(list_active_customers(),1)
-        
+        self.assertEqual(list_active_customers(), 1)
         
