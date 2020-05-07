@@ -1,0 +1,30 @@
+# Logs from small data set.
+2020-05-02 23:17:05,272 database.py:60  INFO function: import_data args: [('data', 'products.csv', 'customers.csv', 'rentals.csv'), {}] took: 0.1628 sec
+2020-05-02 23:17:05,272 database.py:63  INFO function return: ((8, 7, 12), (0, 0, 0))
+2020-05-02 23:17:05,275 database.py:60  INFO function: list_available_products args: [(), {}] took: 0.0021 sec
+2020-05-02 23:17:05,275 database.py:65  INFO function returns 7 records
+2020-05-02 23:17:05,277 database.py:60  INFO function: list_products args: [(), {}] took: 0.0019 sec
+2020-05-02 23:17:05,277 database.py:65  INFO function returns 8 records
+2020-05-02 23:17:05,280 database.py:60  INFO function: show_rentals args: [('prd005',), {}] took: 0.0028 sec
+2020-05-02 23:17:05,281 database.py:65  INFO function returns 2 records
+
+#logs from large data set.
+2020-05-02 23:15:01,994 database.py:60  INFO function: import_data args: [('data', 'products.csv', 'customers.csv', 'rentals.csv'), {}] took: 7.0208 sec
+2020-05-02 23:15:01,994 database.py:63  INFO function return: ((999, 999, 12), (0, 0, 0))
+2020-05-02 23:15:02,010 database.py:60  INFO function: list_available_products args: [(), {}] took: 0.0133 sec
+2020-05-02 23:15:02,011 database.py:65  INFO function returns 996 records
+2020-05-02 23:15:02,117 database.py:60  INFO function: list_products args: [(), {}] took: 0.0081 sec
+2020-05-02 23:15:02,117 database.py:65  INFO function returns 999 records
+2020-05-02 23:15:02,127 database.py:60  INFO function: show_rentals args: [('prd005',), {}] took: 0.0059 sec
+2020-05-02 23:15:02,127 database.py:65  INFO function returns 2 records
+
+27 records took: 0.1628 sec
+2010 records took: 7.0208 sec
+
+74x the number of records took only 43x as long.  It is getting more efficient with higher load.
+Previous performance tests have shown that this method of storing one record at a time is extrememly inefficient,
+yet it does get better at higher load, not worse.
+
+
+Also added a second version that simulates working with legacy code that can't be touched.  I did have 
+to convert the module into a class to take advantage of meta tools.
