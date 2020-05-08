@@ -6,6 +6,7 @@ import logging
 import csv_handler as csvh
 import os.path
 import pymongo
+import time
 from function_timer import timer
 from mongo_connect import *
 
@@ -104,11 +105,18 @@ def main():
     ''' main method to interact with mongodb '''
     mongo = MongoDBConnection()
     print()
-    output = import_data('data', 'product_small.csv', 'customer_small.csv', 'rentals_small.csv')
-    output = import_data('data', 'product.csv', 'customer.csv', 'rentals.csv')
+    start = time.perf_counter()
+
+    # output = import_data('data', 'product_small.csv', 'customer_small.csv', 'rentals_small.csv')
+    # output = import_data('data', 'product.csv', 'customer.csv', 'rentals.csv')
     output = import_data('data', 'product_large.csv', 'customer_large.csv', 'rentals_large.csv')
     available = show_available_products()
     rentals = show_rentals('prd006')
+
+    end = time.perf_counter()
+    total_time = end-start
+    
+    print(f'total time to finish {total_time}')
 
     with mongo:
         database = mongo.connection.hpnorton_db
