@@ -115,7 +115,7 @@ def main():
 
     end = time.perf_counter()
     total_time = end-start
-    
+
     print(f'total time to finish {total_time}')
 
     with mongo:

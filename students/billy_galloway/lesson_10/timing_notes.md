@@ -1,3 +1,4 @@
+# lesson 10
 # Time stats for small, medium and large database
 
 Initial runs were made on an empty database and all subsequent runs of the same job 
