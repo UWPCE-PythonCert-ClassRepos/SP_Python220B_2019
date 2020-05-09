@@ -81,7 +81,6 @@ def exitprogram():
 
 
 if __name__ == '__main__':
-    '''some stuff17'''
     FULLINVENTORY = {}
     while True:
         print(FULLINVENTORY)

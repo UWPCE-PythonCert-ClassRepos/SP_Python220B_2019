@@ -1,9 +1,9 @@
 '''Inventory class'''
 # pylint: disable=R0913,R0903,W0603
 
+
 class Inventory:
     '''some stuff8'''
-
     def __init__(self, product_code, description, market_price, rental_price):
         '''some stuff9'''
         self.product_code = product_code
