@@ -60,6 +60,7 @@ def delete_customer(customer_id):
     except DoesNotExist:
         logging.info(f"Customer with id {customer_id} does not exist")
         logging.info(DoesNotExist)
+        raise DoesNotExist
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -72,6 +73,7 @@ def update_customer_credit(customer_id, credit_limit):
     except DoesNotExist:
         logging.info(f"Customer with id {customer_id} does not exist")
         logging.info(DoesNotExist)
+        raise DoesNotExist
 
 
 def list_active_customers():

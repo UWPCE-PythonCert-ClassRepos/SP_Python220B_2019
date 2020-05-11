@@ -63,6 +63,12 @@ class TestCaseThree(unittest.TestCase):
         customer_three = search_customer("123")
         self.assertEqual(customer_three, {})
 
+    def test_del_customer_not_found(self):
+        """Test the deletion of a customer that does not exist"""
+        database_setup()
+        with self.assertRaises(DoesNotExist):
+            delete_customer("123")
+
 
 class TestCaseFour(unittest.TestCase):
     """Test the Update Customer Credit Function from the basic_operations file"""
@@ -74,6 +80,12 @@ class TestCaseFour(unittest.TestCase):
         update_customer_credit("123", 4500.00)
         customer_four = Customer.get(Customer.customer_id == "123")
         self.assertEqual(customer_four.credit_limit, 4500.00)
+
+    def test_Update_customer_credit_not_found(self):
+        """Test the update of a record that does not exist"""
+        database_setup()
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit("123", 4500.00)
 
 
 class TestCaseFive(unittest.TestCase):
