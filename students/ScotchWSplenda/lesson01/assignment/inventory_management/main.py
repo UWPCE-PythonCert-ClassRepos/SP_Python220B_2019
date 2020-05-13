@@ -1,17 +1,19 @@
-'''launches the user interface for the inventory management system'''
+#!/usr/bin/env python3
 # pylint: disable=R0913,R0903,W0603
+'''launches the user interface for the inventory management system'''
+
 import sys
-import market_prices
-import inventory_class
-import furniture_class
-import electric_appliances_class
+import market_prices as mp
+import inventory_class as ic
+import furniture_class as fc
+import electric_appliances_class as eac
 
 
-def mainmenu(user_prompt=None):
+def main_menu(user_prompt=None):
     '''some stuff12'''
-    valid_prompts = {"1": addnewitem,
-                     "2": iteminfo,
-                     "q": exitprogram}
+    valid_prompts = {"1": add_new_item,
+                     "2": item_info,
+                     "q": exit_program}
     options = list(valid_prompts.keys())
 
     while user_prompt not in valid_prompts:
@@ -24,65 +26,65 @@ def mainmenu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 
-def getprice(item_code):
+def get_price(item_code):
     '''some stuff13'''
     print(f"get price for {item_code}")
 
 
-def addnewitem():
+def add_new_item():
     '''some stuff14'''
-    global FULLINVENTORY
+    global FULL_INVENTORY
     item_code = input("enter item code: ")
     item_description = input("enter item description: ")
     item_rental_price = input("enter item rental price: ")
 
     # get price from the market prices module
-    item_price = market_prices.get_latest_price(item_code)
+    item_price = mp.get_latest_price(item_code)
 
     isfurniture = input("is this item a piece of furniture? (y/n): ")
     if isfurniture.lower() == "y":
         item_material = input("enter item material: ")
         itemsize = input("enter item size (s, m, l, xl): ")
-        newitem = furniture_class.Furniture(item_code, item_description,
-                                            item_price, item_rental_price,
-                                            item_material, itemsize)
+        newitem = fc.Furniture(item_code, item_description,
+                               item_price, item_rental_price,
+                               item_material, itemsize)
     else:
         iselectricappliance = input("is this item an electric appliance? (y/n): ")
         if iselectricappliance.lower() == "y":
             item_brand = input("enter item brand: ")
             itemvoltage = input("enter item voltage: ")
-            newitem = electric_appliances_class.ElectricAppliances(item_code,
-                                                                   item_description,
-                                                                   item_price,
-                                                                   item_rental_price,
-                                                                   item_brand,
-                                                                   itemvoltage)
+            newitem = eac.ElectricAppliances(item_code,
+                                             item_description,
+                                             item_price,
+                                             item_rental_price,
+                                             item_brand,
+                                             itemvoltage)
         else:
-            newitem = inventory_class.Inventory(item_code, item_description,
-                                                item_price, item_rental_price)
-    FULLINVENTORY[item_code] = newitem.return_as_dictionary()
+            newitem = ic.Inventory(item_code, item_description,
+                                   item_price, item_rental_price)
+    FULL_INVENTORY[item_code] = newitem.return_as_dictionary()
     print("new inventory item added")
 
 
-def iteminfo():
+def item_info():
     '''some stuff15'''
     item_code = input("enter item code: ")
-    if item_code in FULLINVENTORY:
-        printdict = FULLINVENTORY[item_code]
+    if item_code in FULL_INVENTORY:
+        printdict = FULL_INVENTORY[item_code]
         for k, value in printdict.items():
             print("{}:{}".format(k, value))
     else:
         print("item not found in inventory")
 
 
-def exitprogram():
-    '''some stuff16'''
+def exit_program():
+    '''quit the program'''
     sys.exit()
 
 
 if __name__ == '__main__':
-    FULLINVENTORY = {}
+    FULL_INVENTORY = {}
     while True:
-        print(FULLINVENTORY)
-        mainmenu()()
+        print(FULL_INVENTORY)
+        main_menu()()
         input("press enter to continue...........")

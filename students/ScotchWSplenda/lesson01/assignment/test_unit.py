@@ -1,7 +1,20 @@
+#!/usr/bin/env python3
+
 from unittest import TestCase
-from inventory_management import market_prices as mp
-from inventory_management import electric_appliances_class as ea
-from inventory_management import inventory_class as inv
+from unittest.mock import patch
+import inventory_management.market_prices as mp
+import inventory_management.inventory_class as inv
+import inventory_management.electric_appliances_class as ea
+import inventory_management.furniture_class as fc
+import inventory_management.main as main
+
+# cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson01\assignment
+# cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson01\assignment\tests
+'''
+python -m pylint ./inventory_management
+python -m coverage run --source=inventory_management -m unittest test_unit.py
+python -m coverage report
+'''
 
 
 class market_prices_test(TestCase):
@@ -18,33 +31,138 @@ class market_prices_test(TestCase):
         assert actual_price == 24
 
 
-class InventoryTests(TestCase):
-    """Perform tests on inventory_class module."""
+class inventory_class_test(TestCase):
+    """FOR inventory_class module."""
+    def test_inventory(self):
+        test_inv = inv.Inventory(12345,
+                                 "First Product",
+                                 420,
+                                 69)
+        test_inv_dict = test_inv.return_as_dictionary()
+        self.assertDictEqual(test_inv_dict, {'item_code': 12345,
+                                             'description': "First Product",
+                                             'market_price': 420,
+                                             'rental_price': 69})
 
+
+class electric_appliances_class_test(TestCase):
+    """for electric_appliances_class module."""
     def setUp(self):
-        """Define set up characteristics of inventory tests."""
-        print('setUp')
-        self.item_code = 12345
-        self.description = "First Product"
-        self.market_price = 800
-        self.rental_price = 25
-        self.test_inv = inv.Inventory(self.item_code,
-                                      self.description,
-                                      self.market_price,
-                                      self.rental_price
-                                      )
-        self.test_inv_dict = self.test_inv.return_as_dictionary()
+        item_code = 69420
+        description = "foot masseuse"
+        market_price = 69
+        rental_price = 420
+        brand = "Costco"
+        voltage = 220
+        self.test_app_item = ea.ElectricAppliances(item_code,
+                                                   description,
+                                                   market_price,
+                                                   rental_price,
+                                                   brand,
+                                                   voltage)
+        self.test_app_dict = self.test_app_item.return_as_dictionary()
 
-    def test_inv_creation(self):
-        """Compare setup dict to intended dict created."""
-        print('test_inv_creation')
-        compare_dict = {'item_code': 12345,
-                        'description': "First Product",
-                        'market_price': 800,
-                        'rental_price': 25
-                        }
-        self.assertEqual(self.item_code, 12345)
-        self.assertEqual(self.description, "First Product")
-        self.assertEqual(self.market_price, 800)
-        self.assertEqual(self.rental_price, 25)
-        self.assertDictEqual(self.test_inv_dict, compare_dict)
+    def test_app_creation(self):
+        """Test creation of electrical appliance item."""
+        comp_dict = {'item_code': 69420,
+                     'description': "foot masseuse",
+                     'market_price': 69,
+                     'rental_price': 420,
+                     'brand': "Costco",
+                     'voltage': 220}
+        self.assertDictEqual(self.test_app_dict, comp_dict)
+
+
+class furniture_class_test(TestCase):
+    """for furniture_class module."""
+    def setUp(self):
+        item_code = 69420
+        description = "bench"
+        market_price = 69
+        rental_price = 420
+        material = "wood"
+        size = 220
+        self.test_app_item = fc.Furniture(item_code,
+                                          description,
+                                          market_price,
+                                          rental_price,
+                                          material,
+                                          size)
+        self.test_app_dict = self.test_app_item.return_as_dictionary()
+
+    def test_furn_creation(self):
+        """Test creation of electrical appliance item."""
+        comp_dict = {'item_code': 69420,
+                     'description': "bench",
+                     'market_price': 69,
+                     'rental_price': 420,
+                     'material': "wood",
+                     'size': 220}
+        self.assertDictEqual(self.test_app_dict, comp_dict)
+
+
+class main_test(TestCase):
+    '''testing adding different types of items'''
+    def test_addfurn(self):
+        input_furniture = ('123', 'bench', 150, 'y', 'wood', 'L')
+        expected_item_dic = {'123': {'description': 'bench',
+                                     'market_price': 24,
+                                     'item_code': '123',
+                                     'rental_price': 150,
+                                     'material': 'wood',
+                                     'size': 'L'}}
+        with patch('builtins.input', side_effect=input_furniture):
+            main.FULL_INVENTORY = {}
+            main.add_new_item()
+            self.assertDictEqual(main.FULL_INVENTORY['123'], expected_item_dic['123'])
+
+    def test_addapp(self):
+        input_app = ('456', 'foot masseuse', 50, 'n', 'y', 'Costco', 120)
+        expected_item_dic = {'456': {'description': 'foot masseuse',
+                                     'market_price': 24,
+                                     'item_code': '456',
+                                     'rental_price': 50,
+                                     'brand': 'Costco',
+                                     'voltage': 120}}
+        with patch('builtins.input', side_effect=input_app):
+            main.FULL_INVENTORY = {}
+            main.add_new_item()
+            self.assertDictEqual(main.FULL_INVENTORY['456'], expected_item_dic['456'])
+
+    def test_addinv(self):
+        input_inventory = ('789', 'test', 5, 'n', 'n')
+        expected_item_dic = {'789': {'description': 'test',
+                                     'market_price': 24,
+                                     'item_code': '789',
+                                     'rental_price': 5}}
+        with patch('builtins.input', side_effect=input_inventory):
+            main.FULL_INVENTORY = {}
+            main.add_new_item()
+            self.assertDictEqual(main.FULL_INVENTORY['789'], expected_item_dic['789'])
+
+    def test_norecord(self):
+        with patch('builtins.input', side_effect=['69']):
+            main.FULL_INVENTORY = {}
+            self.assertEqual(main.item_info(), print("Item not found in inventory"))
+    #
+    # def test_isrecord(self):
+    #     with patch('builtins.input', side_effect=['789']):
+    #         main.FULL_INVENTORY = {'789': {'description': 'test',
+    #                                'market_price': 24,
+    #                                'item_code': '789',
+    #                                'rental_price': 5}}
+    #         self.assertEqual(main.item_info(), print('description: test, market_price: 24, item_code: 789, rental_price: 5')
+    #
+
+
+    def test_exit(self):
+        with self.assertRaises(SystemExit):
+            main.exit_program()
+
+    def test_main_menu(self):
+        with patch('builtins.input', side_effect='1'):
+            self.assertEqual(main.main_menu(), main.add_new_item)
+        with patch('builtins.input', side_effect='2'):
+            self.assertEqual(main.main_menu(), main.item_info)
+        with patch('builtins.input', side_effect='q'):
+            self.assertEqual(main.main_menu(), main.exit_program)

@@ -1,24 +1,25 @@
+
 '''furniture class'''
 # pylint: disable=R0913,R0903,W0603
-from inventory_class import Inventory
+import inventory_management.inventory_class as inv
 
 
-class Furniture(Inventory):
+class Furniture(inv.Inventory):
     '''some stuff5'''
 
-    def __init__(self, product_code, description, market_price, rental_price,
+    def __init__(self, item_code, description, market_price, rental_price,
                  material, size):
         '''some stuff6'''
-        Inventory.__init__(self, product_code, description, market_price,
-                           rental_price)  # common instnc variables from parent
+        inv.Inventory.__init__(self, item_code, description, market_price,
+                               rental_price)  # common instnc variables
 
         self.material = material
         self.size = size
 
-    def returnasdictionary(self):
+    def return_as_dictionary(self):
         '''some stuff7'''
         outputdict = {}
-        outputdict['product_code'] = self.product_code
+        outputdict['item_code'] = self.item_code
         outputdict['description'] = self.description
         outputdict['market_price'] = self.market_price
         outputdict['rental_price'] = self.rental_price
