@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
+
+import sys
 from unittest import TestCase
 from unittest.mock import patch
-import inventory_management.market_prices as mp
-import inventory_management.inventory_class as inv
-import inventory_management.electric_appliances_class as ea
-import inventory_management.furniture_class as fc
-import inventory_management.main as main
+sys.path.append('./inventory_management')
+import market_prices as mp
+import inventory_class as inv
+import electric_appliances_class as ea
+import furniture_class as fc
+import main
 
 # cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson01\assignment
-# cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson01\assignment\tests
 '''
 python -m pylint ./inventory_management
 python -m coverage run --source=inventory_management -m unittest test_unit.py
@@ -140,19 +142,22 @@ class main_test(TestCase):
             main.add_new_item()
             self.assertDictEqual(main.FULL_INVENTORY['789'], expected_item_dic['789'])
 
-    def test_norecord(self):
+    def test_is_no_record(self):
         with patch('builtins.input', side_effect=['69']):
             main.FULL_INVENTORY = {}
             self.assertEqual(main.item_info(), print("Item not found in inventory"))
-    #
-    # def test_isrecord(self):
-    #     with patch('builtins.input', side_effect=['789']):
-    #         main.FULL_INVENTORY = {'789': {'description': 'test',
-    #                                'market_price': 24,
-    #                                'item_code': '789',
-    #                                'rental_price': 5}}
-    #         self.assertEqual(main.item_info(), print('description: test, market_price: 24, item_code: 789, rental_price: 5')
-    #
+
+    def test_is_a_record(self):
+        with patch('builtins.input', side_effect=['789']):
+            main.FULL_INVENTORY = {'789': {'description':'test',
+                                   'market_price':24,
+                                   'item_code':'789',
+                                   'rental_price':5}}
+            self.assertEqual(main.item_info(),
+            print('description:test\n'
+                  'market_price:24\n'
+                  'item_code:789\n'
+                  'rental_price:5'))
 
 
     def test_exit(self):

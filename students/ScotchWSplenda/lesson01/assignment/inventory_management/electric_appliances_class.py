@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # pylint: disable=R0913,R0903,W0603
 '''some stuff1'''
-import inventory_management.inventory_class as inv
+import inventory_class as inv
 
 
 class ElectricAppliances(inv.Inventory):

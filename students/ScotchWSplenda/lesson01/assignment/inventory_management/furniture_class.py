@@ -1,7 +1,7 @@
 
 '''furniture class'''
 # pylint: disable=R0913,R0903,W0603
-import inventory_management.inventory_class as inv
+import inventory_class as inv
 
 
 class Furniture(inv.Inventory):
