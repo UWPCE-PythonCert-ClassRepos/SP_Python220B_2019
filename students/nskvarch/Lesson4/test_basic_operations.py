@@ -3,8 +3,8 @@
 # created by Niels Skvarch
 
 import unittest
-from src.basic_operations import *
-from src.customer_model import *
+from basic_operations import *
+from customer_model import *
 
 
 def database_setup():
@@ -81,7 +81,7 @@ class TestCaseFour(unittest.TestCase):
         customer_four = Customer.get(Customer.customer_id == "123")
         self.assertEqual(customer_four.credit_limit, 4500.00)
 
-    def test_Update_customer_credit_not_found(self):
+    def test_update_customer_credit_not_found(self):
         """Test the update of a record that does not exist"""
         database_setup()
         with self.assertRaises(DoesNotExist):
@@ -100,6 +100,36 @@ class TestCaseFive(unittest.TestCase):
         add_customer("78910", "Roy", "Batty", "Shoulder of Orion",
                      "756453867", "notareplicant@email_server.com", True, 500.00)
         self.assertEqual(list_active_customers(), 2)
+
+
+class TestCaseSix(unittest.TestCase):
+    """Tests the Active Customer Sales Calls Function in the basic_operations file"""
+    def test_active_customer_sales_calls(self):
+        """Tests the sales calls query"""
+        database_setup()
+        add_customer("123", "Markus", "Garvey", "35 Spring Weather drive",
+                     "123456789", "m.garvey@my_email_server.com", True, 2000.00)
+        add_customer("456789", "Jeff", "Ingram", "201 Private road",
+                     "937564323", "jeffiscool@server.com", False, 3500.00)
+        add_customer("78910", "Roy", "Batty", "Shoulder of Orion",
+                     "756453867", "notareplicant@email_server.com", True, 500.00)
+        test_list = ['Markus Garvey 123456789', 'Roy Batty 756453867']
+        self.assertEqual(active_customer_sales_calls(), test_list)
+
+
+class TestCaseSeven(unittest.TestCase):
+    """Tests the Active Customer Credit Query function of the basic_operations file"""
+    def test_active_customer_credit_query(self):
+        """Tests the customer credit limit query"""
+        database_setup()
+        add_customer("123", "Markus", "Garvey", "35 Spring Weather drive",
+                     "123456789", "m.garvey@my_email_server.com", True, 2000.00)
+        add_customer("456789", "Jeff", "Ingram", "201 Private road",
+                     "937564323", "jeffiscool@server.com", False, 3500.00)
+        add_customer("78910", "Roy", "Batty", "Shoulder of Orion",
+                     "756453867", "notareplicant@email_server.com", True, 500.00)
+        test_list2 = ['Markus Garvey 123456789']
+        self.assertEqual(active_customer_credit_query(2000), test_list2)
 
 
 # main program name-space
