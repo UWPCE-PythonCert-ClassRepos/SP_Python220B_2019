@@ -20,50 +20,9 @@ inventory_management\electric_appliances_class.py:4:0: C0115: Missing class docs
 inventory_management\electric_appliances_class.py:6:4: C0103: Argument name "productCode" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\electric_appliances_class.py:6:4: C0103: Argument name "marketPrice" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\electric_appliances_class.py:6:4: C0103: Argument name "rentalPrice" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\electric_appliances_class.py:6:4: R0913: Too many arguments (7/5) (too-many-arguments)
 inventory_management\electric_appliances_class.py:13:4: C0103: Method name "returnAsDictionary" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\electric_appliances_class.py:13:4: C0116: Missing function or method docstring (missing-function-docstring)
 inventory_management\electric_appliances_class.py:14:8: C0103: Variable name "outputDict" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\electric_appliances_class.py:4:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-************* Module furniture_class
-inventory_management\furniture_class.py:7:0: C0301: Line too long (138/100) (line-too-long)
-inventory_management\furniture_class.py:7:31: C0326: Exactly one space required after comma
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
-                               ^ (bad-whitespace)
-inventory_management\furniture_class.py:7:43: C0326: Exactly one space required after comma
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
-                                           ^ (bad-whitespace)
-inventory_management\furniture_class.py:7:55: C0326: Exactly one space required after comma
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
-                                                       ^ (bad-whitespace)
-inventory_management\furniture_class.py:7:67: C0326: Exactly one space required after comma
-        inventory.__init__(self,productCode,description,marketPrice,rentalPrice) # Creates common instance variables from the parent class
-                                                                   ^ (bad-whitespace)
-inventory_management\furniture_class.py:21:0: C0304: Final newline missing (missing-final-newline)
-inventory_management\furniture_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-inventory_management\furniture_class.py:2:0: E0401: Unable to import 'inventoryClass' (import-error)
-inventory_management\furniture_class.py:4:0: C0103: Class name "furniture" doesn't conform to PascalCase naming style (invalid-name)
-inventory_management\furniture_class.py:4:0: C0115: Missing class docstring (missing-class-docstring)
-inventory_management\furniture_class.py:6:4: C0103: Argument name "productCode" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\furniture_class.py:6:4: C0103: Argument name "marketPrice" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\furniture_class.py:6:4: C0103: Argument name "rentalPrice" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\furniture_class.py:6:4: R0913: Too many arguments (7/5) (too-many-arguments)
-inventory_management\furniture_class.py:12:4: C0103: Method name "returnAsDictionary" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\furniture_class.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
-inventory_management\furniture_class.py:13:8: C0103: Variable name "outputDict" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\furniture_class.py:4:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-************* Module inventory_class
-inventory_management\inventory_class.py:17:0: C0304: Final newline missing (missing-final-newline)
-inventory_management\inventory_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-inventory_management\inventory_class.py:2:0: C0103: Class name "inventory" doesn't conform to PascalCase naming style (invalid-name)
-inventory_management\inventory_class.py:5:8: C0103: Attribute name "productCode" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\inventory_class.py:7:8: C0103: Attribute name "marketPrice" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\inventory_class.py:8:8: C0103: Attribute name "rentalPrice" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\inventory_class.py:2:0: C0115: Missing class docstring (missing-class-docstring)
-inventory_management\inventory_class.py:10:4: C0103: Method name "returnAsDictionary" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\inventory_class.py:10:4: C0116: Missing function or method docstring (missing-function-docstring)
-inventory_management\inventory_class.py:11:8: C0103: Variable name "outputDict" doesn't conform to snake_case naming style (invalid-name)
-inventory_management\inventory_class.py:2:0: R0903: Too few public methods (1/2) (too-few-public-methods)
 ************* Module main
 inventory_management\main.py:39:0: C0301: Line too long (116/100) (line-too-long)
 inventory_management\main.py:39:51: C0326: Exactly one space required after comma
@@ -122,7 +81,6 @@ inventory_management\main.py:15:8: W0612: Unused variable 'options_str' (unused-
 inventory_management\main.py:23:0: C0103: Function name "getPrice" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\main.py:23:0: C0103: Argument name "itemCode" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\main.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
-inventory_management\main.py:23:13: W0613: Unused argument 'itemCode' (unused-argument)
 inventory_management\main.py:26:0: C0103: Function name "addNewItem" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\main.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
 inventory_management\main.py:27:4: C0103: Constant name "fullInventory" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -148,22 +106,7 @@ inventory_management\main.py:56:14: C0103: Variable name "v" doesn't conform to 
 inventory_management\main.py:61:0: C0103: Function name "exitProgram" doesn't conform to snake_case naming style (invalid-name)
 inventory_management\main.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
 inventory_management\main.py:65:4: C0103: Constant name "fullInventory" doesn't conform to UPPER_CASE naming style (invalid-name)
-************* Module market_prices
-inventory_management\market_prices.py:3:0: C0304: Final newline missing (missing-final-newline)
-inventory_management\market_prices.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-inventory_management\market_prices.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-inventory_management\market_prices.py:1:21: W0613: Unused argument 'item_code' (unused-argument)
-inventory_management\market_prices.py:1:0: R0801: Similar lines in 3 files
-==electric_appliances_class:12
-==furniture_class:11
-==inventory_class:9
-    def returnAsDictionary(self):
-        outputDict = {}
-        outputDict['productCode'] = self.productCode
-        outputDict['description'] = self.description
-        outputDict['marketPrice'] = self.marketPrice
-        outputDict['rentalPrice'] = self.rentalPrice (duplicate-code)
 
---------------------------------------------------------------------
-Your code has been rated at -2.89/10 (previous run: -2.89/10, +0.00)
+------------------------------------------------------------------
+Your code has been rated at 1.34/10 (previous run: 1.34/10, +0.00)
 
