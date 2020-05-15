@@ -7,16 +7,15 @@ Furniture
 from inventory_management.inventory_class import Inventory
 
 class Furniture(Inventory):
-    '''the furniture class'''
+    """ Furniture """
     def __init__(self, product_code, description, market_price, rental_price, material, size):
+        """ init """
         Inventory.__init__(self, product_code, description, market_price, rental_price)
-        # Creates common instance variables from the parent class
-
         self.material = material
         self.size = size
 
     def return_as_dictionary(self):
-        '''returns the class inventory as a dict'''
+        """ return invent as dict """
         output_dict = {}
         output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
