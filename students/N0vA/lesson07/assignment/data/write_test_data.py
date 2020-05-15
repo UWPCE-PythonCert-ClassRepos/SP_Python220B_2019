@@ -31,9 +31,9 @@ def write_product_data():
                      'sofa': 'livingroom'
                     }
         
-        for i in range(1001):
+        for i in range(1000):
             random_product = random.choice(products)
-            row_format = [str(random.randint(0, 10001)),
+            row_format = [str(random.randint(0, 10000)),
                           random_product,
                           product_dict[random_product],
                           random.choice([str(i) for i in range(6)])]
@@ -56,7 +56,7 @@ def write_customer_data():
         csvfile.write(column_names)
         csvfile.write('\n')
         
-        for i in range(1001):
+        for i in range(1000):
             row_format = [str(random.randint(0, 1000000)),
                           names.get_full_name(),
                           (fake.address()).replace('\n', ' ').replace(',', ''),
@@ -77,8 +77,8 @@ def write_rental_data():
         csvfile.write(column_names)
         csvfile.write('\n')
         
-        for i in range(1001):
-            row_format = [str(random.randint(0, 10001)),
+        for i in range(1000):
+            row_format = [str(random.randint(0, 10000)),
                           str(random.randint(0, 1000000))]
             write_row = ','.join(row_format)
             csvfile.write(write_row)

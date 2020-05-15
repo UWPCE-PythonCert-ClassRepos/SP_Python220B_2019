@@ -1,0 +1,50 @@
+### Diagnosis Write-Up ###
+
+First, I am going to start with the process I took doing the assignment then the results I got.  The nice thing about this assignment was that I could piggyback a lot of the work from the previous lesson. For example, I created expanded data files with a similar script that I had previous used to have 1000 rows of data to make this somewhat more realistic.
+
+# Linear method
+Not much was needed here.  We had already created this approach in lesson05.  I slightly altered the code to produce the new tuple outputs and add the runtime for my diagnosis. There was a key take away I will get into later.
+
+# Parallel method
+This is where things got interesting.  I fond the Threading and multiprocessing Part 4 reading extrememly useful for this part.  I decided to use threading.  This made me realize (and to be honest I had thought of doing it before but I was lazy) I should refactor some of my code.  Specifically, I am referring to the add_table function.  This made the code a lot cleaner and easier to implement the threading technique.  The last thing I had to do to make sure everything ran smoothly and contention was avoided so I used join module.  
+
+# Diagnosis
+So to make this as realistic as possible I cleared the database and started from ground zero.  I wanted to have a blank sheetand see if expanding the database also had an impact on runtime along with the method of importing the data.  So I ran the diagnosis file 5 times and here are the results. (I got rid of some of the print statements for clarity here.)
+
+# Run 1:
+$ python diagnosis.py
+
+THe run time for linear importation method was 0.06705713272094727
+
+The run time for parallel importation method was 0.040534257888793945
+
+# Run 2:
+$ python diagnosis.py
+
+THe run time for linear importation method was 0.05104374885559082
+
+The run time for parallel importation method was 0.042035818099975586
+
+# Run 3:
+$ python diagnosis.py
+
+THe run time for linear importation method was 0.05304551124572754
+
+The run time for parallel importation method was 0.044037580490112305
+
+# Run 4:
+$ python diagnosis.py
+
+THe run time for linear importation method was 0.0540461540222168
+
+The run time for parallel importation method was 0.045038700103759766
+
+# Run 5:
+$ python diagnosis.py
+
+THe run time for linear importation method was 0.05554771423339844
+
+The run time for parallel importation method was 0.046039581298828125
+
+# Analysis
+The parallel importation method outperformed the linear method every run.  As the database got bigger, the runtimes did seem to slightly increase implying those are also correlated.  I do not understand why on Run 1 the linear method took so much longer than the other runs but maybe it was establishing the first connection to the database?  Either way, it is apparent that at HP Norton the parallel method to import data to our database should be used to cut down runtime as we expand and take on more customers and more data.
