@@ -1,0 +1,2 @@
+We see that as the linear version of the importer seems to do a better job with low number of customers, and as expected
+as the order of magnitude of the number of customers rises the relative performance of Linear.py drops in compairson to Parallel.

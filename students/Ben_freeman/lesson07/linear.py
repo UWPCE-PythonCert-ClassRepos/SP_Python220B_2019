@@ -2,12 +2,14 @@ from pymongo import MongoClient
 import pandas as pd
 import logging
 import datetime
+import time
+import argparse
 
 """logging setup"""
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 
-LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + 'linear.log'
 
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setFormatter(FORMATTER)
@@ -85,7 +87,10 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         files = (product_file, customer_file, rentals_file)
         input_count = []
         error_count = []
+        log_time_start = time.time()
+        LOG.info(f"start of import process, current time: {log_time_start}")
         for file, data in zip(files, databases):
+            LOG.info("\n")
             LOG.info(f"starting loading {str(file)}")
             bad_count = 0
             count = 0
@@ -94,9 +99,28 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 data.insert_many(new_data.to_dict("records"))
                 count += 1
                 LOG.info(f"Database,{data} updated successfully")
+                LOG.info("\n")
             except FileNotFoundError:
                 bad_count += 1
                 LOG.info(f"Failed to update {data}")
             input_count.append(count)
             error_count.append(bad_count)
+        LOG.info(f"end of import process, current time {time.time()}")
+        LOG.info(f"total time elasped for import process {time.time() - log_time_start}")
         return tuple(input_count), tuple(error_count)
+
+
+def parse_cmd_arguments():
+    """grabs the arguments to be used later"""
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('-n', '--input', help='number', required=True)
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    LOG.info("NEW RUN")
+    ARGS = parse_cmd_arguments()
+    results = import_data(f"Data/data_files_n={ARGS.input}", "products", "customers", "rentals")
+    print(results)
+    FILE_HANDLER.close()
+

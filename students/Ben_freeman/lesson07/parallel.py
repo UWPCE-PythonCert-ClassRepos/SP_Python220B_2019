@@ -4,12 +4,13 @@ import logging
 import datetime
 import time
 import multiprocessing
+import argparse
 
 """logging setup"""
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 FORMATTER = logging.Formatter(LOG_FORMAT)
 
-LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + 'parallel.log'
 
 FILE_HANDLER = logging.FileHandler(LOG_FILE)
 FILE_HANDLER.setFormatter(FORMATTER)
@@ -74,12 +75,12 @@ def show_rentals(product_id):
         return displayed_items
 
 
-def import_data_pre_function(directory_name, file, data, update_count):
-    new_data = pd.read_csv(f"{directory_name}/{file}.csv")
-    for row in new_data:
-        update_count += 1
-    data.insert_many(new_data.to_dict("records"))
-
+def import_data_pre_function(directory_name, file, data_name, update_count):
+    mongo = MongoDBConnection()
+    with mongo:
+        db = mongo.connection.media
+        new_data = pd.read_csv(f"{directory_name}/{file}.csv")
+        db[data_name].insert_many(new_data.to_dict("records"))
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
@@ -87,23 +88,28 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         db = mongo.connection.media
         databases = (db["products"], db["customers"], db["rentals"])
+        database_names = ("products", "customers", "rentals")
         answer = input("Would you like to clear the database?(yes/no): ")
         if answer.lower() == "yes":
             for item in databases:
                 item.drop()
         files = (product_file, customer_file, rentals_file)
         list_of_tuples = []
-        for file, data in zip(files, databases):
+        log_time_start = time.time()
+        LOG.info(f"start of import process, current time: {log_time_start}")
+        for file, data, name in zip(files, databases, database_names):
             start_time = time.time()
+            LOG.info("\n")
             LOG.info(f"starting loading {str(file)}")
             update_counter = 0
             original_counter = 0
             final_counter = 0
             for item in data.find():
                 original_counter +=1
+            LOG.info(f"Database has {original_counter} items to start with")
             try:
                 processes = multiprocessing.Process(target=import_data_pre_function, 
-                                                    args=(directory_name, file, data, update_counter))
+                                                    args=(directory_name, file, name, update_counter))
                 processes.start()
                 processes.join()
                 LOG.info(f"Database,{data} updated successfully")
@@ -111,7 +117,27 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                 LOG.info(f"Failed to update {data}")
             for item in data.find():
                 final_counter += 1
+            LOG.info(f"Database has {final_counter} items at the end")
+            LOG.info("\n")
             time_taken = time.time() - start_time
-            my_tuples = tuple(update_counter, original_counter, final_counter, time_taken)
+            update_counter = final_counter - original_counter
+            my_tuples = tuple([update_counter, original_counter, final_counter, time_taken])
             list_of_tuples.append(my_tuples)
+        LOG.info(f"end of import process, current time {time.time()}")
+        LOG.info(f"total time elasped for import process {time.time()-log_time_start}")
         return list_of_tuples
+
+
+def parse_cmd_arguments():
+    """grabs the arguments to be used later"""
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('-n', '--input', help='number', required=True)
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    LOG.info("NEW RUN")
+    ARGS = parse_cmd_arguments()
+    results = import_data(f"Data/data_files_n={ARGS.input}", "products", "customers", "rentals")
+    print(results)
+    FILE_HANDLER.close()
