@@ -1,4 +1,10 @@
-# Launches the user interface for the inventory management system
+"""
+Main
+"""
+
+# pylint: disable=unused-argument
+# pylint: disable=unused-variable
+
 import sys
 import market_prices
 import inventoryClass

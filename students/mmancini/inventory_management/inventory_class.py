@@ -6,7 +6,7 @@ Inventory
 # pylint: disable=too-many-arguments
 
 class Inventory:
-    '''inventory class'''
+    """ Inventory """
     def __init__(self, product_code, description, market_price, rental_price):
         self.product_code = product_code
         self.description = description
@@ -14,7 +14,7 @@ class Inventory:
         self.rental_price = rental_price
 
     def return_as_dictionary(self):
-        '''returns the class inventory as a dict'''
+        """ return inventory as dict """
         output_dict = {}
         output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description
