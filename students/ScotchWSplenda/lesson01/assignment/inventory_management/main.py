@@ -28,7 +28,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     '''some stuff13'''
-    print(f"get price for {item_code}")
+    return(f"get price for {item_code}")
 
 
 def add_new_item():

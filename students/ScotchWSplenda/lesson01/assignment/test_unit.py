@@ -3,7 +3,7 @@
 
 import sys
 from unittest import TestCase
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 sys.path.append('./inventory_management')
 import market_prices as mp
 import inventory_class as inv
@@ -159,6 +159,8 @@ class main_test(TestCase):
                   'item_code:789\n'
                   'rental_price:5'))
 
+    def test_get_prices(self):
+        self.assertEqual(main.get_price(69420), 'get price for 69420')
 
     def test_exit(self):
         with self.assertRaises(SystemExit):
