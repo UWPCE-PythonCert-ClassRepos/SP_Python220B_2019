@@ -1,0 +1,8 @@
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
