@@ -43,6 +43,57 @@ class TestMain(TestCase):
         self.mp.get_latest_price = MagicMock(return_value=50)
         self.assertEqual(main.get_price('test'), 50)
 
+    def test_add_new_item(self):
+        """ tests adding new items to the inventory
+            inv == itemcode,descr,rentalprice,isFurn,isAppl
+            furn == itemcode,descr,rentalprice,isFurn,isAppl,material,size
+            appl == itemcode,descr,rentalprice,isFurn,isAppl,brand,voltage
+        """
+        item_inv = ['1', 'Shirt', '50', 'n', 'n']
+        item_furn = ['2', 'Chair', '100', 'y', 'wood', 'L']
+        item_appl = ['3', 'Washer', '200', 'n', 'y', 'Maytag', '120']
+
+        with patch('builtins.input', side_effect = item_inv):
+            main.add_new_item()
+        with patch('builtins.input', side_effect = item_furn):
+            main.add_new_item()
+        with patch('builtins.input', side_effect = item_appl):
+            main.add_new_item()
+
+        test_dict = {'1':{'product_code': '1',
+                          'description': 'Shirt',
+                          'market_price': 24,
+                          'rental_price': '50'},
+                     '2':{'product_code': '2',
+                          'description': 'Chair',
+                          'market_price': 24,
+                          'rental_price': '100',
+                          'material': 'wood',
+                          'size': 'L'},
+                     '3':{'product_code': '3',
+                          'description': 'Washer',
+                          'market_price': 24,
+                          'rental_price': '200',
+                          'brand': 'Maytag',
+                          'voltage': '120'}}
+        self.assertEqual(test_dict, main.return_full_inventory())
+
+    def test_item_info(self):
+        """ test returned item info """
+        item = ['1', 'Chair', '100', 'y', 'wood', 'L' ]
+        with patch('builtins.input', side_effect = item):
+            main.add_new_item()
+
+        with patch('builtins.input', side_effect = '1'):
+            function = main.item_info()
+            info = '\n'.join(('product_code:1',
+                          'description:Chair',
+                          'market_price:50',
+                          'rental_price:100',
+                          'material:wood',
+                          'size:L'))
+            self.assertEqual(function, info)
+        
         
 class TestInventory(TestCase):
     """ tests for inventory """
@@ -112,3 +163,4 @@ class TestMarketPrices(TestCase):
 
         self.mp.get_latest_price = MagicMock(return_value=50)
         self.assertEqual(50, self.mp.get_latest_price(50))
+
