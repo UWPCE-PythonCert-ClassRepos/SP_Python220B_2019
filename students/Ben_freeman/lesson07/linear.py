@@ -80,34 +80,43 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         db = mongo.connection.media
         databases = (db["products"], db["customers"], db["rentals"])
+        database_names = ("products", "customers", "rentals")
         answer = input("Would you like to clear the database?(yes/no): ")
         if answer.lower() == "yes":
             for item in databases:
                 item.drop()
         files = (product_file, customer_file, rentals_file)
-        input_count = []
-        error_count = []
+        list_of_tuples = []
         log_time_start = time.time()
         LOG.info(f"start of import process, current time: {log_time_start}")
-        for file, data in zip(files, databases):
+        for file, data, name in zip(files, databases, database_names):
+            start_time = time.time()
             LOG.info("\n")
             LOG.info(f"starting loading {str(file)}")
-            bad_count = 0
-            count = 0
+            update_counter = 0
+            original_counter = 0
+            final_counter = 0
+            for item in data.find():
+                original_counter += 1
+            LOG.info(f"Database has {original_counter} items to start with")
             try:
                 new_data = pd.read_csv(f"{directory_name}/{file}.csv")
                 data.insert_many(new_data.to_dict("records"))
-                count += 1
                 LOG.info(f"Database,{data} updated successfully")
                 LOG.info("\n")
             except FileNotFoundError:
-                bad_count += 1
                 LOG.info(f"Failed to update {data}")
-            input_count.append(count)
-            error_count.append(bad_count)
+            for item in data.find():
+                final_counter += 1
+            LOG.info(f"Database has {final_counter} items at the end")
+            LOG.info("\n")
+            time_taken = time.time() - start_time
+            update_counter = final_counter - original_counter
+            my_tuples = tuple([name, update_counter, original_counter, final_counter, time_taken])
+            list_of_tuples.append(my_tuples)
         LOG.info(f"end of import process, current time {time.time()}")
         LOG.info(f"total time elasped for import process {time.time() - log_time_start}")
-        return tuple(input_count), tuple(error_count)
+        return list_of_tuples
 
 
 def parse_cmd_arguments():

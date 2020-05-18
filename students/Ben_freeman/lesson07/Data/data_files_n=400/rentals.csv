@@ -1,3 +1,5 @@
+rental_id,customer_id,product_id
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -37,6 +39,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -76,6 +79,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -115,6 +119,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -154,6 +159,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -193,6 +199,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -232,6 +239,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -271,6 +279,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -310,6 +319,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
@@ -349,6 +359,7 @@ rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456
+rnt001, user002, prd001
 rnt011, user002 prd001,nan
 rnt002, user001, prd002
 rnt022, user001,123456

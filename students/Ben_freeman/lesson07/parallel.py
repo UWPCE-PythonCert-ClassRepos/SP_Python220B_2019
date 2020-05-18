@@ -1,10 +1,11 @@
-from pymongo import MongoClient
-import pandas as pd
+
 import logging
 import datetime
 import time
 import multiprocessing
 import argparse
+import pandas as pd
+from pymongo import MongoClient
 
 """logging setup"""
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
@@ -41,6 +42,7 @@ class MongoDBConnection():
 
 
 def show_available_products():
+    """shows products"""
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
@@ -56,6 +58,7 @@ def show_available_products():
 
 
 def show_rentals(product_id):
+    """shows rentals"""
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
@@ -76,6 +79,7 @@ def show_rentals(product_id):
 
 
 def import_data_pre_function(directory_name, file, data_name, update_count):
+    """reads and inserts data into database, split up to work with multiprocessing"""
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
@@ -84,6 +88,7 @@ def import_data_pre_function(directory_name, file, data_name, update_count):
 
 
 def import_data(directory_name, product_file, customer_file, rentals_file):
+    """imports data"""
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
@@ -105,7 +110,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             original_counter = 0
             final_counter = 0
             for item in data.find():
-                original_counter +=1
+                original_counter += 1
             LOG.info(f"Database has {original_counter} items to start with")
             try:
                 processes = multiprocessing.Process(target=import_data_pre_function, 
@@ -121,7 +126,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             LOG.info("\n")
             time_taken = time.time() - start_time
             update_counter = final_counter - original_counter
-            my_tuples = tuple([update_counter, original_counter, final_counter, time_taken])
+            my_tuples = tuple([name, update_counter, original_counter, final_counter, time_taken])
             list_of_tuples.append(my_tuples)
         LOG.info(f"end of import process, current time {time.time()}")
         LOG.info(f"total time elasped for import process {time.time()-log_time_start}")

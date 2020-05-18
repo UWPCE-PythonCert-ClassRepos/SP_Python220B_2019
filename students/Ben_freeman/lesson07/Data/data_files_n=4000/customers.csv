@@ -1,3 +1,6 @@
+customer_id, Name, Address, Phone, Email
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -36,6 +39,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -75,6 +79,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -114,6 +119,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -153,6 +159,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -192,6 +199,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -231,6 +239,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -270,6 +279,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -309,6 +319,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -348,6 +359,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -387,6 +399,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -425,6 +439,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -464,6 +479,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -503,6 +519,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -542,6 +559,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -581,6 +599,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -620,6 +639,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -659,6 +679,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -698,6 +719,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -737,6 +759,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -776,6 +799,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -814,6 +839,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -853,6 +879,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -892,6 +919,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -931,6 +959,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -970,6 +999,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1009,6 +1039,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1048,6 +1079,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1087,6 +1119,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1126,6 +1159,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1165,6 +1199,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -1203,6 +1239,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1242,6 +1279,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1281,6 +1319,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1320,6 +1359,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1359,6 +1399,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1398,6 +1439,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1437,6 +1479,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1476,6 +1519,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1515,6 +1559,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1554,6 +1599,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -1592,6 +1639,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1631,6 +1679,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1670,6 +1719,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1709,6 +1759,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1748,6 +1799,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1787,6 +1839,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1826,6 +1879,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1865,6 +1919,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1904,6 +1959,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -1943,6 +1999,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -1981,6 +2039,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2020,6 +2079,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2059,6 +2119,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2098,6 +2159,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2137,6 +2199,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2176,6 +2239,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2215,6 +2279,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2254,6 +2319,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2293,6 +2359,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2332,6 +2399,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -2370,6 +2439,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2409,6 +2479,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2448,6 +2519,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2487,6 +2559,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2526,6 +2599,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2565,6 +2639,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2604,6 +2679,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2643,6 +2719,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2682,6 +2759,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2721,6 +2799,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -2759,6 +2839,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2798,6 +2879,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2837,6 +2919,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2876,6 +2959,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2915,6 +2999,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2954,6 +3039,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -2993,6 +3079,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3032,6 +3119,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3071,6 +3159,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3110,6 +3199,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -3148,6 +3239,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3187,6 +3279,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3226,6 +3319,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3265,6 +3359,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3304,6 +3399,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3343,6 +3439,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3382,6 +3479,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3421,6 +3519,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3460,6 +3559,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3499,6 +3599,8 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
+user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
 user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
@@ -3537,6 +3639,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3576,6 +3679,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3615,6 +3719,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3654,6 +3759,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3693,6 +3799,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3732,6 +3839,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3771,6 +3879,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3810,6 +3919,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
@@ -3849,6 +3959,7 @@ user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
+user001, Elisa Miles, 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user011, , 4490 Union Street, 206-922-0882, elisa.miles@yahoo.com
 user002, Maya Data, 4936 Elliot Avenue, 206-777-1927, mdata@uw.edu
 user022, Maya Data, 4936 Elliot Avenue, mdata@uw.edu,nan
