@@ -36,6 +36,10 @@ class TestMain(TestCase):
         with patch('builtins.input', side_effect='q'):
             self.assertEqual(main.main_menu(), main.exit_program)
 
+    def test_exit_program(self):
+        """ test program exit """
+        with self.assertRaises(SystemExit):
+            main.exit_program()
             
     def test_get_price(self):
         """Test get_price"""
@@ -93,7 +97,13 @@ class TestMain(TestCase):
                           'material:wood',
                           'size:L'))
             self.assertEqual(function, info)
-        
+
+    def test_item_info_none(self):
+        """ test item not in inventory """
+        with patch('builtins.input', side_effect = '999'):
+            function = main.item_info()
+        self.assertEqual(function, 'Item not found in inventory')    
+
         
 class TestInventory(TestCase):
     """ tests for inventory """
