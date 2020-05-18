@@ -9,11 +9,13 @@ from unittest.mock import patch
 from unittest.mock import MagicMock
 
 import inventory_management.market_prices as market_prices
-from inventory_management.inventory_class import Inventory
 import inventory_management.main as main
+from inventory_management.inventory_class import Inventory
+from inventory_management.electric_appliances_class import ElectricAppliances
+from inventory_management.furniture_class import Furniture
 
 
-class MainTests(TestCase):
+class TestMain(TestCase):
     """ test main """
 
     def setUp(self):
@@ -38,29 +40,64 @@ class MainTests(TestCase):
     def test_get_price(self):
         """Test get_price"""
 
-        self.assertEqual(main.get_price('test'), 24)
+        self.mp.get_latest_price = MagicMock(return_value=50)
+        self.assertEqual(main.get_price('test'), 50)
 
         
-class InventoryClassTests(TestCase):
-    """ test for inventory """
+class TestInventory(TestCase):
+    """ tests for inventory """
     def setUp(self):
-        '''creates inventory object'''
+        """ creates inventory obj """
         self.inventory = Inventory(1, 'some description', 25, 10.50)
 
     def test_inventory_init(self):
-        '''tests init values for inventory object'''
+        """ tests init inventory """
         assert self.inventory.product_code == 1
         assert self.inventory.description == 'some description'
         assert self.inventory.market_price == 25
         assert self.inventory.rental_price == 10.50
 
     def test_return_as_dict(self):
-        '''tests the return as dict method in class inventory'''
+        """ tests the return dict inventory """
         inventory_dict = self.inventory.return_as_dictionary()
         assert inventory_dict == {'product_code': 1,
                                   'description': 'some description',
                                   'market_price': 25,
                                   'rental_price': 10.50}
+
+                                  
+class TestElectricAppliances(TestCase):
+    """ test ElectricAppliances """
+    def test_electric_appliances(self):
+        """Test that an electric appliance object is created"""
+
+        appl = {'product_code': '2',
+                    'description': 'Washer',
+                    'market_price': 450.0,
+                    'rental_price': 125.0,
+                    'brand': 'MayTag',
+                    'voltage': 110.0}
+        item = ('2', 'Washer', 450.0, 125.0, 'MayTag', 110.0)
+        item_returned = ElectricAppliances(*item)
+        self.assertEqual(appl, item_returned.return_as_dictionary())
+
+
+class TestFurniture(TestCase):
+    """ test furniture """
+    def test_furniture(self):
+        """Test that a furniture obj created"""
+
+        furn = {'product_code': '3',
+                    'description': 'Dresser',
+                    'market_price': 350.0,
+                    'rental_price': 25.0,
+                    'material': 'Pine',
+                    'size': 'M'}
+        item = ('3', 'Dresser', 350.0, 25.0, 'Pine', 'M')
+        item_returned = Furniture(*item)
+
+        self.assertEqual(furn, item_returned.return_as_dictionary())
+        
         
 class TestMarketPrices(TestCase):
     """ test market_prices return value """

@@ -12,10 +12,10 @@ Please choose from the following options (1, 2, q):
 q. Quit
 Name                                                Stmts   Miss  Cover
 -----------------------------------------------------------------------
-inventory_management\electric_appliances_class.py      15     11    27%
-inventory_management\furniture_class.py                15     11    27%
+inventory_management\electric_appliances_class.py      15      0   100%
+inventory_management\furniture_class.py                15      0   100%
 inventory_management\inventory_class.py                13      0   100%
 inventory_management\main.py                           58     34    41%
-inventory_management\market_prices.py                   2      0   100%
+inventory_management\market_prices.py                   2      1    50%
 -----------------------------------------------------------------------
-TOTAL                                                 103     56    46%
+TOTAL                                                 103     35    66%
