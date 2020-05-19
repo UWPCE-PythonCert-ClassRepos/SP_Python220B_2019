@@ -1,0 +1,32 @@
+New inventory item added
+New inventory item added
+New inventory item added
+New inventory item added
+product_code:1
+description:Chair
+market_price:50
+rental_price:100
+material:wood
+size:L
+Item not found in inventory
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Name                                                Stmts   Miss  Cover
+-----------------------------------------------------------------------
+inventory_management\electric_appliances_class.py      15      0   100%
+inventory_management\furniture_class.py                15      0   100%
+inventory_management\inventory_class.py                13      0   100%
+inventory_management\main.py                           58      4    93%
+inventory_management\market_prices.py                   2      0   100%
+-----------------------------------------------------------------------
+TOTAL                                                 103      4    96%
