@@ -9,59 +9,28 @@ import logging
 import sys
 
 
-def set_logging_settings(level):
-    if level == '0':
-        logging.disable()
-        return None
+# define the format and tell the logging module about your format
+log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+formatter = logging.Formatter(log_format)
 
-    # define the format and tell the logging module about your format
-    log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-    formatter = logging.Formatter(log_format)
+# name the file the logging gets saved to
+log_file = datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
 
-    # name the file the logging gets saved to
-    log_file = datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+# tell the logging module WHERE to save and  HOW to save in its file
+FH = logging.FileHandler(log_file)
+FH.setFormatter(formatter)
 
-    # tell the logging module WHERE to save and  HOW to save in its file
-    FH = logging.FileHandler(log_file)
-    FH.setFormatter(formatter)
+# tell the logging module WHERE to save and  HOW to save in console
+CH = logging.StreamHandler()
+CH.setFormatter(formatter)
 
-    # tell the logging module WHERE to save and  HOW to save in console
-    CH = logging.StreamHandler()
-    CH.setFormatter(formatter)
-
-    if level == '1':
-        '''look at all this redundant BS'''
-        FH.setLevel(logging.ERROR)
-        CH.setLevel(logging.ERROR)
-
-        LOGGER = logging.getLogger()
-        LOGGER.setLevel(logging.DEBUG)
-        LOGGER.addHandler(FH)
-        LOGGER.addHandler(CH)
-
-    if level == '2':
-        '''look at all this redundant BS'''
-        FH.setLevel(logging.WARNING)
-        CH.setLevel(logging.WARNING)
-
-        LOGGER = logging.getLogger()
-        LOGGER.setLevel(logging.DEBUG)
-        LOGGER.addHandler(FH)
-        LOGGER.addHandler(CH)
-
-    if level == '3':
-        '''look at all this redundant BS'''
-        FH.setLevel(logging.WARNING)
-        CH.setLevel(logging.DEBUG)
-
-        LOGGER = logging.getLogger()
-        LOGGER.setLevel(logging.DEBUG)
-        LOGGER.addHandler(FH)
-        LOGGER.addHandler(CH)
-
-    logging.debug(f'logging level set at {level}')
-    return None
-
+# activate logger
+LOGGER = logging.getLogger()
+# set base level logger
+LOGGER.setLevel(logging.DEBUG)
+# who handles what
+LOGGER.addHandler(FH)
+LOGGER.addHandler(CH)
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -132,11 +101,19 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
-    set_logging_settings(args.dbg_command)
+    level = args.dbg_command
+    if level == '0':
+        LOGGER.disabled = True
+    elif level == '1':
+        FH.setLevel(logging.ERROR)
+        CH.setLevel(logging.ERROR)
+    elif level == '2':
+        FH.setLevel(logging.WARNING)
+        CH.setLevel(logging.WARNING)
+    elif level == '3':
+        FH.setLevel(logging.WARNING)
+        CH.setLevel(logging.DEBUG)
 
-    # logging.debug("Input file provided: %s.", args.input)
-    # logging.debug("Output file provided: %s.", args.output)
-    # logging.debug("Debug level is %s.", args.dbg_command)
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
