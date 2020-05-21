@@ -34,7 +34,7 @@ class linear_Tests(TestCase):
     def setUp(self):
         self.record_num = 100006
         self.csv_file = 'csv_files_dr'
-        self.product_file = 'products_throusand.csv'
+        self.product_file = 'products_thousand.csv'
         self.customer_file = 'customers_thousand.csv'
         self.rental_file = 'rentals_thousand.csv'
 
