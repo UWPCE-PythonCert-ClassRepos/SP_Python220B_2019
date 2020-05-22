@@ -1,0 +1,6 @@
+product_id,renter_id_list
+prd001,user003,user002
+prd002,user005,user004,user001
+prd003,user005
+prd004,user002,user005
+prd005,user004

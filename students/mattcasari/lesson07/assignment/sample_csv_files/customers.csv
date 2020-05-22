@@ -1,0 +1,1001 @@
+customer_id,name,last_name,address,phone_number,email_address,status,credit_limit
+C076760,Victoria,Donald,Rarotonga,539-955-5943,victoria.donald@gmail.io,True,38964.81
+C211038,Shavonda,Russo,Samoa,305-991-1076,shavonda.russo@gmail.com,True,94546.6
+C836393,Norma,Logie,Tuvalu,523-575-5584,norma.logie@gmail.com,True,53808.05
+C131053,Jody,Smith,Tuvalu,385-718-6412,jody.smith@gmail.io,True,1189.5
+C315771,Jason,Olsen,Rarotonga,456-792-6252,jason.olsen@gmail.net,True,15697.4
+C437249,Mary,Adkins,Samoa,550-200-7018,mary.adkins@gmail.io,False,59938.73
+C961310,Roderick,Garza,Tuvalu,601-810-5489,roderick.garza@gmail.net,True,87349.25
+C563252,Steve,Banks,Samoa,224-206-7963,steve.banks@gmail.net,False,64851.97
+C294023,Jessica,Frank,Samoa,152-830-2595,jessica.frank@gmail.net,True,6972.07
+C382471,Sharron,Salvador,Tuvalu,222-174-1987,sharron.salvador@gmail.net,False,37199.62
+C539555,Felicia,Morin,Rarotonga,604-773-5473,felicia.morin@gmail.org,True,45463.33
+C262667,Tammy,Moynihan,Rarotonga,584-500-2856,tammy.moynihan@gmail.net,True,64923.63
+C683734,Paige,Swanson,Samoa,654-465-4508,paige.swanson@gmail.net,False,55166.99
+C198731,Tammy,Bowers,Samoa,168-294-7915,tammy.bowers@gmail.com,True,72122.47
+C781187,Luther,Ruiz,Rarotonga,721-176-6613,luther.ruiz@gmail.com,True,10666.19
+C272337,Elizabeth,Smith,Samoa,301-483-2906,elizabeth.smith@gmail.com,False,61978.86
+C300881,Scott,Wright,Tuvalu,798-442-2425,scott.wright@gmail.io,False,54120.62
+C710412,Dana,Ladouceur,Rarotonga,835-192-1642,dana.ladouceur@gmail.net,True,98143.28
+C095214,Fannie,Simmons,Tuvalu,723-806-1309,fannie.simmons@gmail.net,False,72894.57
+C939960,Chester,Ramirez,Tuvalu,396-381-5125,chester.ramirez@gmail.net,True,6603.35
+C003253,Jenifer,Dudley,Samoa,627-650-3734,jenifer.dudley@gmail.org,True,23861.59
+C089874,Ronnie,Ingram,Rarotonga,191-896-2505,ronnie.ingram@gmail.org,True,59167.21
+C108439,Travis,Tuder,Tuvalu,798-142-5900,travis.tuder@gmail.org,True,23413.46
+C688591,Alberto,Holcombe,Samoa,743-933-6127,alberto.holcombe@gmail.io,True,97486.26
+C768097,Jeffery,Jelden,Tuvalu,146-716-4133,jeffery.jelden@gmail.io,True,45375.58
+C591693,Franklin,Brady,Rarotonga,509- 78-964,franklin.brady@gmail.org,True,53219.77
+C717878,Cesar,Becerra,Tuvalu,819-777-3210,cesar.becerra@gmail.io,False,91103.31
+C196862,Nilda,Kash,Tuvalu,264-513-5891,nilda.kash@gmail.net,True,73846.3
+C904090,Melvin,Turner,Samoa,512-978-4787,melvin.turner@gmail.net,True,29303.99
+C691619,John,Owens,Samoa,  4-809-4038,john.owens@gmail.com,False,7109.71
+C450695,Carrie,Poynter,Samoa,967-444-7815,carrie.poynter@gmail.org,False,28827.45
+C194277,Elizabeth,West,Tuvalu,224-351-7231,elizabeth.west@gmail.net,True,20476.58
+C665846,Amos,Harmon,Samoa,772-105-1077,amos.harmon@gmail.net,False,88340.26
+C696550,Marisol,Wood,Tuvalu,771-620-7172,marisol.wood@gmail.io,False,56170.16
+C137349,Alfred,Grimes,Tuvalu,141-916-9953,alfred.grimes@gmail.com,False,2566.44
+C447838,Timothy,Allison,Tuvalu,657-991-2581,timothy.allison@gmail.com,True,33381.88
+C389327,Gregory,Tobon,Rarotonga, 14-757-5367,gregory.tobon@gmail.com,False,40506.37
+C441085,Kimberly,Linebarger,Tuvalu,502-730-540,kimberly.linebarger@gmail.io,True,56888.25
+C662661,Sharon,Rees,Tuvalu,231-290-7877,sharon.rees@gmail.net,True,24366.02
+C829991,Lelia,Wolters,Rarotonga,951-670-3848,lelia.wolters@gmail.io,False,59677.37
+C046383,Charles,Young,Tuvalu,386-817-426,charles.young@gmail.org,True,98149.34
+C834297,Kristen,Wright,Samoa,779-107-6943,kristen.wright@gmail.net,False,96660.57
+C592851,Bert,Koo,Rarotonga,357-337-719,bert.koo@gmail.net,False,23962.85
+C078761,Shawn,Adams,Tuvalu,111-632-1864,shawn.adams@gmail.com,True,27182.02
+C028742,Sean,Miramon,Samoa,651-821-7651,sean.miramon@gmail.io,False,11028.22
+C871783,Patricia,Alonzo,Rarotonga,597-383-1327,patricia.alonzo@gmail.io,True,8117.49
+C474033,Anna,Zuniga,Samoa,622-331-1054,anna.zuniga@gmail.io,False,64812.52
+C902757,Heather,Lockhart,Rarotonga,545-425-6613,heather.lockhart@gmail.com,True,30656.66
+C666370,Gary,Cabrera,Tuvalu,921-653-3022,gary.cabrera@gmail.org,True,78053.62
+C712404,Sandy,Tellez,Rarotonga,101-245-465,sandy.tellez@gmail.org,False,83210.73
+C766888,Glen,Ryan,Rarotonga,433-255-7392,glen.ryan@gmail.org,False,82282.66
+C877613,Rory,Feliciano,Rarotonga,299-264- 53,rory.feliciano@gmail.io,True,38674.88
+C964822,Virgil,Hughes,Samoa,943-813-6443,virgil.hughes@gmail.com,False,39856.95
+C067500,Lionel,Worrall,Tuvalu,610-433-1120,lionel.worrall@gmail.io,True,49553.19
+C045770,Carole,Ramos,Rarotonga,548-163-9377,carole.ramos@gmail.com,False,80359.62
+C345551,Rosalba,Brown,Tuvalu,354-435-2391,rosalba.brown@gmail.net,False,78991.86
+C041849,Catherine,Bobb,Tuvalu,688-551-5936,catherine.bobb@gmail.io,False,91551.77
+C143337,Jay,Walker,Tuvalu,273-890-3974,jay.walker@gmail.io,False,87804.24
+C022584,David,Tetreault,Tuvalu,797-496-6877,david.tetreault@gmail.com,True,2952.97
+C267948,Irene,Mckenzie,Tuvalu,770-939-2632,irene.mckenzie@gmail.io,False,74975.66
+C615686,Jana,Rehfield,Rarotonga,839-180-570,jana.rehfield@gmail.com,False,90823.43
+C411371,Janet,Behrendt,Rarotonga,523-800-3261,janet.behrendt@gmail.org,True,51719.49
+C547862,Dee,Hutto,Rarotonga,274-320-4606,dee.hutto@gmail.io,True,49839.61
+C901389,Jesse,Sholar,Samoa,349-871-7381,jesse.sholar@gmail.org,True,19172.35
+C872497,Vera,Baldwin,Samoa,582-339-6494,vera.baldwin@gmail.net,False,82527.33
+C647175,Erica,Masterson,Samoa,686-989-2056,erica.masterson@gmail.net,True,31898.94
+C086951,Christopher,Gunn,Rarotonga,998-709-9135,christopher.gunn@gmail.io,True,61525.87
+C038499,Stanley,Garcia,Rarotonga, 32-135-6509,stanley.garcia@gmail.io,True,61261.95
+C860227,Clyde,Gallant,Tuvalu,969-441-2481,clyde.gallant@gmail.org,False,11984.57
+C445080,Florence,Kanagy,Rarotonga, 48-547-7262,florence.kanagy@gmail.com,True,8260.46
+C983394,Betty,Daniel,Tuvalu,290-860-1845,betty.daniel@gmail.net,False,48365.09
+C942093,Evelyn,Farrow,Tuvalu,186-281-5275,evelyn.farrow@gmail.org,True,35509.8
+C145207,Gladys,Goeltz,Samoa, 85-594-6792,gladys.goeltz@gmail.net,True,64806.23
+C588888,Raymond,Marshall,Samoa,574-299-2168,raymond.marshall@gmail.net,True,50654.01
+C870667,Adam,Merchant,Tuvalu,352-902-6960,adam.merchant@gmail.com,True,72832.29
+C914760,Vincent,Hall,Samoa,622-183-1442,vincent.hall@gmail.com,True,80744.45
+C038567,June,Miller,Samoa,440-925-4827,june.miller@gmail.com,False,62165.64
+C109430,Paul,Kessler,Samoa,334-628-7199,paul.kessler@gmail.com,False,70536.56
+C758749,Elodia,Keaton,Tuvalu,811-573-9080,elodia.keaton@gmail.org,True,45775.73
+C708518,Jame,Strawn,Tuvalu,802-586-6777,jame.strawn@gmail.org,False,17571.71
+C918667,Joshua,Shultz,Tuvalu,926-560-635,joshua.shultz@gmail.com,False,72794.41
+C128569,Jerry,Austin,Tuvalu,997-185-9453,jerry.austin@gmail.org,True,76139.13
+C971255,Don,Krohn,Samoa,785-326-1482,don.krohn@gmail.io,True,54143.74
+C122800,Patricia,Ashmore,Tuvalu,388-492-5718,patricia.ashmore@gmail.org,False,35512.78
+C001922,Carma,Kauffman,Rarotonga,988-186-7476,carma.kauffman@gmail.io,False,62213.05
+C188567,Isabelle,Berger,Rarotonga,369-115-6685,isabelle.berger@gmail.com,True,2248.89
+C789445,Lynn,Sojka,Rarotonga,538-895-3027,lynn.sojka@gmail.com,False,43736.34
+C075864,Norris,Darley,Tuvalu,888-754-5802,norris.darley@gmail.org,True,51501.75
+C958572,Brett,Carlsen,Rarotonga,966-225-3888,brett.carlsen@gmail.org,False,71796.43
+C820345,Deanna,Ascencio,Samoa,327-858-9625,deanna.ascencio@gmail.com,True,9360.19
+C461287,Tracie,Queener,Rarotonga,900-578- 82,tracie.queener@gmail.org,True,85477.66
+C101972,Brenda,Munoz,Rarotonga,279-200-4529,brenda.munoz@gmail.net,True,28412.79
+C903016,Patricia,Witt,Rarotonga,615-942-556,patricia.witt@gmail.net,False,34666.41
+C898131,Edgar,Ribron,Tuvalu,957-245-5973,edgar.ribron@gmail.org,True,44883.42
+C721543,Paula,Lipner,Tuvalu,331-179-8398,paula.lipner@gmail.com,True,63389.04
+C819300,Melvin,Ayala,Tuvalu,155-359-3877,melvin.ayala@gmail.org,False,12788.65
+C424664,Anna,Fontana,Samoa,773- 57-7999,anna.fontana@gmail.org,True,49895.38
+C934501,Bill,Maddock,Tuvalu,257-819-4768,bill.maddock@gmail.net,True,30725.98
+C872853,Jennifer,Wheeler,Tuvalu,163-968-6712,jennifer.wheeler@gmail.net,True,703.4
+C548288,Jesus,Gracey,Tuvalu,566-395-9748,jesus.gracey@gmail.io,False,45247.47
+C868055,Kerry,Thomas,Rarotonga,585-892-6764,kerry.thomas@gmail.org,False,98557.37
+C857263,Richard,Rodeheaver,Samoa,738-481-4105,richard.rodeheaver@gmail.io,True,73679.93
+C596721,Melissa,Koester,Samoa,304-935-1021,melissa.koester@gmail.net,False,49586.12
+C428843,Wm,Brezenski,Tuvalu,827-641-1503,wm.brezenski@gmail.net,False,52682.95
+C140877,Vella,New,Rarotonga, 99- 98-5008,vella.new@gmail.io,True,22468.07
+C941339,Freddie,Sinstack,Tuvalu, 35-460-5309,freddie.sinstack@gmail.io,False,56860.06
+C737495,Casey,Schlitz,Tuvalu,441-677-5745,casey.schlitz@gmail.com,False,69848.61
+C438745,Marta,Nickles,Rarotonga,524-222-9207,marta.nickles@gmail.org,False,19199.7
+C703575,Cynthia,Williams,Samoa,917-119-5372,cynthia.williams@gmail.com,False,13789.1
+C154567,Kathleen,Norman,Samoa,993-938-178,kathleen.norman@gmail.org,False,19130.48
+C034956,Virginia,Stay,Rarotonga,864-841-3864,virginia.stay@gmail.net,True,5615.62
+C766556,Margaret,Ryder,Rarotonga,  1-623-317,margaret.ryder@gmail.net,True,77633.88
+C673276,Laura,Winters,Tuvalu,810-688-2819,laura.winters@gmail.net,False,43440.39
+C050557,Beverly,Rodriguez,Tuvalu,135-440-8830,beverly.rodriguez@gmail.com,False,23423.53
+C136556,Eunice,Gallaher,Samoa,723-225-3163,eunice.gallaher@gmail.org,True,99784.5
+C225957,Jane,Sadat,Tuvalu,224-275-5054,jane.sadat@gmail.io,False,18844.22
+C727505,Harold,Mcannally,Rarotonga,695-786-5890,harold.mcannally@gmail.org,False,19046.28
+C802627,Sonja,Burgett,Samoa, 87-436-5438,sonja.burgett@gmail.io,False,30881.62
+C569561,Mary,Begley,Tuvalu,414-368-8632,mary.begley@gmail.com,False,27720.17
+C819689,Gary,Buffalo,Tuvalu, 93-485-6544,gary.buffalo@gmail.org,True,4586.18
+C725337,April,Sims,Rarotonga,223-642-9949,april.sims@gmail.com,True,51192.42
+C248776,Shirley,Moore,Rarotonga, 65-774-1395,shirley.moore@gmail.io,False,78916.44
+C588163,Benjamin,Pereyda,Tuvalu, 69-167-777,benjamin.pereyda@gmail.io,True,25060.88
+C792032,Christina,Juel,Tuvalu,250-583-7640,christina.juel@gmail.net,False,90290.29
+C950356,Chad,Kingston,Tuvalu,300-245-1862,chad.kingston@gmail.org,True,46890.04
+C275091,Donna,Finigan,Isograd, 51- 27-587,donna.finigan@rarebit.org,False,53986.18
+C475665,Nathan,Maia,Formation,901-401-3288,nathan.maia@mudar.net,False,63114.9
+C571992,Anthony,Miles,Slag-hole,655-733-746,anthony.miles@unshipment.org,True,63916.95
+C594097,Jane,Hennessey,Quahogger,995-877-7491,jane.hennessey@dark-coated.org,True,9321.61
+C338713,Jerald,Hunter,Samoa,754-128-6184,jerald.hunter@tryptophane.io,False,34858.51
+C448576,Kasey,Garrison,Samoa,438-230-1760,kasey.garrison@gmail.net,True,58130.25
+C786663,Charles,Richards,Unionization,408- 48-1064,charles.richards@gmail.org,True,53014.23
+C243867,Pedro,Bailey,Samoa,472-836-322,pedro.bailey@gmail.com,False,28369.26
+C753176,Frances,Darosa,Tuvalu,431-347-1929,frances.darosa@gmail.io,False,59940.85
+C700765,Daniel,Sutton,Tuvalu,  4-995-5376,daniel.sutton@gmail.net,True,29240.45
+C554061,Florence,Geffre,Tuvalu,540-338-3164,florence.geffre@gmail.net,False,30650.03
+C574221,Dewey,Forrest,Tuvalu,882- 62-8014,dewey.forrest@gmail.net,True,98797.09
+C797321,Brent,Brown,Rarotonga, 89-420-121,brent.brown@gmail.com,True,28839.44
+C520303,David,Valdez,Tuvalu, 99-931-7668,david.valdez@gmail.com,False,38141.06
+C000656,David,Hinkel,Samoa,755-898-9922,david.hinkel@gmail.org,False,83313.78
+C884191,Charlotte,Dietrich,Rarotonga, 58-130-9873,charlotte.dietrich@gmail.io,True,24868.89
+C624993,Rebecca,Sabb,Rarotonga,123-149-8765,rebecca.sabb@gmail.net,True,12552.55
+C258038,Lucille,Benson,Tuvalu,327-459-7544,lucille.benson@gmail.com,True,98061.67
+C757982,Dan,Loatman,Samoa,837-116-2613,dan.loatman@gmail.net,False,35871.07
+C539953,Salvatore,Saenz,Tuvalu,135-665-7755,salvatore.saenz@gmail.net,True,81253.05
+C679302,Robert,Loeza,Samoa,748- 95-1058,robert.loeza@gmail.io,True,43484.23
+C740018,Ann,Picklesimer,Tuvalu,346-728-8485,ann.picklesimer@gmail.com,False,51173.42
+C856783,Jack,Vrablic,Rarotonga,236-520-7472,jack.vrablic@gmail.org,True,15880.09
+C182993,Terri,Peterson,Samoa,146-695-1317,terri.peterson@gmail.io,True,18189.6
+C712916,James,Kennerson,Samoa,123-196-9744,james.kennerson@gmail.io,False,79668.71
+C499721,Kenneth,Miller,Tuvalu,937-893-8257,kenneth.miller@gmail.com,False,69654.91
+C236886,Richard,Boeke,Rarotonga,125-650-6068,richard.boeke@gmail.org,True,39023.07
+C292433,Mary,Mentgen,Tuvalu,534-974-2903,mary.mentgen@gmail.org,False,20230.33
+C440123,Danial,Beyl,Samoa,519- 39-7733,danial.beyl@gmail.org,True,34329.12
+C588685,Kathleen,Reeves,Rarotonga,231-519-6978,kathleen.reeves@gmail.org,False,33266.93
+C542684,Erin,Nichols,Samoa,518-492-6613,erin.nichols@gmail.io,True,40036.05
+C031996,Monica,Buchanan,Rarotonga,775-548-2520,monica.buchanan@gmail.org,True,75086.65
+C828808,Peter,Griffin,Tuvalu,979-394-5970,peter.griffin@gmail.net,True,30214.2
+C843894,Michael,Blount,Samoa,826-406-4802,michael.blount@gmail.com,True,43912.32
+C729923,Marcia,King,Rarotonga,417-958-1902,marcia.king@gmail.com,False,27506.86
+C574342,James,Rochin,Samoa,321-910-4096,james.rochin@gmail.io,False,48820.55
+C211214,Albert,Hanson,Tuvalu,573-  9-6550,albert.hanson@gmail.net,False,71249.55
+C181355,Leon,Morton,Rarotonga,574-752-6225,leon.morton@gmail.net,False,4662.58
+C628903,Eleanor,Aslam,Samoa,349-112-2748,eleanor.aslam@gmail.net,False,87406.9
+C102393,Ernest,Bonilla,Samoa,496-298-958,ernest.bonilla@gmail.net,False,36668.87
+C275170,Corey,Malveaux,Samoa, 78-990-4596,corey.malveaux@gmail.org,False,62933.29
+C958441,Edward,Duran,Rarotonga,621-949-7040,edward.duran@gmail.net,False,68345.01
+C716002,Patricia,Rose,Tuvalu,491-343-748,patricia.rose@gmail.net,False,47564.34
+C782089,Minnie,Fletcher,Tuvalu,564-919-4606,minnie.fletcher@gmail.com,True,93694.43
+C217449,Joshua,Chapman,Samoa,382-453-9445,joshua.chapman@gmail.net,True,22038.01
+C530097,Dolly,Brown,Samoa,341-929-4354,dolly.brown@gmail.net,False,33794.18
+C256724,Erma,Mitchell,Samoa,549-469-7370,erma.mitchell@gmail.net,False,65596.63
+C788472,Chris,Desrochers,Tuvalu,706-704-7159,chris.desrochers@gmail.net,True,12707.32
+C694791,Shae,Gardner,Rarotonga,271-930-4187,shae.gardner@gmail.io,False,37677.73
+C675414,John,Musick,Samoa,308-696-620,john.musick@gmail.net,False,66745.42
+C606562,John,Beaudion,Rarotonga,933- 84-510,john.beaudion@gmail.net,True,6875.54
+C361034,Thomas,Payton,Tuvalu,266-867-1353,thomas.payton@gmail.org,True,3542.97
+C960788,Reba,Tolbert,Tuvalu,695-859-9639,reba.tolbert@gmail.org,True,47897.96
+C709662,Gabriel,Dorn,Tuvalu,100-267-4664,gabriel.dorn@gmail.io,False,98264.97
+C792064,Maureen,Dunning,Rarotonga,266-351-717,maureen.dunning@gmail.org,False,89877.7
+C531629,Edgar,Wallace,Tuvalu,595- 53-5874,edgar.wallace@gmail.org,True,913.79
+C679260,George,Cox,Tuvalu,703-146-3880,george.cox@gmail.org,True,34570.21
+C671681,Willie,Talaga,Rarotonga,613-550-8523,willie.talaga@gmail.org,True,70676.74
+C814301,Pamela,Tirk,Tuvalu,422- 54-2079,pamela.tirk@gmail.io,False,88814.15
+C982734,Roland,Culver,Tuvalu,575-852-3285,roland.culver@gmail.com,False,39942.77
+C713039,Carla,Bedford,Rarotonga,969-862-6844,carla.bedford@gmail.org,True,15405.35
+C170907,Rose,King,Rarotonga,591-900-8892,rose.king@gmail.net,True,78283.55
+C434582,Art,Hunt,Rarotonga,816-883-1348,art.hunt@gmail.org,False,3884.22
+C698429,Willard,Todd,Samoa,889-533-7085,willard.todd@gmail.io,True,42519.08
+C802765,Claudia,Ford,Rarotonga,605-328-3943,claudia.ford@gmail.io,False,43253.29
+C367277,Don,Woo,Samoa,785-961-2277,don.woo@gmail.org,True,21116.92
+C889628,Adolph,Thurston,Tuvalu,348-707-4255,adolph.thurston@gmail.com,True,72398.27
+C107894,Clyde,Charron,Rarotonga,166-368-4072,clyde.charron@gmail.net,True,22169.91
+C903139,Kim,Wade,Rarotonga,984-815-2105,kim.wade@gmail.net,False,23778.07
+C277241,Mark,Wyland,Samoa,516-164-6397,mark.wyland@gmail.net,True,1993.72
+C964876,Maude,Hill,Rarotonga,672-510-5030,maude.hill@gmail.io,True,82119.34
+C263915,Jermaine,Clark,Samoa,173-898-7363,jermaine.clark@gmail.net,True,36461.24
+C910983,Rosemarie,Starnes,Rarotonga,472-379-5393,rosemarie.starnes@gmail.io,False,35620.99
+C839714,Richard,Owens,Rarotonga,555-906-7430,richard.owens@gmail.com,False,29818.0
+C983698,Jeffrey,Kaschak,Tuvalu,135-990-4412,jeffrey.kaschak@gmail.net,True,89484.34
+C975782,Dan,Keller,Samoa,863- 31-7694,dan.keller@gmail.net,True,29361.62
+C080181,Edward,Lawson,Samoa,494- 19-4294,edward.lawson@gmail.com,False,41066.91
+C543526,Luther,Lucas,Samoa,172-300-3066,luther.lucas@gmail.io,False,93326.59
+C088593,Gary,Croker,Rarotonga,536-972-1085,gary.croker@gmail.com,True,64777.18
+C159991,Mary,Dimarco,Samoa,598-361-8973,mary.dimarco@gmail.net,True,70188.48
+C541314,Naomi,Hughes,Rarotonga,113-326-5449,naomi.hughes@gmail.net,False,40891.84
+C040282,Esperanza,Cheatham,Rarotonga,942- 46-1298,esperanza.cheatham@gmail.org,False,462.7
+C313176,Joyce,Guadagno,Samoa,596-313- 44,joyce.guadagno@gmail.org,True,77531.67
+C954814,Ronald,Chaput,Rarotonga,848-325-7849,ronald.chaput@gmail.io,True,86742.62
+C174579,Francisco,Ashby,Rarotonga,861-619-5913,francisco.ashby@gmail.io,False,10234.27
+C707329,Maria,Fields,Samoa,551-122-3480,maria.fields@gmail.org,False,44094.29
+C427647,Bobbi,Willoughby,Rarotonga, 46-305-3528,bobbi.willoughby@gmail.net,False,53337.96
+C303733,Jay,Quinn,Samoa,235-674-5609,jay.quinn@gmail.com,False,92940.79
+C167791,Dana,Acosta,Samoa, 24-920-6749,dana.acosta@gmail.org,True,26798.9
+C175954,Vanessa,Schmidt,Tuvalu,455-978-1264,vanessa.schmidt@gmail.io,False,11719.01
+C256363,Adam,Bone,Samoa,758- 31- 12,adam.bone@gmail.com,False,94431.56
+C134890,Antonio,Zollars,Tuvalu,459-433-5564,antonio.zollars@gmail.com,True,8212.21
+C813343,Nathan,Mobley,Rarotonga,822-222-2421,nathan.mobley@gmail.org,True,88159.93
+C362891,Shirley,Motley,Tuvalu, 90-671-4656,shirley.motley@gmail.io,True,60217.54
+C055803,Donald,Cox,Rarotonga,797-705-896,donald.cox@gmail.io,False,13172.15
+C565981,Robert,Bowen,Tuvalu,971-167-5102,robert.bowen@gmail.io,True,47334.34
+C197542,Eric,Johnson,Rarotonga,778-237-6192,eric.johnson@gmail.org,False,36189.45
+C450896,Frank,Radcliff,Samoa,167-890-6371,frank.radcliff@gmail.net,True,86836.92
+C425574,Jeanne,Robinson,Tuvalu,128-596-5679,jeanne.robinson@gmail.com,True,4250.35
+C901595,Sara,Henkel,Tuvalu,706- 53-6820,sara.henkel@gmail.com,True,36293.79
+C766922,Kathleen,Lewis,Rarotonga,152-200-353,kathleen.lewis@gmail.com,False,77045.75
+C344883,Diana,Fields,Rarotonga,626-593-5926,diana.fields@gmail.io,False,66494.76
+C629767,Regina,Bridges,Tuvalu,836-529-1232,regina.bridges@gmail.io,True,19857.96
+C743421,Michael,Thomas,Rarotonga,780-414-6655,michael.thomas@gmail.org,True,12317.97
+C613461,Mindy,Conley,Rarotonga,517-979-9857,mindy.conley@gmail.io,True,19624.07
+C240912,Candy,Terry,Samoa,432-861-8317,candy.terry@gmail.com,False,73512.1
+C455541,Carlos,White,Tuvalu, 21-287-1444,carlos.white@gmail.org,False,22935.37
+C887681,Kristin,Harland,Rarotonga,916-507-4752,kristin.harland@gmail.org,True,93017.7
+C537326,Phillip,Stroud,Samoa,137-695-5109,phillip.stroud@gmail.com,False,52411.66
+C050543,Monica,Bedell,Rarotonga,595-936-8912,monica.bedell@gmail.net,True,32712.34
+C319330,Roberta,Gilbert,Samoa,195-349-7021,roberta.gilbert@gmail.com,False,95649.02
+C870697,Kenneth,Pursifull,Rarotonga,742-777-5972,kenneth.pursifull@gmail.io,False,31030.25
+C665108,Amy,Butts,Rarotonga,162-567-9670,amy.butts@gmail.io,False,39069.72
+C967919,Jack,Marshall,Tuvalu, 18-336- 83,jack.marshall@gmail.com,False,67928.17
+C073768,Wendy,Phillips,Rarotonga,571-179-9327,wendy.phillips@gmail.net,True,23505.55
+C663913,Ronald,Laudenslager,Rarotonga,261-979-6591,ronald.laudenslager@gmail.org,False,49674.69
+C388910,Lisa,Evers,Rarotonga,650-189-8235,lisa.evers@gmail.com,False,20309.73
+C118558,Sheila,Laster,Samoa,488-937-9261,sheila.laster@gmail.com,True,82668.56
+C776219,John,Proctor,Rarotonga,  4-120-4667,john.proctor@gmail.org,True,20175.22
+C314482,Pat,Kemp,Samoa,803-213-6590,pat.kemp@gmail.io,True,46970.97
+C402940,Christopher,Moye,Samoa,742-298-2011,christopher.moye@gmail.com,True,46413.97
+C503897,Becky,Saucedo,Samoa,781-174-8571,becky.saucedo@gmail.io,True,1948.27
+C314898,Seth,Healy,Samoa,140-157-328,seth.healy@gmail.net,False,58265.43
+C109928,Brad,Deckman,Tuvalu,554-509-9738,brad.deckman@gmail.io,True,1418.16
+C582659,Richard,Keenan,Rarotonga,522- 71-1190,richard.keenan@gmail.net,False,75124.86
+C388261,Stephanie,Benson,Samoa,735-159-1373,stephanie.benson@gmail.com,False,18200.39
+C002040,Amy,Potter,Tuvalu,503-225-3635,amy.potter@gmail.org,True,60388.78
+C754365,Phyllis,Gibson,Rarotonga, 94-920-7997,phyllis.gibson@gmail.org,False,1403.66
+C942506,Anne,Javier,Rarotonga,691-715-9767,anne.javier@gmail.org,False,40229.82
+C539808,Kathleen,Mcgee,Rarotonga,687-907-4442,kathleen.mcgee@gmail.com,True,74473.45
+C030168,Michelle,Lewis,Tuvalu, 70-272-745,michelle.lewis@gmail.io,True,691.72
+C083255,Scott,Pipes,Tuvalu,714-446-2428,scott.pipes@gmail.net,True,50653.41
+C509782,Julie,Fetter,Rarotonga,463- 37-5559,julie.fetter@gmail.com,False,34697.47
+C052558,Danny,Haney,Samoa,998- 76-2762,danny.haney@gmail.com,False,49587.01
+C312557,Laura,Smith,Rarotonga, 80-496-4063,laura.smith@gmail.io,True,70323.99
+C435469,Ryan,Newman,Samoa,659-974-2360,ryan.newman@gmail.com,True,43452.87
+C127927,Cherie,Rester,Samoa,389-937-2629,cherie.rester@gmail.io,False,26158.35
+C447912,Leslie,Harry,Rarotonga,761-239-987,leslie.harry@gmail.io,True,33114.31
+C554828,Kenneth,Cary,Rarotonga,698-900-2710,kenneth.cary@gmail.io,True,5723.87
+C532080,Nancy,Sparks,Samoa,829-557-6321,nancy.sparks@gmail.org,True,78039.1
+C683423,Brent,Hyatt,Samoa,860- 54-5623,brent.hyatt@gmail.org,False,46711.64
+C597533,Aaron,Abbott,Samoa,559-110-3009,aaron.abbott@gmail.io,True,43874.41
+C220814,Marian,Morse,Rarotonga,914-352-9645,marian.morse@gmail.com,False,80800.31
+C352798,Zachary,Maes,Rarotonga,333-210-8812,zachary.maes@gmail.io,True,54366.88
+C557176,Kenneth,Flower,Tuvalu,662-865-1428,kenneth.flower@gmail.io,False,66202.97
+C163010,Alvin,Cook,Samoa,527- 47-8191,alvin.cook@gmail.io,True,49392.91
+C338242,Patricia,Bryant,Samoa,440- 30-2093,patricia.bryant@gmail.org,False,82157.74
+C761154,Shirley,Carpenter,Samoa,914-924-6819,shirley.carpenter@gmail.io,False,75141.04
+C377973,Myrtle,Orvis,Tuvalu,157- 78-3032,myrtle.orvis@gmail.io,True,35064.45
+C992626,Dee,Mosby,Tuvalu, 38-495-3150,dee.mosby@gmail.net,True,21832.15
+C803552,Misty,Green,Samoa,279-256-3198,misty.green@gmail.com,False,898.87
+C718046,Cynthia,Clement,Tuvalu,541-213-1053,cynthia.clement@gmail.net,True,83270.27
+C472307,Michael,Cassidy,Samoa,790-283-3006,michael.cassidy@gmail.io,True,23105.1
+C134291,Clarence,Antonio,Tuvalu,590-455-6783,clarence.antonio@gmail.com,False,74382.87
+C595859,Shirley,High,Diaheliotropism,529-404-812,shirley.high@knowers.com,True,90936.07
+C434006,Alvin,Roberts,Lushness,177-889-8659,alvin.roberts@tertians.com,False,90982.84
+C517979,Walter,Lopez,Getaway,214-470-770,walter.lopez@cuneus.org,True,3241.53
+C988990,Norma,Gaitor,Pointillage,558-701-6589,norma.gaitor@undervalue.com,True,8520.2
+C227684,Josephine,Davis,Rarotonga,746-182-7486,josephine.davis@gmail.org,False,83191.15
+C740337,Jerry,Reid,Tuvalu,856-817-2512,jerry.reid@gmail.io,True,32991.17
+C194478,David,Giroux,Rarotonga,463-858-6020,david.giroux@gmail.io,True,3600.97
+C508606,Richard,Scott,Pleistocene,293-761-2218,richard.scott@gmail.net,True,9177.97
+C945936,Joanna,George,Samoa, 56-844-6437,joanna.george@replastered.com,False,60306.68
+C829794,Irene,Culler,Tuvalu,653-579-765,irene.culler@gmail.io,False,66406.88
+C493321,Lawrence,Banks,Rarotonga,808-296-3085,lawrence.banks@gmail.org,True,72431.27
+C390786,Karen,Bragdon,Rarotonga,443-551-1772,karen.bragdon@gmail.org,True,57106.96
+C299432,Ruth,Schirmer,Rarotonga,810-888-1992,ruth.schirmer@gmail.org,True,15952.79
+C211877,Mary,Thomas,Samoa,161-824-4900,mary.thomas@gmail.com,True,25074.36
+C976028,Jorge,Turner,Samoa,551-749-5212,jorge.turner@gmail.org,True,37111.24
+C196524,Amber,Wood,Tuvalu,465-994-9905,amber.wood@gmail.io,True,38165.23
+C704282,Robert,Sowell,Samoa,194-797-3380,robert.sowell@gmail.net,True,11233.35
+C482822,William,Becker,Rarotonga,608-909-7556,william.becker@gmail.net,False,1759.14
+C630159,Kim,Johnson,Samoa,730-  8-1993,kim.johnson@gmail.net,False,49357.29
+C807577,David,Roderiquez,Rarotonga,117-822-8398,david.roderiquez@gmail.net,False,36174.08
+C006296,Carmen,Wykes,Samoa,174-611-4617,carmen.wykes@gmail.net,False,61765.3
+C395557,Joseph,Welsh,Rarotonga,389-891-1118,joseph.welsh@gmail.org,True,32109.33
+C339001,Rusty,Viramontes,Tuvalu, 76-260-1168,rusty.viramontes@gmail.org,True,38119.54
+C182072,Ricardo,Beller,Samoa,164-633-4319,ricardo.beller@gmail.com,True,67513.74
+C727665,Duncan,Kapinos,Tuvalu,404-595-1485,duncan.kapinos@gmail.net,True,38.21
+C600019,David,Bland,Samoa,945-361-8343,david.bland@gmail.io,True,22669.81
+C551047,Naomi,Vidal,Rarotonga,508-193-5160,naomi.vidal@gmail.net,False,43275.25
+C638032,Paul,Simpkins,Rarotonga,932-986-992,paul.simpkins@gmail.com,False,450.59
+C652606,Allen,Duncan,Samoa, 34-609-6342,allen.duncan@gmail.net,False,93528.99
+C506167,Ellen,Robinson,Rarotonga,588-247-7700,ellen.robinson@gmail.net,True,17685.06
+C268257,Selma,Wilder,Rarotonga,642-664-2091,selma.wilder@gmail.com,True,25364.57
+C754922,Ron,Boyd,Tuvalu,991-207-9476,ron.boyd@gmail.org,False,39692.89
+C967897,Phillip,Mcgloster,Rarotonga,602-688-2355,phillip.mcgloster@gmail.net,False,85840.91
+C024406,Naomi,Strange,Rarotonga,742-865-5777,naomi.strange@gmail.com,True,43872.6
+C997526,Rafael,Sullivan,Samoa,272-144-3270,rafael.sullivan@gmail.com,False,25085.13
+C800074,James,Lake,Tuvalu,394-546-3728,james.lake@gmail.net,True,96583.83
+C555403,Samantha,Boyd,Tuvalu,701-911-3788,samantha.boyd@gmail.org,True,24069.46
+C562968,Evelyn,Scarce,Samoa,  2-305-6481,evelyn.scarce@gmail.com,True,66496.97
+C889244,Lorna,Hanson,Rarotonga,638-901-542,lorna.hanson@gmail.com,True,21837.7
+C924525,John,Floyd,Rarotonga,844-913-8133,john.floyd@gmail.io,False,42410.24
+C256984,George,Phillips,Samoa,  9-687-6676,george.phillips@gmail.io,True,94183.32
+C315363,Joyce,Toms,Tuvalu,293-327-7792,joyce.toms@gmail.com,True,46037.32
+C815139,Daniel,Gray,Samoa,804-593-1595,daniel.gray@gmail.com,False,23353.97
+C365132,Jamie,Crawford,Tuvalu,855-680- 80,jamie.crawford@gmail.net,False,77309.53
+C143102,Thomas,Lautenschlage,Tuvalu,385-721-528,thomas.lautenschlage@gmail.net,False,49402.76
+C292175,Velma,Mayo,Rarotonga,596-367-1264,velma.mayo@gmail.org,True,21699.01
+C397789,Sarah,Lanterman,Rarotonga,200-829-5502,sarah.lanterman@gmail.io,True,13758.52
+C839812,Willie,Seals,Tuvalu,133-627-1097,willie.seals@gmail.org,False,29783.3
+C949949,Charles,Agnew,Samoa,328-634-9789,charles.agnew@gmail.net,False,38418.07
+C149813,Gary,Clarke,Tuvalu,955-494-6521,gary.clarke@gmail.com,False,96503.82
+C381341,Albert,Hamon,Samoa,539-543-8005,albert.hamon@gmail.org,True,5645.37
+C734839,Rafael,Anderson,Rarotonga,491-440-9442,rafael.anderson@gmail.io,False,12599.89
+C330633,Alexander,Lamberton,Samoa,351-509-1848,alexander.lamberton@gmail.net,True,30858.37
+C928504,Debra,Beltron,Samoa,229-378-7614,debra.beltron@gmail.io,False,94222.01
+C848908,Maria,Boyer,Samoa, 14-350-7431,maria.boyer@gmail.com,True,15626.36
+C553213,Bessie,Evans,Rarotonga,703- 85-3193,bessie.evans@gmail.com,True,23036.64
+C260427,Robert,Faunce,Tuvalu,240-719-8134,robert.faunce@gmail.org,False,11185.25
+C900279,Alva,Bosley,Rarotonga,316-545-756,alva.bosley@gmail.org,True,98267.65
+C365674,Michael,Casanova,Rarotonga,214-172-1458,michael.casanova@gmail.io,False,47481.98
+C166564,Cynthia,Mayfield,Rarotonga,973-890-119,cynthia.mayfield@gmail.io,False,86588.89
+C761112,Elisa,Ransler,Tuvalu,315-630-5431,elisa.ransler@gmail.org,True,32295.88
+C651209,Carrie,Mcneal,Samoa,954- 29-9971,carrie.mcneal@gmail.io,False,92219.46
+C760176,Richard,Little,Tuvalu,479-667-4154,richard.little@gmail.io,True,67000.38
+C410988,Robert,Burns,Samoa,848-305-7903,robert.burns@gmail.io,False,90952.75
+C286563,Ivory,Scott,Tuvalu, 64-248-3920,ivory.scott@gmail.io,False,16391.42
+C825941,Diane,Lord,Samoa,401-205-9829,diane.lord@gmail.org,False,9636.72
+C499600,Efrain,Chalender,Samoa,785-323-8703,efrain.chalender@gmail.org,False,32452.31
+C734104,Edward,Stinchfield,Tuvalu,417-504-6972,edward.stinchfield@gmail.io,True,93773.5
+C854633,Stanley,Jefcoat,Rarotonga,529-163- 59,stanley.jefcoat@gmail.io,False,19671.16
+C900516,Janet,Hamrick,Samoa,478-216-2138,janet.hamrick@gmail.com,False,74070.96
+C517387,Lea,Noble,Tuvalu, 36-425-2567,lea.noble@gmail.org,False,20129.4
+C439588,Ruben,Mansfield,Tuvalu,848-820-2399,ruben.mansfield@gmail.com,True,65437.13
+C263195,Glen,Ibarra,Samoa,798-  6-1859,glen.ibarra@gmail.net,True,23595.0
+C995920,Carlos,Mcmahon,Samoa,863-998-2089,carlos.mcmahon@gmail.io,False,37020.4
+C356653,William,Metcalf,Tuvalu,565-149-2844,william.metcalf@gmail.org,False,46617.45
+C714541,Kerry,Albanese,Samoa,128-346-5452,kerry.albanese@gmail.net,True,94921.32
+C802110,Franklin,Gagnon,Samoa,450-768-3672,franklin.gagnon@gmail.net,False,35960.16
+C483998,Michael,Tejada,Tuvalu,162-253-5199,michael.tejada@gmail.com,True,22743.22
+C107508,Hester,Orozco,Rarotonga,377-648-5093,hester.orozco@gmail.com,True,31758.52
+C995257,Jeanette,Holden,Tuvalu,278-541-424,jeanette.holden@gmail.com,True,17542.17
+C853695,Donald,Mcdevitt,Rarotonga,158-530-6889,donald.mcdevitt@gmail.net,False,45741.37
+C487158,Jim,Tyson,Samoa,252-307-8441,jim.tyson@gmail.org,True,96095.83
+C791250,Charles,Johnson,Tuvalu,784-207-5790,charles.johnson@gmail.com,False,34501.07
+C628494,Sarah,Horsley,Samoa,436-324-8254,sarah.horsley@gmail.io,True,53084.15
+C875195,Richard,Pedersen,Tuvalu,956-596-1316,richard.pedersen@gmail.net,False,75812.47
+C458662,Thelma,Nugent,Tuvalu,317-634-7853,thelma.nugent@gmail.io,False,30070.56
+C273465,Joseph,Jones,Rarotonga,200-678-3348,joseph.jones@gmail.io,False,73571.35
+C170377,Jessica,Romo,Rarotonga,244-699-1865,jessica.romo@gmail.io,False,30781.26
+C970484,Hortense,Arredondo,Tuvalu,128-844-3433,hortense.arredondo@gmail.com,True,37145.7
+C922999,Terry,Stewart,Samoa,373-137-7494,terry.stewart@gmail.com,True,21441.19
+C321785,Roger,Harvey,Tuvalu,757-936-3196,roger.harvey@gmail.com,False,81646.68
+C204333,Helen,Mullin,Rarotonga,568-635-4637,helen.mullin@gmail.com,True,51740.93
+C784656,Cecile,Culligan,Samoa,670-745-1705,cecile.culligan@gmail.com,False,85910.97
+C444343,John,Reeves,Samoa,252-840-4739,john.reeves@gmail.com,True,78789.36
+C247120,Russell,Eastman,Tuvalu,533-424-938,russell.eastman@gmail.org,True,76946.98
+C495735,John,Mckee,Tuvalu,844-386-7620,john.mckee@gmail.org,False,14883.06
+C492423,Kimberly,Wakefield,Tuvalu,549-317-7462,kimberly.wakefield@gmail.com,False,74739.34
+C200622,Ramon,Giles,Rarotonga,118-783-5624,ramon.giles@gmail.io,False,71932.55
+C908102,Gabriela,Friedrichs,Samoa,982-584-2726,gabriela.friedrichs@gmail.io,True,97277.02
+C528775,Danielle,Wilson,Rarotonga,568-757-2019,danielle.wilson@gmail.net,True,59707.57
+C248229,Ena,Thompson,Rarotonga,211-657-6307,ena.thompson@gmail.com,True,74911.01
+C583030,Jessica,White,Rarotonga,973-735-1414,jessica.white@gmail.org,True,23789.17
+C651903,Paul,Cromer,Rarotonga,395-326-9902,paul.cromer@gmail.io,True,58157.76
+C484974,Cindy,Cross,Tuvalu,960-668-9447,cindy.cross@gmail.io,False,7649.48
+C350898,Dana,Gamble,Samoa,286-161-7965,dana.gamble@gmail.net,False,13732.76
+C551202,Norma,Pritchard,Rarotonga,312-991-9727,norma.pritchard@gmail.io,False,77859.77
+C730185,Judith,Bailey,Samoa,680-895-6154,judith.bailey@gmail.com,False,45264.26
+C632587,Francis,Barton,Rarotonga,705-634-2068,francis.barton@gmail.io,False,64985.03
+C545171,Christina,Blake,Rarotonga, 34-712-3174,christina.blake@gmail.com,False,9796.83
+C566260,David,Malone,Rarotonga,438-425-7491,david.malone@gmail.org,True,5653.11
+C265699,Victor,Williams,Rarotonga,651- 98-6398,victor.williams@gmail.org,True,59925.66
+C293789,Mario,Clerc,Samoa,218-151-7066,mario.clerc@gmail.net,False,93232.7
+C356532,Grace,Morrison,Tuvalu,130-439-9798,grace.morrison@gmail.org,False,24371.03
+C487571,Stephen,Ayala,Tuvalu,139- 61-4560,stephen.ayala@gmail.com,True,31342.38
+C406194,John,Anderson,Samoa,806-174-9089,john.anderson@gmail.io,False,91314.84
+C344733,Dennis,Montgomery,Rarotonga,701-643-1302,dennis.montgomery@gmail.org,False,83575.32
+C688497,Sam,Smith,Tuvalu,110-309-1550,sam.smith@gmail.net,True,40142.77
+C586133,Pamela,Hobbs,Rarotonga,233-919-4833,pamela.hobbs@gmail.com,True,65835.81
+C206158,David,Pao,Samoa,811-601-3469,david.pao@gmail.io,False,56149.54
+C232233,Justin,Ioele,Rarotonga,157-589-4963,justin.ioele@gmail.net,False,32434.95
+C235341,Judith,Arvan,Samoa,363-258-8566,judith.arvan@gmail.com,False,75234.21
+C799141,Edward,Souers,Tuvalu,334-382-1806,edward.souers@gmail.org,False,69578.81
+C195660,Cecil,Hamer,Tuvalu,804-801-7734,cecil.hamer@gmail.org,False,21520.03
+C179880,Charles,Elliott,Tuvalu,828-858-8929,charles.elliott@gmail.io,False,57684.53
+C510662,Jason,Fitts,Rarotonga,868-376-6486,jason.fitts@gmail.net,False,27728.5
+C589739,Gregory,Horky,Tuvalu,320-712-2357,gregory.horky@gmail.org,True,9769.0
+C720519,Amanda,Jones,Rarotonga,787-293-2850,amanda.jones@gmail.net,True,33953.74
+C945597,Philip,Gau,Rarotonga,545-952-4348,philip.gau@gmail.net,True,73052.31
+C165945,Patricia,Peachey,Rarotonga,320-327-9902,patricia.peachey@gmail.org,False,88100.71
+C357327,Allen,Williams,Tuvalu,745-729-8411,allen.williams@gmail.com,True,65452.11
+C647780,Darlene,Garcia,Tuvalu,494-337-5445,darlene.garcia@gmail.org,True,31601.36
+C069659,William,Atkins,Rarotonga,784-809-6588,william.atkins@gmail.com,True,31532.06
+C475286,Marie,Massey,Rarotonga,875-376-6565,marie.massey@gmail.net,False,64621.74
+C578780,Thomas,Mccraney,Samoa,444-285-5471,thomas.mccraney@gmail.org,True,21837.65
+C288203,Saul,Wallace,Samoa, 69-613-6509,saul.wallace@gmail.net,False,94397.79
+C024767,William,Aubuchon,Tuvalu, 22- 43-579,william.aubuchon@gmail.net,False,45615.58
+C290475,Eric,Cope,Tuvalu,470-339-4911,eric.cope@gmail.com,True,18585.48
+C640059,Adrian,Davis,Rarotonga, 97-953-3112,adrian.davis@gmail.org,True,27830.55
+C166121,Ruth,Weiner,Samoa,184-139-8791,ruth.weiner@gmail.org,False,16683.78
+C396338,Carol,Miller,Tuvalu, 63-177-6348,carol.miller@gmail.net,False,40367.04
+C100690,Eric,Moore,Rarotonga,412-625-4755,eric.moore@gmail.com,False,23936.6
+C474850,Barbara,Pella,Tuvalu,857-497-4749,barbara.pella@gmail.net,False,59369.85
+C116816,Mary,Holler,Rarotonga,461-784-8053,mary.holler@gmail.io,True,7804.63
+C305225,William,Bailey,Tuvalu,618-454-3531,william.bailey@gmail.com,True,98238.56
+C447273,Dennise,Cornell,Tuvalu,609-163-7478,dennise.cornell@gmail.com,False,6366.21
+C936811,Jennifer,Anderton,Samoa,280-687-5559,jennifer.anderton@gmail.io,False,50433.83
+C211088,Jean,Morrow,Samoa,302-673-5561,jean.morrow@gmail.org,True,93945.3
+C486515,James,Robertson,Rarotonga,409-155-7320,james.robertson@gmail.net,True,62659.32
+C983500,Melissa,Newsome,Samoa,401-308-6364,melissa.newsome@gmail.io,True,4502.98
+C967389,Thomas,Sollars,Rarotonga,324-396-2254,thomas.sollars@gmail.org,False,3946.55
+C589120,Leann,Munoz,Rarotonga,377-257-9013,leann.munoz@gmail.com,True,6101.2
+C257982,Josephine,Everett,Samoa,946-162-1979,josephine.everett@gmail.com,False,15697.75
+C322019,John,Johnson,Samoa,942-600-7466,john.johnson@gmail.org,True,45537.88
+C974775,Norman,Julca,Tuvalu,210-109-1523,norman.julca@martyrial.net,True,12940.73
+C738438,Rafael,Burchett,Diophysite,764-734-5038,rafael.burchett@clothes-shop.net,False,1830.64
+C782289,John,Martin,Corporealities,777-260-640,john.martin@buckaroo.io,True,4700.46
+C849180,Andrew,Townsend,Moratory,352-243-3269,andrew.townsend@penny-ale.io,False,21674.72
+C658723,Loren,Rice,Highnesses,633-268-1320,loren.rice@gmail.io,True,52466.21
+C606385,Brandy,Franklin,Rarotonga,106-421-9955,brandy.franklin@re-activate.io,True,45097.47
+C260765,Marci,Seley,Navajos,734-258-8076,marci.seley@gmail.io,True,45781.12
+C273957,Naomi,Kennedy,Samoa,302-766-7533,naomi.kennedy@gmail.io,False,71912.22
+C301822,Gary,Lindner,Rarotonga, 10-216-1034,gary.lindner@gmail.net,True,34376.13
+C585176,Dana,Delong,Tuvalu,494-496-7140,dana.delong@gmail.net,True,83544.06
+C064353,David,Lassiter,Rarotonga,112-395-2077,david.lassiter@gmail.com,True,72716.87
+C805138,Jennifer,Oneal,Tuvalu,679-641-740,jennifer.oneal@gmail.com,False,73630.15
+C718286,Jorge,Anderson,Rarotonga,500-734-9545,jorge.anderson@gmail.org,True,1928.76
+C270933,Mary,Willey,Samoa,107-640-3536,mary.willey@gmail.io,False,87699.2
+C151663,Mignon,Martinez,Samoa,465-761-3739,mignon.martinez@gmail.org,False,58326.47
+C951012,Sheryl,Lee,Samoa,938-938-5054,sheryl.lee@gmail.net,True,5705.71
+C846906,Julia,Coil,Rarotonga, 17-351-3322,julia.coil@gmail.org,True,12538.06
+C260785,Robert,Roman,Rarotonga,609-744-9519,robert.roman@gmail.com,False,23605.66
+C633994,Beulah,Parsons,Rarotonga, 59-234-4227,beulah.parsons@gmail.com,False,44610.82
+C513689,Jean,Whalen,Rarotonga,165-480-5588,jean.whalen@gmail.org,True,9039.38
+C291644,Blake,Green,Rarotonga,741-408-9869,blake.green@gmail.net,False,9984.75
+C668503,Alyssa,Raposa,Tuvalu,657-290-2543,alyssa.raposa@gmail.com,True,24685.42
+C165179,Rory,Smith,Samoa,519-119-7449,rory.smith@gmail.net,False,77505.08
+C272794,Renee,Griffin,Tuvalu,587-887-9084,renee.griffin@gmail.net,False,13677.95
+C357835,Mattie,Renner,Samoa, 84-167-5455,mattie.renner@gmail.io,False,91935.47
+C603781,Diedre,Peterson,Rarotonga,271-384-1672,diedre.peterson@gmail.net,False,76902.14
+C188199,Elsie,Bohland,Rarotonga,633- 70-3229,elsie.bohland@gmail.io,True,38903.97
+C672738,Mark,Caster,Samoa,595-892-9207,mark.caster@gmail.com,False,62469.45
+C429819,Bertha,Gentry,Tuvalu,302-252-3293,bertha.gentry@gmail.org,True,55054.12
+C187498,George,Daniels,Tuvalu,262-326-1617,george.daniels@gmail.net,False,21170.92
+C758723,Tim,Futch,Tuvalu,657- 57-2010,tim.futch@gmail.net,False,82333.65
+C515339,Robert,Harris,Tuvalu,763- 40-1710,robert.harris@gmail.com,True,80175.48
+C250384,Alfred,Seymour,Samoa,233-102-361,alfred.seymour@gmail.io,False,42122.26
+C869826,Alfredo,Lightfoot,Rarotonga,601- 15-4103,alfredo.lightfoot@gmail.net,True,28203.47
+C044997,Mary,Demmons,Samoa,521- 32-681,mary.demmons@gmail.org,False,59968.25
+C124938,Ila,Ruth,Tuvalu,642-787-3057,ila.ruth@gmail.org,False,68437.84
+C331153,Judith,Siegrist,Samoa,925-652-9235,judith.siegrist@gmail.com,True,3662.54
+C450563,Mitchell,Clarke,Samoa,275-309-6988,mitchell.clarke@gmail.com,False,59321.84
+C726871,Roger,Winchell,Rarotonga, 66-576-8569,roger.winchell@gmail.io,False,71847.8
+C514627,James,Lizotte,Samoa,864-754-5961,james.lizotte@gmail.net,False,73.39
+C052056,James,Robertson,Tuvalu,129-740-1441,james.robertson@gmail.com,True,28216.72
+C949712,Anne,Nolasco,Tuvalu,959-943-630,anne.nolasco@gmail.com,True,73882.67
+C588896,Henry,Grandy,Tuvalu, 96-621-3328,henry.grandy@gmail.io,True,73393.12
+C582471,Carol,Shaul,Tuvalu,656-416-4483,carol.shaul@gmail.org,True,76167.17
+C093559,Joy,Heaberlin,Samoa,627-264-1548,joy.heaberlin@gmail.com,True,14290.48
+C538883,Marilyn,Echols,Samoa,213-763-9415,marilyn.echols@gmail.io,True,42099.74
+C692454,Laurie,Cropp,Rarotonga,520-157-441,laurie.cropp@gmail.com,True,79998.67
+C960699,Pamela,Pennington,Rarotonga,569-724-4567,pamela.pennington@gmail.org,False,87569.43
+C058200,Vickie,Mcqueen,Rarotonga,691-120-2729,vickie.mcqueen@gmail.com,False,67971.31
+C354903,Robert,Dorsey,Rarotonga, 41-234-7725,robert.dorsey@gmail.org,False,35962.66
+C730066,Kyung,Lewis,Rarotonga,401-867-8997,kyung.lewis@gmail.org,True,8095.07
+C989784,Carl,Dietrich,Samoa,348-367-1867,carl.dietrich@gmail.com,True,81563.44
+C242398,Tara,Shultz,Tuvalu,174-262-9456,tara.shultz@gmail.io,True,78477.64
+C071950,Reva,Stevens,Samoa, 86- 40-4234,reva.stevens@gmail.io,True,55507.26
+C821294,Phillip,Baker,Samoa, 78-995-8045,phillip.baker@gmail.com,False,93318.71
+C085483,Rosemary,Turpin,Rarotonga,292-569-4034,rosemary.turpin@gmail.net,True,99339.38
+C125701,Brenda,James,Samoa,420-493-8253,brenda.james@gmail.com,False,92537.94
+C188048,Stephanie,Willis,Samoa,485-496-4798,stephanie.willis@gmail.io,False,61166.05
+C954798,Dorothy,Blake,Rarotonga,195-308-8119,dorothy.blake@gmail.org,True,36906.01
+C235319,Nancy,Reyes,Tuvalu,986-614-2052,nancy.reyes@gmail.io,False,60183.43
+C560100,Kara,Epp,Tuvalu,451-588-1823,kara.epp@gmail.net,False,60506.66
+C511758,Pamela,Hanscom,Tuvalu,591-729-4047,pamela.hanscom@gmail.io,True,74284.01
+C378947,Angela,Park,Rarotonga,351-493-1351,angela.park@gmail.org,False,59378.13
+C408740,Arnold,Miga,Rarotonga,144-523-3128,arnold.miga@gmail.io,True,7811.07
+C820065,Donnell,Kilpatrick,Samoa,995- 48-9146,donnell.kilpatrick@gmail.com,True,20678.35
+C334805,Cristobal,Doonan,Tuvalu,270-762-8900,cristobal.doonan@gmail.net,False,31146.54
+C298247,Betty,Trautman,Tuvalu,310- 82-3140,betty.trautman@gmail.org,False,40472.59
+C369034,James,Schmidt,Tuvalu,660-868-7076,james.schmidt@gmail.com,True,45097.12
+C268148,Fritz,Hill,Samoa,982-879-7802,fritz.hill@gmail.com,False,28935.75
+C732466,Ruby,Whitehouse,Rarotonga,435-826-883,ruby.whitehouse@gmail.com,False,15985.48
+C926998,Amanda,Aman,Tuvalu,432-452-4094,amanda.aman@gmail.net,False,52267.04
+C460533,Evelyn,Abbey,Rarotonga,903-957-9119,evelyn.abbey@gmail.com,True,19091.14
+C179751,Ivette,Morris,Tuvalu,695-  2-9763,ivette.morris@gmail.com,False,21870.68
+C195468,Pamela,Pettigrew,Rarotonga,339-665-122,pamela.pettigrew@gmail.org,False,25466.45
+C933049,Deborah,Jacobs,Samoa,491-643-2369,deborah.jacobs@gmail.net,False,15455.08
+C245639,Kristy,Wilson,Tuvalu,474-  8-2326,kristy.wilson@gmail.io,False,67024.14
+C326089,Stephen,Mcbeth,Tuvalu, 56- 99-5937,stephen.mcbeth@gmail.com,False,27576.03
+C712123,Martin,Atkin,Tuvalu,534-451-554,martin.atkin@gmail.com,True,61400.77
+C246839,Jennifer,Yang,Rarotonga,955-  0-847,jennifer.yang@gmail.com,True,25013.31
+C736001,Michael,Chen,Samoa,208-892-9227,michael.chen@gmail.io,False,86145.83
+C345804,Melissa,Fridman,Tuvalu,977-527-8407,melissa.fridman@gmail.org,False,58650.84
+C216219,Harold,Murillo,Samoa,895-932-5770,harold.murillo@gmail.com,False,33358.58
+C186996,Frances,Medlin,Rarotonga,819-414-2411,frances.medlin@gmail.io,True,16079.01
+C676331,Robert,Wilson,Rarotonga,824-185-6573,robert.wilson@gmail.net,True,22618.43
+C419913,Ivory,Williams,Rarotonga,685-991-7565,ivory.williams@gmail.org,False,49439.77
+C920674,Tracy,Haggerty,Rarotonga,652-798-3273,tracy.haggerty@gmail.com,False,57863.35
+C704378,Theresa,Zamora,Rarotonga,700-190-5414,theresa.zamora@gmail.org,True,31827.96
+C280031,Keith,Matlock,Rarotonga,694-826-8445,keith.matlock@gmail.io,True,93977.55
+C158805,Tonya,Shockey,Tuvalu,403- 61-8016,tonya.shockey@gmail.io,False,45043.57
+C494427,Vivian,Hall,Tuvalu,494-594-1156,vivian.hall@gmail.com,True,89557.73
+C931060,Natalie,Miller,Samoa,953-495-7520,natalie.miller@gmail.org,True,86108.09
+C432015,Joan,Nowlin,Samoa,834-197-8101,joan.nowlin@gmail.io,False,19055.85
+C546735,Daniel,Shield,Tuvalu,920-923-7120,daniel.shield@gmail.io,True,62337.57
+C846939,Frances,Baker,Tuvalu,429- 90-1631,frances.baker@gmail.io,True,99886.14
+C384203,Junior,Scott,Tuvalu, 33-637-2918,junior.scott@gmail.org,True,55870.87
+C019058,Larry,Ott,Samoa,161-231-5543,larry.ott@gmail.io,True,81045.18
+C421594,Ryan,Esparza,Tuvalu,333-632-2840,ryan.esparza@gmail.org,True,25636.67
+C888596,Ginny,Crow,Rarotonga,596-869-1718,ginny.crow@gmail.org,False,63404.64
+C796535,Mattie,Callahan,Rarotonga,653-709-9691,mattie.callahan@gmail.com,False,40476.16
+C649636,Stephen,Lampkin,Tuvalu,  5-120-5522,stephen.lampkin@gmail.org,True,28469.76
+C880480,Lee,Brouillette,Samoa,471-515-6875,lee.brouillette@gmail.io,True,79111.25
+C797482,James,Jones,Tuvalu, 47-730-5213,james.jones@gmail.net,False,26707.7
+C717494,Robert,Vargas,Tuvalu,742-318-858,robert.vargas@gmail.io,True,79532.37
+C785282,Mary,Gonzalez,Rarotonga,224-176-8627,mary.gonzalez@gmail.org,True,66241.5
+C968584,Anne,Law,Samoa,436-651-9220,anne.law@gmail.io,False,15597.83
+C476411,Kenneth,Greathouse,Tuvalu,670-228-5494,kenneth.greathouse@gmail.net,False,18649.2
+C419649,Louise,Becerra,Samoa,114-590-3298,louise.becerra@gmail.org,True,15798.49
+C067670,Eugenia,Holmes,Samoa,547-792-7319,eugenia.holmes@gmail.io,False,22357.33
+C391692,Aide,Dunkel,Rarotonga,484-472-8174,aide.dunkel@gmail.net,False,15385.22
+C945215,Scott,Cox,Tuvalu,243-823-6965,scott.cox@gmail.com,False,95110.34
+C645612,Francis,Slater,Samoa,371-927-7339,francis.slater@gmail.org,True,85174.26
+C229444,Monica,Verch,Rarotonga,779-132-2016,monica.verch@gmail.net,True,85.98
+C995344,Barbara,Young,Tuvalu,677-238-4968,barbara.young@gmail.io,True,88696.02
+C460540,Kristen,Hollis,Rarotonga,299-726-8988,kristen.hollis@gmail.com,False,63487.92
+C401252,Thomas,Francis,Samoa,282-465-1445,thomas.francis@gmail.net,True,25926.16
+C554188,Jermaine,Watkins,Tuvalu,800-946-2879,jermaine.watkins@gmail.net,False,42194.35
+C632007,Julia,Ouellette,Rarotonga,376-159-4511,julia.ouellette@gmail.org,False,2027.21
+C802507,Juanita,Williams,Rarotonga,475- 59-6679,juanita.williams@gmail.com,False,46435.12
+C575153,Trevor,Ross,Tuvalu,596-878-1686,trevor.ross@gmail.com,True,36261.19
+C963341,Frances,Hahn,Tuvalu,357- 63-2545,frances.hahn@gmail.org,False,43044.74
+C231961,Barbra,Craft,Samoa,632-339-1264,barbra.craft@gmail.io,True,91925.22
+C804159,Mary,Gooch,Tuvalu,124-941-557,mary.gooch@gmail.io,False,93578.37
+C665538,Clifford,Popovich,Samoa,678-687-7200,clifford.popovich@gmail.com,True,23202.33
+C501540,Patricia,English,Rarotonga,762- 16-1140,patricia.english@gmail.net,True,33506.81
+C454753,Denise,Wilburn,Samoa,213-283-9629,denise.wilburn@gmail.io,True,39872.94
+C117784,David,Harris,Rarotonga,515-565-1723,david.harris@gmail.net,False,97681.11
+C636835,Rick,Schneider,Rarotonga,667-612-7829,rick.schneider@gmail.org,False,10577.02
+C007827,Jay,Taylor,Samoa,797-937-5723,jay.taylor@gmail.org,True,7110.09
+C132664,Heather,Dobson,Rarotonga,401-788-7671,heather.dobson@gmail.net,True,89964.38
+C273551,Donna,France,Tuvalu,201-223-2488,donna.france@gmail.org,True,35491.78
+C665597,Edward,Bennett,Samoa,504-826-8822,edward.bennett@gmail.org,True,74559.53
+C113175,Richard,Griego,Rarotonga,627-630-3680,richard.griego@gmail.net,False,19588.01
+C673896,Betty,Bennett,Samoa,276-717-1282,betty.bennett@gmail.io,False,11091.47
+C308622,Theresa,Capuano,Tuvalu,788-800-9148,theresa.capuano@gmail.org,False,17403.48
+C582554,Spencer,Jackson,Rarotonga,100-480-1746,spencer.jackson@gmail.org,False,34170.64
+C948446,William,Courser,Rarotonga,313-557-8410,william.courser@gmail.com,True,47985.43
+C265688,Travis,Kenne,Rarotonga,528-798-7144,travis.kenne@gmail.org,True,72864.09
+C221101,Krystle,Simpson,Tuvalu,746-644-4811,krystle.simpson@gmail.com,True,50264.44
+C653122,Kathleen,Jones,Samoa,306-435-4768,kathleen.jones@gmail.net,True,17240.33
+C188068,Ruby,Murphy,Tuvalu,107-867-4533,ruby.murphy@gmail.com,False,141.56
+C858174,Ashley,Wakefield,Tuvalu, 10-498-8727,ashley.wakefield@gmail.com,True,40930.89
+C920175,Byron,Baker,Samoa,512-224-5820,byron.baker@gmail.io,True,24036.0
+C695023,Roland,Bagaoisan,Samoa,957-480-567,roland.bagaoisan@gmail.org,False,59291.03
+C837939,Kimberly,Farrell,Samoa,372-693-2197,kimberly.farrell@gmail.com,False,24613.3
+C634619,Diana,Carter,Samoa,327-697-8932,diana.carter@gmail.com,True,53616.33
+C609945,Nick,Odougherty,Samoa,705-684-3114,nick.odougherty@gmail.io,True,54845.53
+C536186,Paul,Quiggle,Samoa,103-739-6828,paul.quiggle@gmail.net,True,54223.65
+C474492,Kerri,Penland,Samoa, 17-919-501,kerri.penland@gmail.com,False,462.92
+C242508,Anthony,Leggett,Tuvalu, 95-676-1737,anthony.leggett@gmail.com,False,82918.84
+C883504,Arthur,Melton,Samoa,699-199-7623,arthur.melton@gmail.net,True,8252.41
+C846353,Dorothy,Buehler,Rarotonga,732-568-602,dorothy.buehler@gmail.com,True,84421.15
+C486085,David,Vasquez,Rarotonga,156-936-5228,david.vasquez@gmail.org,False,16917.84
+C160714,Erwin,Boyland,Tuvalu,  7-439-698,erwin.boyland@gmail.org,False,79672.88
+C663875,Gordon,Blume,Rarotonga,541-701-2669,gordon.blume@gmail.io,True,22606.19
+C188762,Michael,Hobbins,Rarotonga,185-333-785,michael.hobbins@gmail.io,False,28232.87
+C700904,Albert,Abraham,Tuvalu,543-629-2385,albert.abraham@PEBKAC.org,True,15681.12
+C110417,Shirley,Ward,Coin-ops,122-148-6332,shirley.ward@crystallite.net,True,13638.78
+C409354,Lisa,Loguidice,Cytokines,918-153-3861,lisa.loguidice@turbos.com,True,48349.49
+C936143,Adam,Escobar,Knapsack,176-133-9503,adam.escobar@gmail.org,False,70435.34
+C647618,Jeff,Elmore,Tuvalu,982-695-8511,jeff.elmore@asswage.net,True,29629.69
+C282412,Lisa,Wyatt,Rarotonga, 11-100-4540,lisa.wyatt@witchhunts.com,True,69285.91
+C584530,Franklin,Kovach,Tuvalu, 45-471-7798,franklin.kovach@midwest.io,False,23472.93
+C389246,Thomas,Mckee,Soothing,650-795-665,thomas.mckee@gmail.org,False,29942.53
+C496590,Leroy,Webb,Rarotonga,347-446-7570,leroy.webb@gmail.net,True,80861.6
+C750715,Walter,Rhea,Samoa,563-257-5210,walter.rhea@gmail.org,True,93003.19
+C648114,Irene,Sipriano,Samoa, 92-468-7403,irene.sipriano@gmail.com,True,77220.53
+C407615,Ralph,Leanen,Tuvalu,388-172-6864,ralph.leanen@gmail.org,False,67667.87
+C648379,Sylvia,Peterson,Tuvalu,309-210-1758,sylvia.peterson@gmail.com,False,40389.29
+C795810,Sima,Pilling,Samoa,622-966-6053,sima.pilling@gmail.com,True,90083.65
+C763375,Denise,Dennard,Samoa,312-284-5348,denise.dennard@gmail.io,True,62653.88
+C887102,Matt,Johansen,Rarotonga,899-842-2025,matt.johansen@gmail.io,False,11445.11
+C891280,Scott,Archie,Samoa,271-936-5829,scott.archie@gmail.com,True,91722.42
+C339826,Georgiana,Perry,Samoa,255- 50-5238,georgiana.perry@gmail.net,True,94375.09
+C083021,Ashley,Morrow,Samoa,360-467-5801,ashley.morrow@gmail.com,True,41153.07
+C877374,Anthony,Miner,Tuvalu,995-770-8214,anthony.miner@gmail.net,True,66741.89
+C137803,John,Carter,Rarotonga,991-885-9992,john.carter@gmail.com,False,25427.18
+C910723,Armand,Chrisman,Rarotonga,945-580-7793,armand.chrisman@gmail.com,False,83728.14
+C034217,Mark,Davis,Tuvalu,673-633-3010,mark.davis@gmail.org,False,88969.94
+C868556,Patricia,Walters,Tuvalu,597-107-3458,patricia.walters@gmail.com,False,74391.9
+C505433,Shane,Sullivan,Rarotonga,452-120-4307,shane.sullivan@gmail.org,False,38364.64
+C719058,Margret,Cola,Tuvalu,701-302-4789,margret.cola@gmail.org,False,99556.42
+C367977,Kimberly,Natcher,Rarotonga, 70-824-4051,kimberly.natcher@gmail.net,True,70034.08
+C200001,Eileen,Mccord,Samoa,390-569-3672,eileen.mccord@gmail.net,False,99692.85
+C294118,Joyce,Salmeron,Tuvalu,791-732-9149,joyce.salmeron@gmail.com,False,11841.66
+C734943,Rosalina,Russ,Tuvalu,159-327-7782,rosalina.russ@gmail.io,False,57596.21
+C822170,Debra,Tyus,Tuvalu,317-410-9377,debra.tyus@gmail.net,True,86531.68
+C543293,Charlotte,Blair,Tuvalu,167-679-2242,charlotte.blair@gmail.org,True,21398.64
+C773457,Alexander,Cook,Samoa,837-373-9380,alexander.cook@gmail.com,False,70529.89
+C812803,Lloyd,Wurster,Samoa,733-743-1170,lloyd.wurster@gmail.org,True,38762.33
+C157264,Rudolph,Wills,Rarotonga,169-448-3064,rudolph.wills@gmail.io,True,80777.36
+C735688,Paula,Hayes,Samoa,720-850- 10,paula.hayes@gmail.org,True,80058.35
+C502939,Robert,Turnbow,Samoa,100-418-6971,robert.turnbow@gmail.net,True,18104.82
+C502726,Lisa,Schiller,Tuvalu,791-523-1581,lisa.schiller@gmail.net,False,55547.89
+C622469,Norma,Padilla,Rarotonga,731-444-2196,norma.padilla@gmail.io,False,21601.87
+C542346,Carmen,Baker,Rarotonga,505-772-9125,carmen.baker@gmail.org,False,26104.97
+C287364,Julie,Mahoney,Samoa, 78-562-2630,julie.mahoney@gmail.com,True,99513.53
+C066877,Hazel,Rodriguez,Samoa,227-363-307,hazel.rodriguez@gmail.com,True,78200.22
+C127003,Shirley,Heath,Rarotonga,826-173-9061,shirley.heath@gmail.net,False,30004.92
+C000321,James,Bitto,Samoa,682-212-7710,james.bitto@gmail.io,False,34592.11
+C837865,Raymond,Ladwig,Samoa,396-739-6763,raymond.ladwig@gmail.com,True,8135.21
+C461546,Jennifer,Brogan,Tuvalu,747-145-3315,jennifer.brogan@gmail.net,False,53595.32
+C756414,Niki,Hewell,Tuvalu,846-843-7926,niki.hewell@gmail.com,False,73429.03
+C754119,Alice,Mcneil,Samoa,928- 78-1983,alice.mcneil@gmail.com,False,67607.38
+C110248,Clara,Salinas,Rarotonga, 15-504-5149,clara.salinas@gmail.net,False,19650.47
+C216986,Elsa,Morris,Rarotonga,175-313-337,elsa.morris@gmail.io,False,74692.77
+C304864,Jamie,Shannon,Samoa,894- 68-1146,jamie.shannon@gmail.net,True,78700.35
+C705976,Bobby,Louis,Rarotonga,870-549-1866,bobby.louis@gmail.com,True,66639.08
+C459649,Phillip,Hillsman,Rarotonga,269-656-3754,phillip.hillsman@gmail.org,False,2325.88
+C295457,Steven,Bowers,Tuvalu,975-751-6457,steven.bowers@gmail.com,False,83290.3
+C918330,Carlton,Chamberlain,Samoa,421- 43-5459,carlton.chamberlain@gmail.com,False,23605.25
+C508290,Kevin,Lambert,Tuvalu,709-123-7115,kevin.lambert@gmail.org,False,49123.78
+C041526,Jeffery,Toney,Tuvalu,446-257-4787,jeffery.toney@gmail.org,True,23491.91
+C603553,Mark,Menefield,Samoa, 53-565- 19,mark.menefield@gmail.org,True,34860.15
+C470306,Trevor,Kutscher,Rarotonga,730-511-4430,trevor.kutscher@gmail.net,True,93554.03
+C596680,Henry,Hunt,Rarotonga,671-579-2685,henry.hunt@gmail.io,False,93594.6
+C025690,Lloyd,Bump,Samoa,309- 77-101,lloyd.bump@gmail.org,False,35334.71
+C659529,Amy,Dorst,Tuvalu,713-603-2003,amy.dorst@gmail.com,True,36875.39
+C962985,Lorraine,Smith,Tuvalu,745-588-7542,lorraine.smith@gmail.com,True,27241.13
+C476754,Isabel,Reinkemeyer,Tuvalu,793-921-1030,isabel.reinkemeyer@gmail.net,True,49476.05
+C611526,James,Vann,Tuvalu,236-967-6392,james.vann@gmail.net,True,91296.86
+C912682,Charlotte,Minton,Rarotonga,479-354-3299,charlotte.minton@gmail.org,False,47225.26
+C148640,Mildred,Harris,Tuvalu,992-532-4081,mildred.harris@gmail.net,True,53397.69
+C839690,James,Norris,Tuvalu,132-587-7002,james.norris@gmail.org,False,84004.63
+C766091,Guillermo,Wagner,Rarotonga,722-787-6656,guillermo.wagner@gmail.org,False,11185.01
+C938001,Marilyn,Marrow,Tuvalu,340-384-244,marilyn.marrow@gmail.com,True,68963.39
+C352863,Robert,Allison,Samoa,724-759-3745,robert.allison@gmail.net,False,91230.04
+C845806,Adam,Ford,Samoa,857-378-227,adam.ford@gmail.org,False,55746.39
+C980449,Rico,Burton,Tuvalu,705-883-2752,rico.burton@gmail.org,False,78151.06
+C888434,Patsy,Linares,Tuvalu,348- 57-3966,patsy.linares@gmail.org,False,21300.18
+C706872,Edna,Newberry,Rarotonga,257- 44-8006,edna.newberry@gmail.net,False,78092.26
+C040378,Jack,Jones,Tuvalu,179-501-172,jack.jones@gmail.com,True,31521.72
+C809456,Jayne,Wilkins,Tuvalu,431-148-5028,jayne.wilkins@gmail.org,False,39797.07
+C685761,Jeffrey,Williams,Tuvalu,921- 72-6754,jeffrey.williams@gmail.io,True,97511.6
+C799373,Samantha,Cervantes,Tuvalu,438-363-4743,samantha.cervantes@gmail.org,False,89488.44
+C077174,Michele,Currie,Rarotonga,435-223-3027,michele.currie@gmail.io,True,78637.27
+C404450,Bessie,Durkin,Rarotonga,917- 79-9764,bessie.durkin@gmail.net,True,9915.09
+C353730,Kathi,Artman,Samoa,775-306-5221,kathi.artman@gmail.net,False,59113.76
+C027279,Leslie,Howland,Samoa,690-880-9684,leslie.howland@gmail.io,True,45399.21
+C986586,Mildred,Cody,Samoa,556-831-2292,mildred.cody@gmail.com,False,24308.44
+C156615,Claire,Henderson,Rarotonga,174-760-8661,claire.henderson@gmail.io,False,45584.09
+C079840,Fay,Newsom,Samoa,714-930-2814,fay.newsom@gmail.net,True,80905.91
+C378782,Robert,Castillo,Samoa,959-628-6275,robert.castillo@gmail.com,True,38840.03
+C312501,George,Taylor,Samoa,613-663-8236,george.taylor@gmail.io,True,19266.11
+C673910,Alan,Greenlee,Tuvalu,687-735-6423,alan.greenlee@gmail.io,True,56305.1
+C929498,Gary,Young,Rarotonga,195-556-8606,gary.young@gmail.net,True,99796.31
+C146789,George,Carlson,Tuvalu,973-510-8584,george.carlson@gmail.net,False,73189.49
+C939222,Roxann,Eure,Tuvalu, 12-801-7249,roxann.eure@gmail.org,False,33268.94
+C977347,Leonel,Hunt,Tuvalu,717-151-9296,leonel.hunt@gmail.com,True,37215.11
+C922446,Carl,Burke,Rarotonga, 35-999-4617,carl.burke@gmail.org,True,49905.87
+C527740,Vernon,Wilson,Rarotonga,810-531-4708,vernon.wilson@gmail.net,False,27739.69
+C919389,Robert,Roberson,Rarotonga,912-407-4741,robert.roberson@gmail.io,False,41290.15
+C996262,Jesse,Drew,Rarotonga,816-201-129,jesse.drew@gmail.com,True,92259.23
+C953980,Kelli,Moore,Tuvalu,643-340-9406,kelli.moore@gmail.io,True,60973.15
+C178916,Donald,Jalbert,Tuvalu,185-860-1283,donald.jalbert@gmail.io,False,28353.28
+C539110,Frances,Mason,Tuvalu,764-701-5173,frances.mason@gmail.io,True,20121.91
+C641470,Alan,Rufener,Rarotonga,556- 53-5372,alan.rufener@gmail.com,True,76005.9
+C213798,Michael,Gurley,Tuvalu,573-986-1876,michael.gurley@gmail.net,False,61773.09
+C315202,Kathleen,Konkel,Rarotonga,405-445-9035,kathleen.konkel@gmail.com,False,16631.9
+C582257,Chris,Flanagan,Tuvalu,758-601-9278,chris.flanagan@gmail.com,False,49385.47
+C404085,Elizabeth,Stanley,Samoa,266-910-1190,elizabeth.stanley@gmail.net,True,55685.85
+C285996,Barbara,Smith,Samoa,601- 40-6243,barbara.smith@gmail.io,False,55604.81
+C513783,David,Gray,Tuvalu,205-368-2562,david.gray@gmail.net,True,95667.63
+C154922,Joann,Mcallister,Samoa,623-822-7339,joann.mcallister@gmail.net,True,94480.11
+C991819,Elodia,Shuster,Samoa,811-375-2717,elodia.shuster@gmail.io,True,65421.42
+C644994,Sandy,Tolman,Tuvalu,167-706- 11,sandy.tolman@gmail.org,True,7248.38
+C206263,James,Estep,Tuvalu,101-767-7657,james.estep@gmail.org,False,90805.48
+C967636,Scott,Clay,Tuvalu,136-613-6659,scott.clay@gmail.com,False,50898.44
+C404392,Estelle,Guzman,Samoa,726-417-8751,estelle.guzman@gmail.net,False,10162.37
+C786495,Roy,Killeagle,Samoa,581-891-7726,roy.killeagle@gmail.com,True,14858.23
+C958140,Carlos,Pigue,Rarotonga,525-750-2006,carlos.pigue@gmail.io,False,14336.66
+C343231,Julia,Merz,Samoa,287-830-2302,julia.merz@gmail.net,True,24907.79
+C665454,Allan,Garcia,Rarotonga,680-214-7452,allan.garcia@gmail.com,True,90976.6
+C011186,Kenneth,Sierra,Samoa,891-395-2748,kenneth.sierra@gmail.com,True,32162.47
+C893547,Charity,Delatrinidad,Samoa,364-691-4359,charity.delatrinidad@gmail.org,False,65002.3
+C793190,Bridgette,Anderson,Rarotonga,727-552-958,bridgette.anderson@gmail.io,False,78172.53
+C095534,Danielle,Jackson,Tuvalu,957-412-2660,danielle.jackson@gmail.org,True,48726.95
+C014849,Juanita,Akin,Tuvalu,277- 92-2122,juanita.akin@gmail.com,True,99753.72
+C900999,Debbie,Wing,Rarotonga,864-879-1159,debbie.wing@gmail.org,False,95071.6
+C489931,Michael,Moss,Tuvalu,232- 20-2218,michael.moss@gmail.com,True,82364.99
+C616603,Shawn,Seide,Rarotonga,524-522-7175,shawn.seide@gmail.org,True,46352.29
+C093117,Walter,Sands,Tuvalu, 73-493-9126,walter.sands@gmail.com,True,90120.47
+C367192,Carolyn,Valentine,Tuvalu,586-244-551,carolyn.valentine@gmail.net,True,68005.82
+C030708,Charles,Smith,Tuvalu,765- 69-3127,charles.smith@gmail.net,False,11361.74
+C342671,Leroy,Sichler,Tuvalu,627-436-1677,leroy.sichler@gmail.com,True,74583.55
+C281819,Max,Courter,Rarotonga,958-616-6146,max.courter@gmail.com,True,76805.59
+C846252,Mary,Snider,Rarotonga,295-619-2683,mary.snider@gmail.org,True,28218.68
+C522451,Yesenia,Doyle,Samoa,236-605-6745,yesenia.doyle@gmail.net,True,87725.83
+C250767,Betty,Leer,Tuvalu,808-  7-2708,betty.leer@gmail.net,False,88161.0
+C093548,Luis,Campbell,Rarotonga, 47-  1-4577,luis.campbell@gmail.io,True,86106.23
+C095997,Raymond,Owens,Tuvalu,984-400-5777,raymond.owens@gmail.net,True,48555.2
+C579288,Marcene,Clark,Samoa,316-329-2594,marcene.clark@gmail.com,False,10790.21
+C799019,Doyle,Decker,Samoa,232-984-1654,doyle.decker@gmail.org,True,19777.89
+C888770,Steven,Dyer,Tuvalu,362-112-2251,steven.dyer@gmail.com,False,12476.62
+C517339,Jennifer,Hawkins,Rarotonga,714- 40-7183,jennifer.hawkins@gmail.com,False,90817.26
+C328561,Timothy,Pfeiffer,Samoa,103-833-4963,timothy.pfeiffer@gmail.io,False,92689.03
+C314692,Susan,Bay,Samoa, 75-349-1712,susan.bay@gmail.io,False,58124.87
+C408288,Tommie,Soto,Samoa,442-610-8012,tommie.soto@gmail.com,True,97202.59
+C076876,Sally,Coney,Samoa,445-538-4272,sally.coney@gmail.com,True,27128.64
+C837059,Marguerite,Guajardo,Tuvalu,579-623-8184,marguerite.guajardo@gmail.net,True,90030.94
+C032736,Perry,Woo,Tuvalu,499-505-6741,perry.woo@gmail.com,True,53427.36
+C131084,Wm,Wieland,Rarotonga,120-994-7546,wm.wieland@gmail.org,True,74845.6
+C851197,Grover,Davis,Tuvalu,922-514-6054,grover.davis@gmail.io,False,13845.2
+C980564,Joann,Dunn,Tuvalu,388-725-5055,joann.dunn@gmail.io,False,77499.86
+C427919,Joe,Moses,Rarotonga, 88-667-7230,joe.moses@gmail.net,True,16054.53
+C923287,Joan,Boudreaux,Samoa, 46-538-8114,joan.boudreaux@gmail.io,False,96173.91
+C200038,Sterling,Cloud,Rarotonga,713-555-7561,sterling.cloud@gmail.org,True,74000.94
+C819362,Gerald,Walker,Tuvalu,933- 76-5437,gerald.walker@gmail.org,True,30046.98
+C607634,David,Lozoya,Samoa,746-172-874,david.lozoya@gmail.net,True,13992.4
+C126497,Sean,Ramos,Rarotonga,329- 88-8536,sean.ramos@gmail.net,False,22725.33
+C501526,Ann,Warren,Samoa,205-885-8375,ann.warren@gmail.net,True,82288.18
+C959716,Dorothy,Davenport,Samoa,728-404-9638,dorothy.davenport@benzocaine.org,True,15510.73
+C769907,Sylvia,Bautista,120th,600-763-2447,sylvia.bautista@yielden.net,False,43154.55
+C642097,Judy,Bumpus,Supersets,542-942-8360,judy.bumpus@cafeteria-style.io,True,41166.09
+C349258,Lois,Diaz,Over-under,689-168-8652,lois.diaz@purchase-fall.io,True,83618.07
+C675895,Curtis,Eason,Treetops, 92-625-3875,curtis.eason@gmail.com,True,34212.64
+C240828,Peggy,Manzanarez,Rarotonga,470-640-4903,peggy.manzanarez@gmail.org,True,49873.04
+C758780,Robert,Murillo,Yearlings,877-798-429,robert.murillo@Nagano.org,False,50978.21
+C981185,Travis,Bacon,Samoa,111- 64-4258,travis.bacon@gmail.com,True,29583.38
+C734603,John,Vance,Samoa, 89-238- 38,john.vance@gmail.net,False,6116.53
+C865414,Katlyn,Hildebrand,Samoa,132-483-2435,katlyn.hildebrand@gmail.net,False,75842.23
+C097113,Eugene,Seymour,Samoa,399-530-2944,eugene.seymour@gmail.org,False,34190.09
+C389655,Evelyn,Elliott,Samoa,467-462-8598,evelyn.elliott@gmail.org,True,23158.08
+C143216,Steve,Barnes,Samoa,154-500-2031,steve.barnes@gmail.io,False,44536.31
+C525886,Karen,Morgan,Rarotonga, 87-418-7562,karen.morgan@gmail.org,False,79445.69
+C154016,Ann,Hughey,Samoa,392-920-5177,ann.hughey@gmail.net,True,4331.82
+C498097,Diane,Bakerville,Samoa,408-257-1841,diane.bakerville@gmail.org,False,25938.35
+C220306,Ok,Butler,Rarotonga,515-241-3479,ok.butler@gmail.org,True,78835.35
+C148904,Karen,Giles,Tuvalu,462-722-8326,karen.giles@gmail.com,False,62677.45
+C868105,Brian,Magar,Rarotonga,783-226-6616,brian.magar@gmail.io,True,79572.11
+C477030,Opal,Myers,Rarotonga,539-115-944,opal.myers@gmail.io,False,64424.22
+C191253,Doris,Zuniga,Samoa,272-210-7760,doris.zuniga@gmail.net,True,62265.98
+C821591,Ellis,Belcher,Tuvalu,396-355-1560,ellis.belcher@gmail.com,False,34100.62
+C850857,Phillip,Robinson,Tuvalu,388-776-6924,phillip.robinson@gmail.com,False,55304.7
+C573364,Michael,Ngo,Samoa,473-640-8483,michael.ngo@gmail.io,False,73555.21
+C935406,Deena,Lozoya,Rarotonga,584-971-529,deena.lozoya@gmail.com,False,8665.74
+C058208,Rebecca,Johnson,Samoa,247-217-7806,rebecca.johnson@gmail.org,True,57757.73
+C008144,Ricardo,Sorenson,Tuvalu,936-255-9588,ricardo.sorenson@gmail.net,False,6456.52
+C886864,Doyle,Daniel,Samoa,951-132-695,doyle.daniel@gmail.com,False,36591.09
+C001841,Donald,Schuckert,Tuvalu,683-164-2330,donald.schuckert@gmail.org,True,727.42
+C087518,Michael,Kraft,Tuvalu,860-429-1486,michael.kraft@gmail.com,False,63659.36
+C304307,Charles,Barnes,Rarotonga,200-917-1532,charles.barnes@gmail.com,True,62028.77
+C474489,Glenn,Lunn,Rarotonga,897-277-9132,glenn.lunn@gmail.io,False,75822.27
+C892879,Kristy,Jolin,Tuvalu,777-924-4441,kristy.jolin@gmail.com,True,4635.56
+C831587,Kelly,Thackaberry,Tuvalu,865-622-9427,kelly.thackaberry@gmail.com,False,90643.12
+C771491,Robert,Galeano,Samoa, 22-647-6314,robert.galeano@gmail.org,True,93031.37
+C247096,Helen,Aycock,Rarotonga,152-740-982,helen.aycock@gmail.io,False,46669.62
+C983714,Diane,Rivera,Rarotonga,262-815-2932,diane.rivera@gmail.org,True,90789.12
+C441374,Steven,Dawson,Tuvalu,697-431-9505,steven.dawson@gmail.com,False,93207.77
+C945605,Nancy,Garcia,Rarotonga,989-872-9972,nancy.garcia@gmail.com,False,18157.27
+C428880,Diana,Johnson,Samoa,914- 96-2288,diana.johnson@gmail.io,True,43613.05
+C214165,Kyle,Bates,Samoa,238-727-1880,kyle.bates@gmail.org,True,28253.11
+C011015,Carly,Delucia,Tuvalu, 32-811-5969,carly.delucia@gmail.org,False,24764.07
+C795238,Joyce,Robinson,Samoa,774-305-5897,joyce.robinson@gmail.io,True,25832.64
+C878592,Darlene,Lacey,Tuvalu, 86- 38-2095,darlene.lacey@gmail.org,True,4922.88
+C906420,Jamie,Williams,Samoa,604- 24-5423,jamie.williams@gmail.io,False,75444.95
+C828051,Robert,Baxter,Samoa,531-527-6289,robert.baxter@gmail.io,True,338.34
+C003630,Kathy,Fowler,Samoa,711-357-853,kathy.fowler@gmail.com,True,35591.78
+C929358,Andrew,Neaves,Samoa,844-583-7349,andrew.neaves@gmail.io,False,96178.78
+C468627,Audrey,Mcnary,Samoa,607-450-5450,audrey.mcnary@gmail.org,True,21611.49
+C818619,Chris,Monreal,Samoa,716-378-4890,chris.monreal@gmail.com,True,58194.6
+C997864,Matthew,Crawford,Rarotonga,  4-300-5059,matthew.crawford@gmail.net,True,99758.72
+C659421,Clyde,Eddy,Samoa,731-825-4138,clyde.eddy@gmail.net,False,16824.94
+C629884,Mariano,Takaki,Samoa,453-607-5739,mariano.takaki@gmail.org,True,28745.73
+C613023,James,Townsend,Samoa,700-377-1764,james.townsend@gmail.net,False,7788.58
+C847386,Ruth,Mccrudden,Tuvalu, 46-953-4073,ruth.mccrudden@gmail.com,True,95202.04
+C809727,Lidia,Gros,Rarotonga,567-297-1369,lidia.gros@gmail.net,False,66460.59
+C571082,Wilfredo,Brown,Samoa,800-883-3587,wilfredo.brown@gmail.org,True,4675.01
+C503821,Elaine,Munoz,Rarotonga,301-567-9646,elaine.munoz@gmail.com,True,64154.2
+C415924,Joyce,Hall,Rarotonga,775-934-5802,joyce.hall@gmail.io,True,63166.38
+C435051,David,Gruber,Samoa,823-402-4508,david.gruber@gmail.org,False,39659.26
+C655722,Kathleen,Green,Samoa,  1-840-3657,kathleen.green@gmail.net,False,36123.01
+C485675,Jennifer,Mullins,Tuvalu, 38-151-3750,jennifer.mullins@gmail.org,True,64683.37
+C947121,Damaris,Cathcart,Tuvalu,686-180-6427,damaris.cathcart@gmail.net,True,2253.37
+C947841,Tommy,Shulte,Tuvalu,517-404-9359,tommy.shulte@gmail.io,False,67165.59
+C763371,Justin,Gray,Tuvalu,906-101-1160,justin.gray@gmail.com,False,82898.09
+C498753,Karen,Davis,Tuvalu,863-199-8812,karen.davis@gmail.net,False,16961.09
+C970058,Sally,Johnson,Rarotonga,618-919-381,sally.johnson@gmail.org,False,7144.53
+C814593,Tristan,Stpierre,Rarotonga,642-175-6577,tristan.stpierre@gmail.com,True,69171.36
+C383853,Robert,Roth,Tuvalu, 16-258-5024,robert.roth@gmail.net,False,41971.79
+C672212,Kimberly,Berger,Samoa,535-154-8352,kimberly.berger@gmail.com,True,8321.29
+C571549,Maria,Rodriquez,Rarotonga,321-213-2118,maria.rodriquez@gmail.net,False,61063.42
+C255498,Ofelia,Spearman,Rarotonga, 30-174-5883,ofelia.spearman@gmail.net,False,42786.74
+C566258,Doreen,Biss,Samoa,855-321-3145,doreen.biss@gmail.net,True,39836.68
+C697062,Thomas,Thome,Rarotonga,955-293-921,thomas.thome@gmail.com,True,5461.86
+C258759,Larry,Brown,Tuvalu, 66-703-1009,larry.brown@gmail.io,False,49010.65
+C713046,Jason,Griggs,Rarotonga, 83-122-9403,jason.griggs@gmail.io,False,64475.43
+C607179,Karen,Boyd,Samoa,846-490-5787,karen.boyd@gmail.com,True,72253.01
+C001355,Chris,Martinez,Rarotonga,614-955-8424,chris.martinez@gmail.com,False,15892.32
+C932897,Thomas,Biggerstaff,Samoa,407- 19-983,thomas.biggerstaff@gmail.io,False,31157.57
+C664644,Ivory,Pollock,Rarotonga, 74-452-169,ivory.pollock@gmail.org,False,95177.23
+C435559,Antonia,Romero,Samoa,376- 20-352,antonia.romero@gmail.org,True,87439.86
+C497331,Christopher,Goodwin,Rarotonga,468-563-2059,christopher.goodwin@gmail.org,True,71549.44
+C922076,Spencer,Roberson,Samoa,244- 38-1582,spencer.roberson@gmail.io,True,54964.74
+C481024,Ellis,Robinson,Rarotonga,273-508-5073,ellis.robinson@gmail.com,True,78969.17
+C408901,Clyde,Dusel,Samoa,237-639-2920,clyde.dusel@gmail.org,False,20091.5
+C104760,Jerry,Vargas,Tuvalu,467-790-8067,jerry.vargas@gmail.net,True,84718.33
+C934134,Jack,Sayles,Samoa,556-631-2729,jack.sayles@gmail.org,False,50879.99
+C847231,Anthony,Lewis,Rarotonga,883-415-9368,anthony.lewis@gmail.org,True,88103.67
+C225164,Justin,Clifton,Rarotonga,936-234-2618,justin.clifton@gmail.net,False,2726.63
+C070799,Crystal,Dinkins,Rarotonga,437-171-7739,crystal.dinkins@gmail.io,True,80067.46
+C842733,James,Knight,Rarotonga,373-169-4880,james.knight@gmail.org,False,88872.91
+C542523,Neil,Shook,Rarotonga,245-251-4954,neil.shook@gmail.io,True,86065.59
+C943181,Edward,Biel,Rarotonga,405-545-5458,edward.biel@gmail.net,True,34179.36
+C116036,Minnie,Orosco,Rarotonga,478-109-9822,minnie.orosco@gmail.com,False,46914.25
+C026742,Scott,Forsman,Tuvalu,480-276-1412,scott.forsman@gmail.com,True,86003.42
+C734160,Rosalind,Norris,Rarotonga,903-129-1193,rosalind.norris@gmail.org,False,3405.31
+C376194,Linda,Perez,Rarotonga,303-890-5265,linda.perez@gmail.org,True,68466.46
+C699334,David,Spohr,Tuvalu,260-679-2750,david.spohr@gmail.net,False,81362.72
+C555783,Denny,Lachance,Tuvalu,607-284-3008,denny.lachance@gmail.org,False,49042.33
+C886236,Elizabeth,Simmons,Samoa,873-629-2947,elizabeth.simmons@gmail.net,True,58282.22
+C745693,Matthew,Flinders,Tuvalu,952-268-2834,matthew.flinders@gmail.io,True,5571.91
+C002776,Laura,Mcclure,Rarotonga,450- 30-8066,laura.mcclure@gmail.com,True,61913.32
+C559767,Thomas,Patton,Samoa,798-717-614,thomas.patton@gmail.com,True,18017.44
+C586620,Michael,Ritchie,Rarotonga,203- 89-3783,michael.ritchie@gmail.io,False,72494.35
+C424411,Claude,Michelotti,Samoa,877-158-8475,claude.michelotti@gmail.com,True,19332.02
+C413879,Michelle,Augustin,Samoa,390- 77-8268,michelle.augustin@gmail.io,True,26916.51
+C927541,Daniel,Short,Tuvalu,410-242-4693,daniel.short@gmail.io,True,90429.47
+C603947,Josephine,Bogan,Tuvalu,340-338-5361,josephine.bogan@gmail.com,True,1471.97
+C968999,Mark,Persaud,Rarotonga, 59-776-9424,mark.persaud@gmail.com,False,63280.69
+C344375,Jeff,Orduna,Tuvalu,830-770-2295,jeff.orduna@gmail.com,False,58467.49
+C158937,Harold,Wells,Samoa,605-443-1153,harold.wells@gmail.io,True,56197.19
+C263394,Horace,Duval,Tuvalu,990-472-3842,horace.duval@gmail.io,False,41456.2
+C565477,Jesse,Curry,Samoa,522-861-895,jesse.curry@gmail.org,False,11725.23
+C018456,Teresa,Hogg,Samoa,234-433-3919,teresa.hogg@gmail.org,False,31494.49
+C645391,Jessica,Lukasiewicz,Tuvalu,481-175-7819,jessica.lukasiewicz@gmail.com,True,79564.68
+C211087,Tori,Alexander,Samoa,374-339-1394,tori.alexander@gmail.net,True,99463.6
+C176800,Shirley,Fleming,Rarotonga,493-877-7333,shirley.fleming@gmail.com,False,18848.57
+C370701,Maria,English,Samoa,678-779-1299,maria.english@gmail.com,True,61274.4
+C296082,Duane,Juarez,Rarotonga, 62-478-4196,duane.juarez@gmail.net,True,1057.56
+C641849,Roger,Johnson,Samoa,733-165-5241,roger.johnson@gmail.io,True,50976.21
+C411005,John,Wilson,Samoa,815-672-1975,john.wilson@gmail.org,False,44062.02
+C410553,Nicole,Losoya,Tuvalu,338-431-2244,nicole.losoya@gmail.net,True,10888.52
+C837250,Barbara,Chipman,Tuvalu,574-691-1625,barbara.chipman@gmail.com,False,73047.21
+C075288,Marjorie,Stcyr,Tuvalu,604-818-5180,marjorie.stcyr@gmail.com,True,65248.2
+C682604,Robert,Garza,Rarotonga,829-981-9299,robert.garza@gmail.net,True,49017.33
+C886887,Kathy,Teeter,Rarotonga,534-727-772,kathy.teeter@gmail.com,False,33681.79
+C727677,Steven,Bowl,Rarotonga,269-767-2844,steven.bowl@gmail.com,False,28235.88
+C604802,Anthony,Richardson,Rarotonga,610-876-5103,anthony.richardson@gmail.net,False,66798.69
+C568795,Frank,Cummings,Rarotonga,226-778-7164,frank.cummings@gmail.io,False,14625.55
+C453474,Sandra,Dinsmore,Samoa, 49-556-5256,sandra.dinsmore@gmail.io,False,89402.43
+C448299,Christine,Alward,Rarotonga,338-740-8312,christine.alward@gmail.org,True,77717.73
+C193399,Adrienne,Hendricks,Samoa,471-503-3784,adrienne.hendricks@gmail.io,False,27997.64
+C934694,Stella,Porter,Rarotonga,492-787-3116,stella.porter@gmail.com,True,92451.11
+C305500,Ruth,Merideth,Rarotonga,396-800-9452,ruth.merideth@gmail.net,True,33941.82
+C497533,Gertie,Gonzalez,Rarotonga,404-658-3501,gertie.gonzalez@gmail.io,True,38655.05
+C014877,Esperanza,Rowland,Tuvalu,239-689-3641,esperanza.rowland@gmail.io,True,50706.69
+C567641,Patricia,Walker,Tuvalu,172-178-8172,patricia.walker@gmail.org,False,84505.0
+C543691,Corey,Sampson,Rarotonga, 15-200-4223,corey.sampson@gmail.net,False,94888.94
+C871821,Jackson,Steel,Rarotonga,672-898-4920,jackson.steel@gmail.org,True,69298.41
+C455485,Alfred,Martine,Tuvalu,559- 37-265,alfred.martine@gmail.com,False,15401.07
+C724067,Rick,Shannon,Rarotonga,971-255-4515,rick.shannon@gmail.net,True,42328.85
+C703029,Harold,Capps,Samoa, 71-767-4468,harold.capps@gmail.com,False,1062.53
+C206739,Jonathan,Baca,Tuvalu,123-405-4786,jonathan.baca@gmail.org,False,24138.42
+C265382,Rolf,Lee,Tuvalu,560- 61-6613,rolf.lee@gmail.org,True,8567.34
+C236320,Douglas,Mccracken,Samoa,264-524-1252,douglas.mccracken@gmail.io,False,24763.64
+C632072,William,Derringer,Samoa,585-512-805,william.derringer@gmail.org,True,25242.03
+C529714,George,Doyle,Samoa,357-416-3277,george.doyle@gmail.net,True,39281.53
+C989950,Joseph,Fischer,Rarotonga,393-199-5810,joseph.fischer@gmail.net,True,71840.34
+C984646,Bobbie,Walter,Samoa,796-816-6414,bobbie.walter@gmail.com,False,51162.45
+C922124,Wilfredo,Wei,Rarotonga,188-245-1334,wilfredo.wei@gmail.io,True,80690.31
+C838536,Eleanor,Gladney,Samoa, 67- 77-3674,eleanor.gladney@gmail.net,True,56948.3
+C373314,Stephen,Arend,Rarotonga,942-573-8088,stephen.arend@gmail.org,True,75201.02
+C720331,Judith,Tamayo,Samoa,977-846-892,judith.tamayo@gmail.com,True,28813.53
+C746292,Ana,Fair,Tuvalu,727-112-8829,ana.fair@gmail.net,False,14794.24
+C010112,Samuel,Greer,Tuvalu,180-643-3367,samuel.greer@gmail.org,False,58358.32
+C787320,Michael,Bronson,Rarotonga,107-538-1193,michael.bronson@gmail.org,True,81599.89
+C995346,Mark,Curtis,Tuvalu,695-613-1423,mark.curtis@gmail.io,False,31236.2
+C220150,Laura,Burgin,Samoa,814-244-1397,laura.burgin@gmail.org,False,3308.95
+C357639,Mathew,Mitchell,Boneheadedness,899-480-3082,mathew.mitchell@canebrake.com,False,76291.86
+C432591,James,Enge,Bellona,481-100-2542,james.enge@resumption.net,False,37921.42
+C912284,Gina,King,Shitkicker,419-585-7233,gina.king@ki-yi.com,True,41896.66
+C739582,Maricela,Calton,Refractometry,938-105-3846,maricela.calton@absolutises.io,False,48088.34
+C645539,Mallory,Paradis,Dredger,246-711-2515,mallory.paradis@ailing.io,False,12623.85
+C742274,Tommy,West,Samoa,665- 79-8140,tommy.west@gmail.io,False,44262.73
+C150758,Tracey,Iturbe,Rarotonga,494-124-6360,tracey.iturbe@gmail.io,False,14628.56
+C852026,Frank,Niskanen,Rarotonga,875- 67-6324,frank.niskanen@gmail.org,False,56668.84
+C476813,Katherine,Mccracken,Samoa,959-290-1690,katherine.mccracken@gmail.io,True,74657.35
+C867711,Judith,Richardson,Tuvalu,828-300-1257,judith.richardson@gmail.net,False,93202.1
+C619643,Lionel,Hester,Tuvalu,364-296-6253,lionel.hester@gmail.io,True,71503.86
+C951821,Brenda,Bower,Samoa,110-938-4005,brenda.bower@gmail.io,True,16394.28
+C234776,Leslie,Delarosa,Tuvalu,858-509-9619,leslie.delarosa@gmail.net,True,82774.72
+C990916,Kimberly,Dube,Samoa,192-619-9489,kimberly.dube@gmail.net,False,84969.52
+C537602,Alice,Nicholls,Samoa,908-259-2508,alice.nicholls@gmail.org,False,90799.96
+C115402,Sybil,Warren,Samoa,743- 20-1357,sybil.warren@gmail.net,False,89499.01
+C228785,Linda,Stamper,Tuvalu,876-591-4447,linda.stamper@gmail.com,False,79687.0
+C246999,Jason,Childs,Tuvalu,979-700-8158,jason.childs@gmail.io,False,22711.55
+C936336,George,Landis,Tuvalu,806-687-9428,george.landis@gmail.io,False,72669.0
+C005335,Susan,Harper,Rarotonga,419-577-4242,susan.harper@gmail.com,True,90169.08
+C925440,James,Matos,Samoa,668-361-6090,james.matos@gmail.com,False,5903.39
+C600724,Summer,Adkins,Samoa,997-402-6304,summer.adkins@gmail.net,False,43750.92
+C139646,Lilly,Dickens,Tuvalu,409-478-723,lilly.dickens@gmail.io,False,58077.95
+C948938,Ricky,Macias,Rarotonga,476-709-5525,ricky.macias@gmail.io,True,51199.3
+C048578,Paul,Keller,Rarotonga,257-841-9759,paul.keller@gmail.com,True,32009.09
+C206899,Thomas,Jones,Samoa,845-502-6944,thomas.jones@gmail.org,False,7150.08
+C405580,Javier,Young,Rarotonga,457-182-9945,javier.young@gmail.com,False,37647.5
+C169069,Gladys,Mccabe,Samoa,607-409-875,gladys.mccabe@gmail.io,True,59782.49
+C127310,Warren,Ramirez,Tuvalu,480-818-6843,warren.ramirez@gmail.com,True,20745.99
+C274257,Larissa,Vanwinkle,Rarotonga,205-224-937,larissa.vanwinkle@gmail.com,False,24671.33
+C435384,Emil,Peel,Samoa,856-836-3034,emil.peel@gmail.org,False,47762.53
+C120137,Opal,Gorder,Samoa,571-588-3604,opal.gorder@gmail.com,True,42529.9
+C865722,Maurice,Lewis,Samoa, 41-900-1381,maurice.lewis@gmail.com,True,2059.75
+C582596,James,Richards,Samoa,  0-653-6623,james.richards@gmail.net,False,20879.61
+C238509,Scott,Santana,Tuvalu,125- 99-5226,scott.santana@gmail.com,False,59234.99
+C490639,Timothy,Aguila,Rarotonga,489-507-1834,timothy.aguila@gmail.io,False,75467.98
+C578702,Wendy,Macgregor,Samoa,  8-984-4591,wendy.macgregor@gmail.io,False,8910.1
+C606448,Wesley,Rosales,Samoa,836-663-1647,wesley.rosales@gmail.org,True,92682.78
+C625977,Jose,Marcum,Samoa,543- 63-5153,jose.marcum@gmail.org,True,68456.66
+C766656,Thomas,Beck,Tuvalu,603-395-4663,thomas.beck@gmail.org,False,50099.62
+C740376,Earleen,Beaudette,Tuvalu,342-823-6639,earleen.beaudette@gmail.com,True,26281.45
+C959913,Sara,Cipkowski,Samoa,949-145-4298,sara.cipkowski@gmail.com,False,42250.29
+C122826,John,Mobley,Samoa, 28-408-8350,john.mobley@gmail.io,True,67061.86
+C413885,Richard,Patton,Tuvalu,209-584-2571,richard.patton@gmail.com,True,87263.84
+C942953,Dee,Mejia,Rarotonga,801-128-2230,dee.mejia@gmail.org,True,97585.26
+C673934,Benjamin,Adkins,Tuvalu,562-197-923,benjamin.adkins@gmail.org,True,8778.92
+C931681,Dwight,Hyden,Samoa,648-158-8946,dwight.hyden@gmail.com,False,76650.1
+C255520,William,Jones,Rarotonga,890-536-1684,william.jones@gmail.io,True,21248.08
+C056538,Mark,Stevens,Samoa,729-499-4770,mark.stevens@gmail.io,False,61752.63
+C829946,Lucas,Greene,Rarotonga,432-367-4455,lucas.greene@gmail.com,False,48623.15
+C274319,Ryan,Soape,Tuvalu,288-451-5902,ryan.soape@gmail.com,True,55662.47
+C967976,Jorge,Miller,Rarotonga,698-962-5312,jorge.miller@gmail.com,False,30060.76
+C559124,Johnnie,Matte,Tuvalu,931-148-6568,johnnie.matte@gmail.com,True,76126.49
+C399620,Anthony,Dotson,Samoa,140- 40-4092,anthony.dotson@gmail.org,True,2489.99
+C172120,Christian,Netolicky,Tuvalu,852-954-8966,christian.netolicky@gmail.org,False,41803.64
+C789779,Debra,Northcutt,Rarotonga,916-175-6709,debra.northcutt@gmail.io,False,80466.98
+C076836,Evelyn,Layton,Samoa,906-826-1027,evelyn.layton@gmail.net,True,2602.07
+C775736,Brandon,Amaker,Samoa,542-921-2561,brandon.amaker@gmail.net,False,28780.6
+C749930,Keith,Williams,Tuvalu,370-717-3898,keith.williams@gmail.io,True,18754.88
+C861828,Sonny,Ennis,Tuvalu,884- 69-2562,sonny.ennis@gmail.org,True,69833.95
+C373242,Maryann,Mervyn,Samoa, 97- 14-4890,maryann.mervyn@gmail.com,True,34931.6
+C228439,Donna,Shaw,Rarotonga,123-291-9236,donna.shaw@gmail.io,False,84522.73
+C674448,Heide,Souza,Samoa,630-182-561,heide.souza@gmail.io,False,80749.75
+C416557,Joseph,Julian,Rarotonga,  0-410-2493,joseph.julian@gmail.com,True,97848.36
+C204872,Rebecca,Cass,Samoa,682-847-5754,rebecca.cass@gmail.io,False,38897.86
+C916852,Mary,Pack,Samoa, 99-994-579,mary.pack@gmail.org,True,93728.94
+C492349,Ronald,Friday,Rarotonga,769-925-587,ronald.friday@gmail.net,False,34556.4
+C248577,Darryl,Garcia,Samoa,877-443-6574,darryl.garcia@gmail.io,True,43739.26
+C585273,Richard,Cano,Tuvalu,651- 11-9382,richard.cano@gmail.com,True,10489.44
+C621567,Leslie,Cooper,Samoa,212-611-8054,leslie.cooper@gmail.com,True,82370.89
+C622465,Rose,Sugg,Samoa, 41-890-4753,rose.sugg@gmail.org,True,99149.53
+C366748,Michael,Stewart,Samoa, 95-130-1665,michael.stewart@gmail.net,True,29023.9
+C080811,Emma,Westfall,Samoa,774-560-6463,emma.westfall@gmail.io,True,62393.38
+C151378,Kevin,Vincent,Samoa,215-382-2425,kevin.vincent@gmail.io,True,72848.29
+C801269,Jessica,Grantham,Rarotonga,696-125-4795,jessica.grantham@gmail.net,False,90937.41
+C216237,Ruby,Clark,Samoa,164-140-3579,ruby.clark@gmail.org,True,88824.74
+C262463,James,Diederich,Rarotonga,407-878-7835,james.diederich@gmail.org,True,64452.1
+C326286,Alexander,Bergman,Tuvalu,598-518-4888,alexander.bergman@gmail.org,False,87748.8
+C966666,Brittany,Mcilwain,Samoa,583- 74-8856,brittany.mcilwain@gmail.org,False,74269.69
+C756344,Michelle,Jarvis,Tuvalu,187-958-405,michelle.jarvis@gmail.net,True,52365.32
+C979018,Rose,Perry,Rarotonga,404- 48-3427,rose.perry@gmail.net,True,48124.84
+C933013,David,Hyde,Tuvalu,886-381-1084,david.hyde@gmail.org,False,29446.08
+C084928,Manuel,Kerr,Samoa,130-343-3614,manuel.kerr@gmail.net,False,2350.16
+C088670,Elizabeth,Trice,Rarotonga,745-609-128,elizabeth.trice@gmail.io,True,44689.44
+C697505,Richard,Young,Rarotonga, 33-812-8312,richard.young@gmail.com,True,81655.53
+C804539,Franklin,Kahn,Rarotonga,190-902-5976,franklin.kahn@gmail.org,False,49190.73
+C732298,Brandon,Banks,Samoa,451- 26-6362,brandon.banks@gmail.net,False,15972.51
+C908970,Carmen,Zimmerman,Tuvalu,238-551-9855,carmen.zimmerman@gmail.net,True,14320.65
+C855929,Leon,Hendrick,Tuvalu, 12-308-138,leon.hendrick@gmail.org,False,53698.24
+C876979,Edward,Rahm,Rarotonga,698- 90-4297,edward.rahm@gmail.io,False,73841.72
+C472475,Dana,Gerwitz,Tuvalu,210-151-7327,dana.gerwitz@gmail.io,False,22957.65
+C743646,Lindsay,Wiedmann,Samoa,612-839-5015,lindsay.wiedmann@gmail.org,True,10622.2
+C323936,Patrick,Palacios,Tuvalu, 74-883-7266,patrick.palacios@gmail.org,False,2633.13
+C098260,Terica,Lanham,Tuvalu,263-  8-2111,terica.lanham@gmail.net,True,81424.56
+C313808,Tom,Welch,Samoa, 44-293-8112,tom.welch@gmail.org,True,55597.76
+C419558,John,Silver,Rarotonga,468-719-5919,john.silver@gmail.org,True,93270.6
+C051391,Helen,Clacher,Samoa,361-700-5789,helen.clacher@gmail.net,True,74651.96
+C453427,Elmira,Cannon,Rarotonga, 26- 26-9931,elmira.cannon@gmail.com,False,35358.88
+C575051,Candice,Blaylock,Tuvalu,522-905-994,candice.blaylock@gmail.io,True,99665.29
+C318371,James,Crouch,Tuvalu,551-405-8531,james.crouch@gmail.com,True,2084.54

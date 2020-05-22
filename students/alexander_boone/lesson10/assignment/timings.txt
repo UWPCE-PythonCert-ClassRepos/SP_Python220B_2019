@@ -1,0 +1,17 @@
+--- Small Number of Records ---
+import_data successfully processed 10 records in 0.54459 seconds
+show_rentals successfully processed 1 records in 0.00265 seconds
+show_available_products successfully processed 2 records in 0.00201 seconds
+--- Medium Number of Records ---
+import_data successfully processed 1502 records in 1.13852 seconds
+show_rentals successfully processed 0 records in 0.00217 seconds
+show_available_products successfully processed 413 records in 0.00398 seconds
+--- Large Number of Records ---
+import_data successfully processed 3000 records in 2.11444 seconds
+show_rentals successfully processed 0 records in 0.00359 seconds
+show_available_products successfully processed 824 records in 0.01021 seconds
+
+
+The concluding numbers show that it took a larger amount of time to import data as the number or records increased (makes sense).
+
+In addition, the bottleneck appears to be at the import data stage during file i/o operations, as opposed to database operations.

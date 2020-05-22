@@ -1,0 +1,1001 @@
+product_id,description,product_type,quantity_available
+pid000,basketball,sporting goods,255
+pid001,water bottle,sporting goods,351
+pid002,shoes,clothing,339
+pid003,basketball,sporting goods,266
+pid004,water bottle,sporting goods,253
+pid005,basketball,sporting goods,246
+pid006,water bottle,sporting goods,444
+pid007,water bottle,sporting goods,141
+pid008,water bottle,sporting goods,17
+pid009,basketball,sporting goods,331
+pid010,basketball,sporting goods,74
+pid011,shoes,clothing,120
+pid012,water bottle,sporting goods,466
+pid013,shoes,clothing,129
+pid014,shoes,clothing,9
+pid015,water bottle,sporting goods,370
+pid016,shoes,clothing,149
+pid017,shoes,clothing,337
+pid018,water bottle,sporting goods,341
+pid019,water bottle,sporting goods,397
+pid020,water bottle,sporting goods,404
+pid021,water bottle,sporting goods,37
+pid022,water bottle,sporting goods,467
+pid023,shoes,clothing,231
+pid024,basketball,sporting goods,220
+pid025,shoes,clothing,185
+pid026,water bottle,sporting goods,204
+pid027,shoes,clothing,223
+pid028,basketball,sporting goods,217
+pid029,shoes,clothing,126
+pid030,basketball,sporting goods,14
+pid031,water bottle,sporting goods,299
+pid032,shoes,clothing,431
+pid033,basketball,sporting goods,127
+pid034,water bottle,sporting goods,293
+pid035,water bottle,sporting goods,383
+pid036,basketball,sporting goods,468
+pid037,water bottle,sporting goods,87
+pid038,basketball,sporting goods,344
+pid039,water bottle,sporting goods,130
+pid040,shoes,clothing,16
+pid041,basketball,sporting goods,125
+pid042,shoes,clothing,428
+pid043,basketball,sporting goods,450
+pid044,shoes,clothing,347
+pid045,basketball,sporting goods,152
+pid046,water bottle,sporting goods,416
+pid047,basketball,sporting goods,164
+pid048,shoes,clothing,232
+pid049,basketball,sporting goods,320
+pid050,water bottle,sporting goods,446
+pid051,shoes,clothing,42
+pid052,basketball,sporting goods,59
+pid053,shoes,clothing,361
+pid054,basketball,sporting goods,470
+pid055,shoes,clothing,119
+pid056,shoes,clothing,73
+pid057,shoes,clothing,416
+pid058,basketball,sporting goods,234
+pid059,basketball,sporting goods,281
+pid060,water bottle,sporting goods,29
+pid061,shoes,clothing,339
+pid062,water bottle,sporting goods,22
+pid063,water bottle,sporting goods,4
+pid064,shoes,clothing,431
+pid065,shoes,clothing,328
+pid066,shoes,clothing,231
+pid067,basketball,sporting goods,466
+pid068,basketball,sporting goods,440
+pid069,water bottle,sporting goods,482
+pid070,basketball,sporting goods,219
+pid071,basketball,sporting goods,445
+pid072,water bottle,sporting goods,445
+pid073,shoes,clothing,481
+pid074,shoes,clothing,226
+pid075,water bottle,sporting goods,181
+pid076,shoes,clothing,177
+pid077,water bottle,sporting goods,291
+pid078,water bottle,sporting goods,372
+pid079,water bottle,sporting goods,141
+pid080,basketball,sporting goods,473
+pid081,basketball,sporting goods,255
+pid082,basketball,sporting goods,411
+pid083,water bottle,sporting goods,71
+pid084,shoes,clothing,5
+pid085,water bottle,sporting goods,366
+pid086,basketball,sporting goods,299
+pid087,shoes,clothing,282
+pid088,shoes,clothing,111
+pid089,basketball,sporting goods,351
+pid090,basketball,sporting goods,431
+pid091,shoes,clothing,459
+pid092,shoes,clothing,406
+pid093,water bottle,sporting goods,408
+pid094,water bottle,sporting goods,382
+pid095,shoes,clothing,165
+pid096,water bottle,sporting goods,202
+pid097,shoes,clothing,50
+pid098,water bottle,sporting goods,250
+pid099,water bottle,sporting goods,369
+pid100,water bottle,sporting goods,148
+pid101,water bottle,sporting goods,240
+pid102,basketball,sporting goods,384
+pid103,water bottle,sporting goods,239
+pid104,water bottle,sporting goods,214
+pid105,basketball,sporting goods,104
+pid106,basketball,sporting goods,129
+pid107,shoes,clothing,65
+pid108,basketball,sporting goods,18
+pid109,water bottle,sporting goods,108
+pid110,basketball,sporting goods,414
+pid111,basketball,sporting goods,473
+pid112,shoes,clothing,331
+pid113,water bottle,sporting goods,206
+pid114,shoes,clothing,169
+pid115,water bottle,sporting goods,27
+pid116,water bottle,sporting goods,208
+pid117,basketball,sporting goods,253
+pid118,basketball,sporting goods,191
+pid119,water bottle,sporting goods,10
+pid120,water bottle,sporting goods,483
+pid121,shoes,clothing,497
+pid122,water bottle,sporting goods,301
+pid123,basketball,sporting goods,432
+pid124,water bottle,sporting goods,103
+pid125,water bottle,sporting goods,288
+pid126,shoes,clothing,457
+pid127,shoes,clothing,392
+pid128,water bottle,sporting goods,36
+pid129,basketball,sporting goods,409
+pid130,water bottle,sporting goods,313
+pid131,water bottle,sporting goods,337
+pid132,shoes,clothing,79
+pid133,shoes,clothing,272
+pid134,basketball,sporting goods,221
+pid135,water bottle,sporting goods,118
+pid136,shoes,clothing,433
+pid137,basketball,sporting goods,196
+pid138,water bottle,sporting goods,260
+pid139,water bottle,sporting goods,253
+pid140,basketball,sporting goods,61
+pid141,shoes,clothing,143
+pid142,basketball,sporting goods,281
+pid143,shoes,clothing,482
+pid144,water bottle,sporting goods,118
+pid145,water bottle,sporting goods,14
+pid146,water bottle,sporting goods,456
+pid147,basketball,sporting goods,253
+pid148,water bottle,sporting goods,284
+pid149,basketball,sporting goods,322
+pid150,water bottle,sporting goods,322
+pid151,water bottle,sporting goods,373
+pid152,water bottle,sporting goods,411
+pid153,water bottle,sporting goods,174
+pid154,water bottle,sporting goods,216
+pid155,basketball,sporting goods,195
+pid156,shoes,clothing,203
+pid157,shoes,clothing,77
+pid158,shoes,clothing,120
+pid159,water bottle,sporting goods,110
+pid160,basketball,sporting goods,176
+pid161,basketball,sporting goods,440
+pid162,shoes,clothing,159
+pid163,basketball,sporting goods,107
+pid164,shoes,clothing,176
+pid165,shoes,clothing,327
+pid166,shoes,clothing,446
+pid167,basketball,sporting goods,458
+pid168,basketball,sporting goods,215
+pid169,water bottle,sporting goods,42
+pid170,basketball,sporting goods,447
+pid171,basketball,sporting goods,487
+pid172,shoes,clothing,425
+pid173,shoes,clothing,107
+pid174,shoes,clothing,97
+pid175,water bottle,sporting goods,221
+pid176,water bottle,sporting goods,174
+pid177,shoes,clothing,407
+pid178,water bottle,sporting goods,298
+pid179,shoes,clothing,381
+pid180,shoes,clothing,162
+pid181,water bottle,sporting goods,152
+pid182,basketball,sporting goods,494
+pid183,basketball,sporting goods,141
+pid184,water bottle,sporting goods,264
+pid185,basketball,sporting goods,57
+pid186,basketball,sporting goods,211
+pid187,shoes,clothing,80
+pid188,water bottle,sporting goods,210
+pid189,shoes,clothing,134
+pid190,water bottle,sporting goods,178
+pid191,water bottle,sporting goods,43
+pid192,shoes,clothing,60
+pid193,water bottle,sporting goods,303
+pid194,basketball,sporting goods,19
+pid195,water bottle,sporting goods,12
+pid196,shoes,clothing,344
+pid197,basketball,sporting goods,479
+pid198,shoes,clothing,207
+pid199,basketball,sporting goods,431
+pid200,water bottle,sporting goods,323
+pid201,water bottle,sporting goods,423
+pid202,water bottle,sporting goods,408
+pid203,basketball,sporting goods,341
+pid204,basketball,sporting goods,287
+pid205,shoes,clothing,196
+pid206,water bottle,sporting goods,131
+pid207,basketball,sporting goods,307
+pid208,shoes,clothing,38
+pid209,shoes,clothing,84
+pid210,water bottle,sporting goods,136
+pid211,basketball,sporting goods,493
+pid212,shoes,clothing,352
+pid213,basketball,sporting goods,388
+pid214,basketball,sporting goods,207
+pid215,shoes,clothing,476
+pid216,shoes,clothing,34
+pid217,shoes,clothing,281
+pid218,shoes,clothing,278
+pid219,basketball,sporting goods,445
+pid220,water bottle,sporting goods,272
+pid221,water bottle,sporting goods,391
+pid222,shoes,clothing,295
+pid223,basketball,sporting goods,281
+pid224,basketball,sporting goods,234
+pid225,shoes,clothing,2
+pid226,water bottle,sporting goods,235
+pid227,water bottle,sporting goods,463
+pid228,basketball,sporting goods,425
+pid229,basketball,sporting goods,213
+pid230,basketball,sporting goods,152
+pid231,water bottle,sporting goods,326
+pid232,basketball,sporting goods,6
+pid233,shoes,clothing,68
+pid234,water bottle,sporting goods,355
+pid235,basketball,sporting goods,417
+pid236,shoes,clothing,187
+pid237,basketball,sporting goods,304
+pid238,basketball,sporting goods,367
+pid239,water bottle,sporting goods,377
+pid240,basketball,sporting goods,471
+pid241,shoes,clothing,75
+pid242,shoes,clothing,411
+pid243,shoes,clothing,482
+pid244,water bottle,sporting goods,425
+pid245,water bottle,sporting goods,480
+pid246,shoes,clothing,144
+pid247,water bottle,sporting goods,493
+pid248,shoes,clothing,304
+pid249,shoes,clothing,359
+pid250,shoes,clothing,426
+pid251,water bottle,sporting goods,185
+pid252,water bottle,sporting goods,160
+pid253,basketball,sporting goods,145
+pid254,basketball,sporting goods,339
+pid255,basketball,sporting goods,201
+pid256,basketball,sporting goods,81
+pid257,basketball,sporting goods,74
+pid258,basketball,sporting goods,391
+pid259,basketball,sporting goods,121
+pid260,basketball,sporting goods,224
+pid261,basketball,sporting goods,250
+pid262,shoes,clothing,6
+pid263,shoes,clothing,101
+pid264,shoes,clothing,89
+pid265,basketball,sporting goods,82
+pid266,basketball,sporting goods,318
+pid267,basketball,sporting goods,479
+pid268,basketball,sporting goods,55
+pid269,basketball,sporting goods,410
+pid270,water bottle,sporting goods,250
+pid271,water bottle,sporting goods,272
+pid272,shoes,clothing,249
+pid273,basketball,sporting goods,16
+pid274,water bottle,sporting goods,100
+pid275,water bottle,sporting goods,155
+pid276,shoes,clothing,73
+pid277,basketball,sporting goods,271
+pid278,basketball,sporting goods,130
+pid279,basketball,sporting goods,376
+pid280,shoes,clothing,293
+pid281,shoes,clothing,21
+pid282,water bottle,sporting goods,89
+pid283,basketball,sporting goods,235
+pid284,water bottle,sporting goods,173
+pid285,shoes,clothing,137
+pid286,water bottle,sporting goods,239
+pid287,basketball,sporting goods,259
+pid288,shoes,clothing,36
+pid289,basketball,sporting goods,469
+pid290,basketball,sporting goods,232
+pid291,water bottle,sporting goods,25
+pid292,water bottle,sporting goods,418
+pid293,water bottle,sporting goods,134
+pid294,shoes,clothing,188
+pid295,shoes,clothing,284
+pid296,water bottle,sporting goods,492
+pid297,shoes,clothing,394
+pid298,basketball,sporting goods,267
+pid299,shoes,clothing,395
+pid300,basketball,sporting goods,226
+pid301,water bottle,sporting goods,373
+pid302,water bottle,sporting goods,2
+pid303,shoes,clothing,158
+pid304,shoes,clothing,425
+pid305,shoes,clothing,161
+pid306,shoes,clothing,495
+pid307,basketball,sporting goods,429
+pid308,water bottle,sporting goods,432
+pid309,shoes,clothing,415
+pid310,basketball,sporting goods,136
+pid311,water bottle,sporting goods,20
+pid312,basketball,sporting goods,80
+pid313,basketball,sporting goods,163
+pid314,shoes,clothing,199
+pid315,water bottle,sporting goods,11
+pid316,shoes,clothing,46
+pid317,basketball,sporting goods,319
+pid318,water bottle,sporting goods,60
+pid319,water bottle,sporting goods,376
+pid320,water bottle,sporting goods,331
+pid321,shoes,clothing,121
+pid322,shoes,clothing,446
+pid323,basketball,sporting goods,108
+pid324,shoes,clothing,111
+pid325,water bottle,sporting goods,230
+pid326,shoes,clothing,395
+pid327,basketball,sporting goods,279
+pid328,shoes,clothing,157
+pid329,basketball,sporting goods,141
+pid330,basketball,sporting goods,344
+pid331,water bottle,sporting goods,310
+pid332,shoes,clothing,438
+pid333,shoes,clothing,31
+pid334,shoes,clothing,421
+pid335,water bottle,sporting goods,396
+pid336,basketball,sporting goods,306
+pid337,shoes,clothing,230
+pid338,shoes,clothing,443
+pid339,water bottle,sporting goods,187
+pid340,shoes,clothing,437
+pid341,water bottle,sporting goods,218
+pid342,water bottle,sporting goods,452
+pid343,water bottle,sporting goods,7
+pid344,basketball,sporting goods,192
+pid345,basketball,sporting goods,22
+pid346,water bottle,sporting goods,246
+pid347,water bottle,sporting goods,475
+pid348,basketball,sporting goods,289
+pid349,water bottle,sporting goods,115
+pid350,shoes,clothing,486
+pid351,water bottle,sporting goods,120
+pid352,shoes,clothing,325
+pid353,basketball,sporting goods,186
+pid354,shoes,clothing,452
+pid355,water bottle,sporting goods,308
+pid356,basketball,sporting goods,209
+pid357,basketball,sporting goods,245
+pid358,water bottle,sporting goods,66
+pid359,shoes,clothing,285
+pid360,water bottle,sporting goods,239
+pid361,shoes,clothing,218
+pid362,water bottle,sporting goods,39
+pid363,water bottle,sporting goods,50
+pid364,basketball,sporting goods,294
+pid365,water bottle,sporting goods,356
+pid366,basketball,sporting goods,160
+pid367,basketball,sporting goods,435
+pid368,shoes,clothing,274
+pid369,basketball,sporting goods,246
+pid370,basketball,sporting goods,121
+pid371,shoes,clothing,390
+pid372,water bottle,sporting goods,161
+pid373,shoes,clothing,384
+pid374,basketball,sporting goods,349
+pid375,shoes,clothing,235
+pid376,water bottle,sporting goods,454
+pid377,basketball,sporting goods,131
+pid378,basketball,sporting goods,460
+pid379,shoes,clothing,330
+pid380,basketball,sporting goods,177
+pid381,water bottle,sporting goods,56
+pid382,shoes,clothing,348
+pid383,shoes,clothing,37
+pid384,shoes,clothing,352
+pid385,shoes,clothing,27
+pid386,water bottle,sporting goods,316
+pid387,shoes,clothing,486
+pid388,basketball,sporting goods,313
+pid389,shoes,clothing,196
+pid390,water bottle,sporting goods,339
+pid391,water bottle,sporting goods,477
+pid392,water bottle,sporting goods,1
+pid393,shoes,clothing,377
+pid394,shoes,clothing,55
+pid395,water bottle,sporting goods,90
+pid396,basketball,sporting goods,286
+pid397,basketball,sporting goods,309
+pid398,basketball,sporting goods,399
+pid399,water bottle,sporting goods,43
+pid400,shoes,clothing,107
+pid401,water bottle,sporting goods,320
+pid402,shoes,clothing,355
+pid403,shoes,clothing,351
+pid404,shoes,clothing,311
+pid405,water bottle,sporting goods,476
+pid406,basketball,sporting goods,362
+pid407,water bottle,sporting goods,443
+pid408,shoes,clothing,117
+pid409,shoes,clothing,285
+pid410,basketball,sporting goods,449
+pid411,shoes,clothing,107
+pid412,shoes,clothing,371
+pid413,basketball,sporting goods,73
+pid414,shoes,clothing,76
+pid415,shoes,clothing,66
+pid416,basketball,sporting goods,229
+pid417,water bottle,sporting goods,230
+pid418,basketball,sporting goods,243
+pid419,shoes,clothing,107
+pid420,basketball,sporting goods,349
+pid421,shoes,clothing,11
+pid422,water bottle,sporting goods,277
+pid423,shoes,clothing,203
+pid424,shoes,clothing,238
+pid425,basketball,sporting goods,140
+pid426,water bottle,sporting goods,13
+pid427,water bottle,sporting goods,498
+pid428,water bottle,sporting goods,1
+pid429,water bottle,sporting goods,89
+pid430,water bottle,sporting goods,323
+pid431,shoes,clothing,420
+pid432,basketball,sporting goods,142
+pid433,water bottle,sporting goods,388
+pid434,basketball,sporting goods,429
+pid435,basketball,sporting goods,339
+pid436,water bottle,sporting goods,482
+pid437,basketball,sporting goods,414
+pid438,water bottle,sporting goods,482
+pid439,shoes,clothing,343
+pid440,shoes,clothing,101
+pid441,shoes,clothing,154
+pid442,basketball,sporting goods,341
+pid443,shoes,clothing,193
+pid444,water bottle,sporting goods,284
+pid445,water bottle,sporting goods,425
+pid446,water bottle,sporting goods,343
+pid447,shoes,clothing,147
+pid448,basketball,sporting goods,408
+pid449,water bottle,sporting goods,500
+pid450,basketball,sporting goods,98
+pid451,basketball,sporting goods,249
+pid452,water bottle,sporting goods,136
+pid453,basketball,sporting goods,164
+pid454,basketball,sporting goods,3
+pid455,shoes,clothing,66
+pid456,water bottle,sporting goods,354
+pid457,water bottle,sporting goods,45
+pid458,basketball,sporting goods,378
+pid459,basketball,sporting goods,414
+pid460,water bottle,sporting goods,348
+pid461,basketball,sporting goods,241
+pid462,basketball,sporting goods,22
+pid463,basketball,sporting goods,354
+pid464,shoes,clothing,295
+pid465,basketball,sporting goods,244
+pid466,water bottle,sporting goods,444
+pid467,basketball,sporting goods,34
+pid468,water bottle,sporting goods,367
+pid469,shoes,clothing,141
+pid470,basketball,sporting goods,329
+pid471,water bottle,sporting goods,68
+pid472,shoes,clothing,293
+pid473,shoes,clothing,254
+pid474,basketball,sporting goods,404
+pid475,shoes,clothing,496
+pid476,shoes,clothing,391
+pid477,basketball,sporting goods,438
+pid478,water bottle,sporting goods,332
+pid479,shoes,clothing,361
+pid480,shoes,clothing,474
+pid481,basketball,sporting goods,18
+pid482,shoes,clothing,412
+pid483,basketball,sporting goods,22
+pid484,basketball,sporting goods,312
+pid485,shoes,clothing,349
+pid486,basketball,sporting goods,140
+pid487,shoes,clothing,130
+pid488,water bottle,sporting goods,351
+pid489,water bottle,sporting goods,366
+pid490,shoes,clothing,361
+pid491,water bottle,sporting goods,480
+pid492,basketball,sporting goods,38
+pid493,shoes,clothing,427
+pid494,shoes,clothing,246
+pid495,shoes,clothing,380
+pid496,basketball,sporting goods,189
+pid497,shoes,clothing,194
+pid498,basketball,sporting goods,270
+pid499,basketball,sporting goods,118
+pid500,water bottle,sporting goods,46
+pid501,shoes,clothing,102
+pid502,shoes,clothing,444
+pid503,water bottle,sporting goods,194
+pid504,basketball,sporting goods,337
+pid505,basketball,sporting goods,193
+pid506,water bottle,sporting goods,238
+pid507,shoes,clothing,493
+pid508,shoes,clothing,186
+pid509,water bottle,sporting goods,90
+pid510,basketball,sporting goods,153
+pid511,basketball,sporting goods,5
+pid512,basketball,sporting goods,194
+pid513,shoes,clothing,117
+pid514,basketball,sporting goods,103
+pid515,shoes,clothing,275
+pid516,water bottle,sporting goods,209
+pid517,water bottle,sporting goods,111
+pid518,water bottle,sporting goods,435
+pid519,basketball,sporting goods,386
+pid520,water bottle,sporting goods,106
+pid521,water bottle,sporting goods,436
+pid522,basketball,sporting goods,454
+pid523,basketball,sporting goods,187
+pid524,water bottle,sporting goods,230
+pid525,water bottle,sporting goods,53
+pid526,water bottle,sporting goods,338
+pid527,shoes,clothing,252
+pid528,basketball,sporting goods,34
+pid529,basketball,sporting goods,322
+pid530,basketball,sporting goods,4
+pid531,shoes,clothing,285
+pid532,basketball,sporting goods,17
+pid533,water bottle,sporting goods,6
+pid534,shoes,clothing,487
+pid535,basketball,sporting goods,295
+pid536,basketball,sporting goods,310
+pid537,water bottle,sporting goods,479
+pid538,shoes,clothing,407
+pid539,basketball,sporting goods,217
+pid540,shoes,clothing,200
+pid541,water bottle,sporting goods,232
+pid542,basketball,sporting goods,228
+pid543,basketball,sporting goods,124
+pid544,basketball,sporting goods,373
+pid545,water bottle,sporting goods,190
+pid546,basketball,sporting goods,91
+pid547,shoes,clothing,289
+pid548,water bottle,sporting goods,23
+pid549,basketball,sporting goods,72
+pid550,shoes,clothing,56
+pid551,shoes,clothing,323
+pid552,water bottle,sporting goods,482
+pid553,shoes,clothing,26
+pid554,basketball,sporting goods,497
+pid555,water bottle,sporting goods,115
+pid556,water bottle,sporting goods,152
+pid557,shoes,clothing,367
+pid558,basketball,sporting goods,59
+pid559,basketball,sporting goods,51
+pid560,shoes,clothing,440
+pid561,water bottle,sporting goods,223
+pid562,basketball,sporting goods,138
+pid563,water bottle,sporting goods,173
+pid564,water bottle,sporting goods,277
+pid565,water bottle,sporting goods,19
+pid566,basketball,sporting goods,52
+pid567,basketball,sporting goods,220
+pid568,water bottle,sporting goods,24
+pid569,basketball,sporting goods,55
+pid570,water bottle,sporting goods,138
+pid571,water bottle,sporting goods,498
+pid572,basketball,sporting goods,267
+pid573,shoes,clothing,274
+pid574,basketball,sporting goods,216
+pid575,water bottle,sporting goods,333
+pid576,basketball,sporting goods,139
+pid577,basketball,sporting goods,417
+pid578,basketball,sporting goods,436
+pid579,water bottle,sporting goods,340
+pid580,basketball,sporting goods,452
+pid581,basketball,sporting goods,460
+pid582,water bottle,sporting goods,156
+pid583,shoes,clothing,36
+pid584,basketball,sporting goods,268
+pid585,shoes,clothing,334
+pid586,shoes,clothing,458
+pid587,water bottle,sporting goods,99
+pid588,basketball,sporting goods,444
+pid589,shoes,clothing,44
+pid590,water bottle,sporting goods,497
+pid591,basketball,sporting goods,344
+pid592,basketball,sporting goods,278
+pid593,water bottle,sporting goods,303
+pid594,water bottle,sporting goods,128
+pid595,basketball,sporting goods,488
+pid596,basketball,sporting goods,382
+pid597,shoes,clothing,331
+pid598,water bottle,sporting goods,411
+pid599,basketball,sporting goods,288
+pid600,basketball,sporting goods,480
+pid601,shoes,clothing,495
+pid602,water bottle,sporting goods,473
+pid603,basketball,sporting goods,325
+pid604,water bottle,sporting goods,299
+pid605,basketball,sporting goods,437
+pid606,shoes,clothing,312
+pid607,shoes,clothing,247
+pid608,water bottle,sporting goods,310
+pid609,basketball,sporting goods,194
+pid610,water bottle,sporting goods,254
+pid611,water bottle,sporting goods,146
+pid612,water bottle,sporting goods,481
+pid613,shoes,clothing,292
+pid614,water bottle,sporting goods,190
+pid615,basketball,sporting goods,167
+pid616,shoes,clothing,314
+pid617,basketball,sporting goods,389
+pid618,water bottle,sporting goods,380
+pid619,shoes,clothing,136
+pid620,shoes,clothing,398
+pid621,water bottle,sporting goods,62
+pid622,shoes,clothing,215
+pid623,basketball,sporting goods,482
+pid624,shoes,clothing,236
+pid625,water bottle,sporting goods,449
+pid626,shoes,clothing,381
+pid627,water bottle,sporting goods,322
+pid628,basketball,sporting goods,460
+pid629,water bottle,sporting goods,221
+pid630,basketball,sporting goods,92
+pid631,water bottle,sporting goods,403
+pid632,shoes,clothing,312
+pid633,water bottle,sporting goods,359
+pid634,shoes,clothing,332
+pid635,basketball,sporting goods,236
+pid636,water bottle,sporting goods,38
+pid637,basketball,sporting goods,444
+pid638,shoes,clothing,471
+pid639,basketball,sporting goods,164
+pid640,water bottle,sporting goods,117
+pid641,basketball,sporting goods,110
+pid642,shoes,clothing,352
+pid643,water bottle,sporting goods,183
+pid644,water bottle,sporting goods,298
+pid645,basketball,sporting goods,266
+pid646,water bottle,sporting goods,184
+pid647,shoes,clothing,237
+pid648,shoes,clothing,10
+pid649,shoes,clothing,98
+pid650,shoes,clothing,479
+pid651,water bottle,sporting goods,446
+pid652,basketball,sporting goods,17
+pid653,shoes,clothing,402
+pid654,shoes,clothing,455
+pid655,basketball,sporting goods,260
+pid656,basketball,sporting goods,373
+pid657,basketball,sporting goods,56
+pid658,water bottle,sporting goods,278
+pid659,shoes,clothing,480
+pid660,shoes,clothing,351
+pid661,water bottle,sporting goods,181
+pid662,water bottle,sporting goods,391
+pid663,basketball,sporting goods,426
+pid664,water bottle,sporting goods,297
+pid665,water bottle,sporting goods,49
+pid666,basketball,sporting goods,262
+pid667,basketball,sporting goods,80
+pid668,water bottle,sporting goods,418
+pid669,basketball,sporting goods,233
+pid670,water bottle,sporting goods,6
+pid671,shoes,clothing,428
+pid672,basketball,sporting goods,302
+pid673,water bottle,sporting goods,430
+pid674,basketball,sporting goods,15
+pid675,shoes,clothing,476
+pid676,basketball,sporting goods,256
+pid677,basketball,sporting goods,88
+pid678,water bottle,sporting goods,313
+pid679,shoes,clothing,106
+pid680,water bottle,sporting goods,411
+pid681,shoes,clothing,253
+pid682,basketball,sporting goods,359
+pid683,basketball,sporting goods,439
+pid684,shoes,clothing,123
+pid685,basketball,sporting goods,180
+pid686,shoes,clothing,212
+pid687,shoes,clothing,309
+pid688,water bottle,sporting goods,291
+pid689,basketball,sporting goods,151
+pid690,water bottle,sporting goods,496
+pid691,shoes,clothing,65
+pid692,basketball,sporting goods,77
+pid693,water bottle,sporting goods,27
+pid694,shoes,clothing,189
+pid695,water bottle,sporting goods,404
+pid696,shoes,clothing,201
+pid697,shoes,clothing,285
+pid698,shoes,clothing,15
+pid699,water bottle,sporting goods,35
+pid700,basketball,sporting goods,419
+pid701,shoes,clothing,343
+pid702,shoes,clothing,250
+pid703,shoes,clothing,128
+pid704,shoes,clothing,264
+pid705,shoes,clothing,278
+pid706,basketball,sporting goods,341
+pid707,basketball,sporting goods,278
+pid708,shoes,clothing,305
+pid709,water bottle,sporting goods,448
+pid710,basketball,sporting goods,38
+pid711,basketball,sporting goods,70
+pid712,basketball,sporting goods,328
+pid713,water bottle,sporting goods,65
+pid714,shoes,clothing,195
+pid715,water bottle,sporting goods,381
+pid716,water bottle,sporting goods,96
+pid717,water bottle,sporting goods,484
+pid718,basketball,sporting goods,400
+pid719,shoes,clothing,202
+pid720,water bottle,sporting goods,113
+pid721,shoes,clothing,403
+pid722,basketball,sporting goods,331
+pid723,basketball,sporting goods,261
+pid724,basketball,sporting goods,80
+pid725,water bottle,sporting goods,478
+pid726,basketball,sporting goods,154
+pid727,water bottle,sporting goods,423
+pid728,shoes,clothing,32
+pid729,basketball,sporting goods,46
+pid730,shoes,clothing,130
+pid731,basketball,sporting goods,324
+pid732,basketball,sporting goods,12
+pid733,shoes,clothing,84
+pid734,basketball,sporting goods,296
+pid735,basketball,sporting goods,401
+pid736,water bottle,sporting goods,81
+pid737,shoes,clothing,317
+pid738,shoes,clothing,57
+pid739,water bottle,sporting goods,120
+pid740,basketball,sporting goods,45
+pid741,basketball,sporting goods,213
+pid742,shoes,clothing,319
+pid743,basketball,sporting goods,152
+pid744,basketball,sporting goods,426
+pid745,water bottle,sporting goods,163
+pid746,shoes,clothing,389
+pid747,shoes,clothing,244
+pid748,basketball,sporting goods,334
+pid749,water bottle,sporting goods,85
+pid750,shoes,clothing,92
+pid751,basketball,sporting goods,223
+pid752,shoes,clothing,257
+pid753,basketball,sporting goods,168
+pid754,shoes,clothing,497
+pid755,water bottle,sporting goods,395
+pid756,water bottle,sporting goods,82
+pid757,shoes,clothing,318
+pid758,shoes,clothing,297
+pid759,basketball,sporting goods,45
+pid760,basketball,sporting goods,119
+pid761,basketball,sporting goods,284
+pid762,water bottle,sporting goods,330
+pid763,shoes,clothing,40
+pid764,basketball,sporting goods,118
+pid765,basketball,sporting goods,18
+pid766,shoes,clothing,21
+pid767,shoes,clothing,234
+pid768,water bottle,sporting goods,142
+pid769,shoes,clothing,73
+pid770,water bottle,sporting goods,311
+pid771,water bottle,sporting goods,277
+pid772,water bottle,sporting goods,252
+pid773,water bottle,sporting goods,136
+pid774,water bottle,sporting goods,170
+pid775,water bottle,sporting goods,358
+pid776,shoes,clothing,174
+pid777,basketball,sporting goods,160
+pid778,shoes,clothing,148
+pid779,basketball,sporting goods,460
+pid780,shoes,clothing,37
+pid781,water bottle,sporting goods,476
+pid782,shoes,clothing,410
+pid783,shoes,clothing,343
+pid784,basketball,sporting goods,51
+pid785,shoes,clothing,126
+pid786,basketball,sporting goods,467
+pid787,shoes,clothing,219
+pid788,basketball,sporting goods,451
+pid789,shoes,clothing,441
+pid790,water bottle,sporting goods,180
+pid791,shoes,clothing,474
+pid792,water bottle,sporting goods,119
+pid793,water bottle,sporting goods,349
+pid794,basketball,sporting goods,308
+pid795,shoes,clothing,112
+pid796,water bottle,sporting goods,374
+pid797,shoes,clothing,347
+pid798,basketball,sporting goods,143
+pid799,basketball,sporting goods,256
+pid800,water bottle,sporting goods,124
+pid801,basketball,sporting goods,24
+pid802,basketball,sporting goods,459
+pid803,shoes,clothing,35
+pid804,shoes,clothing,319
+pid805,water bottle,sporting goods,426
+pid806,shoes,clothing,227
+pid807,shoes,clothing,305
+pid808,shoes,clothing,123
+pid809,water bottle,sporting goods,189
+pid810,water bottle,sporting goods,403
+pid811,basketball,sporting goods,266
+pid812,basketball,sporting goods,236
+pid813,basketball,sporting goods,333
+pid814,water bottle,sporting goods,416
+pid815,shoes,clothing,89
+pid816,basketball,sporting goods,418
+pid817,basketball,sporting goods,197
+pid818,basketball,sporting goods,42
+pid819,water bottle,sporting goods,199
+pid820,basketball,sporting goods,379
+pid821,shoes,clothing,171
+pid822,basketball,sporting goods,61
+pid823,basketball,sporting goods,344
+pid824,shoes,clothing,243
+pid825,shoes,clothing,145
+pid826,basketball,sporting goods,410
+pid827,shoes,clothing,27
+pid828,basketball,sporting goods,10
+pid829,shoes,clothing,371
+pid830,shoes,clothing,190
+pid831,water bottle,sporting goods,100
+pid832,shoes,clothing,161
+pid833,shoes,clothing,251
+pid834,basketball,sporting goods,340
+pid835,shoes,clothing,454
+pid836,water bottle,sporting goods,316
+pid837,shoes,clothing,54
+pid838,basketball,sporting goods,139
+pid839,water bottle,sporting goods,244
+pid840,basketball,sporting goods,103
+pid841,water bottle,sporting goods,472
+pid842,water bottle,sporting goods,500
+pid843,shoes,clothing,181
+pid844,basketball,sporting goods,420
+pid845,water bottle,sporting goods,224
+pid846,water bottle,sporting goods,410
+pid847,water bottle,sporting goods,105
+pid848,water bottle,sporting goods,457
+pid849,basketball,sporting goods,205
+pid850,basketball,sporting goods,470
+pid851,shoes,clothing,388
+pid852,basketball,sporting goods,204
+pid853,basketball,sporting goods,297
+pid854,shoes,clothing,481
+pid855,basketball,sporting goods,365
+pid856,water bottle,sporting goods,404
+pid857,shoes,clothing,318
+pid858,water bottle,sporting goods,35
+pid859,water bottle,sporting goods,397
+pid860,basketball,sporting goods,4
+pid861,water bottle,sporting goods,281
+pid862,water bottle,sporting goods,253
+pid863,water bottle,sporting goods,90
+pid864,water bottle,sporting goods,350
+pid865,shoes,clothing,228
+pid866,basketball,sporting goods,348
+pid867,shoes,clothing,62
+pid868,basketball,sporting goods,433
+pid869,basketball,sporting goods,300
+pid870,basketball,sporting goods,180
+pid871,shoes,clothing,430
+pid872,basketball,sporting goods,73
+pid873,water bottle,sporting goods,345
+pid874,basketball,sporting goods,488
+pid875,basketball,sporting goods,44
+pid876,basketball,sporting goods,472
+pid877,shoes,clothing,364
+pid878,shoes,clothing,107
+pid879,basketball,sporting goods,261
+pid880,basketball,sporting goods,333
+pid881,shoes,clothing,410
+pid882,water bottle,sporting goods,369
+pid883,shoes,clothing,23
+pid884,water bottle,sporting goods,258
+pid885,shoes,clothing,35
+pid886,shoes,clothing,321
+pid887,basketball,sporting goods,50
+pid888,shoes,clothing,101
+pid889,shoes,clothing,168
+pid890,shoes,clothing,23
+pid891,shoes,clothing,443
+pid892,shoes,clothing,498
+pid893,basketball,sporting goods,263
+pid894,water bottle,sporting goods,429
+pid895,water bottle,sporting goods,141
+pid896,shoes,clothing,343
+pid897,basketball,sporting goods,395
+pid898,water bottle,sporting goods,364
+pid899,shoes,clothing,57
+pid900,basketball,sporting goods,420
+pid901,shoes,clothing,403
+pid902,water bottle,sporting goods,486
+pid903,shoes,clothing,192
+pid904,water bottle,sporting goods,126
+pid905,basketball,sporting goods,155
+pid906,water bottle,sporting goods,473
+pid907,basketball,sporting goods,265
+pid908,shoes,clothing,43
+pid909,water bottle,sporting goods,353
+pid910,basketball,sporting goods,187
+pid911,water bottle,sporting goods,472
+pid912,shoes,clothing,58
+pid913,water bottle,sporting goods,14
+pid914,water bottle,sporting goods,255
+pid915,water bottle,sporting goods,318
+pid916,shoes,clothing,313
+pid917,shoes,clothing,343
+pid918,water bottle,sporting goods,28
+pid919,basketball,sporting goods,250
+pid920,basketball,sporting goods,358
+pid921,basketball,sporting goods,381
+pid922,basketball,sporting goods,383
+pid923,basketball,sporting goods,114
+pid924,water bottle,sporting goods,316
+pid925,shoes,clothing,424
+pid926,basketball,sporting goods,349
+pid927,shoes,clothing,104
+pid928,shoes,clothing,106
+pid929,water bottle,sporting goods,337
+pid930,water bottle,sporting goods,430
+pid931,water bottle,sporting goods,54
+pid932,water bottle,sporting goods,154
+pid933,basketball,sporting goods,338
+pid934,shoes,clothing,463
+pid935,water bottle,sporting goods,212
+pid936,shoes,clothing,214
+pid937,basketball,sporting goods,433
+pid938,shoes,clothing,401
+pid939,water bottle,sporting goods,252
+pid940,water bottle,sporting goods,309
+pid941,shoes,clothing,499
+pid942,basketball,sporting goods,124
+pid943,shoes,clothing,412
+pid944,basketball,sporting goods,351
+pid945,shoes,clothing,280
+pid946,basketball,sporting goods,240
+pid947,shoes,clothing,31
+pid948,water bottle,sporting goods,50
+pid949,shoes,clothing,199
+pid950,shoes,clothing,397
+pid951,water bottle,sporting goods,388
+pid952,water bottle,sporting goods,122
+pid953,shoes,clothing,402
+pid954,basketball,sporting goods,210
+pid955,water bottle,sporting goods,298
+pid956,water bottle,sporting goods,450
+pid957,water bottle,sporting goods,45
+pid958,basketball,sporting goods,4
+pid959,basketball,sporting goods,64
+pid960,water bottle,sporting goods,245
+pid961,water bottle,sporting goods,290
+pid962,shoes,clothing,229
+pid963,water bottle,sporting goods,43
+pid964,basketball,sporting goods,351
+pid965,water bottle,sporting goods,342
+pid966,water bottle,sporting goods,424
+pid967,water bottle,sporting goods,481
+pid968,basketball,sporting goods,76
+pid969,basketball,sporting goods,280
+pid970,water bottle,sporting goods,287
+pid971,shoes,clothing,127
+pid972,shoes,clothing,467
+pid973,basketball,sporting goods,223
+pid974,shoes,clothing,29
+pid975,basketball,sporting goods,307
+pid976,basketball,sporting goods,153
+pid977,water bottle,sporting goods,214
+pid978,shoes,clothing,199
+pid979,water bottle,sporting goods,58
+pid980,shoes,clothing,289
+pid981,water bottle,sporting goods,224
+pid982,shoes,clothing,96
+pid983,water bottle,sporting goods,491
+pid984,shoes,clothing,463
+pid985,shoes,clothing,259
+pid986,water bottle,sporting goods,425
+pid987,basketball,sporting goods,221
+pid988,shoes,clothing,449
+pid989,water bottle,sporting goods,327
+pid990,water bottle,sporting goods,321
+pid991,shoes,clothing,487
+pid992,basketball,sporting goods,283
+pid993,basketball,sporting goods,177
+pid994,water bottle,sporting goods,34
+pid995,water bottle,sporting goods,318
+pid996,water bottle,sporting goods,250
+pid997,shoes,clothing,166
+pid998,water bottle,sporting goods,477
+pid999,shoes,clothing,469

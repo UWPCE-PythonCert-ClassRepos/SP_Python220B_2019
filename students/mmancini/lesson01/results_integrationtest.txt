@@ -1,0 +1,22 @@
+New inventory item added
+New inventory item added
+New inventory item added
+product_code:2
+description:Chair
+market_price:24
+rental_price:100
+material:wood
+size:L
+Item not found in inventory
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit
+Please choose from the following options (1, 2, q):
+1. Add a new item to the inventory
+2. Get item information
+q. Quit

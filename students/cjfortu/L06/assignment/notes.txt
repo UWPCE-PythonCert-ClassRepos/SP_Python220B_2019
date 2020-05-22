@@ -1,0 +1,77 @@
+Key points in my progress towards good_perf.py are, in chronological sequence:
+
+1: I noticed the loops for new_ones, year_count, and ao.  I set timing commands around those (visible
+   in the script still, but commented out)
+
+2: I could not get significant time improvements by converting these to comprehensions or
+   map-filters.  Using lambdas or functions also did not gain time improvements.
+
+3: I noticed these three loops could be combined.  This gained a noticebale time improvement.
+
+4: I noticed the new_ones loop was unnecessary, as were some 'list' commands.  Removing these
+   also improved time.
+
+The final runtime comparisons are below.  7.62s for poor_perf.py and 3.12s for good_perf.py.
+
+Again the attempted changes, which ultimately were not selected, remain in the script as comments.
+
+See below for gtime results.
+
+
+
+
+
+
+In [79]: !gtime --verbose python poor_perf.py                                                                                                                                        
+{'2013': 110853, '2014': 110920, '2015': 111189, '2016': 111368, '2017': 222017, '2018': 0}
+'ao' was found 500637 times
+    Command being timed: "python poor_perf.py"
+    User time (seconds): 7.62
+    System time (seconds): 0.27
+    Percent of CPU this job got: 99%
+    Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.95
+    Average shared text size (kbytes): 0
+    Average unshared data size (kbytes): 0
+    Average stack size (kbytes): 0
+    Average total size (kbytes): 0
+    Maximum resident set size (kbytes): 254104
+    Average resident set size (kbytes): 0
+    Major (requiring I/O) page faults: 104
+    Minor (reclaiming a frame) page faults: 66191
+    Voluntary context switches: 114
+    Involuntary context switches: 2175
+    Swaps: 0
+    File system inputs: 0
+    File system outputs: 0
+    Socket messages sent: 0
+    Socket messages received: 0
+    Signals delivered: 0
+    Page size (bytes): 4096
+    Exit status: 0
+
+In [80]: !gtime --verbose python good_perf.py                                                                                                                                        
+{'2013': 110853, '2014': 110920, '2015': 111189, '2016': 111368, '2017': 110880, '2018': 111137}
+'ao' was found 500637 times
+    Command being timed: "python good_perf.py"
+    User time (seconds): 3.12
+    System time (seconds): 0.06
+    Percent of CPU this job got: 99%
+    Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.21
+    Average shared text size (kbytes): 0
+    Average unshared data size (kbytes): 0
+    Average stack size (kbytes): 0
+    Average total size (kbytes): 0
+    Maximum resident set size (kbytes): 7188
+    Average resident set size (kbytes): 0
+    Major (requiring I/O) page faults: 0
+    Minor (reclaiming a frame) page faults: 2469
+    Voluntary context switches: 66
+    Involuntary context switches: 705
+    Swaps: 0
+    File system inputs: 0
+    File system outputs: 0
+    Socket messages sent: 0
+    Socket messages received: 0
+    Signals delivered: 0
+    Page size (bytes): 4096
+    Exit status: 0

@@ -1,0 +1,136 @@
+# Code used to generate records
+import uuid
+from random import randint, choice
+
+def random_one_row(num_of_rows):
+    for row in range(num_of_rows):
+        row += 1
+        lastcolumn = choice(['ao', ' ', ' ', ' '])
+        guid_val = uuid.uuid1()
+        rnddate = date = datetime.date(randint(2013, 2018), randint(1, 12), randint(1, 28)).strftime("%m/%d/%Y")
+        yield [str(guid_val), row, row + 1, row + 2, row + 3, rnddate, lastcolumn]
+
+
+def create_csv():
+    rownum = 1000000
+    with open('data/exercise_million.csv', "w") as csv_file:
+        writer = csv.writer(csv_file)
+        for line in random_one_row(rownum):
+            writer.writerow(line)
+            # print(line)
+
+Ran Cprofile on the module to find the areas to focus attention on, looking at total time
+found that reading the CSV file was done twice started there.
+
+calvin@Calvins-iMac lesson_06 % python profileandtime.py
+{'2013': 166032, '2014': 166637, '2015': 166407, '2016': 167047, '2017': 333877, '2018': 0}
+'ao' was found 249777 times
+
+         1038505 function calls in 4.598 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.057    0.057    4.598    4.598 <string>:1(<module>)
+        2    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        2    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+    19242    0.010    0.000    0.028    0.000 codecs.py:319(decode)
+        1    4.438    4.438    4.541    4.541 good_perf.py:12(analyze)
+    19242    0.019    0.000    0.019    0.000 {built-in method _codecs.utf_8_decode}
+        2    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        2    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    4.598    4.598 {built-in method builtins.exec}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+  1000000    0.075    0.000    0.075    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Removed reading csv twice saw a lot of ncalls of 2 redudant work being done. This was true for decode
+and encode which had 19242 call before remove the extra for loop which cut it in half to 9621
+
+
+calvin@Calvins-iMac lesson_06 % python profileandtime.py
+{'2013': 166032, '2014': 166637, '2015': 166407, '2016': 167047, '2017': 333877, '2018': 0}
+'ao' was found 249777 times
+
+         1019257 function calls in 2.974 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.059    0.059    2.974    2.974 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+     9621    0.006    0.000    0.015    0.000 codecs.py:319(decode)
+        1    2.829    2.829    2.915    2.915 good_perf.py:12(analyze)
+     9621    0.009    0.000    0.009    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    2.974    2.974 {built-in method builtins.exec}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+  1000000    0.071    0.000    0.071    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+The next thing that stood out was that the append was taking .071 to append a million items,
+this item list was never really used and not needed so removed it and refactored the code if
+statements. This also took the tottime for <string>:1(<module>) from .059 to 0.
+
+calvin@Calvins-iMac lesson_06 % python profileandtime.py
+{'2013': 166032, '2014': 166637, '2015': 166407, '2016': 167047, '2017': 333877, '2018': 0}
+'ao' was found 249777 times
+         19256 function calls in 2.523 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.523    2.523 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+     9621    0.005    0.000    0.014    0.000 codecs.py:319(decode)
+        1    2.509    2.509    2.523    2.523 good_perf.py:13(analyze)
+     9621    0.009    0.000    0.009    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    2.523    2.523 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Instead of figuring out the date year for each if get it once and use it for each if save some
+time. Question? Is the 9621 decode and {built-in method _codecs.utf_8_decode} something that
+should be tuned further?
+
+calvin@Calvins-iMac lesson_06 % python profileandtime.py
+{'2013': 166032, '2014': 166637, '2015': 166407, '2016': 167047, '2017': 333877, '2018': 0}
+'ao' was found 249777 times
+         19256 function calls in 1.994 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.994    1.994 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+     9621    0.006    0.000    0.014    0.000 codecs.py:319(decode)
+        1    1.979    1.979    1.994    1.994 good_perf.py:13(analyze)
+     9621    0.009    0.000    0.009    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    1.994    1.994 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+
+
+

@@ -5,8 +5,15 @@ poorly performing, poorly written module
 
 import datetime
 import csv
+from timeit import repeat
+from statistics import mean
+
 
 def analyze(filename):
+    '''
+    Analyze csv file to sum counts of lines with each year
+    and count the amount of 'ao' strings at the row's end.
+    '''
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -56,9 +63,23 @@ def analyze(filename):
 
     return (start, end, year_count, found)
 
+
 def main():
-    filename = "data/exercise.csv"
-    analyze(filename)
+    '''Run main function code.'''
+    testcode = '''
+filename = "data/new_exercise_data.csv"
+analyze(filename)
+    '''
+    n_repeats = 3
+    time = repeat(
+        stmt=testcode,
+        globals=globals(),
+        repeat=n_repeats,
+        number=1
+    )
+
+    print('Avg. of ' + str(n_repeats) + ' poor_perf timeit runs (s):')
+    print(mean(time))
 
 
 if __name__ == "__main__":

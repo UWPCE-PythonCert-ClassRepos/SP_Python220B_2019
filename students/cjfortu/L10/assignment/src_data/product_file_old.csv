@@ -1,0 +1,10 @@
+product_id,description,product_type,quantity_available,daily_rate
+LR001,55in TV,Living Room,15,3
+LR002,65in TV,Living Room,0,4
+BD002,Queen Bed,Bedroom,12,2
+BD001,Full Bed,Bedroom,40,1
+OF001,Desk + Chair,Office,26,1
+DN002,Dining Table + 6 Chair,Dining Room,8,3
+DN001,Dining Table + 4 Chair,Dining Room,0,2
+LR003,Sofa,Living Room,17,2
+LR004,,Living Room,5,1

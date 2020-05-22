@@ -1,0 +1,42 @@
+2020-03-04 18:21:16,429 database.py:186 INFO All tables have been dropped.
+2020-03-04 18:21:16,557 database.py:105 INFO Total product records: 2
+2020-03-04 18:21:16,558 database.py:68  INFO Timing for <function import_product at 0x03BD7418> = 0.12700963020324707
+2020-03-04 18:21:16,691 database.py:140 INFO Total customer records: 2
+2020-03-04 18:21:16,693 database.py:68  INFO Timing for <function import_customer at 0x03BD74A8> = 0.13378620147705078
+2020-03-04 18:21:16,824 database.py:173 INFO Total rental records: 2
+2020-03-04 18:21:16,826 database.py:68  INFO Timing for <function import_rental at 0x03BD7538> = 0.13321399688720703
+2020-03-04 18:22:45,439 database.py:186 INFO All tables have been dropped.
+2020-03-04 18:22:45,594 database.py:105 INFO Total product records: 12
+2020-03-04 18:22:45,596 database.py:68  INFO Timing for <function import_product at 0x03157418> = 0.15468335151672363
+2020-03-04 18:22:45,743 database.py:140 INFO Total customer records: 12
+2020-03-04 18:22:45,744 database.py:68  INFO Timing for <function import_customer at 0x031574A8> = 0.14845037460327148
+2020-03-04 18:22:45,896 database.py:173 INFO Total rental records: 12
+2020-03-04 18:22:45,898 database.py:68  INFO Timing for <function import_rental at 0x03157538> = 0.1538684368133545
+2020-03-04 18:25:52,625 database.py:186 INFO All tables have been dropped.
+2020-03-04 18:25:52,809 database.py:105 INFO Total product records: 50
+2020-03-04 18:25:52,810 database.py:68  INFO Timing for <function import_product at 0x03527418> = 0.18335580825805664
+2020-03-04 18:25:52,985 database.py:140 INFO Total customer records: 50
+2020-03-04 18:25:52,987 database.py:68  INFO Timing for <function import_customer at 0x035274A8> = 0.17738747596740723
+2020-03-04 18:25:53,169 database.py:173 INFO Total rental records: 50
+2020-03-04 18:25:53,170 database.py:68  INFO Timing for <function import_rental at 0x03527538> = 0.18295741081237793
+2020-03-04 18:59:54,054 database.py:186 INFO All tables have been dropped.
+2020-03-04 18:59:54,215 database.py:105 INFO Total product records: 100
+2020-03-04 18:59:54,216 database.py:68  INFO Timing for <function import_product at 0x03127418> = 0.16029739379882812
+2020-03-04 18:59:54,374 database.py:140 INFO Total customer records: 100
+2020-03-04 18:59:54,375 database.py:68  INFO Timing for <function import_customer at 0x031274A8> = 0.15930700302124023
+2020-03-04 18:59:54,549 database.py:173 INFO Total rental records: 100
+2020-03-04 18:59:54,549 database.py:68  INFO Timing for <function import_rental at 0x03127538> = 0.1744687557220459
+2020-03-04 19:00:50,280 database.py:186 INFO All tables have been dropped.
+2020-03-04 19:00:50,838 database.py:105 INFO Total product records: 500
+2020-03-04 19:00:50,839 database.py:68  INFO Timing for <function import_product at 0x03B87418> = 0.5570344924926758
+2020-03-04 19:00:51,460 database.py:140 INFO Total customer records: 500
+2020-03-04 19:00:51,462 database.py:68  INFO Timing for <function import_customer at 0x03B874A8> = 0.6218132972717285
+2020-03-04 19:00:52,076 database.py:173 INFO Total rental records: 500
+2020-03-04 19:00:52,077 database.py:68  INFO Timing for <function import_rental at 0x03B87538> = 0.6146433353424072
+2020-03-04 19:01:51,314 database.py:186 INFO All tables have been dropped.
+2020-03-04 19:01:52,284 database.py:105 INFO Total product records: 1000
+2020-03-04 19:01:52,285 database.py:68  INFO Timing for <function import_product at 0x03F27418> = 0.9688000679016113
+2020-03-04 19:01:53,280 database.py:140 INFO Total customer records: 1000
+2020-03-04 19:01:53,281 database.py:68  INFO Timing for <function import_customer at 0x03F274A8> = 0.995915412902832
+2020-03-04 19:01:54,294 database.py:173 INFO Total rental records: 1000
+2020-03-04 19:01:54,295 database.py:68  INFO Timing for <function import_rental at 0x03F27538> = 1.0140650272369385
