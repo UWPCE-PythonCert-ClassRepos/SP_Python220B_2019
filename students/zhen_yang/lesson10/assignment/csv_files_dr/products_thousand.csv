@@ -1,0 +1,1001 @@
+product_id,description,product_type,quantity_available
+prd6,dishwasher,kithen,5
+prd7,queen size bed,bedroom,8
+prd8,microwave oven,kitchen,7
+prd9,L-shaped sofa,livingroom,4
+prd10,dishwasher,kithen,8
+prd11,queen size bed,bedroom,2
+prd12,queen size bed,bedroom,7
+prd13,60-inch TV stand,livingroom,2
+prd14,L-shaped sofa,livingroom,5
+prd15,queen size bed,bedroom,5
+prd16,queen size bed,bedroom,3
+prd17,60-inch TV stand,livingroom,7
+prd18,L-shaped sofa,livingroom,0
+prd19,L-shaped sofa,livingroom,5
+prd20,60-inch TV stand,livingroom,2
+prd21,L-shaped sofa,livingroom,1
+prd22,dishwasher,kithen,7
+prd23,microwave oven,kitchen,8
+prd24,microwave oven,kitchen,2
+prd25,queen size bed,bedroom,9
+prd26,microwave oven,kitchen,1
+prd27,dishwasher,kithen,1
+prd28,queen size bed,bedroom,4
+prd29,queen size bed,bedroom,2
+prd30,microwave oven,kitchen,6
+prd31,queen size bed,bedroom,9
+prd32,60-inch TV stand,livingroom,4
+prd33,queen size bed,bedroom,2
+prd34,microwave oven,kitchen,1
+prd35,L-shaped sofa,livingroom,2
+prd36,microwave oven,kitchen,5
+prd37,queen size bed,bedroom,2
+prd38,queen size bed,bedroom,0
+prd39,queen size bed,bedroom,5
+prd40,microwave oven,kitchen,2
+prd41,microwave oven,kitchen,2
+prd42,dishwasher,kithen,5
+prd43,L-shaped sofa,livingroom,4
+prd44,dishwasher,kithen,9
+prd45,queen size bed,bedroom,2
+prd46,L-shaped sofa,livingroom,5
+prd47,microwave oven,kitchen,8
+prd48,microwave oven,kitchen,2
+prd49,queen size bed,bedroom,4
+prd50,queen size bed,bedroom,0
+prd51,60-inch TV stand,livingroom,3
+prd52,60-inch TV stand,livingroom,0
+prd53,queen size bed,bedroom,9
+prd54,60-inch TV stand,livingroom,1
+prd55,dishwasher,kithen,0
+prd56,queen size bed,bedroom,9
+prd57,L-shaped sofa,livingroom,9
+prd58,60-inch TV stand,livingroom,6
+prd59,L-shaped sofa,livingroom,6
+prd60,microwave oven,kitchen,4
+prd61,dishwasher,kithen,0
+prd62,L-shaped sofa,livingroom,7
+prd63,queen size bed,bedroom,0
+prd64,60-inch TV stand,livingroom,4
+prd65,60-inch TV stand,livingroom,4
+prd66,microwave oven,kitchen,6
+prd67,60-inch TV stand,livingroom,9
+prd68,60-inch TV stand,livingroom,7
+prd69,queen size bed,bedroom,3
+prd70,60-inch TV stand,livingroom,8
+prd71,queen size bed,bedroom,3
+prd72,L-shaped sofa,livingroom,8
+prd73,queen size bed,bedroom,7
+prd74,dishwasher,kithen,7
+prd75,queen size bed,bedroom,6
+prd76,dishwasher,kithen,0
+prd77,60-inch TV stand,livingroom,8
+prd78,dishwasher,kithen,8
+prd79,queen size bed,bedroom,9
+prd80,microwave oven,kitchen,7
+prd81,60-inch TV stand,livingroom,8
+prd82,L-shaped sofa,livingroom,6
+prd83,dishwasher,kithen,6
+prd84,queen size bed,bedroom,2
+prd85,queen size bed,bedroom,1
+prd86,60-inch TV stand,livingroom,7
+prd87,microwave oven,kitchen,7
+prd88,dishwasher,kithen,5
+prd89,dishwasher,kithen,4
+prd90,dishwasher,kithen,4
+prd91,L-shaped sofa,livingroom,5
+prd92,L-shaped sofa,livingroom,9
+prd93,dishwasher,kithen,9
+prd94,microwave oven,kitchen,8
+prd95,queen size bed,bedroom,5
+prd96,60-inch TV stand,livingroom,4
+prd97,60-inch TV stand,livingroom,2
+prd98,queen size bed,bedroom,8
+prd99,60-inch TV stand,livingroom,4
+prd100,L-shaped sofa,livingroom,9
+prd101,microwave oven,kitchen,4
+prd102,L-shaped sofa,livingroom,7
+prd103,queen size bed,bedroom,0
+prd104,queen size bed,bedroom,8
+prd105,queen size bed,bedroom,7
+prd106,L-shaped sofa,livingroom,0
+prd107,dishwasher,kithen,7
+prd108,L-shaped sofa,livingroom,7
+prd109,microwave oven,kitchen,0
+prd110,60-inch TV stand,livingroom,6
+prd111,queen size bed,bedroom,2
+prd112,microwave oven,kitchen,9
+prd113,microwave oven,kitchen,0
+prd114,queen size bed,bedroom,2
+prd115,microwave oven,kitchen,2
+prd116,60-inch TV stand,livingroom,5
+prd117,L-shaped sofa,livingroom,4
+prd118,queen size bed,bedroom,8
+prd119,L-shaped sofa,livingroom,2
+prd120,queen size bed,bedroom,0
+prd121,60-inch TV stand,livingroom,0
+prd122,L-shaped sofa,livingroom,7
+prd123,microwave oven,kitchen,3
+prd124,microwave oven,kitchen,3
+prd125,microwave oven,kitchen,0
+prd126,L-shaped sofa,livingroom,2
+prd127,L-shaped sofa,livingroom,0
+prd128,60-inch TV stand,livingroom,9
+prd129,dishwasher,kithen,7
+prd130,L-shaped sofa,livingroom,4
+prd131,L-shaped sofa,livingroom,5
+prd132,60-inch TV stand,livingroom,3
+prd133,queen size bed,bedroom,1
+prd134,microwave oven,kitchen,6
+prd135,dishwasher,kithen,8
+prd136,60-inch TV stand,livingroom,6
+prd137,microwave oven,kitchen,3
+prd138,dishwasher,kithen,7
+prd139,microwave oven,kitchen,1
+prd140,queen size bed,bedroom,9
+prd141,microwave oven,kitchen,5
+prd142,microwave oven,kitchen,6
+prd143,queen size bed,bedroom,1
+prd144,dishwasher,kithen,5
+prd145,queen size bed,bedroom,9
+prd146,queen size bed,bedroom,4
+prd147,dishwasher,kithen,9
+prd148,microwave oven,kitchen,3
+prd149,queen size bed,bedroom,9
+prd150,microwave oven,kitchen,6
+prd151,L-shaped sofa,livingroom,4
+prd152,60-inch TV stand,livingroom,5
+prd153,L-shaped sofa,livingroom,1
+prd154,dishwasher,kithen,0
+prd155,L-shaped sofa,livingroom,2
+prd156,L-shaped sofa,livingroom,1
+prd157,dishwasher,kithen,4
+prd158,dishwasher,kithen,7
+prd159,queen size bed,bedroom,9
+prd160,microwave oven,kitchen,6
+prd161,L-shaped sofa,livingroom,7
+prd162,queen size bed,bedroom,1
+prd163,queen size bed,bedroom,9
+prd164,L-shaped sofa,livingroom,4
+prd165,microwave oven,kitchen,5
+prd166,60-inch TV stand,livingroom,2
+prd167,dishwasher,kithen,2
+prd168,60-inch TV stand,livingroom,6
+prd169,queen size bed,bedroom,8
+prd170,L-shaped sofa,livingroom,2
+prd171,queen size bed,bedroom,5
+prd172,L-shaped sofa,livingroom,6
+prd173,dishwasher,kithen,8
+prd174,dishwasher,kithen,4
+prd175,60-inch TV stand,livingroom,3
+prd176,queen size bed,bedroom,3
+prd177,microwave oven,kitchen,4
+prd178,dishwasher,kithen,9
+prd179,60-inch TV stand,livingroom,8
+prd180,dishwasher,kithen,5
+prd181,60-inch TV stand,livingroom,5
+prd182,queen size bed,bedroom,4
+prd183,dishwasher,kithen,3
+prd184,microwave oven,kitchen,3
+prd185,60-inch TV stand,livingroom,1
+prd186,queen size bed,bedroom,2
+prd187,60-inch TV stand,livingroom,5
+prd188,microwave oven,kitchen,6
+prd189,queen size bed,bedroom,0
+prd190,dishwasher,kithen,6
+prd191,L-shaped sofa,livingroom,7
+prd192,microwave oven,kitchen,2
+prd193,microwave oven,kitchen,4
+prd194,microwave oven,kitchen,4
+prd195,dishwasher,kithen,1
+prd196,queen size bed,bedroom,9
+prd197,dishwasher,kithen,9
+prd198,dishwasher,kithen,8
+prd199,microwave oven,kitchen,6
+prd200,L-shaped sofa,livingroom,7
+prd201,microwave oven,kitchen,5
+prd202,dishwasher,kithen,1
+prd203,60-inch TV stand,livingroom,0
+prd204,queen size bed,bedroom,2
+prd205,queen size bed,bedroom,0
+prd206,dishwasher,kithen,3
+prd207,microwave oven,kitchen,3
+prd208,L-shaped sofa,livingroom,5
+prd209,microwave oven,kitchen,1
+prd210,L-shaped sofa,livingroom,6
+prd211,60-inch TV stand,livingroom,6
+prd212,L-shaped sofa,livingroom,4
+prd213,L-shaped sofa,livingroom,2
+prd214,60-inch TV stand,livingroom,2
+prd215,queen size bed,bedroom,2
+prd216,60-inch TV stand,livingroom,9
+prd217,queen size bed,bedroom,3
+prd218,dishwasher,kithen,9
+prd219,microwave oven,kitchen,2
+prd220,dishwasher,kithen,0
+prd221,dishwasher,kithen,4
+prd222,L-shaped sofa,livingroom,6
+prd223,L-shaped sofa,livingroom,3
+prd224,dishwasher,kithen,9
+prd225,microwave oven,kitchen,5
+prd226,dishwasher,kithen,7
+prd227,microwave oven,kitchen,1
+prd228,microwave oven,kitchen,9
+prd229,L-shaped sofa,livingroom,7
+prd230,dishwasher,kithen,3
+prd231,L-shaped sofa,livingroom,1
+prd232,60-inch TV stand,livingroom,2
+prd233,L-shaped sofa,livingroom,1
+prd234,queen size bed,bedroom,0
+prd235,60-inch TV stand,livingroom,1
+prd236,L-shaped sofa,livingroom,4
+prd237,microwave oven,kitchen,6
+prd238,queen size bed,bedroom,6
+prd239,microwave oven,kitchen,0
+prd240,60-inch TV stand,livingroom,0
+prd241,microwave oven,kitchen,0
+prd242,queen size bed,bedroom,2
+prd243,microwave oven,kitchen,2
+prd244,microwave oven,kitchen,4
+prd245,dishwasher,kithen,6
+prd246,60-inch TV stand,livingroom,5
+prd247,queen size bed,bedroom,9
+prd248,60-inch TV stand,livingroom,5
+prd249,dishwasher,kithen,3
+prd250,dishwasher,kithen,2
+prd251,queen size bed,bedroom,7
+prd252,60-inch TV stand,livingroom,0
+prd253,microwave oven,kitchen,3
+prd254,60-inch TV stand,livingroom,2
+prd255,60-inch TV stand,livingroom,6
+prd256,60-inch TV stand,livingroom,4
+prd257,L-shaped sofa,livingroom,9
+prd258,60-inch TV stand,livingroom,5
+prd259,microwave oven,kitchen,9
+prd260,dishwasher,kithen,7
+prd261,60-inch TV stand,livingroom,2
+prd262,microwave oven,kitchen,7
+prd263,microwave oven,kitchen,8
+prd264,L-shaped sofa,livingroom,9
+prd265,60-inch TV stand,livingroom,5
+prd266,L-shaped sofa,livingroom,5
+prd267,queen size bed,bedroom,4
+prd268,dishwasher,kithen,5
+prd269,microwave oven,kitchen,8
+prd270,dishwasher,kithen,7
+prd271,dishwasher,kithen,5
+prd272,60-inch TV stand,livingroom,0
+prd273,microwave oven,kitchen,9
+prd274,L-shaped sofa,livingroom,8
+prd275,L-shaped sofa,livingroom,0
+prd276,L-shaped sofa,livingroom,3
+prd277,L-shaped sofa,livingroom,0
+prd278,60-inch TV stand,livingroom,0
+prd279,L-shaped sofa,livingroom,4
+prd280,60-inch TV stand,livingroom,0
+prd281,queen size bed,bedroom,1
+prd282,60-inch TV stand,livingroom,9
+prd283,L-shaped sofa,livingroom,9
+prd284,60-inch TV stand,livingroom,8
+prd285,60-inch TV stand,livingroom,0
+prd286,queen size bed,bedroom,5
+prd287,microwave oven,kitchen,7
+prd288,queen size bed,bedroom,1
+prd289,60-inch TV stand,livingroom,9
+prd290,microwave oven,kitchen,9
+prd291,60-inch TV stand,livingroom,3
+prd292,60-inch TV stand,livingroom,2
+prd293,60-inch TV stand,livingroom,5
+prd294,L-shaped sofa,livingroom,9
+prd295,queen size bed,bedroom,7
+prd296,queen size bed,bedroom,5
+prd297,60-inch TV stand,livingroom,4
+prd298,dishwasher,kithen,2
+prd299,microwave oven,kitchen,7
+prd300,dishwasher,kithen,8
+prd301,L-shaped sofa,livingroom,8
+prd302,microwave oven,kitchen,6
+prd303,60-inch TV stand,livingroom,7
+prd304,60-inch TV stand,livingroom,2
+prd305,microwave oven,kitchen,1
+prd306,queen size bed,bedroom,1
+prd307,L-shaped sofa,livingroom,4
+prd308,queen size bed,bedroom,1
+prd309,60-inch TV stand,livingroom,9
+prd310,60-inch TV stand,livingroom,5
+prd311,queen size bed,bedroom,7
+prd312,dishwasher,kithen,7
+prd313,L-shaped sofa,livingroom,2
+prd314,microwave oven,kitchen,8
+prd315,microwave oven,kitchen,7
+prd316,microwave oven,kitchen,6
+prd317,L-shaped sofa,livingroom,5
+prd318,queen size bed,bedroom,5
+prd319,dishwasher,kithen,5
+prd320,microwave oven,kitchen,1
+prd321,queen size bed,bedroom,1
+prd322,L-shaped sofa,livingroom,3
+prd323,dishwasher,kithen,3
+prd324,60-inch TV stand,livingroom,1
+prd325,60-inch TV stand,livingroom,7
+prd326,60-inch TV stand,livingroom,6
+prd327,60-inch TV stand,livingroom,2
+prd328,queen size bed,bedroom,0
+prd329,dishwasher,kithen,0
+prd330,queen size bed,bedroom,0
+prd331,microwave oven,kitchen,5
+prd332,60-inch TV stand,livingroom,7
+prd333,60-inch TV stand,livingroom,3
+prd334,L-shaped sofa,livingroom,6
+prd335,dishwasher,kithen,5
+prd336,microwave oven,kitchen,2
+prd337,60-inch TV stand,livingroom,2
+prd338,60-inch TV stand,livingroom,3
+prd339,60-inch TV stand,livingroom,8
+prd340,L-shaped sofa,livingroom,6
+prd341,microwave oven,kitchen,1
+prd342,dishwasher,kithen,9
+prd343,L-shaped sofa,livingroom,5
+prd344,L-shaped sofa,livingroom,4
+prd345,microwave oven,kitchen,7
+prd346,dishwasher,kithen,8
+prd347,60-inch TV stand,livingroom,2
+prd348,dishwasher,kithen,9
+prd349,queen size bed,bedroom,4
+prd350,60-inch TV stand,livingroom,8
+prd351,queen size bed,bedroom,2
+prd352,60-inch TV stand,livingroom,4
+prd353,60-inch TV stand,livingroom,6
+prd354,microwave oven,kitchen,3
+prd355,60-inch TV stand,livingroom,7
+prd356,microwave oven,kitchen,3
+prd357,microwave oven,kitchen,2
+prd358,60-inch TV stand,livingroom,3
+prd359,microwave oven,kitchen,0
+prd360,60-inch TV stand,livingroom,1
+prd361,microwave oven,kitchen,7
+prd362,L-shaped sofa,livingroom,1
+prd363,queen size bed,bedroom,5
+prd364,dishwasher,kithen,7
+prd365,microwave oven,kitchen,9
+prd366,dishwasher,kithen,5
+prd367,60-inch TV stand,livingroom,2
+prd368,queen size bed,bedroom,2
+prd369,microwave oven,kitchen,9
+prd370,queen size bed,bedroom,5
+prd371,queen size bed,bedroom,2
+prd372,microwave oven,kitchen,8
+prd373,60-inch TV stand,livingroom,1
+prd374,L-shaped sofa,livingroom,2
+prd375,L-shaped sofa,livingroom,0
+prd376,microwave oven,kitchen,3
+prd377,L-shaped sofa,livingroom,7
+prd378,microwave oven,kitchen,2
+prd379,microwave oven,kitchen,5
+prd380,microwave oven,kitchen,1
+prd381,queen size bed,bedroom,2
+prd382,queen size bed,bedroom,2
+prd383,L-shaped sofa,livingroom,2
+prd384,dishwasher,kithen,1
+prd385,60-inch TV stand,livingroom,2
+prd386,queen size bed,bedroom,8
+prd387,microwave oven,kitchen,2
+prd388,60-inch TV stand,livingroom,4
+prd389,60-inch TV stand,livingroom,4
+prd390,60-inch TV stand,livingroom,3
+prd391,dishwasher,kithen,7
+prd392,60-inch TV stand,livingroom,8
+prd393,microwave oven,kitchen,2
+prd394,queen size bed,bedroom,3
+prd395,microwave oven,kitchen,6
+prd396,microwave oven,kitchen,1
+prd397,queen size bed,bedroom,2
+prd398,L-shaped sofa,livingroom,6
+prd399,60-inch TV stand,livingroom,4
+prd400,60-inch TV stand,livingroom,0
+prd401,queen size bed,bedroom,4
+prd402,microwave oven,kitchen,9
+prd403,dishwasher,kithen,8
+prd404,L-shaped sofa,livingroom,3
+prd405,queen size bed,bedroom,7
+prd406,microwave oven,kitchen,8
+prd407,queen size bed,bedroom,8
+prd408,microwave oven,kitchen,7
+prd409,dishwasher,kithen,1
+prd410,60-inch TV stand,livingroom,5
+prd411,queen size bed,bedroom,1
+prd412,60-inch TV stand,livingroom,7
+prd413,dishwasher,kithen,6
+prd414,60-inch TV stand,livingroom,9
+prd415,L-shaped sofa,livingroom,2
+prd416,queen size bed,bedroom,8
+prd417,dishwasher,kithen,6
+prd418,L-shaped sofa,livingroom,3
+prd419,queen size bed,bedroom,7
+prd420,microwave oven,kitchen,4
+prd421,microwave oven,kitchen,4
+prd422,queen size bed,bedroom,9
+prd423,queen size bed,bedroom,8
+prd424,queen size bed,bedroom,2
+prd425,queen size bed,bedroom,3
+prd426,microwave oven,kitchen,4
+prd427,microwave oven,kitchen,9
+prd428,60-inch TV stand,livingroom,2
+prd429,dishwasher,kithen,6
+prd430,L-shaped sofa,livingroom,3
+prd431,L-shaped sofa,livingroom,7
+prd432,L-shaped sofa,livingroom,6
+prd433,dishwasher,kithen,0
+prd434,dishwasher,kithen,2
+prd435,L-shaped sofa,livingroom,1
+prd436,microwave oven,kitchen,0
+prd437,dishwasher,kithen,3
+prd438,queen size bed,bedroom,4
+prd439,queen size bed,bedroom,9
+prd440,queen size bed,bedroom,4
+prd441,microwave oven,kitchen,6
+prd442,microwave oven,kitchen,7
+prd443,60-inch TV stand,livingroom,1
+prd444,60-inch TV stand,livingroom,2
+prd445,microwave oven,kitchen,3
+prd446,queen size bed,bedroom,7
+prd447,dishwasher,kithen,6
+prd448,queen size bed,bedroom,5
+prd449,L-shaped sofa,livingroom,2
+prd450,60-inch TV stand,livingroom,6
+prd451,60-inch TV stand,livingroom,9
+prd452,L-shaped sofa,livingroom,3
+prd453,queen size bed,bedroom,9
+prd454,queen size bed,bedroom,5
+prd455,L-shaped sofa,livingroom,3
+prd456,queen size bed,bedroom,2
+prd457,queen size bed,bedroom,2
+prd458,microwave oven,kitchen,8
+prd459,60-inch TV stand,livingroom,9
+prd460,60-inch TV stand,livingroom,0
+prd461,L-shaped sofa,livingroom,3
+prd462,60-inch TV stand,livingroom,3
+prd463,60-inch TV stand,livingroom,0
+prd464,L-shaped sofa,livingroom,0
+prd465,L-shaped sofa,livingroom,2
+prd466,microwave oven,kitchen,6
+prd467,60-inch TV stand,livingroom,2
+prd468,dishwasher,kithen,4
+prd469,L-shaped sofa,livingroom,8
+prd470,microwave oven,kitchen,3
+prd471,dishwasher,kithen,8
+prd472,L-shaped sofa,livingroom,7
+prd473,L-shaped sofa,livingroom,4
+prd474,microwave oven,kitchen,6
+prd475,queen size bed,bedroom,0
+prd476,L-shaped sofa,livingroom,0
+prd477,queen size bed,bedroom,4
+prd478,dishwasher,kithen,4
+prd479,L-shaped sofa,livingroom,0
+prd480,dishwasher,kithen,8
+prd481,dishwasher,kithen,1
+prd482,dishwasher,kithen,1
+prd483,dishwasher,kithen,9
+prd484,60-inch TV stand,livingroom,0
+prd485,60-inch TV stand,livingroom,2
+prd486,dishwasher,kithen,9
+prd487,L-shaped sofa,livingroom,8
+prd488,L-shaped sofa,livingroom,3
+prd489,dishwasher,kithen,8
+prd490,L-shaped sofa,livingroom,1
+prd491,dishwasher,kithen,9
+prd492,60-inch TV stand,livingroom,8
+prd493,dishwasher,kithen,1
+prd494,queen size bed,bedroom,3
+prd495,queen size bed,bedroom,7
+prd496,dishwasher,kithen,6
+prd497,60-inch TV stand,livingroom,9
+prd498,dishwasher,kithen,4
+prd499,60-inch TV stand,livingroom,0
+prd500,microwave oven,kitchen,8
+prd501,60-inch TV stand,livingroom,7
+prd502,60-inch TV stand,livingroom,7
+prd503,queen size bed,bedroom,9
+prd504,microwave oven,kitchen,3
+prd505,microwave oven,kitchen,4
+prd506,queen size bed,bedroom,3
+prd507,queen size bed,bedroom,4
+prd508,dishwasher,kithen,0
+prd509,L-shaped sofa,livingroom,9
+prd510,60-inch TV stand,livingroom,0
+prd511,dishwasher,kithen,6
+prd512,L-shaped sofa,livingroom,5
+prd513,dishwasher,kithen,9
+prd514,queen size bed,bedroom,7
+prd515,microwave oven,kitchen,0
+prd516,microwave oven,kitchen,0
+prd517,queen size bed,bedroom,1
+prd518,60-inch TV stand,livingroom,3
+prd519,dishwasher,kithen,9
+prd520,microwave oven,kitchen,2
+prd521,queen size bed,bedroom,2
+prd522,queen size bed,bedroom,6
+prd523,60-inch TV stand,livingroom,0
+prd524,60-inch TV stand,livingroom,7
+prd525,microwave oven,kitchen,5
+prd526,L-shaped sofa,livingroom,9
+prd527,queen size bed,bedroom,1
+prd528,dishwasher,kithen,1
+prd529,microwave oven,kitchen,4
+prd530,L-shaped sofa,livingroom,8
+prd531,L-shaped sofa,livingroom,7
+prd532,queen size bed,bedroom,2
+prd533,dishwasher,kithen,9
+prd534,queen size bed,bedroom,7
+prd535,60-inch TV stand,livingroom,4
+prd536,queen size bed,bedroom,4
+prd537,dishwasher,kithen,6
+prd538,microwave oven,kitchen,0
+prd539,60-inch TV stand,livingroom,1
+prd540,L-shaped sofa,livingroom,8
+prd541,60-inch TV stand,livingroom,6
+prd542,microwave oven,kitchen,0
+prd543,microwave oven,kitchen,4
+prd544,L-shaped sofa,livingroom,1
+prd545,L-shaped sofa,livingroom,4
+prd546,microwave oven,kitchen,4
+prd547,queen size bed,bedroom,8
+prd548,dishwasher,kithen,3
+prd549,queen size bed,bedroom,7
+prd550,60-inch TV stand,livingroom,0
+prd551,L-shaped sofa,livingroom,3
+prd552,60-inch TV stand,livingroom,8
+prd553,dishwasher,kithen,1
+prd554,queen size bed,bedroom,4
+prd555,dishwasher,kithen,9
+prd556,L-shaped sofa,livingroom,4
+prd557,microwave oven,kitchen,3
+prd558,queen size bed,bedroom,7
+prd559,queen size bed,bedroom,5
+prd560,queen size bed,bedroom,1
+prd561,60-inch TV stand,livingroom,7
+prd562,queen size bed,bedroom,5
+prd563,L-shaped sofa,livingroom,1
+prd564,queen size bed,bedroom,3
+prd565,queen size bed,bedroom,3
+prd566,60-inch TV stand,livingroom,3
+prd567,queen size bed,bedroom,2
+prd568,microwave oven,kitchen,6
+prd569,microwave oven,kitchen,8
+prd570,60-inch TV stand,livingroom,4
+prd571,dishwasher,kithen,8
+prd572,queen size bed,bedroom,7
+prd573,queen size bed,bedroom,5
+prd574,L-shaped sofa,livingroom,6
+prd575,60-inch TV stand,livingroom,5
+prd576,queen size bed,bedroom,3
+prd577,dishwasher,kithen,2
+prd578,queen size bed,bedroom,3
+prd579,60-inch TV stand,livingroom,8
+prd580,60-inch TV stand,livingroom,5
+prd581,microwave oven,kitchen,4
+prd582,L-shaped sofa,livingroom,3
+prd583,L-shaped sofa,livingroom,6
+prd584,microwave oven,kitchen,6
+prd585,microwave oven,kitchen,5
+prd586,dishwasher,kithen,2
+prd587,queen size bed,bedroom,0
+prd588,queen size bed,bedroom,8
+prd589,60-inch TV stand,livingroom,5
+prd590,microwave oven,kitchen,0
+prd591,60-inch TV stand,livingroom,5
+prd592,60-inch TV stand,livingroom,7
+prd593,L-shaped sofa,livingroom,9
+prd594,dishwasher,kithen,0
+prd595,queen size bed,bedroom,0
+prd596,microwave oven,kitchen,7
+prd597,queen size bed,bedroom,7
+prd598,60-inch TV stand,livingroom,6
+prd599,queen size bed,bedroom,2
+prd600,60-inch TV stand,livingroom,8
+prd601,microwave oven,kitchen,4
+prd602,queen size bed,bedroom,4
+prd603,dishwasher,kithen,4
+prd604,queen size bed,bedroom,0
+prd605,60-inch TV stand,livingroom,0
+prd606,microwave oven,kitchen,0
+prd607,L-shaped sofa,livingroom,3
+prd608,queen size bed,bedroom,9
+prd609,dishwasher,kithen,7
+prd610,60-inch TV stand,livingroom,9
+prd611,L-shaped sofa,livingroom,4
+prd612,L-shaped sofa,livingroom,2
+prd613,microwave oven,kitchen,1
+prd614,microwave oven,kitchen,9
+prd615,60-inch TV stand,livingroom,7
+prd616,L-shaped sofa,livingroom,4
+prd617,microwave oven,kitchen,0
+prd618,microwave oven,kitchen,0
+prd619,60-inch TV stand,livingroom,8
+prd620,L-shaped sofa,livingroom,6
+prd621,L-shaped sofa,livingroom,7
+prd622,microwave oven,kitchen,8
+prd623,dishwasher,kithen,6
+prd624,60-inch TV stand,livingroom,7
+prd625,L-shaped sofa,livingroom,0
+prd626,queen size bed,bedroom,5
+prd627,L-shaped sofa,livingroom,9
+prd628,queen size bed,bedroom,6
+prd629,dishwasher,kithen,9
+prd630,60-inch TV stand,livingroom,3
+prd631,microwave oven,kitchen,5
+prd632,microwave oven,kitchen,0
+prd633,60-inch TV stand,livingroom,3
+prd634,dishwasher,kithen,3
+prd635,microwave oven,kitchen,8
+prd636,dishwasher,kithen,7
+prd637,queen size bed,bedroom,7
+prd638,dishwasher,kithen,5
+prd639,L-shaped sofa,livingroom,4
+prd640,microwave oven,kitchen,8
+prd641,dishwasher,kithen,8
+prd642,microwave oven,kitchen,7
+prd643,dishwasher,kithen,9
+prd644,microwave oven,kitchen,8
+prd645,dishwasher,kithen,6
+prd646,L-shaped sofa,livingroom,6
+prd647,dishwasher,kithen,5
+prd648,dishwasher,kithen,4
+prd649,microwave oven,kitchen,1
+prd650,queen size bed,bedroom,2
+prd651,queen size bed,bedroom,6
+prd652,L-shaped sofa,livingroom,3
+prd653,microwave oven,kitchen,6
+prd654,queen size bed,bedroom,4
+prd655,L-shaped sofa,livingroom,9
+prd656,queen size bed,bedroom,6
+prd657,L-shaped sofa,livingroom,2
+prd658,L-shaped sofa,livingroom,1
+prd659,60-inch TV stand,livingroom,6
+prd660,60-inch TV stand,livingroom,4
+prd661,microwave oven,kitchen,9
+prd662,microwave oven,kitchen,1
+prd663,queen size bed,bedroom,4
+prd664,dishwasher,kithen,9
+prd665,L-shaped sofa,livingroom,3
+prd666,dishwasher,kithen,8
+prd667,queen size bed,bedroom,9
+prd668,microwave oven,kitchen,8
+prd669,microwave oven,kitchen,3
+prd670,dishwasher,kithen,4
+prd671,queen size bed,bedroom,7
+prd672,dishwasher,kithen,3
+prd673,dishwasher,kithen,7
+prd674,L-shaped sofa,livingroom,2
+prd675,microwave oven,kitchen,5
+prd676,60-inch TV stand,livingroom,6
+prd677,60-inch TV stand,livingroom,0
+prd678,dishwasher,kithen,8
+prd679,microwave oven,kitchen,0
+prd680,queen size bed,bedroom,4
+prd681,dishwasher,kithen,5
+prd682,microwave oven,kitchen,6
+prd683,60-inch TV stand,livingroom,1
+prd684,60-inch TV stand,livingroom,9
+prd685,dishwasher,kithen,6
+prd686,L-shaped sofa,livingroom,5
+prd687,queen size bed,bedroom,5
+prd688,60-inch TV stand,livingroom,5
+prd689,queen size bed,bedroom,1
+prd690,L-shaped sofa,livingroom,2
+prd691,queen size bed,bedroom,7
+prd692,L-shaped sofa,livingroom,6
+prd693,L-shaped sofa,livingroom,6
+prd694,microwave oven,kitchen,6
+prd695,L-shaped sofa,livingroom,1
+prd696,L-shaped sofa,livingroom,5
+prd697,dishwasher,kithen,2
+prd698,dishwasher,kithen,4
+prd699,dishwasher,kithen,8
+prd700,queen size bed,bedroom,2
+prd701,dishwasher,kithen,2
+prd702,60-inch TV stand,livingroom,7
+prd703,microwave oven,kitchen,4
+prd704,dishwasher,kithen,9
+prd705,dishwasher,kithen,2
+prd706,60-inch TV stand,livingroom,3
+prd707,60-inch TV stand,livingroom,2
+prd708,queen size bed,bedroom,3
+prd709,queen size bed,bedroom,6
+prd710,dishwasher,kithen,7
+prd711,dishwasher,kithen,6
+prd712,60-inch TV stand,livingroom,4
+prd713,microwave oven,kitchen,0
+prd714,queen size bed,bedroom,8
+prd715,dishwasher,kithen,7
+prd716,L-shaped sofa,livingroom,0
+prd717,microwave oven,kitchen,3
+prd718,L-shaped sofa,livingroom,9
+prd719,60-inch TV stand,livingroom,6
+prd720,L-shaped sofa,livingroom,9
+prd721,dishwasher,kithen,2
+prd722,microwave oven,kitchen,2
+prd723,L-shaped sofa,livingroom,4
+prd724,L-shaped sofa,livingroom,4
+prd725,60-inch TV stand,livingroom,9
+prd726,queen size bed,bedroom,1
+prd727,dishwasher,kithen,3
+prd728,L-shaped sofa,livingroom,1
+prd729,microwave oven,kitchen,2
+prd730,L-shaped sofa,livingroom,1
+prd731,L-shaped sofa,livingroom,5
+prd732,queen size bed,bedroom,0
+prd733,microwave oven,kitchen,9
+prd734,queen size bed,bedroom,8
+prd735,queen size bed,bedroom,6
+prd736,microwave oven,kitchen,8
+prd737,dishwasher,kithen,0
+prd738,60-inch TV stand,livingroom,9
+prd739,microwave oven,kitchen,8
+prd740,L-shaped sofa,livingroom,5
+prd741,queen size bed,bedroom,2
+prd742,dishwasher,kithen,2
+prd743,microwave oven,kitchen,3
+prd744,L-shaped sofa,livingroom,1
+prd745,microwave oven,kitchen,3
+prd746,dishwasher,kithen,8
+prd747,L-shaped sofa,livingroom,5
+prd748,dishwasher,kithen,4
+prd749,queen size bed,bedroom,0
+prd750,60-inch TV stand,livingroom,6
+prd751,microwave oven,kitchen,2
+prd752,60-inch TV stand,livingroom,1
+prd753,dishwasher,kithen,4
+prd754,60-inch TV stand,livingroom,0
+prd755,dishwasher,kithen,2
+prd756,queen size bed,bedroom,6
+prd757,microwave oven,kitchen,6
+prd758,L-shaped sofa,livingroom,6
+prd759,dishwasher,kithen,6
+prd760,queen size bed,bedroom,6
+prd761,queen size bed,bedroom,0
+prd762,L-shaped sofa,livingroom,4
+prd763,L-shaped sofa,livingroom,3
+prd764,60-inch TV stand,livingroom,1
+prd765,dishwasher,kithen,3
+prd766,dishwasher,kithen,8
+prd767,microwave oven,kitchen,7
+prd768,60-inch TV stand,livingroom,3
+prd769,L-shaped sofa,livingroom,3
+prd770,queen size bed,bedroom,8
+prd771,L-shaped sofa,livingroom,6
+prd772,queen size bed,bedroom,4
+prd773,60-inch TV stand,livingroom,6
+prd774,60-inch TV stand,livingroom,4
+prd775,queen size bed,bedroom,7
+prd776,dishwasher,kithen,4
+prd777,queen size bed,bedroom,1
+prd778,60-inch TV stand,livingroom,8
+prd779,L-shaped sofa,livingroom,1
+prd780,queen size bed,bedroom,7
+prd781,L-shaped sofa,livingroom,0
+prd782,microwave oven,kitchen,1
+prd783,queen size bed,bedroom,0
+prd784,L-shaped sofa,livingroom,4
+prd785,microwave oven,kitchen,8
+prd786,queen size bed,bedroom,7
+prd787,microwave oven,kitchen,7
+prd788,60-inch TV stand,livingroom,5
+prd789,dishwasher,kithen,6
+prd790,dishwasher,kithen,7
+prd791,queen size bed,bedroom,9
+prd792,queen size bed,bedroom,2
+prd793,L-shaped sofa,livingroom,5
+prd794,queen size bed,bedroom,8
+prd795,60-inch TV stand,livingroom,6
+prd796,L-shaped sofa,livingroom,4
+prd797,queen size bed,bedroom,2
+prd798,microwave oven,kitchen,7
+prd799,queen size bed,bedroom,5
+prd800,queen size bed,bedroom,2
+prd801,L-shaped sofa,livingroom,7
+prd802,queen size bed,bedroom,2
+prd803,microwave oven,kitchen,7
+prd804,microwave oven,kitchen,1
+prd805,60-inch TV stand,livingroom,3
+prd806,dishwasher,kithen,2
+prd807,dishwasher,kithen,6
+prd808,microwave oven,kitchen,4
+prd809,L-shaped sofa,livingroom,9
+prd810,L-shaped sofa,livingroom,4
+prd811,dishwasher,kithen,6
+prd812,L-shaped sofa,livingroom,0
+prd813,L-shaped sofa,livingroom,3
+prd814,microwave oven,kitchen,8
+prd815,L-shaped sofa,livingroom,1
+prd816,dishwasher,kithen,3
+prd817,queen size bed,bedroom,5
+prd818,queen size bed,bedroom,1
+prd819,dishwasher,kithen,6
+prd820,dishwasher,kithen,5
+prd821,L-shaped sofa,livingroom,0
+prd822,microwave oven,kitchen,1
+prd823,60-inch TV stand,livingroom,3
+prd824,microwave oven,kitchen,6
+prd825,queen size bed,bedroom,0
+prd826,microwave oven,kitchen,6
+prd827,L-shaped sofa,livingroom,8
+prd828,60-inch TV stand,livingroom,3
+prd829,dishwasher,kithen,8
+prd830,dishwasher,kithen,0
+prd831,L-shaped sofa,livingroom,1
+prd832,L-shaped sofa,livingroom,8
+prd833,microwave oven,kitchen,2
+prd834,60-inch TV stand,livingroom,0
+prd835,L-shaped sofa,livingroom,6
+prd836,queen size bed,bedroom,7
+prd837,dishwasher,kithen,9
+prd838,L-shaped sofa,livingroom,0
+prd839,dishwasher,kithen,7
+prd840,dishwasher,kithen,6
+prd841,queen size bed,bedroom,7
+prd842,60-inch TV stand,livingroom,6
+prd843,dishwasher,kithen,8
+prd844,dishwasher,kithen,5
+prd845,L-shaped sofa,livingroom,5
+prd846,dishwasher,kithen,4
+prd847,queen size bed,bedroom,7
+prd848,dishwasher,kithen,3
+prd849,microwave oven,kitchen,6
+prd850,dishwasher,kithen,3
+prd851,dishwasher,kithen,7
+prd852,microwave oven,kitchen,7
+prd853,dishwasher,kithen,6
+prd854,microwave oven,kitchen,6
+prd855,queen size bed,bedroom,3
+prd856,L-shaped sofa,livingroom,5
+prd857,60-inch TV stand,livingroom,6
+prd858,60-inch TV stand,livingroom,0
+prd859,60-inch TV stand,livingroom,5
+prd860,dishwasher,kithen,5
+prd861,L-shaped sofa,livingroom,4
+prd862,microwave oven,kitchen,0
+prd863,microwave oven,kitchen,2
+prd864,60-inch TV stand,livingroom,8
+prd865,dishwasher,kithen,7
+prd866,L-shaped sofa,livingroom,8
+prd867,L-shaped sofa,livingroom,4
+prd868,dishwasher,kithen,2
+prd869,60-inch TV stand,livingroom,6
+prd870,dishwasher,kithen,1
+prd871,L-shaped sofa,livingroom,0
+prd872,queen size bed,bedroom,8
+prd873,L-shaped sofa,livingroom,7
+prd874,queen size bed,bedroom,9
+prd875,dishwasher,kithen,9
+prd876,60-inch TV stand,livingroom,3
+prd877,L-shaped sofa,livingroom,1
+prd878,dishwasher,kithen,4
+prd879,L-shaped sofa,livingroom,0
+prd880,60-inch TV stand,livingroom,5
+prd881,60-inch TV stand,livingroom,0
+prd882,microwave oven,kitchen,4
+prd883,60-inch TV stand,livingroom,7
+prd884,dishwasher,kithen,0
+prd885,microwave oven,kitchen,9
+prd886,queen size bed,bedroom,4
+prd887,microwave oven,kitchen,3
+prd888,queen size bed,bedroom,3
+prd889,L-shaped sofa,livingroom,3
+prd890,microwave oven,kitchen,5
+prd891,queen size bed,bedroom,2
+prd892,60-inch TV stand,livingroom,6
+prd893,queen size bed,bedroom,4
+prd894,dishwasher,kithen,3
+prd895,microwave oven,kitchen,8
+prd896,60-inch TV stand,livingroom,6
+prd897,queen size bed,bedroom,7
+prd898,microwave oven,kitchen,2
+prd899,microwave oven,kitchen,8
+prd900,queen size bed,bedroom,6
+prd901,queen size bed,bedroom,6
+prd902,microwave oven,kitchen,3
+prd903,60-inch TV stand,livingroom,1
+prd904,60-inch TV stand,livingroom,1
+prd905,L-shaped sofa,livingroom,3
+prd906,dishwasher,kithen,4
+prd907,dishwasher,kithen,8
+prd908,60-inch TV stand,livingroom,2
+prd909,60-inch TV stand,livingroom,7
+prd910,microwave oven,kitchen,3
+prd911,microwave oven,kitchen,7
+prd912,60-inch TV stand,livingroom,6
+prd913,L-shaped sofa,livingroom,6
+prd914,microwave oven,kitchen,3
+prd915,dishwasher,kithen,6
+prd916,L-shaped sofa,livingroom,2
+prd917,queen size bed,bedroom,3
+prd918,60-inch TV stand,livingroom,2
+prd919,microwave oven,kitchen,2
+prd920,L-shaped sofa,livingroom,9
+prd921,60-inch TV stand,livingroom,5
+prd922,L-shaped sofa,livingroom,9
+prd923,queen size bed,bedroom,6
+prd924,60-inch TV stand,livingroom,5
+prd925,L-shaped sofa,livingroom,1
+prd926,queen size bed,bedroom,2
+prd927,L-shaped sofa,livingroom,5
+prd928,60-inch TV stand,livingroom,2
+prd929,microwave oven,kitchen,8
+prd930,queen size bed,bedroom,2
+prd931,60-inch TV stand,livingroom,8
+prd932,dishwasher,kithen,0
+prd933,dishwasher,kithen,0
+prd934,microwave oven,kitchen,3
+prd935,L-shaped sofa,livingroom,8
+prd936,L-shaped sofa,livingroom,2
+prd937,60-inch TV stand,livingroom,6
+prd938,microwave oven,kitchen,0
+prd939,queen size bed,bedroom,0
+prd940,microwave oven,kitchen,1
+prd941,microwave oven,kitchen,2
+prd942,60-inch TV stand,livingroom,5
+prd943,60-inch TV stand,livingroom,1
+prd944,microwave oven,kitchen,0
+prd945,dishwasher,kithen,3
+prd946,L-shaped sofa,livingroom,6
+prd947,60-inch TV stand,livingroom,1
+prd948,microwave oven,kitchen,6
+prd949,queen size bed,bedroom,1
+prd950,microwave oven,kitchen,2
+prd951,microwave oven,kitchen,9
+prd952,L-shaped sofa,livingroom,0
+prd953,60-inch TV stand,livingroom,7
+prd954,microwave oven,kitchen,2
+prd955,L-shaped sofa,livingroom,8
+prd956,queen size bed,bedroom,9
+prd957,dishwasher,kithen,4
+prd958,microwave oven,kitchen,8
+prd959,60-inch TV stand,livingroom,0
+prd960,microwave oven,kitchen,3
+prd961,dishwasher,kithen,2
+prd962,dishwasher,kithen,8
+prd963,60-inch TV stand,livingroom,3
+prd964,microwave oven,kitchen,8
+prd965,microwave oven,kitchen,7
+prd966,60-inch TV stand,livingroom,8
+prd967,L-shaped sofa,livingroom,7
+prd968,L-shaped sofa,livingroom,0
+prd969,L-shaped sofa,livingroom,3
+prd970,60-inch TV stand,livingroom,4
+prd971,L-shaped sofa,livingroom,8
+prd972,microwave oven,kitchen,5
+prd973,queen size bed,bedroom,5
+prd974,L-shaped sofa,livingroom,7
+prd975,microwave oven,kitchen,6
+prd976,microwave oven,kitchen,7
+prd977,queen size bed,bedroom,0
+prd978,dishwasher,kithen,9
+prd979,queen size bed,bedroom,5
+prd980,microwave oven,kitchen,6
+prd981,dishwasher,kithen,1
+prd982,dishwasher,kithen,9
+prd983,dishwasher,kithen,3
+prd984,microwave oven,kitchen,8
+prd985,dishwasher,kithen,2
+prd986,L-shaped sofa,livingroom,7
+prd987,queen size bed,bedroom,5
+prd988,microwave oven,kitchen,6
+prd989,60-inch TV stand,livingroom,7
+prd990,microwave oven,kitchen,0
+prd991,microwave oven,kitchen,9
+prd992,queen size bed,bedroom,4
+prd993,microwave oven,kitchen,3
+prd994,queen size bed,bedroom,3
+prd995,microwave oven,kitchen,5
+prd996,60-inch TV stand,livingroom,8
+prd997,dishwasher,kithen,1
+prd998,L-shaped sofa,livingroom,5
+prd999,microwave oven,kitchen,2
+prd1000,dishwasher,kithen,7
+prd1001,60-inch TV stand,livingroom,8
+prd1002,60-inch TV stand,livingroom,3
+prd1003,microwave oven,kitchen,0
+prd1004,queen size bed,bedroom,9
+prd1005,dishwasher,kithen,8
