@@ -44,7 +44,7 @@ def set_logging_level(level):
         LOGGER.setLevel(debug_level)
 
         # create file handler which logs even debug messages
-        log_file = logging.FileHandler(datetime.datetime.now().strftime("%Y-%m-%d") + '.log')
+        log_file = logging.FileHandler('charges_calc.log')
 
         # create console handler with a higher log level
         log_stdout = logging.StreamHandler(sys.stdout)
