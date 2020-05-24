@@ -31,9 +31,10 @@ def calculate_additional_fields(data):
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        except:
-
-            exit(0)
+        except Exception as e:
+            print('exception encountered: -' + str(e) + "-")
+        #except:
+            #exit(0)
 
     return data
 

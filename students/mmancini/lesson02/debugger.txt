@@ -239,5 +239,55 @@ Breakpoint 2 at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\ste
 (Pdb) 
 
 -------------------------------------
-***Notes:  looks like negative data issue
+
+***Notes: we can see negative values in total_price and total_days
+	  we will need to debug further
+
 -------------------------------------
+C:\Users\Mike\PycharmProjects\untitled1\venv\Scripts\python.exe -m pdb C:/MikeRoot2/Msft/LangPython/UnivWashPy3/uwpy_sp220/lesson02/step01/charges_calc.py --i source.json --o out.json
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 35
+Breakpoint 1 at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py:35
+(Pdb) c
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(35)calculate_additional_fields()
+-> print('exception encountered: -' + str(e) + "-")
+(Pdb) s
+exception encountered: -math domain error-
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) clear 35
+*** Breakpoint number 35 out of range
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py:35
+	breakpoint already hit 1 time
+(Pdb) clear 1
+Deleted breakpoint 1 at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py:35
+(Pdb) b 49
+Breakpoint 2 at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py:49
+(Pdb) c
+exception encountered: -math domain error-
+exception encountered: -math domain error-
+exception encountered: -math domain error-
+exception encountered: -math domain error-
+exception encountered: -math domain error-
+exception encountered: -math domain error-
+
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step01\charges_calc.py(49)<module>()
+-> save_to_json(args.output, data)
+(Pdb) 
+
+---------------------------
+
+Notes:  so by catch and report of the exception the script runs to completion
+	we will need to look closer at the actual data exceptions, but looks like bad
+	input data yielding negative values which causes the exception
+
+---------------------------
