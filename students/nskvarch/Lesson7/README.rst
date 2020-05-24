@@ -1,0 +1,1 @@
+Files for Lesson 7 exercise

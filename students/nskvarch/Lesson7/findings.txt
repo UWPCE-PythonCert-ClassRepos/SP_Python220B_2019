@@ -1,0 +1,74 @@
+First run after stripping the lesson 5 file down to the import function only,
+using only 2 databases, customers and products, expanded the .csv data import files to 1000 lines each:
+C:\ProjectScratchSpace>python -m cProfile linear.py \data_files customer_data.csv product_data.csv
+         54473 function calls (53049 primitive calls) in 0.101 seconds
+Running the test through coverage was giving a more consistent result and also incorporating the log writes:
+C:\ProjectScratchSpace>python -m coverage run test_linear.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.704s
+
+OK
+C:\ProjectScratchSpace>python -m coverage run test_linear.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.785s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_linear.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.650s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_linear.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.737s
+
+OK
+
+
+
+Refactored code to use threading and process both imports at the same time:
+C:\ProjectScratchSpace>python -m coverage run test_parallel.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.046s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_parallel.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.051s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_parallel.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.043s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_parallel.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.045s
+
+OK
+
+C:\ProjectScratchSpace>python -m coverage run test_parallel.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.052s
+
+OK
+
+Conclusions:
+Threading is faster in this case by about a half second on average or about a 33% speed improvement.
+If HP Norton's database is going to grow into a national customer database with
+millions of records I would recommend the the code changes to management.
