@@ -1,0 +1,126 @@
+# performance report
+
+1. running 'test_linear_parallel.py" for linear version of importing data,
+I got the profiling results (saved in file linear.res) as follows:
+
+98304108 function calls (92804013 primitive calls) in 136.187 seconds
+
+Ordered by: cumulative time
+List reduced from 399 to 20 due to restriction <20>
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+1    0.000    0.000  136.186  136.186 linear.py:132(import_thousand_data)
+3    1.070    0.357  136.172   45.391 linear.py:38(read_thousand_csv_file)
+300000    2.813    0.000  131.885    0.000 collection.py:619(insert_one)
+300000    0.666    0.000   96.834    0.000 collection.py:555(_insert)
+300000    2.583    0.000   95.641    0.000 collection.py:517(_insert_one)
+300006    0.771    0.000   87.567    0.000 pool.py:373(command)
+300007    2.855    0.000   86.797    0.000 network.py:48(command)
+300007    1.214    0.000   42.591    0.000 network.py:134(receive_message)
+600014    1.448    0.000   40.968    0.000 network.py:160(_receive_data_on_socket)
+600014   39.392    0.000   39.392    0.000 {method 'recv' of '_socket.socket' objects}
+2700061/1500024    2.106    0.000   25.790    0.000 {built-in method builtins.next}
+600012    1.111    0.000   24.063    0.000 mongo_client.py:821(_get_socket)
+300007    1.371    0.000   23.931    0.000 message.py:435(query)
+300007    0.607    0.000   18.736    0.000 __init__.py:949(encode)
+900024/300006    1.009    0.000   18.247    0.000 contextlib.py:107(__enter__)
+300007    1.582    0.000   18.093    0.000 __init__.py:746(_dict_to_bson)
+2300017/900008    2.791    0.000   14.527    0.000 __init__.py:731(_element_to_bson)
+2600017/900008    2.027    0.000   12.161    0.000 __init__.py:698(_name_value_to_bson)
+600012    0.898    0.000   10.682    0.000 server.py:166(get_socket)
+300000    0.837    0.000   10.227    0.000 __init__.py:505(_encode_list)
+
+
+2. Analyze the linear results:
+For above linear profiling result, we imported three .csv files. Each file
+has 100000 records. The total time used is 136.187 seconds. From the results
+we can see that most time is taken by read_thousand_csv_file() function. So
+HP Norton systems is IO bounded. For IO bounded system, we should try to use
+multi-threading to improve the performance.
+
+3. running 'test_linear_parallel.py" for parallel (multiple-threading) version
+of importing data, I got the profiling results (saved in file
+parallel_without_lock.res) as follows:
+
+3146 function calls (3051 primitive calls) in 66.854 seconds
+
+Ordered by: cumulative time
+List reduced from 377 to 20 due to restriction <20>
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+1    0.000    0.000   66.853   66.853 parallel.py:51(import_thousand_data)
+61   66.841    1.096   66.841    1.096 {method 'acquire' of '_thread.lock' objects}
+3    0.000    0.000   66.833   22.278 threading.py:1012(join)
+16    0.000    0.000   66.833    4.177 threading.py:1050(_wait_for_tstate_lock)
+6    0.000    0.000    0.008    0.001 threading.py:264(wait)
+5    0.000    0.000    0.007    0.001 threading.py:834(start)
+5    0.000    0.000    0.007    0.001 threading.py:534(wait)
+6    0.000    0.000    0.006    0.001 collection.py:1315(count)
+8    0.000    0.000    0.005    0.001 __init__.py:1368(info)
+6    0.000    0.000    0.005    0.001 collection.py:1302(_count)
+8    0.000    0.000    0.005    0.001 __init__.py:1491(_log)
+8    0.000    0.000    0.005    0.001 __init__.py:1516(handle)
+8    0.000    0.000    0.005    0.001 __init__.py:1570(callHandlers)
+8    0.000    0.000    0.005    0.001 __init__.py:881(handle)
+8    0.000    0.000    0.005    0.001 __init__.py:1013(emit)
+8    0.004    0.001    0.004    0.001 {method 'write' of '_io.TextIOWrapper' objects}
+55/18    0.000    0.000    0.004    0.000 {built-in method builtins.next}
+12    0.000    0.000    0.004    0.000 mongo_client.py:848(_socket_for_reads)
+24/6    0.000    0.000    0.003    0.001 contextlib.py:107(__enter__)
+12    0.000    0.000    0.003    0.000 mongo_client.py:821(_get_socket)
+
+4. Analyze the multi-threading without synchronization results:
+From above results, we notice that the time is reduced half compared to the
+linear verion. So multi-threading is a good selection for HP Norton systems.
+However, if we carefully check the output results, the multi-threading system
+generates some unpridicable results. We have a global variable "counter", which
+is used to count the total number of records we processsed in all. All of our
+three threads will access the same section of code and change this variable.
+This leads to the 'race condition'. Our expected output result for 'counter'
+should be '300000' because three .csv file has 100000 records each. But, when
+you run the code, you will see the result is uppredictable.
+To solve this problem, we need to synchronize the global variable by using
+lock.
+
+5. running 'test_linear_parallel.py" for parallel with lock (multiple-threading)
+version of importing data, I got the profiling results (saved in file
+parallel_with_lock.res) as follows:
+
+3146 function calls (3051 primitive calls) in 67.730 seconds
+
+Ordered by: cumulative time
+List reduced from 380 to 20 due to restriction <20>
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+1    0.000    0.000   67.730   67.730 parallel_with_lock.py:51(import_thousand_data)
+61   67.713    1.110   67.713    1.110 {method 'acquire' of '_thread.lock' objects}
+3    0.000    0.000   67.709   22.570 threading.py:1012(join)
+16    0.000    0.000   67.709    4.232 threading.py:1050(_wait_for_tstate_lock)
+8    0.000    0.000    0.009    0.001 __init__.py:1368(info)
+8    0.000    0.000    0.009    0.001 __init__.py:1491(_log)
+8    0.000    0.000    0.008    0.001 __init__.py:1516(handle)
+8    0.000    0.000    0.008    0.001 __init__.py:1570(callHandlers)
+8    0.000    0.000    0.008    0.001 __init__.py:881(handle)
+8    0.000    0.000    0.008    0.001 __init__.py:1013(emit)
+8    0.008    0.001    0.008    0.001 {method 'write' of '_io.TextIOWrapper' objects}
+6    0.000    0.000    0.006    0.001 collection.py:1315(count)
+6    0.000    0.000    0.006    0.001 collection.py:1302(_count)
+6    0.000    0.000    0.004    0.001 threading.py:264(wait)
+55/18    0.000    0.000    0.004    0.000 {built-in method builtins.next}
+12    0.000    0.000    0.004    0.000 mongo_client.py:848(_socket_for_reads)
+24/6    0.000    0.000    0.004    0.001 contextlib.py:107(__enter__)
+5    0.000    0.000    0.004    0.001 threading.py:834(start)
+12    0.000    0.000    0.004    0.000 mongo_client.py:821(_get_socket)
+7    0.000    0.000    0.003    0.000 network.py:48(command)
+
+5. Analyze the multi-threading with synchronization results:
+By using the lock, every time there is only one thread can access the code to
+change the global variable 'counter', so the race condition is removed and
+the result is correct each time you run it. Also, the run time is almost the same
+as the multi-threading without lock.
+
+6. Couclusion:
+After trying the multiple-threading for HP Norton systems with 100000 records for
+each .csv file, we can improve the run time performance by 51% compare to the
+linear version. So I recommand the company to use the parallel (multi-threading
+with lock) version for HP Norton systems.

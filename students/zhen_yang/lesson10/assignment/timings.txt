@@ -1,0 +1,45 @@
+
+-------- Start Timing Information --------
+Input Files: products_5.csv, customers_5.csv, rentals_5.csv
+Number of records processed: 15
+Func:import_data()    1.02 second
+Func:show_available_products()    0.02 second
+Func:show_rentals()    0.01 second
+------- End Timing Information -------
+
+
+-------- Start Timing Information --------
+Input Files: products_hundred.csv, customers_hundred.csv, rentals_hundred.csv
+Number of records processed: 300
+Func:import_data()    1.52 second
+Func:show_available_products()    0.03 second
+Func:show_rentals()    0.02 second
+------- End Timing Information -------
+
+
+-------- Start Timing Information --------
+Input Files: products_thousand.csv, customers_thousand.csv, rentals_thousand.csv
+Number of records processed: 3000
+Func:import_data()    2.52 second
+Func:show_available_products()    0.07 second
+Func:show_rentals()    0.01 second
+------- End Timing Information -------
+
+
+-------- Start Timing Information --------
+Input Files: products_ten_thousand.csv, customers_ten_thousand.csv, rentals_ten_thousand.csv
+Number of records processed: 30000
+Func:import_data()    12.04 second
+Func:show_available_products()    0.23 second
+Func:show_rentals()    0.03 second
+------- End Timing Information -------
+
+
+-------- Start Timing Information --------
+Input Files: products_hundred_thousand.csv, customers_hundred_thousand.csv, rentals_hundred_thousand.csv
+Number of records processed: 300000
+Func:import_data()    113.17 second
+Func:show_available_products()    2.02 second
+Func:show_rentals()    0.22 second
+------- End Timing Information -------
+

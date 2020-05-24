@@ -1,0 +1,42 @@
+Assingment notes for lesson 6 exercise profiling and performance
+created by Niels Skvarch
+
+First Run:
+C:\ProjectScratchSpace>python -m cProfile poor_perf.py
+{'2013': 111223, '2014': 110620, '2015': 110854, '2016': 111972, '2017': 221318, '2018': 0}
+'ao' was found 501173 times
+         1001185 function calls (1001168 primitive calls) in 4.215 seconds
+
+I reformatted the document for PEP8,
+then corrected a typo in the code on line 41 that caused no data to be recorded for the year 2018
+changed line 62 for Windows file format
+
+Second run after only the PEP8 and windows changes:
+C:\ProjectScratchSpace>python -m cProfile good_perf.py
+{'2013': 111223, '2014': 110620, '2015': 110854, '2016': 111972, '2017': 111218, '2018': 110100}
+'ao' was found 501173 times
+         1001185 function calls (1001168 primitive calls) in 4.112 seconds
+
+I combined the 2 "open file and iterate over data loops" into one moving the year check into
+    that for loop as well so that the data is not iterated over three times
+
+Third run after the above change:
+C:\ProjectScratchSpace>python -m cProfile good_perf.py
+{'2013': 111223, '2014': 110620, '2015': 110854, '2016': 111972, '2017': 111218, '2018': 110100}
+'ao' was found 501173 times
+         1181 function calls (1164 primitive calls) in 1.663 seconds
+
+added a print statement to see the start and end times in the console:
+Fourth run:
+C:\ProjectScratchSpace>python -m cProfile good_perf.py
+{'2013': 111223, '2014': 110620, '2015': 110854, '2016': 111972, '2017': 111218, '2018': 110100}
+'ao' was found 501173 times
+2020-05-20 13:17:26.401599 2020-05-20 13:17:28.111980
+         1182 function calls (1165 primitive calls) in 1.722 seconds
+
+and commented it out:
+Fifth run:
+C:\ProjectScratchSpace>python -m cProfile good_perf.py
+{'2013': 111223, '2014': 110620, '2015': 110854, '2016': 111972, '2017': 111218, '2018': 110100}
+'ao' was found 501173 times
+         1181 function calls (1164 primitive calls) in 1.667 seconds
