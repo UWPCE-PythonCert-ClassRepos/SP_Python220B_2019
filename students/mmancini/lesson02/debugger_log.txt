@@ -286,7 +286,7 @@ exception encountered: -math domain error-
 
 ---------------------------
 
-Notes:  so by catch and report of the exception the script runs to completion
+***Notes:  so by catch and report of the exception the script runs to completion
 	we will need to look closer at the actual data exceptions, but looks like bad
 	input data yielding negative values which causes the exception
 
@@ -313,7 +313,7 @@ ValueError: math domain error
 
 -----------------------------
 
-Notes:  so debug shows the sqrt on the neg value throws the exception.   We need to drop the bad data so we can continue
+***Notes:  so debug shows the sqrt on the neg value throws the exception.   We need to drop the bad data so we can continue
         the stacktrace confirms the exception cause line
 
 

@@ -25,17 +25,23 @@ def load_rentals_file(filename):
     return data
 
 def calculate_additional_fields(data):
-    for value in data.values():
+    """
+        calculate values from input data, on bad data report and continue
+    """
+    for key, value in data.items():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
             value['total_price'] = value['total_days'] * value['price_per_day']
+
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except Exception as e:
             print('exception encountered: -' + str(e) + "-")
             print(traceback.format_exc())
+            print(f"Error in input data for key={key}, value={str(value)}")
+
             pass
         #except:
             #exit(0)
