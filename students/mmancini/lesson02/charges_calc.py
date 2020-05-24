@@ -5,6 +5,8 @@ import argparse
 import json
 import datetime
 import math
+import traceback
+
 
 def parse_cmd_arguments():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -33,6 +35,8 @@ def calculate_additional_fields(data):
             value['unit_cost'] = value['total_price'] / value['units_rented']
         except Exception as e:
             print('exception encountered: -' + str(e) + "-")
+            print(traceback.format_exc())
+            pass
         #except:
             #exit(0)
 

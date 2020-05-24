@@ -291,3 +291,30 @@ Notes:  so by catch and report of the exception the script runs to completion
 	input data yielding negative values which causes the exception
 
 ---------------------------
+
+C:\Users\Mike\PycharmProjects\untitled1\venv\Scripts\python.exe -m pdb C:/MikeRoot2/Msft/LangPython/UnivWashPy3/uwpy_sp220/lesson02/step02/charges_calc.py --i source.json --o out.json
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step02\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 39
+Breakpoint 1 at c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step02\charges_calc.py:39
+(Pdb) c
+exception encountered: -math domain error-
+Traceback (most recent call last):
+  File "c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step02\charges_calc.py", line 34, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+
+> c:\mikeroot2\msft\langpython\univwashpy3\uwpy_sp220\lesson02\step02\charges_calc.py(39)calculate_additional_fields()
+-> pass
+(Pdb) p value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542}
+(Pdb) 
+
+
+-----------------------------
+
+Notes:  so debug shows the sqrt on the neg value throws the exception.   We need to drop the bad data so we can continue
+        the stacktrace confirms the exception cause line
+
+
+-----------------------------
