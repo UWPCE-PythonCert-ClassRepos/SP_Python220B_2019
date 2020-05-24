@@ -15,7 +15,7 @@ class TestCaseOne(unittest.TestCase):
         path = current_dir + r"\data_files"
         clear_db()
         import_test = import_data(path, "customer_data.csv", "product_data.csv")
-        self.assertEqual((import_test[0][:3], import_test[1][:3]), ((0, 0, 1000), (0, 0, 1000)))
+        self.assertEqual((import_test[0][:3], import_test[1][:3]), ((1000, 0, 1000), (1000, 0, 1000)))
 
 
 # main program name-space
