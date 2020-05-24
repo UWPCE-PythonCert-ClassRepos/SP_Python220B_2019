@@ -1,5 +1,7 @@
 # Mac files
 .DS_Store
+Pipfile.lock
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
