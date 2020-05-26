@@ -3,6 +3,7 @@ Unit tests
 '''
 
 # pylint: disable=W
+# pylint: disable=R0201
 
 import logging
 from unittest import TestCase
@@ -186,30 +187,29 @@ class TestBasicOperations(TestCase):
             'status': True,
             'credit_limit': 25000
         },
-        {
-            'customer_id': '98765',
-            'name': 'Jack Charles',
-            'lastname': 'Charles',
-            'home_address': '123 Fake Street',
-            'phone_number': '1-212-555-1234',
-            'email_address': 'email@email.com',
-            'status': False,
-            'credit_limit': 25000
-        }
-        ,{
-            'customer_id': '10846',
-            'name': 'Vivie Harper',
-            'lastname': 'Harper',
-            'home_address': '123 Fake Street',
-            'phone_number': '1-212-555-1234',
-            'email_address': 'email@email.com',
-            'status': True,
-            'credit_limit': 25000
-        }]
+                          {
+                              'customer_id': '98765',
+                              'name': 'Jack Charles',
+                              'lastname': 'Charles',
+                              'home_address': '123 Fake Street',
+                              'phone_number': '1-212-555-1234',
+                              'email_address': 'email@email.com',
+                              'status': False,
+                              'credit_limit': 25000
+                          }
+                          , {
+                              'customer_id': '10846',
+                              'name': 'Vivie Harper',
+                              'lastname': 'Harper',
+                              'home_address': '123 Fake Street',
+                              'phone_number': '1-212-555-1234',
+                              'email_address': 'email@email.com',
+                              'status': True,
+                              'credit_limit': 25000
+                          }]
         add_multiple_customers(test_customers)
         #customer_list = return_all_customers()
         #for customer in customer_list:
         #    print(customer)
         print_all_customers()
-
     
