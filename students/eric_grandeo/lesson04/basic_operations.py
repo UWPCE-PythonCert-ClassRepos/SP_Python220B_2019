@@ -61,7 +61,7 @@ def search_customer(customer_id):
     '''Search for a customer by id'''
     try:
         customer = Customers.get(Customers.customer_id == customer_id)
-        LOGGER.info('Customer found')
+        LOGGER.info('Customer {} found'.format(customer_id))
         return {'name':customer.name, 'lastname':customer.lastname,
                 'email_address':customer.email_address, 'phone_number':customer.phone_number}
     except DoesNotExist as error:
@@ -111,7 +111,12 @@ def return_all_customers():
     '''This is a generator that yields all customers by ID and name'''
     for customer_id in Customers.select(Customers.customer_id):
         yield search_customer(customer_id)
-        
+
+def print_all_customers():
+    '''Display all customers on screen'''
+    for customer in return_all_customers():
+        print(customer)
+
 if __name__ == "__main__":
     database.create_tables([Customers])
     database.close()

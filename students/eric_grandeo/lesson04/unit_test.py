@@ -207,9 +207,9 @@ class TestBasicOperations(TestCase):
             'credit_limit': 25000
         }]
         add_multiple_customers(test_customers)
-        customer_list = return_all_customers()
-        for customer in customer_list:
-            print(customer)
-        
+        #customer_list = return_all_customers()
+        #for customer in customer_list:
+        #    print(customer)
+        print_all_customers()
 
     
