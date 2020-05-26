@@ -26,7 +26,10 @@ class MongoDBConnection():
         self.connection.close()
 
 def read_csv_file(dir_name, csv_file, collection, error_list):
-    """ This function read a csv file into MongoDB database """
+    """ This function read a csv file into MongoDB database
+        The input csv file is stricted to only one field one element, can't
+        process list, dictionary fields, can't read in int or float numbers.
+    """
     count = 0
     try:
         filename = os.path.join(dir_name, csv_file)
@@ -128,7 +131,7 @@ def show_rentals(product_id):
     client = MongoDBConnection()
     with client:
         hp_norton_db = client.connection.rental
-        # customers = hp_norton_db['customers']
+        customers = hp_norton_db['customers']
         rentals = hp_norton_db['rentals']
         # using 'aggregate' pipline to integrate two collections 'rentals' and
         # 'customers' together.
@@ -147,6 +150,7 @@ def show_rentals(product_id):
         ])
         the_dict = {}
         for renter in renter_list:
+            LOGGER.debug(renter)
             r = renter['renters']
             the_dict[r['user_id']] = {'name': r['name'],
                                       'address': r['address'],

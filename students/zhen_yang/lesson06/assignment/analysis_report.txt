@@ -1,0 +1,94 @@
+# Performance Report
+
+1. Running profiling on 'poor_perf.py'
+After running the profiling for 'poor_perf.py', I got the results (saved in
+file 'time_poor.res') as follows:
+
+Thu May  7 10:01:09 2020    analyze_poor.res
+
+         1038380 function calls in 5.674 seconds
+
+   Ordered by: internal time
+   List reduced from 13 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    5.138    5.138    5.548    5.548 poor_perf.py:18(analyze)
+    19182    0.311    0.000    0.311    0.000 {built-in method _codecs.charmap_decode}
+        1    0.126    0.126    5.674    5.674 <string>:1(<module>)
+  1000000    0.089    0.000    0.089    0.000 {method 'append' of 'list' objects}
+    19182    0.010    0.000    0.321    0.000 cp1252.py:22(decode)
+        2    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    5.674    5.674 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        2    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+        2    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+
+
+2. Analysis:
+The 'append()' method of list objects costs a lot of time. Plus, to analyze
+the input data, I don't have to copy the contents of the input file to
+another list. I just need to traverse through the input file.
+
+3. Improved first version of 'poor_perf.py'.
+After running the profiling of imporved version 'good_perf_v1.py', I got the
+results (saved in file 'time_good_v1.res') as follows:
+
+Thu May  7 10:00:12 2020    analyze_good.res
+
+         19193 function calls in 2.651 seconds
+
+   Ordered by: internal time
+   List reduced from 12 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.490    2.490    2.651    2.651 good_perf_v1.py:92(analyze)
+     9591    0.156    0.000    0.156    0.000 {built-in method _codecs.charmap_decode}
+     9591    0.005    0.000    0.161    0.000 cp1252.py:22(decode)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    2.651    2.651 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    2.651    2.651 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+
+
+4. Analysis:
+The 'good_perf_v1.py' improves the time by 53% (from 5.674 sec to 2.651 sec).
+So traversing through the input data witout copying it into a list can largely
+imporve the computation time and reduce the required memory for big data set.
+
+5. Improved second version of 'poor_perf.py'
+I also try to use different methods to read in the input data.
+Instead to use the 'csv.reader()', I  tried to use 'islice()', 'strip()' and
+'split()' methods to read in the csv data.
+
+After running the profiling of imporved second version 'good_perf_v2.py', I got
+the results (saved in file 'time_good_v2.res') as follows:
+
+Thu May  7 09:59:36 2020    analyze_good.res
+
+         2019192 function calls in 2.218 seconds
+
+   Ordered by: internal time
+   List reduced from 13 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    1.636    1.636    2.218    2.218 good_perf_v2.py:92(analyze)
+  1000000    0.294    0.000    0.294    0.000 {method 'split' of 'str' objects}
+     9591    0.154    0.000    0.154    0.000 {built-in method _codecs.charmap_decode}
+  1000000    0.128    0.000    0.128    0.000 {method 'strip' of 'str' objects}
+     9591    0.005    0.000    0.159    0.000 cp1252.py:22(decode)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    2.218    2.218 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    2.218    2.218 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+
+6. Anaysis:
+The 'good_perf_v2.py' improves the time of first version 'good_perf_v1.py' by
+16% from 2.651sec to 2.218 sec.
+So based on the profiling results, I found that although the seconed imporved
+version 'good_perf_v2.pf' needs to call 'split()' and 'strip()' 1 million times,
+using 'islice()', 'strip()' and 'split()' methods to read in .csv file is still
+faster than using the csv.read() method.
