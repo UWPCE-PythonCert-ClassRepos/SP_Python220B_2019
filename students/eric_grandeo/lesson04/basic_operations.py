@@ -50,7 +50,7 @@ def add_customer(customer_id, name, lastname, home_address,
     except Exception as error:
         LOGGER.error('Error creating = {}: {}'.format(name, error))
         #LOGGER.error(error)
-        
+
     finally:
         database.close()
         LOGGER.info('Database closed')
@@ -94,8 +94,7 @@ def list_active_customers():
     query = Customers.select().where(Customers.status).count()
     LOGGER.info("Number of active users: {}".format(query))
     return query
-    
-    
+
 def return_active_customers():
     '''Iterable that return the list of all customers where active == True'''
     query = Customers.select().where(Customers.status)
@@ -105,8 +104,8 @@ def return_active_customers():
 
 def add_multiple_customers(customers):
     "Add multiple customers to the db using comprehension"
-    return [add_customer(**customer) for customer in customers ]
- 
+    return [add_customer(**customer) for customer in customers]
+
 def return_all_customers():
     '''This is a generator that yields all customers by ID and name'''
     for customer_id in Customers.select(Customers.customer_id):
@@ -120,4 +119,3 @@ def print_all_customers():
 if __name__ == "__main__":
     database.create_tables([Customers])
     database.close()
-
