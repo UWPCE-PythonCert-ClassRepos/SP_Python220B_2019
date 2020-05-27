@@ -1,22 +1,23 @@
 import os
 
 
-big_list = []
-
-
-def dive(directory):
-    global big_list
+def dive(directory, big_list):
     contents = os.listdir(directory)
     picture_holder = []
+    png_bool = 0
     for items in contents:
-        #print(items)
         try:
-            dive(items)
+            dive(items, big_list)
         except:
-            if ".py" in items:
+            if ".png" in items:
                 picture_holder.append(items)
-    print(picture_holder)
+                png_bool = 1
+    if png_bool == 1:
+        big_list.append(os.path.abspath(directory))
     big_list.append(picture_holder)
-    
-print(big_list)
 
+
+if __name__ == '__main__':
+    big_list = []
+    dive("../lesson09", big_list)
+    print(big_list)
