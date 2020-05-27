@@ -1,5 +1,5 @@
 '''
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
 '''
 import argparse
 import json
@@ -11,7 +11,7 @@ import sys
 
 
 def init_logger(level):
-    """ init logger """
+    ''' init logger '''
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
     log_file = datetime.datetime.now().strftime("%Y-%m-%d") + ".log"
 
@@ -48,6 +48,7 @@ def init_logger(level):
 
 
 def parse_cmd_arguments():
+    ''' parse up the command line runtime args '''
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -58,55 +59,59 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    ''' read rentals source data file '''
+
     with open(filename) as file:
         try:
             data = json.load(file)
-        except:
-            exit(0)
+        except FileNotFoundError:
+            sys.exit(0)
     return data
 
 def calculate_additional_fields(data):
-    """
-        calculate values from input data, on bad data report and continue
-    """
+    ''' calculate values from input data, on bad data report and continue '''
     for key, value in data.items():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
             value['total_price'] = value['total_days'] * value['price_per_day']
-
-            value['sqrt_total_price'] = math.sqrt(value['total_price'])
-            value['unit_cost'] = value['total_price'] / value['units_rented']
-        except Exception as e:
-            print('exception encountered: -' + str(e) + "-")
+        except Exception as ex:
+            # ***MMM fix this
+            print('1111111111111111111111111 exception encountered: -' + str(ex) + "-")
             print(traceback.format_exc())
             print(f"Error in input data for key={key}, value={str(value)}")
 
-            pass
-        #except:
-            #exit(0)
+        try:
+            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            value['unit_cost'] = value['total_price'] / value['units_rented']
+        except Exception as ex:
+            # ***MMM fix this
+            print('222222222222222222222222 exception encountered: -' + str(ex) + "-")
+            print(traceback.format_exc())
+            print(f"Error in input data for key={key}, value={str(value)}")
 
     return data
 
-def save_to_json(filename, data):
+def save_to_json(filename, in_data):
+    ''' save rental data file '''
     with open(filename, 'w') as file:
-        json.dump(data, file)
+        json.dump(in_data, file)
 
 if __name__ == "__main__":
 
-    args = parse_cmd_arguments()
-    init_logger(args.debug)
+    ARGS = parse_cmd_arguments()
+    init_logger(ARGS.debug)
 
-
+    # ***MMM test
     logging.debug("test the logger")
     logging.critical("test the logger")
     logging.error("test the logger")
     logging.warning("test the logger")
-    sys.exit()
+    # sys.exit()
 
 
 
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    DATA = load_rentals_file(ARGS.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(ARGS.output, DATA)
