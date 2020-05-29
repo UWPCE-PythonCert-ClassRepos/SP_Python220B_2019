@@ -12,13 +12,14 @@ LOGGING_DICT = {"3": logging.DEBUG,
                 "0": logging.CRITICAL}
 
 
-def logging_on_off(func, logging):
+def logging_on_off(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        if logging == "on":
+        if args[-1] == "on":
             logging.disable(logging.NOTSET)
-        elif logging == "off":
+        elif args[-1] == "off":
             logging.disable(logging.CRITICAL)
+        args = args[:-1]
         return func(*args, **kwargs)
     return wrapper
 
@@ -56,7 +57,7 @@ def parse_cmd_arguments():
     parser.add_argument('-L', '--logging', help='logging "on"/"off"', required=True)
     return parser.parse_args()
 
-
+@logging_on_off
 def load_rentals_file(filename):
     """loads the data file"""
     with open(filename) as file:
@@ -67,7 +68,7 @@ def load_rentals_file(filename):
             LOG.error("error loading data")
     return data
 
-
+@logging_on_off
 def calculate_additional_fields(data):
     """calculate various derivative fields based on data"""
     LOG.debug("Beginning data calculations")
@@ -91,7 +92,7 @@ def calculate_additional_fields(data):
 
     return data
 
-
+@logging_on_off
 def save_to_json(filename, data):
     """saves the file"""
     with open(filename, 'w') as file:
@@ -102,6 +103,6 @@ def save_to_json(filename, data):
 if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
     LOG = logging_setup(LOGGING_DICT[ARGS.debug])
-    DATA = logging_on_off(load_rentals_file(ARGS.input), ARGS.logging)
-    DATA = logging_on_off(calculate_additional_fields(DATA), ARGS.logging)
-    logging_on_off(save_to_json(ARGS.output, DATA), ARGS.logging)
+    DATA = load_rentals_file(ARGS.input, ARGS.logging)
+    DATA = calculate_additional_fields(DATA, ARGS.logging)
+    save_to_json(ARGS.output, DATA, ARGS.logging)
