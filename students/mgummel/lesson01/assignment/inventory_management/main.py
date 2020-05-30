@@ -4,10 +4,10 @@
 Launches the user interface for the inventory management system
 """
 import sys
-from .market_prices import get_latest_price
-from .furniture import Furniture
-from .inventory import Inventory
-from .electric_appliances import ElectricAppliances
+from inventory_management.market_prices import get_latest_price
+from inventory_management.furniture import Furniture
+from inventory_management.inventory import Inventory
+from inventory_management.electric_appliances import ElectricAppliances
 
 FULL_INVENTORY = {}
 

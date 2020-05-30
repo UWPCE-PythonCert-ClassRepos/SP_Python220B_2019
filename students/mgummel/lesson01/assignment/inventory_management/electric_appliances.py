@@ -2,7 +2,7 @@
 Creates an Electric appliance object that will be added
 to the inventory configuration.
 """
-from .inventory import Inventory
+from inventory_management.inventory import Inventory
 
 
 class ElectricAppliances(Inventory):
