@@ -5,7 +5,6 @@ import argparse
 import json
 import datetime
 import math
-import traceback
 import logging
 import sys
 
@@ -30,7 +29,7 @@ def init_logger(level):
     # Create a log message handler that sends output to a time-stamped log file.
     file_handler = logging.FileHandler(log_file)
     # Sets the level of log messages to be displayed in the file.
-    file_handler.setLevel(logging.WARNING)
+    file_handler.setLevel(log_level)
     # Sets the formatter for this handler to the formatter created above.
     file_handler.setFormatter(formatter)
 
@@ -65,6 +64,7 @@ def load_rentals_file(filename):
         try:
             data = json.load(file)
         except FileNotFoundError:
+            logging.error('Unable to Find Source File %s', filename)
             sys.exit(0)
     return data
 
@@ -74,22 +74,24 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
-            value['total_days'] = (rental_end - rental_start).days
-            value['total_price'] = value['total_days'] * value['price_per_day']
-        except Exception as ex:
-            # ***MMM fix this
-            print('1111111111111111111111111 exception encountered: -' + str(ex) + "-")
-            print(traceback.format_exc())
-            print(f"Error in input data for key={key}, value={str(value)}")
+        except ValueError:
+            logging.warning('detected invalid rental date for %s', key)
+            logging.debug('invalid rental date for %s, %s', key, str(value))
+
+        value['total_days'] = (rental_end - rental_start).days
+        if value['total_days'] < 0:
+            logging.warning('detected invalid rental dates for %s', key)
+            logging.debug('invalid rental dates, start: %s, end: %s for %s',
+                          rental_start, rental_end, key)
+        value['total_price'] = value['total_days'] * value['price_per_day']
 
         try:
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             value['unit_cost'] = value['total_price'] / value['units_rented']
-        except Exception as ex:
-            # ***MMM fix this
-            print('222222222222222222222222 exception encountered: -' + str(ex) + "-")
-            print(traceback.format_exc())
-            print(f"Error in input data for key={key}, value={str(value)}")
+        except ValueError:
+            logging.error('invalid rental data, skip pricing for %s', key)
+            logging.debug('invalid rental data, skip pricing for %s', key)
+            logging.debug('invalid rental data, skip pricing for key=%s, value=%s', key, str(value))
 
     return data
 
@@ -103,15 +105,8 @@ if __name__ == "__main__":
     ARGS = parse_cmd_arguments()
     init_logger(ARGS.debug)
 
-    # ***MMM test
-    logging.debug("test the logger")
-    logging.critical("test the logger")
-    logging.error("test the logger")
-    logging.warning("test the logger")
-    # sys.exit()
-
-
-
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
+
+    print("rental processing completed")

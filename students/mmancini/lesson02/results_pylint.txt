@@ -1,7 +1,4 @@
-************* Module charges_calc
-charges_calc.py:79:15: W0703: Catching too general exception Exception (broad-except)
-charges_calc.py:88:15: W0703: Catching too general exception Exception (broad-except)
 
-------------------------------------------------------------------
-Your code has been rated at 9.72/10 (previous run: 9.44/10, +0.28)
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.58/10, +0.42)
 
