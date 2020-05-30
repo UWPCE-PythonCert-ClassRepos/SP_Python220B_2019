@@ -1,0 +1,18 @@
+# Conclusions.txt
+
+1. We run the program in five different set of input files.
+(1) input file has total 5 records
+(2) input file has total 100 records
+(3) input file has total 1000 records
+(4) input file has total 10000 records
+(5) input file has total 100000 records
+We found that as the number of the records increasing, the computation time
+of the program is also increased, especially for the hundred thousand of records.
+We also note that function 'import_data()' consume most of the computation time.
+It is the bottleneck of our program. Since import_data() is mainly performing
+I/O process, so we should consider using multiple-threading to improve the
+performance of our program.
+
+2. The timing information is obtained by adding timing decorator to the critical
+functions without changing any part of the functions. Other developers can also
+use this timing declarator to timing their functions.

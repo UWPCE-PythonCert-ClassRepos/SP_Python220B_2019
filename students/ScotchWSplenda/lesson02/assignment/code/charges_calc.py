@@ -7,9 +7,10 @@ import datetime
 import math
 import logging
 import sys
-
+# pylint:disable=C0103
 
 def set_logging_settings(level):
+    '''set it'''
     if level == '0':
         logging.disable()
         return None
@@ -30,7 +31,6 @@ def set_logging_settings(level):
     CH.setFormatter(formatter)
 
     if level == '1':
-        '''look at all this redundant BS'''
         FH.setLevel(logging.ERROR)
         CH.setLevel(logging.ERROR)
 
@@ -40,7 +40,6 @@ def set_logging_settings(level):
         LOGGER.addHandler(CH)
 
     if level == '2':
-        '''look at all this redundant BS'''
         FH.setLevel(logging.WARNING)
         CH.setLevel(logging.WARNING)
 
@@ -50,7 +49,6 @@ def set_logging_settings(level):
         LOGGER.addHandler(CH)
 
     if level == '3':
-        '''look at all this redundant BS'''
         FH.setLevel(logging.WARNING)
         CH.setLevel(logging.DEBUG)
 
@@ -59,11 +57,12 @@ def set_logging_settings(level):
         LOGGER.addHandler(FH)
         LOGGER.addHandler(CH)
 
-    logging.debug(f'logging level set at {level}')
+    logging.debug('logging level set at %s', level)
     return None
 
 
 def parse_cmd_arguments():
+    '''parse it'''
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
 # you name the output file in the user interface
@@ -74,51 +73,53 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    '''load it'''
     with open(filename) as file:
         try:
             data = json.load(file)
             logging.debug("Loaded %s.", filename)
         except FileNotFoundError:
-            logging.error(f"Double check name of {filename}.json")
+            logging.error("Double check name of %s.json", filename)
             sys.exit(0)
-    logging.debug(f"You have {len(data)} rows of data")
+    logging.debug("You have %s rows of data", len(data))
     return data
 
 
 def calculate_additional_fields(data):
-    x = 0
+    '''calculate it'''
+    bug_count = 0
     for key, value in data.items():
         try:
             if not value['rental_end']:
-                logging.warning(f"rental_end is missing for {key}")
-                x = x+1
+                logging.warning("rental_end is missing for %s", key)
+                bug_count = bug_count+1
             # make dates into dates data type for calc
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
         except KeyError:
-            logging.error(f"KeyError in total_days for {key}")
+            logging.error("KeyError in total_days for %s", key)
         except ValueError:
-            logging.error(f"ValueError in total_days for {key}")
+            logging.error("ValueError in total_days for %s", key)
             value['total_days'] = 0
-            x = x+1
+            bug_count = bug_count+1
         if not value['rental_start']:
-            logging.warning(f"rental_start is missing for {key}")
-            x = x+1
+            logging.warning("rental_start is missing for %s", key)
+            bug_count = bug_count+1
             continue
         if value['units_rented'] < 1:
-            logging.warning(f"units_rented is less than 1 for {key}")
-            x = x+1
+            logging.warning("units_rented is less than 1 for %s", key)
+            bug_count = bug_count+1
             continue
         if rental_start > rental_end:
-            logging.error(f'rental_end is before rental_start for {key}')
-            x = x+1
+            logging.error('rental_end is before rental_start for %s', key)
+            bug_count = bug_count+1
             continue
         value['total_price'] = value['total_days'] * value['price_per_day']
         value['sqrt_total_price'] = math.sqrt(value['total_price'])
         value['unit_cost'] = value['total_price'] / value['units_rented']
 
-    logging.debug(f'there were {x} bugs out of {len(data)} lines')
+    logging.debug('there were %s bugs out of %s lines' % (bug_count, len(data)))
     return data
 
 
@@ -127,7 +128,7 @@ def save_to_json(filename, data):
     calculate_additional_fields works'''
     with open(filename, 'w') as file:
         json.dump(data, file)
-    logging.debug(f"wrote output file to {filename}")
+    logging.debug("wrote output file to %s", filename)
 
 
 if __name__ == "__main__":
@@ -137,6 +138,6 @@ if __name__ == "__main__":
     # logging.debug("Input file provided: %s.", args.input)
     # logging.debug("Output file provided: %s.", args.output)
     # logging.debug("Debug level is %s.", args.dbg_command)
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    DATA = load_rentals_file(args.input)
+    DATA = calculate_additional_fields(DATA)
+    save_to_json(args.output, DATA)
