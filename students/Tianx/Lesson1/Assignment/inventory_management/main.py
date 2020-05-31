@@ -5,6 +5,7 @@ import inventory_class
 import furniture_class
 import electric_appliances_class
 
+FULL_INVENTORY = {}
 
 def main_menu(user_prompt=None):
     """
@@ -26,12 +27,14 @@ def main_menu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 
-# def get_price(item_code):
-#     """
-#     :param item_code:
-#     :return: None
-#     """
-#     print("Get price")
+def get_price(item_code):
+    """
+    :param item_code:
+    :return: latest_price
+    """
+    print("Get price")
+    latest_price = market_prices.get_latest_price(item_code)
+    return latest_price
 
 
 def add_new_item():
@@ -96,7 +99,6 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    FULL_INVENTORY = {}
     while True:
         print(FULL_INVENTORY)
         main_menu()
