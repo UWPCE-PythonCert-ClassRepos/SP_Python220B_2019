@@ -2,8 +2,13 @@
 Create Mongo Database
 """
 
+import logging
 from pymongo import MongoClient
+import csv
+import os
 
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.INFO)
 
 #Mongo boilerplate code
 class MongoDBConnection():
@@ -32,10 +37,20 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
        a record count of the number of products, customers and rentals
        added (in that order), the second with a count of any errors
        that occurred, in the same order."""
-    pass
+    mongo = MongoDBConnection()
+    
+    with mongo:
+        db = mongo.connection.hp_norton
+        
+        products = db["products"]
+        
+        with open(os.path.join(directory_name, product_file)) as file:
+            result = products.insert_many(csv.DictReader(file))
+        
+        for doc in products.find():
+            LOGGER.info(doc)   
 
-
-
+    #add collections for customer and rentals, and error counts
 
 def show_available_products():
     """Returns a Python dictionary of products listed as available"""

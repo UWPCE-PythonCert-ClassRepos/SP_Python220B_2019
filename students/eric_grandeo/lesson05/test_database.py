@@ -12,13 +12,27 @@ LOGGER = logging.getLogger(__name__)
 class TestBasicOperations(TestCase):
     '''Test all Database functions'''
     def setUp(self):
-        pass
+        """Remove collections and start with no data"""
+        mongo = MongoDBConnection()
+        
+        with mongo:
+            db = mongo.connection.hp_norton
+            db["customers"].drop()
+            db["products"].drop()
+            db["rentals"].drop()
     
     def tearDown(self):
-        pass
+        """Remove collections"""
+        mongo = MongoDBConnection()
+        
+        with mongo:
+            db = mongo.connection.hp_norton
+            db["customers"].drop()
+            db["products"].drop()
+            db["rentals"].drop()
     
     def test_import_data(self):
-        pass
+        import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv")
     
     def test_show_available_products(self):
         pass
