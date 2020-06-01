@@ -76,6 +76,7 @@ class MainTests(TestCase):
 			self.assertEqual(main.main_menu(), main.exit_program)
 
 	def test_add_item(self):
+		# Test Appliance
 		with patch('builtins.input', side_effect=['123', 'RiceCooker', '5.99', 'n', 'y',
 		                                          'GE', '220']):
 			main.add_new_item()
@@ -86,6 +87,7 @@ class MainTests(TestCase):
 			                                              'brand': 'GE',
 			                                              'voltage': '220'})
 
+		# Test Furniture
 		with patch('builtins.input', side_effect=['345', 'Table', '59.99', 'y',
 		                                          'Wood', 'L']):
 			main.add_new_item()
@@ -95,6 +97,29 @@ class MainTests(TestCase):
 			                                              'rental_price': '59.99',
 			                                              'material': 'Wood',
 			                                              'size': 'L'})
+		# Test a none appliance/furniture inventory
+		with patch('builtins.input', side_effect=['456', 'Test item', '19.99', 'n','n'
+		                                          ]):
+			main.add_new_item()
+			self.assertEqual(main.FULL_INVENTORY['456'], {'product_code': '456',
+			                                              'description': 'Test item',
+			                                              'market_price': 24,
+			                                              'rental_price': '19.99'})
 
 	def test_get_price(self):
+		with patch('builtins.input', side_effect=['345', 'Table', '59.99', 'y',
+		                                          'Wood', 'L']):
+			main.add_new_item()
 		self.assertEqual(main.get_price('345'), 24)
+
+	def test_item_info(self):
+		main.FULL_INVENTORY.clear()
+		self.test_item = ElectricAppliances("123", "RiceCooker", "29.99", "5.99",
+		                                   "GE", "220")
+		self.test_dict = self.test_item.return_as_dictionary()
+		with patch('builtins.input', side_effect="123"):
+			self.assertEqual(main.item_info(), None)
+
+		with patch('builtins.input', side_effect="456"):
+			self.assertEqual(main.item_info(), None)
+

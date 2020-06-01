@@ -7,6 +7,7 @@ import electric_appliances_class
 
 FULL_INVENTORY = {}
 
+
 def main_menu(user_prompt=None):
     """
     :param user_prompt:
