@@ -44,7 +44,7 @@ def set_logging_level(level):
         LOGGER.setLevel(debug_level)
 
         # create file handler which logs even debug messages
-        log_file = logging.FileHandler('charges_calc.log')
+        log_file = logging.FileHandler('datetime.datetime.now().strftime("%Y-%m-%d")' + '.log')
 
         # create console handler with a higher log level
         log_stdout = logging.StreamHandler(sys.stdout)
@@ -62,6 +62,7 @@ def set_logging_level(level):
         LOGGER.addHandler(log_file)
 
     except KeyError:
+        print("Invalid Logging level. Disabling logging.")
         logging.disable(logging.CRITICAL)
 
 
