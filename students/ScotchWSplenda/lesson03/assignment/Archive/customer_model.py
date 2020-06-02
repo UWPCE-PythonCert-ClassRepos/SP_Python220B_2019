@@ -1,6 +1,5 @@
 '''
 Peewee ORM, sqlite and Python
-what is this 'peewee.' preamble?
 '''
 # C:\Users\v-ollock\AppData\Local\Programs\Python\Python37-32\Lib\sqlite3
 # http://zetcode.com/python/peewee/
@@ -19,10 +18,13 @@ class Customer(peewee.Model):
     home_address = peewee.CharField(max_length=50)
     phone_number = peewee.CharField(max_length=20)
     email_address = peewee.CharField(max_length=50)
-    status = peewee.CharField(max_length=50)
+    status = peewee.BooleanField()
     poverty_score = peewee.DecimalField(max_digits=3, decimal_places=0)
 
     class Meta:
         """Peewee meta class.  Assign db and table"""
         database = db
         db_table = 'customer'
+
+
+Customer.create_table()
