@@ -1,0 +1,261 @@
+
+Usama@DESKTOP-7L002N9 MINGW64 ~/Documents/SP_Python220B_2019/SP_Python220B_2019/students/Reem_Alqaysi/Lesson_02/code (master)
+$ python -m pdb charges_calc.py --input source.json --output out.json
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(4)<module>()
+-> """
+(Pdb) ll
+  1
+  2     """
+  3     Returns total price paid for individual rentals
+  4  -> """
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9     import logging
+ 10
+ 11
+ 12     def init_logger(level):
+ 13         """Initialize settings for log file"""
+ 14         # Name of the log file with time stamp
+ 15         log_file = 'charges_calc' + datetime.datetime.now().strftime("%Y-%m-%d") + '.log'
+ 16         # log format
+ 17         log_format = "%(asctime)s%(filename)s:%(lineno)-3d%(levelname)s %(message)s"
+ 18         # Create a formatter using format string
+ 19         formatter = logging.Formatter(log_format)
+ 20
+ 21         # Create a log message handler that sends output to the log_file
+ 22         file_handler = logging.FileHandler(log_file)
+ 23         # Set the formatter for this log message handler to the formatter created above
+ 24         file_handler.setFormatter(formatter)
+ 25
+ 26         # Add console handler
+ 27         console_handler = logging.StreamHandler()
+ 28         console_handler.setFormatter(formatter)
+ 29
+ 30         # Get the root logger
+ 31         logger = logging.getLogger()
+ 32         # Add handler to the root logger's handlers
+ 33         logger.addHandler(file_handler)
+ 34         logger.addHandler(console_handler)
+ 35
+ 36         # No debug messages or log file, default
+ 37         logger.setLevel(logging.CRITICAL)
+ 38         if int(level) == 1:
+ 39             # Only error messages
+ 40             logger.setLevel(logging.ERROR)
+ 41             file_handler.setLevel(logging.ERROR)
+ 42             console_handler.setLevel(logging.ERROR)
+ 43         elif int(level) == 2:
+ 44             # Error messages and warnings
+ 45             logger.setLevel(logging.WARNING)
+ 46             file_handler.setLevel(logging.WARNING)
+ 47             console_handler.setLevel(logging.WARNING)
+ 48         elif int(level) == 3:
+ 49             # Error messages, warnings, and debug messages
+ 50             logger.setLevel(logging.DEBUG)
+ 51             file_handler.setLevel(logging.WARNING)
+ 52             console_handler.setLevel(logging.DEBUG)
+ 53
+ 54
+ 55     def parse_cmd_arguments():
+ 56         """
+ 57         Gather arguments from command line. Debug level defaults to 0 if not provided
+ 58         """
+ 59         parser = argparse.ArgumentParser(description='Process some integers.')
+ 60         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 61         parser.add_argument('-o', '--output', help='output JSON file', required=True)
+ 62         parser.add_argument('-d', '--debug', help='debug level', required=False, default=0)
+ 63
+ 64         return parser.parse_args()
+ 65
+ 66
+ 67     def load_rentals_file(filename):
+ 68         """
+ 69         Open passed filename and use json.load to read to read_data object and return it
+ 70         Critical error is logged and program exited if file not found or incorrect value
+ 71         """
+ 72         try:
+ 73             with open(filename) as file:
+ 74                 read_data = json.load(file)
+ 75         except FileNotFoundError:
+ 76             logging.critical("Can't find '%s'", filename)
+ 77             logging.debug("Error in load_rentals_file()")
+ 78             exit(0)
+ 79         except ValueError:
+ 80             logging.critical("'%s' is either empty or in the wrong format", filename)
+ 81             logging.debug("Error in load_rentals_file")
+ 82             exit(0)
+ 83         return read_data
+ 84
+ 85
+ 86     def calculate_additional_fields(data):
+ 87         """ calculate rental data """
+ 88         logging.debug("Calculating additional rental data...")
+ 89
+ 90         for key, value in data.items():
+ 91             # get rental start date
+ 92             try:
+ 93                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 94             except ValueError:
+ 95                 logging.error("Invalid date format for rental start")
+ 96
+ 97             # get rental end date
+ 98             try:
+ 99                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+100             except ValueError:
+101                 logging.error("Invalid date format for rental end")
+102
+103             if rental_start > rental_end:
+104                 logging.warning("Start date cannot be after end date, Rental start date: %s ,Rental end date: %s ", rental_start, ren
+tal_end)
+105             # calculate total rental days
+106             value['total_days'] = (rental_end - rental_start).days
+107             # calculate total rental price
+108             value['total_price'] = value['total_days'] * value['price_per_day']
+109             logging.debug("Total rental price: %s", value['total_price'])
+110
+111             # calculate square root of the total rental price
+112             try:
+113                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+114             except ValueError:
+115                 logging.error("Could not compute square root price for %s (value error)", key)
+116             except KeyError:
+117                 logging.error("Could not compute square root of %s (key error)", key)
+118
+119             # calculate unit rental cost
+120             try:
+121                 value['unit_cost'] = value['total_price'] / value['units_rented']
+122             except ZeroDivisionError:
+123                 logging.error("Could not compute unit cost of %s (divide by 0 error)", key)
+124
+125         return data
+126
+127     def save_to_json(filename, input_data):
+128         """Save info from input_data to filename in json format"""
+129         with open(filename, 'w') as file:
+130             json.dump(input_data, file)
+131
+132
+133     if __name__ == "__main__":
+134         ARGS = parse_cmd_arguments()
+135         init_logger(ARGS.debug)
+136         DATA = load_rentals_file(ARGS.input)
+137         DATA = calculate_additional_fields(DATA)
+138         save_to_json(ARGS.output, DATA)
+(Pdb) b 133
+Breakpoint 1 at c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py:133
+(Pdb) c
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(133)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(134)<module>()
+-> ARGS = parse_cmd_arguments()
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(135)<module>()
+-> init_logger(ARGS.debug)
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(136)<module>()
+-> DATA = load_rentals_file(ARGS.input)
+(Pdb)
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(137)<module>()
+-> DATA = calculate_additional_fields(DATA)
+(Pdb) s
+--Call--
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(86)calculate_additi
+onal_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(88)calculate_additi
+onal_fields()
+-> logging.debug("Calculating additional rental data...")
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(90)calculate_additi
+onal_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(92)calculate_additi
+onal_fields()
+-> try:
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(93)calculate_additi
+onal_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(98)calculate_additi
+onal_fields()
+-> try:
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(99)calculate_additi
+onal_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(103)calculate_addit
+ional_fields()
+-> if rental_start > rental_end:
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(104)calculate_addit
+ional_fields()
+-> logging.warning("Start date cannot be after end date, Rental start date: %s ,Rental end date: %s ", rental_start, rental_end)
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(108)calculate_addit
+ional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb)
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(109)calculate_addit
+ional_fields()
+-> logging.debug("Total rental price: %s", value['total_price'])
+(Pdb)
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(112)calculate_addit
+ional_fields()
+-> try:
+(Pdb)
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(113)calculate_addit
+ional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb)
+ValueError: math domain error
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(113)calculate_addit
+ional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp value['sqrt_total_price']
+*** KeyError: 'sqrt_total_price'
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82,
+'total_price': -2542}
+(Pdb) pp sqrt_total_price
+*** NameError: name 'sqrt_total_price' is not defined
+(Pdb) key
+'RNT001'
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82,
+'total_price': -2542}
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(114)calculate_addit
+ional_fields()
+-> except ValueError:
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(115)calculate_addit
+ional_fields()
+-> logging.error("Could not compute square root price for %s (value error)", key)
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(120)calculate_addit
+ional_fields()
+-> try:
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(121)calculate_addit
+ional_fields()
+-> value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) n
+> c:\users\usama\documents\sp_python220b_2019\sp_python220b_2019\students\reem_alqaysi\lesson_02\code\charges_calc.py(90)calculate_additi
+onal_fields()
+-> for key, value in data.items():
+(Pdb) q
+
+Usama@DESKTOP-7L002N9 MINGW64 ~/Documents/SP_Python220B_2019/SP_Python220B_2019/students/Reem_Alqaysi/Lesson_02/code (master)
+$ python charges_calc.py  --input source.json --output out.json
+
+Usama@DESKTOP-7L002N9 MINGW64 ~/Documents/SP_Python220B_2019/SP_Python220B_2019/students/Reem_Alqaysi/Lesson_02/code (master)
+$
