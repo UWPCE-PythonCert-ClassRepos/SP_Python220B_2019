@@ -43,15 +43,25 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         db = mongo.connection.hp_norton
         
         products = db["products"]
+        customers = db["customers"]
+        rentals = db["rentals"]
         
-        with open(os.path.join(directory_name, product_file)) as file:
-            result = products.insert_many(csv.DictReader(file))
+        coll_list = [products, customers, rentals]
+        file_list = [product_file, customer_file, rentals_file]
         
-        for doc in products.find():
-            LOGGER.info(doc)   
+        merged_list = tuple(zip(coll_list, file_list))
 
-    #add collections for customer and rentals, and error counts
+        for item in merged_list:
+            with open(os.path.join(directory_name, item[1])) as file:
+                result = item[0].insert_many(csv.DictReader(file))
+                for doc in item[0].find():
+                    LOGGER.info(doc)   
 
+        prod_num = products.find().count()
+        cust_num = customers.find().count()
+        rent_num = rentals.find().count()
+        return (prod_num, cust_num, rent_num)
+        
 def show_available_products():
     """Returns a Python dictionary of products listed as available"""
     pass

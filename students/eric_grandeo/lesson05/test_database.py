@@ -32,7 +32,7 @@ class TestBasicOperations(TestCase):
             db["rentals"].drop()
     
     def test_import_data(self):
-        import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv")
+        print(import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers.csv", "rentals.csv"))
     
     def test_show_available_products(self):
         pass
