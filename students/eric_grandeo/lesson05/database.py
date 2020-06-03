@@ -4,6 +4,7 @@ Create Mongo Database
 
 import logging
 from pymongo import MongoClient
+from pymongo import errors
 import csv
 import os
 
@@ -39,28 +40,40 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
        that occurred, in the same order."""
     mongo = MongoDBConnection()
     
-    with mongo:
-        db = mongo.connection.hp_norton
-        
-        products = db["products"]
-        customers = db["customers"]
-        rentals = db["rentals"]
-        
-        coll_list = [products, customers, rentals]
-        file_list = [product_file, customer_file, rentals_file]
-        
-        merged_list = tuple(zip(coll_list, file_list))
+    prod_errors = 0
+    cust_errors = 0
+    rent_errors = 0
+    
+    try:
+        with mongo:
+            db = mongo.connection.hp_norton
+            
+            products = db["products"]
+            customers = db["customers"]
+            rentals = db["rentals"]
+            
+            coll_list = [products, customers, rentals]
+            file_list = [product_file, customer_file, rentals_file]
+            error_list = [prod_errors, cust_errors, rent_errors]
+            
+            merged_list = tuple(zip(coll_list, file_list, error_list))
 
-        for item in merged_list:
-            with open(os.path.join(directory_name, item[1])) as file:
-                result = item[0].insert_many(csv.DictReader(file))
-                for doc in item[0].find():
-                    LOGGER.info(doc)   
+            for item in merged_list:
+                with open(os.path.join(directory_name, item[1])) as file:
+                    result = item[0].insert_many(csv.DictReader(file))
+                    for doc in item[0].find():
+                        LOGGER.info("Added record: {} to collection {}".format(doc, item[0]))   
 
-        prod_num = products.find().count()
-        cust_num = customers.find().count()
-        rent_num = rentals.find().count()
-        return (prod_num, cust_num, rent_num)
+            prod_num = products.find().count()
+            cust_num = customers.find().count()
+            rent_num = rentals.find().count()
+
+    except errors.PyMongoError as error:
+        LOGGER.error("Error creating record: {}". format(error))
+        item[2] += 1
+        
+    return ((prod_num, cust_num, rent_num), (merged_list[0][2], merged_list[1][2], merged_list[2][2]))
+    
         
 def show_available_products():
     """Returns a Python dictionary of products listed as available"""

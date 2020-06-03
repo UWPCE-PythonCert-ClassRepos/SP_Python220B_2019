@@ -32,7 +32,15 @@ class TestBasicOperations(TestCase):
             db["rentals"].drop()
     
     def test_import_data(self):
-        print(import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers.csv", "rentals.csv"))
+        result = import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers.csv", "rentals.csv")
+        compare = ((5, 5, 6), (0, 0, 0))
+        self.assertEqual(result, compare)
+    
+    def test_import_data_fail(self):
+        result = import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers_fail.csv", "rentals.csv")
+        compare = ((5, 0, 6), (0, 1, 0))
+        self.assertEqual(result, compare)
+        #figure out how to cause an error on upload into mongo, create a test data file
     
     def test_show_available_products(self):
         pass
