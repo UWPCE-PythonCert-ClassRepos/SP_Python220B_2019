@@ -1,0 +1,35 @@
+2020-06-03 12:38:45,248 database.py:40  the function clear_db took 0.04080462455749512 to execute
+2020-06-03 12:38:45,250 database.py:86  adding file C:\ProjectScratchSpace\data_files\customer_data_large.csv to the database
+2020-06-03 12:38:45,665 database.py:106 adding file C:\ProjectScratchSpace\data_files\product_data_large.csv to the database
+2020-06-03 12:38:46,037 database.py:125 adding file C:\ProjectScratchSpace\data_files\rental_data_large.csv to the database
+2020-06-03 12:38:46,458 database.py:144 1000 product entries 1000 customer entries and 1000 rental entries were processed
+2020-06-03 12:38:46,459 database.py:40  the function import_data took 1.210998773574829 to execute
+2020-06-03 12:38:46,494 database.py:40  the function clear_db took 0.03490781784057617 to execute
+2020-06-03 12:38:46,497 database.py:86  adding file C:\ProjectScratchSpace\data_files\bad_cust_data.csv to the database
+2020-06-03 12:38:46,517 database.py:106 adding file C:\ProjectScratchSpace\data_files\bad_prod_data.csv to the database
+2020-06-03 12:38:46,538 database.py:125 adding file C:\ProjectScratchSpace\data_files\bad_rent_data.csv to the database
+2020-06-03 12:38:46,559 database.py:144 1 product entries 1 customer entries and 1 rental entries were processed
+2020-06-03 12:38:46,559 database.py:40  the function import_data took 0.06482672691345215 to execute
+2020-06-03 12:38:46,590 database.py:40  the function clear_db took 0.029920339584350586 to execute
+2020-06-03 12:38:46,592 database.py:86  adding file C:\ProjectScratchSpace\data_files\customer_data.csv to the database
+2020-06-03 12:38:46,613 database.py:106 adding file C:\ProjectScratchSpace\data_files\product_data.csv to the database
+2020-06-03 12:38:46,638 database.py:125 adding file C:\ProjectScratchSpace\data_files\rental_data.csv to the database
+2020-06-03 12:38:46,661 database.py:144 8 product entries 5 customer entries and 11 rental entries were processed
+2020-06-03 12:38:46,661 database.py:40  the function import_data took 0.07081174850463867 to execute
+2020-06-03 12:38:46,692 database.py:40  the function clear_db took 0.02991938591003418 to execute
+2020-06-03 12:38:46,699 database.py:144 0 product entries 0 customer entries and 0 rental entries were processed
+2020-06-03 12:38:46,699 database.py:40  the function import_data took 0.006979942321777344 to execute
+2020-06-03 12:38:46,705 database.py:40  the function clear_db took 0.004952669143676758 to execute
+2020-06-03 12:38:46,707 database.py:86  adding file C:\ProjectScratchSpace\data_files\customer_data.csv to the database
+2020-06-03 12:38:46,729 database.py:106 adding file C:\ProjectScratchSpace\data_files\product_data.csv to the database
+2020-06-03 12:38:46,752 database.py:125 adding file C:\ProjectScratchSpace\data_files\rental_data.csv to the database
+2020-06-03 12:38:46,778 database.py:144 8 product entries 5 customer entries and 11 rental entries were processed
+2020-06-03 12:38:46,778 database.py:40  the function import_data took 0.07280468940734863 to execute
+2020-06-03 12:38:46,783 database.py:40  the function show_rentals took 0.0049877166748046875 to execute
+2020-06-03 12:38:46,813 database.py:40  the function clear_db took 0.029921531677246094 to execute
+2020-06-03 12:38:46,815 database.py:86  adding file C:\ProjectScratchSpace\data_files\customer_data.csv to the database
+2020-06-03 12:38:46,839 database.py:106 adding file C:\ProjectScratchSpace\data_files\product_data.csv to the database
+2020-06-03 12:38:46,862 database.py:125 adding file C:\ProjectScratchSpace\data_files\rental_data.csv to the database
+2020-06-03 12:38:46,886 database.py:144 8 product entries 5 customer entries and 11 rental entries were processed
+2020-06-03 12:38:46,886 database.py:40  the function import_data took 0.07280373573303223 to execute
+2020-06-03 12:38:46,890 database.py:40  the function show_available_products took 0.003989458084106445 to execute
