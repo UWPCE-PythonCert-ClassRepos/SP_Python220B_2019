@@ -105,6 +105,7 @@ def delete_customer(customer_id):
 
     except DoesNotExist:
         LOGGER.warning(f"The customer ID {customer_id} does not exist in the database")
+        raise ValueError("Customer ID does not exist")
 
 
 def update_customer_credit(customer_id, credit_limit):
@@ -131,6 +132,8 @@ def update_customer_credit(customer_id, credit_limit):
 
     except DoesNotExist:
         LOGGER.warning(f"The customer ID {customer_id} does not exist in the database")
+        raise ValueError("User Does not exist")
+
 
 
 def list_active_customers():
@@ -147,6 +150,6 @@ def list_active_customers():
                                 .count())
 
     except Exception as e:
-        LOGGER.warning(f"Unable to determine active customers due :\n {e}")
+        LOGGER.warning(f"Unable to determine active customers due to:\n {e}")
 
     return active_customers
