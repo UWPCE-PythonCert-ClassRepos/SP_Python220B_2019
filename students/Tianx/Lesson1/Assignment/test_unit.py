@@ -68,11 +68,11 @@ class MainTests(TestCase):
 	"""Testing the Main module"""
 
 	def test_main_menu(self):
-		with patch('builtins.input', side_effect='1'):
+		with patch('builtins.input', side_effect=['1']):
 			self.assertEqual(main.main_menu(), main.add_new_item)
-		with patch('builtins.input', side_effect='2'):
+		with patch('builtins.input', side_effect=['2']):
 			self.assertEqual(main.main_menu(), main.item_info)
-		with patch('builtins.input', side_effect='q'):
+		with patch('builtins.input', side_effect=['q']):
 			self.assertEqual(main.main_menu(), main.exit_program)
 
 	def test_add_item(self):
@@ -114,12 +114,11 @@ class MainTests(TestCase):
 
 	def test_item_info(self):
 		main.FULL_INVENTORY.clear()
-		self.test_item = ElectricAppliances("123", "RiceCooker", "29.99", "5.99",
-		                                   "GE", "220")
-		self.test_dict = self.test_item.return_as_dictionary()
-		with patch('builtins.input', side_effect="123"):
-			self.assertEqual(main.item_info(), None)
-
-		with patch('builtins.input', side_effect="456"):
-			self.assertEqual(main.item_info(), None)
+		with patch('builtins.input', side_effect=['123', 'RiceCooker', '5.99', 'n', 'y',
+		                                          'GE', '220']):
+			main.add_new_item()
+		with patch('builtins.input', side_effect=['123']):
+			self.assertEqual(main.item_info(), True)
+		with patch('builtins.input', side_effect=['456']):
+			self.assertEqual(main.item_info(), False)
 
