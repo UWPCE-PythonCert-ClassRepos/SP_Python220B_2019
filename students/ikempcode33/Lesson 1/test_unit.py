@@ -44,12 +44,13 @@ class TestFurniture(TestCase):
     def test_furniture(self):
         furn = {'product_code': '0455',
                 'description': 'couch',
-                'market_prices': 280.0,
+                'market_price': 280.0,
                 'rental_price': 30.0,
                 'material': 'leather',
                 'size': 'L'}
         details = ('0455', 'couch', 280.0, 30.0, 'leather', 'L')
         furn_test = Furniture(*details)
+
         self.assertEqual(furn, furn_test.return_as_dictionary())
 
 
@@ -69,7 +70,7 @@ class TestMain(TestCase):
         with patch('builtins.input', side_effect='2'):
             self.assertEqual(main.main_menu(), main.item_info)
 
-        with patch('builtins.input', side_effect='3'):
+        with patch('builtins.input', side_effect='q'):
             self.assertEqual(main.main_menu(), main.exit_program)
 
     def test_get_price(self): 
@@ -84,7 +85,7 @@ class TestMain(TestCase):
         """Test that new items of the correct type are being added"""
         inv_obj_1 = ['545', 'pan', 13.0, 'n', 'n']
         furn_obj_1 = ['0455', 'couch', 30.0, 'y', 'leather', 'L']
-        elec_app_1 = ['786', 'phone charger', 'n', 'y', 'apple', 130.0]
+        elec_app_1 = ['786', 'phone charger', 130.0, 'n', 'y', 'apple', 2.9]
         
         #check if new item is added for inventory
         with patch('market_prices.get_latest_price', return_value=42.0):
@@ -104,9 +105,9 @@ class TestMain(TestCase):
                 furniture_dict = {}
                 main.FULL_INVENTORY = {}
                 main.add_new_item()
-                furniture_dict['0455']={'product_code': '0455',
+                furniture_dict['0455'] = {'product_code': '0455',
                                         'description': 'couch',
-                                        'market_prices': 280.0,
+                                        'market_price': 280.0,
                                         'rental_price': 30.0,
                                         'material': 'leather',
                                         'size': 'L'}
