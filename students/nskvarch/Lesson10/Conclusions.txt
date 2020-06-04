@@ -1,0 +1,22 @@
+Conclusions for Lesson 10 exercise "Meta programming" by Niels Skvarch
+
+I used the test_database.py file to run the database module to ensure my API did not change while adding and refactoring the logging and timing functions.
+
+I used the csv files from lesson 5 and then created 3 additional files expanded to 1000 entries each.
+the data files are .csv format, in the data_files folder
+
+running the test gives the following timing output:
+2020-06-03 12:31:41,288 database.py:87  adding file C:\ProjectScratchSpace\data_files\customer_data_large.csv to the database
+2020-06-03 12:31:41,694 database.py:107 adding file C:\ProjectScratchSpace\data_files\product_data_large.csv to the database
+2020-06-03 12:31:42,122 database.py:126 adding file C:\ProjectScratchSpace\data_files\rental_data_large.csv to the database
+2020-06-03 12:31:42,551 database.py:145 1000 product entries 1000 customer entries and 1000 rental entries were processed
+2020-06-03 12:31:42,552 database.py:40  the function import_data took 1.2666893005371094 to execute
+
+2020-06-03 12:31:42,677 database.py:87  adding file C:\ProjectScratchSpace\data_files\customer_data.csv to the database
+2020-06-03 12:31:42,700 database.py:107 adding file C:\ProjectScratchSpace\data_files\product_data.csv to the database
+2020-06-03 12:31:42,721 database.py:126 adding file C:\ProjectScratchSpace\data_files\rental_data.csv to the database
+2020-06-03 12:31:42,744 database.py:145 8 product entries 5 customer entries and 11 rental entries were processed
+2020-06-03 12:31:42,744 database.py:40  the function import_data took 0.06806182861328125 to execute
+
+The potential bottleneck in this case is the exponential increase in time it takes to process 10 records to 1000 records.
+with another increase to 100000 or 1000000 records the bottleneck will be on the import process.

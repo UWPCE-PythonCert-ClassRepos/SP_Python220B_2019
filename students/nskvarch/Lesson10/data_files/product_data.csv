@@ -1,0 +1,9 @@
+product_id,description,type,number_available
+2001,stereo,electronics,6
+2002,television,electronics,4
+2003,microwave,appliance,2
+2004,painting,decoration,11
+2005,table_lamp,electronics,7
+2006,end_table,furniture,3
+2007,couch,furniture,1
+2008,toaster,appliance,0
