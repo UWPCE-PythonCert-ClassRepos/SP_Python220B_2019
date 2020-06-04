@@ -40,10 +40,6 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
        that occurred, in the same order."""
     mongo = MongoDBConnection()
     
-    prod_errors = 0
-    cust_errors = 0
-    rent_errors = 0
-    
     try:
         with mongo:
             db = mongo.connection.hp_norton
@@ -52,11 +48,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             customers = db["customers"]
             rentals = db["rentals"]
             
+            error_dict = {product_file: 0, customer_file: 0, rentals_file: 0}
+            
             coll_list = [products, customers, rentals]
             file_list = [product_file, customer_file, rentals_file]
-            error_list = [prod_errors, cust_errors, rent_errors]
+            #error_list = [prod_errors, cust_errors, rent_errors]
             
-            merged_list = tuple(zip(coll_list, file_list, error_list))
+            merged_list = tuple(zip(coll_list, file_list))
 
             for item in merged_list:
                 with open(os.path.join(directory_name, item[1])) as file:
@@ -64,20 +62,38 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                     for doc in item[0].find():
                         LOGGER.info("Added record: {} to collection {}".format(doc, item[0]))   
 
-            prod_num = products.find().count()
-            cust_num = customers.find().count()
-            rent_num = rentals.find().count()
-
-    except errors.PyMongoError as error:
+    except errors.PyMongoError as error:    
         LOGGER.error("Error creating record: {}". format(error))
-        item[2] += 1
+        error_dict[item[1]] += 1
+
+    prod_num = products.find().count()
+    cust_num = customers.find().count()
+    rent_num = rentals.find().count()
         
-    return ((prod_num, cust_num, rent_num), (merged_list[0][2], merged_list[1][2], merged_list[2][2]))
+    return ((prod_num, cust_num, rent_num), (error_dict[product_file], error_dict[customer_file], error_dict[rentals_file]))
     
         
 def show_available_products():
     """Returns a Python dictionary of products listed as available"""
-    pass
+    mongo = MongoDBConnection()
+    avail_dict = {}
+    
+    with mongo:
+        db = mongo.connection.hp_norton
+        products = db["products"]
+        
+        myquery = {"quantity_available": {"$gt": "0"}}
+        
+        mydoc = products.find(myquery)
+        
+        for x in mydoc:
+            #LOGGER.info("Available Product: {}".format(x))
+            #avail_dict[x["product_id"]] = {k: v for k,v in x.items() if k != "product_id"}
+            avail_dict[x["product_id"]] = {k: v for k,v in x.items() if k not in  ("_id","product_id")}
+    LOGGER.info("All Available Prods: {}".format(avail_dict))
+    return avail_dict        
+        
+        
 
 
 
