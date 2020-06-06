@@ -89,9 +89,9 @@ def item_info():
         for key, value in print_dict.items():
             print("{}:{}".format(key, value))
         return True
-    else:
-        print("Item not found in inventory")
-        return False
+
+    print("Item not found in inventory")
+    return False
 
 
 
