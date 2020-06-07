@@ -33,9 +33,7 @@ def logger(debug_level):
     LOGGER.addHandler(CONSOLE_HANDLER)
 
     if debug_level == '0':
-        LOGGER.setLevel(logging.CRITICAL)
-        FILE_HANDLER.setLevel(logging.CRITICAL)
-        CONSOLE_HANDLER.setLevel(logging.CRITICAL)
+        LOGGER.disabled = True
     elif debug_level == '1':
         LOGGER.setLevel(logging.ERROR)
         FILE_HANDLER.setLevel(logging.ERROR)
@@ -85,14 +83,14 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid rental_start date: %s'
+            logging.warning('Invalid or missing rental_start date: %s'
                             'product code: %s.', value['rental_start'], value['product_code'])
             logging.debug('Error in calculate_additional_fields')
             continue
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid rental_end date: %s'
+            logging.warning('Invalid or missing rental_end date: %s'
                             'product code: %s.', value['rental_end'], value['product_code'])
             logging.debug('Error in calculate_additional_fields')
             continue
@@ -101,7 +99,9 @@ def calculate_additional_fields(data):
             logging.error('End date %s is before the Start date %s.',value['rental_end'],
                             value['rental_start'])
         value['total_price'] = value['total_days'] * value['price_per_day']
-        logging.debug("total_price: %s", value['total_price'])
+        if value['price_per_day'] < 0:
+            logging.warning("price cannot be negative", value['price_per_day'])
+            logging.debug("total_price: %s", value['total_price'])
         try:
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
             logging.debug("sqrt_total_price: %s", value['sqrt_total_price'])
