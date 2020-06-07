@@ -18,7 +18,7 @@ import logging
 
 
 def logger(debug_level):
-    """Setting up logging"""
+    """Setting up logging level"""
     LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
     LOG_FILE = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
 
@@ -54,6 +54,7 @@ def logger(debug_level):
 
 
 def parse_cmd_arguments():
+    """Defining command line input args"""
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
@@ -64,6 +65,7 @@ def parse_cmd_arguments():
 
 
 def load_rentals_file(filename):
+    """Loading data from the input Json file."""
     with open(filename) as file:
         try:
             data = json.load(file)
@@ -78,6 +80,7 @@ def load_rentals_file(filename):
 
 
 def calculate_additional_fields(data):
+    """Calculate additional fields """
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
@@ -113,6 +116,7 @@ def calculate_additional_fields(data):
 
 
 def save_to_json(filename, data):
+    """Save data to output file"""
     with open(filename, 'w') as file:
         json.dump(data, file)
 
