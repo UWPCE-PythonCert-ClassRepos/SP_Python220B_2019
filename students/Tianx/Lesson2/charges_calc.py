@@ -1,5 +1,14 @@
 """
-Returns total price paid for individual rentals 
+Returns total price paid for individual rentals
+
+logging with command line --debug or -d
+
+0: No debug messages or log file.
+1: Only error messages.
+2: Error messages and warnings.
+3: Error messages, warnings and debug messages.
+
+All logs are written to a .log file in this directory as well as the console
 """
 import argparse
 import json
@@ -8,7 +17,7 @@ import math
 import logging
 
 
-def logger(log_level):
+def logger(debug_level):
     """Setting up logging"""
     LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
     LOG_FILE = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
@@ -19,28 +28,29 @@ def logger(log_level):
 
     CONSOLE_HANDLER = logging.StreamHandler()
     CONSOLE_HANDLER.setFormatter(FORMATTER)
-
     LOGGER = logging.getLogger()
+    LOGGER.addHandler(FILE_HANDLER)
     LOGGER.addHandler(CONSOLE_HANDLER)
 
-    if log_level == '0':
+    if debug_level == '0':
         LOGGER.setLevel(logging.CRITICAL)
         FILE_HANDLER.setLevel(logging.CRITICAL)
         CONSOLE_HANDLER.setLevel(logging.CRITICAL)
-    elif log_level == '1':
+    elif debug_level == '1':
         LOGGER.setLevel(logging.ERROR)
         FILE_HANDLER.setLevel(logging.ERROR)
         CONSOLE_HANDLER.setLevel(logging.ERROR)
-    elif log_level == '2':
+    elif debug_level == '2':
         LOGGER.setLevel(logging.WARNING)
         FILE_HANDLER.setLevel(logging.WARNING)
         CONSOLE_HANDLER.setLevel(logging.WARNING)
-    elif log_level == '3':
+    elif debug_level == '3':
         LOGGER.setLevel(logging.DEBUG)
         FILE_HANDLER.setLevel(logging.WARNING)
         CONSOLE_HANDLER.setLevel(logging.DEBUG)
     else:
-        logging.disable(logging.CRITICAL)
+        logging.debug("ValueError!")
+        logging.error("Debug level should be 0-3")
 
 
 def parse_cmd_arguments():
@@ -67,29 +77,38 @@ def load_rentals_file(filename):
     return data
 
 
-
 def calculate_additional_fields(data):
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid start date: %s'
+            logging.warning('Invalid rental_start date: %s'
                             'product code: %s.', value['rental_start'], value['product_code'])
             logging.debug('Error in calculate_additional_fields')
+            continue
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid end date: (%s)'
-                            'product code: %s.', value['rental_start'], value['product_code'])
+            logging.warning('Invalid rental_end date: %s'
+                            'product code: %s.', value['rental_end'], value['product_code'])
             logging.debug('Error in calculate_additional_fields')
+            continue
         value['total_days'] = (rental_end - rental_start).days
-
+        if value['total_days'] < 0:
+            logging.error('End date %s is before the Start date %s.',value['rental_end'],
+                            value['rental_start'])
         value['total_price'] = value['total_days'] * value['price_per_day']
-        value['sqrt_total_price'] = math.sqrt(value['total_price'])
-        value['unit_cost'] = value['total_price'] / value['units_rented']
-        except:
-            exit(0)
-
+        logging.debug("total_price: %s", value['total_price'])
+        try:
+            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            logging.debug("sqrt_total_price: %s", value['sqrt_total_price'])
+            value['unit_cost'] = value['total_price'] / value['units_rented']
+            logging.debug("unit_cost: %s", value['unit_cost'])
+        except ValueError:
+            logging.warning('Value Error in calculation')
+        except ZeroDivisionError:
+            logging.warning('Unites_rented is Zero')
+            continue
     return data
 
 
@@ -100,6 +119,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
+    logger(args.debug)
     data = load_rentals_file(args.input)
     data = calculate_additional_fields(data)
     save_to_json(args.output, data)
