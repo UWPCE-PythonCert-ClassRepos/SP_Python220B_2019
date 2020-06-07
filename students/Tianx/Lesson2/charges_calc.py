@@ -10,45 +10,51 @@ logging with command line --debug or -d
 
 All logs are written to a .log file in this directory as well as the console
 """
+# pylint:disable=E1205
+
 import argparse
 import json
 import datetime
 import math
 import logging
+import sys
 
 
-def logger(debug_level):
+def set_logger(debug_level):
     """Setting up logging level"""
-    LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
-    LOG_FILE = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+    log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+    log_file = 'charges_calc_'+datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
 
-    FORMATTER = logging.Formatter(LOG_FORMAT)
-    FILE_HANDLER = logging.FileHandler(LOG_FILE, mode="w")
-    FILE_HANDLER.setFormatter(FORMATTER)
+    formatter = logging.Formatter(log_format)
+    file_handler = logging.FileHandler(log_file, mode="w")
+    file_handler.setFormatter(formatter)
 
-    CONSOLE_HANDLER = logging.StreamHandler()
-    CONSOLE_HANDLER.setFormatter(FORMATTER)
-    LOGGER = logging.getLogger()
-    LOGGER.addHandler(FILE_HANDLER)
-    LOGGER.addHandler(CONSOLE_HANDLER)
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    logger = logging.getLogger()
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
 
     if debug_level == '0':
-        LOGGER.disabled = True
+        logger.setLevel(logging.CRITICAL)
+        file_handler.setLevel(logging.CRITICAL)
+        console_handler.setLevel(logging.CRITICAL)
     elif debug_level == '1':
-        LOGGER.setLevel(logging.ERROR)
-        FILE_HANDLER.setLevel(logging.ERROR)
-        CONSOLE_HANDLER.setLevel(logging.ERROR)
+        logger.setLevel(logging.ERROR)
+        file_handler.setLevel(logging.ERROR)
+        console_handler.setLevel(logging.ERROR)
     elif debug_level == '2':
-        LOGGER.setLevel(logging.WARNING)
-        FILE_HANDLER.setLevel(logging.WARNING)
-        CONSOLE_HANDLER.setLevel(logging.WARNING)
+        logger.setLevel(logging.WARNING)
+        file_handler.setLevel(logging.WARNING)
+        console_handler.setLevel(logging.WARNING)
     elif debug_level == '3':
-        LOGGER.setLevel(logging.DEBUG)
-        FILE_HANDLER.setLevel(logging.WARNING)
-        CONSOLE_HANDLER.setLevel(logging.DEBUG)
+        logger.setLevel(logging.DEBUG)
+        file_handler.setLevel(logging.WARNING)
+        console_handler.setLevel(logging.DEBUG)
     else:
         logging.debug("ValueError!")
         logging.error("Debug level should be 0-3")
+        sys.exit()
 
 
 def parse_cmd_arguments():
@@ -70,10 +76,10 @@ def load_rentals_file(filename):
             logging.debug('Data has been loaded, no error')
         except FileNotFoundError:
             logging.error('File not found. Unable to load file from %s', filename)
-            exit(0)
+            sys.exit()
         except json.decoder.JSONDecodeError:
             logging.error('Unable to load file from %s', filename)
-            exit(0)
+            sys.exit()
     return data
 
 
@@ -83,21 +89,21 @@ def calculate_additional_fields(data):
         try:
             rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid or missing rental_start date: %s'
-                            'product code: %s.', value['rental_start'], value['product_code'])
+            logging.warning('Invalid or missing rental_start date'
+                            'product code: %s.', value['product_code'])
             logging.debug('Error in calculate_additional_fields')
             continue
         try:
             rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
         except ValueError:
-            logging.warning('Invalid or missing rental_end date: %s'
-                            'product code: %s.', value['rental_end'], value['product_code'])
+            logging.warning('Invalid or missing rental_end date'
+                            'product code: %s.', value['product_code'])
             logging.debug('Error in calculate_additional_fields')
             continue
         value['total_days'] = (rental_end - rental_start).days
         if value['total_days'] < 0:
-            logging.error('End date %s is before the Start date %s.',value['rental_end'],
-                            value['rental_start'])
+            logging.error('End date %s is before the Start date %s.', value['rental_end'],
+                          value['rental_start'])
         value['total_price'] = value['total_days'] * value['price_per_day']
         if value['price_per_day'] < 0:
             logging.warning("price cannot be negative", value['price_per_day'])
@@ -123,7 +129,7 @@ def save_to_json(filename, data):
 
 if __name__ == "__main__":
     args = parse_cmd_arguments()
-    logger(args.debug)
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    set_logger(args.debug)
+    charge_data = load_rentals_file(args.input)
+    charge_data = calculate_additional_fields(charge_data)
+    save_to_json(args.output, charge_data)
