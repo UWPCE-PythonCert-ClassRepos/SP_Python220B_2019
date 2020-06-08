@@ -87,19 +87,28 @@ def show_available_products():
         mydoc = products.find(myquery)
         
         for x in mydoc:
-            #LOGGER.info("Available Product: {}".format(x))
-            #avail_dict[x["product_id"]] = {k: v for k,v in x.items() if k != "product_id"}
+            LOGGER.info("Available Product: {}".format(x))
             avail_dict[x["product_id"]] = {k: v for k,v in x.items() if k not in  ("_id","product_id")}
     LOGGER.info("All Available Prods: {}".format(avail_dict))
     return avail_dict        
         
-        
-
-
 
 
 def show_rentals(product_id):
     """Returns a Python dictionary with the following user information
        from users that have rented products matching product_id"""
-    pass
-
+    mongo = MongoDBConnection()
+    result_dict = {}
+    
+    with mongo:
+        db = mongo.connection.hp_norton
+        rentals = db["rentals"]
+        customers = db["customers"]
+        
+        for doc in rentals.find({"product_id": product_id}):
+            for customer in customers.find({"user_id": doc["user_id"]}):
+                result_dict[customer["user_id"]] = {k: v for k, v in customer.items() if k not in ("_id", "user_id")}
+                LOGGER.info("Product id: {}, Renter: {}".format(product_id, customer))
+                
+    return result_dict        
+    

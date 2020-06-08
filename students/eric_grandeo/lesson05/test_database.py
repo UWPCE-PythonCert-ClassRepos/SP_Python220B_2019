@@ -40,7 +40,7 @@ class TestBasicOperations(TestCase):
         result = import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers_fail.csv", "rentals.csv")
         compare = ((5, 0, 0), (0, 1, 0))
         self.assertEqual(result, compare)
-        #figure out how to cause an error on upload into mongo, create a test data file
+        
     
     def test_show_available_products(self):
         import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers.csv", "rentals.csv")
@@ -49,5 +49,16 @@ class TestBasicOperations(TestCase):
         self.assertEqual(result, compare)
     
     def test_show_rentals(self):
-        pass
+        import_data("/home/ejgrandeo/uwpython/SP_Python220B_2019/students/eric_grandeo/lesson05", "products.csv", "customers.csv", "rentals.csv")
+        result = show_rentals('prd005')
+        compare = {'user003': {'name': 'John Charles',
+                               'address': '345 Main street',
+                               'phone_number': '718-555-4893',
+                               'email': 'jackdude@yahoo.com'},
+                   'user005': {'name': 'Optimus G',
+                               'address': '101 Cybertron St.',
+                               'phone_number': '212-555-0001',
+                               'email': 'spacerobot@gmail.com'}}
+        self.assertEqual(result, compare)
+        
     
