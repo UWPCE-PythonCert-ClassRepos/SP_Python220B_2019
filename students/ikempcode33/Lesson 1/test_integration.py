@@ -1,53 +1,46 @@
+"""Integration testing of the Inventory Management script"""
+
 import sys
-import os
-# locate file path
-sys.path.append('inventory_management')
+sys.path.append('./inventory_management')
 from unittest import TestCase
-from unittest.mock import patch, MagicMock
-from inventory_management.inventory_class import Inventory 
-from inventory_management.electric_appliances_class import ElectricAppliances
-from inventory_management.furniture_class import Furniture
-import inventory_management.market_prices as market_prices
-import inventory_management.main as main
+from unittest.mock import Mock, MagicMock, patch
+from inventory_class import Inventory
+from electric_appliances_class import ElectricAppliances
+from furniture_class import Furniture
+from market_prices import get_latest_price
+import main
 
-class TestInventoryManagement(TestCase):
+
+class ModuleTests(TestCase):
+    """A class for Integration testing"""
     def test_integration(self):
-        main.FULLINVENTORY = {}
-        inv_obj_1 = ['545', 'pan', 13.0, 'n', 'n']
-        furn_obj_1 = ['0455', 'couch', 30.0, 'y', 'leather', 'L']
-        elec_app_1 = ['786', 'phone charger', 'n', 'y', 'apple', 130.0]
+        # Test main
+        with patch('builtins.input', side_effect=['123', 'RiceCooker', '5.99', 'n', 'y',
+                                                  'GE', '220']):
+            main.add_new_item()
+        with patch('builtins.input', side_effect=['345', 'Table', '59.99', 'y',
+                                                  'Wood', 'L']):
+            main.add_new_item()
+        with patch('builtins.input', side_effect=['456', 'Test item', '19.99', 'n', 'n'
+                                                  ]):
+            main.add_new_item()
 
-        inventory_dict = {'product_code': '545',
-                          'description': 'pan',
-                          'market_price': 42.0,
-                          'rental_price': 13.0}
-        furniture_dict = {'product_code': '0455',
-                          'description': 'couch',
-                          'market_prices': 280.0,
-                          'rental_price': 30.0,
-                          'material': 'leather',
-                          'size': 'L'}
-        electrical_dict = {'product_code': '786',
-                           'description': 'phone charger',
-                           'market_price': 400.0,
-                           'rental_price': 130.0,
-                           'brand': 'apple',
-                           'voltage': 2.9}
-        
-        main.FULL_INVENTORY = {}
+        expected_app = {'product_code': '123', 'description': 'RiceCooker', 'market_price': 24,
+                        'rental_price': '5.99', 'brand': 'GE', 'voltage': '220'}
+        expected_furn = {'product_code': '345', 'description': 'Table', 'market_price': 24,
+                         'rental_price': '59.99', 'material': 'Wood', 'size': 'L'}
+        expected_inv = {'product_code': '456', 'description': 'Test item',
+                        'market_price': 24, 'rental_price': '19.99'}
 
-        # add items to the inventory
+        self.assertEqual(main.FULL_INVENTORY['123'], expected_app)
+        self.assertEqual(main.FULL_INVENTORY['345'], expected_furn)
+        self.assertEqual(main.FULL_INVENTORY['456'], expected_inv)
 
-        with patch('builtins.input', side_effect=inv_obj_1):
-            with patch('market_prices.get_latest_price', return_value=42.0):
-                main.add_new_item()
-        
-        with patch('builtins.input', side_effect=elec_app_1):
-            with patch('market_prices.get_latest_price', return_value=400.0):
-                main.add_new_item()
-
-        with patch('builtins.input', side_effect=furn_obj_1):
-            with patch('market_prices.get_latest_price', return_value=280.0):
-                main.add_new_item()
-
-        print(main.FULL_INVENTORY)
+        # Test item_info
+        with patch('builtins.input', side_effect=['123']):
+            self.assertEqual(main.item_info(), True)
+        with patch('builtins.input', side_effect=['678']):
+            self.assertEqual(main.item_info(), False)
+        # Test get_lastest_price
+        self.market_price = get_latest_price(123)
+        self.assertEqual(self.market_price, 24)
