@@ -2,12 +2,17 @@
 '''
 Returns total price paid for individual rentals
 '''
+
 import logging
 import argparse
 import json
 import datetime
 import math
 import sys
+
+# defined global variable
+logger = logging.getLogger(__name__)
+
 
 
 def setup_logger(level):
@@ -33,14 +38,14 @@ def setup_logger(level):
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.DEBUG)
     console_handler.setFormatter(formatter)
-    logger = logging.getLogger()
+    #logger = logging.getLogger()
     logger.setLevel(debug_level)
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-    loggingSetup = "Logging set up complete."
-    logging.info(loggingSetup)
-    print(loggingSetup)
+    logging_setup = "Logging set up complete."
+    logging.info(logging_setup)
+    print(logging_setup)
 
 
 def parse_cmd_arguments():
@@ -57,31 +62,29 @@ def parse_cmd_arguments():
 
 def load_rentals_file(filename):
     """Loads data"""
-    logging.debug('Loading data from %s...', ARGS.input) #filename
+    logger.debug('Loading data from %s...', ARGS.input) #filename
     with open(filename) as file:
         logging.debug("loading data")
         try:
             data = json.load(file)
         except FileNotFoundError:
-            logging.error('error when loading data, file not found')
+            logger.error('error when loading data, file not found')
     return data
 
 
 def calculate_additional_fields(data):
     """calculate fields for output data"""
-    logging.error("Calculating additional fields.")
+    logger.info("Calculating additional fields.")
     for value in data.values():
         try:
             rental_start = datetime.datetime.strptime(
                 value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(
                 value['rental_end'], '%m/%d/%y')
-        except KeyError:
             value['total_days'] = (rental_end - rental_start).days
-            continue
+        except KeyError:
             if value['total days'] < 1:
-                logging.warning("start date after end date.")
-                continue
+                logger.warning("start date after end date.")
             # logging.warning("Value Error found in date fields of input s%")
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
@@ -89,21 +92,21 @@ def calculate_additional_fields(data):
                 value['unit_cost'] = value['total_price'] / \
                     value['units_rented']
             except ZeroDivisionError:
-                logging.warning("zero unit rented")
+                logger.warning("zero unit rented")
         except ValueError:
-            logging.error("missing data")
+            logger.error("missing data")
 
     return data
 
 
 def save_to_json(filename, data):
     """output data to new file"""
-    print("Saving data to output file")
+    logger.info("Saving data to output file")
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
     except IOError:
-        logging.error("Error. Problem with saving")
+        logger.error("Error. Problem with saving")
 
 
 if __name__ == "__main__":
@@ -112,4 +115,4 @@ if __name__ == "__main__":
     DATA = load_rentals_file(ARGS.input)
     DATA = calculate_additional_fields(DATA)
     save_to_json(ARGS.output, DATA)
-    logging.info("Output is saved.")
+    logger.info("Output is saved.")
