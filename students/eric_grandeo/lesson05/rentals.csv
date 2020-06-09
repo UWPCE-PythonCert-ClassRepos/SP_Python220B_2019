@@ -1,0 +1,7 @@
+product_id,user_id,quantity
+prd005,user003,1
+prd005,user005,2
+prd003,user001,1
+prd004,user002,1
+prd001,user004,2
+prd002,user003,1
