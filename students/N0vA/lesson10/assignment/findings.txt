@@ -1,0 +1,9 @@
+### Database Bottleneck Findings ###
+
+Starting off, to better understand the bottleneck I used two datasets, the set from lesson05 and the other from lesson07.  The first had 3 products, customers, and rentals and the second had 1000 of each.  
+
+We can see using the first dataset reading the data takes no time at all and with the longer dataset, the longest runtime for reading in one of the files was 0.01251077651977539 seconds.  Furthermore, between the two datasets, importing the data into the database took 0.019016265869140625 and 0.07756686210632324 seconds respectively.  The import data function could be improved as we saw when we read it in using parallel processes but still this does not seem to be the biggest issue of the bottleneck which was surprising to me.
+
+The show availible products function only had 4/1000 difference in runtime (0.00250244140625 vs 0.006505489349365234 seconds).  For a dataset that is 333 times as large, a .004 difference seems completely usable as the database grows.
+
+This leaves the show rentals function.  With the smaller data input the runtime was 0.00250244140625 seconds while with the longer dataset it was 0.682086706161499 seconds.  This is a 272.5% difference.  This function to look up a dictionary for availible products that can be rented is the problem behind the bottleneck.  
