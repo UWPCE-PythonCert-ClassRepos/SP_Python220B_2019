@@ -14,7 +14,6 @@ import sys
 logger = logging.getLogger(__name__)
 
 
-
 def setup_logger(level):
     """sets up logging properties"""
     logging_levels = {0: logging.CRITICAL,
@@ -62,7 +61,7 @@ def parse_cmd_arguments():
 
 def load_rentals_file(filename):
     """Loads data"""
-    logger.debug('Loading data from %s...', ARGS.input) #filename
+    logger.debug('Loading data from %s...', ARGS.input)  # filename
     with open(filename) as file:
         logging.debug("loading data")
         try:
@@ -81,21 +80,32 @@ def calculate_additional_fields(data):
                 value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(
                 value['rental_end'], '%m/%d/%y')
-            value['total_days'] = (rental_end - rental_start).days
-        except KeyError:
+        except:
+            logger.error("Bad date, rental_start or rental_end: %s", value)
             continue
+        try:
+            value['total_days'] = (rental_end - rental_start).days
             if value['total days'] < 1:
-                logger.warning("start date after end date.")
-            # logging.warning("Value Error found in date fields of input s%")
+                logger.warning("start date after end date: %s", value)
+        except KeyError:
+            logger.debug("KeyError always generated on Value[] inserts?")
+            # no-op
+        except ValueError:
+            logger.error("ValueError: missing data %s", value)
+            continue
+
+        try:
             value['total_price'] = value['total_days'] * value['price_per_day']
             value['sqrt_total_price'] = math.sqrt(value['total_price'])
-            try:
-                value['unit_cost'] = value['total_price'] / \
-                    value['units_rented']
-            except ZeroDivisionError:
-                logger.warning("zero unit rented")
         except ValueError:
-            logger.error("missing data")
+            logger.error("ValueError: math domain error %s", value)
+            continue
+
+        try:
+            value['unit_cost'] = value['total_price'] / \
+                value['units_rented']
+        except ZeroDivisionError:
+            logger.warning("ZeroDivisionError: zero unit rented: %s", value)
 
     return data
 
