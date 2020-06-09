@@ -83,6 +83,7 @@ def calculate_additional_fields(data):
                 value['rental_end'], '%m/%d/%y')
             value['total_days'] = (rental_end - rental_start).days
         except KeyError:
+            continue
             if value['total days'] < 1:
                 logger.warning("start date after end date.")
             # logging.warning("Value Error found in date fields of input s%")
