@@ -35,19 +35,19 @@ def set_logger(debug_level):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-    if debug_level == '0':
+    if debug_level == 0:
         logger.setLevel(logging.CRITICAL)
         file_handler.setLevel(logging.CRITICAL)
         console_handler.setLevel(logging.CRITICAL)
-    elif debug_level == '1':
+    elif debug_level == 1:
         logger.setLevel(logging.ERROR)
         file_handler.setLevel(logging.ERROR)
         console_handler.setLevel(logging.ERROR)
-    elif debug_level == '2':
+    elif debug_level == 2:
         logger.setLevel(logging.WARNING)
         file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.WARNING)
-    elif debug_level == '3':
+    elif debug_level == 3:
         logger.setLevel(logging.DEBUG)
         file_handler.setLevel(logging.WARNING)
         console_handler.setLevel(logging.DEBUG)
