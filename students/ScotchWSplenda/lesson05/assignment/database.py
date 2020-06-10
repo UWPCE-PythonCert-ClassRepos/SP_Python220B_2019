@@ -9,6 +9,11 @@ import csv
 # import logging
 from pymongo import MongoClient
 from pprint import pprint
+import logging
+# Set up logger
+logging.basicConfig(level=logging.INFO)
+LOGGER = logging.getLogger(__name__)
+
 
 class MongoDBConnection(object):
     """MongoDB Connection"""
@@ -33,7 +38,7 @@ creates and populates a new MongoDB database with these data. It returns 2
 tuples:  the first with a record count of the number of products,  customers
 rentals added (in that order),  the second with a count of any errors that
 occurred,  in the same order.'''
-    product_file_uploads = 0
+    product_file_error, customer_file_error, rentals_file_error = 0, 0, 0
 
     mongo = MongoDBConnection()
     # why does this need a 'with'
@@ -48,16 +53,76 @@ occurred,  in the same order.'''
         # db.customers.drop() # why won't it work with the alias?
         # db.rentals.drop() # why won't it work with the alias?
 
-    with open(f'{directory_name}/{product_file}', 'r') as csv_file:
-        reader = csv.DictReader(csv_file)
-        for row in reader:
-            # how do I set the ID?
-            product_file_table.insert_one(row)
-            product_file_uploads += 1
+    try:
+        with open(f'{directory_name}/{product_file}', 'r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                # how do I set the ID?
+                try:
+                    product_file_table.insert_one(row)
+                    LOGGER.info('product_file added')
+                except NameError:
+                    product_file_error += 1
+                    LOGGER.info('product_file has errors')
+    except FileNotFoundError:
+        LOGGER.info('product_file not found.')
+        product_file_error += 1
 
-    print(product_file_uploads)
+    try:
+        with open(f'{directory_name}/{customer_file}', 'r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                # how do I set the ID?
+                try:
+                    customer_file_table.insert_one(row)
+                    LOGGER.info('customer_file added')
+                except NameError:
+                    customer_file_error += 1
+                    LOGGER.info('customer_file has errors')
+    except FileNotFoundError:
+        LOGGER.info('customer_file not found.')
+        customer_file_error += 1
 
-    cursor = product_file_table.find({})
+    try:
+        with open(f'{directory_name}/{rentals_file}', 'r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                # how do I set the ID?
+                try:
+                    rentals_file_table.insert_one(row)
+                    LOGGER.info('rentals_file added')
+                except NameError:
+                    rentals_file_error += 1
+                    LOGGER.info('rentals_file has errors')
+    except FileNotFoundError:
+        LOGGER.info('rentals_file not found.')
+        rentals_file_error += 1
+
+    error_count = (product_file_error, customer_file_error, rentals_file_error)
+    # record_count = (product_file_table.count_documents({}),
+    #                 customer_file_table.count_documents({}),
+    #                 rentals_file_table.count_documents({}))
+    # record_count = (db.products.count_documents({}),
+    #                 db.customers.count_documents({}),
+    #                 db.rentals.count_documents({}))
+
+    return error_count #, record_count
+
+
+def print_mdb_collection():
+
+    mongo = MongoDBConnection()
+    # db = mongo.connection.norton
+
+    cursor = db.products.find({})
+    for document in cursor:
+        pprint(document)
+
+    cursor = db.customers.find({})
+    for document in cursor:
+        pprint(document)
+
+    cursor = db.rentals.find({})
     for document in cursor:
         pprint(document)
 
