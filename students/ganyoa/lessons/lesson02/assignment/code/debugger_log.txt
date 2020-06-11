@@ -1,0 +1,605 @@
+##__________________________________________________________________________________________________________________
+## note: pdb through original charge_calc.py file
+##__________________________________________________________________________________________________________________
+
+ganyo@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L02 (master)
+$ python -m pdb charge_calc_backup.py -i source.json -o out.json
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(3)<module>()
+-> '''
+(Pdb) ll
+  1     '''
+  2     Returns total price paid for individual rentals
+  3  -> '''
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9     def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+ 15
+ 16
+ 17     def load_rentals_file(filename):
+ 18         with open(filename) as file:
+ 19             try:
+ 20                 data = json.load(file)
+ 21             except:
+ 22                 exit(0)
+ 23         return data
+ 24
+ 25     def calculate_additional_fields(data):
+ 26         for value in data.values():
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32                 value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+ 38
+ 39     def save_to_json(filename, data):
+ 40         with open(filename, 'w') as file:
+ 41             json.dump(data, file)
+ 42
+ 43     if __name__ == "__main__":
+ 44         args = parse_cmd_arguments()
+ 45         data = load_rentals_file(args.input)
+ 46         data = calculate_additional_fields(data)
+ 47         save_to_json(args.output, data) # parser.parse_args
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+
+##__________________________________________________________________________________________________________________
+## note: step into parse_cmd_arguments()
+##__________________________________________________________________________________________________________________
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) l
+  4     import argparse
+  5     import json
+  6     import datetime
+  7     import math
+  8
+  9  -> def parse_cmd_arguments():
+ 10         parser = argparse.ArgumentParser(description='Process some integers.')
+ 11         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 12         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 13
+ 14         return parser.parse_args()
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) pp parser
+*** NameError: name 'parser' is not defined
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) pp parser
+ArgumentParser(prog='charge_calc_backup.py', usage=None, description='Process some integers.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_hand
+ler='error', add_help=True)
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+--Return--
+
+##__________________________________________________________________________________________________________________
+## note: 'next' through and completed parse_cmd_arguments(); pretty print the functions return value to confirm input and output files
+##__________________________________________________________________________________________________________________
+
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(14)parse_cmd_arguments()->Namespace(inp...ut='out.json')
+-> return parser.parse_args()
+(Pdb) pp parser.parse_args()
+Namespace(input='source.json', output='out.json')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) pp data
+*** NameError: name 'data' is not defined
+(Pdb) n
+
+##__________________________________________________________________________________________________________________
+## note: pretty print 'data' as variable of load_rentals_file(args.input) to check content of input file (reduced size of input file for test)
+##__________________________________________________________________________________________________________________
+
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) pp data
+{'RNT001': {'price_per_day': 31,
+            'product_code': 'PRD80',
+            'rental_end': '3/22/17',
+            'rental_start': '6/12/17',
+            'units_rented': 8},
+ 'RNT002': {'price_per_day': 16,
+            'product_code': 'PRD11',
+            'rental_end': '9/30/18',
+            'rental_start': '7/20/16',
+            'units_rented': 1},
+ 'RNT003': {'price_per_day': 40,
+            'product_code': 'PRD22',
+            'rental_end': '6/4/17',
+            'rental_start': '2/1/16',
+            'units_rented': 4},
+ 'RNT004': {'price_per_day': 40,
+            'product_code': 'PRD86',
+            'rental_end': '12/7/17',
+            'rental_start': '8/14/16',
+            'units_rented': 6},
+ 'RNT005': {'price_per_day': 7,
+            'product_code': 'PRD70',
+            'rental_end': '11/23/18',
+            'rental_start': '7/12/17',
+            'units_rented': 8},
+ 'RNT006': {'price_per_day': 20,
+            'product_code': 'PRD51',
+            'rental_end': '7/29/18',
+            'rental_start': '8/26/18',
+            'units_rented': 8},
+ 'RNT007': {'price_per_day': 16,
+            'product_code': 'PRD42',
+            'rental_end': '5/31/17',
+            'rental_start': '7/10/17',
+            'units_rented': 1},
+ 'RNT008': {'price_per_day': 12,
+            'product_code': 'PRD32',
+            'rental_end': '7/4/18',
+            'rental_start': '10/25/18',
+            'units_rented': 3},
+ 'RNT009': {'price_per_day': 6,
+            'product_code': 'PRD13',
+            'rental_end': '7/28/16',
+            'rental_start': '11/3/18',
+            'units_rented': 9},
+ 'RNT010': {'price_per_day': 27,
+            'product_code': 'PRD22',
+            'rental_end': '8/27/17',
+            'rental_start': '3/15/18',
+            'units_rented': 6},
+ 'RNT011': {'price_per_day': 26,
+            'product_code': 'PRD17',
+            'rental_end': '4/29/16',
+            'rental_start': '9/29/17',
+            'units_rented': 7},
+ 'RNT012': {'price_per_day': 18,
+            'product_code': 'PRD55',
+            'rental_end': '1/15/16',
+            'rental_start': '10/24/17',
+            'units_rented': 4}}
+
+
+##__________________________________________________________________________________________________________________
+## note: next through 'data = calculate_additional_fields(data)' resulting in unexpected SystemExit
+##__________________________________________________________________________________________________________________
+
+(Pdb) n
+SystemExit: 0
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(46)<module>()->None
+-> data = calculate_additional_fields(data)
+(Pdb) n
+SystemExit: 0
+> <string>(1)<module>()->None
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+(Pdb) n
+The program exited via sys.exit(). Exit status: 0
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(3)<module>()
+
+##__________________________________________________________________________________________________________________
+## note: next through rest of file to exit and restart at the beginning of charge_calc.py
+##__________________________________________________________________________________________________________________
+
+
+-> '''
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+
+##__________________________________________________________________________________________________________________
+## note: step into calculate_additional_fields(data); point where script unexpectedly ended
+##__________________________________________________________________________________________________________________
+
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(27)calculate_additional_fields()
+-> try:
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'units_rented': 8}
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+
+##__________________________________________________________________________________________________________________
+## note: math.sqrt(value['total_price'] produced math domain error, leading to try/expect/exit(0) 
+##__________________________________________________________________________________________________________________
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) pp total_price
+*** NameError: name 'total_price' is not defined
+(Pdb) pp rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) pp total_days
+*** NameError: name 'total_days' is not defined
+(Pdb) pp value['total_days']
+-82
+(Pdb) pp value['total_price']
+-2542
+
+##__________________________________________________________________________________________________________________
+## note: investigate math domain error with pp total_price to find failed attempt to square root a negative number;
+## looking further back we see a negative total_days caused by inaccurate start and end dates
+##__________________________________________________________________________________________________________________
+
+(Pdb) l
+ 27             try:
+ 28                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30                 value['total_days'] = (rental_end - rental_start).days
+ 31                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 32  ->             value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 33                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 34             except:
+ 35                 exit(0)
+ 36
+ 37         return data
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(34)calculate_additional_fields()
+-> except:
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(35)calculate_additional_fields()
+-> exit(0)
+(Pdb) n
+--Return--
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(35)calculate_additional_fields()->None
+-> exit(0)
+(Pdb) n
+SystemExit: 0
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) n
+--Return--
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(46)<module>()->None
+-> data = calculate_additional_fields(data)
+(Pdb) n
+SystemExit: 0
+> <string>(1)<module>()->None
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+(Pdb) n
+The program exited via sys.exit(). Exit status: 0
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc_backup.py(3)<module>()
+-> '''
+
+
+##__________________________________________________________________________________________________________________
+## note: pdb after code adjustments
+##__________________________________________________________________________________________________________________
+
+ganyo@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L02 (master)
+$ python -m pdb charge_calc.py -i source.json -o out.json -d 3
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(3)<module>()
+-> '''
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(8)<module>()
+-> import logging
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(10)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(20)<module>()
+-> def logging_details(level=0):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(54)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(63)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(80)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(85)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(86)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(87)<module>()
+-> logging_level = logging_details(args.debug)
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(88)<module>()
+-> input_data = load_rentals_file(args.input)
+(Pdb) n
+
+
+##__________________________________________________________________________________________________________________
+## note: step into calculate_additional_fields() to test if statement and data ouput
+##__________________________________________________________________________________________________________________
+
+
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(89)<module>()
+-> output_data = calculate_additional_fields(input_data)
+(Pdb) s
+--Call--
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(63)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) l
+ 58         except FileNotFoundError:
+ 59             logging.error(f'json file, {filename} not found in directory')
+ 60             exit(0)
+ 61         return data
+ 62
+ 63  -> def calculate_additional_fields(data):
+ 64         for key, value in data.items():
+ 65             logging.debug(f"Calculating additional fields for: {key}")
+ 66             try:
+ 67                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 68                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(64)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(65)calculate_additional_fields()
+-> logging.debug(f"Calculating additional fields for: {key}")
+(Pdb) pp key
+'RNT001'
+(Pdb) n
+2020-06-09 12:03:51,963 charge_calc.py:65  DEBUG Calculating additional fields for: RNT001
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(66)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(67)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) pp value
+{'price_per_day': 31,
+ 'product_code': 'PRD80',
+ 'rental_end': '3/22/17',
+ 'rental_start': '6/12/17',
+ 'units_rented': 8}
+(Pdb) pp rental_start
+*** NameError: name 'rental_start' is not defined
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(68)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) pp rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(69)calculate_additional_fields()
+-> if rental_start > rental_end:
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(70)calculate_additional_fields()
+-> logging.warning(f'rental_start > rental_end for record: {key}')
+(Pdb) n
+2020-06-09 12:05:33,012 charge_calc.py:70  WARNING rental_start > rental_end for record: RNT001
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(71)calculate_additional_fields()
+-> continue
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(64)calculate_additional_fields()
+-> for key, value in data.items():
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(65)calculate_additional_fields()
+-> logging.debug(f"Calculating additional fields for: {key}")
+(Pdb) pp key
+'RNT002'
+(Pdb) n
+2020-06-09 12:13:06,275 charge_calc.py:65  DEBUG Calculating additional fields for: RNT002
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(66)calculate_additional_fields()
+-> try:
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(67)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(68)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(69)calculate_additional_fields()
+-> if rental_start > rental_end:
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(72)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(73)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(74)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(75)calculate_additional_fields()
+-> value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(64)calculate_additional_fields()
+-> for key, value in data.items():
+
+##__________________________________________________________________________________________________________________
+## note: pp data; if statement worked as RNT001 skipped calculation due to date errors, and RNT002 was successful
+##__________________________________________________________________________________________________________________
+
+
+(Pdb) pp data
+{'RNT001': {'price_per_day': 31,
+            'product_code': 'PRD80',
+            'rental_end': '3/22/17',
+            'rental_start': '6/12/17',
+            'units_rented': 8},
+ 'RNT002': {'price_per_day': 16,
+            'product_code': 'PRD11',
+            'rental_end': '9/30/18',
+            'rental_start': '7/20/16',
+            'sqrt_total_price': 113.27841806805037,
+            'total_days': 802,
+            'total_price': 12832,
+            'unit_cost': 12832.0,
+            'units_rented': 1},
+ 'RNT003': {'price_per_day': 40,
+            'product_code': 'PRD22',
+            'rental_end': '6/4/17',
+            'rental_start': '2/1/16',
+            'units_rented': 4},
+ 'RNT004': {'price_per_day': 40,
+            'product_code': 'PRD86',
+            'rental_end': '12/7/17',
+            'rental_start': '8/14/16',
+            'units_rented': 6},
+ 'RNT005': {'price_per_day': 7,
+            'product_code': 'PRD70',
+            'rental_end': '11/23/18',
+            'rental_start': '7/12/17',
+            'units_rented': 8},
+ 'RNT006': {'price_per_day': 20,
+            'product_code': 'PRD51',
+            'rental_end': '7/29/18',
+            'rental_start': '8/26/18',
+            'units_rented': 8},
+ 'RNT007': {'price_per_day': 16,
+            'product_code': 'PRD42',
+            'rental_end': '5/31/17',
+            'rental_start': '7/10/17',
+            'units_rented': 1},
+ 'RNT008': {'price_per_day': 12,
+            'product_code': 'PRD32',
+            'rental_end': '7/4/18',
+            'rental_start': '10/25/18',
+            'units_rented': 3},
+ 'RNT009': {'price_per_day': 6,
+            'product_code': 'PRD13',
+            'rental_end': '7/28/16',
+            'rental_start': '11/3/18',
+            'units_rented': 9},
+ 'RNT010': {'price_per_day': 27,
+            'product_code': 'PRD22',
+            'rental_end': '8/27/17',
+            'rental_start': '3/15/18',
+            'units_rented': 6},
+ 'RNT011': {'price_per_day': 26,
+            'product_code': 'PRD17',
+            'rental_end': '4/29/16',
+            'rental_start': '9/29/17',
+            'units_rented': 7},
+ 'RNT012': {'price_per_day': 18,
+            'product_code': 'PRD55',
+            'rental_end': '1/15/16',
+            'rental_start': '10/24/17',
+            'units_rented': 4}}
+(Pdb) n
+> c:\users\ganyo\desktop\python_uw\py_220\l02\charge_calc.py(65)calculate_additional_fields()
+-> logging.debug(f"Calculating additional fields for: {key}")
