@@ -1,7 +1,17 @@
 '''
     Basic operations for Customers Database
 '''
-# pylint Disable=wildcard-import, unused-wildcard-import, too-many-arguments
+
+# pylint: disable=too-few-public-methods
+# pylint: disable=unused-wildcard-import
+# pylint: disable=wildcard-import
+# pylint: disable=unused-import
+# pylint: disable=invalid-name
+# pylint: disable=unused-argument
+# pylint: disable=too-many-arguments
+# pylint: disable=unnecessary-pass
+# pylint: disable=no-self-use
+
 
 import logging
 from customers_model import *
@@ -29,7 +39,25 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
                  email_address, activity_status, credit_limit):
     '''adds new customer to the database'''
     pass
-    LOGGER.info('added customer %s %s to db', first_name, last_name)
+    customer = (customer_id, first_name, last_name, home_address, phone_number,
+            email_address, activity_status, credit_limit)
+    try:
+        with database.transaction():
+            new_customer = Customer.create(
+                customer_id=customer[CUSTOMER_ID],
+                first_name=customer[FIRST_NAME],
+                last_name=customer[LAST_NAME],
+                home_address=customer[HOME_ADDRESS],
+                phone_number=customer[PHONE_NUMBER],
+                email_address=customer[EMAIL_ADDRESS],
+                activity_status=customer[ACTIVITY_STATUS],
+                credit_limit=customer[CREDIT_LIMIT])
+            new_customer.save()
+            LOGGER.info('added customer %s %s to db', first_name, last_name)
+    except IntegrityError as exc:
+        LOGGER.error(exc)
+        LOGGER.info('Was not able to add customer to the database')
+
 
 
 def search_customer(customers_id):
@@ -41,7 +69,6 @@ def search_customer(customers_id):
     pass
     customer_found = "no"
     LOGGER.info('search of customer found == %s', customer_found)
-    
 
 def delete_customer(customers_id):
     '''deletes customer from database'''
