@@ -68,7 +68,19 @@ def search_customer(customers_id):
     '''
     pass
     customer_found = "no"
+    
+    try:
+        customer = Customer.get(Customer.customer_id == customers_id)
+        customer_dict = {'first_name': customer.first_name,
+                         'last_name': customer.last_name,
+                         'email_address': customer.email_address,
+                         'phone_number': customer.phone_number}
+        customer_found = "yes"
+    except DoesNotExist:
+        raise ValueError('Customer id is not in the database')
+
     LOGGER.info('search of customer found == %s', customer_found)
+    return customer_dict
 
 def delete_customer(customers_id):
     '''deletes customer from database'''
@@ -89,8 +101,13 @@ def list_active_customers():
         out:  number of active customers
     '''
     pass
-    active_customers = 0
-    LOGGER.info('Returning %s active customers', active_customers)
+    active_count = 0
+    for customer in Customer.select():
+        if customer.activity_status is True:
+            active_count += 1
+    LOGGER.info('Returning %s active customers', active_count)
+    return active_count
+    
 
 def close_database():
     '''Closes the customers.db database'''
