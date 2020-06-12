@@ -49,9 +49,9 @@ occurred,  in the same order.'''
         product_file_table = db['products']
         customer_file_table = db['customers']
         rentals_file_table = db['rentals']
-        # db.products.drop() # why won't it work with the alias?
-        # db.customers.drop() # why won't it work with the alias?
-        # db.rentals.drop() # why won't it work with the alias?
+        db.products.drop() # why won't it work with the alias?
+        db.customers.drop() # why won't it work with the alias?
+        db.rentals.drop() # why won't it work with the alias?
 
     try:
         with open(f'{directory_name}/{product_file}', 'r') as csv_file:
@@ -99,31 +99,30 @@ occurred,  in the same order.'''
         rentals_file_error += 1
 
     error_count = (product_file_error, customer_file_error, rentals_file_error)
-    # record_count = (product_file_table.count_documents({}),
-    #                 customer_file_table.count_documents({}),
-    #                 rentals_file_table.count_documents({}))
-    # record_count = (db.products.count_documents({}),
-    #                 db.customers.count_documents({}),
-    #                 db.rentals.count_documents({}))
 
-    return error_count #, record_count
+# https://docs.mongodb.com/manual/reference/method/db.collection.count/
+    with mongo:
+        record_count = (db.products.count(),
+                        db.customers.count(),
+                        db.rentals.count())
+    return error_count, record_count
+    # print(error_count)
+    # print(record_count)
 
 
 def print_mdb_collection():
 
     mongo = MongoDBConnection()
-    # db = mongo.connection.norton
+    with mongo:
+        db = mongo.connection.norton
 
-    cursor = db.products.find({})
-    for document in cursor:
+    for document in db.products.find():
         pprint(document)
 
-    cursor = db.customers.find({})
-    for document in cursor:
+    for document in db.customers.find():
         pprint(document)
 
-    cursor = db.rentals.find({})
-    for document in cursor:
+    for document in db.rentals.find():
         pprint(document)
 
 
@@ -133,13 +132,26 @@ def show_available_products():
 -description.
 -product_type.
 -quantity_available.'''
+    mongo = MongoDBConnection()
 
+    with mongo:
+        db = mongo.connection.norton
+        find_them = list(db.products.find({"quantity_available": {"$gt": "0"}}))
+        show_available_products = {}
+
+        for x in find_them:
+            y = ({
+                  'description': x['description'],
+                  'product_type': x['product_type'],
+                 'quantity_available': x['quantity_available']})
+            show_available_products[x['product_id']] = y
+        return show_available_products
 
 {'prd001': {'description': '60-inch TV stand', 'product_type': 'livingroom', 'quantity_available': '3'}
 , 'prd002': {'description': 'L-shaped sofa', 'product_type': 'livingroom', 'quantity_available': '1'}}
 
 
-def show_rentals(product_id):
+def show_rentals(enter_product_id):
     '''Returns a Python dictionary with the following user information from
 users that have rented products matching product_id:
 -user_id.
@@ -148,8 +160,14 @@ users that have rented products matching product_id:
 -phone_number.```
 -email.'''
 
-
-{'user001': {'name': 'Elisa Miles', 'address': '4490 Union Street',
-             'phone_number': '206-922-0882', 'email': 'elisa.miles@yahoo.com'}
-, 'user002': {'name': 'Maya Data', 'address': '4936 Elliot Avenue',
-'phone_number': '206-777-1927', 'email': 'mdata@uw.edu'}}
+    mongo = MongoDBConnection()
+    rental_list = {}
+    with mongo:
+        db = mongo.connection.norton
+        for each in db.rentals.find({'product_id': enter_product_id}):
+            for pers in db.customers.find({'customer_id': each['customer_id']}):
+                rental_list[pers['customer_id']] = {'name': pers['name'],
+                                             'address': pers['address'],
+                                             'phone_number': pers['phone_number'],
+                                             'email': pers['email']}
+    return rental_list
