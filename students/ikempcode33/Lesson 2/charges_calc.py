@@ -80,12 +80,18 @@ def calculate_additional_fields(data):
                 value['rental_start'], '%m/%d/%y')
             rental_end = datetime.datetime.strptime(
                 value['rental_end'], '%m/%d/%y')
-        except:
+        except ValueError:
             logger.error("Bad date, rental_start or rental_end: %s", value)
             continue
+        #except Exception as ex:
+        #    template = "Exception type -> |{0}| occurred. Arguments:{1!r}"
+        #    message = template.format(type(ex).__name__, ex.args)
+        #    logger.error(message)
+        #    logger.error("Bad date, rental_start or rental_end: %s", value)
+
         try:
             value['total_days'] = (rental_end - rental_start).days
-            if value['total days'] < 1:
+            if value['total_days'] < 1:
                 logger.warning("start date after end date: %s", value)
         except KeyError:
             logger.debug("KeyError always generated on Value[] inserts?")
