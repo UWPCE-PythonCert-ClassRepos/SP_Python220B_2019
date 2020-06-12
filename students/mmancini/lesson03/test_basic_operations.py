@@ -30,12 +30,11 @@ database.init('test.db')
 class SuiteOfTests(TestCase):
     '''testing basic operation'''
     customer_111 = ('111', 'John', 'Smith', '111 Main St', 1112223333,
-        'johnsmith@gmail.com', True, 1500)
-    
+                    'johnsmith@gmail.com', True, 1500)
+
     def setUp(self):
         '''sets up the database'''
-        
-        
+
         database.drop_tables([Customer])
         database.create_tables([Customer])
 
@@ -44,7 +43,8 @@ class SuiteOfTests(TestCase):
     def test_add_customer(self):
         '''test add customer'''
         pass
-        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2], self.customer_111[3], self.customer_111[4],
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
                      self.customer_111[5], self.customer_111[6], self.customer_111[7])
         customer = Customer.get(Customer.customer_id == self.customer_111[0])
         self.assertEqual(customer.customer_id, self.customer_111[0])
@@ -60,7 +60,8 @@ class SuiteOfTests(TestCase):
     def test_search_customer(self):
         '''test search customer'''
         pass
-        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2], self.customer_111[3], self.customer_111[4],
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
                      self.customer_111[5], self.customer_111[6], self.customer_111[7])
 
         customer_dict = search_customer(self.customer_111[0])
@@ -76,20 +77,42 @@ class SuiteOfTests(TestCase):
 
         LOGGER.info('test search customer completed')
 
-    def Xtest_delete_customer(self):
+    def test_delete_customer(self):
         '''test delete customer'''
         pass
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
+                     self.customer_111[5], self.customer_111[6], self.customer_111[7])
+        delete_customer(self.customer_111[0])
+        LOGGER.info('customer deleted')
+        LOGGER.info('customer %s %s deleted', self.customer_111[1], self.customer_111[2])
+
+
+        # ensure its deleted
+        with self.assertRaises(ValueError):
+            delete_customer(self.customer_111[0])
+
         LOGGER.info('test delete customer completed')
 
-    def Xtest_update_customer_credit(self):
+    def test_update_customer_credit(self):
         '''test update customer'''
         pass
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
+                     self.customer_111[5], self.customer_111[6], self.customer_111[7])
+        customer = Customer.get(Customer.customer_id == self.customer_111[0])
+        LOGGER.info("test update customer credit limit before update is %s", customer.credit_limit)
+        update_customer_credit(self.customer_111[0], 3000)
+        customer = Customer.get(Customer.customer_id == self.customer_111[0])
+        LOGGER.info("test update customer credit limit after update is %s", customer.credit_limit)
+        self.assertEqual(customer.credit_limit, 3000)
         LOGGER.info('test update customer completed')
 
     def test_list_active_customers(self):
         '''test list active customers'''
         pass
-        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2], self.customer_111[3], self.customer_111[4],
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
                      self.customer_111[5], self.customer_111[6], self.customer_111[7])
         active_count = list_active_customers()
         self.assertEqual(1, active_count)
@@ -97,5 +120,5 @@ class SuiteOfTests(TestCase):
         customer.delete_instance()
         active_count = list_active_customers()
         self.assertEqual(0, active_count)
-        
+
         LOGGER.info('test list active customers completed')

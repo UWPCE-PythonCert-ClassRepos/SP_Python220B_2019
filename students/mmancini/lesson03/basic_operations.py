@@ -40,7 +40,7 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
     '''adds new customer to the database'''
     pass
     customer = (customer_id, first_name, last_name, home_address, phone_number,
-            email_address, activity_status, credit_limit)
+                email_address, activity_status, credit_limit)
     try:
         with database.transaction():
             new_customer = Customer.create(
@@ -68,7 +68,7 @@ def search_customer(customers_id):
     '''
     pass
     customer_found = "no"
-    
+
     try:
         customer = Customer.get(Customer.customer_id == customers_id)
         customer_dict = {'first_name': customer.first_name,
@@ -85,15 +85,30 @@ def search_customer(customers_id):
 def delete_customer(customers_id):
     '''deletes customer from database'''
     pass
-    LOGGER.info('customer delete completed')
+    try:
+        customer = Customer.get(Customer.customer_id == customers_id)
+        customer.delete_instance()
+        LOGGER.info('deleted customer %s %s from the database',
+                    customer.first_name, customer.last_name)
 
+    except DoesNotExist:
+        raise ValueError('Customer not deleted id is not found in the database')
 
 def update_customer_credit(customers_id, new_credit_limit):
     '''
         update customer in db
     '''
     pass
-    LOGGER.info('customer update completed')
+    try:
+        customer = Customer.get(Customer.customer_id == customers_id)
+        current_credit_limit = customer.credit_limit
+        customer.credit_limit = new_credit_limit
+        customer.save()
+        LOGGER.info('updated customer %s %s credit limit from %s to %s',
+                    customer.first_name, customer.last_name,
+                    current_credit_limit, customer.credit_limit)
+    except DoesNotExist:
+        raise ValueError('update failed, customer id is not found in the database')
 
 def list_active_customers():
     '''
@@ -107,7 +122,7 @@ def list_active_customers():
             active_count += 1
     LOGGER.info('Returning %s active customers', active_count)
     return active_count
-    
+
 
 def close_database():
     '''Closes the customers.db database'''

@@ -1,0 +1,34 @@
+INFO:basic_operations:Logger initialized
+INFO:basic_operations:customers db database initialized
+INFO:basic_operations:Customer tables created in database
+INFO:test_basic_operations:Logger initialized
+INFO:test_basic_operations:creating test db
+INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
+INFO:test_basic_operations:test add customer completed
+.INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
+INFO:basic_operations:deleted customer John Smith from the database
+INFO:test_basic_operations:customer deleted
+INFO:test_basic_operations:customer John Smith deleted
+INFO:test_basic_operations:test delete customer completed
+.INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
+INFO:basic_operations:Returning 1 active customers
+INFO:basic_operations:Returning 0 active customers
+INFO:test_basic_operations:test list active customers completed
+.INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
+INFO:basic_operations:search of customer found == yes
+INFO:test_basic_operations:test search customer completed
+.INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
+INFO:test_basic_operations:test update customer credit limit before update is 1500
+INFO:basic_operations:updated customer John Smith credit limit from 1500 to 3000
+INFO:test_basic_operations:test update customer credit limit after update is 3000
+INFO:test_basic_operations:test update customer completed
+.
+----------------------------------------------------------------------
+Ran 5 tests in 2.639s
+
+OK
