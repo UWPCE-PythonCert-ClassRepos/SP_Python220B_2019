@@ -1,0 +1,38 @@
+bash-3.2$ python -m pdb charges_calc.py -i source.json -o output.json -d 0
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(4)<module>()
+-> '''
+(Pdb) b 61
+Breakpoint 1 at /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py:61
+(Pdb) c
+Logging set up complete.
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(61)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) filename
+'source.json'
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(62)load_rentals_file()
+-> logging.debug("loading data")
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(63)load_rentals_file()
+-> try:
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(64)load_rentals_file()
+-> data = json.load(file)
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(67)load_rentals_file()
+-> return data
+(Pdb) n
+--Return--
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(67)load_rentals_file()->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17', 'rental_start': '8/14/16', ...}, ...}
+-> return data
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(113)<module>()
+-> DATA = calculate_additional_fields(DATA)
+(Pdb) n
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(114)<module>()
+-> save_to_json(ARGS.output, DATA)
+(Pdb) n
+Saving data to output file
+> /Users/isabellakemp/Desktop/python/Python/VSC/Quarter 2/Lesson 2/charges_calc.py(115)<module>()
+-> logging.info("Output is saved.")
+(Pdb) 
