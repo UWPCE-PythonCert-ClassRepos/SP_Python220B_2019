@@ -57,6 +57,13 @@ class SuiteOfTests(TestCase):
         self.assertEqual(customer.credit_limit, self.customer_111[7])
         LOGGER.info('test add customer completed')
 
+        # test we are unable to add same customer
+        with self.assertRaises(IntegrityError):
+            add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                         self.customer_111[3], self.customer_111[4],
+                         self.customer_111[5], self.customer_111[6], self.customer_111[7])
+
+            
     def test_search_customer(self):
         '''test search customer'''
         pass
@@ -87,7 +94,6 @@ class SuiteOfTests(TestCase):
         LOGGER.info('customer deleted')
         LOGGER.info('customer %s %s deleted', self.customer_111[1], self.customer_111[2])
 
-
         # ensure its deleted
         with self.assertRaises(ValueError):
             delete_customer(self.customer_111[0])
@@ -108,6 +114,11 @@ class SuiteOfTests(TestCase):
         self.assertEqual(customer.credit_limit, 3000)
         LOGGER.info('test update customer completed')
 
+        # Test update of invalid customer id
+        with self.assertRaises(ValueError):
+            update_customer_credit('222', 7500)
+        
+        
     def test_list_active_customers(self):
         '''test list active customers'''
         pass

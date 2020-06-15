@@ -57,7 +57,7 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
     except IntegrityError as exc:
         LOGGER.error(exc)
         LOGGER.info('Was not able to add customer to the database')
-
+        raise IntegrityError
 
 
 def search_customer(customers_id):
