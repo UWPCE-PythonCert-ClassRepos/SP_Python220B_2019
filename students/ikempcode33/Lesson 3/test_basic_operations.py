@@ -22,30 +22,33 @@ class TestBasicOp(TestCase):
         logger.info('tables are created.')
 
         logger.info('Adding data to database')
+        # Test customer 1
         add_customer(1773, 'Karen', 'Smith',
                      '142 42 st, Bellevue, WA 98105',
                      '123-456-7890', 'ksmith99@gmail.com',
-                     40000.00, True)
+                     True, 40000.00)
+        # Test customer 2
         add_customer(1223, 'Georgia', 'Smith',
                      '123 5 st, Palmsprings, CA 94930',
                      '415-890-8787', 'gsmith@gmail.com',
-                     60000.00, True)
+                     True, 60000.00)
+        # Test customer 3
         add_customer(1003, 'Paul', 'Stevens',
                      '773 7 st, Los Angeles, CA 90005',
                      '415-770-3434', 'pstevens199@gmail.com',
-                     50000.00, True)
+                     True, 50000.00)
         logger.info("data is uploaded, ready to begin tests")
 
     def test_add_customer(self):
-        """Tests adding customers to database"""
+        """Tests adding customers to database, Customer 1"""
         cus_1 = Customer.get(Customer.customer_id == 1773)
         self.assertEqual(cus_1.customer_id, 1773)
         self.assertEqual(cus_1.first_name, 'Karen')
         self.assertEqual(cus_1.last_name, 'Smith')
         self.assertEqual(cus_1.home_address, '142 42 st, Bellevue, WA 98105')
         self.assertEqual(cus_1.phone_number, '123-456-7890')
+        self.assertEqual(cus_1.status, True)
         self.assertEqual(cus_1.credit_limit, 40000.00)
-        self.assertEqual(cus_1.status, False)
 
     def test_search_customer(self):
         """Tests that a customer can be searched via ID"""
@@ -77,6 +80,7 @@ class TestBasicOp(TestCase):
         self.assertEqual(num, 3)
     
     def test_delete_customer(self):
+        '''Tests that a customer can be deleted properly'''
         delete_customer(1773)
         expected = search_customer(1773)
         self.assertEqual(expected, {})
