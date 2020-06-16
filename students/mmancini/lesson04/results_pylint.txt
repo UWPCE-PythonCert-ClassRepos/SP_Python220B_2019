@@ -1,0 +1,17 @@
+"" 
+************* Module basic_operations
+basic_operations.py:123:0: C0301: Line too long (124/100) (line-too-long)
+basic_operations.py:133:0: C0301: Line too long (102/100) (line-too-long)
+basic_operations.py:139:0: C0303: Trailing whitespace (trailing-whitespace)
+
+-------------------------------------------------------------------
+Your code has been rated at 9.60/10 (previous run: 10.00/10, -0.40)
+
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.86/10, +0.14)
+
