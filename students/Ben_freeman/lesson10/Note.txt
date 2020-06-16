@@ -1,0 +1,3 @@
+As predicted and experimentally verified in previous investigations, the initial upload of data into the database represents a signifigent 
+bottleneck. Additionally it should be noted that a general upwards trend on computation time is encountered when the number of records 
+processed increases.

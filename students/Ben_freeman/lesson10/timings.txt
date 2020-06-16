@@ -1,0 +1,64 @@
+
+Function: import_data
+Time: 1.6745216846466064
+Database: products
+Number of records processed: 4
+Database: customers
+Number of records processed: 4
+Database: rentals
+Number of records processed: 4
+------------------------------
+
+Function: show_rentals
+Time: 0.0029921531677246094
+No records processed
+------------------------------
+Function: show_available_products
+Time: 0.0029921531677246094
+No records processed
+------------------------------
+Function: import_data
+Time: 1.8535757064819336
+Database: products
+Number of records processed: 40
+Database: customers
+Number of records processed: 40
+Database: rentals
+Number of records processed: 40
+------------------------------
+Function: import_data
+Time: 1.5454020500183105
+Database: products
+Number of records processed: 400
+Database: customers
+Number of records processed: 400
+Database: rentals
+Number of records processed: 400
+------------------------------
+Function: import_data
+Time: 1.2795968055725098
+Database: products
+Number of records processed: 4000
+Database: customers
+Number of records processed: 4000
+Database: rentals
+Number of records processed: 4000
+------------------------------
+Function: import_data
+Time: 3.6652517318725586
+Database: products
+Number of records processed: 40000
+Database: customers
+Number of records processed: 40000
+Database: rentals
+Number of records processed: 40000
+------------------------------
+Function: import_data
+Time: 25.879586935043335
+Database: products
+Number of records processed: 400000
+Database: customers
+Number of records processed: 400000
+Database: rentals
+Number of records processed: 400000
+------------------------------
