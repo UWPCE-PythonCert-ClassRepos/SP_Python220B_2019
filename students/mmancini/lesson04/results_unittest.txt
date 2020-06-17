@@ -6,6 +6,8 @@ INFO:test_basic_operations:creating test db
 INFO:test_basic_operations:test setup complete
 INFO:basic_operations:added customer John Smith to db
 INFO:test_basic_operations:test add customer completed
+ERROR:basic_operations:UNIQUE constraint failed: customer.customer_id
+INFO:basic_operations:Was not able to add customer to the database
 .INFO:test_basic_operations:test setup complete
 INFO:basic_operations:added customer John Smith to db
 INFO:basic_operations:deleted customer John Smith from the database
@@ -23,12 +25,19 @@ INFO:basic_operations:search of customer found == yes
 INFO:test_basic_operations:test search customer completed
 .INFO:test_basic_operations:test setup complete
 INFO:basic_operations:added customer John Smith to db
+INFO:basic_operations:added customer Mary Jones to db
+INFO:basic_operations:Show names of all the customers in the database.
+INFO:basic_operations:John Smith
+INFO:basic_operations:Mary Jones
+INFO:test_basic_operations:test more pythonic show customers ['John Smith', 'Mary Jones']
+.INFO:test_basic_operations:test setup complete
+INFO:basic_operations:added customer John Smith to db
 INFO:test_basic_operations:test update customer credit limit before update is 1500
 INFO:basic_operations:updated customer John Smith credit limit from 1500 to 3000
 INFO:test_basic_operations:test update customer credit limit after update is 3000
 INFO:test_basic_operations:test update customer completed
 .
 ----------------------------------------------------------------------
-Ran 5 tests in 2.401s
+Ran 6 tests in 3.385s
 
 OK

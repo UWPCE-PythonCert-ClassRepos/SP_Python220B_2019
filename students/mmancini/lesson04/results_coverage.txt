@@ -1,0 +1,7 @@
+Name                       Stmts   Miss  Cover
+----------------------------------------------
+basic_operations.py           62      2    97%
+customers_model.py            16      0   100%
+test_basic_operations.py      67      0   100%
+----------------------------------------------
+TOTAL                        145      2    99%

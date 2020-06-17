@@ -18,7 +18,7 @@ from unittest import TestCase
 from peewee import *
 from customers_model import *
 from basic_operations import add_customer, search_customer, delete_customer
-from basic_operations import update_customer_credit, list_active_customers
+from basic_operations import update_customer_credit, list_active_customers, show_customers
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -31,6 +31,8 @@ class SuiteOfTests(TestCase):
     '''testing basic operation'''
     customer_111 = ('111', 'John', 'Smith', '111 Main St', 1112223333,
                     'johnsmith@gmail.com', True, 1500)
+    customer_222 = ('222', 'Mary', 'Jones', '222 Central Ave', 444-555-6666,
+                    'maryjones@gmail.com', True, 2500)
 
     def setUp(self):
         '''sets up the database'''
@@ -63,7 +65,6 @@ class SuiteOfTests(TestCase):
                          self.customer_111[3], self.customer_111[4],
                          self.customer_111[5], self.customer_111[6], self.customer_111[7])
 
-            
     def test_search_customer(self):
         '''test search customer'''
         pass
@@ -117,8 +118,7 @@ class SuiteOfTests(TestCase):
         # Test update of invalid customer id
         with self.assertRaises(ValueError):
             update_customer_credit('222', 7500)
-        
-        
+
     def test_list_active_customers(self):
         '''test list active customers'''
         pass
@@ -133,3 +133,16 @@ class SuiteOfTests(TestCase):
         self.assertEqual(0, active_count)
 
         LOGGER.info('test list active customers completed')
+
+    def test_show_customers(self):
+        '''test more pythonic show customers'''
+        add_customer(self.customer_111[0], self.customer_111[1], self.customer_111[2],
+                     self.customer_111[3], self.customer_111[4],
+                     self.customer_111[5], self.customer_111[6], self.customer_111[7])
+        add_customer(self.customer_222[0], self.customer_222[1], self.customer_222[2],
+                     self.customer_222[3], self.customer_222[4],
+                     self.customer_222[5], self.customer_222[6], self.customer_222[7])
+        customers = show_customers()
+        LOGGER.info("test more pythonic show customers %s", customers)
+        expected = ['John Smith', 'Mary Jones']
+        self.assertEqual(expected, customers)
