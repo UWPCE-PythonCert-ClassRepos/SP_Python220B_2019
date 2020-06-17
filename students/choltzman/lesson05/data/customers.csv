@@ -1,0 +1,3 @@
+customer_id,name,address,phone_number,email
+user001,"John Doe","123 Example Street","15551234567","john@example.com"
+user002,"Jane Poe","456 Example Lane","15557654321","jane@example.com"
