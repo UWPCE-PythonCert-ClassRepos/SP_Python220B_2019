@@ -1,0 +1,14 @@
+def dir_recursion(items):
+    dir_list = list()
+    list_of_files = list()
+
+    for item in items:
+        print(f'this is the item')
+        if isdir(item):
+
+            subitems = os.listdir(item)
+            full = [os.path.join(item, _) for _ in os.listdir(item)]
+            print(f"yup {item}")
+            dir_recursion(subitems)
+        else:
+            print(f"is file {item}")
