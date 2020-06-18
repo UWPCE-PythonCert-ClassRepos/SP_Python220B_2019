@@ -58,8 +58,8 @@ def main():
     :return: n/a
     """
     filename = "data/exercise.csv"
-    test = analyze(filename)
-    print(test)
+    analyze(filename)
+
 
 if __name__ == "__main__":
     main()
