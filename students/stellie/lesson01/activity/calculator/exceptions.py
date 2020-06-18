@@ -2,5 +2,5 @@
 
 
 class InsufficientOperands(Exception):
-    """ This class provides the InsufficientOperands exception """
-    pass
+    """This class provides the InsufficientOperands exception."""
+    # pass
