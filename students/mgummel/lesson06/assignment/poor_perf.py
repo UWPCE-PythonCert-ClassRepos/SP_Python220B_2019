@@ -58,7 +58,8 @@ def analyze(filename):
 
 def main():
     filename = "data/exercise.csv"
-    analyze(filename)
+    test = analyze(filename)
+    print(test)
 
 
 if __name__ == "__main__":
