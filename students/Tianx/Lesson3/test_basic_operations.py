@@ -1,6 +1,8 @@
 """
 Unittest for basic_operations
 """
+
+# pylint:disable=E0401, C0413
 from unittest import TestCase
 import sys
 sys.path.append('./src')
@@ -8,7 +10,7 @@ from customer_model import Customer
 from basic_operations import add_customer, search_customer, delete_customer,\
     update_customer_credit, list_active_customers
 
-# pylint:disable=E0401, C0413
+
 
 class TestBasicOperations(TestCase):
     """

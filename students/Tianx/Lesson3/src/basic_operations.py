@@ -1,14 +1,15 @@
+# pylint: disable = W0614, W0401, C0301, C0114,R0913,W0703,W1203
+
 import logging
 from peewee import *
 from customer_model import Customer
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 db = SqliteDatabase('customers.db')
 db.create_tables([Customer])
-
-# pylint: disable = W0614, W0401, C0301, C0114, W1203
 
 
 def add_customer(customer_id, first_name, last_name, home_address, phone_number,
@@ -31,9 +32,9 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
                                            credit_limit=credit_limit)
             new_customer.save()
             logger.info(f'Adding new customer:{customer_id} to the database.')
-    except Exception as e:
+    except Exception as err:
         logger.info(f'Error creating = {customer_id}')
-        logger.info(e)
+        logger.info(err)
     finally:
         logger.info('database closes')
         db.close()
@@ -41,7 +42,8 @@ def add_customer(customer_id, first_name, last_name, home_address, phone_number,
 
 def search_customer(customer_id):
     """
-    This function will return a dictionary object with name, lastname, email address and phone number of a customer
+    This function will return a dictionary object with name, lastname, email address and phone
+    number of a customer
     or an empty dictionary object if no customer was found.
     """
     try:
