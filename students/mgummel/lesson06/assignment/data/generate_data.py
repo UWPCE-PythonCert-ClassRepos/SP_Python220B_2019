@@ -50,6 +50,7 @@ def main():
 
     with open('exercise.csv', 'a', newline='') as csv_file:
         csv_write = csv.writer(csv_file)
+        csv_write.writerow('\n')
 
         for i in range(1, 1000001):
             generated_data = list()
