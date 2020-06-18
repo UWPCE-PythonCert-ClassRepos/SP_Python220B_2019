@@ -120,7 +120,8 @@ def list_active_customers():
 #        if customer.activity_status is True:
 #            active_count += 1
     # refactor for Pythonic
-    active_count = len([customer.customer_id for customer in Customer.select().where(Customer.activity_status == 'Active')])
+    active_count = len([customer.customer_id for customer in
+                        Customer.select().where(Customer.activity_status == 'Active')])
     LOGGER.info('Returning %s active customers', active_count)
     return active_count
 
@@ -130,13 +131,14 @@ def show_customers():
         show list of customers via more pythonic comprehensions
     '''
     LOGGER.info('Show names of all the customers in the database.')
-    gener = ((f'{customer.first_name}'+' '+f'{customer.last_name}') for customer in Customer.select())
+    gener = ((f'{customer.first_name}'+' '+f'{customer.last_name}') for
+             customer in Customer.select())
     cust_list = []
     for name in gener:
         cust_list.append(name)
         LOGGER.info(name)
     return cust_list
-    
+
 def close_database():
     '''Closes the customers.db database'''
     database.close()
