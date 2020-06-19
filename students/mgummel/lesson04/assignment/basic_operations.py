@@ -7,10 +7,19 @@ import create_db
 import customer_model as cm
 
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 LOGGER = logging.getLogger(__name__)
+
 create_db.main()
 
+
+# create file handler which logs even debug messages
+log_file = logging.FileHandler('db.log')
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s %(filename)s:%(lineno)-3d \
+         %(levelname)s %(message)s')
+log_file.setFormatter(formatter)
+LOGGER.addHandler(log_file)
 
 def add_customer(customer_id, name, lastname, home_address, phone_number, email_address, active, credit_limit):
     """
@@ -26,6 +35,7 @@ def add_customer(customer_id, name, lastname, home_address, phone_number, email_
     :param credit_limit: Customer's credit limit
     :return: None
     """
+
     try:
         with cm.database.transaction():
             contact_id = cm.Identity.create(
@@ -51,8 +61,6 @@ def add_customer(customer_id, name, lastname, home_address, phone_number, email_
                 customer_id=customer_id
             )
             contact_info.save()
-            for item in contact_info:
-                print(item)
 
             LOGGER.info(f"Contact updated successfully with {contact_info.customer_id}: {contact_info.home_address}")
 
@@ -76,8 +84,10 @@ def search_customer(customer_id):
                 .where(cm.Contact.customer_id == customer_id) \
                 .get()
 
-        customer_info['name'] = customer.name
-        customer_info['lastname'] = customer.last_name
+        customer_dict = {key: value for key, value in vars(customer).items()}['__data__']
+
+        customer_info['name'] = customer_dict.get('name')
+        customer_info['lastname'] = customer_dict.get('last_name')
         customer_info['email_address'] = customer.contact.email_address
         customer_info['phone_number'] = customer.contact.phone_number
 
@@ -127,10 +137,14 @@ def update_customer_credit(customer_id, credit_limit):
                         .where(cm.Identity.customer_id == customer_id)
                         .get())
 
+            pre_update = {key: value for key, value in vars(customer).items()}['__data__']
+            LOGGER.info(f"Initial row values: {pre_update}")
             LOGGER.info(f"Updating {customer.name} {customer.last_name} with credit limit {credit_limit}")
+
             customer.credit_limit = credit_limit
             customer.save()
-            LOGGER.info(f"Updated {customer.name} {customer.last_name} credit limit to: {customer.credit_limit}")
+            updated = {key: value for key, value in vars(customer).items()}['__data__']
+            LOGGER.info(f"Updated row {updated}")
 
     except DoesNotExist:
         LOGGER.warning(f"The customer ID {customer_id} does not exist in the database")
@@ -149,9 +163,12 @@ def list_active_customers():
             active_customers = (cm.Identity
                                 .select()
                                 .where(cm.Identity.active == 1)
-                                .count())
+                                )
+
+            number_of_customers = len([x for x in active_customers])
+
 
     except Exception as e:
         LOGGER.warning(f"Unable to determine active customers due to:\n {e}")
 
-    return active_customers
+    return number_of_customers
