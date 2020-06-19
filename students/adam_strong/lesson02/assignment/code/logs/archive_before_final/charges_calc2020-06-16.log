@@ -1,0 +1,455 @@
+2020-06-16 22:28:33,428 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:28:33,428 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:28:38,944 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:28:38,945 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:28:38,945 log_arg.py:73  WARNING This is merely a warning!
+2020-06-16 22:28:44,818 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:28:44,818 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:28:44,818 log_arg.py:73  WARNING This is merely a warning!
+2020-06-16 22:31:53,288 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:31:53,289 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:32:19,201 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:32:19,202 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:32:19,202 log_arg.py:73  WARNING This is merely a warning!
+2020-06-16 22:32:38,718 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:32:38,718 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:32:38,718 log_arg.py:73  WARNING This is merely a warning!
+2020-06-16 22:35:43,057 log_arg.py:71  CRITICAL This is a critical message!!!!
+2020-06-16 22:35:43,058 log_arg.py:72  ERROR This is an error!!
+2020-06-16 22:35:43,058 log_arg.py:73  WARNING This is merely a warning!
+2020-06-16 22:38:15,751 log_arg.py:70  CRITICAL This is a critical message!!!!
+2020-06-16 22:38:15,751 log_arg.py:71  ERROR This is an error!!
+2020-06-16 22:38:15,751 log_arg.py:72  WARNING This is merely a warning!
+2020-06-16 22:38:15,753 log_arg.py:82  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:39:07,895 log_arg.py:82  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:41:15,477 log_arg.py:82  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:43:07,550 log_arg.py:69  CRITICAL This is a critical message!!!!
+2020-06-16 22:43:07,550 log_arg.py:70  ERROR This is an error!!
+2020-06-16 22:43:07,552 log_arg.py:81  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:47:43,985 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:47:43,985 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:47:43,987 log_arg.py:80  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:47:49,282 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:47:49,282 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:47:49,282 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:47:49,284 log_arg.py:80  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:49:27,026 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:49:27,026 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:49:27,026 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:49:27,027 log_arg.py:80  ERROR Exiting in load_rentals_file() exception error
+2020-06-16 22:52:10,442 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:52:10,443 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:52:10,443 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:54:29,451 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:54:29,451 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:54:29,451 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:55:27,232 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:55:27,232 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:55:27,232 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:55:44,091 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:55:44,091 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:55:44,091 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:57:09,463 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:57:09,463 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:57:09,463 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:57:09,467 log_arg.py:97  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 22:57:30,142 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:57:30,142 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:57:30,143 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:57:30,146 log_arg.py:97  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:05:14,172 charges_calc.py:97  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:08:38,532 charges_calc.py:91  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:08:42,714 charges_calc.py:91  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:12:44,381 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:13:27,727 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:13:42,965 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:13:42,965 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:14:09,637 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:14:25,273 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:15:54,415 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:16:30,041 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:16:51,807 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:19:32,663 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:22:24,154 charges_calc.py:92  ERROR Exiting in calculate_additional_fields() exception error
+2020-06-16 23:25:24,409 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,410 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,410 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,410 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,411 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,411 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,411 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,411 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,412 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,413 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,413 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,413 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,413 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,413 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,414 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,414 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,414 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,414 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,415 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,416 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,416 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,416 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,416 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,417 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,417 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,417 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,417 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,418 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,418 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,418 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,418 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,419 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,419 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,419 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,419 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,436 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,437 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,437 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,437 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,438 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,439 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,439 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,439 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,439 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,439 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,440 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,441 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,441 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,441 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,441 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,442 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,442 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,442 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,442 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,443 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,443 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,443 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,443 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,443 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,444 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,445 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,445 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,445 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,445 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,445 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,446 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,446 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,446 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,446 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,447 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,447 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,447 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,447 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,448 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,448 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,448 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,448 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,448 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,449 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,449 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,449 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,450 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,450 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,450 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,450 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,451 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,451 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,451 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,451 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,451 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,452 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,452 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,452 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,452 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,453 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,453 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,453 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,453 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,453 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,454 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,454 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,454 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,454 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,454 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,455 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,455 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,455 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,455 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,456 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,456 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,456 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,457 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,457 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,457 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,457 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,457 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,458 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,458 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,458 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,458 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,459 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,459 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,459 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,459 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,459 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,460 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,461 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,462 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,462 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,462 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,462 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,463 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,463 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,463 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,463 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,464 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,464 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,464 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,464 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,465 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,465 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,465 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,465 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,466 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,466 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,466 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,466 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,467 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,467 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,467 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,467 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,468 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,468 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,468 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,469 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,469 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,469 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,469 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,469 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,470 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,472 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,472 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,472 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,473 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,473 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,474 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,474 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,474 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,474 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,475 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,475 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,475 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,475 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,475 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,476 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,476 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,476 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,476 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,476 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,477 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,477 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,477 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,478 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,479 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,479 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,479 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,479 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,479 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,480 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,480 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,480 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,480 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,481 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,481 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,482 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,483 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,483 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,483 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,483 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,484 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,484 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,484 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,484 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,484 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,485 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,486 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,486 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,486 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,486 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,487 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,488 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,488 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,488 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,488 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,488 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,489 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,489 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,489 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,489 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,489 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,490 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,490 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,490 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,491 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,491 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,491 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,491 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,492 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,492 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,492 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,492 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,492 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,493 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,493 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,493 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,493 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,493 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,494 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,495 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,495 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,495 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,495 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,496 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,496 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,497 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,497 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,497 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,497 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,497 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,498 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,498 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,498 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,498 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,498 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,499 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,500 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,500 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,500 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,500 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,500 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,501 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,501 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,501 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,501 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,501 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,502 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,502 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,502 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,502 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,502 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,503 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,503 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,503 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,503 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,504 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,504 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,504 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,504 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,504 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,505 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,505 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,505 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,505 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,506 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,506 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,506 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,508 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,508 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,509 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,509 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,510 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,510 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,510 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,510 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,511 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,511 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,512 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,512 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,512 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,512 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,512 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,513 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,513 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,513 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,513 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,514 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,514 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,514 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,514 charges_calc.py:94  WARNING Total days is 0 or less, skipping rest of calculations for this value
+2020-06-16 23:25:24,514 charges_calc.py:96  ERROR Exiting in calculate_additional_fields() exception error

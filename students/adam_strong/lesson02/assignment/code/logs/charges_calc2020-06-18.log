@@ -1,0 +1,998 @@
+2020-06-18 13:37:08,626 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,626 charges_calc.py:126 WARNING Skip: PRD80, 1Error
+2020-06-18 13:37:08,627 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,627 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,627 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,627 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,627 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,627 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,628 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,628 charges_calc.py:126 WARNING Skip: PRD13, 1Error
+2020-06-18 13:37:08,628 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,628 charges_calc.py:126 WARNING Skip: PRD22, 1Error
+2020-06-18 13:37:08,628 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,628 charges_calc.py:126 WARNING Skip: PRD17, 1Error
+2020-06-18 13:37:08,628 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,628 charges_calc.py:126 WARNING Skip: PRD55, 1Error
+2020-06-18 13:37:08,629 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,629 charges_calc.py:126 WARNING Skip: PRD0, 1Error
+2020-06-18 13:37:08,629 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,629 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,629 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,629 charges_calc.py:126 WARNING Skip: PRD5, 1Error
+2020-06-18 13:37:08,629 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,629 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,629 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,629 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,630 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,630 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,630 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,630 charges_calc.py:126 WARNING Skip: PRD97, 1Error
+2020-06-18 13:37:08,631 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,631 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,631 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,631 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,631 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,631 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,631 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,631 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,632 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,632 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,647 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,647 charges_calc.py:126 WARNING Skip: PRD72, 1Error
+2020-06-18 13:37:08,648 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,648 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,648 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,648 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,649 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,649 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,649 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,649 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,649 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,649 charges_calc.py:126 WARNING Skip: PRD62, 1Error
+2020-06-18 13:37:08,650 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,650 charges_calc.py:126 WARNING Skip: PRD46, 1Error
+2020-06-18 13:37:08,650 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,650 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,650 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,650 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,651 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,651 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,652 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,652 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,652 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,652 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,652 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,652 charges_calc.py:126 WARNING Skip: PRD84, 1Error
+2020-06-18 13:37:08,653 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,653 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,653 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,653 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,653 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,653 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,654 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,654 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,655 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,655 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,655 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,655 charges_calc.py:126 WARNING Skip: PRD33, 1Error
+2020-06-18 13:37:08,655 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,655 charges_calc.py:126 WARNING Skip: PRD64, 1Error
+2020-06-18 13:37:08,656 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,656 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,656 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,656 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,657 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,657 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,657 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,657 charges_calc.py:126 WARNING Skip: PRD87, 1Error
+2020-06-18 13:37:08,658 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,658 charges_calc.py:126 WARNING Skip: PRD0, 1Error
+2020-06-18 13:37:08,658 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,658 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,658 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,659 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,659 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,659 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,659 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,660 charges_calc.py:126 WARNING Skip: PRD36, 1Error
+2020-06-18 13:37:08,660 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,660 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,660 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,660 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,660 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,660 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,660 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,660 charges_calc.py:126 WARNING Skip: PRD68, 1Error
+2020-06-18 13:37:08,661 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,661 charges_calc.py:126 WARNING Skip: PRD76, 1Error
+2020-06-18 13:37:08,661 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,661 charges_calc.py:126 WARNING Skip: PRD98, 1Error
+2020-06-18 13:37:08,661 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,661 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,661 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,661 charges_calc.py:126 WARNING Skip: PRD80, 1Error
+2020-06-18 13:37:08,661 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,661 charges_calc.py:126 WARNING Skip: PRD84, 1Error
+2020-06-18 13:37:08,662 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,662 charges_calc.py:126 WARNING Skip: PRD88, 1Error
+2020-06-18 13:37:08,663 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,663 charges_calc.py:126 WARNING Skip: PRD89, 1Error
+2020-06-18 13:37:08,663 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,663 charges_calc.py:126 WARNING Skip: PRD22, 1Error
+2020-06-18 13:37:08,663 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,663 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,663 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,664 charges_calc.py:126 WARNING Skip: PRD11, 1Error
+2020-06-18 13:37:08,664 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,664 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,664 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,664 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,664 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,664 charges_calc.py:126 WARNING Skip: PRD39, 1Error
+2020-06-18 13:37:08,664 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,664 charges_calc.py:126 WARNING Skip: PRD9, 1Error
+2020-06-18 13:37:08,664 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,665 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,665 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,665 charges_calc.py:126 WARNING Skip: PRD76, 1Error
+2020-06-18 13:37:08,666 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,666 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,666 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,666 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,667 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,667 charges_calc.py:126 WARNING Skip: PRD79, 1Error
+2020-06-18 13:37:08,667 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,668 charges_calc.py:126 WARNING Skip: PRD13, 1Error
+2020-06-18 13:37:08,668 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,668 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,668 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,668 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,668 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,668 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,669 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,669 charges_calc.py:126 WARNING Skip: PRD31, 1Error
+2020-06-18 13:37:08,669 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,669 charges_calc.py:126 WARNING Skip: PRD33, 1Error
+2020-06-18 13:37:08,669 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,669 charges_calc.py:126 WARNING Skip: PRD34, 1Error
+2020-06-18 13:37:08,670 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,670 charges_calc.py:126 WARNING Skip: PRD93, 1Error
+2020-06-18 13:37:08,670 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,670 charges_calc.py:126 WARNING Skip: PRD89, 1Error
+2020-06-18 13:37:08,670 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,670 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,671 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,671 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,671 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,671 charges_calc.py:126 WARNING Skip: PRD72, 1Error
+2020-06-18 13:37:08,671 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,671 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,672 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,672 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,672 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,672 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,672 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,672 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,673 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,673 charges_calc.py:126 WARNING Skip: PRD60, 1Error
+2020-06-18 13:37:08,673 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,673 charges_calc.py:126 WARNING Skip: PRD34, 1Error
+2020-06-18 13:37:08,673 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,673 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,673 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,673 charges_calc.py:126 WARNING Skip: PRD0, 1Error
+2020-06-18 13:37:08,673 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,674 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,674 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,674 charges_calc.py:126 WARNING Skip: PRD48, 1Error
+2020-06-18 13:37:08,675 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,675 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,675 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,675 charges_calc.py:126 WARNING Skip: PRD16, 1Error
+2020-06-18 13:37:08,675 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,675 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,676 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,676 charges_calc.py:126 WARNING Skip: PRD10, 1Error
+2020-06-18 13:37:08,676 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,676 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,677 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,677 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,677 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,677 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,678 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,678 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,678 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,678 charges_calc.py:126 WARNING Skip: PRD93, 1Error
+2020-06-18 13:37:08,678 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,678 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,679 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,679 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,679 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,679 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,680 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,680 charges_calc.py:126 WARNING Skip: PRD93, 1Error
+2020-06-18 13:37:08,680 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,681 charges_calc.py:126 WARNING Skip: PRD21, 1Error
+2020-06-18 13:37:08,681 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,681 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,681 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,681 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,682 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,682 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,682 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,682 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,682 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,682 charges_calc.py:126 WARNING Skip: PRD11, 1Error
+2020-06-18 13:37:08,683 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,683 charges_calc.py:126 WARNING Skip: PRD20, 1Error
+2020-06-18 13:37:08,686 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,686 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,686 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,686 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,687 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,687 charges_calc.py:126 WARNING Skip: PRD10, 1Error
+2020-06-18 13:37:08,687 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,687 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,687 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,687 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,688 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,688 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,688 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,688 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,689 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,689 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,689 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,689 charges_calc.py:126 WARNING Skip: PRD16, 1Error
+2020-06-18 13:37:08,689 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,689 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,690 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,690 charges_calc.py:126 WARNING Skip: PRD97, 1Error
+2020-06-18 13:37:08,690 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,690 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,691 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,691 charges_calc.py:126 WARNING Skip: PRD0, 1Error
+2020-06-18 13:37:08,691 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,691 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,691 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,691 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,692 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,692 charges_calc.py:126 WARNING Skip: PRD33, 1Error
+2020-06-18 13:37:08,693 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,693 charges_calc.py:126 WARNING Skip: PRD13, 1Error
+2020-06-18 13:37:08,694 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,694 charges_calc.py:126 WARNING Skip: PRD70, 1Error
+2020-06-18 13:37:08,694 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,694 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,694 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,694 charges_calc.py:126 WARNING Skip: PRD17, 1Error
+2020-06-18 13:37:08,695 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,695 charges_calc.py:126 WARNING Skip: PRD82, 1Error
+2020-06-18 13:37:08,695 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,695 charges_calc.py:126 WARNING Skip: PRD50, 1Error
+2020-06-18 13:37:08,695 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,696 charges_calc.py:126 WARNING Skip: PRD15, 1Error
+2020-06-18 13:37:08,696 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,696 charges_calc.py:126 WARNING Skip: PRD19, 1Error
+2020-06-18 13:37:08,697 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,697 charges_calc.py:126 WARNING Skip: PRD33, 1Error
+2020-06-18 13:37:08,697 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,697 charges_calc.py:126 WARNING Skip: PRD57, 1Error
+2020-06-18 13:37:08,697 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,697 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,698 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,698 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,699 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,699 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,699 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,699 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,700 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,700 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,700 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,700 charges_calc.py:126 WARNING Skip: PRD90, 1Error
+2020-06-18 13:37:08,701 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,701 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,701 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,702 charges_calc.py:126 WARNING Skip: PRD84, 1Error
+2020-06-18 13:37:08,702 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,702 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,702 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,702 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,702 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,702 charges_calc.py:126 WARNING Skip: PRD18, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,703 charges_calc.py:126 WARNING Skip: PRD89, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,703 charges_calc.py:126 WARNING Skip: PRD37, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,703 charges_calc.py:126 WARNING Skip: PRD13, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,703 charges_calc.py:126 WARNING Skip: PRD11, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,703 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,703 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,704 charges_calc.py:126 WARNING Skip: PRD18, 1Error
+2020-06-18 13:37:08,704 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,704 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,704 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,704 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,704 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,704 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,704 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,704 charges_calc.py:126 WARNING Skip: PRD45, 1Error
+2020-06-18 13:37:08,705 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,705 charges_calc.py:126 WARNING Skip: PRD98, 1Error
+2020-06-18 13:37:08,705 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,705 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,705 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,705 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,705 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,705 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,705 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,705 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,706 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,706 charges_calc.py:126 WARNING Skip: PRD90, 1Error
+2020-06-18 13:37:08,706 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,706 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,707 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,707 charges_calc.py:126 WARNING Skip: PRD18, 1Error
+2020-06-18 13:37:08,707 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,707 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,708 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,708 charges_calc.py:126 WARNING Skip: PRD68, 1Error
+2020-06-18 13:37:08,709 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,709 charges_calc.py:126 WARNING Skip: PRD37, 1Error
+2020-06-18 13:37:08,709 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,709 charges_calc.py:126 WARNING Skip: PRD95, 1Error
+2020-06-18 13:37:08,709 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,709 charges_calc.py:126 WARNING Skip: PRD31, 1Error
+2020-06-18 13:37:08,710 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,710 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,711 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,711 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,711 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,711 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,711 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,711 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,711 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,712 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,712 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,712 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,713 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,713 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,713 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,713 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,713 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,713 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,714 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,714 charges_calc.py:126 WARNING Skip: PRD31, 1Error
+2020-06-18 13:37:08,714 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,715 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,715 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,715 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,715 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,715 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,716 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,716 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,716 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,716 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,717 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,717 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,717 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,717 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,718 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,718 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,718 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,718 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,719 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,719 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,719 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,719 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,719 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,720 charges_calc.py:126 WARNING Skip: PRD99, 1Error
+2020-06-18 13:37:08,720 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,720 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,720 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,720 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,720 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,720 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,721 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,721 charges_calc.py:126 WARNING Skip: PRD64, 1Error
+2020-06-18 13:37:08,724 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,724 charges_calc.py:126 WARNING Skip: PRD11, 1Error
+2020-06-18 13:37:08,724 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,724 charges_calc.py:126 WARNING Skip: PRD22, 1Error
+2020-06-18 13:37:08,724 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,724 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,725 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,725 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,726 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,726 charges_calc.py:126 WARNING Skip: PRD48, 1Error
+2020-06-18 13:37:08,726 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,726 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,726 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,727 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,727 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,727 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,727 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,727 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,728 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,728 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,728 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,728 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,729 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,729 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,729 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,729 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,729 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,730 charges_calc.py:126 WARNING Skip: PRD45, 1Error
+2020-06-18 13:37:08,730 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,730 charges_calc.py:126 WARNING Skip: PRD5, 1Error
+2020-06-18 13:37:08,730 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,730 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,731 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,731 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,731 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,731 charges_calc.py:126 WARNING Skip: PRD57, 1Error
+2020-06-18 13:37:08,732 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,732 charges_calc.py:126 WARNING Skip: PRD70, 1Error
+2020-06-18 13:37:08,732 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,732 charges_calc.py:126 WARNING Skip: PRD37, 1Error
+2020-06-18 13:37:08,733 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,733 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,733 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,734 charges_calc.py:126 WARNING Skip: PRD82, 1Error
+2020-06-18 13:37:08,734 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,734 charges_calc.py:126 WARNING Skip: PRD87, 1Error
+2020-06-18 13:37:08,734 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,734 charges_calc.py:126 WARNING Skip: PRD55, 1Error
+2020-06-18 13:37:08,734 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,734 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,735 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,735 charges_calc.py:126 WARNING Skip: PRD89, 1Error
+2020-06-18 13:37:08,735 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,735 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,735 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,735 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,736 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,736 charges_calc.py:126 WARNING Skip: PRD46, 1Error
+2020-06-18 13:37:08,736 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,736 charges_calc.py:126 WARNING Skip: PRD56, 1Error
+2020-06-18 13:37:08,737 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,737 charges_calc.py:126 WARNING Skip: PRD80, 1Error
+2020-06-18 13:37:08,737 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,737 charges_calc.py:126 WARNING Skip: PRD82, 1Error
+2020-06-18 13:37:08,737 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,737 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,738 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,738 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,738 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,738 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,739 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,739 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,740 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,740 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,741 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,741 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,742 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,742 charges_calc.py:126 WARNING Skip: PRD56, 1Error
+2020-06-18 13:37:08,742 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,742 charges_calc.py:126 WARNING Skip: PRD93, 1Error
+2020-06-18 13:37:08,743 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,743 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,743 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,743 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,743 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,743 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,743 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,743 charges_calc.py:126 WARNING Skip: PRD95, 1Error
+2020-06-18 13:37:08,744 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,744 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,744 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,744 charges_calc.py:126 WARNING Skip: PRD8, 1Error
+2020-06-18 13:37:08,744 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,744 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,745 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,745 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,745 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,745 charges_calc.py:126 WARNING Skip: PRD37, 1Error
+2020-06-18 13:37:08,746 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,746 charges_calc.py:126 WARNING Skip: PRD1, 1Error
+2020-06-18 13:37:08,746 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,746 charges_calc.py:126 WARNING Skip: PRD53, 1Error
+2020-06-18 13:37:08,746 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,746 charges_calc.py:126 WARNING Skip: PRD78, 1Error
+2020-06-18 13:37:08,747 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,747 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,747 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,747 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,747 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,747 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,747 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,747 charges_calc.py:126 WARNING Skip: PRD24, 1Error
+2020-06-18 13:37:08,748 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,748 charges_calc.py:126 WARNING Skip: PRD91, 1Error
+2020-06-18 13:37:08,748 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,748 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,748 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,748 charges_calc.py:126 WARNING Skip: PRD41, 1Error
+2020-06-18 13:37:08,748 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,748 charges_calc.py:126 WARNING Skip: PRD96, 1Error
+2020-06-18 13:37:08,749 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,749 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,749 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,749 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,749 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,749 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,750 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,750 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,751 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,751 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,751 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,751 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,751 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,751 charges_calc.py:126 WARNING Skip: PRD79, 1Error
+2020-06-18 13:37:08,751 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,751 charges_calc.py:126 WARNING Skip: PRD94, 1Error
+2020-06-18 13:37:08,751 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,751 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,752 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,752 charges_calc.py:126 WARNING Skip: PRD5, 1Error
+2020-06-18 13:37:08,752 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,752 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,752 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,752 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,753 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,753 charges_calc.py:126 WARNING Skip: PRD53, 1Error
+2020-06-18 13:37:08,753 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,753 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,753 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,753 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,754 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,754 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,754 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,754 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,754 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,754 charges_calc.py:126 WARNING Skip: PRD34, 1Error
+2020-06-18 13:37:08,755 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,755 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,756 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,756 charges_calc.py:126 WARNING Skip: PRD45, 1Error
+2020-06-18 13:37:08,756 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,756 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,756 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,756 charges_calc.py:126 WARNING Skip: PRD9, 1Error
+2020-06-18 13:37:08,757 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,757 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,760 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,760 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,760 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,760 charges_calc.py:126 WARNING Skip: PRD7, 1Error
+2020-06-18 13:37:08,761 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,761 charges_calc.py:126 WARNING Skip: PRD38, 1Error
+2020-06-18 13:37:08,761 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,761 charges_calc.py:126 WARNING Skip: PRD91, 1Error
+2020-06-18 13:37:08,762 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,762 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,763 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,763 charges_calc.py:126 WARNING Skip: PRD10, 1Error
+2020-06-18 13:37:08,763 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,763 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,763 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,763 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,764 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,764 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,764 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,764 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,764 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,764 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,765 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,765 charges_calc.py:126 WARNING Skip: PRD1, 1Error
+2020-06-18 13:37:08,765 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,765 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,765 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,765 charges_calc.py:126 WARNING Skip: PRD24, 1Error
+2020-06-18 13:37:08,766 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,766 charges_calc.py:126 WARNING Skip: PRD45, 1Error
+2020-06-18 13:37:08,766 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,766 charges_calc.py:126 WARNING Skip: PRD48, 1Error
+2020-06-18 13:37:08,766 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,766 charges_calc.py:126 WARNING Skip: PRD87, 1Error
+2020-06-18 13:37:08,767 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,767 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,767 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,767 charges_calc.py:126 WARNING Skip: PRD24, 1Error
+2020-06-18 13:37:08,767 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,767 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,767 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,767 charges_calc.py:126 WARNING Skip: PRD72, 1Error
+2020-06-18 13:37:08,767 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,767 charges_calc.py:126 WARNING Skip: PRD48, 1Error
+2020-06-18 13:37:08,768 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,768 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,769 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,769 charges_calc.py:126 WARNING Skip: PRD97, 1Error
+2020-06-18 13:37:08,769 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,769 charges_calc.py:126 WARNING Skip: PRD99, 1Error
+2020-06-18 13:37:08,769 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,769 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,771 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,771 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,772 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,772 charges_calc.py:126 WARNING Skip: PRD11, 1Error
+2020-06-18 13:37:08,773 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,773 charges_calc.py:126 WARNING Skip: PRD68, 1Error
+2020-06-18 13:37:08,773 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,773 charges_calc.py:126 WARNING Skip: PRD45, 1Error
+2020-06-18 13:37:08,774 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,774 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,774 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,774 charges_calc.py:126 WARNING Skip: PRD99, 1Error
+2020-06-18 13:37:08,774 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,774 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,775 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,775 charges_calc.py:126 WARNING Skip: PRD15, 1Error
+2020-06-18 13:37:08,775 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,775 charges_calc.py:126 WARNING Skip: PRD47, 1Error
+2020-06-18 13:37:08,775 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,775 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,775 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,775 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,776 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,776 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,776 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,776 charges_calc.py:126 WARNING Skip: PRD8, 1Error
+2020-06-18 13:37:08,776 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,777 charges_calc.py:126 WARNING Skip: PRD53, 1Error
+2020-06-18 13:37:08,777 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,777 charges_calc.py:126 WARNING Skip: PRD64, 1Error
+2020-06-18 13:37:08,777 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,777 charges_calc.py:126 WARNING Skip: PRD94, 1Error
+2020-06-18 13:37:08,777 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,777 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,778 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,778 charges_calc.py:126 WARNING Skip: PRD34, 1Error
+2020-06-18 13:37:08,779 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,779 charges_calc.py:126 WARNING Skip: PRD9, 1Error
+2020-06-18 13:37:08,779 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,779 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,779 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,779 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,780 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,780 charges_calc.py:126 WARNING Skip: PRD4, 1Error
+2020-06-18 13:37:08,780 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,780 charges_calc.py:126 WARNING Skip: PRD78, 1Error
+2020-06-18 13:37:08,780 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,780 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,780 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,780 charges_calc.py:126 WARNING Skip: PRD85, 1Error
+2020-06-18 13:37:08,781 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,781 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,781 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,781 charges_calc.py:126 WARNING Skip: PRD51, 1Error
+2020-06-18 13:37:08,781 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,781 charges_calc.py:126 WARNING Skip: PRD56, 1Error
+2020-06-18 13:37:08,782 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,782 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,782 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,782 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,782 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,782 charges_calc.py:126 WARNING Skip: PRD26, 1Error
+2020-06-18 13:37:08,783 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,783 charges_calc.py:126 WARNING Skip: PRD68, 1Error
+2020-06-18 13:37:08,783 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,783 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,784 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,784 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,785 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,785 charges_calc.py:126 WARNING Skip: PRD84, 1Error
+2020-06-18 13:37:08,785 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,785 charges_calc.py:126 WARNING Skip: PRD50, 1Error
+2020-06-18 13:37:08,785 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,785 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,785 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,785 charges_calc.py:126 WARNING Skip: PRD47, 1Error
+2020-06-18 13:37:08,786 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,786 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,787 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,787 charges_calc.py:126 WARNING Skip: PRD88, 1Error
+2020-06-18 13:37:08,787 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,787 charges_calc.py:126 WARNING Skip: PRD41, 1Error
+2020-06-18 13:37:08,787 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,787 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,788 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,788 charges_calc.py:126 WARNING Skip: PRD59, 1Error
+2020-06-18 13:37:08,788 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,788 charges_calc.py:126 WARNING Skip: PRD26, 1Error
+2020-06-18 13:37:08,789 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,789 charges_calc.py:126 WARNING Skip: PRD41, 1Error
+2020-06-18 13:37:08,789 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,789 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,790 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,790 charges_calc.py:126 WARNING Skip: PRD78, 1Error
+2020-06-18 13:37:08,790 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,790 charges_calc.py:126 WARNING Skip: PRD90, 1Error
+2020-06-18 13:37:08,790 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,790 charges_calc.py:126 WARNING Skip: PRD18, 1Error
+2020-06-18 13:37:08,791 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,791 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,791 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,791 charges_calc.py:126 WARNING Skip: PRD24, 1Error
+2020-06-18 13:37:08,792 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,792 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,792 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,792 charges_calc.py:126 WARNING Skip: PRD22, 1Error
+2020-06-18 13:37:08,792 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,792 charges_calc.py:126 WARNING Skip: PRD16, 1Error
+2020-06-18 13:37:08,793 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,793 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,793 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,793 charges_calc.py:126 WARNING Skip: PRD96, 1Error
+2020-06-18 13:37:08,793 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,793 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,795 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,795 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,797 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,797 charges_calc.py:126 WARNING Skip: PRD36, 1Error
+2020-06-18 13:37:08,798 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,798 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,798 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,798 charges_calc.py:126 WARNING Skip: PRD91, 1Error
+2020-06-18 13:37:08,798 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,798 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,799 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,799 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,799 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,799 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,800 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,800 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,800 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,800 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,801 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,801 charges_calc.py:126 WARNING Skip: PRD53, 1Error
+2020-06-18 13:37:08,802 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,802 charges_calc.py:126 WARNING Skip: PRD86, 1Error
+2020-06-18 13:37:08,803 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,803 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,803 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,803 charges_calc.py:126 WARNING Skip: PRD71, 1Error
+2020-06-18 13:37:08,803 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,803 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,803 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,804 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,804 charges_calc.py:102 WARNING No end date
+2020-06-18 13:37:08,804 charges_calc.py:126 WARNING Skip: PRD70, 1Error
+2020-06-18 13:37:08,804 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,804 charges_calc.py:126 WARNING Skip: PRD65, 1Error
+2020-06-18 13:37:08,804 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,804 charges_calc.py:126 WARNING Skip: PRD37, 1Error
+2020-06-18 13:37:08,805 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,805 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,805 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,805 charges_calc.py:126 WARNING Skip: PRD98, 1Error
+2020-06-18 13:37:08,807 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,807 charges_calc.py:126 WARNING Skip: PRD55, 1Error
+2020-06-18 13:37:08,807 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,807 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,807 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,807 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,808 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,808 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,808 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,808 charges_calc.py:126 WARNING Skip: PRD90, 1Error
+2020-06-18 13:37:08,809 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,809 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,810 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,810 charges_calc.py:126 WARNING Skip: PRD12, 1Error
+2020-06-18 13:37:08,810 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,810 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,810 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,811 charges_calc.py:126 WARNING Skip: PRD18, 1Error
+2020-06-18 13:37:08,811 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,811 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,811 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,812 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,812 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,812 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,812 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,812 charges_calc.py:126 WARNING Skip: PRD72, 1Error
+2020-06-18 13:37:08,812 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,812 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,812 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,812 charges_calc.py:126 WARNING Skip: PRD36, 1Error
+2020-06-18 13:37:08,813 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,813 charges_calc.py:126 WARNING Skip: PRD84, 1Error
+2020-06-18 13:37:08,813 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,813 charges_calc.py:126 WARNING Skip: PRD97, 1Error
+2020-06-18 13:37:08,813 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,813 charges_calc.py:126 WARNING Skip: PRD26, 1Error
+2020-06-18 13:37:08,814 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,814 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,815 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,815 charges_calc.py:126 WARNING Skip: PRD10, 1Error
+2020-06-18 13:37:08,816 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,816 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,816 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,816 charges_calc.py:126 WARNING Skip: PRD32, 1Error
+2020-06-18 13:37:08,817 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,817 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,817 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,817 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,817 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,817 charges_calc.py:126 WARNING Skip: PRD91, 1Error
+2020-06-18 13:37:08,817 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,817 charges_calc.py:126 WARNING Skip: PRD79, 1Error
+2020-06-18 13:37:08,818 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,818 charges_calc.py:126 WARNING Skip: PRD26, 1Error
+2020-06-18 13:37:08,818 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,818 charges_calc.py:126 WARNING Skip: PRD89, 1Error
+2020-06-18 13:37:08,818 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,818 charges_calc.py:126 WARNING Skip: PRD88, 1Error
+2020-06-18 13:37:08,819 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,819 charges_calc.py:126 WARNING Skip: PRD58, 1Error
+2020-06-18 13:37:08,820 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,820 charges_calc.py:126 WARNING Skip: PRD88, 1Error
+2020-06-18 13:37:08,820 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,820 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,821 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,821 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,821 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,821 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,822 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,822 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,822 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,822 charges_calc.py:126 WARNING Skip: PRD53, 1Error
+2020-06-18 13:37:08,822 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,822 charges_calc.py:126 WARNING Skip: PRD57, 1Error
+2020-06-18 13:37:08,823 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,823 charges_calc.py:126 WARNING Skip: PRD60, 1Error
+2020-06-18 13:37:08,823 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,823 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,823 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,823 charges_calc.py:126 WARNING Skip: PRD25, 1Error
+2020-06-18 13:37:08,824 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,824 charges_calc.py:126 WARNING Skip: PRD16, 1Error
+2020-06-18 13:37:08,824 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,824 charges_calc.py:126 WARNING Skip: PRD83, 1Error
+2020-06-18 13:37:08,824 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,824 charges_calc.py:126 WARNING Skip: PRD60, 1Error
+2020-06-18 13:37:08,825 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,825 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,825 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,825 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,826 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,826 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,826 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,826 charges_calc.py:126 WARNING Skip: PRD1, 1Error
+2020-06-18 13:37:08,826 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,826 charges_calc.py:126 WARNING Skip: PRD33, 1Error
+2020-06-18 13:37:08,827 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,827 charges_calc.py:126 WARNING Skip: PRD91, 1Error
+2020-06-18 13:37:08,828 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,828 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,828 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,828 charges_calc.py:126 WARNING Skip: PRD20, 1Error
+2020-06-18 13:37:08,828 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,828 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,828 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,828 charges_calc.py:126 WARNING Skip: PRD9, 1Error
+2020-06-18 13:37:08,829 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,829 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,829 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,829 charges_calc.py:126 WARNING Skip: PRD7, 1Error
+2020-06-18 13:37:08,830 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,830 charges_calc.py:126 WARNING Skip: PRD69, 1Error
+2020-06-18 13:37:08,830 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,830 charges_calc.py:126 WARNING Skip: PRD55, 1Error
+2020-06-18 13:37:08,830 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,830 charges_calc.py:126 WARNING Skip: PRD77, 1Error
+2020-06-18 13:37:08,831 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,831 charges_calc.py:126 WARNING Skip: PRD52, 1Error
+2020-06-18 13:37:08,832 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,832 charges_calc.py:126 WARNING Skip: PRD55, 1Error
+2020-06-18 13:37:08,832 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,832 charges_calc.py:126 WARNING Skip: PRD54, 1Error
+2020-06-18 13:37:08,834 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,834 charges_calc.py:126 WARNING Skip: PRD56, 1Error
+2020-06-18 13:37:08,834 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,834 charges_calc.py:126 WARNING Skip: PRD35, 1Error
+2020-06-18 13:37:08,835 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,835 charges_calc.py:126 WARNING Skip: PRD75, 1Error
+2020-06-18 13:37:08,835 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,835 charges_calc.py:126 WARNING Skip: PRD0, 1Error
+2020-06-18 13:37:08,835 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,835 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,836 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,836 charges_calc.py:126 WARNING Skip: PRD3, 1Error
+2020-06-18 13:37:08,836 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,836 charges_calc.py:126 WARNING Skip: PRD79, 1Error
+2020-06-18 13:37:08,837 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,837 charges_calc.py:126 WARNING Skip: PRD44, 1Error
+2020-06-18 13:37:08,837 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,837 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,837 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,837 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,838 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,838 charges_calc.py:126 WARNING Skip: PRD50, 1Error
+2020-06-18 13:37:08,838 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,838 charges_calc.py:126 WARNING Skip: PRD94, 1Error
+2020-06-18 13:37:08,838 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,838 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,839 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,839 charges_calc.py:126 WARNING Skip: PRD97, 1Error
+2020-06-18 13:37:08,839 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,839 charges_calc.py:126 WARNING Skip: PRD57, 1Error
+2020-06-18 13:37:08,840 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,840 charges_calc.py:126 WARNING Skip: PRD6, 1Error
+2020-06-18 13:37:08,840 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,840 charges_calc.py:126 WARNING Skip: PRD94, 1Error
+2020-06-18 13:37:08,840 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,840 charges_calc.py:126 WARNING Skip: PRD2, 1Error
+2020-06-18 13:37:08,841 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,841 charges_calc.py:126 WARNING Skip: PRD29, 1Error
+2020-06-18 13:37:08,841 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,841 charges_calc.py:126 WARNING Skip: PRD78, 1Error
+2020-06-18 13:37:08,841 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,841 charges_calc.py:126 WARNING Skip: PRD26, 1Error
+2020-06-18 13:37:08,842 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,842 charges_calc.py:126 WARNING Skip: PRD81, 1Error
+2020-06-18 13:37:08,842 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,842 charges_calc.py:126 WARNING Skip: PRD72, 1Error
+2020-06-18 13:37:08,842 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,842 charges_calc.py:126 WARNING Skip: PRD90, 1Error
+2020-06-18 13:37:08,842 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,842 charges_calc.py:126 WARNING Skip: PRD50, 1Error
+2020-06-18 13:37:08,843 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,843 charges_calc.py:126 WARNING Skip: PRD99, 1Error
+2020-06-18 13:37:08,844 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,844 charges_calc.py:126 WARNING Skip: PRD74, 1Error
+2020-06-18 13:37:08,844 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,844 charges_calc.py:126 WARNING Skip: PRD43, 1Error
+2020-06-18 13:37:08,844 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,844 charges_calc.py:126 WARNING Skip: PRD28, 1Error
+2020-06-18 13:37:08,844 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,844 charges_calc.py:126 WARNING Skip: PRD82, 1Error
+2020-06-18 13:37:08,844 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,845 charges_calc.py:126 WARNING Skip: PRD92, 1Error
+2020-06-18 13:37:08,845 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,845 charges_calc.py:126 WARNING Skip: PRD30, 1Error
+2020-06-18 13:37:08,845 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,845 charges_calc.py:126 WARNING Skip: PRD67, 1Error
+2020-06-18 13:37:08,845 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,845 charges_calc.py:126 WARNING Skip: PRD27, 1Error
+2020-06-18 13:37:08,845 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,845 charges_calc.py:126 WARNING Skip: PRD20, 1Error
+2020-06-18 13:37:08,846 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,846 charges_calc.py:126 WARNING Skip: PRD19, 1Error
+2020-06-18 13:37:08,846 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,846 charges_calc.py:126 WARNING Skip: PRD14, 1Error
+2020-06-18 13:37:08,847 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,847 charges_calc.py:126 WARNING Skip: PRD77, 1Error
+2020-06-18 13:37:08,847 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,847 charges_calc.py:126 WARNING Skip: PRD61, 1Error
+2020-06-18 13:37:08,847 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,847 charges_calc.py:126 WARNING Skip: PRD78, 1Error
+2020-06-18 13:37:08,848 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,848 charges_calc.py:126 WARNING Skip: PRD66, 1Error
+2020-06-18 13:37:08,848 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,848 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,849 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,849 charges_calc.py:126 WARNING Skip: PRD48, 1Error
+2020-06-18 13:37:08,849 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,849 charges_calc.py:126 WARNING Skip: PRD39, 1Error
+2020-06-18 13:37:08,849 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,849 charges_calc.py:126 WARNING Skip: PRD46, 1Error
+2020-06-18 13:37:08,850 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,850 charges_calc.py:126 WARNING Skip: PRD63, 1Error
+2020-06-18 13:37:08,850 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,850 charges_calc.py:126 WARNING Skip: PRD40, 1Error
+2020-06-18 13:37:08,850 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,850 charges_calc.py:126 WARNING Skip: PRD23, 1Error
+2020-06-18 13:37:08,851 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,851 charges_calc.py:126 WARNING Skip: PRD19, 1Error
+2020-06-18 13:37:08,852 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,852 charges_calc.py:126 WARNING Skip: PRD42, 1Error
+2020-06-18 13:37:08,852 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,853 charges_calc.py:126 WARNING Skip: PRD73, 1Error
+2020-06-18 13:37:08,853 charges_calc.py:113 WARNING Total days is 0 or less, skipping calculations
+2020-06-18 13:37:08,853 charges_calc.py:126 WARNING Skip: PRD69, 1Error
