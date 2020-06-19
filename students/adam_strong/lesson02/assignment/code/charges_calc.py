@@ -32,6 +32,7 @@ def parse_cmd_arguments():
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
     parser.add_argument('-debug', '-d', type=int, default=0, required=False,
+                        choices=[0, 1, 2, 3],
                         help='Debug Level: 0=No debug messages or log file, \
                         1=Only error messages, 2=Error messages and warnings,\
                         3=Error messages, warnings and debug messages')
