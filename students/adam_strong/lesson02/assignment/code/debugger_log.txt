@@ -1,0 +1,720 @@
+
+## Original Exploration - found that I need -i source.json and -o out.json to resume
+
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(3)<module>()
+-> '''
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(4)<module>()
+-> import argparse
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(5)<module>()
+-> import json
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(6)<module>()
+-> import datetime
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(7)<module>()
+-> import math
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(9)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(17)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(25)<module>()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(39)<module>()
+-> def save_to_json(filename, data):
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(43)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) n
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--output
+SystemExit: 2
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) 
+
+
+
+# Exploring the calculate_additional_fields function - 
+
+
+
+-> def calculate_additional_fields(data):
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(27)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(28)calculate_additional_fields()
+-> try:
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(29)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(30)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) rental_start
+datetime.datetime(2017, 6, 12, 0, 0)
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(31)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) rental_end
+datetime.datetime(2017, 3, 22, 0, 0)
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(32)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(33)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) value['total_price']
+-2542
+(Pdb) n
+ValueError: math domain error
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(33)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(35)calculate_additional_fields()
+-> except:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(36)calculate_additional_fields()
+-> exit(0)
+(Pdb) 
+
+
+# Debugging implementation of the logging levels using arg parse 
+
+
+adam@adam-Lenovo-Y520-15IKBN:~/Python_Cert/pyprog220/argparse$ python -m pdb log_arg.py -i source.json -o out.json -d 3
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(4)<module>()
+-> '''
+(Pdb) l
+  1     #!/usr/bin/env python
+  2     '''
+  3     Returns total price paid for individual rentals
+  4  -> '''
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9     import sys
+ 10     import logging
+ 11     
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(5)<module>()
+-> import argparse
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(6)<module>()
+-> import json
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(7)<module>()
+-> import datetime
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(8)<module>()
+-> import math
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(9)<module>()
+-> import sys
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(10)<module>()
+-> import logging
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(12)<module>()
+-> logger = logging.getLogger()
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(13)<module>()
+-> log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(14)<module>()
+-> log_file = 'logs/charges_calc' + datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(15)<module>()
+-> formatter = logging.Formatter(log_format)
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(16)<module>()
+-> logger.setLevel(logging.DEBUG)
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(21)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(33)<module>()
+-> def set_logger(debug):
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(51)<module>()
+-> def set_handlers(log_level):
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(66)<module>()
+-> def test_logging_levels():
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(73)<module>()
+-> def load_rentals_file(filename):
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(85)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(86)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(87)<module>()
+-> set_logger(args.debug)
+(Pdb) n
+3=Error messages, warnings and debug messages
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(88)<module>()
+-> test = test_logging_levels()
+(Pdb) n
+2020-06-16 22:52:10,442 log_arg.py:67  CRITICAL This is a critical message!!!!
+2020-06-16 22:52:10,443 log_arg.py:68  ERROR This is an error!!
+2020-06-16 22:52:10,443 log_arg.py:69  WARNING This is merely a warning!
+2020-06-16 22:52:10,444 log_arg.py:70  INFO Heres some info.
+2020-06-16 22:52:10,444 log_arg.py:71  DEBUG Ho hum, this is debug...
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(89)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) s
+--Call--
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(73)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) s
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(74)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) file
+*** NameError: name 'file' is not defined
+(Pdb) filename
+'source.json'
+(Pdb) s
+--Call--
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(33)getpreferredencoding()
+-> def getpreferredencoding(do_setlocale=True):
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(34)getpreferredencoding()
+-> assert not do_setlocale
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(35)getpreferredencoding()
+-> if sys.flags.utf8_mode:
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(37)getpreferredencoding()
+-> result = _locale.nl_langinfo(_locale.CODESET)
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(38)getpreferredencoding()
+-> if not result and sys.platform == 'darwin':
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(46)getpreferredencoding()
+-> return result
+(Pdb) n
+--Return--
+> /home/adam/anaconda3/lib/python3.7/_bootlocale.py(46)getpreferredencoding()->'UTF-8'
+-> return result
+(Pdb) n
+--Call--
+> /home/adam/anaconda3/lib/python3.7/codecs.py(309)__init__()
+-> def __init__(self, errors='strict'):
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/codecs.py(310)__init__()
+-> IncrementalDecoder.__init__(self, errors)
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/codecs.py(312)__init__()
+-> self.buffer = b""
+(Pdb) n
+--Return--
+> /home/adam/anaconda3/lib/python3.7/codecs.py(312)__init__()->None
+-> self.buffer = b""
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(75)load_rentals_file()
+-> logging.debug('In load_rentals_file, filename is '+ filename)
+(Pdb) n
+2020-06-16 22:53:17,787 log_arg.py:75  DEBUG In load_rentals_file, filename is source.json
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(76)load_rentals_file()
+-> try:
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(77)load_rentals_file()
+-> data = json.load(file)
+(Pdb) s
+--Call--
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(274)load()
+-> def load(fp, *, cls=None, object_hook=None, parse_float=None,
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(293)load()
+-> return loads(fp.read(),
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(294)load()
+-> cls=cls, object_hook=object_hook,
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(295)load()
+-> parse_float=parse_float, parse_int=parse_int,
+(Pdb) n
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(296)load()
+-> parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+(Pdb) n
+--Return--
+> /home/adam/anaconda3/lib/python3.7/json/__init__.py(296)load()->{'RNT001': {'price_per_day': 31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rental_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17', 'rental_start': '8/14/16', ...}, ...}
+-> parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(78)load_rentals_file()
+-> logging.debug('Loading JSON file here is the data:\n' + data)
+(Pdb) n
+TypeError: can only concatenate str (not "dict") to str
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(78)load_rentals_file()
+-> logging.debug('Loading JSON file here is the data:\n' + data)
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(79)load_rentals_file()
+-> except:
+(Pdb) n
+> /home/adam/Python_Cert/pyprog220/argparse/log_arg.py(80)load_rentals_file()
+-> logging.error('Exiting in load_rentals_file() exception error')
+(Pdb) exit
+
+
+# Negative number for total days due to the end date being before the start date
+
+
+adam@adam-Lenovo-Y520-15IKBN:~/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code$ python -m pdb charges_calc.py -i source.json -o out.json -d 3
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(4)<module>()
+-> '''
+(Pdb) ll
+  1     #!/usr/bin/env python
+  2     '''
+  3     Returns total price paid for individual rentals
+  4  -> '''
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9     import sys
+ 10     import logging
+ 11     
+ 12     logger = logging.getLogger()
+ 13     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+ 14     log_file = 'logs/charges_calc' + datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+ 15     formatter = logging.Formatter(log_format)
+ 16     logger.setLevel(logging.DEBUG)
+ 17     
+ 18     
+ 19     # MAIN CODE___________________________________________________________________
+ 20     
+ 21     def parse_cmd_arguments():
+ 22         '''Interpret the command line arguments, -i INPUT, -o OUTPUT, -d DEBUG'''
+ 23         parser = argparse.ArgumentParser(description='Process some integers.')
+ 24         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 25         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 26         parser.add_argument('-debug', '-d', type=int, default=0, required=False,
+ 27             help='Debug Level: 0=No debug messages or log file, 1=Only error messages, 2=Error messages and warnings, 3=Error messages, warnings and debug messages')
+ 28         try:
+ 29             return parser.parse_args() # need to add -i source.json and -o out.json at beginning of script
+ 30         except:
+ 31             sys.exit()
+ 32     
+ 33     def set_logger(debug):
+ 34         '''Sets the logging level input from command line'''
+ 35         if debug > 0:
+ 36             if debug == 1:
+ 37                 print('1=Only error messages')
+ 38                 set_handlers(logging.ERROR)
+ 39             elif debug == 2:
+ 40                 print('2=Error messages and warnings')
+ 41                 set_handlers(logging.WARNING)
+ 42             elif debug == 3:
+ 43                 print('3=Error messages, warnings and debug messages')
+ 44                 set_handlers(logging.DEBUG)
+ 45         else:
+ 46             print('0=No debug messages or log file')
+ 47             logging.disable(logging.CRITICAL)
+ 48         return
+ 49     
+ 50     
+ 51     def set_handlers(log_level):
+ 52         '''Sets all the handlers based on level selected in set_logger(debug)'''
+ 53         file_handler = logging.FileHandler(log_file)
+ 54         if log_level == logging.DEBUG:
+ 55             file_handler.setLevel(logging.WARNING)
+ 56         else:
+ 57             file_handler.setLevel(log_level)
+ 58     
+ 59         file_handler.setFormatter(formatter)
+ 60         console_handler = logging.StreamHandler()
+ 61         console_handler.setLevel(log_level)
+ 62         console_handler.setFormatter(formatter)
+ 63         logger.addHandler(file_handler)
+ 64         logger.addHandler(console_handler)
+ 65     
+ 66     
+ 67     def load_rentals_file(filename):
+ 68         '''Opens up the json file'''
+ 69         with open(filename) as file:
+ 70             logging.debug('In load_rentals_file, filename is ' + filename)
+ 71             try:
+ 72                 data = json.load(file)
+ 73             except:
+ 74                 logging.error('Exiting in load_rentals_file() exception error')
+ 75                 sys.exit()
+ 76         logging.debug('Data has been successfully loaded')
+ 77         return data
+ 78     
+ 79     def calculate_additional_fields(data):
+ 80         '''Main processer of the data'''
+ 81         for value in data.values():
+ 82             try:
+ 83                 logging.debug(value)# What is the value about to be processed
+ 84                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 85                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 86                 value['total_days'] = (rental_end - rental_start).days
+ 87                 logging.debug('Value from total days calculation ' + str(value['total_days']))
+ 88                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 89                 value['sqrt_total_price'] = math.sqrt(value['total_price']) # math domain error reached from mismatched dates
+ 90                 value['unit_cost'] = value['total_price'] / value['units_rented']
+ 91             except:
+ 92                 logging.error('Exiting in calculate_additional_fields() exception error')
+ 93                 sys.exit()
+ 94     
+ 95         return data
+ 96     
+ 97     def save_to_json(filename, data):
+ 98         '''Write the modified json file to out.json'''
+ 99         with open(filename, 'w') as file:
+100             json.dump(data, file)
+101     
+102     
+103     if __name__ == "__main__":
+104         args = parse_cmd_arguments()
+105         set_logger(args.debug)
+106         data = load_rentals_file(args.input)
+107         data = calculate_additional_fields(data)
+108         save_to_json(args.output, data)
+(Pdb) b 107
+Breakpoint 1 at /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py:107
+(Pdb) 
+Breakpoint 2 at /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py:107
+(Pdb) c
+3=Error messages, warnings and debug messages
+2020-06-16 23:19:46,204 charges_calc.py:70  DEBUG In load_rentals_file, filename is source.json
+2020-06-16 23:19:46,205 charges_calc.py:76  DEBUG Data has been successfully loaded
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(107)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(79)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(81)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(82)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(83)calculate_additional_fields()
+-> logging.debug(value)# What is the value about to be processed
+(Pdb) n
+2020-06-16 23:19:59,568 charges_calc.py:83  DEBUG {'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(84)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(85)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(86)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(87)calculate_additional_fields()
+-> logging.debug('Value from total days calculation ' + str(value['total_days']))
+(Pdb) n
+2020-06-16 23:20:11,485 charges_calc.py:87  DEBUG Value from total days calculation -82
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(88)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(89)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price']) # math domain error reached from mismatched dates
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days': -82, 'total_price': -2542}
+(Pdb) value['total_price']
+-2542
+
+# Implemented an error checking system for end_date, start_date existing and if days stayed is 0 or less
+
+adam@adam-Lenovo-Y520-15IKBN:~/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code$ python -m pdb charges_calc.py -i source.json -o out.json -d 3
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(4)<module>()
+-> '''
+(Pdb) ll
+  1     #!/usr/bin/env python
+  2     '''
+  3     Returns total price paid for individual rentals
+  4  -> '''
+  5     import argparse
+  6     import json
+  7     import datetime
+  8     import math
+  9     import sys
+ 10     import logging
+ 11     
+ 12     logger = logging.getLogger()
+ 13     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+ 14     log_file = 'logs/charges_calc' + datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
+ 15     formatter = logging.Formatter(log_format)
+ 16     logger.setLevel(logging.DEBUG)
+ 17     
+ 18     
+ 19     # MAIN CODE___________________________________________________________________
+ 20     
+ 21     def parse_cmd_arguments():
+ 22         '''Interpret the command line arguments, -i INPUT, -o OUTPUT, -d DEBUG'''
+ 23         parser = argparse.ArgumentParser(description='Process some integers.')
+ 24         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 25         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 26         parser.add_argument('-debug', '-d', type=int, default=0, required=False,
+ 27             help='Debug Level: 0=No debug messages or log file, 1=Only error messages, 2=Error messages and warnings, 3=Error messages, warnings and debug messages')
+ 28         try:
+ 29             return parser.parse_args() # need to add -i source.json and -o out.json at beginning of script
+ 30         except:
+ 31             sys.exit()
+ 32     
+ 33     def set_logger(debug):
+ 34         '''Sets the logging level input from command line'''
+ 35         if debug > 0:
+ 36             if debug == 1:
+ 37                 print('1=Only error messages')
+ 38                 set_handlers(logging.ERROR)
+ 39             elif debug == 2:
+ 40                 print('2=Error messages and warnings')
+ 41                 set_handlers(logging.WARNING)
+ 42             elif debug == 3:
+ 43                 print('3=Error messages, warnings and debug messages')
+ 44                 set_handlers(logging.DEBUG)
+ 45         else:
+ 46             print('0=No debug messages or log file')
+ 47             logging.disable(logging.CRITICAL)
+ 48         return
+ 49     
+ 50     
+ 51     def set_handlers(log_level):
+ 52         '''Sets all the handlers based on level selected in set_logger(debug)'''
+ 53         file_handler = logging.FileHandler(log_file)
+ 54         if log_level == logging.DEBUG:
+ 55             file_handler.setLevel(logging.WARNING)
+ 56         else:
+ 57             file_handler.setLevel(log_level)
+ 58     
+ 59         file_handler.setFormatter(formatter)
+ 60         console_handler = logging.StreamHandler()
+ 61         console_handler.setLevel(log_level)
+ 62         console_handler.setFormatter(formatter)
+ 63         logger.addHandler(file_handler)
+ 64         logger.addHandler(console_handler)
+ 65     
+ 66     
+ 67     def load_rentals_file(filename):
+ 68         '''Opens up the json file'''
+ 69         with open(filename) as file:
+ 70             logging.debug('In load_rentals_file, filename is ' + filename)
+ 71             try:
+ 72                 data = json.load(file)
+ 73             except:
+ 74                 logging.error('Exiting in load_rentals_file() exception error')
+ 75                 sys.exit()
+ 76         logging.debug('Data has been successfully loaded')
+ 77         return data
+ 78     
+ 79     def calculate_additional_fields(data):
+ 80         '''Main processer of the data'''
+ 81         for value in data.values():
+ 82             try:
+ 83                 errcount = 0
+ 84                 logging.debug(value)# What is the value about to be processed
+ 85     
+ 86                 #Checking that rental start has a real value
+ 87                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 88                 if value['rental_start'] == '':
+ 89                     errcount += 1
+ 90                     logging.warning('No start date')
+ 91                 else:
+ 92                     logging.debug('Real start date value')
+ 93     
+ 94                 #Checking that rental end has a value
+ 95                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 96                 if value['rental_end'] == '':
+ 97                     errcount += 1
+ 98                     logging.warning('No end date')
+ 99                 else:
+100                     logging.debug('Real end date value')
+101     
+102                 value['total_days'] = (rental_end - rental_start).days
+103     
+104                 #Checking that there is at least 1 day of rental
+105                 if value['total_days'] <= 0:
+106                     errcount += 1
+107                     logging.warning('Total days is 0 or less, skipping rest of calculations for this value')
+108                 else:
+109                     logging.debug('Value from total days calculation ' + str(value['total_days']))
+110     
+111                 #Proceeding if no errors
+112                 if errcount == 0:
+113                     value['total_price'] = value['total_days'] * value['price_per_day']
+114                     value['sqrt_total_price'] = math.sqrt(value['total_price']) # math domain error reached from mismatched dates
+115                     value['unit_cost'] = value['total_price'] / value['units_rented']
+116                 else:
+117                     logging.warning('Skipped record containing: ' + str(value['product_code']) + ' with ' + str(errcount) + ' errors.')
+118     
+119             except:
+120                 logging.error('Exiting in calculate_additional_fields() exception error')
+121                 sys.exit()
+122     
+123         return data
+124     
+125     def save_to_json(filename, data):
+126         '''Write the modified json file to out.json'''
+127         with open(filename, 'w') as file:
+128             json.dump(data, file)
+129     
+130     
+131     if __name__ == "__main__":
+132         args = parse_cmd_arguments()
+133         set_logger(args.debug)
+134         data = load_rentals_file(args.input)
+135         data = calculate_additional_fields(data)
+136         save_to_json(args.output, data)
+(Pdb) b 81
+Breakpoint 1 at /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py:81
+(Pdb) c
+3=Error messages, warnings and debug messages
+2020-06-17 21:33:22,057 charges_calc.py:70  DEBUG In load_rentals_file, filename is source.json
+2020-06-17 21:33:22,060 charges_calc.py:76  DEBUG Data has been successfully loaded
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(81)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(82)calculate_additional_fields()
+-> try:
+(Pdb) s
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(83)calculate_additional_fields()
+-> errcount = 0
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(84)calculate_additional_fields()
+-> logging.debug(value)# What is the value about to be processed
+(Pdb) n
+2020-06-17 21:33:36,173 charges_calc.py:84  DEBUG {'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(87)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(88)calculate_additional_fields()
+-> if value['rental_start'] == '':
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(92)calculate_additional_fields()
+-> logging.debug('Real start date value')
+(Pdb) n
+2020-06-17 21:33:45,375 charges_calc.py:92  DEBUG Real start date value
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(95)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(96)calculate_additional_fields()
+-> if value['rental_end'] == '':
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(100)calculate_additional_fields()
+-> logging.debug('Real end date value')
+(Pdb) n
+2020-06-17 21:33:54,716 charges_calc.py:100 DEBUG Real end date value
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(102)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(105)calculate_additional_fields()
+-> if value['total_days'] <= 0:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(106)calculate_additional_fields()
+-> errcount += 1
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(107)calculate_additional_fields()
+-> logging.warning('Total days is 0 or less, skipping rest of calculations for this value')
+(Pdb) n
+2020-06-17 21:34:10,707 charges_calc.py:107 WARNING Total days is 0 or less, skipping rest of calculations for this value
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(112)calculate_additional_fields()
+-> if errcount == 0:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(117)calculate_additional_fields()
+-> logging.warning('Skipped record containing: ' + str(value['product_code']) + ' with ' + str(errcount) + ' errors.')
+(Pdb) n
+2020-06-17 21:34:16,811 charges_calc.py:117 WARNING Skipped record containing: PRD80 with 1 errors.
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(81)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(82)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(83)calculate_additional_fields()
+-> errcount = 0
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(84)calculate_additional_fields()
+-> logging.debug(value)# What is the value about to be processed
+(Pdb) n
+2020-06-17 21:34:28,450 charges_calc.py:84  DEBUG {'product_code': 'PRD11', 'units_rented': 1, 'price_per_day': 16, 'rental_start': '7/20/16', 'rental_end': '9/30/18'}
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(87)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(88)calculate_additional_fields()
+-> if value['rental_start'] == '':
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(92)calculate_additional_fields()
+-> logging.debug('Real start date value')
+(Pdb) n
+2020-06-17 21:34:35,195 charges_calc.py:92  DEBUG Real start date value
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(95)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(96)calculate_additional_fields()
+-> if value['rental_end'] == '':
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(100)calculate_additional_fields()
+-> logging.debug('Real end date value')
+(Pdb) n
+2020-06-17 21:34:41,091 charges_calc.py:100 DEBUG Real end date value
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(102)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(105)calculate_additional_fields()
+-> if value['total_days'] <= 0:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(109)calculate_additional_fields()
+-> logging.debug('Value from total days calculation ' + str(value['total_days']))
+(Pdb) n
+2020-06-17 21:34:48,937 charges_calc.py:109 DEBUG Value from total days calculation 802
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(112)calculate_additional_fields()
+-> if errcount == 0:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(113)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(114)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price']) # math domain error reached from mismatched dates
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(115)calculate_additional_fields()
+-> value['unit_cost'] = value['total_price'] / value['units_rented']
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(81)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(82)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(83)calculate_additional_fields()
+-> errcount = 0
+(Pdb) exit
+2020-06-17 21:35:08,032 charges_calc.py:120 ERROR Exiting in calculate_additional_fields() exception error
+The program exited via sys.exit(). Exit status: 
+> /home/adam/Python_Cert/classrepo_PY220/SP_Python220B_2019/students/adam_strong/lesson02/assignment/code/charges_calc.py(4)<module>()
+-> '''
+(Pdb) exit
