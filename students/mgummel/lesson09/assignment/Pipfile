@@ -9,6 +9,8 @@ verify_ssl = true
 pylint = "*"
 flake8 = "*"
 coverage = "*"
+pymongo = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
