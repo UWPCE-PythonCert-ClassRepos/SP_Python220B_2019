@@ -1,0 +1,92 @@
+2020-06-19 12:55:01,568 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:01,568 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:01,568 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:01,568 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:01,568 log_decorator.py:30           DEBUG Exception can't multiply sequence by non-int of type 'function'
+2020-06-19 12:55:01,568 log_decorator.py:30           DEBUG Exception can't multiply sequence by non-int of type 'function'
+2020-06-19 12:55:01,568 log_decorator.py:30           DEBUG Exception can't multiply sequence by non-int of type 'function'
+2020-06-19 12:55:01,568 log_decorator.py:30           DEBUG Exception can't multiply sequence by non-int of type 'function'
+2020-06-19 12:55:13,471 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:13,471 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:13,471 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:13,471 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:13,502 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:13,502 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:13,502 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:13,502 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:26,148 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:26,148 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:26,148 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:26,148 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:55:26,183 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:26,183 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:26,183 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:55:26,183 log_decorator.py:30           DEBUG Exception stmt is neither a string nor callable
+2020-06-19 12:56:12,579 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:56:12,579 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:56:12,579 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:56:12,579 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 12:56:12,579 log_decorator.py:30           DEBUG Exception setup is neither a string nor callable
+2020-06-19 12:56:12,579 log_decorator.py:30           DEBUG Exception setup is neither a string nor callable
+2020-06-19 12:56:12,579 log_decorator.py:30           DEBUG Exception setup is neither a string nor callable
+2020-06-19 12:56:12,579 log_decorator.py:30           DEBUG Exception setup is neither a string nor callable
+2020-06-19 13:01:39,383 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:01:39,383 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:01:39,383 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:01:39,383 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:01:39,384 log_decorator.py:32           DEBUG Exception 'function' object has no attribute 'default_timer'
+2020-06-19 13:01:39,384 log_decorator.py:32           DEBUG Exception 'function' object has no attribute 'default_timer'
+2020-06-19 13:01:39,384 log_decorator.py:32           DEBUG Exception 'function' object has no attribute 'default_timer'
+2020-06-19 13:01:39,384 log_decorator.py:32           DEBUG Exception 'function' object has no attribute 'default_timer'
+2020-06-19 13:03:49,655 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:03:49,655 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:03:49,655 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:03:49,655 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:03:49,691 log_decorator.py:29           DEBUG import_data - 0.03626700999999999
+2020-06-19 13:03:49,691 log_decorator.py:29           DEBUG import_data - 0.03626700999999999
+2020-06-19 13:03:49,691 log_decorator.py:29           DEBUG import_data - 0.03626700999999999
+2020-06-19 13:03:49,691 log_decorator.py:29           DEBUG import_data - 0.03626700999999999
+2020-06-19 13:03:49,691 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:03:49,691 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:03:49,691 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:03:49,691 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:03:49,708 log_decorator.py:29           DEBUG show_available_products - 0.01660282900000004
+2020-06-19 13:03:49,708 log_decorator.py:29           DEBUG show_available_products - 0.01660282900000004
+2020-06-19 13:03:49,708 log_decorator.py:29           DEBUG show_available_products - 0.01660282900000004
+2020-06-19 13:03:49,708 log_decorator.py:29           DEBUG show_available_products - 0.01660282900000004
+2020-06-19 13:03:49,708 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:03:49,708 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:03:49,708 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:03:49,708 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:03:50,748 log_decorator.py:29           DEBUG show_rentals - 1.0392809020000002
+2020-06-19 13:03:50,748 log_decorator.py:29           DEBUG show_rentals - 1.0392809020000002
+2020-06-19 13:03:50,748 log_decorator.py:29           DEBUG show_rentals - 1.0392809020000002
+2020-06-19 13:03:50,748 log_decorator.py:29           DEBUG show_rentals - 1.0392809020000002
+2020-06-19 13:05:28,888 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:28,888 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:28,888 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:28,888 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:28,924 log_decorator.py:32           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:28,924 log_decorator.py:32           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:28,924 log_decorator.py:32           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:28,924 log_decorator.py:32           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:58,816 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:58,816 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:58,816 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:58,816 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:05:58,855 log_decorator.py:33           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:58,855 log_decorator.py:33           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:58,855 log_decorator.py:33           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:05:58,855 log_decorator.py:33           DEBUG Exception unsupported operand type(s) for -: 'builtin_function_or_method' and 'builtin_function_or_method'
+2020-06-19 13:06:41,381 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:06:41,381 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:06:41,381 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:06:41,381 log_decorator.py:25           DEBUG import_data - ('.', 'products.csv', 'customer.csv', 'rentals.csv')
+2020-06-19 13:06:41,416 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:06:41,416 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:06:41,416 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:06:41,416 log_decorator.py:25           DEBUG show_available_products - ()
+2020-06-19 13:06:41,432 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:06:41,432 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:06:41,432 log_decorator.py:25           DEBUG show_rentals - (7298,)
+2020-06-19 13:06:41,432 log_decorator.py:25           DEBUG show_rentals - (7298,)
