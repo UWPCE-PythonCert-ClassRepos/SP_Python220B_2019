@@ -7,7 +7,6 @@ from customer_model import Customer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 db = SqliteDatabase('customers.db')
 db.create_tables([Customer])
 
@@ -78,6 +77,7 @@ def delete_customer(customer_id):
             logger.info(f'{customer_id} found and deleted.')
     except DoesNotExist:
         logger.info(f'{customer_id} does not exist.')
+        raise DoesNotExist
     finally:
         logger.info('database closes')
         db.close()
