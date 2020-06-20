@@ -62,6 +62,7 @@ class TestBasicOperations(TestCase):
         self.assertEqual(active_customers, 0)
 
     def test_delete_customer_not_found(self):
+        """tests delete_customer function not found"""
         with self.assertRaises(DoesNotExist):
             delete_customer("C00003")
 
@@ -79,5 +80,6 @@ class TestBasicOperations(TestCase):
         self.assertEqual(active_customers, 1)
 
     def test_list_active_customers_not_found(self):
+        """tests ist_active_customers function when not found"""
         with self.assertRaises(DoesNotExist):
             update_customer_credit("C00003", 500)
