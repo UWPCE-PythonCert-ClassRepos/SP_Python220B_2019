@@ -6,16 +6,21 @@ Unittest for basic_operations
 from unittest import TestCase
 import sys
 sys.path.append('./src')
+from os import path
 from customer_model import Customer
 from basic_operations import add_customer, search_customer, delete_customer,\
     update_customer_credit, list_active_customers
-
+from peewee import DoesNotExist
 
 
 class TestBasicOperations(TestCase):
     """
     Unit tests
     """
+    def test_db(self):
+        """tests db creation"""
+        self.assertTrue(path.exists("customers.db"))
+
     def test_add_customer(self):
         """tests add_customer function"""
         add_customer("C00001",
@@ -56,6 +61,11 @@ class TestBasicOperations(TestCase):
         active_customers = list_active_customers()
         self.assertEqual(active_customers, 0)
 
+    def test_delete_customer_not_found(self):
+        """tests delete_customer function not found"""
+        with self.assertRaises(DoesNotExist):
+            delete_customer("C00003")
+
     def test_list_active_customers(self):
         """tests ist_active_customers function"""
         add_customer("C00002",
@@ -68,3 +78,8 @@ class TestBasicOperations(TestCase):
                      10000.00)
         active_customers = Customer.select().where(Customer.active_status).count()
         self.assertEqual(active_customers, 1)
+
+    def test_list_active_customers_not_found(self):
+        """tests ist_active_customers function when not found"""
+        with self.assertRaises(DoesNotExist):
+            update_customer_credit("C00003", 500)
