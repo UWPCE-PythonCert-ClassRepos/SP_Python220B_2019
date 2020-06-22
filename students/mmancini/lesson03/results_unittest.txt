@@ -29,6 +29,6 @@ INFO:test_basic_operations:test update customer credit limit after update is 300
 INFO:test_basic_operations:test update customer completed
 .
 ----------------------------------------------------------------------
-Ran 5 tests in 2.639s
+Ran 5 tests in 2.401s
 
 OK
