@@ -1,7 +1,7 @@
 """Inventory class"""
 
 
-class Inventory():
+class Inventory:
     """Class to hold all inventory"""
 
     def __init__(self, product_code, description, market_price, rental_price):

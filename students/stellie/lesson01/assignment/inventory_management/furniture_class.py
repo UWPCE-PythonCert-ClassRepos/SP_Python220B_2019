@@ -1,6 +1,6 @@
 """Furniture class"""
 
-from inventory_class import Inventory
+from inventory_management.inventory_class import Inventory
 
 
 class Furniture(Inventory):
@@ -15,6 +15,7 @@ class Furniture(Inventory):
         self.size = size
 
     def return_as_dictionary(self):
+        """Return all inventory with furniture as a dictionary"""
         output_dict = Inventory.return_as_dictionary(self)
         output_dict['material'] = self.material
         output_dict['size'] = self.size
