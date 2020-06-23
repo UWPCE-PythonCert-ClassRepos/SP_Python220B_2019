@@ -1,0 +1,4 @@
+Stella Kim
+Assignment 2: Logging and Debugging
+
+My debugging log:
