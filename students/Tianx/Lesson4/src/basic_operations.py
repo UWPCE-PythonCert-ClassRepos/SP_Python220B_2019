@@ -128,8 +128,8 @@ def display_customer_credit(min_credit):
     returns a list of customers with credit limit above a given parameter.
     """
     query = Customer.select().where(Customer.active_status)
-    lst_of_customer = [f'Nmae:{i.first_name} {i.last_name}, Phone number:{i.phone_number}, ' \
-                       f'Credit limist:{i.credit_limit}'
+    lst_of_customer = [f'Name:{i.first_name} {i.last_name}, Phone number:{i.phone_number}, ' \
+                       f'Credit limit:{i.credit_limit}'
                        for i in query if i.credit_limit >= min_credit]
     LOGGING.info("Getting customer credit limit above %s", min_credit)
     return lst_of_customer
