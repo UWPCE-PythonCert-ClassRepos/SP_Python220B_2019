@@ -1,0 +1,13 @@
+INFO:test_database:setup start
+INFO:test_database:setup import data file to database
+INFO:test_database:setup end
+.INFO:test_database:setup start
+INFO:test_database:setup import data file to database
+INFO:test_database:setup end
+.INFO:test_database:Testing import_data
+INFO:test_database:import_data tests completed
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.093s
+
+OK
