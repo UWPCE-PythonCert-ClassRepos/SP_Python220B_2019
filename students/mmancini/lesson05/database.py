@@ -30,7 +30,6 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
-
 def import_data(directory_name, product_file, customer_file, rentals_file):
     '''
         des:
@@ -78,10 +77,18 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     errors_occurred = (product_errors, customer_errors, rental_errors)
     return record_count, errors_occurred
 
-
 def show_available_products():
     pass
 
 def show_rentals(product_id):
     pass
 
+def dbs_cleanup():
+    '''drop the db'''
+    mongo = MongoDBConnection()
+    with mongo:
+        database = mongo.connection.hp_norton
+        database["Customers"].drop()
+        database["Products"].drop()
+        database["Rentals"].drop()
+    return 'databases dropped'

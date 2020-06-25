@@ -1,24 +1,19 @@
 "" 
 ************* Module database
-database.py:87:0: C0305: Trailing newlines (trailing-newlines)
-database.py:34:46: W0613: Unused argument 'customer_file' (unused-argument)
-database.py:34:61: W0613: Unused argument 'rentals_file' (unused-argument)
-database.py:82:0: C0116: Missing function or method docstring (missing-function-docstring)
-database.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
-database.py:85:17: W0613: Unused argument 'product_id' (unused-argument)
+database.py:33:46: W0613: Unused argument 'customer_file' (unused-argument)
+database.py:33:61: W0613: Unused argument 'rentals_file' (unused-argument)
+database.py:80:0: C0116: Missing function or method docstring (missing-function-docstring)
+database.py:83:0: C0116: Missing function or method docstring (missing-function-docstring)
+database.py:83:17: W0613: Unused argument 'product_id' (unused-argument)
 
------------------------------------
-Your code has been rated at 8.78/10
+------------------------------------------------------------------
+Your code has been rated at 9.12/10 (previous run: 9.12/10, +0.00)
 
 ************* Module test_database
-test_database.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-test_database.py:19:8: W0612: Unused variable 'data' (unused-variable)
-test_database.py:16:4: R0201: Method could be a function (no-self-use)
-test_database.py:38:4: C0116: Missing function or method docstring (missing-function-docstring)
-test_database.py:41:4: C0116: Missing function or method docstring (missing-function-docstring)
-test_database.py:7:0: W0611: Unused show_available_products imported from database (unused-import)
-test_database.py:8:0: W0611: Unused show_rentals imported from database (unused-import)
+test_database.py:26:8: W0612: Unused variable 'data' (unused-variable)
+test_database.py:14:0: W0611: Unused show_available_products imported from database (unused-import)
+test_database.py:15:0: W0611: Unused show_rentals imported from database (unused-import)
 
------------------------------------
-Your code has been rated at 6.82/10
+------------------------------------------------------------------
+Your code has been rated at 8.93/10 (previous run: 8.57/10, +0.36)
 

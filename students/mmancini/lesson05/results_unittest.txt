@@ -1,13 +1,19 @@
+INFO:test_database:Test import_data
+INFO:test_database:test_import_data completed
+.INFO:test_database:test setup, dbs cleanup status = databases dropped
 INFO:test_database:setup start
 INFO:test_database:setup import data file to database
-INFO:test_database:setup end
-.INFO:test_database:setup start
+INFO:test_database:test setup completed
+INFO:test_database:test tearDown completed
+.INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup start
 INFO:test_database:setup import data file to database
-INFO:test_database:setup end
-.INFO:test_database:Testing import_data
-INFO:test_database:import_data tests completed
+INFO:test_database:test setup completed
+INFO:test_database:test tearDown completed
 .
 ----------------------------------------------------------------------
-Ran 3 tests in 0.093s
+Ran 3 tests in 0.997s
 
 OK
+hello
+hello

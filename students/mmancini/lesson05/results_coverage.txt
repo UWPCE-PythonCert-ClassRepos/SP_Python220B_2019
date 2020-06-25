@@ -1,6 +1,6 @@
 Name               Stmts   Miss  Cover
 --------------------------------------
-database.py           49      6    88%
-test_database.py      22      0   100%
+database.py           57      7    88%
+test_database.py      27      0   100%
 --------------------------------------
-TOTAL                 71      6    92%
+TOTAL                 84      7    92%
