@@ -72,6 +72,49 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
             LOGGER.debug('Make sure directory and file name are entered correctly')
             product_errors += 1
 
+        customer_collection = database["Customers"]
+        try:
+            with open(os.path.join(os.path.dirname(__file__),
+                                   directory_name, customer_file)) as csvfile:
+                customer_file = csv.reader(csvfile)
+
+                for customer in customer_file:
+                    customer_info = {'user_id': customer[0],
+                                     'name': customer[1],
+                                     'address': customer[2],
+                                     'phone_number': customer[3],
+                                     'email': customer[4]}
+                    customer_collection.insert_one(customer_info)
+                    customer_count += 1
+
+                    for data in customer: #check for data omissions/'errors'
+                        if data == '':
+                            customer_errors += 1
+        except FileNotFoundError:
+            LOGGER.error('Cannot find customer_file')
+            LOGGER.debug('Make sure directory and file name are entered correctly')
+            customer_errors += 1
+
+        rental_collection = database["Rentals"]
+        try:
+            with open(os.path.join(os.path.dirname(__file__),
+                                   directory_name, rentals_file)) as csvfile:
+                rentals_file = csv.reader(csvfile)
+
+                for rental in rentals_file:
+                    rental_info = {'user_id': rental[0],
+                                   'name': rental[1],
+                                   'rentals': rental[2]}
+                    rental_collection.insert_one(rental_info)
+                    rental_count += 1
+
+                    for data in rental: #check for data omissions/'errors'
+                        if data == '':
+                            rental_errors += 1
+        except FileNotFoundError:
+            LOGGER.error('Cannot find rentals_file')
+            LOGGER.debug('Make sure directory and file name are entered correctly')
+            rental_errors += 1
 
     record_count = (product_count, customer_count, rental_count)
     errors_occurred = (product_errors, customer_errors, rental_errors)

@@ -48,11 +48,6 @@ class TestsDatabase(TestCase):
 
         LOGGER.info('test setup completed')
 
-    def tearDown(self):
-        ''' test cleanup '''
-        LOGGER.info('test tearDown start')
-        LOGGER.info('test tearDown completed')
-
     def test_show_available_products(self):
         ''' test show available products '''
         pass

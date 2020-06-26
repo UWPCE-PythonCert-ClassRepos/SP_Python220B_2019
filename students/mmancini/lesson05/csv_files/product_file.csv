@@ -1,2 +1,6 @@
 product_id,description,product_type,quantity_available
-p111,Washer,Laundry,5
+pid001,sofa,livingroom,5
+pid002,washer,laundry,4
+pid003,microwave,kitchen,3
+pid004,edger,garage,2
+pid004,desk,office,1
