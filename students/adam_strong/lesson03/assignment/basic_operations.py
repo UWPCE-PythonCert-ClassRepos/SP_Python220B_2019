@@ -2,8 +2,8 @@
 """
 Model to interact with customers.db
 for use by all departments at HP Norton
-pylintrc file: disabled - invalid-name(for snake casing), wildcard-import,
-unused-wildcard-import, too-few-public-methods, not-an-iterable
+pylintrc file: disabled - wildcard-import,
+unused-wildcard-import, too-few-public-methods
 """
 
 import logging
@@ -52,10 +52,10 @@ def search_customer(customer_id):
 
     with database.transaction():
         try:
-            c = Customers.get(Customers.customer_id == customer_id)
-            logger.info(model_to_dict(c))
-            return {'first_name': c.first_name, 'last_name': c.last_name,
-                    'email_address': c.email_address, 'phone_number': c.phone_number}
+            record = Customers.get(Customers.customer_id == customer_id)
+            logger.info(model_to_dict(record))
+            return {'first_name': record.first_name, 'last_name': record.last_name,
+                    'email_address': record.email_address, 'phone_number': record.phone_number}
         except (IndexError, peewee.DoesNotExist):
             return {}
 
@@ -65,9 +65,9 @@ def delete_customer(customer_id):
     logger.info('Deleting customer #%s', str(customer_id))
 
     with database.transaction():
-        c = Customers.get(Customers.customer_id == customer_id)
-        logger.info('Deleting %s %s from the database', c.first_name, c.last_name)
-        c.delete_instance()
+        record = Customers.get(Customers.customer_id == customer_id)
+        logger.info('Deleting %s %s from the database', record.first_name, record.last_name)
+        record.delete_instance()
 
 
 
@@ -78,12 +78,12 @@ def update_customer(customer_id, credit_limit):
 
     with database.transaction():
         try:
-            c = Customers.get(Customers.customer_id == customer_id)
-            logger.info('%s %slimit is now %s', c.first_name, c.last_name, credit_limit)
-            c.credit_limit = credit_limit
-            c.save()
-            return {'first_name': c.first_name, 'last_name': c.last_name,
-                    'email_address': c.email_address, 'credit_limit': c.credit_limit}
+            record = Customers.get(Customers.customer_id == customer_id)
+            logger.info('%s %slimit is now %s', record.first_name, record.last_name, credit_limit)
+            record.credit_limit = credit_limit
+            record.save()
+            return {'first_name': record.first_name, 'last_name': record.last_name,
+                    'email_address': record.email_address, 'credit_limit': record.credit_limit}
         except:
             raise ValueError('No customer with this ID, use list_all_customers()')
 
@@ -99,10 +99,11 @@ def list_active_customers():
 def list_all_customers():
     '''This function returns a list of lists of all the customers'''
     cust_list = []
-    for c in Customers:
-        fullname = c.first_name + ' ' + c.last_name + ','
-        formlist = REPORT_STRING.format(c.customer_id, fullname, c.phone_number,
-                                        c.email_address, c.is_active, c.credit_limit)
+    query = Customers.select()
+    for record in query:
+        fullname = record.first_name + ' ' + record.last_name + ','
+        formlist = REPORT_STRING.format(record.customer_id, fullname, record.phone_number,
+                                        record.email_address, record.is_active, record.credit_limit)
         logger.info(formlist)
         cust_list.append([formlist])
     return cust_list
@@ -113,4 +114,3 @@ if __name__ == '__main__':
     testdest = testpth.absolute() / 'customers.db'
     logging.info('Creating Database')
     database.create_tables([Customers])
-    #database.close()
