@@ -12,13 +12,9 @@ class TestDatabase(TestCase):
         """list all available products in the database"""
         import_data('csv_data', 'products.csv', 'customers.csv', 'rentals.csv')
         product_results = show_available_products()
-        expected = {'867': {'description': 'couch', 'product_type': 'livingroom', 'quantity': '8'},
-                    '1009': {'description': 'chair', 'product_type': 'kitchen', 'quantity': '2'},
-                    '148': {'description': 'table', 'product_type': 'office', 'quantity': '4'}}
-        self.assertEqual(expected, product_results)
-       #self.assertEqual(product_results, {'867': {'description': 'couch', 'product_type': 'livingroom', 'quantity': '8'}})
-                                           #'1009': {'description': 'chair', 'product_type': 'kitchen', 'quantity': '2'},
-                                           #'148': {'description': 'table', 'product_type': 'office', 'quantity': '4'}})
+        self.assertEqual(product_results, {'867': {'description': 'couch', 'product_type': 'livingroom', 'quantity': '8'},
+                                           '1009': {'description': 'chair', 'product_type': 'kitchen', 'quantity': '2'},
+                                           '148': {'description': 'table', 'product_type': 'office', 'quantity': '4'}})
     
     def test_show_rentals(self):
         """Tests that customer ID matches to rental user"""

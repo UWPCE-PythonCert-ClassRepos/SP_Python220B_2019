@@ -39,9 +39,9 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         customer = db["customer"]
         product = db["product"]
         rental = db["rental"]
-        customer.drop
-        product.drop
-        rental.drop
+        customer.drop()
+        product.drop()
+        rental.drop()
 
         try:
             with open(os.path.join(directory_name, customer_file)) as csv_file:
@@ -93,7 +93,7 @@ def show_available_products():
     mongo = MongoDBConnection()
     with mongo:
         db = mongo.connection.media
-        products = db['products']
+        products = db['product']
         available_products = {}  #Dictionary output
         # Iterate through products for dict
         for item in products.find():
