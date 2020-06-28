@@ -1,0 +1,220 @@
+Stella Kim
+Activity 2: Logging and Debugging
+
+Activity Questions:
+What is wrong with our logic?
+If n is not a power of 2, then the function will indefinitely call itself.  There is no means to return False if not a power of 2.
+
+Why doesn’t the function stop calling itself?
+The value of n will never equal 2 if it its value is not a power of 2.  The value continues to decrease but is unable to return 'True' and stop running.
+
+What’s happening to the value of ‘n’ as the function gets deeper and deeper into recursion?
+As the function gets deeper into recursion, the value of n becomes smaller and smaller.
+
+
+My debugging log:
+(.env) stellakim@Stellas-MBP activity % python -m pdb recursive.py 16
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(4)<module>()
+-> """Logging Activity"""
+(Pdb) ll
+  1  	# Stella Kim
+  2  	# Activity 2: Logging and Debugging
+  3  	
+  4  ->	"""Logging Activity"""
+  5  	
+  6  	import sys
+  7  	
+  8  	
+  9  	def my_fun(n):
+ 10  	    if n == 2:
+ 11  	        return True
+ 12  	    return my_fun(n / 2)
+ 13  	
+ 14  	
+ 15  	if __name__ == '__main__':
+ 16  	    n = int(sys.argv[1])
+ 17  	    print(my_fun(n))
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(6)<module>()
+-> import sys
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)<module>()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(15)<module>()
+-> if __name__ == '__main__':
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(16)<module>()
+-> n = int(sys.argv[1])
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(17)<module>()
+-> print(my_fun(n))
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+16
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+8.0
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+4.0
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+2.0
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(11)my_fun()
+-> return True
+(Pdb) n
+--Return--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(11)my_fun()->True
+-> return True
+(Pdb) n
+--Return--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()->True
+-> return my_fun(n / 2)
+(Pdb) n
+--Return--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()->True
+-> return my_fun(n / 2)
+(Pdb) n
+--Return--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()->True
+-> return my_fun(n / 2)
+(Pdb) n
+True
+--Return--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(17)<module>()->None
+-> print(my_fun(n))
+(Pdb) n
+--Return--
+> <string>(1)<module>()->None
+(Pdb) n
+The program finished and will be restarted
+
+(.env) stellakim@Stellas-MBP activity % python -m pdb recursive.py 15
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(4)<module>()
+-> """Logging Activity"""
+(Pdb) ll
+  1  	# Stella Kim
+  2  	# Activity 2: Logging and Debugging
+  3  	
+  4  ->	"""Logging Activity"""
+  5  	
+  6  	import sys
+  7  	
+  8  	
+  9  	def my_fun(n):
+ 10  	    if n == 2:
+ 11  	        return True
+ 12  	    return my_fun(n / 2)
+ 13  	
+ 14  	
+ 15  	if __name__ == '__main__':
+ 16  	    n = int(sys.argv[1])
+ 17  	    print(my_fun(n))
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(6)<module>()
+-> import sys
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)<module>()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(15)<module>()
+-> if __name__ == '__main__':
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(16)<module>()
+-> n = int(sys.argv[1])
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(17)<module>()
+-> print(my_fun(n))
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+15
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(12)my_fun()
+-> return my_fun(n / 2)
+(Pdb) s
+--Call--
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(9)my_fun()
+-> def my_fun(n):
+(Pdb) n
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+7.5
+(Pdb) b 10
+Breakpoint 1 at /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py:10
+(Pdb) c
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+3.75
+(Pdb) c
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+1.875
+(Pdb) c
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+0.9375
+(Pdb) c
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+0.46875
+(Pdb) c
+> /Users/stellakim/Documents/UW-Python-Program/SP_Python220B_2019/students/stellie/lesson02/activity/recursive.py(10)my_fun()
+-> if n == 2:
+(Pdb) pp n
+0.234375
+(Pdb) 
+
+(.env) stellakim@Stellas-MBP activity % python recursive.py 16
+True
+(.env) stellakim@Stellas-MBP activity % python recursive.py 15
+False
+(.env) stellakim@Stellas-MBP activity % python recursive.py 22
+False
+(.env) stellakim@Stellas-MBP activity % python recursive.py 8 
+True
