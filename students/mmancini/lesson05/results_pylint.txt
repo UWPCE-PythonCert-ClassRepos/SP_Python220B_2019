@@ -1,17 +1,9 @@
 "" 
-************* Module database
-database.py:124:0: C0116: Missing function or method docstring (missing-function-docstring)
-database.py:127:0: C0116: Missing function or method docstring (missing-function-docstring)
-database.py:127:17: W0613: Unused argument 'product_id' (unused-argument)
 
-------------------------------------------------------------------
-Your code has been rated at 9.66/10 (previous run: 9.12/10, +0.53)
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
-************* Module test_database
-test_database.py:26:8: W0612: Unused variable 'data' (unused-variable)
-test_database.py:14:0: W0611: Unused show_available_products imported from database (unused-import)
-test_database.py:15:0: W0611: Unused show_rentals imported from database (unused-import)
 
-------------------------------------------------------------------
-Your code has been rated at 8.80/10 (previous run: 8.93/10, -0.13)
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
