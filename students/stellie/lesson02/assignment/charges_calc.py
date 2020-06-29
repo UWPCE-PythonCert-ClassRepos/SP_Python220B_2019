@@ -47,7 +47,8 @@ def logging_handler(level):
     try:
         logger.setLevel(log_levels[level])
     except KeyError:
-        print('Debugging level is invalid.  Please enter a level between 0-3.')
+        print('Debugging level is invalid.  Level must be between 0-3.')
+        sys.exit()
 
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
