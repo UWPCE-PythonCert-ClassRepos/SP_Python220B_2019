@@ -1,3 +1,4 @@
+# pylint: disable=C0103,E1101
 '''
 code fails if there are extra commas in the data
 '''

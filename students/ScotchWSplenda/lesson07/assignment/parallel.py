@@ -1,3 +1,4 @@
+# pylint: disable=C0103,C0411
 '''
 table = collection.
 row = document.

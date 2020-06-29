@@ -1,3 +1,4 @@
+# pylint: disable=C0111
 '''
 spent alot of time figuring out
 "InvalidDocument: documents must have only string keys, key was None"
