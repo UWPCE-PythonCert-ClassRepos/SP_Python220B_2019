@@ -1,0 +1,6 @@
+threading goes faster, that is good. i therefore recommend doing it.
+
+
+          recs_add ,beg_recs ,end_recs  ,time
+linear:   2997     ,0        , 2997     ,4.229358434677124
+parallel: 2997     ,0        , 2997     ,2.519719123840332
