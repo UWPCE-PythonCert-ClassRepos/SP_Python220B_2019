@@ -1,0 +1,11 @@
+threading goes faster, that is good. i therefore recommend doing it.
+
+
+          recs_add ,beg_recs ,end_recs  ,time
+linear:   2997     ,0        , 2997     ,4.229358434677124
+parallel: 2997     ,0        , 2997     ,2.519719123840332
+
+# cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson07\assignment
+# python -m pylint ./linear.py
+# python -m pylint ./parallel.py
+# python -m pylint ./create_data.py
