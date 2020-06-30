@@ -1,0 +1,33 @@
+INFO:test_database:Test import_data
+INFO:test_database:test_import_data, result_count = (6, 6, 6), result_errors = (0, 0, 0)
+ERROR:database:Cannot find product_file
+DEBUG:database:Unable to locate product_file
+ERROR:database:Cannot find customer_file
+DEBUG:database:Unable to locate customer_file
+ERROR:database:Cannot find rentals_file
+DEBUG:database:Unable to locate rentals_file
+INFO:test_database:test_import_data, result_count = (0, 0, 0), result_errors = (1, 1, 1)
+INFO:test_database:test_import_data completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+INFO:test_database:test show products with quantities available
+INFO:test_database:available products are {'pid001': {'description': 'sofa', 'product_type': 'livingroom', 'quantity_available': '5'}, 'pid002': {'description': 'washer', 'product_type': 'laundry', 'quantity_available': '4'}, 'pid004': {'description': 'edger', 'product_type': 'garage', 'quantity_available': '2'}, 'pid005': {'description': 'desk', 'product_type': 'office', 'quantity_available': '1'}}
+INFO:test_database:test show_available_products tests completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+INFO:test_database:test start show_rentals
+INFO:test_database:test show_rentals customer who rented product pid001, are {'cid001': {'name': 'JohnSmith', 'address': '111 Broad St.', 'phone_number': '111-222-3333', 'email': 'JohnSmith@gmail.com'}, 'cid004': {'name': 'BettySims', 'address': '444 First St.', 'phone_number': '444-555-6666', 'email': 'BettySims@gmail.com'}}
+INFO:test_database:test show_rentals completed
+.
+----------------------------------------------------------------------
+Ran 4 tests in 2.198s
+
+OK
