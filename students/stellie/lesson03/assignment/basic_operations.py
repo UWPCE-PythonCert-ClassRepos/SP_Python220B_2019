@@ -5,7 +5,7 @@
 
 
 import logging
-from peewee import IntegrityError
+from peewee import IntegrityError, DoesNotExist
 from customer_model import CUSTOMER_DB, Customer
 
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +19,7 @@ LOGGER.info('Customer table created.')
 def add_customer(customer_id, first_name, last_name, home_address,
                  phone, email, status, credit_limit):
     try:
-        with CUSTOMER_DB.atomic():
+        with CUSTOMER_DB.transaction():
             new_customer = Customer.create(
                 customer_id=customer_id,
                 first_name=first_name,
@@ -31,32 +31,63 @@ def add_customer(customer_id, first_name, last_name, home_address,
                 credit_limit=credit_limit
             )
         new_customer.save()
-        LOGGER.DEBUG(f'New customer: {last_name}, {first_name} added to DB')
+        LOGGER.debug('New customer %s %s (ID: %s) has been added to DB',
+                     first_name, last_name, customer_id)
+
     except IntegrityError as error:
-        LOGGER.info('Failure: ID %s already in use.', customer_id)
+        LOGGER.error('Failure: ID %s already in use.', customer_id)
         LOGGER.info(error)
-        raise
+        raise ValueError
 
 
 def search_customer(customer_id):
-    # This function will return a dictionary object with name, lastname,
-    # email address and phone number of a customer or an empty dictionary
-    # object if no customer was found.
+    try:
+        search = Customer.get(Customer.customer_id == customer_id)
+        LOGGER.debug('Searching for customer %s...', customer_id)
+        return {'First Name': search.first_name,
+                'Last Name': search.last_name,
+                'Email Address': search.email,
+                'Phone Number': search.phone}
+
+    except DoesNotExist:
+        LOGGER.error('Customer %s does not exist.', customer_id)
+        return {}
 
 
 def delete_customer(customer_id):
-    # This function will delete a customer from the sqlite3 database.
+    try:
+        search = Customer.get(Customer.customer_id == customer_id)
+        LOGGER.debug('Searching for customer %s...', customer_id)
+        search.delete_instance()
+        LOGGER.debug('Customer %s has been deleted from database.',
+                     customer_id)
+        return search
+
+    except DoesNotExist:
+        LOGGER.error('Customer %s does not exist.', customer_id)
+        return None
 
 
 def update_customer_credit(customer_id, credit_limit):
-    # This function will search an existing customer by customer_id and
-    # update their credit limit or raise a ValueError exception if the
-    # customer does not exist.
+    try:
+        search = Customer.get(Customer.customer_id == customer_id)
+        LOGGER.debug('Searching for customer %s...', customer_id)
+        with CUSTOMER_DB.transaction():
+            search.credit_limit = credit_limit
+            search.save()
+        LOGGER.debug('Credit limit for %s has been updated.', customer_id)
+
+    except IntegrityError as error:
+        LOGGER.error('Customer %s does not exist.', customer_id)
+        LOGGER.info(error)
+        raise ValueError
 
 
 def list_active_customers():
-    # This function will return an integer with the number of customers
-    # whose status is currently active.
+    active_customers = Customer.select().where(Customer.status == 'Active').count()
+    LOGGER.info('Number of customers whose status is currently active: %s.',
+                active_customers)
+    return active_customers
 
 
 CUSTOMER_DB.close()
