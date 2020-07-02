@@ -18,6 +18,7 @@ LOGGER.info('Customer table created.')
 
 def add_customer(customer_id, first_name, last_name, home_address,
                  phone, email, status, credit_limit):
+    """Create a new customer.  Raises error if ID in use."""
     try:
         with CUSTOMER_DB.transaction():
             new_customer = Customer.create(
@@ -41,6 +42,7 @@ def add_customer(customer_id, first_name, last_name, home_address,
 
 
 def search_customer(customer_id):
+    """Search for a customer in the database by ID."""
     try:
         search = Customer.get(Customer.customer_id == customer_id)
         LOGGER.debug('Searching for customer %s...', customer_id)
@@ -55,6 +57,7 @@ def search_customer(customer_id):
 
 
 def delete_customer(customer_id):
+    """Delete a customer from the database by ID."""
     try:
         search = Customer.get(Customer.customer_id == customer_id)
         LOGGER.debug('Searching for customer %s...', customer_id)
@@ -69,6 +72,7 @@ def delete_customer(customer_id):
 
 
 def update_customer_credit(customer_id, credit_limit):
+    """Update a customer's credit limit by ID."""
     try:
         search = Customer.get(Customer.customer_id == customer_id)
         LOGGER.debug('Searching for customer %s...', customer_id)
@@ -77,14 +81,15 @@ def update_customer_credit(customer_id, credit_limit):
             search.save()
         LOGGER.debug('Credit limit for %s has been updated.', customer_id)
 
-    except IntegrityError as error:
+    except DoesNotExist:
         LOGGER.error('Customer %s does not exist.', customer_id)
-        LOGGER.info(error)
-        raise ValueError
+        return None
 
 
 def list_active_customers():
-    active_customers = Customer.select().where(Customer.status == 'Active').count()
+    """Display a count of active customers in the database."""
+    active_customers = Customer.select().where(Customer.status == 
+                                               'Active').count()
     LOGGER.info('Number of customers whose status is currently active: %s.',
                 active_customers)
     return active_customers

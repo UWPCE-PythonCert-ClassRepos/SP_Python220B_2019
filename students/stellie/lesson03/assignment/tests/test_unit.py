@@ -64,8 +64,8 @@ class CustomerTests(TestCase):
         main.update_customer_credit(1, 12000)
         customer = Customer.get(Customer.customer_id == 1)
         self.assertEqual(12000, customer.credit_limit)
-        # with self.assertRaises(ValueError):
-        #     main.update_customer_credit(2, 2000)
+        update = main.update_customer_credit(2, 2000)
+        self.assertEqual(update, None)
 
     def test_list_active_customers(self):
         """Test to check that customer list correctly outputs count"""
