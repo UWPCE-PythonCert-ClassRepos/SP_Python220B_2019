@@ -80,6 +80,7 @@ def update_customer_credit(customer_id, credit_limit):
             search.credit_limit = credit_limit
             search.save()
         LOGGER.debug('Credit limit for %s has been updated.', customer_id)
+        return search.credit_limit
 
     except DoesNotExist:
         LOGGER.error('Customer %s does not exist.', customer_id)
@@ -88,7 +89,7 @@ def update_customer_credit(customer_id, credit_limit):
 
 def list_active_customers():
     """Display a count of active customers in the database."""
-    active_customers = Customer.select().where(Customer.status == 
+    active_customers = Customer.select().where(Customer.status ==
                                                'Active').count()
     LOGGER.info('Number of customers whose status is currently active: %s.',
                 active_customers)
