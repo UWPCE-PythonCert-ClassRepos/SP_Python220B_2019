@@ -5,7 +5,7 @@
 
 from unittest import TestCase
 from peewee import SqliteDatabase
-from customer_model import CUSTOMER_DB, Customer
+from customer_model import Customer
 import basic_operations as main
 
 CUSTOMER_1 = (1, 'John', 'Smith', '123 Main Street', '2065551234',

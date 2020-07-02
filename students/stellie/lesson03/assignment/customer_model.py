@@ -10,7 +10,7 @@ from peewee import (Model, SqliteDatabase, IntegerField, CharField,
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
-CUSTOMER_DB = SqliteDatabase('customer.db')
+CUSTOMER_DB = SqliteDatabase('customers.db')
 CUSTOMER_DB.connect()
 CUSTOMER_DB.execute_sql('PRAGMA foreign_keys = ON;')
 
