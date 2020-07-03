@@ -11,7 +11,7 @@ class TestDatabase(TestCase):
                                'product.csv',
                                'customers.csv',
                                'rental.csv')
-        self.assertEqual(counts, (4, 11, 10))
+        self.assertEqual(counts, (3, 10, 9))
         self.assertEqual(errors, (0, 0, 0))
 
     def test_show_available_products(self):

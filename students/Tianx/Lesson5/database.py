@@ -1,7 +1,9 @@
+# pylint: disable = W0614, W0401, C0301, C0305, R0914
+"""Database.py"""
+import os
+import logging
 import csv
 from pymongo import MongoClient
-import logging
-import os
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -45,50 +47,48 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         product_count, customer_count, rental_count = 0, 0, 0
         product_error_count, customer_error_count, rentals_error_count = 0, 0, 0
         # Reads products data and inserts into database
-        with open(product_path, encoding='utf-8-sig') as csv_file:
-            product_reader = csv.reader(csv_file, delimiter=',')
+        with open(product_path, 'r', encoding='utf-8-sig') as csv_file:
+            product_reader = csv.DictReader(csv_file)
             for product in product_reader:
                 try:
-                    product = {'product_id': product[0],
-                               'description': product[1],
-                               'product_type': product[2],
-                               'quantity_available': product[3]}
+                    product = {'product_id': product['product_id'],
+                               'description': product['description'],
+                               'product_type': product['product_type'],
+                               'quantity_available': product['quantity_available']}
                     products.insert_one(product)
                     product_count += 1
                     LOGGER.info('Product has been added to the product database')
                 except FileNotFoundError:
-                    LOGGER.info(f'File not found')
+                    LOGGER.info('File not found')
                     product_error_count += 1
-                    
         # Reads customer data and inserts into database
-        with open(customer_path, encoding='utf-8-sig') as csv_file:
-            customer_reader = csv.reader(csv_file, delimiter=',')
+        with open(customer_path, 'r', encoding='utf-8-sig') as csv_file:
+            customer_reader = csv.DictReader(csv_file)
             for customer in customer_reader:
                 try:
-                    customer = {'user_id': customer[0],
-                                'name': customer[1],
-                                'address': customer[2],
-                                'phone_number': customer[3],
-                                'email': customer[4]}
+                    customer = {'user_id': customer['user_id'],
+                                'name': customer['name'],
+                                'address': customer['address'],
+                                'phone_number': customer['phone_number'],
+                                'email': customer['email']}
                     customers.insert_one(customer)
                     customer_count += 1
                     LOGGER.info('Customer has been added to the customer database')
                 except FileNotFoundError:
-                    LOGGER.info(f'File not found')
+                    LOGGER.info('File not found')
                     customer_error_count += 1
-                    
         # Reads rentals data and inserts into database
-        with open(rental_path, encoding='utf-8-sig') as csv_file:
-            rental_reader = csv.reader(csv_file, delimiter=',')
+        with open(rental_path, 'r', encoding='utf-8-sig') as csv_file:
+            rental_reader = csv.DictReader(csv_file)
             for rental in rental_reader:
                 try:
-                    rental = {'rental_id': rental[0],
-                              'user_id': rental[1]}
+                    rental = {'product_id': rental['product_id'],
+                              'user_id': rental['user_id']}
                     rentals.insert_one(rental)
                     rental_count += 1
                     LOGGER.info('Rental has been added to the rental database')
                 except FileNotFoundError:
-                    LOGGER.info(f'File not found')
+                    LOGGER.info('File not found')
                     rentals_error_count += 1
         record_count = (product_count, customer_count, rental_count)
         error_count = (product_error_count, customer_error_count, rentals_error_count)
@@ -105,9 +105,10 @@ def show_available_products():
         products = database['products']
         LOGGER.info('Searching or for available products')
         for product in products.find({'quantity_available': {'$gt': '0'}}):
-            available_products[product['product_id']] = {'description': product['description'],
-                                                         'product_type': product['product_type'],
-                                                         'quantity_available': product['quantity_available']}
+            available_products[product['product_id']] = \
+                {'description': product['description'],
+                 'product_type': product['product_type'],
+                 'quantity_available': product['quantity_available']}
     return available_products
 
 
@@ -129,10 +130,11 @@ def show_rentals(product_id):
                 'address': customer['address'],
                 'phone_number': customer['phone_number'],
                 'email': customer['email']}
-    return print(rentals_dict)
+    return rentals_dict
 
 
 def clear_db():
+    """Clears the database"""
     mongo = MongoDBConnection()
     with mongo:
         LOGGER.info('Establish Mongo DB connection')
