@@ -1,16 +1,15 @@
-"""inventory"""
-class Inventory:
-    """inventory class"""
+"""""Inventory class"""""
 
+class Inventory:
+    """method docstring"""
     def __init__(self, product_code, description, market_price, rental_price):
-        """inventory class"""
         self.product_code = product_code
         self.description = description
         self.market_price = market_price
         self.rental_price = rental_price
 
     def return_as_dictionary(self):
-        """inventory class"""
+        """method docstring"""
         output_dict = {}
         output_dict['product_code'] = self.product_code
         output_dict['description'] = self.description

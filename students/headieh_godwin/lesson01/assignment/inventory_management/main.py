@@ -6,7 +6,7 @@ import furniture_class
 import electric_appliances_class as eac
 
 def main_menu(user_prompt=None):
-    """main menu"""
+    """method docstring"""
     valid_prompts = {"1": add_new_item,
                      "2": item_info,
                      "q": exit_program}
@@ -22,14 +22,13 @@ def main_menu(user_prompt=None):
     return valid_prompts.get(user_prompt)
 
 def get_price(item_code):
-    """just a print statement?"""
+    """method docstring"""
     item_price = market_prices.get_latest_price(item_code)
     print("Get price"+item_code)
     return item_price
 
 def add_new_item():
-    """add new item"""
-    global FULLINVENTORY
+    """method docstring"""
     item_code = input("Enter item code: ")
     item_description = input("Enter item description: ")
     item_rental_price = input("Enter item rental price: ")
@@ -64,7 +63,7 @@ def add_new_item():
     print("New inventory item added")
 
 def item_info():
-    """item_info"""
+    """method docstring"""
     item_code = input("Enter item code: ")
     if item_code in FULLINVENTORY:
         print_dict = FULLINVENTORY[item_code]
@@ -74,7 +73,7 @@ def item_info():
         print("Item not found in inventory")
 
 def exit_program():
-    """exit"""
+    """method docstring"""
     sys.exit()
 
 if __name__ == '__main__':

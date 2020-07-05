@@ -1,27 +1,20 @@
-"""furniture class"""
+""""" Furniture class """""
 from inventory_class import Inventory
 
 class Furniture(Inventory):
-    """furniture class"""
+    """method docstring"""
     def __init__(self, product_code,
                  description, market_price,
                  rental_price, material, size):
-        """Init furniture"""
         Inventory.__init__(self, product_code,
                            description, market_price,
                            rental_price)
-        # Creates common instance variables from the parent class
-
         self.material = material
         self.size = size
 
     def return_as_dictionary(self):
-        """Return as Dictionary"""
-        output_dict = {}
-        output_dict['product_code'] = self.product_code
-        output_dict['description'] = self.description
-        output_dict['market_price'] = self.market_price
-        output_dict['rental_price'] = self.rental_price
+        """method docstring"""
+        output_dict = Inventory.return_as_dictionary(self)
         output_dict['material'] = self.material
         output_dict['size'] = self.size
 
