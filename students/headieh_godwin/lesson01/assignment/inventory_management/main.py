@@ -23,9 +23,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """method docstring"""
-    item_price = market_prices.get_latest_price(item_code)
-    print("Get price"+item_code)
-    return item_price
+    print("Get price")
 
 def add_new_item():
     """method docstring"""
