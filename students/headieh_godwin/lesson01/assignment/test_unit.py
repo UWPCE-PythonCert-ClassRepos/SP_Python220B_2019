@@ -3,7 +3,7 @@
 import sys
 import io
 sys.path.append('inventory_management')
-from unittest import TestCase
+from unittest import TestCase, mock
 from unittest.mock import patch, MagicMock
 from inventory_management.electric_appliances_class import ElectricAppliances
 from inventory_management.furniture_class import Furniture
@@ -55,11 +55,10 @@ class TestMarketPrices(TestCase):
         self.assertEqual(24, market_prices.get_latest_price(9))
 
 # test main class
-
 item_info = {'product_code': '400',
-             'description': "refrigerator",
-             'market_price': '800.00',
-             'rental_price': '300.00'}
+            'description': "refrigerator",
+            'market_price': '800.00',
+            'rental_price': '300.00'}
 i_obj = ['300', 'recliner', 20.0, 'n', 'n']
 f_obj = ['200', 'beanbag', 100.0, 'y', 'faux fur', 'L']
 e_obj = ['100', 'lamp', 10.0, 'n', 'y', 'Decor Therapy', 120]
@@ -124,20 +123,25 @@ class TestMain(TestCase):
                 self.assertEqual(i_dict, main.FULLINVENTORY)
 
     def test_item_info(self):
-        exp_print = ('produce_code: 400\n'
-                     'description: refrigerator\n'
-                     'market_price: 800.0\n'
-                     'rental_price: 300.0\n')
 
-        with patch('builtins.input', side_effect=['400']):
-            main.FULLINVENTORY = item_info
-            self.assertEqual(main.item_info(), print(exp_print))
+        out1 = {'product_code':'400',
+                'description':'refrigerator',
+                'market_price':'800.00',
+                'rental_price':'300.00'}
 
-        # test if item is not in inventory
-        with patch('builtins.input', side_effect=['666']):
-            main.FULLINVENTORY = {}
-            exp_string = 'Item not found in this inventory'
-            self.assertEqual(main.item_info(), print(exp_string))
+        main.FULLINVENTORY = {'400': out1}
+
+        with mock.patch("builtins.print") as print_mock, mock.patch("builtins.input") as input_mock:
+            input_mock.return_value = "400"
+
+            main.item_info()
+            for k, val in out1.items():
+                print_mock.assert_any_call(f"{k}:{val}")
+
+        with mock.patch("builtins.print") as print_mock, mock.patch("builtins.input") as input_mock:
+            input_mock.return_value = "666"
+            main.item_info()
+            print_mock.assert_called_with("Item not found in inventory")
 
     def test_get_price(self):
         self.get_price = MagicMock(return_value=24)

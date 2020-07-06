@@ -23,7 +23,7 @@ def main_menu(user_prompt=None):
 
 def get_price(item_code):
     """method docstring"""
-    print("Get price")
+    print(market_prices.get_latest_price(item_code))
 
 def add_new_item():
     """method docstring"""
@@ -65,8 +65,8 @@ def item_info():
     item_code = input("Enter item code: ")
     if item_code in FULLINVENTORY:
         print_dict = FULLINVENTORY[item_code]
-        for i_key, i_val in print_dict.items():
-            print("{}:{}".format(i_key, i_val))
+        for k, val in print_dict.items():
+            print("{}:{}".format(k, val))
     else:
         print("Item not found in inventory")
 
