@@ -1,7 +1,6 @@
 """Unit tests for all classes in the inventory management system"""
 
 import sys
-import io
 sys.path.append('inventory_management')
 from unittest import TestCase, mock
 from unittest.mock import patch, MagicMock
@@ -124,18 +123,13 @@ class TestMain(TestCase):
 
     def test_item_info(self):
 
-        out1 = {'product_code':'400',
-                'description':'refrigerator',
-                'market_price':'800.00',
-                'rental_price':'300.00'}
-
-        main.FULLINVENTORY = {'400': out1}
+        main.FULLINVENTORY = {'400': item_info}
 
         with mock.patch("builtins.print") as print_mock, mock.patch("builtins.input") as input_mock:
             input_mock.return_value = "400"
 
             main.item_info()
-            for k, val in out1.items():
+            for k, val in item_info.items():
                 print_mock.assert_any_call(f"{k}:{val}")
 
         with mock.patch("builtins.print") as print_mock, mock.patch("builtins.input") as input_mock:
@@ -145,7 +139,7 @@ class TestMain(TestCase):
 
     def test_get_price(self):
         self.get_price = MagicMock(return_value=24)
-        self.assertEqual(main.get_price(5), print('Get price'))
+        self.assertEqual(24, main.get_price(5))
 
     def test_exit_program(self):
         with self.assertRaises(SystemExit):
