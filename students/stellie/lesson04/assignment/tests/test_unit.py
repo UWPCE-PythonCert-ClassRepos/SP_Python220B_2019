@@ -67,10 +67,18 @@ class CustomerTests(TestCase):
         update = main.update_customer_credit(2, 2000)
         self.assertEqual(update, None)
 
-    def test_list_active_customers(self):
+    def test_list_active_count(self):
         """Test to check that customer list correctly outputs count"""
         reset_database()
         main.add_customer(*CUSTOMER_1)
         main.add_customer(*CUSTOMER_3)
-        expected = main.list_active_customers()
+        expected = main.list_active_count()
         self.assertEqual(expected, 2)
+    
+    def test_list_active_customers(self):
+        """Test to check that customer list correctly outputs customer names"""
+        reset_database()
+        main.add_customer(*CUSTOMER_1)
+        main.add_customer(*CUSTOMER_3)
+        expected = main.list_active_customers()
+        self.assertEqual(expected, ['John Smith', 'Alice Wonderland'])

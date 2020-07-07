@@ -16,17 +16,14 @@ FORMATTER = logging.Formatter(LOG_FORMAT)
 
 # Setup file handler
 FILE_HANDLER = logging.FileHandler('db.log')
-FILE_HANDLER.setLevel(logging.WARNING)
 FILE_HANDLER.setFormatter(FORMATTER)
 
 # Setup console handler
 CONSOLE_HANDLER = logging.StreamHandler()
-CONSOLE_HANDLER.setLevel(logging.DEBUG)
 CONSOLE_HANDLER.setFormatter(FORMATTER)
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
 LOGGER.addHandler(FILE_HANDLER)
 LOGGER.addHandler(CONSOLE_HANDLER)
 LOGGER.info('Logger has initiated.')
@@ -106,13 +103,21 @@ def update_customer_credit(customer_id, credit_limit):
         return None
 
 
-def list_active_customers():
+def list_active_count():
     """Display a count of active customers in the database."""
-    active_customers = Customer.select().where(Customer.status ==
-                                               'Active').count()
+    active_customers = Customer.select().where(Customer.status).count()
     LOGGER.info('Number of customers whose status is currently active: %s.',
                 active_customers)
     return active_customers
+
+
+def list_active_customers():
+    """Display a list of active customers in the database."""
+    active_customers = Customer.select().where(Customer.status)
+    LOGGER.info('List of customers whose status is currently active: %s.',
+                active_customers)
+    return [customer.first_name + ' ' + customer.last_name for customer
+            in active_customers]
 
 
 CUSTOMER_DB.close()
