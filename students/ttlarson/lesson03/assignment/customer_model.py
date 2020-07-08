@@ -12,7 +12,7 @@
 # pylint: disable=too-few-public-methods
 
 import logging
-from peewee import SqliteDatabase, Model, AutoField, CharField, DecimalField, BooleanField
+from peewee import SqliteDatabase, Model, AutoField, CharField, DecimalField, BooleanField, DoubleField
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -39,8 +39,9 @@ class Customer(BaseModel):
     customer_address = CharField(max_length=300, null=True)
     customer_phone_number = CharField(max_length=20, null=True)
     customer_email = CharField(max_length=100, null=True)
-    credit_limit = DecimalField(max_digits=8, decimal_places=2)
     status = BooleanField(default=False)
+    credit_limit = DoubleField(null=True)
+    # credit_limit = DecimalField(max_digits=18, decimal_places=2)
 
     class Meta:
         """ Meta class to name the table """
