@@ -1,8 +1,8 @@
 "Good Profile Results" 
-{'2013': 111139, '2014': 110984, '2015': 110702, '2016': 110994, '2017': 222284, '2018': 0}
+{'2011': 111541, '2012': 110912, '2013': 111139, '2014': 110984, '2015': 110702, '2016': 110994, '2017': 111355, '2018': 110929, '2019': 0}
 'ao' was found 500109 times
-7.536788377
-         1040013 function calls (1039989 primitive calls) in 7.542 seconds
+3.0792691789999997
+         20826 function calls (20802 primitive calls) in 3.085 seconds
 
    Ordered by: standard name
 
@@ -28,9 +28,9 @@
         7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
         4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:433(spec_from_loader)
         7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
-        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:576(module_from_spec)
+        7    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:576(module_from_spec)
         7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
-      7/3    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:663(_load_unlocked)
+      7/3    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:663(_load_unlocked)
         7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:719(find_spec)
         4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:740(create_module)
         4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:748(exec_module)
@@ -40,8 +40,8 @@
        13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:855(__enter__)
        13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:859(__exit__)
         7    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:882(_find_spec)
-      7/3    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
-      7/3    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap>:978(_find_and_load)
+      7/3    0.000    0.000    0.005    0.002 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+      7/3    0.000    0.000    0.005    0.002 <frozen importlib._bootstrap>:978(_find_and_load)
        15    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1203(_path_importer_cache)
         3    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1240(_get_spec)
         3    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1272(find_spec)
@@ -60,7 +60,7 @@
        60    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:58(<listcomp>)
         6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_split)
         3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:719(create_module)
-        3    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap_external>:722(exec_module)
+        3    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap_external>:722(exec_module)
        18    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
         3    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:793(get_code)
         3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_path_is_mode_type)
@@ -70,11 +70,11 @@
         3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:93(_path_isfile)
         3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:951(path_stats)
         1    0.000    0.000    0.000    0.000 <timeit-src>:2(<module>)
-        1    0.105    0.105    7.537    7.537 <timeit-src>:2(inner)
-        2    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
-        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        1    0.000    0.000    3.079    3.079 <timeit-src>:2(inner)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
         6    0.000    0.000    0.000    0.000 cp1252.py:18(encode)
-    19182    0.018    0.000    0.404    0.000 cp1252.py:22(decode)
+     9591    0.010    0.000    0.206    0.000 cp1252.py:22(decode)
         1    0.000    0.000    0.000    0.000 csv.py:131(DictWriter)
         1    0.000    0.000    0.000    0.000 csv.py:166(Sniffer)
         1    0.000    0.000    0.000    0.000 csv.py:24(Dialect)
@@ -102,19 +102,19 @@
         2    0.000    0.000    0.000    0.000 datetime.py:646(__neg__)
         1    0.000    0.000    0.000    0.000 datetime.py:774(date)
         2    0.000    0.000    0.000    0.000 datetime.py:804(__new__)
-        1    6.935    6.935    7.432    7.432 good_perf.py:10(analyze)
-        1    0.000    0.000    7.542    7.542 good_perf.py:4(<module>)
-        1    0.000    0.000    7.537    7.537 good_perf.py:60(main)
+        1    2.873    2.873    3.079    3.079 good_perf.py:10(analyze)
+        1    0.000    0.000    3.085    3.085 good_perf.py:3(<module>)
+        1    0.000    0.000    3.080    3.080 good_perf.py:49(main)
         1    0.000    0.000    0.000    0.000 timeit.py:100(__init__)
-        1    0.000    0.000    7.537    7.537 timeit.py:162(timeit)
-        1    0.000    0.000    7.537    7.537 timeit.py:229(timeit)
+        1    0.000    0.000    3.079    3.079 timeit.py:162(timeit)
+        1    0.000    0.000    3.080    3.080 timeit.py:229(timeit)
         1    0.000    0.000    0.000    0.000 timeit.py:49(<module>)
         2    0.000    0.000    0.000    0.000 timeit.py:78(reindent)
         1    0.000    0.000    0.000    0.000 timeit.py:82(Timer)
-       22    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x555F1380}
-    19182    0.386    0.000    0.386    0.000 {built-in method _codecs.charmap_decode}
+       22    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x55141380}
+     9591    0.196    0.000    0.196    0.000 {built-in method _codecs.charmap_decode}
         6    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_encode}
-        2    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
         3    0.000    0.000    0.000    0.000 {built-in method _csv.register_dialect}
         3    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
        27    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
@@ -123,7 +123,7 @@
         7    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
         3    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
        27    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
-        2    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale._getdefaultlocale}
        14    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
        14    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
        14    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
@@ -131,7 +131,7 @@
         7    0.000    0.000    0.000    0.000 {built-in method builtins.any}
         3    0.000    0.000    0.000    0.000 {built-in method builtins.compile}
        60    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
-      5/1    0.000    0.000    7.542    7.542 {built-in method builtins.exec}
+      5/1    0.000    0.000    3.085    3.085 {built-in method builtins.exec}
        34    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
         1    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
        42    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
@@ -143,14 +143,14 @@
         1    0.000    0.000    0.000    0.000 {built-in method gc.disable}
         1    0.000    0.000    0.000    0.000 {built-in method gc.enable}
         1    0.000    0.000    0.000    0.000 {built-in method gc.isenabled}
-        2    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
         3    0.001    0.000    0.001    0.000 {built-in method marshal.loads}
         2    0.000    0.000    0.000    0.000 {built-in method now}
         9    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
         3    0.000    0.000    0.000    0.000 {built-in method nt.getcwd}
        18    0.001    0.000    0.001    0.000 {built-in method nt.stat}
         2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
-  1000012    0.093    0.000    0.093    0.000 {method 'append' of 'list' objects}
+       12    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
         3    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
         1    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
