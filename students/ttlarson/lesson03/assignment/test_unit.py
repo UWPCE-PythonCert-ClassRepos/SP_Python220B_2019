@@ -117,6 +117,27 @@ class BasicOperationsTest(TestCase):
         # clean up
         self.delete_customers()
 
+    def test_add_customer_existing(self):
+        """ unit test for adding cutomers to the database """
+        # set up
+        self.add_customers()
+
+        try:
+            basic_operations.add_customer(CUSTOMER_3['customer_id'],
+                                        CUSTOMER_3['customer_name'],
+                                        CUSTOMER_3['customer_lastname'],
+                                        CUSTOMER_3['customer_address'],
+                                        CUSTOMER_3['customer_phone_number'],
+                                        CUSTOMER_3['customer_email'],
+                                        CUSTOMER_3['status'],
+                                        CUSTOMER_3['credit_limit']
+                                        )
+        except Exception as err:
+            self.fail(err)
+
+        # clean up
+        self.delete_customers()
+
     def test_search_customer(self):
         """ unit test for searching for cutomers in the database """
         # set up
@@ -167,6 +188,7 @@ class BasicOperationsTest(TestCase):
         self.add_customers()
 
         self.assertEqual(3, basic_operations.list_active_customers())
+        self.assertNotEqual(0, basic_operations.list_active_customers())
 
         # clean up
         self.delete_customers()
@@ -185,6 +207,10 @@ class BasicOperationsTest(TestCase):
         self.assertEqual({}, db_customer_1)
         self.assertEqual({}, db_customer_2)
         self.assertEqual({}, db_customer_3)
+
+        self.assertNotEqual(CUSTOMER_1, db_customer_1)
+        self.assertNotEqual(CUSTOMER_2, db_customer_2)
+        self.assertNotEqual(CUSTOMER_3, db_customer_3)
 '''
 
 '''
