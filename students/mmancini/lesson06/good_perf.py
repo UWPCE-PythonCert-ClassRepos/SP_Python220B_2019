@@ -15,7 +15,7 @@ def analyze(filename):
     """
 
     start = datetime.datetime.now()
-    with open("data/exercise.csv") as csvfile:
+    with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         found = 0
     
