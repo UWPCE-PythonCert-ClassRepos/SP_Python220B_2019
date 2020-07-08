@@ -1,5 +1,5 @@
 '''
-    sp_py220 lesson6, create expanded data file
+    create exercise.csv
 '''
 import csv
 import uuid
@@ -8,8 +8,8 @@ import random
 
 def random_date():
     '''
-        des: return a random date
-        out: random date mm/dd/yyyy
+        returns a random date between 1/1/2010 and 12/31/2018
+        in the format 'month/day/year'
     '''
     low_range = [1, 1, 2010]
     high_range = [12, 31, 2019]
@@ -34,7 +34,11 @@ def random_date():
 
 def write_csv():
     '''
-        write 1M ros csv, 7 data cols
+        writes a 1,000,000 row csv file with 7 columns:
+            1: UUID
+            2-5: incrementally ascending numbers
+            6: randomly generated date
+            7: 'ao' or ''
     '''
     column_two = 0
     column_three = 1
