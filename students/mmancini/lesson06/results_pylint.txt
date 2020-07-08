@@ -1,18 +1,5 @@
 "" 
-************* Module good_perf
-good_perf.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-good_perf.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
-good_perf.py:53:0: C0330: Wrong hanging indentation (add 4 spaces).
-    'perfomance = analyze(FILENAME)',
-    ^   | (bad-continuation)
-good_perf.py:54:0: C0330: Wrong hanging indentation (add 4 spaces).
-    globals=globals(),
-    ^   | (bad-continuation)
-good_perf.py:55:0: C0330: Wrong hanging indentation (add 4 spaces).
-    number=1))
-    ^   | (bad-continuation)
-good_perf.py:49:0: C0116: Missing function or method docstring (missing-function-docstring)
 
------------------------------------
-Your code has been rated at 7.60/10
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 

@@ -18,7 +18,7 @@ def analyze(filename):
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         found = 0
-    
+
         year_count = {
             "2011": 0,
             "2012": 0,
@@ -38,7 +38,7 @@ def analyze(filename):
                 year_count[row[5][6:]] += 1
             except KeyError:
                 continue
-        
+
         print(year_count)
         print(f"'ao' was found {found} times")
 
@@ -47,12 +47,16 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
+    """
+        Des: Main
+    """
+
     #filename = "data/exercise.csv"
     #analyze(filename)
     print(timer(
-    'perfomance = analyze(FILENAME)',
-    globals=globals(),
-    number=1))
+        'perfomance = analyze(FILENAME)',
+        globals=globals(),
+        number=1))
 
 
 
