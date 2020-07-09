@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 db = SqliteDatabase('customers.db')
 db.connect()
-
+db.execute_sql('PRAGMA foreign_keys = ON;')
 
 class BaseModel(Model):
     """ Base model for Customer """
