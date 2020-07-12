@@ -1,0 +1,637 @@
+Performance differences:
+Linear: 1.578 seconds
+Parallel: 1.055 seconds
+
+Parallel is around 50% faster. I expect the difference to be more significant as the record
+size grows.
+
+Since the imports are not CPU bound and independent, I can take advantage of multithreading by
+splitting the task into sub-tasks and use different processors.
+
+In my lesson 5 homework, the import function imports product file, customer file and rental
+file in the same function which could fail due to contention when the data is not separated.
+This  could be avoided by creating multiple import functions for each collection which is what
+I did in Lesson 7.
+
+
+1102782 function calls (1090749 primitive calls) in 1.578 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:650(_load_unlocked)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:986(_find_and_load)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1010(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1265(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1302(_get_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1334(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1426(_get_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:294(cache_from_source)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:424(_get_cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:456(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:493(_classify_pyc)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_unpack_uint32)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:526(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:578(_compile_bytecode)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_join)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:629(spec_from_file_location)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:64(<listcomp>)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_path_split)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:774(create_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:777(exec_module)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:80(_path_stat)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:849(get_code)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:90(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:939(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:964(get_filename)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:969(get_data)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:99(_path_isfile)
+     3002    0.005    0.000    0.014    0.000 __init__.py:1058(flush)
+     3002    0.006    0.000    0.058    0.000 __init__.py:1069(emit)
+     3002    0.005    0.000    0.022    0.000 __init__.py:1074(_decode_all_selective)
+     3002    0.002    0.000    0.002    0.000 __init__.py:119(getLevelName)
+     3002    0.007    0.000    0.174    0.000 __init__.py:1424(info)
+     3002    0.009    0.000    0.015    0.000 __init__.py:1502(findCaller)
+     3002    0.004    0.000    0.063    0.000 __init__.py:1538(makeRecord)
+     3002    0.007    0.000    0.166    0.000 __init__.py:1553(_log)
+     3002    0.002    0.000    0.003    0.000 __init__.py:156(<lambda>)
+     3002    0.003    0.000    0.081    0.000 __init__.py:1579(handle)
+     3002    0.007    0.000    0.075    0.000 __init__.py:1633(callHandlers)
+        1    0.000    0.000    0.000    0.000 __init__.py:1663(getEffectiveLevel)
+     3002    0.002    0.000    0.002    0.000 __init__.py:1677(isEnabledFor)
+        1    0.000    0.000    0.000    0.000 __init__.py:214(_acquireLock)
+        1    0.000    0.000    0.000    0.000 __init__.py:223(_releaseLock)
+     3002    0.028    0.000    0.059    0.000 __init__.py:284(__init__)
+     3002    0.002    0.000    0.002    0.000 __init__.py:360(getMessage)
+        3    0.000    0.000    0.000    0.000 __init__.py:400(_make)
+        3    0.000    0.000    0.000    0.000 __init__.py:410(_replace)
+     3002    0.002    0.000    0.004    0.000 __init__.py:423(usesTime)
+        1    0.000    0.000    0.000    0.000 __init__.py:43(normalize_encoding)
+     3002    0.007    0.000    0.007    0.000 __init__.py:431(_format)
+     3002    0.003    0.000    0.010    0.000 __init__.py:434(format)
+     3002    0.002    0.000    0.006    0.000 __init__.py:629(usesTime)
+     3002    0.001    0.000    0.012    0.000 __init__.py:635(formatMessage)
+     3002    0.005    0.000    0.025    0.000 __init__.py:651(format)
+        1    0.000    0.000    0.001    0.001 __init__.py:70(search_function)
+     6004    0.003    0.000    0.003    0.000 __init__.py:792(filter)
+     6004    0.003    0.000    0.006    0.000 __init__.py:894(acquire)
+     6004    0.003    0.000    0.004    0.000 __init__.py:901(release)
+     3002    0.002    0.000    0.027    0.000 __init__.py:914(format)
+     3002    0.005    0.000    0.069    0.000 __init__.py:937(handle)
+     3006    0.001    0.000    0.001    0.000 _collections_abc.py:392(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 _collections_abc.py:672(keys)
+        1    0.000    0.000    0.000    0.000 _collections_abc.py:676(items)
+        2    0.000    0.000    0.000    0.000 _collections_abc.py:698(__init__)
+        4    0.000    0.000    0.000    0.000 _collections_abc.py:719(__iter__)
+        4    0.000    0.000    0.000    0.000 _collections_abc.py:742(__iter__)
+        2    0.000    0.000    0.000    0.000 _weakrefset.py:81(add)
+3006/3005    0.001    0.000    0.005    0.000 abc.py:100(__subclasscheck__)
+    24009    0.007    0.000    0.023    0.000 abc.py:96(__instancecheck__)
+        1    0.000    0.000    0.000    0.000 binary.py:148(__new__)
+     3001    0.001    0.000    0.001    0.000 binary.py:158(subtype)
+        1    0.000    0.000    0.000    0.000 client_options.py:109(_parse_pool_options)
+        1    0.000    0.000    0.000    0.000 client_options.py:146(__init__)
+        1    0.000    0.000    0.000    0.000 client_options.py:182(codec_options)
+        1    0.000    0.000    0.000    0.000 client_options.py:187(credentials)
+        1    0.000    0.000    0.000    0.000 client_options.py:192(local_threshold_ms)
+        1    0.000    0.000    0.000    0.000 client_options.py:197(server_selection_timeout)
+        1    0.000    0.000    0.000    0.000 client_options.py:202(server_selector)
+        1    0.000    0.000    0.000    0.000 client_options.py:206(heartbeat_frequency)
+        2    0.000    0.000    0.000    0.000 client_options.py:211(pool_options)
+        1    0.000    0.000    0.000    0.000 client_options.py:216(read_preference)
+        1    0.000    0.000    0.000    0.000 client_options.py:221(replica_set_name)
+        1    0.000    0.000    0.000    0.000 client_options.py:226(write_concern)
+        1    0.000    0.000    0.000    0.000 client_options.py:231(read_concern)
+     3000    0.001    0.000    0.001    0.000 client_options.py:236(retry_writes)
+        1    0.000    0.000    0.000    0.000 client_options.py:246(auto_encryption_opts)
+        1    0.000    0.000    0.000    0.000 client_options.py:33(_parse_credentials)
+        1    0.000    0.000    0.000    0.000 client_options.py:43(_parse_read_preference)
+        1    0.000    0.000    0.000    0.000 client_options.py:55(_parse_write_concern)
+        1    0.000    0.000    0.000    0.000 client_options.py:64(_parse_read_concern)
+        1    0.000    0.000    0.000    0.000 client_options.py:70(_parse_ssl_options)
+        1    0.000    0.000    0.000    0.000 client_options.py:84(<listcomp>)
+     3000    0.002    0.000    0.002    0.000 client_session.py:131(__init__)
+     3002    0.002    0.000    0.003    0.000 client_session.py:240(_validate_session_write_concern)
+     3000    0.003    0.000    0.003    0.000 client_session.py:289(__init__)
+    18000    0.008    0.000    0.008    0.000 client_session.py:296(active)
+     3000    0.002    0.000    0.002    0.000 client_session.py:299(reset)
+     3000    0.004    0.000    0.007    0.000 client_session.py:338(__init__)
+     3000    0.005    0.000    0.028    0.000 client_session.py:357(_end_session)
+     6000    0.001    0.000    0.001    0.000 client_session.py:366(_check_ended)
+     3000    0.000    0.000    0.000    0.000 client_session.py:370(__enter__)
+     3000    0.002    0.000    0.030    0.000 client_session.py:373(__exit__)
+     3000    0.001    0.000    0.001    0.000 client_session.py:394(cluster_time)
+     3000    0.002    0.000    0.002    0.000 client_session.py:705(_advance_cluster_time)
+     3000    0.001    0.000    0.001    0.000 client_session.py:728(_advance_operation_time)
+     3000    0.005    0.000    0.012    0.000 client_session.py:749(_process_response)
+    15000    0.007    0.000    0.014    0.000 client_session.py:763(in_transaction)
+     3000    0.002    0.000    0.003    0.000 client_session.py:771(_pinned_address)
+     3000    0.008    0.000    0.020    0.000 client_session.py:793(_apply_to)
+     3000    0.002    0.000    0.005    0.000 client_session.py:832(_start_retryable_write)
+        1    0.000    0.000    0.000    0.000 client_session.py:838(__init__)
+     8998    0.009    0.000    0.010    0.000 client_session.py:854(timed_out)
+     3000    0.002    0.000    0.002    0.000 client_session.py:865(inc_transaction_id)
+        1    0.000    0.000    0.000    0.000 client_session.py:874(__init__)
+        1    0.000    0.000    0.000    0.000 client_session.py:882(pop_all)
+     3000    0.004    0.000    0.013    0.000 client_session.py:888(get_server_session)
+     3000    0.004    0.000    0.011    0.000 client_session.py:904(return_server_session)
+     3000    0.002    0.000    0.003    0.000 client_session.py:909(return_server_session_no_lock)
+     6000    0.003    0.000    0.007    0.000 client_session.py:915(_clear_stale)
+        1    0.000    0.000    0.000    0.000 codec_options.py:241(__new__)
+        1    0.000    0.000    0.000    0.000 codec_options.py:320(_parse_codec_options)
+        3    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        3    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+       24    0.000    0.000    0.000    0.000 codecs.py:319(decode)
+        1    0.000    0.000    0.000    0.000 codecs.py:94(__new__)
+        3    0.000    0.000    0.000    0.000 collation.py:216(validate_collation_or_none)
+     3000    0.001    0.000    0.001    0.000 collection.py:311(name)
+     3000    0.021    0.000    1.281    0.000 collection.py:556(_insert_one)
+     3000    0.010    0.000    0.816    0.000 collection.py:575(_insert_command)
+     3000    0.008    0.000    1.292    0.000 collection.py:605(_insert)
+     3000    0.018    0.000    1.360    0.000 collection.py:651(insert_one)
+        3    0.000    0.000    0.000    0.000 collection.py:79(__init__)
+        2    0.000    0.000    0.000    0.000 common.py:155(validate_boolean)
+        2    0.000    0.000    0.000    0.000 common.py:162(validate_boolean_or_string)
+        1    0.000    0.000    0.000    0.000 common.py:430(validate_document_class)
+     3000    0.002    0.000    0.014    0.000 common.py:477(validate_is_document_type)
+        3    0.000    0.000    0.000    0.000 common.py:720(validate)
+        5    0.000    0.000    0.000    0.000 common.py:782(__init__)
+        7    0.000    0.000    0.000    0.000 common.py:806(codec_options)
+     3004    0.001    0.000    0.001    0.000 common.py:813(write_concern)
+     3000    0.002    0.000    0.003    0.000 common.py:823(_write_concern_for)
+        4    0.000    0.000    0.000    0.000 common.py:831(read_preference)
+        4    0.000    0.000    0.000    0.000 common.py:848(read_concern)
+        2    0.000    0.000    0.000    0.000 common.py:859(__init__)
+        2    0.000    0.000    0.000    0.000 common.py:867(__len__)
+        3    0.000    0.000    0.000    0.000 common.py:870(__iter__)
+       12    0.000    0.000    0.000    0.000 common.py:871(<genexpr>)
+        6    0.000    0.000    0.000    0.000 common.py:876(__setitem__)
+        6    0.000    0.000    0.000    0.000 common.py:881(__getitem__)
+        2    0.000    0.000    0.000    0.000 common.py:926(update)
+        1    0.000    0.000    0.000    0.000 compression_support.py:86(__init__)
+        1    0.000    0.000    0.000    0.000 compression_support.py:90(get_compression_context)
+9003/6001    0.007    0.000    0.125    0.000 contextlib.py:108(__enter__)
+9003/6001    0.010    0.000    0.097    0.000 contextlib.py:117(__exit__)
+     9003    0.006    0.000    0.022    0.000 contextlib.py:238(helper)
+     9003    0.013    0.000    0.016    0.000 contextlib.py:82(__init__)
+     20/2    0.000    0.000    0.000    0.000 copy.py:128(deepcopy)
+       14    0.000    0.000    0.000    0.000 copy.py:182(_deepcopy_atomic)
+        6    0.000    0.000    0.000    0.000 copy.py:241(_keep_alive)
+     3003    0.013    0.000    0.025    0.000 csv.py:107(__next__)
+        3    0.000    0.000    0.000    0.000 csv.py:81(__init__)
+        3    0.000    0.000    0.000    0.000 csv.py:90(__iter__)
+     6003    0.002    0.000    0.003    0.000 csv.py:93(fieldnames)
+     6000    0.002    0.000    0.002    0.000 database.py:156(client)
+     3003    0.001    0.000    0.001    0.000 database.py:161(name)
+        3    0.000    0.000    0.000    0.000 database.py:292(__getitem__)
+        1    0.000    0.000    0.000    0.000 database.py:43(_check_name)
+        1    0.000    0.000    0.000    0.000 database.py:59(__init__)
+        2    0.000    0.000    0.000    0.000 enum.py:278(__call__)
+        2    0.000    0.000    0.000    0.000 enum.py:557(__new__)
+     3002    0.005    0.000    0.006    0.000 genericpath.py:121(_splitext)
+     3002    0.002    0.000    0.002    0.000 helpers.py:105(_check_command_response)
+     3000    0.002    0.000    0.003    0.000 helpers.py:215(_check_write_command_response)
+        1    0.000    0.000    0.000    0.000 idna.py:147(encode)
+        6    0.000    0.000    0.000    0.000 ismaster.py:102(max_bson_size)
+        3    0.000    0.000    0.000    0.000 ismaster.py:106(max_message_size)
+        3    0.000    0.000    0.000    0.000 ismaster.py:110(max_write_batch_size)
+        2    0.000    0.000    0.000    0.000 ismaster.py:114(min_wire_version)
+        4    0.000    0.000    0.000    0.000 ismaster.py:118(max_wire_version)
+        2    0.000    0.000    0.000    0.000 ismaster.py:122(set_version)
+        2    0.000    0.000    0.000    0.000 ismaster.py:126(election_id)
+        2    0.000    0.000    0.000    0.000 ismaster.py:130(cluster_time)
+        3    0.000    0.000    0.000    0.000 ismaster.py:134(logical_session_timeout_minutes)
+        3    0.000    0.000    0.000    0.000 ismaster.py:138(is_writable)
+        2    0.000    0.000    0.000    0.000 ismaster.py:142(is_readable)
+        2    0.000    0.000    0.000    0.000 ismaster.py:146(me)
+        2    0.000    0.000    0.000    0.000 ismaster.py:152(last_write_date)
+        1    0.000    0.000    0.000    0.000 ismaster.py:156(compressors)
+        3    0.000    0.000    0.000    0.000 ismaster.py:24(_get_server_type)
+        3    0.000    0.000    0.000    0.000 ismaster.py:51(__init__)
+        6    0.000    0.000    0.000    0.000 ismaster.py:72(server_type)
+        2    0.000    0.000    0.000    0.000 ismaster.py:76(all_hosts)
+        2    0.000    0.000    0.000    0.000 ismaster.py:84(tags)
+        2    0.000    0.000    0.000    0.000 ismaster.py:89(primary)
+        2    0.000    0.000    0.000    0.000 ismaster.py:97(replica_set_name)
+        1    0.000    0.000    0.000    0.000 linear.py:17(__init__)
+        1    0.000    0.000    0.001    0.001 linear.py:22(__enter__)
+        1    0.000    0.000    0.000    0.000 linear.py:26(__exit__)
+        1    0.015    0.015    1.578    1.578 linear.py:30(import_data)
+        1    0.000    0.000    0.000    0.000 message.py:1471(__init__)
+        1    0.000    0.000    0.000    0.000 message.py:1477(raw_response)
+        1    0.000    0.000    0.000    0.000 message.py:1516(unpack_response)
+        1    0.000    0.000    0.000    0.000 message.py:1551(unpack)
+     3001    0.002    0.000    0.002    0.000 message.py:1571(__init__)
+     3001    0.004    0.000    0.026    0.000 message.py:1578(unpack_response)
+     3001    0.010    0.000    0.015    0.000 message.py:1601(unpack)
+     3001    0.015    0.000    0.131    0.000 message.py:684(_op_msg)
+        1    0.000    0.000    0.000    0.000 message.py:767(query)
+     3000    0.002    0.000    0.003    0.000 mongo_client.py:1105(retry_writes)
+        1    0.000    0.000    0.000    0.000 mongo_client.py:1129(_end_sessions)
+        1    0.000    0.000    0.000    0.000 mongo_client.py:1150(close)
+     3002    0.006    0.000    0.049    0.000 mongo_client.py:1206(_get_topology)
+     6002    0.016    0.000    0.118    0.000 mongo_client.py:1217(_get_socket)
+     3001    0.008    0.000    0.119    0.000 mongo_client.py:1232(_select_server)
+        2    0.000    0.000    0.000    0.000 mongo_client.py:1287(_socket_for_reads)
+     3000    0.021    0.000    1.104    0.000 mongo_client.py:1348(_retry_with_session)
+     3000    0.001    0.000    0.001    0.000 mongo_client.py:1361(is_retrying)
+     3000    0.010    0.000    1.217    0.000 mongo_client.py:1488(_retryable_write)
+        1    0.000    0.000    0.000    0.000 mongo_client.py:1542(__getattr__)
+        1    0.000    0.000    0.000    0.000 mongo_client.py:1557(__getitem__)
+        1    0.000    0.000    0.000    0.000 mongo_client.py:1720(_process_kill_cursors)
+     3000    0.013    0.000    0.047    0.000 mongo_client.py:1753(__start_session)
+     3000    0.002    0.000    0.024    0.000 mongo_client.py:1794(_get_server_session)
+     3000    0.002    0.000    0.020    0.000 mongo_client.py:1798(_return_server_session)
+     3000    0.003    0.000    0.050    0.000 mongo_client.py:1802(_ensure_session)
+     6000    0.006    0.000    0.087    0.000 mongo_client.py:1815(_tmp_session)
+     3001    0.004    0.000    0.005    0.000 mongo_client.py:1838(_send_cluster_time)
+     3001    0.006    0.000    0.024    0.000 mongo_client.py:1851(_process_response)
+     3001    0.002    0.000    0.002    0.000 mongo_client.py:2167(__init__)
+     3001    0.001    0.000    0.001    0.000 mongo_client.py:2173(contribute_socket)
+     3001    0.000    0.000    0.000    0.000 mongo_client.py:2178(__enter__)
+     3001    0.001    0.000    0.001    0.000 mongo_client.py:2181(__exit__)
+        4    0.000    0.000    0.000    0.000 mongo_client.py:647(<genexpr>)
+        1    0.000    0.000    0.001    0.001 mongo_client.py:96(__init__)
+        1    0.000    0.000    0.000    0.000 monitor.py:100(close)
+     3005    0.002    0.000    0.018    0.000 monitor.py:33(open)
+        1    0.000    0.000    0.000    0.000 monitor.py:40(close)
+        1    0.000    0.000    0.000    0.000 monitor.py:51(request_check)
+        1    0.000    0.000    0.000    0.000 monitor.py:57(__init__)
+        1    0.000    0.000    0.000    0.000 monitoring.py:1115(__init__)
+     3001    0.001    0.000    0.001    0.000 monitoring.py:1141(enabled_for_commands)
+        2    0.000    0.000    0.000    0.000 monitoring.py:1146(enabled_for_server)
+        1    0.000    0.000    0.000    0.000 monitoring.py:1151(enabled_for_server_heartbeat)
+        1    0.000    0.000    0.000    0.000 monitoring.py:1156(enabled_for_topology)
+        1    0.000    0.000    0.000    0.000 monitoring.py:1161(enabled_for_cmap)
+     3002    0.012    0.000    0.497    0.000 network.py:192(receive_message)
+     6004    0.023    0.000    0.467    0.000 network.py:249(_receive_data_on_socket)
+        2    0.000    0.000    0.000    0.000 network.py:279(__init__)
+     3002    0.029    0.000    0.747    0.000 network.py:53(command)
+     3001    0.003    0.000    0.003    0.000 objectid.py:165(_random)
+     3001    0.016    0.000    0.022    0.000 objectid.py:175(__generate)
+     3000    0.001    0.000    0.001    0.000 objectid.py:218(binary)
+     3001    0.002    0.000    0.024    0.000 objectid.py:63(__init__)
+        1    0.000    0.000    0.000    0.000 periodic_executor.py:101(wake)
+        2    0.000    0.000    0.000    0.000 periodic_executor.py:147(_register_executor)
+        2    0.000    0.000    0.000    0.000 periodic_executor.py:26(__init__)
+     6008    0.010    0.000    0.025    0.000 periodic_executor.py:53(open)
+        5    0.000    0.000    0.000    0.000 periodic_executor.py:85(close)
+        2    0.000    0.000    0.000    0.000 pool.py:1030(reset)
+        1    0.000    0.000    0.001    0.001 pool.py:1071(connect)
+     6002    0.008    0.000    0.078    0.000 pool.py:1107(get_socket)
+     3001    0.012    0.000    0.027    0.000 pool.py:1155(_get_socket_no_auth)
+     3001    0.016    0.000    0.040    0.000 pool.py:1203(return_socket)
+        1    0.000    0.000    0.000    0.000 pool.py:122(_set_non_inheritable_non_atomic)
+     3000    0.004    0.000    0.007    0.000 pool.py:1231(_perished)
+        2    0.000    0.000    0.000    0.000 pool.py:1269(__del__)
+        3    0.000    0.000    0.000    0.000 pool.py:170(_set_tcp_option)
+        1    0.000    0.000    0.000    0.000 pool.py:183(_set_keepalive_times)
+        2    0.000    0.000    0.000    0.000 pool.py:303(__init__)
+        2    0.000    0.000    0.000    0.000 pool.py:366(max_pool_size)
+     3000    0.001    0.000    0.001    0.000 pool.py:388(max_idle_time_seconds)
+        3    0.000    0.000    0.000    0.000 pool.py:396(connect_timeout)
+        1    0.000    0.000    0.000    0.000 pool.py:402(socket_timeout)
+     3001    0.001    0.000    0.001    0.000 pool.py:408(wait_queue_timeout)
+        2    0.000    0.000    0.000    0.000 pool.py:415(wait_queue_multiple)
+        2    0.000    0.000    0.000    0.000 pool.py:422(ssl_context)
+        1    0.000    0.000    0.000    0.000 pool.py:428(ssl_match_hostname)
+        2    0.000    0.000    0.000    0.000 pool.py:434(socket_keepalive)
+     6012    0.002    0.000    0.002    0.000 pool.py:441(event_listeners)
+        1    0.000    0.000    0.000    0.000 pool.py:447(appname)
+        1    0.000    0.000    0.000    0.000 pool.py:453(driver)
+        1    0.000    0.000    0.000    0.000 pool.py:459(compression_settings)
+        1    0.000    0.000    0.000    0.000 pool.py:463(metadata)
+        1    0.000    0.000    0.000    0.000 pool.py:479(__init__)
+        1    0.000    0.000    0.000    0.000 pool.py:505(ismaster)
+     3002    0.021    0.000    0.802    0.000 pool.py:533(command)
+     3001    0.001    0.000    0.001    0.000 pool.py:648(_raise_if_not_writable)
+     3001    0.002    0.000    0.002    0.000 pool.py:693(check_auth)
+     3002    0.002    0.000    0.002    0.000 pool.py:733(validate_session)
+        2    0.000    0.000    0.000    0.000 pool.py:749(close_socket)
+     3002    0.003    0.000    0.008    0.000 pool.py:764(send_cluster_time)
+     3001    0.002    0.000    0.003    0.000 pool.py:769(update_last_checkin_time)
+     3001    0.001    0.000    0.001    0.000 pool.py:772(update_is_writable)
+     3000    0.002    0.000    0.002    0.000 pool.py:775(idle_time_seconds)
+        1    0.000    0.000    0.000    0.000 pool.py:816(_create_connection)
+        1    0.000    0.000    0.000    0.000 pool.py:888(_configured_socket)
+        2    0.000    0.000    0.000    0.000 pool.py:946(__init__)
+        2    0.000    0.000    0.000    0.000 pool.py:995(_reset)
+     3002    0.004    0.000    0.011    0.000 posixpath.py:117(splitext)
+     3002    0.005    0.000    0.010    0.000 posixpath.py:140(basename)
+     3005    0.001    0.000    0.002    0.000 posixpath.py:41(_get_sep)
+     3002    0.002    0.000    0.002    0.000 posixpath.py:52(normcase)
+        3    0.000    0.000    0.000    0.000 posixpath.py:71(join)
+     3004    0.002    0.000    0.003    0.000 py3compat.py:49(itervalues)
+        4    0.000    0.000    0.000    0.000 py3compat.py:58(_unicode)
+     3001    0.004    0.000    0.006    0.000 random.py:250(_randbelow_with_getrandbits)
+     3001    0.004    0.000    0.010    0.000 random.py:285(choice)
+        1    0.000    0.000    0.000    0.000 read_concern.py:34(__init__)
+     3001    0.004    0.000    0.004    0.000 read_preferences.py:108(document)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:119(mode)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:147(min_wire_version)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:203(__init__)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:364(make_read_preference)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:40(_validate_tag_sets)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:442(read_pref_mode_from_name)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:450(__init__)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:70(_validate_max_staleness)
+        1    0.000    0.000    0.000    0.000 read_preferences.py:90(__init__)
+     3000    0.001    0.000    0.001    0.000 results.py:25(__init__)
+     3000    0.005    0.000    0.006    0.000 results.py:62(__init__)
+     3001    0.003    0.000    0.009    0.000 server.py:199(get_socket)
+     9002    0.001    0.000    0.001    0.000 server.py:202(description)
+        1    0.000    0.000    0.000    0.000 server.py:206(description)
+     3001    0.001    0.000    0.001    0.000 server.py:211(pool)
+        1    0.000    0.000    0.000    0.000 server.py:31(__init__)
+     3005    0.002    0.000    0.020    0.000 server.py:44(open)
+        1    0.000    0.000    0.000    0.000 server.py:55(close)
+        1    0.000    0.000    0.000    0.000 server.py:66(request_check)
+        2    0.000    0.000    0.000    0.000 server_description.py:186(is_readable)
+     3001    0.001    0.000    0.001    0.000 server_description.py:190(mongos)
+     3006    0.002    0.000    0.003    0.000 server_description.py:194(is_server_type_known)
+     3000    0.002    0.000    0.002    0.000 server_description.py:198(retryable_writes_supported)
+        2    0.000    0.000    0.000    0.000 server_description.py:41(__init__)
+     6004    0.001    0.000    0.001    0.000 server_description.py:79(address)
+     3006    0.001    0.000    0.001    0.000 server_description.py:84(server_type)
+        1    0.000    0.000    0.000    0.000 settings.py:101(heartbeat_frequency)
+        1    0.000    0.000    0.000    0.000 settings.py:105(fqdn)
+        1    0.000    0.000    0.000    0.000 settings.py:109(direct)
+        1    0.000    0.000    0.000    0.000 settings.py:117(get_topology_type)
+        1    0.000    0.000    0.000    0.000 settings.py:125(get_server_descriptions)
+        1    0.000    0.000    0.000    0.000 settings.py:127(<listcomp>)
+        1    0.000    0.000    0.000    0.000 settings.py:29(__init__)
+        2    0.000    0.000    0.000    0.000 settings.py:64(seeds)
+        1    0.000    0.000    0.000    0.000 settings.py:69(replica_set_name)
+        2    0.000    0.000    0.000    0.000 settings.py:73(pool_class)
+        2    0.000    0.000    0.000    0.000 settings.py:77(pool_options)
+        1    0.000    0.000    0.000    0.000 settings.py:81(monitor_class)
+        1    0.000    0.000    0.000    0.000 settings.py:85(condition_class)
+     3002    0.001    0.000    0.001    0.000 settings.py:93(server_selection_timeout)
+     3003    0.001    0.000    0.001    0.000 settings.py:97(server_selector)
+        1    0.000    0.000    0.000    0.000 socket.py:219(__init__)
+        2    0.000    0.000    0.000    0.000 socket.py:492(_real_close)
+        2    0.000    0.000    0.000    0.000 socket.py:496(close)
+        1    0.000    0.000    0.000    0.000 socket.py:897(getaddrinfo)
+        2    0.000    0.000    0.000    0.000 socket.py:97(_intenum_converter)
+     3001    0.004    0.000    0.008    0.000 son.py:114(pop)
+     6019    0.009    0.000    0.020    0.000 son.py:135(update)
+      6/2    0.000    0.000    0.000    0.000 son.py:190(__deepcopy__)
+     3009    0.005    0.000    0.025    0.000 son.py:40(__init__)
+     3009    0.006    0.000    0.007    0.000 son.py:46(__new__)
+    21027    0.019    0.000    0.022    0.000 son.py:57(__setitem__)
+     3000    0.003    0.000    0.004    0.000 son.py:62(__delitem__)
+        1    0.000    0.000    0.000    0.000 son.py:69(copy)
+    30054    0.007    0.000    0.007    0.000 son.py:77(__iter__)
+       28    0.000    0.000    0.000    0.000 son.py:85(iteritems)
+        2    0.000    0.000    0.000    0.000 thread_util.py:124(create_semaphore)
+        2    0.000    0.000    0.000    0.000 thread_util.py:32(__init__)
+     3001    0.004    0.000    0.006    0.000 thread_util.py:38(acquire)
+     3001    0.005    0.000    0.016    0.000 thread_util.py:63(release)
+        2    0.000    0.000    0.000    0.000 thread_util.py:79(__init__)
+     3001    0.003    0.000    0.019    0.000 thread_util.py:83(release)
+     6006    0.003    0.000    0.006    0.000 threading.py:1017(_wait_for_tstate_lock)
+     3002    0.001    0.000    0.001    0.000 threading.py:1031(name)
+     6006    0.007    0.000    0.015    0.000 threading.py:1071(is_alive)
+        2    0.000    0.000    0.000    0.000 threading.py:1095(daemon)
+        2    0.000    0.000    0.000    0.000 threading.py:1110(daemon)
+        2    0.000    0.000    0.000    0.000 threading.py:1177(_make_invoke_excepthook)
+     3004    0.002    0.000    0.003    0.000 threading.py:1306(current_thread)
+        5    0.000    0.000    0.000    0.000 threading.py:222(__init__)
+        2    0.000    0.000    0.000    0.000 threading.py:246(__enter__)
+        2    0.000    0.000    0.000    0.000 threading.py:249(__exit__)
+        3    0.000    0.000    0.000    0.000 threading.py:255(_release_save)
+        3    0.000    0.000    0.000    0.000 threading.py:258(_acquire_restore)
+     3004    0.002    0.000    0.003    0.000 threading.py:261(_is_owned)
+        3    0.000    0.000    0.000    0.000 threading.py:270(wait)
+     3001    0.006    0.000    0.009    0.000 threading.py:341(notify)
+        2    0.000    0.000    0.000    0.000 threading.py:505(__init__)
+     6010    0.001    0.000    0.001    0.000 threading.py:513(is_set)
+        2    0.000    0.000    0.000    0.000 threading.py:540(wait)
+        2    0.000    0.000    0.000    0.000 threading.py:761(__init__)
+        2    0.000    0.000    0.000    0.000 threading.py:834(start)
+     3003    0.005    0.000    0.034    0.000 topology.py:138(open)
+     3001    0.007    0.000    0.042    0.000 topology.py:167(select_servers)
+     3001    0.003    0.000    0.006    0.000 topology.py:195(<listcomp>)
+     3002    0.008    0.000    0.028    0.000 topology.py:198(_select_servers_loop)
+     3001    0.005    0.000    0.057    0.000 topology.py:228(select_server)
+     3001    0.001    0.000    0.003    0.000 topology.py:334(get_server_by_address)
+     3001    0.001    0.000    0.001    0.000 topology.py:376(max_cluster_time)
+     3001    0.001    0.000    0.001    0.000 topology.py:380(_receive_cluster_time_no_lock)
+     3001    0.005    0.000    0.006    0.000 topology.py:394(receive_cluster_time)
+        1    0.000    0.000    0.000    0.000 topology.py:440(close)
+        1    0.000    0.000    0.000    0.000 topology.py:465(description)
+        1    0.000    0.000    0.000    0.000 topology.py:469(pop_all_sessions)
+     3000    0.008    0.000    0.022    0.000 topology.py:474(get_server_session)
+     3000    0.006    0.000    0.018    0.000 topology.py:499(return_server_session)
+     3004    0.005    0.000    0.028    0.000 topology.py:518(_ensure_opened)
+        1    0.000    0.000    0.000    0.000 topology.py:564(_request_check_all)
+        1    0.000    0.000    0.000    0.000 topology.py:569(_update_servers)
+        1    0.000    0.000    0.000    0.000 topology.py:610(_create_pool_for_server)
+        1    0.000    0.000    0.000    0.000 topology.py:613(_create_pool_for_monitor)
+        1    0.000    0.000    0.000    0.000 topology.py:68(__init__)
+     3003    0.001    0.000    0.001    0.000 topology_description.py:118(check_compatible)
+        1    0.000    0.000    0.000    0.000 topology_description.py:127(has_server)
+        1    0.000    0.000    0.000    0.000 topology_description.py:134(reset)
+        2    0.000    0.000    0.000    0.000 topology_description.py:142(<genexpr>)
+        3    0.000    0.000    0.000    0.000 topology_description.py:153(server_descriptions)
+     3005    0.001    0.000    0.001    0.000 topology_description.py:158(topology_type)
+     9000    0.002    0.000    0.002    0.000 topology_description.py:186(logical_session_timeout_minutes)
+     3003    0.003    0.000    0.010    0.000 topology_description.py:191(known_servers)
+     3003    0.003    0.000    0.006    0.000 topology_description.py:194(<listcomp>)
+        1    0.000    0.000    0.000    0.000 topology_description.py:197(has_known_servers)
+        1    0.000    0.000    0.000    0.000 topology_description.py:200(<genexpr>)
+        2    0.000    0.000    0.000    0.000 topology_description.py:203(readable_servers)
+        2    0.000    0.000    0.000    0.000 topology_description.py:206(<listcomp>)
+     3003    0.006    0.000    0.018    0.000 topology_description.py:221(apply_selector)
+        2    0.000    0.000    0.000    0.000 topology_description.py:37(__init__)
+        1    0.000    0.000    0.000    0.000 uri_parser.py:154(_handle_security_options)
+        1    0.000    0.000    0.000    0.000 uri_parser.py:187(_handle_option_deprecations)
+        1    0.000    0.000    0.000    0.000 uri_parser.py:223(_normalize_options)
+        1    0.000    0.000    0.000    0.000 uri_parser.py:304(split_hosts)
+        1    0.000    0.000    0.000    0.000 uri_parser.py:91(parse_host)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:121(getregentry)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:26(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:49(IncrementalDecoder)
+        3    0.000    0.000    0.000    0.000 utf_8_sig.py:50(__init__)
+       24    0.000    0.000    0.000    0.000 utf_8_sig.py:54(_buffer_decode)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:85(StreamWriter)
+        1    0.000    0.000    0.000    0.000 utf_8_sig.py:97(StreamReader)
+        1    0.000    0.000    0.000    0.000 uuid.py:130(__init__)
+        1    0.000    0.000    0.000    0.000 uuid.py:276(bytes)
+        1    0.000    0.000    0.000    0.000 uuid.py:778(uuid4)
+    15000    0.003    0.000    0.003    0.000 write_concern.py:104(acknowledged)
+        1    0.000    0.000    0.000    0.000 write_concern.py:51(__init__)
+     6000    0.001    0.000    0.001    0.000 write_concern.py:89(is_server_default)
+     3015    0.001    0.000    0.001    0.000 {built-in method __new__ of type object at 0x108473b50}
+    24009    0.011    0.000    0.016    0.000 {built-in method _abc._abc_instancecheck}
+3006/3005    0.003    0.000    0.004    0.000 {built-in method _abc._abc_subclasscheck}
+       24    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        3    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 {built-in method _socket.getaddrinfo}
+     6002    0.003    0.000    0.003    0.000 {built-in method _struct.pack}
+       18    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+     6008    0.001    0.000    0.001    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+        3    0.000    0.000    0.000    0.000 {built-in method _weakref.proxy}
+     3002    0.017    0.000    0.017    0.000 {built-in method bson._cbson.decode_all}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+        1    0.000    0.000    0.001    0.001 {built-in method builtins.__import__}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+    12021    0.004    0.000    0.004    0.000 {built-in method builtins.getattr}
+    21035    0.005    0.000    0.005    0.000 {built-in method builtins.hasattr}
+       34    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+    21070    0.009    0.000    0.025    0.000 {built-in method builtins.isinstance}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+     9007    0.003    0.000    0.003    0.000 {built-in method builtins.iter}
+    18025    0.003    0.000    0.003    0.000 {built-in method builtins.len}
+27015/21010    0.020    0.000    0.223    0.000 {built-in method builtins.next}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        2    0.000    0.000    0.000    0.000 {built-in method fcntl.fcntl}
+        4    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+        3    0.000    0.000    0.001    0.000 {built-in method io.open}
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+     9012    0.002    0.000    0.002    0.000 {built-in method posix.fspath}
+    15012    0.003    0.000    0.003    0.000 {built-in method posix.getpid}
+        3    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.urandom}
+     3001    0.079    0.000    0.091    0.000 {built-in method pymongo._cmessage._op_msg}
+        1    0.000    0.000    0.000    0.000 {built-in method pymongo._cmessage._query_message}
+        2    0.000    0.000    0.000    0.000 {built-in method select.poll}
+     3002    0.001    0.000    0.001    0.000 {built-in method sys._getframe}
+    21006    0.004    0.000    0.004    0.000 {built-in method time.monotonic}
+     6003    0.002    0.000    0.002    0.000 {built-in method time.time}
+        2    0.000    0.000    0.000    0.000 {function socket.close at 0x7fc9b4966670}
+        2    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+     6005    0.002    0.000    0.002    0.000 {method 'acquire' of '_thread.RLock' objects}
+    15021    0.007    0.000    0.007    0.000 {method 'acquire' of '_thread.lock' objects}
+        4    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        3    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+    21043    0.003    0.000    0.003    0.000 {method 'append' of 'list' objects}
+     6001    0.001    0.000    0.001    0.000 {method 'appendleft' of 'collections.deque' objects}
+     3001    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        1    0.000    0.000    0.000    0.000 {method 'connect' of '_socket.socket' objects}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'count' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'fileno' of '_socket.socket' objects}
+     3003    0.002    0.000    0.002    0.000 {method 'find' of 'str' objects}
+     3002    0.003    0.000    0.003    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+    30162    0.006    0.000    0.006    0.000 {method 'get' of 'dict' objects}
+     5968    0.001    0.000    0.001    0.000 {method 'getrandbits' of '_random.Random' objects}
+        2    0.000    0.000    0.000    0.000 {method 'getsockopt' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 {method 'index' of 'tuple' objects}
+        9    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+     3009    0.001    0.000    0.001    0.000 {method 'keys' of 'dict' objects}
+       16    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.deque' objects}
+        7    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+     6000    0.001    0.000    0.001    0.000 {method 'popleft' of 'collections.deque' objects}
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+     6004    0.444    0.000    0.444    0.000 {method 'recv_into' of '_socket.socket' objects}
+     6005    0.001    0.000    0.001    0.000 {method 'release' of '_thread.RLock' objects}
+     6005    0.001    0.000    0.001    0.000 {method 'release' of '_thread.lock' objects}
+     3000    0.001    0.000    0.001    0.000 {method 'remove' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+     9006    0.004    0.000    0.004    0.000 {method 'rfind' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+       14    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+     3002    0.032    0.000    0.032    0.000 {method 'sendall' of '_socket.socket' objects}
+        3    0.000    0.000    0.000    0.000 {method 'setsockopt' of '_socket.socket' objects}
+        2    0.000    0.000    0.000    0.000 {method 'settimeout' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'bytes' objects}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'to_bytes' of 'int' objects}
+        1    0.000    0.000    0.000    0.000 {method 'tobytes' of 'memoryview' objects}
+     3002    0.003    0.000    0.003    0.000 {method 'unpack' of 'Struct' objects}
+     3002    0.002    0.000    0.002    0.000 {method 'unpack_from' of 'Struct' objects}
+        1    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'update' of 'set' objects}
+     9014    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+     3002    0.011    0.000    0.011    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+
+
+
+199 function calls in 1.055 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        3    0.000    0.000    0.000    0.000 _weakrefset.py:81(add)
+        3    0.000    0.000    1.053    0.351 queue.py:153(get)
+        1    0.000    0.000    0.000    0.000 queue.py:205(_init)
+        6    0.000    0.000    0.000    0.000 queue.py:208(_qsize)
+        3    0.000    0.000    0.000    0.000 queue.py:216(_get)
+        1    0.000    0.000    0.000    0.000 queue.py:33(__init__)
+        3    0.000    0.000    0.000    0.000 threading.py:1017(_wait_for_tstate_lock)
+        3    0.000    0.000    0.000    0.000 threading.py:1095(daemon)
+        3    0.000    0.000    0.000    0.000 threading.py:1177(_make_invoke_excepthook)
+        3    0.000    0.000    0.000    0.000 threading.py:1306(current_thread)
+        6    0.000    0.000    0.000    0.000 threading.py:222(__init__)
+        6    0.000    0.000    0.000    0.000 threading.py:246(__enter__)
+        6    0.000    0.000    0.000    0.000 threading.py:249(__exit__)
+        6    0.000    0.000    0.000    0.000 threading.py:255(_release_save)
+        6    0.000    0.000    0.000    0.000 threading.py:258(_acquire_restore)
+        9    0.000    0.000    0.000    0.000 threading.py:261(_is_owned)
+        6    0.000    0.000    1.055    0.176 threading.py:270(wait)
+        3    0.000    0.000    0.000    0.000 threading.py:341(notify)
+        3    0.000    0.000    0.000    0.000 threading.py:505(__init__)
+        6    0.000    0.000    0.000    0.000 threading.py:513(is_set)
+        3    0.000    0.000    0.002    0.001 threading.py:540(wait)
+        3    0.000    0.000    0.000    0.000 threading.py:734(_newname)
+        3    0.000    0.000    0.000    0.000 threading.py:761(__init__)
+        3    0.000    0.000    0.002    0.001 threading.py:834(start)
+        3    0.000    0.000    0.000    0.000 threading.py:944(_stop)
+        3    0.000    0.000    0.000    0.000 threading.py:979(join)
+       10    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        3    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        3    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        6    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        6    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+       30    1.054    0.035    1.054    0.035 {method 'acquire' of '_thread.lock' objects}
+        3    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        6    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        6    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        3    0.000    0.000    0.000    0.000 {method 'locked' of '_thread.lock' objects}
+        3    0.000    0.000    0.000    0.000 {method 'popleft' of 'collections.deque' objects}
+        9    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
