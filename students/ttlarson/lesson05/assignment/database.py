@@ -34,7 +34,6 @@ class MongoDBConnection():
         self.connection.close()
         logging.info('Mongo connection closed.')
 
-
 def print_mdb_collection(collection_name):
     """ print everything in collection_name """
     for doc in collection_name.find():
@@ -179,6 +178,7 @@ if __name__ == '__main__':
 
     import_data(DATA_FILE_PATH, DATA_FILE_PRODUCT, DATA_FILE_CUSTOMER, DATA_FILE_RENTAL)
     products_available = show_available_products()
+    logging.info(products_available)
 
     users_E0001 = show_rentals('E0001')
     logging.info(users_E0001)
