@@ -126,6 +126,8 @@ def list_active_customers():
     """Display a list of active customers in the database."""
     active_customers = Customer.select().where(Customer.status).order_by(
         Customer.last_name)
+    LOGGER.debug('List of customers whose status is currently active: %s.',
+                 active_customers)
     return [customer.last_name + ', ' + customer.first_name for customer
             in active_customers]
 
@@ -136,8 +138,6 @@ def list_generator():
     case user would like to print by line.
     """
     active_customers = list_active_customers()
-    LOGGER.debug('List of customers whose status is currently active: %s.',
-                 active_customers)
     index = 0
     while index < len(active_customers):
         yield active_customers[index]
