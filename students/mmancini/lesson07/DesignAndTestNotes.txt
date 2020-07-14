@@ -8,7 +8,7 @@ Design and Test Notes
 . Updated linear and parallel imports for Products and Customers
 . Updated parallel to run imports Products and Customers in parallel
 . DesignDetails - Parallel introduces threads, therefore Products and Customer imports run on their own thread.
-. DesignDetails - Parallel uses the queue class is a blocking class queue.get/put calls for thread synchronization
+. DesignDetails - Parallel uses the queue class is a blocking class queue.get/put calls for synchronized access
 . Update linear and parallel to report import results (see results.txt files) (see format below)
 . Update linear and parallel to report runtimes (see results.txt files) (see format below)
 . Performance - on average liner executes in 1.9sec and parallel executes in 1.1 secs.
