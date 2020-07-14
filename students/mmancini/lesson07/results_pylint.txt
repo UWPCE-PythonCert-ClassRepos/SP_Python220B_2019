@@ -1,0 +1,101 @@
+"" 
+************* Module linear
+linear.py:46:0: C0303: Trailing whitespace (trailing-whitespace)
+linear.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
+linear.py:273:0: C0303: Trailing whitespace (trailing-whitespace)
+linear.py:275:0: C0303: Trailing whitespace (trailing-whitespace)
+linear.py:282:47: C0326: No space allowed before comma
+    LOGGER.info("Product Process Results = %s" , products_result)
+                                               ^ (bad-whitespace)
+linear.py:285:0: C0303: Trailing whitespace (trailing-whitespace)
+linear.py:152:27: E0602: Undefined variable 'pyerror' (undefined-variable)
+linear.py:152:20: W0612: Unused variable 'error' (unused-variable)
+linear.py:187:27: E0602: Undefined variable 'pyerror' (undefined-variable)
+linear.py:187:20: W0612: Unused variable 'error' (unused-variable)
+
+------------------------------------------------------------------
+Your code has been rated at 8.99/10 (previous run: 8.99/10, +0.00)
+
+************* Module test_linear
+test_linear.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:74:0: C0330: Wrong continued indentation (add 2 spaces).
+                                                  'customer_file.csv')
+                                                  ^ | (bad-continuation)
+test_linear.py:77:0: C0330: Wrong continued indentation (add 1 space).
+                                                  'customer_file_XXX.csv',)
+                                                  ^| (bad-continuation)
+test_linear.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:153:0: C0303: Trailing whitespace (trailing-whitespace)
+test_linear.py:29:8: W0612: Unused variable 'result_status' (unused-variable)
+test_linear.py:61:8: W0612: Unused variable 'stats_customers' (unused-variable)
+test_linear.py:76:8: W0612: Unused variable 'stats_products_imported' (unused-variable)
+test_linear.py:13:0: W0611: Unused import time (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 8.31/10 (previous run: 8.31/10, +0.00)
+
+************* Module parallel
+parallel.py:165:0: C0330: Wrong continued indentation (remove 2 spaces).
+                      prod_end-prod_start, error_prod]
+                    | ^ (bad-continuation)
+parallel.py:168:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+parallel.py:169:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:204:0: C0330: Wrong continued indentation (add 3 spaces).
+             cust_end-cust_start, error_cust]
+             ^  | (bad-continuation)
+parallel.py:207:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+parallel.py:209:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:285:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:292:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:295:0: C0330: Wrong continued indentation (remove 5 spaces).
+                                    args=(path, 'product_file.csv'), daemon=True)
+                               |    ^ (bad-continuation)
+parallel.py:297:0: C0330: Wrong continued indentation (remove 5 spaces).
+                                    args=(path, 'customer_file.csv'), daemon=True)
+                               |    ^ (bad-continuation)
+parallel.py:305:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:309:47: C0326: No space allowed before comma
+    LOGGER.info("Product Process Results = %s" , thread1_result)
+                                               ^ (bad-whitespace)
+parallel.py:312:0: C0303: Trailing whitespace (trailing-whitespace)
+parallel.py:155:27: E0602: Undefined variable 'pyerror' (undefined-variable)
+parallel.py:155:20: W0612: Unused variable 'error' (unused-variable)
+parallel.py:172:4: W0603: Using the global statement (global-statement)
+parallel.py:194:27: E0602: Undefined variable 'pyerror' (undefined-variable)
+parallel.py:194:20: W0612: Unused variable 'error' (unused-variable)
+parallel.py:288:4: W0612: Unused variable 'storage' (unused-variable)
+parallel.py:289:4: W0612: Unused variable 'threads' (unused-variable)
+parallel.py:315:4: E1111: Assigning result of a function call, where the function has no return (assignment-from-no-return)
+
+------------------------------------------------------------------
+Your code has been rated at 8.32/10 (previous run: 8.32/10, +0.00)
+
+************* Module test_parallel
+test_parallel.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:59:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:67:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:74:0: C0330: Wrong continued indentation (add 2 spaces).
+                                                  'customer_file.csv')
+                                                  ^ | (bad-continuation)
+test_parallel.py:77:0: C0330: Wrong continued indentation (add 1 space).
+                                                  'customer_file_XXX.csv',)
+                                                  ^| (bad-continuation)
+test_parallel.py:148:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
+test_parallel.py:29:8: W0612: Unused variable 'result_status' (unused-variable)
+test_parallel.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
+test_parallel.py:60:8: W0612: Unused variable 'stats_customers' (unused-variable)
+test_parallel.py:76:8: W0612: Unused variable 'stats_products_imported' (unused-variable)
+test_parallel.py:13:0: W0611: Unused import time (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 8.00/10 (previous run: 8.00/10, +0.00)
+
