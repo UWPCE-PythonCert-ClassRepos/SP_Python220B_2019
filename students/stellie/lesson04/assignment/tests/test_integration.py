@@ -55,6 +55,25 @@ class ModuleTests(TestCase):
         self.assertEqual(search, expected)
         self.assertEqual(main.search_customer(4), {})
 
+        search_all = main.search_all_customers()
+        expected_all = [{
+            'First Name': 'John',
+            'Last Name': 'Smith',
+            'Email Address': 'smith.john@example.com',
+            'Phone Number': '2065551234'
+        }, {
+            'First Name': 'Jane',
+            'Last Name': 'Doe',
+            'Email Address': 'doe.jane@example.com',
+            'Phone Number': '2065555678'
+        }, {
+            'First Name': 'Alice',
+            'Last Name': 'Wonderland',
+            'Email Address': 'wonderland.alice@example.com',
+            'Phone Number': '2065551357'
+        }]
+        self.assertEqual(search_all, expected_all)
+
         main.delete_customer(2)
         search = main.delete_customer(2)
         self.assertEqual(search, None)
@@ -64,3 +83,9 @@ class ModuleTests(TestCase):
         self.assertEqual(12000, customer.credit_limit)
         update = main.update_customer_credit(4, 2000)
         self.assertEqual(update, None)
+
+        all_active = main.list_active_count()
+        self.assertEqual(all_active, 2)
+
+        all_customers = main.list_active_customers()
+        self.assertEqual(all_customers, ['Smith, John', 'Wonderland, Alice'])

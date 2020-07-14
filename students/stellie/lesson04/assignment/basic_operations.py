@@ -72,6 +72,17 @@ def search_customer(customer_id):
         return {}
 
 
+def search_all_customers():
+    """List all customers in the database."""
+    all_customers = Customer.select().where(Customer.customer_id)
+    LOGGER.debug('Listing all customers in database.')
+    return [{'First Name': customer.first_name,
+             'Last Name': customer.last_name,
+             'Email Address': customer.email,
+             'Phone Number': customer.phone}
+            for customer in all_customers]
+
+
 def delete_customer(customer_id):
     """Delete a customer from the database by ID."""
     try:
@@ -106,18 +117,28 @@ def update_customer_credit(customer_id, credit_limit):
 def list_active_count():
     """Display a count of active customers in the database."""
     active_customers = Customer.select().where(Customer.status).count()
-    LOGGER.info('Number of customers whose status is currently active: %s.',
-                active_customers)
+    LOGGER.debug('Number of customers whose status is currently active: %s.',
+                 active_customers)
     return active_customers
 
 
 def list_active_customers():
     """Display a list of active customers in the database."""
-    active_customers = Customer.select().where(Customer.status)
-    LOGGER.info('List of customers whose status is currently active: %s.',
-                active_customers)
-    return [customer.first_name + ' ' + customer.last_name for customer
+    active_customers = Customer.select().where(Customer.status).order_by(
+        Customer.last_name)
+    return [customer.last_name + ', ' + customer.first_name for customer
             in active_customers]
 
 
-CUSTOMER_DB.close()
+def list_generator():
+    """
+    Create generator to iterate through active customers list in
+    case user would like to print by line.
+    """
+    active_customers = list_active_customers()
+    LOGGER.debug('List of customers whose status is currently active: %s.',
+                 active_customers)
+    index = 0
+    while index < len(active_customers):
+        yield active_customers[index]
+        index += 1

@@ -52,6 +52,22 @@ class CustomerTests(TestCase):
         self.assertEqual(search, expected)
         self.assertEqual(main.search_customer(4), {})
 
+    def test_search_all_customers(self):
+        """Test to check that customer list correctly outputs customer info"""
+        reset_database()
+        main.add_customer(*CUSTOMER_1)
+        main.add_customer(*CUSTOMER_3)
+        expected = main.search_all_customers()
+        self.assertEqual(expected,
+                         [{'First Name': 'John',
+                           'Last Name': 'Smith',
+                           'Email Address': 'smith.john@example.com',
+                           'Phone Number': '2065551234'},
+                          {'First Name': 'Alice',
+                           'Last Name': 'Wonderland',
+                           'Email Address': 'wonderland.alice@example.com',
+                           'Phone Number': '2065551357'}])
+
     def test_delete_customer(self):
         """Test to check that deleting a customer behaves properly"""
         main.add_customer(*CUSTOMER_3)
@@ -74,11 +90,11 @@ class CustomerTests(TestCase):
         main.add_customer(*CUSTOMER_3)
         expected = main.list_active_count()
         self.assertEqual(expected, 2)
-    
+
     def test_list_active_customers(self):
         """Test to check that customer list correctly outputs customer names"""
         reset_database()
         main.add_customer(*CUSTOMER_1)
         main.add_customer(*CUSTOMER_3)
         expected = main.list_active_customers()
-        self.assertEqual(expected, ['John Smith', 'Alice Wonderland'])
+        self.assertEqual(expected, ['Smith, John', 'Wonderland, Alice'])
