@@ -1,6 +1,6 @@
 Name               Stmts   Miss  Cover
 --------------------------------------
-parallel.py          195     11    94%
-test_parallel.py      72      0   100%
+parallel.py          193     11    94%
+test_parallel.py      71      0   100%
 --------------------------------------
-TOTAL                267     11    96%
+TOTAL                264     11    96%

@@ -6,6 +6,7 @@
 #pylint: disable=invalid-name
 #pylint: disable=too-many-locals
 #pylint: disable=no-else-continue
+#pylint: disable=global-statement
 
 import csv
 import os
@@ -152,7 +153,7 @@ def import_products(directory_name, product_file):
                                 'quantity_available': row['quantity_available']}
                     try:
                         products.insert_one(prod_add)
-                    except pyerror.DuplicateKeyError as error:
+                    except MongoClient.errors.DuplicateKeyError:
                         LOGGER.info('Product already in database')
                         error_prod += 1
 
@@ -162,11 +163,11 @@ def import_products(directory_name, product_file):
         db_prod_after_count = products.estimated_document_count()
         prod_end = time.time()
         stat_lst = [num_prod_processed, db_prod_init_count, db_prod_after_count,
-                      prod_end-prod_start, error_prod]
+                    prod_end-prod_start, error_prod]
         prod_result = ', '.join(str(x) for x in stat_lst)
         output_queue.put(prod_result)
-        return(stat_lst)
-                
+        return stat_lst
+
 def import_customers(directory_name, customer_file):
     """import customer data"""
     global output_queue
@@ -191,7 +192,7 @@ def import_customers(directory_name, customer_file):
                                 'email': row['email']}
                     try:
                         customers.insert_one(cust_add)
-                    except pyerror.DuplicateKeyError as error:
+                    except MongoClient.errors.DuplicateKeyError:
                         LOGGER.info('customer already in database')
                         error_cust += 1
 
@@ -201,12 +202,12 @@ def import_customers(directory_name, customer_file):
     db_after_cust_count = customers.estimated_document_count()
     cust_end = time.time()
     stat_lst = [num_cust_processed, db_init_cust_count, db_after_cust_count,
-             cust_end-cust_start, error_cust]
+                cust_end-cust_start, error_cust]
     cust_result = ', '.join(str(x) for x in stat_lst)
     output_queue.put(cust_result)
-    return(stat_lst)
+    return stat_lst
 
-            
+
 def show_available_products():
     '''
         des:
@@ -282,19 +283,16 @@ def main():
     '''
         process import data in parallel for products and customers.
     '''
-    
+
     dbs_cleanup()
 
-    storage = []
-    threads = []
-
     start_time = time.time()
-    
+
     path = ('csv_files')
     thread1 = threading.Thread(target=import_products,
-                                    args=(path, 'product_file.csv'), daemon=True)
+                               args=(path, 'product_file.csv'), daemon=True)
     thread2 = threading.Thread(target=import_customers,
-                                    args=(path, 'customer_file.csv'), daemon=True)
+                               args=(path, 'customer_file.csv'), daemon=True)
     thread1.start()
     thread2.start()
 
@@ -302,14 +300,14 @@ def main():
     thread2.join()
 
     end_time = time.time()
-    
+
     thread1_result = output_queue.get()
     thread2_result = output_queue.get()
 
-    LOGGER.info("Product Process Results = %s" , thread1_result)
+    LOGGER.info("Product Process Results = %s", thread1_result)
     LOGGER.info("Customer Process Results = %s", thread2_result)
     LOGGER.info("Total Process Time All Threads = %s", end_time-start_time)
-    
+
 if __name__ == "__main__":
 
-    results_main = main()
+    main()

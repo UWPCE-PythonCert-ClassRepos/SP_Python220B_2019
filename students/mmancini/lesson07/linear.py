@@ -6,6 +6,7 @@
 #pylint: disable=invalid-name
 #pylint: disable=too-many-locals
 #pylint: disable=no-else-continue
+#pylint: disable=unused-variable
 
 import csv
 import os
@@ -43,7 +44,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         out:
             tuple total records count, errors count
     '''
-    
+
     product_count = 0
     customer_count = 0
     rental_count = 0
@@ -149,7 +150,7 @@ def import_products(directory_name, product_file):
                                 'quantity_available': row['quantity_available']}
                     try:
                         products.insert_one(prod_add)
-                    except pyerror.DuplicateKeyError as error:
+                    except MongoClient.errors.DuplicateKeyError:
                         LOGGER.info('Product already in database')
                         error_prod += 1
 
@@ -160,7 +161,7 @@ def import_products(directory_name, product_file):
         prod_end = time.time()
         return (num_prod_processed, db_prod_init_count, db_prod_after_count,
                 prod_end-prod_start, error_prod)
-                
+
 def import_customers(directory_name, customer_file):
     """import customer data"""
     cust_start = time.time()
@@ -184,7 +185,7 @@ def import_customers(directory_name, customer_file):
                                 'email': row['email']}
                     try:
                         customers.insert_one(cust_add)
-                    except pyerror.DuplicateKeyError as error:
+                    except MongoClient.errors.DuplicateKeyError:
                         LOGGER.info('customer already in database')
                         error_cust += 1
 
@@ -270,19 +271,19 @@ def main():
     '''
         process import data for products and customers (linear).
     '''
-   
+
     dbs_cleanup()
-    
+
     start_time = time.time()
     path = ('csv_files')
     products_result = import_products(path, 'product_file.csv')
     customers_result = import_customers(path, 'customer_file.csv')
     end_time = time.time()
 
-    LOGGER.info("Product Process Results = %s" , products_result)
+    LOGGER.info("Product Process Results = %s", products_result)
     LOGGER.info("Customer Process Results = %s", customers_result)
     LOGGER.info("Total Process Time = %s", end_time-start_time)
-    
+
     return products_result, customers_result
 
 if __name__ == "__main__":

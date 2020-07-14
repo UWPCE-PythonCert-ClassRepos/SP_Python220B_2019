@@ -10,7 +10,6 @@
 #pylint: disable=pointless-string-statement
 
 import logging
-import time
 from unittest import TestCase
 from parallel import import_data, import_products, import_customers
 from parallel import show_available_products
@@ -25,9 +24,9 @@ class TestImportDataToDb(TestCase):
     '''test import data files to db'''
     def test_import_data(self):
         '''test importing data files'''
-        
-        result_status = dbs_cleanup()
-        
+
+        dbs_cleanup()
+
         LOGGER.info('Test import_data')
         result_count, result_errors = import_data('csv_files',
                                                   'product_file.csv',
@@ -50,31 +49,33 @@ class TestImportDataToDb(TestCase):
 
         LOGGER.info('test_import_data completed')
 
+
     def test_import_products(self):
+        '''test import products'''
 
         LOGGER.info('Test import_products_started')
         stats_products_imported = import_products('csv_files',
                                                   'product_file.csv',)
         self.assertEqual(stats_products_imported[0], 905)
-        
-        stats_customers = import_products('csv_files',
-                                          'product_file_XXX.csv',)
+
+        stats_products_imported = import_products('csv_files',
+                                                  'product_file_XXX.csv',)
         self.assertRaises(FileNotFoundError)
 
         dbs_cleanup()
         LOGGER.info('test_import_products completed')
 
-        
+
     def test_import_customers(self):
         '''test import customers'''
-    
+
         LOGGER.info('Test import_customers_started')
-       
+
         stats_customers_imported = import_customers('csv_files',
-                                                  'customer_file.csv')
+                                                    'customer_file.csv')
         self.assertEqual(stats_customers_imported[0], 905)
-        stats_products_imported = import_customers('csv_files',
-                                                  'customer_file_XXX.csv',)
+        stats_customers_imported = import_customers('csv_files',
+                                                    'customer_file_XXX.csv',)
         self.assertRaises(FileNotFoundError)
 
         dbs_cleanup()
@@ -145,9 +146,9 @@ class TestsDatabase(TestCase):
         LOGGER.info('Test main started')
 
         dbs_cleanup()
-        
+
         main()
-        
+
         LOGGER.info('main() tests completed')
 
 

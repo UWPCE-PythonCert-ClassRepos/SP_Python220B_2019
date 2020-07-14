@@ -23,9 +23,9 @@ INFO:test_linear:test setup, dbs cleanup status = databases dropped
 INFO:test_linear:setup import data file to database
 INFO:test_linear:test setup completed
 INFO:test_linear:Test main started
-INFO:linear:Product Process Results = (905, 0, 905, 0.836047887802124, 0)
-INFO:linear:Customer Process Results = (905, 0, 905, 1.0120577812194824, 0)
-INFO:linear:Total Process Time = 1.8491055965423584
+INFO:linear:Product Process Results = (905, 0, 905, 0.7050402164459229, 0)
+INFO:linear:Customer Process Results = (905, 0, 905, 1.0210583209991455, 0)
+INFO:linear:Total Process Time = 1.7270987033843994
 INFO:test_linear:main() tests completed
 .INFO:test_linear:setup start
 INFO:test_linear:test setup, dbs cleanup status = databases dropped
@@ -42,10 +42,10 @@ INFO:test_linear:test show_rentals customer who rented product pid001, are {'cid
 INFO:test_linear:test show_rentals completed
 .
 ----------------------------------------------------------------------
-Ran 7 tests in 15.843s
+Ran 7 tests in 15.188s
 
 OK
 "linear runtime:" 
-INFO:__main__:Product Process Results = (905, 0, 905, 0.6680381298065186, 0)
-INFO:__main__:Customer Process Results = (905, 0, 905, 1.0200583934783936, 0)
-INFO:__main__:Total Process Time = 1.6900966167449951
+INFO:__main__:Product Process Results = (905, 0, 905, 0.7780444622039795, 0)
+INFO:__main__:Customer Process Results = (905, 0, 905, 1.0450596809387207, 0)
+INFO:__main__:Total Process Time = 1.8251044750213623
