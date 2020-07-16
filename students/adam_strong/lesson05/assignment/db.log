@@ -1,0 +1,215 @@
+2020-07-07 23:18:42,661 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:18:42,725 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:18:42,725 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:18:59,291 database.py:175 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-07 23:19:53,813 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:19:56,665 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:19:56,763 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:19:56,764 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:19:59,290 database.py:175 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-07 23:19:59,291 database.py:177 INFO These is the found rental history of product SLEDX :
+
+{'user008': {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}}
+2020-07-07 23:20:41,431 database.py:175 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-07 23:20:41,432 database.py:175 INFO {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}
+2020-07-07 23:20:41,433 database.py:177 INFO These is the found rental history of product SLD2 :
+
+{'user008': {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}, 'user001': {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}}
+2020-07-07 23:21:11,396 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2563'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:21:11,396 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2564'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2565'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2566'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2567'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2568'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2569'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:21:11,397 database.py:129 INFO Quantity is not available for CW8000 
+
+2020-07-07 23:21:11,397 database.py:131 INFO {'_id': ObjectId('5f05658c2bf81274ebcc256a'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:21:11,397 database.py:132 INFO 
+
+2020-07-07 23:21:11,397 database.py:133 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}
+2020-07-07 23:21:27,242 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2563'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:21:27,242 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2564'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2565'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2566'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2567'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2568'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc2569'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:21:27,243 database.py:154 INFO {'_id': ObjectId('5f05658c2bf81274ebcc256a'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:21:53,904 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:21:56,997 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:21:57,074 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:21:57,076 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056604ff2f4dcc8c7d4936'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4937'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4938'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4939'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493a'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493b'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493c'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:21:59,911 database.py:154 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493d'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:21:59,912 database.py:159 INFO These are all the products: {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}, 'CW8000': {'Product Code': 'CW8000', 'Quantity Available': '0', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric'}} 
+
+
+2020-07-07 23:22:03,660 database.py:131 INFO {'_id': ObjectId('5f056604ff2f4dcc8c7d4936'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:22:03,661 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4937'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:22:03,661 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4938'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:22:03,661 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4939'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:22:03,661 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493a'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:22:03,661 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493b'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:22:03,662 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493c'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:22:03,662 database.py:129 INFO Quantity is not available for CW8000 
+
+2020-07-07 23:22:03,662 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493d'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:22:03,662 database.py:132 INFO 
+
+2020-07-07 23:22:03,662 database.py:133 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}
+2020-07-07 23:22:44,462 database.py:131 INFO {'_id': ObjectId('5f056604ff2f4dcc8c7d4936'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:22:44,462 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4937'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:22:44,462 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4938'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:22:44,463 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4939'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:22:44,463 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493a'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:22:44,463 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493b'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:22:44,463 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493c'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:22:44,463 database.py:129 INFO Quantity is not available for CW8000 
+
+2020-07-07 23:22:44,463 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493d'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:22:44,463 database.py:132 INFO 
+
+2020-07-07 23:22:44,463 database.py:133 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}
+2020-07-07 23:22:54,480 database.py:131 INFO {'_id': ObjectId('5f056604ff2f4dcc8c7d4936'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:22:54,480 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4937'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:22:54,480 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4938'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:22:54,480 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d4939'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:22:54,481 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493a'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:22:54,481 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493b'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:22:54,481 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493c'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:22:54,481 database.py:129 INFO Quantity is not available for CW8000 
+
+2020-07-07 23:22:54,481 database.py:131 INFO {'_id': ObjectId('5f056605ff2f4dcc8c7d493d'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:22:54,481 database.py:132 INFO 
+
+2020-07-07 23:22:54,481 database.py:133 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}
+2020-07-07 23:23:16,454 database.py:175 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-07 23:23:16,455 database.py:175 INFO {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}
+2020-07-07 23:23:16,455 database.py:177 INFO These are the found rental history of product SLD2 :
+
+{'user008': {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}, 'user001': {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}}
+2020-07-07 23:52:57,841 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:53:01,735 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:53:01,815 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:53:01,816 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:53:05,310 database.py:175 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-07 23:53:05,311 database.py:175 INFO {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}
+2020-07-07 23:53:05,312 database.py:177 INFO These are the found rental history of product SLD2 :
+
+{'user008': {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}, 'user001': {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}}
+2020-07-07 23:54:11,470 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:54:19,997 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:54:20,077 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:54:20,078 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:54:28,587 database.py:154 INFO {'_id': ObjectId('5f056d9bd4461afeafec483f'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:54:28,587 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4840'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:54:28,587 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4841'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:54:28,588 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4842'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:54:28,588 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4843'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:54:28,588 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4844'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:54:28,588 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4845'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:54:28,588 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4846'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:54:28,589 database.py:159 INFO These are all the products: {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}, 'CW8000': {'Product Code': 'CW8000', 'Quantity Available': '0', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric'}} 
+
+
+2020-07-07 23:55:22,142 database.py:154 INFO {'_id': ObjectId('5f056d9bd4461afeafec483f'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:55:22,142 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4840'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:55:22,142 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4841'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:55:22,142 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4842'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:55:22,142 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4843'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:55:22,143 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4844'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:55:22,143 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4845'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:55:22,143 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4846'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:55:22,144 database.py:159 INFO These are all the products: {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}, 'CW8000': {'Product Code': 'CW8000', 'Quantity Available': '0', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric'}} 
+
+
+2020-07-07 23:55:47,124 database.py:154 INFO {'_id': ObjectId('5f056d9cd4461afeafec4847'), 'User ID': 'user001', 'First Name': 'John', 'Last Name': 'Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com', 'Is_active': '1', 'Credit Limit': '8000'}
+2020-07-07 23:56:35,209 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:56:37,817 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:56:37,901 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:56:37,903 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:56:45,825 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e4'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:56:45,825 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e5'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:56:45,825 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e6'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:56:45,826 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e7'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:56:45,826 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e8'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:56:45,826 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4e9'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:56:45,826 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4ea'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:56:45,826 database.py:154 INFO {'_id': ObjectId('5f056e25117b53d6eb5af4eb'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:57:19,102 database.py:142 INFO Deleting all 3 collections
+2020-07-07 23:57:21,489 database.py:62  INFO IMPORTING DATA
+2020-07-07 23:57:21,575 database.py:93  INFO Added: [8, 10, 8]
+2020-07-07 23:57:21,576 database.py:67  INFO Done with importing all 3 files.
+2020-07-07 23:57:25,130 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342570'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342571'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342572'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342573'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342574'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342575'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-07 23:57:25,131 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342576'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-07 23:57:25,132 database.py:154 INFO {'_id': ObjectId('5f056e5108bb6cc799342577'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-07 23:57:25,132 database.py:159 INFO These are all the Products: {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}, 'CW8000': {'Product Code': 'CW8000', 'Quantity Available': '0', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric'}} 
+
+
+2020-07-08 00:00:05,356 database.py:143 INFO Deleting all 3 collections
+2020-07-08 00:00:07,555 database.py:63  INFO IMPORTING DATA
+2020-07-08 00:00:07,637 database.py:94  INFO Added: [8, 10, 8]
+2020-07-08 00:00:07,638 database.py:68  INFO Done with importing all 3 files.
+2020-07-08 00:00:10,283 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec4'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-08 00:00:10,284 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec5'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-08 00:00:10,284 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec6'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-08 00:00:10,284 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec7'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-08 00:00:10,284 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec8'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-08 00:00:10,284 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ec9'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-08 00:00:10,285 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5eca'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-08 00:00:10,285 database.py:155 INFO {'_id': ObjectId('5f056ef710d4054030be5ecb'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-08 00:00:10,286 database.py:160 INFO These are all the Products: {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}, 'CW8000': {'Product Code': 'CW8000', 'Quantity Available': '0', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric'}} 
+
+
+2020-07-08 00:00:16,381 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec4'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-08 00:00:16,381 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec5'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-08 00:00:16,381 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec6'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-08 00:00:16,381 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec7'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-08 00:00:16,382 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec8'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-08 00:00:16,382 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ec9'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-08 00:00:16,382 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5eca'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-08 00:00:16,382 database.py:130 INFO Quantity is not available for CW8000 
+
+2020-07-08 00:00:16,382 database.py:132 INFO {'_id': ObjectId('5f056ef710d4054030be5ecb'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-08 00:00:16,382 database.py:133 INFO 
+
+2020-07-08 00:00:16,383 database.py:134 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}
+2020-07-08 23:10:31,462 database.py:64  INFO IMPORTING DATA
+2020-07-08 23:10:31,548 database.py:96  INFO Added: [8, 10, 8]
+2020-07-08 23:10:31,549 database.py:69  INFO Done with importing all 3 files.
+2020-07-08 23:33:43,047 database.py:64  INFO IMPORTING DATA
+2020-07-08 23:33:43,126 database.py:96  INFO Added: [8, 10, 8]
+2020-07-08 23:33:43,127 database.py:69  INFO Done with importing all 3 files.
+2020-07-08 23:34:01,389 database.py:177 INFO These are the found rental history of product SLDX :
+
+{}
+2020-07-08 23:34:12,809 database.py:174 INFO {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}
+2020-07-08 23:34:12,810 database.py:174 INFO {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}
+2020-07-08 23:34:12,811 database.py:177 INFO These are the found rental history of product SLD2 :
+
+{'user008': {'User ID': 'user008', 'Name': 'Carrie Baker', 'Address': '981 Main St.', 'Phone': '425-444-4444', 'Email': 'cbaker23@fakemail.com'}, 'user001': {'User ID': 'user001', 'Name': 'John Jacboson', 'Address': '123 Fake Street', 'Phone': '206-848-8987', 'Email': 'johnjohn@hotmail.com'}}
+2020-07-08 23:34:23,769 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead1f'), 'Product Code': 'PD5X', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '2'}
+2020-07-08 23:34:23,769 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead20'), 'Product Code': 'SLD2', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric', 'Quantity Available': '20', 'Rental Price': '3'}
+2020-07-08 23:34:23,769 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead21'), 'Product Code': 'SLEDX', 'Description': 'Solar LED X50', 'Product Type': 'Electric', 'Quantity Available': '8', 'Rental Price': '5'}
+2020-07-08 23:34:23,770 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead22'), 'Product Code': 'COU', 'Description': 'Blue Couch', 'Product Type': 'Furniture', 'Quantity Available': '2', 'Rental Price': '10'}
+2020-07-08 23:34:23,770 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead23'), 'Product Code': 'SCRS', 'Description': 'Screwdriver Set', 'Product Type': 'Tools', 'Quantity Available': '12', 'Rental Price': '1'}
+2020-07-08 23:34:23,770 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead24'), 'Product Code': 'CWD5', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric', 'Quantity Available': '1', 'Rental Price': '10'}
+2020-07-08 23:34:23,770 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead25'), 'Product Code': 'CWW1', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric', 'Quantity Available': '3', 'Rental Price': '12'}
+2020-07-08 23:34:23,770 database.py:128 INFO Quantity is not available for CW8000 
+
+2020-07-08 23:34:23,770 database.py:130 INFO {'_id': ObjectId('5f06ba47158f5107b79ead26'), 'Product Code': 'CW8000', 'Description': 'Cleanswell 8000', 'Product Type': 'Electric', 'Quantity Available': '0', 'Rental Price': '30'}
+2020-07-08 23:34:23,771 database.py:131 INFO 
+
+2020-07-08 23:34:23,771 database.py:132 INFO {'PD5X': {'Product Code': 'PD5X', 'Quantity Available': '12', 'Description': 'Power Drill 5Xt', 'Product Type': 'Tools'}, 'SLD2': {'Product Code': 'SLD2', 'Quantity Available': '20', 'Description': 'Solar Lamp D2', 'Product Type': 'Electric'}, 'SLEDX': {'Product Code': 'SLEDX', 'Quantity Available': '8', 'Description': 'Solar LED X50', 'Product Type': 'Electric'}, 'COU': {'Product Code': 'COU', 'Quantity Available': '2', 'Description': 'Blue Couch', 'Product Type': 'Furniture'}, 'SCRS': {'Product Code': 'SCRS', 'Quantity Available': '12', 'Description': 'Screwdriver Set', 'Product Type': 'Tools'}, 'CWD5': {'Product Code': 'CWD5', 'Quantity Available': '1', 'Description': 'Cleanswell Drier', 'Product Type': 'Electric'}, 'CWW1': {'Product Code': 'CWW1', 'Quantity Available': '3', 'Description': 'Cleanswell Washer', 'Product Type': 'Electric'}}

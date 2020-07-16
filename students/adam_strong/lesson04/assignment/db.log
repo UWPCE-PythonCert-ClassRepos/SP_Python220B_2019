@@ -1,0 +1,12 @@
+2020-06-29 23:16:24,291 basic_operations.py:68  INFO Added Silas Skinflint (ID: 1) to database
+2020-06-29 23:17:13,254 basic_operations.py:68  INFO Added Goldie Halfer (ID: 2) to database
+2020-06-29 23:17:57,454 basic_operations.py:68  INFO Added Belahen Olo (ID: 3) to database
+2020-06-29 23:18:52,405 basic_operations.py:68  INFO Added Tired Reah (ID: 4) to database
+2020-06-29 23:19:21,654 basic_operations.py:105 INFO Tired Reah's (ID: 4) credit limit is now $8000000
+2020-06-29 23:20:41,637 basic_operations.py:92  INFO Deleting Belahen Olo (ID: 3) from the database
+2020-06-29 23:21:26,680 basic_operations.py:68  INFO Added Lmonkey Dazzles (ID: 5) to database
+2020-06-30 00:55:53,549 basic_operations.py:68  INFO Added Redford Darma (ID: 6) to database
+2020-06-30 00:55:53,549 basic_operations.py:68  INFO Added Redford Darma (ID: 6) to database
+2020-06-30 22:13:29,909 basic_operations.py:84  INFO Deleting Redford Darma (ID: 6) from the database
+2020-06-30 23:44:38,514 basic_operations.py:62  INFO Added Redford Darma (ID: 1) to database
+2020-07-01 00:06:14,173 basic_operations.py:62  INFO Added Redford 0a (ID: 2) to database

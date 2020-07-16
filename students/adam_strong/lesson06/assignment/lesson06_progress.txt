@@ -1,0 +1,87 @@
+This is a log of changes to increase the speed of poor_perf.py into good_perf.py
+All time profiling was used with end_time - start_time in a print statement 
+(Python version 3.7.0)
+
+
+Original undedited file - poor_pref.py
+###########################################
+
+
+{'2013': 95380, '2014': 95056, '2015': 95306, '2016': 95017, '2017': 95240, '2018': 95505}
+'ao' was found 500150 times
+
+Total time:  0:00:02.673322
+Total time:  0:00:02.669749
+Total time:  0:00:02.656624
+
+
+Changed the several if statements into a single if...elif block
+###########################################
+
+{'2013': 95380, '2014': 95056, '2015': 95306, '2016': 95017, '2017': 95240, '2018': 95505}
+'ao' was found 500150 times
+
+Total time:  0:00:02.498865
+Total time:  0:00:02.588689
+Total time:  0:00:02.613944
+
+
+good_perf_v1:
+    - Removed two instances of readcsv into one instance
+    - Removed intermediary list for years
+    - Merged the two loops through the data into one
+###########################################
+
+{'2013': 95380, '2014': 95056, '2015': 95306, '2016': 95017, '2017': 95240, '2018': 95505}
+'ao' was found 500150 times
+
+Total time:  0:00:01.484664
+Total time:  0:00:01.466423
+Total time:  0:00:01.487197
+
+Removed the redundant lrow = list(row) statement
+##############################################
+{'2013': 95380, '2014': 95056, '2015': 95306, '2016': 95017, '2017': 95240, '2018': 95505}
+'ao' was found 500150 times
+
+Total time:  0:00:01.354015
+Total time:  0:00:01.343732
+Total time:  0:00:01.387750
+
+
+{'2018': 95505, '2015': 95306, '2014': 95056, '2017': 95240, '2016': 95017, '2013': 95380}
+'ao' was found 500150 times
+
+Same build Python 2 (changed the print statements to work with Python 2)
+Total time: 0:00:00.768164
+Total time: 0:00:00.778683
+Total time: 0:00:00.785847
+
+{'2013': 95380, '2014': 95056, '2015': 95306, '2016': 95017, '2017': 95240, '2018': 95505}
+'ao' was found 500150 times
+
+Same build PyPy (changed the print statements to work with Python 2)
+Total time: 0:00:00.625809
+Total time: 0:00:00.612301
+Total time: 0:00:00.620030
+
+
+Another attempt - Tried to do a try: except with a simple <year_count[5][6:] += 1> but it was slower:
+Total time: 0:00:00.633299
+Total time: 0:00:00.663323
+Total time: 0:00:00.642783
+
+############################################
+############################################
+
+OVERALL:
+
+Starting speed:
+ - Python 3.7 @ 2.6656 seconds
+
+Ending speed:
+ - PyPy @ 0.6193799 seconds
+
+############################################
+############################################
+
