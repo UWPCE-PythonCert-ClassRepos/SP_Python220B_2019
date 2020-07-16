@@ -1,0 +1,32 @@
+
+See Luis, comments and suggestions below.
+
+Luis
+    I have updated parallel.py to reflect your suggestion.   Specifically I have tagged the import results so the queue items can be identified.
+    The file results_with_tags.txt are the result of the rerun.
+
+Thanks
+Mike
+
+
+
+
+
+----------------------------------
+
+Luis Comments:
+
++    thread1.start()
++    thread2.start()
++
++    thread1.join()
++    thread2.join()
++
++    end_time = time.time()
++
++    thread1_result = output_queue.get()
+This is only true if thread1 is the first to push data into output_queue. In the (very possible) scenario that thread2 puts its data into the queue first, thread1_result will really contain the results from thread2.
+
+Try to add a marker or something else that allows you to identify whose data you're pulling from the queue.
+
+—

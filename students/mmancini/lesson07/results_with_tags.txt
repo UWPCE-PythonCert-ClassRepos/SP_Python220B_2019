@@ -1,0 +1,3 @@
+INFO:__main__:Product Process Results = 905,0,905,1.9571120738983154,0,TAG_PRODUCTS
+INFO:__main__:Customer Process Results = 905,0,905,2.034116268157959,0,TAG_CUSTOMERS
+INFO:__main__:Total Process Time All Threads = 2.038116693496704
