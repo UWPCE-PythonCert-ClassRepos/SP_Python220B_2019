@@ -1,0 +1,49 @@
+poor_perf.py:
+
+{‘2013': 142994, '2014': 143428, '2015': 142859, '2016': 142701, '2017': 286092, '2018': 0}
+'ao' was found 499558 times
+         1030422 function calls in 4.667 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        2    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+    15202    0.013    0.000    0.033    0.000 codecs.py:319(decode)
+        1    4.441    4.441    4.557    4.557 poor_perf.py:10(analyze)
+        1    0.110    0.110    4.667    4.667 poor_perf.py:61(main)
+    15202    0.020    0.000    0.020    0.000 {built-in method _codecs.utf_8_decode}
+        2    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        2    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+   999999    0.082    0.000    0.082    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+
+good_perf.py:
+
+
+{'2013': 142994, '2014': 143428, '2015': 142859, '2016': 142701, '2017': 143060, '2018': 143032}
+'ao' was found 499558 times
+         15215 function calls in 1.645 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+     7601    0.006    0.000    0.014    0.000 codecs.py:319(decode)
+        1    1.630    1.630    1.645    1.645 good_perf.py:10(analyze)
+        1    0.000    0.000    1.645    1.645 good_perf.py:38(main)
+     7601    0.008    0.000    0.008    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 {built-in method now}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
