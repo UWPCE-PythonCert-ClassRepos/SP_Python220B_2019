@@ -1,0 +1,51 @@
+INFO:test_parallel:Test import_customers_started
+INFO:parallel:Customer file not found
+INFO:test_parallel:test_import_customers completed
+.INFO:test_parallel:Test import_data
+INFO:test_parallel:test_import_data, result_count = (906, 906, 906), result_errors = (0, 0, 0)
+ERROR:parallel:Cannot find product_file
+DEBUG:parallel:Unable to locate product_file
+ERROR:parallel:Cannot find customer_file
+DEBUG:parallel:Unable to locate customer_file
+ERROR:parallel:Cannot find rentals_file
+DEBUG:parallel:Unable to locate rentals_file
+INFO:test_parallel:test_import_data, result_count = (0, 0, 0), result_errors = (1, 1, 1)
+INFO:test_parallel:test_import_data completed
+.INFO:test_parallel:Test import_products_started
+INFO:parallel:Product file not found
+INFO:test_parallel:test_import_products completed
+.INFO:test_parallel:setup start
+INFO:test_parallel:test setup, dbs cleanup status = databases dropped
+INFO:test_parallel:setup import data file to database
+INFO:test_parallel:test setup completed
+.INFO:test_parallel:setup start
+INFO:test_parallel:test setup, dbs cleanup status = databases dropped
+INFO:test_parallel:setup import data file to database
+INFO:test_parallel:test setup completed
+INFO:test_parallel:Test main started
+INFO:parallel:Product Process Results = 905, 0, 1810, 0.5220301151275635, 0
+INFO:parallel:Customer Process Results = 0, 0, 1810, 0.5170292854309082, 1
+INFO:parallel:Total Process Time All Threads = 1.5200867652893066
+INFO:test_parallel:main() tests completed
+.INFO:test_parallel:setup start
+INFO:test_parallel:test setup, dbs cleanup status = databases dropped
+INFO:test_parallel:setup import data file to database
+INFO:test_parallel:test setup completed
+INFO:test_parallel:test show products with quantities available
+INFO:test_parallel:test show_available_products tests completed
+.INFO:test_parallel:setup start
+INFO:test_parallel:test setup, dbs cleanup status = databases dropped
+INFO:test_parallel:setup import data file to database
+INFO:test_parallel:test setup completed
+INFO:test_parallel:test start show_rentals
+INFO:test_parallel:test show_rentals customer who rented product pid001, are {'cid001': {'name': 'JohnSmith', 'address': '111 Broad St.', 'phone_number': '111-222-3333', 'email': 'JohnSmith@gmail.com'}, 'cid004': {'name': 'BettySims', 'address': '444 First St.', 'phone_number': '444-555-6666', 'email': 'BettySims@gmail.com'}}
+INFO:test_parallel:test show_rentals completed
+.
+----------------------------------------------------------------------
+Ran 7 tests in 15.067s
+
+OK
+"parallel runtime:" 
+INFO:__main__:Product Process Results = 905, 0, 905, 0.946054220199585, 0
+INFO:__main__:Customer Process Results = 905, 0, 905, 1.0300588607788086, 0
+INFO:__main__:Total Process Time All Threads = 1.0340592861175537

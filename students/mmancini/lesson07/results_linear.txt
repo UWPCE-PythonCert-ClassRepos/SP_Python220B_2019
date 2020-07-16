@@ -1,0 +1,51 @@
+INFO:test_linear:Test import_customers_started
+INFO:linear:Customer file not found
+INFO:test_linear:test_import_customers completed
+.INFO:test_linear:Test import_data
+INFO:test_linear:test_import_data, result_count = (906, 906, 906), result_errors = (0, 0, 0)
+ERROR:linear:Cannot find product_file
+DEBUG:linear:Unable to locate product_file
+ERROR:linear:Cannot find customer_file
+DEBUG:linear:Unable to locate customer_file
+ERROR:linear:Cannot find rentals_file
+DEBUG:linear:Unable to locate rentals_file
+INFO:test_linear:test_import_data, result_count = (0, 0, 0), result_errors = (1, 1, 1)
+INFO:test_linear:test_import_data completed
+.INFO:test_linear:Test import_products_started
+INFO:linear:Product file not found
+INFO:test_linear:test_import_products completed
+.INFO:test_linear:setup start
+INFO:test_linear:test setup, dbs cleanup status = databases dropped
+INFO:test_linear:setup import data file to database
+INFO:test_linear:test setup completed
+.INFO:test_linear:setup start
+INFO:test_linear:test setup, dbs cleanup status = databases dropped
+INFO:test_linear:setup import data file to database
+INFO:test_linear:test setup completed
+INFO:test_linear:Test main started
+INFO:linear:Product Process Results = (905, 0, 905, 0.7050402164459229, 0)
+INFO:linear:Customer Process Results = (905, 0, 905, 1.0210583209991455, 0)
+INFO:linear:Total Process Time = 1.7270987033843994
+INFO:test_linear:main() tests completed
+.INFO:test_linear:setup start
+INFO:test_linear:test setup, dbs cleanup status = databases dropped
+INFO:test_linear:setup import data file to database
+INFO:test_linear:test setup completed
+INFO:test_linear:test show products with quantities available
+INFO:test_linear:test show_available_products tests completed
+.INFO:test_linear:setup start
+INFO:test_linear:test setup, dbs cleanup status = databases dropped
+INFO:test_linear:setup import data file to database
+INFO:test_linear:test setup completed
+INFO:test_linear:test start show_rentals
+INFO:test_linear:test show_rentals customer who rented product pid001, are {'cid001': {'name': 'JohnSmith', 'address': '111 Broad St.', 'phone_number': '111-222-3333', 'email': 'JohnSmith@gmail.com'}, 'cid004': {'name': 'BettySims', 'address': '444 First St.', 'phone_number': '444-555-6666', 'email': 'BettySims@gmail.com'}}
+INFO:test_linear:test show_rentals completed
+.
+----------------------------------------------------------------------
+Ran 7 tests in 15.188s
+
+OK
+"linear runtime:" 
+INFO:__main__:Product Process Results = (905, 0, 905, 0.7780444622039795, 0)
+INFO:__main__:Customer Process Results = (905, 0, 905, 1.0450596809387207, 0)
+INFO:__main__:Total Process Time = 1.8251044750213623

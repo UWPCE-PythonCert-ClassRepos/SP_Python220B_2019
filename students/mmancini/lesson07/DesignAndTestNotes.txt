@@ -1,0 +1,19 @@
+
+
+Design and Test Notes
+
+. Expanded data files to 1000 records
+. Created linear source from lesson 5 source
+. Created parallel source from linear as base
+. Updated linear and parallel imports for Products and Customers
+. Updated parallel to run imports Products and Customers in parallel
+. DesignDetails - Parallel introduces threads, therefore Products and Customer imports run on their own thread.
+. DesignDetails - Parallel uses the queue class is a blocking class queue.get/put calls for synchronized access
+. Update linear and parallel to report import results (see results.txt files) (see format below)
+. Update linear and parallel to report runtimes (see results.txt files) (see format below)
+. Performance - on average liner executes in 1.9sec and parallel executes in 1.1 secs.
+. Performance - on average parallel shows approx 45% efficiency gain, so running on 2 threads improves performance.
+. Format - Process results format (see results.txt) (ImportedCount, StartingDbCount, EndingDbCount, ImportExecutionTime, ErrorsCount)
+
+
+
