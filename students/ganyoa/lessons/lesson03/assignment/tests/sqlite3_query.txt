@@ -1,0 +1,16 @@
+
+C:\Desktop\SP_Python220B_2019\students\ganyoa\lessons\lesson03\assignment>sqlite3
+SQLite version 3.32.2 2020-06-04 12:58:43
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open customers.db
+sqlite> .tables
+customer
+sqlite> .header on
+sqlite> .mode column
+sqlite> select * from customer;
+customer_id  first_name  last_name   home_address                  phone_number  email_address  customer_status  credit_limit
+-----------  ----------  ----------  ----------------------------  ------------  -------------  ---------------  ------------
+002          Su          Sands       987 Birch St Dover, CA 90387  789-555-4321  su@email.com   1                700
+003          Pat         Smalls      456 Pine St Smithburg, NM 67  654-555-7531  pats@email.co  1                425
