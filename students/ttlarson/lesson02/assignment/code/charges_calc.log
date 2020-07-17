@@ -1,0 +1,994 @@
+2020-07-10 08:07:15,183 charges_calc.py:101 ERROR total_days: -82 for product_code: PRD80.
+2020-07-10 08:07:15,183 charges_calc.py:102 ERROR Removing RNT001 from output.
+2020-07-10 08:07:15,184 charges_calc.py:101 ERROR total_days: -28 for product_code: PRD51.
+2020-07-10 08:07:15,184 charges_calc.py:102 ERROR Removing RNT006 from output.
+2020-07-10 08:07:15,184 charges_calc.py:101 ERROR total_days: -40 for product_code: PRD42.
+2020-07-10 08:07:15,185 charges_calc.py:102 ERROR Removing RNT007 from output.
+2020-07-10 08:07:15,185 charges_calc.py:101 ERROR total_days: -113 for product_code: PRD32.
+2020-07-10 08:07:15,185 charges_calc.py:102 ERROR Removing RNT008 from output.
+2020-07-10 08:07:15,185 charges_calc.py:101 ERROR total_days: -828 for product_code: PRD13.
+2020-07-10 08:07:15,185 charges_calc.py:102 ERROR Removing RNT009 from output.
+2020-07-10 08:07:15,186 charges_calc.py:101 ERROR total_days: -200 for product_code: PRD22.
+2020-07-10 08:07:15,186 charges_calc.py:102 ERROR Removing RNT010 from output.
+2020-07-10 08:07:15,186 charges_calc.py:101 ERROR total_days: -518 for product_code: PRD17.
+2020-07-10 08:07:15,186 charges_calc.py:102 ERROR Removing RNT011 from output.
+2020-07-10 08:07:15,187 charges_calc.py:101 ERROR total_days: -648 for product_code: PRD55.
+2020-07-10 08:07:15,187 charges_calc.py:102 ERROR Removing RNT012 from output.
+2020-07-10 08:07:15,187 charges_calc.py:101 ERROR total_days: -184 for product_code: PRD0.
+2020-07-10 08:07:15,187 charges_calc.py:102 ERROR Removing RNT014 from output.
+2020-07-10 08:07:15,188 charges_calc.py:101 ERROR total_days: -864 for product_code: PRD52.
+2020-07-10 08:07:15,188 charges_calc.py:102 ERROR Removing RNT016 from output.
+2020-07-10 08:07:15,188 charges_calc.py:101 ERROR total_days: -17 for product_code: PRD5.
+2020-07-10 08:07:15,188 charges_calc.py:102 ERROR Removing RNT017 from output.
+2020-07-10 08:07:15,189 charges_calc.py:101 ERROR total_days: -216 for product_code: PRD59.
+2020-07-10 08:07:15,189 charges_calc.py:102 ERROR Removing RNT018 from output.
+2020-07-10 08:07:15,189 charges_calc.py:101 ERROR total_days: -585 for product_code: PRD6.
+2020-07-10 08:07:15,189 charges_calc.py:102 ERROR Removing RNT019 from output.
+2020-07-10 08:07:15,189 charges_calc.py:101 ERROR total_days: -890 for product_code: PRD2.
+2020-07-10 08:07:15,189 charges_calc.py:102 ERROR Removing RNT020 from output.
+2020-07-10 08:07:15,189 charges_calc.py:101 ERROR total_days: -569 for product_code: PRD97.
+2020-07-10 08:07:15,190 charges_calc.py:102 ERROR Removing RNT021 from output.
+2020-07-10 08:07:15,190 charges_calc.py:101 ERROR total_days: -643 for product_code: PRD28.
+2020-07-10 08:07:15,190 charges_calc.py:102 ERROR Removing RNT025 from output.
+2020-07-10 08:07:15,190 charges_calc.py:101 ERROR total_days: -705 for product_code: PRD40.
+2020-07-10 08:07:15,191 charges_calc.py:102 ERROR Removing RNT026 from output.
+2020-07-10 08:07:15,191 charges_calc.py:101 ERROR total_days: -426 for product_code: PRD63.
+2020-07-10 08:07:15,191 charges_calc.py:102 ERROR Removing RNT028 from output.
+2020-07-10 08:07:15,191 charges_calc.py:101 ERROR total_days: -74 for product_code: PRD43.
+2020-07-10 08:07:15,192 charges_calc.py:102 ERROR Removing RNT030 from output.
+2020-07-10 08:07:15,194 charges_calc.py:101 ERROR total_days: -370 for product_code: PRD51.
+2020-07-10 08:07:15,194 charges_calc.py:102 ERROR Removing RNT031 from output.
+2020-07-10 08:07:15,195 charges_calc.py:101 ERROR total_days: -556 for product_code: PRD72.
+2020-07-10 08:07:15,195 charges_calc.py:102 ERROR Removing RNT034 from output.
+2020-07-10 08:07:15,195 charges_calc.py:101 ERROR total_days: -336 for product_code: PRD51.
+2020-07-10 08:07:15,196 charges_calc.py:102 ERROR Removing RNT040 from output.
+2020-07-10 08:07:15,196 charges_calc.py:101 ERROR total_days: -326 for product_code: PRD59.
+2020-07-10 08:07:15,196 charges_calc.py:102 ERROR Removing RNT041 from output.
+2020-07-10 08:07:15,197 charges_calc.py:101 ERROR total_days: -624 for product_code: PRD43.
+2020-07-10 08:07:15,197 charges_calc.py:102 ERROR Removing RNT044 from output.
+2020-07-10 08:07:15,197 charges_calc.py:101 ERROR total_days: -37 for product_code: PRD62.
+2020-07-10 08:07:15,197 charges_calc.py:102 ERROR Removing RNT045 from output.
+2020-07-10 08:07:15,198 charges_calc.py:101 ERROR total_days: -280 for product_code: PRD46.
+2020-07-10 08:07:15,198 charges_calc.py:102 ERROR Removing RNT046 from output.
+2020-07-10 08:07:15,198 charges_calc.py:101 ERROR total_days: -770 for product_code: PRD52.
+2020-07-10 08:07:15,199 charges_calc.py:102 ERROR Removing RNT047 from output.
+2020-07-10 08:07:15,200 charges_calc.py:101 ERROR total_days: -312 for product_code: PRD32.
+2020-07-10 08:07:15,200 charges_calc.py:102 ERROR Removing RNT048 from output.
+2020-07-10 08:07:15,200 charges_calc.py:101 ERROR total_days: -524 for product_code: PRD6.
+2020-07-10 08:07:15,200 charges_calc.py:102 ERROR Removing RNT050 from output.
+2020-07-10 08:07:15,200 charges_calc.py:101 ERROR total_days: -775 for product_code: PRD43.
+2020-07-10 08:07:15,200 charges_calc.py:102 ERROR Removing RNT056 from output.
+2020-07-10 08:07:15,201 charges_calc.py:101 ERROR total_days: -170 for product_code: PRD35.
+2020-07-10 08:07:15,201 charges_calc.py:102 ERROR Removing RNT058 from output.
+2020-07-10 08:07:15,201 charges_calc.py:101 ERROR total_days: -28 for product_code: PRD84.
+2020-07-10 08:07:15,201 charges_calc.py:102 ERROR Removing RNT060 from output.
+2020-07-10 08:07:15,201 charges_calc.py:101 ERROR total_days: -349 for product_code: PRD35.
+2020-07-10 08:07:15,202 charges_calc.py:102 ERROR Removing RNT061 from output.
+2020-07-10 08:07:15,202 charges_calc.py:101 ERROR total_days: -83 for product_code: PRD29.
+2020-07-10 08:07:15,202 charges_calc.py:102 ERROR Removing RNT062 from output.
+2020-07-10 08:07:15,202 charges_calc.py:101 ERROR total_days: -668 for product_code: PRD61.
+2020-07-10 08:07:15,203 charges_calc.py:102 ERROR Removing RNT065 from output.
+2020-07-10 08:07:15,205 charges_calc.py:101 ERROR total_days: -92 for product_code: PRD29.
+2020-07-10 08:07:15,205 charges_calc.py:102 ERROR Removing RNT067 from output.
+2020-07-10 08:07:15,205 charges_calc.py:101 ERROR total_days: -133 for product_code: PRD38.
+2020-07-10 08:07:15,206 charges_calc.py:102 ERROR Removing RNT071 from output.
+2020-07-10 08:07:15,206 charges_calc.py:101 ERROR total_days: -57 for product_code: PRD33.
+2020-07-10 08:07:15,206 charges_calc.py:102 ERROR Removing RNT074 from output.
+2020-07-10 08:07:15,206 charges_calc.py:101 ERROR total_days: -755 for product_code: PRD64.
+2020-07-10 08:07:15,206 charges_calc.py:102 ERROR Removing RNT076 from output.
+2020-07-10 08:07:15,207 charges_calc.py:101 ERROR total_days: -634 for product_code: PRD6.
+2020-07-10 08:07:15,207 charges_calc.py:102 ERROR Removing RNT077 from output.
+2020-07-10 08:07:15,207 charges_calc.py:101 ERROR total_days: -304 for product_code: PRD85.
+2020-07-10 08:07:15,207 charges_calc.py:102 ERROR Removing RNT079 from output.
+2020-07-10 08:07:15,208 charges_calc.py:101 ERROR total_days: -379 for product_code: PRD75.
+2020-07-10 08:07:15,208 charges_calc.py:102 ERROR Removing RNT084 from output.
+2020-07-10 08:07:15,208 charges_calc.py:101 ERROR total_days: -258 for product_code: PRD87.
+2020-07-10 08:07:15,208 charges_calc.py:102 ERROR Removing RNT086 from output.
+2020-07-10 08:07:15,209 charges_calc.py:101 ERROR total_days: -53 for product_code: PRD0.
+2020-07-10 08:07:15,209 charges_calc.py:102 ERROR Removing RNT087 from output.
+2020-07-10 08:07:15,209 charges_calc.py:101 ERROR total_days: -82 for product_code: PRD58.
+2020-07-10 08:07:15,209 charges_calc.py:102 ERROR Removing RNT089 from output.
+2020-07-10 08:07:15,209 charges_calc.py:101 ERROR total_days: -291 for product_code: PRD6.
+2020-07-10 08:07:15,210 charges_calc.py:102 ERROR Removing RNT092 from output.
+2020-07-10 08:07:15,210 charges_calc.py:101 ERROR total_days: -378 for product_code: PRD83.
+2020-07-10 08:07:15,210 charges_calc.py:102 ERROR Removing RNT095 from output.
+2020-07-10 08:07:15,210 charges_calc.py:101 ERROR total_days: -135 for product_code: PRD36.
+2020-07-10 08:07:15,211 charges_calc.py:102 ERROR Removing RNT097 from output.
+2020-07-10 08:07:15,211 charges_calc.py:101 ERROR total_days: -763 for product_code: PRD42.
+2020-07-10 08:07:15,211 charges_calc.py:102 ERROR Removing RNT099 from output.
+2020-07-10 08:07:15,211 charges_calc.py:101 ERROR total_days: -756 for product_code: PRD66.
+2020-07-10 08:07:15,211 charges_calc.py:102 ERROR Removing RNT100 from output.
+2020-07-10 08:07:15,212 charges_calc.py:101 ERROR total_days: -439 for product_code: PRD42.
+2020-07-10 08:07:15,212 charges_calc.py:102 ERROR Removing RNT101 from output.
+2020-07-10 08:07:15,213 charges_calc.py:101 ERROR total_days: -221 for product_code: PRD68.
+2020-07-10 08:07:15,213 charges_calc.py:102 ERROR Removing RNT102 from output.
+2020-07-10 08:07:15,216 charges_calc.py:101 ERROR total_days: -341 for product_code: PRD76.
+2020-07-10 08:07:15,217 charges_calc.py:102 ERROR Removing RNT103 from output.
+2020-07-10 08:07:15,217 charges_calc.py:101 ERROR total_days: -477 for product_code: PRD98.
+2020-07-10 08:07:15,217 charges_calc.py:102 ERROR Removing RNT104 from output.
+2020-07-10 08:07:15,217 charges_calc.py:101 ERROR total_days: -678 for product_code: PRD3.
+2020-07-10 08:07:15,218 charges_calc.py:102 ERROR Removing RNT105 from output.
+2020-07-10 08:07:15,218 charges_calc.py:101 ERROR total_days: -72 for product_code: PRD80.
+2020-07-10 08:07:15,218 charges_calc.py:102 ERROR Removing RNT106 from output.
+2020-07-10 08:07:15,218 charges_calc.py:101 ERROR total_days: -360 for product_code: PRD84.
+2020-07-10 08:07:15,219 charges_calc.py:102 ERROR Removing RNT107 from output.
+2020-07-10 08:07:15,219 charges_calc.py:101 ERROR total_days: -533 for product_code: PRD88.
+2020-07-10 08:07:15,219 charges_calc.py:102 ERROR Removing RNT109 from output.
+2020-07-10 08:07:15,219 charges_calc.py:101 ERROR total_days: -514 for product_code: PRD89.
+2020-07-10 08:07:15,220 charges_calc.py:102 ERROR Removing RNT114 from output.
+2020-07-10 08:07:15,220 charges_calc.py:101 ERROR total_days: -828 for product_code: PRD22.
+2020-07-10 08:07:15,220 charges_calc.py:102 ERROR Removing RNT115 from output.
+2020-07-10 08:07:15,220 charges_calc.py:101 ERROR total_days: -253 for product_code: PRD74.
+2020-07-10 08:07:15,220 charges_calc.py:102 ERROR Removing RNT116 from output.
+2020-07-10 08:07:15,221 charges_calc.py:101 ERROR total_days: -414 for product_code: PRD11.
+2020-07-10 08:07:15,221 charges_calc.py:102 ERROR Removing RNT118 from output.
+2020-07-10 08:07:15,221 charges_calc.py:101 ERROR total_days: -213 for product_code: PRD58.
+2020-07-10 08:07:15,221 charges_calc.py:102 ERROR Removing RNT119 from output.
+2020-07-10 08:07:15,221 charges_calc.py:101 ERROR total_days: -155 for product_code: PRD83.
+2020-07-10 08:07:15,222 charges_calc.py:102 ERROR Removing RNT120 from output.
+2020-07-10 08:07:15,222 charges_calc.py:101 ERROR total_days: -643 for product_code: PRD39.
+2020-07-10 08:07:15,222 charges_calc.py:102 ERROR Removing RNT121 from output.
+2020-07-10 08:07:15,222 charges_calc.py:101 ERROR total_days: -608 for product_code: PRD9.
+2020-07-10 08:07:15,223 charges_calc.py:102 ERROR Removing RNT122 from output.
+2020-07-10 08:07:15,223 charges_calc.py:101 ERROR total_days: -220 for product_code: PRD83.
+2020-07-10 08:07:15,223 charges_calc.py:102 ERROR Removing RNT123 from output.
+2020-07-10 08:07:15,223 charges_calc.py:101 ERROR total_days: -138 for product_code: PRD76.
+2020-07-10 08:07:15,224 charges_calc.py:102 ERROR Removing RNT125 from output.
+2020-07-10 08:07:15,224 charges_calc.py:101 ERROR total_days: -304 for product_code: PRD75.
+2020-07-10 08:07:15,224 charges_calc.py:102 ERROR Removing RNT129 from output.
+2020-07-10 08:07:15,229 charges_calc.py:101 ERROR total_days: -544 for product_code: PRD23.
+2020-07-10 08:07:15,230 charges_calc.py:102 ERROR Removing RNT130 from output.
+2020-07-10 08:07:15,231 charges_calc.py:101 ERROR total_days: -63 for product_code: PRD79.
+2020-07-10 08:07:15,231 charges_calc.py:102 ERROR Removing RNT135 from output.
+2020-07-10 08:07:15,232 charges_calc.py:101 ERROR total_days: -135 for product_code: PRD13.
+2020-07-10 08:07:15,232 charges_calc.py:102 ERROR Removing RNT139 from output.
+2020-07-10 08:07:15,232 charges_calc.py:101 ERROR total_days: -304 for product_code: PRD63.
+2020-07-10 08:07:15,232 charges_calc.py:102 ERROR Removing RNT141 from output.
+2020-07-10 08:07:15,233 charges_calc.py:101 ERROR total_days: -197 for product_code: PRD66.
+2020-07-10 08:07:15,233 charges_calc.py:102 ERROR Removing RNT142 from output.
+2020-07-10 08:07:15,234 charges_calc.py:101 ERROR total_days: -1052 for product_code: PRD38.
+2020-07-10 08:07:15,234 charges_calc.py:102 ERROR Removing RNT143 from output.
+2020-07-10 08:07:15,235 charges_calc.py:101 ERROR total_days: -743 for product_code: PRD31.
+2020-07-10 08:07:15,235 charges_calc.py:102 ERROR Removing RNT145 from output.
+2020-07-10 08:07:15,235 charges_calc.py:101 ERROR total_days: -33 for product_code: PRD33.
+2020-07-10 08:07:15,235 charges_calc.py:102 ERROR Removing RNT148 from output.
+2020-07-10 08:07:15,235 charges_calc.py:101 ERROR total_days: -695 for product_code: PRD34.
+2020-07-10 08:07:15,235 charges_calc.py:102 ERROR Removing RNT149 from output.
+2020-07-10 08:07:15,236 charges_calc.py:101 ERROR total_days: -725 for product_code: PRD93.
+2020-07-10 08:07:15,236 charges_calc.py:102 ERROR Removing RNT151 from output.
+2020-07-10 08:07:15,236 charges_calc.py:101 ERROR total_days: -420 for product_code: PRD35.
+2020-07-10 08:07:15,236 charges_calc.py:102 ERROR Removing RNT154 from output.
+2020-07-10 08:07:15,238 charges_calc.py:101 ERROR total_days: -172 for product_code: PRD30.
+2020-07-10 08:07:15,239 charges_calc.py:102 ERROR Removing RNT155 from output.
+2020-07-10 08:07:15,239 charges_calc.py:101 ERROR total_days: -583 for product_code: PRD72.
+2020-07-10 08:07:15,239 charges_calc.py:102 ERROR Removing RNT157 from output.
+2020-07-10 08:07:15,239 charges_calc.py:101 ERROR total_days: -856 for product_code: PRD3.
+2020-07-10 08:07:15,240 charges_calc.py:102 ERROR Removing RNT158 from output.
+2020-07-10 08:07:15,240 charges_calc.py:101 ERROR total_days: -65 for product_code: PRD61.
+2020-07-10 08:07:15,240 charges_calc.py:102 ERROR Removing RNT160 from output.
+2020-07-10 08:07:15,240 charges_calc.py:101 ERROR total_days: -97 for product_code: PRD43.
+2020-07-10 08:07:15,241 charges_calc.py:102 ERROR Removing RNT163 from output.
+2020-07-10 08:07:15,241 charges_calc.py:101 ERROR total_days: -260 for product_code: PRD71.
+2020-07-10 08:07:15,241 charges_calc.py:102 ERROR Removing RNT164 from output.
+2020-07-10 08:07:15,241 charges_calc.py:101 ERROR total_days: -789 for product_code: PRD60.
+2020-07-10 08:07:15,242 charges_calc.py:102 ERROR Removing RNT166 from output.
+2020-07-10 08:07:15,242 charges_calc.py:101 ERROR total_days: -54 for product_code: PRD34.
+2020-07-10 08:07:15,242 charges_calc.py:102 ERROR Removing RNT167 from output.
+2020-07-10 08:07:15,242 charges_calc.py:101 ERROR total_days: -143 for product_code: PRD44.
+2020-07-10 08:07:15,242 charges_calc.py:102 ERROR Removing RNT168 from output.
+2020-07-10 08:07:15,243 charges_calc.py:101 ERROR total_days: -539 for product_code: PRD0.
+2020-07-10 08:07:15,243 charges_calc.py:102 ERROR Removing RNT169 from output.
+2020-07-10 08:07:15,243 charges_calc.py:101 ERROR total_days: -613 for product_code: PRD54.
+2020-07-10 08:07:15,243 charges_calc.py:102 ERROR Removing RNT170 from output.
+2020-07-10 08:07:15,244 charges_calc.py:101 ERROR total_days: -62 for product_code: PRD48.
+2020-07-10 08:07:15,244 charges_calc.py:102 ERROR Removing RNT175 from output.
+2020-07-10 08:07:15,244 charges_calc.py:101 ERROR total_days: -116 for product_code: PRD35.
+2020-07-10 08:07:15,244 charges_calc.py:102 ERROR Removing RNT178 from output.
+2020-07-10 08:07:15,245 charges_calc.py:101 ERROR total_days: -10 for product_code: PRD16.
+2020-07-10 08:07:15,245 charges_calc.py:102 ERROR Removing RNT179 from output.
+2020-07-10 08:07:15,245 charges_calc.py:101 ERROR total_days: -842 for product_code: PRD12.
+2020-07-10 08:07:15,246 charges_calc.py:102 ERROR Removing RNT180 from output.
+2020-07-10 08:07:15,246 charges_calc.py:101 ERROR total_days: -53 for product_code: PRD10.
+2020-07-10 08:07:15,246 charges_calc.py:102 ERROR Removing RNT183 from output.
+2020-07-10 08:07:15,248 charges_calc.py:101 ERROR total_days: -530 for product_code: PRD66.
+2020-07-10 08:07:15,251 charges_calc.py:102 ERROR Removing RNT184 from output.
+2020-07-10 08:07:15,252 charges_calc.py:101 ERROR total_days: -633 for product_code: PRD12.
+2020-07-10 08:07:15,252 charges_calc.py:102 ERROR Removing RNT187 from output.
+2020-07-10 08:07:15,252 charges_calc.py:101 ERROR total_days: -95 for product_code: PRD54.
+2020-07-10 08:07:15,252 charges_calc.py:102 ERROR Removing RNT189 from output.
+2020-07-10 08:07:15,252 charges_calc.py:101 ERROR total_days: -10 for product_code: PRD59.
+2020-07-10 08:07:15,252 charges_calc.py:102 ERROR Removing RNT192 from output.
+2020-07-10 08:07:15,253 charges_calc.py:101 ERROR total_days: -849 for product_code: PRD93.
+2020-07-10 08:07:15,253 charges_calc.py:102 ERROR Removing RNT195 from output.
+2020-07-10 08:07:15,253 charges_calc.py:101 ERROR total_days: -907 for product_code: PRD92.
+2020-07-10 08:07:15,253 charges_calc.py:102 ERROR Removing RNT196 from output.
+2020-07-10 08:07:15,254 charges_calc.py:101 ERROR total_days: -108 for product_code: PRD69.
+2020-07-10 08:07:15,254 charges_calc.py:102 ERROR Removing RNT197 from output.
+2020-07-10 08:07:15,254 charges_calc.py:101 ERROR total_days: -390 for product_code: PRD14.
+2020-07-10 08:07:15,254 charges_calc.py:102 ERROR Removing RNT201 from output.
+2020-07-10 08:07:15,255 charges_calc.py:101 ERROR total_days: -1001 for product_code: PRD93.
+2020-07-10 08:07:15,256 charges_calc.py:102 ERROR Removing RNT202 from output.
+2020-07-10 08:07:15,256 charges_calc.py:101 ERROR total_days: -650 for product_code: PRD21.
+2020-07-10 08:07:15,256 charges_calc.py:102 ERROR Removing RNT207 from output.
+2020-07-10 08:07:15,256 charges_calc.py:101 ERROR total_days: -6 for product_code: PRD86.
+2020-07-10 08:07:15,256 charges_calc.py:102 ERROR Removing RNT208 from output.
+2020-07-10 08:07:15,256 charges_calc.py:101 ERROR total_days: -184 for product_code: PRD2.
+2020-07-10 08:07:15,256 charges_calc.py:102 ERROR Removing RNT210 from output.
+2020-07-10 08:07:15,257 charges_calc.py:101 ERROR total_days: -158 for product_code: PRD6.
+2020-07-10 08:07:15,257 charges_calc.py:102 ERROR Removing RNT214 from output.
+2020-07-10 08:07:15,257 charges_calc.py:101 ERROR total_days: -70 for product_code: PRD6.
+2020-07-10 08:07:15,257 charges_calc.py:102 ERROR Removing RNT216 from output.
+2020-07-10 08:07:15,257 charges_calc.py:101 ERROR total_days: -744 for product_code: PRD11.
+2020-07-10 08:07:15,258 charges_calc.py:102 ERROR Removing RNT217 from output.
+2020-07-10 08:07:15,258 charges_calc.py:101 ERROR total_days: -353 for product_code: PRD20.
+2020-07-10 08:07:15,258 charges_calc.py:102 ERROR Removing RNT218 from output.
+2020-07-10 08:07:15,258 charges_calc.py:101 ERROR total_days: -820 for product_code: PRD12.
+2020-07-10 08:07:15,258 charges_calc.py:102 ERROR Removing RNT221 from output.
+2020-07-10 08:07:15,261 charges_calc.py:101 ERROR total_days: -646 for product_code: PRD51.
+2020-07-10 08:07:15,262 charges_calc.py:102 ERROR Removing RNT223 from output.
+2020-07-10 08:07:15,262 charges_calc.py:101 ERROR total_days: -394 for product_code: PRD10.
+2020-07-10 08:07:15,263 charges_calc.py:102 ERROR Removing RNT224 from output.
+2020-07-10 08:07:15,263 charges_calc.py:101 ERROR total_days: -142 for product_code: PRD51.
+2020-07-10 08:07:15,263 charges_calc.py:102 ERROR Removing RNT225 from output.
+2020-07-10 08:07:15,264 charges_calc.py:101 ERROR total_days: -827 for product_code: PRD32.
+2020-07-10 08:07:15,264 charges_calc.py:102 ERROR Removing RNT227 from output.
+2020-07-10 08:07:15,265 charges_calc.py:101 ERROR total_days: -112 for product_code: PRD75.
+2020-07-10 08:07:15,265 charges_calc.py:102 ERROR Removing RNT229 from output.
+2020-07-10 08:07:15,266 charges_calc.py:101 ERROR total_days: -641 for product_code: PRD35.
+2020-07-10 08:07:15,266 charges_calc.py:102 ERROR Removing RNT233 from output.
+2020-07-10 08:07:15,267 charges_calc.py:101 ERROR total_days: -95 for product_code: PRD2.
+2020-07-10 08:07:15,268 charges_calc.py:102 ERROR Removing RNT234 from output.
+2020-07-10 08:07:15,268 charges_calc.py:101 ERROR total_days: -997 for product_code: PRD16.
+2020-07-10 08:07:15,268 charges_calc.py:102 ERROR Removing RNT236 from output.
+2020-07-10 08:07:15,269 charges_calc.py:101 ERROR total_days: -147 for product_code: PRD43.
+2020-07-10 08:07:15,269 charges_calc.py:102 ERROR Removing RNT238 from output.
+2020-07-10 08:07:15,269 charges_calc.py:101 ERROR total_days: -207 for product_code: PRD97.
+2020-07-10 08:07:15,269 charges_calc.py:102 ERROR Removing RNT241 from output.
+2020-07-10 08:07:15,270 charges_calc.py:101 ERROR total_days: -348 for product_code: PRD14.
+2020-07-10 08:07:15,272 charges_calc.py:102 ERROR Removing RNT242 from output.
+2020-07-10 08:07:15,272 charges_calc.py:101 ERROR total_days: -421 for product_code: PRD0.
+2020-07-10 08:07:15,273 charges_calc.py:102 ERROR Removing RNT243 from output.
+2020-07-10 08:07:15,273 charges_calc.py:101 ERROR total_days: -647 for product_code: PRD23.
+2020-07-10 08:07:15,273 charges_calc.py:102 ERROR Removing RNT244 from output.
+2020-07-10 08:07:15,273 charges_calc.py:101 ERROR total_days: -158 for product_code: PRD85.
+2020-07-10 08:07:15,274 charges_calc.py:102 ERROR Removing RNT246 from output.
+2020-07-10 08:07:15,274 charges_calc.py:101 ERROR total_days: -30 for product_code: PRD33.
+2020-07-10 08:07:15,274 charges_calc.py:102 ERROR Removing RNT247 from output.
+2020-07-10 08:07:15,274 charges_calc.py:101 ERROR total_days: -197 for product_code: PRD13.
+2020-07-10 08:07:15,274 charges_calc.py:102 ERROR Removing RNT254 from output.
+2020-07-10 08:07:15,274 charges_calc.py:101 ERROR total_days: -194 for product_code: PRD70.
+2020-07-10 08:07:15,274 charges_calc.py:102 ERROR Removing RNT258 from output.
+2020-07-10 08:07:15,275 charges_calc.py:101 ERROR total_days: -547 for product_code: PRD86.
+2020-07-10 08:07:15,275 charges_calc.py:102 ERROR Removing RNT259 from output.
+2020-07-10 08:07:15,275 charges_calc.py:101 ERROR total_days: -374 for product_code: PRD17.
+2020-07-10 08:07:15,275 charges_calc.py:102 ERROR Removing RNT260 from output.
+2020-07-10 08:07:15,276 charges_calc.py:101 ERROR total_days: -124 for product_code: PRD82.
+2020-07-10 08:07:15,276 charges_calc.py:102 ERROR Removing RNT261 from output.
+2020-07-10 08:07:15,276 charges_calc.py:101 ERROR total_days: -729 for product_code: PRD50.
+2020-07-10 08:07:15,276 charges_calc.py:102 ERROR Removing RNT264 from output.
+2020-07-10 08:07:15,276 charges_calc.py:101 ERROR total_days: -1 for product_code: PRD15.
+2020-07-10 08:07:15,277 charges_calc.py:102 ERROR Removing RNT265 from output.
+2020-07-10 08:07:15,277 charges_calc.py:101 ERROR total_days: -37 for product_code: PRD19.
+2020-07-10 08:07:15,277 charges_calc.py:102 ERROR Removing RNT270 from output.
+2020-07-10 08:07:15,278 charges_calc.py:101 ERROR total_days: -842 for product_code: PRD33.
+2020-07-10 08:07:15,278 charges_calc.py:102 ERROR Removing RNT271 from output.
+2020-07-10 08:07:15,278 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD57.
+2020-07-10 08:07:15,279 charges_calc.py:102 ERROR Removing RNT272 from output.
+2020-07-10 08:07:15,279 charges_calc.py:101 ERROR total_days: -671 for product_code: PRD3.
+2020-07-10 08:07:15,279 charges_calc.py:102 ERROR Removing RNT274 from output.
+2020-07-10 08:07:15,280 charges_calc.py:101 ERROR total_days: -655 for product_code: PRD28.
+2020-07-10 08:07:15,283 charges_calc.py:102 ERROR Removing RNT277 from output.
+2020-07-10 08:07:15,284 charges_calc.py:101 ERROR total_days: -152 for product_code: PRD28.
+2020-07-10 08:07:15,284 charges_calc.py:102 ERROR Removing RNT282 from output.
+2020-07-10 08:07:15,284 charges_calc.py:101 ERROR total_days: -18 for product_code: PRD85.
+2020-07-10 08:07:15,284 charges_calc.py:102 ERROR Removing RNT283 from output.
+2020-07-10 08:07:15,285 charges_calc.py:101 ERROR total_days: -109 for product_code: PRD74.
+2020-07-10 08:07:15,286 charges_calc.py:102 ERROR Removing RNT288 from output.
+2020-07-10 08:07:15,286 charges_calc.py:101 ERROR total_days: -5 for product_code: PRD90.
+2020-07-10 08:07:15,286 charges_calc.py:102 ERROR Removing RNT290 from output.
+2020-07-10 08:07:15,286 charges_calc.py:101 ERROR total_days: -199 for product_code: PRD71.
+2020-07-10 08:07:15,286 charges_calc.py:102 ERROR Removing RNT295 from output.
+2020-07-10 08:07:15,286 charges_calc.py:101 ERROR total_days: -574 for product_code: PRD84.
+2020-07-10 08:07:15,286 charges_calc.py:102 ERROR Removing RNT296 from output.
+2020-07-10 08:07:15,287 charges_calc.py:101 ERROR total_days: -156 for product_code: PRD29.
+2020-07-10 08:07:15,287 charges_calc.py:102 ERROR Removing RNT298 from output.
+2020-07-10 08:07:15,287 charges_calc.py:101 ERROR total_days: -5 for product_code: PRD69.
+2020-07-10 08:07:15,287 charges_calc.py:102 ERROR Removing RNT299 from output.
+2020-07-10 08:07:15,288 charges_calc.py:101 ERROR total_days: -211 for product_code: PRD18.
+2020-07-10 08:07:15,288 charges_calc.py:102 ERROR Removing RNT300 from output.
+2020-07-10 08:07:15,288 charges_calc.py:101 ERROR total_days: -559 for product_code: PRD89.
+2020-07-10 08:07:15,288 charges_calc.py:102 ERROR Removing RNT301 from output.
+2020-07-10 08:07:15,288 charges_calc.py:101 ERROR total_days: -284 for product_code: PRD37.
+2020-07-10 08:07:15,289 charges_calc.py:102 ERROR Removing RNT302 from output.
+2020-07-10 08:07:15,289 charges_calc.py:101 ERROR total_days: -405 for product_code: PRD13.
+2020-07-10 08:07:15,290 charges_calc.py:102 ERROR Removing RNT303 from output.
+2020-07-10 08:07:15,290 charges_calc.py:101 ERROR total_days: -180 for product_code: PRD11.
+2020-07-10 08:07:15,290 charges_calc.py:102 ERROR Removing RNT304 from output.
+2020-07-10 08:07:15,290 charges_calc.py:101 ERROR total_days: -630 for product_code: PRD12.
+2020-07-10 08:07:15,290 charges_calc.py:102 ERROR Removing RNT305 from output.
+2020-07-10 08:07:15,290 charges_calc.py:101 ERROR total_days: -562 for product_code: PRD18.
+2020-07-10 08:07:15,290 charges_calc.py:102 ERROR Removing RNT306 from output.
+2020-07-10 08:07:15,290 charges_calc.py:101 ERROR total_days: -88 for product_code: PRD23.
+2020-07-10 08:07:15,291 charges_calc.py:102 ERROR Removing RNT308 from output.
+2020-07-10 08:07:15,291 charges_calc.py:101 ERROR total_days: -38 for product_code: PRD14.
+2020-07-10 08:07:15,291 charges_calc.py:102 ERROR Removing RNT309 from output.
+2020-07-10 08:07:15,291 charges_calc.py:101 ERROR total_days: -876 for product_code: PRD29.
+2020-07-10 08:07:15,291 charges_calc.py:102 ERROR Removing RNT310 from output.
+2020-07-10 08:07:15,295 charges_calc.py:101 ERROR total_days: -584 for product_code: PRD45.
+2020-07-10 08:07:15,295 charges_calc.py:102 ERROR Removing RNT311 from output.
+2020-07-10 08:07:15,296 charges_calc.py:101 ERROR total_days: -83 for product_code: PRD98.
+2020-07-10 08:07:15,297 charges_calc.py:102 ERROR Removing RNT312 from output.
+2020-07-10 08:07:15,297 charges_calc.py:101 ERROR total_days: -340 for product_code: PRD75.
+2020-07-10 08:07:15,298 charges_calc.py:102 ERROR Removing RNT313 from output.
+2020-07-10 08:07:15,298 charges_calc.py:101 ERROR total_days: -506 for product_code: PRD71.
+2020-07-10 08:07:15,299 charges_calc.py:102 ERROR Removing RNT314 from output.
+2020-07-10 08:07:15,299 charges_calc.py:101 ERROR total_days: -272 for product_code: PRD86.
+2020-07-10 08:07:15,299 charges_calc.py:102 ERROR Removing RNT315 from output.
+2020-07-10 08:07:15,299 charges_calc.py:101 ERROR total_days: -270 for product_code: PRD92.
+2020-07-10 08:07:15,300 charges_calc.py:102 ERROR Removing RNT316 from output.
+2020-07-10 08:07:15,300 charges_calc.py:101 ERROR total_days: -417 for product_code: PRD90.
+2020-07-10 08:07:15,300 charges_calc.py:102 ERROR Removing RNT320 from output.
+2020-07-10 08:07:15,301 charges_calc.py:101 ERROR total_days: -313 for product_code: PRD65.
+2020-07-10 08:07:15,301 charges_calc.py:102 ERROR Removing RNT321 from output.
+2020-07-10 08:07:15,301 charges_calc.py:101 ERROR total_days: -1060 for product_code: PRD18.
+2020-07-10 08:07:15,301 charges_calc.py:102 ERROR Removing RNT324 from output.
+2020-07-10 08:07:15,301 charges_calc.py:101 ERROR total_days: -707 for product_code: PRD42.
+2020-07-10 08:07:15,301 charges_calc.py:102 ERROR Removing RNT325 from output.
+2020-07-10 08:07:15,302 charges_calc.py:101 ERROR total_days: -2 for product_code: PRD68.
+2020-07-10 08:07:15,302 charges_calc.py:102 ERROR Removing RNT331 from output.
+2020-07-10 08:07:15,302 charges_calc.py:101 ERROR total_days: -15 for product_code: PRD37.
+2020-07-10 08:07:15,302 charges_calc.py:102 ERROR Removing RNT335 from output.
+2020-07-10 08:07:15,303 charges_calc.py:101 ERROR total_days: -264 for product_code: PRD95.
+2020-07-10 08:07:15,304 charges_calc.py:102 ERROR Removing RNT336 from output.
+2020-07-10 08:07:15,305 charges_calc.py:101 ERROR total_days: -266 for product_code: PRD31.
+2020-07-10 08:07:15,305 charges_calc.py:102 ERROR Removing RNT337 from output.
+2020-07-10 08:07:15,305 charges_calc.py:101 ERROR total_days: -498 for product_code: PRD43.
+2020-07-10 08:07:15,305 charges_calc.py:102 ERROR Removing RNT339 from output.
+2020-07-10 08:07:15,306 charges_calc.py:101 ERROR total_days: -29 for product_code: PRD73.
+2020-07-10 08:07:15,306 charges_calc.py:102 ERROR Removing RNT343 from output.
+2020-07-10 08:07:15,307 charges_calc.py:101 ERROR total_days: -205 for product_code: PRD44.
+2020-07-10 08:07:15,307 charges_calc.py:102 ERROR Removing RNT345 from output.
+2020-07-10 08:07:15,307 charges_calc.py:101 ERROR total_days: -545 for product_code: PRD59.
+2020-07-10 08:07:15,307 charges_calc.py:102 ERROR Removing RNT346 from output.
+2020-07-10 08:07:15,308 charges_calc.py:101 ERROR total_days: -208 for product_code: PRD32.
+2020-07-10 08:07:15,308 charges_calc.py:102 ERROR Removing RNT347 from output.
+2020-07-10 08:07:15,308 charges_calc.py:101 ERROR total_days: -547 for product_code: PRD92.
+2020-07-10 08:07:15,308 charges_calc.py:102 ERROR Removing RNT352 from output.
+2020-07-10 08:07:15,309 charges_calc.py:101 ERROR total_days: -295 for product_code: PRD38.
+2020-07-10 08:07:15,309 charges_calc.py:102 ERROR Removing RNT353 from output.
+2020-07-10 08:07:15,309 charges_calc.py:101 ERROR total_days: -45 for product_code: PRD29.
+2020-07-10 08:07:15,309 charges_calc.py:102 ERROR Removing RNT355 from output.
+2020-07-10 08:07:15,309 charges_calc.py:101 ERROR total_days: -148 for product_code: PRD59.
+2020-07-10 08:07:15,310 charges_calc.py:102 ERROR Removing RNT356 from output.
+2020-07-10 08:07:15,310 charges_calc.py:101 ERROR total_days: -695 for product_code: PRD31.
+2020-07-10 08:07:15,310 charges_calc.py:102 ERROR Removing RNT361 from output.
+2020-07-10 08:07:15,310 charges_calc.py:101 ERROR total_days: -22 for product_code: PRD40.
+2020-07-10 08:07:15,310 charges_calc.py:102 ERROR Removing RNT363 from output.
+2020-07-10 08:07:15,311 charges_calc.py:101 ERROR total_days: -41 for product_code: PRD51.
+2020-07-10 08:07:15,311 charges_calc.py:102 ERROR Removing RNT364 from output.
+2020-07-10 08:07:15,311 charges_calc.py:101 ERROR total_days: -289 for product_code: PRD73.
+2020-07-10 08:07:15,311 charges_calc.py:102 ERROR Removing RNT366 from output.
+2020-07-10 08:07:15,312 charges_calc.py:101 ERROR total_days: -528 for product_code: PRD2.
+2020-07-10 08:07:15,312 charges_calc.py:102 ERROR Removing RNT371 from output.
+2020-07-10 08:07:15,312 charges_calc.py:101 ERROR total_days: -362 for product_code: PRD40.
+2020-07-10 08:07:15,312 charges_calc.py:102 ERROR Removing RNT372 from output.
+2020-07-10 08:07:15,313 charges_calc.py:101 ERROR total_days: -164 for product_code: PRD85.
+2020-07-10 08:07:15,317 charges_calc.py:102 ERROR Removing RNT374 from output.
+2020-07-10 08:07:15,317 charges_calc.py:101 ERROR total_days: -214 for product_code: PRD75.
+2020-07-10 08:07:15,318 charges_calc.py:102 ERROR Removing RNT376 from output.
+2020-07-10 08:07:15,318 charges_calc.py:101 ERROR total_days: -659 for product_code: PRD44.
+2020-07-10 08:07:15,318 charges_calc.py:102 ERROR Removing RNT379 from output.
+2020-07-10 08:07:15,318 charges_calc.py:101 ERROR total_days: -518 for product_code: PRD30.
+2020-07-10 08:07:15,318 charges_calc.py:102 ERROR Removing RNT381 from output.
+2020-07-10 08:07:15,318 charges_calc.py:101 ERROR total_days: -22 for product_code: PRD58.
+2020-07-10 08:07:15,318 charges_calc.py:102 ERROR Removing RNT383 from output.
+2020-07-10 08:07:15,318 charges_calc.py:101 ERROR total_days: -183 for product_code: PRD73.
+2020-07-10 08:07:15,318 charges_calc.py:102 ERROR Removing RNT384 from output.
+2020-07-10 08:07:15,319 charges_calc.py:101 ERROR total_days: -210 for product_code: PRD99.
+2020-07-10 08:07:15,319 charges_calc.py:102 ERROR Removing RNT386 from output.
+2020-07-10 08:07:15,319 charges_calc.py:101 ERROR total_days: -893 for product_code: PRD38.
+2020-07-10 08:07:15,319 charges_calc.py:102 ERROR Removing RNT387 from output.
+2020-07-10 08:07:15,319 charges_calc.py:101 ERROR total_days: -587 for product_code: PRD38.
+2020-07-10 08:07:15,320 charges_calc.py:102 ERROR Removing RNT388 from output.
+2020-07-10 08:07:15,320 charges_calc.py:101 ERROR total_days: -12 for product_code: PRD2.
+2020-07-10 08:07:15,320 charges_calc.py:102 ERROR Removing RNT391 from output.
+2020-07-10 08:07:15,320 charges_calc.py:101 ERROR total_days: -104 for product_code: PRD64.
+2020-07-10 08:07:15,321 charges_calc.py:102 ERROR Removing RNT392 from output.
+2020-07-10 08:07:15,322 charges_calc.py:101 ERROR total_days: -401 for product_code: PRD11.
+2020-07-10 08:07:15,322 charges_calc.py:102 ERROR Removing RNT394 from output.
+2020-07-10 08:07:15,322 charges_calc.py:101 ERROR total_days: -92 for product_code: PRD22.
+2020-07-10 08:07:15,322 charges_calc.py:102 ERROR Removing RNT395 from output.
+2020-07-10 08:07:15,322 charges_calc.py:101 ERROR total_days: -407 for product_code: PRD81.
+2020-07-10 08:07:15,323 charges_calc.py:102 ERROR Removing RNT397 from output.
+2020-07-10 08:07:15,323 charges_calc.py:101 ERROR total_days: -585 for product_code: PRD59.
+2020-07-10 08:07:15,323 charges_calc.py:102 ERROR Removing RNT400 from output.
+2020-07-10 08:07:15,323 charges_calc.py:101 ERROR total_days: -540 for product_code: PRD48.
+2020-07-10 08:07:15,323 charges_calc.py:102 ERROR Removing RNT405 from output.
+2020-07-10 08:07:15,323 charges_calc.py:101 ERROR total_days: -30 for product_code: PRD42.
+2020-07-10 08:07:15,324 charges_calc.py:102 ERROR Removing RNT408 from output.
+2020-07-10 08:07:15,324 charges_calc.py:101 ERROR total_days: -271 for product_code: PRD12.
+2020-07-10 08:07:15,324 charges_calc.py:102 ERROR Removing RNT409 from output.
+2020-07-10 08:07:15,324 charges_calc.py:101 ERROR total_days: -287 for product_code: PRD58.
+2020-07-10 08:07:15,324 charges_calc.py:102 ERROR Removing RNT412 from output.
+2020-07-10 08:07:15,325 charges_calc.py:101 ERROR total_days: -356 for product_code: PRD6.
+2020-07-10 08:07:15,327 charges_calc.py:102 ERROR Removing RNT413 from output.
+2020-07-10 08:07:15,328 charges_calc.py:101 ERROR total_days: -274 for product_code: PRD65.
+2020-07-10 08:07:15,328 charges_calc.py:102 ERROR Removing RNT414 from output.
+2020-07-10 08:07:15,329 charges_calc.py:101 ERROR total_days: -250 for product_code: PRD71.
+2020-07-10 08:07:15,329 charges_calc.py:102 ERROR Removing RNT416 from output.
+2020-07-10 08:07:15,330 charges_calc.py:101 ERROR total_days: -601 for product_code: PRD92.
+2020-07-10 08:07:15,331 charges_calc.py:102 ERROR Removing RNT421 from output.
+2020-07-10 08:07:15,331 charges_calc.py:101 ERROR total_days: -159 for product_code: PRD14.
+2020-07-10 08:07:15,331 charges_calc.py:102 ERROR Removing RNT422 from output.
+2020-07-10 08:07:15,331 charges_calc.py:101 ERROR total_days: -266 for product_code: PRD45.
+2020-07-10 08:07:15,331 charges_calc.py:102 ERROR Removing RNT423 from output.
+2020-07-10 08:07:15,332 charges_calc.py:101 ERROR total_days: -883 for product_code: PRD5.
+2020-07-10 08:07:15,333 charges_calc.py:102 ERROR Removing RNT424 from output.
+2020-07-10 08:07:15,333 charges_calc.py:101 ERROR total_days: -481 for product_code: PRD59.
+2020-07-10 08:07:15,333 charges_calc.py:102 ERROR Removing RNT427 from output.
+2020-07-10 08:07:15,333 charges_calc.py:101 ERROR total_days: -153 for product_code: PRD86.
+2020-07-10 08:07:15,333 charges_calc.py:102 ERROR Removing RNT428 from output.
+2020-07-10 08:07:15,334 charges_calc.py:101 ERROR total_days: -22 for product_code: PRD57.
+2020-07-10 08:07:15,334 charges_calc.py:102 ERROR Removing RNT430 from output.
+2020-07-10 08:07:15,334 charges_calc.py:101 ERROR total_days: -303 for product_code: PRD70.
+2020-07-10 08:07:15,334 charges_calc.py:102 ERROR Removing RNT435 from output.
+2020-07-10 08:07:15,335 charges_calc.py:101 ERROR total_days: -345 for product_code: PRD37.
+2020-07-10 08:07:15,335 charges_calc.py:102 ERROR Removing RNT436 from output.
+2020-07-10 08:07:15,335 charges_calc.py:101 ERROR total_days: -721 for product_code: PRD43.
+2020-07-10 08:07:15,335 charges_calc.py:102 ERROR Removing RNT440 from output.
+2020-07-10 08:07:15,336 charges_calc.py:101 ERROR total_days: -901 for product_code: PRD82.
+2020-07-10 08:07:15,338 charges_calc.py:102 ERROR Removing RNT443 from output.
+2020-07-10 08:07:15,338 charges_calc.py:101 ERROR total_days: -121 for product_code: PRD87.
+2020-07-10 08:07:15,339 charges_calc.py:102 ERROR Removing RNT445 from output.
+2020-07-10 08:07:15,339 charges_calc.py:101 ERROR total_days: -734 for product_code: PRD55.
+2020-07-10 08:07:15,339 charges_calc.py:102 ERROR Removing RNT446 from output.
+2020-07-10 08:07:15,339 charges_calc.py:101 ERROR total_days: -130 for product_code: PRD67.
+2020-07-10 08:07:15,339 charges_calc.py:102 ERROR Removing RNT447 from output.
+2020-07-10 08:07:15,339 charges_calc.py:101 ERROR total_days: -444 for product_code: PRD89.
+2020-07-10 08:07:15,339 charges_calc.py:102 ERROR Removing RNT449 from output.
+2020-07-10 08:07:15,340 charges_calc.py:101 ERROR total_days: -158 for product_code: PRD3.
+2020-07-10 08:07:15,340 charges_calc.py:102 ERROR Removing RNT451 from output.
+2020-07-10 08:07:15,340 charges_calc.py:101 ERROR total_days: -809 for product_code: PRD52.
+2020-07-10 08:07:15,340 charges_calc.py:102 ERROR Removing RNT453 from output.
+2020-07-10 08:07:15,340 charges_calc.py:101 ERROR total_days: -34 for product_code: PRD46.
+2020-07-10 08:07:15,341 charges_calc.py:102 ERROR Removing RNT454 from output.
+2020-07-10 08:07:15,341 charges_calc.py:101 ERROR total_days: -619 for product_code: PRD56.
+2020-07-10 08:07:15,341 charges_calc.py:102 ERROR Removing RNT457 from output.
+2020-07-10 08:07:15,341 charges_calc.py:101 ERROR total_days: -775 for product_code: PRD80.
+2020-07-10 08:07:15,342 charges_calc.py:102 ERROR Removing RNT461 from output.
+2020-07-10 08:07:15,342 charges_calc.py:101 ERROR total_days: -38 for product_code: PRD82.
+2020-07-10 08:07:15,342 charges_calc.py:102 ERROR Removing RNT462 from output.
+2020-07-10 08:07:15,342 charges_calc.py:101 ERROR total_days: -249 for product_code: PRD6.
+2020-07-10 08:07:15,342 charges_calc.py:102 ERROR Removing RNT463 from output.
+2020-07-10 08:07:15,343 charges_calc.py:101 ERROR total_days: -417 for product_code: PRD81.
+2020-07-10 08:07:15,343 charges_calc.py:102 ERROR Removing RNT465 from output.
+2020-07-10 08:07:15,343 charges_calc.py:101 ERROR total_days: -725 for product_code: PRD65.
+2020-07-10 08:07:15,343 charges_calc.py:102 ERROR Removing RNT467 from output.
+2020-07-10 08:07:15,344 charges_calc.py:101 ERROR total_days: -51 for product_code: PRD44.
+2020-07-10 08:07:15,344 charges_calc.py:102 ERROR Removing RNT472 from output.
+2020-07-10 08:07:15,345 charges_calc.py:101 ERROR total_days: -609 for product_code: PRD40.
+2020-07-10 08:07:15,345 charges_calc.py:102 ERROR Removing RNT476 from output.
+2020-07-10 08:07:15,345 charges_calc.py:101 ERROR total_days: -481 for product_code: PRD42.
+2020-07-10 08:07:15,346 charges_calc.py:102 ERROR Removing RNT480 from output.
+2020-07-10 08:07:15,349 charges_calc.py:101 ERROR total_days: -421 for product_code: PRD56.
+2020-07-10 08:07:15,350 charges_calc.py:102 ERROR Removing RNT485 from output.
+2020-07-10 08:07:15,350 charges_calc.py:101 ERROR total_days: -318 for product_code: PRD93.
+2020-07-10 08:07:15,350 charges_calc.py:102 ERROR Removing RNT487 from output.
+2020-07-10 08:07:15,351 charges_calc.py:101 ERROR total_days: -104 for product_code: PRD69.
+2020-07-10 08:07:15,351 charges_calc.py:102 ERROR Removing RNT489 from output.
+2020-07-10 08:07:15,351 charges_calc.py:101 ERROR total_days: -37 for product_code: PRD58.
+2020-07-10 08:07:15,351 charges_calc.py:102 ERROR Removing RNT490 from output.
+2020-07-10 08:07:15,351 charges_calc.py:101 ERROR total_days: -484 for product_code: PRD14.
+2020-07-10 08:07:15,351 charges_calc.py:102 ERROR Removing RNT491 from output.
+2020-07-10 08:07:15,352 charges_calc.py:101 ERROR total_days: -682 for product_code: PRD95.
+2020-07-10 08:07:15,352 charges_calc.py:102 ERROR Removing RNT493 from output.
+2020-07-10 08:07:15,352 charges_calc.py:101 ERROR total_days: -326 for product_code: PRD23.
+2020-07-10 08:07:15,352 charges_calc.py:102 ERROR Removing RNT495 from output.
+2020-07-10 08:07:15,353 charges_calc.py:101 ERROR total_days: -358 for product_code: PRD8.
+2020-07-10 08:07:15,353 charges_calc.py:102 ERROR Removing RNT496 from output.
+2020-07-10 08:07:15,353 charges_calc.py:101 ERROR total_days: -423 for product_code: PRD12.
+2020-07-10 08:07:15,353 charges_calc.py:102 ERROR Removing RNT497 from output.
+2020-07-10 08:07:15,353 charges_calc.py:101 ERROR total_days: -118 for product_code: PRD51.
+2020-07-10 08:07:15,354 charges_calc.py:102 ERROR Removing RNT501 from output.
+2020-07-10 08:07:15,354 charges_calc.py:101 ERROR total_days: -113 for product_code: PRD37.
+2020-07-10 08:07:15,354 charges_calc.py:102 ERROR Removing RNT503 from output.
+2020-07-10 08:07:15,354 charges_calc.py:101 ERROR total_days: -384 for product_code: PRD1.
+2020-07-10 08:07:15,355 charges_calc.py:102 ERROR Removing RNT507 from output.
+2020-07-10 08:07:15,355 charges_calc.py:101 ERROR total_days: -436 for product_code: PRD53.
+2020-07-10 08:07:15,356 charges_calc.py:102 ERROR Removing RNT508 from output.
+2020-07-10 08:07:15,356 charges_calc.py:101 ERROR total_days: -276 for product_code: PRD78.
+2020-07-10 08:07:15,356 charges_calc.py:102 ERROR Removing RNT509 from output.
+2020-07-10 08:07:15,356 charges_calc.py:101 ERROR total_days: -12 for product_code: PRD29.
+2020-07-10 08:07:15,356 charges_calc.py:102 ERROR Removing RNT512 from output.
+2020-07-10 08:07:15,356 charges_calc.py:101 ERROR total_days: -169 for product_code: PRD2.
+2020-07-10 08:07:15,356 charges_calc.py:102 ERROR Removing RNT513 from output.
+2020-07-10 08:07:15,357 charges_calc.py:101 ERROR total_days: -327 for product_code: PRD23.
+2020-07-10 08:07:15,357 charges_calc.py:102 ERROR Removing RNT514 from output.
+2020-07-10 08:07:15,357 charges_calc.py:101 ERROR total_days: -216 for product_code: PRD24.
+2020-07-10 08:07:15,357 charges_calc.py:102 ERROR Removing RNT515 from output.
+2020-07-10 08:07:15,357 charges_calc.py:101 ERROR total_days: -334 for product_code: PRD91.
+2020-07-10 08:07:15,360 charges_calc.py:102 ERROR Removing RNT516 from output.
+2020-07-10 08:07:15,361 charges_calc.py:101 ERROR total_days: -605 for product_code: PRD74.
+2020-07-10 08:07:15,361 charges_calc.py:102 ERROR Removing RNT517 from output.
+2020-07-10 08:07:15,361 charges_calc.py:101 ERROR total_days: -619 for product_code: PRD41.
+2020-07-10 08:07:15,361 charges_calc.py:102 ERROR Removing RNT518 from output.
+2020-07-10 08:07:15,362 charges_calc.py:101 ERROR total_days: -127 for product_code: PRD96.
+2020-07-10 08:07:15,362 charges_calc.py:102 ERROR Removing RNT520 from output.
+2020-07-10 08:07:15,363 charges_calc.py:101 ERROR total_days: -169 for product_code: PRD85.
+2020-07-10 08:07:15,363 charges_calc.py:102 ERROR Removing RNT522 from output.
+2020-07-10 08:07:15,364 charges_calc.py:101 ERROR total_days: -129 for product_code: PRD63.
+2020-07-10 08:07:15,364 charges_calc.py:102 ERROR Removing RNT524 from output.
+2020-07-10 08:07:15,365 charges_calc.py:101 ERROR total_days: -115 for product_code: PRD86.
+2020-07-10 08:07:15,365 charges_calc.py:102 ERROR Removing RNT525 from output.
+2020-07-10 08:07:15,365 charges_calc.py:101 ERROR total_days: -844 for product_code: PRD59.
+2020-07-10 08:07:15,365 charges_calc.py:102 ERROR Removing RNT528 from output.
+2020-07-10 08:07:15,366 charges_calc.py:101 ERROR total_days: -403 for product_code: PRD81.
+2020-07-10 08:07:15,366 charges_calc.py:102 ERROR Removing RNT532 from output.
+2020-07-10 08:07:15,366 charges_calc.py:101 ERROR total_days: -456 for product_code: PRD66.
+2020-07-10 08:07:15,367 charges_calc.py:102 ERROR Removing RNT533 from output.
+2020-07-10 08:07:15,367 charges_calc.py:101 ERROR total_days: -560 for product_code: PRD79.
+2020-07-10 08:07:15,367 charges_calc.py:102 ERROR Removing RNT535 from output.
+2020-07-10 08:07:15,368 charges_calc.py:101 ERROR total_days: -179 for product_code: PRD94.
+2020-07-10 08:07:15,368 charges_calc.py:102 ERROR Removing RNT536 from output.
+2020-07-10 08:07:15,368 charges_calc.py:101 ERROR total_days: -305 for product_code: PRD71.
+2020-07-10 08:07:15,368 charges_calc.py:102 ERROR Removing RNT537 from output.
+2020-07-10 08:07:15,368 charges_calc.py:101 ERROR total_days: -276 for product_code: PRD5.
+2020-07-10 08:07:15,369 charges_calc.py:102 ERROR Removing RNT538 from output.
+2020-07-10 08:07:15,371 charges_calc.py:101 ERROR total_days: -390 for product_code: PRD74.
+2020-07-10 08:07:15,371 charges_calc.py:102 ERROR Removing RNT539 from output.
+2020-07-10 08:07:15,371 charges_calc.py:101 ERROR total_days: -829 for product_code: PRD54.
+2020-07-10 08:07:15,371 charges_calc.py:102 ERROR Removing RNT541 from output.
+2020-07-10 08:07:15,372 charges_calc.py:101 ERROR total_days: -204 for product_code: PRD53.
+2020-07-10 08:07:15,372 charges_calc.py:102 ERROR Removing RNT544 from output.
+2020-07-10 08:07:15,373 charges_calc.py:101 ERROR total_days: -407 for product_code: PRD66.
+2020-07-10 08:07:15,373 charges_calc.py:102 ERROR Removing RNT545 from output.
+2020-07-10 08:07:15,373 charges_calc.py:101 ERROR total_days: -147 for product_code: PRD81.
+2020-07-10 08:07:15,373 charges_calc.py:102 ERROR Removing RNT546 from output.
+2020-07-10 08:07:15,373 charges_calc.py:101 ERROR total_days: -372 for product_code: PRD58.
+2020-07-10 08:07:15,373 charges_calc.py:102 ERROR Removing RNT548 from output.
+2020-07-10 08:07:15,373 charges_calc.py:101 ERROR total_days: -463 for product_code: PRD40.
+2020-07-10 08:07:15,374 charges_calc.py:102 ERROR Removing RNT550 from output.
+2020-07-10 08:07:15,374 charges_calc.py:101 ERROR total_days: -320 for product_code: PRD34.
+2020-07-10 08:07:15,374 charges_calc.py:102 ERROR Removing RNT551 from output.
+2020-07-10 08:07:15,374 charges_calc.py:101 ERROR total_days: -61 for product_code: PRD42.
+2020-07-10 08:07:15,374 charges_calc.py:102 ERROR Removing RNT555 from output.
+2020-07-10 08:07:15,375 charges_calc.py:101 ERROR total_days: -106 for product_code: PRD45.
+2020-07-10 08:07:15,375 charges_calc.py:102 ERROR Removing RNT558 from output.
+2020-07-10 08:07:15,375 charges_calc.py:101 ERROR total_days: -790 for product_code: PRD35.
+2020-07-10 08:07:15,375 charges_calc.py:102 ERROR Removing RNT561 from output.
+2020-07-10 08:07:15,376 charges_calc.py:101 ERROR total_days: -96 for product_code: PRD9.
+2020-07-10 08:07:15,376 charges_calc.py:102 ERROR Removing RNT562 from output.
+2020-07-10 08:07:15,376 charges_calc.py:101 ERROR total_days: -1002 for product_code: PRD3.
+2020-07-10 08:07:15,376 charges_calc.py:102 ERROR Removing RNT566 from output.
+2020-07-10 08:07:15,377 charges_calc.py:101 ERROR total_days: -124 for product_code: PRD43.
+2020-07-10 08:07:15,377 charges_calc.py:102 ERROR Removing RNT569 from output.
+2020-07-10 08:07:15,378 charges_calc.py:101 ERROR total_days: -131 for product_code: PRD7.
+2020-07-10 08:07:15,378 charges_calc.py:102 ERROR Removing RNT570 from output.
+2020-07-10 08:07:15,378 charges_calc.py:101 ERROR total_days: -797 for product_code: PRD38.
+2020-07-10 08:07:15,378 charges_calc.py:102 ERROR Removing RNT572 from output.
+2020-07-10 08:07:15,379 charges_calc.py:101 ERROR total_days: -191 for product_code: PRD91.
+2020-07-10 08:07:15,379 charges_calc.py:102 ERROR Removing RNT575 from output.
+2020-07-10 08:07:15,379 charges_calc.py:101 ERROR total_days: -434 for product_code: PRD81.
+2020-07-10 08:07:15,383 charges_calc.py:102 ERROR Removing RNT580 from output.
+2020-07-10 08:07:15,383 charges_calc.py:101 ERROR total_days: -4 for product_code: PRD10.
+2020-07-10 08:07:15,384 charges_calc.py:102 ERROR Removing RNT582 from output.
+2020-07-10 08:07:15,384 charges_calc.py:101 ERROR total_days: -756 for product_code: PRD75.
+2020-07-10 08:07:15,385 charges_calc.py:102 ERROR Removing RNT585 from output.
+2020-07-10 08:07:15,385 charges_calc.py:101 ERROR total_days: -206 for product_code: PRD73.
+2020-07-10 08:07:15,385 charges_calc.py:102 ERROR Removing RNT586 from output.
+2020-07-10 08:07:15,385 charges_calc.py:101 ERROR total_days: -407 for product_code: PRD63.
+2020-07-10 08:07:15,385 charges_calc.py:102 ERROR Removing RNT587 from output.
+2020-07-10 08:07:15,386 charges_calc.py:101 ERROR total_days: -545 for product_code: PRD67.
+2020-07-10 08:07:15,386 charges_calc.py:102 ERROR Removing RNT590 from output.
+2020-07-10 08:07:15,386 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD73.
+2020-07-10 08:07:15,386 charges_calc.py:102 ERROR Removing RNT591 from output.
+2020-07-10 08:07:15,386 charges_calc.py:101 ERROR total_days: -114 for product_code: PRD1.
+2020-07-10 08:07:15,387 charges_calc.py:102 ERROR Removing RNT592 from output.
+2020-07-10 08:07:15,387 charges_calc.py:101 ERROR total_days: -64 for product_code: PRD69.
+2020-07-10 08:07:15,387 charges_calc.py:102 ERROR Removing RNT593 from output.
+2020-07-10 08:07:15,387 charges_calc.py:101 ERROR total_days: -418 for product_code: PRD24.
+2020-07-10 08:07:15,388 charges_calc.py:102 ERROR Removing RNT595 from output.
+2020-07-10 08:07:15,388 charges_calc.py:101 ERROR total_days: -615 for product_code: PRD45.
+2020-07-10 08:07:15,388 charges_calc.py:102 ERROR Removing RNT597 from output.
+2020-07-10 08:07:15,388 charges_calc.py:101 ERROR total_days: -550 for product_code: PRD48.
+2020-07-10 08:07:15,388 charges_calc.py:102 ERROR Removing RNT598 from output.
+2020-07-10 08:07:15,389 charges_calc.py:101 ERROR total_days: -856 for product_code: PRD87.
+2020-07-10 08:07:15,389 charges_calc.py:102 ERROR Removing RNT599 from output.
+2020-07-10 08:07:15,389 charges_calc.py:101 ERROR total_days: -151 for product_code: PRD71.
+2020-07-10 08:07:15,389 charges_calc.py:102 ERROR Removing RNT601 from output.
+2020-07-10 08:07:15,390 charges_calc.py:101 ERROR total_days: -181 for product_code: PRD24.
+2020-07-10 08:07:15,390 charges_calc.py:102 ERROR Removing RNT602 from output.
+2020-07-10 08:07:15,390 charges_calc.py:101 ERROR total_days: -588 for product_code: PRD65.
+2020-07-10 08:07:15,390 charges_calc.py:102 ERROR Removing RNT603 from output.
+2020-07-10 08:07:15,390 charges_calc.py:101 ERROR total_days: -373 for product_code: PRD72.
+2020-07-10 08:07:15,390 charges_calc.py:102 ERROR Removing RNT604 from output.
+2020-07-10 08:07:15,391 charges_calc.py:101 ERROR total_days: -424 for product_code: PRD48.
+2020-07-10 08:07:15,391 charges_calc.py:102 ERROR Removing RNT605 from output.
+2020-07-10 08:07:15,391 charges_calc.py:101 ERROR total_days: -873 for product_code: PRD61.
+2020-07-10 08:07:15,391 charges_calc.py:102 ERROR Removing RNT606 from output.
+2020-07-10 08:07:15,392 charges_calc.py:101 ERROR total_days: -34 for product_code: PRD97.
+2020-07-10 08:07:15,394 charges_calc.py:102 ERROR Removing RNT611 from output.
+2020-07-10 08:07:15,394 charges_calc.py:101 ERROR total_days: -260 for product_code: PRD99.
+2020-07-10 08:07:15,394 charges_calc.py:102 ERROR Removing RNT613 from output.
+2020-07-10 08:07:15,394 charges_calc.py:101 ERROR total_days: -93 for product_code: PRD29.
+2020-07-10 08:07:15,396 charges_calc.py:102 ERROR Removing RNT615 from output.
+2020-07-10 08:07:15,397 charges_calc.py:101 ERROR total_days: -126 for product_code: PRD40.
+2020-07-10 08:07:15,397 charges_calc.py:102 ERROR Removing RNT622 from output.
+2020-07-10 08:07:15,398 charges_calc.py:101 ERROR total_days: -355 for product_code: PRD11.
+2020-07-10 08:07:15,398 charges_calc.py:102 ERROR Removing RNT626 from output.
+2020-07-10 08:07:15,398 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD68.
+2020-07-10 08:07:15,398 charges_calc.py:102 ERROR Removing RNT630 from output.
+2020-07-10 08:07:15,398 charges_calc.py:101 ERROR total_days: -6 for product_code: PRD45.
+2020-07-10 08:07:15,398 charges_calc.py:102 ERROR Removing RNT632 from output.
+2020-07-10 08:07:15,399 charges_calc.py:101 ERROR total_days: -158 for product_code: PRD54.
+2020-07-10 08:07:15,400 charges_calc.py:102 ERROR Removing RNT633 from output.
+2020-07-10 08:07:15,400 charges_calc.py:101 ERROR total_days: -40 for product_code: PRD99.
+2020-07-10 08:07:15,400 charges_calc.py:102 ERROR Removing RNT634 from output.
+2020-07-10 08:07:15,401 charges_calc.py:101 ERROR total_days: -413 for product_code: PRD81.
+2020-07-10 08:07:15,401 charges_calc.py:102 ERROR Removing RNT636 from output.
+2020-07-10 08:07:15,401 charges_calc.py:101 ERROR total_days: -341 for product_code: PRD15.
+2020-07-10 08:07:15,401 charges_calc.py:102 ERROR Removing RNT638 from output.
+2020-07-10 08:07:15,401 charges_calc.py:101 ERROR total_days: -455 for product_code: PRD47.
+2020-07-10 08:07:15,402 charges_calc.py:102 ERROR Removing RNT639 from output.
+2020-07-10 08:07:15,402 charges_calc.py:101 ERROR total_days: -498 for product_code: PRD35.
+2020-07-10 08:07:15,402 charges_calc.py:102 ERROR Removing RNT640 from output.
+2020-07-10 08:07:15,402 charges_calc.py:101 ERROR total_days: -22 for product_code: PRD14.
+2020-07-10 08:07:15,402 charges_calc.py:102 ERROR Removing RNT642 from output.
+2020-07-10 08:07:15,405 charges_calc.py:101 ERROR total_days: -980 for product_code: PRD59.
+2020-07-10 08:07:15,405 charges_calc.py:102 ERROR Removing RNT643 from output.
+2020-07-10 08:07:15,405 charges_calc.py:101 ERROR total_days: -209 for product_code: PRD8.
+2020-07-10 08:07:15,405 charges_calc.py:102 ERROR Removing RNT647 from output.
+2020-07-10 08:07:15,405 charges_calc.py:101 ERROR total_days: -388 for product_code: PRD53.
+2020-07-10 08:07:15,405 charges_calc.py:102 ERROR Removing RNT648 from output.
+2020-07-10 08:07:15,406 charges_calc.py:101 ERROR total_days: -243 for product_code: PRD64.
+2020-07-10 08:07:15,406 charges_calc.py:102 ERROR Removing RNT649 from output.
+2020-07-10 08:07:15,406 charges_calc.py:101 ERROR total_days: -960 for product_code: PRD94.
+2020-07-10 08:07:15,406 charges_calc.py:102 ERROR Removing RNT651 from output.
+2020-07-10 08:07:15,406 charges_calc.py:101 ERROR total_days: -150 for product_code: PRD54.
+2020-07-10 08:07:15,406 charges_calc.py:102 ERROR Removing RNT653 from output.
+2020-07-10 08:07:15,407 charges_calc.py:101 ERROR total_days: -823 for product_code: PRD34.
+2020-07-10 08:07:15,407 charges_calc.py:102 ERROR Removing RNT656 from output.
+2020-07-10 08:07:15,407 charges_calc.py:101 ERROR total_days: -373 for product_code: PRD9.
+2020-07-10 08:07:15,407 charges_calc.py:102 ERROR Removing RNT659 from output.
+2020-07-10 08:07:15,408 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD12.
+2020-07-10 08:07:15,408 charges_calc.py:102 ERROR Removing RNT662 from output.
+2020-07-10 08:07:15,408 charges_calc.py:101 ERROR total_days: -348 for product_code: PRD85.
+2020-07-10 08:07:15,408 charges_calc.py:102 ERROR Removing RNT663 from output.
+2020-07-10 08:07:15,408 charges_calc.py:101 ERROR total_days: -681 for product_code: PRD4.
+2020-07-10 08:07:15,408 charges_calc.py:102 ERROR Removing RNT664 from output.
+2020-07-10 08:07:15,409 charges_calc.py:101 ERROR total_days: -216 for product_code: PRD78.
+2020-07-10 08:07:15,409 charges_calc.py:102 ERROR Removing RNT665 from output.
+2020-07-10 08:07:15,409 charges_calc.py:101 ERROR total_days: -644 for product_code: PRD30.
+2020-07-10 08:07:15,409 charges_calc.py:102 ERROR Removing RNT667 from output.
+2020-07-10 08:07:15,409 charges_calc.py:101 ERROR total_days: -47 for product_code: PRD85.
+2020-07-10 08:07:15,409 charges_calc.py:102 ERROR Removing RNT668 from output.
+2020-07-10 08:07:15,410 charges_calc.py:101 ERROR total_days: -302 for product_code: PRD65.
+2020-07-10 08:07:15,410 charges_calc.py:102 ERROR Removing RNT670 from output.
+2020-07-10 08:07:15,410 charges_calc.py:101 ERROR total_days: -262 for product_code: PRD51.
+2020-07-10 08:07:15,410 charges_calc.py:102 ERROR Removing RNT671 from output.
+2020-07-10 08:07:15,410 charges_calc.py:101 ERROR total_days: -456 for product_code: PRD56.
+2020-07-10 08:07:15,411 charges_calc.py:102 ERROR Removing RNT674 from output.
+2020-07-10 08:07:15,411 charges_calc.py:101 ERROR total_days: -17 for product_code: PRD69.
+2020-07-10 08:07:15,411 charges_calc.py:102 ERROR Removing RNT677 from output.
+2020-07-10 08:07:15,412 charges_calc.py:101 ERROR total_days: -14 for product_code: PRD44.
+2020-07-10 08:07:15,412 charges_calc.py:102 ERROR Removing RNT678 from output.
+2020-07-10 08:07:15,412 charges_calc.py:101 ERROR total_days: -657 for product_code: PRD26.
+2020-07-10 08:07:15,412 charges_calc.py:102 ERROR Removing RNT679 from output.
+2020-07-10 08:07:15,413 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD68.
+2020-07-10 08:07:15,416 charges_calc.py:102 ERROR Removing RNT682 from output.
+2020-07-10 08:07:15,417 charges_calc.py:101 ERROR total_days: -449 for product_code: PRD74.
+2020-07-10 08:07:15,417 charges_calc.py:102 ERROR Removing RNT684 from output.
+2020-07-10 08:07:15,417 charges_calc.py:101 ERROR total_days: -34 for product_code: PRD74.
+2020-07-10 08:07:15,417 charges_calc.py:102 ERROR Removing RNT688 from output.
+2020-07-10 08:07:15,418 charges_calc.py:101 ERROR total_days: -739 for product_code: PRD84.
+2020-07-10 08:07:15,418 charges_calc.py:102 ERROR Removing RNT691 from output.
+2020-07-10 08:07:15,418 charges_calc.py:101 ERROR total_days: -29 for product_code: PRD50.
+2020-07-10 08:07:15,418 charges_calc.py:102 ERROR Removing RNT692 from output.
+2020-07-10 08:07:15,418 charges_calc.py:101 ERROR total_days: -450 for product_code: PRD12.
+2020-07-10 08:07:15,418 charges_calc.py:102 ERROR Removing RNT694 from output.
+2020-07-10 08:07:15,419 charges_calc.py:101 ERROR total_days: -131 for product_code: PRD47.
+2020-07-10 08:07:15,419 charges_calc.py:102 ERROR Removing RNT695 from output.
+2020-07-10 08:07:15,419 charges_calc.py:101 ERROR total_days: -496 for product_code: PRD69.
+2020-07-10 08:07:15,419 charges_calc.py:102 ERROR Removing RNT698 from output.
+2020-07-10 08:07:15,419 charges_calc.py:101 ERROR total_days: -292 for product_code: PRD88.
+2020-07-10 08:07:15,420 charges_calc.py:102 ERROR Removing RNT702 from output.
+2020-07-10 08:07:15,420 charges_calc.py:101 ERROR total_days: -106 for product_code: PRD41.
+2020-07-10 08:07:15,420 charges_calc.py:102 ERROR Removing RNT703 from output.
+2020-07-10 08:07:15,420 charges_calc.py:101 ERROR total_days: -630 for product_code: PRD6.
+2020-07-10 08:07:15,420 charges_calc.py:102 ERROR Removing RNT704 from output.
+2020-07-10 08:07:15,421 charges_calc.py:101 ERROR total_days: -114 for product_code: PRD59.
+2020-07-10 08:07:15,421 charges_calc.py:102 ERROR Removing RNT706 from output.
+2020-07-10 08:07:15,421 charges_calc.py:101 ERROR total_days: -123 for product_code: PRD26.
+2020-07-10 08:07:15,421 charges_calc.py:102 ERROR Removing RNT709 from output.
+2020-07-10 08:07:15,421 charges_calc.py:101 ERROR total_days: -365 for product_code: PRD41.
+2020-07-10 08:07:15,422 charges_calc.py:102 ERROR Removing RNT711 from output.
+2020-07-10 08:07:15,422 charges_calc.py:101 ERROR total_days: -427 for product_code: PRD74.
+2020-07-10 08:07:15,422 charges_calc.py:102 ERROR Removing RNT712 from output.
+2020-07-10 08:07:15,422 charges_calc.py:101 ERROR total_days: -426 for product_code: PRD78.
+2020-07-10 08:07:15,422 charges_calc.py:102 ERROR Removing RNT715 from output.
+2020-07-10 08:07:15,422 charges_calc.py:101 ERROR total_days: -987 for product_code: PRD90.
+2020-07-10 08:07:15,423 charges_calc.py:102 ERROR Removing RNT717 from output.
+2020-07-10 08:07:15,423 charges_calc.py:101 ERROR total_days: -170 for product_code: PRD18.
+2020-07-10 08:07:15,423 charges_calc.py:102 ERROR Removing RNT719 from output.
+2020-07-10 08:07:15,423 charges_calc.py:101 ERROR total_days: -201 for product_code: PRD58.
+2020-07-10 08:07:15,423 charges_calc.py:102 ERROR Removing RNT721 from output.
+2020-07-10 08:07:15,424 charges_calc.py:101 ERROR total_days: -577 for product_code: PRD24.
+2020-07-10 08:07:15,424 charges_calc.py:102 ERROR Removing RNT722 from output.
+2020-07-10 08:07:15,424 charges_calc.py:101 ERROR total_days: -94 for product_code: PRD71.
+2020-07-10 08:07:15,424 charges_calc.py:102 ERROR Removing RNT725 from output.
+2020-07-10 08:07:15,424 charges_calc.py:101 ERROR total_days: -567 for product_code: PRD22.
+2020-07-10 08:07:15,424 charges_calc.py:102 ERROR Removing RNT726 from output.
+2020-07-10 08:07:15,425 charges_calc.py:101 ERROR total_days: -117 for product_code: PRD16.
+2020-07-10 08:07:15,427 charges_calc.py:102 ERROR Removing RNT729 from output.
+2020-07-10 08:07:15,428 charges_calc.py:101 ERROR total_days: -76 for product_code: PRD30.
+2020-07-10 08:07:15,428 charges_calc.py:102 ERROR Removing RNT731 from output.
+2020-07-10 08:07:15,429 charges_calc.py:101 ERROR total_days: -267 for product_code: PRD96.
+2020-07-10 08:07:15,430 charges_calc.py:102 ERROR Removing RNT732 from output.
+2020-07-10 08:07:15,430 charges_calc.py:101 ERROR total_days: -202 for product_code: PRD40.
+2020-07-10 08:07:15,431 charges_calc.py:102 ERROR Removing RNT733 from output.
+2020-07-10 08:07:15,431 charges_calc.py:101 ERROR total_days: -126 for product_code: PRD81.
+2020-07-10 08:07:15,431 charges_calc.py:102 ERROR Removing RNT740 from output.
+2020-07-10 08:07:15,431 charges_calc.py:101 ERROR total_days: -319 for product_code: PRD36.
+2020-07-10 08:07:15,432 charges_calc.py:102 ERROR Removing RNT745 from output.
+2020-07-10 08:07:15,432 charges_calc.py:101 ERROR total_days: -69 for product_code: PRD40.
+2020-07-10 08:07:15,432 charges_calc.py:102 ERROR Removing RNT746 from output.
+2020-07-10 08:07:15,432 charges_calc.py:101 ERROR total_days: -168 for product_code: PRD91.
+2020-07-10 08:07:15,432 charges_calc.py:102 ERROR Removing RNT748 from output.
+2020-07-10 08:07:15,433 charges_calc.py:101 ERROR total_days: -137 for product_code: PRD67.
+2020-07-10 08:07:15,433 charges_calc.py:102 ERROR Removing RNT750 from output.
+2020-07-10 08:07:15,433 charges_calc.py:101 ERROR total_days: -203 for product_code: PRD2.
+2020-07-10 08:07:15,433 charges_calc.py:102 ERROR Removing RNT751 from output.
+2020-07-10 08:07:15,434 charges_calc.py:101 ERROR total_days: -71 for product_code: PRD81.
+2020-07-10 08:07:15,434 charges_calc.py:102 ERROR Removing RNT753 from output.
+2020-07-10 08:07:15,434 charges_calc.py:101 ERROR total_days: -142 for product_code: PRD44.
+2020-07-10 08:07:15,434 charges_calc.py:102 ERROR Removing RNT756 from output.
+2020-07-10 08:07:15,434 charges_calc.py:101 ERROR total_days: -160 for product_code: PRD52.
+2020-07-10 08:07:15,435 charges_calc.py:102 ERROR Removing RNT757 from output.
+2020-07-10 08:07:15,435 charges_calc.py:101 ERROR total_days: -767 for product_code: PRD53.
+2020-07-10 08:07:15,435 charges_calc.py:102 ERROR Removing RNT759 from output.
+2020-07-10 08:07:15,435 charges_calc.py:101 ERROR total_days: -230 for product_code: PRD86.
+2020-07-10 08:07:15,436 charges_calc.py:102 ERROR Removing RNT766 from output.
+2020-07-10 08:07:15,438 charges_calc.py:101 ERROR total_days: -1061 for product_code: PRD83.
+2020-07-10 08:07:15,438 charges_calc.py:102 ERROR Removing RNT770 from output.
+2020-07-10 08:07:15,438 charges_calc.py:101 ERROR total_days: -117 for product_code: PRD71.
+2020-07-10 08:07:15,438 charges_calc.py:102 ERROR Removing RNT772 from output.
+2020-07-10 08:07:15,438 charges_calc.py:101 ERROR total_days: -10 for product_code: PRD14.
+2020-07-10 08:07:15,439 charges_calc.py:102 ERROR Removing RNT773 from output.
+2020-07-10 08:07:15,439 charges_calc.py:101 ERROR total_days: -562 for product_code: PRD30.
+2020-07-10 08:07:15,439 charges_calc.py:102 ERROR Removing RNT774 from output.
+2020-07-10 08:07:15,439 charges_calc.py:94  ERROR Unsuported data format for rental_start. time data '' does not match format '%m/%d/%y'
+2020-07-10 08:07:15,439 charges_calc.py:95  ERROR Removing RNT776 from output.
+2020-07-10 08:07:15,440 charges_calc.py:101 ERROR total_days: -375 for product_code: PRD65.
+2020-07-10 08:07:15,440 charges_calc.py:102 ERROR Removing RNT778 from output.
+2020-07-10 08:07:15,440 charges_calc.py:101 ERROR total_days: -163 for product_code: PRD37.
+2020-07-10 08:07:15,440 charges_calc.py:102 ERROR Removing RNT779 from output.
+2020-07-10 08:07:15,440 charges_calc.py:101 ERROR total_days: -284 for product_code: PRD14.
+2020-07-10 08:07:15,441 charges_calc.py:102 ERROR Removing RNT782 from output.
+2020-07-10 08:07:15,441 charges_calc.py:101 ERROR total_days: -615 for product_code: PRD98.
+2020-07-10 08:07:15,441 charges_calc.py:102 ERROR Removing RNT783 from output.
+2020-07-10 08:07:15,441 charges_calc.py:101 ERROR total_days: -400 for product_code: PRD55.
+2020-07-10 08:07:15,441 charges_calc.py:102 ERROR Removing RNT790 from output.
+2020-07-10 08:07:15,442 charges_calc.py:101 ERROR total_days: -288 for product_code: PRD92.
+2020-07-10 08:07:15,442 charges_calc.py:102 ERROR Removing RNT791 from output.
+2020-07-10 08:07:15,442 charges_calc.py:101 ERROR total_days: -974 for product_code: PRD54.
+2020-07-10 08:07:15,442 charges_calc.py:102 ERROR Removing RNT794 from output.
+2020-07-10 08:07:15,442 charges_calc.py:101 ERROR total_days: -132 for product_code: PRD83.
+2020-07-10 08:07:15,442 charges_calc.py:102 ERROR Removing RNT795 from output.
+2020-07-10 08:07:15,443 charges_calc.py:101 ERROR total_days: -219 for product_code: PRD90.
+2020-07-10 08:07:15,443 charges_calc.py:102 ERROR Removing RNT796 from output.
+2020-07-10 08:07:15,443 charges_calc.py:101 ERROR total_days: -250 for product_code: PRD32.
+2020-07-10 08:07:15,443 charges_calc.py:102 ERROR Removing RNT803 from output.
+2020-07-10 08:07:15,444 charges_calc.py:101 ERROR total_days: -258 for product_code: PRD12.
+2020-07-10 08:07:15,444 charges_calc.py:102 ERROR Removing RNT807 from output.
+2020-07-10 08:07:15,444 charges_calc.py:101 ERROR total_days: -222 for product_code: PRD67.
+2020-07-10 08:07:15,445 charges_calc.py:102 ERROR Removing RNT808 from output.
+2020-07-10 08:07:15,445 charges_calc.py:101 ERROR total_days: -241 for product_code: PRD18.
+2020-07-10 08:07:15,445 charges_calc.py:102 ERROR Removing RNT809 from output.
+2020-07-10 08:07:15,446 charges_calc.py:101 ERROR total_days: -68 for product_code: PRD23.
+2020-07-10 08:07:15,446 charges_calc.py:102 ERROR Removing RNT812 from output.
+2020-07-10 08:07:15,446 charges_calc.py:101 ERROR total_days: -378 for product_code: PRD32.
+2020-07-10 08:07:15,446 charges_calc.py:102 ERROR Removing RNT814 from output.
+2020-07-10 08:07:15,446 charges_calc.py:101 ERROR total_days: -248 for product_code: PRD58.
+2020-07-10 08:07:15,451 charges_calc.py:102 ERROR Removing RNT815 from output.
+2020-07-10 08:07:15,451 charges_calc.py:101 ERROR total_days: -167 for product_code: PRD72.
+2020-07-10 08:07:15,451 charges_calc.py:102 ERROR Removing RNT816 from output.
+2020-07-10 08:07:15,451 charges_calc.py:101 ERROR total_days: -1020 for product_code: PRD66.
+2020-07-10 08:07:15,451 charges_calc.py:102 ERROR Removing RNT817 from output.
+2020-07-10 08:07:15,452 charges_calc.py:101 ERROR total_days: -549 for product_code: PRD36.
+2020-07-10 08:07:15,452 charges_calc.py:102 ERROR Removing RNT818 from output.
+2020-07-10 08:07:15,452 charges_calc.py:101 ERROR total_days: -73 for product_code: PRD84.
+2020-07-10 08:07:15,452 charges_calc.py:102 ERROR Removing RNT819 from output.
+2020-07-10 08:07:15,452 charges_calc.py:101 ERROR total_days: -8 for product_code: PRD97.
+2020-07-10 08:07:15,453 charges_calc.py:102 ERROR Removing RNT820 from output.
+2020-07-10 08:07:15,453 charges_calc.py:101 ERROR total_days: -126 for product_code: PRD26.
+2020-07-10 08:07:15,453 charges_calc.py:102 ERROR Removing RNT822 from output.
+2020-07-10 08:07:15,453 charges_calc.py:101 ERROR total_days: -113 for product_code: PRD67.
+2020-07-10 08:07:15,453 charges_calc.py:102 ERROR Removing RNT825 from output.
+2020-07-10 08:07:15,454 charges_calc.py:101 ERROR total_days: -3 for product_code: PRD10.
+2020-07-10 08:07:15,454 charges_calc.py:102 ERROR Removing RNT831 from output.
+2020-07-10 08:07:15,454 charges_calc.py:101 ERROR total_days: -594 for product_code: PRD2.
+2020-07-10 08:07:15,454 charges_calc.py:102 ERROR Removing RNT835 from output.
+2020-07-10 08:07:15,454 charges_calc.py:101 ERROR total_days: -5 for product_code: PRD32.
+2020-07-10 08:07:15,455 charges_calc.py:102 ERROR Removing RNT836 from output.
+2020-07-10 08:07:15,455 charges_calc.py:101 ERROR total_days: -179 for product_code: PRD67.
+2020-07-10 08:07:15,455 charges_calc.py:102 ERROR Removing RNT839 from output.
+2020-07-10 08:07:15,455 charges_calc.py:101 ERROR total_days: -635 for product_code: PRD63.
+2020-07-10 08:07:15,455 charges_calc.py:102 ERROR Removing RNT840 from output.
+2020-07-10 08:07:15,456 charges_calc.py:101 ERROR total_days: -548 for product_code: PRD91.
+2020-07-10 08:07:15,456 charges_calc.py:102 ERROR Removing RNT842 from output.
+2020-07-10 08:07:15,456 charges_calc.py:101 ERROR total_days: -499 for product_code: PRD79.
+2020-07-10 08:07:15,456 charges_calc.py:102 ERROR Removing RNT843 from output.
+2020-07-10 08:07:15,456 charges_calc.py:101 ERROR total_days: -217 for product_code: PRD26.
+2020-07-10 08:07:15,456 charges_calc.py:102 ERROR Removing RNT844 from output.
+2020-07-10 08:07:15,457 charges_calc.py:101 ERROR total_days: -436 for product_code: PRD89.
+2020-07-10 08:07:15,457 charges_calc.py:102 ERROR Removing RNT846 from output.
+2020-07-10 08:07:15,457 charges_calc.py:101 ERROR total_days: -226 for product_code: PRD88.
+2020-07-10 08:07:15,457 charges_calc.py:102 ERROR Removing RNT847 from output.
+2020-07-10 08:07:15,457 charges_calc.py:101 ERROR total_days: -700 for product_code: PRD58.
+2020-07-10 08:07:15,458 charges_calc.py:102 ERROR Removing RNT849 from output.
+2020-07-10 08:07:15,458 charges_calc.py:101 ERROR total_days: -825 for product_code: PRD88.
+2020-07-10 08:07:15,458 charges_calc.py:102 ERROR Removing RNT853 from output.
+2020-07-10 08:07:15,458 charges_calc.py:101 ERROR total_days: -112 for product_code: PRD28.
+2020-07-10 08:07:15,458 charges_calc.py:102 ERROR Removing RNT855 from output.
+2020-07-10 08:07:15,459 charges_calc.py:101 ERROR total_days: -69 for product_code: PRD61.
+2020-07-10 08:07:15,461 charges_calc.py:102 ERROR Removing RNT858 from output.
+2020-07-10 08:07:15,462 charges_calc.py:101 ERROR total_days: -505 for product_code: PRD52.
+2020-07-10 08:07:15,462 charges_calc.py:102 ERROR Removing RNT861 from output.
+2020-07-10 08:07:15,463 charges_calc.py:101 ERROR total_days: -219 for product_code: PRD42.
+2020-07-10 08:07:15,463 charges_calc.py:102 ERROR Removing RNT863 from output.
+2020-07-10 08:07:15,464 charges_calc.py:101 ERROR total_days: -8 for product_code: PRD53.
+2020-07-10 08:07:15,464 charges_calc.py:102 ERROR Removing RNT864 from output.
+2020-07-10 08:07:15,464 charges_calc.py:101 ERROR total_days: -239 for product_code: PRD57.
+2020-07-10 08:07:15,464 charges_calc.py:102 ERROR Removing RNT866 from output.
+2020-07-10 08:07:15,465 charges_calc.py:101 ERROR total_days: -146 for product_code: PRD60.
+2020-07-10 08:07:15,465 charges_calc.py:102 ERROR Removing RNT867 from output.
+2020-07-10 08:07:15,465 charges_calc.py:101 ERROR total_days: -299 for product_code: PRD74.
+2020-07-10 08:07:15,465 charges_calc.py:102 ERROR Removing RNT869 from output.
+2020-07-10 08:07:15,465 charges_calc.py:101 ERROR total_days: -69 for product_code: PRD25.
+2020-07-10 08:07:15,465 charges_calc.py:102 ERROR Removing RNT871 from output.
+2020-07-10 08:07:15,466 charges_calc.py:101 ERROR total_days: -76 for product_code: PRD16.
+2020-07-10 08:07:15,466 charges_calc.py:102 ERROR Removing RNT873 from output.
+2020-07-10 08:07:15,466 charges_calc.py:101 ERROR total_days: -3 for product_code: PRD83.
+2020-07-10 08:07:15,466 charges_calc.py:102 ERROR Removing RNT874 from output.
+2020-07-10 08:07:15,466 charges_calc.py:101 ERROR total_days: -222 for product_code: PRD60.
+2020-07-10 08:07:15,467 charges_calc.py:102 ERROR Removing RNT876 from output.
+2020-07-10 08:07:15,467 charges_calc.py:101 ERROR total_days: -693 for product_code: PRD44.
+2020-07-10 08:07:15,467 charges_calc.py:102 ERROR Removing RNT879 from output.
+2020-07-10 08:07:15,468 charges_calc.py:101 ERROR total_days: -654 for product_code: PRD3.
+2020-07-10 08:07:15,468 charges_calc.py:102 ERROR Removing RNT882 from output.
+2020-07-10 08:07:15,468 charges_calc.py:101 ERROR total_days: -206 for product_code: PRD28.
+2020-07-10 08:07:15,468 charges_calc.py:102 ERROR Removing RNT883 from output.
+2020-07-10 08:07:15,468 charges_calc.py:101 ERROR total_days: -216 for product_code: PRD1.
+2020-07-10 08:07:15,468 charges_calc.py:102 ERROR Removing RNT884 from output.
+2020-07-10 08:07:15,469 charges_calc.py:101 ERROR total_days: -93 for product_code: PRD33.
+2020-07-10 08:07:15,469 charges_calc.py:102 ERROR Removing RNT886 from output.
+2020-07-10 08:07:15,469 charges_calc.py:101 ERROR total_days: -813 for product_code: PRD91.
+2020-07-10 08:07:15,469 charges_calc.py:102 ERROR Removing RNT890 from output.
+2020-07-10 08:07:15,469 charges_calc.py:101 ERROR total_days: -129 for product_code: PRD6.
+2020-07-10 08:07:15,472 charges_calc.py:102 ERROR Removing RNT892 from output.
+2020-07-10 08:07:15,472 charges_calc.py:101 ERROR total_days: -281 for product_code: PRD20.
+2020-07-10 08:07:15,472 charges_calc.py:102 ERROR Removing RNT893 from output.
+2020-07-10 08:07:15,473 charges_calc.py:101 ERROR total_days: -89 for product_code: PRD29.
+2020-07-10 08:07:15,473 charges_calc.py:102 ERROR Removing RNT894 from output.
+2020-07-10 08:07:15,473 charges_calc.py:101 ERROR total_days: -914 for product_code: PRD9.
+2020-07-10 08:07:15,473 charges_calc.py:102 ERROR Removing RNT895 from output.
+2020-07-10 08:07:15,473 charges_calc.py:101 ERROR total_days: -94 for product_code: PRD74.
+2020-07-10 08:07:15,473 charges_calc.py:102 ERROR Removing RNT896 from output.
+2020-07-10 08:07:15,474 charges_calc.py:101 ERROR total_days: -285 for product_code: PRD7.
+2020-07-10 08:07:15,474 charges_calc.py:102 ERROR Removing RNT898 from output.
+2020-07-10 08:07:15,474 charges_calc.py:101 ERROR total_days: -140 for product_code: PRD69.
+2020-07-10 08:07:15,474 charges_calc.py:102 ERROR Removing RNT901 from output.
+2020-07-10 08:07:15,474 charges_calc.py:101 ERROR total_days: -117 for product_code: PRD55.
+2020-07-10 08:07:15,475 charges_calc.py:102 ERROR Removing RNT903 from output.
+2020-07-10 08:07:15,475 charges_calc.py:101 ERROR total_days: -16 for product_code: PRD77.
+2020-07-10 08:07:15,475 charges_calc.py:102 ERROR Removing RNT905 from output.
+2020-07-10 08:07:15,475 charges_calc.py:101 ERROR total_days: -736 for product_code: PRD52.
+2020-07-10 08:07:15,475 charges_calc.py:102 ERROR Removing RNT909 from output.
+2020-07-10 08:07:15,476 charges_calc.py:101 ERROR total_days: -271 for product_code: PRD55.
+2020-07-10 08:07:15,476 charges_calc.py:102 ERROR Removing RNT911 from output.
+2020-07-10 08:07:15,476 charges_calc.py:101 ERROR total_days: -806 for product_code: PRD54.
+2020-07-10 08:07:15,476 charges_calc.py:102 ERROR Removing RNT912 from output.
+2020-07-10 08:07:15,476 charges_calc.py:101 ERROR total_days: -731 for product_code: PRD56.
+2020-07-10 08:07:15,476 charges_calc.py:102 ERROR Removing RNT914 from output.
+2020-07-10 08:07:15,477 charges_calc.py:101 ERROR total_days: -233 for product_code: PRD35.
+2020-07-10 08:07:15,477 charges_calc.py:102 ERROR Removing RNT915 from output.
+2020-07-10 08:07:15,477 charges_calc.py:101 ERROR total_days: -263 for product_code: PRD75.
+2020-07-10 08:07:15,477 charges_calc.py:102 ERROR Removing RNT917 from output.
+2020-07-10 08:07:15,477 charges_calc.py:101 ERROR total_days: -21 for product_code: PRD0.
+2020-07-10 08:07:15,478 charges_calc.py:102 ERROR Removing RNT918 from output.
+2020-07-10 08:07:15,478 charges_calc.py:101 ERROR total_days: -416 for product_code: PRD2.
+2020-07-10 08:07:15,479 charges_calc.py:102 ERROR Removing RNT919 from output.
+2020-07-10 08:07:15,479 charges_calc.py:101 ERROR total_days: -221 for product_code: PRD3.
+2020-07-10 08:07:15,480 charges_calc.py:102 ERROR Removing RNT922 from output.
+2020-07-10 08:07:15,480 charges_calc.py:101 ERROR total_days: -769 for product_code: PRD79.
+2020-07-10 08:07:15,480 charges_calc.py:102 ERROR Removing RNT924 from output.
+2020-07-10 08:07:15,481 charges_calc.py:101 ERROR total_days: -149 for product_code: PRD44.
+2020-07-10 08:07:15,483 charges_calc.py:102 ERROR Removing RNT926 from output.
+2020-07-10 08:07:15,483 charges_calc.py:101 ERROR total_days: -30 for product_code: PRD61.
+2020-07-10 08:07:15,484 charges_calc.py:102 ERROR Removing RNT927 from output.
+2020-07-10 08:07:15,484 charges_calc.py:101 ERROR total_days: -557 for product_code: PRD66.
+2020-07-10 08:07:15,484 charges_calc.py:102 ERROR Removing RNT928 from output.
+2020-07-10 08:07:15,485 charges_calc.py:101 ERROR total_days: -160 for product_code: PRD50.
+2020-07-10 08:07:15,485 charges_calc.py:102 ERROR Removing RNT930 from output.
+2020-07-10 08:07:15,485 charges_calc.py:101 ERROR total_days: -478 for product_code: PRD94.
+2020-07-10 08:07:15,485 charges_calc.py:102 ERROR Removing RNT931 from output.
+2020-07-10 08:07:15,485 charges_calc.py:101 ERROR total_days: -745 for product_code: PRD63.
+2020-07-10 08:07:15,485 charges_calc.py:102 ERROR Removing RNT932 from output.
+2020-07-10 08:07:15,486 charges_calc.py:101 ERROR total_days: -9 for product_code: PRD97.
+2020-07-10 08:07:15,486 charges_calc.py:102 ERROR Removing RNT935 from output.
+2020-07-10 08:07:15,486 charges_calc.py:101 ERROR total_days: -13 for product_code: PRD57.
+2020-07-10 08:07:15,486 charges_calc.py:102 ERROR Removing RNT937 from output.
+2020-07-10 08:07:15,486 charges_calc.py:101 ERROR total_days: -327 for product_code: PRD6.
+2020-07-10 08:07:15,487 charges_calc.py:102 ERROR Removing RNT938 from output.
+2020-07-10 08:07:15,487 charges_calc.py:101 ERROR total_days: -627 for product_code: PRD94.
+2020-07-10 08:07:15,487 charges_calc.py:102 ERROR Removing RNT939 from output.
+2020-07-10 08:07:15,487 charges_calc.py:101 ERROR total_days: -8 for product_code: PRD2.
+2020-07-10 08:07:15,487 charges_calc.py:102 ERROR Removing RNT940 from output.
+2020-07-10 08:07:15,487 charges_calc.py:101 ERROR total_days: -45 for product_code: PRD29.
+2020-07-10 08:07:15,488 charges_calc.py:102 ERROR Removing RNT942 from output.
+2020-07-10 08:07:15,488 charges_calc.py:101 ERROR total_days: -525 for product_code: PRD78.
+2020-07-10 08:07:15,488 charges_calc.py:102 ERROR Removing RNT943 from output.
+2020-07-10 08:07:15,488 charges_calc.py:101 ERROR total_days: -362 for product_code: PRD26.
+2020-07-10 08:07:15,488 charges_calc.py:102 ERROR Removing RNT944 from output.
+2020-07-10 08:07:15,488 charges_calc.py:101 ERROR total_days: -85 for product_code: PRD81.
+2020-07-10 08:07:15,489 charges_calc.py:102 ERROR Removing RNT946 from output.
+2020-07-10 08:07:15,489 charges_calc.py:101 ERROR total_days: -76 for product_code: PRD72.
+2020-07-10 08:07:15,489 charges_calc.py:102 ERROR Removing RNT947 from output.
+2020-07-10 08:07:15,489 charges_calc.py:101 ERROR total_days: -570 for product_code: PRD90.
+2020-07-10 08:07:15,489 charges_calc.py:102 ERROR Removing RNT948 from output.
+2020-07-10 08:07:15,490 charges_calc.py:101 ERROR total_days: -224 for product_code: PRD50.
+2020-07-10 08:07:15,490 charges_calc.py:102 ERROR Removing RNT949 from output.
+2020-07-10 08:07:15,490 charges_calc.py:101 ERROR total_days: -619 for product_code: PRD99.
+2020-07-10 08:07:15,490 charges_calc.py:102 ERROR Removing RNT951 from output.
+2020-07-10 08:07:15,490 charges_calc.py:101 ERROR total_days: -98 for product_code: PRD74.
+2020-07-10 08:07:15,491 charges_calc.py:102 ERROR Removing RNT955 from output.
+2020-07-10 08:07:15,491 charges_calc.py:101 ERROR total_days: -78 for product_code: PRD43.
+2020-07-10 08:07:15,491 charges_calc.py:102 ERROR Removing RNT956 from output.
+2020-07-10 08:07:15,491 charges_calc.py:101 ERROR total_days: -225 for product_code: PRD28.
+2020-07-10 08:07:15,491 charges_calc.py:102 ERROR Removing RNT957 from output.
+2020-07-10 08:07:15,491 charges_calc.py:101 ERROR total_days: -220 for product_code: PRD82.
+2020-07-10 08:07:15,492 charges_calc.py:102 ERROR Removing RNT958 from output.
+2020-07-10 08:07:15,495 charges_calc.py:101 ERROR total_days: -202 for product_code: PRD92.
+2020-07-10 08:07:15,495 charges_calc.py:102 ERROR Removing RNT959 from output.
+2020-07-10 08:07:15,496 charges_calc.py:101 ERROR total_days: -495 for product_code: PRD30.
+2020-07-10 08:07:15,496 charges_calc.py:102 ERROR Removing RNT960 from output.
+2020-07-10 08:07:15,497 charges_calc.py:101 ERROR total_days: -56 for product_code: PRD67.
+2020-07-10 08:07:15,497 charges_calc.py:102 ERROR Removing RNT961 from output.
+2020-07-10 08:07:15,498 charges_calc.py:101 ERROR total_days: -56 for product_code: PRD27.
+2020-07-10 08:07:15,498 charges_calc.py:102 ERROR Removing RNT962 from output.
+2020-07-10 08:07:15,498 charges_calc.py:101 ERROR total_days: -34 for product_code: PRD20.
+2020-07-10 08:07:15,498 charges_calc.py:102 ERROR Removing RNT963 from output.
+2020-07-10 08:07:15,498 charges_calc.py:101 ERROR total_days: -63 for product_code: PRD19.
+2020-07-10 08:07:15,499 charges_calc.py:102 ERROR Removing RNT965 from output.
+2020-07-10 08:07:15,499 charges_calc.py:101 ERROR total_days: -560 for product_code: PRD14.
+2020-07-10 08:07:15,499 charges_calc.py:102 ERROR Removing RNT967 from output.
+2020-07-10 08:07:15,499 charges_calc.py:101 ERROR total_days: -762 for product_code: PRD77.
+2020-07-10 08:07:15,499 charges_calc.py:102 ERROR Removing RNT969 from output.
+2020-07-10 08:07:15,500 charges_calc.py:101 ERROR total_days: -678 for product_code: PRD61.
+2020-07-10 08:07:15,500 charges_calc.py:102 ERROR Removing RNT970 from output.
+2020-07-10 08:07:15,500 charges_calc.py:101 ERROR total_days: -311 for product_code: PRD78.
+2020-07-10 08:07:15,501 charges_calc.py:102 ERROR Removing RNT971 from output.
+2020-07-10 08:07:15,501 charges_calc.py:101 ERROR total_days: -237 for product_code: PRD66.
+2020-07-10 08:07:15,501 charges_calc.py:102 ERROR Removing RNT974 from output.
+2020-07-10 08:07:15,501 charges_calc.py:101 ERROR total_days: -177 for product_code: PRD23.
+2020-07-10 08:07:15,501 charges_calc.py:102 ERROR Removing RNT977 from output.
+2020-07-10 08:07:15,502 charges_calc.py:101 ERROR total_days: -525 for product_code: PRD48.
+2020-07-10 08:07:15,502 charges_calc.py:102 ERROR Removing RNT979 from output.
+2020-07-10 08:07:15,502 charges_calc.py:101 ERROR total_days: -232 for product_code: PRD39.
+2020-07-10 08:07:15,502 charges_calc.py:102 ERROR Removing RNT982 from output.
+2020-07-10 08:07:15,502 charges_calc.py:101 ERROR total_days: -300 for product_code: PRD46.
+2020-07-10 08:07:15,503 charges_calc.py:102 ERROR Removing RNT983 from output.
+2020-07-10 08:07:15,505 charges_calc.py:101 ERROR total_days: -131 for product_code: PRD63.
+2020-07-10 08:07:15,505 charges_calc.py:102 ERROR Removing RNT985 from output.
+2020-07-10 08:07:15,505 charges_calc.py:101 ERROR total_days: -984 for product_code: PRD40.
+2020-07-10 08:07:15,505 charges_calc.py:102 ERROR Removing RNT986 from output.
+2020-07-10 08:07:15,505 charges_calc.py:101 ERROR total_days: -560 for product_code: PRD23.
+2020-07-10 08:07:15,506 charges_calc.py:102 ERROR Removing RNT987 from output.
+2020-07-10 08:07:15,506 charges_calc.py:101 ERROR total_days: -931 for product_code: PRD19.
+2020-07-10 08:07:15,506 charges_calc.py:102 ERROR Removing RNT989 from output.
+2020-07-10 08:07:15,506 charges_calc.py:101 ERROR total_days: -153 for product_code: PRD42.
+2020-07-10 08:07:15,506 charges_calc.py:102 ERROR Removing RNT994 from output.
+2020-07-10 08:07:15,507 charges_calc.py:101 ERROR total_days: -871 for product_code: PRD73.
+2020-07-10 08:07:15,507 charges_calc.py:102 ERROR Removing RNT998 from output.
+2020-07-10 08:07:15,507 charges_calc.py:101 ERROR total_days: -740 for product_code: PRD69.
+2020-07-10 08:07:15,507 charges_calc.py:102 ERROR Removing RNT999 from output.
