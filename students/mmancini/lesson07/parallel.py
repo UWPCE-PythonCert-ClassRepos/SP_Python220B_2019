@@ -163,8 +163,8 @@ def import_products(directory_name, product_file):
         db_prod_after_count = products.estimated_document_count()
         prod_end = time.time()
         stat_lst = [num_prod_processed, db_prod_init_count, db_prod_after_count,
-                    prod_end-prod_start, error_prod]
-        prod_result = ', '.join(str(x) for x in stat_lst)
+                    prod_end-prod_start, error_prod, "TAG_PRODUCTS"]
+        prod_result = ','.join(str(x) for x in stat_lst)
         output_queue.put(prod_result)
         return stat_lst
 
@@ -202,8 +202,8 @@ def import_customers(directory_name, customer_file):
     db_after_cust_count = customers.estimated_document_count()
     cust_end = time.time()
     stat_lst = [num_cust_processed, db_init_cust_count, db_after_cust_count,
-                cust_end-cust_start, error_cust]
-    cust_result = ', '.join(str(x) for x in stat_lst)
+                cust_end-cust_start, error_cust, "TAG_CUSTOMERS"]
+    cust_result = ','.join(str(x) for x in stat_lst)
     output_queue.put(cust_result)
     return stat_lst
 
@@ -301,11 +301,16 @@ def main():
 
     end_time = time.time()
 
-    thread1_result = output_queue.get()
-    thread2_result = output_queue.get()
-
-    LOGGER.info("Product Process Results = %s", thread1_result)
-    LOGGER.info("Customer Process Results = %s", thread2_result)
+    for i in range(0,2):
+        thread_result = output_queue.get()
+        thread_result_items = thread_result.split(',')
+        if thread_result_items[5] == "TAG_PRODUCTS":
+            result_imported_products = thread_result
+        else:
+            result_imported_consumers = thread_result
+        
+    LOGGER.info("Product Process Results = %s", result_imported_products)
+    LOGGER.info("Customer Process Results = %s", result_imported_consumers)
     LOGGER.info("Total Process Time All Threads = %s", end_time-start_time)
 
 if __name__ == "__main__":
