@@ -1,0 +1,36 @@
+2020-06-30 23:40:00,234 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-06-30 23:40:00,298 basic_operations.py:84  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-06-30 23:40:00,484 basic_operations.py:98  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-01 00:07:40,792 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-01 00:07:40,841 basic_operations.py:82  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-01 00:07:41,045 basic_operations.py:96  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-01 00:07:45,844 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-01 00:07:45,895 basic_operations.py:82  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-01 00:07:46,158 basic_operations.py:96  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-01 00:16:51,513 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-01 00:16:51,564 basic_operations.py:82  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-01 00:16:51,798 basic_operations.py:96  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-01 00:18:38,910 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-01 00:18:38,960 basic_operations.py:83  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-01 00:18:39,181 basic_operations.py:97  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-01 00:23:36,006 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-01 00:23:36,070 basic_operations.py:84  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-01 00:23:36,298 basic_operations.py:98  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 08:49:00,966 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 08:49:01,016 basic_operations.py:84  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 08:49:01,243 basic_operations.py:98  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 09:03:11,987 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 09:03:12,039 basic_operations.py:84  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 09:03:12,260 basic_operations.py:98  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 09:03:30,570 basic_operations.py:62  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 09:03:30,625 basic_operations.py:84  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 09:03:30,887 basic_operations.py:98  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 09:17:43,385 basic_operations.py:63  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 09:17:43,444 basic_operations.py:85  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 09:17:43,662 basic_operations.py:99  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 09:17:48,613 basic_operations.py:63  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 09:17:48,666 basic_operations.py:85  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 09:17:48,913 basic_operations.py:99  INFO Danny McCrinkel's (ID: 2) credit limit is now $399
+2020-07-16 09:19:29,670 basic_operations.py:63  INFO Added Silas Skinflint (ID: 5) to database
+2020-07-16 09:19:29,720 basic_operations.py:85  INFO Deleting Danny McCrinkel (ID: 2) from the database
+2020-07-16 09:19:29,931 basic_operations.py:99  INFO Danny McCrinkel's (ID: 2) credit limit is now $399

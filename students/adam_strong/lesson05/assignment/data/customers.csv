@@ -1,0 +1,11 @@
+User ID,First Name,Last Name,Address,Phone,Email,Is_active,Credit Limit
+user001,John,Jacboson,123 Fake Street,206-848-8987,johnjohn@hotmail.com,1,8000
+user002,Silas,Skinflint,24 Circle Drive,555-264-3435,skinflint@hotmail.com,1,200
+user003,Sammy,Linderson,1000 Infinity Loop,808-732-3007,slinder@lycos.com,1,2000
+user004,Serra,Highlander,8455 Granger Avenue,212-643-5555,shigh@friendster.com,1,800
+user005,Darlene,Smith,200 Dillingham Hw.,800-213-9585,dsmith@navy.gov,0,1
+user006,Jaime,Johnson,8888 Eight Place,643-777-7777,jj@imail.com,1,20000
+user007,Lucas,Simon,2020 Vision Avenue,206-598-5998,lucas@fakemail.com,1,14000
+user008,Carrie,Baker,981 Main St.,425-444-4444,cbaker23@fakemail.com,0,600
+user009,Hal,Issacs,1 Rocky Lane,222-322-5671,hal@hotmal.com,1,100000
+user010,Tammy,Becker,444 8th Ave NE,800-123-4577,tammybecker@fakemail.com,1,0
