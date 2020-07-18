@@ -84,13 +84,18 @@ def configure_logging(log_level):
 
     :param log_level: Integer to set logging level to
     """
+    logger = logging.getLogger()
     # Convert log level to numeric value of logging level
-    if log_level == 1:
+    if log_level == 0:
+        logger.disabled = True
+    elif log_level == 1:
         log_level = logging.ERROR
     elif log_level == 2:
         log_level = logging.WARNING
     elif log_level == 3:
         log_level = logging.DEBUG
+    else:
+        raise ValueError(f'{log_level} is an invalid log level.  Must be between 0 and 3.')
 
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
     formatter = logging.Formatter(log_format)
@@ -104,9 +109,6 @@ def configure_logging(log_level):
     console_handler.setLevel(logging.DEBUG)
     console_handler.setFormatter(formatter)
 
-    logger = logging.getLogger()
-    if log_level == 0:
-        logger.disabled = True
     logger.setLevel(log_level)
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
