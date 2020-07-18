@@ -1,0 +1,66 @@
+
+
+# poor_perf.py: 
+{'2013': 111171, '2014': 110772, '2015': 111427, '2016': 111424, '2017': 221700, '2018': 0}
+'ao' was found 499600 times
+[63.0163082, 60.656016, 61.54847649999999, 62.3749842, 65.53519150000002]
+mean: 62.626195280000005
+
+First use timeit to test the performance of poor_perf.py and we see that the average time is 62.63 sec.
+
+Next, I look at the code in poor_perf.py and can immediately identify several items to fix:
+1. The data file is opened twice, which is unneccessary and a big performance cost. 
+2. The "new_ones" list is not used efficiently and can be refactored out. Thus removing the second for 
+   loop for new_ones. 
+3. Because of #2, I need to move some code around and recode the series of if statements in the first loop 
+   since the second loop is redundent and removed.
+
+   At this time, I renamed the new[0][6:] to row[5][6:] and realized that the code is evaluating the row[5][6:]
+   value multiple times. So, I refactored the row[5][6:] to a variable named "year". This reduces the runtime 
+   evaluation of row[5][6:] in every if statement; efficiently evaluating it once in each loop.
+
+Now, checking to see what improvements this code brings us:
+
+# good_perf.py:
+{'2013': 111171, '2014': 110772, '2015': 111427, '2016': 111424, '2017': 221700, '2018': 0}
+'ao' was found 499600 times
+[20.7784214, 23.125144900000002, 22.204601299999993, 25.723598699999997, 23.919702]
+mean: 23.15029366
+
+I see that we have the same output, that's very good. It means we are on the right track.
+And the new code is about 1/3 of the time. Let's see if we can do more:
+
+Second round of imporvements:
+
+Taking a deeper dive into the code:
+1. I change the if statements to if-elif. 
+2. I also noted that "if "ao" in line[6]:" can be changed to a more simple construct "if row[6] == "ao"". 
+3. Updating the print statements to use the more efficient .format print.
+Let's see if these work well.
+
+# good_perf.py:
+{'2013': 111171, '2014': 110772, '2015': 111427, '2016': 111424, '2017': 221700, '2018': 0}
+'ao' was found 499600 times
+[18.9906064, 20.6952009, 19.774798600000004, 19.561554799999996, 22.4658333]
+mean: 20.2975988
+
+I see that the average is slightly better - a 20+% performance improvement over the first attempt - and that's good. 
+Removing the extra function call by moving all code under main() and removing the analyze() function.
+{'2013': 111171, '2014': 110772, '2015': 111427, '2016': 111424, '2017': 221700, '2018': 0}
+'ao' was found 499600 times
+[20.3072893, 18.492268499999998, 19.161954, 21.405617400000004, 24.178038599999994]
+mean: 20.709033559999998
+
+Removing the extra function did not do much.
+
+Taking note on the year = '2018' but the count is incrementing 2017. With this discover, I changed the code by Removing
+the if-elif statements to "if year in year_count: year_count[year] += 1". This changes the output for the year 
+2017 and 2018. But the performance is slightly better. The logic seems correct to use the same year to increment 
+the year count. And since it is slightly performant. I will go with that.
+
+{'2013': 111171, '2014': 110772, '2015': 111427, '2016': 111424, '2017': 111014, '2018': 110686}
+'ao' was found 499600 times
+[17.6852987, 18.914372500000002, 21.5834429, 19.317187099999998, 20.428709800000007]
+mean: 19.585802200000003
+
+Reviewing the code, I don't think I can imporve the code futther with Cython. 
