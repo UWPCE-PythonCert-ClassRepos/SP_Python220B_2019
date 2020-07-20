@@ -8,7 +8,7 @@ from lessons.lesson01.activity.calculator.adder import Adder
 from lessons.lesson01.activity.calculator.subtracter import Subtracter
 from lessons.lesson01.activity.calculator.multiplier import Multiplier
 from lessons.lesson01.activity.calculator.divider import Divider
-from lesson01.calc.calc_fix import Calculator
+from Activity.calc.calc_fix import Calculator
 
 
 # class BaseTest(unittest.TestCase):
