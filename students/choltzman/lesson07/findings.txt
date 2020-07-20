@@ -1,0 +1,3 @@
+Notable findings:
+    * Using subprocesses to import each file in parallel drastically reduced execution time. Specifically, when importing 2 files it cut the time to run in half.
+    * Using threading to run individual queries in parallel within each subprocess did not reduce execution time at all. This is not surprising, since mongo queries would run into disk IO limits long before the CPU became a bottleneck.
