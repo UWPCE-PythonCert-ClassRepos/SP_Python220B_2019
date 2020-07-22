@@ -1,0 +1,187 @@
+Nichole-Godwins-MacBook-Pro:assignment Nichole$ python -m pdb charges_calc.py -i source.json -o out.json
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) l
+  1  	'''
+  2  	Returns total price paid for individual rentals
+  3  ->	'''
+  4  	import argparse
+  5  	import json
+  6  	import datetime
+  7  	import math
+  8
+  9  	def parse_cmd_arguments():
+ 10  	    parser = argparse.ArgumentParser(description='Process some integers.')
+ 11  	    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) break 44
+Breakpoint 1 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:44
+(Pdb) break 45
+Breakpoint 2 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:45
+(Pdb) break 46
+Breakpoint 3 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:46
+(Pdb) break 47
+Breakpoint 4 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:47
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) pp parser.parse_args()
+Namespace(input='source.json', output='out.json')
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(17)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) filename
+'source.json'
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(18)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(19)load_rentals_file()
+-> try:
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(20)load_rentals_file()
+-> data = json.load(file)
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(23)load_rentals_file()
+-> return data
+(Pdb) data
+##DATA LOOKS NORMAL##
+(Pdb) n
+--Return--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(23)load_rentals_file()->{u'RNT001': {u'price_per_day': 31, u'product_code': u'PRD80', u'rental_end': u'3/22/17', u'rental_start': u'6/12/17', ...}, u'RNT002': {u'price_per_day': 16, u'product_code': u'PRD11', u'rental_end': u'9/30/18', u'rental_start': u'7/20/16', ...}, u'RNT003': {u'price_per_day': 40, u'product_code': u'PRD22', u'rental_end': u'6/4/17', u'rental_start': u'2/1/16', ...}, u'RNT004': {u'price_per_day': 40, u'product_code': u'PRD86', u'rental_end': u'12/7/17', u'rental_start': u'8/14/16', ...}, ...}
+-> return data
+(Pdb) data
+##DATA LOOKS NORMAL##
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) s
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) rental_start
+datetime.datetime(2017, 12, 7, 0, 0)
+(Pdb) rental_end
+datetime.datetime(2017, 9, 25, 0, 0)
+(Pdb) n
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) value['total_days']
+-73
+(Pdb) c
+The program exited via sys.exit(). Exit status:  0
+
+##changed code assuming those rows with negative total days just got the start and end backwards##
+## go back to where we left off ##
+
+Nichole-Godwins-MacBook-Pro:assignment Nichole$ python3 -m pdb charges_calc.py -i source.json -o out.json
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) break 47
+Breakpoint 1 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:47
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(47)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) ll
+ 25  ->	def calculate_additional_fields(data):
+ 26  	    for value in data.values():
+ 27  	        try:
+ 28  	            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 29  	            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 30  	#changed code to take abs value assuming start and end were just backwards for some
+ 31  	            value['total_days'] = abs((rental_end - rental_start).days)
+ 32  	            value['total_price'] = value['total_days'] * value['price_per_day']
+ 33  	            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 34  	            value['unit_cost'] = value['total_price'] / value['units_rented']
+ 35  	        except:
+ 36  	            exit(0)
+ 37
+ 38  	    return data
+(Pdb) break 35
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(35)calculate_additional_fields()
+-> except:
+(Pdb) value
+{'product_code': 'PRD70', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '6/19/16', 'rental_end': ''}
+##Went to line 35 just before an error and looked at value - we see that the rental end date is blank##
+##changed code assuming those rows with blank start or end days get a 0 total days##
+## go back to where we left off ##
+Nichole-Godwins-MacBook-Pro:assignment Nichole$ python3 -m pdb charges_calc.py -i source.json -o out.json
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) break 52
+Breakpoint 1 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:52
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(52)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) break 40
+Breakpoint 2 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:40
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(40)calculate_additional_fields()
+-> except:
+(Pdb) value
+{'product_code': 'PRD79', 'units_rented': 0, 'price_per_day': 34, 'rental_start': '11/7/17', 'rental_end': '6/26/16', 'total_days': 499, 'total_price': 16966, 'sqrt_total_price': 130.25359879865124}
+##went to area of code right before it errors again and see that units_rented is 0 and that unit_cost has unit_rented on the denominator and you cannot divide by 0##
+##changed code assuming those rows with 0 units should actually be 1##
+## go back to where we left off ##
+Nichole-Godwins-MacBook-Pro:assignment Nichole$ python3 -m pdb charges_calc.py -i source.json -o out.json
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+(Pdb) break 54
+Breakpoint 1 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:54
+(Pdb) c
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(54)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) break 42
+Breakpoint 2 at /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py:42
+(Pdb) c
+The program finished and will be restarted
+> /Users/Nichole/Documents/school/UW/python-cert/py220/SP_Python220B_2019/students/headieh_godwin/lesson02/assignment/charges_calc.py(3)<module>()
+-> '''
+## we can see there are no more errors - now lets run
