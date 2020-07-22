@@ -1,0 +1,150 @@
+
+### Just adding total import time to lesson 05 code ####
+
+In [1]: run linear.py                                                      
+2020-07-20 12:46:33,367 linear.py:66  INFO IMPORTING DATA
+2020-07-20 12:46:33,448 linear.py:97  INFO Added: [8, 10, 8]
+2020-07-20 12:46:33,449 linear.py:71  INFO Done with importing all 3 files.
+2020-07-20 12:46:33,449 linear.py:119 INFO Finished with the import - main loop
+Process took 0.08205389976501465 seconds
+
+In [1]: run linear.py                                                      
+2020-07-20 12:46:08,957 linear.py:66  INFO IMPORTING DATA
+2020-07-20 12:46:09,027 linear.py:97  INFO Added: [8, 10, 8]
+2020-07-20 12:46:09,028 linear.py:71  INFO Done with importing all 3 files.
+2020-07-20 12:46:09,028 linear.py:119 INFO Finished with the import - main loop
+Process took 0.07165169715881348 seconds
+
+In [1]: run linear.py                                                      
+2020-07-20 12:45:43,233 linear.py:66  INFO IMPORTING DATA
+2020-07-20 12:45:43,302 linear.py:97  INFO Added: [8, 10, 8]
+2020-07-20 12:45:43,304 linear.py:71  INFO Done with importing all 3 files.
+2020-07-20 12:45:43,304 linear.py:119 INFO Finished with the import - main loop
+Process took 0.07144784927368164 seconds
+
+AVERAGE:
+0.07505 seconds
+
+############
+###########   TIME START/END ()
+##########
+
+
+Process took 0.06849217414855957 seconds
+Process took 0.06895661354064941 seconds
+Process took 0.06928038597106934 seconds
+
+AVERAGE:
+0.06891 seconds
+
+### INDIVIDUAL IMPORT TIMES ####
+
+2020-07-20 13:19:19,189 linear.py:66  INFO IMPORTING DATA
+2020-07-20 13:19:19,190 linear.py:96  INFO Importing Proudcts to MongoDB:
+2020-07-20 13:19:19,211 linear.py:125 INFO Importing process took 0.020355701446533203 seconds
+2020-07-20 13:19:19,211 linear.py:98  INFO Importing Customers to MongoDB:
+2020-07-20 13:19:19,234 linear.py:125 INFO Importing process took 0.02338099479675293 seconds
+2020-07-20 13:19:19,234 linear.py:100 INFO Importing Rentals to MongoDB:
+2020-07-20 13:19:19,260 linear.py:125 INFO Importing process took 0.02540898323059082 seconds
+2020-07-20 13:19:19,260 linear.py:105 INFO Process took 0.0703132152557373 seconds
+
+
+__________________________________________________________________________________________________________________
+
+#### MADE AROUND 1000 lines in customers.csv and products.csv to increase time ####
+
+linear.py                                                                                                         
+2020-07-21 12:59:32,535 linear.py:66  INFO IMPORTING DATA
+2020-07-21 12:59:32,544 linear.py:96  INFO Importing Products to MongoDB:
+2020-07-21 12:59:32,881 linear.py:128 INFO Tuple : (0, 999, 999, 0.336467981338501)
+2020-07-21 12:59:32,881 linear.py:98  INFO Importing Customers to MongoDB:
+2020-07-21 12:59:33,251 linear.py:128 INFO Tuple : (0, 1006, 1006, 0.37035584449768066)
+2020-07-21 12:59:33,251 linear.py:100 INFO Importing Rentals to MongoDB:
+2020-07-21 12:59:33,275 linear.py:128 INFO Tuple : (0, 8, 8, 0.023891925811767578)
+2020-07-21 12:59:33,276 linear.py:103 INFO Processing all 3 collections took 0.7318704128265381 seconds
+2020-07-21 12:59:33,276 linear.py:104 INFO Added: [999, 1006, 8]
+2020-07-21 12:59:33,277 linear.py:71  INFO Done with importing all 3 files.
+2020-07-21 12:59:33,277 linear.py:135 INFO Finished with the import - main loop
+2020-07-21 12:59:33,277 linear.py:136 INFO This is the output tuple: [(0, 1006, 1006, 0.37035584449768066), (0, 999, 999, 0.336467981338501)]
+
+
+>>> Version 1 of the parallel processing:
+>>> - from motor.motor_asyncio import AsyncIOMotorClient, replaced MongoClient with AsyncoIOMotorClient
+>>> - added an event loop, run until complete for add_to_database()
+>>> - put: 'await collection.insert_one(dict(row))'
+
+run parallel.py                                                                                                       
+2020-07-21 14:23:45,218 parallel.py:67  INFO IMPORTING DATA
+2020-07-21 14:23:45,225 parallel.py:98  INFO Importing Products to MongoDB:
+2020-07-21 14:23:46,008 parallel.py:131 INFO Tuple : (0, 999, 999, 0.7830309867858887)
+2020-07-21 14:23:46,009 parallel.py:100 INFO Importing Customers to MongoDB:
+2020-07-21 14:23:46,880 parallel.py:131 INFO Tuple : (0, 1006, 1006, 0.8707287311553955)
+2020-07-21 14:23:46,880 parallel.py:102 INFO Importing Rentals to MongoDB:
+2020-07-21 14:23:46,905 parallel.py:131 INFO Tuple : (0, 8, 8, 0.024546146392822266)
+2020-07-21 14:23:46,905 parallel.py:105 INFO Processing all 3 collections took 1.679910659790039 seconds
+2020-07-21 14:23:46,905 parallel.py:106 INFO Added: [999, 1006, 8]
+2020-07-21 14:23:46,906 parallel.py:72  INFO Done with importing all 3 files.
+2020-07-21 14:23:46,906 parallel.py:138 INFO Finished with the import - main loop
+2020-07-21 14:23:46,906 parallel.py:139 INFO This is the output tuple: [(0, 1006, 1006, 0.8707287311553955), (0, 999, 999, 0.7830309867858887)]
+
+FINDINGS: Adding async/await to adding the records actually made it go much longer (3x the time)
+
+>>> Version 2 of the parallel processing
+>>> - removed motor and used normal asyncio package
+>>> - kept the same type of await/async as v1
+
+run parallel.py                                                                                                       
+2020-07-22 11:49:12,453 parallel.py:68  INFO IMPORTING DATA
+2020-07-22 11:49:12,461 parallel.py:98  INFO Importing Products to MongoDB:
+2020-07-22 11:49:12,731 parallel.py:132 INFO Tuple : (0, 999, 999, 0.27041196823120117)
+2020-07-22 11:49:12,732 parallel.py:100 INFO Importing Customers to MongoDB:
+2020-07-22 11:49:13,045 parallel.py:132 INFO Tuple : (0, 1006, 1006, 0.31290698051452637)
+2020-07-22 11:49:13,045 parallel.py:102 INFO Importing Rentals to MongoDB:
+2020-07-22 11:49:13,068 parallel.py:132 INFO Tuple : (0, 8, 8, 0.02327871322631836)
+2020-07-22 11:49:13,069 parallel.py:105 INFO Processing all 3 collections took 0.6081058979034424 seconds
+2020-07-22 11:49:13,069 parallel.py:106 INFO Added: [999, 1006, 8]
+2020-07-22 11:49:13,070 parallel.py:73  INFO Done with importing all 3 files.
+2020-07-22 11:49:13,070 parallel.py:140 INFO Finished with the import - main loop
+2020-07-22 11:49:13,070 parallel.py:141 INFO This is the output tuple: [(0, 1006, 1006, 0.31290698051452637), (0, 999, 999, 0.27041196823120117)]
+
+FINDINGS: Very similar to linear performance
+
+>>> Version 3 of the parallel processing
+>>> - used threading (thread.start, thread.join) instead of asyncio
+
+2020-07-22 15:05:30,159 parallel_v4.py:69  INFO IMPORTING DATA
+2020-07-22 15:05:30,167 parallel_v4.py:101 INFO Starting importing Products to MongoDB
+2020-07-22 15:05:30,169 parallel_v4.py:105 INFO Starting importing Customers to MongoDB
+2020-07-22 15:05:30,175 parallel_v4.py:109 INFO Starting mporting Rentals to MongoDB
+2020-07-22 15:05:30,232 parallel_v4.py:143 INFO Tuple for rentals: (0, 8, 8, 0.0568385124206543)
+2020-07-22 15:05:30,673 parallel_v4.py:143 INFO Tuple for customers: (0, 1006, 1006, 0.5024726390838623)
+2020-07-22 15:05:30,676 parallel_v4.py:143 INFO Tuple for products: (0, 999, 999, 0.5093019008636475)
+2020-07-22 15:05:30,677 parallel_v4.py:118 INFO Processing all 3 collections took 0.5099198818206787 seconds
+2020-07-22 15:05:30,677 parallel_v4.py:119 INFO Added: [8, 1006, 999]
+2020-07-22 15:05:30,677 parallel_v4.py:74  INFO Done with importing all 3 files.
+2020-07-22 15:05:30,677 parallel_v4.py:160 INFO Finished with the import - main loop
+2020-07-22 15:05:30,677 parallel_v4.py:161 INFO This is the output tuple: [(0, 1006, 1006, 0.5024726390838623), (0, 999, 999, 0.5093019008636475)]
+
+FINDINGS: Took much longer than either linear or version 2. Most likely due to contention, however it was able to cut down the speed for running all 3 together by around:: ~20%
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+CONCLUSIONS:
+
+parallel_v3 (submitted as parallel.py) overall performed the best (even compared to the linear approach) with co-importing files
+
+Overall:
+   linear.py performed better than parallel.py on imports per collection:
+     - linear.py was about 40-80% faster than parallel.py on individual timing
+
+   parallel.py performed better than linear.py on total time to import the three collections
+     - parallel.py was about 20% faster than linear.py on total time to execute the import of all 3 collections
+
+   This overall efficiency was true for both ~1000 records and 9000+ records
+   
+RECOMMENDATIONS:
+    I would recommend parallelization if there were multiple different types of collections or tasks being done at the same time in the MongoDB, however it seems for a straight large import into one collection I would not use this approach
+
+
