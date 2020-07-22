@@ -1,0 +1,10 @@
+Based on the timing function implemented it is clear that with larger csv files, the import time is slower. 
+Here we test the original CSV data as well as generated data with 1000 inputs to see the time difference.
+
+2020-07-21 14:49:08,513 database.py:46  INFO function: import_data
+2020-07-21 14:49:08,513 database.py:47  INFO time: 0.13638615608215332
+2020-07-21 14:49:08,513 database.py:50  INFO processed records: 9
+
+2020-07-21 14:49:10,269 database.py:46  INFO function: import_data
+2020-07-21 14:49:10,269 database.py:47  INFO time: 1.7552521228790283
+2020-07-21 14:49:10,269 database.py:50  INFO processed records: 2994

@@ -1,0 +1,24 @@
+
+2020-07-21 14:49:08,513 database.py:46  INFO function: import_data
+2020-07-21 14:49:08,513 database.py:47  INFO time: 0.13638615608215332
+2020-07-21 14:49:08,513 database.py:50  INFO processed records: 9
+2020-07-21 14:49:10,269 database.py:46  INFO function: import_data
+2020-07-21 14:49:10,269 database.py:46  INFO function: import_data
+2020-07-21 14:49:10,269 database.py:47  INFO time: 1.7552521228790283
+2020-07-21 14:49:10,269 database.py:47  INFO time: 1.7552521228790283
+2020-07-21 14:49:10,269 database.py:50  INFO processed records: 2994
+2020-07-21 14:49:10,269 database.py:50  INFO processed records: 2994
+2020-07-21 14:49:10,277 database.py:46  INFO function: show_available_products
+2020-07-21 14:49:10,277 database.py:46  INFO function: show_available_products
+2020-07-21 14:49:10,277 database.py:46  INFO function: show_available_products
+2020-07-21 14:49:10,278 database.py:47  INFO time: 0.007707834243774414
+2020-07-21 14:49:10,278 database.py:47  INFO time: 0.007707834243774414
+2020-07-21 14:49:10,278 database.py:47  INFO time: 0.007707834243774414
+2020-07-21 14:49:10,281 database.py:46  INFO function: show_rentals
+2020-07-21 14:49:10,281 database.py:46  INFO function: show_rentals
+2020-07-21 14:49:10,281 database.py:46  INFO function: show_rentals
+2020-07-21 14:49:10,281 database.py:46  INFO function: show_rentals
+2020-07-21 14:49:10,282 database.py:47  INFO time: 0.003400087356567383
+2020-07-21 14:49:10,282 database.py:47  INFO time: 0.003400087356567383
+2020-07-21 14:49:10,282 database.py:47  INFO time: 0.003400087356567383
+2020-07-21 14:49:10,282 database.py:47  INFO time: 0.003400087356567383
