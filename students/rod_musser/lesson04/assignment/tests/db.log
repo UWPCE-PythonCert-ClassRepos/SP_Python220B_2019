@@ -1,0 +1,153 @@
+2020-07-24 18:07:54,672 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:07:54,690 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:07:54,703 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:07:54,704 basic_operations.py:68  INFO Customer 1 was deleted.
+2020-07-24 18:07:54,716 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:07:54,716 basic_operations.py:70  INFO Customer not deleted.  Customer with id 5 could not be found.
+2020-07-24 18:07:54,727 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:07:54,751 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:07:54,765 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:07:54,778 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:07:54,779 basic_operations.py:83  INFO Customer 1 credit was updated from 100000 to 250.0.
+2020-07-24 18:07:54,793 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:07:54,793 basic_operations.py:85  INFO Customer credit not updated. Customer with id 5 could not be found.
+2020-07-24 18:12:31,530 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:12:31,544 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:12:31,557 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:12:31,558 basic_operations.py:68  INFO Customer 1 was deleted.
+2020-07-24 18:12:31,573 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:12:31,573 basic_operations.py:70  INFO Customer not deleted.  Customer with id 5 could not be found.
+2020-07-24 18:12:31,585 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:12:31,609 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:12:31,622 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:12:31,634 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:12:31,635 basic_operations.py:83  INFO Customer 1 credit was updated from 100000 to 250.0.
+2020-07-24 18:12:31,650 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:12:31,650 basic_operations.py:85  INFO Customer credit not updated. Customer with id 5 could not be found.
+2020-07-24 18:12:39,226 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:12:39,233 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:12:39,237 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:12:39,241 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:12:39,243 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:12:39,245 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:12:39,247 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:12:39,250 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:12:39,252 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:12:39,254 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:12:39,255 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:13:09,500 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:13:09,508 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:13:09,511 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:13:09,514 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:13:09,516 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:13:09,518 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:13:09,519 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:13:09,522 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:13:09,523 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:13:09,525 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:13:09,526 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:14:31,581 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:14:31,589 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:31,593 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:31,595 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:31,598 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:14:31,599 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:14:31,600 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:14:31,603 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:14:31,604 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:14:31,606 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:14:31,607 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:14:35,575 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:14:35,583 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:35,586 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:35,590 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:14:35,592 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:14:35,594 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:14:35,595 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:14:35,598 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:14:35,599 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:14:35,601 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:14:35,602 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:15:26,340 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:15:26,349 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:26,353 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:26,356 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:26,358 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:15:26,359 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:15:26,360 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:15:26,362 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:15:26,363 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:15:50,106 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:15:50,116 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:50,119 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:50,121 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:15:50,124 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:15:50,125 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:15:50,126 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:15:50,130 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:15:50,132 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:15:50,134 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:15:50,134 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:20:11,928 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:20:11,935 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:20:11,938 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:20:11,941 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:20:11,943 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:20:11,944 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:20:11,945 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:20:11,947 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:20:11,948 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:20:11,950 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:20:11,951 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:20:19,999 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:20:26,942 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:21:28,240 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:21:28,254 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:28,266 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:28,267 basic_operations.py:68  INFO Customer 1 was deleted.
+2020-07-24 18:21:28,279 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:28,279 basic_operations.py:70  INFO Customer not deleted.  Customer with id 5 could not be found.
+2020-07-24 18:21:28,289 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:21:28,311 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:28,323 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:28,335 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:28,336 basic_operations.py:83  INFO Customer 1 credit was updated from 100000 to 250.0.
+2020-07-24 18:21:28,353 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:28,353 basic_operations.py:85  INFO Customer credit not updated. Customer with id 5 could not be found.
+2020-07-24 18:21:38,073 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:21:38,087 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:38,100 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:38,101 basic_operations.py:68  INFO Customer 1 was deleted.
+2020-07-24 18:21:38,113 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:38,113 basic_operations.py:70  INFO Customer not deleted.  Customer with id 5 could not be found.
+2020-07-24 18:21:38,122 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:21:38,146 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:38,156 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:38,167 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:38,169 basic_operations.py:83  INFO Customer 1 credit was updated from 100000 to 250.0.
+2020-07-24 18:21:38,182 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:38,182 basic_operations.py:85  INFO Customer credit not updated. Customer with id 5 could not be found.
+2020-07-24 18:21:41,764 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:21:41,774 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:41,778 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:41,780 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:41,782 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:41,784 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:21:41,785 basic_operations.py:83  INFO Customer 2 credit was updated from 50000 to 250.99.
+2020-07-24 18:21:41,787 basic_operations.py:57  INFO Customer was 2 was found.
+2020-07-24 18:21:41,788 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:21:41,789 basic_operations.py:57  INFO Customer was 3 was found.
+2020-07-24 18:21:41,790 basic_operations.py:68  INFO Customer 3 was deleted.
+2020-07-24 18:21:43,886 basic_operations.py:23  INFO One off program to build the classes from the model in the database
+2020-07-24 18:21:43,902 basic_operations.py:43  INFO Database add successful
+2020-07-24 18:21:43,914 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:43,915 basic_operations.py:68  INFO Customer 1 was deleted.
+2020-07-24 18:21:43,927 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:43,927 basic_operations.py:70  INFO Customer not deleted.  Customer with id 5 could not be found.
+2020-07-24 18:21:43,939 basic_operations.py:92  INFO %s active customers.
+2020-07-24 18:21:43,963 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:43,975 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:43,988 basic_operations.py:57  INFO Customer was 1 was found.
+2020-07-24 18:21:43,989 basic_operations.py:83  INFO Customer 1 credit was updated from 100000 to 250.0.
+2020-07-24 18:21:44,005 basic_operations.py:55  INFO Customer with id 5 could not be found.
+2020-07-24 18:21:44,005 basic_operations.py:85  INFO Customer credit not updated. Customer with id 5 could not be found.
