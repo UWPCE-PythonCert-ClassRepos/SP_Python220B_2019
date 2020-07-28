@@ -1,0 +1,1 @@
+import_data function seems to be the bottleneck. It took longest time to run. This is expected as the records growth, it will take longer to import.

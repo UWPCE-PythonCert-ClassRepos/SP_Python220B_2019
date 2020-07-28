@@ -1,0 +1,6 @@
+2020-07-28 10:54:39,924 database.py:43  INFO ran import_data and processed (3, 10, 9) records in 0.037101030349731445
+2020-07-28 10:54:39,926 database.py:43  INFO ran show_available_products and processed 3 records in 0.0021638870239257812
+2020-07-28 10:54:39,945 database.py:43  INFO ran show_rentals and processed 1 records in 0.01846480369567871
+2020-07-28 10:54:40,788 database.py:43  INFO ran import_data and processed (1000, 1000, 1000) records in 0.8265488147735596
+2020-07-28 10:54:40,795 database.py:43  INFO ran show_available_products and processed 980 records in 0.007010936737060547
+2020-07-28 10:54:40,829 database.py:43  INFO ran show_rentals and processed 2 records in 0.03378725051879883
