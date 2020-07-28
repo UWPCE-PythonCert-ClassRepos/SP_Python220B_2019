@@ -1,0 +1,18 @@
+Here are the times for each customers, products, and rentals + total times for the linear.py:
+customers:
+(998, 0, 998, 0.478588342666626)
+products:
+(998, 0, 998, 0.4463529586791992)
+rentals:
+(998, 0, 998, 0.37744593620300293)
+total time
+1.3024778366088867
+
+Here are the total times for the parallel.py
+(998, 0, 975, 0.8014407157897949)
+(998, 0, 998, 0.8150830268859863)
+(998, 0, 998, 0.8195621967315674)
+total time
+0.8205990791320801
+
+As we can see the parallel.py importation file is faster (.82 seconds) than linear.py (1.147 seconds).
