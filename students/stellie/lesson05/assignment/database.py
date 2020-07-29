@@ -1,14 +1,16 @@
 # Stella Kim
 # Assignment 5: Consuming APIs with NoSQL
 
-"""Migrate product data from a sample CSV file into MongoDB"""
+"""
+Migrate product, customer, rentals data from sample CSV files into MongoDB
+"""
 
 import csv
 import os
 import logging
 from pymongo import MongoClient
 
-# Format logs
+# Set up and format logging
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
 logging.basicConfig(filename='database.log', filemode='a',
                     format=LOG_FORMAT, level=logging.DEBUG)
@@ -79,7 +81,7 @@ def import_csv(directory_name, collection_file, database):
 
 
 def data_convert(items):
-    """Convert quantity available column in products file to integer form"""
+    """Convert quantity_available column in products file to integer form"""
     for item in items:
         converted_item = item.copy()
         if 'quantity_available' in item:  # convert columns
