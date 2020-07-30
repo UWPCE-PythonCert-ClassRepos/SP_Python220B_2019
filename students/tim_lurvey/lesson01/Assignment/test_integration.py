@@ -13,13 +13,13 @@ class InventoryManagementIntegrationTest(TestCase):
         furn = ['f', 'test furn', '9', 'wood', 'L' ]
         check_furn = furn + []
         check_furn.insert(2, 24)
-        input_furn = furn
+        input_furn = furn + []
         input_furn.insert(3, 'y')
 
         elec = ['e', 'test elec', '9', 'GE', '110']
         check_elec = elec + []
         check_elec.insert(2, 24)
-        input_elec = elec
+        input_elec = elec + []
         input_elec.insert(3, 'n')
         input_elec.insert(4, 'y')
 
