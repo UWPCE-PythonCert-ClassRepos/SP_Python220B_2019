@@ -1,7 +1,8 @@
+# pylint: disable=C0111,E1101,W0105,C0330,C0103
 '''
 -ctrl + C exits a help()
 -such a thing as "entry.path.endswith('.png')""
--on line 18 png_disco(dir_list.extend(entry.path)) would make more sense but it
+-on line 19 png_disco(dir_list.extend(entry.path)) would make more sense but it
 doesnt work
 '''
 import os

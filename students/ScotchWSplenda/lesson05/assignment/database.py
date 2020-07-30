@@ -10,21 +10,25 @@ import csv
 from pymongo import MongoClient
 from pprint import pprint
 import logging
-from contextlib import contextmanager
-
 # Set up logger
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 
-@contextmanager
-def MongoDBConnection(host, port):
-    '''can 'mongobaby' be replaced by 'connection' is 'connection'
-    a keyword?'''
-    mongobaby = MongoClient('127.0.0.1', 27017)
-    return mongobaby
-    yield
-    mongobaby.close()
+class MongoDBConnection(object):
+    """MongoDB Connection"""
+    def __init__(self, host='127.0.0.1', port=27017):
+        """ be sure to use the ip address not name for local windows"""
+        self.host = host
+        self.port = port
+        self.connection = None
+
+    def __enter__(self):
+        self.connection = MongoClient(self.host, self.port)
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.connection.close()
 
 
 def import_data(directory_name,  product_file,  customer_file,  rentals_file):
@@ -167,3 +171,7 @@ users that have rented products matching product_id:
                                              'phone_number': pers['phone_number'],
                                              'email': pers['email']}
     return rental_list
+
+
+print(show_available_products())
+print(print_mdb_collection())
