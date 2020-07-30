@@ -68,16 +68,27 @@ def parse_cmd_arguments():
 
     return parser.parse_args()
 
+@do_logger
 def load_rentals_file(filename):
-    pass
+    ''' read rentals source data file '''
+
+    with open(filename) as file:
+        try:
+            data = json.load(file)
+        except FileNotFoundError:
+            logging.error('Unable to Find Source File %s', filename)
+            sys.exit(0)
+    return data
     
 def calculate_additional_fields(data):
     ''' process input data '''
     pass
 
+@do_logger
 def save_to_json(filename, in_data):
     ''' save rental data file '''
-    pass
+    with open(filename, 'w') as file:
+        json.dump(in_data, file)
 
 if __name__ == "__main__":
 
