@@ -2,10 +2,10 @@
 """Launches the user interface for the inventory management system"""
 
 import sys
-from . import market_prices
-from . import inventory_class
-from . import furniture_class
-from . import electric_appliances_class
+from inventory_management import market_prices
+from inventory_management import inventory_class
+from inventory_management import furniture_class
+from inventory_management import electric_appliances_class
 
 
 def main_menu(user_prompt=None):
@@ -97,6 +97,6 @@ def exit_program():
 if __name__ == '__main__':
     FULL_INVENTORY = {}
     while True:
-        print(FULL_INVENTORY)
+        # print(FULL_INVENTORY)
         main_menu()()
         input("Press Enter to continue...........")
