@@ -2,6 +2,7 @@
 
 import logging
 from unittest import TestCase
+from peewee import IntegrityError
 from customer_model import Customer
 from basic_operations import *
 
@@ -22,7 +23,7 @@ class BasicOperationsTests(TestCase):
         """ Tests that customers get added to the DB correctly """
         LOGGER.info('clearing and creating new db table')
         clear_db()
-        LOGGER.info('-- Testing adding new customer --')
+        LOGGER.info('Testing addition of new customer')
         customer_list = [('1', 'Susan', 'Anderson', '1 A Ave Davis CA 95630',
                           '9161234567', 'emaila@gmail.com', True, 1000),
                          ('2', 'Karen', 'Smith', '2 B St Dana Point CA 92673',
@@ -42,6 +43,8 @@ class BasicOperationsTests(TestCase):
         add_customer(*customer_list[1])
         add_customer(*customer_list[2])
         self.assertEqual(len(Customer), 3)
+        with self.assertRaises(IntegrityError):
+            add_customer(*customer_list[0])
 
     def test_search_customer(self):
         """ Tests that searching for customers works correctly """
@@ -70,8 +73,10 @@ class BasicOperationsTests(TestCase):
         """This function tests that updating the credit works correctly"""
         LOGGER.info('Updating existing customer credit limit')
         update_customer_credit(2, 15000)
-        self.assertEqual(Customer.get(Customer.customer_id == 2).credit_limit,
-                         15000)
+        self.assertEqual(Customer.get(Customer.customer_id == 2).credit_limit, 15000)
+        LOGGER.info('Updating existing non-customer credit limit')
+        #with self.assertRaises(IndexError):
+            #update_customer_credit(123, 15000)
 
     def test_list_active_customers(self):
         """ This function tests that active customers are listed correctly """

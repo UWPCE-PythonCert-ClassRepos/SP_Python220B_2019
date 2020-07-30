@@ -2,6 +2,7 @@
 import logging
 from customer_model import DB, Customer
 
+
 # set up logging
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -10,22 +11,23 @@ LOGGER.info("logger initialized")
 def add_customer(customer_id, firstname, lastname, home_address,
                  phone_number, email_address, status, credit_limit):
     """ This function will add a new customer to the sql database. """
-    try:
-        with DB.transaction():
-            LOGGER.info("adding customer: %s, %s to the database...", firstname, lastname)
-            new_customer = Customer.create(customer_id=customer_id,
-                                           firstname=firstname,
-                                           lastname=lastname,
-                                           home_address=home_address,
-                                           phone_number=phone_number,
-                                           email_address=email_address,
-                                           status=status,
-                                           credit_limit=credit_limit)
-            new_customer.save()
-            LOGGER.info("added customer: %s %s was successfull", firstname, lastname)
+    with DB.transaction():
+        LOGGER.info("adding customer: %s %s to the database...", firstname, lastname)
+        new_customer = Customer.create(customer_id=customer_id,
+                                       firstname=firstname,
+                                       lastname=lastname,
+                                       home_address=home_address,
+                                       phone_number=phone_number,
+                                       email_address=email_address,
+                                       status=status,
+                                       credit_limit=credit_limit)
+        new_customer.save()
+        LOGGER.info("added customer: %s %s was successfull", firstname, lastname)
 
-    except TypeError:
-        LOGGER.info("unable to add customer %s, %s to database", firstname, lastname)
+    #unreachable code
+    #except IntegrityError as error:
+    #    raise error
+    #    LOGGER.info("unable to add customer %s, %s to database", firstname, lastname)
 
 def search_customer(customer_id):
     """This function will return a dictionary object with firstname,
@@ -60,8 +62,8 @@ def delete_customer(customer_id):
             info.delete_instance()
             LOGGER.info("customer_id: %s has been deleted", customer_id)
     except IndexError:
-        LOGGER.info('customer_id: %s does not exist', customer_id)
-        raise ValueError
+        LOGGER.info('customer_id: %s does not exist - nothing has been deleted', customer_id)
+
 
 def update_customer_credit(customer_id, credit_limit):
     """This function will search an existing customer by customer_id

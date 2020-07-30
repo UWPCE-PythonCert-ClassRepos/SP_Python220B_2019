@@ -1,5 +1,5 @@
 # Created by .ignore support
-.db
+*.db
 
 # Runtime data
 /__py*
