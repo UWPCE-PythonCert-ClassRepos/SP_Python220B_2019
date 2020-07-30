@@ -1,0 +1,15 @@
+2020-07-30 12:48:51,053 basic_operation.py:29  INFO Adding a Tony Tentoes to Customer table
+2020-07-30 12:48:51,068 basic_operation.py:41  INFO Tony Tentoes added to customers.db
+2020-07-30 12:48:51,068 basic_operation.py:29  INFO Adding a Su Sands to Customer table
+2020-07-30 12:48:51,084 basic_operation.py:41  INFO Su Sands added to customers.db
+2020-07-30 12:48:51,084 basic_operation.py:29  INFO Adding a Pat Smalls to Customer table
+2020-07-30 12:48:51,099 basic_operation.py:41  INFO Pat Smalls added to customers.db
+2020-07-30 12:48:51,099 basic_operation.py:48  INFO Searching for customer ID 002
+2020-07-30 12:48:51,099 basic_operation.py:48  INFO Searching for customer ID 765
+2020-07-30 12:48:51,099 basic_operation.py:57  ERROR Customer ID 765 not found.
+2020-07-30 12:48:51,099 basic_operation.py:91  INFO Quantity of active customers: 3
+2020-07-30 12:48:51,099 basic_operation.py:64  INFO Deleting customer ID 001 from Customer table
+2020-07-30 12:48:51,129 basic_operation.py:48  INFO Searching for customer ID 001
+2020-07-30 12:48:51,129 basic_operation.py:57  ERROR Customer ID 001 not found.
+2020-07-30 12:48:51,129 basic_operation.py:77  INFO Updating customer ID 003 credit limit
+2020-07-30 12:48:51,147 basic_operation.py:91  INFO Quantity of active customers: 2
