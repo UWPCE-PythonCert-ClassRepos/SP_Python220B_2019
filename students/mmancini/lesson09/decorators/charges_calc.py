@@ -79,10 +79,34 @@ def load_rentals_file(filename):
             logging.error('Unable to Find Source File %s', filename)
             sys.exit(0)
     return data
-    
+
+@do_logger
 def calculate_additional_fields(data):
     ''' process input data '''
-    pass
+    for key, value in data.items():
+        try:
+            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+        except ValueError:
+            logging.warning('detected invalid rental date for %s', key)
+            logging.debug('invalid rental date for %s, %s', key, str(value))
+
+        value['total_days'] = (rental_end - rental_start).days
+        if value['total_days'] < 0:
+            logging.warning('detected invalid rental dates for %s', key)
+            logging.debug('invalid rental dates, start: %s, end: %s for %s',
+                          rental_start, rental_end, key)
+        value['total_price'] = value['total_days'] * value['price_per_day']
+
+        try:
+            value['sqrt_total_price'] = math.sqrt(value['total_price'])
+            value['unit_cost'] = value['total_price'] / value['units_rented']
+        except ValueError:
+            logging.error('invalid rental data, skip pricing for %s', key)
+            logging.debug('invalid rental data, skip pricing for %s', key)
+            logging.debug('invalid rental data, skip pricing for key=%s, value=%s', key, str(value))
+
+    return data
 
 @do_logger
 def save_to_json(filename, in_data):
