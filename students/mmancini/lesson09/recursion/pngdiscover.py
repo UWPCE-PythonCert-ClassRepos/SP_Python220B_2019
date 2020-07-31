@@ -9,9 +9,9 @@ def png_discovery(directory):
     '''
         des: recurse specified folder create a hierarchy of contained subfolders and files
         in: folder spec to traverse from
-        out: list of list format([subfoldername1/[filename1.png,filename2.png],...],[subfoldername2/[filename1.png,filename2.png,...], etc]
+        out: list of list format([subfoldername1/[filename1.png,filename2.png],...],
+                                  [subfoldername2/[filename1.png,filename2.png,...], etc]
     '''
-    
     sublist = []
     count = 0
     for file in os.listdir(directory):
@@ -29,4 +29,7 @@ def png_discovery(directory):
 
 if __name__ == '__main__':
     png_discovery(os.getcwd())
-    
+
+    #***MMM
+    for item in DATA_LIST:
+        print(item)
