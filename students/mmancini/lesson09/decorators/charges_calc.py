@@ -1,12 +1,16 @@
 '''
     perform rental inventory
 '''
+
 import argparse
 import json
 import datetime
 import math
 import logging
 import sys
+
+##pylint: disable=too-many-function-args
+##pylint: disable=missing-function-docstring
 
 
 def do_logger(func):
@@ -64,7 +68,7 @@ def parse_cmd_arguments():
     parser.add_argument('-ld', '--logging_decorated',
                         help='logging for decorated functions, "on" or "off"',
                         required=False, default='on')
-    
+
 
     return parser.parse_args()
 
@@ -120,5 +124,5 @@ if __name__ == "__main__":
     DATA = load_rentals_file(ARGS.debug, ARGS.input)
     DATA = calculate_additional_fields(ARGS.debug, DATA)
     save_to_json(ARGS.debug, ARGS.output, DATA)
-    
+
     print("rental processing completed")
