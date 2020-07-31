@@ -23,7 +23,7 @@ def create_random_date():
 
 def generate_data(default=1000000):
     """Generate rows of data following exercise file formatting"""
-    with open('data.csv', 'w', newline='') as file:
+    with open('./data/data.csv', 'w', newline='') as file:
         data_file = csv.writer(file, quoting=csv.QUOTE_NONE)
         choices = ['ao', '']
         for i in range(default):
