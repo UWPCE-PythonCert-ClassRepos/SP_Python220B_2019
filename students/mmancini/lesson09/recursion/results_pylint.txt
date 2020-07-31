@@ -1,0 +1,8 @@
+"" 
+************* Module pngdiscover
+pngdiscover.py:12:0: C0301: Line too long (139/100) (line-too-long)
+pngdiscover.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+
+-----------------------------------
+Your code has been rated at 8.95/10
+
