@@ -10,6 +10,7 @@ import random
 import datetime
 import csv
 import uuid
+from timeit import timeit as timer
 
 
 def create_random_date():
@@ -20,16 +21,22 @@ def create_random_date():
     return random_date.strftime('%m/%d/%Y')
 
 
-def generate_data():
+def generate_data(default=1000000):
     """Generate rows of data following exercise file formatting"""
     with open('data.csv', 'w', newline='') as file:
         data_file = csv.writer(file, quoting=csv.QUOTE_NONE)
-        choice = (['ao', ''])
-        for i in range(1000000):
+        choices = ['ao', '']
+        for i in range(default):
             row = uuid.uuid4(), i + 1, i + 2, i + 3, i + 4,\
-                  create_random_date(), random.choice(choice)
+                  create_random_date(), random.choice(choices)
             data_file.writerow(row)
 
 
+def _code_timer():
+    """Measure time it takes to run code"""
+    print(timer('generate_data()', globals=globals(), number=1))
+
+
 if __name__ == "__main__":
-    generate_data()
+    generate_data(10)
+    # _code_timer()
