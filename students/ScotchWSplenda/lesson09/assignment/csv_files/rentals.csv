@@ -1,0 +1,9 @@
+rental_id,customer_id,product_id,quantity
+r0001,user001,prd001,1
+r0002,user001,prd003,1
+r0003,user001,prd006,1
+r0004,user002,prd002,1
+r0005,user003,prd004,4
+r0006,user002,prd001,3
+r0007,user004,prd005,1
+r0008,user003,prd004,1
