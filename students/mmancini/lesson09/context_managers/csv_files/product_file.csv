@@ -1,0 +1,6 @@
+product_id,description,product_type,quantity_available
+pid001,sofa,livingroom,5
+pid002,washer,laundry,4
+pid003,microwave,kitchen,0
+pid004,edger,garage,2
+pid005,desk,office,1
