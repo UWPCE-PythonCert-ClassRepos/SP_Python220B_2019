@@ -55,16 +55,16 @@ class MongoDBConnection():
         self.host = host
         self.port = port
         self.connection = None
-        print(f'Initializing MongoDBConnection with host = {self.host}'
-              f' and port = {self.port}')
+        logger.info('Initializing MongoDBConnection with host = %s'
+                    ' and port = %s', self.host, self.port)
 
     def __enter__(self):
         self.connection = MongoClient(self.host, self.port)
-        print('Beginning connection with MongoDB')
+        logger.info('Beginning connection with MongoDB')
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print('Shutting down the connection to MongoDB')
+        logger.info('Shutting down the connection to MongoDB')
         self.connection.close()
 
 
