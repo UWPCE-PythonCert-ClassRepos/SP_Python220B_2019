@@ -1,34 +1,43 @@
+# pylint: disable=C0103,E1101,W1203,C0330,C0301
+
 '''
 table = collection.
 row = document.
 column = field.
 Database = database
 index = index
+gave up on from contextlib import contextmanager
+
 '''
 import csv
 # import logging
 from pymongo import MongoClient
 from pprint import pprint
 import logging
+
+
 # Set up logger
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 
-class MongoDBConnection(object):
-    """MongoDB Connection"""
-    def __init__(self, host='127.0.0.1', port=27017):
-        """ be sure to use the ip address not name for local windows"""
+class MongoDBmongobaby():
+    '''
+    -can 'mongobaby' be replaced by 'mongobaby' is 'mongobaby'
+    a keyword?
+    -need to specify DB in here?'''
+    def __init__(self, host=None, port=None):
         self.host = host
         self.port = port
-        self.connection = None
 
     def __enter__(self):
-        self.connection = MongoClient(self.host, self.port)
+        self.mongobaby = MongoClient(host='127.0.0.1', port=27017)
+        LOGGER.info("MongoDB in the heezy")
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.connection.close()
+        LOGGER.info("MongoDB connection peaced out")
+        self.mongobaby.close()
 
 
 def import_data(directory_name,  product_file,  customer_file,  rentals_file):
@@ -40,11 +49,11 @@ rentals added (in that order),  the second with a count of any errors that
 occurred,  in the same order.'''
     product_file_error, customer_file_error, rentals_file_error = 0, 0, 0
 
-    mongo = MongoDBConnection()
+    mongo = MongoDBmongobaby()
     # why does this need a 'with'
     with mongo:
         # creating the DB
-        db = mongo.connection.norton
+        db = mongo.mongobaby.norton
         # creating the tables/collections
         product_file_table = db['products']
         customer_file_table = db['customers']
@@ -112,9 +121,9 @@ occurred,  in the same order.'''
 
 def print_mdb_collection():
 
-    mongo = MongoDBConnection()
+    mongo = MongoDBmongobaby()
     with mongo:
-        db = mongo.connection.norton
+        db = mongo.mongobaby.norton
 
     for document in db.products.find():
         pprint(document)
@@ -132,10 +141,10 @@ def show_available_products():
 -description.
 -product_type.
 -quantity_available.'''
-    mongo = MongoDBConnection()
+    mongo = MongoDBmongobaby()
 
     with mongo:
-        db = mongo.connection.norton
+        db = mongo.mongobaby.norton
         find_them = list(db.products.find({"quantity_available": {"$gt": "0"}}))
         show_available_products = {}
 
@@ -160,10 +169,10 @@ users that have rented products matching product_id:
 -phone_number.```
 -email.'''
 
-    mongo = MongoDBConnection()
+    mongo = MongoDBmongobaby()
     rental_list = {}
     with mongo:
-        db = mongo.connection.norton
+        db = mongo.mongobaby.norton
         for each in db.rentals.find({'product_id': enter_product_id}):
             for pers in db.customers.find({'customer_id': each['customer_id']}):
                 rental_list[pers['customer_id']] = {'name': pers['name'],
@@ -173,5 +182,4 @@ users that have rented products matching product_id:
     return rental_list
 
 
-print(show_available_products())
 print(print_mdb_collection())
