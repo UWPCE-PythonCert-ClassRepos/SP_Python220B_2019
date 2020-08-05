@@ -1,6 +1,7 @@
+# pylint: disable=C0103,E1101,W1203
+
 '''
 https://lerner.co.il/2019/05/05/making-your-python-decorators-even-better-with-functool-wraps/
-
 '''
 import argparse
 import json
@@ -8,7 +9,6 @@ import datetime
 import math
 import logging
 import sys
-
 
 # define the format and tell the logging module about your format
 log_format = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
@@ -33,16 +33,37 @@ LOGGER.setLevel(logging.DEBUG)
 LOGGER.addHandler(FH)
 LOGGER.addHandler(CH)
 
+
+def logging_deco(func):
+    '''Decorator function for logging options.'''
+    def return_function(dbg_command, *args, **kwargs):
+        if dbg_command == 0:
+            # Disable logging
+            LOGGER.disabled = True
+        elif dbg_command == 1:
+            FH.setLevel(logging.ERROR)
+            CH.setLevel(logging.ERROR)
+        elif dbg_command == 2:
+            FH.setLevel(logging.WARNING)
+            CH.setLevel(logging.WARNING)
+        elif dbg_command == 3:
+            FH.setLevel(logging.DEBUG)
+            CH.setLevel(logging.DEBUG)
+        return func(*args)
+    return return_function
+
+
 def parse_cmd_arguments():
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    '''this lets you put arguments in the cmd line, making it interactive'''
+    parser = argparse.ArgumentParser(description='do some JSON garbage')
     parser.add_argument('-i', '--input', help='input JSON file', required=True)
-# you name the output file in the user interface
     parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
-    parser.add_argument('-d', '--dbg_command', help='debug level', required=False
-                        , default=0)
+    parser.add_argument('-d', '--dbg_command', help='debug level', type=int,
+                        default=0, choices=range(4), required=False)
     return parser.parse_args()
 
 
+@logging_deco
 def load_rentals_file(filename):
     with open(filename) as file:
         try:
@@ -101,20 +122,11 @@ def save_to_json(filename, data):
 
 
 if __name__ == "__main__":
-    args = parse_cmd_arguments()
-    level = args.dbg_command
-    if level == '0':
-        LOGGER.disabled = True
-    elif level == '1':
-        FH.setLevel(logging.ERROR)
-        CH.setLevel(logging.ERROR)
-    elif level == '2':
-        FH.setLevel(logging.WARNING)
-        CH.setLevel(logging.WARNING)
-    elif level == '3':
-        FH.setLevel(logging.WARNING)
-        CH.setLevel(logging.DEBUG)
+    ARGS = parse_cmd_arguments()
+    DATA_IN = load_rentals_file(ARGS.dbg_command, ARGS.input)
+    DATA_OUT = calculate_additional_fields(DATA_IN)
+    save_to_json(ARGS.output, DATA_OUT)
 
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+
+    # cd C:\Users\v-ollock\github\SP_Python220B_2019\students\ScotchWSplenda\lesson09\assignment\
+    # python -m pylint ./charges_calcV3.py

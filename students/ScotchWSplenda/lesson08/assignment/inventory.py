@@ -4,7 +4,7 @@ create_invoice = single_customer("Susan Wong", "rented_items.csv")
 create_invoice("test_items.csv")
 
 ->removed the 'invoice_file.csv' since it's repetitive
-if row: #why the hell do I have to add this!>!>!?!> otherwise i got a
+line 33 ; if row: #why the hell do I have to add this!>!>!?!> otherwise i got a
 "IndexError: list index out of range"
 '''
 import csv

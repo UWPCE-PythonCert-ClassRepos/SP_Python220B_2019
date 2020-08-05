@@ -1,0 +1,242 @@
+ganyoa@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L04 (master)
+$ python -m unittest test_basic_operation_04
+2020-07-30 12:00:22,171 customer_model_04.py:5   INFO Define data (the schema) for Customer table in customers.db
+2020-07-30 12:00:22,171 customer_model_04.py:21  INFO Specify the fields in Customer model/table
+.2020-07-30 12:00:22,203 test_basic_operation_04.py:33  INFO test_add_customer
+2020-07-30 12:00:22,203 test_basic_operation_04.py:33  INFO test_add_customer
+2020-07-30 12:00:22,203 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,203 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,218 basic_operation_04.py:41  INFO Joe Moe added to customers.db
+2020-07-30 12:00:22,218 basic_operation_04.py:41  INFO Joe Moe added to customers.db
+2020-07-30 12:00:22,234 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,234 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,249 basic_operation_04.py:41  INFO Terry Scary added to customers.db
+2020-07-30 12:00:22,249 basic_operation_04.py:41  INFO Terry Scary added to customers.db
+2020-07-30 12:00:22,249 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,249 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,262 basic_operation_04.py:41  INFO Pam Glam added to customers.db
+2020-07-30 12:00:22,262 basic_operation_04.py:41  INFO Pam Glam added to customers.db
+.2020-07-30 12:00:22,262 test_basic_operation_04.py:62  INFO test_delete_customer_match
+2020-07-30 12:00:22,262 test_basic_operation_04.py:62  INFO test_delete_customer_match
+2020-07-30 12:00:22,262 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,262 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,262 basic_operation_04.py:43  ERROR Unique customer_id required. 009 not added
+2020-07-30 12:00:22,262 basic_operation_04.py:43  ERROR Unique customer_id required. 009 not added
+2020-07-30 12:00:22,262 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,262 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,262 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,262 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,277 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,277 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,277 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,277 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,277 basic_operation_04.py:64  INFO Deleting customer ID 009 from Customer table
+2020-07-30 12:00:22,277 basic_operation_04.py:64  INFO Deleting customer ID 009 from Customer table
+2020-07-30 12:00:22,293 basic_operation_04.py:48  INFO Searching for customer ID 009
+2020-07-30 12:00:22,293 basic_operation_04.py:48  INFO Searching for customer ID 009
+2020-07-30 12:00:22,293 basic_operation_04.py:57  ERROR Customer ID 009 not found.
+2020-07-30 12:00:22,293 basic_operation_04.py:57  ERROR Customer ID 009 not found.
+.2020-07-30 12:00:22,293 test_basic_operation_04.py:70  INFO test_delete_customer_no_match
+2020-07-30 12:00:22,293 test_basic_operation_04.py:70  INFO test_delete_customer_no_match
+2020-07-30 12:00:22,293 basic_operation_04.py:64  INFO Deleting customer ID 055 from Customer table
+2020-07-30 12:00:22,293 basic_operation_04.py:64  INFO Deleting customer ID 055 from Customer table
+2020-07-30 12:00:22,293 basic_operation_04.py:71  ERROR Customer 055 not found. <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."customer_status", "
+t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['055', 1, 0]
+2020-07-30 12:00:22,293 basic_operation_04.py:71  ERROR Customer 055 not found. <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."customer_status", "
+t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['055', 1, 0]
+.2020-07-30 12:00:22,293 test_basic_operation_04.py:91  INFO test_list_active_customers
+2020-07-30 12:00:22,293 test_basic_operation_04.py:91  INFO test_list_active_customers
+2020-07-30 12:00:22,293 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,293 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:41  INFO Joe Moe added to customers.db
+2020-07-30 12:00:22,314 basic_operation_04.py:41  INFO Joe Moe added to customers.db
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:91  INFO Quantity of active customers: 3
+2020-07-30 12:00:22,314 basic_operation_04.py:91  INFO Quantity of active customers: 3
+.2020-07-30 12:00:22,314 test_basic_operation_04.py:47  INFO test_search_match
+2020-07-30 12:00:22,314 test_basic_operation_04.py:47  INFO test_search_match
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Joe Moe to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 009 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 009 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Terry Scary to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 008 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:29  INFO Adding a Pam Glam to Customer table
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:43  ERROR Unique customer_id required. 007 not added
+2020-07-30 12:00:22,314 basic_operation_04.py:48  INFO Searching for customer ID 009
+2020-07-30 12:00:22,314 basic_operation_04.py:48  INFO Searching for customer ID 009
+.2020-07-30 12:00:22,314 test_basic_operation_04.py:55  INFO test_search_no_match
+2020-07-30 12:00:22,314 test_basic_operation_04.py:55  INFO test_search_no_match
+2020-07-30 12:00:22,314 basic_operation_04.py:48  INFO Searching for customer ID 765
+2020-07-30 12:00:22,314 basic_operation_04.py:48  INFO Searching for customer ID 765
+2020-07-30 12:00:22,314 basic_operation_04.py:57  ERROR Customer ID 765 not found.
+2020-07-30 12:00:22,314 basic_operation_04.py:57  ERROR Customer ID 765 not found.
+.2020-07-30 12:00:22,314 test_basic_operation_04.py:76  INFO test_update_credit_match
+2020-07-30 12:00:22,314 test_basic_operation_04.py:76  INFO test_update_credit_match
+2020-07-30 12:00:22,314 basic_operation_04.py:77  INFO Updating customer ID 007 credit limit
+2020-07-30 12:00:22,314 basic_operation_04.py:77  INFO Updating customer ID 007 credit limit
+.2020-07-30 12:00:22,345 test_basic_operation_04.py:84  INFO test_update_credit_no_match
+2020-07-30 12:00:22,345 test_basic_operation_04.py:84  INFO test_update_credit_no_match
+2020-07-30 12:00:22,345 basic_operation_04.py:77  INFO Updating customer ID 005 credit limit
+2020-07-30 12:00:22,345 basic_operation_04.py:77  INFO Updating customer ID 005 credit limit
+2020-07-30 12:00:22,345 basic_operation_04.py:83  ERROR Customer ID 005 not found. <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."customer_status", "
+t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['005', 1, 0]
+2020-07-30 12:00:22,345 basic_operation_04.py:83  ERROR Customer ID 005 not found. <Model: Customer> instance matching query does not exist:
+SQL: SELECT "t1"."customer_id", "t1"."first_name", "t1"."last_name", "t1"."home_address", "t1"."phone_number", "t1"."email_address", "t1"."customer_status", "
+t1"."credit_limit" FROM "customer" AS "t1" WHERE ("t1"."customer_id" = ?) LIMIT ? OFFSET ?
+Params: ['005', 1, 0]
+.
+----------------------------------------------------------------------
+Ran 9 tests in 0.170s
+
+OK
+
+
+
+
+ganyoa@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L04 (master)
+$ coverage report -m
+Name                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------
+basic_operation_04.py           67     11    84%   96-109
+customer_model_04.py            21      0   100%
+test_basic_operation_04.py      53      0   100%
+----------------------------------------------------------
+TOTAL                          141     11    92%
+
+
+
+
+ganyoa@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L04 (master)
+$ flake8 basic_operation_04.py
+
+
+
+
+ganyoa@AG-PC MINGW64 ~/Desktop/Python_UW/py_220/L04 (master)
+$ pylint -ry basic_operation_04
+************* Module basic_operation_04
+basic_operation_04.py:25:0: R0913: Too many arguments (8/5) (too-many-arguments)
+basic_operation_04.py:29:4: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:41:8: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:43:8: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:48:4: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:57:8: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:64:4: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:71:12: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:77:4: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:83:8: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+basic_operation_04.py:91:4: W1202: Use % formatting in logging functions and pass the % parameters as arguments (logging-format-interpolation)
+
+
+Report
+======
+67 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |5      |NC         |NC         |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    customer_model_04 (basic_operation_04)
+    peewee (basic_operation_04)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |80     |72.07 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |9      |8.11  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |0      |0.00  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |22     |19.82 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |1      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |10     |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------------+------------+
+|message id                   |occurrences |
++=============================+============+
+|logging-format-interpolation |10          |
++-----------------------------+------------+
+|too-many-arguments           |1           |
++-----------------------------+------------+
+
+
+
+
+------------------------------------------------------------------
+Your code has been rated at 8.36/10 (previous run: 8.36/10, +0.00)
+
