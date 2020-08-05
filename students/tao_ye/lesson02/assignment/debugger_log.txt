@@ -1,0 +1,236 @@
+#########################################################################################################
+Initial try... discovered that the command line options to run the charges_calc.py are as follows:
+#########################################################################################################
+
+TYE-LAPTOP-HP:assignment Tao$ python charges_calc.py
+usage: charges_calc.py [-h] -i INPUT -o OUTPUT
+charges_calc.py: error: the following arguments are required: -i/--input, -o/--output
+
+TYE-LAPTOP-HP:assignment Tao$ python charges_calc.py -i source.json -o out.json
+
+#########################################################################################################
+But it seemed nothing happened. The output file "out.json" was not created. 
+
+So started the debugger to run the script. In the following records, the code listings from "ll" or "l" 
+debug commands are not included for clarity.
+#########################################################################################################
+
+TYE-LAPTOP-HP:assignment Tao$ python -m pdb charges_calc.py -i source.json -o out.json
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+
+#########################################################################################################
+jump to the line 44 in the main for the first function "parse_cmd_arguments()" call
+#########################################################################################################
+(Pdb) b 44
+Breakpoint 1 at e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py:44
+(Pdb) c
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(44)<module>()
+-> args = parse_cmd_arguments()
+
+#########################################################################################################
+step into the function "parse_cmd_arguments()"
+#########################################################################################################
+(Pdb) s
+--Call--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(9)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(10)parse_cmd_arguments()
+-> parser = argparse.ArgumentParser(description='Process some integers.')
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(11)parse_cmd_arguments()
+-> parser.add_argument('-i', '--input', help='input JSON file', required=True)
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(12)parse_cmd_arguments()
+-> parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(14)parse_cmd_arguments()
+-> return parser.parse_args()
+(Pdb) parser.parse_args()
+Namespace(input='source.json', output='out.json')
+(Pdb) n
+--Return--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(14)parse_cmd_arguments()->Namespace(inp...ut='o
+ut.json')
+-> return parser.parse_args()
+
+#########################################################################################################
+Up to this point, did not see any issue with the function "parse_cmd_arguments()". Now step into the
+second function "load_rentals_file(args.input)"
+#########################################################################################################
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(45)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb) s
+--Call--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(17)load_rentals_file()
+-> def load_rentals_file(filename):
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(18)load_rentals_file()
+-> with open(filename) as file:
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(19)load_rentals_file()
+-> try:
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(20)load_rentals_file()
+-> data = json.load(file)
+(Pdb) file
+<_io.TextIOWrapper name='source.json' mode='r' encoding='cp1252'>
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(23)load_rentals_file()
+-> return data
+(Pdb) data['RNT001']
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+(Pdb) data['RNT999']
+{'product_code': 'PRD69', 'units_rented': 8, 'price_per_day': 36, 'rental_start': '10/12/18', 'rental_end': '10/2/16'}
+(Pdb) len(data)
+999
+
+#########################################################################################################
+At the end of the function call of "load_rentals_file(args.input)", checked 1st and last elements of 
+"data" as well as the number of items, which is "999". They all matched what is in source.json.
+
+Now proceed to call the third function "calculate_additional_fields(data)", and step into it.
+#########################################################################################################
+(Pdb) n
+--Return--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(23)load_rentals_file()->{'RNT001': {'price_per_day':
+31, 'product_code': 'PRD80', 'rental_end': '3/22/17', 'rental_start': '6/12/17', ...}, 'RNT002': {'price_per_day': 16, 'product_code
+': 'PRD11', 'rental_end': '9/30/18', 'rental_start': '7/20/16', ...}, 'RNT003': {'price_per_day': 40, 'product_code': 'PRD22', 'rent
+al_end': '6/4/17', 'rental_start': '2/1/16', ...}, 'RNT004': {'price_per_day': 40, 'product_code': 'PRD86', 'rental_end': '12/7/17',
+ 'rental_start': '8/14/16', ...}, ...}
+-> return data
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(46)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(25)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(26)calculate_additional_fields()
+-> for value in data.values():
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(27)calculate_additional_fields()
+-> try:
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17'}
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(28)calculate_additional_fields()
+-> rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) rental_start
+*** NameError: name 'rental_start' is not defined
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(29)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(30)calculate_additional_fields()
+-> value['total_days'] = (rental_end - rental_start).days
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(31)calculate_additional_fields()
+-> value['total_price'] = value['total_days'] * value['price_per_day']
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) n
+ValueError: math domain error
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(32)calculate_additional_fields()
+-> value['sqrt_total_price'] = math.sqrt(value['total_price'])
+(Pdb) value
+{'product_code': 'PRD80', 'units_rented': 8, 'price_per_day': 31, 'rental_start': '6/12/17', 'rental_end': '3/22/17', 'total_days':
+-82, 'total_price': -2542}
+
+#########################################################################################################
+Here, it had a ValueError: math domain error at line 32: value['sqrt_total_price'] = math.sqrt(value['total_price'])
+The data in variable "value" is printed out as shown above.
+
+And the value['total_price'] = -2542, a negative number. Square root of a native number caused this ValueError.
+Why is value['total_price'] negative? From line 31, it is caused by a negative value['total_days'] of -82.
+Why is value['total_days'] negative? Well, 'the rental_end' is before the 'rental_start'. These are input
+data error in "source.json" file. 
+#########################################################################################################
+
+
+########################################################################################################
+After enabling and inserting logging statement, turning on debug, it stopped after "RNT774" is processed.
+########################################################################################################
+TYE-LAPTOP-HP:assignment Tao$ python charges_calc.py -i source.json -o output.json -d 3
+2020-08-04 15:22:19,511 charges_calc.py:54  DEBUG Calling load_rentals_file(source.json)
+2020-08-04 15:22:19,511 charges_calc.py:65  DEBUG Calling calculate_additional_fields(data)
+2020-08-04 15:22:19,511 charges_calc.py:66  DEBUG Entrance number of elements in data: 999
+2020-08-04 15:22:19,511 charges_calc.py:78  ERROR rental_end is before rental_start at RNT001
+2020-08-04 15:22:19,526 charges_calc.py:78  ERROR rental_end is before rental_start at RNT006
+2020-08-04 15:22:19,526 charges_calc.py:78  ERROR rental_end is before rental_start at RNT007
+2020-08-04 15:22:19,526 charges_calc.py:78  ERROR rental_end is before rental_start at RNT008
+...
+...
+2020-08-04 15:22:19,651 charges_calc.py:78  ERROR rental_end is before rental_start at RNT772
+2020-08-04 15:22:19,651 charges_calc.py:78  ERROR rental_end is before rental_start at RNT773
+2020-08-04 15:22:19,651 charges_calc.py:78  ERROR rental_end is before rental_start at RNT774
+
+########################################################################################################
+Use debugger to run again. Use breakpoint to jump to function calculate_additional_fields
+########################################################################################################
+TYE-LAPTOP-HP:assignment Tao$ python -m pdb charges_calc.py -i source.json -o output.json
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(3)<module>()
+-> '''
+(Pdb) b 121
+Breakpoint 1 at e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py:121
+(Pdb) c
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(121)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(64)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(65)calculate_additional_fields()
+-> logging.debug('Calling calculate_additional_fields(data)')
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(66)calculate_additional_fields()
+-> logging.debug('Entrance number of elements in data: %-6d', len(data))
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(68)calculate_additional_fields()
+-> for key in data:
+
+########################################################################################################
+Now in the function, set another breakpoint just inside the for loop. And checked the source.json file
+after "RNT774" and noticed the "rental_end" of RNT776 is empty. So set condition of BP 2 to key='RNT776'
+to see what rental_end would get.
+########################################################################################################
+(Pdb) b 69
+Breakpoint 2 at e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py:69
+(Pdb) condition 2 key == 'RNT776'
+New condition set for breakpoint 2.
+(Pdb) c
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(69)calculate_additional_fields()
+-> value = data[key]
+(Pdb) key
+'RNT776'
+(Pdb) value
+{'product_code': 'PRD70', 'units_rented': 1, 'price_per_day': 14, 'rental_start': '6/19/16', 'rental_end': ''}
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(72)calculate_additional_fields()
+-> if value['rental_end'] is None:
+(Pdb) n
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(76)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+(Pdb) n
+ValueError: time data '' does not match format '%m/%d/%y'
+> e:\uw\sp_python220b_2019\students\tao_ye\lesson02\assignment\charges_calc.py(76)calculate_additional_fields()
+-> rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+
+########################################################################################################
+add logging statement to handle missing "rental_end" correctly. And now the program finishs normally and 
+produces an output.json.
+########################################################################################################
+
+
+
+
+
+
+
+
+
