@@ -1,0 +1,84 @@
+Stella Kim
+Assignment 6: Finding Bottlenecks
+
+INITIAL FINDINGS
+
+It looks as though the code should be reading the CSV file and any date that is
+past 2012 should be tallied.  Also all 'ao' entries should be counted.
+
+Current output of poor_perf.py:
+{'2013': 94172, '2014': 94083, '2015': 94017, '2016': 94684, '2017': 188968, '2018': 0}
+'ao' was found 499747 times
+
+Average time to run poor_perf.py: 4.501145265 seconds
+Using cProfile: 1040594 function calls (1040570 primitive calls) in 4.699 seconds
+
+
+UPDATES TO CODEBASE
+
+1. Pulled out main() function, as it was an extra function to run code.
+Instead, ran analyze() function directly.  Corrected count of 2018 entries.
+
+    Output:
+    {'2013': 94172, '2014': 94083, '2015': 94017, '2016': 94684, '2017': 94172, '2018': 94796}
+    'ao' was found 499747 times
+    Average time to run updated poor_perf.py (good_perf.py): 4.474524954 seconds
+
+    Code ran slightly faster with correct output.
+
+2. Took out second CSV file reader to look for 'ao' values.
+
+    Output:
+    {'2013': 94172, '2014': 94083, '2015': 94017, '2016': 94684, '2017': 94172, '2018': 94796}
+    'ao' was found 499747 times
+    Average time to run updated poor_perf.py (good_perf.py): 2.900440565 seconds
+
+    Code ran significantly faster (about 1.5 seconds) not having to run the CSV read function twice.
+
+3. Removed creation of 'new_ones' list.  Tried reading from reader output directly.
+
+    Output:
+    {'2013': 94172, '2014': 94083, '2015': 94017, '2016': 94684, '2017': 94172, '2018': 94796}
+    'ao' was found 499747 times
+    Average time to run updated poor_perf.py (good_perf.py): 1.813830712 seconds
+    Using cProfile: 21405 function calls (21381 primitive calls) in 1.803 seconds
+
+    Code proved to run faster by about one second when not having to create a
+    new list to add to and update counts.
+
+4. Tried cleaning up the following function for efficiency instead of having two IF statements.
+    for row in reader:
+            if 'ao' in row[6]:
+                found += 1
+
+            year_key = row[5][-4:]
+            if year_key in year_count:
+                year_count[year_key] += 1
+    
+    Output:
+    {'2013': 94172, '2014': 94083, '2015': 94017, '2016': 94684, '2017': 94172, '2018': 94796}
+    'ao' was found 499747 times
+    Average time to run updated poor_perf.py (good_perf.py): 1.90308626 seconds
+    Using cProfile: 21405 function calls (21381 primitive calls) in 1.868 seconds
+
+    for row in reader:
+            if 'ao' in row[6]:
+                found += 1
+            try:
+                year_key = row[5][-4:]
+                year_count[year_key] += 1
+            except KeyError:
+                # print(f'Year: {year_key} does not exist in dictionary.')
+                continue
+    
+    The updated code above actually ran a little slower probably due to the
+    amount of times the exception occurred (as there are many years listed in
+    the data file other than 2013-2018).
+
+
+CONCLUSION
+
+I was able to rewrite the module to improve performance of the original code,
+by about 60%.  This was done mainly from cutting down functions that were
+redundant (reading a CSV file twice) or unnecessary (having to create a NEW list
+to read and count data from).  The function calls dropped from 1040594 to 21405.
