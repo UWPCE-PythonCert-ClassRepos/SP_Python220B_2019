@@ -38,5 +38,5 @@ def _code_timer():
 
 
 if __name__ == "__main__":
-    generate_data(10)
+    generate_data()
     # _code_timer()
