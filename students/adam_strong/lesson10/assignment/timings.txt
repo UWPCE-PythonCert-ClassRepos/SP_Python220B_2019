@@ -1,0 +1,351 @@
+TIMING SAMPLES
+
+
+----------------
+~10 records each
+----------------
+
+
+2020-08-04 23:49:10,111 database.py:214 INFO
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-04 23:49:10,112 database.py:81  INFO 0.000161 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:49:10,112 database.py:81  INFO 0.000122 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:49:10,112 database.py:81  INFO 0.000111 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:49:10,114 database.py:117 INFO Adding in [ 8 ] records in PRODUCTS collection
+2020-08-04 23:49:10,146 database.py:81  INFO 0.031580 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:49:10,146 database.py:120 INFO Adding in [ 10 ] records in CUSTOMERS collection
+2020-08-04 23:49:10,170 database.py:81  INFO 0.023714 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:49:10,170 database.py:123 INFO Adding in [ 8 ] records in RENTALS collection
+2020-08-04 23:49:10,195 database.py:81  INFO 0.024856 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:49:10,196 database.py:81  INFO 0.083550 secs || TIME for function 'insert_in_mongo'
+
+2020-08-04 23:49:10,196 database.py:81  INFO 0.084387 secs || TIME for function 'import_data'
+
+2020-08-04 23:49:10,201 database.py:81  INFO 0.004330 secs || TIME for function 'show_all_products'
+
+2020-08-04 23:49:10,205 database.py:81  INFO 0.004437 secs || TIME for function 'show_available_products'
+
+2020-08-04 23:49:10,211 database.py:81  INFO 0.005531 secs || TIME for function 'show_rentals'
+
+2020-08-04 23:49:10,212 database.py:171 INFO Deleting all 3 collections
+2020-08-04 23:49:10,225 database.py:81  INFO 0.013557 secs || TIME for function 'delete_db'
+
+
+
+2020-08-04 23:53:48,190 database.py:214 INFO
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-04 23:53:48,191 database.py:81  INFO 0.000152 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:53:48,191 database.py:81  INFO 0.000130 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:53:48,191 database.py:81  INFO 0.000141 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:53:48,193 database.py:117 INFO Adding in [ 8 ] records in PRODUCTS collection
+2020-08-04 23:53:48,218 database.py:81  INFO 0.024902 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:53:48,218 database.py:120 INFO Adding in [ 10 ] records in CUSTOMERS collection
+2020-08-04 23:53:48,243 database.py:81  INFO 0.024525 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:53:48,243 database.py:123 INFO Adding in [ 8 ] records in RENTALS collection
+2020-08-04 23:53:48,267 database.py:81  INFO 0.024382 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:53:48,268 database.py:81  INFO 0.076856 secs || TIME for function 'insert_in_mongo'
+
+2020-08-04 23:53:48,268 database.py:81  INFO 0.077755 secs || TIME for function 'import_data'
+
+2020-08-04 23:53:48,273 database.py:81  INFO 0.004574 secs || TIME for function 'show_all_products'
+
+2020-08-04 23:53:48,278 database.py:81  INFO 0.004270 secs || TIME for function 'show_available_products'
+
+2020-08-04 23:53:48,284 database.py:81  INFO 0.006686 secs || TIME for function 'show_rentals'
+
+2020-08-04 23:53:48,286 database.py:171 INFO Deleting all 3 collections
+2020-08-04 23:53:48,298 database.py:81  INFO 0.013366 secs || TIME for function 'delete_db'
+
+
+2020-08-04 23:55:36,970 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-04 23:55:36,970 database.py:81  INFO 0.000155 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:55:36,970 database.py:81  INFO 0.000145 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:55:36,971 database.py:81  INFO 0.000119 secs || TIME for function 'import_single_file'
+
+2020-08-04 23:55:36,972 database.py:117 INFO Adding in [ 8 ] records in PRODUCTS collection
+2020-08-04 23:55:37,004 database.py:81  INFO 0.031524 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:55:37,005 database.py:120 INFO Adding in [ 10 ] records in CUSTOMERS collection
+2020-08-04 23:55:37,029 database.py:81  INFO 0.024791 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:55:37,030 database.py:123 INFO Adding in [ 8 ] records in RENTALS collection
+2020-08-04 23:55:37,068 database.py:81  INFO 0.038168 secs || TIME for function 'add_to_database'
+
+2020-08-04 23:55:37,069 database.py:81  INFO 0.098197 secs || TIME for function 'insert_in_mongo'
+
+2020-08-04 23:55:37,069 database.py:81  INFO 0.099258 secs || TIME for function 'import_data'
+
+2020-08-04 23:55:37,075 database.py:81  INFO 0.005180 secs || TIME for function 'show_all_products'
+
+2020-08-04 23:55:37,079 database.py:81  INFO 0.004654 secs || TIME for function 'show_available_products'
+
+2020-08-04 23:55:37,085 database.py:81  INFO 0.005251 secs || TIME for function 'show_rentals'
+
+2020-08-04 23:55:37,086 database.py:171 INFO Deleting all 3 collections
+2020-08-04 23:55:37,097 database.py:81  INFO 0.011386 secs || TIME for function 'delete_db'
+
+
+------------------
+~1000 records each
+------------------
+
+
+2020-08-05 00:11:22,188 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:11:22,191 database.py:81  INFO 0.002770 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:11:22,195 database.py:81  INFO 0.004418 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:11:22,198 database.py:81  INFO 0.002578 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:11:22,200 database.py:117 INFO Adding in [ 999 ] records in PRODUCTS collection
+2020-08-05 00:11:22,491 database.py:81  INFO 0.291096 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:11:22,491 database.py:120 INFO Adding in [ 1006 ] records in CUSTOMERS collection
+2020-08-05 00:11:22,787 database.py:81  INFO 0.295666 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:11:22,787 database.py:123 INFO Adding in [ 1002 ] records in RENTALS collection
+2020-08-05 00:11:23,041 database.py:81  INFO 0.253854 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:11:23,042 database.py:81  INFO 0.843241 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:11:23,042 database.py:81  INFO 0.853629 secs || TIME for function 'import_data'
+
+2020-08-05 00:11:23,049 database.py:81  INFO 0.007278 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:11:23,064 database.py:81  INFO 0.014824 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:11:23,073 database.py:81  INFO 0.008152 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:11:23,074 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:11:23,089 database.py:81  INFO 0.015393 secs || TIME for function 'delete_db'
+
+
+2020-08-05 00:12:05,077 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:12:05,080 database.py:81  INFO 0.002821 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:05,084 database.py:81  INFO 0.004167 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:05,087 database.py:81  INFO 0.002566 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:05,088 database.py:117 INFO Adding in [ 999 ] records in PRODUCTS collection
+2020-08-05 00:12:05,351 database.py:81  INFO 0.262331 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:05,351 database.py:120 INFO Adding in [ 1006 ] records in CUSTOMERS collection
+2020-08-05 00:12:05,616 database.py:81  INFO 0.265191 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:05,616 database.py:123 INFO Adding in [ 1002 ] records in RENTALS collection
+2020-08-05 00:12:05,964 database.py:81  INFO 0.347273 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:05,964 database.py:81  INFO 0.877158 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:12:05,964 database.py:81  INFO 0.887177 secs || TIME for function 'import_data'
+
+2020-08-05 00:12:05,971 database.py:81  INFO 0.006630 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:12:05,978 database.py:81  INFO 0.006813 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:12:05,982 database.py:81  INFO 0.004284 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:12:05,983 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:12:05,995 database.py:81  INFO 0.012702 secs || TIME for function 'delete_db'
+
+
+2020-08-05 00:12:28,502 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:12:28,505 database.py:81  INFO 0.002573 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:28,509 database.py:81  INFO 0.003875 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:28,512 database.py:81  INFO 0.002695 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:12:28,513 database.py:117 INFO Adding in [ 999 ] records in PRODUCTS collection
+2020-08-05 00:12:28,846 database.py:81  INFO 0.331849 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:28,846 database.py:120 INFO Adding in [ 1006 ] records in CUSTOMERS collection
+2020-08-05 00:12:29,233 database.py:81  INFO 0.387131 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:29,233 database.py:123 INFO Adding in [ 1002 ] records in RENTALS collection
+2020-08-05 00:12:29,526 database.py:81  INFO 0.292435 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:12:29,526 database.py:81  INFO 1.014152 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:12:29,526 database.py:81  INFO 1.023834 secs || TIME for function 'import_data'
+
+2020-08-05 00:12:29,533 database.py:81  INFO 0.006451 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:12:29,541 database.py:81  INFO 0.007591 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:12:29,546 database.py:81  INFO 0.005235 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:12:29,547 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:12:29,557 database.py:81  INFO 0.010139 secs || TIME for function 'delete_db'
+
+
+
+-------------------
+~10000 records each
+-------------------
+
+
+
+
+2020-08-05 00:07:00,026 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:07:00,062 database.py:81  INFO 0.035338 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:00,108 database.py:81  INFO 0.045850 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:00,135 database.py:81  INFO 0.026973 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:00,137 database.py:117 INFO Adding in [ 9990 ] records in PRODUCTS collection
+2020-08-05 00:07:02,450 database.py:81  INFO 2.312367 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:02,450 database.py:120 INFO Adding in [ 9054 ] records in CUSTOMERS collection
+2020-08-05 00:07:04,685 database.py:81  INFO 2.234539 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:04,685 database.py:123 INFO Adding in [ 10089 ] records in RENTALS collection
+2020-08-05 00:07:07,138 database.py:81  INFO 2.452973 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:07,139 database.py:81  INFO 7.003460 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:07:07,139 database.py:81  INFO 7.112563 secs || TIME for function 'import_data'
+
+2020-08-05 00:07:07,185 database.py:81  INFO 0.046258 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:07:07,242 database.py:81  INFO 0.055946 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:07:07,256 database.py:81  INFO 0.013760 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:07:07,257 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:07:07,266 database.py:81  INFO 0.010365 secs || TIME for function 'delete_db'
+
+
+2020-08-05 00:06:29,193 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:06:29,222 database.py:81  INFO 0.028405 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:06:29,256 database.py:81  INFO 0.034213 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:06:29,284 database.py:81  INFO 0.027332 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:06:29,286 database.py:117 INFO Adding in [ 9990 ] records in PRODUCTS collection
+2020-08-05 00:06:31,594 database.py:81  INFO 2.307610 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:06:31,594 database.py:120 INFO Adding in [ 9054 ] records in CUSTOMERS collection
+2020-08-05 00:06:33,777 database.py:81  INFO 2.182869 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:06:33,777 database.py:123 INFO Adding in [ 10089 ] records in RENTALS collection
+2020-08-05 00:06:36,134 database.py:81  INFO 2.356875 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:06:36,135 database.py:81  INFO 6.850967 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:06:36,135 database.py:81  INFO 6.941757 secs || TIME for function 'import_data'
+
+2020-08-05 00:06:36,181 database.py:81  INFO 0.045501 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:06:36,235 database.py:81  INFO 0.054256 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:06:36,248 database.py:81  INFO 0.012599 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:06:36,249 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:06:36,259 database.py:81  INFO 0.010548 secs || TIME for function 'delete_db'
+
+
+2020-08-05 00:07:48,721 database.py:214 INFO 
+----------------------------------------------------------------------------------------------------
+In main/name statement -> To test timing functionality 
+----------------------------------------------------------------------------------------------------
+
+2020-08-05 00:07:48,748 database.py:81  INFO 0.027206 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:48,787 database.py:81  INFO 0.038213 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:48,814 database.py:81  INFO 0.026738 secs || TIME for function 'import_single_file'
+
+2020-08-05 00:07:48,815 database.py:117 INFO Adding in [ 9990 ] records in PRODUCTS collection
+2020-08-05 00:07:51,192 database.py:81  INFO 2.376246 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:51,192 database.py:120 INFO Adding in [ 9054 ] records in CUSTOMERS collection
+2020-08-05 00:07:53,401 database.py:81  INFO 2.208955 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:53,401 database.py:123 INFO Adding in [ 10089 ] records in RENTALS collection
+2020-08-05 00:07:55,760 database.py:81  INFO 2.358732 secs || TIME for function 'add_to_database'
+
+2020-08-05 00:07:55,760 database.py:81  INFO 6.946624 secs || TIME for function 'insert_in_mongo'
+
+2020-08-05 00:07:55,761 database.py:81  INFO 7.039628 secs || TIME for function 'import_data'
+
+2020-08-05 00:07:55,806 database.py:81  INFO 0.045417 secs || TIME for function 'show_all_products'
+
+2020-08-05 00:07:55,862 database.py:81  INFO 0.055795 secs || TIME for function 'show_available_products'
+
+2020-08-05 00:07:55,877 database.py:81  INFO 0.014517 secs || TIME for function 'show_rentals'
+
+2020-08-05 00:07:55,878 database.py:171 INFO Deleting all 3 collections
+2020-08-05 00:07:55,888 database.py:81  INFO 0.010641 secs || TIME for function 'delete_db'
+
+
+
+CONCLUSIONS:
+
+Timing in seconds ---------------------------------------------------------------------
+
+FUNCTION:              import data (PRODUCTS    CUSTOMERS    RENTALS) – add to database
+~10 Records (AVG)       0.087133    0.029335    0.024343    0.029135
+Normalized per record   0.003351    0.003667    0.002434    0.003642
+
+FUNCTION:              import data (PRODUCTS    CUSTOMERS    RENTALS) – add to database
+~1000 Records (AVG)     0.921547    0.295060    0.314473    0.297854
+Normalized per record   0.000306    0.000295    0.000313    0.000297
+
+
+FUNCTION:              import data (PRODUCTS    CUSTOMERS    RENTALS) – add to database
+~10000 Records (AVG)    7.031316    2.332067    2.208788    2.389527
+Normalized per record   0.000241    0.000233    0.000244    0.000237
+
+  - Ran database.py importing csv files of different sizes for each collection: products, customers, rentals.
+  - Order of magnitude drop in processing time per record from 10 to 1000 records
+  - ~30% drop in time going from 1000 records to 10000 records
+  - Importing the files from the csv files seems to have a more linear relationship to record amount
+  - Other functions also work in a more linear fashion than the importing into MongoDB function
