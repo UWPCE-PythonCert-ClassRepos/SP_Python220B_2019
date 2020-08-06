@@ -1,0 +1,6 @@
+_id,name,address,phone_number,email
+cid001,JohnSmith,111 Broad St.,111-222-3333,JohnSmith@gmail.com
+cid002,NancyAdams,222 Central Ave.,222-333-4444,NancyAdams@gmail.com
+cid003,BenJones,333 Crown St.,333-444-555,BenJones@gmail.com
+cid004,BettySims,444 First St.,444-555-6666,BettySims@gmail.com
+cid005,BradDavis,555 Fifth St.,555-666-7777,BradDavis@gmail.com
