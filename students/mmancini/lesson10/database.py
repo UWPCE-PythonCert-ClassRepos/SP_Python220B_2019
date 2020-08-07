@@ -1,3 +1,4 @@
+
 '''
     sp_py220 assignment 5, consuming api's with MongoDB
 '''
@@ -6,6 +7,8 @@
 #pylint: disable=invalid-name
 #pylint: disable=too-many-locals
 #pylint: disable=no-else-continue
+#pylint: disable=no-self-use
+#pylint: disable=unused-import
 
 import sys
 import csv
@@ -34,6 +37,7 @@ class MongoDBConnection():
         self.connection.close()
 
 def db_get_metrics(db):
+    ''' get metrics on db '''
     time_metric = datetime.datetime.now()
     products_metric = db['Products'].estimated_document_count()
     customers_metric = db['Customers'].estimated_document_count()
@@ -42,9 +46,11 @@ def db_get_metrics(db):
     return lst_metrics
 
 def measure_function(func):
+    ''' perform db measurements '''
     def wrapper(*args, **kwargs):
+        ''' include db metrics '''
         print("{0} is called with parameter {1}".format(func.__qualname__, args[1:]))
-        
+
         host = '127.0.0.1'
         port = 27017
         connection = MongoClient(host, port)
@@ -52,12 +58,12 @@ def measure_function(func):
 
         lst_metrics_before = db_get_metrics(db)
         print("before metrics = " + str(lst_metrics_before))
-        
+
         result = func(*args, **kwargs)
 
         lst_metrics_after = db_get_metrics(db)
         print("after metrics = " + str(lst_metrics_after))
-        
+
         connection.close()
 
         start_time = lst_metrics_before[0]
@@ -66,7 +72,7 @@ def measure_function(func):
         pre_counts = lst_metrics_before
         counts = (abs(post_counts[1]-pre_counts[1]), abs(post_counts[2]-pre_counts[2]),
                   abs(post_counts[3]-pre_counts[3]))
-        
+
         with open('timings.txt', mode='a+') as file:
             file.write('Function: {}, Time: {}, Records Processed: {}\n'.format(func.__name__,
                                                                                 end_time-start_time,
@@ -78,7 +84,7 @@ def measure_function(func):
 
 
 def measure_all_methods(cls):
-
+    ''' metrics for all functions '''
     for key, val in vars(cls).items():
         if callable(val):
             setattr(cls, key, measure_function(val))
@@ -86,7 +92,7 @@ def measure_all_methods(cls):
 
 
 class MetaClassMeasure(type):
-
+    ''' meta class measurements '''
     def __new__(cls, clsname, bases, clsdict):
         obj = super().__new__(cls, clsname, bases, clsdict)
         obj = measure_all_methods(obj)
@@ -94,6 +100,7 @@ class MetaClassMeasure(type):
 
 
 class MeasuredDB(metaclass=MetaClassMeasure):
+    ''' inventory db '''
     def import_data(self, directory_name, product_file, customer_file, rentals_file):
         '''
             des:
@@ -253,12 +260,3 @@ class MeasuredDB(metaclass=MetaClassMeasure):
             database["Products"].drop()
             database["Rentals"].drop()
         return 'databases dropped'
-
-        
-if __name__ == '__main__':
-
-    print("pathspec commandline arg = " + str(sys.argv[1]))
-    pathspec = str(sys.argv[1])
-
-    measured_db = MeasuredDB()
-    
