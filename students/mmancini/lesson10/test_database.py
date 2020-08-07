@@ -1,3 +1,4 @@
+
 '''
     test suite for mongoDB
 '''
@@ -8,11 +9,14 @@
 #pylint: disable=no-self-use
 #pylint: disable=unnecessary-pass
 #pylint: disable=pointless-string-statement
+#pylint: disable=unused-import
 
+import sys
 import logging
 from unittest import TestCase
-from database import import_data, show_available_products
-from database import show_rentals, dbs_cleanup
+#from database import import_data, show_available_products
+#from database import show_rentals, dbs_cleanup
+import database
 
 logging.basicConfig()
 LOGGER = logging.getLogger(__name__)
@@ -23,20 +27,45 @@ class TestImportDataToDb(TestCase):
     def test_import_data(self):
         '''test importing data files'''
         LOGGER.info('Test import_data')
-        result_count, result_errors = import_data('csv_files',
-                                                  'product_file.csv',
-                                                  'customer_file.csv',
-                                                  'rentals_file.csv')
+        measured_db = database.MeasuredDB()
+
+        pathspec = "csv_files_9"
+        result_count, result_errors = measured_db.import_data(pathspec,
+                                                              'product_file.csv',
+                                                              'customer_file.csv',
+                                                              'rentals_file.csv')
         LOGGER.info('test_import_data, result_count = %s, result_errors = %s',
                     str(result_count), str(result_errors))
-        self.assertEqual(result_count, (6, 6, 6))
+        self.assertEqual(result_count, (9, 9, 9))
+        self.assertEqual(result_errors, (0, 0, 0))
+        measured_db.dbs_cleanup()
+
+        pathspec = "csv_files_90"
+        result_count, result_errors = measured_db.import_data(pathspec,
+                                                              'product_file.csv',
+                                                              'customer_file.csv',
+                                                              'rentals_file.csv')
+        LOGGER.info('test_import_data, result_count = %s, result_errors = %s',
+                    str(result_count), str(result_errors))
+        self.assertEqual(result_count, (90, 90, 90))
+        self.assertEqual(result_errors, (0, 0, 0))
+        measured_db.dbs_cleanup()
+
+        pathspec = "csv_files_900"
+        result_count, result_errors = measured_db.import_data(pathspec,
+                                                              'product_file.csv',
+                                                              'customer_file.csv',
+                                                              'rentals_file.csv')
+        LOGGER.info('test_import_data, result_count = %s, result_errors = %s',
+                    str(result_count), str(result_errors))
+        self.assertEqual(result_count, (906, 906, 906))
         self.assertEqual(result_errors, (0, 0, 0))
 
         # err check filenotfound
-        result_count, result_errors = import_data('csv_files',
-                                                  'product_file.csvXXX',
-                                                  'customer_file.csvXXX',
-                                                  'rentals_file.csvXXX')
+        result_count, result_errors = measured_db.import_data('csv_files',
+                                                              'product_file.csvXXX',
+                                                              'customer_file.csvXXX',
+                                                              'rentals_file.csvXXX')
         LOGGER.info('test_import_data, result_count = %s, result_errors = %s',
                     str(result_count), str(result_errors))
         self.assertEqual(result_count, (0, 0, 0))
@@ -44,21 +73,24 @@ class TestImportDataToDb(TestCase):
 
         LOGGER.info('test_import_data completed')
 
-class TestsDatabase(TestCase):
+
+class xTestsDatabase(TestCase):
     ''' test suite database '''
+    measured_db = database.MeasuredDB()
+
     def setUp(self):
         ''' test setup '''
         LOGGER.info('setup start')
 
-        dropped_status = dbs_cleanup()
+        dropped_status = self.measured_db.dbs_cleanup()
         LOGGER.info('test setup, dbs cleanup status = %s', dropped_status)
 
         ''' import data files '''
         LOGGER.info('setup import data file to database')
-        import_data('csv_files',
-                    'product_file.csv',
-                    'customer_file.csv',
-                    'rentals_file.csv')
+        self.measured_db.import_data('csv_files',
+                                     'product_file.csv',
+                                     'customer_file.csv',
+                                     'rentals_file.csv')
 
         LOGGER.info('test setup completed')
 
@@ -66,7 +98,7 @@ class TestsDatabase(TestCase):
         '''testing show_available_products function'''
         pass
         LOGGER.info('test show products with quantities available')
-        result_dict = show_available_products()
+        result_dict = self.measured_db.show_available_products()
         expected_dict = {'pid001': {'description': 'sofa',
                                     'product_type': 'livingroom',
                                     'quantity_available': '5'},
@@ -93,7 +125,7 @@ class TestsDatabase(TestCase):
                          'cid004': {'name': 'BettySims', 'address': '444 First St.',
                                     'phone_number': '444-555-6666',
                                     'email': 'BettySims@gmail.com'}}
-        result_dict = show_rentals('pid001')
+        result_dict = self.measured_db.show_rentals('pid001')
         self.assertEqual(result_dict, expected_data)
         LOGGER.info('test show_rentals customer who rented product %s, are %s',
                     'pid001', result_dict)
@@ -105,6 +137,6 @@ class TestsDatabase(TestCase):
     def test_dbs_cleanup(self):
         '''test drop dbs'''
         pass
-        result_status = dbs_cleanup()
+        result_status = self.measured_db.dbs_cleanup()
         expected_status = 'databases dropped'
         self.assertEqual(result_status, expected_status)
