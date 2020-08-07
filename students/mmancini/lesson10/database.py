@@ -33,11 +33,44 @@ class MongoDBConnection():
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
 
+def db_get_metrics(db):
+    time_metric = datetime.datetime.now()
+    products_metric = db['Products'].estimated_document_count()
+    customers_metric = db['Customers'].estimated_document_count()
+    rentals_metric = db['Rentals'].estimated_document_count()
+    lst_metrics = [time_metric, products_metric, customers_metric, rentals_metric]
+    return lst_metrics
+
 def measure_function(func):
     def wrapper(*args, **kwargs):
         print("{0} is called with parameter {1}".format(func.__qualname__, args[1:]))
         
+        host = '127.0.0.1'
+        port = 27017
+        connection = MongoClient(host, port)
+        db = connection.hp_norton
+
+        lst_metrics_before = db_get_metrics(db)
+        print("before metrics = " + str(lst_metrics_before))
+        
         result = func(*args, **kwargs)
+
+        lst_metrics_after = db_get_metrics(db)
+        print("after metrics = " + str(lst_metrics_after))
+        
+        connection.close()
+
+        start_time = lst_metrics_before[0]
+        end_time = lst_metrics_after[0]
+        post_counts = lst_metrics_after
+        pre_counts = lst_metrics_before
+        counts = (abs(post_counts[1]-pre_counts[1]), abs(post_counts[2]-pre_counts[2]),
+                  abs(post_counts[3]-pre_counts[3]))
+        
+        with open('timings.txt', mode='a+') as file:
+            file.write('Function: {}, Time: {}, Records Processed: {}\n'.format(func.__name__,
+                                                                                end_time-start_time,
+                                                                                counts))
 
         return result
 
