@@ -1,0 +1,51 @@
+MeasuredDB.import_data is called with parameter ('csv_files_9', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 17, 697277), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 17, 889288), 15, 15, 15]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 17, 896289), 15, 15, 15]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 18, 294311), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files_90', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 18, 326313), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 19, 807398), 90, 90, 90]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 19, 815398), 90, 90, 90]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 20, 229422), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files_900', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 20, 258424), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 22, 808570), 906, 906, 906]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csvXXX', 'customer_file.csvXXX', 'rentals_file.csvXXX')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 22, 814570), 906, 906, 906]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 22, 825571), 906, 906, 906]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 22, 998580), 906, 906, 906]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 23, 285597), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 23, 323599), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 141646), 6, 6, 6]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 171648), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 423662), 0, 0, 0]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 429662), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 439663), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 24, 452664), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 105701), 6, 6, 6]
+MeasuredDB.show_available_products is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 122702), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 160704), 6, 6, 6]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 177705), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 441720), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 25, 465722), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 26, 115759), 6, 6, 6]
+MeasuredDB.show_rentals is called with parameter ('pid001',)
+before metrics = [datetime.datetime(2020, 8, 7, 9, 49, 26, 129760), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 9, 49, 26, 156761), 6, 6, 6]
+Name               Stmts   Miss  Cover
+--------------------------------------
+database.py          154      4    97%
+test_database.py      62      0   100%
+--------------------------------------
+TOTAL                216      4    98%
