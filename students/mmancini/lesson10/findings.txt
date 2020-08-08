@@ -1,0 +1,34 @@
+
+
+Description of Tests:
+	The tests were conducted with 3 data sets, of size 9, 90, and 900 records.
+	Reference the below database metrics which were gathered for 3 test runs.
+	(see timings.txt)
+
+Test 9 records:
+Function: import_data, Time: 0:00:00.784045, Records Processed: (9, 9, 9)
+Function: show_available_products, Time: 0:00:00.013001, Records Processed: (0, 0, 0)
+Function: show_rentals, Time: 0:00:00.021001, Records Processed: (0, 0, 0)
+Function: dbs_cleanup, Time: 0:00:00.279016, Records Processed: (9, 9, 9)
+
+Test 90 records:
+Function: import_data, Time: 0:00:01.232070, Records Processed: (90, 90, 90)
+Function: show_available_products, Time: 0:00:00.045002, Records Processed: (0, 0, 0)
+Function: show_rentals, Time: 0:00:00.017001, Records Processed: (0, 0, 0)
+Function: dbs_cleanup, Time: 0:00:00.457026, Records Processed: (90, 90, 90)
+
+Test with 900 records;
+Function: import_data, Time: 0:00:02.002115, Records Processed: (906, 906, 906)
+Function: show_available_products, Time: 0:00:00.039002, Records Processed: (0, 0, 0)
+Function: show_rentals, Time: 0:00:00.032002, Records Processed: (0, 0, 0)
+Function: dbs_cleanup, Time: 0:00:00.273016, Records Processed: (906, 906, 906)
+
+
+Findings:
+	The database metrics indicate the biggest performance hit comes during import_data.
+	Observed is that there is an approximate doubleling of the import time as the 
+	number of records increases by a factor of 10.  Should very large inventory
+	datasets be required this could be a factor for consideration pending the SLA requirements.
+
+
+
