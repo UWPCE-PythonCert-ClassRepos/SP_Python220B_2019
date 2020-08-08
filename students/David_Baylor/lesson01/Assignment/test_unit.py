@@ -134,7 +134,9 @@ class MainTest(TestCase):
                 sys.stdout = sys.__stdout__
 
             self.assertEqual(captured_output.getvalue(),
-                             """Please choose from the following options (1, 2, q):
+                             """{'1111': {'product_code': '1111', 'description': 'Pen', """\
+                             """'market_price': 24, 'rental_price': '$0.50'}}
+Please choose from the following options (1, 2, q):
 1. Add a new item to the inventory
 2. Get item information
 q. Quit\n""")
