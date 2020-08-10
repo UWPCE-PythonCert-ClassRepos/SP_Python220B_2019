@@ -1,3 +1,4 @@
+# pylint: disable=C0103,C0111,R0903
 '''
 Peewee ORM, sqlite and Python
 what is this 'peewee.' preamble? -> only if you do a * import

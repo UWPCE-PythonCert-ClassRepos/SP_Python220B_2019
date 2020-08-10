@@ -2,10 +2,11 @@
 who don't i have to 'connect' or 'close'?
 """
 
-from customer_model import db, Customer
-import peewee
 import logging
 import datetime
+import peewee
+from customer_model import db, Customer
+
 
 # tell logger where to save
 LOG_FILE = datetime.datetime.now().strftime('%Y-%m-%d')+'.log'
@@ -29,13 +30,13 @@ def add_customer(_name, _last_name, _home_address, _phone_number,
     try:
         with db.transaction():
             new_customer = Customer.create(
-                        name=_name,
-                        last_name=_last_name,
-                        home_address=_home_address,
-                        phone_number=_phone_number,
-                        email_address=_email_address,
-                        status=_status,
-                        poverty_score=_poverty_score
+                name=_name,
+                last_name=_last_name,
+                home_address=_home_address,
+                phone_number=_phone_number,
+                email_address=_email_address,
+                status=_status,
+                poverty_score=_poverty_score
                         )
             new_customer.save()
             LOGGER.info("Added customer %s %s to database.", _name, _last_name)
@@ -60,15 +61,15 @@ def delete_customer(_name):
     with db.transaction():
         result = Customer.get(Customer.name == _name)
         if result is not None:
-            result.delete()
+            result.delete_instance()
             LOGGER.info("Deleted %s %s", result.name, result.last_name)
         if result is None:
             LOGGER.warning('Customer %s does not exist', _name)
 
 
 def search_customer(name):
-    '''Return a dictionary'''
-    '''locate customer by id and return as dictionary.'''
+    '''Return a dictionary
+    locate customer by id and return as dictionary.'''
     try:
         result = Customer.select().where(Customer.name == name).dicts().get()
     except peewee.DoesNotExist:
