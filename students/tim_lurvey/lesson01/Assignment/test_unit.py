@@ -81,7 +81,7 @@ class mainTest(TestCase):
     def test_main_menu_direct(self):
         self.assertEqual(main.main_menu('1'), main.add_new_item)
         self.assertEqual(main.main_menu('2'), main.item_info)
-        self.assertEqual(main.main_menu('3'), main.exit_program)
+        self.assertEqual(main.main_menu('q'), main.exit_program)
 
     def test_main_menu_input(self):
         with mock.patch('builtins.input', side_effect=['1']):
