@@ -1,6 +1,6 @@
-'''
-Returns total price paid for individual rentals 
-'''
+"""
+Returns total price paid for individual rentals
+"""
 import argparse
 import json
 import datetime
@@ -51,14 +51,14 @@ def set_logging_level():
                        'file': logging.WARNING},
                  }
 
-    format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+    format_str = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 
     log_terminal = logging.StreamHandler()
-    log_terminal.setFormatter(fmt=logging.Formatter(format))
+    log_terminal.setFormatter(fmt=logging.Formatter(format_str))
     log_terminal.setLevel(level=log_level.get(args.debug).get('term'))
 
     log_file = logging.FileHandler(filename=datetime.datetime.now().strftime("%Y-%m-%d") + ".log")
-    log_file.setFormatter(fmt=logging.Formatter(format))
+    log_file.setFormatter(fmt=logging.Formatter(format_str))
     log_file.setLevel(level=log_level.get(args.debug).get('file'))
 
     logger = logging.getLogger()
@@ -79,9 +79,9 @@ def load_rentals_file(filename):
     try:
         with open(filename) as file:
             try:
-                data = json.load(file)
+                read_data = json.load(file)
                 logging.debug("File opened: {f}".format(f=filename))
-                return data
+                return read_data
             except Exception as ex:
                 logging.error("Cannot open file: {f}".format(f=filename))
                 raise ex
@@ -100,7 +100,7 @@ def check_dates(key, val):
     """
     for start_end in ['rental_start', 'rental_end']:
         try:
-            date = datetime.datetime.strptime(val[start_end], '%m/%d/%y')
+            datetime.datetime.strptime(val[start_end], '%m/%d/%y')
         except:
             logging.error(f"[{key}] Value {start_end} cannot be converted to a date.  Skipping Entry")
             return False
@@ -149,7 +149,7 @@ def calc_unit_cost(val):
     :type val: dict
     :return float
     """
-    if val.get('units_rented'):
+    if val.get('units_rented'):     # pylint: disable=no-else-return
         return val.get('total_price') / val.get('units_rented')
     else:
         return 0.
@@ -183,8 +183,7 @@ def calculate_additional_fields(data):
             try:
                 read = value[sub_key]
                 logging.debug(f"[{key}] Value '{sub_key}' read as {read}")
-
-            except Exception as ex:
+            except:
                 logging.error(f"[{key}] No value '{sub_key}'")
 
         # determine if dates are readable and convertible, skip entry if not
@@ -193,7 +192,7 @@ def calculate_additional_fields(data):
 
         # setup new variables and add them to data
         for new_val in sorted(calculations.keys()):
-            calc  = calculations.get(new_val)(val=value)
+            calc = calculations.get(new_val)(val=value)
             if not calc:
                 logging.warning(f"[{key}] Unabled to calculate {new_val}. Using {calc}")
             value.update({new_val: calc})
@@ -216,6 +215,6 @@ def save_to_json(filename, data):
 if __name__ == "__main__":
     args = parse_cmd_arguments()
     set_logging_level()
-    data = load_rentals_file(args.input)
-    data = calculate_additional_fields(data)
-    save_to_json(args.output, data)
+    raw_data = load_rentals_file(args.input)
+    mod_data = calculate_additional_fields(raw_data)
+    save_to_json(args.output, mod_data)
