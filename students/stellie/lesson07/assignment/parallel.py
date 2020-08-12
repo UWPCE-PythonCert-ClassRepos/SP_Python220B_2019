@@ -60,17 +60,20 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     with mongo:
         database = mongo.connection.hp_norton
         customers_thread = threading.Thread(
-            target=threaded_worker, args=(directory_name, customer_file, database))
+            target=threaded_worker, args=(directory_name, customer_file,
+                                          database))
         customers_thread.start()
         threads.append(customers_thread)
         products_thread = threading.Thread(
-            target=threaded_worker, args=(directory_name, product_file, database))
+            target=threaded_worker, args=(directory_name, product_file,
+                                          database))
         products_thread.start()
         threads.append(products_thread)
-        rentals_thread = threading.Thread(
-            target=threaded_worker, args=(directory_name, rentals_file, database))
-        rentals_thread.start()
-        threads.append(rentals_thread)
+        # rentals_thread = threading.Thread(
+        #     target=threaded_worker, args=(directory_name, rentals_file,
+        #                                   database))
+        # rentals_thread.start()
+        # threads.append(rentals_thread)
 
         for thread in threads:
             thread.join()

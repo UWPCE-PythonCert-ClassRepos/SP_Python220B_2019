@@ -1,0 +1,40 @@
+Stella Kim
+Assignment 7: Concurrency & Async
+
+INITIAL FINDINGS
+
+After updating Assignment 5 so that the customer and product tuples return the
+number of records processed, intial and final count of records in the database
+and the total time elapsed to run the module, the average run times were:
+
+                Records     Initial     Final       Elapsed
+Collection      Processed   Count       Count       Time (s)   
+-----------------------------------------------------------------------------
+Customers       1000        0           1000        0.06669566667
+Products        1000        0           1000        0.066256
+
+Total time: 0.1329516667 seconds
+Average time: 0.06647583333 seconds
+
+
+UPDATE (parallel)
+
+Updated linear.py so that import functions run in parallel with output return
+as dictionary.  I did this by creating another function where I stored the
+output of my CSV function into a results dictionary:
+
+    output = import_csv(directory_name, collection_file, database)
+    results[output[0]] = output[1:]
+
+The average run times using this method were:
+
+                Records     Initial     Final       Elapsed
+Collection      Processed   Count       Count       Time (s)   
+-----------------------------------------------------------------------------
+Customers       1000        0           1000        0.1504783333
+Products        1000        0           1000        0.128188
+
+Total time: 0.1880216667 seconds
+Average time: 0.09401083333 seconds
+
+This method was actually almost twice as slow as running the files in series.
