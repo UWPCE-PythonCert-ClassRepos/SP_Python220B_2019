@@ -34,10 +34,9 @@ def add_customer(customer_id, name, last_name, home_address, phone_number,
                 active=active,
                 credit_limit=credit_limit)
             new_customer.save()
-            logger.info(f'Customer {customer_id} add successful')
-    except peewee.OperationalError as operational_error:
-        logger.info(f'Error creating customer: {customer_id}')
-        logger.info(operational_error)
+        logger.info(f'Customer {customer_id} add successful')
+    except (peewee.IntegrityError, peewee.OperationalError):
+        logger.info(f'Error adding customer: {customer_id}')
     finally:
         database.close()
 
@@ -89,7 +88,7 @@ def update_customer_credit(customer_id, credit_limit):
             a_customer = Customer.get(Customer.customer_id == customer_id)
         logger.info(f'Customer: {customer_id} credit limit is '
                     f'{a_customer.credit_limit}.')
-    except ValueError:
+    except (IndexError, ValueError, peewee.DoesNotExist):
         logger.info(f'Customer: {customer_id} not found.')
         database.close()
         return

@@ -1,6 +1,5 @@
 from unittest import TestCase
 import logging
-from decimal import Decimal
 
 import basic_operations as op
 import customer_model as db
@@ -40,21 +39,17 @@ class OperationsTests(TestCase):
         self.assertTrue(db.Customer.table_exists())
 
         for customer in customers:
-            try:
-                with db.database.transaction():
-                    new_customer = db.Customer.create(
-                        customer_id=customer[CUSTOMER_ID],
-                        name=customer[NAME],
-                        last_name=customer[LAST_NAME],
-                        home_address=customer[HOME_ADDRESS],
-                        phone_number=customer[PHONE_NUMBER],
-                        email_address=customer[EMAIL_ADDRESS],
-                        active=customer[ACTIVE],
-                        credit_limit=customer[CREDIT_LIMIT])
-                    new_customer.save()
-            except Exception as e:
-                logger.info(f'Error creating: {customer[CUSTOMER_ID]}')
-                logger.info(e)
+            with db.database.transaction():
+                new_customer = db.Customer.create(
+                    customer_id=customer[CUSTOMER_ID],
+                    name=customer[NAME],
+                    last_name=customer[LAST_NAME],
+                    home_address=customer[HOME_ADDRESS],
+                    phone_number=customer[PHONE_NUMBER],
+                    email_address=customer[EMAIL_ADDRESS],
+                    active=customer[ACTIVE],
+                    credit_limit=customer[CREDIT_LIMIT])
+                new_customer.save()
 
     def test_add_customer(self):
         """ test add_customer function """
@@ -74,6 +69,11 @@ class OperationsTests(TestCase):
         self.assertTrue(not a_customer.active)
         self.assertEqual(a_customer.credit_limit, 2400.00)
 
+        # Test exception: add an existing customer
+        op.add_customer('1', new_customer[NAME], new_customer[LAST_NAME],
+                        new_customer[HOME_ADDRESS], new_customer[PHONE_NUMBER],
+                        new_customer[EMAIL_ADDRESS], new_customer[ACTIVE], new_customer[CREDIT_LIMIT])
+
     def test_search_customer(self):
         """ test search_customer function """
         logger.info('Test search_customer')
@@ -84,6 +84,9 @@ class OperationsTests(TestCase):
         self.assertEqual(customer_info['email address'], 'jane.goodall@gmail.com')
         self.assertEqual(customer_info['phone number'], '970-555-0171')
 
+        # test exception
+        customer_info = op.search_customer('50')
+
     def test_delete_customer(self):
         """ test delete_customer function """
         logger.info('Test delete_customer')
@@ -92,22 +95,25 @@ class OperationsTests(TestCase):
         names = []
         for customer in db.Customer:
             names.append(customer.name)
-        db.database.close()
 
         self.assertTrue('Enrico Fermi' not in names)
+
+        # Test customer not found exception
+        op.delete_customer('40')
+
+        db.database.close()
 
     def test_update_customer_credit(self):
         """ test update_customer_credit function """
         logger.info('Test update_customer_credit')
+        op.update_customer_credit('1', 2000)
         a_customer = db.Customer.get(db.Customer.customer_id == '1')
-        current_credit_limit = a_customer.credit_limit
-        new_credit_limit = current_credit_limit + Decimal(500.00)
-        op.update_customer_credit('1', new_credit_limit)
+        self.assertEqual(a_customer.credit_limit, 2000)
 
-        a_customer = db.Customer.get(db.Customer.customer_id == '1')
+        # Test customer not found exception
+        op.update_customer_credit('100', 2000)
+
         db.database.close()
-
-        self.assertEqual(a_customer.credit_limit, new_credit_limit)
 
     def test_list_active_customers(self):
         """ test list_active_customers function """
