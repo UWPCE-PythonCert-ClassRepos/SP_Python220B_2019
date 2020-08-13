@@ -15,6 +15,7 @@ Products        1000        0           1000        0.066256
 
 Total time: 0.1329516667 seconds
 Average time: 0.06647583333 seconds
+cProfile: 129078 function calls (127361 primitive calls) in 0.556 seconds
 
 
 UPDATE (parallel)
@@ -36,5 +37,37 @@ Products        1000        0           1000        0.128188
 
 Total time: 0.1880216667 seconds
 Average time: 0.09401083333 seconds
+cProfile: 66694 function calls (65046 primitive calls) in 0.340 seconds
 
-This method was actually almost twice as slow as running the files in series.
+This method was actually almost twice as slow as running the files in series,
+although the overall code runtime was faster with less function calls.  The
+results were also in different order depending on which file completed first.
+
+
+UPDATE (parallel with queue)
+
+Updated import process using threading and the queue module.  I used the put()
+function to insert results into the queue and retrieved them to print to the
+console:
+
+    while not results.empty():
+        print(results.get())
+
+The average run times using this method were:
+
+                Records     Initial     Final       Elapsed
+Collection      Processed   Count       Count       Time (s)   
+-----------------------------------------------------------------------------
+Customers       1000        0           1000        0.104246
+Products        1000        0           1000        0.08168166667
+
+Total time: 0.1859276667 seconds
+Average time: 0.093022 seconds
+cProfile: 66725 function calls (65077 primitive calls) in 0.570 seconds
+
+File import times were slightly better than the first parallel attempt but
+overall runtime was slower, possibly due to processes in the module.  There are
+also other factors to consider like I/O contention.  You have files running in
+parallel but they are sharing the same processor.  This could have an affect
+on processing time.  In conclusion, running these small files does not seem to
+benefit from parallelization.

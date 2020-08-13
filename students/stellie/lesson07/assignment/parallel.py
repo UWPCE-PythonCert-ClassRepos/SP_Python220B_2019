@@ -9,6 +9,7 @@ import csv
 import os
 import logging
 import threading
+import queue
 from datetime import datetime
 from timeit import timeit as timer
 from pymongo import MongoClient
@@ -51,29 +52,17 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     """
     mongo = MongoDBConnection()
     threads = []
-    results = {}
-
-    def threaded_worker(directory_name, collection_file, database):
-        output = import_csv(directory_name, collection_file, database)
-        results[output[0]] = output[1:]
+    results = queue.Queue(maxsize=0)
 
     with mongo:
         database = mongo.connection.hp_norton
-        customers_thread = threading.Thread(
-            target=threaded_worker, args=(directory_name, customer_file,
-                                          database))
-        customers_thread.start()
-        threads.append(customers_thread)
-        products_thread = threading.Thread(
-            target=threaded_worker, args=(directory_name, product_file,
-                                          database))
-        products_thread.start()
-        threads.append(products_thread)
-        # rentals_thread = threading.Thread(
-        #     target=threaded_worker, args=(directory_name, rentals_file,
-        #                                   database))
-        # rentals_thread.start()
-        # threads.append(rentals_thread)
+
+        for collection in [product_file, customer_file, rentals_file]:
+            thread = threading.Thread(
+                target=import_csv, args=(directory_name, collection,
+                                         database, results))
+            thread.start()
+            threads.append(thread)
 
         for thread in threads:
             thread.join()
@@ -81,11 +70,12 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         LOGGER.debug('%s, %s, %s databases successfully created.',
                      customer_file, product_file, rentals_file)
 
-    print(results)
-    # return results
+    while not results.empty():
+        print(results.get())
+        # return (results.get())
 
 
-def import_csv(directory_name, collection_file, database):
+def import_csv(directory_name, collection_file, database, results):
     """Create collection in DB and import CSV file to insert into collection"""
     LOGGER.debug('Importing %s CSV file...', collection_file)
     start_time = datetime.now()
@@ -106,8 +96,8 @@ def import_csv(directory_name, collection_file, database):
     end_time = datetime.now()
     total_time = (end_time - start_time).total_seconds()
 
-    return (collection_file, rec_processed, initial_count,
-            final_count, total_time)
+    results.put((collection_file, rec_processed, initial_count,
+                 final_count, total_time))
 
 
 def data_convert(items):

@@ -8,8 +8,9 @@ Migrate product, customer, rentals data from sample CSV files into MongoDB
 import csv
 import os
 import logging
-from pymongo import MongoClient
 from datetime import datetime
+from timeit import timeit as timer
+from pymongo import MongoClient
 
 # Set up and format logging
 LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
@@ -57,7 +58,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         rentals_tuple = import_csv(directory_name, rentals_file, database)
         LOGGER.debug('%s database successfully created.', rentals_file)
 
-    return ((customers_tuple), (products_tuple))
+    print((customers_tuple), (products_tuple), (rentals_tuple))
+    # return ((customers_tuple), (products_tuple), (rentals_tuple))
 
 
 def import_csv(directory_name, collection_file, database):
@@ -81,7 +83,8 @@ def import_csv(directory_name, collection_file, database):
     end_time = datetime.now()
     total_time = (end_time - start_time).total_seconds()
 
-    return (rec_processed, initial_count, final_count, total_time)
+    return (collection_file, rec_processed, initial_count,
+            final_count, total_time)
 
 
 def data_convert(items):
@@ -141,6 +144,13 @@ def clear_collections():
         # database.dropDatabase()
 
 
+def _code_timer():
+    """Measure time it takes to run code"""
+    print(timer("import_data('./data/', 'products', 'customers', 'rentals')",
+                globals=globals(), number=1))
+
+
 if __name__ == "__main__":
     clear_collections()
     import_data('./data/', 'products', 'customers', 'rentals')
+    # _code_timer()
