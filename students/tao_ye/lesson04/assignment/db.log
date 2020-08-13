@@ -1,0 +1,44 @@
+2020-08-13 14:01:14,317 basic_operations.py:35  INFO Customer table create successful
+2020-08-13 14:01:15,074 basic_operations.py:42  INFO In function add_customer...
+2020-08-13 14:01:15,135 basic_operations.py:55  INFO Customer 6 add successful
+2020-08-13 14:01:15,136 basic_operations.py:151 INFO List all customers in the current database
+2020-08-13 14:01:15,136 basic_operations.py:154 INFO ID   Name                Phone No       Email                         Active  Credit Limit
+2020-08-13 14:01:15,137 basic_operations.py:155 INFO ------------------------------------------------------------------------------------------
+2020-08-13 14:01:15,140 basic_operations.py:160 INFO 1    Albert Einstein     559-555-0107   albert.einstein@gmail.com     1       1000        
+2020-08-13 14:01:15,141 basic_operations.py:160 INFO 2    Blaise Pascal       404-555-0124   blaise.pascal@gmail.com       0       600         
+2020-08-13 14:01:15,141 basic_operations.py:160 INFO 3    Chien-Shiung Wu     630-555-0129   chien-shiung.wu@gmail.com     1       1300        
+2020-08-13 14:01:15,141 basic_operations.py:160 INFO 4    Enrico Fermi        567-555-0199   enrico.fermi@gmail.com        1       2100        
+2020-08-13 14:01:15,141 basic_operations.py:160 INFO 5    Jane Goodall        970-555-0171   jane.goodall@gmail.com        0       1800        
+2020-08-13 14:01:15,141 basic_operations.py:160 INFO 6    Max Planck          716-555-0195   max.planck@gmail.com          0       2400        
+2020-08-13 14:01:15,146 basic_operations.py:42  INFO In function add_customer...
+2020-08-13 14:01:15,147 basic_operations.py:58  INFO Error adding customer 1
+2020-08-13 14:01:16,769 basic_operations.py:90  INFO In function delete_customer...
+2020-08-13 14:01:16,952 basic_operations.py:95  INFO Customer 4 deleted.
+2020-08-13 14:01:16,952 basic_operations.py:151 INFO List all customers in the current database
+2020-08-13 14:01:16,953 basic_operations.py:154 INFO ID   Name                Phone No       Email                         Active  Credit Limit
+2020-08-13 14:01:16,953 basic_operations.py:155 INFO ------------------------------------------------------------------------------------------
+2020-08-13 14:01:16,956 basic_operations.py:160 INFO 1    Albert Einstein     559-555-0107   albert.einstein@gmail.com     1       1000        
+2020-08-13 14:01:16,957 basic_operations.py:160 INFO 2    Blaise Pascal       404-555-0124   blaise.pascal@gmail.com       0       600         
+2020-08-13 14:01:16,957 basic_operations.py:160 INFO 3    Chien-Shiung Wu     630-555-0129   chien-shiung.wu@gmail.com     1       1300        
+2020-08-13 14:01:16,958 basic_operations.py:160 INFO 5    Jane Goodall        970-555-0171   jane.goodall@gmail.com        0       1800        
+2020-08-13 14:01:16,973 basic_operations.py:90  INFO In function delete_customer...
+2020-08-13 14:01:16,977 basic_operations.py:98  INFO Customer 40 not found.
+2020-08-13 14:01:17,778 basic_operations.py:138 INFO In function list_active_customers...
+2020-08-13 14:01:17,781 basic_operations.py:143 INFO active customer count = 3
+2020-08-13 14:01:20,350 basic_operations.py:68  INFO In function search_customer...
+2020-08-13 14:01:20,351 basic_operations.py:79  INFO Customer 5 info returned.
+2020-08-13 14:01:20,355 basic_operations.py:68  INFO In function search_customer...
+2020-08-13 14:01:20,356 basic_operations.py:81  INFO Customer 50 not found.
+2020-08-13 14:01:22,170 basic_operations.py:108 INFO In function update_customer_credit...
+2020-08-13 14:01:22,174 basic_operations.py:112 INFO Customer 1 credit limit is 1000.
+2020-08-13 14:01:22,395 basic_operations.py:127 INFO Customer 1 credit limit is updated to 2000.
+2020-08-13 14:01:22,395 basic_operations.py:151 INFO List all customers in the current database
+2020-08-13 14:01:22,395 basic_operations.py:154 INFO ID   Name                Phone No       Email                         Active  Credit Limit
+2020-08-13 14:01:22,396 basic_operations.py:155 INFO ------------------------------------------------------------------------------------------
+2020-08-13 14:01:22,396 basic_operations.py:160 INFO 1    Albert Einstein     559-555-0107   albert.einstein@gmail.com     1       2000        
+2020-08-13 14:01:22,397 basic_operations.py:160 INFO 2    Blaise Pascal       404-555-0124   blaise.pascal@gmail.com       0       600         
+2020-08-13 14:01:22,397 basic_operations.py:160 INFO 3    Chien-Shiung Wu     630-555-0129   chien-shiung.wu@gmail.com     1       1300        
+2020-08-13 14:01:22,397 basic_operations.py:160 INFO 4    Enrico Fermi        567-555-0199   enrico.fermi@gmail.com        1       2100        
+2020-08-13 14:01:22,397 basic_operations.py:160 INFO 5    Jane Goodall        970-555-0171   jane.goodall@gmail.com        0       1800        
+2020-08-13 14:01:22,402 basic_operations.py:108 INFO In function update_customer_credit...
+2020-08-13 14:01:22,403 basic_operations.py:115 INFO Customer 100 not found.
