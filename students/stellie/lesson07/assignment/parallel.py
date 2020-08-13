@@ -71,12 +71,13 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
                      customer_file, product_file, rentals_file)
 
     while not results.empty():
-        print(results.get())
-        # return (results.get())
+        # print(results.get())
+        return results.get()
 
 
 def import_csv(directory_name, collection_file, database, results):
     """Create collection in DB and import CSV file to insert into collection"""
+    print(collection_file, database, results)
     LOGGER.debug('Importing %s CSV file...', collection_file)
     start_time = datetime.now()
 
@@ -89,9 +90,10 @@ def import_csv(directory_name, collection_file, database, results):
                 data_convert(csv.DictReader(file)))
             rec_processed = len(rec_processed.inserted_ids)
         final_count = collection.count_documents({})
-    except OSError as err:
-        print(f'OS error: {err}')
+    except FileNotFoundError as err:
+        print(f'Error found: {err}')
         LOGGER.error('Error reading %s file: %s', collection_file, err)
+        raise
 
     end_time = datetime.now()
     total_time = (end_time - start_time).total_seconds()

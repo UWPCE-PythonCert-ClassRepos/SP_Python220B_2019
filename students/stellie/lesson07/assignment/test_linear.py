@@ -29,8 +29,8 @@ class ModuleTests(TestCase):
     def test_failed_import_data(self):
         """Test CSV import failure"""
         main.clear_collections()  # clear all collections from database
-        self.assertRaises(FileNotFoundError, main.import_data, './data/',
-                          'products', 'customers', 'fail')
+        with self.assertRaises(FileNotFoundError):
+            main.import_data('./data/', 'products', 'customers', 'fail')
 
     def test_show_available_products(self):
         """Test DB to show all available products as a Python dictionary"""

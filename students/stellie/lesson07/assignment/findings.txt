@@ -40,8 +40,9 @@ Average time: 0.09401083333 seconds
 cProfile: 66694 function calls (65046 primitive calls) in 0.340 seconds
 
 This method was actually almost twice as slow as running the files in series,
-although the overall code runtime was faster with less function calls.  The
-results were also in different order depending on which file completed first.
+although the overall code runtime was faster with less function calls.  Setting
+up threading could have added to the file import times.  The results were also
+in different order depending on which file completed first.
 
 
 UPDATE (parallel with queue)
@@ -68,8 +69,10 @@ cProfile: 66725 function calls (65077 primitive calls) in 0.570 seconds
 File import times were slightly better than the first parallel attempt but
 overall runtime was slower, possibly due to processes in the module.  There are
 also other factors to consider like I/O contention.  You have files running in
-parallel but they are sharing the same processor.  This could have an affect
-on processing time.  I did try to run both linear.py and parallel.py with one
+parallel but they are sharing the same disk space, where information can only
+be passed through one at a time.  This could have an affect on processing time.
+
+I did try to run both linear.py and parallel.py with one
 million records and found the file processing times to be faster running
 serially but overall code runtime was slower than in parallel.  In conclusion,
 running these small files does not seem to benefit from parallelization.

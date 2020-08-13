@@ -1,0 +1,1001 @@
+product_id,description,product_type,quantity_available
+prd0001,Lime Drill,Appliance,19
+prd0002,Olive Office Chair,Furniture,10
+prd0003,White Vacuum Cleaner,Appliance,9
+prd0004,Silver Rice Cooker,Appliance,9
+prd0005,Navy Drill,Appliance,6
+prd0006,Yellow Office Chair,Furniture,13
+prd0007,Teal Desk,Furniture,5
+prd0008,Blue Blender,Appliance,16
+prd0009,Teal Oven,Appliance,24
+prd0010,Silver Blender,Appliance,17
+prd0011,Purple Bookshelf,Furniture,4
+prd0012,Silver Vacuum Cleaner,Appliance,2
+prd0013,Purple Office Chair,Furniture,20
+prd0014,Black Couch,Furniture,19
+prd0015,Yellow Drill,Appliance,1
+prd0016,Lime Dresser,Furniture,20
+prd0017,Fuchsia Oven,Appliance,5
+prd0018,Olive Office Chair,Furniture,18
+prd0019,Fuchsia Office Chair,Furniture,18
+prd0020,Lime Vacuum Cleaner,Appliance,20
+prd0021,Black Blender,Appliance,15
+prd0022,Navy Couch,Furniture,6
+prd0023,Green Vacuum Cleaner,Appliance,18
+prd0024,Purple Toaster,Appliance,14
+prd0025,Lime Rice Cooker,Appliance,2
+prd0026,Teal Vacuum Cleaner,Appliance,19
+prd0027,Aqua Table,Furniture,24
+prd0028,Blue Office Chair,Furniture,25
+prd0029,Gray Oven,Appliance,2
+prd0030,Navy Dresser,Furniture,6
+prd0031,Aqua Drill,Appliance,22
+prd0032,Green Table,Furniture,21
+prd0033,Blue Rice Cooker,Appliance,24
+prd0034,Purple Desk,Furniture,13
+prd0035,Black Vacuum Cleaner,Appliance,18
+prd0036,White Table,Furniture,21
+prd0037,Lime Rice Cooker,Appliance,11
+prd0038,Gray Desk,Furniture,7
+prd0039,Green Office Chair,Furniture,1
+prd0040,Purple Rice Cooker,Appliance,20
+prd0041,Maroon Couch,Furniture,17
+prd0042,Aqua Dresser,Furniture,17
+prd0043,Olive Dresser,Furniture,2
+prd0044,Green Couch,Furniture,10
+prd0045,Gray Office Chair,Furniture,9
+prd0046,Teal Rice Cooker,Appliance,19
+prd0047,Aqua Dresser,Furniture,14
+prd0048,Fuchsia Bookshelf,Furniture,15
+prd0049,Green Rice Cooker,Appliance,2
+prd0050,Fuchsia Office Chair,Furniture,0
+prd0051,Navy Oven,Appliance,23
+prd0052,Olive Vacuum Cleaner,Appliance,1
+prd0053,Olive Vacuum Cleaner,Appliance,25
+prd0054,Purple Office Chair,Furniture,7
+prd0055,Black Office Chair,Furniture,8
+prd0056,Gray Office Chair,Furniture,3
+prd0057,White Table,Furniture,6
+prd0058,Olive Desk,Furniture,1
+prd0059,Teal Blender,Appliance,23
+prd0060,Green Drill,Appliance,22
+prd0061,Blue Drill,Appliance,0
+prd0062,Olive Bookshelf,Furniture,25
+prd0063,Black Office Chair,Furniture,10
+prd0064,Black Rice Cooker,Appliance,19
+prd0065,Maroon Toaster,Appliance,17
+prd0066,Lime Desk,Furniture,21
+prd0067,Black Vacuum Cleaner,Appliance,0
+prd0068,Silver Rice Cooker,Appliance,22
+prd0069,Green Dresser,Furniture,17
+prd0070,White Blender,Appliance,9
+prd0071,Lime Table,Furniture,1
+prd0072,Yellow Vacuum Cleaner,Appliance,1
+prd0073,Black Vacuum Cleaner,Appliance,9
+prd0074,White Vacuum Cleaner,Appliance,21
+prd0075,Blue Desk,Furniture,17
+prd0076,Maroon Dresser,Furniture,3
+prd0077,Teal Couch,Furniture,18
+prd0078,Fuchsia Oven,Appliance,2
+prd0079,Gray Blender,Appliance,18
+prd0080,Green Toaster,Appliance,0
+prd0081,Purple Dresser,Furniture,20
+prd0082,White Desk,Furniture,8
+prd0083,Maroon Blender,Appliance,3
+prd0084,Gray Desk,Furniture,0
+prd0085,Green Rice Cooker,Appliance,14
+prd0086,Aqua Rice Cooker,Appliance,2
+prd0087,Gray Toaster,Appliance,15
+prd0088,Purple Dresser,Furniture,4
+prd0089,Silver Table,Furniture,1
+prd0090,Maroon Dresser,Furniture,3
+prd0091,Olive Oven,Appliance,0
+prd0092,Maroon Vacuum Cleaner,Appliance,16
+prd0093,Maroon Desk,Furniture,2
+prd0094,White Oven,Appliance,21
+prd0095,Aqua Oven,Appliance,9
+prd0096,Silver Rice Cooker,Appliance,15
+prd0097,Navy Rice Cooker,Appliance,6
+prd0098,Teal Oven,Appliance,23
+prd0099,Fuchsia Office Chair,Furniture,18
+prd0100,Silver Bookshelf,Furniture,9
+prd0101,White Vacuum Cleaner,Appliance,20
+prd0102,White Toaster,Appliance,3
+prd0103,Maroon Blender,Appliance,1
+prd0104,Blue Bookshelf,Furniture,11
+prd0105,Purple Drill,Appliance,12
+prd0106,Silver Table,Furniture,22
+prd0107,Fuchsia Table,Furniture,0
+prd0108,Gray Blender,Appliance,14
+prd0109,Green Office Chair,Furniture,13
+prd0110,Fuchsia Vacuum Cleaner,Appliance,3
+prd0111,Purple Desk,Furniture,20
+prd0112,Lime Dresser,Furniture,21
+prd0113,Olive Drill,Appliance,0
+prd0114,Fuchsia Rice Cooker,Appliance,24
+prd0115,Blue Drill,Appliance,23
+prd0116,Yellow Vacuum Cleaner,Appliance,15
+prd0117,Lime Vacuum Cleaner,Appliance,6
+prd0118,Lime Desk,Furniture,16
+prd0119,Olive Toaster,Appliance,4
+prd0120,White Couch,Furniture,15
+prd0121,Purple Desk,Furniture,15
+prd0122,Yellow Blender,Appliance,1
+prd0123,Fuchsia Table,Furniture,1
+prd0124,Yellow Rice Cooker,Appliance,0
+prd0125,Black Office Chair,Furniture,25
+prd0126,Yellow Drill,Appliance,14
+prd0127,Green Dresser,Furniture,13
+prd0128,Blue Dresser,Furniture,2
+prd0129,Teal Couch,Furniture,8
+prd0130,Aqua Rice Cooker,Appliance,19
+prd0131,Olive Oven,Appliance,10
+prd0132,Green Desk,Furniture,2
+prd0133,Maroon Oven,Appliance,10
+prd0134,Silver Desk,Furniture,23
+prd0135,Teal Table,Furniture,24
+prd0136,Green Vacuum Cleaner,Appliance,25
+prd0137,Green Toaster,Appliance,2
+prd0138,Yellow Oven,Appliance,5
+prd0139,Teal Drill,Appliance,14
+prd0140,Aqua Table,Furniture,8
+prd0141,Maroon Drill,Appliance,17
+prd0142,Navy Desk,Furniture,3
+prd0143,Gray Table,Furniture,4
+prd0144,Gray Blender,Appliance,24
+prd0145,Teal Office Chair,Furniture,12
+prd0146,Black Couch,Furniture,23
+prd0147,Navy Toaster,Appliance,19
+prd0148,Yellow Bookshelf,Furniture,18
+prd0149,Blue Drill,Appliance,16
+prd0150,Gray Drill,Appliance,17
+prd0151,Maroon Oven,Appliance,6
+prd0152,Olive Couch,Furniture,10
+prd0153,Yellow Drill,Appliance,23
+prd0154,Gray Dresser,Furniture,11
+prd0155,White Toaster,Appliance,7
+prd0156,Lime Bookshelf,Furniture,19
+prd0157,White Office Chair,Furniture,20
+prd0158,Olive Blender,Appliance,25
+prd0159,Black Bookshelf,Furniture,14
+prd0160,Gray Dresser,Furniture,19
+prd0161,Aqua Drill,Appliance,6
+prd0162,Yellow Table,Furniture,15
+prd0163,White Desk,Furniture,25
+prd0164,Blue Toaster,Appliance,3
+prd0165,Olive Bookshelf,Furniture,7
+prd0166,White Dresser,Furniture,2
+prd0167,Blue Vacuum Cleaner,Appliance,19
+prd0168,Olive Dresser,Furniture,16
+prd0169,Black Toaster,Appliance,17
+prd0170,Lime Couch,Furniture,15
+prd0171,Olive Rice Cooker,Appliance,2
+prd0172,Black Bookshelf,Furniture,7
+prd0173,Fuchsia Bookshelf,Furniture,5
+prd0174,Purple Bookshelf,Furniture,9
+prd0175,Lime Drill,Appliance,8
+prd0176,Maroon Office Chair,Furniture,4
+prd0177,Lime Office Chair,Furniture,8
+prd0178,Lime Blender,Appliance,2
+prd0179,Gray Toaster,Appliance,25
+prd0180,Purple Couch,Furniture,17
+prd0181,Olive Toaster,Appliance,13
+prd0182,Blue Oven,Appliance,11
+prd0183,Aqua Rice Cooker,Appliance,15
+prd0184,Silver Toaster,Appliance,18
+prd0185,Aqua Oven,Appliance,7
+prd0186,Aqua Table,Furniture,9
+prd0187,Olive Drill,Appliance,10
+prd0188,Fuchsia Rice Cooker,Appliance,23
+prd0189,Silver Office Chair,Furniture,2
+prd0190,Yellow Toaster,Appliance,16
+prd0191,Yellow Oven,Appliance,18
+prd0192,Gray Couch,Furniture,16
+prd0193,Maroon Toaster,Appliance,19
+prd0194,Green Oven,Appliance,0
+prd0195,Gray Dresser,Furniture,15
+prd0196,Aqua Vacuum Cleaner,Appliance,14
+prd0197,White Office Chair,Furniture,2
+prd0198,Purple Rice Cooker,Appliance,22
+prd0199,Purple Desk,Furniture,1
+prd0200,Purple Couch,Furniture,1
+prd0201,Yellow Oven,Appliance,18
+prd0202,Gray Oven,Appliance,25
+prd0203,Aqua Rice Cooker,Appliance,21
+prd0204,Gray Desk,Furniture,10
+prd0205,Green Blender,Appliance,2
+prd0206,Maroon Toaster,Appliance,9
+prd0207,Navy Toaster,Appliance,2
+prd0208,Navy Vacuum Cleaner,Appliance,10
+prd0209,Lime Oven,Appliance,22
+prd0210,Olive Table,Furniture,7
+prd0211,Yellow Table,Furniture,20
+prd0212,Maroon Couch,Furniture,6
+prd0213,Olive Vacuum Cleaner,Appliance,24
+prd0214,Fuchsia Oven,Appliance,16
+prd0215,Black Oven,Appliance,15
+prd0216,White Table,Furniture,19
+prd0217,Silver Desk,Furniture,7
+prd0218,Gray Rice Cooker,Appliance,8
+prd0219,Black Blender,Appliance,14
+prd0220,Silver Oven,Appliance,20
+prd0221,Aqua Desk,Furniture,3
+prd0222,Aqua Blender,Appliance,0
+prd0223,Blue Table,Furniture,16
+prd0224,White Desk,Furniture,1
+prd0225,Lime Oven,Appliance,6
+prd0226,Aqua Blender,Appliance,4
+prd0227,Gray Blender,Appliance,3
+prd0228,Yellow Drill,Appliance,5
+prd0229,Silver Bookshelf,Furniture,10
+prd0230,Maroon Desk,Furniture,3
+prd0231,Navy Rice Cooker,Appliance,4
+prd0232,Purple Drill,Appliance,21
+prd0233,Aqua Toaster,Appliance,8
+prd0234,Aqua Table,Furniture,8
+prd0235,Blue Office Chair,Furniture,7
+prd0236,Olive Blender,Appliance,21
+prd0237,Navy Drill,Appliance,20
+prd0238,Black Office Chair,Furniture,24
+prd0239,Navy Table,Furniture,22
+prd0240,Aqua Couch,Furniture,15
+prd0241,Aqua Dresser,Furniture,22
+prd0242,Fuchsia Couch,Furniture,14
+prd0243,Olive Dresser,Furniture,0
+prd0244,White Table,Furniture,8
+prd0245,Silver Bookshelf,Furniture,20
+prd0246,Gray Blender,Appliance,14
+prd0247,Fuchsia Couch,Furniture,13
+prd0248,Lime Rice Cooker,Appliance,14
+prd0249,Olive Blender,Appliance,22
+prd0250,Purple Toaster,Appliance,25
+prd0251,Fuchsia Dresser,Furniture,14
+prd0252,Green Rice Cooker,Appliance,24
+prd0253,Yellow Toaster,Appliance,23
+prd0254,Yellow Couch,Furniture,23
+prd0255,Aqua Toaster,Appliance,8
+prd0256,Silver Toaster,Appliance,4
+prd0257,Teal Oven,Appliance,10
+prd0258,Fuchsia Toaster,Appliance,11
+prd0259,Blue Oven,Appliance,10
+prd0260,Navy Toaster,Appliance,19
+prd0261,Blue Bookshelf,Furniture,15
+prd0262,Gray Oven,Appliance,24
+prd0263,Black Toaster,Appliance,20
+prd0264,Navy Rice Cooker,Appliance,7
+prd0265,Yellow Bookshelf,Furniture,23
+prd0266,Yellow Dresser,Furniture,7
+prd0267,Fuchsia Toaster,Appliance,9
+prd0268,Aqua Drill,Appliance,20
+prd0269,Olive Couch,Furniture,17
+prd0270,Gray Desk,Furniture,7
+prd0271,Olive Oven,Appliance,25
+prd0272,Black Vacuum Cleaner,Appliance,6
+prd0273,Silver Bookshelf,Furniture,3
+prd0274,Olive Office Chair,Furniture,0
+prd0275,Fuchsia Vacuum Cleaner,Appliance,12
+prd0276,Gray Rice Cooker,Appliance,25
+prd0277,Fuchsia Blender,Appliance,16
+prd0278,Olive Vacuum Cleaner,Appliance,7
+prd0279,Lime Desk,Furniture,9
+prd0280,Fuchsia Bookshelf,Furniture,12
+prd0281,Gray Table,Furniture,25
+prd0282,Fuchsia Couch,Furniture,1
+prd0283,Teal Blender,Appliance,0
+prd0284,Yellow Oven,Appliance,16
+prd0285,Maroon Desk,Furniture,24
+prd0286,Purple Dresser,Furniture,18
+prd0287,Olive Dresser,Furniture,0
+prd0288,Yellow Dresser,Furniture,11
+prd0289,Blue Couch,Furniture,13
+prd0290,Olive Drill,Appliance,14
+prd0291,Navy Desk,Furniture,8
+prd0292,Aqua Oven,Appliance,10
+prd0293,Purple Office Chair,Furniture,13
+prd0294,Olive Couch,Furniture,24
+prd0295,Black Vacuum Cleaner,Appliance,7
+prd0296,Olive Oven,Appliance,2
+prd0297,Gray Office Chair,Furniture,21
+prd0298,Aqua Bookshelf,Furniture,19
+prd0299,Purple Desk,Furniture,23
+prd0300,Navy Desk,Furniture,0
+prd0301,Gray Oven,Appliance,25
+prd0302,Gray Bookshelf,Furniture,8
+prd0303,Fuchsia Blender,Appliance,4
+prd0304,Green Bookshelf,Furniture,7
+prd0305,Silver Rice Cooker,Appliance,25
+prd0306,Olive Blender,Appliance,25
+prd0307,Maroon Rice Cooker,Appliance,19
+prd0308,Green Blender,Appliance,4
+prd0309,Blue Office Chair,Furniture,19
+prd0310,Maroon Drill,Appliance,0
+prd0311,Green Oven,Appliance,23
+prd0312,Black Vacuum Cleaner,Appliance,5
+prd0313,White Desk,Furniture,8
+prd0314,Blue Drill,Appliance,15
+prd0315,Blue Toaster,Appliance,25
+prd0316,White Bookshelf,Furniture,21
+prd0317,Silver Bookshelf,Furniture,7
+prd0318,Yellow Dresser,Furniture,9
+prd0319,Silver Toaster,Appliance,6
+prd0320,White Couch,Furniture,12
+prd0321,Black Couch,Furniture,18
+prd0322,Teal Rice Cooker,Appliance,15
+prd0323,Teal Toaster,Appliance,25
+prd0324,Navy Drill,Appliance,15
+prd0325,Black Dresser,Furniture,16
+prd0326,Purple Oven,Appliance,16
+prd0327,Navy Desk,Furniture,18
+prd0328,Silver Dresser,Furniture,14
+prd0329,Aqua Office Chair,Furniture,13
+prd0330,Black Vacuum Cleaner,Appliance,24
+prd0331,Black Toaster,Appliance,12
+prd0332,Gray Dresser,Furniture,21
+prd0333,Aqua Office Chair,Furniture,13
+prd0334,Aqua Rice Cooker,Appliance,22
+prd0335,Navy Desk,Furniture,3
+prd0336,Lime Drill,Appliance,13
+prd0337,Teal Desk,Furniture,6
+prd0338,Navy Table,Furniture,19
+prd0339,Lime Blender,Appliance,4
+prd0340,Lime Vacuum Cleaner,Appliance,16
+prd0341,Silver Couch,Furniture,4
+prd0342,Navy Blender,Appliance,11
+prd0343,Maroon Blender,Appliance,8
+prd0344,Olive Table,Furniture,24
+prd0345,Fuchsia Oven,Appliance,9
+prd0346,Green Dresser,Furniture,17
+prd0347,Olive Vacuum Cleaner,Appliance,9
+prd0348,Gray Bookshelf,Furniture,19
+prd0349,Silver Dresser,Furniture,25
+prd0350,Purple Toaster,Appliance,23
+prd0351,Black Bookshelf,Furniture,6
+prd0352,Teal Table,Furniture,2
+prd0353,Green Blender,Appliance,18
+prd0354,Green Rice Cooker,Appliance,0
+prd0355,Aqua Desk,Furniture,18
+prd0356,Maroon Vacuum Cleaner,Appliance,8
+prd0357,Lime Bookshelf,Furniture,16
+prd0358,Green Toaster,Appliance,24
+prd0359,Green Dresser,Furniture,7
+prd0360,Lime Bookshelf,Furniture,1
+prd0361,Teal Vacuum Cleaner,Appliance,2
+prd0362,Navy Toaster,Appliance,21
+prd0363,Black Drill,Appliance,24
+prd0364,White Drill,Appliance,1
+prd0365,Purple Table,Furniture,19
+prd0366,Black Drill,Appliance,9
+prd0367,Blue Desk,Furniture,3
+prd0368,Purple Oven,Appliance,3
+prd0369,Purple Office Chair,Furniture,11
+prd0370,Blue Office Chair,Furniture,12
+prd0371,Fuchsia Blender,Appliance,8
+prd0372,Olive Couch,Furniture,17
+prd0373,Blue Couch,Furniture,13
+prd0374,Yellow Toaster,Appliance,0
+prd0375,Olive Table,Furniture,14
+prd0376,Navy Vacuum Cleaner,Appliance,3
+prd0377,White Table,Furniture,1
+prd0378,Yellow Oven,Appliance,0
+prd0379,Purple Drill,Appliance,4
+prd0380,Black Drill,Appliance,16
+prd0381,White Office Chair,Furniture,15
+prd0382,Green Vacuum Cleaner,Appliance,14
+prd0383,Lime Toaster,Appliance,17
+prd0384,Maroon Couch,Furniture,24
+prd0385,Olive Desk,Furniture,15
+prd0386,Maroon Office Chair,Furniture,2
+prd0387,Gray Desk,Furniture,18
+prd0388,Navy Drill,Appliance,2
+prd0389,Black Toaster,Appliance,13
+prd0390,Maroon Vacuum Cleaner,Appliance,23
+prd0391,Purple Bookshelf,Furniture,0
+prd0392,Gray Drill,Appliance,23
+prd0393,Green Toaster,Appliance,16
+prd0394,Lime Oven,Appliance,14
+prd0395,Yellow Desk,Furniture,16
+prd0396,Fuchsia Office Chair,Furniture,25
+prd0397,White Couch,Furniture,0
+prd0398,Yellow Toaster,Appliance,12
+prd0399,Navy Couch,Furniture,13
+prd0400,Green Drill,Appliance,9
+prd0401,Green Dresser,Furniture,19
+prd0402,Yellow Couch,Furniture,23
+prd0403,Navy Rice Cooker,Appliance,6
+prd0404,Purple Drill,Appliance,17
+prd0405,Gray Vacuum Cleaner,Appliance,16
+prd0406,Purple Vacuum Cleaner,Appliance,9
+prd0407,Purple Drill,Appliance,10
+prd0408,Blue Office Chair,Furniture,16
+prd0409,Silver Vacuum Cleaner,Appliance,13
+prd0410,Silver Vacuum Cleaner,Appliance,25
+prd0411,White Office Chair,Furniture,25
+prd0412,Navy Drill,Appliance,21
+prd0413,White Drill,Appliance,7
+prd0414,Black Bookshelf,Furniture,9
+prd0415,Fuchsia Dresser,Furniture,24
+prd0416,Aqua Oven,Appliance,10
+prd0417,Teal Toaster,Appliance,7
+prd0418,Blue Couch,Furniture,20
+prd0419,Green Blender,Appliance,4
+prd0420,Gray Drill,Appliance,2
+prd0421,Purple Blender,Appliance,22
+prd0422,White Blender,Appliance,2
+prd0423,Teal Dresser,Furniture,18
+prd0424,Silver Rice Cooker,Appliance,7
+prd0425,Navy Office Chair,Furniture,13
+prd0426,White Oven,Appliance,3
+prd0427,Navy Table,Furniture,19
+prd0428,Navy Dresser,Furniture,3
+prd0429,Maroon Vacuum Cleaner,Appliance,24
+prd0430,Black Office Chair,Furniture,3
+prd0431,Blue Blender,Appliance,10
+prd0432,White Blender,Appliance,18
+prd0433,White Oven,Appliance,4
+prd0434,Green Desk,Furniture,17
+prd0435,Olive Rice Cooker,Appliance,19
+prd0436,Lime Office Chair,Furniture,14
+prd0437,Purple Dresser,Furniture,14
+prd0438,Olive Couch,Furniture,18
+prd0439,Navy Vacuum Cleaner,Appliance,10
+prd0440,Silver Blender,Appliance,25
+prd0441,Gray Dresser,Furniture,1
+prd0442,Black Dresser,Furniture,5
+prd0443,Yellow Couch,Furniture,2
+prd0444,Aqua Dresser,Furniture,2
+prd0445,Fuchsia Bookshelf,Furniture,13
+prd0446,Fuchsia Dresser,Furniture,5
+prd0447,Aqua Table,Furniture,1
+prd0448,Navy Oven,Appliance,16
+prd0449,Gray Office Chair,Furniture,18
+prd0450,Black Toaster,Appliance,2
+prd0451,Purple Toaster,Appliance,15
+prd0452,Lime Vacuum Cleaner,Appliance,17
+prd0453,Olive Toaster,Appliance,1
+prd0454,Purple Toaster,Appliance,15
+prd0455,Olive Dresser,Furniture,16
+prd0456,Silver Blender,Appliance,3
+prd0457,Fuchsia Bookshelf,Furniture,7
+prd0458,Green Blender,Appliance,17
+prd0459,Black Toaster,Appliance,19
+prd0460,Green Vacuum Cleaner,Appliance,17
+prd0461,Yellow Office Chair,Furniture,7
+prd0462,Gray Desk,Furniture,3
+prd0463,Purple Vacuum Cleaner,Appliance,15
+prd0464,White Dresser,Furniture,23
+prd0465,Black Drill,Appliance,2
+prd0466,Aqua Vacuum Cleaner,Appliance,4
+prd0467,Blue Desk,Furniture,14
+prd0468,Maroon Office Chair,Furniture,5
+prd0469,Blue Dresser,Furniture,6
+prd0470,Maroon Table,Furniture,4
+prd0471,Teal Blender,Appliance,6
+prd0472,Teal Blender,Appliance,0
+prd0473,Purple Drill,Appliance,15
+prd0474,Yellow Rice Cooker,Appliance,16
+prd0475,Purple Drill,Appliance,24
+prd0476,Black Blender,Appliance,6
+prd0477,Teal Blender,Appliance,14
+prd0478,Purple Oven,Appliance,25
+prd0479,Black Table,Furniture,8
+prd0480,Aqua Desk,Furniture,0
+prd0481,Black Bookshelf,Furniture,12
+prd0482,Aqua Couch,Furniture,20
+prd0483,Aqua Office Chair,Furniture,1
+prd0484,White Blender,Appliance,13
+prd0485,Blue Table,Furniture,1
+prd0486,Green Rice Cooker,Appliance,1
+prd0487,Yellow Toaster,Appliance,19
+prd0488,Lime Rice Cooker,Appliance,4
+prd0489,Gray Drill,Appliance,16
+prd0490,Blue Rice Cooker,Appliance,14
+prd0491,Navy Drill,Appliance,10
+prd0492,Purple Blender,Appliance,24
+prd0493,Yellow Office Chair,Furniture,22
+prd0494,White Table,Furniture,14
+prd0495,Lime Desk,Furniture,11
+prd0496,Gray Office Chair,Furniture,8
+prd0497,Yellow Blender,Appliance,10
+prd0498,Gray Vacuum Cleaner,Appliance,0
+prd0499,Aqua Drill,Appliance,8
+prd0500,Purple Blender,Appliance,15
+prd0501,Yellow Drill,Appliance,22
+prd0502,Yellow Toaster,Appliance,13
+prd0503,Aqua Couch,Furniture,6
+prd0504,Gray Table,Furniture,20
+prd0505,Fuchsia Blender,Appliance,5
+prd0506,Green Drill,Appliance,11
+prd0507,Green Blender,Appliance,23
+prd0508,White Blender,Appliance,6
+prd0509,Black Vacuum Cleaner,Appliance,3
+prd0510,Teal Desk,Furniture,2
+prd0511,Navy Bookshelf,Furniture,11
+prd0512,White Rice Cooker,Appliance,7
+prd0513,Fuchsia Table,Furniture,6
+prd0514,Silver Office Chair,Furniture,4
+prd0515,Silver Oven,Appliance,12
+prd0516,Teal Rice Cooker,Appliance,19
+prd0517,Silver Drill,Appliance,20
+prd0518,Green Dresser,Furniture,25
+prd0519,Purple Rice Cooker,Appliance,5
+prd0520,Aqua Couch,Furniture,11
+prd0521,Yellow Blender,Appliance,4
+prd0522,Black Desk,Furniture,15
+prd0523,White Toaster,Appliance,13
+prd0524,Silver Couch,Furniture,13
+prd0525,Olive Vacuum Cleaner,Appliance,14
+prd0526,Silver Couch,Furniture,16
+prd0527,Yellow Desk,Furniture,11
+prd0528,Green Drill,Appliance,0
+prd0529,Olive Toaster,Appliance,15
+prd0530,Green Desk,Furniture,18
+prd0531,Lime Blender,Appliance,3
+prd0532,Purple Bookshelf,Furniture,1
+prd0533,Blue Couch,Furniture,19
+prd0534,Aqua Bookshelf,Furniture,21
+prd0535,Maroon Desk,Furniture,15
+prd0536,Aqua Toaster,Appliance,2
+prd0537,Navy Oven,Appliance,15
+prd0538,Green Vacuum Cleaner,Appliance,18
+prd0539,Purple Bookshelf,Furniture,1
+prd0540,Lime Couch,Furniture,17
+prd0541,Yellow Drill,Appliance,0
+prd0542,Blue Desk,Furniture,15
+prd0543,Silver Toaster,Appliance,19
+prd0544,Lime Blender,Appliance,24
+prd0545,Purple Dresser,Furniture,12
+prd0546,Aqua Drill,Appliance,7
+prd0547,Aqua Dresser,Furniture,7
+prd0548,Navy Toaster,Appliance,4
+prd0549,Navy Couch,Furniture,10
+prd0550,Lime Drill,Appliance,1
+prd0551,Olive Toaster,Appliance,5
+prd0552,Navy Office Chair,Furniture,13
+prd0553,Lime Desk,Furniture,14
+prd0554,Navy Rice Cooker,Appliance,21
+prd0555,Purple Couch,Furniture,1
+prd0556,Olive Desk,Furniture,9
+prd0557,Blue Table,Furniture,6
+prd0558,Gray Couch,Furniture,1
+prd0559,Lime Toaster,Appliance,0
+prd0560,Green Oven,Appliance,1
+prd0561,Olive Bookshelf,Furniture,15
+prd0562,White Oven,Appliance,12
+prd0563,Yellow Couch,Furniture,0
+prd0564,Gray Office Chair,Furniture,15
+prd0565,Silver Blender,Appliance,16
+prd0566,Lime Rice Cooker,Appliance,3
+prd0567,Green Desk,Furniture,1
+prd0568,Green Couch,Furniture,25
+prd0569,Yellow Desk,Furniture,10
+prd0570,Teal Desk,Furniture,4
+prd0571,Gray Table,Furniture,0
+prd0572,Blue Couch,Furniture,9
+prd0573,Silver Rice Cooker,Appliance,13
+prd0574,Gray Dresser,Furniture,25
+prd0575,Navy Office Chair,Furniture,19
+prd0576,Green Drill,Appliance,5
+prd0577,Silver Rice Cooker,Appliance,25
+prd0578,Fuchsia Office Chair,Furniture,11
+prd0579,Fuchsia Desk,Furniture,16
+prd0580,Aqua Dresser,Furniture,15
+prd0581,White Toaster,Appliance,18
+prd0582,Maroon Vacuum Cleaner,Appliance,11
+prd0583,Purple Drill,Appliance,16
+prd0584,Maroon Couch,Furniture,6
+prd0585,White Bookshelf,Furniture,2
+prd0586,Lime Couch,Furniture,15
+prd0587,Gray Couch,Furniture,10
+prd0588,Olive Office Chair,Furniture,12
+prd0589,Teal Toaster,Appliance,12
+prd0590,Teal Table,Furniture,22
+prd0591,Gray Dresser,Furniture,15
+prd0592,Black Bookshelf,Furniture,2
+prd0593,Maroon Toaster,Appliance,8
+prd0594,Navy Dresser,Furniture,22
+prd0595,Fuchsia Drill,Appliance,15
+prd0596,Olive Vacuum Cleaner,Appliance,16
+prd0597,Green Bookshelf,Furniture,2
+prd0598,Black Rice Cooker,Appliance,12
+prd0599,Fuchsia Bookshelf,Furniture,24
+prd0600,Silver Oven,Appliance,3
+prd0601,Silver Table,Furniture,14
+prd0602,Blue Rice Cooker,Appliance,1
+prd0603,Gray Table,Furniture,10
+prd0604,Purple Desk,Furniture,8
+prd0605,Teal Couch,Furniture,2
+prd0606,Lime Vacuum Cleaner,Appliance,8
+prd0607,Navy Toaster,Appliance,0
+prd0608,Maroon Toaster,Appliance,15
+prd0609,Fuchsia Rice Cooker,Appliance,20
+prd0610,Gray Rice Cooker,Appliance,6
+prd0611,Black Rice Cooker,Appliance,12
+prd0612,Green Table,Furniture,20
+prd0613,Blue Rice Cooker,Appliance,11
+prd0614,Maroon Desk,Furniture,8
+prd0615,Gray Couch,Furniture,16
+prd0616,Silver Blender,Appliance,21
+prd0617,Teal Table,Furniture,5
+prd0618,White Table,Furniture,7
+prd0619,Green Drill,Appliance,19
+prd0620,Green Blender,Appliance,3
+prd0621,White Drill,Appliance,22
+prd0622,Teal Oven,Appliance,3
+prd0623,Olive Couch,Furniture,14
+prd0624,Olive Rice Cooker,Appliance,9
+prd0625,Purple Table,Furniture,23
+prd0626,Aqua Toaster,Appliance,1
+prd0627,Gray Toaster,Appliance,22
+prd0628,Teal Vacuum Cleaner,Appliance,15
+prd0629,Lime Dresser,Furniture,7
+prd0630,Fuchsia Office Chair,Furniture,0
+prd0631,Yellow Drill,Appliance,23
+prd0632,Olive Toaster,Appliance,7
+prd0633,Black Couch,Furniture,16
+prd0634,Green Vacuum Cleaner,Appliance,10
+prd0635,White Office Chair,Furniture,3
+prd0636,Fuchsia Toaster,Appliance,0
+prd0637,Aqua Couch,Furniture,12
+prd0638,Green Table,Furniture,10
+prd0639,Maroon Drill,Appliance,3
+prd0640,White Vacuum Cleaner,Appliance,15
+prd0641,White Drill,Appliance,11
+prd0642,Black Office Chair,Furniture,18
+prd0643,White Dresser,Furniture,21
+prd0644,Purple Table,Furniture,18
+prd0645,Black Couch,Furniture,12
+prd0646,Maroon Drill,Appliance,0
+prd0647,Gray Oven,Appliance,10
+prd0648,Aqua Drill,Appliance,17
+prd0649,Gray Bookshelf,Furniture,7
+prd0650,Fuchsia Office Chair,Furniture,15
+prd0651,Navy Bookshelf,Furniture,1
+prd0652,Fuchsia Rice Cooker,Appliance,6
+prd0653,Navy Couch,Furniture,4
+prd0654,Gray Bookshelf,Furniture,17
+prd0655,Blue Office Chair,Furniture,5
+prd0656,Purple Blender,Appliance,4
+prd0657,Teal Vacuum Cleaner,Appliance,9
+prd0658,Fuchsia Toaster,Appliance,14
+prd0659,Green Oven,Appliance,18
+prd0660,White Couch,Furniture,6
+prd0661,Teal Toaster,Appliance,7
+prd0662,Purple Toaster,Appliance,18
+prd0663,Fuchsia Toaster,Appliance,16
+prd0664,Black Table,Furniture,8
+prd0665,Blue Vacuum Cleaner,Appliance,13
+prd0666,Yellow Bookshelf,Furniture,20
+prd0667,Silver Vacuum Cleaner,Appliance,23
+prd0668,Aqua Toaster,Appliance,2
+prd0669,Lime Couch,Furniture,25
+prd0670,Navy Table,Furniture,21
+prd0671,Green Toaster,Appliance,16
+prd0672,Maroon Table,Furniture,21
+prd0673,Navy Desk,Furniture,22
+prd0674,Olive Oven,Appliance,3
+prd0675,Blue Office Chair,Furniture,21
+prd0676,Lime Office Chair,Furniture,22
+prd0677,Navy Couch,Furniture,13
+prd0678,Silver Office Chair,Furniture,9
+prd0679,Aqua Rice Cooker,Appliance,20
+prd0680,Purple Vacuum Cleaner,Appliance,19
+prd0681,Olive Bookshelf,Furniture,17
+prd0682,Black Blender,Appliance,15
+prd0683,Yellow Office Chair,Furniture,2
+prd0684,Olive Dresser,Furniture,4
+prd0685,Green Desk,Furniture,21
+prd0686,Teal Oven,Appliance,7
+prd0687,Yellow Vacuum Cleaner,Appliance,13
+prd0688,Aqua Couch,Furniture,13
+prd0689,Fuchsia Bookshelf,Furniture,0
+prd0690,Green Vacuum Cleaner,Appliance,22
+prd0691,Silver Office Chair,Furniture,17
+prd0692,Lime Oven,Appliance,22
+prd0693,Green Oven,Appliance,23
+prd0694,Maroon Rice Cooker,Appliance,9
+prd0695,Blue Vacuum Cleaner,Appliance,19
+prd0696,Purple Blender,Appliance,5
+prd0697,Yellow Toaster,Appliance,17
+prd0698,Navy Bookshelf,Furniture,13
+prd0699,Fuchsia Rice Cooker,Appliance,6
+prd0700,Blue Toaster,Appliance,7
+prd0701,White Blender,Appliance,5
+prd0702,White Desk,Furniture,9
+prd0703,Navy Dresser,Furniture,8
+prd0704,Gray Oven,Appliance,8
+prd0705,Black Dresser,Furniture,14
+prd0706,Purple Blender,Appliance,20
+prd0707,Blue Dresser,Furniture,17
+prd0708,Navy Rice Cooker,Appliance,6
+prd0709,Olive Blender,Appliance,15
+prd0710,Blue Vacuum Cleaner,Appliance,1
+prd0711,Lime Rice Cooker,Appliance,11
+prd0712,Green Dresser,Furniture,11
+prd0713,Lime Blender,Appliance,16
+prd0714,Teal Couch,Furniture,7
+prd0715,Fuchsia Oven,Appliance,25
+prd0716,Blue Couch,Furniture,16
+prd0717,Gray Bookshelf,Furniture,16
+prd0718,Purple Office Chair,Furniture,4
+prd0719,Blue Office Chair,Furniture,20
+prd0720,Gray Vacuum Cleaner,Appliance,2
+prd0721,Teal Bookshelf,Furniture,18
+prd0722,Green Table,Furniture,3
+prd0723,Yellow Blender,Appliance,21
+prd0724,Lime Drill,Appliance,3
+prd0725,Maroon Couch,Furniture,23
+prd0726,Aqua Dresser,Furniture,2
+prd0727,Olive Drill,Appliance,8
+prd0728,Lime Office Chair,Furniture,16
+prd0729,Black Toaster,Appliance,13
+prd0730,Maroon Toaster,Appliance,2
+prd0731,Green Oven,Appliance,16
+prd0732,Olive Office Chair,Furniture,23
+prd0733,Maroon Rice Cooker,Appliance,5
+prd0734,Green Rice Cooker,Appliance,14
+prd0735,Black Oven,Appliance,23
+prd0736,Maroon Vacuum Cleaner,Appliance,21
+prd0737,Aqua Blender,Appliance,4
+prd0738,Black Desk,Furniture,20
+prd0739,Purple Bookshelf,Furniture,7
+prd0740,Teal Toaster,Appliance,17
+prd0741,Purple Blender,Appliance,25
+prd0742,Lime Oven,Appliance,19
+prd0743,Silver Desk,Furniture,12
+prd0744,Black Table,Furniture,18
+prd0745,Aqua Oven,Appliance,23
+prd0746,Blue Dresser,Furniture,4
+prd0747,Fuchsia Vacuum Cleaner,Appliance,18
+prd0748,Green Toaster,Appliance,10
+prd0749,Maroon Table,Furniture,21
+prd0750,Yellow Desk,Furniture,20
+prd0751,Yellow Bookshelf,Furniture,21
+prd0752,Teal Rice Cooker,Appliance,25
+prd0753,Yellow Table,Furniture,6
+prd0754,Blue Vacuum Cleaner,Appliance,2
+prd0755,White Dresser,Furniture,3
+prd0756,Olive Drill,Appliance,13
+prd0757,Black Blender,Appliance,15
+prd0758,Olive Table,Furniture,14
+prd0759,Maroon Blender,Appliance,16
+prd0760,Purple Blender,Appliance,24
+prd0761,Olive Drill,Appliance,16
+prd0762,Gray Rice Cooker,Appliance,13
+prd0763,Black Vacuum Cleaner,Appliance,8
+prd0764,Blue Table,Furniture,1
+prd0765,Blue Office Chair,Furniture,2
+prd0766,Fuchsia Bookshelf,Furniture,14
+prd0767,Silver Table,Furniture,25
+prd0768,Silver Couch,Furniture,11
+prd0769,Fuchsia Toaster,Appliance,8
+prd0770,Olive Vacuum Cleaner,Appliance,4
+prd0771,Lime Dresser,Furniture,8
+prd0772,Blue Office Chair,Furniture,3
+prd0773,Silver Toaster,Appliance,10
+prd0774,Fuchsia Couch,Furniture,4
+prd0775,Purple Table,Furniture,13
+prd0776,Gray Office Chair,Furniture,5
+prd0777,Silver Blender,Appliance,2
+prd0778,Gray Desk,Furniture,10
+prd0779,Navy Drill,Appliance,5
+prd0780,Fuchsia Desk,Furniture,19
+prd0781,Silver Dresser,Furniture,13
+prd0782,Black Couch,Furniture,5
+prd0783,Maroon Desk,Furniture,5
+prd0784,Fuchsia Table,Furniture,6
+prd0785,Navy Bookshelf,Furniture,16
+prd0786,Aqua Couch,Furniture,6
+prd0787,Navy Table,Furniture,16
+prd0788,Teal Vacuum Cleaner,Appliance,12
+prd0789,Purple Rice Cooker,Appliance,20
+prd0790,Olive Oven,Appliance,19
+prd0791,Olive Vacuum Cleaner,Appliance,14
+prd0792,Lime Bookshelf,Furniture,15
+prd0793,Aqua Oven,Appliance,2
+prd0794,Teal Vacuum Cleaner,Appliance,10
+prd0795,Blue Toaster,Appliance,21
+prd0796,Navy Office Chair,Furniture,12
+prd0797,Silver Bookshelf,Furniture,13
+prd0798,Olive Bookshelf,Furniture,7
+prd0799,Green Desk,Furniture,22
+prd0800,Navy Blender,Appliance,22
+prd0801,Aqua Desk,Furniture,16
+prd0802,Olive Oven,Appliance,9
+prd0803,Teal Office Chair,Furniture,6
+prd0804,Navy Vacuum Cleaner,Appliance,9
+prd0805,Blue Blender,Appliance,14
+prd0806,Aqua Bookshelf,Furniture,25
+prd0807,Navy Drill,Appliance,5
+prd0808,Black Couch,Furniture,21
+prd0809,Fuchsia Vacuum Cleaner,Appliance,5
+prd0810,Maroon Drill,Appliance,11
+prd0811,Maroon Office Chair,Furniture,19
+prd0812,Aqua Vacuum Cleaner,Appliance,5
+prd0813,Purple Drill,Appliance,5
+prd0814,Gray Rice Cooker,Appliance,0
+prd0815,Lime Rice Cooker,Appliance,7
+prd0816,Fuchsia Drill,Appliance,21
+prd0817,Gray Office Chair,Furniture,20
+prd0818,Silver Couch,Furniture,6
+prd0819,Navy Drill,Appliance,23
+prd0820,Fuchsia Desk,Furniture,20
+prd0821,Purple Rice Cooker,Appliance,17
+prd0822,Lime Oven,Appliance,0
+prd0823,Gray Table,Furniture,22
+prd0824,Silver Toaster,Appliance,15
+prd0825,Olive Drill,Appliance,9
+prd0826,White Office Chair,Furniture,22
+prd0827,Fuchsia Office Chair,Furniture,6
+prd0828,Green Rice Cooker,Appliance,25
+prd0829,Lime Office Chair,Furniture,8
+prd0830,Black Desk,Furniture,8
+prd0831,Teal Drill,Appliance,9
+prd0832,Olive Rice Cooker,Appliance,11
+prd0833,Gray Toaster,Appliance,8
+prd0834,Black Table,Furniture,15
+prd0835,Green Table,Furniture,8
+prd0836,Aqua Vacuum Cleaner,Appliance,2
+prd0837,Maroon Oven,Appliance,22
+prd0838,Blue Desk,Furniture,19
+prd0839,Gray Rice Cooker,Appliance,1
+prd0840,Aqua Toaster,Appliance,5
+prd0841,Blue Drill,Appliance,9
+prd0842,Fuchsia Table,Furniture,18
+prd0843,Silver Dresser,Furniture,17
+prd0844,Lime Desk,Furniture,12
+prd0845,Fuchsia Rice Cooker,Appliance,4
+prd0846,Navy Table,Furniture,5
+prd0847,Teal Couch,Furniture,15
+prd0848,Olive Bookshelf,Furniture,21
+prd0849,White Rice Cooker,Appliance,11
+prd0850,Olive Blender,Appliance,23
+prd0851,Blue Bookshelf,Furniture,1
+prd0852,Blue Drill,Appliance,3
+prd0853,White Desk,Furniture,16
+prd0854,Yellow Oven,Appliance,19
+prd0855,Olive Blender,Appliance,7
+prd0856,Teal Dresser,Furniture,0
+prd0857,Olive Toaster,Appliance,0
+prd0858,Purple Drill,Appliance,0
+prd0859,Green Dresser,Furniture,21
+prd0860,Purple Desk,Furniture,24
+prd0861,Fuchsia Vacuum Cleaner,Appliance,11
+prd0862,Blue Blender,Appliance,13
+prd0863,Fuchsia Drill,Appliance,21
+prd0864,Maroon Toaster,Appliance,10
+prd0865,Purple Couch,Furniture,18
+prd0866,Yellow Drill,Appliance,10
+prd0867,Blue Couch,Furniture,14
+prd0868,White Couch,Furniture,17
+prd0869,Blue Dresser,Furniture,5
+prd0870,Green Dresser,Furniture,17
+prd0871,White Drill,Appliance,0
+prd0872,Purple Couch,Furniture,6
+prd0873,Black Couch,Furniture,23
+prd0874,Navy Bookshelf,Furniture,14
+prd0875,Olive Office Chair,Furniture,2
+prd0876,Purple Rice Cooker,Appliance,3
+prd0877,Aqua Oven,Appliance,7
+prd0878,Maroon Office Chair,Furniture,16
+prd0879,Fuchsia Bookshelf,Furniture,1
+prd0880,Fuchsia Blender,Appliance,21
+prd0881,Maroon Oven,Appliance,2
+prd0882,Aqua Couch,Furniture,23
+prd0883,Maroon Couch,Furniture,21
+prd0884,Teal Desk,Furniture,19
+prd0885,Teal Desk,Furniture,22
+prd0886,Aqua Blender,Appliance,8
+prd0887,Silver Table,Furniture,19
+prd0888,Green Table,Furniture,5
+prd0889,Purple Oven,Appliance,15
+prd0890,Purple Desk,Furniture,16
+prd0891,Purple Vacuum Cleaner,Appliance,10
+prd0892,White Toaster,Appliance,16
+prd0893,Purple Vacuum Cleaner,Appliance,21
+prd0894,Yellow Oven,Appliance,18
+prd0895,Aqua Toaster,Appliance,23
+prd0896,Blue Oven,Appliance,10
+prd0897,Olive Rice Cooker,Appliance,7
+prd0898,Silver Bookshelf,Furniture,9
+prd0899,Yellow Rice Cooker,Appliance,20
+prd0900,Black Dresser,Furniture,16
+prd0901,Purple Vacuum Cleaner,Appliance,16
+prd0902,Yellow Bookshelf,Furniture,7
+prd0903,Lime Rice Cooker,Appliance,3
+prd0904,Green Dresser,Furniture,15
+prd0905,Teal Desk,Furniture,8
+prd0906,Fuchsia Couch,Furniture,14
+prd0907,Blue Table,Furniture,24
+prd0908,Blue Table,Furniture,17
+prd0909,Aqua Blender,Appliance,17
+prd0910,Silver Desk,Furniture,6
+prd0911,Yellow Desk,Furniture,11
+prd0912,Lime Drill,Appliance,15
+prd0913,Maroon Bookshelf,Furniture,12
+prd0914,Green Couch,Furniture,20
+prd0915,Purple Office Chair,Furniture,7
+prd0916,Yellow Drill,Appliance,24
+prd0917,Navy Office Chair,Furniture,3
+prd0918,Blue Desk,Furniture,19
+prd0919,Purple Oven,Appliance,25
+prd0920,Silver Dresser,Furniture,2
+prd0921,Olive Desk,Furniture,21
+prd0922,White Bookshelf,Furniture,21
+prd0923,Gray Drill,Appliance,16
+prd0924,Fuchsia Bookshelf,Furniture,3
+prd0925,Aqua Toaster,Appliance,12
+prd0926,Aqua Rice Cooker,Appliance,24
+prd0927,Lime Dresser,Furniture,19
+prd0928,Teal Desk,Furniture,9
+prd0929,Blue Rice Cooker,Appliance,0
+prd0930,Silver Desk,Furniture,23
+prd0931,Yellow Vacuum Cleaner,Appliance,6
+prd0932,Maroon Table,Furniture,22
+prd0933,Gray Blender,Appliance,10
+prd0934,Navy Drill,Appliance,13
+prd0935,Fuchsia Blender,Appliance,3
+prd0936,Maroon Dresser,Furniture,17
+prd0937,Lime Table,Furniture,3
+prd0938,Silver Toaster,Appliance,16
+prd0939,Fuchsia Office Chair,Furniture,17
+prd0940,Yellow Desk,Furniture,2
+prd0941,Aqua Dresser,Furniture,4
+prd0942,Teal Dresser,Furniture,17
+prd0943,Lime Table,Furniture,10
+prd0944,Green Dresser,Furniture,12
+prd0945,Blue Oven,Appliance,6
+prd0946,Silver Couch,Furniture,16
+prd0947,Fuchsia Vacuum Cleaner,Appliance,23
+prd0948,Olive Toaster,Appliance,6
+prd0949,Fuchsia Rice Cooker,Appliance,7
+prd0950,Lime Bookshelf,Furniture,18
+prd0951,Purple Blender,Appliance,7
+prd0952,Navy Blender,Appliance,20
+prd0953,Teal Dresser,Furniture,9
+prd0954,Navy Blender,Appliance,19
+prd0955,Purple Oven,Appliance,25
+prd0956,Fuchsia Drill,Appliance,19
+prd0957,White Bookshelf,Furniture,5
+prd0958,Fuchsia Bookshelf,Furniture,18
+prd0959,Blue Desk,Furniture,6
+prd0960,White Desk,Furniture,15
+prd0961,Lime Blender,Appliance,12
+prd0962,Teal Bookshelf,Furniture,21
+prd0963,Purple Office Chair,Furniture,12
+prd0964,Maroon Rice Cooker,Appliance,4
+prd0965,Olive Couch,Furniture,8
+prd0966,Aqua Rice Cooker,Appliance,10
+prd0967,White Blender,Appliance,16
+prd0968,Yellow Dresser,Furniture,21
+prd0969,Olive Couch,Furniture,11
+prd0970,Aqua Drill,Appliance,7
+prd0971,Gray Oven,Appliance,18
+prd0972,Silver Vacuum Cleaner,Appliance,13
+prd0973,Yellow Couch,Furniture,20
+prd0974,Fuchsia Vacuum Cleaner,Appliance,17
+prd0975,White Drill,Appliance,12
+prd0976,Olive Dresser,Furniture,19
+prd0977,Navy Drill,Appliance,17
+prd0978,Purple Oven,Appliance,25
+prd0979,Fuchsia Rice Cooker,Appliance,12
+prd0980,Lime Vacuum Cleaner,Appliance,15
+prd0981,Purple Vacuum Cleaner,Appliance,6
+prd0982,Maroon Bookshelf,Furniture,3
+prd0983,Purple Rice Cooker,Appliance,9
+prd0984,Teal Rice Cooker,Appliance,14
+prd0985,Blue Blender,Appliance,15
+prd0986,Maroon Vacuum Cleaner,Appliance,5
+prd0987,White Bookshelf,Furniture,21
+prd0988,Green Table,Furniture,2
+prd0989,Navy Vacuum Cleaner,Appliance,5
+prd0990,Yellow Rice Cooker,Appliance,3
+prd0991,Purple Vacuum Cleaner,Appliance,6
+prd0992,Purple Vacuum Cleaner,Appliance,4
+prd0993,Fuchsia Toaster,Appliance,23
+prd0994,Yellow Couch,Furniture,17
+prd0995,Navy Vacuum Cleaner,Appliance,4
+prd0996,Green Blender,Appliance,17
+prd0997,Gray Table,Furniture,0
+prd0998,Lime Bookshelf,Furniture,12
+prd0999,Green Toaster,Appliance,2
+prd1000,Teal Desk,Furniture,12
