@@ -69,5 +69,7 @@ File import times were slightly better than the first parallel attempt but
 overall runtime was slower, possibly due to processes in the module.  There are
 also other factors to consider like I/O contention.  You have files running in
 parallel but they are sharing the same processor.  This could have an affect
-on processing time.  In conclusion, running these small files does not seem to
-benefit from parallelization.
+on processing time.  I did try to run both linear.py and parallel.py with one
+million records and found the file processing times to be faster running
+serially but overall code runtime was slower than in parallel.  In conclusion,
+running these small files does not seem to benefit from parallelization.

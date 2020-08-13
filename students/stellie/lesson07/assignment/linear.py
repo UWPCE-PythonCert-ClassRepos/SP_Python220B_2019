@@ -58,8 +58,8 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
         rentals_tuple = import_csv(directory_name, rentals_file, database)
         LOGGER.debug('%s database successfully created.', rentals_file)
 
-    print((customers_tuple), (products_tuple), (rentals_tuple))
-    # return ((customers_tuple), (products_tuple), (rentals_tuple))
+    # print((customers_tuple), (products_tuple), (rentals_tuple))
+    return ((customers_tuple), (products_tuple), (rentals_tuple))
 
 
 def import_csv(directory_name, collection_file, database):
@@ -76,9 +76,10 @@ def import_csv(directory_name, collection_file, database):
                 data_convert(csv.DictReader(file)))
             rec_processed = len(rec_processed.inserted_ids)
         final_count = collection.count_documents({})
-    except OSError as err:
-        print(f'OS error: {err}')
+    except FileNotFoundError as err:
+        print(f'Error found: {err}')
         LOGGER.error('Error reading %s file: %s', collection_file, err)
+        raise
 
     end_time = datetime.now()
     total_time = (end_time - start_time).total_seconds()
