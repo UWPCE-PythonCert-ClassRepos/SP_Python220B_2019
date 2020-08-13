@@ -43,6 +43,9 @@ class TestDatabase(unittest.TestCase):
 
     def test_available_products(self):
         LOGGER.info("test_available_products section")
+        drop_collection()
+        import_data('data_files', 'products.csv', 'customers.csv', 'rentals.csv')
+
         result = show_available_products()
         self.assertEqual(result['prd001']['quantity_available'], 5)
         self.assertEqual(result['prd004']['quantity_available'], 7)
