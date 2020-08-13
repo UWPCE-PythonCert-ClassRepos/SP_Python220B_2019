@@ -1,0 +1,80 @@
+INFO:test_database:Test import_data
+INFO:test_database:test_import_data, result_count = (9, 9, 9), result_errors = (0, 0, 0)
+INFO:test_database:test_import_data, result_count = (90, 90, 90), result_errors = (0, 0, 0)
+INFO:test_database:test_import_data, result_count = (906, 906, 906), result_errors = (0, 0, 0)
+ERROR:database:Cannot find product_file
+DEBUG:database:Unable to locate product_file
+ERROR:database:Cannot find customer_file
+DEBUG:database:Unable to locate customer_file
+ERROR:database:Cannot find rentals_file
+DEBUG:database:Unable to locate rentals_file
+INFO:test_database:test_import_data, result_count = (0, 0, 0), result_errors = (1, 1, 1)
+INFO:test_database:test_import_data completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+INFO:test_database:test show products with quantities available
+INFO:test_database:available products are {'pid001': {'description': 'sofa', 'product_type': 'livingroom', 'quantity_available': '5'}, 'pid002': {'description': 'washer', 'product_type': 'laundry', 'quantity_available': '4'}, 'pid004': {'description': 'edger', 'product_type': 'garage', 'quantity_available': '2'}, 'pid005': {'description': 'desk', 'product_type': 'office', 'quantity_available': '1'}}
+INFO:test_database:test show_available_products tests completed
+.INFO:test_database:setup start
+INFO:test_database:test setup, dbs cleanup status = databases dropped
+INFO:test_database:setup import data file to database
+INFO:test_database:test setup completed
+INFO:test_database:test start show_rentals
+INFO:test_database:test show_rentals customer who rented product pid001, are {'cid001': {'name': 'JohnSmith', 'address': '111 Broad St.', 'phone_number': '111-222-3333', 'email': 'JohnSmith@gmail.com'}, 'cid004': {'name': 'BettySims', 'address': '444 First St.', 'phone_number': '444-555-6666', 'email': 'BettySims@gmail.com'}}
+INFO:test_database:test show_rentals completed
+.
+----------------------------------------------------------------------
+Ran 4 tests in 7.545s
+
+OK
+MeasuredDB.import_data is called with parameter ('csv_files_9', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 4, 527569), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 5, 306614), 9, 9, 9]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 5, 315614), 9, 9, 9]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 5, 635633), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files_90', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 5, 664634), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 6, 706694), 90, 90, 90]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 6, 711694), 90, 90, 90]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 7, 711), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files_900', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 7, 31712), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 8, 989824), 906, 906, 906]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csvXXX', 'customer_file.csvXXX', 'rentals_file.csvXXX')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 8, 993825), 906, 906, 906]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 9, 825), 906, 906, 906]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 9, 10826), 906, 906, 906]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 9, 460851), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 9, 489853), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 160891), 6, 6, 6]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 173892), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 450908), 0, 0, 0]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 469909), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 489910), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 10, 503911), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 112946), 6, 6, 6]
+MeasuredDB.show_available_products is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 126947), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 140948), 6, 6, 6]
+MeasuredDB.dbs_cleanup is called with parameter ()
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 157948), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 459966), 0, 0, 0]
+MeasuredDB.import_data is called with parameter ('csv_files', 'product_file.csv', 'customer_file.csv', 'rentals_file.csv')
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 11, 483967), 0, 0, 0]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 12, 10997), 6, 6, 6]
+MeasuredDB.show_rentals is called with parameter ('pid001',)
+before metrics = [datetime.datetime(2020, 8, 7, 10, 3, 12, 33999), 6, 6, 6]
+after metrics = [datetime.datetime(2020, 8, 7, 10, 3, 12, 58000), 6, 6, 6]

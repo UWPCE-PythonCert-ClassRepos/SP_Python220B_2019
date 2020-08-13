@@ -1,0 +1,160 @@
+'''
+Returns total price paid for individual rentals 
+'''
+import argparse
+import json
+import datetime
+import math
+import logging
+
+
+def parse_cmd_arguments():
+    """
+    Parse arguments from command line and return values
+    """
+    debug_help_cmd = "Debugging level" \
+                     "\n0: No debug messages or log file." \
+                     "\n1: Only error messages." \
+                     "\n2: Error messages and warnings." \
+                     "\n3: Error messages, warnings and debug messages."
+
+    parser = argparse.ArgumentParser(description='Process some integers.',
+                                     formatter_class=argparse.RawTextHelpFormatter)
+
+    parser.add_argument('-i', '--input',
+                        help='input JSON file',
+                        required=True)
+
+    parser.add_argument('-o', '--output',
+                        help='ouput JSON file',
+                        required=True)
+
+    parser.add_argument('-d', '--debug',
+                        help=debug_help_cmd,
+                        required=False,
+                        default='0')
+
+    return parser.parse_args()
+
+
+def set_logging_level():
+    """
+    Determine the logging level from the command line and set terminal and file logging.
+    Default is no logging or debug printing
+    """
+    log_level = {'0': {'term': logging.NOTSET,
+                       'file': logging.NOTSET},
+                 '1': {'term': logging.ERROR,
+                       'file': logging.ERROR},
+                 '2': {'term': logging.WARNING,
+                       'file': logging.WARNING},
+                 '3': {'term': logging.DEBUG,
+                       'file': logging.WARNING},
+                 }
+
+    format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
+
+    log_terminal = logging.StreamHandler()
+    log_terminal.setFormatter(fmt=logging.Formatter(format))
+    log_terminal.setLevel(level=log_level.get(args.debug).get('term'))
+
+    log_file = logging.FileHandler(filename=datetime.datetime.now().strftime("%Y-%m-%d") + ".log")
+    log_file.setFormatter(fmt=logging.Formatter(format))
+    log_file.setLevel(level=log_level.get(args.debug).get('file'))
+
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(log_terminal)
+    logger.addHandler(log_file)
+
+
+def load_rentals_file(filename):
+    """
+    Open the specified data file
+    """
+    try:
+        with open(filename) as file:
+            try:
+                data = json.load(file)
+                logging.debug("File opened: {f}".format(f=filename))
+                return data
+            except Exception as ex:
+                logging.error("Cannot open file: {f}".format(f=filename))
+                raise ex
+    except FileNotFoundError as ex:
+        logging.error("File not found: {f}".format(f=filename))
+        raise ex
+
+
+def calculate_additional_fields(data):
+    """Calculate and set new values needed for each entry in the data set."""
+    for key, value in data.items():
+        # test for key reading
+        for sub_key in ['rental_start', 'rental_end', 'price_per_day', 'units_rented']:
+            try:
+                read = value[sub_key]
+                logging.debug(f"[{key}] Read '{sub_key}' as {read}")
+            except Exception as ex:
+                logging.error(f"[{key}] No value '{sub_key}'")
+
+        try:
+            rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+        except:
+            logging.error(f"[{key}] Value 'rental_start' cannot be converted to a date.  Skipping Entry")
+            continue
+        logging.debug(f"[{key}] Value 'rental_start' set as {rental_start}")
+
+        try:
+            rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+        except:
+            logging.warning(f"[{key}] Value 'rental_start' cannot be converted to a date.  Using today()")
+            rental_end = datetime.datetime.date(datetime.datetime.today())
+        logging.debug(f"[{key}] Value 'rental_end' set as {rental_end}")
+
+        # setup new variables and add them to data
+        try:
+            total_days = (rental_end - rental_start).days
+        except:
+            total_days = 0
+            logging.warning(f"[{key}] Unabled to calculate the total rental days")
+        value['total_days'] = total_days
+        logging.debug(f"[{key}] Value 'total_days' calculated as {total_days}")
+
+        try:
+            total_price = value['total_days'] * value['price_per_day']
+        except:
+            total_price = 0
+            logging.warning(f"[{key}] Unabled to calculate total price")
+        value['total_price'] = total_price
+        logging.debug(f"[{key}] Value 'total_price' calculated at {total_price}")
+
+        try:
+            total_sqrt = math.sqrt(total_price)
+        except:
+            total_sqrt = 0
+            logging.warning(f"[{key}] Unabled to calculate square root of total_price")
+        value['sqrt_total_price'] = total_sqrt
+        logging.debug(f"[{key}] Value 'total_sqrt' calculated at {total_sqrt}")
+
+        try:
+            unit_cost = value['total_price'] / value['units_rented']
+        except:
+            unit_cost = 0
+            logging.warning(f"[{key}] Unabled to calculate unit cost")
+        value['unit_cost'] = unit_cost
+        logging.debug(f"[{key}] Value 'unit_cost' calculated at {unit_cost}")
+
+    return data
+
+
+def save_to_json(filename, data):
+    with open(filename, 'w') as file:
+        file.write(json.dumps(data, indent=2))
+
+
+if __name__ == "__main__":
+    args = parse_cmd_arguments()
+    set_logging_level(args.debug)
+    data = load_rentals_file(args.input)
+    data = calculate_additional_fields(data)
+    save_to_json(args.output, data)

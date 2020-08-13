@@ -1,0 +1,121 @@
+
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT151] Value 'price_per_day' read as 25
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT151] Value 'units_rented' read as 7
+2020-08-11 01:17:11,408 charges_calc.py:177 DEBUG [RNT151] Value total_days set as -725
+2020-08-11 01:17:11,408 charges_calc.py:177 DEBUG [RNT151] Value total_price set as -18125.0
+2020-08-11 01:17:11,408 charges_calc.py:175 WARNING [RNT151] Unabled to calculate total_sqrt. Using 0.0
+2020-08-11 01:17:11,408 charges_calc.py:177 DEBUG [RNT151] Value total_sqrt set as 0.0
+2020-08-11 01:17:11,408 charges_calc.py:177 DEBUG [RNT151] Value unit_cost set as -2589.285714285714
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT152] Value 'product_code' read as PRD89
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT152] Value 'rental_start' read as 12/24/17
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT152] Value 'rental_end' read as 12/24/17
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT152] Value 'price_per_day' read as 36
+2020-08-11 01:17:11,408 charges_calc.py:163 DEBUG [RNT152] Value 'units_rented' read as 4
+> c:\users\pants\pycharmprojects\sp_python220b_2019\students\tim_lurvey\lesson02\assignment\code\charges_calc.py(175)calculate_additional_fields()
+-> logging.warning(f"[{key}] Unabled to calculate {new_val}. Using {calc}")
+(Pdb) l
+170
+171             # setup new variables and add them to data
+172             for new_val in sorted(calculations.keys()):
+173                 calc  = calculations.get(new_val)(val=value)
+174                 if not calc:
+175 B->                 logging.warning(f"[{key}] Unabled to calculate {new_val}. Using {calc}")
+176                 value.update({new_val: calc})
+177                 logging.debug(f"[{key}] Value {new_val} set as {calc}")
+178
+179         return data
+180
+(Pdb) source calc
+*** module, class, method, function, traceback, frame, or code object was expected, got int
+(Pdb) source calculations.get(new_val)(val=value)
+*** module, class, method, function, traceback, frame, or code object was expected, got int
+(Pdb) source calculations.get(new_val)
+103     def calc_total_days(val):
+104         """
+105         Return the total number of days
+106         :type val: dict
+107         :return int
+108         """
+109         try:
+110             start = datetime.datetime.strptime(val['rental_start'], '%m/%d/%y')
+111             end = datetime.datetime.strptime(val['rental_end'], '%m/%d/%y')
+112             total_days = (end - start).days
+113         except:
+114             total_days = 0
+115         return total_days
+(Pdb) end
+*** NameError: name 'end' is not defined
+(Pdb) start = datetime.datetime.strptime(val['rental_start'], '%m/%d/%y')
+*** NameError: name 'val' is not defined
+(Pdb) start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+(Pdb) start
+datetime.datetime(2017, 12, 24, 0, 0)
+(Pdb) end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+...
+187     if __name__ == "__main__":
+188         args = parse_cmd_arguments()
+189         set_logging_level()
+190         data = load_rentals_file(args.input)
+191  ->     data = calculate_additional_fields(data)
+192         save_to_json(args.output, data)
+[EOF]
+(Pdb)c
+2020-08-11 13:45:01,367 charges_calc.py:177 DEBUG [RNT734] Value total_days set as 570
+2020-08-11 13:45:01,367 charges_calc.py:177 DEBUG [RNT734] Value total_price set as 15390.0
+2020-08-11 13:45:01,367 charges_calc.py:177 DEBUG [RNT734] Value total_sqrt set as 124.056438768812
+2020-08-11 13:45:01,367 charges_calc.py:177 DEBUG [RNT734] Value unit_cost set as 1710.0
+2020-08-11 13:45:01,367 charges_calc.py:163 DEBUG [RNT735] Value 'product_code' read as PRD22
+2020-08-11 13:45:01,367 charges_calc.py:163 DEBUG [RNT735] Value 'rental_start' read as 1/15/18
+...
+2020-08-11 13:45:01,830 charges_calc.py:177 DEBUG [RNT843] Value total_price set as -16966.0
+2020-08-11 13:45:01,830 charges_calc.py:175 WARNING [RNT843] Unabled to calculate total_sqrt. Using 0.0
+2020-08-11 13:45:01,830 charges_calc.py:177 DEBUG [RNT843] Value total_sqrt set as 0.0
+> c:\users\pants\pycharmprojects\sp_python220b_2019\students\tim_lurvey\lesson02\assignment\code\charges_calc.py(175)calculate_additional_fields()
+-> logging.warning(f"[{key}] Unabled to calculate {new_val}. Using {calc}")
+(Pdb) key,value
+('RNT843', {'product_code': 'PRD79', 'units_rented': 0, 'price_per_day': 34, 'rental_start': '11/7/17', 'rental_end': '6/26/16', 'total_days': -499, 'total_price': -16966.0, 'total_sqrt': 0.0})
+(Pdb) l
+170
+171             # setup new variables and add them to data
+172             for new_val in sorted(calculations.keys()):
+173                 calc  = calculations.get(new_val)(val=value)
+174                 if not calc:
+175 B->                 logging.warning(f"[{key}] Unabled to calculate {new_val}. Using {calc}")
+176                 value.update({new_val: calc})
+177                 logging.debug(f"[{key}] Value {new_val} set as {calc}")
+178
+179         return data
+180
+(Pdb)c
+2020-08-11 13:46:25,416 charges_calc.py:163 DEBUG [RNT894] Value 'rental_end' read as 12/7/16
+2020-08-11 13:46:25,416 charges_calc.py:163 DEBUG [RNT894] Value 'price_per_day' read as 13
+2020-08-11 13:46:25,416 charges_calc.py:163 DEBUG [RNT894] Value 'units_rented' read as 5
+2020-08-11 13:46:25,416 charges_calc.py:177 DEBUG [RNT894] Value total_days set as -89
+2020-08-11 13:46:25,416 charges_calc.py:177 DEBUG [RNT894] Value total_price set as -1157.0
+2020-08-11 13:46:25,416 charges_calc.py:175 WARNING [RNT894] Unabled to calculate total_sqrt. Using 0.0
+2020-08-11 13:46:25,416 charges_calc.py:177 DEBUG [RNT894] Value total_sqrt set as 0.0
+2020-08-11 13:46:25,416 charges_calc.py:177 DEBUG [RNT894] Value unit_cost set as -231.4
+2020-08-11 13:46:25,416 charges_calc.py:163 DEBUG [RNT895] Value 'product_code' read as PRD9
+...
+2020-08-11 13:46:25,839 charges_calc.py:163 DEBUG [RNT999] Value 'rental_start' read as 10/12/18
+2020-08-11 13:46:25,839 charges_calc.py:163 DEBUG [RNT999] Value 'rental_end' read as 10/2/16
+2020-08-11 13:46:25,839 charges_calc.py:163 DEBUG [RNT999] Value 'price_per_day' read as 36
+2020-08-11 13:46:25,839 charges_calc.py:163 DEBUG [RNT999] Value 'units_rented' read as 8
+2020-08-11 13:46:25,839 charges_calc.py:177 DEBUG [RNT999] Value total_days set as -740
+2020-08-11 13:46:25,839 charges_calc.py:177 DEBUG [RNT999] Value total_price set as -26640.0
+2020-08-11 13:46:25,839 charges_calc.py:175 WARNING [RNT999] Unabled to calculate total_sqrt. Using 0.0
+2020-08-11 13:46:25,839 charges_calc.py:177 DEBUG [RNT999] Value total_sqrt set as 0.0
+2020-08-11 13:46:25,839 charges_calc.py:177 DEBUG [RNT999] Value unit_cost set as -3330.0
+The program finished and will be restarted
+Traceback (most recent call last):
+  File "C:\Users\pants\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1701, in main
+    pdb._runscript(mainpyfile)
+  File "C:\Users\pants\AppData\Local\Programs\Python\Python37\lib\pdb.py", line 1570, in _runscript
+    self.run(statement)
+  File "C:\Users\pants\AppData\Local\Programs\Python\Python37\lib\bdb.py", line 585, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "c:\users\pants\pycharmprojects\sp_python220b_2019\students\tim_lurvey\lesson02\assignment\code\charges_calc.py", line 9
+    import p?db
+            ^
+SyntaxError: invalid syntax
