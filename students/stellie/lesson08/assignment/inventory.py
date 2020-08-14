@@ -31,7 +31,6 @@ def single_customer(customer_name, invoice_file):
         filename = f'{rental_items}.csv'
         with open(filename, 'r', newline='') as file:
             data_file = csv.reader(file, delimiter=',')
-            print(data_file)
             for row in data_file:
                 rentals(*row)
     return customer_rentals
