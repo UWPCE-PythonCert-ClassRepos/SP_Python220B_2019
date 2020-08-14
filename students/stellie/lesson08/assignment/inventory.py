@@ -19,30 +19,24 @@ def add_furniture(invoice_file, customer_name, item_code, item_description,
         row = (customer_name,
                item_code,
                item_description,
-               f'{item_monthly_price:.2f}')
+               item_monthly_price)
         data_file.writerow(row)
 
 
 def single_customer(customer_name, invoice_file):
     """Load customer rentals"""
-    filename = f'{invoice_file}.csv'
-    with open(filename, 'r', newline='') as file:
+    rentals = partial(add_furniture, invoice_file, customer_name)
 
-    def rentals(rental_items):
-
-    return rentals
-
-    # single_customer needs to use functools.partial and closures, in order
-    # to return a function that will iterate through rental_items and add
-    # each item to invoice_file.
-
-    # The idea is for the single_customer() function to return a new function
-    # (with a fixed customer name and destination inventory file) that will
-    # add all items in a source file to the overall inventory under a single
-    # customer name. Internally, single_customer() should leverage
-    # add_furniture() by fixing the first two parameters.
+    def customer_rentals(rental_items):
+        filename = f'{rental_items}.csv'
+        with open(filename, 'r', newline='') as file:
+            data_file = csv.reader(file, delimiter=',')
+            print(data_file)
+            for row in data_file:
+                rentals(*row)
+    return customer_rentals
 
 
 if __name__ == "__main__":
-    add_furniture('rented_items', 'John Smith', 'KT28', 'Blender', 15)
-    # single_customer('Sandra Lee', 'rented_items')
+    CREATE_INVOICE = single_customer('John Smith', 'rented_items')
+    CREATE_INVOICE('test_items')
