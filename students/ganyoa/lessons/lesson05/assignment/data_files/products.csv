@@ -1,0 +1,8 @@
+product_id,description,product_type,quantity_available
+prd001,dinning_table,dinning_room,5
+prd002,dinning_chair,dinning_room,30
+prd003,section_couch,living_room,4
+prd004,loveseat,living_room,7
+prd005,reading_chair,living_room,9
+prd006,queen_bed,bed_room,3
+prd007,night_stand,bed_room,4
