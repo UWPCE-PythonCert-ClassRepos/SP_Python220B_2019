@@ -1,5 +1,5 @@
 '''Adds csv file to a MongoDB database'''
-
+#https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 import logging
 import csv
 import os
