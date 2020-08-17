@@ -51,6 +51,9 @@ def set_logging_level():
                        'file': logging.WARNING},
                  }
 
+    if args.debug not in log_level:
+        raise SystemExit(f"The logging value '{args.debug}' is invalid.  Please use -h for valid options.\nExiting....")
+
     format_str = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
 
     log_terminal = logging.StreamHandler()
