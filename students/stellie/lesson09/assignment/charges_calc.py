@@ -11,16 +11,21 @@ import logging
 import sys
 
 
-def parse_cmd_arguments():
-    """Parse command line arguments"""
-    parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('-i', '--input', help='input JSON file', required=True)
-    parser.add_argument('-o', '--output', help='ouput JSON file',
-                        required=True)
-    parser.add_argument('-d', '--debug', help='debug levels 0-3', default=0,
-                        type=int, required=False)
+# Format logs
+LOG_FORMAT = '%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s'
+LOG_FILE = datetime.datetime.now().strftime('%Y-%m-%d') + '.charges_calc.log'
 
-    return parser.parse_args()
+# Setup logging format
+FORMATTER = logging.Formatter(LOG_FORMAT)
+
+# Setup handlers
+FILE_HANDLER = logging.FileHandler(LOG_FILE)
+FILE_HANDLER.setFormatter(FORMATTER)
+CONSOLE_HANDLER = logging.StreamHandler()
+CONSOLE_HANDLER.setFormatter(FORMATTER)
+
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.DEBUG)
 
 
 def logging_decorator(func):
@@ -38,41 +43,36 @@ def logging_decorator(func):
         elements and errors are shown for inconsistencies in source data.
         """
 
-        # Format logs
-        log_format = '%(asctime)s %(filename)s:%(lineno)-3d ' +\
-                    '%(levelname)s %(message)s'
-        log_file = datetime.datetime.now().strftime('%Y-%m-%d') +\
-            '.charges_calc.log'
-
-        # Setup logging format
-        formatter = logging.Formatter(log_format)
-
-        # Setup file handler
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(logging.WARNING)
-        file_handler.setFormatter(formatter)
-
-        # Setup console handler
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
-        console_handler.setFormatter(formatter)
-
-        logger = logging.getLogger()
         log_levels = {0: logging.NOTSET, 1: logging.ERROR, 2: logging.WARNING,
                       3: logging.DEBUG}
         try:
-            logger.setLevel(log_levels[level])
+            if level == 0:
+                LOGGER.disabled = True
+            else:
+                LOGGER.setLevel(log_levels[level])
         except KeyError:
             print('Debugging level is invalid.  Level must be between 0-3.')
             sys.exit()
 
-        logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
+        LOGGER.addHandler(FILE_HANDLER)
+        LOGGER.addHandler(CONSOLE_HANDLER)
 
         result = func(*args)
         return result
 
     return logging_handler
+
+
+def parse_cmd_arguments():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('-i', '--input', help='input JSON file', required=True)
+    parser.add_argument('-o', '--output', help='ouput JSON file',
+                        required=True)
+    parser.add_argument('-d', '--debug', help='debug levels 0-3', default=0,
+                        type=int, required=False)
+
+    return parser.parse_args()
 
 
 @logging_decorator
@@ -148,7 +148,6 @@ def save_to_json(filename, data):
 if __name__ == '__main__':
     ARGS = parse_cmd_arguments()
     LEVEL = ARGS.debug
-    # logging_handler(ARGS.debug)
     DATA = load_rentals_file(LEVEL, ARGS.input)
     DATA = calculate_additional_fields(LEVEL, DATA)
     save_to_json(ARGS.output, DATA)
