@@ -11,49 +11,6 @@ import logging
 import sys
 
 
-def logging_handler(level):
-    """
-    Setup logging with the following debug level requirements:
-    # 0: No debug messages or log file.
-    # 1: Only error messages.
-    # 2: Error messages and warnings.
-    # 3: Error messages, warnings and debug messages.
-
-    Debug level should contain general comments, warnings display missing
-    elements and errors are shown for inconsistencies in source data.
-    """
-
-    # Format logs
-    log_format = '%(asctime)s %(filename)s:%(lineno)-3d ' +\
-                 '%(levelname)s %(message)s'
-    log_file = datetime.datetime.now().strftime('%Y-%m-%d')+'.charges_calc.log'
-
-    # Setup logging format
-    formatter = logging.Formatter(log_format)
-
-    # Setup file handler
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setLevel(logging.WARNING)
-    file_handler.setFormatter(formatter)
-
-    # Setup console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)
-    console_handler.setFormatter(formatter)
-
-    logger = logging.getLogger()
-    log_levels = {0: logging.NOTSET, 1: logging.ERROR, 2: logging.WARNING,
-                  3: logging.DEBUG}
-    try:
-        logger.setLevel(log_levels[level])
-    except KeyError:
-        print('Debugging level is invalid.  Level must be between 0-3.')
-        sys.exit()
-
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
-
-
 def parse_cmd_arguments():
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -66,6 +23,59 @@ def parse_cmd_arguments():
     return parser.parse_args()
 
 
+def logging_decorator(func):
+    """Logging Decorator"""
+
+    def logging_handler(level, *args):
+        """
+        Setup logging with the following debug level requirements:
+        # 0: No debug messages or log file.
+        # 1: Only error messages.
+        # 2: Error messages and warnings.
+        # 3: Error messages, warnings and debug messages.
+
+        Debug level should contain general comments, warnings display missing
+        elements and errors are shown for inconsistencies in source data.
+        """
+
+        # Format logs
+        log_format = '%(asctime)s %(filename)s:%(lineno)-3d ' +\
+                    '%(levelname)s %(message)s'
+        log_file = datetime.datetime.now().strftime('%Y-%m-%d') +\
+            '.charges_calc.log'
+
+        # Setup logging format
+        formatter = logging.Formatter(log_format)
+
+        # Setup file handler
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setLevel(logging.WARNING)
+        file_handler.setFormatter(formatter)
+
+        # Setup console handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+        console_handler.setFormatter(formatter)
+
+        logger = logging.getLogger()
+        log_levels = {0: logging.NOTSET, 1: logging.ERROR, 2: logging.WARNING,
+                      3: logging.DEBUG}
+        try:
+            logger.setLevel(log_levels[level])
+        except KeyError:
+            print('Debugging level is invalid.  Level must be between 0-3.')
+            sys.exit()
+
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+
+        result = func(*args)
+        return result
+
+    return logging_handler
+
+
+@logging_decorator
 def load_rentals_file(filename):
     """Load source data file"""
     with open(filename) as file:
@@ -78,6 +88,7 @@ def load_rentals_file(filename):
     return data
 
 
+@logging_decorator
 def calculate_additional_fields(data):
     """Calculate additional values based on data file values"""
     for value in data.values():
@@ -136,7 +147,8 @@ def save_to_json(filename, data):
 
 if __name__ == '__main__':
     ARGS = parse_cmd_arguments()
-    logging_handler(ARGS.debug)
-    DATA = load_rentals_file(ARGS.input)
-    DATA = calculate_additional_fields(DATA)
+    LEVEL = ARGS.debug
+    # logging_handler(ARGS.debug)
+    DATA = load_rentals_file(LEVEL, ARGS.input)
+    DATA = calculate_additional_fields(LEVEL, DATA)
     save_to_json(ARGS.output, DATA)
