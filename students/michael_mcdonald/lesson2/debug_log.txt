@@ -1,0 +1,299 @@
+# debugging with only five product_codes
+# reran with dummy data starting line 216
+# dummy data contained new dates
+# debugged file slightly modified as a started in on the logging exercise first
+# 2 breakpoints set
+# in places, s led me into the python kernel(?) files, so removed these lines for brevity
+
+S C:\Users\mimcdona\Dropbox\UW\UW-Python220_Project\lesson2> python -m pdb charges_calc.py -i source.json -o out.json                                                                                      > c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(1)<module>()
+-> """Returns total price paid for individual rentals """
+(Pdb) ll
+  1  -> """Returns total price paid for individual rentals """
+  2     import argparse
+  3     import json
+  4     import datetime
+  5     import math
+  6     import logging
+  7
+  8     log_format = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"  # Add/modify these
+  9     formatter = logging.Formatter(log_format)
+ 10     file_handler = logging.FileHandler('charges_calc.log')
+ 11     file_handler.setLevel(logging.DEBUG)
+ 12     file_handler.setFormatter(formatter)
+ 13
+ 14     console_handler = logging.StreamHandler()
+ 15     console_handler.setLevel(logging.DEBUG)
+ 16     console_handler.setFormatter(formatter)
+ 17
+ 18     logger = logging.getLogger()
+ 19     logger.setLevel(logging.DEBUG)
+ 20     logger.addHandler(file_handler)
+ 21     logger.addHandler(console_handler)
+ 22     """"""
+ 23
+ 24     """ The logging library includes various levels of logging messages
+ 25     logging.critical("This is a critical error!")
+ 26     logging.error("I'm an error.")
+ 27     logging.warning("Hello! I'm a warning!")
+ 28     logging.info("This is some information.")
+ 29     logging.debug("Perhaps this information will help you find your problem?")
+ 30     """
+ 31
+ 32     # python charges_calc.py -i source.json -o out.json
+ 33
+ 34
+ 35     def parse_cmd_arguments():
+ 36         logging.info('parse_cmd_arguments')
+ 37         parser = argparse.ArgumentParser(description='Process some integers.')
+ 38         parser.add_argument('-i', '--input', help='input JSON file', required=True)
+ 39         parser.add_argument('-o', '--output', help='ouput JSON file', required=True)
+ 40         return parser.parse_args()
+ 41
+ 42
+ 43     def load_rentals_file(filename):
+ 44         logging.info('load_rentals_file: filename =\t{}'.format(filename))
+ 45         with open(filename) as file:
+ 46             try:
+ 47                 data = json.load(file)
+ 48             except:
+ 49                 logger.error("json.load(file)", exc_info=True)
+ 50                 exit(0)
+ 51         return data
+ 52
+ 53
+ 54     def calculate_additional_fields(data):
+ 55         logging.info('calculate_additional_fields: data =\t{}'.format('data'))
+ 56         for value in data.values():
+ 57             try:
+ 58                 # add product_code to logging to quickly find which ones are failing
+ 59                 product_code = value['product_code']
+ 60                 rental_start = datetime.datetime.strptime(value['rental_start'], '%m/%d/%y')
+ 61                 rental_end = datetime.datetime.strptime(value['rental_end'], '%m/%d/%y')
+ 62                 value['total_days'] = (rental_end - rental_start).days
+ 63                 value['total_price'] = value['total_days'] * value['price_per_day']
+ 64
+ 65                 # total_price = (rental_end - rental_start) * price_per_day
+ 66                 # total_price = total_days * price_per_day
+ 67                 logging.info('sqrt_total_price = ({} - {}) * {} ({}) {}'.format(rental_end, rental_start,
+ 68                                                                                 value['price_per_day'],
+ 69                                                                                 value['total_days'],
+ 70                                                                                 product_code))
+ 71                 try:
+ 72                     value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ 73                     value['unit_cost'] = value['total_price'] / value['units_rented']
+ 74                 except ValueError:
+ 75                     logger.error('rental calculation error {} {}'.format(ValueError, product_code), exc_info=True)
+ 76             except:
+ 77                 logger.error('calculate_additional_fields.data.values()', exc_info=True)
+ 78                 exit(0)
+ 79
+ 80         return data
+ 81
+ 82
+ 83     def save_to_json(filename, data):
+ 84         logging.info('save_to_json: filename = \t{}, data = \t{}'.format(filename, 'data'))
+ 85         with open(filename, 'w') as file:
+ 86             json.dump(data, file)
+ 87
+ 88
+ 89     if __name__ == "__main__":
+ 90         logging.info('__name__')
+ 91         args = parse_cmd_arguments()
+ 92         data = load_rentals_file(args.input)
+ 93         data = calculate_additional_fields(data)
+ 94         save_to_json(args.output, data)
+(Pdb) b 35
+Breakpoint 1 at c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py:35
+(Pdb) continue
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(35)<module>()
+-> def parse_cmd_arguments():
+(Pdb) n
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(43)<module>()
+-> def load_rentals_file(filename):
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(54)<module>()
+-> def calculate_additional_fields(data):
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(83)<module>()
+-> def save_to_json(filename, data):
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(89)<module>()
+-> if __name__ == "__main__":
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(90)<module>()
+-> logging.info('__name__')
+(Pdb)
+2020-07-27 18:01:10,720 charges_calc.py:90   INFO __name__
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(91)<module>()
+-> args = parse_cmd_arguments()
+(Pdb)
+2020-07-27 18:01:11,159 charges_calc.py:36   INFO parse_cmd_arguments
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(92)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb)
+2020-07-27 18:01:11,606 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(93)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb)
+2020-07-27 18:01:11,871 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:01:11,878 charges_calc.py:67   INFO sqrt_total_price = (2017-03-22 00:00:00 - 2017-06-12 00:00:00) * 31 (-82) PRD80
+2020-07-27 18:01:11,878 charges_calc.py:75   ERROR rental calculation error <class 'ValueError'> PRD80
+Traceback (most recent call last):
+  File "c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py", line 72, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+2020-07-27 18:01:11,879 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:01:11,880 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:01:11,880 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:01:11,883 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(94)<module>()
+-> save_to_json(args.output, data)
+(Pdb)
+2020-07-27 18:01:12,072 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+--Return--
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(94)<module>()->None
+-> save_to_json(args.output, data)
+(Pdb) b 89
+Breakpoint 2 at c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py:89
+(Pdb) continue
+The program finished and will be restarted
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(1)<module>()
+-> """Returns total price paid for individual rentals """
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(35)<module>()
+-> def parse_cmd_arguments():
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(89)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(90)<module>()
+-> logging.info('__name__')
+(Pdb)
+2020-07-27 18:01:45,563 charges_calc.py:90   INFO __name__
+2020-07-27 18:01:45,563 charges_calc.py:90   INFO __name__
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(91)<module>()
+-> args = parse_cmd_arguments()
+(Pdb)
+2020-07-27 18:01:51,541 charges_calc.py:36   INFO parse_cmd_arguments
+2020-07-27 18:01:51,541 charges_calc.py:36   INFO parse_cmd_arguments
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(92)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb)
+2020-07-27 18:02:17,112 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+2020-07-27 18:02:17,112 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(93)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb) s
+--Call--
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(54)calculate_additional_fields()
+-> def calculate_additional_fields(data):
+(Pdb) s
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(55)calculate_additional_fields()
+-> logging.info('calculate_additional_fields: data =\t{}'.format('data'))
+(Pdb)
+-> f = currentframe()
+(Pdb) continue
+2020-07-27 18:03:28,641 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:03:28,641 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:03:28,642 charges_calc.py:67   INFO sqrt_total_price = (2017-03-22 00:00:00 - 2017-06-12 00:00:00) * 31 (-82) PRD80
+2020-07-27 18:03:28,642 charges_calc.py:67   INFO sqrt_total_price = (2017-03-22 00:00:00 - 2017-06-12 00:00:00) * 31 (-82) PRD80
+2020-07-27 18:03:28,643 charges_calc.py:75   ERROR rental calculation error <class 'ValueError'> PRD80
+Traceback (most recent call last):
+  File "c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py", line 72, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+2020-07-27 18:03:28,643 charges_calc.py:75   ERROR rental calculation error <class 'ValueError'> PRD80
+Traceback (most recent call last):
+  File "c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py", line 72, in calculate_additional_fields
+    value['sqrt_total_price'] = math.sqrt(value['total_price'])
+ValueError: math domain error
+2020-07-27 18:03:28,644 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:03:28,644 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:03:28,645 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:03:28,645 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:03:28,646 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:03:28,646 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:03:28,647 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+2020-07-27 18:03:28,647 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+2020-07-27 18:03:28,648 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+2020-07-27 18:03:28,648 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+The program finished and will be restarted
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(1)<module>()
+-> """Returns total price paid for individual rentals """
+(Pdb) # dummy data inserted
+*** SyntaxError: unexpected EOF while parsing
+(Pdb) continue
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(35)<module>()
+-> def parse_cmd_arguments():
+(Pdb) continue
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(89)<module>()
+-> if __name__ == "__main__":
+(Pdb) n
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(90)<module>()
+-> logging.info('__name__')
+(Pdb)
+2020-07-27 18:04:51,903 charges_calc.py:90   INFO __name__
+2020-07-27 18:04:51,903 charges_calc.py:90   INFO __name__
+2020-07-27 18:04:51,903 charges_calc.py:90   INFO __name__
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(91)<module>()
+-> args = parse_cmd_arguments()
+(Pdb) s
+--Call--
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(35)parse_cmd_arguments()
+-> def parse_cmd_arguments():
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(36)parse_cmd_arguments()
+-> logging.info('parse_cmd_arguments')
+(Pdb)
+--Call--
+
+2020-07-27 18:06:00,673 charges_calc.py:36   INFO parse_cmd_arguments
+2020-07-27 18:06:00,673 charges_calc.py:36   INFO parse_cmd_arguments
+2020-07-27 18:06:00,673 charges_calc.py:36   INFO parse_cmd_arguments
+
+-> return parser.parse_args()
+(Pdb)
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(92)<module>()
+-> data = load_rentals_file(args.input)
+(Pdb)
+2020-07-27 18:06:13,554 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+2020-07-27 18:06:13,554 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+2020-07-27 18:06:13,554 charges_calc.py:44   INFO load_rentals_file: filename = source.json
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(93)<module>()
+-> data = calculate_additional_fields(data)
+(Pdb)
+2020-07-27 18:06:15,721 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:06:15,721 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:06:15,721 charges_calc.py:55   INFO calculate_additional_fields: data =   data
+2020-07-27 18:06:15,723 charges_calc.py:67   INFO sqrt_total_price = (2017-06-22 00:00:00 - 2017-03-12 00:00:00) * 31 (102) PRD80
+2020-07-27 18:06:15,723 charges_calc.py:67   INFO sqrt_total_price = (2017-06-22 00:00:00 - 2017-03-12 00:00:00) * 31 (102) PRD80
+2020-07-27 18:06:15,723 charges_calc.py:67   INFO sqrt_total_price = (2017-06-22 00:00:00 - 2017-03-12 00:00:00) * 31 (102) PRD80
+2020-07-27 18:06:15,725 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:06:15,725 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:06:15,725 charges_calc.py:67   INFO sqrt_total_price = (2018-09-30 00:00:00 - 2016-07-20 00:00:00) * 16 (802) PRD11
+2020-07-27 18:06:15,728 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:06:15,728 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:06:15,728 charges_calc.py:67   INFO sqrt_total_price = (2017-06-04 00:00:00 - 2016-02-01 00:00:00) * 40 (489) PRD22
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2017-12-07 00:00:00 - 2016-08-14 00:00:00) * 40 (480) PRD86
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+2020-07-27 18:06:15,729 charges_calc.py:67   INFO sqrt_total_price = (2018-11-23 00:00:00 - 2017-07-12 00:00:00) * 7 (499) PRD70
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(94)<module>()
+-> save_to_json(args.output, data)
+(Pdb)
+2020-07-27 18:06:25,813 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+2020-07-27 18:06:25,813 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+2020-07-27 18:06:25,813 charges_calc.py:84   INFO save_to_json: filename =      out.json, data =        data
+--Return--
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(94)<module>()->None
+-> save_to_json(args.output, data)
+(Pdb)
+--Return--
+> <string>(1)<module>()->None
+(Pdb)
+The program finished and will be restarted
+> c:\users\mimcdona\dropbox\uw\uw-python220_project\lesson2\charges_calc.py(1)<module>()
+-> """Returns total price paid for individual rentals """
+(Pdb)  
