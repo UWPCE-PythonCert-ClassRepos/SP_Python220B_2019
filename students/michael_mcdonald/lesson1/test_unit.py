@@ -4,16 +4,16 @@
 import unittest
 from unittest import TestCase
 from unittest.mock import patch
-from inventory_management import electric_appliances_class as eac  # pylint: disable=import-error
-from inventory_management import inventory_class as ic  # pylint: disable=import-error
-from inventory_management import furniture_class as fc  # pylint: disable=import-error
-from inventory_management import market_prices as mp  # pylint: disable=import-error
-from inventory_management import main as ma  # pylint: disable=import-error
+from lesson1.inventory_management import electric_appliances_class as eac  # pylint: disable=import-error
+from lesson1.inventory_management import inventory_class as ic  # pylint: disable=import-error
+from lesson1.inventory_management import furniture_class as fc  # pylint: disable=import-error
+from lesson1.inventory_management import market_prices as mp  # pylint: disable=import-error
+from lesson1.inventory_management import main as ma  # pylint: disable=import-error
 # integration testing
 # linting
 # for each set of tests create a class
 # cd C:\Users\mimcdona\Dropbox\UW\UW-Python220_Project
-# python -m unittest test_unit.py
+# python -m unittest lesson1\test_unit.py
 # python -m coverage run --source=inventory_management -m unittest test_unit.py
 # python -m coverage report
 
@@ -77,9 +77,9 @@ class TestMarketPrices(TestCase):
     def test_get_latest_price_equal(self):
         """test get latest price"""
 
-        with patch("inventory_management.market_prices") as mock_market_prices:
+        with patch("lesson1.inventory_management.market_prices") as mock_market_prices:
             mock_market_prices.return_value = 24
-            self.assertEqual(mp.get_latest_price() == 24)
+            self.assertEqual(mp.get_latest_price(), 24)
     print('- TestMarketPricestest_get_latest_price_equal complete -')
 
 
@@ -179,7 +179,3 @@ class TestMain(TestCase):
         with self.assertRaises(SystemExit) as sysex:
             ma.exit_program()
             self.assertEqual(sysex.exception.code, 1)
-
-
-if __name__ == "__main__":
-    unittest.main()

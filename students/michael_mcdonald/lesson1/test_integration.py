@@ -2,10 +2,18 @@
 import unittest
 from unittest import TestCase
 from unittest.mock import patch
-import lesson1.inventory_management.main as ma  # pylint: disable=import-error
+from lesson1.inventory_management import main as ma # pylint: disable=import-error
 from lesson1.test_unit import SAMPLE_GENE_ITEM_DICT  # pylint: disable=import-error
 from lesson1.test_unit import SAMPLE_ELEC_ITEM_DICT  # pylint: disable=import-error
 from lesson1.test_unit import SAMPLE_FURN_ITEM_DICT  # pylint: disable=import-error
+
+# integration testing
+# linting
+# for each set of tests create a class
+# cd C:\Users\mimcdona\Dropbox\UW\UW-Python220_Project
+# python -m unittest lesson1\test_integration.py
+# python -m coverage run --source=inventory_management -m unittest lesson1\test_integration.py
+# python -m coverage report
 
 
 class TestIntegration(TestCase):

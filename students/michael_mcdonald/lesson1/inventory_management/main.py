@@ -1,9 +1,9 @@
 """Launches the user interface for the inventory management system"""
 import sys
-import inventory_class
-import furniture_class
-import electric_appliances_class
-import market_prices
+from lesson1.inventory_management import inventory_class  # pylint: disable=import-error
+from lesson1.inventory_management import furniture_class  # pylint: disable=import-error
+from lesson1.inventory_management import electric_appliances_class  # pylint: disable=import-error
+from lesson1.inventory_management import market_prices  # pylint: disable=import-error
 
 FULL_INVENTORY = {}
 

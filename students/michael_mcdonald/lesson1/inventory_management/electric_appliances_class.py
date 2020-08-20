@@ -1,9 +1,6 @@
 """Electric appliances class"""
 
-import sys
-from inventory_class import Inventory  # pylint: disable=import-error
-sys.path.append('C:\\Users\\mimcdona\\Dropbox\\UW\\UW-Python220_Project'
-                '\\lesson1\\inventory_management')
+from lesson1.inventory_management.inventory_class import Inventory  # pylint: disable=import-error
 
 
 class ElectricAppliances(Inventory):
