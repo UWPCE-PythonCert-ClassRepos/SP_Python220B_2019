@@ -28,6 +28,8 @@ class MongoDBConnection():
         self.host = host
         self.port = port
         self.connection = None
+        print('MongoDB__init__:\nHost: {}\nPort: {}'.format(
+            self.host, self.port))
 
     def __enter__(self):
         """Establish connection to MongoDB"""
@@ -36,6 +38,8 @@ class MongoDBConnection():
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Exits connection"""
+        print('MongoDB__exit__:\nexc_type: {}\nexc_val: {}\nexc_tb: {}'.format(
+            exc_type, exc_val, exc_tb))
         self.connection.close()
 
 
@@ -46,8 +50,7 @@ def import_data(directory_name, product_file, customer_file, rentals_file):
     the second with a count of any errors that occurred, in the same
     order.
     """
-    mongo = MongoDBConnection()
-    with mongo:
+    with MongoDBConnection() as mongo:
         database = mongo.connection.hp_norton
         product_count, product_errors = import_csv(directory_name,
                                                    product_file, database)
@@ -96,9 +99,8 @@ def data_convert(items):
 def show_available_products():
     """Show all available products as a Python dictionary"""
     LOGGER.debug('Listing all available products.')
-    mongo = MongoDBConnection()
     available_products = {}
-    with mongo:
+    with MongoDBConnection() as mongo:
         database = mongo.connection.hp_norton
         for product in database.products.find(
                         {'quantity_available': {'$gt': 0}}):
@@ -112,9 +114,8 @@ def show_available_products():
 def show_rentals(product_id):
     """Return user information for rented products matching product_id"""
     LOGGER.debug('Listing all rentals for specified product: %s.', product_id)
-    mongo = MongoDBConnection()
     rented_products = {}
-    with mongo:
+    with MongoDBConnection() as mongo:
         database = mongo.connection.hp_norton
         for rental in database.rentals.find({'product_id': product_id}):
             for customer in database.customers.find(
@@ -130,8 +131,7 @@ def show_rentals(product_id):
 def clear_collections():
     """Clear all collections from DB"""
     LOGGER.debug('Clearing all collections from database.')
-    mongo = MongoDBConnection()
-    with mongo:
+    with MongoDBConnection() as mongo:
         database = mongo.connection.hp_norton
         database.products.drop()
         database.customers.drop()
