@@ -1,0 +1,45 @@
+File: poor_perf.py
+Performances Times:
+5.415
+5.467
+5.423
+5.552
+Notes:
+Orginal file
+
+File: good_perf_v1.py
+Performance Times:
+3.783
+3.533
+3.501
+3.677
+Notes:
+Remove uneccesary second loop thru the file to find number of rows containing 'ao.'
+
+File: good_perf_v2.py
+Performance Times:
+3.103
+3.137
+3.104
+3.380
+Notes:
+Removed looping through year values and condensend it into the loop reading the file.
+
+File: good_perf_v3.py
+Performance Times:
+2.944
+3.036
+2.947
+2.963
+Notes:
+Replaced uneecsaary if with elif to streamline evaluation
+
+File: good_perf_v4.py (good_perf.py)
+Performance Times:
+2.496
+2.457
+2.377
+2.352
+Notes:
+Used filter to do two things.  First, update year count.  Second filter out rows that did not contain "ao"
+
