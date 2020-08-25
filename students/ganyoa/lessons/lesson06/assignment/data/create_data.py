@@ -8,7 +8,7 @@ import datetime
 import csv
 
 
-def rand_date():
+def random_date():
     '''
     calculate the number of days between today and 01/01/2010
     '''
@@ -18,14 +18,13 @@ def rand_date():
     return (then + datetime.timedelta(days=random.randrange(1, date_diff))).strftime("%m/%d/%Y")
 
 
-def ao():
+def random_ao():
     '''
     random chance to return string: ao
     '''
     if random.random() < .3:
         return 'ao'
-    else:
-        return ''
+    return ''
 
 
 def random_records():
@@ -41,7 +40,7 @@ def random_records():
             second = record + 2
             third = record + 3
             forth = record + 4
-            random_writer.writerow([guid, first, second, third, forth, rand_date(), ao()])
+            random_writer.writerow([guid, first, second, third, forth, random_date(), random_ao()])
 
 if __name__ == '__main__':
     random_records()
