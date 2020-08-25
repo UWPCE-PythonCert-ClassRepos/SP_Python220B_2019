@@ -1,0 +1,144 @@
+'''#--------------------------------------------------------------------------------------------------------------------
+	standard time command results for good_perf.py
+'''#--------------------------------------------------------------------------------------------------------------------
+ganyo@AG-PC ~/Desktop/Python_UW/SP_Python220B_2019/students/ganyoa/lessons/lesson06/assignment (master)
+$ time python good_perf.py
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+
+real    0m1.939s
+user    0m0.000s
+sys     0m0.030s
+
+
+
+
+'''#--------------------------------------------------------------------------------------------------------------------
+	timeit results for good_perf.py
+'''#--------------------------------------------------------------------------------------------------------------------
+ganyo@AG-PC ~/Desktop/Python_UW/SP_Python220B_2019/students/ganyoa/lessons/lesson06/assignment (master)
+$ python -m timeit -v "import good_perf; good_perf.main('data/exercise.csv')"
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+1 loop -> 1.73 secs
+
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+raw times: 1.71 sec, 1.71 sec, 1.71 sec, 1.71 sec, 1.7 sec
+
+1 loop, best of 5: 1.7 sec per loop
+
+
+
+'''#--------------------------------------------------------------------------------------------------------------------
+	cProfiling and pstats results for good_perf.py
+	1- create output file
+	2- top 10 cumulative time
+	3- top 10 callers (sorted by cumtime)
+	4- top 10 callees (sorted by cumtime)
+	notes: the good_perf module makes significantly fewer calls under built-in methods, and line py:22 in good_perf.py
+'''#--------------------------------------------------------------------------------------------------------------------
+ganyo@AG-PC ~/Desktop/Python_UW/SP_Python220B_2019/students/ganyoa/lessons/lesson06/assignment (master)
+$ python -m cProfile -s 'cumtime' -o cprofiling_output_good_perf good_perf.py
+{'2013': 93930, '2014': 94052, '2015': 93844, '2016': 94612, '2017': 93810, '2018': 93469}
+'ao' was found 299839 times
+
+
+ganyo@AG-PC ~/Desktop/Python_UW/SP_Python220B_2019/students/ganyoa/lessons/lesson06/assignment (master)
+$ python -m pstats cprofiling_output_good_perf
+Welcome to the profile statistics browser.
+cprofiling_output_good_perf% sort cumtime
+cprofiling_output_good_perf% stats 10
+Mon Aug 24 12:11:57 2020    cprofiling_output_good_perf
+
+         1019458 function calls (1019452 primitive calls) in 1.814 seconds
+
+   Ordered by: cumulative time
+   List reduced from 112 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      2/1    0.000    0.000    1.814    1.814 {built-in method builtins.exec}
+        1    0.000    0.000    1.814    1.814 good_perf.py:6(<module>)
+        1    1.651    1.651    1.813    1.813 good_perf.py:10(main)
+     9542    0.004    0.000    0.109    0.000 C:\Users\ganyo\AppData\Local\Programs\Python\Python37\lib\encodings\cp1252.py:22(decode)
+     9542    0.106    0.000    0.106    0.000 {built-in method _codecs.charmap_decode}
+  1000000    0.052    0.000    0.052    0.000 {method 'keys' of 'dict' objects}
+      2/1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:978(_find_and_load)
+      2/1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+      2/1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:663(_load_unlocked)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:722(exec_module)
+
+
+cprofiling_output_good_perf% callers 10
+   Ordered by: cumulative time
+   List reduced from 112 to 10 due to restriction <10>
+
+Function                                                                                  was called by...
+                                                                                              ncalls  tottime  cumtime
+{built-in method builtins.exec}                                                           <-       1    0.000    0.000  <frozen importlib._bootstrap>:211(_cal
+l_with_frames_removed)
+good_perf.py:6(<module>)                                                                  <-       1    0.000    1.814  {built-in method builtins.exec}
+good_perf.py:10(main)                                                                     <-       1    1.651    1.813  good_perf.py:6(<module>)
+C:\Users\ganyo\AppData\Local\Programs\Python\Python37\lib\encodings\cp1252.py:22(decode)  <-    9542    0.004    0.109  good_perf.py:10(main)
+{built-in method _codecs.charmap_decode}                                                  <-    9542    0.106    0.106  C:\Users\ganyo\AppData\Local\Programs\
+Python\Python37\lib\encodings\cp1252.py:22(decode)
+{method 'keys' of 'dict' objects}                                                         <- 1000000    0.052    0.052  good_perf.py:10(main)
+<frozen importlib._bootstrap>:978(_find_and_load)                                         <-       1    0.000    0.000  C:\Users\ganyo\AppData\Local\Programs\
+Python\Python37\lib\csv.py:4(<module>)
+                                                                                                   1    0.000    0.001  good_perf.py:6(<module>)
+<frozen importlib._bootstrap>:948(_find_and_load_unlocked)                                <-     2/1    0.000    0.001  <frozen importlib._bootstrap>:978(_fin
+d_and_load)
+<frozen importlib._bootstrap>:663(_load_unlocked)                                         <-     2/1    0.000    0.000  <frozen importlib._bootstrap>:948(_fin
+d_and_load_unlocked)
+<frozen importlib._bootstrap_external>:722(exec_module)                                   <-       1    0.000    0.000  <frozen importlib._bootstrap>:663(_loa
+d_unlocked)
+
+
+cprofiling_output_good_perf% strip
+cprofiling_output_good_perf% sort cumtime
+cprofiling_output_good_perf% callees 10
+   Ordered by: cumulative time
+   List reduced from 112 to 10 due to restriction <10>
+
+Function                                                    called...
+                                                                ncalls  tottime  cumtime
+{built-in method builtins.exec}                             ->       1    0.000    0.000  csv.py:4(<module>)
+                                                                     1    0.000    1.814  good_perf.py:6(<module>)
+good_perf.py:6(<module>)                                    ->       1    0.000    0.001  <frozen importlib._bootstrap>:978(_find_and_load)
+                                                                     1    1.651    1.813  good_perf.py:10(main)
+good_perf.py:10(main)                                       ->    9542    0.004    0.109  cp1252.py:22(decode)
+                                                                     1    0.000    0.000  {built-in method _csv.reader}
+                                                                     2    0.000    0.000  {built-in method builtins.print}
+                                                                     1    0.000    0.000  {built-in method io.open}
+                                                               1000000    0.052    0.052  {method 'keys' of 'dict' objects}
+cp1252.py:22(decode)                                        ->    9542    0.106    0.106  {built-in method _codecs.charmap_decode}
+{built-in method _codecs.charmap_decode}                    ->
+{method 'keys' of 'dict' objects}                           ->
+<frozen importlib._bootstrap>:978(_find_and_load)           ->       2    0.000    0.000  <frozen importlib._bootstrap>:143(__init__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:147(__enter__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:151(__exit__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:176(cb)
+                                                                   2/1    0.000    0.001  <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+                                                                     2    0.000    0.000  {method 'get' of 'dict' objects}
+<frozen importlib._bootstrap>:948(_find_and_load_unlocked)  ->     2/1    0.000    0.000  <frozen importlib._bootstrap>:663(_load_unlocked)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:882(_find_spec)
+                                                                     2    0.000    0.000  {method 'rpartition' of 'str' objects}
+<frozen importlib._bootstrap>:663(_load_unlocked)           ->       2    0.000    0.000  <frozen importlib._bootstrap>:307(__init__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:311(__enter__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:318(__exit__)
+                                                                     2    0.000    0.000  <frozen importlib._bootstrap>:576(module_from_spec)
+                                                                     1    0.000    0.000  <frozen importlib._bootstrap>:748(exec_module)
+                                                                     1    0.000    0.000  <frozen importlib._bootstrap_external>:722(exec_module)
+                                                                     2    0.000    0.000  {built-in method builtins.hasattr}
+<frozen importlib._bootstrap_external>:722(exec_module)     ->       1    0.000    0.000  <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+                                                                     1    0.000    0.000  <frozen importlib._bootstrap_external>:793(get_code)
+
+
