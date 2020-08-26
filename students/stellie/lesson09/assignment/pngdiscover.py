@@ -17,15 +17,13 @@ def parse_cmd_arguments():
 
 def png_search(directory, results):
     """Return a list of lists of PNG files"""
-# As output, it will return a list of lists structured like this:
-# [“full/path/to/files”, [“file1.png”, “file2.png”,…], “another/path”,[], etc]
-    files_list = os.listdir(directory)
-    dir_list = []
+    files_list = os.listdir(directory)  # lists files in directory
+    dir_list = []  # sublist for multiple images in the same directory
     for item in files_list:
         filepath = os.path.join(directory, item)
         path_no_filename = os.path.split(filepath)
         if os.path.isdir(filepath):
-            png_search(filepath, results)
+            png_search(filepath, results)  # recursion
         elif path_no_filename[0] in results and item.endswith('.png'):
             dir_list.append(item)
         elif not path_no_filename[0] in results and item.endswith('.png'):
