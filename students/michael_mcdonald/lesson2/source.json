@@ -1,0 +1,37 @@
+{
+  "RNT001": {
+    "product_code": "PRD80",
+    "units_rented": 8,
+    "price_per_day": 31,
+    "rental_start": "6/12/17",
+    "rental_end": "3/22/17"
+  },
+  "RNT002": {
+    "product_code": "PRD11",
+    "units_rented": 1,
+    "price_per_day": 16,
+    "rental_start": "7/20/16",
+    "rental_end": "9/30/18"
+  },
+  "RNT003": {
+    "product_code": "PRD22",
+    "units_rented": 4,
+    "price_per_day": 40,
+    "rental_start": "2/1/16",
+    "rental_end": "6/4/17"
+  },
+  "RNT004": {
+    "product_code": "PRD86",
+    "units_rented": 6,
+    "price_per_day": 40,
+    "rental_start": "8/14/16",
+    "rental_end": "12/7/17"
+  },
+  "RNT005": {
+    "product_code": "PRD70",
+    "units_rented": 8,
+    "price_per_day": 7,
+    "rental_start": "7/12/17",
+    "rental_end": "11/23/18"
+  }
+}

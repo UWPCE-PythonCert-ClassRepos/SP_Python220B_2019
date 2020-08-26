@@ -1,0 +1,6 @@
+user_id,name,address,phone_number,email
+user001,Albert Einstein,"7 Vine Drive, Cleveland, TN 37312",559-555-0107,albert.einstein@gmail.com
+user002,Blaise Pascal,"9834 Vernon Ave., Smyrna, GA 30080",404-555-0124,blaise.pascal@gmail.com
+user003,Chien-Shiung Wu,"263 Orange Lane, Deerfield, IL 60015",630-555-0129,chien-shiung.wu@gmail.com
+user004,Enrico Fermi,"468 Wilson St., Solon, OH 44139",567-555-0199,enrico.fermi@gmail.com
+user005,Jane Goodall,"52 S. Summer St., Littleton, CO 80123",970-555-0171,jane.goodall@gmail.com
