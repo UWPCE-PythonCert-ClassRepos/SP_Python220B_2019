@@ -31,7 +31,8 @@ def png_search(directory, results):
         elif not path_no_filename[0] in results and item.endswith('.png'):
             results.append(path_no_filename[0])
             dir_list.append(item)
-    results.append(dir_list)
+    if dir_list:
+        results.append(dir_list)
     return results
 
 
