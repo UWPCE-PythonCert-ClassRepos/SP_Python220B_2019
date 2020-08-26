@@ -1,0 +1,5 @@
+user_id,name,address,phone_number,email
+user001,John Smith,123 Main Street,2065551234,smith.john@example.com
+user002,Jane Doe,1000 Market Street,2065555678,doe.jane@example.com
+user003,Alice Wonderland,200 Cherry Street,2065551357,wonderland.alice@example.com
+user004,Mark Allen,555 Columbia Avenue,2065552468,allen.mark@example.com
