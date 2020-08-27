@@ -9,10 +9,9 @@ This module returns for customer and rentals:
 """
 import logging
 import os
+from timeit import default_timer as timer
 import pandas as pd
 from pymongo import MongoClient
-from timeit import default_timer as timer
-from threading import Thread
 
 logging.basicConfig(level=logging.INFO)
 
@@ -167,7 +166,7 @@ def import_data(directory_name, product_file, customer_file, rental_file):
         import_data_customers(mongo, directory_name, customer_file)
         import_data_products(mongo, directory_name, product_file)
         import_data_rentals(mongo, directory_name, rental_file)
-        
+
     tup_customer = (record_count['customers']-record_count_init['customers'],
                     record_count_init['customers'],
                     record_count['customers'],
@@ -237,4 +236,3 @@ if __name__ == '__main__':
 
     users_E0001 = show_rentals('E0001')
     logging.info(users_E0001)
-
