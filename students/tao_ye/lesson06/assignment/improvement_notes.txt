@@ -1,0 +1,53 @@
+First, there is a typo in the original script. In year count "if" 
+blocks: key "2017" appears twice with no key "2018". Corrected.
+
+In this case, there is only one function, so the easiest way
+to check the performance is to insert "time.perf_counter()" 
+statementin various locations in the code to measure the process 
+times of various code blocks.
+
+The differences between consecutive "time.perf_counter()"
+values are the process time spent on the code block in between
+the two "time.perf_counter()" statement.
+
+
+Within "analyze" function, the first block measured is the
+creation of the "new_ones" list. The second block measured 
+is to do the year count from the "new_ones" list. The third 
+block measured is to do the "ao" count.
+
+
+The performance of original poor written module are below
+
+Process time for block 1:     1.872083
+Process time for block 2:     0.656412
+Process time for block 3:     1.678449
+Total process time:           4.206945
+
+The total process time is 4.2 second.
+
+It looks like the first block takes the longest time. Let's 
+improve it. And obviously, there is no need to create a list
+to do the year count. It can be done when reading from the CVS
+file. So block 1 and 2 can be combined, and list "new_ones"
+can be eliminated.
+
+Then "ao" counting can be combined with the year counting by
+reading from the file once instead of twice overall.
+
+Some other minor improvement:
+1. Moved "ao" count (if statement) before the big if-blocks for 
+year count
+2. For year count, add "continue" to each if-block. So once the 
+year is a match, the remaining if-blocks can be skipped.
+
+
+After the above improvement, the total process time is almost cut
+in half to 2.22 second.
+
+Total Process time:     2.220391
+
+
+
+
+
