@@ -1,36 +1,64 @@
 """"
-use 127.0.0.1 on windows
+This module returns for customer and rentals:
+    (int) the number of records processed
+    (int) the record count in the database prior to running
+    (int) the record count after running
+    (float) the time taken to run the module.
+
+! mongo tip: use 127.0.0.1 on windows
 """
 import logging
 import os
 import pandas as pd
 from pymongo import MongoClient
+from timeit import default_timer as timer
+from threading import Thread
 
 logging.basicConfig(level=logging.INFO)
 
 # pylint: disable=broad-except
 # pylint: disable=too-many-locals
 
+record_count_init = {
+    "customers": 0,
+    "products": 0,
+    "rentals": 0
+}
+record_count = {
+    "customers": 0,
+    "products": 0,
+    "rentals": 0
+}
+err_count = {
+    "customers": 0,
+    "products": 0,
+    "rentals": 0
+}
+time_exec = {
+    "customers": 0,
+    "products": 0,
+    "rentals": 0
+}
+
 class MongoDBConnection():
     """ MongoDB Connection """
-
     def __init__(self, host='127.0.0.1', port=27017):
         """ be sure to use the ip address not name for local windows """
         self.host = host
         self.port = port
         self.connection = None
-        logging.info('Starting Mongo connection ...')
+        logging.debug('Starting Mongo connection ...')
 
     def __enter__(self):
         """ On entering: creating the connection to Mongo  """
         self.connection = MongoClient(self.host, self.port)
-        logging.info('Mongo connected.')
+        logging.debug('Mongo connected.')
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """ On exiting: closing the connection to Mongo  """
         self.connection.close()
-        logging.info('Mongo connection closed.')
+        logging.debug('Mongo connection closed.')
 
 def print_mdb_collection(collection_name):
     """ print everything in collection_name """
@@ -40,7 +68,7 @@ def print_mdb_collection(collection_name):
 def import_data_csv(directory_name, data_file):
     """ import data from csv files """
     file_path = os.path.join(directory_name, data_file)
-    logging.info('Opening file: %s', file_path)
+    logging.debug('Opening file: %s', file_path)
 
     data = pd.DataFrame()
 
@@ -49,83 +77,118 @@ def import_data_csv(directory_name, data_file):
     except FileNotFoundError:
         logging.error('Cannot find file: %s', file_path)
 
-    logging.info('Done with file: %s', file_path)
+    logging.debug('Done with file: %s', file_path)
 
     return data
 
-def import_data(directory_name, product_file, customer_file, rentals_file):
+def import_data_customers(mongo, directory_name, customer_file):
+    """ import customer data """
+    dt_start = timer()
+
+    # create collections if not exist
+    logging.debug('Creating the customers collections ...')
+    customers = mongo["customers"]
+
+    # clear out the collections and start fresh
+    logging.debug('Clearing collection data ...')
+    customers.drop()
+
+    logging.debug('Start loading customer data from CSV file ...')
+    data_customer = import_data_csv(directory_name, customer_file)
+    dict_customer = data_customer.to_dict('records')
+
+    try:
+        insert_result_customers = customers.insert_many(dict_customer)
+        record_count['customers'] = len(insert_result_customers.inserted_ids)
+    except Exception as err:
+        err_count['customers'] += 1
+        logging.debug('Customer error count incremented by 1.')
+        logging.error('%s', err)
+
+    dt_end = timer()
+    time_exec['customers'] = dt_end - dt_start
+
+def import_data_products(mongo, directory_name, product_file):
+    """ import product data """
+    dt_start = timer()
+
+    # create collections if not exist
+    logging.debug('Creating the products collections ...')
+    products = mongo["products"]
+
+    # clear out the collections and start fresh
+    logging.debug('Clearing collection data ...')
+    products.drop()
+
+    logging.debug('Start loading product data from CSV file ...')
+    data_product = import_data_csv(directory_name, product_file)
+    dict_product = data_product.to_dict('records')
+
+    try:
+        insert_result_products = products.insert_many(dict_product)
+        record_count['products'] = len(insert_result_products.inserted_ids)
+    except Exception as err:
+        err_count['products'] += 1
+        logging.debug('Product error count incremented by 1.')
+        logging.error('%s', err)
+
+    dt_end = timer()
+    time_exec['products'] = dt_end - dt_start
+
+def import_data_rentals(mongo, directory_name, rental_file):
+    ''' import rental data '''
+    # create collections if not exist
+    logging.debug('Creating the rental collections ...')
+    rentals = mongo["rentals"]
+
+    # clear out the collections and start fresh
+    logging.debug('Clearing collection data ...')
+    rentals.drop()
+
+    logging.debug('Start loading rental data from CSV file ...')
+    data_rental = import_data_csv(directory_name, rental_file)
+    dict_rental = data_rental.to_dict('records')
+
+    try:
+        insert_result_rentals = rentals.insert_many(dict_rental)
+        record_count['rentals'] = len(insert_result_rentals.inserted_ids)
+    except Exception as err:
+        err_count['rentals'] += 1
+        logging.debug('Rental error count incremented by 1.')
+        logging.error('%s', err)
+
+def import_data(directory_name, product_file, customer_file, rental_file):
     """ import data from CSV files, then insert into MongoDB """
-    record_count = {
-        "customers": 0,
-        "products": 0,
-        "rentals": 0
-    }
-    err_count = {
-        "customers": 0,
-        "products": 0,
-        "rentals": 0
-    }
 
     mdb = MongoDBConnection()
     with mdb:
         mongo = mdb.connection.HPNorton
 
-        # create collections if not exist
-        logging.info('Creating collections ...')
-        customers = mongo["customers"]
-        products = mongo["products"]
-        rentals = mongo["rentals"]
+        c_thread = Thread(target=import_data_customers,
+                          args=(mongo, directory_name, customer_file))
+        p_thread = Thread(target=import_data_products,
+                          args=(mongo, directory_name, product_file))
+        r_thread = Thread(target=import_data_rentals,
+                          args=(mongo, directory_name, rental_file))
 
-        # clear out the collections and start fresh
-        logging.info('Clearing collection data ...')
-        customers.drop()
-        products.drop()
-        rentals.drop()
+        c_thread.start()
+        p_thread.start()
+        r_thread.start()
 
-        logging.info('Start loading customer data from CSV file ...')
-        data_customer = import_data_csv(directory_name, customer_file)
-        dict_customer = data_customer.to_dict('records')
+        c_thread.join()
+        p_thread.join()
+        r_thread.join()
+        
+    tup_customer = (record_count['customers']-record_count_init['customers'],
+                    record_count_init['customers'],
+                    record_count['customers'],
+                    time_exec['customers'])
+    tup_product = (record_count['products']-record_count_init['products'],
+                   record_count_init['products'],
+                   record_count['products'],
+                   time_exec['products'])
 
-        try:
-            insert_result_customers = customers.insert_many(dict_customer)
-            record_count['customers'] = len(insert_result_customers.inserted_ids)
-        except Exception as err:
-            err_count['customers'] += 1
-            logging.info('Customer error count incremented by 1.')
-            logging.error('%s', err)
-
-        logging.info('Start loading product data from CSV file ...')
-        data_product = import_data_csv(directory_name, product_file)
-        dict_product = data_product.to_dict('records')
-
-        try:
-            insert_result_products = products.insert_many(dict_product)
-            record_count['products'] = len(insert_result_products.inserted_ids)
-        except Exception as err:
-            err_count['products'] += 1
-            logging.info('Product error count incremented by 1.')
-            logging.error('%s', err)
-
-        logging.info('Start loading rental data from CSV file ...')
-        data_rental = import_data_csv(directory_name, rentals_file)
-        dict_rental = data_rental.to_dict('records')
-
-        try:
-            insert_result_rentals = rentals.insert_many(dict_rental)
-            record_count['rentals'] = len(insert_result_rentals.inserted_ids)
-        except Exception as err:
-            err_count['rentals'] += 1
-            logging.info('Rental error count incremented by 1.')
-            logging.error('%s', err)
-
-        tup_record_count = (record_count['products'],
-                            record_count['customers'],
-                            record_count['rentals'])
-        tup_error_count = (err_count['products'],
-                           err_count['customers'],
-                           err_count['rentals'])
-
-    return tup_record_count, tup_error_count
+    return [tup_customer, tup_product]
 
 def show_available_products():
     """ function to show all the products avalable """
@@ -172,20 +235,17 @@ if __name__ == '__main__':
     DATA_FILE_PRODUCT = 'products.csv'
     DATA_FILE_RENTAL = 'rentals.csv'
     DATA_FILE_PATH = os.getcwd()
-    logging.info('Current directory: %s', DATA_FILE_PATH)
+    logging.debug('Current directory: %s', DATA_FILE_PATH)
 
-    import_data(DATA_FILE_PATH, DATA_FILE_PRODUCT, DATA_FILE_CUSTOMER, DATA_FILE_RENTAL)
+    import_status = import_data(DATA_FILE_PATH,
+                                DATA_FILE_PRODUCT,
+                                DATA_FILE_CUSTOMER,
+                                DATA_FILE_RENTAL)
+    logging.info(import_status)
+
     products_available = show_available_products()
     logging.info(products_available)
 
     users_E0001 = show_rentals('E0001')
     logging.info(users_E0001)
 
-    users_F0001 = show_rentals('F0001')
-    logging.info(users_F0001)
-
-    users_I0003 = show_rentals('I0003')
-    logging.info(users_I0003)
-
-    users_F0002 = show_rentals('F0002')
-    logging.info(users_F0002)
