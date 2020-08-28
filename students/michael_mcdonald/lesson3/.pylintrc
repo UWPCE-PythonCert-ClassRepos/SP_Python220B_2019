@@ -1,0 +1,15 @@
+[BASIC]
+good-names=
+    i,
+    e,
+    c,
+    s,
+    k,
+
+[DESIGN]
+min-public-methods=0
+max-locals=25
+
+[TYPECHECK]
+disable=no-value-for-parameter
+
