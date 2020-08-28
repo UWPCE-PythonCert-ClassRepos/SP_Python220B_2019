@@ -71,7 +71,7 @@ def _code_timer():
 
 
 if __name__ == "__main__":
-    generate_customers(10)
-    generate_products(10)
-    generate_rentals(10)
+    generate_customers(100000)
+    generate_products(100000)
+    generate_rentals(100000)
     # _code_timer()
