@@ -1,0 +1,49 @@
+Using python threading.
+
+At first, we profiled the 2 codes with the original data files from lesson05 using only a few entries in each file. The cummulative time using cProfile does not show a performance improvement between linear.py and parallel.py. 
+
+Then, I generated 10,000 for the customer and rental data type and profile the two codes again. The cummulative time shows a performance improvement between linear.py and parallel.py about 60% (linear.py vs parallel.py, 4.268 seconds vs 2.510 seconds. The performance improvement is calculated using the following method: 2.510/4.268 = 0.5881, or approximately 60%).
+
+In summary, we recommend using threading to reduce bottleneck and maximize the performance of the application. 
+
+
+
+Profile results are below:
+
+/*** using original records from lesson05 ***/
+python -m cProfile -s cumtime linear.py
+INFO:root:[(3, 0, 3, 0.04237239999999998), (4, 0, 4, 0.02235280000000006)]
+INFO:root:{'E0001': {'description': 'Television', 'product_type': 'electronics', 'quantity_available': 502}, 'F0001': {'description': 'Sofa', 'product_type': 'furniture', 'quantity_available': 398}, 'I0003': {'description': 'Computer', 'product_type': 'electronics', 'quantity_available': 19}}
+INFO:root:{'U003': {'name': 'Mark Zuckerberg', 'address': '1 Hacker Way, Menlo Park, California 94025', 'phone_number': nan, 'email': 'mz@fb.com'}, 'U002': {'name': 'Bill Gates', 'address': '440 5th Ave N., Seattle, WA 98109440 5th Ave N., Seattle, WA 98109', 'phone_number': '206-709-3100 ext. 7100', 'email': 'bill.gates@gatesfoundation.org'}}
+         276701 function calls (268917 primitive calls) in 0.700 seconds
+
+   Ordered by: cumulative time
+
+
+python -m cProfile -s cumtime parallel.py
+INFO:root:[(3, 0, 3, 0.05830839999999993), (4, 0, 4, 0.04193840000000004)]
+INFO:root:{'E0001': {'description': 'Television', 'product_type': 'electronics', 'quantity_available': 502}, 'F0001': {'description': 'Sofa', 'product_type': 'furniture', 'quantity_available': 398}, 'I0003': {'description': 'Computer', 'product_type': 'electronics', 'quantity_available': 19}}
+INFO:root:{'U003': {'name': 'Mark Zuckerberg', 'address': '1 Hacker Way, Menlo Park, California 94025', 'phone_number': nan, 'email': 'mz@fb.com'}, 'U002': {'name': 'Bill Gates', 'address': '440 5th Ave N., Seattle, WA 98109440 5th Ave N., Seattle, WA 98109', 'phone_number': '206-709-3100 ext. 7100', 'email': 'bill.gates@gatesfoundation.org'}}
+         252528 function calls (245233 primitive calls) in 0.667 seconds
+
+   Ordered by: cumulative time
+   
+   
+   
+/*** using 10000+ customer and renteal records ***/
+python -m cProfile -s cumtime linear.py
+INFO:root:[(10003, 0, 10003, 0.5775274000000001), (4, 0, 4, 0.03768899999999986)]
+INFO:root:{'E0001': {'description': 'Television', 'product_type': 'electronics', 'quantity_available': 502}, 'F0001': {'description': 'Sofa', 'product_type': 'furniture', 'quantity_available': 398}, 'I0003': {'description': 'Computer', 'product_type': 'electronics', 'quantity_available': 19}}
+INFO:root:{'U003': {'name': 'Mark Zuckerberg', 'address': '1 Hacker Way, Menlo Park, California 94025', 'phone_number': nan, 'email': 'mz@fb.com'}, 'U002': {'name': 'Bill Gates', 'address': '440 5th Ave N., Seattle, WA 98109440 5th Ave N., Seattle, WA 98109', 'phone_number': '206-709-3100 ext. 7100', 'email': 'bill.gates@gatesfoundation.org'}}
+         1597824 function calls (1590008 primitive calls) in 4.268 seconds
+
+   Ordered by: cumulative time
+
+
+python -m cProfile -s cumtime parallel.py
+INFO:root:[(10003, 0, 10003, 0.9750280000000002), (4, 0, 4, 0.08809050000000007)]
+INFO:root:{'E0001': {'description': 'Television', 'product_type': 'electronics', 'quantity_available': 502}, 'F0001': {'description': 'Sofa', 'product_type': 'furniture', 'quantity_available': 398}, 'I0003': {'description': 'Computer', 'product_type': 'electronics', 'quantity_available': 19}}
+INFO:root:{'U003': {'name': 'Mark Zuckerberg', 'address': '1 Hacker Way, Menlo Park, California 94025', 'phone_number': nan, 'email': 'mz@fb.com'}, 'U002': {'name': 'Bill Gates', 'address': '440 5th Ave N., Seattle, WA 98109440 5th Ave N., Seattle, WA 98109', 'phone_number': '206-709-3100 ext. 7100', 'email': 'bill.gates@gatesfoundation.org'}}
+         573500 function calls (566173 primitive calls) in 2.510 seconds
+
+   Ordered by: cumulative time
