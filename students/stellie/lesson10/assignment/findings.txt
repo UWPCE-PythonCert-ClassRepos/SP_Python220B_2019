@@ -1,3 +1,36 @@
 Stella Kim
 Assignment 10: Metaprogramming
 
+DATA SETS: products, customers, rentals using previously created data
+generator, generate_data.py.
+
+RUN #1 (10 records in each data set)
+Output:
+Function: clear_collections              Time(s): 0.07448700           Records Processed: 0                   
+Function: import_data                    Time(s): 0.14229000           Records Processed: 30                  
+Function: show_available_products        Time(s): 0.00414500           Records Processed: 10                  
+Function: show_rentals                   Time(s): 0.00369400           Records Processed: 0 
+
+
+RUN #2 (1000 records in each data set)
+Output:
+Function: clear_collections              Time(s): 0.07617000           Records Processed: 0                   
+Function: import_data                    Time(s): 0.19639700           Records Processed: 3000                
+Function: show_available_products        Time(s): 0.01024100           Records Processed: 954                 
+Function: show_rentals                   Time(s): 0.00448200           Records Processed: 1   
+
+
+RUN #3 (100,000 records in each data set)
+Output:
+Function: clear_collections              Time(s): 0.07033300           Records Processed: 0                   
+Function: import_data                    Time(s): 5.88434600           Records Processed: 300000              
+Function: show_available_products        Time(s): 0.51264800           Records Processed: 96177               
+Function: show_rentals                   Time(s): 4.08810600           Records Processed: 103    
+
+
+FINDINGS
+Initially, the process time for import_data was 0.0047430000 seconds for 30
+records.  As I increase the records by x100 each run, you can see that the
+process time is faster for more records, 0.0000654657 seconds for 3000 records
+and 0.0000196145 for 300,000 records respectively.  It seems this method is 
+more efficient for processing larger sets of data.

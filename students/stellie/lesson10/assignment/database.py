@@ -90,7 +90,7 @@ class DataTimer(type):
     def __new__(cls, clsname, bases, clsdict):
         for name, value in clsdict.items():
             if not name.startswith('__'):
-                clsdict[name] = timing_decorator(value)  # time function
+                clsdict[name] = timing_decorator(value)  # time decorator
         return super(DataTimer, cls).__new__(cls, clsname, bases, clsdict)
 
 
