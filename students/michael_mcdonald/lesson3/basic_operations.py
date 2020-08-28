@@ -42,18 +42,13 @@ class Connection:
 
     database = pw.SqliteDatabase('customers.db', pragmas={'foreign_keys': 1})
     connection_result = ''
-    try:
-        database.connect()
-        logger.info('connection successful')
-        connection_result = 'connection successful'
-    except sqlite3.Error as error:
-        logger.error('sqlite3 connection error %s', error, exc_info=True)
-        connection_result = 'connection failed'
+    database.connect()
+    logger.info('connection successful')
+    connection_result = 'connection successful'
 
 
 class BaseModel(pw.Model):
     """create a db base model"""
-
 
     class Meta():
         """ add meta class"""
@@ -101,8 +96,6 @@ def add_customer_handler():
         home_address = input('Home address:')
         phone_number = input('Phone number:')
         email_address = input('Email address:')
-        # active or inactive only
-        # status = input('is the customer (a)ctive or (i)nactive?:').lower()
         is_status = False
         while not is_status:
             status = str(input('Is the customer (a)ctive or (i)nactive? >'))
@@ -163,8 +156,6 @@ def search_customer_handler():
                 print('{} not found'.format(customer_id))
                 results = '{} not found'.format(customer_id)
             is_status = True
-        else:
-            print('Please enter a customer id. Enter l to see a list of customers >')
     return results
 
 
@@ -194,6 +185,7 @@ def search_customer(customer_id):
 
 def delete_customer_handler():
     """ determine customer and call delete_customer"""
+    result = ''
     is_status = False
     while not is_status:
         customer_id = input('Enter the customer ID to be deleted. To see a list enter l >')
@@ -206,6 +198,7 @@ def delete_customer_handler():
             if tmp_customer is None:
                 print('- Customer not found - ')
                 is_status = False
+                return result
             if tmp_customer is not None:
                 delete_customer(customer_id)
                 is_status = True
@@ -300,6 +293,7 @@ def main_menu(user_prompt=None):
                      '4': update_customer_credit_handler,
                      '5': list_active_customers,
                      '6': delete_all_customers,
+                     '7': insert_new_customers,
                      'q': exit_program}
     while user_prompt not in valid_prompts:
         print('Please choose from the following options ({options_str}):')
@@ -309,6 +303,7 @@ def main_menu(user_prompt=None):
         print('4. Update customer credit')
         print('5. List active customers')
         print('6. Delete all customers')
+        print('7. Insert test customers')
         print('q. Quit')
         user_prompt = input('>')
     return valid_prompts.get(user_prompt)
@@ -342,8 +337,6 @@ def exit_program():
 
 
 if __name__ == '__main__':
-    print('running Lesson3 basic_operations')
-    insert_new_customers()
     while True:
         main_menu()()
         input("Press Enter to continue...........")

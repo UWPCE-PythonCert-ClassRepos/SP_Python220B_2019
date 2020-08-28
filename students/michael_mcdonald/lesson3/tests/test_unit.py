@@ -5,6 +5,7 @@
 # pylint: disable=W0614
 # pylint: disable-msg=R0913
 # pylint: disable-msg=too-many-locals
+# pylint: disable=R0904
 
 from unittest import TestCase
 from unittest.mock import patch
@@ -12,6 +13,7 @@ import unittest.mock
 import uuid
 import sqlite3
 import logging
+# import pytest
 import peewee as pw
 import lesson3.basic_operations as ba  # pylint: disable=import-error
 
@@ -66,7 +68,7 @@ class Connection:
 class BaseModel(pw.Model):
     """create a db base model"""
 
-    class Meta():
+    class Meta:
         """ add meta class"""
 
         my_connection = Connection()
@@ -100,7 +102,6 @@ def insert_new_customer():
             Customer.insert_many(new_customers).execute()
 
 
-# python -m coverage run --source=lesson3 -m unittest lesson3\tests\test_unit.py
 class TestBasicOperations(TestCase):
     """test TestBasicOperations class"""
 
@@ -135,6 +136,30 @@ class TestBasicOperations(TestCase):
         self.assertEqual(new_credit_limit, 3000)
         print(mock_input)
 
+    @patch('builtins.input', side_effect=['l', c_id, '3000'])
+    def test_update_customer_credit_handler_list(self, mock_input):
+        """test update credit"""
+        ba.delete_all_customers()
+        insert_new_customer()
+        ba.update_customer_credit_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is not None:
+            new_credit_limit = tmp_customer.credit_limit
+        self.assertEqual(new_credit_limit, 3000)
+        print(mock_input)
+
+    @patch('builtins.input', side_effect=[c_id, 'three-thousand', '3000'])
+    def test_update_customer_credit_handler_isdigit(self, mock_input):
+        """test update credit"""
+        ba.delete_all_customers()
+        insert_new_customer()
+        ba.update_customer_credit_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is not None:
+            new_credit_limit = tmp_customer.credit_limit
+        self.assertEqual(new_credit_limit, 3000)
+        print(mock_input)
+
     @patch('builtins.input', side_effect=[c_id])
     def test_delete_customer_handler(self, mock_input):
         """test delete customer handler"""
@@ -152,10 +177,80 @@ class TestBasicOperations(TestCase):
         self.assertEqual(result, 'customer deleted')
         print(mock_input)
 
+    @patch('builtins.input', side_effect=['l', c_id])
+    def test_delete_customer_handler_list(self, mock_input):
+        """test delete customer handler"""
+
+        ba.delete_all_customers()
+        insert_new_customer()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is not None:
+            result = 'customer exists'
+        self.assertEqual(result, 'customer exists')
+        ba.delete_customer_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer deleted'
+        self.assertEqual(result, 'customer deleted')
+        print(mock_input)
+
+    @patch('builtins.input', side_effect=['123456789'])
+    def test_delete_customer_handler_customer_not_found(self, mock_input):
+        """test delete customer handler"""
+
+        ba.delete_all_customers()
+        insert_new_customer()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is not None:
+            result = 'customer exists'
+        self.assertEqual(result, 'customer exists')
+        ba.delete_customer_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer does not exist'
+        self.assertEqual(result, 'customer exists')
+        print(mock_input)
+
     @patch('builtins.input', side_effect=[CUSTOMER_ID, NAME, LASTNAME,
                                           HOME_ADDRESS, PHONE_NUMBER,
                                           EMAIL_ADDRESS, 'a', '3000'])
-    def test_add_customer_handler(self, mock_input):
+    def test_active_customer_handler_add(self, mock_input):
+        """test add customer handler"""
+
+        ba.delete_all_customers()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer does not exist'
+        self.assertEqual(result, 'customer does not exist')
+        ba.add_customer_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer does exist'
+        self.assertEqual(result, 'customer does exist')
+        print(mock_input)
+
+    @patch('builtins.input', side_effect=[CUSTOMER_ID, NAME, LASTNAME,
+                                          HOME_ADDRESS, PHONE_NUMBER,
+                                          EMAIL_ADDRESS, 'i', '3000'])
+    def test_add_customer_handler_inactive(self, mock_input):
+        """test add customer handler"""
+
+        ba.delete_all_customers()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer does not exist'
+        self.assertEqual(result, 'customer does not exist')
+        ba.add_customer_handler()
+        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
+        if tmp_customer is None:
+            result = 'customer does exist'
+        self.assertEqual(result, 'customer does exist')
+        print(mock_input)
+
+    @patch('builtins.input', side_effect=[CUSTOMER_ID, NAME, LASTNAME,
+                                          HOME_ADDRESS, PHONE_NUMBER,
+                                          EMAIL_ADDRESS, 'i', 'three-thousand', '3000'])
+    def test_add_customer_handler_isdigit(self, mock_input):
         """test add customer handler"""
 
         ba.delete_all_customers()
@@ -180,6 +275,26 @@ class TestBasicOperations(TestCase):
         self.assertEqual(results, '{}\tname3\tlastname3'.format(TestBasicOperations.c_id))
         print(mock_input)
 
+    @patch('builtins.input', side_effect=['l', c_id])
+    def test_search_customer_handler_list(self, mock_input):
+        """test delete customer handler"""
+
+        ba.delete_all_customers()
+        insert_new_customer()
+        results = ba.search_customer_handler()
+        self.assertEqual(results, '{}\tname3\tlastname3'.format(TestBasicOperations.c_id))
+        print(mock_input)
+
+    @patch('builtins.input', side_effect=['', c_id])
+    def test_search_customer_handler_empty_cid(self, mock_input):
+        """test delete customer handler"""
+
+        ba.delete_all_customers()
+        insert_new_customer()
+        results = ba.search_customer_handler()
+        self.assertEqual(results, ' not found')
+        print(mock_input)
+
     def test_insert_new_customers(self):
         """test insert_new_customers"""
 
@@ -198,6 +313,8 @@ class TestBasicOperations(TestCase):
         self.assertEqual(my_unittest_result, my_test_result)
         self.assertEqual(my_unittest_result, 'connection successful')
         self.assertEqual(my_test_result, 'connection successful')
+        # self.assertRaises(pw.DoesNotExist, ba.Connection())
+        # self.assertRaises(pw.OperationalError, ba.Connection)
 
     def test_is_digit(self):
         """test is digit"""
@@ -219,6 +336,10 @@ class TestBasicOperations(TestCase):
         self.assertEqual(test_results.email_address, 'email_address1')
         self.assertEqual(test_results.status, 'active')
         self.assertEqual(test_results.credit_limit, 1000)
+        #self.assertRaises(pw.IntegrityError, ba.add_customer,
+        #                 customer_id, 'a',
+        #                  'a', 'a', 'a', 'a', 'a', '20')
+
 
     def test_search_customer(self):
         """test search customer method"""
@@ -234,6 +355,9 @@ class TestBasicOperations(TestCase):
         self.assertEqual(test_results['email_address'], 'email_address1')
         self.assertEqual(test_results['status'], 'active')
         self.assertEqual(test_results['credit_limit'], 1000)
+        #self.assertRaises(pw.DoesNotExist, ba.search_customer, 2000)
+        #with self.assertRaises(pw.DoesNotExist):
+        #   test = test_results(111)
 
     def test_delete_customer(self):
         """test delete customer method"""
