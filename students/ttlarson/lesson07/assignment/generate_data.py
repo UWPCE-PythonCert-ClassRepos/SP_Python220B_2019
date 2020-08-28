@@ -1,12 +1,28 @@
-import random, csv
+''' code to generate test data '''
+import csv
+import random
 import pandas as pd
+
+# pylint: disable=invalid-name
 
 END = 10000
 
 if __name__ == '__main__':
-    df_customer = pd.DataFrame(columns=['user_id', 'name', 'address', 'phone_number', 'email'])
-    df_product = pd.DataFrame(columns=['product_id', 'description', 'product_type', 'quantity_available'])
-    df_rental = pd.DataFrame(columns=['rental_id', 'product_id', 'user_id', 'dt_start', 'dt_end', 'quantity'])
+    df_customer = pd.DataFrame(columns=['user_id',
+                                        'name',
+                                        'address',
+                                        'phone_number',
+                                        'email'])
+    df_product = pd.DataFrame(columns=['product_id',
+                                       'description',
+                                       'product_type',
+                                       'quantity_available'])
+    df_rental = pd.DataFrame(columns=['rental_id',
+                                      'product_id',
+                                      'user_id',
+                                      'dt_start',
+                                      'dt_end',
+                                      'quantity'])
 
     list_random = random.sample(range(0, END), END)
     i = 0
@@ -17,9 +33,22 @@ if __name__ == '__main__':
         rental_id = 'R{}{}'.format(num_0f_0*'0', num)
         print('{}: {}, {}, {}'.format(i, user_id, product_id, rental_id))
 
-        df_customer.loc[i] = [user_id, 'firstname, lastname', '1 Nowhere Dr, Middleland, NO', '999-999-9999', 'me@here.com']
-        df_product.loc[i] = [product_id, 'Some Product', 'Some Product Type', num]
-        df_rental.loc[i] = [rental_id, product_id, user_id, '0000-00-00', '9999-99-99', num]
+        df_customer.loc[i] = [user_id,
+                              'firstname, lastname',
+                              '1 Nowhere Dr, Middleland, NO',
+                              '999-999-9999',
+                              'me@here.com']
+        df_product.loc[i] = [product_id,
+                             'Some Product',
+                             'Some Product Type',
+                             num]
+        df_rental.loc[i] = [rental_id,
+                            product_id,
+                            user_id,
+                            '0000-00-00',
+                            '9999-99-99',
+                            num]
+
 
         i = i + 1
 
