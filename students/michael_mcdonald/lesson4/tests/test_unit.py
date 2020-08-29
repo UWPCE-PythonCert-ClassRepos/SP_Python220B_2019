@@ -15,7 +15,7 @@ import sqlite3
 import logging
 # import pytest
 import peewee as pw
-import lesson3.basic_operations as ba  # pylint: disable=import-error
+import lesson4.basic_operations as ba  # pylint: disable=import-error
 
 # set up logging
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
@@ -37,8 +37,8 @@ logger.addHandler(console_handler)
 # integration testing
 # linting
 # cd C:\Users\mimcdona\Dropbox\UW\UW-Python220_Project
-# python -m unittest lesson3\tests\test_unit.py
-# python -m coverage run --source=lesson3 -m unittest lesson3\tests\test_unit.py
+# python -m unittest lesson4\tests\test_unit.py
+# python -m coverage run --source=lesson4 -m unittest lesson4\tests\test_unit.py
 # python -m coverage report -m
 
 CUSTOMER_ID = '3111111-e25a-11ea-9f69-287fcf638d95'
@@ -192,23 +192,6 @@ class TestBasicOperations(TestCase):
         if tmp_customer is None:
             result = 'customer deleted'
         self.assertEqual(result, 'customer deleted')
-        print(mock_input)
-
-    @patch('builtins.input', side_effect=['123456789'])
-    def test_delete_customer_handler_customer_not_found(self, mock_input):
-        """test delete customer handler"""
-
-        ba.delete_all_customers()
-        insert_new_customer()
-        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
-        if tmp_customer is not None:
-            result = 'customer exists'
-        self.assertEqual(result, 'customer exists')
-        ba.delete_customer_handler()
-        tmp_customer = Customer.get_or_none(Customer.customer_id == TestBasicOperations.c_id)
-        if tmp_customer is None:
-            result = 'customer does not exist'
-        self.assertEqual(result, 'customer exists')
         print(mock_input)
 
     @patch('builtins.input', side_effect=[CUSTOMER_ID, NAME, LASTNAME,

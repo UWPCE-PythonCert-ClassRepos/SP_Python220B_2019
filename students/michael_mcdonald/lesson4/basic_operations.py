@@ -1,13 +1,16 @@
 # pylint: disable=W0614
 # pylint: disable-msg=R0913
-"""lesson 3 michael mcdonald """
+"""lesson 4 michael mcdonald """
 
 import uuid
 import sqlite3
 import logging
 import sys
+import operator
 # pylint: disable=wildcard-import
+from functools import reduce
 import peewee as pw
+
 
 # set up logging
 LOG_FORMAT = "%(asctime)s %(filename)s:%(lineno)-4d %(levelname)s %(message)s"
@@ -15,6 +18,9 @@ formatter = logging.Formatter(LOG_FORMAT)
 file_handler = logging.FileHandler('basic_operations.log')
 file_handler.setLevel(logging.INFO)
 file_handler.setFormatter(formatter)
+sql_file_handler = logging.FileHandler('db.log')
+sql_file_handler.setLevel(logging.INFO)
+sql_file_handler.setFormatter(formatter)
 
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.ERROR)
@@ -26,15 +32,20 @@ logger.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-
-# Create some functional and unit tests for the model. Store them in the tests directory.
-# Develop tests, and show some tests passing. Show other tests failing.
-# general requirements, specific to three user types
-# Your code should not trigger any warnings or errors from Pylint.
+sql_logger = logging.getLogger('peewee')
+sql_logger.addHandler(logging.StreamHandler())
+sql_logger.setLevel(logging.INFO)
+sql_logger.addHandler(sql_file_handler)
+sql_logger.addHandler(console_handler)
 
 
 # initiate a new sqlite3 db
 # pragmas={'foreign_keys': 1} recommended to avoid foreign key errors
+database = pw.SqliteDatabase('customers.db', pragmas={'foreign_keys': 1})
+try:
+    database.connect()
+except sqlite3.Error as sqlerror:
+    sql_logger.error('sqlite3 connection error %s', sqlerror, exc_info=True)
 
 
 class Connection:
@@ -43,7 +54,6 @@ class Connection:
     database = pw.SqliteDatabase('customers.db', pragmas={'foreign_keys': 1})
     connection_result = ''
     database.connect()
-    logger.info('connection successful')
     connection_result = 'connection successful'
 
 
@@ -57,7 +67,7 @@ class BaseModel(pw.Model):
 
 
 class Customer(BaseModel):
-    """ customer model/table"""
+    """ customer model/table """
 
     customer_id = pw.CharField(max_length=200, primary_key=True, null=False)
     name = pw.CharField(max_length=200, null=False)
@@ -74,15 +84,57 @@ try:
     database = my_connection.database
     database.create_tables([Customer])
 except sqlite3.Error as sqlerror:
-    logger.error('error creating table %s', sqlerror, exc_info=True)
+    sql_logger.error('error creating table %s', sqlerror, exc_info=True)
 
-
+# helper functions and methods
 def is_digit(check_input):
-    """function checking if your string is a pure digit, int  return : bool"""
+    """ function checking if your string is a pure digit, int  return : bool """
 
     if check_input.isdigit():
         return True
     return False
+
+
+def to_proper_case(s):
+    """ convert strings to Proper case """
+    return str(s).title()
+
+
+def add_tab(s):
+    """ add tabs """
+    return str(s) + '\t'
+
+
+def add_header():
+    """ add customer table header """
+    header = 'CustomerID\tName\tLastname\tHome Address\tEmail Address\tStatus\tCredit Limit'
+    print(header)
+
+
+# use lambda & filter to print correct message
+def user_messages(user_message_type):
+    """ standardized messaging is generated based on the the request type """
+
+    mess_dict = {'update_credit_success': '- customer credit updated successfully-',
+                 'cust_delete_success': '- customer delete success -',
+                 'del_all_customers': '- all customers deleted. good luck on your next job -',
+                 'empty_customer_set': '- no customer(s) found -'}
+    filtered_mess_list = dict(filter(lambda elem: elem[0] == user_message_type, mess_dict.items()))
+    print(list(filtered_mess_list.values())[0])
+
+
+# use map and reduce to simplify list management
+def print_customer_data(customer_id='', name='', lastname='', home_address='',
+                        email_address='', status='', credit_limit=''):
+    """ create all print formatting here """
+
+    tmp_id = '{}\t'.format(customer_id)
+    tmp_list = [name, lastname, home_address, email_address, status, credit_limit]
+    tmp_list = map(to_proper_case, tmp_list)
+    tmp_list = list(map(add_tab, tmp_list))
+    tmp_list.insert(0, tmp_id)  # add in customer_id
+    tmp_list = reduce(operator.add, tmp_list)
+    print(tmp_list)
 
 
 def add_customer_handler():
@@ -107,7 +159,6 @@ def add_customer_handler():
             status = 'active'
         elif status == 'i':
             status = 'inactive'
-
         credit_limit = input('What is their credit limit >')
         while not is_digit(credit_limit):
             print('Integers only')
@@ -129,11 +180,13 @@ def add_customer(customer_id, name, lastname, home_address, phone_number,
                                            status=status, credit_limit=credit_limit,
                                            customer_id=customer_id)
             tmp_customer.save()
+            add_header()
             for c in Customer.select().where(Customer.customer_id == customer_id):
-                print('{}\t{}\t{} created'.format(c.customer_id, c.name, c.lastname))
-            logger.info('customer %s created', customer_id)
+                print_customer_data(c.customer_id, c.name, c.lastname, c.home_address,
+                                    c.email_address, c.status, c.credit_limit)
+            sql_logger.info('customer %s created', customer_id)
     except sqlite3.Error as e:
-        logger.error('error creating customer\t%s', e, exc_info=True)
+        sql_logger.error('error creating customer\t%s', e, exc_info=True)
 
 
 def search_customer_handler():
@@ -143,25 +196,29 @@ def search_customer_handler():
     while not is_status:
         customer_id = input('Please enter a customer id. Enter l to see a list of customers >')
         if customer_id == 'l'.lower():
+            add_header()
             for c in Customer.select():
-                print('{}\t{}\t{}'.format(c.customer_id, c.name, c.lastname))
+                print_customer_data(c.customer_id, c.name, c.lastname, c.home_address,
+                                    c.email_address, c.status, c.credit_limit)
         elif customer_id != 'l'.lower():
-            tmp_customer = search_customer(customer_id)
-            if len(tmp_customer) != 0:
-                print('{}\t{}\t{}'.format(tmp_customer['customer_id'],
-                                          tmp_customer['name'], tmp_customer['lastname']))
-                results = '{}\t{}\t{}'.format(tmp_customer['customer_id'],
-                                              tmp_customer['name'], tmp_customer['lastname'])
+            c = search_customer(customer_id)
+            add_header()
+            if len(c) != 0:
+                print_customer_data(c['customer_id'], c['name'], c['lastname'], c['home_address'],
+                                    c['email_address'], c['status'], c['credit_limit'])
+                results = '{}\t{}\t{}'.format(c['customer_id'],
+                                              c['name'], c['lastname'])
             else:
                 print('{} not found'.format(customer_id))
                 results = '{} not found'.format(customer_id)
             is_status = True
+        else:
+            print('Please enter a customer id. Enter l to see a list of customers >')
     return results
 
 
 def search_customer(customer_id):
-    """return a dictionary object with name, lastname, email address and phone number
-    of a customer or an empty dictionary object if no customer was found."""
+    """ returns a dictionary of a customer or an empty dictionary if no customer found """
 
     results = {}
     try:
@@ -176,29 +233,29 @@ def search_customer(customer_id):
                        'credit_limit': tmp_customer.credit_limit,
                        'customer_id': tmp_customer.customer_id}
         if tmp_customer is None:
-            logger.info('customer not found returned %s', customer_id, exc_info=True)
+            sql_logger.info('customer not found returned %s', customer_id, exc_info=True)
         return results  # just return an empty dictionary
     except IndexError:
         logger.error('IndexError thrown, error finding customer\t%s', customer_id, exc_info=True)
-        print('customer not found')
+        user_messages('empty_customer_set')
 
 
 def delete_customer_handler():
     """ determine customer and call delete_customer"""
-    result = ''
     is_status = False
     while not is_status:
         customer_id = input('Enter the customer ID to be deleted. To see a list enter l >')
         if customer_id == 'l'.lower():
+            add_header()
             for c in Customer.select():
-                print('{}\t{}\t{}'.format(c.customer_id, c.name, c.lastname))
+                print_customer_data(c.customer_id, c.name, c.lastname, c.home_address,
+                                    c.email_address, c.status, c.credit_limit)
         elif customer_id != 'l'.lower():
             # check first if exists before passing to the delete method
             tmp_customer = Customer.get_or_none(Customer.customer_id == customer_id)
             if tmp_customer is None:
                 print('- Customer not found - ')
                 is_status = False
-                return result
             if tmp_customer is not None:
                 delete_customer(customer_id)
                 is_status = True
@@ -207,17 +264,15 @@ def delete_customer_handler():
 def delete_customer(customer_id):
     """ delete a customer from the sqlite3 database"""
 
-    tmp_customer = Customer.get(Customer.customer_id == customer_id)
     try:
-        tmp_name = tmp_customer.name
-        tmp_lastname = tmp_customer.lastname
-        tmp_id = tmp_customer.customer_id
-        c_to_del = Customer.get(Customer.customer_id == customer_id)
-        c_to_del.delete_instance()
-        logger.info('%s %s %s deleted successfully', tmp_name, tmp_lastname, tmp_id)
-        print('{} {}, {} deleted successfully'.format(tmp_name, tmp_lastname, tmp_id))
+        c = Customer.get(Customer.customer_id == customer_id)
+        sql_logger.info('%s %s %s deleted successfully', c.name, c.lastname, customer_id)
+        user_messages('cust_delete_success')
+        print_customer_data(c.customer_id, c.name, c.lastname, c.home_address, c.email_address,
+                            c.status, c.credit_limit)
+        c.delete_instance()
     except sqlite3.Error as e:
-        logger.error('delete customer error\t%s', e, exc_info=True)
+        sql_logger.error('delete customer error\t%s', e, exc_info=True)
 
 
 def update_customer_credit_handler():
@@ -226,20 +281,22 @@ def update_customer_credit_handler():
     while not is_status:
         customer_id = input('Enter the customer ID to be updated. To see a list enter l >')
         if customer_id == 'l'.lower():
+            add_header()
             for c in Customer.select():
-                print('{}\t{}\t{}'.format(c.customer_id, c.name, c.lastname))
+                print_customer_data(c.customer_id, c.name, c.lastname, c.home_address,
+                                    c.email_address, c.status, c.credit_limit)
         elif customer_id != 'l'.lower():
             # check first if exists before passing to the delete method
-            tmp_customer = Customer.get_or_none(Customer.customer_id == customer_id)
-            if tmp_customer is not None:
+            c = Customer.get_or_none(Customer.customer_id == customer_id)
+            if c is not None:
                 new_credit_limit = input('Enter new credit limit >')
                 while not is_digit(new_credit_limit):
                     print('Enter integers only')
                     new_credit_limit = input('Enter new credit limit >')
                 update_customer_credit(customer_id, new_credit_limit)
                 is_status = True
-            if tmp_customer is None:
-                print('- customer not found -')
+            if c is None:
+                user_messages('empty_customer_set')
                 is_status = False
 
 
@@ -248,22 +305,26 @@ def update_customer_credit(customer_id, new_credit_limit):
     or raise a ValueError exception if the customer does not exist"""
 
     try:
-        query = Customer.update(credit_limit=new_credit_limit). \
+        query = Customer.update(credit_limit=new_credit_limit).\
             where(Customer.customer_id == customer_id)
         query.execute()
-        logger.info('%s\tcredit updated\t new limit\t%s', customer_id, new_credit_limit)
-        print('{} credit updated successfully. New limit {}'.format(customer_id, new_credit_limit))
+        c = Customer.get(Customer.customer_id == customer_id)
+        user_messages('update_credit_success')
+        add_header()
+        print_customer_data(c.customer_id, c.name, c.lastname, c.home_address, c.email_address,
+                            c.status, c.credit_limit)
+        sql_logger.info('%s\tcredit updated\t new limit\t%s', customer_id, new_credit_limit)
     except sqlite3.Error as e:
-        logger.error('update customer credit error\t%s', e, exc_info=True)
+        sql_logger.error('update customer credit error\t%s', e, exc_info=True)
 
 
 def list_active_customers():
-    """list all active customers"""
+    """list all active customers using comprehension"""
     cust_cnt = Customer.select().where(Customer.status == 'active').count()
+    add_header()
     for c in Customer.select().where(Customer.status == 'active'):
-        print('{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(c.customer_id, c.name, c.lastname,
-                                                  c.home_address, c.email_address,
-                                                  c.status, c.credit_limit))
+        print_customer_data(c.customer_id, c.name, c.lastname, c.home_address, c.email_address,
+                            c.status, c.credit_limit)
     return cust_cnt
 
 
@@ -271,41 +332,41 @@ def delete_all_customers():
     """delete all customers in database"""
 
     try:
-        query = Customer.select()  # check for empty table
-        if query.exists(None):
+        customers = Customer.select()  # check for empty table
+        if customers.exists(None):
             for c in Customer.select():
                 c_to_del = Customer.get(Customer.customer_id == c.customer_id)
                 c_to_del.delete_instance(None)
-                logger.info('%s\tdeleted', c.customer_id)
-            print('all customers deleted. good luck on your next job.')
+                sql_logger.info('%s\tdeleted', c.customer_id)
+            user_messages('del_all_customers')
         else:
-            print('Customer tables is already empty')
+            user_messages('empty_customer_set')
     except sqlite3.Error as e:
-        logger.error('error deleting customers\t%s', e, exc_info=True)
+        sql_logger.error('error deleting customers\t%s', e, exc_info=True)
 
 
 def main_menu(user_prompt=None):
     """main menu"""
 
-    valid_prompts = {'1': add_customer_handler,
-                     '2': search_customer_handler,
-                     '3': delete_customer_handler,
-                     '4': update_customer_credit_handler,
-                     '5': list_active_customers,
-                     '6': delete_all_customers,
-                     '7': insert_new_customers,
-                     'q': exit_program}
+    valid_prompts = {"1": add_customer_handler,
+                     "2": search_customer_handler,
+                     "3": delete_customer_handler,
+                     "4": update_customer_credit_handler,
+                     "5": list_active_customers,
+                     "6": delete_all_customers,
+                     "7": insert_new_customers,
+                     "q": exit_program}
     while user_prompt not in valid_prompts:
-        print('Please choose from the following options ({options_str}):')
-        print('1. Add customer')
-        print('2. Search for a customer')
-        print('3. Delete a customer')
-        print('4. Update customer credit')
-        print('5. List active customers')
-        print('6. Delete all customers')
-        print('7. Insert test customers')
-        print('q. Quit')
-        user_prompt = input('>')
+        print("Please choose from the following options ({options_str}):")
+        print("1. Add customer")
+        print("2. Search for a customer")
+        print("3. Delete a customer")
+        print("4. Update customer credit")
+        print("5. List active customers")
+        print("6. Delete all customers")
+        print("7. Insert test customers")
+        print("q. Quit")
+        user_prompt = input(">")
     return valid_prompts.get(user_prompt)
 
 
