@@ -1,0 +1,16 @@
+Function: clear_collections              Time(s): 0.07448700           Records Processed: 0                   
+Function: import_data                    Time(s): 0.14229000           Records Processed: 30                  
+Function: show_available_products        Time(s): 0.00414500           Records Processed: 10                  
+Function: show_rentals                   Time(s): 0.00369400           Records Processed: 0                   
+Function: clear_collections              Time(s): 0.07617000           Records Processed: 0                   
+Function: import_data                    Time(s): 0.19639700           Records Processed: 3000                
+Function: show_available_products        Time(s): 0.01024100           Records Processed: 954                 
+Function: show_rentals                   Time(s): 0.00448200           Records Processed: 1                   
+Function: clear_collections              Time(s): 0.07033300           Records Processed: 0                   
+Function: import_data                    Time(s): 5.88434600           Records Processed: 300000              
+Function: show_available_products        Time(s): 0.51264800           Records Processed: 96177               
+Function: show_rentals                   Time(s): 4.08810600           Records Processed: 103                 
+Function: clear_collections              Time(s): 0.06775900           Records Processed: 0                   
+Function: import_data                    Time(s): 5.64358700           Records Processed: 300000              
+Function: show_available_products        Time(s): 0.50323600           Records Processed: 96177               
+Function: show_rentals                   Time(s): 4.14834800           Records Processed: 103                 
