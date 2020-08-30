@@ -1,0 +1,35 @@
+### exercise.csv notes:
+- A column: guid (a unique identity)
+- B column: 1:10
+- C column: 2:11
+- D column: 3:12
+- E column: 4:13
+- F column: date (MM/DD/YYYY)
+- G column: 'ao' or null
+
+### poor_perf.py notes:
+- Outputs a count of each year in the file for years 2013:2018
+- Outputs a count of 'ao'
+
+### Task1
+- Take the data file, and expand it (following the format for the 10 records) so that it contains one million records.
+- (expand_data.py - output: data/exercise_million.csv)
+
+### Task2
+- Changed the poor_perf file to import the data/exercise_million.csv file
+- `python3 -m cProfile poor_perf.py`: 1039951 function calls (1039934 primitive calls) in 4.826 seconds
+
+- Here the append of list was called 1000012 times due to multiple loops, this can be improved.
+
+- After the improvements were made, I checked that poor_perf returned exactly the same thing as good_perf
+
+`python3 poor_perf.py`
+{'2013': 93990, '2014': 93710, '2015': 93501, '2016': 93817, '2017': 187112, '2018': 0}
+'ao' was found 500176 times
+
+`python3 good_perf.py`
+{'2013': 93990, '2014': 93710, '2015': 93501, '2016': 93817, '2017': 93490, '2018': 93622}
+'ao' was found 500176 times
+
+`python3 -m cProfile good_perf.py`: 1020763 function calls (1020746 primitive calls) in 2.027 seconds
+- performance has improved from 4.826 to 2.027

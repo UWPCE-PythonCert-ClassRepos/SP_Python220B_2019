@@ -7,6 +7,9 @@ import datetime
 import csv
 
 def analyze(filename):
+    """
+    returns counts of years 2013-2018, and counts of ao
+    """
     start = datetime.datetime.now()
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -57,9 +60,11 @@ def analyze(filename):
     return (start, end, year_count, found)
 
 def main():
-    filename = "data/exercise.csv"
+    """
+    reads file and runs analyze
+    """
+    filename = "data/exercise_million.csv"
     analyze(filename)
-
 
 if __name__ == "__main__":
     main()
