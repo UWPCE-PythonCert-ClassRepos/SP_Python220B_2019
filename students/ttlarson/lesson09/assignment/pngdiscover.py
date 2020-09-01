@@ -1,5 +1,7 @@
 """ this utility finds all the PNG files and add to a list of lists  """
 
+# pylint: disable=invalid-name
+
 import logging
 import os
 
@@ -23,8 +25,8 @@ def find_png_files(directory):
             logging.debug('Adding file list: %s', file_list)
             list_of_lists.append(cur_dir)
             list_of_lists.append(file_list)
-        
-        if len(dirs):
+
+        if len(dirs) > 0:
             for d in dirs:
                 find_png_files(d)
 

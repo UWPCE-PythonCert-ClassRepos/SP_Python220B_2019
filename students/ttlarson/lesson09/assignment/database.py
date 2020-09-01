@@ -7,20 +7,26 @@ This module returns for customer and rentals:
 
 ! mongo tip: use 127.0.0.1 on windows
 """
+
+# pylint: disable=broad-except
+# pylint: disable=too-many-locals
+# pylint: disable=invalid-name
+
 import logging
 import functools
 import os
+import sys
 from threading import Thread
 from timeit import default_timer as timer
 import pandas as pd
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 
-logging.basicConfig(level=logging.INFO)
-
-# pylint: disable=broad-except
-# pylint: disable=too-many-locals
-# pylint: disable=invalid-name
+# command line option to turn debugging info on/off
+if len(sys.argv) > 1 and sys.argv[1].lower() in ('1', 'y', 'yes'):
+    logging.basicConfig(level=logging.DEBUG)
+else:
+    logging.basicConfig(level=logging.INFO)
 
 record_count_init = {
     "customers": 0,
