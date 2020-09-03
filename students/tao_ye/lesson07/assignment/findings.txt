@@ -1,0 +1,67 @@
+These are the Python scripts for this assignment:
+
+test.py: tests for various linear and parallel import functions.
+
+linear.py: serial version of import function to read 3 CSV files and load into Mongo database.
+
+parallel.py: muitithread version of import function to read 3 CSV files and load into Mongo database.
+It uses 3 threads to read 3 files and insert into three different collections in the database. Each 
+thread is responsible for reading a unique file and save to a unique collection. Therefore, the 
+operation is thread-safe. The overall time it takes to import all three files consurrently is compared 
+to that in the serial version of the import fuction in linear.py.
+
+parallel_contention_example.py: an example of multithreaded import that does not produce the correct
+results when two threads read the same CSV file and load into the same collection in the database.
+
+logging is built into each script. As the test.py calls the import function in each module, logging 
+information is saved to a file, respectively.
+
+In addition, the CSV data files are expanded to have 1000 records/rows each.
+
+
+Run test.py, and it will generate a test.log file. The test.log file content is copied below.
+
+>python -m unittest test.py
+
+test.py :42  Test Linear import...
+test.py :47  Linear import takes 1.9414781000000003 seconds in total.
+test.py :48  Customer tuple: (1000, 0, 1000, 0.6492123999999999) 
+test.py :49  Product tuple: (1000, 0, 1000, 0.6158168) 
+test.py :60  
+test.py :61  Test concurrent import...
+test.py :66  Concurrent import takes 1.3980095000000001 seconds in total.
+test.py :67  Customer tuple: (1000, 0, 1000, 1.3976954) 
+test.py :68  Product tuple: (1000, 0, 1000, 1.3976954) 
+test.py :72  
+test.py :73  Test concurrent import with contention ...
+test.py :74  Two threads import the same product CSV file and save to the same collection
+test.py :76  Product tuple from thread 1: (1000, 0, 1646, 1.0590431000000002) 
+test.py :77  Product tuple from thread 2: (1000, 0, 2000, 1.0590431000000002) 
+
+
+Findings: The time recorded for importing data is different from one execution to another. 
+In this particular run, the concurrent import takes 1.398 seconds in total vs. 1.941 seconds
+in the serial version. A speed up of about 28%. The record count shows that the import is 
+compeleted as expected. In this case, there are three CSV files to be imported into three
+collections in the database. The obvious arrangement is to use three threads with each one 
+working on one CSV file and its associated collection only. This way, the threads do not
+share data and won't intefere with each other's task. So the contention/race condition can
+be avoided.
+
+Just to see what could go wrong when multiple threads work on shared data, an example is created 
+where two threads import one CSV file to one collection in the database. The 
+logging information above show that each thread did the import independent of each other.
+When the thread 1 finishes, it shows the number of records in the collection is 1646 which
+is still in the middle of thread 2 import. By the time both threads finish, the total number 
+of the records is 2000 which is double the number of the records in the product CSV file. Wrong!
+To fix this issue, some complex coding change is probably required where once a record is read in 
+the CSV file, that record should be marked as processed so that record would only be imported
+once. But the coding change and the extra time to flag the record as processed and subsequent
+check on the flag would offset any performance gain using multithreads on one file. It is not 
+worth it.
+
+So my recommmendation is to use concurrent import when there are multiple files to be imported
+into multiple collections. One file should have one thread and one thread only. It is very easy
+to implement and can avoid contention or other concurrent issues. If there is only one file 
+to import, serial import works fine and multiple threads are not recommended.
+
