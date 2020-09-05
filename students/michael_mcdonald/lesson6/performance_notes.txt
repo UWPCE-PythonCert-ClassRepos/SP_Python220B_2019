@@ -1,0 +1,15 @@
+# performance improvement notes
+- debugged and coded on ~300k file
+- ran final on 1m records
+- analyzie function called inside a wrapper function to allow for arguments to be passed inside timeit
+- created a good and bad perf handlers to measure performance of each
+- 1m file creation added into a seperate class. Each time it is called it increases the test file by 100k rows
+- perf improvement #1, open just one reader (removed 2nd) ~40-50% savings (later convert to a generator
+- perf improvement #2, remove unused var assignment, ~.02-.03 at 300k rows
+- perf improvement #3, replaced reader with generator, ~.6 to .5 at 300k rows, potential huge savings with a very large file that could create mem errors
+
+- final performance with 1m rows:
+- analyzer runs nearly 3x more efeciently than original
+	good:	Line count:	1000000	Analyser ran in:	1.5719740999998066
+	(orig):	Line count:	1000000	Analyser ran in:	3.7611633999999867
+
