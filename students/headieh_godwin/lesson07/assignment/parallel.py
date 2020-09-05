@@ -5,6 +5,8 @@ import logging
 import csv
 import time
 import os
+import threading
+from queue import Queue
 from pymongo import MongoClient
 
 #too-many-locals,
@@ -31,10 +33,8 @@ class MongoDBConnection():
         '''Exits connection'''
         self.connection.close()
 
-
 def import_products(directory_name, product_file):
     '''Populate MongoDB database '''
-    p_start = time.time()
     product_error = 0
     product_file_path = os.path.join(directory_name, product_file)
     attempts = 0
@@ -44,7 +44,8 @@ def import_products(directory_name, product_file):
         data_base = mongo.connection.hpn
         products = data_base['products']
         initial = data_base.products.count_documents({})
-    # Attempt to import product data file into MongoDB db, create product collection
+
+    p_start = time.time()
     try:
         with open(product_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
@@ -59,21 +60,21 @@ def import_products(directory_name, product_file):
                 except NameError:
                     LOGGER.info('Error adding product to database')
                     product_error += 1
-
     except FileNotFoundError:
         LOGGER.info('Product file not found.')
         product_error += 1
+
     p_end = time.time()
+    p_time = (p_end-p_start)
 
-    return (attempts, initial, data_base.products.count_documents({}), p_end-p_start, product_error)
-
-
+    OUTPUT_QUEUE.put(
+        (attempts, initial, data_base.products.count_documents({}), p_time),
+        product_error, 'product_results')
 
 
 
 def import_customers(directory_name, customer_file):
     '''Populate MongoDB database '''
-    c_start = time.time()
     customer_error = 0
     customer_file_path = os.path.join(directory_name, customer_file)
     attempts = 0
@@ -83,7 +84,8 @@ def import_customers(directory_name, customer_file):
         data_base = mongo.connection.hpn
         customers = data_base['customers']
         initial = data_base.customers.count_documents({})
-    # Attempt to import product data file into MongoDB db, create product collection
+
+    c_start = time.time()
     try:
         with open(customer_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
@@ -95,30 +97,26 @@ def import_customers(directory_name, customer_file):
                                 'phone_number': row['phone_number'],
                                 'email': row['email']}
                 try:
-                    customers.insert_one(add_customer) # Fixed to use correct method
+                    customers.insert_one(add_customer)
                     LOGGER.info('Customer added!')
                 except NameError:
                     LOGGER.info('Error adding customer to database')
                     customer_error += 1
-
     except FileNotFoundError:
         LOGGER.info('Customer file not found.')
         customer_error += 1
+
     c_end = time.time()
+    c_time = (c_end-c_start)
 
-    return (attempts, initial,
-            data_base.customers.count_documents({}),
-            c_end-c_start, customer_error)
+    OUTPUT_QUEUE.put(
+        (attempts, initial, data_base.customers.count_documents({}), c_time),
+        customer_error, 'customer_results')
 
-
-
-
-
-def import_rentals(directory_name, rental_file):
+def import_rentals(directory_name, rentals_file):
     '''Populate MongoDB database '''
-    r_start = time.time()
     rental_error = 0
-    rental_file_path = os.path.join(directory_name, rental_file)
+    rentals_file_path = os.path.join(directory_name, rentals_file)
     attempts = 0
 
     mongo = MongoDBConnection()
@@ -126,27 +124,36 @@ def import_rentals(directory_name, rental_file):
         data_base = mongo.connection.hpn
         rentals = data_base['rentals']
         initial = data_base.rentals.count_documents({})
-    # Attempt to import product data file into MongoDB db, create product collection
+
+    r_start = time.time()
     try:
-        with open(rental_file_path, encoding='utf-8-sig') as file:
+        with open(rentals_file_path, encoding='utf-8-sig') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                add_rental = {'rental_id': row['rental_id'],
-                              'product_id': row['product_id'],
-                              'customer_id': row['customer_id']}
+                add_rentals = {'rental_id': row['rental_id'],
+                               'product_id': row['product_id'],
+                               'customer_id': row['customer_id']}
                 try:
-                    rentals.insert_one(add_rental) # Fixed to use correct method
-                    LOGGER.info('Rental added!')
+                    rentals.insert_one(add_rentals)
+                    LOGGER.info('Rentals added!')
                 except NameError:
-                    LOGGER.info('Error adding rental to database')
+                    LOGGER.info('Error adding rentals to database')
                     rental_error += 1
-
     except FileNotFoundError:
-        LOGGER.info('Rental file not found.')
+        LOGGER.info('Rentals file not found.')
         rental_error += 1
     r_end = time.time()
+    r_time = (r_end-r_start)
 
-    return (attempts, initial, data_base.rentals.count_documents({}), r_end-r_start, rental_error)
+    OUTPUT_QUEUE.put(
+        (attempts, initial, data_base.rentals.count_documents({}), r_time),
+        rental_error, 'rental_results')
+
+
+
+
+
+
 
 
 def show_available_products():
@@ -196,12 +203,24 @@ def clear_all():
 if __name__ == '__main__':
     clear_all()
     T_START = time.time()
-    PRODUCTS = import_products(os.getcwd(), 'data/products.csv')
-    CUSTOMERS = import_customers(os.getcwd(), 'data/customers.csv')
-    RENTALS = import_rentals(os.getcwd(), 'data/rentals.csv')
+
+    OUTPUT_QUEUE = Queue()
+    THREADS = []
+
+    THREADS.append(threading.Thread(target=import_products,
+                                    args=(os.getcwd(), 'data/products.csv'), daemon=True))
+
+    THREADS.append(threading.Thread(target=import_customers,
+                                    args=(os.getcwd(), 'data/customers.csv'), daemon=True))
+
+    THREADS.append(threading.Thread(target=import_rentals,
+                                    args=(os.getcwd(), 'data/rentals.csv'), daemon=True))
+
+    for thread in THREADS:
+        thread.start()
+    for thread in THREADS:
+        thread.join()
     T_END = time.time()
-    print("products", PRODUCTS)
-    print("customers", CUSTOMERS)
-    print("rentals", RENTALS)
+    print(THREADS)
     print("total time")
     print(T_END - T_START)

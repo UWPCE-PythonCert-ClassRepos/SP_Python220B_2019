@@ -1,0 +1,21 @@
+- Expanded fake data using expand_data.py script.
+
+- I originally timed parallel and linear and found that linear was actually
+slightly faster. This was before I amended the import logic for linear.py
+the way parallel was amended so that it can process the imports in parallel.
+After amending the linear.py script to have 3 separate imports, parallel is
+faster than linear. Therefore I don't really think it was worth it however it
+is possible that if the database was even larger that eventually linear would have
+been slower and worth the change. A point of contention might be when one thread
+is waiting for an object that is currently being held by another thread. So if
+you lock the object in the queue when another thread is expecting it, then the
+for loop that runs the threads will be infinite.
+
+Linear:
+products ~ 0.94s
+customers ~ 0.98s
+rentals ~ 0.93s
+total time ~ 2.87s
+
+Parallel:
+total time ~ 1.53s
