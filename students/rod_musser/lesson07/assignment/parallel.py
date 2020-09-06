@@ -64,8 +64,8 @@ def import_data(directory_name, data_file, table_name, field_names):
 
     start = datetime.datetime.now()
     logger = utilities.configure_logger('default', 'mongo.log')
-    mongo = MongoDBConnection()
     logger.debug('Connected to Mongo DB')
+    mongo = MongoDBConnection()
 
     with mongo:
         # mongodb database; it all starts here
@@ -216,7 +216,11 @@ def main():
     for i in range(3):
         thread = threading.Thread(target=worker, args=('./data', data[i], tables[i], fields[i]))
         thread.start()
+        # thread.join()
         threads.append(thread)
+
+    for thread in threads:
+        thread.join()
 
     for i in range(3):
         print(results.get())
