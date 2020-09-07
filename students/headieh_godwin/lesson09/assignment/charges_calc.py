@@ -35,11 +35,7 @@ def init_log(level):
               #1:only errors or critical messages
               #2: warnings or above,
               #3: everything is logged
-    try:
-        log_level = levels.get(int(level))
-    except KeyError:
-        log_level = logging.CRITICAL("Error: Level is not valid use 0,1,2,3 or 4")
-        sys.exit()
+    log_level = levels.get(int(level))
     # Format log file
     log_format = "%(asctime)s %(filename)s:%(lineno)-3d %(levelname)s %(message)s"
     filename = os.path.join(parent, timestr + "/charges_calc.log")

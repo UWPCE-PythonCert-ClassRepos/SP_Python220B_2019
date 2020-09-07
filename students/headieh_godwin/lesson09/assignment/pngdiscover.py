@@ -25,7 +25,7 @@ def getpngfiles(filepath):
     return FILELIST
 
 if __name__ == '__main__':
-    folder = os.getcwd()+'/data'
-    print(folder)
-    png_files = getpngfiles(folder)
-    print(png_files)
+    FOLDER = os.getcwd()+'/data'
+    print(FOLDER)
+    PNG_FILES = getpngfiles(FOLDER)
+    print(PNG_FILES)
