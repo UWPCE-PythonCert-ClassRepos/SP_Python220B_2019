@@ -1,0 +1,4 @@
+customer_id,firstname,lastname,address,phone_number,email
+c1,Susan,Anderson,1 A Ave Davis CA 95630,9161234567,emaila@gmail.com
+c2,Karen,Smith,2 B St Dana Point CA 92673,9491234567,emailb@hotmail.com
+c3,Mo,Walters,"3 C Rd Houston, TX 77057",9491234567,emailc@mail.com

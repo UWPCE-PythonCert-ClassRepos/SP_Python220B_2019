@@ -1,0 +1,5 @@
+product_id,description,product_type,quantity_available
+p1,desk,office,0
+p2,couch,livingroom,1
+p3,chair,office,4
+p4,table,diningroom,2
