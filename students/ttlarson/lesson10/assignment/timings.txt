@@ -12,7 +12,7 @@
 (import_data_csv) - 12 records processed in 0.004758700000000005 seconds.
 (db_insert) - 12 records processed in 0.013531999999999988 seconds.
 (import_data_rentals) - 12 records processed in 0.06490810000000002 seconds.
-(import_data) - 3 records processed in 0.2384826 seconds.
+(import_data) - 7 records processed in 0.2384826 seconds.
 (show_available_products) - 3 records processed in 0.005506899999999981 seconds.
 (show_rentals) - 2 records processed in 0.009442300000000015 seconds.
 (__exit__) - 0 records processed in 0.0010087000000000845 seconds.
@@ -31,7 +31,7 @@
 (import_data_csv) - 120 records processed in 0.005766099999999996 seconds.
 (db_insert) - 120 records processed in 0.025084400000000007 seconds.
 (import_data_rentals) - 120 records processed in 0.15151879999999995 seconds.
-(import_data) - 3 records processed in 0.41900840000000006 seconds.
+(import_data) - 7 records processed in 0.41900840000000006 seconds.
 (show_available_products) - 3 records processed in 0.021805300000000027 seconds.
 (show_rentals) - 2 records processed in 0.060361700000000074 seconds.
 (__exit__) - 0 records processed in 0.0010556000000001564 seconds.
@@ -50,7 +50,7 @@
 (import_data_csv) - 1200 records processed in 0.04056870000000001 seconds.
 (db_insert) - 1200 records processed in 0.03757789999999983 seconds.
 (import_data_rentals) - 1200 records processed in 0.1292196 seconds.
-(import_data) - 3 records processed in 0.39359900000000003 seconds.
+(import_data) - 7 records processed in 0.39359900000000003 seconds.
 (show_available_products) - 3 records processed in 0.011287899999999906 seconds.
 (show_rentals) - 2 records processed in 1.4216537000000002 seconds.
 (__exit__) - 0 records processed in 0.0016274000000002786 seconds.
@@ -69,7 +69,7 @@
 (import_data_csv) - 12000 records processed in 0.028076800000000013 seconds.
 (db_insert) - 12000 records processed in 0.19353920000000002 seconds.
 (import_data_rentals) - 12000 records processed in 0.3402050000000001 seconds.
-(import_data) - 3 records processed in 0.6989141 seconds.
+(import_data) - 7 records processed in 0.6989141 seconds.
 (show_available_products) - 3 records processed in 0.032751500000000044 seconds.
 (show_rentals) - 2 records processed in 64.06603270000001 seconds.
 (__exit__) - 0 records processed in 0.000969699999998852 seconds.
@@ -88,7 +88,7 @@
 (import_data_csv) - 120000 records processed in 0.11950939999999965 seconds.
 (db_insert) - 120000 records processed in 2.0889762000000003 seconds.
 (import_data_rentals) - 120000 records processed in 3.3378802000000003 seconds.
-(import_data) - 3 records processed in 5.6231642 seconds.
+(import_data) - 7 records processed in 5.6231642 seconds.
 (show_available_products) - 3 records processed in 0.20706040000000048 seconds.
 (__exit__) - 0 records processed in 0.00042409999878145754 seconds.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
