@@ -14,6 +14,7 @@ ref: https://stackabuse.com/python-metaclasses-and-metaprogramming/
 # pylint: disable=broad-except
 # pylint: disable=too-many-locals
 # pylint: disable=invalid-name
+# pylint: disable=unidiomatic-typecheck 
 
 import logging
 import os
@@ -23,14 +24,12 @@ import warnings
 from functools import wraps
 from timeit import default_timer as timer
 import pandas as pd
-from pandas import DataFrame
 import pymongo as mongodb
 from pymongo import MongoClient
-from pymongo import collection
 from pymongo.errors import ConnectionFailure
 
 # surpress deprecation warning
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # command line option to turn debugging info on/off
 if len(sys.argv) > 1 and sys.argv[1].lower() in ('1', 'y', 'yes'):
@@ -42,6 +41,7 @@ else:
 OUTPUT_FILE = 'timings.txt'
 
 def wrapper_timeit(func):
+    """ timeit wrapper function """
     @wraps(func)
     def wrapper(*args, **kwargs):
         tm_start = timer()
@@ -50,15 +50,13 @@ def wrapper_timeit(func):
         tm_lapsed = tm_end - tm_start
         num_records = 0
 
-        # logging.info('restul type: %s' % type(result))
-
-        if type(result) is None:
+        if result is None:
             num_records = 0
-        elif type(result) is list:
-            num_records = len(result[0])
-        elif type(result) is dict:
+        elif isinstance(result, list):
+            num_records = (result[0][0] + result[1][0])
+        elif isinstance(result, dict):
             num_records = len(result)
-        elif type(result) is int:
+        elif isinstance(result, int):
             num_records = result
         elif isinstance(result, pd.DataFrame):
             num_records = len(result.index)
@@ -67,9 +65,11 @@ def wrapper_timeit(func):
 
         # log timing result to file
         with open(OUTPUT_FILE, mode='a+') as file:
-            file.write('(%s) - %s records processed in %s seconds.\n' % (func.__name__, num_records, tm_lapsed))
+            file.write('(%s) - %s records processed in %s seconds.\n' % \
+                (func.__name__, num_records, tm_lapsed))
             if func.__name__ == '__exit__':
-                file.write('%s' % '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+                file.write('%s' % \
+                    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
                 file.write('\n')
 
         return result
@@ -83,11 +83,11 @@ class MetaTime(type):
     """
     def __new__(cls, name, bases, attr):
         """  """
-        for name, value in attr.items():
-            if type(value) is types.FunctionType or type(value) is types.MethodType:
-                attr[name] = wrapper_timeit(value)
+        for n, v in attr.items():
+            if type(v) is types.FunctionType or type(v) is types.MethodType:
+                attr[n] = wrapper_timeit(v)
 
-        # Return a new type called TimeMetareturn 
+        # Return a new type called TimeMetareturn
         return super(MetaTime, cls).__new__(cls, name, bases, attr)
 
 
@@ -122,9 +122,7 @@ class HpNortonDbApp(metaclass=MetaTime):
     """ HP Norton Database Application """
     def __init__(self):
         """ initializing the HP Norton App  """
-        logging.debug('HP Norton App started.')
-
-    def __enter__(self):
+        self.tm_start = timer()
         self.record_count_init = {
             "customers": 0,
             "products": 0,
@@ -140,13 +138,19 @@ class HpNortonDbApp(metaclass=MetaTime):
             "products": 0,
             "rentals": 0
         }
+        logging.debug('HP Norton App started.')
 
-    def print_mdb_collection(self, collection_name):
+    def __enter__(self):
+        pass
+
+    @staticmethod
+    def print_mdb_collection(collection_name):
         """ print everything in collection_name """
         for doc in collection_name.find():
             print(doc)
 
-    def import_data_csv(self, directory_name, data_file):
+    @staticmethod
+    def import_data_csv(directory_name, data_file):
         """ import data from csv files """
         file_path = os.path.join(directory_name, data_file)
         logging.debug('Opening file: %s', file_path)
@@ -162,24 +166,26 @@ class HpNortonDbApp(metaclass=MetaTime):
 
         return data
 
-    def db_collection_init(self, mdb, collection_name):
+    @staticmethod
+    def db_collection_init(mdb, collection_name):
         """ decorator to initialize mongo collection """
         # create collections if not exist
         logging.debug('Creating the %s collections ...', collection_name)
-        collection = mdb[collection_name]
+        mg_collection = mdb[collection_name]
 
         # clear out the collections and start fresh
         logging.debug('Clearing collection data for %s ...', collection_name)
-        collection.drop()
+        mg_collection.drop()
 
-        return collection
+        return mg_collection
 
     def db_insert(self, mdb_collection, dict_name, name):
         """ using decorator for mongo insert logging """
         try:
             result = mdb_collection.insert_many(dict_name)
             self.record_count[name] = len(result.inserted_ids)
-            logging.debug('%s records inserted into Mongodb collection %s.', self.record_count[name], name)
+            logging.debug('%s records inserted into Mongodb collection %s.', \
+                self.record_count[name], name)
         except Exception as err:
             self.err_count[name] += 1
             logging.debug('Error count incremented by 1 for %s.', name)
@@ -229,12 +235,13 @@ class HpNortonDbApp(metaclass=MetaTime):
                         self.record_count_init['customers'],
                         self.record_count['customers'])
         tup_product = (self.record_count['products']-self.record_count_init['products'],
-                    self.record_count_init['products'],
-                    self.record_count['products'])
+                       self.record_count_init['products'],
+                       self.record_count['products'])
 
         return [tup_customer, tup_product]
 
-    def show_available_products(self):
+    @staticmethod
+    def show_available_products():
         """ function to show all the products avalable """
         available = dict()
 
@@ -246,14 +253,15 @@ class HpNortonDbApp(metaclass=MetaTime):
                 if product['quantity_available'] > 0:
                     key = product['product_id']
                     product = {'description': product['description'],
-                            'product_type': product['product_type'],
-                            'quantity_available': product['quantity_available']}
+                               'product_type': product['product_type'],
+                               'quantity_available': product['quantity_available']}
 
                     available[key] = product
 
         return available
 
-    def show_rentals(self, product_id):
+    @staticmethod
+    def show_rentals(product_id):
         """ function to show the list of user information by using product_id  """
         user_info = dict()
 
@@ -276,14 +284,20 @@ class HpNortonDbApp(metaclass=MetaTime):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """ closing the HP Norton App  """
+        tm_end = timer()
+        tm_lapsed = tm_end - self.tm_start
         if exc_type:
             logging.error('Error: %s', exc_val)
+        logging.debug('Total time lapse: %s.', tm_lapsed)
         logging.debug('HP Norton App closed.')
 
 if __name__ == '__main__':
-    DATA_FILE_CUSTOMER = 'customers_x1000.csv'
-    DATA_FILE_PRODUCT = 'products_x1000.csv'
-    DATA_FILE_RENTAL = 'rentals_x1000.csv'
+    DATA_FILE_CUSTOMER = 'customers.csv'
+    DATA_FILE_PRODUCT = 'products.csv'
+    DATA_FILE_RENTAL = 'rentals.csv'
+    # DATA_FILE_CUSTOMER = 'customers_x10000.csv'
+    # DATA_FILE_PRODUCT = 'products_x10000.csv'
+    # DATA_FILE_RENTAL = 'rentals_x10000.csv'
     DATA_FILE_PATH = os.path.dirname(os.path.realpath(__file__))
     logging.debug('Current directory: %s', DATA_FILE_PATH)
 
@@ -292,9 +306,9 @@ if __name__ == '__main__':
     # in order to call __exit__, we need to use hp as a context manager
     with hp:
         import_status = hp.import_data(DATA_FILE_PATH,
-                                DATA_FILE_PRODUCT,
-                                DATA_FILE_CUSTOMER,
-                                DATA_FILE_RENTAL)
+                                       DATA_FILE_PRODUCT,
+                                       DATA_FILE_CUSTOMER,
+                                       DATA_FILE_RENTAL)
         logging.info(import_status)
 
         products_available = hp.show_available_products()

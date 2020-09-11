@@ -29,6 +29,9 @@ class TestDatabase(TestCase):
         self.assertTupleEqual(tup_record_count, expected_record_count)
         self.assertTupleEqual(tup_error_count, expected_error_count)
 
+        self.assertTupleNotEqual(tup_record_count, (4, 3, 11))
+        self.assertTupleNotEqual(tup_error_count, (0, 1, 0))
+
     def test_import_data_error(self):
         """ test import_data """
         expected_record_count = (4, 0, 0)

@@ -92,3 +92,14 @@
 (show_available_products) - 3 records processed in 0.20706040000000048 seconds.
 (__exit__) - 0 records processed in 0.00042409999878145754 seconds.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(__init__) - 0 records processed in 0.0004875000000000851 seconds.
+(__enter__) - 0 records processed in 2.1000000000048757e-06 seconds.
+(db_insert) - 3 records processed in 0.016298400000000046 seconds.
+(import_data_customers) - 3 records processed in 0.049880499999999994 seconds.
+(db_insert) - 4 records processed in 0.016627199999999953 seconds.
+(import_data_products) - 4 records processed in 0.03743609999999997 seconds.
+(db_insert) - 12 records processed in 0.01632239999999996 seconds.
+(import_data_rentals) - 12 records processed in 0.03707420000000006 seconds.
+(import_data) - 7 records processed in 0.15331780000000006 seconds.
+(__exit__) - 0 records processed in 0.0016372000000000053 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
