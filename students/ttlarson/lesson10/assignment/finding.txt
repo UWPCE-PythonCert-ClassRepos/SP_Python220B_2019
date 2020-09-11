@@ -1,0 +1,35 @@
+In this assignment, I added the total time lapse to measure the total execution time for the app - 
+by taking advantage of python's built-in __init__ and __exit__ functions. 
+With that, we can see that with the increase in the amount of data, the total execution time increases exponetially. 
+Specifically, the larger the amount of data the inporportion increase in the total lapse time.
+
+-- regular file
+Total time lapse: 0.29821069999999994.
+
+-- x10 file; with 10 times the data
+Total time lapse: 0.5581667000000001.
+
+-- x100 file; with 100 times the data
+Total time lapse: 1.8820674999999998.
+
+-- x1000 file; with 1000 times the data
+Total time lapse: 64.84378389999999.
+
+-- x10000 file; with 10000 times the data
+Total time lapse: 35239.9119393.
+
+Then, when we dig into the timings of each function, we see that the function show_rentals is the culprit 
+in slowing down the performance. That's a great find! 
+
+Next, we examine the function and see that the code 
+queries the rental collection using the product id, then queries the customer collection to find the relationship 
+between the two collections. With a small amount of data, this is not obvious. But with the 10000 times of data, 
+uhg! That's 12000 x 3000 records to loop through!
+
+In relational database, we can do a join and it would be very efficient (This method is very inefficient - a quick 
+search online shows that Mongodb does not have a join). Following the thoughts above, perhaps we can improve the 
+show_rentals function by using a fileter in the inner loop as a quick fix. But that's outside the scope of this 
+assignment. But, at least, we identified one small section of the code to optumize.
+
+In addition, we do see the execution time increases as the amount of data increase in the database functions. However, 
+It seems Mongodb is pretty efficient in loading large amounts of data.
