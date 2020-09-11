@@ -40,13 +40,11 @@ DEBUG:root:Total time lapse: 6865.852504099999.
 (import_data_rentals) - 120000 records processed in 3.2852084999999995 seconds.
 (import_data) - 70000 records processed in 4.7279395 seconds.
 
-Then, when we dig into the timings of each function, we see that the function show_rentals is the culprit 
-in slowing down the performance. That's a great find! 
-
-Next, we examine the function and see that the code 
-queries the rental collection using the product id, then queries the customer collection to find the relationship 
-between the two collections. With a small amount of data, this is not obvious. But with the 10000 times of data, 
-uhg! That's 12000 x 3000 records to loop through!
+Then, when we dig into each function, we see that the function show_rentals is the culprit 
+in slowing down the performance. We examine the function and see that the code queries the rental collection using 
+the product id, then queries the customer collection to find the relationship between the two collections. With a 
+small amount of data, this is not obvious. But with the 10000 times of data, uhg! That's 12000 x 3000 records to loop 
+through!
 
 In relational database, we can do a join and it would be very efficient (This method is very inefficient - a quick 
 search online shows that Mongodb does not have a join). Following the thoughts above, perhaps we can improve the 
