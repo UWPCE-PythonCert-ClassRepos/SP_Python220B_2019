@@ -1,22 +1,44 @@
 In this assignment, I added the total time lapse to measure the total execution time for the app - 
 by taking advantage of python's built-in __init__ and __exit__ functions. 
 With that, we can see that with the increase in the amount of data, the total execution time increases exponetially. 
-Specifically, the larger the amount of data the inporportion increase in the total lapse time.
+Specifically, the larger the amount of data the inporportion increase in the total lapse time. 
+
+See below. The total time lapse is a debugging command line output.
 
 -- regular file
-Total time lapse: 0.29821069999999994.
+DEBUG:root:Total time lapse: 0.1815643.
+(import_data_customers) - 3 records processed in 0.03934320000000002 seconds.
+(import_data_products) - 4 records processed in 0.033248500000000014 seconds.
+(import_data_rentals) - 12 records processed in 0.03315400000000002 seconds.
+(import_data) - 7 records processed in 0.1253913000000001 seconds.
 
 -- x10 file; with 10 times the data
-Total time lapse: 0.5581667000000001.
+DEBUG:root:Total time lapse: 0.26417289999999993.
+(import_data_customers) - 30 records processed in 0.0647063 seconds.
+(import_data_products) - 40 records processed in 0.04341100000000009 seconds.
+(import_data_rentals) - 120 records processed in 0.04940650000000002 seconds.
+(import_data) - 70 records processed in 0.18547769999999997 seconds.
 
 -- x100 file; with 100 times the data
-Total time lapse: 1.8820674999999998.
+DEBUG:root:Total time lapse: 1.3217271.
+(import_data_customers) - 300 records processed in 0.05704799999999999 seconds.
+(import_data_products) - 400 records processed in 0.0544458000000001 seconds.
+(import_data_rentals) - 1200 records processed in 0.07723449999999998 seconds.
+(import_data) - 700 records processed in 0.21178170000000007 seconds.
 
 -- x1000 file; with 1000 times the data
-Total time lapse: 64.84378389999999.
+DEBUG:root:Total time lapse: 57.312858500000004.
+(import_data_customers) - 3000 records processed in 0.12186739999999996 seconds.
+(import_data_products) - 4000 records processed in 0.12599519999999997 seconds.
+(import_data_rentals) - 12000 records processed in 0.29090539999999987 seconds.
+(import_data) - 7000 records processed in 0.5647076999999999 seconds.
 
 -- x10000 file; with 10000 times the data
-Total time lapse: 35239.9119393.
+DEBUG:root:Total time lapse: 6865.852504099999.
+(import_data_customers) - 30000 records processed in 0.6542038 seconds.
+(import_data_products) - 40000 records processed in 0.7671479000000001 seconds.
+(import_data_rentals) - 120000 records processed in 3.2852084999999995 seconds.
+(import_data) - 70000 records processed in 4.7279395 seconds.
 
 Then, when we dig into the timings of each function, we see that the function show_rentals is the culprit 
 in slowing down the performance. That's a great find! 
