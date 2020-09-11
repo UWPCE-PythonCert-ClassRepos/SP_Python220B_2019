@@ -1,0 +1,55 @@
+(__init__) - 0 records processed in 0.0010008999999999713 seconds.
+(__enter__) - 0 records processed in 1.8000000000517602e-06 seconds.
+(db_insert) - 3 records processed in 0.01566970000000001 seconds.
+(import_data_customers) - 3 records processed in 0.03934320000000002 seconds.
+(db_insert) - 4 records processed in 0.013661900000000005 seconds.
+(import_data_products) - 4 records processed in 0.033248500000000014 seconds.
+(db_insert) - 12 records processed in 0.013466500000000048 seconds.
+(import_data_rentals) - 12 records processed in 0.03315400000000002 seconds.
+(import_data) - 7 records processed in 0.1253913000000001 seconds.
+(__exit__) - 0 records processed in 0.003971499999999906 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(__init__) - 0 records processed in 0.0012522000000000366 seconds.
+(__enter__) - 0 records processed in 1.7999999999407379e-06 seconds.
+(db_insert) - 30 records processed in 0.01711700000000005 seconds.
+(import_data_customers) - 30 records processed in 0.0647063 seconds.
+(db_insert) - 40 records processed in 0.017399300000000006 seconds.
+(import_data_products) - 40 records processed in 0.04341100000000009 seconds.
+(db_insert) - 120 records processed in 0.0184763 seconds.
+(import_data_rentals) - 120 records processed in 0.04940650000000002 seconds.
+(import_data) - 70 records processed in 0.18547769999999997 seconds.
+(__exit__) - 0 records processed in 0.003569700000000009 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(__init__) - 0 records processed in 0.00023169999999994584 seconds.
+(__enter__) - 0 records processed in 1.8999999999991246e-06 seconds.
+(db_insert) - 300 records processed in 0.023604500000000028 seconds.
+(import_data_customers) - 300 records processed in 0.05704799999999999 seconds.
+(db_insert) - 400 records processed in 0.025711499999999998 seconds.
+(import_data_products) - 400 records processed in 0.0544458000000001 seconds.
+(db_insert) - 1200 records processed in 0.03630460000000002 seconds.
+(import_data_rentals) - 1200 records processed in 0.07723449999999998 seconds.
+(import_data) - 700 records processed in 0.21178170000000007 seconds.
+(__exit__) - 0 records processed in 0.0038202999999998877 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(__init__) - 0 records processed in 0.0010973000000000788 seconds.
+(__enter__) - 0 records processed in 1.8999999999991246e-06 seconds.
+(db_insert) - 3000 records processed in 0.05705349999999998 seconds.
+(import_data_customers) - 3000 records processed in 0.12186739999999996 seconds.
+(db_insert) - 4000 records processed in 0.07632020000000006 seconds.
+(import_data_products) - 4000 records processed in 0.12599519999999997 seconds.
+(db_insert) - 12000 records processed in 0.1735313999999999 seconds.
+(import_data_rentals) - 12000 records processed in 0.29090539999999987 seconds.
+(import_data) - 7000 records processed in 0.5647076999999999 seconds.
+(__exit__) - 0 records processed in 0.0041980000000023665 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(__init__) - 0 records processed in 0.0010211999999999444 seconds.
+(__enter__) - 0 records processed in 2.0000000000575113e-06 seconds.
+(db_insert) - 30000 records processed in 0.4388677999999999 seconds.
+(import_data_customers) - 30000 records processed in 0.6542038 seconds.
+(db_insert) - 40000 records processed in 0.5497182999999999 seconds.
+(import_data_products) - 40000 records processed in 0.7671479000000001 seconds.
+(db_insert) - 120000 records processed in 2.4742558999999997 seconds.
+(import_data_rentals) - 120000 records processed in 3.2852084999999995 seconds.
+(import_data) - 70000 records processed in 4.7279395 seconds.
+(__exit__) - 0 records processed in 0.00023669999973208178 seconds.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
