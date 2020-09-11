@@ -16,7 +16,7 @@
 (show_available_products) - 3 records processed in 0.005506899999999981 seconds.
 (show_rentals) - 2 records processed in 0.009442300000000015 seconds.
 (__exit__) - 0 records processed in 0.0010087000000000845 seconds.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (__init__) - 0 records processed in 0.0011263999999999719 seconds.
 (__enter__) - 0 records processed in 4.2000000000097515e-06 seconds.
 (db_collection_init) - 0 records processed in 0.010557000000000039 seconds.
@@ -35,7 +35,7 @@
 (show_available_products) - 3 records processed in 0.021805300000000027 seconds.
 (show_rentals) - 2 records processed in 0.060361700000000074 seconds.
 (__exit__) - 0 records processed in 0.0010556000000001564 seconds.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (__init__) - 0 records processed in 0.0010147999999999824 seconds.
 (__enter__) - 0 records processed in 4.2000000000097515e-06 seconds.
 (db_collection_init) - 0 records processed in 0.012998000000000065 seconds.
@@ -54,7 +54,7 @@
 (show_available_products) - 3 records processed in 0.011287899999999906 seconds.
 (show_rentals) - 2 records processed in 1.4216537000000002 seconds.
 (__exit__) - 0 records processed in 0.0016274000000002786 seconds.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (__init__) - 0 records processed in 0.0005555999999999894 seconds.
 (__enter__) - 0 records processed in 5.000000000032756e-06 seconds.
 (db_collection_init) - 0 records processed in 0.012951600000000063 seconds.
@@ -73,7 +73,7 @@
 (show_available_products) - 3 records processed in 0.032751500000000044 seconds.
 (show_rentals) - 2 records processed in 64.06603270000001 seconds.
 (__exit__) - 0 records processed in 0.000969699999998852 seconds.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (__init__) - 0 records processed in 0.001058700000000079 seconds.
 (__enter__) - 0 records processed in 4.699999999968618e-06 seconds.
 (db_collection_init) - 0 records processed in 0.011916499999999997 seconds.
@@ -91,7 +91,7 @@
 (import_data) - 3 records processed in 5.6231642 seconds.
 (show_available_products) - 3 records processed in 0.20706040000000048 seconds.
 (__exit__) - 0 records processed in 0.00042409999878145754 seconds.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (__init__) - 0 records processed in 0.0004875000000000851 seconds.
 (__enter__) - 0 records processed in 2.1000000000048757e-06 seconds.
 (db_insert) - 3 records processed in 0.016298400000000046 seconds.
