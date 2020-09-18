@@ -39,16 +39,7 @@ def search_customer(customer_id: str) -> dict:
     try:
         with database.transaction():
             customer_record = Customer.get_by_id(customer_id)
-            answer = {
-                "customer_id": customer_record.customer_id,
-                "name": customer_record.name,
-                "lastname": customer_record.lastname,
-                "home_address": customer_record.home_address,
-                "phone_number": customer_record.phone_number,
-                "email_address": customer_record.email_address,
-                "status": customer_record.status,
-                "credit_limit": customer_record.credit_limit,
-                }
+            answer = customer_record.__dict__.get("__data__")
     except Exception as e:
         logger.error(f"Customer record not found: {customer_id}")
         logger.error(e)
