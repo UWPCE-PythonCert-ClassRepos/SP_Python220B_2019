@@ -1,5 +1,6 @@
 #!/usr/env/bin python
-""" Documentation for {file} """.format(file=__file__)
+""" Documentation for {file}
+This file contains basic operations for interaction with an sqlite3 database""".format(file=__file__)
 
 import logging
 from peewee import *
@@ -8,19 +9,20 @@ from database_models import *
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
+
 def add_customer(customer_id, name, lastname, home_address, phone_number, email_address, status, credit_limit):
     """This function will add a new customer to the sqlite3 database."""
     try:
         with database.transaction():
             new_customer = Customer.create(
-                customer_id = customer_id,
-                name = name,
-                lastname = lastname,
-                home_address = home_address,
-                phone_number = phone_number,
-                email_address = email_address,
-                status = status,
-                credit_limit = credit_limit,
+                customer_id=customer_id,
+                name=name,
+                lastname=lastname,
+                home_address=home_address,
+                phone_number=phone_number,
+                email_address=email_address,
+                status=status,
+                credit_limit=credit_limit,
             )
             new_customer.save()
             logger.info(f'Customer record created: {customer_id}')
@@ -49,6 +51,7 @@ def search_customer(customer_id: str) -> dict:
                 }
     except Exception as e:
         logger.error(f"Customer record not found: {customer_id}")
+        logger.error(e)
 
     return answer
 
@@ -69,14 +72,15 @@ def update_customer_credit(customer_id: str, credit_limit: float) -> None:
         Customer.get_by_id(customer_id).credit_limit = credit_limit
         logger.info(f"Customer record credit limit updated to {credit_limit} for: {customer_id}")
 
+
 def list_active_customers() -> tuple:
     """This function will return an integer with the number of
     customers whose status is currently active."""
     test = []
     try:
         with database.transaction():
-            test.append(Customer.select().where(Customer.status == True))
-            for cust in Customer.select().where(Customer.status == True):
+            test.append(Customer.select().where(Customer.status is True))
+            for cust in Customer.select().where(Customer.status is True):
                 logger.info(f"Customer record is active for: {cust.customer_id}")
 
     except Exception as e:
