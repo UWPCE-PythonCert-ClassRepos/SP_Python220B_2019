@@ -1,9 +1,8 @@
 #!/usr/env/bin python
-""" Documentation for {file} 
-This file contains the database models for storing
-customer data.""".format(file=__file__)
+"""This file contains the database models for storing
+customer data."""
 
-from peewee import *
+from peewee import Model, CharField, IntegerField, BooleanField, FloatField, SqliteDatabase
 
 database = SqliteDatabase('customers.db')
 database.connect()
@@ -23,9 +22,15 @@ class Customer(BaseModel):
     # http://docs.peewee-orm.com/en/latest/peewee/models.html#field-initialization-arguments
     customer_id = CharField(primary_key=True, max_length=10)
     name = CharField(max_length=20)
-    lastname= CharField(max_length=20)
+    lastname = CharField(max_length=20)
     home_address = CharField(max_length=200)
     phone_number = IntegerField()
     email_address = CharField(max_length=40)
     active = BooleanField(default=False)
     credit_limit = FloatField()
+
+
+if __name__ == '__main__':
+    # Create a new empty database
+    database.create_tables([Customer])
+    database.close()
