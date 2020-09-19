@@ -1,0 +1,41 @@
+- https://uwpce-pythoncert.github.io/PythonCertDevel220/modules/lesson07/assignment.html
+
+# run notes
+upped input to each to ~2k to get more delay
+first tried thread.start() and thread.join() techniques
+
+# technique applied
+The program uses concurrent.futures.ThreadPoolExecutor to launch a thread for each item in a list of lists containing
+customer and products table names and filenames. This technique allows for returning the tuple directly to the
+calling method and worked as well (performance) as creating seperate threads with thread.start() and thread.join().
+
+# profile data, results (2 sample runs)
+running in parallel executes the insert in about 1/4 of time
+
+linear
+Prods: processed_record_cnt:2000	prior_record_cnt:0	post_record_cnt:2000	processing_time:0.55739
+Custs: processed_record_cnt:1800	prior_record_cnt:0	post_record_cnt:1800	processing_time:0.52322
+total runtime: 3.669999999900142e-05
+
+Prods: processed_record_cnt:2000	prior_record_cnt:2000	post_record_cnt:4000	processing_time:0.54677
+Custs: processed_record_cnt:1800	prior_record_cnt:1800	post_record_cnt:3600	processing_time:0.5039
+total runtime: 4.120000000540358e-05
+
+
+Parallel
+Records: processed_record_cnt:1800	prior_record_cnt:0	post_record_cnt:1800	processing_time:0.78403
+Records: processed_record_cnt:2000	prior_record_cnt:0	post_record_cnt:2000	processing_time:0.84256
+total runtime: 0.8569488000000005
+
+Records: processed_record_cnt:1800	prior_record_cnt:1800	post_record_cnt:3600	processing_time:0.62878
+Records: processed_record_cnt:2000	prior_record_cnt:2000	post_record_cnt:4000	processing_time:0.67492
+total runtime: 0.7117052000000008
+
+# a couple of notes on contention
+In this assignment 2 threads are launched for seperate data inserts. Both threads operate on different source files and different
+tables in MongoDB. Therefore contention (one thread attempting to aquire a lock, another thread holding it) is minimized.
+However, if both threads were attempting to read and write from the same file to the same table, locking could occur
+in two instances which could acrue performance penalties due to contention.
+    1). read lock - one thread could hold a lock on a file while it is reading, forcing the second thread to wait
+    2). data insert lock. The database could be holding a write lock on a table forcing a second thread to wait for an
+opportunity to write to the table.
