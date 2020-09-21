@@ -82,8 +82,7 @@ class BaseTestCase(TestCase):
         for record in RECORDS:
             test_logger.info(f"Testing record {record[CUSTOMER_ID]}")
             self.assertEqual(first=record[EMAIL_ADDRESS],
-                             second=Customer.get_by_id(record[CUSTOMER_ID]).email_address,
-                             )
+                             second=Customer.get_by_id(record[CUSTOMER_ID]).email_address)
 
         self.tearDown()
         test_logger.info("end test_add_customer()")

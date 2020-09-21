@@ -2,7 +2,8 @@
 """This file contains the database models for storing
 customer data."""
 
-from peewee import Model, CharField, IntegerField, BooleanField, FloatField, SqliteDatabase
+from peewee import Model, CharField, IntegerField,\
+    BooleanField, FloatField, SqliteDatabase, IntegrityError
 
 database = SqliteDatabase('customers.db')
 database.connect()

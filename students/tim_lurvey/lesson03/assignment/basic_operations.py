@@ -3,7 +3,7 @@
 
 import logging
 import re
-from database_models import Customer, database
+from database_models import Customer, database, IntegrityError
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -69,7 +69,7 @@ def add_customer(customer_id: str,
             new_customer.save()
             logger.info(f'Customer record created: {customer_id}')
 
-    except Exception as e:
+    except IntegrityError as e:
         logger.info(f'Customer record creation failed: {customer_id}')
         logger.info(e)
 
@@ -80,13 +80,9 @@ def search_customer(customer_id: str) -> dict:
     answer = {}
     try:
         with database.transaction():
-            customer_record = Customer.get_or_none(customer_id=customer_id)
-            if customer_record:
-                answer = customer_record.__dict__.get("__data__")
-            else:
-                logger.info(f"Customer record not found: '{customer_id}'")
-    except Exception as e:
-        logger.error(e)
+            answer = Customer.get_by_id(customer_id).__dict__.get("__data__")
+    except Customer.DoesNotExist:
+        logger.info(f"Customer record not found: '{customer_id}'")
 
     return answer
 
@@ -114,15 +110,10 @@ def list_active_customers() -> tuple:
     """This function will return an integer with the number of
     customers whose status is currently active."""
     test = []
-    try:
-        with database.transaction():
-            # NOTE:  MUST USE "==" (operator style testings).  Pythonic "is" fails
-            for cust in Customer.select().where(Customer.active == True):
-                test.append(search_customer(cust.customer_id))
-                logger.info(f"Customer record is active for: {cust.customer_id}")
-
-    except Exception as e:
-        logger.error("Error searching records")
-        logger.error(e)
+    with database.transaction():
+        # NOTE:  MUST USE "==" (operator style testings).  Pythonic "is" fails
+        for cust in Customer.select().where(Customer.active == True):
+            test.append(search_customer(cust.customer_id))
+            logger.info(f"Customer record is active for: {cust.customer_id}")
 
     return tuple(test)
