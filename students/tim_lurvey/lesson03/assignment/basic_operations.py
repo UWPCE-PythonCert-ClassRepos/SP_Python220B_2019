@@ -21,8 +21,9 @@ def _validate_phone_number(num: any) -> int:
 
     try:
         return int(num)
-    except Exception as e:
-        logger.error(f"The phone number is invalid type.  Type={type(num)}.\n{e}")
+    except ValueError as e:
+        logger.error(f"The phone number is invalid type.  Type={type(num)}.")
+        logger.error(f"{e}")
         return 0
 
 
@@ -38,8 +39,9 @@ def _validate_active(active: any):
 def _validate_credit_limit(limit):
     try:
         return float(limit)
-    except Exception as e:
-        logger.error(f"Invalid parameter: 'credit_limit' is not numeric. {e}")
+    except ValueError as e:
+        logger.error(f"Invalid parameter: 'credit_limit' is not numeric.")
+        logger.error(f"{e}")
         return 0.
 
 
@@ -78,10 +80,13 @@ def search_customer(customer_id: str) -> dict:
     answer = {}
     try:
         with database.transaction():
-            customer_record = Customer.get_by_id(customer_id)
-            answer = customer_record.__dict__.get("__data__")
-    except Exception:
-        logger.error(f"Customer record not found: '{customer_id}'")
+            customer_record = Customer.get_or_none(customer_id=customer_id)
+            if customer_record:
+                answer = customer_record.__dict__.get("__data__")
+            else:
+                logger.info(f"Customer record not found: '{customer_id}'")
+    except Exception as e:
+        logger.error(e)
 
     return answer
 
