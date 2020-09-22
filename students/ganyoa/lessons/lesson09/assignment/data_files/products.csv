@@ -1,0 +1,16 @@
+product_id,description,product_type,quantity_available
+prd001,dresser,bedroom,117
+prd002,desk,office,97
+prd003,desk_chair,office,274
+prd004,lamp,bedroom,193
+prd005,lamp,living_room,254
+prd006,sofa,living_room,156
+prd007,loveseat,living_room,265
+prd008,sectional,living_room,375
+prd009,end_table,living_room,482
+prd010,end_table,bedroom,292
+prd011,reading_chair,living_room,188
+prd012,reading_chair,bedroom,198
+prd013,coffee_table,living_room,261
+prd014,dining_table,dining_room,227
+prd015,dining_table,dining_room,138
