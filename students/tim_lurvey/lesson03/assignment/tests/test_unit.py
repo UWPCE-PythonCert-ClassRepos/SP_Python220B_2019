@@ -150,7 +150,7 @@ class BaseTestCase(TestCase):
 
     def test_fail_bad_phone_number(self):
         self.setUp()
-        test_logger.info("begin () ...")
+        test_logger.info("begin test_fail_bad_phone_number() ...")
         basic_operations.add_customer(customer_id='01',
                                       name='test',
                                       lastname='test',
@@ -163,11 +163,11 @@ class BaseTestCase(TestCase):
 
         # self.assertEqual(first=c.get('phone_number'),
         #                  second=1234567890)
-        self.assertEqual(first='1234567890',
-                         second=c.get('phone_number'))
+        self.assertNotEqual(first='1234567890',
+                            second=c.get('phone_number'))
         test_logger.info("phone number as str() is converted if correct format")
 
-        test_logger.info("end ()\n")
+        test_logger.info("end test_fail_bad_phone_number()\n")
 
     def test_fail_bad_active(self):
         self.setUp()
@@ -184,8 +184,8 @@ class BaseTestCase(TestCase):
 
         # self.assertEqual(first=c.get('active'),
         #                  second=False)
-        self.assertEqual(first='True',
-                         second=c.get('active'))
+        self.assertNotEqual(first='True',
+                            second=c.get('active'))
         test_logger.info("Active status is False if not boolean")
 
         test_logger.info("end test_bad_active()\n")
@@ -205,8 +205,8 @@ class BaseTestCase(TestCase):
 
         # self.assertEqual(first=c.get('credit_limit'),
         #                  second=0.)
-        self.assertEqual(first='unlimited',
-                         second=c.get('credit_limit'))
+        self.assertNotEqual(first='unlimited',
+                            second=c.get('credit_limit'))
         test_logger.info("Credit limit is not float-able value, set to 0.")
 
         test_logger.info("end test_bad_credit_limit()\n")
