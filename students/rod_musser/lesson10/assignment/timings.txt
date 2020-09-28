@@ -1,0 +1,32 @@
+drop_collections took 0.044 seconds.
+import_data took 0.118 seconds and loaded 14 records.
+drop_collections took 0.042 seconds.
+import_data took 0.099 seconds and loaded 14 records.
+show_available_products took 0.006 seconds.
+drop_collections took 0.040 seconds.
+import_data took 0.098 seconds and loaded 14 records.
+show_rentals took 0.007 seconds.
+drop_collections took 0.046 seconds.
+import_data took 0.617 seconds and loaded 300 records.
+drop_collections took 0.050 seconds.
+import_data took 0.618 seconds and loaded 300 records.
+show_available_products took 0.025 seconds.
+drop_collections took 0.039 seconds.
+import_data took 0.579 seconds and loaded 300 records.
+show_rentals took 0.038 seconds.
+drop_collections took 0.045 seconds.
+import_data took 3.017 seconds and loaded 1500 records.
+drop_collections took 0.043 seconds.
+import_data took 2.766 seconds and loaded 1500 records.
+show_available_products took 0.108 seconds.
+drop_collections took 0.044 seconds.
+import_data took 3.134 seconds and loaded 1500 records.
+show_rentals took 0.609 seconds.
+drop_collections took 0.055 seconds.
+import_data took 7.156 seconds and loaded 3000 records.
+drop_collections took 0.038 seconds.
+import_data took 7.643 seconds and loaded 3000 records.
+show_available_products took 0.208 seconds.
+drop_collections took 0.039 seconds.
+import_data took 7.406 seconds and loaded 3000 records.
+show_rentals took 2.096 seconds.

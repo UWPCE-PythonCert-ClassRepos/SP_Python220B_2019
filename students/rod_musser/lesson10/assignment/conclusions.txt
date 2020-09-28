@@ -1,0 +1,11 @@
+Looking at the performance of inserting 300, 1500, and 3000 records, a concerning trend emerges:
+
+# of records    Time Elapsed    % change in records     % increase
+300             0.604s          N/A                     N/A
+1500            2.972s          400%                    392%
+3000            7.402s          100%                    149%
+
+As the table above shows, performance between 300 and 1500 records is linear.  That is, inserting 5
+times the records takes about 5 times as long.  However, between 1500 and 3000 records, twice as
+many records take almost 2.5 times as long.  Depending on the expected growth of the rental business,
+the team may want to spend time imoproving the database performance at scale.
