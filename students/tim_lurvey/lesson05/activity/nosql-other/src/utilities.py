@@ -17,13 +17,13 @@ def configure_logger(name, log_path):
         },
         'handlers': {
             'console': {
-                'LEVEL': 'DEBUG',
+                'level': 'DEBUG',
                 'class': 'logging.StreamHandler',
                 'formatter': 'default',
                 'stream': 'ext://sys.stdout'
             },
             'file': {
-                'LEVEL': 'DEBUG',
+                'level': 'DEBUG',
                 'class': 'logging.handlers.RotatingFileHandler',
                 'formatter': 'default',
                 'filename': log_path,
@@ -33,7 +33,7 @@ def configure_logger(name, log_path):
         },
         'loggers': {
             'default': {
-                'LEVEL': 'DEBUG',
+                'level': 'DEBUG',
                 'handlers': ['console', 'file']
             }
         },
