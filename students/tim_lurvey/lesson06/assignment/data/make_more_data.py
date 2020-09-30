@@ -25,13 +25,15 @@ lines = []
 
 
 def rand_pattern(n):
+    """generate the random patten as follows:
+    uuid4(),n,n+1,n+2,n+3,MM/DD/YYYY,[ao]"""
     rand_epoch = int(rn.randint(1000000000, int(time.time())))
     for x in [str(uuid.uuid4()),
               n,
               n + 1,
               n + 2,
               n + 3,
-              datetime.fromtimestamp(rand_epoch).strftime("%d/%m/%Y"),
+              datetime.fromtimestamp(rand_epoch).strftime("%m/%d/%Y"),
               rn.choice(("", "ao")),
               ]:
         yield str(x)
