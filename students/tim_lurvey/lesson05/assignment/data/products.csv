@@ -1,0 +1,19 @@
+product_id,description,product_type,quantity_available
+prod000001,TV 50 inch,residential,8
+prod000002,TV 65 inch,residential,4
+prod000003,Projector LED,residential,7
+prod000004,Speaker Large,residential,1
+prod000005,Speaker Small,residential,6
+prod000006,Car compact,automobile,6
+prod000007,Car mid size,automobile,4
+prod000008,Car full size,automobile,5
+prod000009,SUV compact,automobile,6
+prod000010,SUV full size,automobile,1
+prod000011,SUV Luxury,automobile,5
+prod000012,Lawn mover 24,tools,9
+prod000013,Lawn mower 56,tools,10
+prod000014,Leaf blower small,tools,10
+prod000015,Leaf blower large,tools,3
+prod000016,Fan Large,tools,1
+prod000017,Fan Medium,tools,6
+prod000018,Fan Small,tools,8
