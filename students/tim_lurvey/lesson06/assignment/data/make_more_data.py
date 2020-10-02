@@ -13,26 +13,28 @@ This file will make more records matching the format in exercise.csv
 import os
 import uuid
 import time
-import random as rn
+import random
 from datetime import datetime
 
-tstart = time.time()
-
-pathx = r"C:\Users\pants\PycharmProjects\SP_Python220B_2019\students\tim_lurvey\lesson06\assignment\data"
-file = "exercise.csv"
-
 lines = []
+tstart = time.time()
+file = "exercise.csv"
+pathx = r"C:\Users\pants\PycharmProjects\SP_Python220B_2019\students\
+            tim_lurvey\lesson06\assignment\data"
 
 
 def rand_pattern(n):
-    rand_epoch = int(rn.randint(1000000000, int(time.time())))
+    """generate the random patten as follows:
+    uuid4(),n,n+1,n+2,n+3,MM/DD/YYYY,[ao]"""
+    rand_epoch = int(random.randint(1000000000,
+                                    datetime(2018, 12, 31, 12, 59).timestamp()))
     for x in [str(uuid.uuid4()),
               n,
               n + 1,
               n + 2,
               n + 3,
-              datetime.fromtimestamp(rand_epoch).strftime("%d/%m/%Y"),
-              rn.choice(("", "ao")),
+              datetime.fromtimestamp(rand_epoch).strftime("%m/%d/%Y"),
+              random.choice(("", "ao")),
               ]:
         yield str(x)
 

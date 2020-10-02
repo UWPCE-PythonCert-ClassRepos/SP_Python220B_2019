@@ -1,0 +1,61 @@
+make_more_data.py
+- [0] the first key is some kind of hex id
+    - it's uuid, use uuid4() per instructions online
+- [1:5] then next 4 fields are n, n+1, n+2, n+3
+    - next line is n+1, n+2, n+3, n+4
+    - ..and so on
+- [5] is a MM/DD/YYYY date
+    - between the early 2000s and 2018
+- [6] is 'ao' or ''
+
+
+use random to make dates
+ - and 'ao' choice
+
+build the string for 10 < i =< 1000000
+    add to list
+append list to file
+
+-----------------------------------
+do_profile.py  (lazy)
+write a profiler that will launch a profile job of each script
+echo to file with timestamp
+
+-----------------------------------
+poor_perf.py
+
+1: dont open the file twice
+  - this was easy but didnt have good time benefit since 'reader' is a generator
+  - the second loop (see #3) was where the second file is consumed
+2: try to avoid opening using with and holding the file system pointer
+  - this didnt have much improvement on SSD, better for moving drives
+  - is good practice for IO sensitive things
+3: dont loop through the file twice
+  - do date and 'ao' counting on the chunk
+    - make chunk generator that strips non-counting data away
+      - no, just slice and map() the slicer
+  - filter the chunks by date range
+    - good place for filter()
+    - no, be lazy and only look for dates of dictionary keys when counting
+    - any extra filter(), map(), zip() added time
+      - all but one was removed for best time
+      - probably missing something here...
+      - extra generators didnt help...
+  - required function to slice data
+    - get_year_and_ao()
+    - dont get fancy with matching and splitting, simple slicing is fast on standard data
+  - dont use zip(*data) as it makes several lists of 1,000,000 entries each
+    - no way to get generators back, just lists?
+  - biggest gain!
+4: dont read by lines, read by one big list and use count() ?
+  - not really the point but gets the job done
+  - not as fast a expected
+  - high memory, crashed
+  - ABANDON!
+5: analyze() move into main() ?
+  - no improvement, harder to compare the cProfile results
+6: simplify logic of year counting
+  - using .count() on the list for each year
+  - not as fast a expected
+  - VIOLATES #3
+  - ABANDON!
