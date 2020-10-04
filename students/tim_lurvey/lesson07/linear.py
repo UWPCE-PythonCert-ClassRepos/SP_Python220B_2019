@@ -28,6 +28,7 @@ if logger.getEffectiveLevel() > FILE_LOG_LEVEL:
 # database class initialization
 mongo = db.MongoDBConnection()
 
+
 # @func_timer
 def document_to_dict(document: dict, key: str = "_id", suppress: tuple = ()) -> dict:
     """return a new dictionary from document data with the specified key
@@ -36,11 +37,12 @@ def document_to_dict(document: dict, key: str = "_id", suppress: tuple = ()) -> 
     # get key and remove from dict
     key_id = document.pop(key)
     # suppress any matching fields
-    data_dict = {k: v for k, v in document.items() if not k in suppress}
+    data_dict = {key: val for key, val in document.items() if not key in suppress}
     # make new dict with specified key
     return {key_id: data_dict}
 
 
+@func_timer
 def show_available_products() -> dict:
     """Returns a Python dictionary of products listed as available with the following fields:
     product_id.
@@ -65,6 +67,7 @@ def show_available_products() -> dict:
     logger.debug(f"Found {len(prod_dict)} documents in database.products")
     logger.info("End function show_available_products()")
     return prod_dict
+
 
 @func_timer
 def show_rentals(product_id: str) -> dict:
@@ -94,10 +97,11 @@ def show_rentals(product_id: str) -> dict:
                 # store processed document data
                 rent_dict.update(renter_dict)
             else:
-                logger.error("Record not found for user_id:{renter_id}")
+                logger.error(f"Record not found for user_id:{renter_id}")
     logger.debug(f"Found {len(rent_dict)} customers for product_id: {product_id}")
     logger.info("end function show_rentals()")
     return rent_dict
+
 
 @func_timer
 def parsed_file_data(filename: str, directory: str = "") -> tuple:
@@ -164,6 +168,7 @@ def import_data(path_name: str, product_file: str, customer_file: str, rentals_f
     logger.info("End function import_data()")
     return (tuple(input_records), tuple(success_records))
 
+
 @func_timer
 def delete_collection(database, collection):
     """delete the collection"""
@@ -178,17 +183,18 @@ def delete_collection(database, collection):
     logger.info("end function delete_collection()")
 
 
+@func_timer
 def delete_all_collections(exclude: tuple = ()):
     """drop all collections, except those names in exclude sequence"""
     logger.info("begin function delete_all_collections()")
     logger.debug(f"Dropping all collections except {exclude}")
     with mongo:
         database = mongo.connection.norton
-        for collection in [n for n in database.list_collection_names() if n not in exclude]:
+        for collection in [ex for ex in database.list_collection_names() if ex not in exclude]:
             delete_collection(database, collection)
     logger.info("end function delete_all_collections()")
 
-
+@func_timer
 def main():
     """main function to populate all data into the database"""
     logger.info("begin function main()")
@@ -214,6 +220,6 @@ if __name__ == "__main__":
     delete_all_collections()
     main()
     all_products = show_available_products()
-    for k in all_products:
-        rentals = show_rentals(product_id=k)
-        logger.info(f"Found {len(rentals)} rental records for {k}")
+    for pid in all_products:
+        rentals = show_rentals(product_id=pid)
+        logger.info(f"Found {len(rentals)} rental records for {pid}")
