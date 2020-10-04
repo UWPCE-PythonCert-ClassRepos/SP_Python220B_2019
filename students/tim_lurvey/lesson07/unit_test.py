@@ -38,7 +38,7 @@ class LinearDatabaseTest(TestCase):
     def test_import_data(self):
         pathx = r"C:\Users\pants\PycharmProjects\SP_Python220B_2019\students\tim_lurvey\lesson05\assignment\data"
 
-        r, e = linear.import_data(directory_name=pathx,
+        r, e = linear.import_data(path_name=pathx,
                                   product_file='products.csv',
                                   customer_file='customers.csv',
                                   rentals_file='rentals.csv')
@@ -49,7 +49,7 @@ class LinearDatabaseTest(TestCase):
     def test_show_available_products(self):
         linear.delete_all_collections()
 
-        r, e = linear.import_data(directory_name=self.DATA_PATH,
+        r, e = linear.import_data(path_name=self.DATA_PATH,
                                   product_file='products.csv',
                                   customer_file='customers.csv',
                                   rentals_file='rentals.csv')
@@ -73,7 +73,7 @@ class LinearDatabaseTest(TestCase):
     def test_show_rentals(self):
         linear.delete_all_collections()
 
-        r, e = linear.import_data(directory_name=self.DATA_PATH,
+        r, e = linear.import_data(path_name=self.DATA_PATH,
                                   product_file='products.csv',
                                   customer_file='customers.csv',
                                   rentals_file='rentals.csv')

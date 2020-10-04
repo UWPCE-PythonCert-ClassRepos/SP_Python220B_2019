@@ -2,7 +2,7 @@
 This file contains code for running database processes in a
 linear or sequential manner"""
 
-# pylint: disable=logging-fstring-interpolation
+# pylint: disable=logging-fstring-interpolation, too-many-locals
 
 import time
 import os
@@ -82,11 +82,9 @@ def show_rentals(product_id: str) -> dict:
         database = mongo.connection.norton
         # get all renters who rented a product_id
         renters = [d.get("user_id") for d in database.rentals.find({"product_id": product_id})]
-        for id in renters:
+        for renter_id in renters:
             # get renter info from customer database
-            # for renter in
-            # renter = database.customers.find_one({"user_id": doc.get("user_id")})
-            renter = database.customers.find_one({"user_id": id})
+            renter = database.customers.find_one({"user_id": renter_id})
             # process document data
             if renter:
                 renter_dict = document_to_dict(document=renter,
@@ -96,7 +94,7 @@ def show_rentals(product_id: str) -> dict:
                 # store processed document data
                 rent_dict.update(renter_dict)
             else:
-                logger.error("Record not found for user_id:{id}")
+                logger.error("Record not found for user_id:{renter_id}")
     logger.debug(f"Found {len(rent_dict)} customers for product_id: {product_id}")
     logger.info("end function show_rentals()")
     return rent_dict
@@ -131,10 +129,7 @@ def parsed_file_data(filename: str, directory: str = "") -> tuple:
         raise error
 
 
-def import_data(directory_name: str, 
-                product_file: str, 
-                customer_file: str, 
-                rentals_file: str)-> tuple:
+def import_data(path_name: str, product_file: str, customer_file: str, rentals_file: str)-> tuple:
     """import data in to MongoDB from files"""
 
     logger.info("Begin function import_data()")
@@ -152,9 +147,9 @@ def import_data(directory_name: str,
             collection = database[name]
             logger.debug(f"New collection database.{name} created.")
             # get data from file modified, modified for database input
-            t = time.time()
-            data = parsed_file_data(file_name, directory_name)
-            end = time.time() - t
+            start_time = time.time()
+            data = parsed_file_data(file_name, path_name)
+            end_time = time.time() - start_time
             # inset the data
             result = collection.insert_many(data)
             # count the records
@@ -164,13 +159,14 @@ def import_data(directory_name: str,
             input_records.append(n_rent)
             success_records.append(n_error)
             logger.debug(f"Created database.{name} with {n_rent} records and {n_error} errors")
-            logger.debug(f"Time in database.{name} was {end} seconds")
+            logger.debug(f"Time in database.{name} was {end_time} seconds")
 
     logger.info("End function import_data()")
     return (tuple(input_records), tuple(success_records))
 
 @func_timer
 def delete_collection(database, collection):
+    """delete the collection"""
     logger.info("begin function delete_collection()")
     try:
         database[collection].drop()
@@ -194,8 +190,8 @@ def delete_all_collections(exclude: tuple = ()):
 
 
 def main():
-    logger.info("begin function main()")
     """main function to populate all data into the database"""
+    logger.info("begin function main()")
     pathx = "\\".join(["C:",
                        "Users",
                        "pants",
@@ -206,7 +202,7 @@ def main():
                        "lesson07",
                        "data"])
 
-    count, errors = import_data(directory_name=pathx,
+    count, errors = import_data(path_name=pathx,
                                 product_file='products.csv',
                                 customer_file='customers.csv',
                                 rentals_file='rentals.csv')
