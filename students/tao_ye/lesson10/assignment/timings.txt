@@ -1,0 +1,3 @@
+Function 'import_data' processed 3005 records in 1.6500 secs
+Function 'show_available_products' processed 600 records in 0.0375 secs
+Function 'show_rentals' processed 811 records in 0.5322 secs

@@ -1,0 +1,33 @@
+A decorator function 'timer()' is added to log the timing information for the
+three functions in HP Norton application: import_data, 
+show_available_products, and show_rentals. And data files have around 
+1000 records each.
+
+To run the script, type
+>python database.py
+
+It will output timing information to a file 'timings.txt' and onto the
+console.
+
+The timing information saved in timings.txt is listed below:
+
+Function 'import_data' processed 3005 records in 1.6500 secs
+Function 'show_available_products' processed 600 records in 0.0375 secs
+Function 'show_rentals' processed 811 records in 0.5322 secs
+
+As it can be seen, the 'import_data' and 'show_rentals' functions took much
+longer time than 'show_available_products' function, and seem to be the bottle 
+neck. 
+
+Upon further examination, 'show_rentals' likely took more time than 
+'import_data' if the number of records processed by the 'show_rentals' function
+is increased to around 3000, similar to that of 'import_data' function 
+assuming a linear relationship between the time consumed and the number of 
+records processed.
+
+In addition, the 'show_rentals' function is probably also used a lot more
+often than the "import_data" function, hence, the 'show_rentals' function could 
+be the root cause for the system performance issue.
+
+
+
