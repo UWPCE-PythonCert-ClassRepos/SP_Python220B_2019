@@ -12,12 +12,11 @@ import asyncio
 import motor.motor_asyncio
 from types import coroutine     # pylint: disable=unused-import
 import norton_db_utils as db
-from misc_utils import func_timer
 
 # FILE_LOG_LEVEL = logging.NOTSET         # 0
-FILE_LOG_LEVEL = logging.DEBUG          # 10
+# FILE_LOG_LEVEL = logging.DEBUG          # 10
 # FILE_LOG_LEVEL = logging.INFO           # 20
-# FILE_LOG_LEVEL = logging.ERROR          # 50
+FILE_LOG_LEVEL = logging.ERROR          # 50
 
 logging.basicConfig(format="%(asctime)s "
                            "%(levelname)s "
@@ -31,6 +30,8 @@ if logger.getEffectiveLevel() > FILE_LOG_LEVEL:
 # database class initialization
 mongo = db.MongoDBConnectionAsync()
 
+# variable for counting
+counts = {}
 
 def document_to_dict(document: dict, key: str = "_id", suppress: tuple = ()):
     """return a new dictionary from document data with the specified key
@@ -159,41 +160,51 @@ async def parsed_file_data(filename: str, directory: str = "") -> tuple:
         raise error
 
 
-async def import_data(path:str, file_name:str)-> tuple:
-    """import data in to MongoDB from a file"""
-
+async def import_data(path:str, files: tuple)-> tuple:
+    """import data in to MongoDB from a file
+    This function takes a directory name three csv files as input, one with
+    product data, one with customer data and the third one with rentals data
+    and creates and populates a new MongoDB database with these data.
+    It returns 2 tuples: the first with a record count of the number of
+    products, customers and rentals added (in that order), the second with
+    a count of any errors that occurred, in the same order."""
     logger.info("Begin function import_data()")
 
-    input_records = []
-    success_records = []
-
-    with mongo:
-        # connect
-        database = mongo.connection.norton
-        # name from file
-        name = file_name.replace(".csv", "")
-        # collection in database
-        collection = database[name]
-        logger.debug(f"New collection database.{name} created.")
-        # get data from file modified, modified for database input
-        tstart = time.time()
-        data = await parsed_file_data(file_name, path)
-        end = time.time() - tstart
-        # inset the data
-        result = await collection.insert_many(data)
-        # count the records
-        n_rent = len(data)
-        n_error = n_rent - len(result.inserted_ids)
-        # store counts
-        input_records.append(n_rent)
-        success_records.append(n_error)
-        logger.debug(f"Created database.{name} with {n_rent} records and {n_error} errors")
-        doc_count = await collection.count_documents({})
-        logger.debug(f"The database.{name} has {doc_count} records")
-        logger.debug(f"Time in database.{name} was {end} seconds")
+    for file_name in files:
+        #timer
+        with mongo:
+            start_time = time.time()
+            # connect
+            database = mongo.connection.norton
+            # name from file
+            name = file_name.replace(".csv", "")
+            counts.update({name:{'old':0, 'new':0, 'errors':0}})
+            # collection in database
+            collection = database[name]
+            logger.debug(f"New collection database.{name} created.")
+            counts[name]['old'] = await collection.count_documents({})
+            # get data from file modified, modified for database input
+            data = await parsed_file_data(file_name, path)
+            # inset the data
+            result = await collection.insert_many(data)
+            # count the records
+            counts[name]['new'] = await collection.count_documents({})\
+                                  - counts[name]['old']
+            counts[name]['errors'] = counts[name]['new']\
+                                     - len(result.inserted_ids)
+            counts[name]['time'] = time.time() - start_time
+            # info
+            logger.debug(f"Time in database.{name} was {counts[name]['time']} seconds")
+            logger.info(f"Created database.{name} "
+                         f"with {counts[name]['new']} records "
+                         f"and {counts[name]['errors']} errors")
 
     logger.info("End function import_data()")
-    return (tuple(input_records), tuple(success_records))
+    answer = [[],[]]
+    for db in ['products', 'customers', 'rentals']:
+        answer[0].append(counts[db]['new'])
+        answer[1].append(counts[db]['errors'])
+    return tuple(answer[0]), tuple(answer[1])
 
 
 async def delete_all_collections(exclude: tuple = ()):
@@ -205,7 +216,7 @@ async def delete_all_collections(exclude: tuple = ()):
         names = await database.list_collection_names()
         for col in [name for name in names if name not in exclude]:
             await database.drop_collection(col)
-    await asyncio.sleep(0.1)
+    await asyncio.sleep(0.01)
     logger.info("end function delete_all_collections()")
 
 
@@ -220,18 +231,17 @@ async def main():
                        "students",
                        "tim_lurvey",
                        "lesson07",
+                       "assignment",
                        "data"])
     
-    for file in ['products.csv','customers.csv','rentals.csv']:
-        count, errors = await import_data(path=pathx, file_name=file)
+    files = ('products.csv','customers.csv','rentals.csv')
+    count, errors = await import_data(path=pathx, files=files)
 
-    logger.debug(f"Populated {file} data {count} with {errors} errors")
+    logger.debug(f"Populated all data {count} with {errors} errors")
     logger.info("end function main()")
 
 if __name__ == "__main__":
-
-    loop = asyncio.get_event_loop()
-    asyncio.run(delete_all_collections())
+    # asyncio.run(delete_all_collections())
 
     # TIME OF CONCURRENT main()
     # -------------------------------------------
@@ -242,8 +252,14 @@ if __name__ == "__main__":
     t2_end = time.time() - t2_start
     # logger.info(f"\t\tMAIN: {time_3}")
     logger.info(f"\t\tMAIN CONCURRENT: {t2_end}")
-
-    all_products = asyncio.run(show_available_products())
-
-    all_rentals = {}
-    find_all_rentals(products=all_products)
+    #
+    # all_products = asyncio.run(show_available_products())
+    # all_rentals = {}
+    # find_all_rentals(products=all_products)
+    for db in ('customers', 'rentals'):
+        print(db, (counts.get(db).get('new'),
+                   counts.get(db).get('old'),
+                   counts.get(db).get('new') + counts.get(db).get('old'),
+                   counts.get(db).get('time'),
+                   )
+              )

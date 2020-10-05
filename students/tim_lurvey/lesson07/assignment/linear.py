@@ -12,9 +12,9 @@ import norton_db_utils as db
 from misc_utils import func_timer
 
 # FILE_LOG_LEVEL = logging.NOTSET         # 0
-FILE_LOG_LEVEL = logging.DEBUG          # 10
+# FILE_LOG_LEVEL = logging.DEBUG          # 10
 # FILE_LOG_LEVEL = logging.INFO           # 20
-# FILE_LOG_LEVEL = logging.ERROR          # 50
+FILE_LOG_LEVEL = logging.ERROR          # 50
 
 logging.basicConfig(format="%(asctime)s "
                            "%(levelname)s "
@@ -28,6 +28,8 @@ if logger.getEffectiveLevel() > FILE_LOG_LEVEL:
 # database class initialization
 mongo = db.MongoDBConnection()
 
+# variables for counting
+counts = {}
 
 # @func_timer
 def document_to_dict(document: dict, key: str = "_id", suppress: tuple = ()) -> dict:
@@ -133,40 +135,51 @@ def parsed_file_data(filename: str, directory: str = "") -> tuple:
         raise error
 
 
-def import_data(path_name: str, product_file: str, customer_file: str, rentals_file: str)-> tuple:
-    """import data in to MongoDB from files"""
-
+def import_data(path_name: str, files: tuple)-> tuple:
+    """import data in to MongoDB from files
+    This function takes a directory name three csv files as input, one with
+    product data, one with customer data and the third one with rentals data
+    and creates and populates a new MongoDB database with these data.
+    It returns 2 tuples: the first with a record count of the number of
+    products, customers and rentals added (in that order), the second with
+    a count of any errors that occurred, in the same order."""
     logger.info("Begin function import_data()")
 
-    input_records = []
-    success_records = []
-
-    for file_name in [product_file, customer_file, rentals_file]:
+    for file_name in files:
+        #timer
+        start_time = time.time()
         with mongo:
             # connect
             database = mongo.connection.norton
             # name from file
             name = file_name.replace(".csv", "")
+            counts.update({name:{'old':0, 'new':0, 'errors':0}})
             # collection in database
             collection = database[name]
             logger.debug(f"New collection database.{name} created.")
+            counts[name]['old'] = collection.count_documents({})
             # get data from file modified, modified for database input
-            start_time = time.time()
             data = parsed_file_data(file_name, path_name)
-            end_time = time.time() - start_time
             # inset the data
             result = collection.insert_many(data)
             # count the records
-            n_rent = len(data)
-            n_error = n_rent - len(result.inserted_ids)
-            # store counts
-            input_records.append(n_rent)
-            success_records.append(n_error)
-            logger.debug(f"Created database.{name} with {n_rent} records and {n_error} errors")
-            logger.debug(f"Time in database.{name} was {end_time} seconds")
+            counts[name]['new'] = len(list(collection.find())) - \
+                                        counts[name]['old']
+            counts[name]['errors'] = counts[name]['new'] -\
+                                     len(result.inserted_ids)
+            counts[name]['time'] = time.time() - start_time
+            # info
+            logger.debug(f"Time in database.{name} was {counts[name]['time']} seconds")
+            logger.info(f"Created database.{name} "
+                         f"with {counts[name]['new']} records "
+                         f"and {counts[name]['errors']} errors")
 
     logger.info("End function import_data()")
-    return (tuple(input_records), tuple(success_records))
+    answer = [[],[]]
+    for db in ['products', 'customers', 'rentals']:
+        answer[0].append(counts[db]['new'])
+        answer[1].append(counts[db]['errors'])
+    return tuple(answer[0]), tuple(answer[1])
 
 
 @func_timer
@@ -198,6 +211,7 @@ def delete_all_collections(exclude: tuple = ()):
 def main():
     """main function to populate all data into the database"""
     logger.info("begin function main()")
+    #
     pathx = "\\".join(["C:",
                        "Users",
                        "pants",
@@ -206,20 +220,29 @@ def main():
                        "students",
                        "tim_lurvey",
                        "lesson07",
+                       "assignment",
                        "data"])
 
-    count, errors = import_data(path_name=pathx,
-                                product_file='products.csv',
-                                customer_file='customers.csv',
-                                rentals_file='rentals.csv')
+    data_files = ('products.csv', 'customers.csv', 'rentals.csv')
+    count, errors = import_data(path_name=pathx, files=data_files)
 
     logger.debug(f"Populated all data {count} with {errors} errors")
     logger.info("end function main()")
 
 if __name__ == "__main__":
-    delete_all_collections()
+    # reset database
+    # delete_all_collections()
+    # populate the database
     main()
-    all_products = show_available_products()
-    for pid in all_products:
-        rentals = show_rentals(product_id=pid)
-        logger.info(f"Found {len(rentals)} rental records for {pid}")
+    #
+    # all_products = show_available_products()
+    # for pid in all_products:
+    #     rentals = show_rentals(product_id=pid)
+    #     logger.info(f"Found {len(rentals)} rental records for {pid}")
+    for db in ('customers', 'rentals'):
+        print(db, (counts.get(db).get('new'),
+                   counts.get(db).get('old'),
+                   counts.get(db).get('new') + counts.get(db).get('old'),
+                   counts.get(db).get('time'),
+                   )
+              )
