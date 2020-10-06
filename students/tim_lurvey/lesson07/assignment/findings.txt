@@ -1,0 +1,33 @@
+Assignment 07 findings
+-------------------------
+1.  I thoroughly enjoyed this lesson.  I have dabbled in threading with some applications
+    written, but never to this level.  I really wanted to understand and make the
+    assignment work with async programming, having never successfully implemented it.
+
+2.  asyncio was more difficult that using drop-in threading but I feel confident to try
+    it in the real world.
+
+3.  My time improvement with async was not as much as expected, but I am not surprised
+    that the databasing modules are well optimized themselves and everything is
+    performed locally on disc.  I feel a ~30% improvement is respectable.
+
+    By adding more and more data, the performance gains are more apparent.When I tried
+    running a lot more operations with many many coroutines executing concurrently, the
+    performance got better, as expected.  I expect to see further improvements with real
+    world latency.
+
+4.  cProfile logs -> profile-{file}-{MMDDYYYY_HHMMSS}
+
+    - comparing all methods
+        profile-linear_py-10042020_160228
+        profile-parallel_py-10042020_160427
+
+    - comparing assignment requirements
+
+        - initial runs with ~30% improvement
+        profile-linear_py-10042020_235308
+        profile-parallel_py-10042020_235310
+
+        - more data -> more improvement over sequential operations
+        profile-linear_py-10042020_235336
+        profile-parallel_py-10042020_235339

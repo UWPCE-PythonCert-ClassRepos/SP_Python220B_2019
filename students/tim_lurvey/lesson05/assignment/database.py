@@ -196,5 +196,5 @@ if __name__ == "__main__":
     delete_all_collections()
     main()
     # all_products = show_available_products()
-    # for k in all_products:
-    #     show_rentals(product_id=k)
+    # for pid in all_products:
+    #     show_rentals(product_id=pid)

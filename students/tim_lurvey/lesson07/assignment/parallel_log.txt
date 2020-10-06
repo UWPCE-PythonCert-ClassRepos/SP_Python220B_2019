@@ -1,0 +1,147 @@
+C:\Users\pants\AppData\Local\Programs\Python\Python37\python.exe C:/Users/pants/PycharmProjects/SP_Python220B_2019/students/tim_lurvey/lesson07/parallel_async2.py
+2020-10-04 15:54:01,106 INFO parallel_async2.py.delete_all_collections():201 > begin function delete_all_collections()
+2020-10-04 15:54:01,106 DEBUG parallel_async2.py.delete_all_collections():202 > Dropping all collections except ()
+2020-10-04 15:54:01,234 INFO parallel_async2.py.delete_all_collections():209 > end function delete_all_collections()
+2020-10-04 15:54:01,235 INFO parallel_async2.py.main():214 > begin function main()
+2020-10-04 15:54:01,235 INFO parallel_async2.py.import_data():165 > Begin function import_data()
+2020-10-04 15:54:01,247 DEBUG parallel_async2.py.import_data():177 > New collection database.products created.
+2020-10-04 15:54:01,247 INFO parallel_async2.py.parsed_file_data():135 > begin function parsed_file_data()
+2020-10-04 15:54:01,250 INFO parallel_async2.py.parsed_file_data():145 > end function parsed_file_data()
+2020-10-04 15:54:01,267 DEBUG parallel_async2.py.import_data():190 > Created database.products with 18 records and 0 errors
+2020-10-04 15:54:01,268 DEBUG parallel_async2.py.import_data():192 > The database.products has 18 records
+2020-10-04 15:54:01,268 DEBUG parallel_async2.py.import_data():193 > Time in database.products was 0.0029671192169189453 seconds
+2020-10-04 15:54:01,269 INFO parallel_async2.py.import_data():195 > End function import_data()
+2020-10-04 15:54:01,269 INFO parallel_async2.py.import_data():165 > Begin function import_data()
+2020-10-04 15:54:01,283 DEBUG parallel_async2.py.import_data():177 > New collection database.customers created.
+2020-10-04 15:54:01,283 INFO parallel_async2.py.parsed_file_data():135 > begin function parsed_file_data()
+2020-10-04 15:54:01,295 INFO parallel_async2.py.parsed_file_data():145 > end function parsed_file_data()
+2020-10-04 15:54:01,760 DEBUG parallel_async2.py.import_data():190 > Created database.customers with 19616 records and 0 errors
+2020-10-04 15:54:01,772 DEBUG parallel_async2.py.import_data():192 > The database.customers has 19616 records
+2020-10-04 15:54:01,772 DEBUG parallel_async2.py.import_data():193 > Time in database.customers was 0.06383132934570312 seconds
+2020-10-04 15:54:01,773 INFO parallel_async2.py.import_data():195 > End function import_data()
+2020-10-04 15:54:01,781 INFO parallel_async2.py.import_data():165 > Begin function import_data()
+2020-10-04 15:54:01,785 DEBUG parallel_async2.py.import_data():177 > New collection database.rentals created.
+2020-10-04 15:54:01,785 INFO parallel_async2.py.parsed_file_data():135 > begin function parsed_file_data()
+2020-10-04 15:54:01,791 INFO parallel_async2.py.parsed_file_data():145 > end function parsed_file_data()
+2020-10-04 15:54:02,131 DEBUG parallel_async2.py.import_data():190 > Created database.rentals with 19617 records and 0 errors
+2020-10-04 15:54:02,140 DEBUG parallel_async2.py.import_data():192 > The database.rentals has 19617 records
+2020-10-04 15:54:02,140 DEBUG parallel_async2.py.import_data():193 > Time in database.rentals was 0.036934852600097656 seconds
+2020-10-04 15:54:02,141 INFO parallel_async2.py.import_data():195 > End function import_data()
+2020-10-04 15:54:02,145 DEBUG parallel_async2.py.main():228 > Populated rentals.csv data (19617,) with (0,) errors
+2020-10-04 15:54:02,146 INFO parallel_async2.py.main():229 > end function main()
+2020-10-04 15:54:02,146 INFO parallel_async2.py.<module>():244 > 		MAIN CONCURRENT: 0.9125704765319824
+2020-10-04 15:54:02,147 INFO parallel_async2.py.show_available_products():54 > begin function show_available_products()
+2020-10-04 15:54:02,163 DEBUG parallel_async2.py.show_available_products():68 > Found 18 documents in database.products
+2020-10-04 15:54:02,164 INFO parallel_async2.py.show_available_products():69 > End function show_available_products()
+2020-10-04 15:54:02,165 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000001')
+2020-10-04 15:54:02,169 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000002')
+2020-10-04 15:54:02,174 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000003')
+2020-10-04 15:54:02,181 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000004')
+2020-10-04 15:54:02,188 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000005')
+2020-10-04 15:54:02,194 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000006')
+2020-10-04 15:54:02,201 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000007')
+2020-10-04 15:54:02,208 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000008')
+2020-10-04 15:54:02,216 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000009')
+2020-10-04 15:54:02,222 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000010')
+2020-10-04 15:54:02,228 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000011')
+2020-10-04 15:54:02,235 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000012')
+2020-10-04 15:54:02,242 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000013')
+2020-10-04 15:54:02,249 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000014')
+2020-10-04 15:54:02,265 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000015')
+2020-10-04 15:54:02,270 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000016')
+2020-10-04 15:54:02,277 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000017')
+2020-10-04 15:54:02,284 INFO parallel_async2.py.show_rentals():99 > begin function show_rentals(product_id='prod000018')
+2020-10-04 15:54:02,330 DEBUG parallel_async2.py.show_rentals():106 > There are 1175 for product_id: prod000002
+2020-10-04 15:54:02,330 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000002
+2020-10-04 15:54:02,336 DEBUG parallel_async2.py.show_rentals():106 > There are 1070 for product_id: prod000003
+2020-10-04 15:54:02,336 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000003
+2020-10-04 15:54:02,359 DEBUG parallel_async2.py.show_rentals():106 > There are 1064 for product_id: prod000005
+2020-10-04 15:54:02,359 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000005
+2020-10-04 15:54:02,367 DEBUG parallel_async2.py.show_rentals():106 > There are 1037 for product_id: prod000001
+2020-10-04 15:54:02,367 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000001
+2020-10-04 15:54:02,373 DEBUG parallel_async2.py.show_rentals():106 > There are 1103 for product_id: prod000007
+2020-10-04 15:54:02,449 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000007
+2020-10-04 15:54:02,460 DEBUG parallel_async2.py.show_rentals():106 > There are 1013 for product_id: prod000009
+2020-10-04 15:54:02,460 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000009
+2020-10-04 15:54:02,463 DEBUG parallel_async2.py.show_rentals():106 > There are 1119 for product_id: prod000008
+2020-10-04 15:54:02,464 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000008
+2020-10-04 15:54:02,467 DEBUG parallel_async2.py.show_rentals():106 > There are 1118 for product_id: prod000010
+2020-10-04 15:54:02,467 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000010
+2020-10-04 15:54:02,470 DEBUG parallel_async2.py.show_rentals():106 > There are 1081 for product_id: prod000011
+2020-10-04 15:54:02,470 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000011
+2020-10-04 15:54:02,473 DEBUG parallel_async2.py.show_rentals():106 > There are 1091 for product_id: prod000013
+2020-10-04 15:54:02,473 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000013
+2020-10-04 15:54:02,476 DEBUG parallel_async2.py.show_rentals():106 > There are 1117 for product_id: prod000012
+2020-10-04 15:54:02,476 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000012
+2020-10-04 15:54:02,485 DEBUG parallel_async2.py.show_rentals():106 > There are 1106 for product_id: prod000014
+2020-10-04 15:54:02,485 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000014
+2020-10-04 15:54:02,491 DEBUG parallel_async2.py.show_rentals():106 > There are 1037 for product_id: prod000015
+2020-10-04 15:54:02,492 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000015
+2020-10-04 15:54:02,496 DEBUG parallel_async2.py.show_rentals():106 > There are 1116 for product_id: prod000016
+2020-10-04 15:54:02,497 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000016
+2020-10-04 15:54:02,501 DEBUG parallel_async2.py.show_rentals():106 > There are 1054 for product_id: prod000017
+2020-10-04 15:54:02,502 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000017
+2020-10-04 15:54:02,505 DEBUG parallel_async2.py.show_rentals():106 > There are 1127 for product_id: prod000006
+2020-10-04 15:54:02,506 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000006
+2020-10-04 15:54:02,510 DEBUG parallel_async2.py.show_rentals():106 > There are 1109 for product_id: prod000004
+2020-10-04 15:54:02,510 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000004
+2020-10-04 15:54:02,513 DEBUG parallel_async2.py.show_rentals():106 > There are 1080 for product_id: prod000018
+2020-10-04 15:54:02,514 DEBUG parallel_async2.py.show_rentals():107 > Looking up renter data for product_id: prod000018
+2020-10-04 15:54:02,515 ERROR parallel_async2.py.find_renter():87 > Record not found for user_id:aberal01 in product prod000013
+2020-10-04 15:54:35,083 DEBUG parallel_async2.py.show_rentals():110 > Found 1081 customers for product_id: prod000011
+2020-10-04 15:54:35,083 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000011')
+2020-10-04 15:54:35,933 DEBUG parallel_async2.py.show_rentals():110 > Found 1119 customers for product_id: prod000008
+2020-10-04 15:54:35,933 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000008')
+2020-10-04 15:54:40,485 DEBUG parallel_async2.py.show_rentals():110 > Found 1080 customers for product_id: prod000018
+2020-10-04 15:54:40,486 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000018')
+2020-10-04 15:54:43,706 DEBUG parallel_async2.py.show_rentals():110 > Found 1117 customers for product_id: prod000012
+2020-10-04 15:54:43,707 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000012')
+2020-10-04 15:54:45,259 DEBUG parallel_async2.py.show_rentals():110 > Found 1064 customers for product_id: prod000005
+2020-10-04 15:54:45,259 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000005')
+2020-10-04 15:54:48,748 DEBUG parallel_async2.py.show_rentals():110 > Found 1109 customers for product_id: prod000004
+2020-10-04 15:54:48,748 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000004')
+2020-10-04 15:54:55,574 DEBUG parallel_async2.py.show_rentals():110 > Found 1103 customers for product_id: prod000007
+2020-10-04 15:54:55,574 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000007')
+2020-10-04 15:54:55,956 DEBUG parallel_async2.py.show_rentals():110 > Found 1054 customers for product_id: prod000017
+2020-10-04 15:54:55,956 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000017')
+2020-10-04 15:54:56,264 DEBUG parallel_async2.py.show_rentals():110 > Found 1013 customers for product_id: prod000009
+2020-10-04 15:54:56,264 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000009')
+2020-10-04 15:54:58,150 DEBUG parallel_async2.py.show_rentals():110 > Found 1118 customers for product_id: prod000010
+2020-10-04 15:54:58,150 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000010')
+2020-10-04 15:54:58,238 DEBUG parallel_async2.py.show_rentals():110 > Found 1070 customers for product_id: prod000003
+2020-10-04 15:54:58,238 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000003')
+2020-10-04 15:55:00,296 DEBUG parallel_async2.py.show_rentals():110 > Found 1091 customers for product_id: prod000013
+2020-10-04 15:55:00,297 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000013')
+2020-10-04 15:55:00,342 DEBUG parallel_async2.py.show_rentals():110 > Found 1127 customers for product_id: prod000006
+2020-10-04 15:55:00,342 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000006')
+2020-10-04 15:55:01,042 DEBUG parallel_async2.py.show_rentals():110 > Found 1106 customers for product_id: prod000014
+2020-10-04 15:55:01,042 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000014')
+2020-10-04 15:55:01,046 DEBUG parallel_async2.py.show_rentals():110 > Found 1037 customers for product_id: prod000001
+2020-10-04 15:55:01,046 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000001')
+2020-10-04 15:55:01,270 DEBUG parallel_async2.py.show_rentals():110 > Found 1037 customers for product_id: prod000015
+2020-10-04 15:55:01,270 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000015')
+2020-10-04 15:55:02,155 DEBUG parallel_async2.py.show_rentals():110 > Found 1116 customers for product_id: prod000016
+2020-10-04 15:55:02,155 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000016')
+2020-10-04 15:55:02,579 DEBUG parallel_async2.py.show_rentals():110 > Found 1175 customers for product_id: prod000002
+2020-10-04 15:55:02,579 INFO parallel_async2.py.show_rentals():111 > end function show_rentals(product_id='prod000002')
+2020-10-04 15:55:02,580 INFO parallel_async2.py.find_all_rentals():130 > 		SHOW RENTALS CONCURRENT: 60.41514706611633
+Product: prod000001 has 1037 rental records
+Product: prod000002 has 1175 rental records
+Product: prod000003 has 1070 rental records
+Product: prod000004 has 1109 rental records
+Product: prod000005 has 1064 rental records
+Product: prod000006 has 1127 rental records
+Product: prod000007 has 1103 rental records
+Product: prod000008 has 1119 rental records
+Product: prod000009 has 1013 rental records
+Product: prod000010 has 1118 rental records
+Product: prod000011 has 1081 rental records
+Product: prod000012 has 1117 rental records
+Product: prod000013 has 1091 rental records
+Product: prod000014 has 1106 rental records
+Product: prod000015 has 1037 rental records
+Product: prod000016 has 1116 rental records
+Product: prod000017 has 1054 rental records
+Product: prod000018 has 1080 rental records
+
+Process finished with exit code 0

@@ -1,0 +1,138 @@
+C:\Users\pants\AppData\Local\Programs\Python\Python37\python.exe C:/Users/pants/PycharmProjects/SP_Python220B_2019/students/tim_lurvey/lesson07/linear.py
+2020-10-03 22:29:40,621 INFO linear.py.delete_all_collections():183 > begin function delete_all_collections()
+2020-10-03 22:29:40,621 DEBUG linear.py.delete_all_collections():184 > Dropping all collections except ()
+2020-10-03 22:29:40,630 INFO linear.py.delete_collection():170 > begin function delete_collection()
+2020-10-03 22:29:40,637 DEBUG linear.py.delete_collection():173 > Dropped database.customers successfully
+2020-10-03 22:29:40,637 INFO linear.py.delete_collection():178 > end function delete_collection()
+2020-10-03 22:29:40,637 INFO misc_utils.py.inner():19 > TIMER: delete_collection() ->  0.0069807 sec | COUNT: 1
+2020-10-03 22:29:40,638 INFO linear.py.delete_collection():170 > begin function delete_collection()
+2020-10-03 22:29:40,644 DEBUG linear.py.delete_collection():173 > Dropped database.rentals successfully
+2020-10-03 22:29:40,644 INFO linear.py.delete_collection():178 > end function delete_collection()
+2020-10-03 22:29:40,644 INFO misc_utils.py.inner():19 > TIMER: delete_collection() ->  0.0059850 sec | COUNT: 2
+2020-10-03 22:29:40,644 INFO linear.py.delete_collection():170 > begin function delete_collection()
+2020-10-03 22:29:40,650 DEBUG linear.py.delete_collection():173 > Dropped database.products successfully
+2020-10-03 22:29:40,650 INFO linear.py.delete_collection():178 > end function delete_collection()
+2020-10-03 22:29:40,650 INFO misc_utils.py.inner():19 > TIMER: delete_collection() ->  0.0059814 sec | COUNT: 3
+2020-10-03 22:29:40,651 INFO linear.py.delete_all_collections():189 > end function delete_all_collections()
+2020-10-03 22:29:40,651 INFO misc_utils.py.inner():19 > TIMER: delete_all_collections() ->  0.0299237 sec | COUNT: 1
+2020-10-03 22:29:40,651 INFO linear.py.main():194 > begin function main()
+2020-10-03 22:29:40,651 INFO linear.py.import_data():135 > Begin function import_data()
+2020-10-03 22:29:40,655 DEBUG linear.py.import_data():148 > New collection database.products created.
+2020-10-03 22:29:40,655 INFO linear.py.parsed_file_data():105 > begin function parsed_file_data()
+2020-10-03 22:29:40,658 INFO linear.py.parsed_file_data():115 > end function parsed_file_data()
+2020-10-03 22:29:40,658 INFO misc_utils.py.inner():19 > TIMER: parsed_file_data() ->  0.0029910 sec | COUNT: 1
+2020-10-03 22:29:40,674 DEBUG linear.py.import_data():161 > Created database.products with 18 records and 0 errors
+2020-10-03 22:29:40,674 DEBUG linear.py.import_data():162 > Time in database.products was 0.0029909610748291016 seconds
+2020-10-03 22:29:40,679 DEBUG linear.py.import_data():148 > New collection database.customers created.
+2020-10-03 22:29:40,679 INFO linear.py.parsed_file_data():105 > begin function parsed_file_data()
+2020-10-03 22:29:40,694 INFO linear.py.parsed_file_data():115 > end function parsed_file_data()
+2020-10-03 22:29:40,740 INFO misc_utils.py.inner():19 > TIMER: parsed_file_data() ->  0.0618355 sec | COUNT: 2
+2020-10-03 22:29:41,163 DEBUG linear.py.import_data():161 > Created database.customers with 19616 records and 0 errors
+2020-10-03 22:29:41,163 DEBUG linear.py.import_data():162 > Time in database.customers was 0.061835527420043945 seconds
+2020-10-03 22:29:41,167 DEBUG linear.py.import_data():148 > New collection database.rentals created.
+2020-10-03 22:29:41,167 INFO linear.py.parsed_file_data():105 > begin function parsed_file_data()
+2020-10-03 22:29:41,171 INFO linear.py.parsed_file_data():115 > end function parsed_file_data()
+2020-10-03 22:29:41,206 INFO misc_utils.py.inner():19 > TIMER: parsed_file_data() ->  0.0389345 sec | COUNT: 3
+2020-10-03 22:29:41,596 DEBUG linear.py.import_data():161 > Created database.rentals with 19617 records and 0 errors
+2020-10-03 22:29:41,596 DEBUG linear.py.import_data():162 > Time in database.rentals was 0.0438847541809082 seconds
+2020-10-03 22:29:41,597 INFO linear.py.import_data():164 > End function import_data()
+2020-10-03 22:29:41,602 DEBUG linear.py.main():210 > Populated all data (18, 19616, 19617) with (0, 0, 0) errors
+2020-10-03 22:29:41,603 INFO linear.py.main():211 > end function main()
+2020-10-03 22:29:41,603 INFO misc_utils.py.inner():19 > TIMER: main() ->  0.9524484 sec | COUNT: 1
+2020-10-03 22:29:41,603 INFO linear.py.show_available_products():51 > begin function show_available_products()
+2020-10-03 22:29:41,608 DEBUG linear.py.show_available_products():65 > Found 18 documents in database.products
+2020-10-03 22:29:41,608 INFO linear.py.show_available_products():66 > End function show_available_products()
+2020-10-03 22:29:41,608 INFO misc_utils.py.inner():19 > TIMER: show_available_products() ->  0.0049882 sec | COUNT: 1
+2020-10-03 22:29:41,608 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:29:48,308 DEBUG linear.py.show_rentals():98 > Found 1037 customers for product_id: prod000001
+2020-10-03 22:29:48,308 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:29:48,308 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.6997297 sec | COUNT: 1
+2020-10-03 22:29:48,308 INFO linear.py.<module>():219 > Found 1037 rental records for prod000001
+2020-10-03 22:29:48,308 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:29:55,937 DEBUG linear.py.show_rentals():98 > Found 1175 customers for product_id: prod000002
+2020-10-03 22:29:55,937 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:29:55,937 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  7.6292808 sec | COUNT: 2
+2020-10-03 22:29:55,938 INFO linear.py.<module>():219 > Found 1175 rental records for prod000002
+2020-10-03 22:29:55,938 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:02,542 DEBUG linear.py.show_rentals():98 > Found 1070 customers for product_id: prod000003
+2020-10-03 22:30:02,543 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:02,543 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.6045423 sec | COUNT: 3
+2020-10-03 22:30:02,543 INFO linear.py.<module>():219 > Found 1070 rental records for prod000003
+2020-10-03 22:30:02,543 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:09,254 DEBUG linear.py.show_rentals():98 > Found 1109 customers for product_id: prod000004
+2020-10-03 22:30:09,254 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:09,254 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.7115984 sec | COUNT: 4
+2020-10-03 22:30:09,254 INFO linear.py.<module>():219 > Found 1109 rental records for prod000004
+2020-10-03 22:30:09,254 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:15,551 DEBUG linear.py.show_rentals():98 > Found 1064 customers for product_id: prod000005
+2020-10-03 22:30:15,551 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:15,551 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.2963693 sec | COUNT: 5
+2020-10-03 22:30:15,551 INFO linear.py.<module>():219 > Found 1064 rental records for prod000005
+2020-10-03 22:30:15,551 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:22,305 DEBUG linear.py.show_rentals():98 > Found 1127 customers for product_id: prod000006
+2020-10-03 22:30:22,305 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:22,305 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.7547278 sec | COUNT: 6
+2020-10-03 22:30:22,305 INFO linear.py.<module>():219 > Found 1127 rental records for prod000006
+2020-10-03 22:30:22,305 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:29,165 DEBUG linear.py.show_rentals():98 > Found 1103 customers for product_id: prod000007
+2020-10-03 22:30:29,165 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:29,165 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.8595440 sec | COUNT: 7
+2020-10-03 22:30:29,166 INFO linear.py.<module>():219 > Found 1103 rental records for prod000007
+2020-10-03 22:30:29,166 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:36,402 DEBUG linear.py.show_rentals():98 > Found 1119 customers for product_id: prod000008
+2020-10-03 22:30:36,403 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:36,403 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  7.2370012 sec | COUNT: 8
+2020-10-03 22:30:36,403 INFO linear.py.<module>():219 > Found 1119 rental records for prod000008
+2020-10-03 22:30:36,403 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:42,477 DEBUG linear.py.show_rentals():98 > Found 1013 customers for product_id: prod000009
+2020-10-03 22:30:42,477 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:42,477 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.0742588 sec | COUNT: 9
+2020-10-03 22:30:42,478 INFO linear.py.<module>():219 > Found 1013 rental records for prod000009
+2020-10-03 22:30:42,478 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:49,456 DEBUG linear.py.show_rentals():98 > Found 1118 customers for product_id: prod000010
+2020-10-03 22:30:49,456 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:49,456 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.9783022 sec | COUNT: 10
+2020-10-03 22:30:49,456 INFO linear.py.<module>():219 > Found 1118 rental records for prod000010
+2020-10-03 22:30:49,456 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:30:55,962 DEBUG linear.py.show_rentals():98 > Found 1081 customers for product_id: prod000011
+2020-10-03 22:30:55,962 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:30:55,963 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.5069063 sec | COUNT: 11
+2020-10-03 22:30:55,963 INFO linear.py.<module>():219 > Found 1081 rental records for prod000011
+2020-10-03 22:30:55,963 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:02,625 DEBUG linear.py.show_rentals():98 > Found 1117 customers for product_id: prod000012
+2020-10-03 22:31:02,625 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:02,625 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.6619899 sec | COUNT: 12
+2020-10-03 22:31:02,625 INFO linear.py.<module>():219 > Found 1117 rental records for prod000012
+2020-10-03 22:31:02,626 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:02,664 ERROR linear.py.show_rentals():97 > Record not found for user_id:{renter_id}
+2020-10-03 22:31:09,194 DEBUG linear.py.show_rentals():98 > Found 1090 customers for product_id: prod000013
+2020-10-03 22:31:09,194 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:09,195 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.5687594 sec | COUNT: 13
+2020-10-03 22:31:09,195 INFO linear.py.<module>():219 > Found 1090 rental records for prod000013
+2020-10-03 22:31:09,195 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:16,487 DEBUG linear.py.show_rentals():98 > Found 1106 customers for product_id: prod000014
+2020-10-03 22:31:16,487 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:16,487 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  7.2918272 sec | COUNT: 14
+2020-10-03 22:31:16,487 INFO linear.py.<module>():219 > Found 1106 rental records for prod000014
+2020-10-03 22:31:16,487 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:23,076 DEBUG linear.py.show_rentals():98 > Found 1037 customers for product_id: prod000015
+2020-10-03 22:31:23,076 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:23,076 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.5886860 sec | COUNT: 15
+2020-10-03 22:31:23,077 INFO linear.py.<module>():219 > Found 1037 rental records for prod000015
+2020-10-03 22:31:23,077 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:29,819 DEBUG linear.py.show_rentals():98 > Found 1116 customers for product_id: prod000016
+2020-10-03 22:31:29,820 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:29,820 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.7430875 sec | COUNT: 16
+2020-10-03 22:31:29,820 INFO linear.py.<module>():219 > Found 1116 rental records for prod000016
+2020-10-03 22:31:29,820 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:36,181 DEBUG linear.py.show_rentals():98 > Found 1054 customers for product_id: prod000017
+2020-10-03 22:31:36,182 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:36,182 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.3618627 sec | COUNT: 17
+2020-10-03 22:31:36,182 INFO linear.py.<module>():219 > Found 1054 rental records for prod000017
+2020-10-03 22:31:36,182 INFO linear.py.show_rentals():78 > begin function show_rentals()
+2020-10-03 22:31:42,810 DEBUG linear.py.show_rentals():98 > Found 1080 customers for product_id: prod000018
+2020-10-03 22:31:42,810 INFO linear.py.show_rentals():99 > end function show_rentals()
+2020-10-03 22:31:42,810 INFO misc_utils.py.inner():19 > TIMER: show_rentals() ->  6.6282783 sec | COUNT: 18
+2020-10-03 22:31:42,810 INFO linear.py.<module>():219 > Found 1080 rental records for prod000018
+
+Process finished with exit code 0
