@@ -19,7 +19,7 @@ above). 2. You will create additionally functionality that will load individual 
 """
 
 from csv import reader
-
+from functools import partial
 
 def add_furniture(invoice_file, customer_name, item_code, item_description, item_monthly_price):
     """This function will create {invoice_file} (to replace the spreadsheet’s data)
@@ -61,8 +61,14 @@ def single_customer(customer_name, invoice_file):
     :type invoice_file: str
     """
     def write_items(rental_items):
+        add_cust = partial(add_furniture,
+                           invoice_file=invoice_file,
+                           customer_name=customer_name,)
         for line in get_csv_lines(rental_items):
-            add_furniture(invoice_file, customer_name, *line)
+            item_code, item_description, item_monthly_price = line
+            add_cust(item_code=item_code,
+                     item_description=item_description,
+                     item_monthly_price=item_monthly_price,)
     return write_items
 
 
