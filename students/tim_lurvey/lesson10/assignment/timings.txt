@@ -1,0 +1,4711 @@
+TIMER: delete_all_collections() -> 0:00:00.958213 | COUNT: 1
+TIMER: import_data() -> 0:00:01.084614 | COUNT: 1
+TIMER: import_data() -> 0:00:00.873662 | COUNT: 2
+TIMER: import_data() -> 0:00:01.022953 | COUNT: 3
+TIMER: import_data() -> 0:00:01.122592 | COUNT: 4
+TIMER: import_data() -> 0:00:01.239729 | COUNT: 5
+TIMER: import_data() -> 0:00:01.513522 | COUNT: 6
+TIMER: import_data() -> 0:00:01.584783 | COUNT: 7
+TIMER: import_data() -> 0:00:01.594835 | COUNT: 8
+TIMER: import_data() -> 0:00:01.709398 | COUNT: 9
+TIMER: import_data() -> 0:00:01.765945 | COUNT: 10
+TIMER: import_data() -> 0:00:01.847307 | COUNT: 11
+TIMER: import_data() -> 0:00:02.256960 | COUNT: 12
+TIMER: import_data() -> 0:00:02.032288 | COUNT: 13
+TIMER: import_data() -> 0:00:02.646982 | COUNT: 14
+TIMER: import_data() -> 0:00:02.663875 | COUNT: 15
+TIMER: import_data() -> 0:00:02.376365 | COUNT: 16
+TIMER: import_data() -> 0:00:02.480534 | COUNT: 17
+TIMER: import_data() -> 0:00:02.844322 | COUNT: 18
+TIMER: import_data() -> 0:00:02.810082 | COUNT: 19
+TIMER: import_data() -> 0:00:02.843047 | COUNT: 20
+TIMER: import_data() -> 0:00:02.933242 | COUNT: 21
+TIMER: import_data() -> 0:00:02.995441 | COUNT: 22
+TIMER: import_data() -> 0:00:03.150752 | COUNT: 23
+TIMER: import_data() -> 0:00:03.223705 | COUNT: 24
+TIMER: import_data() -> 0:00:03.333594 | COUNT: 25
+TIMER: import_data() -> 0:00:03.908039 | COUNT: 26
+TIMER: import_data() -> 0:00:03.629197 | COUNT: 27
+TIMER: import_data() -> 0:00:03.672412 | COUNT: 28
+TIMER: import_data() -> 0:00:05.144414 | COUNT: 29
+TIMER: import_data() -> 0:00:05.093500 | COUNT: 30
+TIMER: import_data() -> 0:00:05.327924 | COUNT: 31
+TIMER: import_data() -> 0:00:04.801653 | COUNT: 32
+TIMER: import_data() -> 0:00:05.111176 | COUNT: 33
+TIMER: import_data() -> 0:00:04.876566 | COUNT: 34
+TIMER: import_data() -> 0:00:05.020282 | COUNT: 35
+TIMER: import_data() -> 0:00:04.822932 | COUNT: 36
+TIMER: import_data() -> 0:00:05.941395 | COUNT: 37
+TIMER: import_data() -> 0:00:04.825420 | COUNT: 38
+TIMER: import_data() -> 0:00:04.982486 | COUNT: 39
+TIMER: import_data() -> 0:00:05.555422 | COUNT: 40
+TIMER: import_data() -> 0:00:05.620053 | COUNT: 41
+TIMER: import_data() -> 0:00:05.850468 | COUNT: 42
+TIMER: import_data() -> 0:00:06.056442 | COUNT: 43
+TIMER: import_data() -> 0:00:06.493965 | COUNT: 44
+TIMER: import_data() -> 0:00:06.219894 | COUNT: 45
+TIMER: import_data() -> 0:00:06.679888 | COUNT: 46
+TIMER: import_data() -> 0:00:07.249962 | COUNT: 47
+TIMER: import_data() -> 0:00:06.020149 | COUNT: 48
+TIMER: import_data() -> 0:00:06.205577 | COUNT: 49
+TIMER: import_data() -> 0:00:06.165198 | COUNT: 50
+TIMER: import_data() -> 0:00:06.113115 | COUNT: 51
+TIMER: import_data() -> 0:00:06.806104 | COUNT: 52
+TIMER: import_data() -> 0:00:06.504499 | COUNT: 53
+TIMER: import_data() -> 0:00:06.509729 | COUNT: 54
+TIMER: import_data() -> 0:00:06.579892 | COUNT: 55
+TIMER: import_data() -> 0:00:06.761718 | COUNT: 56
+TIMER: import_data() -> 0:00:06.974276 | COUNT: 57
+TIMER: import_data() -> 0:00:07.262982 | COUNT: 58
+TIMER: import_data() -> 0:00:07.395224 | COUNT: 59
+TIMER: import_data() -> 0:00:08.285763 | COUNT: 60
+TIMER: import_data() -> 0:00:09.530947 | COUNT: 61
+TIMER: import_data() -> 0:00:09.646495 | COUNT: 62
+TIMER: import_data() -> 0:00:09.760308 | COUNT: 63
+TIMER: import_data() -> 0:00:09.044637 | COUNT: 64
+TIMER: import_data() -> 0:00:08.526483 | COUNT: 65
+TIMER: import_data() -> 0:00:10.297256 | COUNT: 66
+TIMER: import_data() -> 0:00:10.286961 | COUNT: 67
+TIMER: import_data() -> 0:00:10.231345 | COUNT: 68
+TIMER: import_data() -> 0:00:09.453220 | COUNT: 69
+TIMER: import_data() -> 0:00:11.019669 | COUNT: 70
+TIMER: import_data() -> 0:00:12.716846 | COUNT: 71
+TIMER: import_data() -> 0:00:09.663692 | COUNT: 72
+TIMER: import_data() -> 0:00:08.296575 | COUNT: 73
+TIMER: import_data() -> 0:00:08.347690 | COUNT: 74
+TIMER: import_data() -> 0:00:08.736429 | COUNT: 75
+TIMER: import_data() -> 0:00:08.742682 | COUNT: 76
+TIMER: import_data() -> 0:00:10.421165 | COUNT: 77
+TIMER: import_data() -> 0:00:08.837011 | COUNT: 78
+TIMER: import_data() -> 0:00:09.482683 | COUNT: 79
+TIMER: import_data() -> 0:00:09.378493 | COUNT: 80
+TIMER: import_data() -> 0:00:09.110161 | COUNT: 81
+TIMER: import_data() -> 0:00:09.173914 | COUNT: 82
+TIMER: import_data() -> 0:00:09.243799 | COUNT: 83
+TIMER: import_data() -> 0:00:09.512173 | COUNT: 84
+TIMER: import_data() -> 0:00:09.486898 | COUNT: 85
+TIMER: import_data() -> 0:00:09.591191 | COUNT: 86
+TIMER: import_data() -> 0:00:11.930007 | COUNT: 87
+TIMER: import_data() -> 0:00:09.807053 | COUNT: 88
+TIMER: import_data() -> 0:00:11.146574 | COUNT: 89
+TIMER: import_data() -> 0:00:10.123908 | COUNT: 90
+TIMER: import_data() -> 0:00:10.089388 | COUNT: 91
+TIMER: import_data() -> 0:00:10.682576 | COUNT: 92
+TIMER: import_data() -> 0:00:10.522981 | COUNT: 93
+TIMER: import_data() -> 0:00:11.437461 | COUNT: 94
+TIMER: import_data() -> 0:00:11.733112 | COUNT: 95
+TIMER: import_data() -> 0:00:10.751150 | COUNT: 96
+TIMER: import_data() -> 0:00:10.996385 | COUNT: 97
+TIMER: import_data() -> 0:00:11.971951 | COUNT: 98
+TIMER: import_data() -> 0:00:11.083694 | COUNT: 99
+TIMER: import_data() -> 0:00:11.519780 | COUNT: 100
+{
+    "2020/10/16@11:00:27.826866": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:28.410305": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:28.851125": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:28.904982": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:29.339855": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:29.725785": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:29.810560": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:30.289966": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:30.748764": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:30.870414": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:31.399995": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:31.870334": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:32.030929": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:32.604414": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:33.111060": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:33.315513": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:34.088446": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:34.625580": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:34.850616": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:35.641366": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:36.210388": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:36.484627": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:37.170894": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:37.805197": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:38.141298": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:38.831400": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:39.513631": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:39.847702": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:40.579454": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:41.281538": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:41.655120": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:42.419793": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:43.127846": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:43.534789": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:44.312677": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:45.385838": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:45.825629": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:46.644451": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:47.418119": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:48.064379": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:48.921101": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:50.066063": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:50.574714": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:51.877250": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:52.730159": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:53.277607": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:54.212612": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:55.106312": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:55.692798": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:56.654664": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:57.586874": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:58.440072": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:00:59.465348": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:00.431168": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:01.099413": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:02.241843": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:03.241288": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:03.956142": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:05.039840": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:06.085295": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:06.836309": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:07.936921": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:09.017539": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:09.779101": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:10.907777": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:12.012948": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:12.832282": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:14.044609": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:15.164728": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:15.986024": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:17.211424": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:18.388823": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:19.256113": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:20.522283": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:21.722030": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:22.648059": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:23.939083": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:25.631063": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:26.572898": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:27.972587": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:29.259263": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:30.233811": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:31.618614": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:32.931676": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:34.180522": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:36.710951": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:38.077088": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:39.199589": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:41.298407": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:43.170556": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:44.344417": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:46.644358": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:48.499481": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:49.753725": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:51.375895": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:53.302162": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:54.561793": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:56.696097": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:58.413339": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:01:59.589296": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:01.304002": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:03.290905": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:04.827416": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:06.619633": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:08.311187": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:09.580441": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:11.278853": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:13.132124": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:15.603985": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:17.396187": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:19.074518": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:20.432802": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:22.184235": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:23.899936": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:25.306665": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:27.100151": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:28.883421": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:30.394173": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:32.326907": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:34.438872": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:36.034054": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:38.119212": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:40.059915": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:41.676793": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:43.760063": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:45.911354": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:47.772940": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:49.880676": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:51.967802": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:53.703643": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:55.913599": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:02:58.462758": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:00.097598": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:02.691458": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:04.682644": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:06.334794": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:08.421847": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:11.363533": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:14.095278": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:16.208765": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:18.614518": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:20.342509": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:22.423022": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:24.635704": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:26.479005": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:28.685477": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:30.840273": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:32.701762": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:34.947279": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:37.005477": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:38.834191": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:41.013930": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:43.118559": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:45.549670": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:47.730990": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:49.924695": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:51.892313": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:54.221097": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:56.429189": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:03:58.309740": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:00.612037": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:02.938919": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:04.894677": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:07.277561": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:09.519777": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:11.472569": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:13.861795": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:16.281470": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:18.293633": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:20.729859": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:23.255802": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:25.378685": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:28.036778": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:30.519723": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:32.759523": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:35.443455": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:37.915941": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:40.155495": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:42.761254": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:46.201744": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:49.030116": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:52.441518": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:55.730678": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:04:58.588101": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:01.944710": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:05.379174": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:08.344108": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:11.735714": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:15.138482": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:17.975125": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:21.182106": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:24.185115": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:26.508194": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:29.677383": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:32.710603": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:35.944321": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:39.584203": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:43.007856": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:46.160805": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:49.832954": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:53.295816": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:05:56.438643": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:00.000764": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:03.526161": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:06.350088": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:09.247509": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:12.982373": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:16.289495": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:20.150054": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:24.001045": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:27.504668": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:32.155753": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:36.718888": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:40.635416": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:43.578129": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:46.384548": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:48.906919": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:51.790006": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:54.681122": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:06:57.207618": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:00.132929": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:03.028811": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:05.714875": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:08.798016": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:11.765268": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:14.505927": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:17.553024": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:20.507948": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:23.162125": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:27.934213": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:30.930087": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:33.638041": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:36.772319": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:39.767067": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:42.457051": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:45.554916": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:49.248807": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:52.143309": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:55.441312": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:07:58.627005": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:01.429224": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:04.639111": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:07.737543": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:10.536493": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:13.763658": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:16.911350": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:19.751382": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:22.963245": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:26.155122": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:29.023817": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:32.340680": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:35.668317": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:38.598659": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:41.910450": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:45.155757": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:48.094735": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:51.455215": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:54.746411": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:08:57.752544": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:02.045549": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:06.676819": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:09.683848": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:13.070529": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:16.483924": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:19.780361": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:24.233846": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:27.631014": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:30.709477": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:34.271922": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:37.754721": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:40.894054": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:44.400764": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:47.845307": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:50.992547": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:54.573114": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:09:58.528910": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:01.749008": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:05.409722": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:09.050924": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:12.294353": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:15.920601": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:20.489351": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:23.728443": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:27.357329": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:32.222435": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:35.553009": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:39.325581": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:42.974581": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:46.290425": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:50.097993": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:53.969970": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:10:58.451060": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:02.236695": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:05.941951": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:09.373770": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:13.226325": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:17.025615": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:20.464350": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:24.774043": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}{
+    "2020/10/16@11:11:28.545368": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 1961600,
+            "products": 1800,
+            "rentals": 1961700
+        },
+        "time_delta": "0:00:02.042137"
+    }
+}TIMER: import_data() -> 0:00:11.864553 | COUNT: 1
+TIMER: import_data() -> 0:00:12.466297 | COUNT: 1
+TIMER: import_data() -> 0:00:12.072135 | COUNT: 2
+TIMER: import_data() -> 0:00:11.334512 | COUNT: 3
+{
+    "2020/10/16@11:51:37.238847": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:51:42.076301": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:51:46.028014": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:51:49.516825": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:51:54.286670": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:51:58.100152": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:52:01.617861": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:52:05.532577": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}{
+    "2020/10/16@11:52:09.435657": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 2079296.0,
+            "products": 2088.0,
+            "rentals": 2059785.0
+        },
+        "time_delta": 2.116581
+    }
+}TIMER: delete_all_collections() -> 0:00:02.275008 | COUNT: 1
+TIMER: import_data() -> 0:00:12.191801 | COUNT: 1
+TIMER: import_data() -> 0:00:01.453885 | COUNT: 2
+TIMER: import_data() -> 0:00:01.556173 | COUNT: 3
+TIMER: import_data() -> 0:00:01.672441 | COUNT: 1
+TIMER: import_data() -> 0:00:01.724780 | COUNT: 2
+TIMER: import_data() -> 0:00:01.852196 | COUNT: 3
+TIMER: import_data() -> 0:00:01.950291 | COUNT: 1
+TIMER: import_data() -> 0:00:02.041848 | COUNT: 2
+TIMER: import_data() -> 0:00:02.191873 | COUNT: 3
+TIMER: import_data() -> 0:00:02.238661 | COUNT: 1
+TIMER: import_data() -> 0:00:02.382909 | COUNT: 2
+TIMER: import_data() -> 0:00:02.406650 | COUNT: 3
+{
+    "2020/10/16@12:01:31.183630": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 176544,
+            "products": 180,
+            "rentals": 176553
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:32.155008": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 196160,
+            "products": 180,
+            "rentals": 176553
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:33.076220": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 196160,
+            "products": 180,
+            "rentals": 196170
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:33.452343": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 196160,
+            "products": 198,
+            "rentals": 196170
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:34.429992": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 215776,
+            "products": 198,
+            "rentals": 196170
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:35.460164": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 215776,
+            "products": 198,
+            "rentals": 215787
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:35.859058": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 215776,
+            "products": 216,
+            "rentals": 215787
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:36.872527": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 235392,
+            "products": 216,
+            "rentals": 215787
+        },
+        "time_delta": 0.782818
+    }
+}{
+    "2020/10/16@12:01:37.866777": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 235392,
+            "products": 216,
+            "rentals": 235404
+        },
+        "time_delta": 0.782818
+    }
+}TIMER: import_data() -> 0:00:02.514006 | COUNT: 1
+TIMER: import_data() -> 0:00:02.695512 | COUNT: 2
+TIMER: import_data() -> 0:00:02.757090 | COUNT: 3
+TIMER: import_data() -> 0:00:03.034997 | COUNT: 1
+TIMER: import_data() -> 0:00:03.387778 | COUNT: 2
+TIMER: import_data() -> 0:00:03.071883 | COUNT: 3
+TIMER: import_data() -> 0:00:03.301930 | COUNT: 1
+TIMER: import_data() -> 0:00:03.301940 | COUNT: 2
+TIMER: import_data() -> 0:00:03.348807 | COUNT: 3
+{
+    "2020/10/16@12:16:25.585812": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:26.910939": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:28.159627": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:28.855247": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:30.176872": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:31.462604": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:32.170841": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:33.531248": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}{
+    "2020/10/16@12:16:34.811975": {
+        "count_delta": {
+            "customers": 0,
+            "products": 0,
+            "rentals": 19617
+        },
+        "counts": {
+            "customers": 411936.0,
+            "products": 432.0,
+            "rentals": 411957.0
+        },
+        "time_delta": 0.908753
+    }
+}TIMER: import_data() -> 0:00:03.516693 | COUNT: 1
+TIMER: import_data() -> 0:00:03.564237 | COUNT: 2
+TIMER: import_data() -> 0:00:03.908697 | COUNT: 3
+TIMER: import_data() -> 0:00:03.875960 | COUNT: 1
+TIMER: import_data() -> 0:00:04.356443 | COUNT: 2
+TIMER: import_data() -> 0:00:04.030400 | COUNT: 3
